@@ -240,7 +240,7 @@ class Timezone(Gtk.Box):
         self.auto_timezone_thread.start()
 
     def start_mirrorlist_thread(self):
-        scripts_dir = os.path.join(self.settings.get("CNCHI_DIR"), "scripts")
+        scripts_dir = os.path.join(self.settings.get("THUS_DIR"), "scripts")
         self.mirrorlist_thread = GenerateMirrorListThread(self.auto_timezone_coords, scripts_dir)
         self.mirrorlist_thread.start()
 

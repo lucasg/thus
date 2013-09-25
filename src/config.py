@@ -38,7 +38,7 @@ class Settings():
         self.settings = Queue(1)
 
         self.settings.put( { \
-            'CNCHI_DIR' : '/usr/share/thus/', \
+            'THUS_DIR' : '/usr/share/thus/', \
             'UI_DIR' : '/usr/share/thus/ui/', \
             'DATA_DIR' : '/usr/share/thus/data/', \
             'TMP_DIR' : '/tmp', \
@@ -67,7 +67,7 @@ class Settings():
             'auto_device' : '/dev/sda', \
             'log_file' : '/tmp/thus.log', \
             'fullname' : '', \
-            'hostname' : 'antergos', \
+            'hostname' : 'manjaro', \
             'username' : '', \
             'password' : '', \
             'require_password' : True, \

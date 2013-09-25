@@ -126,7 +126,7 @@ class Main(Gtk.Window):
 
         if not os.path.exists(self.ui_dir):
             thus_dir = os.path.join(os.path.dirname(__file__), './')
-            self.settings.set("CNCHI_DIR", thus_dir)
+            self.settings.set("THUS_DIR", thus_dir)
             
             ui_dir = os.path.join(os.path.dirname(__file__), 'ui/')
             self.settings.set("UI_DIR", ui_dir)

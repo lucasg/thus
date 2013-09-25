@@ -239,7 +239,7 @@ class InstallationProcess(multiprocessing.Process):
         
         if self.method == 'automatic':
             self.auto_device = self.mount_devices["/"].replace("3","")
-            thus_dir = self.settings.get("CNCHI_DIR")
+            thus_dir = self.settings.get("THUS_DIR")
             script_path = os.path.join(thus_dir, "scripts", _autopartition_script)
             try:
                 self.queue_event('debug', "Automatic device: %s" % self.auto_device)
@@ -916,7 +916,7 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("/opt/manjaro/pacman-gfx.conf"):
             self.queue_event('info', _("Setup graphic card.."))
             self.queue_event('pulse') 
-            mhwd_script_path = os.path.join(self.settings.get("CNCHI_DIR"), "scripts", _mhwd_script)  
+            mhwd_script_path = os.path.join(self.settings.get("THUS_DIR"), "scripts", _mhwd_script)  
             try:
                 self.queue_event('debug', "Running MHWD script...")
                 subprocess.check_call(["/usr/bin/bash", mhwd_script_path])
@@ -1151,7 +1151,7 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('info', _("Running mkinitcpio... done"))
         
         '''# Call post-install script to execute gsettings commands
-        script_path_postinstall = os.path.join(self.settings.get("CNCHI_DIR"), \
+        script_path_postinstall = os.path.join(self.settings.get("THUS_DIR"), \
             "scripts", _postinstall_script)
         subprocess.check_call(["/usr/bin/bash", script_path_postinstall, \
             username, self.dest_dir, self.desktop, keyboard_layout, keyboard_variant])
