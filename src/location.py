@@ -3,8 +3,7 @@
 #
 #  location.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,27 +20,21 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk, GLib
 
 # Import functions
 import config
 import os
-import log
+import logging
 import show_message as show
-import log
 import xml.etree.ElementTree as etree
 
 _next_page = "check"
@@ -187,6 +180,8 @@ class Location(Gtk.Box):
 
         self.treeview_items = len(areas)
         
+        areas.sort()
+        
         for area in areas:
             liststore.append([area])
             
@@ -195,18 +190,22 @@ class Location(Gtk.Box):
         selected = self.treeview.get_selection()
         if selected:
             (ls, iter) = selected.get_selected()
-            if iter:
-                country = ls.get_value(iter, 0)
-                lang_code = self.settings.get("language_code")
-                for mylocale in self.locales:
-                    if self.locales[mylocale] == country:
-                        self.settings.set("locale", mylocale)
-                        try:
-                            import locale
-                            locale.setlocale(locale.LC_ALL, mylocale)
-                            log.debug(_("locale changed to : %s") % mylocale)
-                        except (ImportError, locale.Error):
-                            log.debug(_("Can't change to locale '%s'") % mylocale)
+
+            if not iter:
+                iter = ls.get_iter_first()
+
+            country = ls.get_value(iter, 0)
+            lang_code = self.settings.get("language_code")
+            for mylocale in self.locales:
+                if self.locales[mylocale] == country:
+                    self.settings.set("locale", mylocale)
+                    try:
+                        import locale
+                        locale.setlocale(locale.LC_ALL, mylocale)
+                        logging.info(_("locale changed to : %s") % mylocale)
+                    except (ImportError, locale.Error):
+                        logging.warning(_("Can't change to locale '%s'") % mylocale)
+
         return True
 
     def get_prev_page(self):

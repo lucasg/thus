@@ -3,8 +3,7 @@
 #
 #  installation_advanced.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,18 +20,13 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 import xml.etree.ElementTree as etree
 
@@ -41,7 +35,7 @@ import subprocess
 import gettext
 import sys
 import os
-import log
+import logging
 import misc
 
 # Insert the src/parted directory at the front of the path.
@@ -51,9 +45,12 @@ sys.path.insert(0, parted_dir)
 
 import partition_module as pm
 import fs_module as fs
+import lvm
 import used_space
-import installation_thread
+import installation_process
 import show_message as show
+
+#import bootinfo
 
 _next_page = "timezone"
 _prev_page = "installation_ask"
@@ -62,13 +59,15 @@ class InstallationAdvanced(Gtk.Box):
 
     def __init__(self, params):
         ## Store class parameters
+        self.blvm = False
         self.title = params['title']
         self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
-
+        self.alternate_package_list = params['alternate_package_list']
+        self.lv_partitions = []
         self.disks_changed = []
         self.my_first_time = True
         self.orig_label_dic = {}        
@@ -160,13 +159,14 @@ class InstallationAdvanced(Gtk.Box):
             if "free" in path:
                 return None
             for zz in self.all_partitions:
-                for yy in zz:
-                    if zz[yy].path == path:
-                        p = zz[yy]
+                if "/dev/mapper" not in zz:
+                    for yy in zz:
+                        if zz[yy].path == path:
+                            p = zz[yy]
         try:
             dev = p.disk.device.path
         except:
-            dev = 'thinking'
+            dev = path
         if p:
             ends = p.geometry.end
             starts = p.geometry.start
@@ -199,17 +199,19 @@ class InstallationAdvanced(Gtk.Box):
                 button_new.set_sensitive(True)
             else:
                 disks = pm.get_devices()
-                if not path in disks:
+                if (path not in disks and 'dev/mapper' not in path) or ('dev/mapper' in path and '-' in path):
                     ## A partition is selected
                     for i in self.all_partitions:
-                        if path in i:
+                        if path in i and '/mapper' not in path and '/' in path:
                             diskobj = i[path].disk.device.path
                     if diskobj and model[tree_iter][1] == 'extended' and \
                      self.diskdic[diskobj]['has_logical']:
                         button_delete.set_sensitive(False)
                         button_edit.set_sensitive(False)
                     else:
-                        button_delete.set_sensitive(True)    
+                        button_delete.set_sensitive(True)
+                        if '/mapper' in path:
+                            button_delete.set_sensitive(False)
                         button_edit.set_sensitive(True)
                 else:
                     ## A drive (disk) is selected
@@ -237,10 +239,13 @@ class InstallationAdvanced(Gtk.Box):
                     line = '{0} [{1} GB] ({2})'.format(dev.model, size_in_gigabytes, dev.path)
                     self.grub_device_entry.append_text(line)
                     self.grub_devices[line] = dev.path
-                    self.grub_device = self.grub_devices[line]
         
         ## Automatically select first entry
         self.select_first_combobox_item(self.grub_device_entry)
+
+    def on_grub_device_check_toggled(self, checkbox):
+        combo = self.ui.get_object("grub_device_entry")
+        combo.set_sensitive(checkbox.get_active())
 
     ## Automatically select first entry
     def select_first_combobox_item(self, combobox):
@@ -249,7 +254,7 @@ class InstallationAdvanced(Gtk.Box):
         combobox.set_active_iter(tree_iter)
 
     ## Get new selected GRUB device
-    def on_select_grub_drive_changed(self, widget):
+    def on_grub_device_entry_changed(self, widget):
         line = self.grub_device_entry.get_active_text()
         if line != None:
             self.grub_device = self.grub_devices[line]
@@ -289,7 +294,7 @@ class InstallationAdvanced(Gtk.Box):
         ssd_toggle = Gtk.CellRendererToggle()
         ssd_toggle.connect("toggled", self.on_ssd_cell_toggled)
 
-        col = Gtk.TreeViewColumn(_("Solid State Drive (SSD)"), ssd_toggle, active=12, visible=13, sensitive=14)
+        col = Gtk.TreeViewColumn(_("SSD"), ssd_toggle, active=12, visible=13, sensitive=14)
         self.partition_list.append_column(col)   
 
     ## Helper function to get a disk/partition size in human format
@@ -341,8 +346,58 @@ class InstallationAdvanced(Gtk.Box):
         ## Be sure to call get_devices once
         if self.disks == None:
             self.disks = pm.get_devices()
-
+        self.lv_partitions = []
         self.diskdic['mounts'] = []
+        vgs = lvm.get_volume_groups()
+        if vgs:
+            for vg in vgs:
+                is_ssd = False
+                lvs = lvm.get_logical_volumes(vg)
+                if not lvs:
+                    continue
+                row = [vg, "", "", "",  False, False, "", "", "", "", 0, False, False, False, False]
+                lvparent = self.partition_list_store.append(None, row)
+                for lv in lvs:
+                    fmt_enable = True
+                    fmt_active = False
+                    label = ""
+                    fs_type = ""
+                    mount_point = ""
+                    used = ""
+                    flags = ""
+                    formatable = True
+                    partition_path = "/dev/mapper/%s-%s" % (vg, lv)
+                    self.all_partitions.append(partition_path)
+                    self.lv_partitions.append(partition_path)
+                    uid = self.gen_partition_uid(path=partition_path)
+                    if fs.get_type(partition_path):
+                        fs_type = fs.get_type(partition_path)
+                    else:
+                        #kludge, btrfs not being detected...
+                        if used_space.is_btrfs(partition_path):
+                            fs_type = 'btrfs'
+
+                    if uid in self.stage_opts:
+                        (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
+                    
+                    info = fs.get_info(partition_path)
+                    if 'LABEL' in info:
+                       label = info['LABEL']
+
+                    if mount_point:
+                        self.diskdic['mounts'].append(mount_point)
+
+                    ## do not show swap version, only the 'swap' word
+                    if 'swap' in fs_type:
+                        fs_type = 'swap'
+
+                    row = [partition_path, fs_type, mount_point, label, fmt_active, \
+                           formatable, '', '', partition_path, \
+                           "", 0, fmt_enable, False, False, False]
+                    self.partition_list_store.append(lvparent, row)
+                    if self.my_first_time:
+                        self.orig_part_dic[partition_path] = self.gen_partition_uid(path=partition_path)
+                        self.orig_label_dic[partition_path] = label
 
         ## Here we fill our model
         for disk_path in sorted(self.disks):
@@ -373,8 +428,9 @@ class InstallationAdvanced(Gtk.Box):
                 
                 row = [dev.path, "", "", "", False, False, size_txt, "", \
                     "", "", 0, False, is_ssd, True, True]
+                if '/dev/mapper/' in disk_path:
+                    continue
                 disk_parent = self.partition_list_store.append(None, row)
-                
                 parent = disk_parent
 
                 # Create a list of partitions for this device (/dev/sda for example)
@@ -396,10 +452,13 @@ class InstallationAdvanced(Gtk.Box):
                     formatable = True
 
                     path = p.path
-                    
+                    if '/dev/mapper' in path:
+                        continue
                     ## Get file system
                     if p.fileSystem and p.fileSystem.type:
                         fs_type = p.fileSystem.type
+                    elif fs.get_type(path):
+                        fs_type = fs.get_type(path)
                     else:
                         #kludge, btrfs not being detected...
                         if 'free' not in partition_path:
@@ -437,6 +496,8 @@ class InstallationAdvanced(Gtk.Box):
                     if uid in self.stage_opts:
                         (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
                         fmt_enable = not is_new
+                        if mount_point == "/":
+                            fmt_enable = False
                     else:
                         fmt_enable = True
                         if _("free space") not in path:
@@ -539,7 +600,8 @@ class InstallationAdvanced(Gtk.Box):
         fmt = row[4]
         partition_path = row[8]
         fmtable = row[11]
-        
+        if "lvm2" in fs.lower():
+            return 
         # set fs in dialog combobox
         use_combo = self.ui.get_object('partition_use_combo2')
         use_combo_model = use_combo.get_model()
@@ -572,8 +634,10 @@ class InstallationAdvanced(Gtk.Box):
 
         # Get disk_path and disk
         disk_path = self.get_disk_path_from_selection(model, tree_iter)    
-        disk = self.disks[disk_path]
-
+        try:
+            disk = self.disks[disk_path]
+        except:
+            disk = None
         # show edit partition dialog
         response = self.edit_partition_dialog.run()
         
@@ -583,6 +647,8 @@ class InstallationAdvanced(Gtk.Box):
 
             if mymount in self.diskdic['mounts'] and mymount != mount_point:
                 show.warning(_('Cannot use same mount twice...'))
+            elif mymount == "/" and not format_check.get_active():
+                show.warning(_('Root partition must be formatted...'))
             else:
                 if mount_point:
                     self.diskdic['mounts'].remove(mount_point)               
@@ -597,7 +663,8 @@ class InstallationAdvanced(Gtk.Box):
                     #fmtop = False
 
                 # Should we force a format if the partition is new?
-
+                if myfmt == 'swap':
+                    mymount = 'swap'
                 self.stage_opts[uid] = (is_new, mylabel, mymount, myfmt, fmtop)
             
         self.edit_partition_dialog.hide()
@@ -654,7 +721,7 @@ class InstallationAdvanced(Gtk.Box):
         disk_path = self.get_disk_path_from_selection(model, tree_iter)
         self.disks_changed.append(disk_path)
 
-        log.debug("You will delete from disk [%s] partition [%s]" % (disk_path, partition_path))
+        logging.info("You will delete from disk [%s] partition [%s]" % (disk_path, partition_path))
 
         # Be sure to just call get_devices once
         if self.disks == None:
@@ -671,7 +738,7 @@ class InstallationAdvanced(Gtk.Box):
         ## Before delete the partition, check if it's already mounted
         if pm.check_mounted(part):
             ## We unmount the partition. Should we ask first?
-            log.debug("Unmounting %s..." % part.path)
+            logging.info("Unmounting %s..." % part.path)
             subp = subprocess.Popen(['umount', part.path], stdout=subprocess.PIPE)
 
         ## Is it worth to show some warning message here?
@@ -826,6 +893,8 @@ class InstallationAdvanced(Gtk.Box):
                 myfmt = use_combo.get_active_text()
                 if myfmt == None:
                     myfmt = ""
+                if myfmt == 'swap':
+                    mymount = 'swap'
                 # Get selected size
                 size = int(size_spin.get_value())
 
@@ -838,7 +907,7 @@ class InstallationAdvanced(Gtk.Box):
 
                 # user wants to create an extended, logical or primary partition
                 if primary_radio.get_active():
-                    log.debug(_("Creating primary partition"))
+                    logging.debug(_("Creating primary partition"))
                     pm.create_partition(disk, pm.PARTITION_PRIMARY, geometry)
                 elif extended_radio.get_active():
                     #No mounting extended partitions...
@@ -849,13 +918,13 @@ class InstallationAdvanced(Gtk.Box):
                     mylabel = ''
                     myfmt = ''
                     formatme = False 
-                    log.debug(_("Creating extended partition"))
+                    logging.debug(_("Creating extended partition"))
                     pm.create_partition(disk, pm.PARTITION_EXTENDED, geometry)
                 elif logical_radio.get_active():
                     logical_count = len(list(disk.getLogicalPartitions()))
                     max_logicals = disk.getMaxLogicalPartitions()        
                     if logical_count < max_logicals:
-                        log.debug(_("Creating logical partition"))
+                        logging.debug(_("Creating logical partition"))
                         # which geometry should we use here?
                         pm.create_partition(disk, pm.PARTITION_LOGICAL, geometry)
                 
@@ -873,6 +942,27 @@ class InstallationAdvanced(Gtk.Box):
                 self.fill_partition_list()
 
         self.create_partition_dialog.hide()
+    def on_partition_use_combo_changed(self, selection):
+        fs_selected = selection.get_active_text()
+        p_mount_combo = self.ui.get_object('partition_mount_combo')
+        p_mount_label = self.ui.get_object('partition_mount_label')
+        if fs_selected == 'swap':
+            p_mount_combo.hide()
+            p_mount_label.hide()
+        else:
+            p_mount_combo.show()
+            p_mount_label.show()
+     
+    def on_partition_use_combo2_changed(self,selection):
+        fs_selected = selection.get_active_text()
+        p_mount_combo = self.ui.get_object('partition_mount_combo2')
+        p_mount_label = self.ui.get_object('partition_mount_label2')
+        if fs_selected == 'swap':
+            p_mount_combo.hide()
+            p_mount_label.hide()
+        else:
+            p_mount_combo.show()
+            p_mount_label.show()
 
     def on_partition_list_undo_activate(self, button):
         ## To undo user changes, we simply reload all devices        
@@ -925,7 +1015,7 @@ class InstallationAdvanced(Gtk.Box):
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
         
-        txt = _("Device for boot loader installation:")
+        txt = _("Use this device for boot loader installation:")
         txt = "<span weight='bold' size='small'>%s</span>" % txt
         label = self.ui.get_object('grub_device_label')
         label.set_markup(txt)
@@ -1098,7 +1188,7 @@ class InstallationAdvanced(Gtk.Box):
                 if "GPT" in line:
                     ptype = 'gpt'
 
-                log.debug(_("Creating a new partition table of type %s for disk %s") % (ptype, path))
+                logging.info(_("Creating a new partition table of type %s for disk %s") % (ptype, path))
                 #remove debug, this doesn't actually do anything... 
                 new_disk = pm.make_new_disk(path, ptype)
                 self.disks[path] = new_disk
@@ -1155,6 +1245,37 @@ class InstallationAdvanced(Gtk.Box):
     def get_changes(self):
         changelist = []
         #store values as (path, create?, label?, format?)
+        if self.lv_partitions:
+            for e in self.lv_partitions:
+                if self.gen_partition_uid(path=e) in self.stage_opts:
+                    (is_new, lbl, mnt, fs, fmt) = self.stage_opts[self.gen_partition_uid(path=e)]
+                    if fmt:
+                        fmt = 'Yes'
+                    else:
+                        fmt = 'No'
+                    # Advanced method formats root by default
+                    # https://github.com/Manjaro/Thus/issues/8
+                    if mnt == "/":
+                        fmt = 'Yes'
+                    if is_new:
+                        relabel = 'Yes'
+                        fmt = 'Yes'
+                        createme = 'Yes'
+                    else:
+                        if e in self.orig_label_dic:
+                            if self.orig_label_dic[e] == lbl:
+                                relabel = 'No'
+                            else:
+                                relabel = 'Yes'
+                        createme = 'No'
+                else:
+                    relabel = 'No'
+                    fmt = 'No'
+                    createme = 'No'
+                    mnt = ''
+            if createme == 'Yes' or relabel == 'Yes' or fmt == 'Yes' or mnt:
+                changelist.append((e, createme, relabel, fmt, mnt))
+
         if self.disks:
             for disk_path in self.disks:
                 disk = self.disks[disk_path]
@@ -1162,16 +1283,30 @@ class InstallationAdvanced(Gtk.Box):
                 for partition_path in partitions:
                     if self.gen_partition_uid(path=partition_path) in self.stage_opts:
                         if disk.device.busy:
-                            # There's some mounted partition
+                            # Check if there's some mounted partition
                             if pm.check_mounted(partitions[partition_path]):
-                                mount_point, fs, writable = self.get_mount_point(partition_path)
-                                msg = _("%s is mounted in '%s'.\nTo continue it has to be unmounted.\nClick Yes to unmount, or No to return\n") % (partition_path, mount_point)
-                                response = show.question(msg)
-                                if response != Gtk.ResponseType.YES:
-                                    return []
+                                mount_point, fs_type, writable = self.get_mount_point(partition_path)
+                                if "swap" in fs_type:
+                                    msg = _("%s is mounted as swap.\nTo continue it has to be unmounted.\nClick Yes to unmount, or No to return\n") % partition_path
                                 else:
-                                    # unmount it!
+                                    msg = _("%s is mounted in '%s'.\nTo continue it has to be unmounted.\nClick Yes to unmount, or No to return\n") % (partition_path, mount_point)
+                                    
+                                if "install" in mount_point:
+                                    # If we're recovering from a failed/stoped install, there'll be
+                                    # some mounted directories. Unmount them without asking.
                                     subp = subprocess.Popen(['umount', partition_path], stdout=subprocess.PIPE)
+                                    logging.debug("%s unmounted" % mount_point)
+                                else:
+                                    response = show.question(msg)
+                                    if response != Gtk.ResponseType.YES:
+                                        return []
+                                    else:
+                                        # unmount it!
+                                        if "swap" in fs_type:
+                                            subp = subprocess.Popen(['swapoff', partition_path], stdout=subprocess.PIPE)
+                                        else:
+                                            subp = subprocess.Popen(['umount', partition_path], stdout=subprocess.PIPE)
+                                            logging.debug("%s unmounted" % mount_point)
                                 
                         (is_new, lbl, mnt, fs, fmt) = self.stage_opts[self.gen_partition_uid(path=partition_path)]
                         
@@ -1179,6 +1314,12 @@ class InstallationAdvanced(Gtk.Box):
                             fmt = 'Yes'
                         else:
                             fmt = 'No'
+                            
+                        # Advanced method formats root by default
+                        # https://github.com/Manjaro/Thus/issues/8
+                        if mnt == "/":
+                            fmt = 'Yes'
+                            
                         if is_new:
                             relabel = 'Yes'
                             fmt = 'Yes'
@@ -1262,7 +1403,7 @@ class InstallationAdvanced(Gtk.Box):
         response = self.show_changes(changelist)
         if response == Gtk.ResponseType.CANCEL:
             return False
-
+        partitions = {}
         ## Create staged partitions 
         if self.disks != None:
             for disk_path in self.disks:
@@ -1270,27 +1411,46 @@ class InstallationAdvanced(Gtk.Box):
                 #only commit changes to disks we've changed!
                 if disk_path in self.disks_changed:
                     pm.finalize_changes(disk)
-                    log.debug(_("Saving changes done in %s") % disk_path)
+                    logging.info(_("Saving changes done in %s") % disk_path)
                 ## Now that partitions are created, set fs and label
-                partitions = pm.get_partitions(disk)
-                for partition_path in partitions:
-                    log.debug(partition_path)
+                partitions.update(pm.get_partitions(disk))
+            apartitions = list(partitions) + self.lv_partitions
+            if True:
+                noboot = True
+                for allopts in self.stage_opts:
+                    if self.stage_opts[allopts][2] == '/boot':
+                        noboot = False
+                for partition_path in apartitions:
+                    #log.debug(partition_path)
                     ## Get label, mount point and filesystem of staged partitions
                     uid = self.gen_partition_uid(path=partition_path)
                     if uid in self.stage_opts:
                         (is_new, lbl, mnt, fisy, fmt) = self.stage_opts[uid]
-                        log.debug(_("Creating fs of type %s in %s with label %s") % (fisy, partition_path, lbl))
-                        if mnt == '/':
+                        logging.info(_("Creating fs of type %s in %s with label %s") % (fisy, partition_path, lbl))
+                        if ((mnt == '/' and noboot) or mnt == '/boot') and ('/dev/mapper' not in partition_path):
                             if not pm.get_flag(partitions[partition_path], 
                                                1):
                                 x = pm.set_flag(1, partitions[partition_path])
                                 pm.finalize_changes(partitions[partition_path].disk)
+                        if "/dev/mapper" in partition_path:
+                            pvs = lvm.get_lvm_partitions()
+                            vgname = partition_path.split("/")[-1]
+                            vgname = vgname.split('-')[0]
+                            if (mnt == '/' and noboot) or mnt == '/boot':
+                                self.blvm = True
+                                for ee in pvs[vgname]:
+                                    print(partitions)
+                                    if not pm.get_flag(partitions[ee], 1):
+                                        x = pm.set_flag(1, partitions[ee])
+                                pm.finalize_changes(partitions[ee].disk)
                          #only format if they want formatting
                         if fmt:  
                          #all of fs module takes paths, not partition objs
                             (error, msg) = fs.create_fs(partition_path, fisy, lbl)
-                            log.debug(msg)
-                            log.debug(_("FORMATTED"))
+                            if error == 0:
+                                logging.info(msg)
+                            else:
+                                logging.error(msg)
                         elif partition_path in self.orig_label_dic:
                             if self.orig_label_dic[partition_path] != lbl:
                                 fs.label_fs(fisy, partition_path, lbl)
@@ -1312,8 +1472,6 @@ class InstallationAdvanced(Gtk.Box):
 
     ## Start installation process
     def start_installation(self):
-        ## TODO: should we add already mounted partitions to the list of
-        ## partitions we will mount in the new system?
         fs_devices = {} 
         mount_devices = {} 
         for disk_path in self.disks:
@@ -1321,6 +1479,12 @@ class InstallationAdvanced(Gtk.Box):
             partitions = pm.get_partitions(disk)
             self.all_partitions.append(partitions)
             partition_list = pm.order_partitions(partitions)
+            for ppath in self.lv_partitions:
+                uid = self.gen_partition_uid(path=ppath)
+                if uid in self.stage_opts:
+                    (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
+                    mount_devices[mount_point] = ppath
+                    fs_devices[ppath] = fs_type
             for partition_path in partition_list:
                 p = partitions[partition_path]
                 uid = self.gen_partition_uid(p=p)
@@ -1328,16 +1492,33 @@ class InstallationAdvanced(Gtk.Box):
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
                     mount_devices[mount_point] = partition_path
                     fs_devices[partition_path] = fs_type
-                elif pm.check_mounted(p):
-                    mount_point, fs, writable = self.get_mount_point(p.path)
-                    mount_devices[mount_point] = partition_path
+                #elif pm.check_mounted(p):
+                #    mount_point, fs, writable = self.get_mount_point(p.path)
+                #    mount_devices[mount_point] = partition_path
 
-        self.thread = installation_thread.InstallationThread( \
+        checkbox = self.ui.get_object("grub_device_check")
+        if checkbox.get_active() == False:
+            self.settings.set('install_bootloader', False)
+        else:
+            # Ask bootloader type
+            import bootloader
+            bl = bootloader.BootLoader(self.settings)
+            bl.ask()
+        
+        if self.settings.get('install_bootloader'):
+            self.settings.set('bootloader_device', self.grub_device)
+            logging.info(_("Manjaro will install the bootloader of type %s in %s") % \
+                (self.settings.get('bootloader_type'), self.settings.get('bootloader_device')))
+        else:
+            logging.warning("Thus will not install any boot loader")
+
+        self.process = installation_process.InstallationProcess( \
                     self.settings, \
                     self.callback_queue, \
                     mount_devices, \
-                    self.grub_device, \
                     fs_devices, \
-                    self.ssd)
+                    self.ssd, \
+                    self.alternate_package_list, \
+                    self.blvm)
                     
-        self.thread.start()
+        self.process.start()

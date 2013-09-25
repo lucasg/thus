@@ -3,8 +3,7 @@
 #
 #  installation_automatic.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,18 +20,13 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 import xml.etree.ElementTree as etree
 
@@ -40,11 +34,10 @@ from gi.repository import Gtk
 import subprocess
 import os
 import sys
-import threading
 import parted
 import misc
-import log
-import installation_thread
+import logging
+import installation_process
 
 _next_page = "timezone"
 _prev_page = "installation_ask"
@@ -58,6 +51,7 @@ class InstallationAutomatic(Gtk.Box):
         self.backwards_button = params['backwards_button']
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
+        self.alternate_package_list = params['alternate_package_list']
         
         super().__init__()
         self.ui = Gtk.Builder()
@@ -72,11 +66,10 @@ class InstallationAutomatic(Gtk.Box):
         super().add(self.ui.get_object("installation_automatic"))
 
         self.devices = dict()
-        self.thread = None
-        self.update_thread_event = threading.Event()
+        self.process = None
 
     def translate_ui(self):
-        txt = _("Manjaro automatic installation mode")
+        txt = _("Automatic installation mode")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
 
@@ -84,10 +77,13 @@ class InstallationAutomatic(Gtk.Box):
         self.device_label.set_markup(txt)
 
         label = self.ui.get_object('text_automatic')
-        txt = _("This installation mode will overwrite everything in your drive. "
-         "If you are sure that this is what you want, please choose the drive where "
-         "you want to install Manjaro and click the button below to start the process.")
+        txt = _("WARNING! This installation mode will overwrite everything in your drive!")
         txt = "<b>%s</b>" % txt
+        label.set_markup(txt)
+
+        label = self.ui.get_object('text_automatic2')
+        txt = _("Please choose the drive where you want to install Manjaro\nand click the button below to start the process.")
+        txt = "%s" % txt
         label.set_markup(txt)
 
         txt = _("Install now!")
@@ -109,7 +105,7 @@ class InstallationAutomatic(Gtk.Box):
                 line = '{0} [{1} GB] ({2})'.format(dev.model, size_in_gigabytes, dev.path)
                 self.device_store.append_text(line)
                 self.devices[line] = dev.path
-                log.debug(line)
+                logging.debug(line)
 
         self.select_first_combobox_item(self.device_store)
 
@@ -133,7 +129,7 @@ class InstallationAutomatic(Gtk.Box):
     def store_values(self):
         #self.forward_button.set_sensitive(True)
         #installer_settings['auto_device'] = self.auto_device
-        log.debug(_("Automatic install using %s device") % self.auto_device)
+        logging.info(_("Automatic install using %s device") % self.auto_device)
         self.start_installation()
         return True
 
@@ -149,7 +145,7 @@ class InstallationAutomatic(Gtk.Box):
 
     def start_installation(self):
         #self.install_progress.set_sensitive(True)
-        log.debug(self.auto_device)
+        logging.info(_("Manjaro will use %s as installation device") % self.auto_device)
         
         mount_devices = {}
         root_partition = self.auto_device + "3"
@@ -161,14 +157,24 @@ class InstallationAutomatic(Gtk.Box):
         fs_devices[boot_partition] = "ext2"
         fs_devices[root_partition] = "ext4"
 
-        # TODO: Ask where to install GRUB
-        grub_device = self.auto_device
-        
-        self.thread = installation_thread.InstallationThread( \
+        # Ask bootloader type
+        import bootloader
+        bl = bootloader.BootLoader(self.settings)
+        bl.ask()
+
+        if self.settings.get('install_bootloader'):
+            self.settings.set('bootloader_device', self.auto_device)
+            logging.info(_("Manjaro will install the bootloader of type %s in %s") % \
+                (self.settings.get('bootloader_type'), self.settings.get('bootloader_device')))
+        else:
+            logging.warning("Thus will not install any boot loader")
+
+        self.process = installation_process.InstallationProcess( \
                         self.settings, \
                         self.callback_queue, \
                         mount_devices, \
-                        grub_device, \
-                        fs_devices)
+                        fs_devices, \
+                        None, \
+                        self.alternate_package_list)
                         
-        self.thread.start()
+        self.process.start()

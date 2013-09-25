@@ -3,8 +3,7 @@
 #
 #  timezone.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,18 +20,13 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk, Gdk, TimezoneMap
 
@@ -41,12 +35,13 @@ import threading
 import multiprocessing
 import queue
 import urllib.request
+import urllib.error
 import time
 import queue
 import datetime
 import show_message as show
 import config
-import log
+import logging
 import tz
 import dbus
 import subprocess
@@ -108,8 +103,9 @@ class Timezone(Gtk.Box):
         self.start_auto_timezone_thread()
         
         # thread to generate a pacman mirrorlist based on country code
+        # Why do this? There're foreign mirrors faster than the Spanish ones... - Karasu
         self.mirrorlist_thread = None
-        self.start_mirrorlist_thread()
+        #self.start_mirrorlist_thread()
 
         super().add(self.ui.get_object('location'))
 
@@ -136,7 +132,7 @@ class Timezone(Gtk.Box):
             self.timezone = None
             self.forward_button.set_sensitive(False)
         else:
-            log.debug(_("location changed to : %s") % self.timezone)
+            logging.info(_("location changed to : %s") % self.timezone)
             self.update_comboboxes(self.timezone)
             self.forward_button.set_sensitive(True)
 
@@ -224,7 +220,9 @@ class Timezone(Gtk.Box):
                 # Put the coords again in the queue (in case GenerateMirrorList still needs them)
                 #self.autodetected_coords.put_nowait(self.autodetected_coords)
             except queue.Empty:
-                log.debug(_("Can't autodetect timezone coordinates"))
+                logging.warning(_("Can't autodetect timezone coordinates"))
+                # set to Berlin by error
+                self.set_timezone("Europe/Berlin")
 
         if self.autodetected_coords != None:
             coords = self.autodetected_coords
@@ -242,7 +240,7 @@ class Timezone(Gtk.Box):
         self.auto_timezone_thread.start()
 
     def start_mirrorlist_thread(self):
-        scripts_dir = os.path.join(self.settings.get("THUS_DIR"), "scripts")
+        scripts_dir = os.path.join(self.settings.get("CNCHI_DIR"), "scripts")
         self.mirrorlist_thread = GenerateMirrorListThread(self.auto_timezone_coords, scripts_dir)
         self.mirrorlist_thread.start()
 
@@ -270,7 +268,7 @@ class Timezone(Gtk.Box):
             else:
                 self.settings.set("timezone_longitude", "")
 
-        # this way installer_thread will know all info has been entered
+        # this way installer_process will know all info has been entered
         self.settings.set("timezone_done", True)
         
         return True
@@ -281,10 +279,12 @@ class Timezone(Gtk.Box):
     def get_next_page(self):
         return _next_page
         
-    def stop_thread(self):
-        log.debug(_("Stoping timezone threads..."))
-        self.auto_timezone_thread.stop()
-        self.mirrorlist_thread.stop()
+    def stop_threads(self):
+        logging.debug(_("Stoping timezone threads..."))
+        if self.auto_timezone_thread != None:
+            self.auto_timezone_thread.stop()
+        if self.mirrorlist_thread != None:
+            self.mirrorlist_thread.stop()
 
 class AutoTimezoneThread(threading.Thread):
     def __init__(self, coords_queue):
@@ -310,7 +310,7 @@ class AutoTimezoneThread(threading.Thread):
             manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
             state = self.get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
-            log.debug(_("In timezone, can't get network status"))
+            logging.warning(_("In timezone, can't get network status"))
             return False
         return state == NM_STATE_CONNECTED_GLOBAL
 
@@ -324,7 +324,7 @@ class AutoTimezoneThread(threading.Thread):
         # ok, now get our timezone
 
         try:
-            url = "http://geo.cinnarch.com"
+            url = "http://geo.antergos.com"
             conn = urllib.request.urlopen(url)
             coords = conn.read().decode('utf-8').strip()
         except:
@@ -361,7 +361,7 @@ class GenerateMirrorListThread(threading.Thread):
             manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
             state = self.get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
-            log.debug(_("In timezone, can't get network status"))
+            logging.warning(_("In timezone, can't get network status"))
             return False
         return state == NM_STATE_CONNECTED_GLOBAL
 
@@ -382,13 +382,12 @@ class GenerateMirrorListThread(threading.Thread):
             timezone = tzmap.get_timezone_at_coords(float(coords[0]), float(coords[1]))
             loc = self.tzdb.get_loc(timezone)
             country_code = ''
-
             if loc:
                 country_code = loc.country
-        except queue.Empty:
-            log.debug(_("Can't get the country code used to create a pacman mirrorlist"))
+        except (queue.Empty, IndexError) as e:
+            logging.warning(_("Can't get the country code used to create a pacman mirrorlist"))
 
-'''        try:
+        try:
             url = 'https://www.archlinux.org/mirrorlist/?country=%s&protocol=http&ip_version=4&use_mirror_status=on' % country_code
             country_mirrorlist = urlopen(url).read()
             if '<!DOCTYPE' in str(country_mirrorlist, encoding='utf8'):
@@ -398,6 +397,7 @@ class GenerateMirrorListThread(threading.Thread):
                 with open('/tmp/country_mirrorlist','wb') as f:
                     f.write(country_mirrorlist)
         except URLError as e:
+            logging.error(e.reason)
             self.queue_event('error', "Can't retrieve country mirrorlist.")
 
         try:
@@ -405,9 +405,9 @@ class GenerateMirrorListThread(threading.Thread):
                 pass
             else:
                 script = os.path.join(self.scripts_dir, "generate-mirrorlist.sh")
-                subprocess.check_call(['/bin/bash', script])
-                log.debug(_("Downloaded a specific mirrorlist for pacman based on %s country code") % timezone)
+                subprocess.check_call(['/usr/bin/bash', script])
+                logging.info(_("Downloaded a specific mirrorlist for pacman based on %s country code") % timezone)
         except subprocess.CalledProcessError as e:
-            print(_("Couldn't generate mirrorlist for pacman based on country code"))
+            logging.warning(_("Couldn't generate mirrorlist for pacman based on country code"))
         
-'''        
+        

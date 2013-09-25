@@ -3,8 +3,7 @@
 #
 #  rank_mirrors.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,22 +20,18 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 import threading
 import multiprocessing
 import subprocess
+import logging
 
 NM = 'org.freedesktop.NetworkManager'
 NM_STATE_CONNECTED_GLOBAL = 70
@@ -44,6 +39,7 @@ NM_STATE_CONNECTED_GLOBAL = 70
 class AutoRankmirrorsThread(threading.Thread):
     def __init__(self):
         super(AutoRankmirrorsThread, self).__init__()
+        self.rankmirrors_pid = None
 
     def get_prop(self, obj, iface, prop):
         import dbus
@@ -62,7 +58,7 @@ class AutoRankmirrorsThread(threading.Thread):
             manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
             state = self.get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
-            log.debug(_("In rankmirrors, can't get network status"))
+            logging.warning(_("In rankmirrors, can't get network status"))
             return False
         return state == NM_STATE_CONNECTED_GLOBAL
 
@@ -70,13 +66,10 @@ class AutoRankmirrorsThread(threading.Thread):
         # wait until there is an Internet connection available
         while not self.has_connection():
             time.sleep(2)  # Delay 
-            if self.stop_event.is_set():
-                #self.coords_queue.clear()
-                return
 
         # Run rankmirrors command
         try:
-            subprocess.check_call(['/bin/bash', '/usr/share/thus/scripts/rankmirrors.sh'])
+            self.rankmirrors_pid = subprocess.Popen(["/usr/share/thus/scripts/rankmirrors-script"]).pid
         except subprocess.CalledProcessError as e:
-            print(_("Couldn't execute auto mirroring selection"))
+            logging.error(_("Couldn't execute auto mirroring selection"))
         

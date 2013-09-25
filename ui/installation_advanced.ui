@@ -143,6 +143,7 @@
                 <accessibility>
                   <relation type="labelled-by" target="partition_use_label2"/>
                 </accessibility>
+                <signal name="changed" handler="on_partition_use_combo_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -598,6 +599,7 @@
                 <accessibility>
                   <relation type="labelled-by" target="partition_use_label2"/>
                 </accessibility>
+                <signal name="changed" handler="on_partition_use_combo2_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -946,11 +948,21 @@
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkLabel" id="grub_device_label">
+              <object class="GtkCheckButton" id="grub_device_check">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
                 <property name="xalign">0</property>
-                <property name="label" translatable="yes">Help for GRUB device selection goes here.</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <signal name="toggled" handler="on_grub_device_check_toggled" swapped="no"/>
+                <child>
+                  <object class="GtkLabel" id="grub_device_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Use this device for boot loader installation:</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -964,6 +976,7 @@
                 <property name="can_focus">False</property>
                 <property name="entry_text_column">0</property>
                 <property name="id_column">1</property>
+                <signal name="changed" handler="on_grub_device_entry_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>

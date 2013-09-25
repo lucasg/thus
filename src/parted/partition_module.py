@@ -3,8 +3,7 @@
 #
 #  partition_module.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,23 +20,18 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 import parted
 import subprocess
 import shlex
-
+import os
 import misc
 
 # Partition types
@@ -56,7 +50,12 @@ DISK_EXTENDED = 1
 def get_devices():
     device_list = parted.getAllDevices()
     disk_dic = {}
-    myhome = subprocess.check_output(shlex.split('df -P /bootmnt')).decode()
+    
+    myhomepath = '/run/archiso/bootmnt'
+    if os.path.exists(myhomepath):
+        myhome = subprocess.check_output(["df", "-P", myhomepath]).decode()
+    else:
+        myhome = ""
     
     for dev in device_list:
         if dev.path in myhome:
@@ -77,7 +76,7 @@ def get_devices():
         #Must create disk object to drill down
 
         # skip cd drive
-        if not dev.path.startswith("/dev/sr"):
+        if not dev.path.startswith("/dev/sr") and not dev.path.startswith("/dev/mapper"):
             try:           
                 diskob = parted.Disk(dev)
                 disk_dic[dev.path] = diskob
@@ -85,6 +84,7 @@ def get_devices():
                 print(e)
                 
                 disk_dic[dev.path] = None
+        
 
     return disk_dic
 
@@ -182,7 +182,7 @@ def create_partition(diskob, part_type, geom):
     # This case should be caught in the frontend!
     # Never let user specify a length exceeding the free space.
     if nend > diskob.device.length - 1:
-        nend = diskob.device.length -1
+        nend = diskob.device.length - 1
     nalign = diskob.partitionAlignment
     if not nalign.isAligned(geom, nstart):
         nstart = nalign.alignNearest(geom, nstart)
@@ -238,7 +238,9 @@ def check_mounted(part):
         return 0
 
 def get_used_space(part):
-    path = part.path
+    return get_used_space_from_path(part.path)
+
+def get_used_space_from_path(path):
     try:
         x = subprocess.check_output(shlex.split('df -H %s' % path)).decode()
         y = x.split('\n')
@@ -272,9 +274,9 @@ def get_largest_size(diskob, part):
 74	        PED_PARTITION_DIAG=14,
 75	        PED_PARTITION_LEGACY_BOOT=15
 '''
-#The return value is tuple.  First arg is 0 for success, 1 for fail
-#Secong arg is either None if successful
-#or exception if failure
+# The return value is tuple.  First arg is 0 for success, 1 for fail
+# Second arg is either None if successful
+# or exception if failure
 def set_flag(flagno, part):
     ret = (0, None)
     try:
@@ -306,6 +308,61 @@ def order_partitions(partdic):
     #of partitions in order as they are on disk
     x = sorted(partdic, key=lambda key: partdic[key].geometry.start)
     return x
+
+# To shrink a partition:
+# 1. Shrink fs
+# 2. Shrink partition (resize)
+
+# To expand a partition:
+# 1. Expand partition
+# 2. Expand fs (resize)
+
+@misc.raise_privileges    
+def split_partition(device_path, partition_path, new_size_in_mb):
+    # shrinks partition and splits it in two.
+    # ALERT: The file system must be resized before trying this!
+
+    disk_dic = get_devices()
+    disk = disk_dic[device_path]
+    
+    part_dic = get_partitions(disk)
+    part = part_dic[partition_path]
+
+    if not check_mounted(part):
+        delete_partition(disk, part)
+    else:
+        print(partition_path + ' is mounted, unmount first')
+        return False
+        
+    # ok, partition deleted. Now we must create a new partition with
+    # the new size
+    
+    sec_size = disk.sectorSize
+    print("Sec size: ", sec_size)
+
+    # Get old info
+    units = 1000000
+    start_sector = part.geometry.start
+    old_end_sector = part.gemotry.end
+    old_length = part.geometry.length
+    old_size_in_mb =  old_length * sec_size / units
+  
+    # Create new partition (the one for the otherOS)
+    new_length = int(new_size_in_mb * units / sec_size)
+    new_end_sector = start_sector + new_length
+    my_geometry = geom_builder(disk, start_sector, new_end_sector, new_size_in_mb)
+    print("create_partition ", my_geometry)
+    create_partition(disk, 0, my_geometry)
+        
+    # Create new partition (for Antergos)
+    new_size_in_mb = old_size_in_mb - new_size_in_mb
+    start_sector = new_end_sector + 1
+    end_sector = old_end_sector
+    my_geometry = geom_builder(disk, start_sector, end_sector, new_size_in_mb)
+    print("create_partition ", my_geometry)
+    create_partition(disk, 0, my_geometry)
+    
+    finalize_changes(disk)
 
 # ----------------------------------------------------------------------------
 # Usage example

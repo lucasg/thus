@@ -3,8 +3,7 @@
 #
 #  user_info.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,24 +20,20 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk
 
 import os
 import validation
 import config
+import show_message as show
 
 _next_page = "slides"
 _prev_page = "keymap"
@@ -96,6 +91,10 @@ class UserInfo(Gtk.Box):
         txt = _("Your name:")
         label.set_markup(txt)
 
+        label = self.ui.get_object('fullname')
+        txt = _("Your name")
+        label.set_placeholder_text(txt)
+
         label = self.ui.get_object('hostname_label')
         txt = _("Your computer's name:")
         label.set_markup(txt)
@@ -104,13 +103,25 @@ class UserInfo(Gtk.Box):
         txt = _("Pick a username:")
         label.set_markup(txt)
 
+        label = self.ui.get_object('username')
+        txt = _("Username")
+        label.set_placeholder_text(txt)
+
         label = self.ui.get_object('password_label')
         txt = _("Choose a password:")
         label.set_markup(txt)
 
+        label = self.ui.get_object('password')
+        txt = _("Password")
+        label.set_placeholder_text(txt)
+
         label = self.ui.get_object('verified_password_label')
         txt = _("Confirm your password:")
         label.set_markup(txt)
+
+        label = self.ui.get_object('verified_password')
+        txt = _("Confirm password")
+        label.set_placeholder_text(txt)
 
         label = self.ui.get_object('hostname_extra_label')
         txt = _("The name it uses when it talks to other computers.")
@@ -148,7 +159,7 @@ class UserInfo(Gtk.Box):
 
         self.password_strength.hide()
         
-        self.login['encrypt'].hide()
+        #self.login['encrypt'].hide()
 
     def store_values(self):
         self.settings.set('fullname', self.entry['fullname'].get_text())
@@ -157,16 +168,32 @@ class UserInfo(Gtk.Box):
         self.settings.set('password', self.entry['password'].get_text())
         self.settings.set('require_password', self.require_password)
         
-        # TODO: Allow to encrypt home directory
         self.settings.set('encrypt_home', False)
+        if self.encrypt_home:
+            m = _("Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n\n")
+            m += _("Don't worry, for most intents and purposes this deficiency does not pose a problem.\n\n")
+            m += _("Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n\n")
+            m += _("A simple workaround is to place sparse files in an unencrypted .Public directory\n\n")
+            m += _("Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n\n")
+            m += _("Are you sure you want to encrypt your home directory?\n")
+            res = show.question(m)
+            if res == Gtk.ResponseType.YES:
+                self.settings.set('encrypt_home', True)
         
-        # this way installer_thread will know all info has been entered
+        # this way installer_process will know all info has been entered
         self.settings.set('user_info_done', True)
 
     def prepare(self, direction):
         self.translate_ui()
         self.show_all()
         self.hide_widgets()
+        
+        desktop = self.settings.get('desktop')
+        if desktop != "nox" and self.login['auto']:
+            self.login['auto'].set_sensitive(True)
+        else:
+            self.login['auto'].set_sensitive(False)
+        
         self.forward_button.set_sensitive(False)
 
     def get_prev_page(self):
@@ -194,13 +221,9 @@ class UserInfo(Gtk.Box):
         if len(value) == 0:
             self.ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
             self.ok[element].show()
-            txt = _('You must enter a name')
-            txt = '<small><span color="darkred">%s</span></small>' % (txt)
-            self.error_label[element].set_markup(txt)
             self.error_label[element].show()
         else:
             result = validation.check(element, value)
-
             if len(result) == 0:
                 self.ok[element].set_from_stock("gtk-yes", Gtk.IconSize.BUTTON)
                 self.ok[element].show()
@@ -214,7 +237,11 @@ class UserInfo(Gtk.Box):
                     txt = "<small><span color='darkred'>%s</span></small>" % txt
                     self.error_label[element].set_markup(txt)
                 elif validation.NAME_BADDOTS in result:
-                    txt = _("Contains consecutive, initial and/or final dots")
+                    txt = _("Username can't contain dots")
+                    txt = "<small><span color='darkred'>%s</span></small>" % txt
+                    self.error_label[element].set_markup(txt)
+                elif validation.NAME_LENGTH in result:
+                    txt = _("Too many characters")
                     txt = "<small><span color='darkred'>%s</span></small>" % txt
                     self.error_label[element].set_markup(txt)
 

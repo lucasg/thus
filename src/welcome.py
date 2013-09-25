@@ -3,8 +3,7 @@
 #
 #  welcome.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,20 +20,15 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro) <roland.manjaro.org>
-#   Philip Müller (philm) <philm.manjaro.org>
-#   Guillaume Benoit (guinux) <guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 import subprocess, sys, os
 import gettext
 import os
@@ -53,7 +47,6 @@ _next_page = "language"
 _prev_page = None
 
 class Welcome(Gtk.Box):
-
     def __init__(self, params):
         self.title = params['title']
         self.ui_dir = params['ui_dir']
@@ -93,15 +86,26 @@ class Welcome(Gtk.Box):
             self.image[key].set_from_file(self.filename[key])
         
         self.translate_ui()
-
+        
+        self.set_name("welcome")
+        
         super().add(self.ui.get_object("welcome"))
 
     def translate_ui(self):
         #label = self.ui.get_object("infowelcome_label")
-        txt = _("You can try Manjaro without modifying your hard drive, just click on 'Try it'.\n" \
-        "If you want to install the system to your PC, use one of the two installer options.")
+        txt = _("Try Manjaro without modifying your hard drive.\n" \
+        "Or install it to your PC with one of the two installer options.")
         txt = '<span weight="bold">%s</span>' % txt
         self.label['info'].set_markup(txt)
+
+        txt = _("Try it")
+        self.button['tryit'].set_label(txt)
+
+        txt = _("CLI Installer")
+        self.button['cli'].set_label(txt)
+
+        txt = _("Graphical Installer")
+        self.button['graph'].set_label(txt)
 
         txt = _("Welcome to Manjaro!")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
@@ -120,13 +124,13 @@ class Welcome(Gtk.Box):
         Gtk.main_quit()
         
     def on_cli_button_clicked(self, widget, data=None):
+        cli_installer = "manjaro-setup"
         try:
-            subprocess.Popen(["clisetup"])
+            subprocess.Popen([cli_installer])
         except:
             warning(_("Can't load the CLI installer"))
         finally:
             self.remove_temp_files()
-        #Gtk.main_quit()
 		
     def on_graph_button_clicked(self, widget, data=None):
         self.forward_button.emit("clicked")

@@ -3,8 +3,7 @@
 #
 #  installation_ask.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,27 +20,24 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk
 
 import subprocess
 import os
+import logging
+import bootinfo
 
 import config
 
-_prev_page = "check"
+_prev_page = "features"
 
 class InstallationAsk(Gtk.Box):
 
@@ -56,13 +52,13 @@ class InstallationAsk(Gtk.Box):
         self.ui = Gtk.Builder()
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_ask.ui"))
 
-        partitioner_dir = os.path.join(self.settings.get("DATA_DIR"), "partitioner/")
+        partitioner_dir = os.path.join(self.settings.get("DATA_DIR"), "partitioner/small/")
 
         image = self.ui.get_object("automatic_image")
         image.set_from_file(partitioner_dir + "automatic.png")
 
-        image = self.ui.get_object("easy_image")
-        image.set_from_file(partitioner_dir + "easy.png")
+        image = self.ui.get_object("alongside_image")
+        image.set_from_file(partitioner_dir + "alongside.png")
 
         image = self.ui.get_object("advanced_image")
         image.set_from_file(partitioner_dir + "advanced.png")
@@ -70,16 +66,37 @@ class InstallationAsk(Gtk.Box):
         self.ui.connect_signals(self)
 
         super().add(self.ui.get_object("installation_ask"))
-
+        
+        oses = {}
+        oses = bootinfo.get_os_dict()
+        
+        self.otherOS = ""
+        for k in oses:
+            if "sda" in k and oses[k] != "unknown":
+                self.otherOS = oses[k]
+                
         # by default, select automatic installation
         self.next_page = "installation_automatic"
-
+        
+    def enable_automatic_options(self, status):
+        objects = [ "encrypt_checkbutton", "encrypt_label", "lvm_checkbutton", "lvm_label" ]
+        for o in objects:
+            ob = self.ui.get_object(o)
+            ob.set_sensitive(status)
+        
     def prepare(self, direction):
         self.translate_ui()
         self.show_all()
+        
+        # Hide alongside option if no existing OS has been detected
+        if self.otherOS == "":
+            radio = self.ui.get_object("alongside_radiobutton")
+            radio.hide()
+            label = self.ui.get_object("alongside_description")
+            label.hide()
 
     def translate_ui(self):
-        txt = _("Your preferred installation type")
+        txt = _("Installation type")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
         
@@ -92,36 +109,56 @@ class InstallationAsk(Gtk.Box):
         radio.set_label(_("Erase disk and install Manjaro (automatic)"))
 
         label = self.ui.get_object("automatic_description")
-        txt = _("Warning: This will delete all programs, documents, photos, music and any other files on your disk")
+        txt = _("Warning: This will delete all data on your disk")
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
         label.set_line_wrap(True)
         
-        radio = self.ui.get_object("easy_radiobutton")
-        radio.set_label(_("Choose where to install Manjaro (easy)"))
+        # alongside is still experimental. Needs a lot of testing.
+        radio = self.ui.get_object("alongside_radiobutton")
+        radio.set_label(_("Install Manjaro alongside %s") % self.otherOS)
 
-        label = self.ui.get_object("easy_description")
-        txt = _("You will have to choose where to install Manjaro. You will be only asked for the mount points of your root and swap devices.")
+        label = self.ui.get_object("alongside_description")
+        txt = _("Install this OS alongside the other OSes you have already installed.")
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
         label.set_line_wrap(True)
 
         radio = self.ui.get_object("advanced_radiobutton")
-        radio.set_label(_("Manage your partitions and choose where to install Manjaro (advanced)"))
+        radio.set_label(_("Manage your partitions where to install Manjaro (advanced)"))
 
         label = self.ui.get_object("advanced_description")
-        txt = _("You will be able to create/delete partitions, choose where to install Manjaro and also choose additional mount points.")
+        txt = _("Create/delete partitions, and also choose additional mount points.")
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
         label.set_line_wrap(True)
 
     def store_values(self):
+        check = self.ui.get_object("encrypt_checkbutton")
+        use_luks = check.get_active()
+        
+        check = self.ui.get_object("lvm_checkbutton")
+        use_lvm = check.get_active()
+                
         if self.next_page == "installation_automatic":
             self.settings.set('partition_mode', 'automatic')
-        elif self.next_page == "installation_easy":
-            self.settings.set('partition_mode', 'easy')
+            self.settings.set('use_lvm', use_lvm)
+            self.settings.set('use_luks', use_luks)
+        else:
+            self.settings.set('use_lvm', False)
+            self.settings.set('use_luks', False)
+
+        if self.settings.get('use_luks'):
+            logging.info(_("Manjaro installation will be encrypted"))
+            
+        if self.settings.get('use_lvm'):
+            logging.info(_("Manjaro will be installed using a LVM setup"))
+            
+        if self.next_page == "installation_alongside":
+            self.settings.set('partition_mode', 'alongside')
         else:
             self.settings.set('partition_mode', 'advanced')
+                
         return True
 
     def get_next_page(self):
@@ -133,11 +170,14 @@ class InstallationAsk(Gtk.Box):
     def on_automatic_radiobutton_toggled(self, widget):
         if widget.get_active():
             self.next_page = "installation_automatic"
+            self.enable_automatic_options(True)
 
     def on_easy_radiobutton_toggled(self, widget):
         if widget.get_active():
-            self.next_page = "installation_easy"
+            self.next_page = "installation_alongside"
+            self.enable_automatic_options(False)
 
     def on_advanced_radiobutton_toggled(self, widget):
         if widget.get_active():
             self.next_page = "installation_advanced"
+            self.enable_automatic_options(False)

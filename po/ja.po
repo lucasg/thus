@@ -1,0 +1,915 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# 
+# Translators:
+# ひよこ大佐 <colonel.hiyoko@gmail.com>, 2013
+# ひよこ大佐 <colonel.hiyoko@gmail.com>, 2013
+# ほたゔぃあ(lindwurm), 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Manjaro\n"
+"POT-Creation-Date: 2013-07-29 12:53+CEST\n"
+"PO-Revision-Date: 2013-08-04 05:44+0000\n"
+"Last-Translator: ほたゔぃあ(lindwurm)\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/antergos/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: thus.py:103
+msgid ""
+"This installer must be run with administrative privileges, and cannot "
+"continue without them."
+msgstr "このインストーラーは管理者権限で実行する必要があり、権限無しで続けることはできません。"
+
+#: thus.py:109
+msgid ""
+"You cannot run two instances of this installer.\n"
+"\n"
+"If you are sure that the installer is not already running\n"
+"you can manually delete the file %s\n"
+"and run this installer again."
+msgstr "インストーラーを同時に実行することはできません。\n\nインストーラーが同時に実行されていない場合\n手動で %s を削除し\nインストーラーを再実行してください。"
+
+#: thus.py:186
+msgid "Using Aria2 to download packages - EXPERIMENTAL"
+msgstr ""
+
+#: thus.py:205
+msgid "Using '%s' file as package list"
+msgstr ""
+
+#: thus.py:224 src/slides.py:187
+msgid "Manjaro Installer"
+msgstr "Manjaro インストーラー"
+
+#: thus.py:292
+msgid "Quiting installer..."
+msgstr "インストーラを終了しています..."
+
+#: src/bootinfo.py:43 src/bootinfo.py:63 src/bootinfo.py:68 src/bootinfo.py:89
+#: src/installation_alongside.py:211
+msgid "unknown"
+msgstr "不明"
+
+#: src/bootloader.py:58
+msgid "What is your boot system type?"
+msgstr "ブートシステムタイプは何ですか？"
+
+#: src/bootloader.py:63
+msgid "BIOS (Common)"
+msgstr ""
+
+#: src/bootloader.py:67
+msgid "x86_64 UEFI"
+msgstr "x86_64 UEFI"
+
+#: src/bootloader.py:71
+msgid "i386 UEFI"
+msgstr "i386 UEFI "
+
+#: src/bootloader.py:75
+msgid "Choose 'cancel' if you don't want to install a boot loader"
+msgstr "ブートローダーをインストールしたくない場合、「キャンセル」を選択してください"
+
+#: src/check.py:71
+msgid "Check your computer"
+msgstr "コンピューターを確認して下さい"
+
+#: src/check.py:76
+msgid "has at least 3GB available drive space"
+msgstr "3GB 以上の空き領域がドライブにあること"
+
+#: src/check.py:80
+msgid "is plugged in to a power source"
+msgstr "電源に接続されていること"
+
+#: src/check.py:84
+msgid "is connected to the Internet"
+msgstr "インターネットに接続していること"
+
+#: src/check.py:88
+msgid "For best results, please ensure that this computer:"
+msgstr "正常にインストールするためコンピューターを確認してください:"
+
+#: src/check.py:93
+msgid ""
+"Manjaro uses third-party software to play Flash, MP3 and other media. Some "
+"of this software is propietary. The software is subject to license terms "
+"included with its documentation."
+msgstr "ManjaroはFlashやMP3などのメディアを再生するためにサードパーティ製のソフトウェアを使用します。いくつかのソフトウェアはプロプライエタリです。ソフトウェアライセンスはソフトウェアのドキュメントに含まれています。"
+
+#: src/check.py:99
+msgid "Install this third-party software"
+msgstr "サードパーティ製のソフトウェアをインストールする"
+
+#: src/check.py:119
+msgid "Can't get network status"
+msgstr "ネットワークの状態を確認できません"
+
+#: src/check.py:195
+msgid "We have Internet connection."
+msgstr "インターネットに接続しています。"
+
+#: src/check.py:196
+msgid "We're connected to a power source."
+msgstr "電源に接続されています。"
+
+#: src/check.py:197
+msgid "We have enough space in disk."
+msgstr "ディスクに十分な空き領域があります。"
+
+#: src/desktop.py:84
+msgid ""
+"Gnome 3 is an easy and elegant way to use your computer. It is designed to "
+"put you in control and bring freedom to everybody. GNOME 3 is developed by "
+"the GNOME community."
+msgstr "GNOME 3 はあなたのコンピューターを簡単かつエレガントに使う方法です。これはあなたを含むみんなに自由をもたらすように設計されています。 GNOME 3 は GNOME コミュニティの多様で国際的な貢献者たちによって開発されています。"
+
+#: src/desktop.py:91
+msgid ""
+"Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
+"attempts to provide a more traditional user environment based on the desktop"
+" metaphor, like GNOME 2"
+msgstr "Cinnamon は GNOME Shell からフォークしており、 Linux Mint によって、またそれのために開発されています。 Cinnamon は GNOME 2 のようにデスクトップメタファーに基づいた、より伝統的なユーザー環境を提供します。"
+
+#: src/desktop.py:98
+msgid ""
+"Xfce is a lightweight desktop environment for UNIX-like operating systems. "
+"It aims to be fast and low on system resources, while still being visually "
+"appealing and user friendly."
+msgstr "XfceはUNIXライクなオペレーティングシステム向けの軽量なデスクトップ環境です。視覚的にも魅力的でユーザーフレンドリーでありながら、低いシステムリソースでも高速に動作することを目指しています。"
+
+#: src/desktop.py:105
+msgid ""
+"Extremely fast-performing and energy-saving desktop environment. It comes "
+"with a beautiful interface, multi-language support, standard keyboard short "
+"cuts and additional features like tabbed file browsing."
+msgstr "素晴らしいパフォーマンスと省エネルギーを両立したデスクトップ環境です。美しいインターフェイス、多言語サポート、一般的なキーボードショートカットとタブ型のファイルブラウジング機能のような追加機能があります。"
+
+#: src/desktop.py:112
+msgid ""
+"Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
+"The *box visual style is well known for its minimalistic appearance."
+msgstr ""
+
+#: src/desktop.py:119
+msgid ""
+"Enlightenment is not just a window manager for Linux/X11 and others, but "
+"also a whole suite of libraries to help you create beautiful user interfaces"
+" with much less work"
+msgstr ""
+
+#: src/desktop.py:125
+msgid ""
+"The KDE Community is an international technology team dedicated to creating "
+"a free and user-friendly computing experience, offering an advanced "
+"graphical desktop and a wide variety of applications."
+msgstr ""
+
+#: src/desktop.py:132
+msgid ""
+"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
+"Qt technologies. It has been tailored for users who value simplicity, speed,"
+" and an intuitive interface."
+msgstr ""
+
+#: src/desktop.py:139
+msgid ""
+"This will install Manjaro as command-line system, without any desktop at "
+"all. After the installation you can install the desktop you may see fit."
+msgstr ""
+
+#: src/desktop.py:151
+msgid "Select your desktop"
+msgstr "デスクトップを選択して下さい"
+
+#: src/desktop.py:161
+msgid "Desktops"
+msgstr "デスクトップ環境"
+
+#: src/desktop.py:194
+msgid "Thus will install Manjaro with the '%s' desktop"
+msgstr ""
+
+#: src/download.py:82
+msgid "Error creating metalink for package %s"
+msgstr ""
+
+#: src/download.py:88
+msgid "Error adding metalink for package %s"
+msgstr ""
+
+#: src/download.py:137
+msgid "Downloading package '%s'..."
+msgstr ""
+
+#: src/download.py:161
+msgid "Can't connect to Aria2. Won't be able to speed up the download."
+msgstr ""
+
+#: src/download.py:232
+msgid "Unable to create download queue for package %s"
+msgstr ""
+
+#: src/download.py:236
+msgid "Can't find these packages: "
+msgstr "次のパッケージを見つけられませんでした:"
+
+#: src/download.py:242
+msgid "Warning! Can't resolve these dependencies: "
+msgstr ""
+
+#: src/installation_advanced.py:197 src/installation_advanced.py:488
+#: src/installation_advanced.py:502
+msgid "free space"
+msgstr "空き領域"
+
+#: src/installation_advanced.py:266 src/installation_alongside.py:169
+msgid "Device"
+msgstr "デバイス"
+
+#: src/installation_advanced.py:269
+msgid "Type"
+msgstr "種類"
+
+#: src/installation_advanced.py:272
+msgid "Mount point"
+msgstr "マウントポイント"
+
+#: src/installation_advanced.py:275
+msgid "Label"
+msgstr "ラベル"
+
+#: src/installation_advanced.py:281 src/installation_advanced.py:1355
+msgid "Format"
+msgstr "フォーマット"
+
+#: src/installation_advanced.py:284
+msgid "Size"
+msgstr "サイズ"
+
+#: src/installation_advanced.py:287
+msgid "Used"
+msgstr "使用済み"
+
+#: src/installation_advanced.py:290
+msgid "Flags"
+msgstr "フラグ"
+
+#: src/installation_advanced.py:296
+msgid "SSD"
+msgstr "SSD"
+
+#: src/installation_advanced.py:471
+msgid "none"
+msgstr "なし"
+
+#: src/installation_advanced.py:523
+msgid "extended"
+msgstr "拡張"
+
+#: src/installation_advanced.py:648 src/installation_advanced.py:888
+msgid "Cannot use same mount twice..."
+msgstr ""
+
+#: src/installation_advanced.py:650
+msgid "Root partition must be formatted..."
+msgstr ""
+
+#: src/installation_advanced.py:909
+msgid "Creating primary partition"
+msgstr "基本パーティションの作成中"
+
+#: src/installation_advanced.py:920
+msgid "Creating extended partition"
+msgstr "拡張パーティションの作成中"
+
+#: src/installation_advanced.py:926
+msgid "Creating logical partition"
+msgstr "論理パーティションの作成中"
+
+#: src/installation_advanced.py:1013
+msgid "Advanced installation mode"
+msgstr "高度なインストール"
+
+#: src/installation_advanced.py:1017
+msgid "Use this device for boot loader installation:"
+msgstr ""
+
+#: src/installation_advanced.py:1027
+msgid "New partition table"
+msgstr "新しいパーティションテーブル"
+
+#: src/installation_advanced.py:1035
+msgid "Change..."
+msgstr "変更..."
+
+#: src/installation_advanced.py:1040
+msgid "Size:"
+msgstr "サイズ:"
+
+#: src/installation_advanced.py:1044
+msgid "Type:"
+msgstr "タイプ:"
+
+#: src/installation_advanced.py:1048
+msgid "Primary"
+msgstr "基本パーティション"
+
+#: src/installation_advanced.py:1052
+msgid "Logical"
+msgstr "論理パーティション"
+
+#: src/installation_advanced.py:1056
+msgid "Extended"
+msgstr "拡張パーティション"
+
+#: src/installation_advanced.py:1060
+msgid "Beginning of this space"
+msgstr "この領域の始点"
+
+#: src/installation_advanced.py:1064
+msgid "End of this space"
+msgstr "この領域の終点"
+
+#: src/installation_advanced.py:1068 src/installation_advanced.py:1085
+msgid "Use as:"
+msgstr ""
+
+#: src/installation_advanced.py:1072 src/installation_advanced.py:1089
+msgid "Mount point:"
+msgstr "マウントポイント:"
+
+#: src/installation_advanced.py:1076 src/installation_advanced.py:1093
+msgid "Label (optional):"
+msgstr "ラベル (オプション):"
+
+#: src/installation_advanced.py:1080
+msgid "Encryption options..."
+msgstr "暗号化オプション..."
+
+#: src/installation_advanced.py:1097
+msgid "Format:"
+msgstr "フォーマット:"
+
+#: src/installation_advanced.py:1102
+msgid "Partition table type:"
+msgstr "パーティションテーブルの種類:"
+
+#: src/installation_advanced.py:1107
+msgid "Create partition table"
+msgstr "パーティションテーブルの作成"
+
+#: src/installation_advanced.py:1110 src/installation_alongside.py:147
+#: src/installation_automatic.py:89
+msgid "Install now!"
+msgstr "インストール"
+
+#: src/installation_advanced.py:1190
+msgid "Creating a new partition table of type %s for disk %s"
+msgstr ""
+
+#: src/installation_advanced.py:1289
+msgid ""
+"%s is mounted in '%s'.\n"
+"To continue it has to be unmounted.\n"
+"Click Yes to unmount, or No to return\n"
+msgstr ""
+
+#: src/installation_advanced.py:1348
+msgid "Partition %s will be deleted"
+msgstr "パーティション %s は削除されます"
+
+#: src/installation_advanced.py:1355
+msgid "Mount"
+msgstr "マウント"
+
+#: src/installation_advanced.py:1355
+msgid "New"
+msgstr "新規"
+
+#: src/installation_advanced.py:1355
+msgid "Partition"
+msgstr "パーティション"
+
+#: src/installation_advanced.py:1355
+msgid "Relabel"
+msgstr ""
+
+#: src/installation_advanced.py:1376
+msgid "These disks will have partition actions:"
+msgstr ""
+
+#: src/installation_advanced.py:1401
+msgid "Saving changes done in %s"
+msgstr ""
+
+#: src/installation_advanced.py:1416
+msgid "Creating fs of type %s in %s with label %s"
+msgstr ""
+
+#: src/installation_advanced.py:1498 src/installation_automatic.py:167
+msgid "Manjaro will install the bootloader of type %s in %s"
+msgstr ""
+
+#: src/installation_alongside.py:112
+msgid "Can't load %s css"
+msgstr ""
+
+#: src/installation_alongside.py:139
+msgid "Choose next to which OS you want to install Manjaro"
+msgstr ""
+
+#: src/installation_alongside.py:143
+msgid "Manjaro alongside another OS"
+msgstr "Manjaro を他の OS と共存させる"
+
+#: src/installation_alongside.py:172
+msgid "Detected OS"
+msgstr ""
+
+#: src/installation_alongside.py:175
+msgid "Filesystem"
+msgstr "ファイルシステム"
+
+#: src/installation_alongside.py:215
+msgid "In alongside install, can't create list of partitions"
+msgstr ""
+
+#: src/installation_ask.py:78
+msgid "Installation type"
+msgstr "インストールの種類"
+
+#: src/installation_ask.py:88
+msgid "Erase disk and install Manjaro (automatic)"
+msgstr "ディスクを消去してManjaroをインストール (自動)"
+
+#: src/installation_ask.py:91
+msgid "Warning: This will delete all data on your disk"
+msgstr "警告: ディスク内の全てのデータが消去されます"
+
+#: src/installation_ask.py:98
+msgid "Install this OS alongside the other OSes"
+msgstr ""
+
+#: src/installation_ask.py:103
+msgid "Install this OS alongside the other OSes you have already installed."
+msgstr ""
+
+#: src/installation_ask.py:111
+msgid "Manage your partitions where to install Manjaro (advanced)"
+msgstr ""
+
+#: src/installation_ask.py:114
+msgid "Create/delete partitions, and also choose additional mount points."
+msgstr ""
+
+#: src/installation_automatic.py:72
+msgid "Automatic installation mode"
+msgstr "自動インストール"
+
+#: src/installation_automatic.py:76
+msgid "Select drive:"
+msgstr "ドライブの選択:"
+
+#: src/installation_automatic.py:80
+msgid ""
+"WARNING! This installation mode will overwrite everything in your drive!"
+msgstr "警告！このインストールモードではドライブの全てを上書きします！"
+
+#: src/installation_automatic.py:85
+msgid ""
+"Please choose the drive where you want to install Manjaro\n"
+"and click the button below to start the process."
+msgstr ""
+
+#: src/installation_automatic.py:132
+msgid "Automatic install using %s device"
+msgstr ""
+
+#: src/installation_automatic.py:148
+msgid "Manjaro will use %s as installation device"
+msgstr ""
+
+#: src/installation_process.py:83
+msgid "Installing using the '%s' method"
+msgstr ""
+
+#: src/installation_process.py:145
+msgid "Can't execute the auto partition script"
+msgstr ""
+
+#: src/installation_process.py:191 src/installation_process.py:215
+msgid "Mounting partition %s into %s directory"
+msgstr ""
+
+#: src/installation_process.py:197
+msgid "Mounting partition %s into %s/boot directory"
+msgstr ""
+
+#: src/installation_process.py:201
+msgid "Couldn't mount root and boot partitions"
+msgstr "ルート及びブート用パーティションをマウントできません"
+
+#: src/installation_process.py:220
+msgid "Can't mount %s in %s"
+msgstr "%s を %s にマウントできません"
+
+#: src/installation_process.py:229
+msgid "Can't create necessary directories on destination system"
+msgstr ""
+
+#: src/installation_process.py:379
+msgid "Can't retrieve remote package list, using a local file instead."
+msgstr ""
+
+#: src/installation_process.py:705
+msgid "Installing GRUB(2) BIOS boot loader in %s"
+msgstr "GRUB(2) BIOS ブートローダーを %s にインストールしています"
+
+#: src/installation_process.py:725 src/installation_process.py:741
+msgid "ERROR installing GRUB(2) BIOS."
+msgstr "GRUB(2) のインストール中にエラーが発生しました。"
+
+#: src/installation_process.py:739
+msgid "GRUB(2) BIOS has been successfully installed."
+msgstr "GRUB(2) のインストールは完了しました。"
+
+#: src/installation_process.py:752
+msgid "Installing GRUB(2) UEFI %s boot loader in %s"
+msgstr "GRUB(2) UEFI %s ブートローダーを %s にインストールしています"
+
+#: src/installation_process.py:775 src/installation_process.py:793
+msgid "ERROR installing GRUB(2) UEFI."
+msgstr "GRUB(2) UEFI のインストール中にエラーが発生しました。"
+
+#: src/installation_process.py:863
+msgid "Error creating password hash for user %s"
+msgstr ""
+
+#: src/installation_process.py:869
+msgid "Error changing password for user %s"
+msgstr ""
+
+#: src/installation_process.py:918
+msgid "Configuring your new system"
+msgstr "新しいシステムを設定しています"
+
+#: src/installation_process.py:984
+msgid "Generating locales..."
+msgstr "ロケールの生成中..."
+
+#: src/installation_process.py:999
+msgid "Adjusting hardware clock..."
+msgstr "ハードウェアの時計を調整しています..."
+
+#: src/installation_process.py:1078
+msgid "Running mkinitcpio..."
+msgstr ""
+
+#: src/keymap.py:70
+msgid "Select your keyboard layout"
+msgstr "キーボードレイアウトの選択"
+
+#: src/keymap.py:78
+msgid "Layouts"
+msgstr "レイアウト"
+
+#: src/keymap.py:84
+msgid "Variants"
+msgstr ""
+
+#: src/keymap.py:106
+msgid "keyboard_layout is %s"
+msgstr "キーボードレイアウトは %s です"
+
+#: src/language.py:80
+msgid "Please choose your language:"
+msgstr "言語を選択してください:"
+
+#: src/language.py:85
+msgid "This is an Alpha version."
+msgstr "これはアルファ版です。"
+
+#: src/language.py:86
+msgid ""
+"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
+"Please proceed with caution as data loss is possible! \n"
+"\n"
+"If you find any bug, please, visit <a href='http://bugs.antergos.com'>http://bugs.antergos.com</a>"
+msgstr ""
+
+#: src/language.py:94 src/welcome.py:110
+msgid "Welcome to Manjaro!"
+msgstr "Manjaro へようこそ！"
+
+#: src/language.py:112
+msgid "Languages"
+msgstr "言語"
+
+#: src/language.py:132
+msgid "Can't find translation file for the %s language"
+msgstr "言語 %s の翻訳ファイルが見つかりません"
+
+#: src/location.py:72
+msgid "Select your location"
+msgstr "現在地を選択してください"
+
+#: src/location.py:76
+msgid ""
+"The selected location will be used to help select the system locale.\n"
+"Normally this should be the country where you live.\n"
+"This is a shortlist of locations based on the language you selected."
+msgstr "システムのロケールを選択するのを手助けするために地域を選択してください。\\n\n通常これはあなたが住んでいる国にあたります。\\n\nこれは選択された言語に基づいた地域のリストです。"
+
+#: src/location.py:81
+msgid "Country, territory or area:"
+msgstr "国、領域または地域:"
+
+#: src/location.py:205
+msgid "locale changed to : %s"
+msgstr "ロケールを %s に変更しました"
+
+#: src/location.py:207
+msgid "Can't change to locale '%s'"
+msgstr "ロケールを %s に変更できませんでした"
+
+#: src/pacman/pac.py:243
+msgid "Package %s not found in any repo!"
+msgstr ""
+
+#: src/pacman/pac.py:293
+msgid "Checking dependencies..."
+msgstr "依存関係をチェックしています..."
+
+#: src/pacman/pac.py:295
+msgid "Checking file conflicts..."
+msgstr ""
+
+#: src/pacman/pac.py:297
+msgid "Resolving dependencies..."
+msgstr "依存関係を解決しています..."
+
+#: src/pacman/pac.py:299
+msgid "Checking inter conflicts..."
+msgstr ""
+
+#: src/pacman/pac.py:304
+msgid "Removing..."
+msgstr "削除しています..."
+
+#: src/pacman/pac.py:306
+msgid "Upgrading..."
+msgstr "アップグレード中..."
+
+#: src/pacman/pac.py:308
+msgid "Checking integrity..."
+msgstr ""
+
+#: src/pacman/pac.py:311
+msgid "Loading packages files..."
+msgstr "パッケージファイルを読み込んでいます..."
+
+#: src/pacman/pac.py:314
+msgid "Configuring..."
+msgstr "設定中..."
+
+#: src/pacman/pac.py:315
+msgid "Configuring a package"
+msgstr "パッケージを設定中"
+
+#: src/pacman/pac.py:317
+msgid "Downloading a file"
+msgstr "ファイルをダウンロード中"
+
+#: src/pacman/pac.py:341
+msgid "ERROR: %s"
+msgstr "エラー: %s"
+
+#: src/pacman/pac.py:348
+msgid "WARNING: %s"
+msgstr "警告: %s"
+
+#: src/pacman/pac.py:389
+msgid "Downloading %s..."
+msgstr "%s をダウンロード中..."
+
+#: src/pacman/pac.py:398
+msgid "Refreshing %s..."
+msgstr ""
+
+#: src/pacman/pac.py:407
+msgid "Installing %s (%d/%d)"
+msgstr "%s をインストールしています (%d/%d)"
+
+#: src/pacman/pac.py:409
+msgid "Checking and loading packages..."
+msgstr "パッケージの確認と読み込み中..."
+
+#: src/rank_mirrors.py:61
+msgid "In rankmirrors, can't get network status"
+msgstr ""
+
+#: src/rank_mirrors.py:74
+msgid "Couldn't execute auto mirroring selection"
+msgstr ""
+
+#: src/show_message.py:60
+msgid "Manjaro Installer - Error"
+msgstr "Manjaro インストーラー - エラー"
+
+#: src/show_message.py:71
+msgid "Manjaro Installer - Warning"
+msgstr "Manjaro インストーラー - 警告"
+
+#: src/show_message.py:82
+msgid "Manjaro Installer - Information"
+msgstr "Manjaro インストーラー - 情報"
+
+#: src/show_message.py:92
+msgid "Manjaro Installer - Question"
+msgstr "Manjaro インストーラー - 質問"
+
+#: src/slides.py:86 src/slides.py:101
+msgid ""
+"Installation finished!\n"
+"Do you want to restart your system now?"
+msgstr "インストールが完了しました！\nシステムをいますぐ再起動しますか?"
+
+#: src/slides.py:94
+msgid "Installing Manjaro..."
+msgstr "Manjaro をインストール中..."
+
+#: src/slides.py:99
+msgid "Please wait..."
+msgstr "お待ち下さい..."
+
+#: src/timezone.py:115
+msgid "Where are you?"
+msgstr "どこに住んでいますか？"
+
+#: src/timezone.py:120
+msgid "Zone:"
+msgstr "タイムゾーン:"
+
+#: src/timezone.py:124
+msgid "Region:"
+msgstr "地域:"
+
+#: src/timezone.py:135
+msgid "location changed to : %s"
+msgstr ""
+
+#: src/timezone.py:223
+msgid "Can't autodetect timezone coordinates"
+msgstr "タイムゾーンを自動検出できません"
+
+#: src/timezone.py:281
+msgid "Stoping timezone threads..."
+msgstr "タイムゾーンスレッドの終了中..."
+
+#: src/timezone.py:311 src/timezone.py:362
+msgid "In timezone, can't get network status"
+msgstr "タイムゾーンでは、ネットワークステータスを取得できません"
+
+#: src/timezone.py:386
+msgid "Can't get the country code used to create a pacman mirrorlist"
+msgstr ""
+
+#: src/timezone.py:407
+msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
+msgstr ""
+
+#: src/timezone.py:409
+msgid "Couldn't generate mirrorlist for pacman based on country code"
+msgstr ""
+
+#: src/user_info.py:90
+msgid "Your name:"
+msgstr "あなたの名前:"
+
+#: src/user_info.py:94
+msgid "Your name"
+msgstr "あなたの名前"
+
+#: src/user_info.py:98
+msgid "Your computer's name:"
+msgstr "コンピューター名:"
+
+#: src/user_info.py:102
+msgid "Pick a username:"
+msgstr "ユーザー名:"
+
+#: src/user_info.py:106
+msgid "Username"
+msgstr "ユーザー名"
+
+#: src/user_info.py:110
+msgid "Choose a password:"
+msgstr "パスワードの入力:"
+
+#: src/user_info.py:114
+msgid "Password"
+msgstr "パスワード"
+
+#: src/user_info.py:118
+msgid "Confirm your password:"
+msgstr "パスワードの入力(確認):"
+
+#: src/user_info.py:122
+msgid "Confirm password"
+msgstr "パスワードの確認"
+
+#: src/user_info.py:126
+msgid "The name it uses when it talks to other computers."
+msgstr "他のコンピューターと通信するときに使用する名前です。"
+
+#: src/user_info.py:130
+msgid "You must enter a name"
+msgstr "名前を入力してください"
+
+#: src/user_info.py:134
+msgid "You must enter a username"
+msgstr "ユーザー名を入力してください"
+
+#: src/user_info.py:138
+msgid "You must enter a password"
+msgstr "パスワードを入力してください"
+
+#: src/user_info.py:142
+msgid "Log in automatically"
+msgstr "自動でログインする"
+
+#: src/user_info.py:143
+msgid "Require my password to log in"
+msgstr "ログイン時にパスワードを要求する"
+
+#: src/user_info.py:144
+msgid "Encrypt my home folder"
+msgstr "ホームフォルダを暗号化する"
+
+#: src/user_info.py:146
+msgid "Who are you?"
+msgstr "あなたの情報を入力してください"
+
+#: src/user_info.py:226
+msgid "Invalid characters entered"
+msgstr "無効な文字が入力されました"
+
+#: src/user_info.py:230
+msgid "Username can't contain dots"
+msgstr "ユーザー名にドットは使えません"
+
+#: src/user_info.py:234
+msgid "Too many characters"
+msgstr "文字数が多過ぎます"
+
+#: src/validation.py:144
+msgid "password is too short"
+msgstr "パスワードが短過ぎます"
+
+#: src/validation.py:147
+msgid "weak password"
+msgstr "弱いパスワード"
+
+#: src/validation.py:150
+msgid "fair password"
+msgstr "まあまあなパスワード"
+
+#: src/validation.py:153
+msgid "good password"
+msgstr "良いパスワード"
+
+#: src/validation.py:156
+msgid "strong password"
+msgstr "強固なパスワード"
+
+#: src/validation.py:171
+msgid "Passwords do not match"
+msgstr "パスワードが一致しません"
+
+#: src/welcome.py:96
+msgid ""
+"Try Manjaro without modifying your hard drive.\n"
+"Or install it to your PC with one of the two installer options."
+msgstr ""
+
+#: src/welcome.py:101
+msgid "Try it"
+msgstr "試す"
+
+#: src/welcome.py:104
+msgid "CLI Installer"
+msgstr "コマンドライン インストーラー"
+
+#: src/welcome.py:107
+msgid "Graphical Installer"
+msgstr "グラフィカル インストーラー"
+
+#: src/welcome.py:131
+msgid "Can't load the CLI installer"
+msgstr "コマンドライン インストーラーを読み込めません。"

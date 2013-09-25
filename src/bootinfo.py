@@ -3,8 +3,7 @@
 #
 #  bootinfo.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,25 +20,27 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 import os
+import subprocess
+import re
+import logging
+
+if __name__ == '__main__':
+    import gettext
+    _ = gettext.gettext
 
 def get_os(mountname):
     #  If partition is mounted, try to identify the Operating System
     # (OS) by looking for files specific to the OS.
-    OS = "unknown"
+    OS = _("unknown")
 
     win_dirs = ["windows", "Windows", "WINDOWS"]
     system_dirs = ["System32", "system32"]
@@ -59,12 +60,12 @@ def get_os(mountname):
                             OS = "Windows Vista"
                         elif seven_mark in f:
                             OS = "Windows 7"
-            if OS == "unknown":
+            if OS == _("unknown"):
                 for name in secevent_names:
                     p = os.path.join(mountname, windows, system, "config", name)
                     if os.path.exists(p):
                         OS = "Windows XP"
-    if OS == "unknown":
+    if OS == _("unknown"):
         p = os.path.join(mountname, "ReactOS/system32/config/SecEvent.Evt")
         if os.path.exists(p):
             OS = "ReactOS"
@@ -85,7 +86,7 @@ def get_os(mountname):
 
     # Linuxes
     
-    if OS == "unknown":
+    if OS == _("unknown"):
         linux_names = ["issue", "slackware_version"]
         for name in linux_names:
             p = os.path.join(mountname, "etc", name)
@@ -101,16 +102,53 @@ def get_os(mountname):
 
     return OS
 
-if __name__ == '__main__':
-    print(get_os("/"))
-                
-            
-        
 
-'''
+def get_devices_and_their_mount_points():
+    d = {}
+    try:
+        out = subprocess.check_output(["mount"]).decode()
+    except (subprocess.CalledProcessError, FileNotFoundError) as e:
+        logging.exception(e)
+        return d
 
-[ -s "${mountname}/etc/issue" ] && OS=$(sed -e 's/\\. //g' -e 's/\\.//g' -e 's/^[ \t]*//' "${mountname}"/etc/issue);
-
-[ -s "${mountname}/etc/slackware-version" ] && OS=$(sed -e 's/\\. //g' -e 's/\\.//g' -e 's/^[ \t]*//' "${mountname}"/etc/slackware-version);
-'''
+    out = out.split("\n")
     
+    for line in out:
+        e = line.split()
+        try:
+            device = e[0]
+            if "sd" in device and re.search(r'\d+$', device):
+                # ok, it has sd and ends with a number
+                d[device] = e[2]
+        except:
+            pass
+
+    return d
+    
+
+def get_os_dict():
+    oses = {}
+    
+    with open("/proc/partitions", "rt") as f:
+        for line in f:
+            l = line.split()
+            if len(l) > 0:
+                device = l[3]
+                if "sd" in device and re.search(r'\d+$', device):
+                    # ok, it has sd and ends with a number
+                    device = "/dev/" + device
+                    try:
+                        subprocess.call(["mount", device, "/mnt"], stderr=subprocess.DEVNULL)
+                        oses[device] = get_os("/mnt")
+                        subprocess.call(["umount", "/mnt"], stderr=subprocess.DEVNULL)
+                    except AttributeError:
+                        subprocess.call(["mount", device, "/mnt"])
+                        oses[device] = get_os("/mnt")
+                        subprocess.call(["umount", "/mnt"])
+                        
+    return oses
+    
+if __name__ == '__main__':
+    oses = {}
+    oses = get_os_dict()
+    print (oses)

@@ -3,8 +3,7 @@
 #
 #  keymap.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,18 +20,13 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk, GLib
 
@@ -40,7 +34,7 @@ from gi.repository import Gtk, GLib
 import config
 import os
 import keyboard_names
-import log
+import logging
 import show_message as show
 
 _next_page = "user_info"
@@ -109,7 +103,7 @@ class Keymap(Gtk.Box):
         if found == False:
             self.select_value_in_treeview(self.layout_treeview, "USA")
 
-        log.debug(_("keyboard_layout is %s") % selected_country)
+        logging.info(_("keyboard_layout is %s") % selected_country)
 
         self.show_all()
 
@@ -129,6 +123,8 @@ class Keymap(Gtk.Box):
 
     def fill_layout_treeview(self):
         lang = self.settings.get("language_code")
+
+        keyboard_names._default_filename = self.filename
 
         if not keyboard_names.has_language(lang):
             lang = "C"
@@ -188,7 +184,7 @@ class Keymap(Gtk.Box):
                 keyboard_layout = ls.get_value(iter, 0)
 
                 # store layout selected
-                self.keyboard_layout = keyboard_layout
+                self.keyboard_layout_human = keyboard_layout
 
                 lang = self.settings.get("language_code")
 
@@ -198,7 +194,7 @@ class Keymap(Gtk.Box):
                 kbd_names = keyboard_names.KeyboardNames(self.filename)
                 kbd_names._load(lang)
 
-                country_code = kbd_names._layout_by_human[keyboard_layout]
+                country_code = kbd_names._layout_by_human[self.keyboard_layout_human]
                 self.keyboard_layout = country_code
 
                 variants = kbd_names._variant_by_human
@@ -233,16 +229,28 @@ class Keymap(Gtk.Box):
         # we've previously stored our layout, now store our variant
         selected = self.variant_treeview.get_selection()
 
-        keyboard_variant = ""
+        keyboard_variant_human = ""
 
         if selected:
             (ls, iter) = selected.get_selected()
             if iter:
-                keyboard_variant = ls.get_value(iter, 0)
+                keyboard_variant_human = ls.get_value(iter, 0)
+
+        lang = self.settings.get("language_code")
+
+        kbd_names = keyboard_names.KeyboardNames(self.filename)
+
+        if not kbd_names.has_language(lang):
+            lang = "C"
+
+        kbd_names._load(lang)
+        country_code = kbd_names._layout_by_human[self.keyboard_layout_human]
+
+        self.keyboard_variant = kbd_names._variant_by_human[country_code][keyboard_variant_human]
 
         self.settings.set("keyboard_layout", self.keyboard_layout)
-        self.settings.set("keyboard_variant", keyboard_variant)
-        
+        self.settings.set("keyboard_variant", self.keyboard_variant)
+
         return True
 
     def get_prev_page(self):

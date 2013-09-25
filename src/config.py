@@ -3,8 +3,7 @@
 #
 #  config.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,35 +20,28 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
-import queue
+#import queue
+from multiprocessing import Queue
 
 class Settings():
     def __init__(self):
         # Create a queue one element size
-        self.settings = queue.Queue(1)
+
+        self.settings = Queue(1)
 
         self.settings.put( { \
-            'THUS_DIR' : '/usr/share/thus/', \
+            'CNCHI_DIR' : '/usr/share/thus/', \
             'UI_DIR' : '/usr/share/thus/ui/', \
             'DATA_DIR' : '/usr/share/thus/data/', \
             'TMP_DIR' : '/tmp', \
-            'ROOT_SQF' : 'root-image', \
-            'DE_SQF' : 'xfce-image', \
-            'KERNEL' : 'linux38', \
-            'KERNR' : '38', \
             'language_name' : '', \
             'language_code' : '', \
             'locale' : '', \
@@ -64,17 +56,25 @@ class Settings():
             'timezone_longitude' : 0, \
             'timezone_done' : False, \
             'use_ntp' : True, \
+            'install_bootloader' : True, \
+            'bootloader_device' : '/dev/sda', \
+            'bootloader_type' : 'GRUB2', \
+            'force_grub_type' : False, \
+            'third_party_software' : False, \
+            'desktops' : [], \
+            'desktop' : 'gnome', \
             'partition_mode' : 'easy', \
             'auto_device' : '/dev/sda', \
             'log_file' : '/tmp/thus.log', \
             'fullname' : '', \
-            'hostname' : 'manjaro', \
+            'hostname' : 'antergos', \
             'username' : '', \
             'password' : '', \
             'require_password' : True, \
             'encrypt_home' : False, \
             'user_info_done' : False, \
-            'rankmirrors_done' : False })
+            'rankmirrors_done' : False, \
+            'use_aria2' : False })
 
     def _get_settings(self):
         gd = self.settings.get()

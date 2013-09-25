@@ -4,8 +4,7 @@
 #
 #  language.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -22,23 +21,19 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk, GLib
 import gettext
 import locale
 import os
+import logging
 
 # Useful vars for gettext (translations)
 APP="thus"
@@ -47,8 +42,6 @@ DIR = "/usr/share/locale"
 # Import functions
 import config
 import i18n
-
-import log
 
 _next_page = "location"
 _prev_page = "welcome"
@@ -87,15 +80,15 @@ class Language(Gtk.Box):
         txt = _("Please choose your language:")
         txt = '<span weight="bold">%s</span>' % txt
         self.label_choose_language.set_markup(txt)
-
+        
         label = self.ui.get_object("welcome_label")
-        txt = _("<span weight='bold'>This is an Alpha version.</span>\n\n" \
-        "The Software is provided \"as is\" without warranty of any\n" \
-        "kind, either express or implied, including without limitation\n" \
-        "any implied warranties of condition, uninterrupted use,\n" \
-        "merchantability, fitness for a particular purpose, or\n" \
-        "non-infringement.\n\n" \
-        "If you find any bug, please, visit <a href='http://bugs.manjaro.org/'>http://bugs.manjaro.org/</a>")
+        txt_bold = _("This is an Alpha version.")
+        txt = _("Still undergoing development. It is known NOT " \
+        "to work yet with LVM, RAID, btrfs subvolumes, and other " \
+        "advanced setups. \n" \
+        "Please proceed with caution as data loss is possible! \n\n" \
+        "If you find any bug, please, visit <a href='http://bugs.antergos.com'>http://bugs.antergos.com</a>")
+        txt = "<span weight='bold'>%s</span>\n\n" % txt_bold + txt
         label.set_markup(txt)
 
         txt = _("Welcome to Manjaro!")
@@ -136,7 +129,7 @@ class Language(Gtk.Box):
             lang.install()
             self.translate_ui()
         except IOError:
-            log.debug(_("Can't find translation file for the %s language") % locale_code)
+            logging.error(_("Can't find translation file for the %s language") % locale_code)
     
     # Select language loaded on boot as default
     def select_default_row(self, treeview, language):   

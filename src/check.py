@@ -3,8 +3,7 @@
 #
 #  check.py
 #  
-#  Copyright 2013 Manjaro
-#  Copyright 2013 Cinnarch
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,25 +20,20 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  Manjaro Team:
-#   Roland Singer (singro)   <roland.manjaro.org>
-#   Philip Müller (philm)    <philm.manjaro.org>
-#   Guillaume Benoit (guinux)<guillaume.manjaro.org>
-#  
-#  Cinnarch Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.cinnarch.com>
-#   Raúl Granados (pollitux) <raulgranados.cinnarch.com>
-#   Gustau Castells (karasu) <karasu.cinnarch.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.cinnarch.com>
-#   Marc Miralles (arcnexus) <arcnexus.cinnarch.com>
-#   Alex Skinner (skinner) <skinner.cinnarch.com>
+#  Antergos Team:
+#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
+#   Raúl Granados (pollitux) <raulgranados.antergos.com>
+#   Gustau Castells (karasu) <karasu.antergos.com>
+#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
+#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
+#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk, GObject
 
 import subprocess
 import os
 import gtkwidgets
-import log
+import logging
 
 from rank_mirrors import AutoRankmirrorsThread
 
@@ -49,6 +43,7 @@ NM_STATE_CONNECTED_GLOBAL = 70
 UPOWER = 'org.freedesktop.UPower'
 UPOWER_PATH = '/org/freedesktop/UPower'
 
+#_next_page = "desktop"
 _next_page = "installation_ask"
 _prev_page = "location"
 
@@ -58,6 +53,7 @@ class Check(Gtk.Box):
 
         self.title = params['title']
         self.ui_dir = params['ui_dir']
+        self.settings = params['settings']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
 
@@ -77,9 +73,9 @@ class Check(Gtk.Box):
         txt = '<span weight="bold" size="large">%s</span>' % txt
         self.title.set_markup(txt)
 
-        self.prepare_sufficient_space = self.ui.get_object("prepare_sufficient_space")
+        self.prepare_enough_space = self.ui.get_object("prepare_enough_space")
         txt = _("has at least 3GB available drive space")
-        self.prepare_sufficient_space.props.label = txt
+        self.prepare_enough_space.props.label = txt
 
         self.prepare_power_source = self.ui.get_object("prepare_power_source")
         txt = _("is plugged in to a power source")
@@ -93,6 +89,16 @@ class Check(Gtk.Box):
         txt = _("For best results, please ensure that this computer:")
         txt = '<span weight="bold" size="large">%s</span>' % txt
         self.prepare_best_results.set_markup(txt)
+
+        self.third_party_info = self.ui.get_object("third_party_info")
+        txt = _("Manjaro uses third-party software to play Flash, MP3 " \
+                "and other media. Some of this software is propietary. The " \
+                "software is subject to license terms included with its documentation.")
+        self.third_party_info.set_label(txt)
+
+        self.third_party_checkbutton = self.ui.get_object("third_party_checkbutton")
+        txt = _("Install this third-party software")
+        self.third_party_checkbutton.set_label(txt)
 
     def get_prop(self, obj, iface, prop):
         try:
@@ -111,7 +117,7 @@ class Check(Gtk.Box):
             manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
             state = self.get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
-            log.debug(_("Can't get network status"))
+            logging.warning(_("Can't get network status"))
             return False
         return state == NM_STATE_CONNECTED_GLOBAL
 
@@ -123,9 +129,9 @@ class Check(Gtk.Box):
         self.prepare_power_source.set_state(on_power)
         
         space = self.has_enough_space()
-        self.prepare_sufficient_space.set_state(space)
+        self.prepare_enough_space.set_state(space)
 
-        if has_internet and on_power and space:
+        if has_internet and space:
             return True
 
         return False
@@ -171,6 +177,13 @@ class Check(Gtk.Box):
 
         return False
 
+    def on_third_party_checkbutton_toggled(self, button):
+        current_value = self.settings.get("third_party_software")
+        if current_value is False:
+            self.settings.set("third_party_software", True)
+        else:
+            self.settings.set("third_party_software", False)
+
     def on_timer(self, time):
         if not self.remove_timer:
             self.forward_button.set_sensitive(self.check_all())
@@ -180,17 +193,18 @@ class Check(Gtk.Box):
         # remove timer
         self.remove_timer = True
 
-        log.debug(_("We have Internet connection."))
-        log.debug(_("We're connected to a power source."))
-        log.debug(_("We have enough space in disk."))
+        logging.info(_("We have Internet connection."))
+        logging.info(_("We're connected to a power source."))
+        logging.info(_("We have enough space in disk."))
           
         # Enable forward button
         self.forward_button.set_sensitive(True)
-        
+
         ## Launch rankmirrors script to determine the 5 fastest mirrors
         self.thread = None
         self.thread = AutoRankmirrorsThread()
         self.thread.start()
+        
         return True
 
     def get_prev_page(self):
@@ -202,6 +216,13 @@ class Check(Gtk.Box):
     def prepare(self, direction):
         self.translate_ui()
         self.show_all()
+        
+        # We now have a features screen, so we don't need this here
+        # Just hide it for now
+        self.third_party_info.hide()
+        self.third_party_checkbutton.hide()
+        
         self.forward_button.set_sensitive(self.check_all())
+
         # set timer
         self.timeout_id = GObject.timeout_add(1000, self.on_timer, None)
