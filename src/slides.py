@@ -201,7 +201,7 @@ class Slides(Gtk.Box):
                     (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
                     if fsname:
                         subprocess.check_call(['umount', self.dest_dir])
-                    quit()
+                    os._exit(0)
                         
                 self.exit_button.show()
                 return False
