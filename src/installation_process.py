@@ -1068,12 +1068,8 @@ class InstallationProcess(multiprocessing.Process):
             shutil.copy2(path, os.path.join(self.dest_dir, 'etc/'))
 
         # copy mirror list
-        if self.has_connection == "True":
-            shutil.copy2('/etc/pacman.d/mirrorlist', \
+        shutil.copy2('/etc/pacman.d/mirrorlist', \
                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
-        else:
-            self.do_run_in_chroot("cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup")
-            self.do_run_in_chroot("sed -i -e 's~# Server = http://mirror.dacentec.com~Server = http://mirror.dacentec.com~' /etc/pacman.d/mirrorlist")
 
         # copy random generated keys by pacman-init to target
         if os.path.exists("/install/etc/pacman.d/gnupg"):
@@ -1081,9 +1077,11 @@ class InstallationProcess(multiprocessing.Process):
         os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
         self.chroot_mount()
         self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        if self.has_connection == "True":
+        if self.has_connection is True:
             self.do_run_in_chroot("pacman -Syy")
         self.chroot_umount()
+
+        self.queue_event('info', _("Finished configuring package manager."))
 
         #desktop = self.settings.get('desktop')
 
