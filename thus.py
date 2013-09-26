@@ -58,6 +58,7 @@ import installation_alongside
 import installation_advanced
 import user_info
 import slides
+import subprocess
 import misc
 import info
 import updater
@@ -118,7 +119,26 @@ class Main(Gtk.Window):
 
         # workaround for dconf
         os.system("mkdir -p /root/.cache/dconf")
-        os.system("chmod -R 777 /root/.cache")        
+        os.system("chmod -R 777 /root/.cache")
+
+        # unmount folders if installer crashed
+        self.dest_dir = "/install"
+        source_dirs = { "source", "source_desktop" }
+        for p in source_dirs:
+            p = os.path.join("/", p)
+            (fsname, fstype, writable) = misc.mount_info(p)
+            if fsname:
+                subprocess.check_call(['umount', p])
+        install_dirs = { "boot", "dev", "proc", "sys", "var" }
+        for p in install_dirs:
+            p = os.path.join(self.dest_dir, p)
+            (fsname, fstype, writable) = misc.mount_info(p)
+            if fsname:
+                subprocess.check_call(['umount', p])
+        # now we can unmount /install
+        (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
+        if fsname:
+            subprocess.check_call(['umount', self.dest_dir])      
         
         logging.info("Thus installer version %s" % info.thus_VERSION)
         

@@ -45,7 +45,7 @@ import xml.etree.ElementTree as etree
 import urllib.request
 import urllib.error
 import crypt
-import download
+#import download
 import config
 import logging
 import info
@@ -122,7 +122,7 @@ class FileCopyThread(Thread):
 
 ## END: RSYNC-based file copy support
 
-conf_file = '/etc/live-installer/install.conf'
+conf_file = '/etc/thus.conf'
 configuration = ConfigObj(conf_file)
 
 # Insert the src/pacman directory at the front of the path.
@@ -910,9 +910,8 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('pulse') 
             mhwd_script_path = os.path.join(self.settings.get("THUS_DIR"), "scripts", _mhwd_script)  
             try:
-                self.queue_event('debug', "Running MHWD script...")
                 subprocess.check_call(["/usr/bin/bash", mhwd_script_path])
-                self.queue_event('debug', "MHWD script done.")
+                self.queue_event('debug', "Setup graphic card done.")
             except subprocess.FileNotFoundError as e:
                 self.queue_fatal_event(_("Can't execute the MHWD script"))
                 return False
@@ -1082,25 +1081,27 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot_umount()
 
         self.queue_event('info', _("Finished configuring package manager."))
+         
+        consolefh = open("/install/etc/keyboard.conf", "r")
+        newconsolefh = open("/install/etc/keyboard.new", "w")
+        for line in consolefh:
+            line = line.rstrip("\r\n")
+            if(line.startswith("XKBLAYOUT=")):
+                newconsolefh.write("XKBLAYOUT=\"%s\"\n" % keyboard_layout)
+            elif(line.startswith("XKBVARIANT=") and keyboard_variant != ''):
+                newconsolefh.write("XKBVARIANT=\"%s\"\n" % keyboard_variant)
+            else:
+                newconsolefh.write("%s\n" % line)
+        consolefh.close()
+        newconsolefh.close()
+        os.system("rm /install/etc/keyboard.conf")
+        os.system("mv /install/etc/keyboard.new /etc/keyboard.conf")
 
         #desktop = self.settings.get('desktop')
 
         desktop = "x"
         
         if desktop != "nox":
-            # Set /etc/X11/xorg.conf.d/00-keyboard.conf for the xkblayout
-            xorg_conf_xkb_path = os.path.join(self.dest_dir, "etc/X11/xorg.conf.d/00-keyboard.conf")
-            with open(xorg_conf_xkb_path, "wt") as xorg_conf_xkb:
-                xorg_conf_xkb.write("# Read and parsed by systemd-localed. It's probably wise not to edit this file\n")
-                xorg_conf_xkb.write('# manually too freely.\n')
-                xorg_conf_xkb.write('Section "InputClass"\n')
-                xorg_conf_xkb.write('        Identifier "system-keyboard"\n')
-                xorg_conf_xkb.write('        MatchIsKeyboard "on"\n')
-                xorg_conf_xkb.write('        Option "XkbLayout" "%s"\n' % keyboard_layout)
-                if keyboard_variant != '':
-                    xorg_conf_xkb.write('        Option "XkbVariant" "%s"\n' % keyboard_variant)
-                xorg_conf_xkb.write('EndSection\n')
-
             # Set autologin if selected
             if self.settings.get('require_password') is False:
                 # Systems with GDM as Desktop Manager
@@ -1114,8 +1115,9 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with MDM as Desktop Manager
                 if self.desktop_manager == 'mdm':
+                    self.queue_event('info', _("MDM: Enable automatic login for user %s." % username))
                     mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
-                    with open(gdm_conf_path, "wt") as mdm_conf:
+                    with open(mdm_conf_path, "wt") as mdm_conf:
                         mdm_conf.write('# Enable automatic login for user\n')
                         mdm_conf.write('[daemon]\n')
                         mdm_conf.write('AutomaticLogin=%s\n' % username)
@@ -1123,6 +1125,7 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with KDM as Desktop Manager
                 elif self.desktop_manager == 'kdm':
+                    self.queue_event('info', _("KDM: Enable automatic login for user %s." % username))
                     kdm_conf_path = os.path.join(self.dest_dir, "usr/share/config/kdm/kdmrc")
                     text = []
                     with open(kdm_conf_path, "rt") as kdm_conf:
@@ -1139,6 +1142,7 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with LXDM as Desktop Manager
                 elif self.desktop_manager == 'lxdm':
+                    self.queue_event('info', _("LXDM: Enable automatic login for user %s." % username))
                     lxdm_conf_path = os.path.join(self.dest_dir, "etc/lxdm/lxdm.conf")
                     text = []
                     with open(lxdm_conf_path, "rt") as lxdm_conf:
@@ -1154,6 +1158,7 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with LightDM as the Desktop Manager
                 elif self.desktop_manager == 'lightdm':
+                    self.queue_event('info', _("LightDM: Enable automatic login for user %s." % username))
                     lightdm_conf_path = os.path.join(self.dest_dir, "etc/lightdm/lightdm.conf")
                     # Ideally, use configparser for the ini conf file, but just do
                     # a simple text replacement for now
