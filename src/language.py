@@ -43,8 +43,10 @@ DIR = "/usr/share/locale"
 import config
 import i18n
 
-_next_page = "location"
-_prev_page = "welcome"
+#_next_page = "location"
+#_prev_page = "welcome"
+_prev_page = None
+_next_page = "check"
 
 class Language(Gtk.Box):
 
@@ -183,6 +185,7 @@ class Language(Gtk.Box):
 
     def prepare(self, direction):
         self.translate_ui()
+        self.backwards_button.hide()
         
         # scroll language treeview to selected item
         self.scroll_to_selected_item(self.treeview_language)

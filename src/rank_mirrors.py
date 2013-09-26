@@ -32,6 +32,7 @@ import threading
 import multiprocessing
 import subprocess
 import logging
+import time
 
 NM = 'org.freedesktop.NetworkManager'
 NM_STATE_CONNECTED_GLOBAL = 70

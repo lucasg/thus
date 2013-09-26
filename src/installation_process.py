@@ -118,7 +118,7 @@ class FileCopyThread(Thread):
                     self.update_progress(self.our_current)
                 else:
                     # we've got a filename!
-                    self.update_label(line.decode('latin1').strip())
+                    self.update_label(line.decode().strip())
 
 ## END: RSYNC-based file copy support
 
@@ -168,7 +168,7 @@ class InstallationProcess(multiprocessing.Process):
         
         # Check desktop selected to load packages needed
         self.desktop = self.settings.get('desktop')
-        self.desktop_manager = 'gdm'
+        #self.desktop_manager = 'gdm'
         self.network_manager = 'NetworkManager'
         self.card = []
         # Packages to be removed
@@ -804,14 +804,8 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event("action", _("Configuring your new system"))
         self.queue_event('pulse') 
 
-        # Copy important config files to target system
-        files = [ "/etc/pacman.conf", "/etc/yaourtrc" ]        
-        
-        for path in files:
-            shutil.copy2(path, os.path.join(self.dest_dir, 'etc/'))
-
         # enable services      
-        #self.enable_services([ self.desktop_manager, self.network_manager ])
+        self.enable_services([ self.network_manager, 'cups', 'dcron', 'remote-fs.target' ])
 
         # TODO: we never ask the user about this...
         if self.settings.get("use_ntp"):
@@ -864,19 +858,6 @@ class InstallationProcess(multiprocessing.Process):
         # User password is the root password  
         self.change_user_password('root', password)
 
-        '''# setup pacman
-        self.queue_event("action", _("Configuring package manager"))
-        self.queue_event("pulse")
-        os.system("pacman -Syy")
-        self.do_run_in_chroot("cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup")
-        self.do_run_in_chroot("sed -i -e 's~# Server = http://mirror.dacentec.com~Server = http://mirror.dacentec.com~' /etc/pacman.d/mirrorlist")
-        # copy random generated keys by pacman-init to target
-        if os.path.exists("/install/etc/pacman.d/gnupg"):
-            os.system("rm -rf /install/etc/pacman.d/gnupg")
-        os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
-        self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        self.do_run_in_chroot("pacman -Syy")'''
-
         ## Generate locales
         keyboard_layout = self.settings.get("keyboard_layout")
         keyboard_variant = self.settings.get("keyboard_variant")
@@ -928,12 +909,6 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
                 return False
 
-        # setup systemd
-        self.do_run_in_chroot("systemctl enable cups.service")
-        self.do_run_in_chroot("systemctl enable dcron.service")
-        self.do_run_in_chroot("systemctl enable NetworkManager.service")
-        self.do_run_in_chroot("systemctl enable remote-fs.target")
-
         self.queue_event('info', _("Configure display manager..")) 
         # setup lightdm
         if os.path.exists("/usr/bin/lightdm"):
@@ -948,6 +923,7 @@ class InstallationProcess(multiprocessing.Process):
                 os.system("sed -i -e 's/^.*user-session=.*/user-session=xfce/' /install/etc/lightdm/lightdm.conf")
                 os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver /install/usr/bin/gdmflexiserver")
             os.system("chmod +r /install/etc/lightdm/lightdm.conf")
+            self.desktop_manager = 'lightdm'
 
         # setup gdm
         if os.path.exists("/usr/bin/gdm"):
@@ -972,6 +948,7 @@ class InstallationProcess(multiprocessing.Process):
                 elif os.path.exists("/usr/bin/lxsession"):
                     os.system("echo \"XSession=LXDE\" >> /install/var/lib/AccountsService/users/gdm")
                 os.system("echo \"Icon=\" >> /install/var/lib/AccountsService/users/gdm")
+            self.desktop_manager = 'gdm'
 
         # setup mdm
         if os.path.exists("/usr/bin/mdm"):
@@ -994,6 +971,7 @@ class InstallationProcess(multiprocessing.Process):
                 os.system("sed -i 's|default.desktop|LXDE.desktop|g' /install/etc/mdm/custom.conf")
             if os.path.exists("/usr/bin/enlightenment_start"):
                 os.system("sed -i 's|default.desktop|enlightenment.desktop|g' /install/etc/mdm/custom.conf")
+            self.desktop_manager = 'mdm'
 
         # setup lxdm
         if os.path.exists("/usr/bin/lxdm"):
@@ -1013,6 +991,7 @@ class InstallationProcess(multiprocessing.Process):
             os.system("chgrp -R lxdm /install/var/lib/lxdm")
             os.system("chgrp lxdm /install/etc/lxdm/lxdm.conf")
             os.system("chmod +r /install/etc/lxdm/lxdm.conf")
+            self.desktop_manager = 'lxdm'
 
         # setup kdm
         if os.path.exists("/usr/bin/kdm"):
@@ -1023,6 +1002,7 @@ class InstallationProcess(multiprocessing.Process):
             self.do_run_in_chroot("chown -R 135:135 var/lib/kdm")
             self.do_run_in_chroot("xdg-icon-resource forceupdate --theme hicolor")
             self.do_run_in_chroot("update-desktop-database -q")
+            self.desktop_manager = 'kdm'
 
         self.queue_event('info', _("Configure System..")) 
 
@@ -1065,11 +1045,36 @@ class InstallationProcess(multiprocessing.Process):
         self.do_run_in_chroot("dbus-uuidgen --ensure=/etc/machine-id")
         self.do_run_in_chroot("dbus-uuidgen --ensure=/var/lib/dbus/machine-id")
 
+
+        # setup pacman
+        self.queue_event("action", _("Configuring package manager"))
+        self.queue_event("pulse")
+
+        # Copy important config files to target system
+        files = [ "/etc/pacman.conf", "/etc/yaourtrc" ]        
+        
+        for path in files:
+            shutil.copy2(path, os.path.join(self.dest_dir, 'etc/'))
+
         # copy mirror list
         shutil.copy2('/etc/pacman.d/mirrorlist', \
                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
 
-        '''desktop = self.settings.get('desktop')
+        #os.system("pacman -Syy")
+        #self.do_run_in_chroot("cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup")
+        #self.do_run_in_chroot("sed -i -e 's~# Server = http://mirror.dacentec.com~Server = http://mirror.dacentec.com~' /etc/pacman.d/mirrorlist")
+        # copy random generated keys by pacman-init to target
+        if os.path.exists("/install/etc/pacman.d/gnupg"):
+            os.system("rm -rf /install/etc/pacman.d/gnupg")
+        os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
+        self.chroot_mount()
+        self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
+        self.do_run_in_chroot("pacman -Syy")
+        self.chroot_umount()
+
+        #desktop = self.settings.get('desktop')
+
+        desktop = "x"
         
         if desktop != "nox":
             # Set /etc/X11/xorg.conf.d/00-keyboard.conf for the xkblayout
@@ -1095,6 +1100,15 @@ class InstallationProcess(multiprocessing.Process):
                         gdm_conf.write('[daemon]\n')
                         gdm_conf.write('AutomaticLogin=%s\n' % username)
                         gdm_conf.write('AutomaticLoginEnable=True\n')
+
+                # Systems with MDM as Desktop Manager
+                if self.desktop_manager == 'mdm':
+                    mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
+                    with open(gdm_conf_path, "wt") as mdm_conf:
+                        mdm_conf.write('# Enable automatic login for user\n')
+                        mdm_conf.write('[daemon]\n')
+                        mdm_conf.write('AutomaticLogin=%s\n' % username)
+                        mdm_conf.write('AutomaticLoginEnable=True\n')
 
                 # Systems with KDM as Desktop Manager
                 elif self.desktop_manager == 'kdm':
@@ -1140,7 +1154,7 @@ class InstallationProcess(multiprocessing.Process):
                         for line in text:
                             if '#autologin-user=' in line:
                                 line = 'autologin-user=%s\n' % username
-                            lightdm_conf.write(line)'''
+                            lightdm_conf.write(line)
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
@@ -1154,7 +1168,7 @@ class InstallationProcess(multiprocessing.Process):
         script_path_postinstall = os.path.join(self.settings.get("THUS_DIR"), \
             "scripts", _postinstall_script)
         subprocess.check_call(["/usr/bin/bash", script_path_postinstall, \
-            username, self.dest_dir, self.desktop, keyboard_layout, keyboard_variant])
+            username, self.dest_dir, self.desktop, keyboard_layout, keyboard_variant])'''
 
         # In openbox "desktop", the postinstall script writes /etc/slim.conf
         # so we have to modify it here (after running the script).
@@ -1171,15 +1185,15 @@ class InstallationProcess(multiprocessing.Process):
                         line = 'auto_login yes\n'
                     if 'default_user' in line:
                         line = 'default_user %s\n' % username
-                    slim_conf.write(line)'''
+                    slim_conf.write(line)
               
-        # Setup ufw if it's an user wanted feature
-        #if self.settings.get("feature_firewall"):
-        #    pass
+        '''# Setup ufw if it's an user wanted feature
+        if self.settings.get("feature_firewall"):
+            pass
             # ufw default deny
             # ufw allow Transmission
             # ufw enable
-            # systemctl enable ufw.service
+            # systemctl enable ufw.service'''
 			
                 
         # encrypt home directory if requested

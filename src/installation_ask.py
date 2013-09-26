@@ -37,7 +37,8 @@ import bootinfo
 
 import config
 
-_prev_page = "features"
+#_prev_page = "features"
+_prev_page = "check"
 
 class InstallationAsk(Gtk.Box):
 

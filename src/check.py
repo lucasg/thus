@@ -45,7 +45,8 @@ UPOWER_PATH = '/org/freedesktop/UPower'
 
 #_next_page = "desktop"
 _next_page = "installation_ask"
-_prev_page = "location"
+#_prev_page = "location"
+_prev_page = "language"
 
 class Check(Gtk.Box):
 
@@ -131,7 +132,8 @@ class Check(Gtk.Box):
         space = self.has_enough_space()
         self.prepare_enough_space.set_state(space)
 
-        if has_internet and space:
+        #if has_internet and space:
+        if space:
             return True
 
         return False

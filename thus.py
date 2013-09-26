@@ -46,7 +46,7 @@ import config
 
 #import welcome
 import language
-import location
+#import location
 import check
 #import desktop
 #import features
@@ -80,7 +80,7 @@ APP = "thus"
 DIR = "/usr/share/locale"
 
 _main_window_width = 800
-_main_window_height = 500
+_main_window_height = 520
 
 _debug = False
 
@@ -115,6 +115,10 @@ class Main(Gtk.Window):
         super().__init__()
         
         self.setup_logging()
+
+        # workaround for dconf
+        os.system("mkdir -p /root/.cache/dconf")
+        os.system("chmod -R 777 /root/.cache")        
         
         logging.info("Thus installer version %s" % info.thus_VERSION)
         
@@ -205,7 +209,7 @@ class Main(Gtk.Window):
         
         #self.pages["welcome"] = welcome.Welcome(params)
         self.pages["language"] = language.Language(params)
-        self.pages["location"] = location.Location(params)
+        #self.pages["location"] = location.Location(params)
         self.pages["check"] = check.Check(params)
         #self.pages["desktop"] = desktop.DesktopAsk(params)
         #self.pages["features"] = features.Features(params)
@@ -290,7 +294,7 @@ class Main(Gtk.Window):
     def on_exit_button_clicked(self, widget, data=None):
         self.remove_temp_files()
         logging.info(_("Quiting installer..."))
-        Gtk.main_quit()
+        quit()
 
     def set_progressbar_step(self, add_value):
         new_value = self.progressbar.get_fraction() + add_value
