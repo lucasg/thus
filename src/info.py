@@ -24,12 +24,16 @@
 #   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
 #   Marc Miralles (arcnexus) <arcnexus.antergos.com>
 #   Alex Skinner (skinner) <skinner.antergos.com>
+#
+#  Manjaro Team:
+#   Philip Müller (philm) <philm.manjaro.org>
+#   Mateusz Mikołajczyk (toudi) <mikolajczyk.mateusz.gmail.com>
+#
 
-
-thus_VERSION = "0.4.0"
-thus_LAST_STABLE = "0.3.2"
-thus_WEBSITE = "http://www.antergos.com"
-thus_AUTHORS = "faidoc, karasu, skinner, arcnexus, omelchek"
+thus_VERSION = "0.8.7.900"
+thus_LAST_STABLE = "0.8.7"
+thus_WEBSITE = "http://www.manjaro.org"
+thus_AUTHORS = "philm,  toudi, faidoc, karasu, skinner, arcnexus, omelchek"
 thus_LICENSE = '''
     thus is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

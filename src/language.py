@@ -89,7 +89,7 @@ class Language(Gtk.Box):
         "to work yet with LVM, RAID, btrfs subvolumes, and other " \
         "advanced setups. \n" \
         "Please proceed with caution as data loss is possible! \n\n" \
-        "If you find any bug, please, visit <a href='http://bugs.antergos.com'>http://bugs.antergos.com</a>")
+        "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>")
         txt = "<span weight='bold'>%s</span>\n\n" % txt_bold + txt
         label.set_markup(txt)
 

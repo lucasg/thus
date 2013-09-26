@@ -31,7 +31,7 @@ msgid ""
 "If you are sure that the installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Es ist nicht möglich zwei Instanzen des Installers zu starten.⏎\n⏎\nWenn Sie sich sicher sind, dass der Installer nicht bereits ausgeführt wird, ⏎\nso können Sie manuell die Datei %s löschen⏎\nund den Installer erneut starten."
+msgstr "Es ist nicht möglich zwei Instanzen des Installers zu starten.\n\nWenn Sie sich sicher sind, dass der Installer nicht bereits ausgeführt wird, \nso können Sie manuell die Datei %s löschen\nund den Installer erneut starten."
 
 #: thus.py:186
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
@@ -461,7 +461,7 @@ msgstr ""
 
 #: src/installation_ask.py:111
 msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr "Organisieren Sie Ihre Partitionen manuell um zu definieren, wo Manjaro installiert werden soll (fortgeschritten)"
+msgstr "Organisieren Sie Ihre Partitionen manuell um zu definieren,\nwo Manjaro installiert werden soll (fortgeschritten)"
 
 #: src/installation_ask.py:114
 msgid "Create/delete partitions, and also choose additional mount points."
@@ -599,7 +599,7 @@ msgid ""
 "Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
 "Please proceed with caution as data loss is possible! \n"
 "\n"
-"If you find any bug, please, visit <a href='http://bugs.antergos.com'>http://bugs.antergos.com</a>"
+"If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
 #: src/language.py:94 src/welcome.py:110

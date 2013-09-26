@@ -30,7 +30,7 @@
 #
 #  Manjaro Team:
 #   Philip Müller (philm) <philm.manjaro.org>
-#   Mateusz Mikołajczyk <mikolajczyk.mateusz.gmail.com>
+#   Mateusz Mikołajczyk (toudi) <mikolajczyk.mateusz.gmail.com>
 #
 
 import multiprocessing
@@ -178,6 +178,17 @@ class InstallationProcess(multiprocessing.Process):
         
         self.running = True
         self.error = False
+
+    def has_connection(self):
+        import dbus
+        try:
+            bus = dbus.SystemBus()
+            manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
+            state = self.get_prop(manager, NM, 'state')
+        except dbus.exceptions.DBusException:
+            logging.warning(_("In installation-process, can't get network status"))
+            return False
+        return state == NM_STATE_CONNECTED_GLOBAL
     
     def queue_fatal_event(self, txt):
         # Queue the fatal event and exit process
@@ -1057,19 +1068,21 @@ class InstallationProcess(multiprocessing.Process):
             shutil.copy2(path, os.path.join(self.dest_dir, 'etc/'))
 
         # copy mirror list
-        shutil.copy2('/etc/pacman.d/mirrorlist', \
+        if self.has_connection == "True":
+            shutil.copy2('/etc/pacman.d/mirrorlist', \
                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
+        else:
+            self.do_run_in_chroot("cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup")
+            self.do_run_in_chroot("sed -i -e 's~# Server = http://mirror.dacentec.com~Server = http://mirror.dacentec.com~' /etc/pacman.d/mirrorlist")
 
-        #os.system("pacman -Syy")
-        #self.do_run_in_chroot("cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup")
-        #self.do_run_in_chroot("sed -i -e 's~# Server = http://mirror.dacentec.com~Server = http://mirror.dacentec.com~' /etc/pacman.d/mirrorlist")
         # copy random generated keys by pacman-init to target
         if os.path.exists("/install/etc/pacman.d/gnupg"):
             os.system("rm -rf /install/etc/pacman.d/gnupg")
         os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
         self.chroot_mount()
         self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        self.do_run_in_chroot("pacman -Syy")
+        if self.has_connection == "True":
+            self.do_run_in_chroot("pacman -Syy")
         self.chroot_umount()
 
         #desktop = self.settings.get('desktop')
