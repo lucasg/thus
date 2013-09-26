@@ -46,7 +46,7 @@ import config
 
 #import welcome
 import language
-#import location
+import location
 import check
 #import desktop
 #import features
@@ -229,7 +229,7 @@ class Main(Gtk.Window):
         
         #self.pages["welcome"] = welcome.Welcome(params)
         self.pages["language"] = language.Language(params)
-        #self.pages["location"] = location.Location(params)
+        self.pages["location"] = location.Location(params)
         self.pages["check"] = check.Check(params)
         #self.pages["desktop"] = desktop.DesktopAsk(params)
         #self.pages["features"] = features.Features(params)

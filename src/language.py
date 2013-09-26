@@ -43,10 +43,9 @@ DIR = "/usr/share/locale"
 import config
 import i18n
 
-#_next_page = "location"
+_next_page = "location"
 #_prev_page = "welcome"
 _prev_page = None
-_next_page = "check"
 
 class Language(Gtk.Box):
 
