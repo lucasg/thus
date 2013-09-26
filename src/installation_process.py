@@ -805,6 +805,8 @@ class InstallationProcess(multiprocessing.Process):
         # setup systemd services
         # ... check configure_system from arch-setup
 
+        has_internet = self.has_connection()
+
         # Generate the fstab file        
         self.auto_fstab()
         
@@ -1076,7 +1078,7 @@ class InstallationProcess(multiprocessing.Process):
         os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
         self.chroot_mount()
         self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        if self.has_connection is True:
+        if has_internet:
             self.do_run_in_chroot("pacman -Syy")
         self.chroot_umount()
 
@@ -1095,7 +1097,7 @@ class InstallationProcess(multiprocessing.Process):
         consolefh.close()
         newconsolefh.close()
         os.system("rm /install/etc/keyboard.conf")
-        os.system("mv /install/etc/keyboard.new /etc/keyboard.conf")
+        os.system("mv /install/etc/keyboard.new /install/etc/keyboard.conf")
 
         #desktop = self.settings.get('desktop')
 
@@ -1106,6 +1108,7 @@ class InstallationProcess(multiprocessing.Process):
             if self.settings.get('require_password') is False:
                 # Systems with GDM as Desktop Manager
                 if self.desktop_manager == 'gdm':
+                    self.queue_event('info', _("GDM: Enable automatic login for user %s." % username))
                     gdm_conf_path = os.path.join(self.dest_dir, "etc/gdm/custom.conf")
                     with open(gdm_conf_path, "wt") as gdm_conf:
                         gdm_conf.write('# Enable automatic login for user\n')
@@ -1117,11 +1120,21 @@ class InstallationProcess(multiprocessing.Process):
                 if self.desktop_manager == 'mdm':
                     self.queue_event('info', _("MDM: Enable automatic login for user %s." % username))
                     mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
-                    with open(mdm_conf_path, "wt") as mdm_conf:
-                        mdm_conf.write('# Enable automatic login for user\n')
-                        mdm_conf.write('[daemon]\n')
-                        mdm_conf.write('AutomaticLogin=%s\n' % username)
-                        mdm_conf.write('AutomaticLoginEnable=True\n')
+                    if os.path.exists(mdm_conf_path):
+                        with open(mdm_conf_path, "rt") as mdm_conf:
+                            text = mdm_conf.readlines()
+            
+                        with open(mdm_conf_path, "wt") as mdm_conf:
+                            for line in text:
+                                if '[daemon]' in line:
+                                    line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
+                                mdm_conf.write(line)
+                    else:
+                        with open(mdm_conf_path, "wt") as mdm_conf:
+                            mdm_conf.write('# Enable automatic login for user\n')
+                            mdm_conf.write('[daemon]\n')
+                            mdm_conf.write('AutomaticLogin=%s\n' % username)
+                            mdm_conf.write('AutomaticLoginEnable=True\n')
 
                 # Systems with KDM as Desktop Manager
                 elif self.desktop_manager == 'kdm':
