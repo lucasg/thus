@@ -98,9 +98,10 @@ class FileCopyThread(Thread):
     def update_label(self, text):
         self.installer.queue_event('info', _("Copying '/%s'" % text))
 
-    def update_progress(self, our_current):
-        progress = (float(our_current)/float(self.total_files))
+    def update_progress(self, num_files):
+        progress = (float(num_files)/float(self.total_files))
         self.installer.queue_event('percent', progress)
+        self.installer.queue_event('progress-info', '%d/%d ( %.2f %% )' % (num_files, self.total_files, (progress*100)))
 
     def run(self):
         while self.process.poll() is None:
@@ -109,13 +110,11 @@ class FileCopyThread(Thread):
             except Empty:
                 continue
             else:
-                #self.update_label(line.strip())
-                #self.our_current += 1
-                #self.update_progress(self.our_current)
-                if 'to-check' in line.decode():
+                m = re.findall(r'xfer#(\d+),', line.decode())
+                if m:
                     # we've got a percentage update
-                    self.our_current += 1
-                    self.update_progress(self.our_current)
+                    num_files_copied = int(m[0])
+                    self.update_progress(num_files_copied)
                 else:
                     # we've got a filename!
                     self.update_label(line.decode().strip())
@@ -377,6 +376,8 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_fatal_event(e.value)
             return False
         except:
+            from traceback import print_exc
+            print_exc()
             # unknown error
             self.running = False
             self.error = True
