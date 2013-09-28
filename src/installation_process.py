@@ -58,6 +58,7 @@ import math
 ## BEGIN: RSYNC-based file copy support
 #CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
 CMD = 'rsync -ar --progress %(source)s %(dest)s'
+PERCENTAGE_FORMAT = '%d/%d ( %.2f %% )'
 from threading import Thread
 from queue import Queue, Empty
 import re
@@ -73,7 +74,7 @@ def enqueue_output(out, queue):
 # Update the value of the progress bar so that we get
 # some movement
 class FileCopyThread(Thread):
-    def __init__(self, installer, current_file, total_files, source, dest):
+    def __init__(self, installer, current_file, total_files, source, dest, offset=0):
         self.our_current = current_file
         self.process = subprocess.Popen(
             (CMD % {
@@ -86,6 +87,9 @@ class FileCopyThread(Thread):
         )
         self.installer = installer
         self.total_files = total_files
+        # in order for the progressbar to pick up where the last rsync ended,
+        # we need to set the offset (because the total number of files is calculated before) 
+        self.offset = offset
         t = Thread(target=enqueue_output, args=(self.process.stdout, q))
         t.daemon = True # thread dies with the program
         t.start()
@@ -101,23 +105,39 @@ class FileCopyThread(Thread):
     def update_progress(self, num_files):
         progress = (float(num_files)/float(self.total_files))
         self.installer.queue_event('percent', progress)
-        self.installer.queue_event('progress-info', '%d/%d ( %.2f %% )' % (num_files, self.total_files, (progress*100)))
+        self.installer.queue_event('progress-info', PERCENTAGE_FORMAT % (num_files, self.total_files, (progress*100)))
 
     def run(self):
+        num_files_copied = 0
         while self.process.poll() is None:
             try:
                 line = q.get(timeout=3)
             except Empty:
                 continue
             else:
-                m = re.findall(r'xfer#(\d+),', line.decode())
+                # small comment on this regexp.
+                # rsync outputs three parameters in the progress.
+                # xfer#x => i try to interpret it as 'file copy try no. x'
+                # to-check=x/y, where:
+                #  - x = number of files yet to be checked
+                #  - y = currently calculated total number of files.
+                # but if you're copying directory with some links in it, the xfer# might not be a
+                # reliable counter. ( for one increase of xfer, many files may be created)
+                # In case of manjaro, we pre-compute the total number of files.
+                # therefore we can easily subtract x from y in order to get real files copied / processed count.
+                m = re.findall(r'xfer#(\d+), to-check=(\d+)/(\d+)', line.decode())
                 if m:
                     # we've got a percentage update
-                    num_files_copied = int(m[0])
+                    num_files_remaining = int(m[0][1])
+                    num_files_total_local = int(m[0][2])
+                    # adjusting the offset so that progressbar can be continuesly drawn
+                    num_files_copied = num_files_total_local - num_files_remaining + self.offset
                     self.update_progress(num_files_copied)
                 else:
                     # we've got a filename!
                     self.update_label(line.decode().strip())
+
+        self.offset = num_files_copied
 
 ## END: RSYNC-based file copy support
 
@@ -469,9 +489,15 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('info', "Extracting desktop-image..")
             our_current = int(output1)
             #t = FileCopyThread(self, our_total, self.media_desktop, DEST)
-            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST)
+            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST, t.offset)
             t.start()
             t.join()
+            # this is purely out of aesthetic reasons. Because we're reading of the queue
+            # once 3 seconds, good chances are we're going to miss the 100% file copy.
+            # therefore it would be nice to show 100% to the user so he doesn't panick that
+            # not all of the files copied.
+            self.queue_event('percent', 1.00)
+            self.queue_event('progress-info', PERCENTAGE_FORMAT % (our_total, our_total, 100))
             for dirtime in directory_times:
                 (directory, atime, mtime) = dirtime
                 try:
