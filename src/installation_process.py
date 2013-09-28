@@ -1078,9 +1078,10 @@ class InstallationProcess(multiprocessing.Process):
         # remove .manjaro-chroot
         #os.system("rm /install/.manjaro-chroot")
         
-        # remove live-initramfs (or w/e)
-        self.queue_event('info', _("Removing live configuration (packages)"))
-        #self.do_run_in_chroot("pacman -R --noconfirm live-installer")
+        # remove thus
+        if os.path.exists("%s/usr/bin/thus" % self.dest_dir):
+            self.queue_event('info', _("Removing live configuration (packages)"))
+            self.do_run_in_chroot("pacman -R --noconfirm thus")
 
         # remove virtualbox driver on real hardware
         p1 = subprocess.Popen(["mhwd"], stdout=subprocess.PIPE)
