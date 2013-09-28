@@ -273,11 +273,20 @@ class InstallationProcess(multiprocessing.Process):
             self.auto_device = self.mount_devices["/"].replace("3","")
             thus_dir = self.settings.get("THUS_DIR")
             script_path = os.path.join(thus_dir, "scripts", _autopartition_script)
+
+            use_lvm = ""
+            if self.settings.get("use_lvm"):
+                use_lvm = "--lvm"
+
+            use_luks = ""
+            if self.settings.get("use_luks"):
+                use_luks = "--luks"
+
             try:
                 self.queue_event('debug', "Automatic device: %s" % self.auto_device)
                 self.queue_event('debug', "Running automatic script...")
                 self.queue_event('pulse') 
-                subprocess.check_call(["/usr/bin/bash", script_path, self.auto_device])
+                subprocess.check_call(["/usr/bin/bash", script_path, self.auto_device, use_lvm, use_luks])
                 self.queue_event('stop_pulse') 
                 self.queue_event('debug', "Automatic script done.")
             except subprocess.FileNotFoundError as e:
@@ -398,8 +407,6 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_fatal_event(e.value)
             return False
         except:
-            from traceback import print_exc
-            print_exc()
             # unknown error
             self.running = False
             self.error = True

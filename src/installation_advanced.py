@@ -1254,7 +1254,7 @@ class InstallationAdvanced(Gtk.Box):
                     else:
                         fmt = 'No'
                     # Advanced method formats root by default
-                    # https://github.com/Manjaro/Thus/issues/8
+                    # https://github.com/Antergos/Cnchi/issues/8
                     if mnt == "/":
                         fmt = 'Yes'
                     if is_new:
@@ -1316,7 +1316,7 @@ class InstallationAdvanced(Gtk.Box):
                             fmt = 'No'
                             
                         # Advanced method formats root by default
-                        # https://github.com/Manjaro/Thus/issues/8
+                        # https://github.com/Antergos/Cnchi/issues/8
                         if mnt == "/":
                             fmt = 'Yes'
                             

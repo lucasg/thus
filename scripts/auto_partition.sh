@@ -1,10 +1,16 @@
 #!/bin/bash
 
+# This script is called by Thus when an automatic installation is selected
+#
+# Usage: auto_partition.sh device
+# Optional parameters: --lvm --luks
+
 unset LANG
 ANSWER="/tmp/.setup"
 
-# use the first VT not dedicated to a running console
-LOG="/dev/tty7"
+## use the first VT not dedicated to a running console
+#LOG="/dev/tty7"
+LOG="/tmp/thus-auto_partition.log"
 
 # don't use /mnt because it's intended to mount other things there!
 DESTDIR="/install"
@@ -13,6 +19,19 @@ _BLKID="blkid -c /dev/null"
 # destination of blockdevices in /sys
 block="/sys/block"
 
+OPTIONS="$@"
+USE_LVM="0"
+USE_LUKS="0"
+
+for f in $OPTIONS; do
+    if [ "${f}" == "--lvm" ]; then
+        USE_LVM="1"
+    fi
+
+    if [ "${f}" == "--luks" ]; then
+        USE_LUKS="1"
+    fi
+done
 
 
 getfsuuid()
@@ -339,6 +358,8 @@ autoprepare() {
         ROOT_SIZE="${DISC_SIZE}"
         [[ "${DISC_SIZE}" -lt "7500" ]] && ROOT_SIZE="${DISC_SIZE}"
         ROOT_PART_SIZE="${DISC_SIZE}"
+
+        LVM_PV_PART_SIZE=$((${SWAP_PART_SIZE}+${ROOT_PART_SIZE}))
         
         DEFAULTFS=1
     done
@@ -379,8 +400,14 @@ autoprepare() {
         sgdisk --set-alignment="2048" --new=1:1M:+${GPT_BIOS_GRUB_PART_SIZE}M --typecode=1:EF02 --change-name=1:BIOS_GRUB ${DEVICE} > ${LOG}
         sgdisk --set-alignment="2048" --new=2:0:+${UEFISYS_PART_SIZE}M --typecode=2:EF00 --change-name=2:UEFI_SYSTEM ${DEVICE} > ${LOG}
         sgdisk --set-alignment="2048" --new=3:0:+${BOOT_PART_SIZE}M --typecode=3:8300 --attributes=3:set:2 --change-name=3:MANJARO_BOOT ${DEVICE} > ${LOG}
-        sgdisk --set-alignment="2048" --new=4:0:+${SWAP_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_SWAP ${DEVICE} > ${LOG}
-        sgdisk --set-alignment="2048" --new=5:0:+${ROOT_PART_SIZE}M --typecode=5:8300 --change-name=5:MANJARO_ROOT ${DEVICE} > ${LOG}
+
+        if [ "$USE_LVM" == "1" ]; then
+            sgdisk --set-alignment="2048" --new=4:0:+${LVM_PV_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_LVM ${DEVICE} > ${LOG}
+        else
+            sgdisk --set-alignment="2048" --new=4:0:+${SWAP_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_SWAP ${DEVICE} > ${LOG}
+            sgdisk --set-alignment="2048" --new=5:0:+${ROOT_PART_SIZE}M --typecode=5:8300 --change-name=5:MANJARO_ROOT ${DEVICE} > ${LOG}        
+        fi
+        
         sgdisk --print ${DEVICE} > ${LOG}
     else
         PART_ROOT="${DEVICE}3"
@@ -394,8 +421,13 @@ autoprepare() {
         parted -a optimal -s ${DEVICE} mktable msdos >/dev/null 2>&1
         parted -a optimal -s ${DEVICE} mkpart primary 1 $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) >${LOG}
         parted -a optimal -s ${DEVICE} set 1 boot on >${LOG}
-        parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) >${LOG}
-        parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) 100% >${LOG}
+        
+        if [ "$USE_LVM" == "1" ]; then
+            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${LVM_PV_PART_SIZE})) >${LOG}
+        else
+            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) >${LOG}
+            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) 100% >${LOG}
+        fi
     fi
     partprobe ${DISC}
     if [[ $? -gt 0 ]]; then
@@ -407,35 +439,50 @@ autoprepare() {
     ## wait until /dev initialized correct devices
     udevadm settle
 
-    ## FSSPECS - default filesystem specs (the + is bootable flag)
-    ## <partnum>:<mountpoint>:<partsize>:<fstype>[:<fsoptions>][:+]:labelname
-    ## The partitions in FSSPECS list should be listed in the "mountpoint" order.
-    ## Make sure the "root" partition is defined first in the FSSPECS list
-    FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+    if [ "$USE_LVM" == "1" ]; then
+        # /dev/sdX1 is /boot
+        # /dev/sdX2 is the PV
+        pvcreate ${DEVICE}2
+        vgcreate -v ManjaroVG ${DEVICE}2
+        lvcreate -n ManjaroRoot -L ${ROOT_PART_SIZE} ManjaroVG
+        lvcreate -n ManjaroSwap -L ${SWAP_PART_SIZE} ManjaroVG
+        
+        # TODO: mkfs on ManjaroRoot and ManjaroSwap
+        #/dev/ManjaroVG/ManjaroRoot
+        _mkfs yes /dev/ManjaroVG/ManjaroRoot ext4 "${DESTDIR}" / ManjaroRoot || return 1
+        _mkfs yes /dev/ManjaroVG/ManjaroSwap swap || return 1
+    else
+        
+        ## FSSPECS - default filesystem specs (the + is bootable flag)
+        ## <partnum>:<mountpoint>:<partsize>:<fstype>[:<fsoptions>][:+]:labelname
+        ## The partitions in FSSPECS list should be listed in the "mountpoint" order.
+        ## Make sure the "root" partition is defined first in the FSSPECS list
+        FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
 
-    if [[ "${GUIDPARAMETER}" == "yes" ]]; then
-        FSSPECS="5:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+        if [[ "${GUIDPARAMETER}" == "yes" ]]; then
+            FSSPECS="5:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+        fi
+
+        ## make and mount filesystems
+        for fsspec in ${FSSPECS}; do
+            part="$(echo ${fsspec} | tr -d ' ' | cut -f1 -d:)"
+            mountpoint="$(echo ${fsspec} | tr -d ' ' | cut -f2 -d:)"
+            fstype="$(echo ${fsspec} | tr -d ' ' | cut -f4 -d:)"
+            fsoptions="$(echo ${fsspec} | tr -d ' ' | cut -f5 -d:)"
+            [[ "${fsoptions}" == "" ]] && fsoptions="NONE"
+            labelname="$(echo ${fsspec} | tr -d ' ' | cut -f7 -d:)"
+            btrfsdevices="${DEVICE}${part}"
+            btrfsssd="NONE"
+            btrfscompress="NONE"
+            btrfssubvolume="NONE"
+            btrfslevel="NONE"
+            dosubvolume="no"
+            # if echo "${mountpoint}" | tr -d ' ' | grep '^/$' 2>&1 >/dev/null; then
+            # if [[ "$(echo ${mountpoint} | tr -d ' ' | grep '^/$' | wc -l)" -eq 0 ]]; then
+            _mkfs yes "${DEVICE}${part}" "${fstype}" "${DESTDIR}" "${mountpoint}" "${labelname}" "${fsoptions}" "${btrfsdevices}" "${btrfssubvolume}" "${btrfslevel}" "${dosubvolume}" "${btrfssd}" "${btrfscompress}" || return 1
+            # fi
+        done
     fi
-
-    ## make and mount filesystems
-    for fsspec in ${FSSPECS}; do
-        part="$(echo ${fsspec} | tr -d ' ' | cut -f1 -d:)"
-        mountpoint="$(echo ${fsspec} | tr -d ' ' | cut -f2 -d:)"
-        fstype="$(echo ${fsspec} | tr -d ' ' | cut -f4 -d:)"
-        fsoptions="$(echo ${fsspec} | tr -d ' ' | cut -f5 -d:)"
-        [[ "${fsoptions}" == "" ]] && fsoptions="NONE"
-        labelname="$(echo ${fsspec} | tr -d ' ' | cut -f7 -d:)"
-        btrfsdevices="${DEVICE}${part}"
-        btrfsssd="NONE"
-        btrfscompress="NONE"
-        btrfssubvolume="NONE"
-        btrfslevel="NONE"
-        dosubvolume="no"
-        # if echo "${mountpoint}" | tr -d ' ' | grep '^/$' 2>&1 >/dev/null; then
-        # if [[ "$(echo ${mountpoint} | tr -d ' ' | grep '^/$' | wc -l)" -eq 0 ]]; then
-        _mkfs yes "${DEVICE}${part}" "${fstype}" "${DESTDIR}" "${mountpoint}" "${labelname}" "${fsoptions}" "${btrfsdevices}" "${btrfssubvolume}" "${btrfslevel}" "${dosubvolume}" "${btrfssd}" "${btrfscompress}" || return 1
-        # fi
-    done
 
     S_MKFSAUTO=1
 }
