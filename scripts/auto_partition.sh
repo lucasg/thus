@@ -12,6 +12,8 @@ ANSWER="/tmp/.setup"
 #LOG="/dev/tty7"
 LOG="/tmp/thus-auto_partition.log"
 
+echo "Thus auto partition log" > ${LOG}
+
 # don't use /mnt because it's intended to mount other things there!
 DESTDIR="/install"
 EDITOR=""
@@ -68,7 +70,7 @@ _stopluks()
         echo "Removing luks encrypted devices ..."
         for i in ${LUKSDEVICE}; do
             LUKS_REAL_DEVICE="$(echo $(cryptsetup status ${i} | grep device: | sed -e 's#device:##g'))"
-            cryptsetup remove ${i} > ${LOG}
+            cryptsetup remove ${i} >> ${LOG}
             # delete header from device
             dd if=/dev/zero of=${LUKS_REAL_DEVICE} bs=512 count=2048 >/dev/null 2>&1
         done
@@ -100,11 +102,11 @@ _stopmd()
         if [[ "${DISABLEMD}" = "1" ]]; then
             echo "Disabling all software raid devices..."
             for i in $(cat /proc/mdstat 2>/dev/null | grep ^md | sed -e 's# :.*##g'); do
-                mdadm --manage --stop /dev/${i} > ${LOG}
+                mdadm --manage --stop /dev/${i} >> ${LOG}
             done
             echo "Cleaning superblocks of all software raid devices..."
             for i in $(${_BLKID} | grep "TYPE=\"linux_raid_member\"" | sed -e 's#:.*##g'); do
-                mdadm --zero-superblock ${i} > ${LOG}
+                mdadm --zero-superblock ${i} >> ${LOG}
             done
         fi
     fi
@@ -114,7 +116,7 @@ _stopmd()
         if [[ "${DISABLEMDSB}" = "1" ]]; then
             DIALOG --infobox "Cleaning superblocks of all software raid devices..." 0 0
             for i in $(${_BLKID} | grep "TYPE=\"linux_raid_member\"" | sed -e 's#:.*##g'); do
-                mdadm --zero-superblock ${i} > ${LOG}
+                mdadm --zero-superblock ${i} >> ${LOG}
             done
         fi
     fi
@@ -137,15 +139,15 @@ _stoplvm()
     if [[ "${DISABLELVM}" = "1" ]]; then
         DIALOG --infobox "Removing logical volumes ..." 0 0
         for i in ${LV_VOLUMES}; do
-            lvremove -f /dev/mapper/${i} 2>/dev/null> ${LOG}
+            lvremove -f /dev/mapper/${i} 2>/dev/null >> ${LOG}
         done
         DIALOG --infobox "Removing logical groups ..." 0 0
         for i in ${LV_GROUPS}; do
-            vgremove -f ${i} 2>/dev/null > ${LOG}
+            vgremove -f ${i} 2>/dev/null >> ${LOG}
         done
         DIALOG --infobox "Removing physical volumes ..." 0 0
         for i in ${LV_PHYSICAL}; do
-            pvremove -f ${i} 2>/dev/null > ${LOG}
+            pvremove -f ${i} 2>/dev/null >> ${LOG}
         done
     fi
 }
@@ -199,13 +201,13 @@ _mkfs() {
     if [[ "${_fstype}" = "swap" ]]; then
         swapoff ${_device} >/dev/null 2>&1
         if [[ "${_domk}" = "yes" ]]; then
-            mkswap -L ${_labelname} ${_device} >${LOG} 2>&1
+            mkswap -L ${_labelname} ${_device} >> ${LOG} 2>&1
             if [[ $? != 0 ]]; then
                 echo "Error creating swap: mkswap ${_device}"
                 return 1
             fi
         fi
-        swapon ${_device} >${LOG} 2>&1
+        swapon ${_device} >> ${LOG} 2>&1
         if [[ $? != 0 ]]; then
             echo "Error activating swap: swapon ${_device}"
             return 1
@@ -224,16 +226,16 @@ _mkfs() {
         if [[ "${_domk}" = "yes" ]]; then
             local ret
             case ${_fstype} in
-                xfs)      mkfs.xfs ${_fsoptions} -L ${_labelname} -f ${_device} >${LOG} 2>&1; ret=$? ;;
-                jfs)      yes | mkfs.jfs ${_fsoptions} -L ${_labelname} ${_device} >${LOG} 2>&1; ret=$? ;;
-                reiserfs) yes | mkreiserfs ${_fsoptions} -l ${_labelname} ${_device} >${LOG} 2>&1; ret=$? ;;
-                ext2)     mkfs.ext2 -L ${_fsoptions} ${_labelname} ${_device} >${LOG} 2>&1; ret=$? ;;
-                ext3)     mke2fs ${_fsoptions} -L ${_labelname} -t ext3 ${_device} >${LOG} 2>&1; ret=$? ;;
-                ext4)     mke2fs ${_fsoptions} -L ${_labelname} -t ext4 ${_device} >${LOG} 2>&1; ret=$? ;;
-                btrfs)    mkfs.btrfs ${_fsoptions} -L ${_labelname} ${_btrfsdevices} >${LOG} 2>&1; ret=$? ;;
-                nilfs2)   mkfs.nilfs2 ${_fsoptions} -L ${_labelname} ${_device} >${LOG} 2>&1; ret=$? ;;
-                ntfs-3g)  mkfs.ntfs ${_fsoptions} -L ${_labelname} ${_device} >${LOG} 2>&1; ret=$? ;;
-                vfat)     mkfs.vfat ${_fsoptions} -n ${_labelname} ${_device} >${LOG} 2>&1; ret=$? ;;
+                xfs)      mkfs.xfs ${_fsoptions} -L ${_labelname} -f ${_device} >>${LOG} 2>&1; ret=$? ;;
+                jfs)      yes | mkfs.jfs ${_fsoptions} -L ${_labelname} ${_device} >>${LOG} 2>&1; ret=$? ;;
+                reiserfs) yes | mkreiserfs ${_fsoptions} -l ${_labelname} ${_device} >>${LOG} 2>&1; ret=$? ;;
+                ext2)     mkfs.ext2 -L ${_fsoptions} ${_labelname} ${_device} >>${LOG} 2>&1; ret=$? ;;
+                ext3)     mke2fs ${_fsoptions} -L ${_labelname} -t ext3 ${_device} >>${LOG} 2>&1; ret=$? ;;
+                ext4)     mke2fs ${_fsoptions} -L ${_labelname} -t ext4 ${_device} >>${LOG} 2>&1; ret=$? ;;
+                btrfs)    mkfs.btrfs ${_fsoptions} -L ${_labelname} ${_btrfsdevices} >>${LOG} 2>&1; ret=$? ;;
+                nilfs2)   mkfs.nilfs2 ${_fsoptions} -L ${_labelname} ${_device} >>${LOG} 2>&1; ret=$? ;;
+                ntfs-3g)  mkfs.ntfs ${_fsoptions} -L ${_labelname} ${_device} >>${LOG} 2>&1; ret=$? ;;
+                vfat)     mkfs.vfat ${_fsoptions} -n ${_labelname} ${_device} >>${LOG} 2>&1; ret=$? ;;
                 # don't handle anything else here, we will error later
             esac
             if [[ ${ret} != 0 ]]; then
@@ -247,7 +249,7 @@ _mkfs() {
         # create our mount directory
         mkdir -p ${_dest}${_mountpoint}
       
-        mount -t ${_fstype} ${_device} ${_dest}${_mountpoint} >${LOG} 2>&1
+        mount -t ${_fstype} ${_device} ${_dest}${_mountpoint} >>${LOG} 2>&1
 
         if [[ $? != 0 ]]; then
             echo "Error mounting ${_dest}${_mountpoint}"
@@ -397,18 +399,18 @@ autoprepare() {
         # create fresh GPT
         sgdisk --clear ${DEVICE} &>/dev/null
         # create actual partitions
-        sgdisk --set-alignment="2048" --new=1:1M:+${GPT_BIOS_GRUB_PART_SIZE}M --typecode=1:EF02 --change-name=1:BIOS_GRUB ${DEVICE} > ${LOG}
-        sgdisk --set-alignment="2048" --new=2:0:+${UEFISYS_PART_SIZE}M --typecode=2:EF00 --change-name=2:UEFI_SYSTEM ${DEVICE} > ${LOG}
-        sgdisk --set-alignment="2048" --new=3:0:+${BOOT_PART_SIZE}M --typecode=3:8300 --attributes=3:set:2 --change-name=3:MANJARO_BOOT ${DEVICE} > ${LOG}
+        sgdisk --set-alignment="2048" --new=1:1M:+${GPT_BIOS_GRUB_PART_SIZE}M --typecode=1:EF02 --change-name=1:BIOS_GRUB ${DEVICE} >> ${LOG}
+        sgdisk --set-alignment="2048" --new=2:0:+${UEFISYS_PART_SIZE}M --typecode=2:EF00 --change-name=2:UEFI_SYSTEM ${DEVICE} >> ${LOG}
+        sgdisk --set-alignment="2048" --new=3:0:+${BOOT_PART_SIZE}M --typecode=3:8300 --attributes=3:set:2 --change-name=3:MANJARO_BOOT ${DEVICE} >> ${LOG}
 
         if [ "$USE_LVM" == "1" ]; then
-            sgdisk --set-alignment="2048" --new=4:0:+${LVM_PV_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_LVM ${DEVICE} > ${LOG}
+            sgdisk --set-alignment="2048" --new=4:0:+${LVM_PV_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_LVM ${DEVICE} >> ${LOG}
         else
-            sgdisk --set-alignment="2048" --new=4:0:+${SWAP_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_SWAP ${DEVICE} > ${LOG}
-            sgdisk --set-alignment="2048" --new=5:0:+${ROOT_PART_SIZE}M --typecode=5:8300 --change-name=5:MANJARO_ROOT ${DEVICE} > ${LOG}        
+            sgdisk --set-alignment="2048" --new=4:0:+${SWAP_PART_SIZE}M --typecode=4:8200 --change-name=4:MANJARO_SWAP ${DEVICE} >> ${LOG}
+            sgdisk --set-alignment="2048" --new=5:0:+${ROOT_PART_SIZE}M --typecode=5:8300 --change-name=5:MANJARO_ROOT ${DEVICE} >> ${LOG}        
         fi
         
-        sgdisk --print ${DEVICE} > ${LOG}
+        sgdisk --print ${DEVICE} >> ${LOG}
     else
         PART_ROOT="${DEVICE}3"
         # start at sector 1 for 4k drive compatibility and correct alignment
@@ -419,14 +421,14 @@ autoprepare() {
         wipefs -a ${DEVICE} &>/dev/null
         # create DOS MBR with parted
         parted -a optimal -s ${DEVICE} mktable msdos >/dev/null 2>&1
-        parted -a optimal -s ${DEVICE} mkpart primary 1 $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) >${LOG}
-        parted -a optimal -s ${DEVICE} set 1 boot on >${LOG}
+        parted -a optimal -s ${DEVICE} mkpart primary 1 $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) >>${LOG}
+        parted -a optimal -s ${DEVICE} set 1 boot on >>${LOG}
         
         if [ "$USE_LVM" == "1" ]; then
-            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${LVM_PV_PART_SIZE})) >${LOG}
+            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${LVM_PV_PART_SIZE})) >>${LOG}
         else
-            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) >${LOG}
-            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) 100% >${LOG}
+            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) >>${LOG}
+            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) 100% >>${LOG}
         fi
     fi
     partprobe ${DISC}
@@ -445,12 +447,15 @@ autoprepare() {
         pvcreate ${DEVICE}2
         vgcreate -v ManjaroVG ${DEVICE}2
         lvcreate -n ManjaroRoot -L ${ROOT_PART_SIZE} ManjaroVG
-        lvcreate -n ManjaroSwap -L ${SWAP_PART_SIZE} ManjaroVG
+        
+        # Use the remainig space for our swap volume
+        #lvcreate -n ManjaroSwap -L ${SWAP_PART_SIZE} ManjaroVG
+        lvcreate -n ManjaroSwap -l 100%FREE ManjaroVG
         
         # TODO: mkfs on ManjaroRoot and ManjaroSwap
         #/dev/ManjaroVG/ManjaroRoot
         _mkfs yes /dev/ManjaroVG/ManjaroRoot ext4 "${DESTDIR}" / ManjaroRoot || return 1
-        _mkfs yes /dev/ManjaroVG/ManjaroSwap swap || return 1
+        _mkfs yes /dev/ManjaroVG/ManjaroSwap swap "${DESTDIR}" "" ManjaroSwap || return 1
     else
         
         ## FSSPECS - default filesystem specs (the + is bootable flag)
@@ -460,7 +465,7 @@ autoprepare() {
         FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
 
         if [[ "${GUIDPARAMETER}" == "yes" ]]; then
-            FSSPECS="5:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+            FSSPECS="5:/:${ROOT_PART_SIZE} :${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
         fi
 
         ## make and mount filesystems
