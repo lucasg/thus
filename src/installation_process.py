@@ -53,7 +53,9 @@ import info
 from configobj import ConfigObj
 import stat
 import math
-#import commands
+
+NM = 'org.freedesktop.NetworkManager'
+NM_STATE_CONNECTED_GLOBAL = 70
 
 ## BEGIN: RSYNC-based file copy support
 #CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
@@ -202,12 +204,12 @@ class InstallationProcess(multiprocessing.Process):
         import dbus
         try:
             bus = dbus.SystemBus()
-            manager = bus.get_object(misc.NM, '/org/freedesktop/NetworkManager')
-            state = misc.get_prop(manager, misc.NM, 'state')
+            manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
+            state = get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
             logging.warning(_("In installation-process, can't get network status"))
             return False
-        return state == misc.NM_STATE_CONNECTED_GLOBAL
+        return state == NM_STATE_CONNECTED_GLOBAL
     
     def queue_fatal_event(self, txt):
         # Queue the fatal event and exit process
