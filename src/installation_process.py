@@ -54,9 +54,6 @@ from configobj import ConfigObj
 import stat
 import math
 
-NM = 'org.freedesktop.NetworkManager'
-NM_STATE_CONNECTED_GLOBAL = 70
-
 ## BEGIN: RSYNC-based file copy support
 #CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
 CMD = 'rsync -ar --progress %(source)s %(dest)s'
@@ -199,17 +196,6 @@ class InstallationProcess(multiprocessing.Process):
         
         self.running = True
         self.error = False
-
-    def has_connection(self):
-        import dbus
-        try:
-            bus = dbus.SystemBus()
-            manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
-            state = get_prop(manager, NM, 'state')
-        except dbus.exceptions.DBusException:
-            logging.warning(_("In installation-process, can't get network status"))
-            return False
-        return state == NM_STATE_CONNECTED_GLOBAL
     
     def queue_fatal_event(self, txt):
         # Queue the fatal event and exit process
@@ -418,37 +404,6 @@ class InstallationProcess(multiprocessing.Process):
         self.error = False
         return True
 
-    def download_packages(self):
-        conf_file = "/tmp/pacman.conf"
-        cache_dir = "%s/var/cache/pacman/pkg" % self.dest_dir
-        download.DownloadPackages(self.packages, conf_file, cache_dir, self.callback_queue)
-       
-    # Add gnupg pacman files to installed system
-    # Needs testing, but it seems to be the way to do it now
-    # Must be also changed in the CLI Installer
-    def prepare_pacman_keychain(self):
-        # removed / from etc to make path relative...
-        dest_path = os.path.join(self.dest_dir, "etc/pacman.d/gnupg")
-        # use copytree for cp -r
-        try:
-            misc.copytree('/etc/pacman.d/gnupg', dest_path)
-        except (FileExistsError, shutil.Error) as e:
-            # log error but continue anyway
-            logging.exception(e)
-
-    # Configures pacman and syncs db on destination system
-    def prepare_pacman(self):
-        dirs = [ "var/cache/pacman/pkg", "var/lib/pacman" ]
-        
-        for d in dirs:
-            mydir = os.path.join(self.dest_dir, d)
-            if not os.path.exists(mydir):
-                os.makedirs(mydir)
-
-        self.prepare_pacman_keychain()
-        
-        self.pac.do_refresh()
-
     # Copies all files to target
     def install_system(self):
         # mount the media location.
@@ -591,6 +546,7 @@ class InstallationProcess(multiprocessing.Process):
 
     # TODO: Take care of swap partitions
     def auto_fstab(self):
+        self.queue_event('info', _("Create fstab."))
         all_lines = []
         all_lines.append("# /etc/fstab: static file system information.")
         all_lines.append("#")
@@ -841,8 +797,6 @@ class InstallationProcess(multiprocessing.Process):
         # setup systemd services
         # ... check configure_system from arch-setup
 
-        has_internet = self.has_connection()
-
         # Generate the fstab file        
         self.auto_fstab()
         
@@ -854,7 +808,9 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('pulse') 
 
         # enable services      
-        self.enable_services([ self.network_manager, 'cups', 'dcron', 'remote-fs.target' ])
+        self.enable_services([ self.network_manager, 'remote-fs.target' ])
+        if os.path.exists("%s/usr/lib/systemd/system/cups.service"  % self.dest_dir):
+            self.enable_services([ 'cups' ])
 
         # TODO: we never ask the user about this...
         if self.settings.get("use_ntp"):
@@ -1115,8 +1071,6 @@ class InstallationProcess(multiprocessing.Process):
         os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
         self.chroot_mount()
         self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        if has_internet:
-            self.do_run_in_chroot("pacman -Syy")
         self.chroot_umount()
 
         self.queue_event('info', _("Finished configuring package manager."))
