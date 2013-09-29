@@ -1,31 +1,33 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
 # faidoc <faidoc@gmail.com>, 2013
 # mats_bjork007 <mats_bjork007@yahoo.se>, 2013
-# mats_bjork007 <mats_bjork007@yahoo.se>, 2013
+#   <pojk3n@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: Manjaro\n"
-"POT-Creation-Date: 2013-07-29 12:53+CEST\n"
-"PO-Revision-Date: 2013-07-29 11:01+0000\n"
-"Last-Translator: faidoc <faidoc@gmail.com>\n"
-"Language-Team: Swedish (http://www.transifex.com/projects/p/antergos/language/sv/)\n"
+"Project-Id-Version: manjaro-thus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-28 11:22+0200\n"
+"PO-Revision-Date: 2013-09-29 11:39+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/manjaro-thus/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"Generated-By: pygettext.py 1.5\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:103
+#: thus.py:104
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
 msgstr "Installationen måste köras med administratörsrättigheter och kan inte fortsätta utan det."
 
-#: thus.py:109
+#: thus.py:110
+#, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
 "\n"
@@ -34,91 +36,92 @@ msgid ""
 "and run this installer again."
 msgstr "Du kan inte köra två installationer samtidigt.\n\nOm du är säker på att installationen inte redan körs kan du manuellt ta bort filen %s och starta om installationen."
 
-#: thus.py:186
+#: thus.py:210
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Använd Aria2 för att ladda ner paket - EXPERIMENTELLT"
 
-#: thus.py:205
+#: thus.py:228
+#, python-format
 msgid "Using '%s' file as package list"
 msgstr "Använder fil '%s' som paketlista"
 
-#: thus.py:224 src/slides.py:187
+#: thus.py:248 src/slides.py:241
 msgid "Manjaro Installer"
-msgstr "Manjaro installation"
+msgstr ""
 
-#: thus.py:292
+#: thus.py:316
 msgid "Quiting installer..."
 msgstr "Avbryter installationen..."
 
 #: src/bootinfo.py:43 src/bootinfo.py:63 src/bootinfo.py:68 src/bootinfo.py:89
-#: src/installation_alongside.py:211
+#: src/installation_alongside.py:221
 msgid "unknown"
 msgstr "okänt"
 
-#: src/bootloader.py:58
+#: src/bootloader.py:58 ui/bootloader.ui:69
 msgid "What is your boot system type?"
 msgstr "Vad är ditt startsystem?"
 
-#: src/bootloader.py:63
+#: src/bootloader.py:63 ui/bootloader.ui:98
 msgid "BIOS (Common)"
 msgstr "BIOS (gemensam)"
 
-#: src/bootloader.py:67
+#: src/bootloader.py:67 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
 msgstr "x86_64 UEFI"
 
-#: src/bootloader.py:71
+#: src/bootloader.py:71 ui/bootloader.ui:142
 msgid "i386 UEFI"
 msgstr "i386 UEFI"
 
-#: src/bootloader.py:75
+#: src/bootloader.py:75 ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
 msgstr "Välj 'avbryt' om du inte vill installera en starthanterare"
 
-#: src/check.py:71
+#: src/check.py:72
 msgid "Check your computer"
 msgstr "Kontrollera din dator"
 
-#: src/check.py:76
+#: src/check.py:77
 msgid "has at least 3GB available drive space"
 msgstr "har åtminstone 3GB tillgängligt diskutrymme"
 
-#: src/check.py:80
+#: src/check.py:81
 msgid "is plugged in to a power source"
 msgstr "är inkopplad till en kraftkälla"
 
-#: src/check.py:84
+#: src/check.py:85
 msgid "is connected to the Internet"
 msgstr "är ansluten till Internet"
 
-#: src/check.py:88
+#: src/check.py:89
 msgid "For best results, please ensure that this computer:"
 msgstr "För bästa resultat, se till att den här datorn:"
 
-#: src/check.py:93
+#: src/check.py:94
 msgid ""
 "Manjaro uses third-party software to play Flash, MP3 and other media. Some "
 "of this software is propietary. The software is subject to license terms "
 "included with its documentation."
-msgstr "Manjaro använder tredje parts mjulvara för att spela upp Flash, MP3 och andra media. Några av dessa mjukvaror är proprietära. I dokumentationen för mjukvaran ska det följa med licensvillkoren."
+msgstr ""
 
-#: src/check.py:99
+#: src/check.py:100 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "Installera dessa tredje-parts mjukvaror"
 
-#: src/check.py:119
+#: src/check.py:120
 msgid "Can't get network status"
 msgstr "Kan inte kontrollera nätverksstatus"
 
-#: src/check.py:195
+#: src/check.py:197
 msgid "We have Internet connection."
 msgstr "Vi har anslutning till internet."
 
-#: src/check.py:196
+#: src/check.py:198
 msgid "We're connected to a power source."
 msgstr "Vi är ansluten till en kraftkälla."
 
-#: src/check.py:197
+#: src/check.py:199
 msgid "We have enough space in disk."
 msgstr "Vi har tillräckligt med diskutrymme."
 
@@ -181,7 +184,7 @@ msgstr "Razor-qt är en avancerad, lättanvänd och snabb skrivbordsmiljö baser
 msgid ""
 "This will install Manjaro as command-line system, without any desktop at "
 "all. After the installation you can install the desktop you may see fit."
-msgstr "Det här kommer att installera Manjaro som ett terminalbaserat system, utan något skrivbord alls. Efter installationen kan du installera det skrivbord du anser passa."
+msgstr ""
 
 #: src/desktop.py:151
 msgid "Select your desktop"
@@ -192,18 +195,22 @@ msgid "Desktops"
 msgstr "Skrivbord"
 
 #: src/desktop.py:194
+#, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Thus kommer att installera Manjaro med '%s' som skrivbord."
+msgstr ""
 
 #: src/download.py:82
+#, python-format
 msgid "Error creating metalink for package %s"
 msgstr "Fel vid skapande av länk för paket %s"
 
 #: src/download.py:88
+#, python-format
 msgid "Error adding metalink for package %s"
 msgstr "Fel när länken för paketet %s lades till."
 
 #: src/download.py:137
+#, python-format
 msgid "Downloading package '%s'..."
 msgstr "Laddar ner paket '%s'..."
 
@@ -212,6 +219,7 @@ msgid "Can't connect to Aria2. Won't be able to speed up the download."
 msgstr "Kan inte ansluta till Aria2. Kommer inte att kunna öka nedladdningen."
 
 #: src/download.py:232
+#, python-format
 msgid "Unable to create download queue for package %s"
 msgstr "Kan inte skapa kö för nedladdning för paket %s"
 
@@ -223,353 +231,518 @@ msgstr "Kan inte hitta dessa paket:"
 msgid "Warning! Can't resolve these dependencies: "
 msgstr "Varning! Kan inte lösa dessa beroenden:"
 
-#: src/installation_advanced.py:197 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/features.py:100
+msgid "Feature selection"
+msgstr ""
+
+#: src/features.py:105
+msgid "Bluetooth support"
+msgstr ""
+
+#: src/features.py:108 ui/features.ui:55
+msgid "Without Bluetooth support you can't use Bluetooth devices"
+msgstr ""
+
+#: src/features.py:112
+msgid "Printing support (cups)"
+msgstr ""
+
+#: src/features.py:115 ui/features.ui:135
+msgid "This includes printer drivers and manage tools"
+msgstr ""
+
+#: src/features.py:119
+msgid "LibreOffice"
+msgstr ""
+
+#: src/features.py:122
+msgid "Office suite (word processor, spreadsheet, ...)"
+msgstr ""
+
+#: src/features.py:126
+msgid "Visual effects"
+msgstr ""
+
+#: src/features.py:129 ui/features.ui:295
+msgid "Visual effects such as transparencies, shadows, etc."
+msgstr ""
+
+#: src/features.py:133
+msgid "Uncomplicated firewall"
+msgstr ""
+
+#: src/features.py:136
+msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
+msgstr ""
+
+#: src/features.py:140
+msgid "Propietary packages"
+msgstr ""
+
+#: src/features.py:143 ui/features.ui:455
+msgid "Third-party software to play Flash, MP3 and other media"
+msgstr ""
+
+#: src/installation_advanced.py:198 src/installation_advanced.py:489
+#: src/installation_advanced.py:503
 msgid "free space"
 msgstr "tillgängligt utrymme"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:169
+#: src/installation_advanced.py:267 src/installation_alongside.py:175
 msgid "Device"
 msgstr "Enhet"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:270
 msgid "Type"
 msgstr "Typ"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:273
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:276
 msgid "Label"
 msgstr "Etikett"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1355
+#: src/installation_advanced.py:282 src/installation_advanced.py:1368
 msgid "Format"
 msgstr "Formattera"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:285
 msgid "Size"
 msgstr "Storlek"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:288
 msgid "Used"
 msgstr "Använd"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:291
 msgid "Flags"
 msgstr "Flaggor"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:297
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:471
+#: src/installation_advanced.py:472
 msgid "none"
 msgstr "ingen"
 
-#: src/installation_advanced.py:523
+#: src/installation_advanced.py:524
 msgid "extended"
 msgstr "utökad"
 
-#: src/installation_advanced.py:648 src/installation_advanced.py:888
+#: src/installation_advanced.py:649 src/installation_advanced.py:889
 msgid "Cannot use same mount twice..."
 msgstr "Kan inte använda samma monteringspunkt två gånger..."
 
-#: src/installation_advanced.py:650
+#: src/installation_advanced.py:651
 msgid "Root partition must be formatted..."
 msgstr "Rootpartitionen måste vara formaterad.."
 
-#: src/installation_advanced.py:909
+#: src/installation_advanced.py:910
 msgid "Creating primary partition"
 msgstr "Skapar primär partition"
 
-#: src/installation_advanced.py:920
+#: src/installation_advanced.py:921
 msgid "Creating extended partition"
 msgstr "Skapar utökad partition"
 
-#: src/installation_advanced.py:926
+#: src/installation_advanced.py:927
 msgid "Creating logical partition"
 msgstr "Skapar logisk partition"
 
-#: src/installation_advanced.py:1013
+#: src/installation_advanced.py:1014
 msgid "Advanced installation mode"
 msgstr "Avancerad installationsmetod"
 
-#: src/installation_advanced.py:1017
+#: src/installation_advanced.py:1018 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
 msgstr "Använd den här enheten för att installera starthanteraren:"
 
-#: src/installation_advanced.py:1027
+#: src/installation_advanced.py:1028 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Ny partionstabell"
 
-#: src/installation_advanced.py:1035
+#: src/installation_advanced.py:1036
 msgid "Change..."
 msgstr "Ändra..."
 
-#: src/installation_advanced.py:1040
+#: src/installation_advanced.py:1041 ui/installation_advanced.ui:96
 msgid "Size:"
 msgstr "Storlek:"
 
-#: src/installation_advanced.py:1044
+#: src/installation_advanced.py:1045 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/installation_advanced.py:1048
+#: src/installation_advanced.py:1049 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Primär"
 
-#: src/installation_advanced.py:1052
+#: src/installation_advanced.py:1053 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Logisk"
 
-#: src/installation_advanced.py:1056
+#: src/installation_advanced.py:1057 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Utökad"
 
-#: src/installation_advanced.py:1060
+#: src/installation_advanced.py:1061 ui/installation_advanced.ui:200
 msgid "Beginning of this space"
 msgstr "Början av detta utrymme"
 
-#: src/installation_advanced.py:1064
+#: src/installation_advanced.py:1065 ui/installation_advanced.ui:218
 msgid "End of this space"
 msgstr "Slutet av detta utrymme"
 
-#: src/installation_advanced.py:1068 src/installation_advanced.py:1085
+#: src/installation_advanced.py:1069 src/installation_advanced.py:1086
+#: ui/installation_advanced.ui:127 ui/installation_advanced.ui:583
 msgid "Use as:"
 msgstr "Använd som:"
 
-#: src/installation_advanced.py:1072 src/installation_advanced.py:1089
+#: src/installation_advanced.py:1073 src/installation_advanced.py:1090
+#: ui/installation_advanced.ui:160 ui/installation_advanced.ui:616
 msgid "Mount point:"
 msgstr "Monteringspunkt"
 
-#: src/installation_advanced.py:1076 src/installation_advanced.py:1093
+#: src/installation_advanced.py:1077 src/installation_advanced.py:1094
+#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:653
 msgid "Label (optional):"
 msgstr "Etikett (valfritt):"
 
-#: src/installation_advanced.py:1080
+#: src/installation_advanced.py:1081 ui/installation_advanced.ui:412
+#: ui/installation_advanced.ui:720
 msgid "Encryption options..."
 msgstr "Krypteringsalternativ..."
 
-#: src/installation_advanced.py:1097
+#: src/installation_advanced.py:1098 ui/installation_advanced.ui:680
 msgid "Format:"
 msgstr "Formattera:"
 
-#: src/installation_advanced.py:1102
+#: src/installation_advanced.py:1103 ui/installation_advanced.ui:486
 msgid "Partition table type:"
 msgstr "Typ av partitionstabell:"
 
-#: src/installation_advanced.py:1107
+#: src/installation_advanced.py:1108
 msgid "Create partition table"
 msgstr "Skapa partitionstabell"
 
-#: src/installation_advanced.py:1110 src/installation_alongside.py:147
-#: src/installation_automatic.py:89
+#: src/installation_advanced.py:1111 src/installation_alongside.py:153
+#: src/installation_automatic.py:95
 msgid "Install now!"
 msgstr "Installera nu!"
 
-#: src/installation_advanced.py:1190
+#: src/installation_advanced.py:1191
+#, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Skapar en ny partitionstabell med typen %s för disk %s"
 
-#: src/installation_advanced.py:1289
+#: src/installation_advanced.py:1290
+#, python-format
+msgid ""
+"%s is mounted as swap.\n"
+"To continue it has to be unmounted.\n"
+"Click Yes to unmount, or No to return\n"
+msgstr ""
+
+#: src/installation_advanced.py:1292
+#, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
 msgstr "%s är monterad i '%s'.\nFör att fortsätta måste den avmonteras.\nKlicka Ja för att avmontera eller Nej för att återgå\n"
 
-#: src/installation_advanced.py:1348
+#: src/installation_advanced.py:1361
+#, python-format
 msgid "Partition %s will be deleted"
 msgstr "Partition %s kommer att tas bort"
 
-#: src/installation_advanced.py:1355
-msgid "Mount"
-msgstr "Montera"
-
-#: src/installation_advanced.py:1355
-msgid "New"
-msgstr "Ny"
-
-#: src/installation_advanced.py:1355
+#: src/installation_advanced.py:1368
 msgid "Partition"
 msgstr "Partition"
 
-#: src/installation_advanced.py:1355
+#: src/installation_advanced.py:1368
+msgid "New"
+msgstr "Ny"
+
+#: src/installation_advanced.py:1368
 msgid "Relabel"
 msgstr "Ändra etikett"
 
-#: src/installation_advanced.py:1376
+#: src/installation_advanced.py:1368
+msgid "Mount"
+msgstr "Montera"
+
+#: src/installation_advanced.py:1389
 msgid "These disks will have partition actions:"
 msgstr "För dessa diskar kommer partitionerna att påverkas:"
 
-#: src/installation_advanced.py:1401
+#: src/installation_advanced.py:1414
+#, python-format
 msgid "Saving changes done in %s"
 msgstr "Sparar ändringar gjorda på %s"
 
-#: src/installation_advanced.py:1416
+#: src/installation_advanced.py:1429
+#, python-format
 msgid "Creating fs of type %s in %s with label %s"
 msgstr "Skapar filsystem av typen %s i %s med etiketten %s"
 
-#: src/installation_advanced.py:1498 src/installation_automatic.py:167
+#: src/installation_advanced.py:1510 src/installation_automatic.py:173
+#, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro kommer att installera starthanterare %s i %s"
+msgstr ""
 
-#: src/installation_alongside.py:112
+#: src/installation_alongside.py:118
+#, python-format
 msgid "Can't load %s css"
 msgstr "Kan inte ladda %s css"
 
-#: src/installation_alongside.py:139
+#: src/installation_alongside.py:145
 msgid "Choose next to which OS you want to install Manjaro"
-msgstr "Välj bredvid vilket operativsystem du vill installera Manjaro"
+msgstr ""
 
-#: src/installation_alongside.py:143
+#: src/installation_alongside.py:149
 msgid "Manjaro alongside another OS"
-msgstr "Manjaro bredvid annat operativsystem"
+msgstr ""
 
-#: src/installation_alongside.py:172
+#: src/installation_alongside.py:178
 msgid "Detected OS"
 msgstr "Funna operativsystem"
 
-#: src/installation_alongside.py:175
+#: src/installation_alongside.py:181
 msgid "Filesystem"
 msgstr "Filsystem"
 
-#: src/installation_alongside.py:215
+#: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
 msgstr "Kan inte skapa lista på partitioner vid installation parallellt."
 
-#: src/installation_ask.py:78
+#: src/installation_alongside.py:265
+msgid "Can't shrink the partition (maybe it's nearly full)"
+msgstr ""
+
+#: src/installation_ask.py:100
 msgid "Installation type"
 msgstr "Typ av installation"
 
-#: src/installation_ask.py:88
+#: src/installation_ask.py:110 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr "Radera disken och installera Manjaro (automatiskt)"
+msgstr ""
 
-#: src/installation_ask.py:91
+#: src/installation_ask.py:113
 msgid "Warning: This will delete all data on your disk"
 msgstr "Varning: Det här kommer att ta bort all data på din disk"
 
-#: src/installation_ask.py:98
-msgid "Install this OS alongside the other OSes"
-msgstr "Installera det här operativsystemet parallellt med de andra systemen."
+#: src/installation_ask.py:120
+#, python-format
+msgid "Install Manjaro alongside %s"
+msgstr ""
 
-#: src/installation_ask.py:103
+#: src/installation_ask.py:123
 msgid "Install this OS alongside the other OSes you have already installed."
 msgstr "Installera det här operativsystemet parallellt med de andra systemen du redan har installerat."
 
-#: src/installation_ask.py:111
+#: src/installation_ask.py:129
 msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr "Hantera dina partitioner där du vill installera Manjaro (avancerat)"
+msgstr ""
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:132
 msgid "Create/delete partitions, and also choose additional mount points."
 msgstr "Skapa/ta bort partitioner och även välja ytterligare montagepunkter."
 
-#: src/installation_automatic.py:72
+#: src/installation_ask.py:152
+msgid "Manjaro installation will be encrypted"
+msgstr ""
+
+#: src/installation_ask.py:155
+msgid "Manjaro will be installed using a LVM setup"
+msgstr ""
+
+#: src/installation_automatic.py:78
 msgid "Automatic installation mode"
 msgstr "Automatiskt läge av installation"
 
-#: src/installation_automatic.py:76
+#: src/installation_automatic.py:82 ui/installation_automatic.ui:66
 msgid "Select drive:"
 msgstr "Välj enhet:"
 
-#: src/installation_automatic.py:80
+#: src/installation_automatic.py:86
 msgid ""
 "WARNING! This installation mode will overwrite everything in your drive!"
 msgstr "VARNING! Den här installationsmetoden kommer att skriva över allt på din disk!"
 
-#: src/installation_automatic.py:85
+#: src/installation_automatic.py:91
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr "Vänligen välj den hårddisk där du vill installera Manjaro\noch tryck på knappen nedan för att starta."
+msgstr ""
 
-#: src/installation_automatic.py:132
+#: src/installation_automatic.py:138
+#, python-format
 msgid "Automatic install using %s device"
 msgstr "Automatisk installation använder enhet %s"
 
-#: src/installation_automatic.py:148
+#: src/installation_automatic.py:154
+#, python-format
 msgid "Manjaro will use %s as installation device"
-msgstr "Manjaro kommer att installeras på enhet %s"
+msgstr ""
 
-#: src/installation_process.py:83
+#: src/installation_process.py:105
+#, python-format
+msgid "Copying '/%s'"
+msgstr ""
+
+#: src/installation_process.py:185
+#, python-format
 msgid "Installing using the '%s' method"
 msgstr "Använder '%s' som metod för installation"
 
-#: src/installation_process.py:145
+#: src/installation_process.py:210
+msgid "In installation-process, can't get network status"
+msgstr ""
+
+#: src/installation_process.py:293
 msgid "Can't execute the auto partition script"
 msgstr "Kan inte köra skriptet för automatisk partitionering"
 
-#: src/installation_process.py:191 src/installation_process.py:215
+#: src/installation_process.py:334 src/installation_process.py:358
+#, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Monterar partition %s i katalogen %s"
 
-#: src/installation_process.py:197
+#: src/installation_process.py:340
+#, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Monterar partition %s i %s startkatalog"
 
-#: src/installation_process.py:201
+#: src/installation_process.py:344
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kund inte montera root och boot partitionerna"
 
-#: src/installation_process.py:220
+#: src/installation_process.py:363
+#, python-format
 msgid "Can't mount %s in %s"
 msgstr "Kan inte montera %s i %s"
 
-#: src/installation_process.py:229
+#: src/installation_process.py:385
 msgid "Can't create necessary directories on destination system"
 msgstr "Kan inte skapa nödvändiga kataloger i systemet"
 
-#: src/installation_process.py:379
-msgid "Can't retrieve remote package list, using a local file instead."
-msgstr "Kan inte hämta extern lista på paket, använder lokal fil istället."
+#: src/installation_process.py:513
+#, python-format
+msgid "Restoring meta-information on %s"
+msgstr ""
 
-#: src/installation_process.py:705
+#: src/installation_process.py:662
+#, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installerar GRUB(2) BIOS starthanterare i %s"
 
-#: src/installation_process.py:725 src/installation_process.py:741
-msgid "ERROR installing GRUB(2) BIOS."
-msgstr "FEL vid installation av GRUB(2) BIOS."
-
-#: src/installation_process.py:739
+#: src/installation_process.py:686
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS har installerats utan problem."
 
-#: src/installation_process.py:752
+#: src/installation_process.py:688
+msgid "ERROR installing GRUB(2) BIOS."
+msgstr "FEL vid installation av GRUB(2) BIOS."
+
+#: src/installation_process.py:699
+#, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installerar GRUB(2) UEFI %s starthanterare i %s"
 
-#: src/installation_process.py:775 src/installation_process.py:793
+#: src/installation_process.py:722 src/installation_process.py:740
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "Fel vid installation av GRUB(2) UEFI."
 
-#: src/installation_process.py:863
+#: src/installation_process.py:762
+#, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Fel vid skapande av lösenordskryptering för användare %s"
 
-#: src/installation_process.py:869
+#: src/installation_process.py:768
+#, python-format
 msgid "Error changing password for user %s"
 msgstr "Fel när lösenordet ändrades för användare %s"
 
-#: src/installation_process.py:918
+#: src/installation_process.py:853
 msgid "Configuring your new system"
 msgstr "Konfigurerar ditt nya system"
 
-#: src/installation_process.py:984
+#: src/installation_process.py:914
 msgid "Generating locales..."
 msgstr "Genererar språk..."
 
-#: src/installation_process.py:999
+#: src/installation_process.py:934
 msgid "Adjusting hardware clock..."
 msgstr "Uppdaterar klockan..."
 
-#: src/installation_process.py:1078
+#: src/installation_process.py:940
+msgid "Configuring hardware.."
+msgstr ""
+
+#: src/installation_process.py:947
+msgid "Setup graphic card.."
+msgstr ""
+
+#: src/installation_process.py:954
+msgid "Can't execute the MHWD script"
+msgstr ""
+
+#: src/installation_process.py:960
+msgid "Configure display manager.."
+msgstr ""
+
+#: src/installation_process.py:1055
+msgid "Configure System.."
+msgstr ""
+
+#: src/installation_process.py:1082
+msgid "Removing live configuration (packages)"
+msgstr ""
+
+#: src/installation_process.py:1098
+msgid "Configuring package manager"
+msgstr ""
+
+#: src/installation_process.py:1121
+msgid "Finished configuring package manager."
+msgstr ""
+
+#: src/installation_process.py:1147
+#, python-format
+msgid "GDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1157
+#, python-format
+msgid "MDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1177
+#, python-format
+msgid "KDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1194
+#, python-format
+msgid "LXDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1210
+#, python-format
+msgid "LightDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1227
 msgid "Running mkinitcpio..."
 msgstr "Kör mkinitcpio..."
+
+#: src/installation_process.py:1230
+msgid "Running mkinitcpio... done"
+msgstr ""
 
 #: src/keymap.py:70
 msgid "Select your keyboard layout"
@@ -584,34 +757,36 @@ msgid "Variants"
 msgstr "Varianter"
 
 #: src/keymap.py:106
+#, python-format
 msgid "keyboard_layout is %s"
 msgstr "Tangentbordslayout är %s"
 
-#: src/language.py:80
+#: src/language.py:81
 msgid "Please choose your language:"
 msgstr "Välj ditt språk:"
 
-#: src/language.py:85
+#: src/language.py:86
 msgid "This is an Alpha version."
 msgstr "Det här är en Alfaversion."
 
-#: src/language.py:86
+#: src/language.py:87
 msgid ""
 "Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Fortfarande under utveckling. Det är känt att det INTE fungerar med LVM, RAID, btrfs delvolymer och andra avancerade inställningar.\nFortsätt med försiktighet då det är möjligt att data försvinner!\n\nOm du hittar några fel, gå till <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr ""
 
-#: src/language.py:94 src/welcome.py:110
+#: src/language.py:95 src/welcome.py:110
 msgid "Welcome to Manjaro!"
-msgstr "Välkommen till Manjaro!"
+msgstr ""
 
-#: src/language.py:112
+#: src/language.py:113
 msgid "Languages"
 msgstr "Språk"
 
-#: src/language.py:132
+#: src/language.py:133
+#, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Kan inte hitta översättning för det %s språket"
 
@@ -619,7 +794,7 @@ msgstr "Kan inte hitta översättning för det %s språket"
 msgid "Select your location"
 msgstr "Välj din plats"
 
-#: src/location.py:76
+#: src/location.py:76 ui/location.ui:21
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
@@ -631,120 +806,50 @@ msgid "Country, territory or area:"
 msgstr "Land, distrikt eller område:"
 
 #: src/location.py:205
+#, python-format
 msgid "locale changed to : %s"
 msgstr "språk ändrad till : %s"
 
 #: src/location.py:207
+#, python-format
 msgid "Can't change to locale '%s'"
 msgstr "Kan inte ändra språk till '%s'"
 
-#: src/pacman/pac.py:243
-msgid "Package %s not found in any repo!"
-msgstr "Paketet %s hittades inte i något förråd!"
-
-#: src/pacman/pac.py:293
-msgid "Checking dependencies..."
-msgstr "Kontrollerar beroenden..."
-
-#: src/pacman/pac.py:295
-msgid "Checking file conflicts..."
-msgstr "Kontrollerar filer i konflikt..."
-
-#: src/pacman/pac.py:297
-msgid "Resolving dependencies..."
-msgstr "Löser beroenden..."
-
-#: src/pacman/pac.py:299
-msgid "Checking inter conflicts..."
-msgstr "Kontrollerar inbördes konflikter"
-
-#: src/pacman/pac.py:304
-msgid "Removing..."
-msgstr "Tar bort..."
-
-#: src/pacman/pac.py:306
-msgid "Upgrading..."
-msgstr "Uppgraderar..."
-
-#: src/pacman/pac.py:308
-msgid "Checking integrity..."
-msgstr "Kontrollerar integritet..."
-
-#: src/pacman/pac.py:311
-msgid "Loading packages files..."
-msgstr "Laddar paketfiler..."
-
-#: src/pacman/pac.py:314
-msgid "Configuring..."
-msgstr "Konfigurerar..."
-
-#: src/pacman/pac.py:315
-msgid "Configuring a package"
-msgstr "Konfigurerar ett paket"
-
-#: src/pacman/pac.py:317
-msgid "Downloading a file"
-msgstr "Laddar ner en fil"
-
-#: src/pacman/pac.py:341
-msgid "ERROR: %s"
-msgstr "FEL: %s"
-
-#: src/pacman/pac.py:348
-msgid "WARNING: %s"
-msgstr "VARNING: %s"
-
-#: src/pacman/pac.py:389
-msgid "Downloading %s..."
-msgstr "Laddar ner %s..."
-
-#: src/pacman/pac.py:398
-msgid "Refreshing %s..."
-msgstr "Aktualiserar %s..."
-
-#: src/pacman/pac.py:407
-msgid "Installing %s (%d/%d)"
-msgstr "Installerar %s (%d/%d)"
-
-#: src/pacman/pac.py:409
-msgid "Checking and loading packages..."
-msgstr "Kontrollerar och laddar paket..."
-
-#: src/rank_mirrors.py:61
+#: src/rank_mirrors.py:62
 msgid "In rankmirrors, can't get network status"
 msgstr "Kan inte kontrollera nätverksstatus för rankmirrors"
 
-#: src/rank_mirrors.py:74
+#: src/rank_mirrors.py:75
 msgid "Couldn't execute auto mirroring selection"
 msgstr "Kunde inte utföra automatiskt val av speglingsserver"
 
 #: src/show_message.py:60
 msgid "Manjaro Installer - Error"
-msgstr "Manjaro installation - Fel"
+msgstr ""
 
 #: src/show_message.py:71
 msgid "Manjaro Installer - Warning"
-msgstr "Manjaro installation - Varning"
+msgstr ""
 
 #: src/show_message.py:82
 msgid "Manjaro Installer - Information"
-msgstr "Manjaro installation - information"
+msgstr ""
 
 #: src/show_message.py:92
 msgid "Manjaro Installer - Question"
-msgstr "Manjaro installation - Fråga"
+msgstr ""
 
-#: src/slides.py:86 src/slides.py:101
+#: src/slides.py:90 src/slides.py:105
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
 msgstr "Installationen är klar!\nVill du starta om ditt system nu?"
 
-#: src/slides.py:94
+#: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr "Installerar Manjaro..."
+msgstr ""
 
-#: src/slides.py:99
+#: src/slides.py:103
 msgid "Please wait..."
 msgstr "Vänta..."
 
@@ -752,15 +857,16 @@ msgstr "Vänta..."
 msgid "Where are you?"
 msgstr "Var är du?"
 
-#: src/timezone.py:120
+#: src/timezone.py:120 ui/timezone.ui:34
 msgid "Zone:"
 msgstr "Zon:"
 
-#: src/timezone.py:124
+#: src/timezone.py:124 ui/timezone.ui:79
 msgid "Region:"
 msgstr "Region:"
 
 #: src/timezone.py:135
+#, python-format
 msgid "location changed to : %s"
 msgstr "plats ändrad till : %s"
 
@@ -768,103 +874,138 @@ msgstr "plats ändrad till : %s"
 msgid "Can't autodetect timezone coordinates"
 msgstr "Kan inte automatiskt känna av koordinaterna för tidszonen"
 
-#: src/timezone.py:281
+#: src/timezone.py:283
 msgid "Stoping timezone threads..."
 msgstr "Stoppar trådar för tidszoner..."
 
-#: src/timezone.py:311 src/timezone.py:362
+#: src/timezone.py:313 src/timezone.py:364
 msgid "In timezone, can't get network status"
 msgstr "Kan inte kontrollera nätverksstatus i tidszon"
 
-#: src/timezone.py:386
+#: src/timezone.py:388
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Kan inte få språkkoden som används för att skapa lista över spegelservrar för pacman"
 
-#: src/timezone.py:407
+#: src/timezone.py:409
+#, python-format
 msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
 msgstr "Laddade ner en specifik lista över speglingsservrar för pacman baserad på landskoden %s"
 
-#: src/timezone.py:409
+#: src/timezone.py:411
 msgid "Couldn't generate mirrorlist for pacman based on country code"
 msgstr "Kunde inte generera lista på speglingsservrar baserad på landskoden"
 
-#: src/user_info.py:90
+#: src/user_info.py:91 ui/user_info.ui:34
 msgid "Your name:"
 msgstr "Ditt namn:"
 
-#: src/user_info.py:94
+#: src/user_info.py:95
 msgid "Your name"
 msgstr "Ditt namn"
 
-#: src/user_info.py:98
+#: src/user_info.py:99 ui/user_info.ui:474
 msgid "Your computer's name:"
 msgstr "Namn på din dator:"
 
-#: src/user_info.py:102
+#: src/user_info.py:103 ui/user_info.ui:48
 msgid "Pick a username:"
 msgstr "Välj ett användarnamn:"
 
-#: src/user_info.py:106
+#: src/user_info.py:107
 msgid "Username"
 msgstr "Användarnamn"
 
-#: src/user_info.py:110
+#: src/user_info.py:111 ui/user_info.ui:63
 msgid "Choose a password:"
 msgstr "Välj ett lösenord:"
 
-#: src/user_info.py:114
+#: src/user_info.py:115
 msgid "Password"
 msgstr "Lösenord"
 
-#: src/user_info.py:118
+#: src/user_info.py:119 ui/user_info.ui:78
 msgid "Confirm your password:"
 msgstr "Bekräfta ditt lösenord:"
 
-#: src/user_info.py:122
+#: src/user_info.py:123
 msgid "Confirm password"
 msgstr "Bekräfta lösenordet"
 
-#: src/user_info.py:126
+#: src/user_info.py:127
 msgid "The name it uses when it talks to other computers."
 msgstr "Namnet den använder för att prata med andra datorer."
 
-#: src/user_info.py:130
+#: src/user_info.py:131
 msgid "You must enter a name"
 msgstr "Du måste ange ett namn"
 
-#: src/user_info.py:134
+#: src/user_info.py:135
 msgid "You must enter a username"
 msgstr "Du måste ange ett användarnamn"
 
-#: src/user_info.py:138
+#: src/user_info.py:139
 msgid "You must enter a password"
 msgstr "Du måste ange ett lösenord"
 
-#: src/user_info.py:142
+#: src/user_info.py:143 ui/user_info.ui:96
 msgid "Log in automatically"
 msgstr "Logga in automatiskt"
 
-#: src/user_info.py:143
+#: src/user_info.py:144 ui/user_info.ui:113
 msgid "Require my password to log in"
 msgstr "Kräv mitt lösenord för att logga in"
 
-#: src/user_info.py:144
+#: src/user_info.py:145 ui/user_info.ui:134
 msgid "Encrypt my home folder"
 msgstr "Kryptera min hemkatalog"
 
-#: src/user_info.py:146
+#: src/user_info.py:147
 msgid "Who are you?"
 msgstr "Vem är du?"
 
-#: src/user_info.py:226
+#: src/user_info.py:173
+msgid ""
+"Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:174
+msgid ""
+"Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:175
+msgid ""
+"Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:176
+msgid ""
+"A simple workaround is to place sparse files in an unencrypted .Public directory\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:177
+msgid ""
+"Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:178
+msgid "Are you sure you want to encrypt your home directory?\n"
+msgstr ""
+
+#: src/user_info.py:236
 msgid "Invalid characters entered"
 msgstr "Ogiltiga tecken angivna"
 
-#: src/user_info.py:230
+#: src/user_info.py:240
 msgid "Username can't contain dots"
 msgstr "Användarnamn får inte innehålla punkter"
 
-#: src/user_info.py:234
+#: src/user_info.py:244
 msgid "Too many characters"
 msgstr "För många tecken"
 
@@ -896,20 +1037,291 @@ msgstr "Lösenorden stämmer inte överens"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr "Prova Manjaro utan att göra ändringar på din hårddisk.\nEller installera den på din PC med två olika alternativa sätt."
+msgstr ""
 
-#: src/welcome.py:101
+#: src/welcome.py:101 ui/welcome.ui:45
 msgid "Try it"
 msgstr "Prova den"
 
-#: src/welcome.py:104
+#: src/welcome.py:104 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "Installation från kommandoraden"
 
-#: src/welcome.py:107
+#: src/welcome.py:107 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "Grafisk installation"
 
 #: src/welcome.py:131
 msgid "Can't load the CLI installer"
 msgstr "Kan inte ladda CLI installeraren"
+
+#: src/pacman/pac.py:243
+#, python-format
+msgid "Package %s not found in any repo!"
+msgstr "Paketet %s hittades inte i något förråd!"
+
+#: src/pacman/pac.py:295
+msgid "Checking dependencies..."
+msgstr "Kontrollerar beroenden..."
+
+#: src/pacman/pac.py:297
+msgid "Checking file conflicts..."
+msgstr "Kontrollerar filer i konflikt..."
+
+#: src/pacman/pac.py:299
+msgid "Resolving dependencies..."
+msgstr "Löser beroenden..."
+
+#: src/pacman/pac.py:301
+msgid "Checking inter conflicts..."
+msgstr "Kontrollerar inbördes konflikter"
+
+#: src/pacman/pac.py:306
+msgid "Removing..."
+msgstr "Tar bort..."
+
+#: src/pacman/pac.py:308
+msgid "Upgrading..."
+msgstr "Uppgraderar..."
+
+#: src/pacman/pac.py:310
+msgid "Checking integrity..."
+msgstr "Kontrollerar integritet..."
+
+#: src/pacman/pac.py:313
+msgid "Loading packages files..."
+msgstr "Laddar paketfiler..."
+
+#: src/pacman/pac.py:316
+msgid "Configuring..."
+msgstr "Konfigurerar..."
+
+#: src/pacman/pac.py:317
+msgid "Configuring a package"
+msgstr "Konfigurerar ett paket"
+
+#: src/pacman/pac.py:319
+msgid "Downloading a file"
+msgstr "Laddar ner en fil"
+
+#: src/pacman/pac.py:343
+#, python-format
+msgid "ERROR: %s"
+msgstr "FEL: %s"
+
+#: src/pacman/pac.py:350
+#, python-format
+msgid "WARNING: %s"
+msgstr "VARNING: %s"
+
+#: src/pacman/pac.py:391
+#, python-format
+msgid "Downloading %s..."
+msgstr "Laddar ner %s..."
+
+#: src/pacman/pac.py:400
+#, python-format
+msgid "Refreshing %s..."
+msgstr "Aktualiserar %s..."
+
+#: src/pacman/pac.py:409
+#, python-format
+msgid "Installing %s (%d/%d)"
+msgstr "Installerar %s (%d/%d)"
+
+#: src/pacman/pac.py:411
+msgid "Checking and loading packages..."
+msgstr "Kontrollerar och laddar paket..."
+
+#: ui/bootloader.ui:7
+msgid "Boot"
+msgstr ""
+
+#: ui/check.ui:28
+msgid ""
+"<span weight=\"bold\" size=\"large\">For best results, please ensure that "
+"this computer:</span>"
+msgstr ""
+
+#: ui/check.ui:106
+msgid ""
+"Antergos uses third-party software to play Flash, MP3 and other media. Some "
+"of this software is propietary. The software is subject to license terms "
+"included with its documentation."
+msgstr "Antergos använder tredje parts mjulvara för att spela upp Flash, MP3 och andra media. Några av dessa mjukvaror är proprietära. I dokumentationen för mjukvaran ska det följa med licensvillkoren."
+
+#: ui/desktop.ui:106 ui/installation_alongside.ui:191
+#: ui/installation_alongside.ui:203 ui/location.ui:36 ui/pac.ui:84
+#: ui/slides.ui:62
+msgid "label"
+msgstr ""
+
+#: ui/features.ui:40
+msgid "<span weight='bold' size='large'>Bluetooth support</span>"
+msgstr ""
+
+#: ui/features.ui:120
+msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
+msgstr ""
+
+#: ui/features.ui:200
+msgid "<span weight='bold' size='large'>LibreOffice</span>"
+msgstr ""
+
+#: ui/features.ui:215
+msgid "Office suite (word processor, spreadsheet, etc.)"
+msgstr ""
+
+#: ui/features.ui:280
+msgid "<span weight='bold' size='large'>Visual effects</span>"
+msgstr ""
+
+#: ui/features.ui:360
+msgid "<span weight='bold' size='large'>Firewall</span>"
+msgstr ""
+
+#: ui/features.ui:375
+msgid "Activates your firewall (closes all ports by default)"
+msgstr ""
+
+#: ui/features.ui:440
+msgid "<span weight='bold' size='large'>Propietary packages</span>"
+msgstr ""
+
+#: ui/installation_advanced.ui:72
+msgid "Create partition"
+msgstr ""
+
+#: ui/installation_advanced.ui:112
+msgid "Location:"
+msgstr ""
+
+#: ui/installation_advanced.ui:272
+msgid "MB"
+msgstr ""
+
+#: ui/installation_advanced.ui:559
+msgid "Edit partition"
+msgstr ""
+
+#: ui/installation_advanced.ui:899
+msgid "LVM..."
+msgstr ""
+
+#: ui/installation_alongside.ui:14
+msgid ""
+"<span size=\"large\">Choose next to which OS you want to install "
+"Manjaro</span>"
+msgstr ""
+
+#: ui/installation_alongside.ui:88
+msgid "Choose the new size"
+msgstr ""
+
+#: ui/installation_alongside.ui:155
+msgid "Other OS"
+msgstr ""
+
+#: ui/installation_alongside.ui:167
+msgid "Antergos"
+msgstr ""
+
+#: ui/installation_ask.ui:57
+msgid ""
+"<span weight=\"light\" size=\"small\">Warning: This will delete all "
+"programs, documents, photos, music and any other files on your disk</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:69
+msgid "Encrypts the new Manjaro installation for security"
+msgstr ""
+
+#: ui/installation_ask.ui:90
+msgid ""
+"<span weight=\"light\" size=\"small\">You will be asked for the encryption "
+"key in the next step</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:101
+msgid "Use LVM with the new Manjaro installation"
+msgstr ""
+
+#: ui/installation_ask.ui:122
+msgid ""
+"<span weight=\"light\" size=\"small\">This will setup LVM allowing to make "
+"snapshots and changing partition sizes in an easy way</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:133
+msgid "Install alongside other OSes"
+msgstr ""
+
+#: ui/installation_ask.ui:159
+msgid ""
+"<span weight=\"light\" size=\"small\">With this option you will be "
+"installing Manjaro alongside one of the other OSes that you have already "
+"installed.</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:171
+msgid "Manage your partitions and choose where to install Manjaro (advanced)"
+msgstr ""
+
+#: ui/installation_ask.ui:197
+msgid ""
+"<span weight=\"light\" size=\"small\">You will be able to create/delete "
+"partitions, choose where to install Manjaro and also choose additional mount"
+" points.</span>"
+msgstr ""
+
+#: ui/installation_automatic.ui:16
+msgid "<b>installation automatic warning goes here</b>"
+msgstr ""
+
+#: ui/installation_automatic.ui:30
+msgid "Explanation goes here"
+msgstr ""
+
+#: ui/language.ui:25
+msgid "<span weight=\"bold\">Please choose your language:</span>"
+msgstr ""
+
+#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
+msgid " "
+msgstr ""
+
+#: ui/pac.ui:43
+msgid "Progress"
+msgstr ""
+
+#: ui/thus.ui:37
+msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
+msgstr ""
+
+#: ui/user_info.ui:188
+msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:247
+msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:348
+msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:425
+msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:447
+msgid ""
+"<span size=\"small\">The name it uses when it talks to other "
+"computers.</span>"
+msgstr ""
+
+#: ui/welcome.ui:151
+msgid ""
+"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
+"If you want to install the system to your PC, use one of the two installer options."
+msgstr ""

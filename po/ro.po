@@ -1,30 +1,36 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ayceman <alexandru.ianu@gmail.com>, 2013
+# Arthur Titeica <arthur@psw.ro>, 2013
+# cantabile <cantabile.desu@gmail.com>, 2011
 # LinuxVideoRO, 2013
-# LinuxVideoRO, 2013
+# Mihai Coman <mihai@m1x.ro>, 2011,2013
+# roentgen <arthur.titeica@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Manjaro\n"
-"POT-Creation-Date: 2013-07-29 12:53+CEST\n"
-"PO-Revision-Date: 2013-07-29 10:57+0000\n"
-"Last-Translator: faidoc <faidoc@gmail.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/antergos/language/ro/)\n"
+"Project-Id-Version: manjaro-thus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-28 11:22+0200\n"
+"PO-Revision-Date: 2013-09-29 15:16+0000\n"
+"Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"Generated-By: pygettext.py 1.5\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: thus.py:103
+#: thus.py:104
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr "Acest program de instalare trebuie rulat cu drepturi administrative, și nu poate continua fară acestea."
+msgstr "Acest program de instalare trebuie rulat cu drepturi administrative, și nu poate continua fără acestea."
 
-#: thus.py:109
+#: thus.py:110
+#, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
 "\n"
@@ -33,91 +39,92 @@ msgid ""
 "and run this installer again."
 msgstr "Nu puteți rula două instanțe ale acestui program de instalare.\n\nDacă sunteți siguri că programul de instalare nu rulează deja\nputeți să ștergeți manual fișierul %s\nși să rulați programul de instalare din nou."
 
-#: thus.py:186
+#: thus.py:210
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Se folosește Aria2 pentru descărcarea pachetelor - EXPERIMENTAL"
 
-#: thus.py:205
+#: thus.py:228
+#, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "Se folosește fișierul '%s' ca listă de pachete"
 
-#: thus.py:224 src/slides.py:187
+#: thus.py:248 src/slides.py:241
 msgid "Manjaro Installer"
-msgstr "Programul de instalare Manjaro"
+msgstr "Instalator Manjaro"
 
-#: thus.py:292
+#: thus.py:316
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Se iese din instalator..."
 
 #: src/bootinfo.py:43 src/bootinfo.py:63 src/bootinfo.py:68 src/bootinfo.py:89
-#: src/installation_alongside.py:211
+#: src/installation_alongside.py:221
 msgid "unknown"
-msgstr ""
+msgstr "necunoscut"
 
-#: src/bootloader.py:58
+#: src/bootloader.py:58 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Care este tipul vostru de sistem de inițializare"
 
-#: src/bootloader.py:63
+#: src/bootloader.py:63 ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Comun)"
 
-#: src/bootloader.py:67
+#: src/bootloader.py:67 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
-#: src/bootloader.py:71
+#: src/bootloader.py:71 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
-#: src/bootloader.py:75
+#: src/bootloader.py:75 ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Alegeți 'renunțare' dacă nu doriți să instalați un încărcător de sistem"
 
-#: src/check.py:71
+#: src/check.py:72
 msgid "Check your computer"
-msgstr "Verificați-vă computerul"
+msgstr "Verificați-vă calculatorul"
 
-#: src/check.py:76
+#: src/check.py:77
 msgid "has at least 3GB available drive space"
 msgstr "are cel puțin 3GB de spațiu liber pe disc"
 
-#: src/check.py:80
+#: src/check.py:81
 msgid "is plugged in to a power source"
 msgstr "este conectat la o sursă de curent"
 
-#: src/check.py:84
+#: src/check.py:85
 msgid "is connected to the Internet"
 msgstr "este conectat la Internet"
 
-#: src/check.py:88
+#: src/check.py:89
 msgid "For best results, please ensure that this computer:"
-msgstr "Pentru rezultate optime, asigurați-vă că acest computer:"
+msgstr "Pentru rezultate optime, asigurați-vă că acest calculator:"
 
-#: src/check.py:93
+#: src/check.py:94
 msgid ""
 "Manjaro uses third-party software to play Flash, MP3 and other media. Some "
 "of this software is propietary. The software is subject to license terms "
 "included with its documentation."
-msgstr ""
+msgstr "Manjaro folosește programe terțe pentru a rula Flash, MP3 și alte forme de media. În unele cazuri, acestea pot avea licență proprietară și se supun termenilor din documentație."
 
-#: src/check.py:99
+#: src/check.py:100 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "Instalează acest programe terț"
 
-#: src/check.py:119
+#: src/check.py:120
 msgid "Can't get network status"
 msgstr "Nu se poate obține starea rețelei"
 
-#: src/check.py:195
+#: src/check.py:197
 msgid "We have Internet connection."
 msgstr "Avem conexiune la Internet."
 
-#: src/check.py:196
+#: src/check.py:198
 msgid "We're connected to a power source."
 msgstr "Suntem conectați la o sursă de curent."
 
-#: src/check.py:197
+#: src/check.py:199
 msgid "We have enough space in disk."
 msgstr "Avem suficient spațiu pe disc."
 
@@ -126,41 +133,41 @@ msgid ""
 "Gnome 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr ""
+msgstr "Gnome 3 este o metodă ușoară și elegantă de a vă folosi calculatorul. Este gândit să vă pună în control și să aducă libertate tuturor. Gnome 3 este dezvoltat de comunitatea GNOME."
 
 #: src/desktop.py:91
 msgid ""
 "Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
 "attempts to provide a more traditional user environment based on the desktop"
 " metaphor, like GNOME 2"
-msgstr ""
+msgstr "Cinnamon este o ramificație a GNOME Shell, dezvoltată de (și pentru) Linux Mint. Încearcă să redea un mediu de utilizare mai tradițional bazat pe metafora de desktop, precum GNOME 2"
 
 #: src/desktop.py:98
 msgid ""
 "Xfce is a lightweight desktop environment for UNIX-like operating systems. "
 "It aims to be fast and low on system resources, while still being visually "
 "appealing and user friendly."
-msgstr ""
+msgstr "Xfce este un ambient de lucru ușor pentru sisteme de operare tip UNIX. Urmărește să fie rapid și ușor pe resursele de sistem, dar rămânând atrăgător și prietenos cu utilizatorul."
 
 #: src/desktop.py:105
 msgid ""
 "Extremely fast-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard short "
 "cuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "Ambient de lucru performant și economicos. Vine cu o interfață frumoasă, suport multilingvistic, scurtături de tastatură standard și funcționalități precum navigare de fișiere pe taburi."
 
 #: src/desktop.py:112
 msgid ""
 "Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox este un gestionar de ferestre foarte configurabil de nouă generație cu suport extins pentru standarde.\nStilul vizual *box este foarte cunoscut pentru  aspectul minimalist."
 
 #: src/desktop.py:119
 msgid ""
 "Enlightenment is not just a window manager for Linux/X11 and others, but "
 "also a whole suite of libraries to help you create beautiful user interfaces"
 " with much less work"
-msgstr "Enlightenment nu este decât un administrator de ferestre pentru Linux/X11 și altele, ci o întreagă suită de librării ce te ajută să creezi mult mai ușor interfețe de utilizare frumoase."
+msgstr "Enlightenment nu este doar un administrator de ferestre pentru Linux/X11 și altele, ci o întreagă suită de librării ce te ajută să creezi mult mai ușor interfețe de utilizare frumoase."
 
 #: src/desktop.py:125
 msgid ""
@@ -174,13 +181,13 @@ msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "Razor-qt este un ambient de lucru ușor de folosit și rapid bazat pe tehnologiile Qt. A fost croit pentru utilizatori ce valorează simplicitatea, viteza și o interfață intuitivă."
 
 #: src/desktop.py:139
 msgid ""
 "This will install Manjaro as command-line system, without any desktop at "
 "all. After the installation you can install the desktop you may see fit."
-msgstr ""
+msgstr "Aceasta va instala Manjaro ca sistem linie de comandă, fără vreun desktop. După instalare puteți instala orice desktop doriți. "
 
 #: src/desktop.py:151
 msgid "Select your desktop"
@@ -188,386 +195,556 @@ msgstr "Alegeți-vă desktopul"
 
 #: src/desktop.py:161
 msgid "Desktops"
-msgstr "Desktop-uri"
+msgstr "Desktopuri"
 
 #: src/desktop.py:194
+#, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus va instala Manjaro cu desktopul '%s'"
 
 #: src/download.py:82
+#, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Eroare în crearea metalegăturii pentru pachetul %s"
 
 #: src/download.py:88
+#, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Eroare în adăugarea metalegăturii pentru pachetul %s"
 
 #: src/download.py:137
+#, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Se descarcă pachetul '%s'..."
 
 #: src/download.py:161
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Nu se poate conecta la Aria2. Nu va fi posibilă scurtarea descărcării."
 
 #: src/download.py:232
+#, python-format
 msgid "Unable to create download queue for package %s"
-msgstr ""
+msgstr "Nu se poare crea coada la descărcare pentru pachetul %s"
 
 #: src/download.py:236
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Nu se găsesc aceste pachete:"
 
 #: src/download.py:242
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Atenție! Nu se pot rezolva aceste dependențe:"
 
-#: src/installation_advanced.py:197 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/features.py:100
+msgid "Feature selection"
+msgstr "Selecția funcționalităților"
+
+#: src/features.py:105
+msgid "Bluetooth support"
+msgstr "Suport Bluetooth"
+
+#: src/features.py:108 ui/features.ui:55
+msgid "Without Bluetooth support you can't use Bluetooth devices"
+msgstr "Fără suport Bluetooth nu puteți folosi dispozitive Bluetooth"
+
+#: src/features.py:112
+msgid "Printing support (cups)"
+msgstr "Suport imprimante (CUPS)"
+
+#: src/features.py:115 ui/features.ui:135
+msgid "This includes printer drivers and manage tools"
+msgstr "Acesta include drivere de imprimantă și unelte de gestiune"
+
+#: src/features.py:119
+msgid "LibreOffice"
+msgstr "LibreOffice"
+
+#: src/features.py:122
+msgid "Office suite (word processor, spreadsheet, ...)"
+msgstr "Suită de birou (procesor de text, foaie de calcul, șamd.)"
+
+#: src/features.py:126
+msgid "Visual effects"
+msgstr "Efecte vizuale"
+
+#: src/features.py:129 ui/features.ui:295
+msgid "Visual effects such as transparencies, shadows, etc."
+msgstr "Efecte vizuale precum transparențe, umbre, șamd."
+
+#: src/features.py:133
+msgid "Uncomplicated firewall"
+msgstr "Uncomplicated firewall"
+
+#: src/features.py:136
+msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
+msgstr "Instalează parafocul ufw ce respinge implicit orice trafic (gufw îl poate configura)"
+
+#: src/features.py:140
+msgid "Propietary packages"
+msgstr "Pachete proprietare"
+
+#: src/features.py:143 ui/features.ui:455
+msgid "Third-party software to play Flash, MP3 and other media"
+msgstr "Programe terțe pentru a putea rula Flash, MP3 și alte forme de media"
+
+#: src/installation_advanced.py:198 src/installation_advanced.py:489
+#: src/installation_advanced.py:503
 msgid "free space"
 msgstr "spațiu liber"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:169
+#: src/installation_advanced.py:267 src/installation_alongside.py:175
 msgid "Device"
 msgstr "Dispozitiv"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:270
 msgid "Type"
 msgstr "Tip"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:273
 msgid "Mount point"
 msgstr "Punct de montare"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:276
 msgid "Label"
 msgstr "Etichetă"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1355
+#: src/installation_advanced.py:282 src/installation_advanced.py:1368
 msgid "Format"
-msgstr "Formatați"
+msgstr "Format"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:285
 msgid "Size"
-msgstr "Dimensiune"
+msgstr "Mărime"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:288
 msgid "Used"
-msgstr "Folosit"
+msgstr "Folosită"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:291
 msgid "Flags"
 msgstr "Steaguri"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:297
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:471
+#: src/installation_advanced.py:472
 msgid "none"
 msgstr "niciunul"
 
-#: src/installation_advanced.py:523
+#: src/installation_advanced.py:524
 msgid "extended"
 msgstr "extinsă"
 
-#: src/installation_advanced.py:648 src/installation_advanced.py:888
+#: src/installation_advanced.py:649 src/installation_advanced.py:889
 msgid "Cannot use same mount twice..."
 msgstr "Nu puteți utiliza aceeași montare de două ori..."
 
-#: src/installation_advanced.py:650
+#: src/installation_advanced.py:651
 msgid "Root partition must be formatted..."
 msgstr ""
 
-#: src/installation_advanced.py:909
+#: src/installation_advanced.py:910
 msgid "Creating primary partition"
 msgstr "Creare partiție primară"
 
-#: src/installation_advanced.py:920
+#: src/installation_advanced.py:921
 msgid "Creating extended partition"
 msgstr "Creare partiție extinsă"
 
-#: src/installation_advanced.py:926
+#: src/installation_advanced.py:927
 msgid "Creating logical partition"
 msgstr "Creare partiție logică"
 
-#: src/installation_advanced.py:1013
+#: src/installation_advanced.py:1014
 msgid "Advanced installation mode"
 msgstr "Mod de instalare avansat"
 
-#: src/installation_advanced.py:1017
+#: src/installation_advanced.py:1018 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
 msgstr ""
 
-#: src/installation_advanced.py:1027
+#: src/installation_advanced.py:1028 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Tabela nouă de partiție"
 
-#: src/installation_advanced.py:1035
+#: src/installation_advanced.py:1036
 msgid "Change..."
 msgstr "Schimbă..."
 
-#: src/installation_advanced.py:1040
+#: src/installation_advanced.py:1041 ui/installation_advanced.ui:96
 msgid "Size:"
 msgstr "Dimensiune:"
 
-#: src/installation_advanced.py:1044
+#: src/installation_advanced.py:1045 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr "Tip:"
 
-#: src/installation_advanced.py:1048
+#: src/installation_advanced.py:1049 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Primară"
 
-#: src/installation_advanced.py:1052
+#: src/installation_advanced.py:1053 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Logică"
 
-#: src/installation_advanced.py:1056
+#: src/installation_advanced.py:1057 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Extinsă"
 
-#: src/installation_advanced.py:1060
+#: src/installation_advanced.py:1061 ui/installation_advanced.ui:200
 msgid "Beginning of this space"
 msgstr "Începutul acestui spațiu"
 
-#: src/installation_advanced.py:1064
+#: src/installation_advanced.py:1065 ui/installation_advanced.ui:218
 msgid "End of this space"
 msgstr "Sfârșitul acestui spațiu"
 
-#: src/installation_advanced.py:1068 src/installation_advanced.py:1085
+#: src/installation_advanced.py:1069 src/installation_advanced.py:1086
+#: ui/installation_advanced.ui:127 ui/installation_advanced.ui:583
 msgid "Use as:"
 msgstr "Folosiți ca:"
 
-#: src/installation_advanced.py:1072 src/installation_advanced.py:1089
+#: src/installation_advanced.py:1073 src/installation_advanced.py:1090
+#: ui/installation_advanced.ui:160 ui/installation_advanced.ui:616
 msgid "Mount point:"
 msgstr "Punct de montare:"
 
-#: src/installation_advanced.py:1076 src/installation_advanced.py:1093
+#: src/installation_advanced.py:1077 src/installation_advanced.py:1094
+#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:653
 msgid "Label (optional):"
 msgstr "Etichetă (opțional):"
 
-#: src/installation_advanced.py:1080
+#: src/installation_advanced.py:1081 ui/installation_advanced.ui:412
+#: ui/installation_advanced.ui:720
 msgid "Encryption options..."
 msgstr "Opțiuni de criptare..."
 
-#: src/installation_advanced.py:1097
+#: src/installation_advanced.py:1098 ui/installation_advanced.ui:680
 msgid "Format:"
 msgstr "Formatați:"
 
-#: src/installation_advanced.py:1102
+#: src/installation_advanced.py:1103 ui/installation_advanced.ui:486
 msgid "Partition table type:"
 msgstr "Tipul tabelei de partiție:"
 
-#: src/installation_advanced.py:1107
+#: src/installation_advanced.py:1108
 msgid "Create partition table"
 msgstr "Creați tabela de partiție:"
 
-#: src/installation_advanced.py:1110 src/installation_alongside.py:147
-#: src/installation_automatic.py:89
+#: src/installation_advanced.py:1111 src/installation_alongside.py:153
+#: src/installation_automatic.py:95
 msgid "Install now!"
 msgstr "Instalați acum!"
 
-#: src/installation_advanced.py:1190
+#: src/installation_advanced.py:1191
+#, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Creare o nouă tabelă de partiție de tipul %s pentru discul %s"
 
-#: src/installation_advanced.py:1289
+#: src/installation_advanced.py:1290
+#, python-format
+msgid ""
+"%s is mounted as swap.\n"
+"To continue it has to be unmounted.\n"
+"Click Yes to unmount, or No to return\n"
+msgstr ""
+
+#: src/installation_advanced.py:1292
+#, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
 msgstr "%s este montată in '%s'.\nPentru a continua trebuie sa fie demontată.\nClic Da pentru demontare, sau Nu pentru revenire\n"
 
-#: src/installation_advanced.py:1348
+#: src/installation_advanced.py:1361
+#, python-format
 msgid "Partition %s will be deleted"
 msgstr "Partiția %s va fi ștearsă"
 
-#: src/installation_advanced.py:1355
-msgid "Mount"
-msgstr "Montați"
-
-#: src/installation_advanced.py:1355
-msgid "New"
-msgstr "Nouă"
-
-#: src/installation_advanced.py:1355
+#: src/installation_advanced.py:1368
 msgid "Partition"
 msgstr "Partiție"
 
-#: src/installation_advanced.py:1355
+#: src/installation_advanced.py:1368
+msgid "New"
+msgstr "Nouă"
+
+#: src/installation_advanced.py:1368
 msgid "Relabel"
 msgstr "Reetichetare"
 
-#: src/installation_advanced.py:1376
+#: src/installation_advanced.py:1368
+msgid "Mount"
+msgstr "Montați"
+
+#: src/installation_advanced.py:1389
 msgid "These disks will have partition actions:"
 msgstr "Aceste discuri vor suferi acțiuni de partiționare:"
 
-#: src/installation_advanced.py:1401
+#: src/installation_advanced.py:1414
+#, python-format
 msgid "Saving changes done in %s"
 msgstr "Salvare schimbări efectuate în %s"
 
-#: src/installation_advanced.py:1416
+#: src/installation_advanced.py:1429
+#, python-format
 msgid "Creating fs of type %s in %s with label %s"
 msgstr "Creare fs de tipul %s in %s cu eticheta %s"
 
-#: src/installation_advanced.py:1498 src/installation_automatic.py:167
+#: src/installation_advanced.py:1510 src/installation_automatic.py:173
+#, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr ""
 
-#: src/installation_alongside.py:112
+#: src/installation_alongside.py:118
+#, python-format
 msgid "Can't load %s css"
 msgstr ""
 
-#: src/installation_alongside.py:139
+#: src/installation_alongside.py:145
 msgid "Choose next to which OS you want to install Manjaro"
 msgstr ""
 
-#: src/installation_alongside.py:143
+#: src/installation_alongside.py:149
 msgid "Manjaro alongside another OS"
 msgstr ""
 
-#: src/installation_alongside.py:172
+#: src/installation_alongside.py:178
 msgid "Detected OS"
 msgstr ""
 
-#: src/installation_alongside.py:175
+#: src/installation_alongside.py:181
 msgid "Filesystem"
 msgstr ""
 
-#: src/installation_alongside.py:215
+#: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
 msgstr ""
 
-#: src/installation_ask.py:78
+#: src/installation_alongside.py:265
+msgid "Can't shrink the partition (maybe it's nearly full)"
+msgstr ""
+
+#: src/installation_ask.py:100
 msgid "Installation type"
 msgstr "Tipul instalării"
 
-#: src/installation_ask.py:88
+#: src/installation_ask.py:110 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr "Ștergeți discul si instalați Manjaro (automată)"
+msgstr ""
 
-#: src/installation_ask.py:91
+#: src/installation_ask.py:113
 msgid "Warning: This will delete all data on your disk"
 msgstr "Avertisment: Vor fi șterse toate datele de pe disc"
 
-#: src/installation_ask.py:98
-msgid "Install this OS alongside the other OSes"
+#: src/installation_ask.py:120
+#, python-format
+msgid "Install Manjaro alongside %s"
 msgstr ""
 
-#: src/installation_ask.py:103
+#: src/installation_ask.py:123
 msgid "Install this OS alongside the other OSes you have already installed."
 msgstr ""
 
-#: src/installation_ask.py:111
+#: src/installation_ask.py:129
 msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr "Administrați-vă partițiile unde veți instala Manjaro (avansat)"
+msgstr ""
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:132
 msgid "Create/delete partitions, and also choose additional mount points."
 msgstr "Creați/ștergeți partiții și alegeți puncte de montare adiționale."
 
-#: src/installation_automatic.py:72
+#: src/installation_ask.py:152
+msgid "Manjaro installation will be encrypted"
+msgstr ""
+
+#: src/installation_ask.py:155
+msgid "Manjaro will be installed using a LVM setup"
+msgstr ""
+
+#: src/installation_automatic.py:78
 msgid "Automatic installation mode"
 msgstr "Metodă de instalare automată"
 
-#: src/installation_automatic.py:76
+#: src/installation_automatic.py:82 ui/installation_automatic.ui:66
 msgid "Select drive:"
 msgstr "Selectați discul:"
 
-#: src/installation_automatic.py:80
+#: src/installation_automatic.py:86
 msgid ""
 "WARNING! This installation mode will overwrite everything in your drive!"
 msgstr ""
 
-#: src/installation_automatic.py:85
+#: src/installation_automatic.py:91
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr ""
 
-#: src/installation_automatic.py:132
+#: src/installation_automatic.py:138
+#, python-format
 msgid "Automatic install using %s device"
 msgstr "Instalare automată folosind dispozitivul %s"
 
-#: src/installation_automatic.py:148
+#: src/installation_automatic.py:154
+#, python-format
 msgid "Manjaro will use %s as installation device"
 msgstr ""
 
-#: src/installation_process.py:83
+#: src/installation_process.py:105
+#, python-format
+msgid "Copying '/%s'"
+msgstr ""
+
+#: src/installation_process.py:185
+#, python-format
 msgid "Installing using the '%s' method"
 msgstr "Instalare folosind metoda '%s'"
 
-#: src/installation_process.py:145
+#: src/installation_process.py:210
+msgid "In installation-process, can't get network status"
+msgstr ""
+
+#: src/installation_process.py:293
 msgid "Can't execute the auto partition script"
 msgstr "Nu poate fi executat scriptul de autopartiționare"
 
-#: src/installation_process.py:191 src/installation_process.py:215
+#: src/installation_process.py:334 src/installation_process.py:358
+#, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr ""
 
-#: src/installation_process.py:197
+#: src/installation_process.py:340
+#, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr ""
 
-#: src/installation_process.py:201
+#: src/installation_process.py:344
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nu pot fi montate partițiile root și boot"
 
-#: src/installation_process.py:220
+#: src/installation_process.py:363
+#, python-format
 msgid "Can't mount %s in %s"
 msgstr "Nu se poate monta %s în %s"
 
-#: src/installation_process.py:229
+#: src/installation_process.py:385
 msgid "Can't create necessary directories on destination system"
 msgstr ""
 
-#: src/installation_process.py:379
-msgid "Can't retrieve remote package list, using a local file instead."
+#: src/installation_process.py:513
+#, python-format
+msgid "Restoring meta-information on %s"
 msgstr ""
 
-#: src/installation_process.py:705
+#: src/installation_process.py:662
+#, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr ""
 
-#: src/installation_process.py:725 src/installation_process.py:741
-msgid "ERROR installing GRUB(2) BIOS."
-msgstr "EROARE la instalarea GRUB(2) BIOS."
-
-#: src/installation_process.py:739
+#: src/installation_process.py:686
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS a fost instalat cu succes."
 
-#: src/installation_process.py:752
+#: src/installation_process.py:688
+msgid "ERROR installing GRUB(2) BIOS."
+msgstr "EROARE la instalarea GRUB(2) BIOS."
+
+#: src/installation_process.py:699
+#, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr ""
 
-#: src/installation_process.py:775 src/installation_process.py:793
+#: src/installation_process.py:722 src/installation_process.py:740
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr ""
 
-#: src/installation_process.py:863
+#: src/installation_process.py:762
+#, python-format
 msgid "Error creating password hash for user %s"
 msgstr ""
 
-#: src/installation_process.py:869
+#: src/installation_process.py:768
+#, python-format
 msgid "Error changing password for user %s"
 msgstr "Eroare la schimbarea parolei pentru utilizatorul %s"
 
-#: src/installation_process.py:918
+#: src/installation_process.py:853
 msgid "Configuring your new system"
 msgstr "Configurarea noului tău sistem"
 
-#: src/installation_process.py:984
+#: src/installation_process.py:914
 msgid "Generating locales..."
 msgstr ""
 
-#: src/installation_process.py:999
+#: src/installation_process.py:934
 msgid "Adjusting hardware clock..."
 msgstr ""
 
-#: src/installation_process.py:1078
+#: src/installation_process.py:940
+msgid "Configuring hardware.."
+msgstr ""
+
+#: src/installation_process.py:947
+msgid "Setup graphic card.."
+msgstr ""
+
+#: src/installation_process.py:954
+msgid "Can't execute the MHWD script"
+msgstr ""
+
+#: src/installation_process.py:960
+msgid "Configure display manager.."
+msgstr ""
+
+#: src/installation_process.py:1055
+msgid "Configure System.."
+msgstr ""
+
+#: src/installation_process.py:1082
+msgid "Removing live configuration (packages)"
+msgstr ""
+
+#: src/installation_process.py:1098
+msgid "Configuring package manager"
+msgstr ""
+
+#: src/installation_process.py:1121
+msgid "Finished configuring package manager."
+msgstr ""
+
+#: src/installation_process.py:1147
+#, python-format
+msgid "GDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1157
+#, python-format
+msgid "MDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1177
+#, python-format
+msgid "KDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1194
+#, python-format
+msgid "LXDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1210
+#, python-format
+msgid "LightDM: Enable automatic login for user %s."
+msgstr ""
+
+#: src/installation_process.py:1227
 msgid "Running mkinitcpio..."
+msgstr ""
+
+#: src/installation_process.py:1230
+msgid "Running mkinitcpio... done"
 msgstr ""
 
 #: src/keymap.py:70
@@ -583,18 +760,19 @@ msgid "Variants"
 msgstr "Variante"
 
 #: src/keymap.py:106
+#, python-format
 msgid "keyboard_layout is %s"
 msgstr "schema_tastaturii este %s"
 
-#: src/language.py:80
+#: src/language.py:81
 msgid "Please choose your language:"
 msgstr "Va rugăm să vă alegeți limba:"
 
-#: src/language.py:85
+#: src/language.py:86
 msgid "This is an Alpha version."
 msgstr "Aceasta este o versiune alfa."
 
-#: src/language.py:86
+#: src/language.py:87
 msgid ""
 "Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
 "Please proceed with caution as data loss is possible! \n"
@@ -602,15 +780,16 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:94 src/welcome.py:110
+#: src/language.py:95 src/welcome.py:110
 msgid "Welcome to Manjaro!"
-msgstr "Bun venit in Manjaro!"
+msgstr ""
 
-#: src/language.py:112
+#: src/language.py:113
 msgid "Languages"
 msgstr "Limbi"
 
-#: src/language.py:132
+#: src/language.py:133
+#, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Nu poate fi găsit fișierul de traducere pentru limba %s"
 
@@ -618,7 +797,7 @@ msgstr "Nu poate fi găsit fișierul de traducere pentru limba %s"
 msgid "Select your location"
 msgstr "Selectați-vă locația"
 
-#: src/location.py:76
+#: src/location.py:76 ui/location.ui:21
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
@@ -630,120 +809,50 @@ msgid "Country, territory or area:"
 msgstr "Țară, teritoriu sau suprafață:"
 
 #: src/location.py:205
+#, python-format
 msgid "locale changed to : %s"
 msgstr "locale schimbate în : %s"
 
 #: src/location.py:207
+#, python-format
 msgid "Can't change to locale '%s'"
 msgstr ""
 
-#: src/pacman/pac.py:243
-msgid "Package %s not found in any repo!"
-msgstr ""
-
-#: src/pacman/pac.py:293
-msgid "Checking dependencies..."
-msgstr "Verificare dependențe..."
-
-#: src/pacman/pac.py:295
-msgid "Checking file conflicts..."
-msgstr "Verificare conflicte intre fișiere..."
-
-#: src/pacman/pac.py:297
-msgid "Resolving dependencies..."
-msgstr "Rezolvare dependențe..."
-
-#: src/pacman/pac.py:299
-msgid "Checking inter conflicts..."
-msgstr "Verificare conflicte interne..."
-
-#: src/pacman/pac.py:304
-msgid "Removing..."
-msgstr "Eliminare..."
-
-#: src/pacman/pac.py:306
-msgid "Upgrading..."
-msgstr ""
-
-#: src/pacman/pac.py:308
-msgid "Checking integrity..."
-msgstr "Verificare integritate..."
-
-#: src/pacman/pac.py:311
-msgid "Loading packages files..."
-msgstr "Încărcare fișiere din pachete..."
-
-#: src/pacman/pac.py:314
-msgid "Configuring..."
-msgstr "Configurare..."
-
-#: src/pacman/pac.py:315
-msgid "Configuring a package"
-msgstr "Configurarea unui pachet"
-
-#: src/pacman/pac.py:317
-msgid "Downloading a file"
-msgstr "Descărcarea unui fișier"
-
-#: src/pacman/pac.py:341
-msgid "ERROR: %s"
-msgstr "EROARE: %s"
-
-#: src/pacman/pac.py:348
-msgid "WARNING: %s"
-msgstr "AVERTISMENT: %s"
-
-#: src/pacman/pac.py:389
-msgid "Downloading %s..."
-msgstr ""
-
-#: src/pacman/pac.py:398
-msgid "Refreshing %s..."
-msgstr "Reîmprospătare %s"
-
-#: src/pacman/pac.py:407
-msgid "Installing %s (%d/%d)"
-msgstr ""
-
-#: src/pacman/pac.py:409
-msgid "Checking and loading packages..."
-msgstr ""
-
-#: src/rank_mirrors.py:61
+#: src/rank_mirrors.py:62
 msgid "In rankmirrors, can't get network status"
 msgstr ""
 
-#: src/rank_mirrors.py:74
+#: src/rank_mirrors.py:75
 msgid "Couldn't execute auto mirroring selection"
 msgstr "Nu se poate executa autoselecția oglinzilor"
 
 #: src/show_message.py:60
 msgid "Manjaro Installer - Error"
-msgstr "Programul de instalare Manjaro - Eroare"
+msgstr ""
 
 #: src/show_message.py:71
 msgid "Manjaro Installer - Warning"
-msgstr "Programul de instalare Manjaro - Avertisment"
+msgstr ""
 
 #: src/show_message.py:82
 msgid "Manjaro Installer - Information"
-msgstr "Programul de instalare Manjaro - Informare"
+msgstr ""
 
 #: src/show_message.py:92
 msgid "Manjaro Installer - Question"
-msgstr "Programul de instalare Manjaro - Intrebare"
+msgstr ""
 
-#: src/slides.py:86 src/slides.py:101
+#: src/slides.py:90 src/slides.py:105
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
 msgstr "Instalare completă!\nVreți să reporniți sistemul acum?"
 
-#: src/slides.py:94
+#: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr "Instalare Manjaro..."
+msgstr ""
 
-#: src/slides.py:99
+#: src/slides.py:103
 msgid "Please wait..."
 msgstr "Vă rugăm așteptați..."
 
@@ -751,15 +860,16 @@ msgstr "Vă rugăm așteptați..."
 msgid "Where are you?"
 msgstr "Unde sunteți?"
 
-#: src/timezone.py:120
+#: src/timezone.py:120 ui/timezone.ui:34
 msgid "Zone:"
 msgstr "Zonă:"
 
-#: src/timezone.py:124
+#: src/timezone.py:124 ui/timezone.ui:79
 msgid "Region:"
 msgstr "Regiune:"
 
 #: src/timezone.py:135
+#, python-format
 msgid "location changed to : %s"
 msgstr "locație schimbată in : %s"
 
@@ -767,103 +877,138 @@ msgstr "locație schimbată in : %s"
 msgid "Can't autodetect timezone coordinates"
 msgstr "Nu se poate autodetecta coordonatele fusului orar"
 
-#: src/timezone.py:281
+#: src/timezone.py:283
 msgid "Stoping timezone threads..."
 msgstr ""
 
-#: src/timezone.py:311 src/timezone.py:362
+#: src/timezone.py:313 src/timezone.py:364
 msgid "In timezone, can't get network status"
 msgstr ""
 
-#: src/timezone.py:386
+#: src/timezone.py:388
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr ""
 
-#: src/timezone.py:407
+#: src/timezone.py:409
+#, python-format
 msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
 msgstr ""
 
-#: src/timezone.py:409
+#: src/timezone.py:411
 msgid "Couldn't generate mirrorlist for pacman based on country code"
 msgstr ""
 
-#: src/user_info.py:90
+#: src/user_info.py:91 ui/user_info.ui:34
 msgid "Your name:"
 msgstr "Numele vostru:"
 
-#: src/user_info.py:94
+#: src/user_info.py:95
 msgid "Your name"
 msgstr ""
 
-#: src/user_info.py:98
+#: src/user_info.py:99 ui/user_info.ui:474
 msgid "Your computer's name:"
 msgstr "Numele computerului vostru:"
 
-#: src/user_info.py:102
+#: src/user_info.py:103 ui/user_info.ui:48
 msgid "Pick a username:"
 msgstr "Alegeți un nume de utilizator:"
 
-#: src/user_info.py:106
+#: src/user_info.py:107
 msgid "Username"
 msgstr ""
 
-#: src/user_info.py:110
+#: src/user_info.py:111 ui/user_info.ui:63
 msgid "Choose a password:"
 msgstr "Alegeți o parolă:"
 
-#: src/user_info.py:114
+#: src/user_info.py:115
 msgid "Password"
 msgstr ""
 
-#: src/user_info.py:118
+#: src/user_info.py:119 ui/user_info.ui:78
 msgid "Confirm your password:"
 msgstr "Confirmați-vă parola:"
 
-#: src/user_info.py:122
+#: src/user_info.py:123
 msgid "Confirm password"
 msgstr ""
 
-#: src/user_info.py:126
+#: src/user_info.py:127
 msgid "The name it uses when it talks to other computers."
 msgstr "Numele folosit în comunicarea cu alte computere."
 
-#: src/user_info.py:130
+#: src/user_info.py:131
 msgid "You must enter a name"
 msgstr "Trebuie să introduceți un nume"
 
-#: src/user_info.py:134
+#: src/user_info.py:135
 msgid "You must enter a username"
 msgstr "Trebuie să introduceți un nume de utilizator"
 
-#: src/user_info.py:138
+#: src/user_info.py:139
 msgid "You must enter a password"
 msgstr "Trebuie să introduceți o parolă"
 
-#: src/user_info.py:142
+#: src/user_info.py:143 ui/user_info.ui:96
 msgid "Log in automatically"
 msgstr "Logare automată"
 
-#: src/user_info.py:143
+#: src/user_info.py:144 ui/user_info.ui:113
 msgid "Require my password to log in"
 msgstr "Cere parolă pentru logare"
 
-#: src/user_info.py:144
+#: src/user_info.py:145 ui/user_info.ui:134
 msgid "Encrypt my home folder"
 msgstr "Criptează dosarul acasa"
 
-#: src/user_info.py:146
+#: src/user_info.py:147
 msgid "Who are you?"
 msgstr "Cine sunteți?"
 
-#: src/user_info.py:226
+#: src/user_info.py:173
+msgid ""
+"Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:174
+msgid ""
+"Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:175
+msgid ""
+"Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:176
+msgid ""
+"A simple workaround is to place sparse files in an unencrypted .Public directory\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:177
+msgid ""
+"Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
+"\n"
+msgstr ""
+
+#: src/user_info.py:178
+msgid "Are you sure you want to encrypt your home directory?\n"
+msgstr ""
+
+#: src/user_info.py:236
 msgid "Invalid characters entered"
 msgstr "Caractere invalide introduse"
 
-#: src/user_info.py:230
+#: src/user_info.py:240
 msgid "Username can't contain dots"
 msgstr ""
 
-#: src/user_info.py:234
+#: src/user_info.py:244
 msgid "Too many characters"
 msgstr "Prea multe caractere"
 
@@ -895,20 +1040,291 @@ msgstr "Parolele nu se potrivesc"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr "Încetcați Manjaro fără a vă modifica discul dur.\nSau instalați-l pe computerul vostru folosind una din cele două opțiuni de instalare."
+msgstr ""
 
-#: src/welcome.py:101
+#: src/welcome.py:101 ui/welcome.ui:45
 msgid "Try it"
 msgstr "Încercați-l"
 
-#: src/welcome.py:104
+#: src/welcome.py:104 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "Program de instalare CLI"
 
-#: src/welcome.py:107
+#: src/welcome.py:107 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "Program de instalare grafic"
 
 #: src/welcome.py:131
 msgid "Can't load the CLI installer"
 msgstr "Nu poate fi incarcat programul de instalare CLI"
+
+#: src/pacman/pac.py:243
+#, python-format
+msgid "Package %s not found in any repo!"
+msgstr ""
+
+#: src/pacman/pac.py:295
+msgid "Checking dependencies..."
+msgstr "Verificare dependențe..."
+
+#: src/pacman/pac.py:297
+msgid "Checking file conflicts..."
+msgstr "Verificare conflicte intre fișiere..."
+
+#: src/pacman/pac.py:299
+msgid "Resolving dependencies..."
+msgstr "Rezolvare dependențe..."
+
+#: src/pacman/pac.py:301
+msgid "Checking inter conflicts..."
+msgstr "Verificare conflicte interne..."
+
+#: src/pacman/pac.py:306
+msgid "Removing..."
+msgstr "Eliminare..."
+
+#: src/pacman/pac.py:308
+msgid "Upgrading..."
+msgstr ""
+
+#: src/pacman/pac.py:310
+msgid "Checking integrity..."
+msgstr "Verificare integritate..."
+
+#: src/pacman/pac.py:313
+msgid "Loading packages files..."
+msgstr "Încărcare fișiere din pachete..."
+
+#: src/pacman/pac.py:316
+msgid "Configuring..."
+msgstr "Configurare..."
+
+#: src/pacman/pac.py:317
+msgid "Configuring a package"
+msgstr "Configurarea unui pachet"
+
+#: src/pacman/pac.py:319
+msgid "Downloading a file"
+msgstr "Descărcarea unui fișier"
+
+#: src/pacman/pac.py:343
+#, python-format
+msgid "ERROR: %s"
+msgstr "EROARE: %s"
+
+#: src/pacman/pac.py:350
+#, python-format
+msgid "WARNING: %s"
+msgstr "AVERTISMENT: %s"
+
+#: src/pacman/pac.py:391
+#, python-format
+msgid "Downloading %s..."
+msgstr ""
+
+#: src/pacman/pac.py:400
+#, python-format
+msgid "Refreshing %s..."
+msgstr "Reîmprospătare %s"
+
+#: src/pacman/pac.py:409
+#, python-format
+msgid "Installing %s (%d/%d)"
+msgstr ""
+
+#: src/pacman/pac.py:411
+msgid "Checking and loading packages..."
+msgstr ""
+
+#: ui/bootloader.ui:7
+msgid "Boot"
+msgstr ""
+
+#: ui/check.ui:28
+msgid ""
+"<span weight=\"bold\" size=\"large\">For best results, please ensure that "
+"this computer:</span>"
+msgstr ""
+
+#: ui/check.ui:106
+msgid ""
+"Antergos uses third-party software to play Flash, MP3 and other media. Some "
+"of this software is propietary. The software is subject to license terms "
+"included with its documentation."
+msgstr ""
+
+#: ui/desktop.ui:106 ui/installation_alongside.ui:191
+#: ui/installation_alongside.ui:203 ui/location.ui:36 ui/pac.ui:84
+#: ui/slides.ui:62
+msgid "label"
+msgstr ""
+
+#: ui/features.ui:40
+msgid "<span weight='bold' size='large'>Bluetooth support</span>"
+msgstr ""
+
+#: ui/features.ui:120
+msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
+msgstr ""
+
+#: ui/features.ui:200
+msgid "<span weight='bold' size='large'>LibreOffice</span>"
+msgstr ""
+
+#: ui/features.ui:215
+msgid "Office suite (word processor, spreadsheet, etc.)"
+msgstr ""
+
+#: ui/features.ui:280
+msgid "<span weight='bold' size='large'>Visual effects</span>"
+msgstr ""
+
+#: ui/features.ui:360
+msgid "<span weight='bold' size='large'>Firewall</span>"
+msgstr ""
+
+#: ui/features.ui:375
+msgid "Activates your firewall (closes all ports by default)"
+msgstr ""
+
+#: ui/features.ui:440
+msgid "<span weight='bold' size='large'>Propietary packages</span>"
+msgstr ""
+
+#: ui/installation_advanced.ui:72
+msgid "Create partition"
+msgstr ""
+
+#: ui/installation_advanced.ui:112
+msgid "Location:"
+msgstr ""
+
+#: ui/installation_advanced.ui:272
+msgid "MB"
+msgstr ""
+
+#: ui/installation_advanced.ui:559
+msgid "Edit partition"
+msgstr ""
+
+#: ui/installation_advanced.ui:899
+msgid "LVM..."
+msgstr ""
+
+#: ui/installation_alongside.ui:14
+msgid ""
+"<span size=\"large\">Choose next to which OS you want to install "
+"Manjaro</span>"
+msgstr ""
+
+#: ui/installation_alongside.ui:88
+msgid "Choose the new size"
+msgstr ""
+
+#: ui/installation_alongside.ui:155
+msgid "Other OS"
+msgstr ""
+
+#: ui/installation_alongside.ui:167
+msgid "Antergos"
+msgstr ""
+
+#: ui/installation_ask.ui:57
+msgid ""
+"<span weight=\"light\" size=\"small\">Warning: This will delete all "
+"programs, documents, photos, music and any other files on your disk</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:69
+msgid "Encrypts the new Manjaro installation for security"
+msgstr ""
+
+#: ui/installation_ask.ui:90
+msgid ""
+"<span weight=\"light\" size=\"small\">You will be asked for the encryption "
+"key in the next step</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:101
+msgid "Use LVM with the new Manjaro installation"
+msgstr ""
+
+#: ui/installation_ask.ui:122
+msgid ""
+"<span weight=\"light\" size=\"small\">This will setup LVM allowing to make "
+"snapshots and changing partition sizes in an easy way</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:133
+msgid "Install alongside other OSes"
+msgstr ""
+
+#: ui/installation_ask.ui:159
+msgid ""
+"<span weight=\"light\" size=\"small\">With this option you will be "
+"installing Manjaro alongside one of the other OSes that you have already "
+"installed.</span>"
+msgstr ""
+
+#: ui/installation_ask.ui:171
+msgid "Manage your partitions and choose where to install Manjaro (advanced)"
+msgstr ""
+
+#: ui/installation_ask.ui:197
+msgid ""
+"<span weight=\"light\" size=\"small\">You will be able to create/delete "
+"partitions, choose where to install Manjaro and also choose additional mount"
+" points.</span>"
+msgstr ""
+
+#: ui/installation_automatic.ui:16
+msgid "<b>installation automatic warning goes here</b>"
+msgstr ""
+
+#: ui/installation_automatic.ui:30
+msgid "Explanation goes here"
+msgstr ""
+
+#: ui/language.ui:25
+msgid "<span weight=\"bold\">Please choose your language:</span>"
+msgstr ""
+
+#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
+msgid " "
+msgstr ""
+
+#: ui/pac.ui:43
+msgid "Progress"
+msgstr ""
+
+#: ui/thus.ui:37
+msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
+msgstr ""
+
+#: ui/user_info.ui:188
+msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:247
+msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:348
+msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:425
+msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
+msgstr ""
+
+#: ui/user_info.ui:447
+msgid ""
+"<span size=\"small\">The name it uses when it talks to other "
+"computers.</span>"
+msgstr ""
+
+#: ui/welcome.ui:151
+msgid ""
+"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
+"If you want to install the system to your PC, use one of the two installer options."
+msgstr ""

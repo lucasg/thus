@@ -82,7 +82,7 @@ APP = "thus"
 DIR = "/usr/share/locale"
 
 _main_window_width = 800
-_main_window_height = 520
+_main_window_height = 526
 
 _debug = False
 

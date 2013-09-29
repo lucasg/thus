@@ -241,7 +241,7 @@ class TestWindow(Gtk.Window):
         self.set_title(_('Manjaro Installer'))
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_resizable(False)
-        self.set_size_request(800, 520)
+        self.set_size_request(800, 526)
         self.ui = Gtk.Builder()
         self.ui.add_from_file("/usr/share/thus/ui/thus.ui")
 
