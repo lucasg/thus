@@ -64,9 +64,6 @@ _stopluks()
     done
     ! [[ "${LUKSDEVICE}" = "" ]] && DETECTED_LUKS=1
     if [[ "${DETECTED_LUKS}" = "1" ]]; then
-        echo "Setup detected running luks encrypted devices, do you want to remove them completely?"
-    fi
-    if [[ "${DISABLELUKS}" = "1" ]]; then
         echo "Removing luks encrypted devices ..."
         for i in ${LUKSDEVICE}; do
             LUKS_REAL_DEVICE="$(echo $(cryptsetup status ${i} | grep device: | sed -e 's#device:##g'))"
@@ -82,9 +79,6 @@ _stopluks()
     # detect not running luks devices
     [[ "$(${_BLKID} | grep "TYPE=\"crypto_LUKS\"")" ]] && DETECTED_LUKS=1
     if [[ "${DETECTED_LUKS}" = "1" ]]; then
-        echo "Setup detected not running luks encrypted devices, do you want to remove them completely?"
-    fi
-    if [[ "${DISABLELUKS}" = "1" ]]; then
         echo "Removing not running luks encrypted devices ..."
         for i in $(${_BLKID} | grep "TYPE=\"crypto_LUKS\"" | sed -e 's#:.*##g'); do
             # delete header from device
@@ -134,18 +128,12 @@ _stoplvm()
     ! [[ "${LV_GROUPS}" = "" ]] && DETECTED_LVM=1
     ! [[ "${LV_PHYSICAL}" = "" ]] && DETECTED_LVM=1
     if [[ "${DETECTED_LVM}" = "1" ]]; then
-        DIALOG --defaultno --yesno "Setup detected lvm volumes, volume groups or physical devices, do you want to remove them completely?" 0 0 && DISABLELVM="1"
-    fi
-    if [[ "${DISABLELVM}" = "1" ]]; then
-        DIALOG --infobox "Removing logical volumes ..." 0 0
         for i in ${LV_VOLUMES}; do
             lvremove -f /dev/mapper/${i} 2>/dev/null >> ${LOG}
         done
-        DIALOG --infobox "Removing logical groups ..." 0 0
         for i in ${LV_GROUPS}; do
             vgremove -f ${i} 2>/dev/null >> ${LOG}
         done
-        DIALOG --infobox "Removing physical volumes ..." 0 0
         for i in ${LV_PHYSICAL}; do
             pvremove -f ${i} 2>/dev/null >> ${LOG}
         done
@@ -293,11 +281,15 @@ _mkfs() {
 
 autoprepare() {
     # check on encrypted devices, else weird things can happen!
-    # _stopluks
+    if [ "$USE_LUKS" == "1" ]; then
+       _stopluks
+    fi
     # check on raid devices, else weird things can happen during partitioning!
     # _stopmd
     # check on lvm devices, else weird things can happen during partitioning!
-    # _stoplvm
+    if [ "$USE_LVM" == "1" ]; then
+        _stoplvm
+    fi
     NAME_SCHEME_PARAMETER_RUN=""
     # switch for mbr usage
 
