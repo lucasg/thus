@@ -1055,12 +1055,6 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event("action", _("Configuring package manager"))
         self.queue_event("pulse")
 
-        # Copy important config files to target system
-        files = [ "/etc/pacman.conf", "/etc/yaourtrc" ]        
-        
-        for path in files:
-            shutil.copy2(path, os.path.join(self.dest_dir, 'etc/'))
-
         # copy mirror list
         shutil.copy2('/etc/pacman.d/mirrorlist', \
                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
