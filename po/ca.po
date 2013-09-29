@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-09-29 15:15+0000\n"
+"PO-Revision-Date: 2013-09-29 17:17+0000\n"
 "Last-Translator: tmallafre <tomas@mallafre.cat>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -362,7 +362,7 @@ msgstr "Mode d'instal·lació avançat"
 
 #: src/installation_advanced.py:1018 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Utilitza aquest dispositiu per a instal·lar el carregador d'arrencada:"
 
 #: src/installation_advanced.py:1028 ui/installation_advanced.ui:885
 msgid "New partition table"
@@ -448,7 +448,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s s'ha muntat com a swap\nPer a continuar s'ha de desmuntar.\nCliqueu Sí per a desmuntar, o No per a tirar enrere\n"
 
 #: src/installation_advanced.py:1292
 #, python-format
@@ -496,36 +496,36 @@ msgstr "Creant sistema de fitxers %s a %s amb l'etiqueta %s"
 #: src/installation_advanced.py:1510 src/installation_automatic.py:173
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "El Manjaro instal·larà el carregador d'arrencada del tipus %s a %s"
 
 #: src/installation_alongside.py:118
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "No es pot carregar %s css"
 
 #: src/installation_alongside.py:145
 msgid "Choose next to which OS you want to install Manjaro"
-msgstr ""
+msgstr "Trieu el SO a continuació del qual voleu instal·lar el Manjaro"
 
 #: src/installation_alongside.py:149
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "El Manjaro al costat d'un altre SO"
 
 #: src/installation_alongside.py:178
 msgid "Detected OS"
-msgstr ""
+msgstr "SO detectat"
 
 #: src/installation_alongside.py:181
 msgid "Filesystem"
-msgstr ""
+msgstr "Sistema de fitxers"
 
 #: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
-msgstr ""
+msgstr "En instal·lació conjunta, no es pot crear la llista de particions"
 
 #: src/installation_alongside.py:265
 msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr ""
+msgstr "No es pot encongir la partició (potser és gairebé plena)"
 
 #: src/installation_ask.py:100
 msgid "Installation type"
@@ -542,11 +542,11 @@ msgstr "Advertència: Això eliminarà totes les dades del disc"
 #: src/installation_ask.py:120
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Instal·la el Manjaro al costat de %s"
 
 #: src/installation_ask.py:123
 msgid "Install this OS alongside the other OSes you have already installed."
-msgstr ""
+msgstr "Instal·la aquest SO al costat dels altres SO que ja heu instal·lat."
 
 #: src/installation_ask.py:129
 msgid "Manage your partitions where to install Manjaro (advanced)"
@@ -558,11 +558,11 @@ msgstr "Crear/eliminar particions, i també triar els punts de muntatge addicion
 
 #: src/installation_ask.py:152
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "La instal·lació del Manjaro estarà encriptada"
 
 #: src/installation_ask.py:155
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "El Manjaro s'instal·larà utilitzant la configuració LVM"
 
 #: src/installation_automatic.py:78
 msgid "Automatic installation mode"
@@ -575,13 +575,13 @@ msgstr "Selecciona la unitat:"
 #: src/installation_automatic.py:86
 msgid ""
 "WARNING! This installation mode will overwrite everything in your drive!"
-msgstr ""
+msgstr "AVÍS! Aquest mode d'instal·lació sobreescriurà tot el que hi ha al vostre disc!"
 
 #: src/installation_automatic.py:91
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Si us plau, trieu el disc on voleu instal·lar el Manjaro\ni cliqueu el botó inferior per a iniciar el procés."
 
 #: src/installation_automatic.py:138
 #, python-format
@@ -591,12 +591,12 @@ msgstr "Instal·lació automàtica usant el dispositiu %s"
 #: src/installation_automatic.py:154
 #, python-format
 msgid "Manjaro will use %s as installation device"
-msgstr ""
+msgstr "El Manjaro utilitzarà %s com a dispositiu d'instal·lació"
 
 #: src/installation_process.py:105
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Copiant '/%s'"
 
 #: src/installation_process.py:185
 #, python-format
@@ -605,7 +605,7 @@ msgstr "Instal·lant usant el mètode '%s'"
 
 #: src/installation_process.py:210
 msgid "In installation-process, can't get network status"
-msgstr ""
+msgstr "En procés d'instal·lació, no es pot obtenir l'estat de la xarxa"
 
 #: src/installation_process.py:293
 msgid "Can't execute the auto partition script"
@@ -614,12 +614,12 @@ msgstr "No puc executar el script d'autoparticionat"
 #: src/installation_process.py:334 src/installation_process.py:358
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "Muntant la partició %s al directori %s"
 
 #: src/installation_process.py:340
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "Muntant la partició %s al directori %s/boot"
 
 #: src/installation_process.py:344
 msgid "Couldn't mount root and boot partitions"
@@ -642,7 +642,7 @@ msgstr "Restauració de meta-informació sobre %s"
 #: src/installation_process.py:662
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr ""
+msgstr "Instal·lant el carregador d'arrencada GRUB(2) BIOS a %s"
 
 #: src/installation_process.py:686
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -655,11 +655,11 @@ msgstr "ERROR instal·lant el GRUB(2) BIOS."
 #: src/installation_process.py:699
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
-msgstr ""
+msgstr "Instal·lant el carregador d'arrencada GRUB(2) UEFI %s a %s"
 
 #: src/installation_process.py:722 src/installation_process.py:740
 msgid "ERROR installing GRUB(2) UEFI."
-msgstr ""
+msgstr "ERROR instal·lant GRUB(2) UEFI."
 
 #: src/installation_process.py:762
 #, python-format
@@ -677,76 +677,76 @@ msgstr "Configurant el sistema"
 
 #: src/installation_process.py:914
 msgid "Generating locales..."
-msgstr ""
+msgstr "Generant la configuració local..."
 
 #: src/installation_process.py:934
 msgid "Adjusting hardware clock..."
-msgstr ""
+msgstr "Ajustament del maquinari del rellotge..."
 
 #: src/installation_process.py:940
 msgid "Configuring hardware.."
-msgstr ""
+msgstr "Configurant el maquinari..."
 
 #: src/installation_process.py:947
 msgid "Setup graphic card.."
-msgstr ""
+msgstr "Configuració de la targeta gràfica..."
 
 #: src/installation_process.py:954
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "No es pot executar l'script MHWD"
 
 #: src/installation_process.py:960
 msgid "Configure display manager.."
-msgstr ""
+msgstr "Configurant el gestor de visualització..."
 
 #: src/installation_process.py:1055
 msgid "Configure System.."
-msgstr ""
+msgstr "Configurant el sistema..."
 
 #: src/installation_process.py:1082
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Eliminant la configuració viva (paquets)"
 
 #: src/installation_process.py:1098
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Configurant el gestor de paquets"
 
 #: src/installation_process.py:1121
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Ha acabat la configuració del gestor de paquets."
 
 #: src/installation_process.py:1147
 #, python-format
 msgid "GDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "GDM: Activa l'inici de sessió automàtic per a l'usuari %s."
 
 #: src/installation_process.py:1157
 #, python-format
 msgid "MDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "MDM: Activa l'inici de sessió automàtic per a l'usuari %s."
 
 #: src/installation_process.py:1177
 #, python-format
 msgid "KDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "KDM: Activa l'inici automàtic de sessió per a l'usuari %s."
 
 #: src/installation_process.py:1194
 #, python-format
 msgid "LXDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "LXDM: Activa l'inici automàtic de sessió per a l'usuari %s."
 
 #: src/installation_process.py:1210
 #, python-format
 msgid "LightDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "LightDM:Activa l'inici automàtic de sessió per a l'usuari %s."
 
 #: src/installation_process.py:1227
 msgid "Running mkinitcpio..."
-msgstr ""
+msgstr "Executant mkinitcpio..."
 
 #: src/installation_process.py:1230
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "Executant mkinitcpio... fet"
 
 #: src/keymap.py:70
 msgid "Select your keyboard layout"
@@ -779,7 +779,7 @@ msgid ""
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Encara en desenvolupament. No funcionarà encara amb LVM, RAID, subvolums btrfs i altres configuracions avançades.\nSi us plau, procediu amb precaució perquè hi ha possibilitat de pèrdua de dades!\n\nSi trobeu cap error, si us plau, visiteu <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:95 src/welcome.py:110
 msgid "Welcome to Manjaro!"
@@ -905,7 +905,7 @@ msgstr "El teu nom:"
 
 #: src/user_info.py:95
 msgid "Your name"
-msgstr ""
+msgstr "El vostre nom"
 
 #: src/user_info.py:99 ui/user_info.ui:474
 msgid "Your computer's name:"
@@ -917,7 +917,7 @@ msgstr "Escull un nom d'usuari:"
 
 #: src/user_info.py:107
 msgid "Username"
-msgstr ""
+msgstr "Nom d'usuari"
 
 #: src/user_info.py:111 ui/user_info.ui:63
 msgid "Choose a password:"
@@ -989,7 +989,7 @@ msgstr "De totes maneres, un popular i poc aconsellable ús d'eCryptfs és xifra
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "Una senzilla solució temporal consisteix en desar els fitxers dispersos en un directori .Public sense encriptar\n\n"
 
 #: src/user_info.py:177
 msgid ""
@@ -999,7 +999,7 @@ msgstr "Mira https://wiki.archlinux.org/index.php/ECryptfs per obtenir informaci
 
 #: src/user_info.py:178
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "Esteu segur que voleu encriptar el vostre directori d'usuari?\n"
 
 #: src/user_info.py:236
 msgid "Invalid characters entered"
@@ -1041,7 +1041,7 @@ msgstr "Les contrasenyes no coincideixen"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr "Intenta Manjaro sense modificar el disc dur. ⏎\nO instal.lar al teu PC amb una de les dues opcions d'instal·lació."
+msgstr "Proveu el Manjaro sense modificar el vostre disc dur. ⏎\nO instal·lleu-lo al vostre PC amb una de les dues opcions d'instal·lació."
 
 #: src/welcome.py:101 ui/welcome.ui:45
 msgid "Try it"
@@ -1049,7 +1049,7 @@ msgstr "Prova'l ara"
 
 #: src/welcome.py:104 ui/welcome.ui:83
 msgid "CLI Installer"
-msgstr "CLI l'instal·lador"
+msgstr "Instal·lador CLI"
 
 #: src/welcome.py:107 ui/welcome.ui:121
 msgid "Graphical Installer"
@@ -1062,7 +1062,7 @@ msgstr "No es pot carregar l'instal·lador CLI"
 #: src/pacman/pac.py:243
 #, python-format
 msgid "Package %s not found in any repo!"
-msgstr ""
+msgstr "El paquet %s no s'ha trobat a cap dipòsit!"
 
 #: src/pacman/pac.py:295
 msgid "Checking dependencies..."
@@ -1082,7 +1082,7 @@ msgstr "Comprovació dels conflictes interns ..."
 
 #: src/pacman/pac.py:306
 msgid "Removing..."
-msgstr "Extracció de ..."
+msgstr "Eliminant ..."
 
 #: src/pacman/pac.py:308
 msgid "Upgrading..."
@@ -1121,7 +1121,7 @@ msgstr "ADVERTÈNCIA: %s"
 #: src/pacman/pac.py:391
 #, python-format
 msgid "Downloading %s..."
-msgstr ""
+msgstr "Baixada %s..."
 
 #: src/pacman/pac.py:400
 #, python-format
@@ -1131,74 +1131,74 @@ msgstr "Refrescant %s..."
 #: src/pacman/pac.py:409
 #, python-format
 msgid "Installing %s (%d/%d)"
-msgstr ""
+msgstr "Instal·lant %s (%d/%d)"
 
 #: src/pacman/pac.py:411
 msgid "Checking and loading packages..."
-msgstr ""
+msgstr "Comprovació i càrrega dels paquets..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Arrencada"
 
 #: ui/check.ui:28
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Per a uns resultats òptims, assegureu-vos que aquest ordinador:</span>"
 
 #: ui/check.ui:106
 msgid ""
 "Antergos uses third-party software to play Flash, MP3 and other media. Some "
 "of this software is propietary. The software is subject to license terms "
 "included with its documentation."
-msgstr ""
+msgstr "Antergos utilitza programari de tercers per a reproduir Flash, MP3  altres suports. Part d'aquest programari és privatiu. El programari està subjecte a condicions de llicència incloses en aquesta documentació."
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:191
 #: ui/installation_alongside.ui:203 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:62
 msgid "label"
-msgstr ""
+msgstr "etiqueta"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Assistència de bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Assistència d'impressió (cups)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "Paquet ofimàtic (processador de textos, fulls de càlcul, etc.)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Efectes de visualització</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Tallafoc</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "Activa el vostre tallafoc (tanca tots els ports per defecte)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Propietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Paquets privatius</span>"
 
 #: ui/installation_advanced.ui:72
 msgid "Create partition"
-msgstr ""
+msgstr "Crea una partició"
 
 #: ui/installation_advanced.ui:112
 msgid "Location:"
-msgstr ""
+msgstr "Ubicació:"
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
@@ -1206,7 +1206,7 @@ msgstr "MB"
 
 #: ui/installation_advanced.ui:559
 msgid "Edit partition"
-msgstr "Edita partició"
+msgstr "Edita la partició"
 
 #: ui/installation_advanced.ui:899
 msgid "LVM..."
@@ -1216,7 +1216,7 @@ msgstr "LVM..."
 msgid ""
 "<span size=\"large\">Choose next to which OS you want to install "
 "Manjaro</span>"
-msgstr "<span size=\"large\">Seleccioneu al costat del quin sistema operatiu que voleu instal·lar Manjaro</span>"
+msgstr "<span size=\"large\">Seleccioneu al costat de quin sistema operatiu voleu instal·lar Manjaro</span>"
 
 #: ui/installation_alongside.ui:88
 msgid "Choose the new size"
@@ -1238,13 +1238,13 @@ msgstr "<span weight=\"light\" size=\"small\">Advertència: Això eliminarà tot
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for security"
-msgstr "Xifra la nova instal·lació Manjaro per seguretat"
+msgstr "Encripta la nova instal·lació Manjaro per seguretat"
 
 #: ui/installation_ask.ui:90
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr "<span weight=\"light\" size=\"small\">Se li demanarà la clau de xifrat en el següent pas</span>"
+msgstr "<span weight=\"light\" size=\"small\">Se us demanarà la clau d'encriptació en el següent pas</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
@@ -1258,25 +1258,25 @@ msgstr "<span weight=\"light\" size=\"small\">Això configurarà LVM, permetent 
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr "Instal·lar al costat d'altres sistemes operatius"
+msgstr "Instal·la al costat d'altres sistemes operatius"
 
 #: ui/installation_ask.ui:159
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes that you have already "
 "installed.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Amb aquesta opció s'instal·lara Manjaro al costat d'un dels altres sistemes operatius que ja està instal·lat.</span>"
+msgstr "<span weight=\"light\" size=\"small\">Amb aquesta opció s'instal·larà Manjaro al costat d'un dels altres sistemes operatius que ja estan instal·lats.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr "Administrar les particions i triar on instal·lar Manjaro (avançat)"
+msgstr "Administra les particions i tria on instal·lar Manjaro (avançat)"
 
 #: ui/installation_ask.ui:197
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Vostè serà capaç de crear / esborrar particions, triar on instal·lar Manjaro i també triar els punts de muntatge addicionals.</span>"
+msgstr "<span weight=\"light\" size=\"small\">Podreu crear / esborrar particions, triar on instal·lar Manjaro i també triar els punts de muntatge addicionals.</span>"
 
 #: ui/installation_automatic.ui:16
 msgid "<b>installation automatic warning goes here</b>"
@@ -1284,11 +1284,11 @@ msgstr "<b>L'avís de la instal·lació automàtica va aquí</b>"
 
 #: ui/installation_automatic.ui:30
 msgid "Explanation goes here"
-msgstr "Explicació va aquí"
+msgstr "L'explicació va aquí"
 
 #: ui/language.ui:25
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr "<span weight=\"bold\">Si us plau seleccioni el seu idioma:</span>"
+msgstr "<span weight=\"bold\">Si us plau seleccioneu el vostre idioma:</span>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
@@ -1308,11 +1308,11 @@ msgstr "Contrasenya segura"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Heu d'introduir una contrasenya</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Heu d'introduir un nom d'usuari</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"

@@ -4,14 +4,14 @@
 # 
 # Translators:
 # reis33 <bahadiroglu33@gmail.com>, 2013
-# tulliana <sonageldik@gmail.com>, 2013
+# tulliana <mdemiray@msn.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-09-29 15:11+0000\n"
-"Last-Translator: reis33 <bahadiroglu33@gmail.com>\n"
+"PO-Revision-Date: 2013-09-29 16:39+0000\n"
+"Last-Translator: tulliana <mdemiray@msn.com>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/manjaro-thus/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr "Bü yükleyici yönetici hakları ile çalıştırılmalıdır, bu haklar olmadan devam edemez."
+msgstr "Bu yükleyici yönetici hakları ile çalıştırılmalıdır, bu haklar olmadan devam edemez."
 
 #: thus.py:110
 #, python-format
@@ -136,7 +136,7 @@ msgid ""
 "Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
 "attempts to provide a more traditional user environment based on the desktop"
 " metaphor, like GNOME 2"
-msgstr ""
+msgstr "Cinnamon bir GNOME Shell çatallamasıdır, Linux Mint tarafından ( ve için) geliştirilmiştir. GNOME 2 gibi, daha geleneksel bir kullanıcı masaüstü ortamı tasarımı sunmayı amaçlar"
 
 #: src/desktop.py:98
 msgid ""
@@ -163,27 +163,27 @@ msgid ""
 "Enlightenment is not just a window manager for Linux/X11 and others, but "
 "also a whole suite of libraries to help you create beautiful user interfaces"
 " with much less work"
-msgstr ""
+msgstr "Enlightenment/E17 Masaüstü Yöneticisi; Linux/X11 ve diğerleri için sadece bir pencere yöneticisi değil, aynı zamanda çok daha az çalışma ile kullanıcı için görsel arayüzler oluşturan kütüphaneye sahiptir"
 
 #: src/desktop.py:125
 msgid ""
 "The KDE Community is an international technology team dedicated to creating "
 "a free and user-friendly computing experience, offering an advanced "
 "graphical desktop and a wide variety of applications."
-msgstr ""
+msgstr "KDE Topluluğu tarafından geliştirilen KDE masaüstü Yöneticisi, gelişmiş bir grafik masaüstü ve bir çok çeşitli uygulamalar sunan, ücretsiz ve kullanıcı dostu bilgisayar deneyimi oluşturmaya adanmış uluslararası bir teknolojidir"
 
 #: src/desktop.py:132
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "Razor-qt; Qt teknolojilerine dayalı gelişmiş, kullanımı kolay ve hızlı bir masaüstü ortamıdır. Bu basitlik, hız ve sezgisel arayüz, kullanıcılar için değerli ve özel olmuştur."
 
 #: src/desktop.py:139
 msgid ""
 "This will install Manjaro as command-line system, without any desktop at "
 "all. After the installation you can install the desktop you may see fit."
-msgstr ""
+msgstr "Bu seçenek, hiç bir  masaüstü yöneticisi olmadan, komut satırı sistemi olarak \"konsol arayüzü\" ile çalışan Manjaro kuracaktır. Yükleme tamamlandıktan sonra size uygun olabilir masaüstü yöneticisi yükleyebilirsiniz."
 
 #: src/desktop.py:151
 msgid "Select your desktop"
@@ -252,190 +252,190 @@ msgstr "Yazıcı sürücüleri ve yönetim araçlarını içerir"
 
 #: src/features.py:119
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:122
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Ofis paketi (kelime işlemci, elektronik tablo, ...)"
 
 #: src/features.py:126
 msgid "Visual effects"
-msgstr ""
+msgstr "Görsel efektler"
 
 #: src/features.py:129 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgstr "Saydamlık, gölge gibi görsel efektler"
 
 #: src/features.py:133
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Karmaşık olmayan güvenlik duvarı"
 
 #: src/features.py:136
 msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr ""
+msgstr "Ufw yükler ve varsayılan olarak tüm trafiği engeller (ayarlarmalar için gufw kullanın)"
 
 #: src/features.py:140
 msgid "Propietary packages"
-msgstr ""
+msgstr "Sahipli paketler"
 
 #: src/features.py:143 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 and other media"
-msgstr ""
+msgstr "MP3, Flash ve diğer ortamları oynatabilmek için üçüncü parti yazılım "
 
 #: src/installation_advanced.py:198 src/installation_advanced.py:489
 #: src/installation_advanced.py:503
 msgid "free space"
-msgstr ""
+msgstr "boş alan"
 
 #: src/installation_advanced.py:267 src/installation_alongside.py:175
 msgid "Device"
-msgstr ""
+msgstr "Aygıt"
 
 #: src/installation_advanced.py:270
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #: src/installation_advanced.py:273
 msgid "Mount point"
-msgstr ""
+msgstr "Bağlama noktası"
 
 #: src/installation_advanced.py:276
 msgid "Label"
-msgstr ""
+msgstr "Etiket"
 
 #: src/installation_advanced.py:282 src/installation_advanced.py:1368
 msgid "Format"
-msgstr ""
+msgstr "Biçim"
 
 #: src/installation_advanced.py:285
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: src/installation_advanced.py:288
 msgid "Used"
-msgstr ""
+msgstr "Kullanılan"
 
 #: src/installation_advanced.py:291
 msgid "Flags"
-msgstr ""
+msgstr "Bayraklar"
 
 #: src/installation_advanced.py:297
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:472
 msgid "none"
-msgstr ""
+msgstr "yok"
 
 #: src/installation_advanced.py:524
 msgid "extended"
-msgstr ""
+msgstr "uzatılmış"
 
 #: src/installation_advanced.py:649 src/installation_advanced.py:889
 msgid "Cannot use same mount twice..."
-msgstr ""
+msgstr "Aynı bağlama noktası iki defa kullanılamaz..."
 
 #: src/installation_advanced.py:651
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Kök bölümü biçimlendirilmiş olmalıdır..."
 
 #: src/installation_advanced.py:910
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Birincil bölüm oluşturuluyor"
 
 #: src/installation_advanced.py:921
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Uzatılmış bölüm oluşturuluyor"
 
 #: src/installation_advanced.py:927
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Mantıksal bölüm oluşturuluyor"
 
 #: src/installation_advanced.py:1014
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Gelişmiş kurulum kipi"
 
 #: src/installation_advanced.py:1018 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Önyükleyici kurulumu için bu aygıtı kullan:"
 
 #: src/installation_advanced.py:1028 ui/installation_advanced.ui:885
 msgid "New partition table"
-msgstr ""
+msgstr "Yeni bölüm tablosu"
 
 #: src/installation_advanced.py:1036
 msgid "Change..."
-msgstr ""
+msgstr "Değiştir..."
 
 #: src/installation_advanced.py:1041 ui/installation_advanced.ui:96
 msgid "Size:"
-msgstr ""
+msgstr "Boyut:"
 
 #: src/installation_advanced.py:1045 ui/installation_advanced.ui:295
 msgid "Type:"
-msgstr ""
+msgstr "Tür:"
 
 #: src/installation_advanced.py:1049 ui/installation_advanced.ui:312
 msgid "Primary"
-msgstr ""
+msgstr "Birincil"
 
 #: src/installation_advanced.py:1053 ui/installation_advanced.ui:330
 msgid "Logical"
-msgstr ""
+msgstr "Mantıksal"
 
 #: src/installation_advanced.py:1057 ui/installation_advanced.ui:348
 msgid "Extended"
-msgstr ""
+msgstr "Uzatılmış"
 
 #: src/installation_advanced.py:1061 ui/installation_advanced.ui:200
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Bu boşluğun başlangıcı"
 
 #: src/installation_advanced.py:1065 ui/installation_advanced.ui:218
 msgid "End of this space"
-msgstr ""
+msgstr "Bu boşluğun sonu"
 
 #: src/installation_advanced.py:1069 src/installation_advanced.py:1086
 #: ui/installation_advanced.ui:127 ui/installation_advanced.ui:583
 msgid "Use as:"
-msgstr ""
+msgstr "Nasıl kullanılacağı:"
 
 #: src/installation_advanced.py:1073 src/installation_advanced.py:1090
 #: ui/installation_advanced.ui:160 ui/installation_advanced.ui:616
 msgid "Mount point:"
-msgstr ""
+msgstr "Bağlama noktası:"
 
 #: src/installation_advanced.py:1077 src/installation_advanced.py:1094
 #: ui/installation_advanced.ui:376 ui/installation_advanced.ui:653
 msgid "Label (optional):"
-msgstr ""
+msgstr "Etiket (isteğe bağlı):"
 
 #: src/installation_advanced.py:1081 ui/installation_advanced.ui:412
 #: ui/installation_advanced.ui:720
 msgid "Encryption options..."
-msgstr ""
+msgstr "Şifreleme seçenekleri..."
 
 #: src/installation_advanced.py:1098 ui/installation_advanced.ui:680
 msgid "Format:"
-msgstr ""
+msgstr "Biçim:"
 
 #: src/installation_advanced.py:1103 ui/installation_advanced.ui:486
 msgid "Partition table type:"
-msgstr ""
+msgstr "Bölüm tablosu türü:"
 
 #: src/installation_advanced.py:1108
 msgid "Create partition table"
-msgstr ""
+msgstr "Bölüm tablosu oluştur"
 
 #: src/installation_advanced.py:1111 src/installation_alongside.py:153
 #: src/installation_automatic.py:95
 msgid "Install now!"
-msgstr ""
+msgstr "Şimdi Yükle!"
 
 #: src/installation_advanced.py:1191
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "%s diski için %s türünde bölüm tablosu oluşturuluyor"
 
 #: src/installation_advanced.py:1290
 #, python-format
@@ -443,7 +443,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s takas-swap olarak bağlandı\\n\nDevam etmek için bağlanmamış olması gerekir\\n\nAyırmak için Eveti tıklayın, veya Hayır deyip geri dönün\\n"
 
 #: src/installation_advanced.py:1292
 #, python-format
@@ -451,126 +451,126 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s %s içerisinde bağlanmış.\n"
 
 #: src/installation_advanced.py:1361
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "%s bölümü silinecek"
 
 #: src/installation_advanced.py:1368
 msgid "Partition"
-msgstr ""
+msgstr "Bölüm"
 
 #: src/installation_advanced.py:1368
 msgid "New"
-msgstr ""
+msgstr "Yeni"
 
 #: src/installation_advanced.py:1368
 msgid "Relabel"
-msgstr ""
+msgstr "Tekrar etiketle"
 
 #: src/installation_advanced.py:1368
 msgid "Mount"
-msgstr ""
+msgstr "Bağla"
 
 #: src/installation_advanced.py:1389
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Bu disklerde yapılacak bölümlendirme işlemleri:"
 
 #: src/installation_advanced.py:1414
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "%s yapılan değişiklikler kaydediliyor"
 
 #: src/installation_advanced.py:1429
 #, python-format
 msgid "Creating fs of type %s in %s with label %s"
-msgstr ""
+msgstr "Etiket %s ile %s türü %s fs oluşturuldu"
 
 #: src/installation_advanced.py:1510 src/installation_automatic.py:173
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro %s türü %s önyükleyiciyi kuracak"
 
 #: src/installation_alongside.py:118
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "%s css yüklenmedi"
 
 #: src/installation_alongside.py:145
 msgid "Choose next to which OS you want to install Manjaro"
-msgstr ""
+msgstr "Manjaro'yu diğer işletim sistemlerinin yanına yükle"
 
 #: src/installation_alongside.py:149
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Başka bir işletim sistemi ile birlikte Manjaro"
 
 #: src/installation_alongside.py:178
 msgid "Detected OS"
-msgstr ""
+msgstr "Başka işletim sistemleri tespit edildi"
 
 #: src/installation_alongside.py:181
 msgid "Filesystem"
-msgstr ""
+msgstr "Dosya sistemi"
 
 #: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
-msgstr ""
+msgstr "Kurulum diskine, bölüm listesi oluşturamazsınız"
 
 #: src/installation_alongside.py:265
 msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr ""
+msgstr "Disk bölümü küçültülemiyor (belki çoğu dolu olabilir)"
 
 #: src/installation_ask.py:100
 msgid "Installation type"
-msgstr ""
+msgstr "Yükleme tipi"
 
 #: src/installation_ask.py:110 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Diski sil ve Manjaro yükle (otomatik)"
 
 #: src/installation_ask.py:113
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Uyarı: Bu işlem, diğer işletim sisteminin kullandığı ​​disk üzerindeki tüm programları, resimleri, belgeleri, müzikleri, diğer verileri siler"
 
 #: src/installation_ask.py:120
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "%s yanına Manjaro yükleyin"
 
 #: src/installation_ask.py:123
 msgid "Install this OS alongside the other OSes you have already installed."
-msgstr ""
+msgstr "Zaten yüklü olan işletim sistemlerinin yanına Manjaro'yu yükleyin."
 
 #: src/installation_ask.py:129
 msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Bölümleri kendiniz oluşturabilir ve yeniden boyutlandırabilirsiniz yada Manjaro için çoklu bölümler seçebilirsiniz (Gelişmiş Seçenekler)"
 
 #: src/installation_ask.py:132
 msgid "Create/delete partitions, and also choose additional mount points."
-msgstr ""
+msgstr "Bölümleri oluştur/sil ve bağlama noktalarını seç."
 
 #: src/installation_ask.py:152
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "Manjaro kurulumu şifreli olacak"
 
 #: src/installation_ask.py:155
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro, LVM kurulumu ile kurulacak"
 
 #: src/installation_automatic.py:78
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "Otomatik yükleme kipi"
 
 #: src/installation_automatic.py:82 ui/installation_automatic.ui:66
 msgid "Select drive:"
-msgstr ""
+msgstr "Sürücü seç:"
 
 #: src/installation_automatic.py:86
 msgid ""
 "WARNING! This installation mode will overwrite everything in your drive!"
-msgstr ""
+msgstr "UYARI! Bu kurulum kipi sürücünüzdeki herşeyin üzerine yazar!"
 
 #: src/installation_automatic.py:91
 msgid ""
@@ -1287,7 +1287,7 @@ msgstr "<span weight=\"bold\">Lütfen kullanacağınız dili seçiniz:</span>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
-msgstr ""
+msgstr "."
 
 #: ui/pac.ui:43
 msgid "Progress"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-09-29 13:02+0000\n"
+"PO-Revision-Date: 2013-09-29 19:03+0000\n"
 "Last-Translator: Ringo Be <ringodekroon@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -143,136 +143,136 @@ msgid ""
 "Xfce is a lightweight desktop environment for UNIX-like operating systems. "
 "It aims to be fast and low on system resources, while still being visually "
 "appealing and user friendly."
-msgstr ""
+msgstr "Xfce is een lichtgewicht desktop omgeving voor UNIX-achtige besturingssystemen. Hij streeft naar een snelle en weinig systeembronnen, terwijl het nog steeds visueel aantrekkelijk en gebruiksvriendelijk."
 
 #: src/desktop.py:105
 msgid ""
 "Extremely fast-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard short "
 "cuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "Extreem snel presterende en energiebesparende desktop omgeving. Het wordt geleverd met een mooie interface, ondersteuning voor meerdere talen, standaard sneltoetsen en extra functies zoals tabbed browsing-bestand."
 
 #: src/desktop.py:112
 msgid ""
 "Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox is een zeer configureerbare, volgende generatie window manager met uitgebreide ondersteuning van standaarden. ⏎\nDe * box visuele stijl is bekend om zijn minimalistische uitstraling .."
 
 #: src/desktop.py:119
 msgid ""
 "Enlightenment is not just a window manager for Linux/X11 and others, but "
 "also a whole suite of libraries to help you create beautiful user interfaces"
 " with much less work"
-msgstr ""
+msgstr "Enlightenment is niet alleen een window manager voor Linux/X11 en anderen, maar ook een hele suite van bibliotheken om u te helpen prachtige gebruikersinterfaces maken met veel minder werk"
 
 #: src/desktop.py:125
 msgid ""
 "The KDE Community is an international technology team dedicated to creating "
 "a free and user-friendly computing experience, offering an advanced "
 "graphical desktop and a wide variety of applications."
-msgstr ""
+msgstr "De KDE-gemeenschap is een internationaal technologie team gewijd aan het creëren van een gratis en gebruiksvriendelijke computer ervaring, biedt een geavanceerde grafische desktop en een breed scala aan toepassingen."
 
 #: src/desktop.py:132
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "Razor-qt is een geavanceerde, eenvoudig te gebruiken en snelle desktop-omgeving gebaseerd op Qt technologieën. Het is op maat gemaakt voor gebruikers die eenvoud, snelheid, en een intuïtieve interface waarderen."
 
 #: src/desktop.py:139
 msgid ""
 "This will install Manjaro as command-line system, without any desktop at "
 "all. After the installation you can install the desktop you may see fit."
-msgstr ""
+msgstr "Dit wil de command-line systeem van manjaro installeren, zonder enige desktop.Na de installatie kunt u de desktop zelf naar keuze installeren"
 
 #: src/desktop.py:151
 msgid "Select your desktop"
-msgstr ""
+msgstr "Selecteer je desktop"
 
 #: src/desktop.py:161
 msgid "Desktops"
-msgstr ""
+msgstr "Bureaubladen"
 
 #: src/desktop.py:194
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus installeerd manjaro met de '%s' desktop"
 
 #: src/download.py:82
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Fout bij creeeren van een metalink voor pakket %s"
 
 #: src/download.py:88
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Fout bij toevoegen metalink voor pakket %s"
 
 #: src/download.py:137
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Downloaden pakket '%s'..."
 
 #: src/download.py:161
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Kan geen verbinding maken met aria2. Zal niet in staat zijn vanwege de download snelheid"
 
 #: src/download.py:232
 #, python-format
 msgid "Unable to create download queue for package %s"
-msgstr ""
+msgstr "Niet in staat om te downloaden wachtrij te maken voor pakket %s"
 
 #: src/download.py:236
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Kan niet dit pakketten vinden:"
 
 #: src/download.py:242
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Waarschuwing! Kan de afhankelijkheden niet oplossen:"
 
 #: src/features.py:100
 msgid "Feature selection"
-msgstr ""
+msgstr "Feature selectie"
 
 #: src/features.py:105
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bluetooth ondersteuning"
 
 #: src/features.py:108 ui/features.ui:55
 msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr ""
+msgstr "Zonder Bluetooth ondersteuning kan je geen Bluetooth apparaat gebruiken"
 
 #: src/features.py:112
 msgid "Printing support (cups)"
-msgstr ""
+msgstr "Printen ondersteuning (cups)"
 
 #: src/features.py:115 ui/features.ui:135
 msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgstr "Inclusief printer drivers en beheersgereedschap"
 
 #: src/features.py:119
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:122
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Office suite (word processor, spreadsheet, ...)"
 
 #: src/features.py:126
 msgid "Visual effects"
-msgstr ""
+msgstr "Visueel effecten"
 
 #: src/features.py:129 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgstr "Visueel effecten zoals transpiranten, shaduw, etc."
 
 #: src/features.py:133
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Uncomplicated firewall"
 
 #: src/features.py:136
 msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr ""
+msgstr "Installeerd ufw en blokkeer standaard alle verkeer (gebruik gufw om in te stellen) "
 
 #: src/features.py:140
 msgid "Propietary packages"
@@ -280,162 +280,162 @@ msgstr ""
 
 #: src/features.py:143 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 and other media"
-msgstr ""
+msgstr "Software van derde om Flash,MP3 en andere media"
 
 #: src/installation_advanced.py:198 src/installation_advanced.py:489
 #: src/installation_advanced.py:503
 msgid "free space"
-msgstr ""
+msgstr "Vrije ruimte"
 
 #: src/installation_advanced.py:267 src/installation_alongside.py:175
 msgid "Device"
-msgstr ""
+msgstr "Apparaat"
 
 #: src/installation_advanced.py:270
 msgid "Type"
-msgstr ""
+msgstr "Soort"
 
 #: src/installation_advanced.py:273
 msgid "Mount point"
-msgstr ""
+msgstr "Mount punt"
 
 #: src/installation_advanced.py:276
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: src/installation_advanced.py:282 src/installation_advanced.py:1368
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: src/installation_advanced.py:285
 msgid "Size"
-msgstr ""
+msgstr "Grootte"
 
 #: src/installation_advanced.py:288
 msgid "Used"
-msgstr ""
+msgstr "Gebruikt"
 
 #: src/installation_advanced.py:291
 msgid "Flags"
-msgstr ""
+msgstr "Flags"
 
 #: src/installation_advanced.py:297
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:472
 msgid "none"
-msgstr ""
+msgstr "Geen"
 
 #: src/installation_advanced.py:524
 msgid "extended"
-msgstr ""
+msgstr "extended"
 
 #: src/installation_advanced.py:649 src/installation_advanced.py:889
 msgid "Cannot use same mount twice..."
-msgstr ""
+msgstr "Kan niet de zelfde mount punt twee keer gebruiken."
 
 #: src/installation_advanced.py:651
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Root partitie moet geformatteerd zijn.."
 
 #: src/installation_advanced.py:910
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Creeer primair partitie"
 
 #: src/installation_advanced.py:921
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Creeer extended partitie"
 
 #: src/installation_advanced.py:927
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Creeer logical partitie"
 
 #: src/installation_advanced.py:1014
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Geavanceerd installatie modus"
 
 #: src/installation_advanced.py:1018 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Gebruik dit apparaat voor bootlader installatie:"
 
 #: src/installation_advanced.py:1028 ui/installation_advanced.ui:885
 msgid "New partition table"
-msgstr ""
+msgstr "Nieuwe partitie tabel"
 
 #: src/installation_advanced.py:1036
 msgid "Change..."
-msgstr ""
+msgstr "Verander..."
 
 #: src/installation_advanced.py:1041 ui/installation_advanced.ui:96
 msgid "Size:"
-msgstr ""
+msgstr "Grootte:"
 
 #: src/installation_advanced.py:1045 ui/installation_advanced.ui:295
 msgid "Type:"
-msgstr ""
+msgstr "Type:"
 
 #: src/installation_advanced.py:1049 ui/installation_advanced.ui:312
 msgid "Primary"
-msgstr ""
+msgstr "Primair"
 
 #: src/installation_advanced.py:1053 ui/installation_advanced.ui:330
 msgid "Logical"
-msgstr ""
+msgstr "Logical"
 
 #: src/installation_advanced.py:1057 ui/installation_advanced.ui:348
 msgid "Extended"
-msgstr ""
+msgstr "Extended"
 
 #: src/installation_advanced.py:1061 ui/installation_advanced.ui:200
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Het begin van dit ruimte"
 
 #: src/installation_advanced.py:1065 ui/installation_advanced.ui:218
 msgid "End of this space"
-msgstr ""
+msgstr "Het einde van de ruimte"
 
 #: src/installation_advanced.py:1069 src/installation_advanced.py:1086
 #: ui/installation_advanced.ui:127 ui/installation_advanced.ui:583
 msgid "Use as:"
-msgstr ""
+msgstr "Gebruik als:"
 
 #: src/installation_advanced.py:1073 src/installation_advanced.py:1090
 #: ui/installation_advanced.ui:160 ui/installation_advanced.ui:616
 msgid "Mount point:"
-msgstr ""
+msgstr "Mount punt:"
 
 #: src/installation_advanced.py:1077 src/installation_advanced.py:1094
 #: ui/installation_advanced.ui:376 ui/installation_advanced.ui:653
 msgid "Label (optional):"
-msgstr ""
+msgstr "Label (optioneel):"
 
 #: src/installation_advanced.py:1081 ui/installation_advanced.ui:412
 #: ui/installation_advanced.ui:720
 msgid "Encryption options..."
-msgstr ""
+msgstr "Encryptie opties..."
 
 #: src/installation_advanced.py:1098 ui/installation_advanced.ui:680
 msgid "Format:"
-msgstr ""
+msgstr "Format:"
 
 #: src/installation_advanced.py:1103 ui/installation_advanced.ui:486
 msgid "Partition table type:"
-msgstr ""
+msgstr "Partitie tabel type:"
 
 #: src/installation_advanced.py:1108
 msgid "Create partition table"
-msgstr ""
+msgstr "Creeer partitie tabel"
 
 #: src/installation_advanced.py:1111 src/installation_alongside.py:153
 #: src/installation_automatic.py:95
 msgid "Install now!"
-msgstr ""
+msgstr "Installeerd nu!"
 
 #: src/installation_advanced.py:1191
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Creeerd een nieuw partitie tabel van type %s voor disk %s"
 
 #: src/installation_advanced.py:1290
 #, python-format
@@ -451,68 +451,68 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s is aangekoppeld als '%s'⏎\nOm verder te gaan moet het niet gekoppeld zijn⏎\nKlik Ja om te los koppelen of nee om terug te gaan.⏎\n"
 
 #: src/installation_advanced.py:1361
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Partitie %s word gewist"
 
 #: src/installation_advanced.py:1368
 msgid "Partition"
-msgstr ""
+msgstr "Partitie"
 
 #: src/installation_advanced.py:1368
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 #: src/installation_advanced.py:1368
 msgid "Relabel"
-msgstr ""
+msgstr "HerLabel"
 
 #: src/installation_advanced.py:1368
 msgid "Mount"
-msgstr ""
+msgstr "Mount"
 
 #: src/installation_advanced.py:1389
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Deze schijven zal partitie acties hebben:"
 
 #: src/installation_advanced.py:1414
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Wijzigingen opslaan gebeurt in %s"
 
 #: src/installation_advanced.py:1429
 #, python-format
 msgid "Creating fs of type %s in %s with label %s"
-msgstr ""
+msgstr "Creeerd fs van type %s in %s met label %s"
 
 #: src/installation_advanced.py:1510 src/installation_automatic.py:173
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro installerd de bootlader van type %s in %s"
 
 #: src/installation_alongside.py:118
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Kan niet %s css laden"
 
 #: src/installation_alongside.py:145
 msgid "Choose next to which OS you want to install Manjaro"
-msgstr ""
+msgstr "Kies naast welk OS je wilt Manjaro installeren"
 
 #: src/installation_alongside.py:149
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro naast een andere OS"
 
 #: src/installation_alongside.py:178
 msgid "Detected OS"
-msgstr ""
+msgstr "Gedetecteerd OS"
 
 #: src/installation_alongside.py:181
 msgid "Filesystem"
-msgstr ""
+msgstr "Bestandsysteem"
 
 #: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
