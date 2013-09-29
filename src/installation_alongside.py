@@ -62,7 +62,7 @@ _next_page = "timezone"
 _prev_page = "installation_ask"
 
 # leave at least 3.5GB for Manjaro when shrinking
-_minimum_space_for_antergos = 3500
+_minimum_space_for_manjaro = 3500
 
 class InstallationAlongside(Gtk.Box):
     def __init__(self, params):
@@ -259,7 +259,7 @@ class InstallationAlongside(Gtk.Box):
         except subprocess.CalledProcessError as e:
             logging.exception("CalledProcessError.output = %s" % e.output)
 
-        if self.min_size + _minimum_space_for_antergos < self.max_size:
+        if self.min_size + _minimum_space_for_manjaro < self.max_size:
             self.new_size = self.ask_shrink_size(other_os_name)
         else:
             show.error(_("Can't shrink the partition (maybe it's nearly full)"))
@@ -275,8 +275,8 @@ class InstallationAlongside(Gtk.Box):
         label_other_os_size = self.ui.get_object("label_other_os_size")
         label_other_os_size.set_markup(str(int(new_value)) + " MB")
 
-        label_antergos_size = self.ui.get_object("label_antergos_size")
-        label_antergos_size.set_markup(str(int(self.max_size - new_value)) + " MB")
+        label_manjaro_size = self.ui.get_object("label_manjaro_size")
+        label_manjaro_size.set_markup(str(int(self.max_size - new_value)) + " MB")
         
     def ask_shrink_size(self, other_os_name):
         dialog = self.ui.get_object("shrink-dialog")
@@ -284,7 +284,7 @@ class InstallationAlongside(Gtk.Box):
         slider = self.ui.get_object("scale")
 
         # leave space for Manjaro
-        self.available_slider_range = [ self.min_size, self.max_size - _minimum_space_for_antergos ]
+        self.available_slider_range = [ self.min_size, self.max_size - _minimum_space_for_manjaro ]
 
         slider.set_fill_level(self.min_size)
         slider.set_show_fill_level(True)
@@ -297,9 +297,9 @@ class InstallationAlongside(Gtk.Box):
         txt = "<span weight='bold' size='large'>%s</span>" % other_os_name
         label_other_os.set_markup(txt)
 
-        label_antergos = self.ui.get_object("label_antergos")
+        label_manjaro = self.ui.get_object("label_manjaro")
         txt = "<span weight='bold' size='large'>Manjaro</span>"
-        label_antergos.set_markup(txt)
+        label_manjaro.set_markup(txt)
         
         self.update_ask_shrink_size_labels(self.min_size)
        

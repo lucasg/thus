@@ -161,10 +161,10 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="label_antergos">
+                  <object class="GtkLabel" id="label_manjaro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Antergos</property>
+                    <property name="label" translatable="yes">Manjaro</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -197,7 +197,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="label_antergos_size">
+                  <object class="GtkLabel" id="label_manjaro_size">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">label</property>
