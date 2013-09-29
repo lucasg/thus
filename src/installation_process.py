@@ -612,6 +612,24 @@ class InstallationProcess(multiprocessing.Process):
             self.install_bootloader_grub2_bios()
         elif bt == "UEFI_x86_64" or bt == "UEFI_i386":
             self.install_bootloader_grub2_efi(bt)
+
+    def install_bootloader_grub2_locales(self):
+        dest_locale_dir = os.path.join(self.dest_dir, "boot/grub/locale")
+        
+        if not os.path.exists(dest_locale_dir):
+            os.makedirs(dest_locale_dir)
+        
+        mo = os.path.join(self.dest_dir, "usr/share/locale/en@quot/LC_MESSAGES/grub.mo")
+
+        try:
+            shutil.copy2(mo, os.path.join(dest_locale_dir, "en.mo"))
+        except FileNotFoundError:
+            self.chroot_umount()            
+            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
+            return
+        except FileExistsError:
+            # ignore if already exists
+            pass
     
     def install_bootloader_grub2_bios(self):
         grub_device = self.settings.get('bootloader_device')
@@ -630,6 +648,8 @@ class InstallationProcess(multiprocessing.Process):
         
         if not os.path.exists(grub_d_dir):
             os.makedirs(grub_d_dir)
+
+        self.install_bootloader_grub2_locales()
 
         locale = self.settings.get("locale")
         self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale])
@@ -664,22 +684,7 @@ class InstallationProcess(multiprocessing.Process):
                   '--recheck', \
                   grub_device])
         
-        dest_locale_dir = os.path.join(self.dest_dir, "boot/grub/locale")
-        
-        if not os.path.exists(dest_locale_dir):
-            os.makedirs(dest_locale_dir)
-        
-        mo = os.path.join(self.dest_dir, "usr/share/locale/en@quot/LC_MESSAGES/grub.mo")
-
-        try:
-            shutil.copy2(mo, os.path.join(dest_locale_dir, "en.mo"))
-        except FileNotFoundError:
-            self.chroot_umount()            
-            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
-            return
-        except FileExistsError:
-            # ignore if already exists
-            pass
+        self.install_bootloader_grub2_locales()
 
         d = self.dest_dir
         locale = self.settings.get("locale")
