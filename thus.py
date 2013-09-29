@@ -71,6 +71,7 @@ _desktops = [ "nox", "gnome", "cinnamon", "xfce", "razor", "openbox" ]
 # Command line options
 _alternate_package_list = ""
 _use_aria2 = False
+_use_staging = False
 _log_level = logging.INFO
 _verbose = False
 _update = False
@@ -203,6 +204,9 @@ class Main(Gtk.Window):
         # the background thread from being joined automatically when the
         # process exits – see join_thread().
         #self.callback_queue.cancel_join_thread()
+
+        # save in config if we have enabled staging features
+        self.settings.set("use_staging", _use_staging)
 
         # save in config if we have to use aria2 to download pacman packages
         self.settings.set("use_aria2", _use_aria2)
@@ -394,6 +398,7 @@ def show_help():
     print("Advanced options:")
     print("-a, --aria2 : Use aria2 to download Manjaro packages (EXPERIMENTAL)")
     print("-d, --debug : Show debug messages")
+    print("-s, --staging : Enable stating options")
     print("-v, --verbose : Show logging messages to stdout")
     print("-g type, --force-grub-type type : force grub type to install, type can be bios, efi, ask or none")
     print("-p file.xml, --packages file.xml : Manjaro will install the packages referenced by file.xml instead of the default ones")
@@ -405,8 +410,8 @@ if __name__ == '__main__':
     argv = sys.argv[1:]
     
     try:
-        opts, args = getopt.getopt(argv, "adp:uvg:h",
-         ["aria2", "debug", "packages=", "update", "verbose", \
+        opts, args = getopt.getopt(argv, "adp:usvg:h",
+         ["aria2", "debug", "packages=", "staging", "update", "verbose", \
           "force-grub=", "help"])
     except getopt.GetoptError as e:
         show_help()
@@ -418,6 +423,8 @@ if __name__ == '__main__':
             _log_level = logging.DEBUG
         elif opt in ('-v', '--verbose'):
             _verbose = True
+        elif opt in ('-s', '--staging'):
+            _use_staging = True
         elif opt in ('-u', '--update'):
             _update = True
         elif opt in ('-p', '--packages'):

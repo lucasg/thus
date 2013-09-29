@@ -53,7 +53,10 @@ class InstallationAsk(Gtk.Box):
         self.ui = Gtk.Builder()
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_ask.ui"))
 
-        partitioner_dir = os.path.join(self.settings.get("DATA_DIR"), "partitioner/small/")
+        if self.settings.get("use_staging"):
+            partitioner_dir = os.path.join(self.settings.get("DATA_DIR"), "partitioner/small/")
+        else:
+            partitioner_dir = os.path.join(self.settings.get("DATA_DIR"), "partitioner/")
 
         image = self.ui.get_object("automatic_image")
         image.set_from_file(partitioner_dir + "automatic.png")
@@ -94,6 +97,17 @@ class InstallationAsk(Gtk.Box):
             radio = self.ui.get_object("alongside_radiobutton")
             radio.hide()
             label = self.ui.get_object("alongside_description")
+            label.hide()
+
+        # Disable staging features
+        if not self.settings.get("use_staging"):
+            radio = self.ui.get_object("encrypt_checkbutton")
+            radio.hide()
+            label = self.ui.get_object("encrypt_label")
+            label.hide()
+            radio = self.ui.get_object("lvm_checkbutton")
+            radio.hide()
+            label = self.ui.get_object("lvm_label")
             label.hide()
 
     def translate_ui(self):
