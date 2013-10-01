@@ -282,7 +282,7 @@ _mkfs() {
 autoprepare() {
     # check on encrypted devices, else weird things can happen!
     if [ "$USE_LUKS" == "1" ]; then
-       _stopluks
+        _stopluks
     fi
     # check on raid devices, else weird things can happen during partitioning!
     # _stopmd
@@ -290,6 +290,7 @@ autoprepare() {
     if [ "$USE_LVM" == "1" ]; then
         _stoplvm
     fi
+    
     NAME_SCHEME_PARAMETER_RUN=""
     # switch for mbr usage
 
@@ -300,6 +301,8 @@ autoprepare() {
     SWAP_PART_SET=""
     ROOT_PART_SET=""
     FSTYPE='ext4'
+    
+    # Do not support UEFI
     GUIDPARAMETER="no"
 
     if [[ "${GUIDPARAMETER}" = "yes" ]]; then
@@ -344,7 +347,6 @@ autoprepare() {
         else
             let SWAP_PART_SIZE=`grep MemTotal /proc/meminfo | awk '{print $2}'`/1024
         fi
-
 
         SWAP_PART_SET=1
 
@@ -444,10 +446,16 @@ autoprepare() {
         #lvcreate -n ManjaroSwap -L ${SWAP_PART_SIZE} ManjaroVG
         lvcreate -n ManjaroSwap -l 100%FREE ManjaroVG
         
-        # TODO: mkfs on ManjaroRoot and ManjaroSwap
-        #/dev/ManjaroVG/ManjaroRoot
+        ## Make sure the "root" partition is defined first
         _mkfs yes /dev/ManjaroVG/ManjaroRoot ext4 "${DESTDIR}" / ManjaroRoot || return 1
         _mkfs yes /dev/ManjaroVG/ManjaroSwap swap "${DESTDIR}" "" ManjaroSwap || return 1
+
+        if [ "${GUIDPARAMETER}" == "yes" ]; then
+            _mkfs yes "${DEVICE}3" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1
+        else        
+            _mkfs yes "${DEVICE}1" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1
+        fi
+        
     else
         
         ## FSSPECS - default filesystem specs (the + is bootable flag)
@@ -456,7 +464,7 @@ autoprepare() {
         ## Make sure the "root" partition is defined first in the FSSPECS list
         FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
 
-        if [[ "${GUIDPARAMETER}" == "yes" ]]; then
+        if [ "${GUIDPARAMETER}" == "yes" ]; then
             FSSPECS="5:/:${ROOT_PART_SIZE} :${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
         fi
 

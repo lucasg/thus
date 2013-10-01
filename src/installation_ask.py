@@ -3,10 +3,10 @@
 #
 #  installation_ask.py
 #  
-#  This file has fragments of code from Cnchi (graphical installer from Antergos)
+#  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #  
-#  Copyright 2013 Antergos (http://http://antergos.com/)
+#  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify

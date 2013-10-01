@@ -3,10 +3,10 @@
 #
 #  installation_automatic.py
 #  
-#  This file has fragments of code from Cnchi (graphical installer from Antergos)
+#  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #  
-#  Copyright 2013 Antergos (http://http://antergos.com/)
+#  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
@@ -148,7 +148,19 @@ class InstallationAutomatic(Gtk.Box):
     def start_installation(self):
         #self.install_progress.set_sensitive(True)
         logging.info(_("Manjaro will use %s as installation device") % self.auto_device)
+
+        if self.settings.get('use_lvm'):
+            # WARNING! : This must be the same that appears in auto_partition.sh
+            root_partition = "/dev/ManjaroVG/ManjaroRoot"
+        else:
+            root_partition = self.auto_device + "3"
+
+        boot_partition = self.auto_device + "1"
         
+        # TODO: UEFI Install (must update auto_partition.sh)
+        # root_partition = self.auto_device + "5"
+        # boot_partition = self.atuo_device + "3"
+
         mount_devices = {}
         root_partition = self.auto_device + "3"
         boot_partition = self.auto_device + "1"

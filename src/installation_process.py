@@ -3,10 +3,10 @@
 #
 #  installation_process.py
 #  
-#  This file has fragments of code from Cnchi (graphical installer from Antergos)
+#  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #  
-#  Copyright 2013 Antergos (http://http://antergos.com/)
+#  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
@@ -603,24 +603,6 @@ class InstallationProcess(multiprocessing.Process):
             self.install_bootloader_grub2_bios()
         elif bt == "UEFI_x86_64" or bt == "UEFI_i386":
             self.install_bootloader_grub2_efi(bt)
-
-    def install_bootloader_grub2_locales(self):
-        dest_locale_dir = os.path.join(self.dest_dir, "boot/grub/locale")
-        
-        if not os.path.exists(dest_locale_dir):
-            os.makedirs(dest_locale_dir)
-        
-        mo = os.path.join(self.dest_dir, "usr/share/locale/en@quot/LC_MESSAGES/grub.mo")
-
-        try:
-            shutil.copy2(mo, os.path.join(dest_locale_dir, "en.mo"))
-        except FileNotFoundError:
-            self.chroot_umount()            
-            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
-            return
-        except FileExistsError:
-            # ignore if already exists
-            pass
     
     def install_bootloader_grub2_bios(self):
         grub_device = self.settings.get('bootloader_device')
@@ -700,7 +682,27 @@ class InstallationProcess(multiprocessing.Process):
                   '--format=%s-efi' % uefi_arch, \
                   '--compression="xz"', \
                   '--output="/boot/efi/EFI/manjaro_grub/grub%s_standalone.efi' % spec_uefi_arch, \
-                  'boot/grub/grub.cfg'])      
+                  'boot/grub/grub.cfg'])
+
+        # TODO: Create a boot entry for Manjaro in the UEFI boot manager (is this necessary?)
+
+    def install_bootloader_grub2_locales(self):
+        dest_locale_dir = os.path.join(self.dest_dir, "boot/grub/locale")
+        
+        if not os.path.exists(dest_locale_dir):
+            os.makedirs(dest_locale_dir)
+        
+        mo = os.path.join(self.dest_dir, "usr/share/locale/en@quot/LC_MESSAGES/grub.mo")
+
+        try:
+            shutil.copy2(mo, os.path.join(dest_locale_dir, "en.mo"))
+        except FileNotFoundError:
+            self.chroot_umount()            
+            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
+            return
+        except FileExistsError:
+            # ignore if already exists
+            pass    
 
     def enable_services(self, services):
         for name in services:
@@ -1087,9 +1089,9 @@ class InstallationProcess(multiprocessing.Process):
         if desktop != "nox":
             # Set autologin if selected
             if self.settings.get('require_password') is False:
+                self.queue_event('info', _("%s: Enable automatic login for user %s." % (self.desktop_manager, username)))
                 # Systems with GDM as Desktop Manager
                 if self.desktop_manager == 'gdm':
-                    self.queue_event('info', _("GDM: Enable automatic login for user %s." % username))
                     gdm_conf_path = os.path.join(self.dest_dir, "etc/gdm/custom.conf")
                     with open(gdm_conf_path, "wt") as gdm_conf:
                         gdm_conf.write('# Enable automatic login for user\n')
@@ -1099,7 +1101,6 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with MDM as Desktop Manager
                 if self.desktop_manager == 'mdm':
-                    self.queue_event('info', _("MDM: Enable automatic login for user %s." % username))
                     mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
                     if os.path.exists(mdm_conf_path):
                         with open(mdm_conf_path, "rt") as mdm_conf:
@@ -1119,7 +1120,6 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with KDM as Desktop Manager
                 elif self.desktop_manager == 'kdm':
-                    self.queue_event('info', _("KDM: Enable automatic login for user %s." % username))
                     kdm_conf_path = os.path.join(self.dest_dir, "usr/share/config/kdm/kdmrc")
                     text = []
                     with open(kdm_conf_path, "rt") as kdm_conf:
@@ -1136,7 +1136,6 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with LXDM as Desktop Manager
                 elif self.desktop_manager == 'lxdm':
-                    self.queue_event('info', _("LXDM: Enable automatic login for user %s." % username))
                     lxdm_conf_path = os.path.join(self.dest_dir, "etc/lxdm/lxdm.conf")
                     text = []
                     with open(lxdm_conf_path, "rt") as lxdm_conf:
@@ -1152,7 +1151,6 @@ class InstallationProcess(multiprocessing.Process):
 
                 # Systems with LightDM as the Desktop Manager
                 elif self.desktop_manager == 'lightdm':
-                    self.queue_event('info', _("LightDM: Enable automatic login for user %s." % username))
                     lightdm_conf_path = os.path.join(self.dest_dir, "etc/lightdm/lightdm.conf")
                     # Ideally, use configparser for the ini conf file, but just do
                     # a simple text replacement for now

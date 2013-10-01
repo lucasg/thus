@@ -3,11 +3,7 @@
 #
 #  installation_alongside.py
 #  
-#  This file has fragments of code from Cnchi (graphical installer from Antergos)
-#  Check it at https://github.com/antergos
-#  
-#  Copyright 2013 Antergos (http://http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright 2013 Antergos, Manjaro
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -35,7 +31,6 @@ import logging
 import show_message as show
 import bootinfo
 import subprocess
-import logging
 
 # To be able to test this installer in other systems
 # that do not have pyparted3 installed

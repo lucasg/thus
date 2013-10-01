@@ -3,7 +3,7 @@
 #
 #  welcome.py
 #  
-#  Copyright 2013 Antergos, Manjaro
+#  Copyright 2013 Antergos (http://antergos.com/)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -19,14 +19,6 @@
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
-#  
-#  Antergos Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
-#   Raúl Granados (pollitux) <raulgranados.antergos.com>
-#   Gustau Castells (karasu) <karasu.antergos.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
-#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
-#   Alex Skinner (skinner) <skinner.antergos.com>
 
 from gi.repository import Gtk, Gdk
 import subprocess, sys, os

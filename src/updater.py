@@ -3,11 +3,7 @@
 #
 #  updater.py
 #  
-#  This file has fragments of code from Cnchi (graphical installer from Antergos)
-#  Check it at https://github.com/antergos
-#  
-#  Copyright 2013 Antergos (http://http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright 2013 Antergos (http://antergos.com/)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
