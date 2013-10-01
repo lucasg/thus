@@ -10,6 +10,7 @@
 # kyak <peselnik@gmail.com>, 2013
 # macbet <rostovslipknot@gmail.com>, 2013
 # partizan <serg.partizan@gmail.com>, 2012-2013
+# Umidjon Almasov <u.almasov@gmail.com>, 2013
 # Valentine Zgonnik <noisyislands@gmail.com>, 2013
 # VVS <vitaliy.star@gmail.com>, 2011
 msgid ""
@@ -17,8 +18,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-09-29 11:38+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-01 11:59+0000\n"
+"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/manjaro-thus/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +54,7 @@ msgstr "Использовать '%s' файл,  как список пакет�
 
 #: thus.py:248 src/slides.py:241
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Установщик Manjaro"
 
 #: thus.py:316
 msgid "Quiting installer..."
@@ -243,7 +244,7 @@ msgstr ""
 
 #: src/features.py:105
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Поддержка Bluetooth"
 
 #: src/features.py:108 ui/features.ui:55
 msgid "Without Bluetooth support you can't use Bluetooth devices"
@@ -251,39 +252,39 @@ msgstr ""
 
 #: src/features.py:112
 msgid "Printing support (cups)"
-msgstr ""
+msgstr "Поддержка печати (cups)"
 
 #: src/features.py:115 ui/features.ui:135
 msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgstr "Включает драйверы принтера и средства управления"
 
 #: src/features.py:119
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:122
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Офисный пакет (текстовый процессор, электронные таблицы, ...)"
 
 #: src/features.py:126
 msgid "Visual effects"
-msgstr ""
+msgstr "Визуальные эффекты"
 
 #: src/features.py:129 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgstr "Визуальные эффекты, такие как прозрачность, тени и т.д."
 
 #: src/features.py:133
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Простой брандмауэр"
 
 #: src/features.py:136
 msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr ""
+msgstr "Устанавливает UFW и запрещает весь трафик по умолчанию (используйте Gufw для настройки)"
 
 #: src/features.py:140
 msgid "Propietary packages"
-msgstr ""
+msgstr "Проприетарные пакеты"
 
 #: src/features.py:143 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 and other media"
@@ -535,7 +536,7 @@ msgstr "Тип установки"
 
 #: src/installation_ask.py:110 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Стереть диск и установить Manjaro (автоматически)"
 
 #: src/installation_ask.py:113
 msgid "Warning: This will delete all data on your disk"
@@ -598,7 +599,7 @@ msgstr ""
 #: src/installation_process.py:105
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Копирование '/%s'"
 
 #: src/installation_process.py:185
 #, python-format
@@ -687,15 +688,15 @@ msgstr "Настройка аппаратных часов ..."
 
 #: src/installation_process.py:940
 msgid "Configuring hardware.."
-msgstr ""
+msgstr "Настройка оборудования..."
 
 #: src/installation_process.py:947
 msgid "Setup graphic card.."
-msgstr ""
+msgstr "Настройка видео-карты..."
 
 #: src/installation_process.py:954
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "Невозможно запустить скрипт MHWD"
 
 #: src/installation_process.py:960
 msgid "Configure display manager.."
@@ -703,7 +704,7 @@ msgstr ""
 
 #: src/installation_process.py:1055
 msgid "Configure System.."
-msgstr ""
+msgstr "Настройка системы..."
 
 #: src/installation_process.py:1082
 msgid "Removing live configuration (packages)"
@@ -711,36 +712,36 @@ msgstr ""
 
 #: src/installation_process.py:1098
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Настройка менеджера пакетов"
 
 #: src/installation_process.py:1121
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Настройка менеджера пакетов завершена."
 
 #: src/installation_process.py:1147
 #, python-format
 msgid "GDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "GDM: Разрешить автоматический вход в систему для %s."
 
 #: src/installation_process.py:1157
 #, python-format
 msgid "MDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "MDM: Разрешить автоматический вход в систему для %s."
 
 #: src/installation_process.py:1177
 #, python-format
 msgid "KDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "KDM: Разрешить автоматический вход в систему для %s."
 
 #: src/installation_process.py:1194
 #, python-format
 msgid "LXDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "LXDM: Разрешить автоматический вход в систему для %s."
 
 #: src/installation_process.py:1210
 #, python-format
 msgid "LightDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "LightDM: Разрешить автоматический вход в систему для %s."
 
 #: src/installation_process.py:1227
 msgid "Running mkinitcpio..."
@@ -785,7 +786,7 @@ msgstr ""
 
 #: src/language.py:95 src/welcome.py:110
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Добро пожаловать в Manjaro!"
 
 #: src/language.py:113
 msgid "Languages"
@@ -831,15 +832,15 @@ msgstr "Не удается выполнить авто-выбор зеркал"
 
 #: src/show_message.py:60
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Установщик Manjaro - Ошибка"
 
 #: src/show_message.py:71
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Установщик Manjaro - Предупреждение"
 
 #: src/show_message.py:82
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Установщик Manjaro - Информация"
 
 #: src/show_message.py:92
 msgid "Manjaro Installer - Question"
@@ -1176,43 +1177,43 @@ msgstr ""
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "Офисный пакет (текстовый процессор, электронные таблицы и т.д.)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Визуальные эффекты</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Брандмауэр</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "Включает брандмауэр (закрывает все порты по умолчанию)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Propietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Проприетарные пакеты</span>"
 
 #: ui/installation_advanced.ui:72
 msgid "Create partition"
-msgstr ""
+msgstr "Создание раздела"
 
 #: ui/installation_advanced.ui:112
 msgid "Location:"
-msgstr ""
+msgstr "Расположение:"
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
-msgstr ""
+msgstr "МБ"
 
 #: ui/installation_advanced.ui:559
 msgid "Edit partition"
-msgstr ""
+msgstr "Изменение раздела"
 
 #: ui/installation_advanced.ui:899
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_alongside.ui:14
 msgid ""
@@ -1222,11 +1223,11 @@ msgstr ""
 
 #: ui/installation_alongside.ui:88
 msgid "Choose the new size"
-msgstr ""
+msgstr "Выбор нового размера"
 
 #: ui/installation_alongside.ui:155
 msgid "Other OS"
-msgstr ""
+msgstr "Другая ОС"
 
 #: ui/installation_alongside.ui:167
 msgid "Antergos"
@@ -1236,7 +1237,7 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Предупреждение: Это удалит все программы, документы, фотографии, музыку и все остальные файлы на вашем диске</span>"
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for security"
@@ -1290,11 +1291,11 @@ msgstr ""
 
 #: ui/language.ui:25
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Выберите язык:</span>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/pac.ui:43
 msgid "Progress"
@@ -1302,7 +1303,7 @@ msgstr ""
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Добро пожаловать в Manjaro</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"

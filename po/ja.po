@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-09-29 13:07+0000\n"
+"PO-Revision-Date: 2013-09-30 16:39+0000\n"
 "Last-Translator: rago1975\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -203,26 +203,26 @@ msgstr "デスクトップ環境 '%s' でManjaroをインストールします�
 #: src/download.py:82
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr " %s パッケージへのメタリンク作成時のエラー"
 
 #: src/download.py:88
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "%s パッケージへのメタリンク追加時のエラー"
 
 #: src/download.py:137
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "パッケージ  '%s' をダウンロード..."
 
 #: src/download.py:161
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr " Aria2に接続できません。ダウンロードの速度を向上させることができません。"
 
 #: src/download.py:232
 #, python-format
 msgid "Unable to create download queue for package %s"
-msgstr ""
+msgstr "パッケージ %s のダウンロードキューを作成することができません"
 
 #: src/download.py:236
 msgid "Can't find these packages: "
@@ -230,7 +230,7 @@ msgstr "次のパッケージを見つけられませんでした:"
 
 #: src/download.py:242
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "警告! 依存性を解決することができません:"
 
 #: src/features.py:100
 msgid "Feature selection"
@@ -238,35 +238,35 @@ msgstr ""
 
 #: src/features.py:105
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bluetooth サポート"
 
 #: src/features.py:108 ui/features.ui:55
 msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr ""
+msgstr "Bluetooth サポート無しに、Bluetooth デバイスを使用することができません"
 
 #: src/features.py:112
 msgid "Printing support (cups)"
-msgstr ""
+msgstr "プリンターのサポート(cups)"
 
 #: src/features.py:115 ui/features.ui:135
 msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgstr "プリンターのドライバ及び管理ツールを含みます"
 
 #: src/features.py:119
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:122
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "オフィススイート（ワードプロセッサー、スプレッドシート、...）"
 
 #: src/features.py:126
 msgid "Visual effects"
-msgstr ""
+msgstr "視覚効果"
 
 #: src/features.py:129 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgstr "透過処理、影の作成等の視覚効果"
 
 #: src/features.py:133
 msgid "Uncomplicated firewall"
@@ -278,11 +278,11 @@ msgstr ""
 
 #: src/features.py:140
 msgid "Propietary packages"
-msgstr ""
+msgstr "プロプリエタリーパッケージ"
 
 #: src/features.py:143 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 and other media"
-msgstr ""
+msgstr "Flash、MP3等を再生するサードパーティーのソフトウェア"
 
 #: src/installation_advanced.py:198 src/installation_advanced.py:489
 #: src/installation_advanced.py:503
@@ -335,11 +335,11 @@ msgstr "拡張"
 
 #: src/installation_advanced.py:649 src/installation_advanced.py:889
 msgid "Cannot use same mount twice..."
-msgstr ""
+msgstr "同じマウントを再度使用することはできません..."
 
 #: src/installation_advanced.py:651
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Rootパーティションはフォーマットする必要があります..."
 
 #: src/installation_advanced.py:910
 msgid "Creating primary partition"

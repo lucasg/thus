@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Umidjon Almasov <u.almasov@gmail.com>, 2013
+# Umidjon Almasov <u.almasov@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-09-28 09:43+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-01 12:13+0000\n"
+"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/manjaro-thus/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,16 +46,16 @@ msgstr ""
 
 #: thus.py:248 src/slides.py:241
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro o'rnatuvchisi"
 
 #: thus.py:316
 msgid "Quiting installer..."
-msgstr ""
+msgstr "O'rnatuvchidan chiqish..."
 
 #: src/bootinfo.py:43 src/bootinfo.py:63 src/bootinfo.py:68 src/bootinfo.py:89
 #: src/installation_alongside.py:221
 msgid "unknown"
-msgstr ""
+msgstr "noma'lum"
 
 #: src/bootloader.py:58 ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -66,11 +67,11 @@ msgstr ""
 
 #: src/bootloader.py:67 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:71 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:75 ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
@@ -186,11 +187,11 @@ msgstr ""
 
 #: src/desktop.py:151
 msgid "Select your desktop"
-msgstr ""
+msgstr "Ish stolini tanlash"
 
 #: src/desktop.py:161
 msgid "Desktops"
-msgstr ""
+msgstr "Ish stollari"
 
 #: src/desktop.py:194
 #, python-format
@@ -210,7 +211,7 @@ msgstr ""
 #: src/download.py:137
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "'%s' paketi yuklab olinmoqda..."
 
 #: src/download.py:161
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
@@ -251,7 +252,7 @@ msgstr ""
 
 #: src/features.py:119
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:122
 msgid "Office suite (word processor, spreadsheet, ...)"
@@ -308,7 +309,7 @@ msgstr ""
 
 #: src/installation_advanced.py:285
 msgid "Size"
-msgstr ""
+msgstr "Hajmi"
 
 #: src/installation_advanced.py:288
 msgid "Used"
@@ -320,7 +321,7 @@ msgstr ""
 
 #: src/installation_advanced.py:297
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:472
 msgid "none"
@@ -364,15 +365,15 @@ msgstr ""
 
 #: src/installation_advanced.py:1036
 msgid "Change..."
-msgstr ""
+msgstr "O'zgartirish..."
 
 #: src/installation_advanced.py:1041 ui/installation_advanced.ui:96
 msgid "Size:"
-msgstr ""
+msgstr "Hajmi:"
 
 #: src/installation_advanced.py:1045 ui/installation_advanced.ui:295
 msgid "Type:"
-msgstr ""
+msgstr "Turi:"
 
 #: src/installation_advanced.py:1049 ui/installation_advanced.ui:312
 msgid "Primary"
@@ -429,7 +430,7 @@ msgstr ""
 #: src/installation_advanced.py:1111 src/installation_alongside.py:153
 #: src/installation_automatic.py:95
 msgid "Install now!"
-msgstr ""
+msgstr "O'rnatish!"
 
 #: src/installation_advanced.py:1191
 #, python-format
@@ -463,7 +464,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1368
 msgid "New"
-msgstr ""
+msgstr "Yangi"
 
 #: src/installation_advanced.py:1368
 msgid "Relabel"
@@ -511,7 +512,7 @@ msgstr ""
 
 #: src/installation_alongside.py:181
 msgid "Filesystem"
-msgstr ""
+msgstr "Fayl tizimi"
 
 #: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
@@ -777,11 +778,11 @@ msgstr ""
 
 #: src/language.py:95 src/welcome.py:110
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Manjaroga xush kelibsiz!"
 
 #: src/language.py:113
 msgid "Languages"
-msgstr ""
+msgstr "Tillar"
 
 #: src/language.py:133
 #, python-format
@@ -823,7 +824,7 @@ msgstr ""
 
 #: src/show_message.py:60
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro o'rnatuvchisi - Xato"
 
 #: src/show_message.py:71
 msgid "Manjaro Installer - Warning"
@@ -831,11 +832,11 @@ msgstr ""
 
 #: src/show_message.py:82
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro o'rnatuvchisi - Ma'lumot"
 
 #: src/show_message.py:92
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro o'rnatuvchisi - Savol"
 
 #: src/slides.py:90 src/slides.py:105
 msgid ""
@@ -845,11 +846,11 @@ msgstr ""
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Manjaro o'rnatilmoqda..."
 
 #: src/slides.py:103
 msgid "Please wait..."
-msgstr ""
+msgstr "Kutib turing..."
 
 #: src/timezone.py:115
 msgid "Where are you?"
@@ -919,7 +920,7 @@ msgstr ""
 
 #: src/user_info.py:115
 msgid "Password"
-msgstr ""
+msgstr "Maxfiy so'z"
 
 #: src/user_info.py:119 ui/user_info.ui:78
 msgid "Confirm your password:"
@@ -1105,7 +1106,7 @@ msgstr ""
 #: src/pacman/pac.py:343
 #, python-format
 msgid "ERROR: %s"
-msgstr ""
+msgstr "XATO: %s"
 
 #: src/pacman/pac.py:350
 #, python-format
@@ -1115,17 +1116,17 @@ msgstr ""
 #: src/pacman/pac.py:391
 #, python-format
 msgid "Downloading %s..."
-msgstr ""
+msgstr "%s yuklab olinmoqda..."
 
 #: src/pacman/pac.py:400
 #, python-format
 msgid "Refreshing %s..."
-msgstr ""
+msgstr "%s yangilanmoqda..."
 
 #: src/pacman/pac.py:409
 #, python-format
 msgid "Installing %s (%d/%d)"
-msgstr ""
+msgstr "O'rnatilmoqda %s (%d/%d)"
 
 #: src/pacman/pac.py:411
 msgid "Checking and loading packages..."
@@ -1164,7 +1165,7 @@ msgstr ""
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
@@ -1196,7 +1197,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:559
 msgid "Edit partition"
@@ -1204,7 +1205,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:899
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_alongside.ui:14
 msgid ""
@@ -1218,7 +1219,7 @@ msgstr ""
 
 #: ui/installation_alongside.ui:155
 msgid "Other OS"
-msgstr ""
+msgstr "Boshqa OT"
 
 #: ui/installation_alongside.ui:167
 msgid "Antergos"
