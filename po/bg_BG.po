@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-10-01 14:54+0000\n"
+"PO-Revision-Date: 2013-10-02 18:11+0000\n"
 "Last-Translator: Fingli\n"
 "Language-Team: Bulgarian (Bulgaria) (http://www.transifex.com/projects/p/manjaro-thus/language/bg_BG/)\n"
 "MIME-Version: 1.0\n"
@@ -481,292 +481,292 @@ msgstr "Тези дискове ще претърпят дейности по д
 #: src/installation_advanced.py:1414
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Промените на %s са записани"
 
 #: src/installation_advanced.py:1429
 #, python-format
 msgid "Creating fs of type %s in %s with label %s"
-msgstr ""
+msgstr "Създаване на файлова система %s в %s с етикет %s"
 
 #: src/installation_advanced.py:1510 src/installation_automatic.py:173
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro ще инсталира мениджър на зареждане %s в %s"
 
 #: src/installation_alongside.py:118
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Не е възможно да се зареди %s css"
 
 #: src/installation_alongside.py:145
 msgid "Choose next to which OS you want to install Manjaro"
-msgstr ""
+msgstr "Изберете до коя ОС искате да се инсталира Manjaro"
 
 #: src/installation_alongside.py:149
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro успоредно с друга ОС"
 
 #: src/installation_alongside.py:178
 msgid "Detected OS"
-msgstr ""
+msgstr "Открити ОС"
 
 #: src/installation_alongside.py:181
 msgid "Filesystem"
-msgstr ""
+msgstr "Файлова система"
 
 #: src/installation_alongside.py:225
 msgid "In alongside install, can't create list of partitions"
-msgstr ""
+msgstr "При успоредно инсталиране не е възможно създаване на списък с дялове"
 
 #: src/installation_alongside.py:265
 msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr ""
+msgstr "Не е възможно свиване на дяла (може би е пълен)"
 
 #: src/installation_ask.py:100
 msgid "Installation type"
-msgstr ""
+msgstr "Вид инсталиране"
 
 #: src/installation_ask.py:110 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Изтриване на диска и инсталиране на Manjaro (автоматично)"
 
 #: src/installation_ask.py:113
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Внимание: Това ще изтрие всички данни на диска"
 
 #: src/installation_ask.py:120
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Инсталиране на Manjaro успоредно с %s"
 
 #: src/installation_ask.py:123
 msgid "Install this OS alongside the other OSes you have already installed."
-msgstr ""
+msgstr "Инсталиране на тази ОС заедно с други ОС-ми, които вече са инсталирани"
 
 #: src/installation_ask.py:129
 msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Управление на дяловете, където ще се инсталира Manjaro (за напреднали)"
 
 #: src/installation_ask.py:132
 msgid "Create/delete partitions, and also choose additional mount points."
-msgstr ""
+msgstr "Създаване/изтриване на дялове, както и избиране на допълнителни точки за монтиране."
 
 #: src/installation_ask.py:152
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "Инсталацията на Manjaro ще бъде криптирана"
 
 #: src/installation_ask.py:155
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro ще се инсталира използвайки LVM"
 
 #: src/installation_automatic.py:78
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "Режим автоматично инсталиране"
 
 #: src/installation_automatic.py:82 ui/installation_automatic.ui:66
 msgid "Select drive:"
-msgstr ""
+msgstr "Избор на устройство:"
 
 #: src/installation_automatic.py:86
 msgid ""
 "WARNING! This installation mode will overwrite everything in your drive!"
-msgstr ""
+msgstr "ВНИМАНИЕ! Този режим на инсталиране ще унищожи всички предишни файлове на диска."
 
 #: src/installation_automatic.py:91
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Моля, изберете устройство, където желаете да инсталирате Manjaro\nи натиснете бутона по-долу, за да стартирате процеса."
 
 #: src/installation_automatic.py:138
 #, python-format
 msgid "Automatic install using %s device"
-msgstr ""
+msgstr "Автоматично инсталиране, използвайки устройство %s"
 
 #: src/installation_automatic.py:154
 #, python-format
 msgid "Manjaro will use %s as installation device"
-msgstr ""
+msgstr "Manjaro ще използва %s като устройство за инсталиране"
 
 #: src/installation_process.py:105
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Копиране '/%s'"
 
 #: src/installation_process.py:185
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "Инсталиране използвайки '/%s' метод"
 
 #: src/installation_process.py:210
 msgid "In installation-process, can't get network status"
-msgstr ""
+msgstr "В процеса на инсталиране не е възможно да се провери статуса на мрежата"
 
 #: src/installation_process.py:293
 msgid "Can't execute the auto partition script"
-msgstr ""
+msgstr "Не е възможно да се изпълни скрипта за създаване на дялове"
 
 #: src/installation_process.py:334 src/installation_process.py:358
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "Монтиране на дял %s в директория %s"
 
 #: src/installation_process.py:340
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "Монтиране на дял %s в %s/boot "
 
 #: src/installation_process.py:344
 msgid "Couldn't mount root and boot partitions"
-msgstr ""
+msgstr "Не е възможно да се монтират кореновият и стартиращият дялове"
 
 #: src/installation_process.py:363
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "Не е възможно да се монтира %s в %s"
 
 #: src/installation_process.py:385
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "Не е възможно да се създадат необходимите директории на системата"
 
 #: src/installation_process.py:513
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Възстановяване на мета-информацията на %s"
 
 #: src/installation_process.py:662
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr ""
+msgstr "Инсталиране на GRUB(2) BIOS мениджър на зареждането в %s"
 
 #: src/installation_process.py:686
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) BIOS е успешно инсталиран."
 
 #: src/installation_process.py:688
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr ""
+msgstr "ГРЕШКА при инсталиране на GRUB(2) BIOS"
 
 #: src/installation_process.py:699
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
-msgstr ""
+msgstr "Инсталиране на GRUB(2) UEFI %s мениджър на зареждане в %s"
 
 #: src/installation_process.py:722 src/installation_process.py:740
 msgid "ERROR installing GRUB(2) UEFI."
-msgstr ""
+msgstr "ГРЕШКА при инсталиране на GRUB(2) UEFI"
 
 #: src/installation_process.py:762
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr ""
+msgstr "Грешка при създаване на хаш-парола за потребител %s"
 
 #: src/installation_process.py:768
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "Грешка при промяна на паролата на потребител %s"
 
 #: src/installation_process.py:853
 msgid "Configuring your new system"
-msgstr ""
+msgstr "Конфигуриране на Вашата нова система"
 
 #: src/installation_process.py:914
 msgid "Generating locales..."
-msgstr ""
+msgstr "Създаване на локализации..."
 
 #: src/installation_process.py:934
 msgid "Adjusting hardware clock..."
-msgstr ""
+msgstr "Сверяване на хардуерния часовник..."
 
 #: src/installation_process.py:940
 msgid "Configuring hardware.."
-msgstr ""
+msgstr "Конфигуриране на хардуер..."
 
 #: src/installation_process.py:947
 msgid "Setup graphic card.."
-msgstr ""
+msgstr "Настройване на видео картата..."
 
 #: src/installation_process.py:954
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "Не е възможно да се изпълни MHWD скрипт"
 
 #: src/installation_process.py:960
 msgid "Configure display manager.."
-msgstr ""
+msgstr "Конфигуриране на мениджъра на прозорци..."
 
 #: src/installation_process.py:1055
 msgid "Configure System.."
-msgstr ""
+msgstr "Конфигуриране на системата..."
 
 #: src/installation_process.py:1082
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Премахване пакети принадлежащи на (живия) инсталатор"
 
 #: src/installation_process.py:1098
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Конфигуриране мениджъра на пакети"
 
 #: src/installation_process.py:1121
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Край на конфигурирането мениджър на пакети."
 
 #: src/installation_process.py:1147
 #, python-format
 msgid "GDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "GDM: Разрешаване автоматично вписване на потребител %s"
 
 #: src/installation_process.py:1157
 #, python-format
 msgid "MDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "MDM: Разрешаване автоматично вписване на потребител %s"
 
 #: src/installation_process.py:1177
 #, python-format
 msgid "KDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "KDM: Разрешаване автоматично вписване на потребител %s"
 
 #: src/installation_process.py:1194
 #, python-format
 msgid "LXDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "LXDM: Разрешаване автоматично вписване на потребител %s"
 
 #: src/installation_process.py:1210
 #, python-format
 msgid "LightDM: Enable automatic login for user %s."
-msgstr ""
+msgstr "LightDM: Разрешаване автоматично вписване на потребител %s"
 
 #: src/installation_process.py:1227
 msgid "Running mkinitcpio..."
-msgstr ""
+msgstr "Изпълнение на mkinitcpio..."
 
 #: src/installation_process.py:1230
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "Изпълнение на mkinitcpio... готово"
 
 #: src/keymap.py:70
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Изберете клавиатурна подредба"
 
 #: src/keymap.py:78
 msgid "Layouts"
-msgstr ""
+msgstr "Подредби"
 
 #: src/keymap.py:84
 msgid "Variants"
-msgstr ""
+msgstr "Варианти"
 
 #: src/keymap.py:106
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "keyboard_layout е %s"
 
 #: src/language.py:81
 msgid "Please choose your language:"
-msgstr ""
+msgstr "Моля, изберете език:"
 
 #: src/language.py:86
 msgid "This is an Alpha version."
-msgstr ""
+msgstr "Това е алфа версия."
 
 #: src/language.py:87
 msgid ""
@@ -774,45 +774,45 @@ msgid ""
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Все още в процес на разработване. Знае се, че в момента не работи с  LVM, RAID, btrfs поддялове и други сложни инсталатори.\nМоля, подходете с внимание, тъй като е възможно да изгубите данни!\n\nАко попаднете на бъг, моля, посетете <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:95 src/welcome.py:110
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Добре дошли в Manjaro!"
 
 #: src/language.py:113
 msgid "Languages"
-msgstr ""
+msgstr "Езици"
 
 #: src/language.py:133
 #, python-format
 msgid "Can't find translation file for the %s language"
-msgstr ""
+msgstr "Не е възможно да се намери преведеният файл за %s език"
 
 #: src/location.py:72
 msgid "Select your location"
-msgstr ""
+msgstr "Посочете местоположението си"
 
 #: src/location.py:76 ui/location.ui:21
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr ""
+msgstr "Избраното местоположение ще Ви бъде от полза при избор на език на системата.\nОбикновено това е държавата, в която живеете.\nТова е кратък списък с места базиран на езика, който избрахте."
 
 #: src/location.py:81
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "Държава, територия или област:"
 
 #: src/location.py:205
 #, python-format
 msgid "locale changed to : %s"
-msgstr ""
+msgstr "езикът е сменен на: %s"
 
 #: src/location.py:207
 #, python-format
 msgid "Can't change to locale '%s'"
-msgstr ""
+msgstr "Не е възможно да се смени езика с '%s'"
 
 #: src/rank_mirrors.py:62
 msgid "In rankmirrors, can't get network status"
@@ -820,37 +820,37 @@ msgstr ""
 
 #: src/rank_mirrors.py:75
 msgid "Couldn't execute auto mirroring selection"
-msgstr ""
+msgstr "Не може да бъде изпълнен автоматичният избор на огледален сървър"
 
 #: src/show_message.py:60
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro инсталатор - Грешка"
 
 #: src/show_message.py:71
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Manjaro инсталатор - Предупреждение"
 
 #: src/show_message.py:82
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro инсталатор - Информация"
 
 #: src/show_message.py:92
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro инсталатор - Въпрос"
 
 #: src/slides.py:90 src/slides.py:105
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Инсталирането приключи!\nИскате ли да рестартирате системата сега?"
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Инсталиране на Manjaro..."
 
 #: src/slides.py:103
 msgid "Please wait..."
-msgstr ""
+msgstr "Моля, изчакайте..."
 
 #: src/timezone.py:115
 msgid "Where are you?"
