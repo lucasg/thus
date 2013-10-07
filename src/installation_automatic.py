@@ -162,8 +162,6 @@ class InstallationAutomatic(Gtk.Box):
         # boot_partition = self.atuo_device + "3"
 
         mount_devices = {}
-        root_partition = self.auto_device + "3"
-        boot_partition = self.auto_device + "1"
         mount_devices["/"] = root_partition 
         mount_devices["/boot"] = boot_partition
 

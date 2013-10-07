@@ -199,11 +199,6 @@ class Main(Gtk.Window):
         # to the main thread (installer_*.py)
         #self.callback_queue = multiprocessing.Queue()
         self.callback_queue = multiprocessing.JoinableQueue()
-        
-        # Prevent join_thread() from blocking. In particular, this prevents
-        # the background thread from being joined automatically when the
-        # process exits – see join_thread().
-        #self.callback_queue.cancel_join_thread()
 
         # save in config if we have enabled staging features
         self.settings.set("use_staging", _use_staging)

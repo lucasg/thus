@@ -167,7 +167,11 @@ class InstallationProcess(multiprocessing.Process):
         
         self.callback_queue = callback_queue
         self.settings = settings
+
+        # Used to know if there is a lvm partition (from advanced install)
+        # so we'll have to add the lvm2 hook to mkinitcpio
         self.blvm = blvm
+
         self.method = self.settings.get('partition_mode')
         
         self.queue_event('info', _("Installing using the '%s' method") % self.method)
@@ -187,6 +191,8 @@ class InstallationProcess(multiprocessing.Process):
         
         self.running = True
         self.error = False
+
+        self.special_dirs_mounted = False
     
     def queue_fatal_event(self, txt):
         # Queue the fatal event and exit process
@@ -305,8 +311,8 @@ class InstallationProcess(multiprocessing.Process):
             os.mkdir(self.dest_dir)
 
         # Mount root and boot partitions (only if it's needed)
+        # Not doing this in automatic mode as our script (auto_partition.sh) mounts the root and boot devices itself.
         if self.method == 'alongside' or self.method == 'advanced':
-            # not doing this in automatic mode as our script mounts the root and boot devices
             try:
                 txt = _("Mounting partition %s into %s directory") % (root_partition, self.dest_dir)
                 self.queue_event('debug', txt)
@@ -342,6 +348,7 @@ class InstallationProcess(multiprocessing.Process):
                         # return False
 
 
+        # Nasty workaround:
         # If pacman was stoped and /var is in another partition than root
         # (so as to be able to resume install), database lock file will still be in place.
         # We must delete it or this new installation will fail
@@ -466,7 +473,12 @@ class InstallationProcess(multiprocessing.Process):
             exc_type, exc_value, exc_traceback = sys.exc_info()
             traceback.print_tb(exc_traceback, limit=1, file=sys.stdout)
    
-    def chroot_mount(self):
+    def chroot_mount_special_dirs(self):
+        # do not remount
+        if self.special_dirs_mounted:
+            self.queue_event('debug', _("Special dirs already mounted."))
+            return
+        
         dirs = [ "sys", "proc", "dev" ]
         for d in dirs:
             mydir = os.path.join(self.dest_dir, d)
@@ -484,13 +496,27 @@ class InstallationProcess(multiprocessing.Process):
 
         mydir = os.path.join(self.dest_dir, "dev")
         subprocess.check_call(["mount", "-o", "bind", "/dev", mydir])
-        
-    def chroot_umount(self):
+
+        self.special_dirs_mounted = True
+         
+    def chroot_umount_special_dirs(self):
+        # Do not umount if they're not mounted
+        if not self.special_dirs_mounted:
+            self.queue_event('debug', _("Special dirs already not mounted."))
+            return
+            
         dirs = [ "proc", "sys", "dev" ]
-        
+
         for d in dirs:
             mydir = os.path.join(self.dest_dir, d)
-            subprocess.check_call(["umount", mydir])
+            try:
+                subprocess.check_call(["umount", mydir])
+            except:
+                self.queue_event('warning', _("Unable to umount %s") % mydir)
+                return
+        
+        self.special_dirs_mounted = False
+
 
     def chroot(self, cmd, stdin=None, stdout=None):
         run = ['chroot', self.dest_dir]
@@ -608,7 +634,7 @@ class InstallationProcess(multiprocessing.Process):
         grub_device = self.settings.get('bootloader_device')
         self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_device)
 
-        self.chroot_mount()
+        self.chroot_mount_special_dirs()
 
         self.chroot(['grub-install', \
                   '--directory=/usr/lib/grub/i386-pc', \
@@ -616,6 +642,8 @@ class InstallationProcess(multiprocessing.Process):
                   '--boot-directory=/boot', \
                   '--recheck', \
                   grub_device])
+
+        self.chroot_umount_special_dirs()
         
         grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
         
@@ -625,9 +653,9 @@ class InstallationProcess(multiprocessing.Process):
         self.install_bootloader_grub2_locales()
 
         locale = self.settings.get("locale")
-        self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale])
-        
-        self.chroot_umount()
+        self.chroot_mount_special_dirs()
+        self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale])       
+        self.chroot_umount_special_dirs()
 
         core_path = os.path.join(self.dest_dir, "boot/grub/i386-pc/core.img")
         
@@ -647,7 +675,7 @@ class InstallationProcess(multiprocessing.Process):
         grub_device = self.settings.get('bootloader_device')
         self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader in %s") % (uefi_arch, grub_device))
 
-        self.chroot_mount()
+        self.chroot_mount_special_dirs()
         
         self.chroot(['grub-install', \
                   '--directory=/usr/lib/grub/%s-efi' % uefi_arch, \
@@ -656,33 +684,35 @@ class InstallationProcess(multiprocessing.Process):
                   '--boot-directory=/boot', \
                   '--recheck', \
                   grub_device])
+
+        self.chroot_umount_special_dirs()
         
         self.install_bootloader_grub2_locales()
 
-        d = self.dest_dir
         locale = self.settings.get("locale")
+        self.chroot_mount_special_dirs()
         self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale])
-        
-        self.chroot_umount()
+        self.chroot_umount_special_dirs()
 
-        grub_cfg = "%s/boot/grub/grub.cfg" % d
-        grub_standalone = "%s/boot/efi/EFI/manjaro_grub/grub%s_standalone.cfg" % (d, spec_uefi_arch)
+        grub_cfg = "%s/boot/grub/grub.cfg" % self.dest_dir
+        grub_standalone = "%s/boot/efi/EFI/manjaro_grub/grub%s_standalone.cfg" % (self.dest_dir, spec_uefi_arch)
         try:
             shutil.copy2(grub_cfg, grub_standalone)
-        except FileNotFoundError:
-            self.chroot_umount()            
-            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
+        except FileNotFoundError: 
+            self.queue_event('warning', _("ERROR installing GRUB(2) configuration file."))
             return
         except FileExistsError:
             # ignore if already exists
             pass
 
+        self.chroot_mount_special_dirs()
         self.chroot(['grub-mkstandalone', \
                   '--directory=/usr/lib/grub/%s-efi' % uefi_arch, \
                   '--format=%s-efi' % uefi_arch, \
                   '--compression="xz"', \
                   '--output="/boot/efi/EFI/manjaro_grub/grub%s_standalone.efi' % spec_uefi_arch, \
                   'boot/grub/grub.cfg'])
+        self.chroot_umount_special_dirs()
 
         # TODO: Create a boot entry for Manjaro in the UEFI boot manager (is this necessary?)
 
@@ -697,12 +727,10 @@ class InstallationProcess(multiprocessing.Process):
         try:
             shutil.copy2(mo, os.path.join(dest_locale_dir, "en.mo"))
         except FileNotFoundError:
-            self.chroot_umount()            
-            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
-            return
+            self.queue_event('warning', _("ERROR installing GRUB(2) locale."))
         except FileExistsError:
             # ignore if already exists
-            pass    
+            pass
 
     def enable_services(self, services):
         for name in services:
@@ -730,7 +758,8 @@ class InstallationProcess(multiprocessing.Process):
 
     # runs mkinitcpio on the target system
     def run_mkinitcpio(self):
-        if self.blvm:
+        # Add lvm hook if necessary
+        if self.blvm or self.settings.get("use_lvm"):
             with open("%s/etc/mkinitcpio.conf" % self.dest_dir) as f:
                 mklins = [x.strip() for x in f.readlines()]
             for e in range(len(mklins)):
@@ -738,9 +767,10 @@ class InstallationProcess(multiprocessing.Process):
                    mklins[e] = mklins[e].strip('"') + ' lvm2"'
             with open("%s/etc/mkinitcpio.conf" % self.dest_dir, "w") as f:
                 f.write("\n".join(mklins) + "\n")
-        self.chroot_mount()
+
+        self.chroot_mount_special_dirs()
         self.chroot(["/usr/bin/mkinitcpio", "-p", self.kernel])
-        self.chroot_umount()
+        self.chroot_umount_special_dirs()
 
     # Uncomment selected locale in /etc/locale.gen
     def uncomment_locale_gen(self, locale):
@@ -796,7 +826,9 @@ class InstallationProcess(multiprocessing.Process):
         # ... check configure_system from arch-setup
 
         # Generate the fstab file        
+        self.queue_event('debug', 'Generating the fstab file...')
         self.auto_fstab()
+        self.queue_event('debug', 'fstab file generated.')
         
         # Copy configured networks in Live medium to target system
         if self.network_manager == 'NetworkManager':
@@ -807,7 +839,9 @@ class InstallationProcess(multiprocessing.Process):
 
         # enable services      
         self.enable_services([ self.network_manager, 'remote-fs.target' ])
-        if os.path.exists("%s/usr/lib/systemd/system/cups.service"  % self.dest_dir):
+
+        cups_service = os.path.join(self.dest_dir, "usr/lib/systemd/system/cups.service")
+        if os.path.exists(cups_service):
             self.enable_services([ 'cups' ])
 
         # TODO: we never ask the user about this...
@@ -1061,9 +1095,9 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("/install/etc/pacman.d/gnupg"):
             os.system("rm -rf /install/etc/pacman.d/gnupg")
         os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
-        self.chroot_mount()
+        self.chroot_mount_special_dirs()
         self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        self.chroot_umount()
+        self.chroot_umount_special_dirs()
 
         self.queue_event('info', _("Finished configuring package manager."))
          
@@ -1079,7 +1113,7 @@ class InstallationProcess(multiprocessing.Process):
                 newconsolefh.write("%s\n" % line)
         consolefh.close()
         newconsolefh.close()
-        os.system("rm /install/etc/keyboard.conf")
+        os.system("mv /install/etc/keyboard.conf /install/etc/keyboard.conf.old")
         os.system("mv /install/etc/keyboard.new /install/etc/keyboard.conf")
 
         #desktop = self.settings.get('desktop')
@@ -1206,5 +1240,7 @@ class InstallationProcess(multiprocessing.Process):
                 
         # encrypt home directory if requested
         if self.settings.get('encrypt_home'):
+            self.queue_event('debug', "Encrypting user home dir...")
             self.encrypt_home()
+            self.queue_event('debug', "User home dir encrypted")
 
