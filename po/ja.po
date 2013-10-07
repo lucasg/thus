@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:22+0200\n"
-"PO-Revision-Date: 2013-10-04 22:14+0000\n"
+"PO-Revision-Date: 2013-10-06 03:52+0000\n"
 "Last-Translator: rago1975\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -234,7 +234,7 @@ msgstr "警告! 依存性を解決することができません:"
 
 #: src/features.py:100
 msgid "Feature selection"
-msgstr ""
+msgstr "外観の選択"
 
 #: src/features.py:105
 msgid "Bluetooth support"
@@ -818,11 +818,11 @@ msgstr "ロケールを %s に変更できませんでした"
 
 #: src/rank_mirrors.py:62
 msgid "In rankmirrors, can't get network status"
-msgstr ""
+msgstr "rankmirrorsにおいて、ネットワークのステータスを取得できません"
 
 #: src/rank_mirrors.py:75
 msgid "Couldn't execute auto mirroring selection"
-msgstr ""
+msgstr "ミラーの自動選択を実行できません"
 
 #: src/show_message.py:60
 msgid "Manjaro Installer - Error"
@@ -869,7 +869,7 @@ msgstr "地域:"
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "ロケーションが %s に変更されました。"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
@@ -885,16 +885,16 @@ msgstr "タイムゾーンでは、ネットワークステータスを取得で
 
 #: src/timezone.py:388
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "pacmanのミラーリストの作成に使用する国コードが取得できません"
 
 #: src/timezone.py:409
 #, python-format
 msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
-msgstr ""
+msgstr "国コード %s に基づきpacman のためのミラーリストをダウンロードしました"
 
 #: src/timezone.py:411
 msgid "Couldn't generate mirrorlist for pacman based on country code"
-msgstr ""
+msgstr "国コードに基づいた、pacmanのためのミラーリストを作成することができません"
 
 #: src/user_info.py:91 ui/user_info.ui:34
 msgid "Your name:"
@@ -968,35 +968,35 @@ msgstr "あなたの情報を入力してください"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaroはホームディレクトリの暗号化のためにeCryptfsを使用します。残念ながら、eCryptfsはsparseなファイルをうまく扱うことができません。\n\n"
 
 #: src/user_info.py:174
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "心配しないでください。この欠陥の意図や目的は問題を持ち出すことではありません。\n"
 
 #: src/user_info.py:175
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "いずれにせよ、BitTorrentによるダウンロードの際の暗号化に対するeCryptfs のお勧めできない点は、eCryptfs が10GB以上のsparseなファイルを取り扱うことを要求し、深刻なディスク容量の不足を引き起こすことです。\n"
 
 #: src/user_info.py:176
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "単純な回避策はsparseなファイルを暗号化しないことです。共有のディレクトリ\n"
 
 #: src/user_info.py:177
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "https://wiki.archlinux.org/index.php/ECryptfs for detailed information　を参照してください。\n"
 
 #: src/user_info.py:178
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "ホームディレクトリを暗号化していいですか?\n"
 
 #: src/user_info.py:236
 msgid "Invalid characters entered"
@@ -1038,7 +1038,7 @@ msgstr "パスワードが一致しません"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr ""
+msgstr "ドライブ構成の変更なしにManjaroを試してください。\nあるいはPCに2つのオプションのうち1つを使ってインストールしてください。"
 
 #: src/welcome.py:101 ui/welcome.ui:45
 msgid "Try it"
@@ -1059,7 +1059,7 @@ msgstr "コマンドライン インストーラーを読み込めません。"
 #: src/pacman/pac.py:243
 #, python-format
 msgid "Package %s not found in any repo!"
-msgstr ""
+msgstr "パッケージ %s がどのリポジトリにも見つかりません!"
 
 #: src/pacman/pac.py:295
 msgid "Checking dependencies..."
@@ -1067,7 +1067,7 @@ msgstr "依存関係をチェックしています..."
 
 #: src/pacman/pac.py:297
 msgid "Checking file conflicts..."
-msgstr ""
+msgstr "ファイルの衝突をチェックしています..."
 
 #: src/pacman/pac.py:299
 msgid "Resolving dependencies..."
@@ -1075,7 +1075,7 @@ msgstr "依存関係を解決しています..."
 
 #: src/pacman/pac.py:301
 msgid "Checking inter conflicts..."
-msgstr ""
+msgstr "内部衝突をチェックしています..."
 
 #: src/pacman/pac.py:306
 msgid "Removing..."
@@ -1087,7 +1087,7 @@ msgstr "アップグレード中..."
 
 #: src/pacman/pac.py:310
 msgid "Checking integrity..."
-msgstr ""
+msgstr "ファイルの損傷をチェックしています..."
 
 #: src/pacman/pac.py:313
 msgid "Loading packages files..."
@@ -1123,7 +1123,7 @@ msgstr "%s をダウンロード中..."
 #: src/pacman/pac.py:400
 #, python-format
 msgid "Refreshing %s..."
-msgstr ""
+msgstr "%s を更新しています..."
 
 #: src/pacman/pac.py:409
 #, python-format
@@ -1136,13 +1136,13 @@ msgstr "パッケージの確認と読み込み中..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "ブート"
 
 #: ui/check.ui:28
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">最良の結果を得るために、コンピューターを確認してください:</span>"
 
 #: ui/check.ui:106
 msgid ""
@@ -1155,77 +1155,77 @@ msgstr "AntergosはFlashやMP3などのメディアを再生するためにサ�
 #: ui/installation_alongside.ui:203 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:62
 msgid "label"
-msgstr ""
+msgstr "ラベル"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Bluetooth サポート</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>プリンタのサポート(cups)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "オフィススイート(ワードプロセッサ、スプレッドシート、他)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>視覚効果</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>ファイアウォール</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "ファイアウォールを有効にする(デフォルトでは全てのポートを閉じます)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Propietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>プロピリエタリなパッケージ</span>"
 
 #: ui/installation_advanced.ui:72
 msgid "Create partition"
-msgstr ""
+msgstr "パーティション作成"
 
 #: ui/installation_advanced.ui:112
 msgid "Location:"
-msgstr ""
+msgstr "地域:"
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
-msgstr ""
+msgstr "メガバイト"
 
 #: ui/installation_advanced.ui:559
 msgid "Edit partition"
-msgstr ""
+msgstr "パーティションの編集"
 
 #: ui/installation_advanced.ui:899
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_alongside.ui:14
 msgid ""
 "<span size=\"large\">Choose next to which OS you want to install "
 "Manjaro</span>"
-msgstr ""
+msgstr "<span size=\"large\">ManjaroをインストールしたいOSを選択してください</span>"
 
 #: ui/installation_alongside.ui:88
 msgid "Choose the new size"
-msgstr ""
+msgstr "サイズを選択してください"
 
 #: ui/installation_alongside.ui:155
 msgid "Other OS"
-msgstr ""
+msgstr "他のOS"
 
 #: ui/installation_alongside.ui:167
 msgid "Antergos"
-msgstr ""
+msgstr "Antergos"
 
 #: ui/installation_ask.ui:57
 msgid ""
