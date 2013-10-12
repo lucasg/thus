@@ -760,18 +760,31 @@ class InstallationProcess(multiprocessing.Process):
         subprocess.check_call(["hwclock", "--systohc", "--utc"])
         shutil.copy2("/etc/adjtime", "%s/etc/" % self.dest_dir)
 
-    # runs mkinitcpio on the target system
-    def run_mkinitcpio(self):
-        # Add lvm hook if necessary
-        if self.blvm or self.settings.get("use_lvm"):
-            with open("%s/etc/mkinitcpio.conf" % self.dest_dir) as f:
-                mklins = [x.strip() for x in f.readlines()]
-            for e in range(len(mklins)):
-                if mklins[e].startswith("HOOKS"):
-                   mklins[e] = mklins[e].strip('"') + ' lvm2"'
-            with open("%s/etc/mkinitcpio.conf" % self.dest_dir, "w") as f:
-                f.write("\n".join(mklins) + "\n")
+    def add_mkinitcpio_hooks(self, hooks):
+        with open("%s/etc/mkinitcpio.conf" % self.dest_dir) as f:
+            mklins = [x.strip() for x in f.readlines()]
 
+        for e in range(len(mklins)):
+            if mklins[e].startswith("HOOKS"):
+                for hook in hooks:
+                    mklins[e] = mklins[e].strip('"') + (' %s"' % hook)
+
+        with open("%s/etc/mkinitcpio.conf" % self.dest_dir, "w") as f:
+            f.write("\n".join(mklins) + "\n")
+
+    def run_mkinitcpio(self):
+        # Add lvm and encrypt hooks if necessary
+        hooks = []
+        
+        if self.settings.get("use_luks"):
+            hooks.append("encrypt")
+ 
+        if self.blvm or self.settings.get("use_lvm"):
+            hooks.append("lvm2")
+            
+        self.add_mkinitcpio_hooks(hooks)
+        
+        # run mkinitcpio on the target system
         self.chroot_mount_special_dirs()
         self.chroot(["/usr/bin/mkinitcpio", "-p", self.kernel])
         self.chroot_umount_special_dirs()
@@ -812,6 +825,30 @@ class InstallationProcess(multiprocessing.Process):
         subprocess.check_call(['su', username])
         
         # User should run ecryptfs-unwrap-passphrase and write down the generated passphrase
+
+    def copy_cache_files(self, cache_dir):
+        # Check in case user has given a wrong folder
+        if not os.path.exists(cache_dir):
+            return
+        self.queue_event('info', 'Copying xz files from cache...')
+        dest_dir = os.path.join(self.dest_dir, "var/cache/pacman/pkg")
+        if not os.path.exists(dest_dir):
+            os.makedirs(dest_dir)
+        self.copyfiles_progress(cache_dir, dest_dir)
+
+    def copyfiles_progress(self, src, dst):
+        percent = 0.0
+        items = os.listdir(src)
+        step = 1.0 / len(items)
+        for item in items:
+            self.queue_event("percent", percent)
+            s = os.path.join(src, item)
+            d = os.path.join(dst, item)
+            try:
+                shutil.copy2(s, d)
+            except (FileExistsError, shutil.Error) as e:
+                pass
+            percent += step
 
     # TODO: remove this backport from live-installer
 
@@ -858,9 +895,10 @@ class InstallationProcess(multiprocessing.Process):
             time.sleep(5)
 
         # set timezone
-        zoneinfo_path = os.path.join("/usr/share/zoneinfo", \
-                                     self.settings.get("timezone_zone"))
+        zoneinfo_path = os.path.join("/usr/share/zoneinfo", self.settings.get("timezone_zone"))
         self.chroot(['ln', '-s', zoneinfo_path, "/etc/localtime"])
+
+        self.queue_event('debug', 'Timezone set.')
         
         # Wait FOREVER until the user sets his params
         while self.settings.get('user_info_done') is False:
@@ -873,8 +911,8 @@ class InstallationProcess(multiprocessing.Process):
         password = self.settings.get('password')
         hostname = self.settings.get('hostname')
         
-        sudoers_path = os.path.join(self.dest_dir, \
-                                    "etc/sudoers.d/10-installer")
+        sudoers_path = os.path.join(self.dest_dir, "etc/sudoers.d/10-installer")
+
         with open(sudoers_path, "wt") as sudoers:
             sudoers.write('%s ALL=(ALL) ALL\n' % username)
         

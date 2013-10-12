@@ -64,6 +64,9 @@ _stopluks()
     done
     ! [[ "${LUKSDEVICE}" = "" ]] && DETECTED_LUKS=1
     if [[ "${DETECTED_LUKS}" = "1" ]]; then
+        echo "Setup detected running luks encrypted devices, do you want to remove them completely?"
+    fi
+    if [[ "${DISABLELUKS}" = "1" ]]; then
         echo "Removing luks encrypted devices ..."
         for i in ${LUKSDEVICE}; do
             LUKS_REAL_DEVICE="$(echo $(cryptsetup status ${i} | grep device: | sed -e 's#device:##g'))"
@@ -79,6 +82,9 @@ _stopluks()
     # detect not running luks devices
     [[ "$(${_BLKID} | grep "TYPE=\"crypto_LUKS\"")" ]] && DETECTED_LUKS=1
     if [[ "${DETECTED_LUKS}" = "1" ]]; then
+        echo "Setup detected not running luks encrypted devices, do you want to remove them completely?"
+    fi
+    if [[ "${DISABLELUKS}" = "1" ]]; then
         echo "Removing not running luks encrypted devices ..."
         for i in $(${_BLKID} | grep "TYPE=\"crypto_LUKS\"" | sed -e 's#:.*##g'); do
             # delete header from device
@@ -128,12 +134,18 @@ _stoplvm()
     ! [[ "${LV_GROUPS}" = "" ]] && DETECTED_LVM=1
     ! [[ "${LV_PHYSICAL}" = "" ]] && DETECTED_LVM=1
     if [[ "${DETECTED_LVM}" = "1" ]]; then
+        DIALOG --defaultno --yesno "Setup detected lvm volumes, volume groups or physical devices, do you want to remove them completely?" 0 0 && DISABLELVM="1"
+    fi
+    if [[ "${DISABLELVM}" = "1" ]]; then
+        DIALOG --infobox "Removing logical volumes ..." 0 0
         for i in ${LV_VOLUMES}; do
             lvremove -f /dev/mapper/${i} 2>/dev/null >> ${LOG}
         done
+        DIALOG --infobox "Removing logical groups ..." 0 0
         for i in ${LV_GROUPS}; do
             vgremove -f ${i} 2>/dev/null >> ${LOG}
         done
+        DIALOG --infobox "Removing physical volumes ..." 0 0
         for i in ${LV_PHYSICAL}; do
             pvremove -f ${i} 2>/dev/null >> ${LOG}
         done
@@ -281,15 +293,11 @@ _mkfs() {
 
 autoprepare() {
     # check on encrypted devices, else weird things can happen!
-    if [ "$USE_LUKS" == "1" ]; then
-        _stopluks
-    fi
+    # _stopluks
     # check on raid devices, else weird things can happen during partitioning!
     # _stopmd
     # check on lvm devices, else weird things can happen during partitioning!
-    if [ "$USE_LVM" == "1" ]; then
-        _stoplvm
-    fi
+    # _stoplvm
     
     NAME_SCHEME_PARAMETER_RUN=""
     # switch for mbr usage
@@ -302,9 +310,11 @@ autoprepare() {
     ROOT_PART_SET=""
     FSTYPE='ext4'
     
+    KEY_FILE="/tmp/.keyfile"
+    
     # Do not support UEFI
     GUIDPARAMETER="no"
-
+    
     if [[ "${GUIDPARAMETER}" = "yes" ]]; then
         GUID_PART_SIZE="2"
         GPT_BIOS_GRUB_PART_SIZE="${GUID_PART_SIZE}"
@@ -320,6 +330,7 @@ autoprepare() {
         echo "ERROR: Setup cannot detect size of your device, please use normal installation routine for partitioning and mounting devices."
         return 1
     fi
+    
     while [[ "${DEFAULTFS}" = "" ]]; do
 
         # create 1 MB bios_grub partition for grub-bios GPT support
@@ -380,6 +391,7 @@ autoprepare() {
     if [[ "${NAME_SCHEME_PARAMETER_RUN}" == "" ]]; then
         set_device_name_scheme || return 1
     fi
+
     # we assume a /dev/hdX format (or /dev/sdX)
     if [[ "${GUIDPARAMETER}" == "yes" ]]; then
         PART_ROOT="${DEVICE}5"
@@ -425,6 +437,7 @@ autoprepare() {
             parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) 100% >>${LOG}
         fi
     fi
+    
     partprobe ${DISC}
     if [[ $? -gt 0 ]]; then
         echo "Error partitioning ${DEVICE} (see ${LOG} for details)" 0 0
@@ -434,18 +447,46 @@ autoprepare() {
     printk on
     ## wait until /dev initialized correct devices
     udevadm settle
+    
+    # if using LVM, data_device will store root and swap partitions
+    # if not using LVM, data_device will be root partition
+    if [ "$USE_LVM" == "1" ]; then
+        DATA_DEVICE=${DEVICE}2
+    else
+        DATA_DEVICE=${DEVICE}3
+    
+        if [[ "${GUIDPARAMETER}" == "yes" ]]; then
+            DATA_DEVICE=${DEVICE}5
+        fi
+    fi
+    
+    if [ "$USE_LUKS" == "1" ]; then
+        # Create a random keyfile
+        sudo dd if=/dev/urandom of=${KEY_FILE} bs=1024 count=4
+        
+        # Setup luks
+        cryptsetup luksFormat -q -c aes-xts-plain -s 512 ${DATA_DEVICE} ${KEY_FILE}
+        cryptsetup luksOpen ${DATA_DEVICE} cryptManjaro -q --key-file ${KEY_FILE}
+    fi
 
     if [ "$USE_LVM" == "1" ]; then
         # /dev/sdX1 is /boot
         # /dev/sdX2 is the PV
-        pvcreate ${DEVICE}2
-        vgcreate -v ManjaroVG ${DEVICE}2
+        
+        if [ "$USE_LUKS" == "1" ]; then
+            # setup LVM on LUKS
+            pvcreate /dev/mapper/cryptManjaro
+            vgcreate -v ManjaroVG /dev/mapper/cryptManjaro
+        else
+            pvcreate ${DATA_DEVICE}
+            vgcreate -v ManjaroVG ${DATA_DEVICE}
+        fi
+        
         lvcreate -n ManjaroRoot -L ${ROOT_PART_SIZE} ManjaroVG
         
         # Use the remainig space for our swap volume
-        #lvcreate -n ManjaroSwap -L ${SWAP_PART_SIZE} ManjaroVG
         lvcreate -n ManjaroSwap -l 100%FREE ManjaroVG
-        
+
         ## Make sure the "root" partition is defined first
         _mkfs yes /dev/ManjaroVG/ManjaroRoot ext4 "${DESTDIR}" / ManjaroRoot || return 1
         _mkfs yes /dev/ManjaroVG/ManjaroSwap swap "${DESTDIR}" "" ManjaroSwap || return 1
@@ -454,18 +495,26 @@ autoprepare() {
             _mkfs yes "${DEVICE}3" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1
         else        
             _mkfs yes "${DEVICE}1" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1
-        fi
-        
+        fi      
     else
-        
-        ## FSSPECS - default filesystem specs (the + is bootable flag)
-        ## <partnum>:<mountpoint>:<partsize>:<fstype>[:<fsoptions>][:+]:labelname
-        ## The partitions in FSSPECS list should be listed in the "mountpoint" order.
-        ## Make sure the "root" partition is defined first in the FSSPECS list
-        FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+        # Not using LVM
+        if [ "$USE_LUKS" == "1" ]; then
+            ## Make sure the "root" partition is defined first
+            _mkfs yes /dev/mapper/cryptManjaro ext4 "${DESTDIR}" / ManjaroRoot || return 1
+            FSSPECS="1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+            if [ "${GUIDPARAMETER}" == "yes" ]; then
+                FSSPECS="3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+            fi
+        else
+            ## FSSPECS - default filesystem specs (the + is bootable flag)
+            ## <partnum>:<mountpoint>:<partsize>:<fstype>[:<fsoptions>][:+]:labelname
+            ## The partitions in FSSPECS list should be listed in the "mountpoint" order.
+            ## Make sure the "root" partition is defined first in the FSSPECS list
+            FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
 
-        if [ "${GUIDPARAMETER}" == "yes" ]; then
-            FSSPECS="5:/:${ROOT_PART_SIZE} :${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+            if [ "${GUIDPARAMETER}" == "yes" ]; then
+                FSSPECS="5:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_MANJARO 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_MANJARO 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_MANJARO"
+            fi
         fi
 
         ## make and mount filesystems
@@ -489,6 +538,34 @@ autoprepare() {
         done
     fi
 
+    if [ "$USE_LUKS" == "1" ]; then
+        # https://wiki.archlinux.org/index.php/Encrypted_LVM
+
+        # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py
+
+        # Edit /install/etc/default/grub and change
+        # GRUB_CMDLINE_LINUX="cryptdevice=${DATA_DEVICE}:cryptManjaro"
+
+        DEFAULT_DIR="${DESTDIR}/etc/default"    
+        DEFAULT_GRUB="${DEFAULT_DIR}/grub"
+
+        mkdir -p ${DEFAULT_DIR}
+        cp /etc/default/grub "${DEFAULT_GRUB}"
+
+        sed -i /GRUB_CMDLINE_LINUX=/c\GRUB_CMDLINE_LINUX=\"cryptdevice=${DATA_DEVICE}:cryptManjaro\" ${DEFAULT_GRUB}
+
+        # NOTE: Grub will be rebuild in installation_process.py
+        
+        # Copy keyfile to boot partition, user will choose what to do with it
+        # THIS IS NONSENSE (BIG SECURITY HOLE), BUT WE TRUST THE USER TO FIX THIS
+        # User shouldn't store the keyfiles unencrypted unless the medium itself is reasonably safe
+        # (boot partition is not)
+        # Maybe instead of using a keyfile we should use a password...
+        sudo chmod 0400 "${KEY_FILE}"
+        cp ${KEY_FILE} ${DESTDIR}/boot
+        rm ${KEY_FILE}
+    fi
+    
     S_MKFSAUTO=1
 }
 
