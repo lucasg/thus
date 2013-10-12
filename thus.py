@@ -284,7 +284,7 @@ class Main(Gtk.Window):
 
         # Hide titlebar but show border decoration
         self.get_window().set_accept_focus(True)
-        self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
+        #self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
         
         # hide progress bar as it's value is zero
         self.progressbar.set_fraction(0)
