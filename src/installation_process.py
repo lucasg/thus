@@ -95,7 +95,7 @@ class FileCopyThread(Thread):
     def update_progress(self, num_files):
         progress = (float(num_files)/float(self.total_files))
         self.installer.queue_event('percent', progress)
-        self.installer.queue_event('progress-info', PERCENTAGE_FORMAT % (num_files, self.total_files, (progress*100)))
+        #self.installer.queue_event('progress-info', PERCENTAGE_FORMAT % (num_files, self.total_files, (progress*100)))
 
     def run(self):
         num_files_copied = 0
@@ -115,7 +115,7 @@ class FileCopyThread(Thread):
                 # reliable counter. ( for one increase of xfer, many files may be created)
                 # In case of manjaro, we pre-compute the total number of files.
                 # therefore we can easily subtract x from y in order to get real files copied / processed count.
-                m = re.findall(r'xfer#(\d+), to-check=(\d+)/(\d+)', line.decode())
+                m = re.findall(r'xfr#(\d+), ir-chk=(\d+)/(\d+)', line.decode())
                 if m:
                     # we've got a percentage update
                     num_files_remaining = int(m[0][1])
@@ -826,30 +826,6 @@ class InstallationProcess(multiprocessing.Process):
         
         # User should run ecryptfs-unwrap-passphrase and write down the generated passphrase
 
-    def copy_cache_files(self, cache_dir):
-        # Check in case user has given a wrong folder
-        if not os.path.exists(cache_dir):
-            return
-        self.queue_event('info', 'Copying xz files from cache...')
-        dest_dir = os.path.join(self.dest_dir, "var/cache/pacman/pkg")
-        if not os.path.exists(dest_dir):
-            os.makedirs(dest_dir)
-        self.copyfiles_progress(cache_dir, dest_dir)
-
-    def copyfiles_progress(self, src, dst):
-        percent = 0.0
-        items = os.listdir(src)
-        step = 1.0 / len(items)
-        for item in items:
-            self.queue_event("percent", percent)
-            s = os.path.join(src, item)
-            d = os.path.join(dst, item)
-            try:
-                shutil.copy2(s, d)
-            except (FileExistsError, shutil.Error) as e:
-                pass
-            percent += step
-
     # TODO: remove this backport from live-installer
 
     def do_run_in_chroot(self, command):
@@ -918,10 +894,13 @@ class InstallationProcess(multiprocessing.Process):
         
         subprocess.check_call(["chmod", "440", sudoers_path])
         
-        
+        self.queue_event('debug', 'Sudo configuration for user %s done.' % username)
+
         self.chroot(['useradd', '-m', '-s', '/bin/bash', \
                   '-g', 'users', '-G', 'lp,video,network,storage,wheel,audio', \
                   username])
+
+        self.queue_event('debug', 'User %s added.' % username)
 
         self.change_user_password(username, password)
 
@@ -936,6 +915,7 @@ class InstallationProcess(multiprocessing.Process):
         
         # User password is the root password  
         self.change_user_password('root', password)
+        self.queue_event('debug', 'Set the same password to root.')
 
         ## Generate locales
         keyboard_layout = self.settings.get("keyboard_layout")

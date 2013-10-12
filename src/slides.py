@@ -160,8 +160,6 @@ class Slides(Gtk.Box):
 
             if event[0] == 'percent':
                 self.progress_bar.set_fraction(event[1])
-            elif event[0] == 'progress-info':
-                self.progress_bar.set_text(event[1])
             elif event[0] == 'pulse':
                 self.do_progress_pulse()
             elif event[0] == 'stop_pulse':
