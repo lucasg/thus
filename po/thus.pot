@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-12 14:06+0200\n"
+"POT-Creation-Date: 2013-10-13 07:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Using '%s' file as package list"
 msgstr ""
 
-#: thus.py:247 src/slides.py:241
+#: thus.py:247 src/slides.py:239
 msgid "Manjaro Installer"
 msgstr ""
 
@@ -682,60 +682,60 @@ msgstr ""
 msgid "Error changing password for user %s"
 msgstr ""
 
-#: src/installation_process.py:878
+#: src/installation_process.py:854
 msgid "Configuring your new system"
 msgstr ""
 
-#: src/installation_process.py:944
+#: src/installation_process.py:924
 msgid "Generating locales..."
 msgstr ""
 
-#: src/installation_process.py:964
+#: src/installation_process.py:944
 msgid "Adjusting hardware clock..."
 msgstr ""
 
-#: src/installation_process.py:970
+#: src/installation_process.py:950
 msgid "Configuring hardware.."
 msgstr ""
 
-#: src/installation_process.py:977
+#: src/installation_process.py:957
 msgid "Setup graphic card.."
 msgstr ""
 
-#: src/installation_process.py:984
+#: src/installation_process.py:964
 msgid "Can't execute the MHWD script"
 msgstr ""
 
-#: src/installation_process.py:990
+#: src/installation_process.py:970
 msgid "Configure display manager.."
 msgstr ""
 
-#: src/installation_process.py:1085
+#: src/installation_process.py:1065
 msgid "Configure System.."
 msgstr ""
 
-#: src/installation_process.py:1113
+#: src/installation_process.py:1093
 msgid "Removing live configuration (packages)"
 msgstr ""
 
-#: src/installation_process.py:1129
+#: src/installation_process.py:1109
 msgid "Configuring package manager"
 msgstr ""
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1124
 msgid "Finished configuring package manager."
 msgstr ""
 
-#: src/installation_process.py:1168
+#: src/installation_process.py:1148
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr ""
 
-#: src/installation_process.py:1246
+#: src/installation_process.py:1226
 msgid "Running mkinitcpio..."
 msgstr ""
 
-#: src/installation_process.py:1249
+#: src/installation_process.py:1229
 msgid "Running mkinitcpio... done"
 msgstr ""
 
@@ -756,15 +756,15 @@ msgstr ""
 msgid "keyboard_layout is %s"
 msgstr ""
 
-#: src/language.py:72
+#: src/language.py:78
 msgid "Please choose your language:"
 msgstr ""
 
-#: src/language.py:77
+#: src/language.py:83
 msgid "This is an Alpha version."
 msgstr ""
 
-#: src/language.py:78
+#: src/language.py:84
 msgid ""
 "Still undergoing development. It is known NOT to work yet with LVM, RAID, "
 "btrfs subvolumes, and other advanced setups. \n"
@@ -774,15 +774,15 @@ msgid ""
 "bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:86 src/welcome.py:102
+#: src/language.py:92 src/welcome.py:102
 msgid "Welcome to Manjaro!"
 msgstr ""
 
-#: src/language.py:104
+#: src/language.py:109
 msgid "Languages"
 msgstr ""
 
-#: src/language.py:124
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr ""
@@ -1276,8 +1276,21 @@ msgid ""
 "b>"
 msgstr ""
 
-#: ui/language.ui:25
+#: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
+msgstr ""
+
+#: ui/language.ui:88
+msgid ""
+"<span weight='bold'>This is an Alpha version.</span>\n"
+"\n"
+"\n"
+"Still undergoing development. It is known NOT to work yet with LVM, RAID, "
+"btrfs subvolumes, and other \" advanced setups.\n"
+"Please proceed with caution as data loss is possible! \n"
+"\n"
+"If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://"
+"bugs.manjaro.org</a>"
 msgstr ""
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179

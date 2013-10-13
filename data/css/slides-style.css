@@ -52,6 +52,14 @@
     -ms-animation-delay: 24s;
     animation-delay: 24s; 
 }
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url(../images/4.png);
+    -webkit-animation-delay: 36s;
+    -moz-animation-delay: 36s;
+    -o-animation-delay: 36s;
+    -ms-animation-delay: 36s;
+    animation-delay: 36s; 
+}
 
 /* Animation for the slideshow images */
 @-webkit-keyframes imageAnimation { 
