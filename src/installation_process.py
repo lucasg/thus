@@ -50,16 +50,8 @@ import math
 CMD = 'rsync -ar --progress %(source)s %(dest)s'
 PERCENTAGE_FORMAT = '%d/%d ( %.2f %% )'
 from threading import Thread
-from queue import Queue, Empty
 import re
 ON_POSIX = 'posix' in sys.builtin_module_names
-
-q = Queue()
-
-def enqueue_output(out, queue):
-    for line in iter(out.readline, b''):
-        queue.put(line)
-    out.close()
 
 # Update the value of the progress bar so that we get
 # some movement
@@ -80,9 +72,6 @@ class FileCopyThread(Thread):
         # in order for the progressbar to pick up where the last rsync ended,
         # we need to set the offset (because the total number of files is calculated before) 
         self.offset = offset
-        t = Thread(target=enqueue_output, args=(self.process.stdout, q))
-        t.daemon = True # thread dies with the program
-        t.start()
         super(FileCopyThread, self).__init__()
 
     def kill(self):
@@ -99,32 +88,29 @@ class FileCopyThread(Thread):
 
     def run(self):
         num_files_copied = 0
-        while self.process.poll() is None:
-            try:
-                line = q.get(timeout=3)
-            except Empty:
-                continue
-            else:
-                # small comment on this regexp.
-                # rsync outputs three parameters in the progress.
-                # xfer#x => i try to interpret it as 'file copy try no. x'
-                # to-check=x/y, where:
-                #  - x = number of files yet to be checked
-                #  - y = currently calculated total number of files.
-                # but if you're copying directory with some links in it, the xfer# might not be a
-                # reliable counter. ( for one increase of xfer, many files may be created)
-                # In case of manjaro, we pre-compute the total number of files.
-                # therefore we can easily subtract x from y in order to get real files copied / processed count.
-                m = re.findall(r'xfr#(\d+), ir-chk=(\d+)/(\d+)', line.decode())
-                if m:
-                    # we've got a percentage update
-                    num_files_remaining = int(m[0][1])
-                    num_files_total_local = int(m[0][2])
-                    # adjusting the offset so that progressbar can be continuesly drawn
-                    num_files_copied = num_files_total_local - num_files_remaining + self.offset
+        for line in iter(self.process.stdout.readline, b''):
+            # small comment on this regexp.
+            # rsync outputs three parameters in the progress.
+            # xfer#x => i try to interpret it as 'file copy try no. x'
+            # to-check=x/y, where:
+            #  - x = number of files yet to be checked
+            #  - y = currently calculated total number of files.
+            # but if you're copying directory with some links in it, the xfer# might not be a
+            # reliable counter. ( for one increase of xfer, many files may be created)
+            # In case of manjaro, we pre-compute the total number of files.
+            # therefore we can easily subtract x from y in order to get real files copied / processed count.
+            m = re.findall(r'xfr#(\d+), ir-chk=(\d+)/(\d+)', line.decode())
+            if m:
+                # we've got a percentage update
+                num_files_remaining = int(m[0][1])
+                num_files_total_local = int(m[0][2])
+                # adjusting the offset so that progressbar can be continuesly drawn
+                num_files_copied = num_files_total_local - num_files_remaining + self.offset
+                if num_files_copied % 100 == 0:
                     self.update_progress(num_files_copied)
-                else:
-                    # we've got a filename!
+            else:
+                # we've got a filename!
+                if num_files_copied % 100 == 0:
                     self.update_label(line.decode().strip())
 
         self.offset = num_files_copied
