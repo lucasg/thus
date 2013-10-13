@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.0 on Sun Oct 13 18:17:48 2013 -->
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkBox" id="installation_alongside">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="margin_top">50</property>
+    <property name="hexpand">True</property>
     <property name="orientation">vertical</property>
     <property name="spacing">40</property>
     <child>
