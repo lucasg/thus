@@ -61,6 +61,12 @@ class Language(Gtk.Box):
         self.current_locale = locale.getdefaultlocale()[0]
         self.language_list = self.settings.get("DATA_DIR") + "languagelist.data.gz"
         self.set_languages_list()
+        
+        image1 = self.ui.get_object("image1")
+        image1.set_from_file(self.settings.get("DATA_DIR") + "languages.png")
+        
+        label = self.ui.get_object("welcome_label")
+        label.set_name("WelcomeMessage")
 
         super().add(self.ui.get_object("language"))
 
@@ -95,7 +101,6 @@ class Language(Gtk.Box):
         for lang, lang_code in display_map.items():
             if lang_code[1] == self.current_locale:
                 return lang
-            
 
     def set_languages_list(self):
         liststore_language = Gtk.ListStore(str)
