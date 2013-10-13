@@ -181,7 +181,7 @@ class InstallationProcess(multiprocessing.Process):
         
         # Check desktop selected to load packages needed
         self.desktop = self.settings.get('desktop')
-        #self.desktop_manager = 'gdm'
+        self.desktop_manager = 'none'
         self.network_manager = 'NetworkManager'
         self.card = []
         # Packages to be removed
@@ -967,7 +967,11 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
                 return False
 
-        self.queue_event('info', _("Configure display manager..")) 
+        self.queue_event('info', _("Configure display manager.."))
+        # setup slim
+        if os.path.exists("/usr/bin/slim"):
+            self.desktop_manager = 'slim'
+
         # setup lightdm
         if os.path.exists("/usr/bin/lightdm"):
             os.system("mkdir -p /install/run/lightdm")
@@ -1156,7 +1160,7 @@ class InstallationProcess(multiprocessing.Process):
                         gdm_conf.write('AutomaticLoginEnable=True\n')
 
                 # Systems with MDM as Desktop Manager
-                if self.desktop_manager == 'mdm':
+                elif self.desktop_manager == 'mdm':
                     mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
                     if os.path.exists(mdm_conf_path):
                         with open(mdm_conf_path, "rt") as mdm_conf:
