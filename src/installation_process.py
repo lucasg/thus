@@ -167,6 +167,8 @@ class InstallationProcess(multiprocessing.Process):
         
         # Check desktop selected to load packages needed
         self.desktop = self.settings.get('desktop')
+
+        # Set defaults
         self.desktop_manager = 'none'
         self.network_manager = 'NetworkManager'
         self.card = []
@@ -607,7 +609,7 @@ class InstallationProcess(multiprocessing.Process):
 
         full_text = '\n'.join(all_lines)
 
-        with open('/install/etc/fstab','w') as f:
+        with open('%s/etc/fstab' % self.dest_dir, 'w') as f:
             f.write(full_text)
 
     def install_bootloader(self):
@@ -619,10 +621,39 @@ class InstallationProcess(multiprocessing.Process):
             self.install_bootloader_grub2_bios()
         elif bt == "UEFI_x86_64" or bt == "UEFI_i386":
             self.install_bootloader_grub2_efi(bt)
+
+    def modify_grub_default(self):
+        # If using LUKS, we need to modify GRUB_CMDLINE_LINUX to load our root encrypted partition
+        # This scheme can be used in the automatic installation option only (at this time)
+        if self.method == 'automatic' and self.settings.get('use_luks'):
+            default_dir = os.path.join(self.dest_dir, "etc/default")
+            default_grub = os.path.join(default_dir, "grub")
+
+            if not os.path.exists(default_dir):
+                os.mkdir(default_dir)
+
+            #sed -i /GRUB_CMDLINE_LINUX=/c\GRUB_CMDLINE_LINUX=\"cryptdevice=${DATA_DEVICE}:cryptAntergos\ cryptkey=${BOOT_DEVICE}:ext2:.keyfile\" ${DEFAULT_GRUB}
+            
+            root_device = self.mount_devices["/"]
+            boot_device = self.mount_devices["/boot"]
+            
+            default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptAntergos cryptkey=%s:ext2:/.keyfile"' % (root_device, boot_device)
+            
+            with open(default_grub) as f:
+                lines = [x.strip() for x in f.readlines()]
+
+            for e in range(len(lines)):
+                if lines[e].startswith("GRUB_CMDLINE_LINUX"):
+                    lines[e] = default_line
+
+            with open(default_grub, "w") as f:
+                f.write("\n".join(lines) + "\n")
     
     def install_bootloader_grub2_bios(self):
         grub_device = self.settings.get('bootloader_device')
         self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_device)
+
+        self.modify_grub_default()
 
         self.chroot_mount_special_dirs()
 
@@ -664,6 +695,8 @@ class InstallationProcess(multiprocessing.Process):
 
         grub_device = self.settings.get('bootloader_device')
         self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader in %s") % (uefi_arch, grub_device))
+
+        self.modify_grub_default()
 
         self.chroot_mount_special_dirs()
         
@@ -746,8 +779,12 @@ class InstallationProcess(multiprocessing.Process):
         subprocess.check_call(["hwclock", "--systohc", "--utc"])
         shutil.copy2("/etc/adjtime", "%s/etc/" % self.dest_dir)
 
-    def add_mkinitcpio_hooks(self, hooks):
-        with open("%s/etc/mkinitcpio.conf" % self.dest_dir) as f:
+    def set_mkinitcpio_hooks_and_modules(self, hooks, modules):        
+        self.queue_event('debug', 'Setting hooks and modules in mkinitcpio.conf')
+        self.queue_event('debug', 'HOOKS="%s"' % ' '.join(hooks))
+        self.queue_event('debug', 'MODULES="%s"' % ' '.join(modules))
+        
+        with open("/etc/mkinitcpio.conf") as f:
             mklins = [x.strip() for x in f.readlines()]
 
         for e in range(len(mklins)):
@@ -760,15 +797,24 @@ class InstallationProcess(multiprocessing.Process):
 
     def run_mkinitcpio(self):
         # Add lvm and encrypt hooks if necessary
-        hooks = []
+        
+        hooks = [ "base", "udev", "autodetect", "modconf", "block" ] 
+        modules = []
+        
+        # It is important that the encrypt hook comes before the filesystems hook
+        # (in case you are using LVM on LUKS, the order should be: encrypt lvm2 filesystems)
         
         if self.settings.get("use_luks"):
             hooks.append("encrypt")
+
+            modules.extend([ "dm_mod", "dm_crypt", "ext4", "aes-x86_64", "sha256", "sha512" ])
  
         if self.blvm or self.settings.get("use_lvm"):
             hooks.append("lvm2")
             
-        self.add_mkinitcpio_hooks(hooks)
+        hooks.extend([ "filesystems", "keyboard", "fsck" ])
+            
+        self.set_mkinitcpio_hooks_and_modules(hooks, modules)
         
         # run mkinitcpio on the target system
         self.chroot_mount_special_dirs()
@@ -835,7 +881,8 @@ class InstallationProcess(multiprocessing.Process):
         
         # Copy configured networks in Live medium to target system
         if self.network_manager == 'NetworkManager':
-            self.copy_network_config()    
+            self.copy_network_config()
+        self.queue_event('debug', 'Network configuration copied.')
 
         self.queue_event("action", _("Configuring your new system"))
         self.queue_event('pulse') 
@@ -850,6 +897,8 @@ class InstallationProcess(multiprocessing.Process):
         # TODO: we never ask the user about this...
         if self.settings.get("use_ntp"):
             self.enable_services(["ntpd"])
+
+        self.queue_event('debug', 'Enabled installed services.')
 
         # Wait FOREVER until the user sets the timezone
         while self.settings.get('timezone_done') is False:
@@ -898,6 +947,8 @@ class InstallationProcess(multiprocessing.Process):
         if not os.path.exists(hostname_path):
             with open(hostname_path, "wt") as f:
                 f.write(hostname)
+
+        self.queue_event('debug', 'Hostname  %s set.' % hostname)
         
         # User password is the root password  
         self.change_user_password('root', password)

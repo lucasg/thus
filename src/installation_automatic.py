@@ -147,7 +147,19 @@ class InstallationAutomatic(Gtk.Box):
 
     def start_installation(self):
         #self.install_progress.set_sensitive(True)
-        logging.info(_("Manjaro will use %s as installation device") % self.auto_device)
+        logging.info(_("Thus will use %s as installation device") % self.auto_device)
+
+        # Ask (if guessing doesn't work) bootloader type
+        import bootloader
+        bl = bootloader.BootLoader(self.settings)
+        bl.ask()
+ 
+        if self.settings.get('install_bootloader'):
+            self.settings.set('bootloader_device', self.auto_device)
+            logging.info(_("Thus will install the bootloader of type %s in %s") % \
+                (self.settings.get('bootloader_type'), self.settings.get('bootloader_device')))
+        else:
+            logging.warning("Thus will not install any boot loader")
 
         if self.settings.get('use_lvm'):
             # WARNING! : This must be the same that appears in auto_partition.sh
@@ -158,8 +170,9 @@ class InstallationAutomatic(Gtk.Box):
         boot_partition = self.auto_device + "1"
         
         # TODO: UEFI Install (must update auto_partition.sh)
-        # root_partition = self.auto_device + "5"
-        # boot_partition = self.atuo_device + "3"
+        if self.settings.get('bootloader_type') != "GRUB2":
+            root_partition = self.auto_device + "5"
+            boot_partition = self.atuo_device + "3"
 
         mount_devices = {}
         mount_devices["/"] = root_partition 
@@ -168,18 +181,6 @@ class InstallationAutomatic(Gtk.Box):
         fs_devices = {}
         fs_devices[boot_partition] = "ext2"
         fs_devices[root_partition] = "ext4"
-
-        # Ask bootloader type
-        import bootloader
-        bl = bootloader.BootLoader(self.settings)
-        bl.ask()
-
-        if self.settings.get('install_bootloader'):
-            self.settings.set('bootloader_device', self.auto_device)
-            logging.info(_("Manjaro will install the bootloader of type %s in %s") % \
-                (self.settings.get('bootloader_type'), self.settings.get('bootloader_device')))
-        else:
-            logging.warning("Thus will not install any boot loader")
 
         self.process = installation_process.InstallationProcess( \
                         self.settings, \

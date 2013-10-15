@@ -476,6 +476,12 @@ autoprepare() {
         
     fi
 
+    BOOT_DEVICE="${DEVICE}1"
+
+    if [ "${GUIDPARAMETER}" == "yes" ]; then
+        BOOT_DEVICE="${DEVICE}3"
+    fi  
+
     if [ "$USE_LVM" == "1" ]; then
         # /dev/sdX1 is /boot
         # /dev/sdX2 is the PV
@@ -498,11 +504,7 @@ autoprepare() {
         _mkfs yes /dev/ManjaroVG/ManjaroRoot ext4 "${DESTDIR}" / ManjaroRoot || return 1
         _mkfs yes /dev/ManjaroVG/ManjaroSwap swap "${DESTDIR}" "" ManjaroSwap || return 1
 
-        if [ "${GUIDPARAMETER}" == "yes" ]; then
-            _mkfs yes "${DEVICE}3" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1
-        else        
-            _mkfs yes "${DEVICE}1" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1
-        fi      
+        _mkfs yes "${BOOT_DEVICE}" ext2 "${DESTDIR}" /boot ManjaroBoot || return 1    
     else
         # Not using LVM
         if [ "$USE_LUKS" == "1" ]; then
@@ -549,19 +551,7 @@ autoprepare() {
         # https://wiki.archlinux.org/index.php/Encrypted_LVM
 
         # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py
-
-        # Edit /install/etc/default/grub and change
-        # GRUB_CMDLINE_LINUX="cryptdevice=${DATA_DEVICE}:cryptManjaro"
-
-        DEFAULT_DIR="${DESTDIR}/etc/default"    
-        DEFAULT_GRUB="${DEFAULT_DIR}/grub"
-
-        mkdir -p ${DEFAULT_DIR}
-        cp /etc/default/grub "${DEFAULT_GRUB}"
-
-        sed -i /GRUB_CMDLINE_LINUX=/c\GRUB_CMDLINE_LINUX=\"cryptdevice=${DATA_DEVICE}:cryptManjaro\" ${DEFAULT_GRUB}
-
-        # NOTE: Grub will be rebuild in installation_process.py
+        # NOTE: /etc/default/grub will be modified in installation_process.py, too.
         
         # Copy keyfile to boot partition, user will choose what to do with it
         # THIS IS NONSENSE (BIG SECURITY HOLE), BUT WE TRUST THE USER TO FIX THIS

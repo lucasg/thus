@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.0 on Sat Oct 12 17:09:25 2013 -->
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkBox" id="slides">
@@ -53,6 +52,19 @@
       </packing>
     </child>
     <child>
+      <object class="GtkProgressBar" id="global_progressbar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">10</property>
+        <property name="margin_right">10</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">3</property>
+      </packing>
+    </child>
+    <child>
       <object class="GtkLabel" id="info_label">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
@@ -64,7 +76,7 @@
       <packing>
         <property name="expand">False</property>
         <property name="fill">True</property>
-        <property name="position">3</property>
+        <property name="position">4</property>
       </packing>
     </child>
     <child>
@@ -78,7 +90,7 @@
       <packing>
         <property name="expand">True</property>
         <property name="fill">True</property>
-        <property name="position">4</property>
+        <property name="position">5</property>
       </packing>
     </child>
   </object>

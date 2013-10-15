@@ -3,11 +3,12 @@
 #
 #  pac.py
 #
-#  This file has fragments of code from pamac (package manager from Manjaro)
+#  This file has fragments of code from 'pamac'
+#  (pamac is a package manager from Manjaro team)
 #  Check it at http://git.manjaro.org/core/pamac
 #  
-#  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright 2013 Antergos (http://antergos.com/)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -50,6 +51,8 @@ class Pac(object):
         self.to_add = []
         self.to_update = []
         self.to_provide = []
+        
+        self.target = ""
         
         # Packages to be removed
         # E.g: connman conflicts with netctl(openresolv), which is installed
@@ -271,7 +274,8 @@ class Pac(object):
         except queue.Full:
             pass
 
-        logging.info(event_text)
+        #if event_type != "percent":
+        #    logging.info(event_text)
         
         if event_type == "error":
             # We've queued a fatal event so we must exit installer_process process
@@ -398,8 +402,10 @@ class Pac(object):
     def cb_progress(self, _target, _percent, n, i):
         if _target:
             self.target = _("Installing %s (%d/%d)") % (_target, i, n)
+            self.queue_event('global_percent', n / i)
         else:
-            self.target = _("Checking and loading packages...")
+            self.target = _("Checking and loading packages... [%s]" % _target)
+
         self.percent = _percent / 100
-        self.queue_event("target", self.target)
-        self.queue_event("percent", self.percent)
+        self.queue_event('target', self.target)
+        self.queue_event('percent', self.percent)
