@@ -5,6 +5,7 @@
 # Translators:
 # reis33 <bahadiroglu33@gmail.com>, 2013
 # tulliana <mdemiray@msn.com>, 2013
+# tulliana <mdemiray@msn.com>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 # reis33 <bahadiroglu33@gmail.com>, 2013
@@ -13,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-12 13:53+0200\n"
-"PO-Revision-Date: 2013-10-12 12:02+0000\n"
+"POT-Creation-Date: 2013-10-15 19:41+0200\n"
+"PO-Revision-Date: 2013-10-15 17:50+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/manjaro-thus/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +49,7 @@ msgstr "Paketleri indirmek için Aria2 kullanımı - DENEYSEL"
 msgid "Using '%s' file as package list"
 msgstr "Paket listesi olarak '%s' dosyası kullanımı"
 
-#: thus.py:247 src/slides.py:241
+#: thus.py:247 src/slides.py:258
 msgid "Manjaro Installer"
 msgstr "Manjaro Yükleyici"
 
@@ -329,7 +330,7 @@ msgstr "SSD"
 
 #: src/installation_advanced.py:464
 msgid "none"
-msgstr "yok"
+msgstr "-"
 
 #: src/installation_advanced.py:516
 msgid "extended"
@@ -359,11 +360,11 @@ msgstr "Mantıksal bölüm oluşturuluyor"
 msgid "Advanced installation mode"
 msgstr "Gelişmiş kurulum kipi"
 
-#: src/installation_advanced.py:1010 ui/installation_advanced.ui:963
+#: src/installation_advanced.py:1010 ui/installation_advanced.ui:962
 msgid "Use this device for boot loader installation:"
 msgstr "Önyükleyici kurulumu için bu aygıtı kullan:"
 
-#: src/installation_advanced.py:1020 ui/installation_advanced.ui:885
+#: src/installation_advanced.py:1020 ui/installation_advanced.ui:884
 msgid "New partition table"
 msgstr "Yeni bölüm tablosu"
 
@@ -371,7 +372,7 @@ msgstr "Yeni bölüm tablosu"
 msgid "Change..."
 msgstr "Değiştir..."
 
-#: src/installation_advanced.py:1033 ui/installation_advanced.ui:96
+#: src/installation_advanced.py:1033 ui/installation_advanced.ui:97
 msgid "Size:"
 msgstr "Boyut:"
 
@@ -391,35 +392,35 @@ msgstr "Mantıksal"
 msgid "Extended"
 msgstr "Uzatılmış"
 
-#: src/installation_advanced.py:1053 ui/installation_advanced.ui:200
+#: src/installation_advanced.py:1053 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
 msgstr "Bu boşluğun başlangıcı"
 
-#: src/installation_advanced.py:1057 ui/installation_advanced.ui:218
+#: src/installation_advanced.py:1057 ui/installation_advanced.ui:219
 msgid "End of this space"
 msgstr "Bu boşluğun sonu"
 
 #: src/installation_advanced.py:1061 src/installation_advanced.py:1078
-#: ui/installation_advanced.ui:127 ui/installation_advanced.ui:583
+#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:581
 msgid "Use as:"
 msgstr "Dosya sistemi:"
 
 #: src/installation_advanced.py:1065 src/installation_advanced.py:1082
-#: ui/installation_advanced.ui:160 ui/installation_advanced.ui:616
+#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:614
 msgid "Mount point:"
 msgstr "Bağlama noktası:"
 
 #: src/installation_advanced.py:1069 src/installation_advanced.py:1086
-#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:653
+#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:651
 msgid "Label (optional):"
 msgstr "Etiket (isteğe bağlı):"
 
 #: src/installation_advanced.py:1073 ui/installation_advanced.ui:412
-#: ui/installation_advanced.ui:720
+#: ui/installation_advanced.ui:718
 msgid "Encryption options..."
 msgstr "Şifreleme seçenekleri..."
 
-#: src/installation_advanced.py:1090 ui/installation_advanced.ui:680
+#: src/installation_advanced.py:1090 ui/installation_advanced.ui:678
 msgid "Format:"
 msgstr "Biçimle/Formatla:"
 
@@ -492,7 +493,7 @@ msgstr "%s yapılan değişiklikler kaydediliyor"
 msgid "Creating fs of type %s in %s with label %s"
 msgstr "Etiket %s ile %s türü %s fs oluşturuldu"
 
-#: src/installation_advanced.py:1502 src/installation_automatic.py:179
+#: src/installation_advanced.py:1502
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro %s türü %s önyükleyiciyi kuracak"
@@ -589,158 +590,163 @@ msgstr "%s aygıtı kullanarak otomatik kurulum"
 
 #: src/installation_automatic.py:150
 #, python-format
-msgid "Manjaro will use %s as installation device"
-msgstr "Manjaro, kurulum cihazı olarak %s kullanacak"
+msgid "Thus will use %s as installation device"
+msgstr ""
 
-#: src/installation_process.py:93
+#: src/installation_automatic.py:159
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr ""
+
+#: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Kopyalanıyor '/%s'"
 
-#: src/installation_process.py:177
+#: src/installation_process.py:163
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "'%s' yöntemini kullanarak yükleme"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:264
 msgid "Can't execute the auto partition script"
 msgstr "Otomatik bölümleme komutu yürütülemiyor"
 
-#: src/installation_process.py:317 src/installation_process.py:341
+#: src/installation_process.py:305 src/installation_process.py:329
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Bölüme bağlanıyor %s dizinine %s dizini"
 
-#: src/installation_process.py:323
+#: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Bölüme bağlanıyor %s dizinine %s/boot dizini"
 
-#: src/installation_process.py:327
+#: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kök-Root ve önyükleme bölümleri bağlanamadı"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:334
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Bağlanamadı %s in %s"
 
-#: src/installation_process.py:369
+#: src/installation_process.py:357
 msgid "Can't create necessary directories on destination system"
 msgstr "Hedef sistemde gerekli dizinleri oluşturulamıyor"
 
-#: src/installation_process.py:466
+#: src/installation_process.py:454
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Meta-bilgi geri yükleme %s"
 
-#: src/installation_process.py:479
+#: src/installation_process.py:467
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Özel disk zaten bağlı."
 
-#: src/installation_process.py:505
+#: src/installation_process.py:493
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "Özel disk zaten bağlı değil."
 
-#: src/installation_process.py:515
+#: src/installation_process.py:503
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Ayırma işlemi yapılamadı %s"
 
-#: src/installation_process.py:566
+#: src/installation_process.py:554
 msgid "Create fstab."
-msgstr ""
+msgstr "fstab oluştur."
 
-#: src/installation_process.py:639
+#: src/installation_process.py:654
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "GRUB(2) yükleniyor BIOS önyükleyici oluşturuluyor %s"
 
-#: src/installation_process.py:667
+#: src/installation_process.py:684
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS başarıyla yüklenmiştir."
 
-#: src/installation_process.py:669
+#: src/installation_process.py:686
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS yükleme hatası."
 
-#: src/installation_process.py:680
+#: src/installation_process.py:697
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI yükleniyor %s Önyükleyici oluşturuluyor %s"
 
-#: src/installation_process.py:706
+#: src/installation_process.py:725
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "Yükleme hatası GRUB(2) konfigürasyon dosyası."
 
-#: src/installation_process.py:734
+#: src/installation_process.py:753
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "Yükleme hatası GRUB(2) yerel."
 
-#: src/installation_process.py:748
+#: src/installation_process.py:767
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Kullanıcı karma parola değiştirme hatası %s"
 
-#: src/installation_process.py:754
+#: src/installation_process.py:773
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Kullanıcı parola değiştirme hatası %s"
 
-#: src/installation_process.py:878
+#: src/installation_process.py:887
 msgid "Configuring your new system"
 msgstr "Yeni sistem yapılandırılıyor"
 
-#: src/installation_process.py:944
+#: src/installation_process.py:961
 msgid "Generating locales..."
 msgstr "Yereliniz yapılandrılıyor..."
 
-#: src/installation_process.py:964
+#: src/installation_process.py:981
 msgid "Adjusting hardware clock..."
 msgstr "Donanım saati ayarlanıyor..."
 
-#: src/installation_process.py:970
+#: src/installation_process.py:987
 msgid "Configuring hardware.."
 msgstr "Donanım yapılandırılıyor.."
 
-#: src/installation_process.py:977
+#: src/installation_process.py:994
 msgid "Setup graphic card.."
 msgstr "Ekran kartı kurulumu.."
 
-#: src/installation_process.py:984
+#: src/installation_process.py:1001
 msgid "Can't execute the MHWD script"
 msgstr "MHWD komut dosyasını yürütemedi"
 
-#: src/installation_process.py:990
+#: src/installation_process.py:1007
 msgid "Configure display manager.."
 msgstr "Görüntü yöneticisini yapılandır.."
 
-#: src/installation_process.py:1085
+#: src/installation_process.py:1106
 msgid "Configure System.."
 msgstr "Sistem Yapılandılıyor.."
 
-#: src/installation_process.py:1113
+#: src/installation_process.py:1134
 msgid "Removing live configuration (packages)"
-msgstr "Geçici konfigürasyonlar kaldılıyor (paketler)"
+msgstr "Geçici konfigürasyonlar kaldırılıyor (paketler)"
 
-#: src/installation_process.py:1129
+#: src/installation_process.py:1150
 msgid "Configuring package manager"
 msgstr "Paket yöneticisi yapılandırılıyor"
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1165
 msgid "Finished configuring package manager."
 msgstr "Paket yönetici yapılandırması tamamlandı."
 
-#: src/installation_process.py:1168
+#: src/installation_process.py:1189
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Kullanıcı için otomatik giriş etkin %s."
 
-#: src/installation_process.py:1246
+#: src/installation_process.py:1267
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpio çalıştırılıyor..."
 
-#: src/installation_process.py:1249
+#: src/installation_process.py:1270
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpio çalıştırılıyor... tamamlandı"
 
@@ -761,15 +767,15 @@ msgstr "Alt türevler"
 msgid "keyboard_layout is %s"
 msgstr "Klavye Düzenleri %s"
 
-#: src/language.py:72
+#: src/language.py:78
 msgid "Please choose your language:"
 msgstr "Lütfen dil tercihi yapınız:"
 
-#: src/language.py:77
+#: src/language.py:83
 msgid "This is an Alpha version."
 msgstr "\"Thus\" sistem yükleyisi, alfa sürüm aşamasındadır."
 
-#: src/language.py:78
+#: src/language.py:84
 msgid ""
 "Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
 "Please proceed with caution as data loss is possible! \n"
@@ -777,15 +783,15 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Bu sistem yükleyicisi halen geliştirilmektedir. LVM, RAID, btrfs subvolumes ve diğer gelişmiş kurulumlarla ilgili hatalarla karşılaşma olasılığınız vardır. \nVeri kaybına uğramamak için lütfen dikkatli olunuz! \n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: src/language.py:86 src/welcome.py:102
+#: src/language.py:92 src/welcome.py:102
 msgid "Welcome to Manjaro!"
 msgstr "Manjaro'ya Hoşgeldiniz!"
 
-#: src/language.py:104
+#: src/language.py:109
 msgid "Languages"
 msgstr "Diller"
 
-#: src/language.py:124
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "%s dili için çeviri dosyası bulunmuyor"
@@ -815,11 +821,15 @@ msgstr "yerel şu şekilde değiştirildi: %s"
 msgid "Can't change to locale '%s'"
 msgstr "Yereli '%s' için değiştiremezsiniz"
 
-#: src/rank_mirrors.py:58
+#: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
 msgstr "Ağ durumu bilinmiyor. Popüler yansılar alınamadı"
 
-#: src/rank_mirrors.py:71
+#: src/rank_mirrors.py:70
+msgid "Can't find rank mirrors script"
+msgstr ""
+
+#: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
 msgstr "Otomatik yansı seçimi çalıştırılamıyor"
 
@@ -837,19 +847,19 @@ msgstr "Manjaro Yükleyici - Belgeler"
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr "Manjaro Yükleyici - Sorular"
+msgstr "Manjaro Sistem Yükleyici Soruyor !"
 
-#: src/slides.py:86 src/slides.py:101
+#: src/slides.py:91 src/slides.py:106
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
 msgstr "Kurulum tamamlandı!\nSisteminizi yeniden başlatmak istiyor musunuz?"
 
-#: src/slides.py:94
-msgid "Installing Manjaro..."
-msgstr "Manjaro Yükleniyor..."
-
 #: src/slides.py:99
+msgid "Installing Manjaro..."
+msgstr "Manjaro bilgisayarınıza kuruluyor..."
+
+#: src/slides.py:104
 msgid "Please wait..."
 msgstr "Lütfen bekleyiniz..."
 
@@ -897,11 +907,11 @@ msgstr "Ülke koduna göre pacman için mirrorlist oluşturulmadı"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
-msgstr "Adınız:"
+msgstr "Gerçek Adınız:"
 
 #: src/user_info.py:87
 msgid "Your name"
-msgstr "Adınız:"
+msgstr "Gerçek Adınız:"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
@@ -925,7 +935,7 @@ msgstr "Parola"
 
 #: src/user_info.py:111 ui/user_info.ui:78
 msgid "Confirm your password:"
-msgstr "Parolanızı seçin:"
+msgstr "Parolanızı doğrulayın:"
 
 #: src/user_info.py:115
 msgid "Confirm password"
@@ -949,7 +959,7 @@ msgstr "Bir parola belirleyin"
 
 #: src/user_info.py:135 ui/user_info.ui:96
 msgid "Log in automatically"
-msgstr "otomatik giriş"
+msgstr "Otomatik giriş yap"
 
 #: src/user_info.py:136 ui/user_info.ui:113
 msgid "Require my password to log in"
@@ -961,7 +971,7 @@ msgstr "Ev dizinimi şifrele"
 
 #: src/user_info.py:139
 msgid "Who are you?"
-msgstr "Sen de kimsin?"
+msgstr "Kendinizi  tanımladınız mı?"
 
 #: src/user_info.py:167
 msgid ""
@@ -1055,83 +1065,84 @@ msgstr "Grafik (Görsel) Yükleyici"
 msgid "Can't load the CLI installer"
 msgstr "CLI-installer (Konsol Kurulum) yüklenemiyor"
 
-#: src/pacman/pac.py:234
+#: src/pacman/pac.py:237
 #, python-format
 msgid "Package %s not found in any repo!"
 msgstr "Paketi %s herhangi bir depoda bulunamadı!"
 
-#: src/pacman/pac.py:286
+#: src/pacman/pac.py:290
 msgid "Checking dependencies..."
 msgstr "Bağımlılıkları kontrol ediliyor ..."
 
-#: src/pacman/pac.py:288
+#: src/pacman/pac.py:292
 msgid "Checking file conflicts..."
 msgstr "Dosya çakışmaları kontrol ediliyor ..."
 
-#: src/pacman/pac.py:290
+#: src/pacman/pac.py:294
 msgid "Resolving dependencies..."
 msgstr "Bağımlılıklar çözümleniyor..."
 
-#: src/pacman/pac.py:292
+#: src/pacman/pac.py:296
 msgid "Checking inter conflicts..."
 msgstr "Çakışmalar kontrol ediliyor..."
 
-#: src/pacman/pac.py:297
+#: src/pacman/pac.py:301
 msgid "Removing..."
 msgstr "Kaldırılıyor..."
 
-#: src/pacman/pac.py:299
+#: src/pacman/pac.py:303
 msgid "Upgrading..."
 msgstr "Yükseltme yapılıyor..."
 
-#: src/pacman/pac.py:301
+#: src/pacman/pac.py:305
 msgid "Checking integrity..."
 msgstr "Bütünlüğü kontrol ediliyor..."
 
-#: src/pacman/pac.py:304
+#: src/pacman/pac.py:308
 msgid "Loading packages files..."
 msgstr "Paketler ve dosyalar yükleniyor..."
 
-#: src/pacman/pac.py:307
+#: src/pacman/pac.py:311
 msgid "Configuring..."
 msgstr "Yapılandırılıyor..."
 
-#: src/pacman/pac.py:308
+#: src/pacman/pac.py:312
 msgid "Configuring a package"
 msgstr "Paket yapılandırılıyor"
 
-#: src/pacman/pac.py:310
+#: src/pacman/pac.py:314
 msgid "Downloading a file"
 msgstr "Dosya indiriliyor"
 
-#: src/pacman/pac.py:334
+#: src/pacman/pac.py:338
 #, python-format
 msgid "ERROR: %s"
 msgstr "HATA: %s"
 
-#: src/pacman/pac.py:341
+#: src/pacman/pac.py:345
 #, python-format
 msgid "WARNING: %s"
 msgstr "UYARI %s"
 
-#: src/pacman/pac.py:382
+#: src/pacman/pac.py:386
 #, python-format
 msgid "Downloading %s..."
 msgstr "İndiriliyor %s..."
 
-#: src/pacman/pac.py:391
+#: src/pacman/pac.py:395
 #, python-format
 msgid "Refreshing %s..."
 msgstr "Yenileniyor %s..."
 
-#: src/pacman/pac.py:400
+#: src/pacman/pac.py:404
 #, python-format
 msgid "Installing %s (%d/%d)"
 msgstr "Yükleniyor %s (%d/%d)"
 
-#: src/pacman/pac.py:402
-msgid "Checking and loading packages..."
-msgstr "Paketler kontrol ediliyor ve yükleniyor.."
+#: src/pacman/pac.py:407
+#, python-format
+msgid "Checking and loading packages... [%s]"
+msgstr ""
 
 #: ui/bootloader.ui:7
 msgid "Boot"
@@ -1143,9 +1154,9 @@ msgid ""
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">En iyi sonuç için bilgisayarınızın aşağıdaki koşulları sağladığından emin olun:</span>"
 
-#: ui/desktop.ui:106 ui/installation_alongside.ui:191
-#: ui/installation_alongside.ui:203 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:62
+#: ui/desktop.ui:106 ui/installation_alongside.ui:193
+#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
+#: ui/slides.ui:74
 msgid "label"
 msgstr "etiket"
 
@@ -1181,11 +1192,11 @@ msgstr "Güvenlik duvarını etkinleştir (varsayılan tüm portları kapatır)"
 msgid "<span weight='bold' size='large'>Propietary packages</span>"
 msgstr "<span weight='bold' size='large'>Tescilli paketler</span>"
 
-#: ui/installation_advanced.ui:72
+#: ui/installation_advanced.ui:73
 msgid "Create partition"
 msgstr "Bölüm oluştur"
 
-#: ui/installation_advanced.ui:112
+#: ui/installation_advanced.ui:113
 msgid "Location:"
 msgstr "Yer:"
 
@@ -1193,31 +1204,31 @@ msgstr "Yer:"
 msgid "MB"
 msgstr "MB"
 
-#: ui/installation_advanced.ui:559
+#: ui/installation_advanced.ui:557
 msgid "Edit partition"
 msgstr "Bölümü düzenle"
 
-#: ui/installation_advanced.ui:899
+#: ui/installation_advanced.ui:898
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_alongside.ui:14
+#: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose next to which OS you want to install "
 "Manjaro</span>"
 msgstr "<span size=\"large\">Manjaro'yu diğer işletim sistemlerinin yanına yükle</span>"
 
-#: ui/installation_alongside.ui:88
+#: ui/installation_alongside.ui:90
 msgid "Choose the new size"
 msgstr "Yeni boyutu seçin"
 
-#: ui/installation_alongside.ui:155
+#: ui/installation_alongside.ui:157
 msgid "Other OS"
 msgstr "Diğer Sistem"
 
-#: ui/installation_alongside.ui:167
+#: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1271,11 +1282,22 @@ msgstr "<span weight=\"light\" size=\"small\">Disk bölümleri oluşturman ve si
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b> UYARI ! Bu yükleme kipi diskinizdeki herşeyin üzerine yazacak! </b>"
 
-#: ui/language.ui:25
+#: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
 msgstr "<span weight=\"bold\">Lütfen kullanacağınız dili seçiniz:</span>"
+
+#: ui/language.ui:88
+msgid ""
+"<span weight='bold'>This is an Alpha version.</span>\n"
+"\n"
+"\n"
+"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other \" advanced setups.\n"
+"Please proceed with caution as data loss is possible! \n"
+"\n"
+"If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr ""
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
