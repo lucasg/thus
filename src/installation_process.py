@@ -241,7 +241,7 @@ class InstallationProcess(multiprocessing.Process):
         ## Create/Format partitions
         
         if self.method == 'automatic':
-            self.auto_device = self.mount_devices["/"].replace("3","")
+            self.auto_device = self.mount_devices["/boot"].replace("1","")
             thus_dir = self.settings.get("THUS_DIR")
             script_path = os.path.join(thus_dir, "scripts", _autopartition_script)
 
@@ -501,7 +501,6 @@ class InstallationProcess(multiprocessing.Process):
                 subprocess.check_call(["umount", mydir])
             except:
                 self.queue_event('warning', _("Unable to umount %s") % mydir)
-                return
         
         self.special_dirs_mounted = False
 
@@ -518,6 +517,7 @@ class InstallationProcess(multiprocessing.Process):
                                     stdout=subprocess.PIPE,
                                     stderr=subprocess.STDOUT)
             out = proc.communicate()[0]
+            logging.debug(str(out))
         except OSError as e:
             logging.exception("Error running command: %s" % e.strerror)
             raise
@@ -613,8 +613,6 @@ class InstallationProcess(multiprocessing.Process):
             f.write(full_text)
 
     def install_bootloader(self):
-        # TODO: check dogrub_config and dogrub_bios from arch-setup
-        
         bt = self.settings.get('bootloader_type')
 
         if bt == "GRUB2":
@@ -631,20 +629,24 @@ class InstallationProcess(multiprocessing.Process):
 
             if not os.path.exists(default_dir):
                 os.mkdir(default_dir)
-
-            #sed -i /GRUB_CMDLINE_LINUX=/c\GRUB_CMDLINE_LINUX=\"cryptdevice=${DATA_DEVICE}:cryptAntergos\ cryptkey=${BOOT_DEVICE}:ext2:.keyfile\" ${DEFAULT_GRUB}
             
             root_device = self.mount_devices["/"]
             boot_device = self.mount_devices["/boot"]
-            
-            default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptAntergos cryptkey=%s:ext2:/.keyfile"' % (root_device, boot_device)
+
+            # Let GRUB automatically add the kernel parameters for root encryption
+            default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro cryptkey=%s:ext2:/.keyfile"' % (root_device, boot_device)
+
+            #Also, disable the usage of UUIDs for the rootfs:
+            disable_uuid_line = 'GRUB_DISABLE_LINUX_UUID=true'
             
             with open(default_grub) as f:
                 lines = [x.strip() for x in f.readlines()]
 
             for e in range(len(lines)):
-                if lines[e].startswith("GRUB_CMDLINE_LINUX"):
+                if lines[e].startswith("#GRUB_CMDLINE_LINUX") or lines[e].startswith("GRUB_CMDLINE_LINUX"):
                     lines[e] = default_line
+                elif lines[e].startswith("#GRUB_DISABLE_LINUX_UUID") or lines[e].startswith("GRUB_DISABLE_LINUX_UUID"):
+                    lines[e] = disable_uuid_line
 
             with open(default_grub, "w") as f:
                 f.write("\n".join(lines) + "\n")
@@ -721,7 +723,7 @@ class InstallationProcess(multiprocessing.Process):
         grub_standalone = "%s/boot/efi/EFI/manjaro_grub/grub%s_standalone.cfg" % (self.dest_dir, spec_uefi_arch)
         try:
             shutil.copy2(grub_cfg, grub_standalone)
-        except FileNotFoundError: 
+        except FileNotFoundError:
             self.queue_event('warning', _("ERROR installing GRUB(2) configuration file."))
             return
         except FileExistsError:
@@ -789,8 +791,9 @@ class InstallationProcess(multiprocessing.Process):
 
         for e in range(len(mklins)):
             if mklins[e].startswith("HOOKS"):
-                for hook in hooks:
-                    mklins[e] = mklins[e].strip('"') + (' %s"' % hook)
+                mklins[e] = 'HOOKS="%s"' % ' '.join(hooks)
+            elif mklins[e].startswith("MODULES"):
+                mklins[e] = 'MODULES="%s"' % ' '.join(modules)
 
         with open("%s/etc/mkinitcpio.conf" % self.dest_dir, "w") as f:
             f.write("\n".join(mklins) + "\n")
@@ -1263,7 +1266,8 @@ class InstallationProcess(multiprocessing.Process):
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
-        # This way we don't have to fix deprecated hooks.    
+        # This way we don't have to fix deprecated hooks.
+        # NOTE: With LUKS or LVM maybe we'll have to fix deprecated hooks.    
         self.queue_event('info', _("Running mkinitcpio..."))
         self.queue_event("pulse")
         self.run_mkinitcpio()

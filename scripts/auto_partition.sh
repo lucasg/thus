@@ -488,10 +488,10 @@ autoprepare() {
         
         if [ "$USE_LUKS" == "1" ]; then
             # setup LVM on LUKS
-            pvcreate /dev/mapper/cryptManjaro
+            pvcreate -f /dev/mapper/cryptManjaro
             vgcreate -v ManjaroVG /dev/mapper/cryptManjaro
         else
-            pvcreate ${DATA_DEVICE}
+            pvcreate -f ${DATA_DEVICE}
             vgcreate -v ManjaroVG ${DATA_DEVICE}
         fi
         

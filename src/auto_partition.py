@@ -3,7 +3,11 @@
 #
 #  auto_partition.py
 #  
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#  
 #  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -26,22 +30,31 @@ import logging
 import time
 
 class AutoPartition():
-    def __init__(self, dest_dir, auto_device, settings):
-        
+    def __init__(self, dest_dir, auto_device, use_luks, use_lvm):
         self.dest_dir = dest_dir
         self.auto_device = auto_device
+
+        self.uefi = False
         
-        # destination of blockdevices in /sys
-        block="/sys/block"
+        if os.path.exists("/sys/firmware/efi/systab"):
+            self.uefi = True
+
+        self.luks = use_luks
+        self.lvm = use_lvm
         
-        self.luks = settings.get('use_luks')
-        self.lvm = settings.get('use_lvm')
+        self.run()
 
     def get_fs_uuid(self, device):
         return subprocess.check_output("blkid -p -i -s UUID -o value %s" % device)
     
     def get_fs_label(self, device):
         return subprocess.check_output("blkid -p -i -s LABEL -o value %s" % device)
+        
+    def printk(self, enable):
+        if enable:
+            subprocess.call("echo 4 >/proc/sys/kernel/printk")
+        else:
+            subprocess.call("echo 0 >/proc/sys/kernel/printk")
 
     def umount_all(self):
         subprocess.call(["swapoff", "-a"])
@@ -54,29 +67,15 @@ class AutoPartition():
         devices = subprocess.check_output(command)
         subprocess.call("umount %s" % devices)
 
-    def mkfs(self, params):
-        device = params['device']
-        fs_type = params['fs_type']
-        dest = params['dest']
-        mount_point = params['mount_point']
-        label_name = params['label_name']
-        fs_options = params['fs_options']
-
-        btrfs_devices = params['brtfs_devices']
-        '''
-        local _btrfsdevices="$(echo ${8} | sed -e 's|#| |g')"
-        local _btrfslevel=${9}
-        local _btrfssubvolume=${10}
-        local _dosubvolume=${11}
-        local _btrfscompress=${12}
-        local _btrfsssd=${13}
-        '''
-        
+    def mkfs(self, device, fs_type, mount_point, label_name, fs_options="", btrfs_devices=""):
         # we have two main cases: "swap" and everything else.
         if fs_type == "swap":
-            subprocess.call(["swapoff", device])
-            subprocess.call(["mkswap", "-L", label_name, device])
-            subprocess.call(["swapon", device])
+            try:
+                subprocess.check_call(["swapoff", device])
+                subprocess.check_call(["mkswap", "-L", label_name, device])
+                subprocess.check_call(["swapon", device])
+            except subprocess.CalledProcessError as e:
+                logging.warning(e.output)
         else:
             mkfs = { "xfs" : "mkfs.xfs %s -L %s -f %s" % (fs_options, label_name, device),
                      "jfs" : "yes | mkfs.jfs %s -L %s %s" % (fs_options, label_name, device),
@@ -95,16 +94,20 @@ class AutoPartition():
                 return
             
             command = mkfs[fs_type]
-            subprocess.call(command)
             
+            try:
+                subprocess.check_call(command)
+            except subprocess.CalledProcessError as e:
+                logging.error(e.output)
+                return
 
             time.sleep(4)
 
             # create our mount directory
-            subprocess.call("mkdir -p %s%s" % (dest, mount_point))
+            subprocess.call("mkdir -p %s%s" % (self.dest_dir, mount_point))
 
             # mount our new filesystem
-            subprocess.call("mount -t %s %s %s%s" % (fs_type, device, dest, mount_point))
+            subprocess.call("mount -t %s %s %s%s" % (fs_type, device, self.dest_dir, mount_point))
 
             # change permission of base directories to correct permission
             # to avoid btrfs issues
@@ -115,19 +118,52 @@ class AutoPartition():
             elif mount_point == "/root":
                 mode = "750"
                     
-            subprocess.call("chmod %s %s%s" % (mode, dest, mount_point))
+            subprocess.call("chmod %s %s%s" % (mode, self.dest_dir, mount_point))
         
         fs_uuid = self.get_fs_uuid(device)
         fs_label = self.get_fs_label(device)
         logging.debug("Device details: %s UUID=%s LABEL=%s" % (device, fs_uuid, fs_label))
+
+    def get_devices(self):
+        d = self.auto_device
+        
+        boot = ""
+        swap = ""
+        root = ""
+
+        luks = ""    
+        lvm = ""
+
+        if self.uefi:
+            boot = d + "3"
+            swap = d + "4"
+            root = d + "5"
+        else:
+            boot = d + "1"
+            swap = d + "2"
+            root = d + "3"
+
+        if self.lvm:
+            lvm = root
+            swap = "/dev/ManjaroVG/ManjaroSwap"
+            root = "/dev/ManjaroVG/ManjaroRoot"
+                    
+        if self.luks:
+            if self.lvm:
+                # LUKS and LVM
+                luks = lvm
+                lvm = "/dev/mapper/cryptManjaro"
+            else:
+                # LUKS and no LVM
+                luks = root
+                root = "/dev/mapper/cryptManjaro"
+
+        return (boot, swap, root, luks, lvm)
     
     def run(self):
-        # TODO: support UEFI
-        uefi = False
-
         key_file = "/tmp/.keyfile"
     
-        if uefi:
+        if self.uefi:
             guid_part_size = "2"
             gpt_bios_grub_part_size = "2"
             uefisys_part_size = "512"
@@ -136,12 +172,12 @@ class AutoPartition():
             uefisys_part_size = "0"
 
         # get just the disk size in 1000*1000 MB
-        device = subprocess.check_output("basename %s" % self.auto_device)
-        base_path = "/sys/block/%s" % device
+        device_name = subprocess.check_output("basename %s" % self.auto_device)
+        base_path = "/sys/block/%s" % device_name
         if os.path.exists("%s/size" % base_path):
             with open("%s/queue/logical_block_size" % base_path, "rt") as f:
                 logical_block_size = f.read()
-            with open(("%s/size" % base_path, "rt") as f:
+            with open("%s/size" % base_path, "rt") as f:
                 size = f.read()
             
             disc_size = logical_block_size * size
@@ -166,182 +202,124 @@ class AutoPartition():
         # disable swap and all mounted partitions, umount / last!
         self.umount_all()
 
+        self.printk(False)
+        
+        device = self.auto_device
+        
         # we assume a /dev/hdX format (or /dev/sdX)
-        if uefi:
-            '''
-            PART_ROOT="${DEVICE}5"
-            # GPT (GUID) is supported only by 'parted' or 'sgdisk'
-            printk off
-            # clean partition table to avoid issues!
-            sgdisk --zap ${DEVICE} &>/dev/null
-            # clear all magic strings/signatures - mdadm, lvm, partition tables etc.
-            dd if=/dev/zero of=${DEVICE} bs=512 count=2048 &>/dev/null
-            wipefs -a ${DEVICE} &>/dev/null
-            # create fresh GPT
-            sgdisk --clear ${DEVICE} &>/dev/null
-            # create actual partitions
-            sgdisk --set-alignment="2048" --new=1:1M:+${GPT_BIOS_GRUB_PART_SIZE}M --typecode=1:EF02 --change-name=1:BIOS_GRUB ${DEVICE} >> ${LOG}
-            sgdisk --set-alignment="2048" --new=2:0:+${UEFISYS_PART_SIZE}M --typecode=2:EF00 --change-name=2:UEFI_SYSTEM ${DEVICE} >> ${LOG}
-            sgdisk --set-alignment="2048" --new=3:0:+${BOOT_PART_SIZE}M --typecode=3:8300 --attributes=3:set:2 --change-name=3:ANTERGOS_BOOT ${DEVICE} >> ${LOG}
-
-            if [ "$USE_LVM" == "1" ]; then
-                sgdisk --set-alignment="2048" --new=4:0:+${LVM_PV_PART_SIZE}M --typecode=4:8200 --change-name=4:ANTERGOS_LVM ${DEVICE} >> ${LOG}
-            else
-                sgdisk --set-alignment="2048" --new=4:0:+${SWAP_PART_SIZE}M --typecode=4:8200 --change-name=4:ANTERGOS_SWAP ${DEVICE} >> ${LOG}
-                sgdisk --set-alignment="2048" --new=5:0:+${ROOT_PART_SIZE}M --typecode=5:8300 --change-name=5:ANTERGOS_ROOT ${DEVICE} >> ${LOG}        
-            fi
+        if self.uefi:
+            part_root = self.auto_device + "5"
             
-            sgdisk --print ${DEVICE} >> ${LOG}
-            '''
-    else:
-        PART_ROOT="${DEVICE}3"
-        # start at sector 1 for 4k drive compatibility and correct alignment
-        printk off
+            # GPT (GUID) is supported only by 'parted' or 'sgdisk'
+            # clean partition table to avoid issues!
+            subprocess.call("sgdisk --zap %s" % device)
 
-        # clean partitiontable to avoid issues!
-        dd if=/dev/zero of=${DEVICE} bs=512 count=2048 >/dev/null 2>&1
-        wipefs -a ${DEVICE} &>/dev/null
-        # create DOS MBR with parted
-        parted -a optimal -s ${DEVICE} mktable msdos >/dev/null 2>&1
-        parted -a optimal -s ${DEVICE} mkpart primary 1 $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) >>${LOG}
-        parted -a optimal -s ${DEVICE} set 1 boot on >>${LOG}
-        
-        if [ "$USE_LVM" == "1" ]; then
-            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${LVM_PV_PART_SIZE})) >>${LOG}
-        else
-            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE})) $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) >>${LOG}
-            parted -a optimal -s ${DEVICE} mkpart primary $((${GUID_PART_SIZE}+${BOOT_PART_SIZE}+${SWAP_PART_SIZE})) 100% >>${LOG}
-        fi
-    fi
-    
-    partprobe ${DISC}
-    if [[ $? -gt 0 ]]; then
-        echo "Error partitioning ${DEVICE} (see ${LOG} for details)" 0 0
-        printk on
-        return 1
-    fi
-    printk on
-    ## wait until /dev initialized correct devices
-    udevadm settle
-    
-    # if using LVM, data_device will store root and swap partitions
-    # if not using LVM, data_device will be root partition
-    if [ "$USE_LVM" == "1" ]; then
-        DATA_DEVICE=${DEVICE}2
-    else
-        DATA_DEVICE=${DEVICE}3
-    
-        if [[ "${GUIDPARAMETER}" == "yes" ]]; then
-            DATA_DEVICE=${DEVICE}5
-        fi
-    fi
-    
-    if [ "$USE_LUKS" == "1" ]; then
-        # Wipe LUKS header (just in case we're installing on a pre LUKS setup)
-        # For 512 bit key length the header is 2MB
-        # If in doubt, just be generous and overwrite the first 10MB or so
-        dd if=/dev/zero of=${DATA_DEVICE} bs=512 count=20480
-    
-        # Create a random keyfile
-        dd if=/dev/urandom of=${KEY_FILE} bs=1024 count=4
-        
-        # Setup luks
-        cryptsetup luksFormat -q -c aes-xts-plain -s 512 ${DATA_DEVICE} ${KEY_FILE}
-        #cryptsetup luksAddKey ${DATA_DEVICE} --key-file ${KEY_FILE}
-        cryptsetup luksOpen ${DATA_DEVICE} cryptAntergos -q --key-file ${KEY_FILE}
-        
-    fi
+            # clear all magic strings/signatures - mdadm, lvm, partition tables etc.
+            subprocess.call("dd if=/dev/zero of=%s bs=512 count=2048" % device)
+            subprocess.call("wipefs -a %s" % device)
+            # create fresh GPT
+            subprocess.call("sgdisk --clear %s" % device)
+            # create actual partitions
+            subprocess.call('sgdisk --set-alignment="2048" --new=1:1M:+%dM --typecode=1:EF02 --change-name=1:BIOS_GRUB %s' % (gpt_bios_grub_part_size, device))
+            subprocess.call('sgdisk --set-alignment="2048" --new=2:0:+%dM --typecode=2:EF00 --change-name=2:UEFI_SYSTEM %s' % (uefisys_part_size, device))
+            subprocess.call('sgdisk --set-alignment="2048" --new=3:0:+%dM --typecode=3:8300 --attributes=3:set:2 --change-name=3:MANJARO_BOOT %s' % (boot_part_size, device))
 
-    BOOT_DEVICE="${DEVICE}1"
+            if self.lvm:
+                subprocess.call('sgdisk --set-alignment="2048" --new=4:0:+%dM --typecode=4:8200 --change-name=4:MANJARO_LVM %s' % (lvm_pv_part_size, device))
+            else:
+                subprocess.call('sgdisk --set-alignment="2048" --new=4:0:+%dM --typecode=4:8200 --change-name=4:MANJARO_SWAP %s' % (swap_part_size, device))
+                subprocess.call('sgdisk --set-alignment="2048" --new=5:0:+%dM --typecode=5:8300 --change-name=5:MANJARO_ROOT %s' % (root_part_size, device))
+            
+            logging.debug(subprocess.check_output("sgdisk --print %s" % device))            
+        else:
+            part_root = self.auto_device + "3"
+            # start at sector 1 for 4k drive compatibility and correct alignment
+            # clean partitiontable to avoid issues!
+            subprocess.call("dd if=/dev/zero of=%s bs=512 count=2048" % device)
+            subprocess.call("wipefs -a %s" % device)
 
-    if [ "${GUIDPARAMETER}" == "yes" ]; then
-        BOOT_DEVICE="${DEVICE}3"
-    fi  
+            # create DOS MBR with parted
+            subprocess.call("parted -a optimal -s %s mktable msdos" % device)
+            subprocess.call("parted -a optimal -s %s mkpart primary 1 %d" % (device, guid_part_size + boot_part_size))
+            subprocess.call("parted -a optimal -s %s set 1 boot on" % device)
+            
+            if self.lvm:
+                start = guid_part_size + boot_part_size
+                end = start + lvm_pv_part_size
+                subprocess.call("parted -a optimal -s %s mkpart primary %d %d" % (device, start, end))
+            else:
+                start = guid_part_size + boot_part_size
+                end = start + swap_part_size
+                subprocess.call("parted -a optimal -s %s mkpart primary %d %d" % (device, start, end))
+                subprocess.call("parted -a optimal -s %s mkpart primary %d 100%" % (device, end))
 
-    if [ "$USE_LVM" == "1" ]; then
-        # /dev/sdX1 is /boot
-        # /dev/sdX2 is the PV
+        self.printk(True)
+
+        ## wait until /dev initialized correct devices
+        subprocess.call("udevadm settle")
         
-        if [ "$USE_LUKS" == "1" ]; then
-            # setup LVM on LUKS
-            pvcreate /dev/mapper/cryptAntergos
-            vgcreate -v AntergosVG /dev/mapper/cryptAntergos
-        else
-            pvcreate ${DATA_DEVICE}
-            vgcreate -v AntergosVG ${DATA_DEVICE}
-        fi
+        (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
         
-        lvcreate -n AntergosRoot -L ${ROOT_PART_SIZE} AntergosVG
+        logging.debug("Boot %s, Swap %s, Root %s" % (boot_device, swap_device, root_device))
         
-        # Use the remainig space for our swap volume
-        lvcreate -n AntergosSwap -l 100%FREE AntergosVG
+        if self.luks:
+            logging.debug("Will setup LUKS on device %s" % luks_device)
+                        
+            # Wipe LUKS header (just in case we're installing on a pre LUKS setup)
+            # For 512 bit key length the header is 2MB
+            # If in doubt, just be generous and overwrite the first 10MB or so
+            subprocess.call("dd if=/dev/zero of=%s bs=512 count=20480" % luks_device)
+        
+            # Create a random keyfile
+            subprocess.call("dd if=/dev/urandom of=%s bs=1024 count=4" % key_file)
+            
+            # Setup luks
+            subprocess.call("cryptsetup luksFormat -q -c aes-xts-plain -s 512 %s %s" % (luks_device, key_file))
+            subprocess.call("cryptsetup luksOpen %s cryptManjaro -q --key-file %s" % (luks_device, key_file))
+
+        if self.lvm:
+            # /dev/sdX1 is /boot
+            # /dev/sdX2 is the PV
+            
+            logging.debug("Will setup LVM on device %s" % lvm_device)
+
+            subprocess.call("pvcreate -f %s" % lvm_device)
+            subprocess.call("vgcreate -v ManjaroVG %s" % lvm_device)
+            
+            subprocess.call("lvcreate -n ManjaroRoot -L %d ManjaroVG" % root_part_size)
+            
+            # Use the remainig space for our swap volume
+            subprocess.call("lvcreate -n ManjaroSwap -l 100%FREE ManjaroVG")
 
         ## Make sure the "root" partition is defined first
-        _mkfs yes /dev/AntergosVG/AntergosRoot ext4 "${DESTDIR}" / AntergosRoot || return 1
-        _mkfs yes /dev/AntergosVG/AntergosSwap swap "${DESTDIR}" "" AntergosSwap || return 1
-
-        _mkfs yes "${BOOT_DEVICE}" ext2 "${DESTDIR}" /boot AntergosBoot || return 1    
-    else
-        # Not using LVM
-        if [ "$USE_LUKS" == "1" ]; then
-            ## Make sure the "root" partition is defined first
-            _mkfs yes /dev/mapper/cryptAntergos ext4 "${DESTDIR}" / AntergosRoot || return 1
-            FSSPECS="1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_ANTERGOS 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_ANTERGOS"
-            if [ "${GUIDPARAMETER}" == "yes" ]; then
-                FSSPECS="3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_ANTERGOS 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_ANTERGOS"
-            fi
-        else
-            ## FSSPECS - default filesystem specs (the + is bootable flag)
-            ## <partnum>:<mountpoint>:<partsize>:<fstype>[:<fsoptions>][:+]:labelname
-            ## The partitions in FSSPECS list should be listed in the "mountpoint" order.
-            ## Make sure the "root" partition is defined first in the FSSPECS list
-            FSSPECS="3:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_ANTERGOS 1:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_ANTERGOS 2:swap:${SWAP_PART_SIZE}:swap:::SWAP_ANTERGOS"
-
-            if [ "${GUIDPARAMETER}" == "yes" ]; then
-                FSSPECS="5:/:${ROOT_PART_SIZE}:${FSTYPE}:::ROOT_ANTERGOS 3:/boot:${BOOT_PART_SIZE}:ext2::+:BOOT_ANTERGOS 2:/boot/efi:512:vfat:-F32::ESP 4:swap:${SWAP_PART_SIZE}:swap:::SWAP_ANTERGOS"
-            fi
-        fi
-
-        ## make and mount filesystems
-        for fsspec in ${FSSPECS}; do
-            part="$(echo ${fsspec} | tr -d ' ' | cut -f1 -d:)"
-            mountpoint="$(echo ${fsspec} | tr -d ' ' | cut -f2 -d:)"
-            fstype="$(echo ${fsspec} | tr -d ' ' | cut -f4 -d:)"
-            fsoptions="$(echo ${fsspec} | tr -d ' ' | cut -f5 -d:)"
-            [[ "${fsoptions}" == "" ]] && fsoptions="NONE"
-            labelname="$(echo ${fsspec} | tr -d ' ' | cut -f7 -d:)"
-            btrfsdevices="${DEVICE}${part}"
-            btrfsssd="NONE"
-            btrfscompress="NONE"
-            btrfssubvolume="NONE"
-            btrfslevel="NONE"
-            dosubvolume="no"
-            # if echo "${mountpoint}" | tr -d ' ' | grep '^/$' 2>&1 >/dev/null; then
-            # if [[ "$(echo ${mountpoint} | tr -d ' ' | grep '^/$' | wc -l)" -eq 0 ]]; then
-            _mkfs yes "${DEVICE}${part}" "${fstype}" "${DESTDIR}" "${mountpoint}" "${labelname}" "${fsoptions}" "${btrfsdevices}" "${btrfssubvolume}" "${btrfslevel}" "${dosubvolume}" "${btrfssd}" "${btrfscompress}" || return 1
-            # fi
-        done
-    fi
-
-    if [ "$USE_LUKS" == "1" ]; then
-        # https://wiki.archlinux.org/index.php/Encrypted_LVM
-
-        # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py
-        # NOTE: /etc/default/grub will be modified in installation_process.py, too.
+        self.mkfs(root_device, "ext4", "/", "ManjaroRoot")
+        self.mkfs(swap_device, "swap", "", "ManjaroSwap")
+        self.mkfs(boot_device, "ext2", "/boot", "ManjaroBoot")
         
-        # Copy keyfile to boot partition, user will choose what to do with it
-        # THIS IS NONSENSE (BIG SECURITY HOLE), BUT WE TRUST THE USER TO FIX THIS
-        # User shouldn't store the keyfiles unencrypted unless the medium itself is reasonably safe
-        # (boot partition is not)
-        # Maybe instead of using a keyfile we should use a password...
-        sudo chmod 0400 "${KEY_FILE}"
-        cp ${KEY_FILE} ${DESTDIR}/boot
-        rm ${KEY_FILE}
-    fi
-    
-    S_MKFSAUTO=1
-}
+        if self.luks:
+            # https://wiki.archlinux.org/index.php/Encrypted_LVM
 
-touch /tmp/.auto_partition.lock
-autoprepare $1
-rm /tmp/.auto_partition.lock
+            # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py
+            # NOTE: /etc/default/grub will be modified in installation_process.py, too.
+            
+            # Copy keyfile to boot partition, user will choose what to do with it
+            # THIS IS NONSENSE (BIG SECURITY HOLE), BUT WE TRUST THE USER TO FIX THIS
+            # User shouldn't store the keyfiles unencrypted unless the medium itself is reasonably safe
+            # (boot partition is not)
+            # Maybe instead of using a keyfile we should use a password...
+            subprocess.call('chmod 0400 "${KEY_FILE}"')
+            subprocess.call('cp %s %s/boot' % (key_file, self.dest_dir))
+            subprocess.call('rm %s' % key_file)
+
+if __name__ == '__main__':
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    sh = logging.StreamHandler()
+    sh.setLevel(logging.DEBUG)
+    sh.setFormatter(formatter)
+    logger.addHandler(sh)
+
+
+    ap = AutoPartition("/install", "/dev/sdb", False, False)
+    ap.run()
