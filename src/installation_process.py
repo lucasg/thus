@@ -1039,8 +1039,8 @@ class InstallationProcess(multiprocessing.Process):
                 os.system("echo \"[User]\" > /install/var/lib/AccountsService/users/gdm")
                 if os.path.exists("/usr/bin/startxfce4"):
                     os.system("echo \"XSession=xfce\" >> /install/var/lib/AccountsService/users/gdm")
-                elif os.path.exists("/usr/bin/cinnamon"):
-                    os.system("echo \"XSession=cinnamon\" >> /install/var/lib/AccountsService/users/gdm")
+                elif os.path.exists("/usr/bin/cinnamon-session"):
+                    os.system("echo \"XSession=cinnamon-session\" >> /install/var/lib/AccountsService/users/gdm")
                 elif os.path.exists("/usr/bin/mate-session"):
                     os.system("echo \"XSession=mate\" >> /install/var/lib/AccountsService/users/gdm")
                 elif os.path.exists("/usr/bin/enlightenment_start"):
@@ -1063,7 +1063,7 @@ class InstallationProcess(multiprocessing.Process):
             self.do_run_in_chroot("chmod 1770 /var/lib/mdm")
             if os.path.exists("/usr/bin/startxfce4"):
                 os.system("sed -i 's|default.desktop|xfce.desktop|g' /install/etc/mdm/custom.conf")
-            if os.path.exists("/usr/bin/gnome-session-cinnamon"):
+            if os.path.exists("/usr/bin/cinnamon-session"):
                 os.system("sed -i 's|default.desktop|cinnamon.desktop|g' /install/etc/mdm/custom.conf")
             if os.path.exists("/usr/bin/openbox-session"):
                 os.system("sed -i 's|default.desktop|openbox.desktop|g' /install/etc/mdm/custom.conf")
@@ -1080,8 +1080,8 @@ class InstallationProcess(multiprocessing.Process):
             self.do_run_in_chroot("groupadd --system lxdm")
             if os.path.exists("/usr/bin/startxfce4"):
                 os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/startxfce4|' /install/etc/lxdm/lxdm.conf")
-            elif os.path.exists("/usr/bin/cinnamon"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/cinnamon|' /install/etc/lxdm/lxdm.conf")
+            elif os.path.exists("/usr/bin/cinnamon-session"):
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/cinnamon-session|' /install/etc/lxdm/lxdm.conf")
             elif os.path.exists("/usr/bin/mate-session"):
                 os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/mate-session|' /install/etc/lxdm/lxdm.conf")
             elif os.path.exists("/usr/bin/enlightenment_start"):
