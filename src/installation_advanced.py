@@ -908,7 +908,7 @@ class InstallationAdvanced(Gtk.Box):
                         mymount = ''   
                     #No labeling either..
                     mylabel = ''
-                    myfmt = ''
+                    myfmt = None
                     formatme = False 
                     logging.debug(_("Creating extended partition"))
                     pm.create_partition(disk, pm.PARTITION_EXTENDED, geometry)
