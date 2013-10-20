@@ -1457,7 +1457,7 @@ class InstallationAdvanced(Gtk.Box):
                     uid = self.gen_partition_uid(path=partition_path)
                     if uid in self.stage_opts:
                         (is_new, lbl, mnt, fisy, fmt) = self.stage_opts[uid]
-                        #TODO: check why extended partitions get fmt flag true on new creation
+                        #TODO: check why extended partitions get fmt flag true when new created
                         if fisy =='':
                             continue
                         logging.info(_("Creating fs of type %s in %s with label %s - format: %s") % (fisy, partition_path, lbl, fmt))
@@ -1517,7 +1517,7 @@ class InstallationAdvanced(Gtk.Box):
                 uid = self.gen_partition_uid(path=ppath)
                 if uid in self.stage_opts:
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
-                    #TODO: check why extended partitions get added to be mounted
+                    #TODO: check why extended partitions get added to be mounted when new created
                     if fs_type =='':
                         continue
                     else:
@@ -1528,7 +1528,7 @@ class InstallationAdvanced(Gtk.Box):
                 uid = self.gen_partition_uid(p=p)
                 if uid in self.stage_opts:
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
-                    #TODO: check why extended partitions get added to be mounted
+                    #TODO: check why extended partitions get added to be mounted when new created
                     if fs_type =='':
                         continue
                     else:
