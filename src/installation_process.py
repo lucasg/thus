@@ -577,7 +577,9 @@ class InstallationProcess(multiprocessing.Process):
             else:
                 # It hasn't any filesystem defined
                 continue
-            
+
+            logging.debug("Adding %s with filesystem %s to fstab" % (parti, myfmt))  
+          
             # Avoid adding a partition to fstab when
             # it has no mount point (except swap, of course)
             if path == "" and "swap" not in myfmt:

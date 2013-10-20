@@ -1457,9 +1457,9 @@ class InstallationAdvanced(Gtk.Box):
                     uid = self.gen_partition_uid(path=partition_path)
                     if uid in self.stage_opts:
                         (is_new, lbl, mnt, fisy, fmt) = self.stage_opts[uid]
-                        #TODO: check why still extended partitions get fmt flag true on new creation
+                        #TODO: check why extended partitions get fmt flag true on new creation
                         if fisy =='':
-                            fmt = False
+                            continue
                         logging.info(_("Creating fs of type %s in %s with label %s - format: %s") % (fisy, partition_path, lbl, fmt))
                         if ((mnt == '/' and noboot) or mnt == '/boot') and ('/dev/mapper' not in partition_path):
                             if not pm.get_flag(partitions[partition_path], 
@@ -1517,15 +1517,23 @@ class InstallationAdvanced(Gtk.Box):
                 uid = self.gen_partition_uid(path=ppath)
                 if uid in self.stage_opts:
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
-                    mount_devices[mount_point] = ppath
-                    fs_devices[ppath] = fs_type
+                    #TODO: check why extended partitions get added to be mounted
+                    if fs_type =='':
+                        continue
+                    else:
+                        mount_devices[mount_point] = ppath
+                        fs_devices[ppath] = fs_type
             for partition_path in partition_list:
                 p = partitions[partition_path]
                 uid = self.gen_partition_uid(p=p)
                 if uid in self.stage_opts:
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
-                    mount_devices[mount_point] = partition_path
-                    fs_devices[partition_path] = fs_type
+                    #TODO: check why extended partitions get added to be mounted
+                    if fs_type =='':
+                        continue
+                    else:
+                        mount_devices[mount_point] = partition_path
+                        fs_devices[partition_path] = fs_type
                 #elif pm.check_mounted(p):
                 #    mount_point, fs, writable = self.get_mount_point(p.path)
                 #    mount_devices[mount_point] = partition_path
