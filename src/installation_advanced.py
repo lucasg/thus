@@ -908,7 +908,7 @@ class InstallationAdvanced(Gtk.Box):
                         mymount = ''   
                     #No labeling either..
                     mylabel = ''
-                    myfmt = None
+                    myfmt = ''
                     formatme = False 
                     logging.debug(_("Creating extended partition"))
                     pm.create_partition(disk, pm.PARTITION_EXTENDED, geometry)
@@ -1418,7 +1418,7 @@ class InstallationAdvanced(Gtk.Box):
                     uid = self.gen_partition_uid(path=partition_path)
                     if uid in self.stage_opts:
                         (is_new, lbl, mnt, fisy, fmt) = self.stage_opts[uid]
-                        logging.info(_("Creating fs of type %s in %s with label %s") % (fisy, partition_path, lbl))
+                        logging.info(_("Creating fs of type %s in %s with label %s - format: %s") % (fisy, partition_path, lbl, fmt))
                         if ((mnt == '/' and noboot) or mnt == '/boot') and ('/dev/mapper' not in partition_path):
                             if not pm.get_flag(partitions[partition_path], 
                                                1):
@@ -1436,7 +1436,8 @@ class InstallationAdvanced(Gtk.Box):
                                         x = pm.set_flag(1, partitions[ee])
                                 pm.finalize_changes(partitions[ee].disk)
                          #only format if they want formatting
-                        if fmt:  
+                         #TODO: find out why extended partitions get true on fmt
+                        if fmt and fisy !='':
                          #all of fs module takes paths, not partition objs
                             (error, msg) = fs.create_fs(partition_path, fisy, lbl)
                             if error == 0:
