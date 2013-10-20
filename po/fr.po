@@ -452,7 +452,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s est monté comme swap.⏎\nPour continuer, il doit être démonté.⏎\nCliquez sur Oui pour le démonter, ou Non pour revenir\\n"
+msgstr "%s est monté comme swap.\nPour continuer, il doit être démonté.\nCliquez sur Oui pour le démonter, ou Non pour revenir\n"
 
 #: src/installation_advanced.py:1284
 #, python-format
@@ -981,35 +981,35 @@ msgstr "Qui êtes-vous?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro va utiliser eCryptfs pour chiffrer votre répertoire personnel. Malheureusement, eCryptfs gère mal les fichiers fragmentés.\\n"
+msgstr "Manjaro va utiliser eCryptfs pour chiffrer votre répertoire personnel. Malheureusement, eCryptfs gère mal les fichiers fragmentés.\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "N'ayez crainte, dans la plupart des cas ce défaut ne pose aucun problème.\\n"
+msgstr "N'ayez crainte, dans la plupart des cas ce défaut ne pose aucun problème.\n"
 
 #: src/user_info.py:169
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "D'un autre coté, une application populaire mais déconseillée d'eCryptfs consiste à chiffrer un emplacement de téléchargement BitTorrent, ce qui requiert qu'eCryptfs manipule des fichiers fragmentés de plus de 10 GB, et peut conduire à une fatigue du disque.\\n"
+msgstr "D'un autre coté, une application populaire mais déconseillée d'eCryptfs consiste à chiffrer un emplacement de téléchargement BitTorrent, ce qui requiert qu'eCryptfs manipule des fichiers fragmentés de plus de 10 GB, et peut conduire à une fatigue du disque.\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Une parade simple consiste à placer les fichiers fragmentés dans un répertoire public non-chiffré.\\n"
+msgstr "Une parade simple consiste à placer les fichiers fragmentés dans un répertoire public non-chiffré.\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr "Voir https://wiki.archlinux.org/index.php/ECryptfs pour des informations détaillées.\\n"
+msgstr "Voir https://wiki.archlinux.org/index.php/ECryptfs pour des informations détaillées.\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "Êtes-vous sûr de vouloir chiffrer votre répertoire personnel ?\\n"
+msgstr "Êtes-vous sûr de vouloir chiffrer votre répertoire personnel ?\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"

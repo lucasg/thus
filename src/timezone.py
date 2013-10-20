@@ -329,9 +329,6 @@ class AutoTimezoneThread(threading.Thread):
         if coords != 'error':
             coords = coords.split()
             self.coords_queue.put(coords)
-        else
-            # set to Berlin by error
-            self.set_timezone("Europe/Berlin")
 
 # Creates a mirror list for pacman based on country code
 class GenerateMirrorListThread(threading.Thread):
@@ -386,7 +383,7 @@ class GenerateMirrorListThread(threading.Thread):
         except (queue.Empty, IndexError) as e:
             logging.warning(_("Can't get the country code used to create a pacman mirrorlist"))
 
-        try:
+        '''try:
             url = 'https://www.archlinux.org/mirrorlist/?country=%s&protocol=http&ip_version=4&use_mirror_status=on' % country_code
             country_mirrorlist = urlopen(url).read()
             if '<!DOCTYPE' in str(country_mirrorlist, encoding='utf8'):
@@ -407,6 +404,6 @@ class GenerateMirrorListThread(threading.Thread):
                 subprocess.check_call(['/usr/bin/bash', script])
                 logging.info(_("Downloaded a specific mirrorlist for pacman based on %s country code") % timezone)
         except subprocess.CalledProcessError as e:
-            logging.warning(_("Couldn't generate mirrorlist for pacman based on country code"))
+            logging.warning(_("Couldn't generate mirrorlist for pacman based on country code"))'''
         
         
