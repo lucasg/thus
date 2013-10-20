@@ -1250,8 +1250,14 @@ class InstallationAdvanced(Gtk.Box):
                     if mnt == "/":
                         fmt = 'Yes'
                     if is_new:
-                        relabel = 'Yes'
-                        fmt = 'Yes'
+                        if lbl !='':
+                                relabel = 'Yes'
+                        else:
+                                relabel = 'No'
+                        if fs !='':
+                                fmt = 'Yes'
+                        else:
+                                fmt = 'No'
                         createme = 'Yes'
                     else:
                         if e in self.orig_label_dic:
@@ -1313,8 +1319,14 @@ class InstallationAdvanced(Gtk.Box):
                             fmt = 'Yes'
                             
                         if is_new:
-                            relabel = 'Yes'
-                            fmt = 'Yes'
+                            if lbl !='':
+                                    relabel = 'Yes'
+                            else:
+                                    relabel = 'No'
+                            if fs !='':
+                                    fmt = 'Yes'
+                            else:
+                                    fmt = 'No'
                             createme = 'Yes' 
                         else:
                             if partition_path in self.orig_label_dic:
@@ -1436,8 +1448,7 @@ class InstallationAdvanced(Gtk.Box):
                                         x = pm.set_flag(1, partitions[ee])
                                 pm.finalize_changes(partitions[ee].disk)
                          #only format if they want formatting
-                         #TODO: find out why extended partitions get true on fmt
-                        if fmt and fisy !='':
+                        if fmt:
                          #all of fs module takes paths, not partition objs
                             (error, msg) = fs.create_fs(partition_path, fisy, lbl)
                             if error == 0:
