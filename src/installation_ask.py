@@ -105,6 +105,10 @@ class InstallationAsk(Gtk.Box):
             radio.hide()
             label = self.ui.get_object("lvm_label")
             label.hide()
+            radio = self.ui.get_object("alongside_radiobutton")
+            radio.hide()
+            label = self.ui.get_object("alongside_description")
+            label.hide()
 
     def translate_ui(self):
         txt = _("Installation type")
