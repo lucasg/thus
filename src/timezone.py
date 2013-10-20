@@ -329,6 +329,9 @@ class AutoTimezoneThread(threading.Thread):
         if coords != 'error':
             coords = coords.split()
             self.coords_queue.put(coords)
+        else
+            # set to Berlin by error
+            self.set_timezone("Europe/Berlin")
 
 # Creates a mirror list for pacman based on country code
 class GenerateMirrorListThread(threading.Thread):
