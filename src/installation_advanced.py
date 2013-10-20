@@ -3,7 +3,11 @@
 #
 #  installation_advanced.py
 #  
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#  
 #  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -934,6 +938,29 @@ class InstallationAdvanced(Gtk.Box):
                 self.fill_partition_list()
 
         self.create_partition_dialog.hide()
+
+    def on_partition_create_type_extended_toggled(self, widget):
+        partition_use_label = self.ui.get_object('partition_use_label')
+        partition_use_combo = self.ui.get_object('partition_use_combo')
+        partition_mount_label = self.ui.get_object('partition_mount_label')
+        partition_mount_combo = self.ui.get_object('partition_mount_combo')
+        partition_label_label = self.ui.get_object('partition_label_label')
+        partition_label_entry = self.ui.get_object('partition_label_entry')
+        if widget.get_active():
+            partition_use_label.hide()
+            partition_use_combo.hide()
+            partition_mount_label.hide()
+            partition_mount_combo.hide()
+            partition_label_label.hide()
+            partition_label_entry.hide()
+        else:
+            partition_use_label.show()
+            partition_use_combo.show()
+            partition_mount_label.show()
+            partition_mount_combo.show()
+            partition_label_label.show()
+            partition_label_entry.show()
+
     def on_partition_use_combo_changed(self, selection):
         fs_selected = selection.get_active_text()
         p_mount_combo = self.ui.get_object('partition_mount_combo')
