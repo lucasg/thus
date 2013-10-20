@@ -1457,6 +1457,9 @@ class InstallationAdvanced(Gtk.Box):
                     uid = self.gen_partition_uid(path=partition_path)
                     if uid in self.stage_opts:
                         (is_new, lbl, mnt, fisy, fmt) = self.stage_opts[uid]
+                        #TODO: check why still extended partitions get fmt flag true on new creation
+                        if fisy =='':
+                            fmt = False
                         logging.info(_("Creating fs of type %s in %s with label %s - format: %s") % (fisy, partition_path, lbl, fmt))
                         if ((mnt == '/' and noboot) or mnt == '/boot') and ('/dev/mapper' not in partition_path):
                             if not pm.get_flag(partitions[partition_path], 
