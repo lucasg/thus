@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
+"PO-Revision-Date: 2013-10-20 13:41+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -589,12 +589,12 @@ msgstr "%s aygıtı kullanarak otomatik kurulum"
 #: src/installation_automatic.py:150
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Thus kurulum için %s sürücüsünü kullanacak"
 
 #: src/installation_automatic.py:159
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Thus önyükleyici olarak %s üzerine %s kuracak"
 
 #: src/installation_process.py:82
 #, python-format
@@ -825,7 +825,7 @@ msgstr "Ağ durumu bilinmiyor. Popüler yansılar alınamadı"
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Popüler yansılar için komut dosyası <mirrorlist script'i> bulunamıyor"
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
@@ -1140,7 +1140,7 @@ msgstr "Yükleniyor %s (%d/%d)"
 #: src/pacman/pac.py:407
 #, python-format
 msgid "Checking and loading packages... [%s]"
-msgstr ""
+msgstr "Paketler kontrol ediliyor ve yükleniyor... [%s]"
 
 #: ui/bootloader.ui:7
 msgid "Boot"
@@ -1295,7 +1295,7 @@ msgid ""
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>\"Thus\" sistem yükleyicisi alfa sürümündedir</span> \\n\n\\n\n\\n\nBu sistem yükleyicisi halen geliştirilmektedir. LVM, RAID, btrfs subvolumes ve diğer gelişmiş kurulumlarla ilgili hatalarla karşılaşma olasılığınız vardır. \\n\nVeri kaybına uğramamak için lütfen dikkatli olunuz! \\n\n\\n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "

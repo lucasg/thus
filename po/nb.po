@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Jon Gjengset <jon@thesquareplanet.com>, 2011,2013
+# Ulseth85 <ulseth85@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-20 13:45+0000\n"
+"Last-Translator: Ulseth85 <ulseth85@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/manjaro-thus/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Dette installasjonsprogrammet må kjøres med administratorrettigheter, og kan ikke fortsette uten dem."
 
 #: thus.py:111
 #, python-format
@@ -32,409 +33,409 @@ msgid ""
 "If you are sure that the installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Du kan ikke kjøre to forekomster av dette installasjonsprogrammet.\n\nHvis du er sikker på at installasjonsprogrammet ikke allerede kjører\nkan du manuelt slette filen %s\nog kjøre dette installasjonsprogrammet igjen."
 
 #: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Bruk Aria2 for å laste ned pakker - EKSPERIMENTELL"
 
 #: thus.py:227
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "Bruk '%s' filen som pakkeliste"
 
 #: thus.py:247 src/slides.py:258
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro Installer"
 
 #: thus.py:315
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Avslutter installasjonsprogrammet ..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "ukjent"
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Hva er din boot system type?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Vanlig)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Velg 'avbryte' hvis du ikke ønsker å installere en boot laster"
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "Kontroller datamaskinen"
 
 #: src/check.py:73
 msgid "has at least 3GB available drive space"
-msgstr ""
+msgstr "har minst 3 GB tilgjengelig harddiskplass"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "er koblet til en strømkilde"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "er koblet til Internett"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "For best resultat, må du sørge for at denne datamaskinen:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Flash, MP3 and other media. Some "
 "of this software is propietary. The software is subject to license terms "
 "included with its documentation."
-msgstr ""
+msgstr "Manjaro bruker tredjeparts programvare for å spille av Flash, MP3 og andre medier. Noe av denne programvaren er proprietære. Programvaren er underlagt lisensvilkårene som følger med dokumentasjonen."
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "Installer denne tredje-parts programvaren"
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "Kan ikke få nettverksstatus"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "Vi har Internett-tilkobling."
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "Vi er koblet til en strømkilde."
 
 #: src/check.py:195
 msgid "We have enough space in disk."
-msgstr ""
+msgstr "Vi har nok plass på disken."
 
 #: src/desktop.py:76
 msgid ""
 "Gnome 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr ""
+msgstr "Gnome 3 er en enkel og elegant måte å bruke datamaskinen. Den er designet for å gi deg full kontroll og bringe frihet til alle. GNOME 3 er utviklet av GNOME samfunnet."
 
 #: src/desktop.py:83
 msgid ""
 "Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
 "attempts to provide a more traditional user environment based on the desktop"
 " metaphor, like GNOME 2"
-msgstr ""
+msgstr "Cinnamon det er en gaffel av GNOME Shell, utviklet av (og for) Linux Mint. Den forsøker å gi et mer tradisjonelt brukermiljø basert på skrivebordet metafor, som GNOME 2"
 
 #: src/desktop.py:90
 msgid ""
 "Xfce is a lightweight desktop environment for UNIX-like operating systems. "
 "It aims to be fast and low on system resources, while still being visually "
 "appealing and user friendly."
-msgstr ""
+msgstr "Xfce er et lett skrivebordsmiljø for Unix-lignende operativsystemer. Målet er at det skal være raskt og bruke lite systemressurser, samtidig som den er visuelt tiltalende og brukervennlig."
 
 #: src/desktop.py:97
 msgid ""
 "Extremely fast-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard short "
 "cuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "Ekstrem rask ytelse og energisparende skrivebordsmiljø. Den leveres med et vakkert grensesnitt, støtte for flere språk, standard tastatursnarveier og ekstra funksjoner som fanebasert fillesing."
 
 #: src/desktop.py:104
 msgid ""
 "Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox er en svært konfigurerbar, neste generasjons vindusbehandler som støtter en rekke standarder.\n*box visuelle stilen er godt kjent for sin minimalistiske utseende."
 
 #: src/desktop.py:111
 msgid ""
 "Enlightenment is not just a window manager for Linux/X11 and others, but "
 "also a whole suite of libraries to help you create beautiful user interfaces"
 " with much less work"
-msgstr ""
+msgstr "Enlightenment er ikke bare en vindusbehandler for Linux/X11 og andre, men også en hel pakke med biblioteker for å hjelpe deg å lage vakre brukergrensesnitt med mye mindre arbeid"
 
 #: src/desktop.py:117
 msgid ""
 "The KDE Community is an international technology team dedicated to creating "
 "a free and user-friendly computing experience, offering an advanced "
 "graphical desktop and a wide variety of applications."
-msgstr ""
+msgstr "KDE Community er et internasjonalt teknologi team dedikert til å skape et fritt og brukervennlig databehandling, og tilbyr et avansert grafisk desktop og et bredt utvalg av applikasjoner."
 
 #: src/desktop.py:124
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "Razor-qt er en avansert, enkel å bruke, og raskt skrivebords miljø basert på Qt-teknologi. Det har blitt skreddersydd for brukere som verdsetter enkelhet, hastighet og et intuitivt grensesnitt."
 
 #: src/desktop.py:131
 msgid ""
 "This will install Manjaro as command-line system, without any desktop at "
 "all. After the installation you can install the desktop you may see fit."
-msgstr ""
+msgstr "Dette vil installere Manjaro som kommandolinje-system, uten skrivebordet i det hele tatt. Etter installasjonen kan du installere det skrivebordet du måtte ønske."
 
 #: src/desktop.py:143
 msgid "Select your desktop"
-msgstr ""
+msgstr "Velg ditt skrivebord"
 
 #: src/desktop.py:153
 msgid "Desktops"
-msgstr ""
+msgstr "Desktops"
 
 #: src/desktop.py:186
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus vil installere Manjaro med '%s' skriverbordet"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Feil ved oppretting metalink for pakken %s"
 
 #: src/download.py:84
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Feil ved å legge til metalink for pakken %s"
 
 #: src/download.py:133
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Laster ned pakken '%s'..."
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Kan ikke koble til Aria2. Vil ikke være i stand til å øke hastigheten på nedlastingen."
 
 #: src/download.py:228
 #, python-format
 msgid "Unable to create download queue for package %s"
-msgstr ""
+msgstr "Kan ikke opprette nedlastingskø for pakken %s"
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Kan ikke finne disse pakkene:"
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Advarsel! Kan ikke løse disse avhengighetene:"
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Fremhevet utvalg"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bluetooth støtte"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr ""
+msgstr "Uten Bluetooth-støtte kan du ikke bruke Bluetooth-enheter"
 
 #: src/features.py:103
 msgid "Printing support (cups)"
-msgstr ""
+msgstr "Utskrift støtte (cups)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgstr "Dette inkluderer skriverdrivere og administrere verktøy"
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Kontorpakke (tekstbehandling, regneark, ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Visuelle effekter"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgstr "Visuelle effekter som transparenter, skygger, osv."
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "ukomplisert brannmur"
 
 #: src/features.py:127
 msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr ""
+msgstr "Installerer ufw og benekter all trafikk som standard (bruk gufw får å sette den opp)"
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Proprietære pakker"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 and other media"
-msgstr ""
+msgstr "Tredjeparts programvare for å spille av Flash, MP3 og andre medier"
 
 #: src/installation_advanced.py:190 src/installation_advanced.py:481
 #: src/installation_advanced.py:495
 msgid "free space"
-msgstr ""
+msgstr "ledig plass"
 
 #: src/installation_advanced.py:259 src/installation_alongside.py:166
 msgid "Device"
-msgstr ""
+msgstr "Enhet"
 
 #: src/installation_advanced.py:262
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: src/installation_advanced.py:265
 msgid "Mount point"
-msgstr ""
+msgstr "Mount point"
 
 #: src/installation_advanced.py:268
 msgid "Label"
-msgstr ""
+msgstr "Etikett"
 
 #: src/installation_advanced.py:274 src/installation_advanced.py:1360
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: src/installation_advanced.py:277
 msgid "Size"
-msgstr ""
+msgstr "Størrelse"
 
 #: src/installation_advanced.py:280
 msgid "Used"
-msgstr ""
+msgstr "Brukt"
 
 #: src/installation_advanced.py:283
 msgid "Flags"
-msgstr ""
+msgstr "Flags"
 
 #: src/installation_advanced.py:289
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:464
 msgid "none"
-msgstr ""
+msgstr "ingen"
 
 #: src/installation_advanced.py:516
 msgid "extended"
-msgstr ""
+msgstr "utvidet"
 
 #: src/installation_advanced.py:641 src/installation_advanced.py:881
 msgid "Cannot use same mount twice..."
-msgstr ""
+msgstr "Kan ikke bruke samme mount to ganger..."
 
 #: src/installation_advanced.py:643
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Root partisjonen må formateres..."
 
 #: src/installation_advanced.py:902
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Oppretter primær partisjon"
 
 #: src/installation_advanced.py:913
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Oppretter utvidet partisjon"
 
 #: src/installation_advanced.py:919
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Oppretter logisk partisjon"
 
 #: src/installation_advanced.py:1006
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Avansert installasjon modus"
 
 #: src/installation_advanced.py:1010 ui/installation_advanced.ui:962
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Bruk denne enheten for boot Laster installasjon:"
 
 #: src/installation_advanced.py:1020 ui/installation_advanced.ui:884
 msgid "New partition table"
-msgstr ""
+msgstr "Nytt partisjons bord"
 
 #: src/installation_advanced.py:1028
 msgid "Change..."
-msgstr ""
+msgstr "Endre..."
 
 #: src/installation_advanced.py:1033 ui/installation_advanced.ui:97
 msgid "Size:"
-msgstr ""
+msgstr "Størrelse:"
 
 #: src/installation_advanced.py:1037 ui/installation_advanced.ui:295
 msgid "Type:"
-msgstr ""
+msgstr "Type:"
 
 #: src/installation_advanced.py:1041 ui/installation_advanced.ui:312
 msgid "Primary"
-msgstr ""
+msgstr "Primær"
 
 #: src/installation_advanced.py:1045 ui/installation_advanced.ui:330
 msgid "Logical"
-msgstr ""
+msgstr "Logisk"
 
 #: src/installation_advanced.py:1049 ui/installation_advanced.ui:348
 msgid "Extended"
-msgstr ""
+msgstr "Utvidet"
 
 #: src/installation_advanced.py:1053 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Begynnelsen av denne plassen"
 
 #: src/installation_advanced.py:1057 ui/installation_advanced.ui:219
 msgid "End of this space"
-msgstr ""
+msgstr "Slutten av denne plassen"
 
 #: src/installation_advanced.py:1061 src/installation_advanced.py:1078
 #: ui/installation_advanced.ui:128 ui/installation_advanced.ui:581
 msgid "Use as:"
-msgstr ""
+msgstr "Bruk som:"
 
 #: src/installation_advanced.py:1065 src/installation_advanced.py:1082
 #: ui/installation_advanced.ui:161 ui/installation_advanced.ui:614
 msgid "Mount point:"
-msgstr ""
+msgstr "Monter punkt:"
 
 #: src/installation_advanced.py:1069 src/installation_advanced.py:1086
 #: ui/installation_advanced.ui:376 ui/installation_advanced.ui:651
 msgid "Label (optional):"
-msgstr ""
+msgstr "Etikett (valgfritt):"
 
 #: src/installation_advanced.py:1073 ui/installation_advanced.ui:412
 #: ui/installation_advanced.ui:718
 msgid "Encryption options..."
-msgstr ""
+msgstr "Krypterings alternativer..."
 
 #: src/installation_advanced.py:1090 ui/installation_advanced.ui:678
 msgid "Format:"
-msgstr ""
+msgstr "Format:"
 
 #: src/installation_advanced.py:1095 ui/installation_advanced.ui:486
 msgid "Partition table type:"
-msgstr ""
+msgstr "Partisjons type:"
 
 #: src/installation_advanced.py:1100
 msgid "Create partition table"
-msgstr ""
+msgstr "Nytt partisjons bord"
 
 #: src/installation_advanced.py:1103 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
 msgid "Install now!"
-msgstr ""
+msgstr "Installer nå!"
 
 #: src/installation_advanced.py:1183
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Oppretter et nytt partisjons bord av typen %s for disk %s"
 
 #: src/installation_advanced.py:1282
 #, python-format
@@ -442,7 +443,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s er montert som swap.\nFor å fortsette må den avmonteres.\nKlikk Ja for å avmontere, eller Nei for å gå tilbake\n"
 
 #: src/installation_advanced.py:1284
 #, python-format
@@ -450,42 +451,42 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s er montert i '%s'.\nFor å fortsette må den avmonteres.\nKlikk Ja for å avmontere, eller Nei for å gå tilbake\n"
 
 #: src/installation_advanced.py:1353
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Partisjonen %s vil bli slettet"
 
 #: src/installation_advanced.py:1360
 msgid "Partition"
-msgstr ""
+msgstr "Partisjon"
 
 #: src/installation_advanced.py:1360
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: src/installation_advanced.py:1360
 msgid "Relabel"
-msgstr ""
+msgstr "Endre navn"
 
 #: src/installation_advanced.py:1360
 msgid "Mount"
-msgstr ""
+msgstr "Monter"
 
 #: src/installation_advanced.py:1381
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Disse diskene vil ha partisjon handlinger:"
 
 #: src/installation_advanced.py:1406
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Lagre endringer som er gjort i %s"
 
 #: src/installation_advanced.py:1421
 #, python-format
 msgid "Creating fs of type %s in %s with label %s"
-msgstr ""
+msgstr "Oppretter fs av typen %s på %s med etiketten %s"
 
 #: src/installation_advanced.py:1502
 #, python-format

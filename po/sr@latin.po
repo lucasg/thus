@@ -5,14 +5,15 @@
 # Translators:
 # daimonion <pejakm@gmail.com>, 2013
 # Slobodan Terzić <githzerai06@gmail.com>, 2011
+# Vladimir Rujević <vladimir.rujevic95@gmail.com>, 2013
 # Zoran Olujić <olujicz@gmail.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-20 10:32+0000\n"
+"Last-Translator: Vladimir Rujević <vladimir.rujevic95@gmail.com>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/manjaro-thus/language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Ovaj instaler se mora pokrenuti sa privilegijama administratora i ne može nastaviti bez njih."
 
 #: thus.py:111
 #, python-format
@@ -34,29 +35,29 @@ msgid ""
 "If you are sure that the installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Ovaj instaler ne možete pokrenuti dva puta.\n\nAko ste sigurni da instaler nije pokrenut\nmožete ručno obrisati ovu datoteku %s\ni pokrenuti instaler ponovo"
 
 #: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Koristeći Aria2 za preuzimanje paketa - EKSPERIMENTALNO"
 
 #: thus.py:227
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "Koristeći fajl %s kao listu paketa"
 
 #: thus.py:247 src/slides.py:258
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro Instaler"
 
 #: thus.py:315
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Zatvaram instaler..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "nepoznato"
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -64,15 +65,15 @@ msgstr ""
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Najčešće)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
@@ -80,23 +81,23 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "Provjerite da li vaš računar"
 
 #: src/check.py:73
 msgid "has at least 3GB available drive space"
-msgstr ""
+msgstr "ima najmanje 3GB slobodnog prostora na diskovima."
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "je priključen na izvor energije"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "je konektovan na internet"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "Za najbolje rezultate, budite sigurni da vaš računar:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -107,15 +108,15 @@ msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "Instaliraj ove programe"
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "Nemoguće dobiti status mreže"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "Postoji konekcija na internet"
 
 #: src/check.py:194
 msgid "We're connected to a power source."
@@ -184,20 +185,20 @@ msgstr ""
 msgid ""
 "This will install Manjaro as command-line system, without any desktop at "
 "all. After the installation you can install the desktop you may see fit."
-msgstr ""
+msgstr "Ova opcija će Manjaro instalirati kao sistem za komandnu liniju, bez radnog okruženja. Poslije instalacije možete instalirati radno okruženje koje vam najviše odgovara."
 
 #: src/desktop.py:143
 msgid "Select your desktop"
-msgstr ""
+msgstr "Izaberite vaše radno okruženje"
 
 #: src/desktop.py:153
 msgid "Desktops"
-msgstr ""
+msgstr "Radna okruženja"
 
 #: src/desktop.py:186
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus će instalirati Manjaro sa %s radnim okruženjem"
 
 #: src/download.py:78
 #, python-format

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-19 11:37+0000\n"
+"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/manjaro-thus/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Ushbu o'rnatuvchi ma’mur imtiyozlari bilan bajarilishi shart, ularsiz davom ettirib bo'lmaydi."
 
 #: thus.py:111
 #, python-format
@@ -33,11 +33,11 @@ msgid ""
 "If you are sure that the installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Ushbu o'rnatuvchini ikki nusxada bajarib bo'lmaydi.\n\nAgar o'rnatuvchi ishga tushirilmaganligiga ishonchingiz komil bo'lsa,\nsiz %s faylini qo'l bilan o'chirishingiz va ushbu\no'rnatuvchini qayta ishga tushirishingiz mumkin."
 
 #: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Paketlarni yuklab olish uchun Aria2 qo'llanmoqda - EKSPERIMENT"
 
 #: thus.py:227
 #, python-format
@@ -224,31 +224,31 @@ msgstr ""
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Ushbu paketlarni topib bo'lmadi: "
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Ogohlantirish! Ushbu bog'liqliklarni bartaraf etib bo'lmadi: "
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Imkoniyatlarni tanlash"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bluetooth qo‘llab-quvvatlash"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr ""
+msgstr "Bluetooth qo‘llab-quvvatlashsiz Bluetooth qurilmalaridan foydalanib bo'lmaydi"
 
 #: src/features.py:103
 msgid "Printing support (cups)"
-msgstr ""
+msgstr "Chop etishini qo‘llab-quvvatlash (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgstr "Bu printer drayverlarini va boshqarish vositalarini o'z ichiga oladi"
 
 #: src/features.py:110
 msgid "LibreOffice"
@@ -256,11 +256,11 @@ msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Ofis to'plami (matn protsessori, elektron jadval, ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Vizual effektlar"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
@@ -285,19 +285,19 @@ msgstr ""
 #: src/installation_advanced.py:190 src/installation_advanced.py:481
 #: src/installation_advanced.py:495
 msgid "free space"
-msgstr ""
+msgstr "bo'sh joy"
 
 #: src/installation_advanced.py:259 src/installation_alongside.py:166
 msgid "Device"
-msgstr ""
+msgstr "Qurilma"
 
 #: src/installation_advanced.py:262
 msgid "Type"
-msgstr ""
+msgstr "Turi"
 
 #: src/installation_advanced.py:265
 msgid "Mount point"
-msgstr ""
+msgstr "Ulash nuqtasi"
 
 #: src/installation_advanced.py:268
 msgid "Label"
@@ -329,7 +329,7 @@ msgstr ""
 
 #: src/installation_advanced.py:516
 msgid "extended"
-msgstr ""
+msgstr "kengaytirilgan"
 
 #: src/installation_advanced.py:641 src/installation_advanced.py:881
 msgid "Cannot use same mount twice..."
@@ -357,11 +357,11 @@ msgstr ""
 
 #: src/installation_advanced.py:1010 ui/installation_advanced.ui:962
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Ushbu qurilmani yuklovchi o'rnatish uchun qo'llash:"
 
 #: src/installation_advanced.py:1020 ui/installation_advanced.ui:884
 msgid "New partition table"
-msgstr ""
+msgstr "Yangi bo'lim jadvali"
 
 #: src/installation_advanced.py:1028
 msgid "Change..."
@@ -377,15 +377,15 @@ msgstr "Turi:"
 
 #: src/installation_advanced.py:1041 ui/installation_advanced.ui:312
 msgid "Primary"
-msgstr ""
+msgstr "Birlamchi"
 
 #: src/installation_advanced.py:1045 ui/installation_advanced.ui:330
 msgid "Logical"
-msgstr ""
+msgstr "Mantiqiy"
 
 #: src/installation_advanced.py:1049 ui/installation_advanced.ui:348
 msgid "Extended"
-msgstr ""
+msgstr "Kengaytirilgan"
 
 #: src/installation_advanced.py:1053 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
@@ -398,34 +398,34 @@ msgstr ""
 #: src/installation_advanced.py:1061 src/installation_advanced.py:1078
 #: ui/installation_advanced.ui:128 ui/installation_advanced.ui:581
 msgid "Use as:"
-msgstr ""
+msgstr "Qo'llash:"
 
 #: src/installation_advanced.py:1065 src/installation_advanced.py:1082
 #: ui/installation_advanced.ui:161 ui/installation_advanced.ui:614
 msgid "Mount point:"
-msgstr ""
+msgstr "Ulash nuqtasi:"
 
 #: src/installation_advanced.py:1069 src/installation_advanced.py:1086
 #: ui/installation_advanced.ui:376 ui/installation_advanced.ui:651
 msgid "Label (optional):"
-msgstr ""
+msgstr "Belgi (ixtiyoriy):"
 
 #: src/installation_advanced.py:1073 ui/installation_advanced.ui:412
 #: ui/installation_advanced.ui:718
 msgid "Encryption options..."
-msgstr ""
+msgstr "Shifrlash parametrlari..."
 
 #: src/installation_advanced.py:1090 ui/installation_advanced.ui:678
 msgid "Format:"
-msgstr ""
+msgstr "Formatlash:"
 
 #: src/installation_advanced.py:1095 ui/installation_advanced.ui:486
 msgid "Partition table type:"
-msgstr ""
+msgstr "Bo‘limlar jadvali turi:"
 
 #: src/installation_advanced.py:1100
 msgid "Create partition table"
-msgstr ""
+msgstr "Bo‘limlar jadvalini yaratish"
 
 #: src/installation_advanced.py:1103 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
@@ -435,7 +435,7 @@ msgstr "O'rnatish!"
 #: src/installation_advanced.py:1183
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "%s turdagi %s diski uchun yangi bo'limlar jadvalini yaratish"
 
 #: src/installation_advanced.py:1282
 #, python-format
@@ -443,7 +443,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s swap sifatida ulangan.\nDavom ettirish uchun uni ajratish kerak.\nAjratish uchun Ha yoki qaytish uchun Yo'q bosing\n"
 
 #: src/installation_advanced.py:1284
 #, python-format
@@ -456,11 +456,11 @@ msgstr ""
 #: src/installation_advanced.py:1353
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "%s bo'limi o'chiriladi"
 
 #: src/installation_advanced.py:1360
 msgid "Partition"
-msgstr ""
+msgstr "Bo'lim"
 
 #: src/installation_advanced.py:1360
 msgid "New"
@@ -472,7 +472,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1360
 msgid "Mount"
-msgstr ""
+msgstr "Ulash"
 
 #: src/installation_advanced.py:1381
 msgid "These disks will have partition actions:"
@@ -524,15 +524,15 @@ msgstr ""
 
 #: src/installation_ask.py:110
 msgid "Installation type"
-msgstr ""
+msgstr "O'rnatish turi"
 
 #: src/installation_ask.py:120 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Diskni tozalash va Manjaro o'rnatish (avtomatik)"
 
 #: src/installation_ask.py:123
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Ogohlantirish: Diskdagi hamma ma'lumotlar o'chiriladi"
 
 #: src/installation_ask.py:130
 #, python-format
@@ -565,7 +565,7 @@ msgstr ""
 
 #: src/installation_automatic.py:78 ui/installation_automatic.ui:69
 msgid "Select drive:"
-msgstr ""
+msgstr "Disk tanlash:"
 
 #: src/installation_automatic.py:82
 msgid ""
@@ -596,7 +596,7 @@ msgstr ""
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Nusxa olinmoqda '/%s'"
 
 #: src/installation_process.py:163
 #, python-format
@@ -646,11 +646,11 @@ msgstr ""
 #: src/installation_process.py:503
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "%s ajratib bo'lmadi"
 
 #: src/installation_process.py:554
 msgid "Create fstab."
-msgstr ""
+msgstr "fstab yaratish."
 
 #: src/installation_process.py:654
 #, python-format
@@ -735,7 +735,7 @@ msgstr ""
 #: src/installation_process.py:1189
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Foydalanuvchi %s uchun tizimga avtomatik kirishni yoqish."
 
 #: src/installation_process.py:1267
 msgid "Running mkinitcpio..."
@@ -1004,11 +1004,11 @@ msgstr ""
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "Mumkin bo‘lmagan belgilar kiritilgan"
 
 #: src/user_info.py:234
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "Foydalanuvchi nomi nuqtalarni o'z ichiga olish mumkin emas"
 
 #: src/user_info.py:238
 msgid "Too many characters"
@@ -1137,7 +1137,7 @@ msgstr "O'rnatilmoqda %s (%d/%d)"
 #: src/pacman/pac.py:407
 #, python-format
 msgid "Checking and loading packages... [%s]"
-msgstr ""
+msgstr "Paketlar tekshirilmoqda va yuklanmoqda... [%s]"
 
 #: ui/bootloader.ui:7
 msgid "Boot"
@@ -1223,7 +1223,7 @@ msgstr "Boshqa OT"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1281,7 +1281,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Tilni tanlang:</span>"
 
 #: ui/language.ui:88
 msgid ""
@@ -1296,31 +1296,31 @@ msgstr ""
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "Bajarilishi"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Manjaro'ga xush kelibsiz</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Mustahkam parol</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Parol kiritishingiz shart</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Foydalanuvchi nomini kiritishingiz shart</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Ismingizni kiritishingiz shart</span></small>"
 
 #: ui/user_info.ui:447
 msgid ""

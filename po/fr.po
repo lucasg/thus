@@ -7,6 +7,7 @@
 # Tonino99 <a.galinie@gmail.com>, 2013
 # Apos <jeandavidmoisan@gmail.com>, 2013
 # Dan McGee <dpmcgee@gmail.com>, 2011
+# Loubrix <david30160@gmail.com>, 2013
 # djanos <elie.bouttier@free.fr>, 2013
 # faidoc <faidoc@gmail.com>, 2013
 # Gatien Bovyn <gatien.bovyn@hotmail.com>, 2013
@@ -18,8 +19,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-19 17:50+0000\n"
+"Last-Translator: Loubrix <david30160@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/manjaro-thus/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -240,55 +241,55 @@ msgstr "Attention ! Ces dépendances ne sont pas résolues :"
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Sélection des fonctionnalités"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Support du Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr ""
+msgstr "Sans le support du Bluetooth, vous ne pouvez pas utiliser de périphériques Bluetooth"
 
 #: src/features.py:103
 msgid "Printing support (cups)"
-msgstr ""
+msgstr "Support de l'impression (cups)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgstr "Ceci inclut les pilotes d'impression et les outils de gestion"
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Suite bureautique (traitement de texte, tableur, ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Effets visuels"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgstr "Effets visuels comme la transparence, les ombres, etc."
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Pare-feu simplifié"
 
 #: src/features.py:127
 msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr ""
+msgstr "Installe Ufw et refuse tout le traffic par défaut (utilisez Gufw pour le régler)"
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Paquets propriétaires"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 and other media"
-msgstr ""
+msgstr "Logiciels tiers pour lire le Flash, le MP3 et autres medias"
 
 #: src/installation_advanced.py:190 src/installation_advanced.py:481
 #: src/installation_advanced.py:495
@@ -451,7 +452,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s est monté comme swap.⏎\nPour continuer, il doit être démonté.⏎\nCliquez sur Oui pour le démonter, ou Non pour revenir\\n"
 
 #: src/installation_advanced.py:1284
 #, python-format
@@ -528,7 +529,7 @@ msgstr "Dans l'installation en parallèle, la liste de partitions ne peut pas ê
 
 #: src/installation_alongside.py:256
 msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr ""
+msgstr "Vous ne pouvez pas réduire la partition (elle est peut-être presque pleine)"
 
 #: src/installation_ask.py:110
 msgid "Installation type"
@@ -545,7 +546,7 @@ msgstr "Attention : Ceci effacera toutes les données sur votre disque"
 #: src/installation_ask.py:130
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Installer Manjaro à coté de %s"
 
 #: src/installation_ask.py:133
 msgid "Install this OS alongside the other OSes you have already installed."
@@ -561,11 +562,11 @@ msgstr "Créer/effacer des partitions et aussi choisir des points de montage add
 
 #: src/installation_ask.py:162
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "L'installation de Manjaro sera chiffrée"
 
 #: src/installation_ask.py:165
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro sera installée en utilisant une configuration LVM"
 
 #: src/installation_automatic.py:74
 msgid "Automatic installation mode"
@@ -594,17 +595,17 @@ msgstr "Installation automatique à l'aide du périphérique %s"
 #: src/installation_automatic.py:150
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Thus va utiliser %s comme périphérique d'installation"
 
 #: src/installation_automatic.py:159
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Thus va installer un chargeur de démarrage de type %s dans %s"
 
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Copie de '/%s'"
 
 #: src/installation_process.py:163
 #, python-format
@@ -641,24 +642,24 @@ msgstr "Impossible de créer les répertoires nécessaires sur le système de de
 #: src/installation_process.py:454
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Restauration des meta-informations sur %s"
 
 #: src/installation_process.py:467
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Répertoires spéciaux déjà montés."
 
 #: src/installation_process.py:493
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "Répertoires spéciaux pas encore montés."
 
 #: src/installation_process.py:503
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Impossible de démonter %s"
 
 #: src/installation_process.py:554
 msgid "Create fstab."
-msgstr ""
+msgstr "Création du fstab."
 
 #: src/installation_process.py:654
 #, python-format
@@ -680,11 +681,11 @@ msgstr "Installation du chargeur d’amorçage GRUB(2) UEFI %s dans %s"
 
 #: src/installation_process.py:725
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "ERREUR d'installation du fichier de configuration de GRUB(2)."
 
 #: src/installation_process.py:753
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "ERREUR d'installation de la locale de GRUB(2)."
 
 #: src/installation_process.py:767
 #, python-format
@@ -726,24 +727,24 @@ msgstr "Configuration du gestionnaire de connections ..."
 
 #: src/installation_process.py:1106
 msgid "Configure System.."
-msgstr ""
+msgstr "Configuration du Système.."
 
 #: src/installation_process.py:1134
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Suppression de la configuration du Live (paquets)"
 
 #: src/installation_process.py:1150
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Configuration du gestionnaire de paquets"
 
 #: src/installation_process.py:1165
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Fin de la configuration du gestionnaire de paquets."
 
 #: src/installation_process.py:1189
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s : Active la connexion automatique pour l'utilisateur %s."
 
 #: src/installation_process.py:1267
 msgid "Running mkinitcpio..."
@@ -751,7 +752,7 @@ msgstr "Exécution de mkinitcpio…"
 
 #: src/installation_process.py:1270
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "Exécution de Mkinitcpio... fait"
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
@@ -830,7 +831,7 @@ msgstr "Impossible d'obtenir l'état du réseau pour rankmirrors"
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Impossible de trouver le script de classement des mirroirs"
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
@@ -980,35 +981,35 @@ msgstr "Qui êtes-vous?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro va utiliser eCryptfs pour chiffrer votre répertoire personnel. Malheureusement, eCryptfs gère mal les fichiers fragmentés.\\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "N'ayez crainte, dans la plupart des cas ce défaut ne pose aucun problème.\\n"
 
 #: src/user_info.py:169
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "D'un autre coté, une application populaire mais déconseillée d'eCryptfs consiste à chiffrer un emplacement de téléchargement BitTorrent, ce qui requiert qu'eCryptfs manipule des fichiers fragmentés de plus de 10 GB, et peut conduire à une fatigue du disque.\\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "Une parade simple consiste à placer les fichiers fragmentés dans un répertoire public non-chiffré.\\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Voir https://wiki.archlinux.org/index.php/ECryptfs pour des informations détaillées.\\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir chiffrer votre répertoire personnel ?\\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
@@ -1016,7 +1017,7 @@ msgstr "Caractères non valides entrés"
 
 #: src/user_info.py:234
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "Le nom d'utilisateur ne peut pas contenir de points"
 
 #: src/user_info.py:238
 msgid "Too many characters"
@@ -1145,151 +1146,151 @@ msgstr "Installation de %s (%d/%d)"
 #: src/pacman/pac.py:407
 #, python-format
 msgid "Checking and loading packages... [%s]"
-msgstr ""
+msgstr "Vérification et chargement des paquets... [%s]"
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Démarrage"
 
 #: ui/check.ui:28
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Pour de meilleurs résultats, veuillez vous assurer que cet ordinateur :"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "étiquette"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Support du Bluetooth"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Support de l'impression (cups)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "Suite bureautique (traitement de texte, tableur, etc.)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Effets visuels</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Pare-feu</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "Active votre pare-feu (ferme tous les ports par défaut)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Propietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Paquets propriétaires</span>"
 
 #: ui/installation_advanced.ui:73
 msgid "Create partition"
-msgstr ""
+msgstr "Créer une partition"
 
 #: ui/installation_advanced.ui:113
 msgid "Location:"
-msgstr ""
+msgstr "Emplacement :"
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:557
 msgid "Edit partition"
-msgstr ""
+msgstr "Modifier la partition"
 
 #: ui/installation_advanced.ui:898
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose next to which OS you want to install "
 "Manjaro</span>"
-msgstr ""
+msgstr "<span size=\"large\">Choisissez l'OS à coté duquel vous voulez installer Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "Choisissez la nouvelle taille"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "Autre OS"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Attention : Ceci va effacer tous les programmes, documents, photos, musique et tous les autres fichiers sur votre disque</span>"
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for security"
-msgstr ""
+msgstr "Chiffrer la nouvelle installation de Manjaro pour la sécurité"
 
 #: ui/installation_ask.ui:90
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">La clé de chiffrement vous sera demandée à l'étape suivante</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Utiliser LVM avec la nouvelle installation de Manjaro"
 
 #: ui/installation_ask.ui:122
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup LVM allowing to make "
 "snapshots and changing partition sizes in an easy way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Ceci va configurer LVM ce qui permettra de générer des instantanés et modifier la taille des partitions de façon simple</span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "Installer à coté d'autres OS"
 
 #: ui/installation_ask.ui:159
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes that you have already "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Avec cette option, vous installerez Manjaro à coté d'un des autres OS que vous avez déjà installés.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Gérez vos partitions et choisissez où installer Manjaro (avancé)"
 
 #: ui/installation_ask.ui:197
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Vous allez pouvoir créer/effacer des partitions, choisir où installer Manjaro et aussi choisir des points de montage supplémentaires.</span>"
 
 #: ui/installation_automatic.ui:18
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>ATTENTION ! Ce mode d'installation effacera la totalité de votre disque !"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Veuillez choisir votre langue :</span>"
 
 #: ui/language.ui:88
 msgid ""
@@ -1300,44 +1301,44 @@ msgid ""
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Ceci est une version Alpha.</span>⏎\n⏎\n⏎\nEncore en développement. Il est connu pour ne PAS fonctionner avec LVM, RAID, les sous-volumes Btrfs, et d'autres \"réglages avancés\".⏎\nVeuillez agir avec précaution car les pertes de données sont possibles !⏎\n⏎\nSi vous trouvez des bogues, veuillez visiter "
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "Progression"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Bienvenue sur Manjaro</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Mot de passe fort</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Vous devez entrer un mot de passe</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Vous devez entrer un nom d'utilisateur</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Vous devez entrer un nom</span></small>"
 
 #: ui/user_info.ui:447
 msgid ""
 "<span size=\"small\">The name it uses when it talks to other "
 "computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Le nom utilisé pour dialoguer avec d'autres ordinateurs.</span>"
 
 #: ui/welcome.ui:151
 msgid ""
 "You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
 "If you want to install the system to your PC, use one of the two installer options."
-msgstr ""
+msgstr "Vous pouvez essayer Manjaro sans modifier votre disque dur, cliquez juste sur \"Essayer\".⏎\nSi vous voulez installer le système sur votre PC, utilisez une des deux options de l'installateur."
