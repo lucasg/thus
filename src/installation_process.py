@@ -417,16 +417,16 @@ class InstallationProcess(multiprocessing.Process):
             DEST = self.dest_dir
             directory_times = []
             # index the files
-            self.queue_event('info', "Indexing files to be copied..")
+            self.queue_event('info', "Indexing files to be copied...")
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(["wc","-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output1 = p2.communicate()[0]
-            self.queue_event('info', "Indexing files to be copied..")
+            self.queue_event('info', "Indexing files to be copied...")
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media_desktop], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(["wc","-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output2 = p2.communicate()[0]	
             our_total = int(float(output1)+float(output2))
-            self.queue_event('info', "Extracting root-image..")
+            self.queue_event('info', "Extracting root-image...")
             our_current = 0
             #t = FileCopyThread(self, our_total, self.media, DEST)
             t = FileCopyThread(self, our_current, our_total, SOURCE, DEST)
@@ -436,7 +436,7 @@ class InstallationProcess(multiprocessing.Process):
             SOURCE = "/source_desktop/"
             DEST = self.dest_dir
             directory_times = []
-            self.queue_event('info', "Extracting desktop-image..")
+            self.queue_event('info', "Extracting desktop-image...")
             our_current = int(output1)
             #t = FileCopyThread(self, our_total, self.media_desktop, DEST)
             t = FileCopyThread(self, our_current, our_total, SOURCE, DEST, t.offset)
@@ -989,14 +989,14 @@ class InstallationProcess(multiprocessing.Process):
         # install configs for root
         os.system("cp -a /install/etc/skel/. /install/root/")
 
-        self.queue_event('info', _("Configuring hardware.."))  
+        self.queue_event('info', _("Configuring hardware..."))
         # copy generated xorg.xonf to target
         if os.path.exists("/etc/X11/xorg.conf"):
             os.system("cp /etc/X11/xorg.conf /install/etc/X11/xorg.conf")
 
         # Install xf86-video driver
         if os.path.exists("/opt/manjaro/pacman-gfx.conf"):
-            self.queue_event('info', _("Setup graphic card.."))
+            self.queue_event('info', _("Set up graphics card..."))
             self.queue_event('pulse') 
             mhwd_script_path = os.path.join(self.settings.get("THUS_DIR"), "scripts", _mhwd_script)  
             try:
@@ -1009,7 +1009,7 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
                 return False
 
-        self.queue_event('info', _("Configure display manager.."))
+        self.queue_event('info', _("Configure display manager..."))
         # setup slim
         if os.path.exists("/usr/bin/slim"):
             self.desktop_manager = 'slim'
@@ -1108,7 +1108,7 @@ class InstallationProcess(multiprocessing.Process):
             self.do_run_in_chroot("update-desktop-database -q")
             self.desktop_manager = 'kdm'
 
-        self.queue_event('info', _("Configure System..")) 
+        self.queue_event('info', _("Configure System..."))
 
         # add BROWSER var
         os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> /install/etc/environment")

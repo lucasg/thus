@@ -50,7 +50,7 @@
                 <child>
                   <object class="StateBox" id="prepare_enough_space">
                     <property name="visible">True</property>
-                    <property name="label">has at least 3GB available drive space</property>
+                    <property name="label">has at least 3GB available disk space</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -61,7 +61,7 @@
                 <child>
                   <object class="StateBox" id="prepare_power_source">
                     <property name="visible">True</property>
-                    <property name="label">is plugged in to a power source</property>
+                    <property name="label">is connected to a power source</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -103,7 +103,7 @@
                   <object class="GtkLabel" id="third_party_info">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Manjaro uses third-party software to play Flash, MP3 and other media. Some of this software is propietary. The software is subject to license terms included with its documentation.</property>
+                    <property name="label" translatable="yes">Manjaro uses third-party software to play Flash, MP3 files, and other media. Some of this software is proprietary. The software is subject to license terms included with its documentation.</property>
                     <property name="wrap">True</property>
                   </object>
                   <packing>

@@ -52,7 +52,7 @@ class BootLoader():
         self.title.set_markup(txt)
 
         label = self.ui.get_object("GRUB2_label")
-        txt = _("BIOS (Common)")
+        txt = _("BIOS (common)")
         label.set_markup(txt)
 
         label = self.ui.get_object("UEFI_x86_64_label")
@@ -64,7 +64,7 @@ class BootLoader():
         label.set_markup(txt)
         
         label = self.ui.get_object("help_label")
-        txt = _("Choose 'cancel' if you don't want to install a boot loader")
+        txt = _("Choose 'Cancel' if you don't want to install a boot loader")
         label.set_markup(txt)
         
     def get_type(self):

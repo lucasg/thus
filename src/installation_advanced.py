@@ -642,7 +642,7 @@ class InstallationAdvanced(Gtk.Box):
             mymount = mount_combo_entry.get_text().strip()
 
             if mymount in self.diskdic['mounts'] and mymount != mount_point:
-                show.warning(_('Cannot use same mount twice...'))
+                show.warning(_("Can't use same mount point twice..."))
             elif mymount == "/" and not format_check.get_active():
                 show.warning(_('Root partition must be formatted...'))
             else:
@@ -882,7 +882,7 @@ class InstallationAdvanced(Gtk.Box):
             mylabel = label_entry.get_text()
             mymount = mount_combo_entry.get_text().strip()
             if mymount in self.diskdic['mounts']:
-                show.warning(_('Cannot use same mount twice...'))
+                show.warning(_("Can't use same mount point twice..."))
             else:
                 if mymount:         
                     self.diskdic['mounts'].append(mymount)       

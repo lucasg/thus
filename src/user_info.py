@@ -116,7 +116,7 @@ class UserInfo(Gtk.Box):
         label.set_placeholder_text(txt)
 
         label = self.ui.get_object('hostname_extra_label')
-        txt = _("The name it uses when it talks to other computers.")
+        txt = _("Its name as it appears to other computers.")
         txt = '<span size="small">%s</span>' % txt
         label.set_markup(txt)
 

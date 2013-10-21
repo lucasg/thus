@@ -276,7 +276,7 @@ class Timezone(Gtk.Box):
         return _next_page
         
     def stop_threads(self):
-        logging.debug(_("Stoping timezone threads..."))
+        logging.debug(_("Stopping timezone threads..."))
         if self.auto_timezone_thread != None:
             self.auto_timezone_thread.stop()
         if self.mirrorlist_thread != None:

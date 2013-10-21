@@ -134,16 +134,16 @@ class InstallationAsk(Gtk.Box):
         radio.set_label(_("Install Manjaro alongside %s") % self.otherOS)
 
         label = self.ui.get_object("alongside_description")
-        txt = _("Install this OS alongside the other OSes you have already installed.")
+        txt = _("Install this OS alongside the other OSes you already have installed.")
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
         label.set_line_wrap(True)
 
         radio = self.ui.get_object("advanced_radiobutton")
-        radio.set_label(_("Manage your partitions where to install Manjaro (advanced)"))
+        radio.set_label(_("Manage your partitions and where to install Manjaro (advanced)"))
 
         label = self.ui.get_object("advanced_description")
-        txt = _("Create/delete partitions, and also choose additional mount points.")
+        txt = _("Create and delete partitions, and choose additional mount points.")
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
         label.set_line_wrap(True)

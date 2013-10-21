@@ -73,51 +73,50 @@ class DesktopAsk(Gtk.Box):
         label = self.ui.get_object("desktop_info")
 
         if desktop == 'gnome':
-            txt = _("Gnome 3 is an easy and elegant way to use your " \
+            txt = _("GNOME 3 is an easy and elegant way to use your " \
             "computer. It is designed to put you in control " \
             "and bring freedom to everybody. GNOME 3 is developed " \
             "by the GNOME community.")
             txt = "<span weight='bold'>GNOME</span>\n" + txt
 
         elif desktop == 'cinnamon':
-            txt = _("Cinnamon it's a fork of GNOME Shell, " \
+            txt = _("Cinnamon is a fork of GNOME Shell, " \
             "developed by (and for) Linux Mint. It attempts to " \
             "provide a more traditional user environment based " \
-            "on the desktop metaphor, like GNOME 2")
+            "on the GNOME2 desktop metaphor")
             txt = "<span weight='bold'>CINNAMON</span>\n" + txt
 
         elif desktop == 'xfce':
-            txt = _("Xfce is a lightweight desktop environment " \
-            "for UNIX-like operating systems. It aims to " \
-            "be fast and low on system resources, while " \
-            "still being visually appealing and user friendly.")
+            txt = _("XFCE is a lightweight desktop environment " \
+            "It aims to be light on system resources while still" \
+            "being visually appealing, fully-featured, and easy to use.")
             txt = "<span weight='bold'>XFCE</span>\n" + txt
 
         elif desktop == 'lxde':
-            txt = _("Extremely fast-performing and energy-saving desktop " \
+            txt = _("LXDE is a high-performing and energy-saving desktop " \
             "environment. It comes with a beautiful interface, " \
-            "multi-language support, standard keyboard short cuts " \
+            "multi-language support, standard keyboard shortcuts " \
             "and additional features like tabbed file browsing.")
             txt = "<span weight='bold'>LXDE</span>\n" + txt
 
         elif desktop == 'openbox':
-            txt = _("Openbox is a highly configurable, next generation " \
+            txt = _("Openbox is a highly configurable, next-generation " \
             "window manager with extensive standards support.\n" \
             "The *box visual style is well known for its " \
             "minimalistic appearance.")
             txt = "<span weight='bold'>OPENBOX</span>\n" + txt
 
         elif desktop == 'enlightenment':
-            txt = _("Enlightenment is not just a window manager for Linux/X11 " \
-            "and others, but also a whole suite of libraries to help " \
-            "you create beautiful user interfaces with much less work")
+            txt = _("Enlightenment is a lean, fast, modular and very extensible "\
+            "window manager for X11 and Linux. It is classed as a \"desktop shell\" "\
+            "providing the things you need to operate your desktop (or laptop). ")
             txt = "<span weight='bold'>ENLIGHTMENT</span>\n" + txt
 
         elif desktop == 'kde':
-            txt = _("The KDE Community is an international technology " \
-            "team dedicated to creating a free and user-friendly " \
-            "computing experience, offering an advanced graphical " \
-            "desktop and a wide variety of applications.")
+            txt = _("The KDE Desktop offers a beautiful looking desktop "\
+            "that takes complete advantage of modern computing technology. "\
+            "Through the use of visual effects and scalable graphics, the "\
+            "desktop experience is not only smooth but also pleasant to the eye.")
             txt = "<span weight='bold'>KDE</span>\n" + txt
 
         elif desktop == 'razor':
@@ -129,8 +128,8 @@ class DesktopAsk(Gtk.Box):
         
         if desktop == 'nox':
             txt = _("This will install Manjaro as command-line system, " \
-            "without any desktop at all. After the installation you can " \
-            "install the desktop you may see fit.")
+            "without any desktop environment at all. After the installation "\
+            "you can optionally install the environment of your choice.")
             txt = "<span weight='bold'>Command-line system</span>\n" + txt
             
         label.set_line_wrap(True)

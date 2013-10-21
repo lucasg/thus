@@ -133,7 +133,7 @@ class InstallationAlongside(Gtk.Box):
             return False
     
     def translate_ui(self):
-        txt = _("Choose next to which OS you want to install Manjaro")
+        txt = _("Choose which OS you want to install Manjaro next to")
         txt = '<span size="large">%s</span>' % txt
         self.label.set_markup(txt)
 
@@ -213,7 +213,7 @@ class InstallationAlongside(Gtk.Box):
                                 self.treeview_store.append(None, row)
                         self.partitions[p.path] = p
                 except Exception as e:
-                    logging.warning(_("In alongside install, can't create list of partitions"))
+                    logging.warning(_("In alongside install: can't create list of partitions"))
 
         # assign our new model to our treeview
         self.treeview.set_model(self.treeview_store)
@@ -253,7 +253,7 @@ class InstallationAlongside(Gtk.Box):
         if self.min_size + _minimum_space_for_manjaro < self.max_size:
             self.new_size = self.ask_shrink_size(other_os_name)
         else:
-            show.error(_("Can't shrink the partition (maybe it's nearly full)"))
+            show.error(_("Can't shrink the partition (maybe it's nearly full?)"))
             return
 
         if self.new_size > 0 and self.is_room_available():
@@ -339,7 +339,7 @@ class InstallationAlongside(Gtk.Box):
         logging.debug("primary partitions: %s" % primary_partitions)
         
         if len(primary_partitions) >= 4:
-            logging.error("There're too many primary partitions, can't create a new one")
+            logging.error("There are too many primary partitions, can't create a new one")
             return False
         
         self.extended_path = extended_path

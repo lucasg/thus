@@ -79,7 +79,7 @@ class InstallationAutomatic(Gtk.Box):
         self.device_label.set_markup(txt)
 
         label = self.ui.get_object('text_automatic')
-        txt = _("WARNING! This installation mode will overwrite everything in your drive!")
+        txt = _("WARNING! This installation mode will overwrite everything on your drive!")
         txt = "<b>%s</b>" % txt
         label.set_markup(txt)
 
