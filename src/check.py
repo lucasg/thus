@@ -87,8 +87,8 @@ class Check(Gtk.Box):
         self.prepare_best_results.set_markup(txt)
 
         self.third_party_info = self.ui.get_object("third_party_info")
-        txt = _("Manjaro uses third-party software to play Adobe Flash, MP3 files " \
-                "and other media. Some of this software is propietary. The " \
+        txt = _("Manjaro uses third-party software to play Adobe Flash, MP3 files, " \
+                "and other media. Some of this software is proprietary. The " \
                 "software is subject to license terms included with its documentation.")
         self.third_party_info.set_label(txt)
 
