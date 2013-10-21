@@ -301,14 +301,16 @@ class AutoTimezoneThread(threading.Thread):
                 raise
         
     def has_connection(self):
-        try:
+        # Workaround since we have no geo-service yet.
+        return False
+        '''try:
             bus = dbus.SystemBus()
             manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
             state = self.get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
             logging.warning(_("In timezone, can't get network status"))
             return False
-        return state == NM_STATE_CONNECTED_GLOBAL
+        return state == NM_STATE_CONNECTED_GLOBAL'''
 
     def run(self):
         # wait until there is an Internet connection available
@@ -352,14 +354,16 @@ class GenerateMirrorListThread(threading.Thread):
                 raise
         
     def has_connection(self):
-        try:
+        # Workaround since we have no geo-service yet.
+        return False
+        '''try:
             bus = dbus.SystemBus()
             manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
             state = self.get_prop(manager, NM, 'state')
         except dbus.exceptions.DBusException:
             logging.warning(_("In timezone, can't get network status"))
             return False
-        return state == NM_STATE_CONNECTED_GLOBAL
+        return state == NM_STATE_CONNECTED_GLOBAL'''
 
     @misc.raise_privileges
     def run(self):
