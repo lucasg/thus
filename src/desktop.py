@@ -88,7 +88,7 @@ class DesktopAsk(Gtk.Box):
 
         elif desktop == 'xfce':
             txt = _("XFCE is a lightweight desktop environment " \
-            "It aims to be light on system resources while still " \
+            "which aims to be light on system resources while still " \
             "being visually appealing, fully-featured, and easy to use.")
             txt = "<span weight='bold'>XFCE</span>\n" + txt
 
