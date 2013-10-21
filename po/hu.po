@@ -6,13 +6,14 @@
 # Dr. Tibor Attila Anca <anca.tibor@gmail.com>, 2013
 # i_sty <szollosi.istv4n@gmail.com>, 2013
 # lacika501 <80kiri@gmail.com>, 2013
+# lajos <mrlajos@gmail.com>, 2013
 # ngaba <ngaba@bibl.u-szeged.hu>, 2011,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
+"POT-Creation-Date: 2013-10-21 19:57+0200\n"
+"PO-Revision-Date: 2013-10-21 18:00+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: thus.py:105
 msgid ""
-"This installer must be run with administrative privileges, and cannot "
+"This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "Ezt a telepítőt adminisztrátor jogokkal kell futtatni, nem lehet enélkül folytatni."
 
@@ -32,27 +33,27 @@ msgstr "Ezt a telepítőt adminisztrátor jogokkal kell futtatni, nem lehet ené
 msgid ""
 "You cannot run two instances of this installer.\n"
 "\n"
-"If you are sure that the installer is not already running\n"
+"If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Nem lehet egyszerre két telepítőt futtatni.\n\nHa biztos vagy benne, hogy a telepítő már nem fut,\ntöröld a %s fájlt\nés indítsd újra ezt a telepítőt."
+msgstr "Nem lehet egyszerre két telepítőt futtatni.\n\n Ha biztos benne, hogy a másik telepítő már nem fut, törölje a %s fájlt\n és indítsa újra a telepítőt."
 
 #: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Aria2 használata a csomagok letöltésére - Kísérleti"
 
 #: thus.py:227
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "'%s' fájl használata mint csomag lista"
 
 #: thus.py:247 src/slides.py:258
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro Telepítő"
 
 #: thus.py:315
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Kilépés a telepítőből..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
@@ -64,8 +65,8 @@ msgid "What is your boot system type?"
 msgstr "Milyen típusú a rendszerindítód?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
-msgid "BIOS (Common)"
-msgstr "BIOS (Általában)"
+msgid "BIOS (common)"
+msgstr "BIOS (általános)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -76,15 +77,15 @@ msgid "i386 UEFI"
 msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
-msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr "Válaszd a 'mégse' gombot, ha nem akarod telepíteni a rendszerindítót"
+msgid "Choose 'Cancel' if you don't want to install a boot loader"
+msgstr "Válassza a 'Mégse' gombot, ha nem akarja telepíteni a rendszerbetöltőt"
 
 #: src/check.py:68
 msgid "Check your computer"
 msgstr "Számítógép ellenőrzése"
 
 #: src/check.py:73
-msgid "has at least 3GB available drive space"
+msgid "has at least 3GB available disk space"
 msgstr "legalább 3GB szabad tárhellyel rendelkezik"
 
 #: src/check.py:77
@@ -101,14 +102,14 @@ msgstr "A legjobb eredmény érdekében bizonyosodj meg róla, hogy a számító
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
-"Manjaro uses third-party software to play Flash, MP3 and other media. Some "
-"of this software is propietary. The software is subject to license terms "
-"included with its documentation."
+"Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
+"media. Some of this software is proprietary. The software is subject to "
+"license terms included with its documentation."
 msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "Telepítse a külső féltől származó szoftvert"
 
 #: src/check.py:116
 msgid "Can't get network status"
@@ -123,331 +124,334 @@ msgid "We're connected to a power source."
 msgstr "Kapcsolódtunk az áramforráshoz."
 
 #: src/check.py:195
-msgid "We have enough space in disk."
+msgid "We have enough disk space."
 msgstr "Van elég szabad tárhely a lemezen."
 
 #: src/desktop.py:76
 msgid ""
-"Gnome 3 is an easy and elegant way to use your computer. It is designed to "
+"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr ""
+msgstr "A GNOME 3 egy könnyű és elegáns módja a számítógép használatának. Úgy tervezték, hogy a felhasználóé legyen az irányítás és szabadságot ad mindenkinek. GNOME 3-at a GNOME közösség fejleszti."
 
 #: src/desktop.py:83
 msgid ""
-"Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the desktop"
-" metaphor, like GNOME 2"
-msgstr ""
+"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
+"attempts to provide a more traditional user environment based on the GNOME2 "
+"desktop metaphor"
+msgstr "Cinnamon egy módosított GNOME Shell, Linux Mint(hez) és által fejlesztve. Megpróbál tradícionálisabb felhasználói környeztet szolgáltatni a GNOME2 asztali környezet irányelveihez igazodva."
 
 #: src/desktop.py:90
 msgid ""
-"Xfce is a lightweight desktop environment for UNIX-like operating systems. "
-"It aims to be fast and low on system resources, while still being visually "
-"appealing and user friendly."
+"XFCE is a lightweight desktop environment which aims to be light on system "
+"resources while still being visually appealing, fully-featured, and easy to "
+"use."
 msgstr ""
 
-#: src/desktop.py:97
+#: src/desktop.py:96
 msgid ""
-"Extremely fast-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard short "
-"cuts and additional features like tabbed file browsing."
+"LXDE is a high-performing and energy-saving desktop environment. It comes "
+"with a beautiful interface, multi-language support, standard keyboard "
+"shortcuts and additional features like tabbed file browsing."
 msgstr "Rendkívül gyors teljesítményű és energiatakarékos asztali környezet. Egy szép felületet, több nyelvű támogatást, szabványos gyorsbillentyű kombinációkat és további funkciókat is kínál, mint például a füles fálj-böngészést."
 
-#: src/desktop.py:104
+#: src/desktop.py:103
 msgid ""
-"Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
+"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox egy magas szinten konfigurálható, következő generációs ablakkezelő kiterjedt szabvány támogatással.\nA *box vizuális stílus jól ismert minimális megjelenéséről."
 
-#: src/desktop.py:111
+#: src/desktop.py:110
 msgid ""
-"Enlightenment is not just a window manager for Linux/X11 and others, but "
-"also a whole suite of libraries to help you create beautiful user interfaces"
-" with much less work"
-msgstr "Az Enlightenment nem csak egy ablakkezelő Linux/X11 alá, mint a többi, hanem egy egész könyvtár csomag, ami segíti a szép felhasználófelület egyszerűbb létrehozását."
+"Enlightenment is a lean, fast, modular and very extensible window manager "
+"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
+" you need to operate your desktop (or laptop). "
+msgstr "Enlightenment egy szikár, gyors, moduláris és nagy mértékben bővíthető ablakkezelő X11 és Linux-hoz. Desktop-shell kategóriába osztályozva ami a szükséges dolgokat szolgáltatja az asztal (laptop) kezelésére."
 
-#: src/desktop.py:117
+#: src/desktop.py:116
 msgid ""
-"The KDE Community is an international technology team dedicated to creating "
-"a free and user-friendly computing experience, offering an advanced "
-"graphical desktop and a wide variety of applications."
-msgstr "A KDE Közösség egy nemzetközi technológiai csapat elkötelezettsége, hogy egy ingyenes és felhasználóbarát számítástechnikai élményt nyújtson, egy fejlett grafikus felület és alkalmazások széles palettája mellett."
+"The KDE Desktop offers a beautiful looking desktop that takes complete "
+"advantage of modern computing technology. Through the use of visual effects "
+"and scalable graphics, the desktop experience is not only smooth but also "
+"pleasant to the eye."
+msgstr "A KDE Asztal egy szép asztali környezetet ajánl ami teljesen kihasználja a modern számítógépek teljesítményét. A vizuális effektek, skálázható grafika és asztal használat nem csak gördülékeny de kellemes a szemnek is."
 
-#: src/desktop.py:124
+#: src/desktop.py:123
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "A Razor-qt egy fejlett, könnyen használható és gyors asztali környezet ami a Qt technológiára épül. Azokat a felhasználókat célozza meg akik értékelik az egyszerűséget, sebességet és a könnyen kezelhető felületet."
 
-#: src/desktop.py:131
+#: src/desktop.py:130
 msgid ""
-"This will install Manjaro as command-line system, without any desktop at "
-"all. After the installation you can install the desktop you may see fit."
-msgstr ""
+"This will install Manjaro as command-line system, without any desktop "
+"environment at all. After the installation you can optionally install the "
+"environment of your choice."
+msgstr "Ez telepíteni fogja a Manjaro-t parancssori rendszerként asztali környezet nélkül. A telepítés után opcionálisan telepíthet asztali környezetet amilyent szeretne."
 
-#: src/desktop.py:143
+#: src/desktop.py:142
 msgid "Select your desktop"
 msgstr "Asztali környezet kiválasztása"
 
-#: src/desktop.py:153
+#: src/desktop.py:152
 msgid "Desktops"
 msgstr "Asztali környezetek"
 
-#: src/desktop.py:186
+#: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus telepíteni fogja a Manjaro-t az '%s' asztali környezettel"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Hiba metalink létrehozásakor a %s csomaghoz"
 
 #: src/download.py:84
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Hiba metalink hozzáadásakor a %s csomaghoz"
 
 #: src/download.py:133
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Csomag letöltése: '%s'..."
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Nem lehet csatlakozni Aria2-hoz. Nem lehetséges a letöltés felgyorsítása."
 
 #: src/download.py:228
 #, python-format
 msgid "Unable to create download queue for package %s"
-msgstr ""
+msgstr "Nem lehet létrehozni a letöltési listát %s csomaghoz"
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Nem találhatóak ezek a csomagok: "
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Figyelem! Nem lehet feloldani ezeket a függőségeket: "
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Jellemzők kiválasztása"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bluetooth támogatás"
 
 #: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr ""
+msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
+msgstr "Bluetooth támogatás nélkül nem lesz képes Bluetooth eszközöket használni."
 
 #: src/features.py:103
-msgid "Printing support (cups)"
-msgstr ""
+msgid "Printing support (CUPS)"
+msgstr "Nyomtatási támogatás (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and manage tools"
-msgstr ""
+msgid "This includes printer drivers and management tools"
+msgstr "Ez tartalmaz nyomtató meghajtókat és kezelő eszközöket"
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Irodai csomag (szövegszerkesztő, táblázatkezelő ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Vizuális effektusok"
 
 #: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as transparencies, shadows, etc."
-msgstr ""
+msgid "Visual effects such as window transparency and shadows"
+msgstr "Vizuális effektek mint pl. ablak átlátszóság és árnyékok"
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Nem bonyolult tűzfal"
 
 #: src/features.py:127
-msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr ""
+msgid ""
+"Installs ufw and denies all traffic by default (use gufw to configure it)"
+msgstr "Telepíti a ufw-t és letiltja az összes forgalmat alapértelmezetten (a gufw grafikus felület használható konfigurálásra)"
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Tulajdonosi \"zárt\" csomagok"
 
 #: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 and other media"
-msgstr ""
+msgid "Third-party software to play Flash, MP3 files, and other media"
+msgstr "Harmadik féltől származó szoftware Flash, MP3 és egyéb média lejátszásra"
 
-#: src/installation_advanced.py:190 src/installation_advanced.py:481
-#: src/installation_advanced.py:495
+#: src/installation_advanced.py:194 src/installation_advanced.py:485
+#: src/installation_advanced.py:499
 msgid "free space"
 msgstr "szabad hely"
 
-#: src/installation_advanced.py:259 src/installation_alongside.py:166
+#: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Eszköz"
 
-#: src/installation_advanced.py:262
+#: src/installation_advanced.py:266
 msgid "Type"
 msgstr "Típus"
 
-#: src/installation_advanced.py:265
+#: src/installation_advanced.py:269
 msgid "Mount point"
 msgstr "Csatolási pont"
 
-#: src/installation_advanced.py:268
+#: src/installation_advanced.py:272
 msgid "Label"
 msgstr "Címke"
 
-#: src/installation_advanced.py:274 src/installation_advanced.py:1360
+#: src/installation_advanced.py:278 src/installation_advanced.py:1399
 msgid "Format"
 msgstr "Formatálás"
 
-#: src/installation_advanced.py:277
+#: src/installation_advanced.py:281
 msgid "Size"
 msgstr "Méret"
 
-#: src/installation_advanced.py:280
+#: src/installation_advanced.py:284
 msgid "Used"
 msgstr "Használva"
 
-#: src/installation_advanced.py:283
+#: src/installation_advanced.py:287
 msgid "Flags"
 msgstr "Zászlók"
 
-#: src/installation_advanced.py:289
+#: src/installation_advanced.py:293
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:464
+#: src/installation_advanced.py:468
 msgid "none"
 msgstr "semmi"
 
-#: src/installation_advanced.py:516
+#: src/installation_advanced.py:520
 msgid "extended"
 msgstr "kiterjesztett"
 
-#: src/installation_advanced.py:641 src/installation_advanced.py:881
-msgid "Cannot use same mount twice..."
+#: src/installation_advanced.py:645 src/installation_advanced.py:885
+msgid "Can't use same mount point twice..."
 msgstr "Nem lehet kétszer használni ugyanazt a csatolási pontot..."
 
-#: src/installation_advanced.py:643
+#: src/installation_advanced.py:647
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "A Root partíciót szükséges formázni..."
 
-#: src/installation_advanced.py:902
+#: src/installation_advanced.py:906
 msgid "Creating primary partition"
 msgstr "Elsődleges partíció létrehozása"
 
-#: src/installation_advanced.py:913
+#: src/installation_advanced.py:917
 msgid "Creating extended partition"
 msgstr "Kiterjesztett partíció létrehozása"
 
-#: src/installation_advanced.py:919
+#: src/installation_advanced.py:923
 msgid "Creating logical partition"
 msgstr "Logikai partíció létrehozása"
 
-#: src/installation_advanced.py:1006
+#: src/installation_advanced.py:1033
 msgid "Advanced installation mode"
 msgstr "Haladó telepítési mód"
 
-#: src/installation_advanced.py:1010 ui/installation_advanced.ui:962
+#: src/installation_advanced.py:1037 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Használja ezt az eszközt a rendszer betöltő telepítésére: "
 
-#: src/installation_advanced.py:1020 ui/installation_advanced.ui:884
+#: src/installation_advanced.py:1047 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Új partíciós tábla"
 
-#: src/installation_advanced.py:1028
+#: src/installation_advanced.py:1055
 msgid "Change..."
 msgstr "Változás..."
 
-#: src/installation_advanced.py:1033 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1060 ui/installation_advanced.ui:97
 msgid "Size:"
 msgstr "Méret:"
 
-#: src/installation_advanced.py:1037 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1064 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr "Típus:"
 
-#: src/installation_advanced.py:1041 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1068 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Elsődleges"
 
-#: src/installation_advanced.py:1045 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1072 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Logikai"
 
-#: src/installation_advanced.py:1049 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Kiterjesztett"
 
-#: src/installation_advanced.py:1053 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1080 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
 msgstr "Az elején ennek a helynek"
 
-#: src/installation_advanced.py:1057 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1084 ui/installation_advanced.ui:219
 msgid "End of this space"
 msgstr "A végen ennek a helynek"
 
-#: src/installation_advanced.py:1061 src/installation_advanced.py:1078
-#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:581
+#: src/installation_advanced.py:1088 src/installation_advanced.py:1105
+#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
 msgid "Use as:"
 msgstr "Használja mint:"
 
-#: src/installation_advanced.py:1065 src/installation_advanced.py:1082
-#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:614
+#: src/installation_advanced.py:1092 src/installation_advanced.py:1109
+#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
 msgid "Mount point:"
 msgstr "Csatolási pont:"
 
-#: src/installation_advanced.py:1069 src/installation_advanced.py:1086
-#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:651
+#: src/installation_advanced.py:1096 src/installation_advanced.py:1113
+#: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
 msgid "Label (optional):"
 msgstr "Címke (opcionális):"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:412
-#: ui/installation_advanced.ui:718
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:413
+#: ui/installation_advanced.ui:719
 msgid "Encryption options..."
 msgstr "Titkosítási beállítások..."
 
-#: src/installation_advanced.py:1090 ui/installation_advanced.ui:678
+#: src/installation_advanced.py:1117 ui/installation_advanced.ui:679
 msgid "Format:"
 msgstr "Formatálás:"
 
-#: src/installation_advanced.py:1095 ui/installation_advanced.ui:486
+#: src/installation_advanced.py:1122 ui/installation_advanced.ui:487
 msgid "Partition table type:"
 msgstr "Partíciós táblat típusa:"
 
-#: src/installation_advanced.py:1100
+#: src/installation_advanced.py:1127
 msgid "Create partition table"
 msgstr "Partíciós tábla létrehozása"
 
-#: src/installation_advanced.py:1103 src/installation_alongside.py:144
+#: src/installation_advanced.py:1130 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
 msgid "Install now!"
 msgstr "Telepítés most!"
 
-#: src/installation_advanced.py:1183
+#: src/installation_advanced.py:1210
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Új %s partíciós táblázat létrehozása a %s lemez számára"
 
-#: src/installation_advanced.py:1282
+#: src/installation_advanced.py:1315
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s csatolva mint swap.\nA folytatáshoz le kell csatolni.\nKattints az Igen-re lecsatoláshoz, vagy a Nem-re visszatérni\n"
 
-#: src/installation_advanced.py:1284
+#: src/installation_advanced.py:1317
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -455,111 +459,111 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s csatlakoztatva ide '%s'.\nA folytatáshoz lekel választani.\nKattints az Igen-re a lecsatlakoztatáshoz, vagy a Nem-re a vissza lépéshez\n"
 
-#: src/installation_advanced.py:1353
+#: src/installation_advanced.py:1392
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s partíció törlődni fog"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Partition"
 msgstr "Partíció"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "New"
 msgstr "Új"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Relabel"
 msgstr "Újracímkézés"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Mount"
 msgstr "Csatolás"
 
-#: src/installation_advanced.py:1381
+#: src/installation_advanced.py:1420
 msgid "These disks will have partition actions:"
 msgstr "Ennek a lemeznek ezek a partíciós beállításai lesznek:"
 
-#: src/installation_advanced.py:1406
+#: src/installation_advanced.py:1445
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Beállítások mentve ide %s"
 
-#: src/installation_advanced.py:1421
+#: src/installation_advanced.py:1463
 #, python-format
-msgid "Creating fs of type %s in %s with label %s"
-msgstr "%s fájlrendszer létrehozása erre a lemezre: %s, ezzel a címkével: %s"
+msgid "Creating fs of type %s in %s with label %s - format: %s"
+msgstr "Fájlrendszer létrehozása %s típussal %s lemezen %s címkével %s formátumban"
 
-#: src/installation_advanced.py:1502
+#: src/installation_advanced.py:1552
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro telepíteni fogja a rendszer betöltőt a %s - %s"
 
 #: src/installation_alongside.py:109
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Nem lehet betölteni %s css"
 
 #: src/installation_alongside.py:136
-msgid "Choose next to which OS you want to install Manjaro"
-msgstr ""
+msgid "Choose which OS you want to install Manjaro next to"
+msgstr "Válassza ki melyik operációs rendszer mellé telepíti a Manjaro-t"
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro telepítése meglévő operációs rendszer mellé"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr ""
+msgstr "Felismert operációs rendszer"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
-msgstr ""
+msgstr "Fájlrendszer"
 
 #: src/installation_alongside.py:216
-msgid "In alongside install, can't create list of partitions"
-msgstr ""
+msgid "In alongside install: can't create list of partitions"
+msgstr "Más operációs rendszer mellé telepítéskor: Nem tudta létrehozni a partíciót"
 
 #: src/installation_alongside.py:256
-msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr ""
+msgid "Can't shrink the partition (maybe it's nearly full?)"
+msgstr "Nem lehet zsugorítani a partíciót (lehetséges nincs elég szabad hely?)"
 
-#: src/installation_ask.py:110
+#: src/installation_ask.py:114
 msgid "Installation type"
 msgstr "Telepítés típusa"
 
-#: src/installation_ask.py:120 ui/installation_ask.ui:33
+#: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Lemez törlése és Manjaro telepítése (automatikus)"
 
-#: src/installation_ask.py:123
+#: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
 msgstr "Figyelem: Ez törölni fogja az összes adatot a lemezen"
 
-#: src/installation_ask.py:130
+#: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Manjaro telepítése %s mellé"
 
-#: src/installation_ask.py:133
-msgid "Install this OS alongside the other OSes you have already installed."
-msgstr ""
+#: src/installation_ask.py:137
+msgid "Install this OS alongside the other OSes you already have installed."
+msgstr "Telepítse ezt az operációs rendszert másik operációs rendszerek mellé amiket már telepített."
 
-#: src/installation_ask.py:139
-msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr ""
+#: src/installation_ask.py:143
+msgid "Manage your partitions and where to install Manjaro (advanced)"
+msgstr "Partíciók kezelése és Manjaro telepítési helyének kiválasztása. (haladó)"
 
-#: src/installation_ask.py:142
-msgid "Create/delete partitions, and also choose additional mount points."
+#: src/installation_ask.py:146
+msgid "Create and delete partitions, and choose additional mount points."
 msgstr "Hozz létre/törölj partíciókat, és válasz további csatolási pontokat."
 
-#: src/installation_ask.py:162
+#: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "A telepített Manjaro titkosítva lesz"
 
-#: src/installation_ask.py:165
+#: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro telepítve lesz LVM használatával"
 
 #: src/installation_automatic.py:74
 msgid "Automatic installation mode"
@@ -571,14 +575,14 @@ msgstr "Meghajtó kiválasztása:"
 
 #: src/installation_automatic.py:82
 msgid ""
-"WARNING! This installation mode will overwrite everything in your drive!"
-msgstr ""
+"WARNING! This installation mode will overwrite everything on your drive!"
+msgstr "FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!"
 
 #: src/installation_automatic.py:87 ui/installation_automatic.ui:32
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Kérem válassza ki a meghajtót ahova telepíteni akarja a Manjaro-t\nés kattintson az alábbi gombra a folyamat megkezdéséhez."
 
 #: src/installation_automatic.py:134
 #, python-format
@@ -588,17 +592,17 @@ msgstr "Automatikus telepítés, használva ezt az eszközt:  %s"
 #: src/installation_automatic.py:150
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Thus használni fogja a következő telepítési eszközt: %s"
 
 #: src/installation_automatic.py:159
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro telepíteni fogja a rendszerbetöltőt a %s - %s"
 
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Másolás '/%s'"
 
 #: src/installation_process.py:163
 #, python-format
@@ -612,12 +616,12 @@ msgstr "Nem lehet futtatni az automatikus partícionáló scriptet"
 #: src/installation_process.py:305 src/installation_process.py:329
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "%s partíció csatolása a %s könyvtárba"
 
 #: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "%s partíció csatolása a %s/boot könyvtárba"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
@@ -635,117 +639,117 @@ msgstr "Nem hozhatsz létre szükséges könyvtárakat a cél rendszeren"
 #: src/installation_process.py:454
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "meta információk visszaállítása a %s"
 
 #: src/installation_process.py:467
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Speciális könyvtárak már csatolva vannak."
 
 #: src/installation_process.py:493
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "Speciális könyvtárak már nincsenek csatolva."
 
 #: src/installation_process.py:503
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Nem lehet csatolni %s"
 
 #: src/installation_process.py:554
 msgid "Create fstab."
-msgstr ""
+msgstr "fstab létrehozása."
 
-#: src/installation_process.py:654
+#: src/installation_process.py:658
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr ""
+msgstr "GRUB(2) rendszerbetöltő telepítése a %s"
 
-#: src/installation_process.py:684
+#: src/installation_process.py:688
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS telepítése sikeres."
 
-#: src/installation_process.py:686
+#: src/installation_process.py:690
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "HIBA a GRUB(2) BIOS telepítése során."
 
-#: src/installation_process.py:697
+#: src/installation_process.py:701
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
-msgstr ""
+msgstr "GRUB(2) UEFI %s rendszerbetöltő telepítése a %s"
 
-#: src/installation_process.py:725
+#: src/installation_process.py:729
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "HIBA a GRUB(2) konfigurációs fájl telepítésekor."
 
-#: src/installation_process.py:753
+#: src/installation_process.py:757
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "HIBA a GRUB(2) lokális változók telepítésekor."
 
-#: src/installation_process.py:767
+#: src/installation_process.py:771
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Jelszó hash nem került létrehozásra a következő felhasználónak: %s"
 
-#: src/installation_process.py:773
+#: src/installation_process.py:777
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Hiba a jelszó megváltoztatásánál a következő felhasználónál: %s"
 
-#: src/installation_process.py:887
+#: src/installation_process.py:892
 msgid "Configuring your new system"
 msgstr "Rendszer testreszabása"
 
-#: src/installation_process.py:961
+#: src/installation_process.py:966
 msgid "Generating locales..."
-msgstr ""
+msgstr "Lokális változók generálása..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:986
 msgid "Adjusting hardware clock..."
-msgstr ""
+msgstr "Hardware óra beállítása..."
 
-#: src/installation_process.py:987
-msgid "Configuring hardware.."
-msgstr ""
+#: src/installation_process.py:992
+msgid "Configuring hardware..."
+msgstr "Hardware konfigurálása..."
 
-#: src/installation_process.py:994
-msgid "Setup graphic card.."
-msgstr ""
+#: src/installation_process.py:999
+msgid "Set up graphics card..."
+msgstr "Grafikus kártya beállítása..."
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1006
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "Nem lehet futtatni az MHWD \"Manjaro Hardware Detection\" scriptet"
 
-#: src/installation_process.py:1007
-msgid "Configure display manager.."
-msgstr ""
+#: src/installation_process.py:1012
+msgid "Configure display manager..."
+msgstr "Képernyő kezelő konfigurálása..."
 
-#: src/installation_process.py:1106
-msgid "Configure System.."
-msgstr ""
+#: src/installation_process.py:1111
+msgid "Configure System..."
+msgstr "Rendszer konfigurálása..."
 
-#: src/installation_process.py:1134
+#: src/installation_process.py:1139
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Lemezről betöltött \"élő\" konfiguráció (csomagok) eltávolítása "
 
-#: src/installation_process.py:1150
+#: src/installation_process.py:1155
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Csomagkezelő konfigurálása"
 
-#: src/installation_process.py:1165
+#: src/installation_process.py:1170
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Csomagkezelő konfigurálása befejeződött."
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1194
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Automatikus bejelentkezés engedélyezése a felhasználónak: %s"
 
-#: src/installation_process.py:1267
+#: src/installation_process.py:1273
 msgid "Running mkinitcpio..."
-msgstr ""
+msgstr "mkinitcpio futtatása..."
 
-#: src/installation_process.py:1270
+#: src/installation_process.py:1276
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "mkinitcpio futtatása... befejezve"
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
@@ -778,11 +782,11 @@ msgid ""
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Fejlesztés alatt. Jelenleg NEM működik LVM, RAID, btrfs alkötetekkel és egyéb összetett telepítésekkel.\nKérem figyeljen oda a folyamatra mert adatvesztés lehetséges!\n\nHa bármilyen hibát talál látogassa meg a: <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:92 src/welcome.py:102
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Üdvözli önt a Manjaro!"
 
 #: src/language.py:109
 msgid "Languages"
@@ -824,7 +828,7 @@ msgstr "A rankmirrors-ban nem található hálózati állapot"
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Nem található a tükörszerverek rangsorolása script"
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
@@ -832,19 +836,19 @@ msgstr "Nem lehetséges az automatikus tükörszerver választást futtatni"
 
 #: src/show_message.py:52
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro telepítő - Hiba"
 
 #: src/show_message.py:63
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Manjaro telepítő - Figyelmeztetés"
 
 #: src/show_message.py:74
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro telepítő - Információ"
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro telepítő - Kérdés"
 
 #: src/slides.py:91 src/slides.py:106
 msgid ""
@@ -854,7 +858,7 @@ msgstr "A rendszertelepítés befejeződött.\nÚjraindítja a rendszert most?"
 
 #: src/slides.py:99
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Manjaro telepítése..."
 
 #: src/slides.py:104
 msgid "Please wait..."
@@ -882,7 +886,7 @@ msgid "Can't autodetect timezone coordinates"
 msgstr "Nem választódtak ki az időzónai koordináták:"
 
 #: src/timezone.py:279
-msgid "Stoping timezone threads..."
+msgid "Stopping timezone threads..."
 msgstr "Időzónai szálak leállítása..."
 
 #: src/timezone.py:309 src/timezone.py:360
@@ -893,22 +897,13 @@ msgstr "Az időzónában, nem található hálózati állapot"
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Nem található ország kód, a pacman tükörlista elkészítéséhez"
 
-#: src/timezone.py:405
-#, python-format
-msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
-msgstr "Egyedi tükörlista letöltve a pacman-hoz, a(z) %s ország kódon alapulva"
-
-#: src/timezone.py:407
-msgid "Couldn't generate mirrorlist for pacman based on country code"
-msgstr "Nem sikerült elkészíteni a tükörlistát a pacman-hoz, ehhez az országkódhoz"
-
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
 msgstr "Neved:"
 
 #: src/user_info.py:87
 msgid "Your name"
-msgstr ""
+msgstr "Az ön neve"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
@@ -920,7 +915,7 @@ msgstr "Válassz egy felhasználónevet:"
 
 #: src/user_info.py:99
 msgid "Username"
-msgstr ""
+msgstr "Felhasználónév"
 
 #: src/user_info.py:103 ui/user_info.ui:63
 msgid "Choose a password:"
@@ -928,7 +923,7 @@ msgstr "Válassz egy jelszót:"
 
 #: src/user_info.py:107
 msgid "Password"
-msgstr ""
+msgstr "Jelszó"
 
 #: src/user_info.py:111 ui/user_info.ui:78
 msgid "Confirm your password:"
@@ -936,11 +931,11 @@ msgstr "Erősítsd meg a jelszavadat:"
 
 #: src/user_info.py:115
 msgid "Confirm password"
-msgstr ""
+msgstr "Jelszó megerősítése"
 
 #: src/user_info.py:119
-msgid "The name it uses when it talks to other computers."
-msgstr "A név, amellyel beszélsz más számítógépekkel."
+msgid "Its name as it appears to other computers."
+msgstr "Név ami más számítógépek számára megjelenik."
 
 #: src/user_info.py:123
 msgid "You must enter a name"
@@ -974,35 +969,35 @@ msgstr "Ki vagy?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro az eCryptfs-t használja az ön home könyvtárának a titkosítására. Sajnos az eCryptfs nem kezeli a töredezett fájlokat jól.\n\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "Ne aggódjon, a legtöbb célra és szándékra ez a védelem nem okoz problémát.\n\n"
 
 #: src/user_info.py:169
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "Egyébként egy népszerű és nem javasolt alkalmazása az eCryptfs-nek a BitTorrent letöltési helyének titkosítása ami sokszor megköveteli az eCryptfs-től, hogy 10 GB-nál több töredezett fájlt kezeljen. Ez intenzív lemezhasználathoz vezethet.\n\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "Egy egyszerű megoldás, hogy a töredezett fájlokat egy nem titkosított .Public könyvtárba helyezzük.\n\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Látogassa meg  https://wiki.archlinux.org/index.php/ECryptfs oldalt részletes információért.\n\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "Biztos abban, hogy titkosítani akarja a home könyvtárat?\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
@@ -1010,7 +1005,7 @@ msgstr "Érvénytelen karaktereket adtál meg"
 
 #: src/user_info.py:234
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "Felhasználónév nem tartalmazhat pontokat"
 
 #: src/user_info.py:238
 msgid "Too many characters"
@@ -1044,7 +1039,7 @@ msgstr "A jelszavak nem egyeznek"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr ""
+msgstr "Próbálja ki a Manjaro-t a merevlemez módosítása nélkül.\nVagy telepítse a számítógépére a két telepítési opció egyikével."
 
 #: src/welcome.py:93 ui/welcome.ui:45
 msgid "Try it"
@@ -1065,7 +1060,7 @@ msgstr "Nem sikerült betölteni a CLI telepítőt"
 #: src/pacman/pac.py:237
 #, python-format
 msgid "Package %s not found in any repo!"
-msgstr ""
+msgstr "A csomag %s nem található egy tárolóban sem!"
 
 #: src/pacman/pac.py:290
 msgid "Checking dependencies..."
@@ -1124,7 +1119,7 @@ msgstr "FIGYELMEZTETÉS: %s"
 #: src/pacman/pac.py:386
 #, python-format
 msgid "Downloading %s..."
-msgstr ""
+msgstr "Letöltés %s..."
 
 #: src/pacman/pac.py:395
 #, python-format
@@ -1134,204 +1129,201 @@ msgstr "Frissítése: %s"
 #: src/pacman/pac.py:404
 #, python-format
 msgid "Installing %s (%d/%d)"
-msgstr ""
+msgstr "Telepítés %s (%d/%d)"
 
 #: src/pacman/pac.py:407
-#, python-format
-msgid "Checking and loading packages... [%s]"
-msgstr ""
+msgid "Checking and loading packages..."
+msgstr "Csomagok ellenőrzése és betöltése..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Boot"
 
 #: ui/check.ui:28
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">A legjobb eredmény érdekében győződjön meg arról, hogy ez a számítógép:</span>"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "Címke"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Bluetooth támogatás</span>"
 
 #: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
-msgstr ""
+msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
+msgstr "<span weight='bold' size='large'>Nyomtatási támogatás (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "Irodai csomag (szövegszerkesztő, táblázatkezelő ...)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Vizuális effektusok</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Tűzfal</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "Tűzfal aktiválása (lezárja az összes portot alapértelmezetten)"
 
 #: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Propietary packages</span>"
-msgstr ""
+msgid "<span weight='bold' size='large'>Proprietary packages</span>"
+msgstr "<span weight='bold' size='large'>Cégfüggő \"zárt\" csomagok</span>"
 
 #: ui/installation_advanced.ui:73
 msgid "Create partition"
-msgstr ""
+msgstr "Partíció létrehozása"
 
 #: ui/installation_advanced.ui:113
 msgid "Location:"
-msgstr ""
+msgstr "Hely:"
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
-#: ui/installation_advanced.ui:557
+#: ui/installation_advanced.ui:558
 msgid "Edit partition"
-msgstr ""
+msgstr "Partíció szerkesztése"
 
-#: ui/installation_advanced.ui:898
+#: ui/installation_advanced.ui:899
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_alongside.ui:16
 msgid ""
-"<span size=\"large\">Choose next to which OS you want to install "
-"Manjaro</span>"
-msgstr ""
+"<span size=\"large\">Choose which OS you want to install Manjaro next "
+"to</span>"
+msgstr "<span size=\"large\">Válassza ki melyik operációs rendszer mellé telepíti a Manjaro-t</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "Válasszon új méretet"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "Egyéb operációs rendszer"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Figzelem: Ez törölni fogja az összes programot, dokumentumot, fotót, zenét és egyéb fájlokat a merevlemezről</span>"
 
 #: ui/installation_ask.ui:69
-msgid "Encrypts the new Manjaro installation for security"
-msgstr ""
+msgid "Encrypts the new Manjaro installation for better security"
+msgstr "A telepített Manjaro titkosítva lesz a jobb biztonság érdekében"
 
 #: ui/installation_ask.ui:90
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">A következő lépésben a titkosítási kulcsot kell megadni</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Használja az LVM-et az új Manjaro telepítéssel"
 
 #: ui/installation_ask.ui:122
 msgid ""
-"<span weight=\"light\" size=\"small\">This will setup LVM allowing to make "
-"snapshots and changing partition sizes in an easy way</span>"
-msgstr ""
+"<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
+"make snapshots and change partition sizes in a straightforward way</span>"
+msgstr "<span weight=\"light\" size=\"small\">Ez telepíti az LVM-et ami lehetővé teszi pillanatfelvételek készítését, változtatni a partíció méreteket egyértelmű módon</span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "Telepítse más egyéb operációs rendszerek mellé"
 
 #: ui/installation_ask.ui:159
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
-"installing Manjaro alongside one of the other OSes that you have already "
+"installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Ezzel az opcióval Manjaro telepítésre kerül más operációs rendszer mellé ami már telepítve van.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Partíciók kezelése és Manjaro telepítési helyének kiválasztása. (haladó)"
 
 #: ui/installation_ask.ui:197
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Létrehozhat, törölhet partíciókat. Válassza ki hova települjön a Manjaro és válasszon csatolási pontokat.</span>"
 
 #: ui/installation_automatic.ui:18
 msgid ""
-"<b>WARNING! This installation mode will overwrite everything in your "
+"<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Válasszon nyelvet:</span>"
 
 #: ui/language.ui:88
 msgid ""
 "<span weight='bold'>This is an Alpha version.</span>\n"
 "\n"
 "\n"
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other \" advanced setups.\n"
+"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups.\n"
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Ez Alfa verzió.</span>\n\n\nFejlesztés alatt. Jelenleg NEM működik LVM, RAID, btrfs alkötetekkel és egyéb összetett telepítésekkel.\n\nHa bármilyen hibát talál látogassa meg a: <ahref='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "Folyamat"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Üdvözli a Manjaro</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Erős jelszó</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Meg kell adni a jelszót</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Felhasználó nevet kell megadni</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Nevet kell megadni</span></small>"
 
 #: ui/user_info.ui:447
-msgid ""
-"<span size=\"small\">The name it uses when it talks to other "
-"computers.</span>"
-msgstr ""
+msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
+msgstr "<span size=\"small\">Név ami más számítógépek számára megjelenik.</span>"
 
 #: ui/welcome.ui:151
 msgid ""
 "You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
 "If you want to install the system to your PC, use one of the two installer options."
-msgstr ""
+msgstr "Kipróbálhatja a Manjaro-t a merevlemez módosítása nélkül, csak kattintson a \"Kipróbál\"-ra. \nHa telepíteni akarja a rendszert a számítógépére akkor használja a két telepítési opció egyikét."

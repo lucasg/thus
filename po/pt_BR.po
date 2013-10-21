@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-19 23:43+0000\n"
-"Last-Translator: arnt <qtgzmanager@gmail.com>\n"
+"POT-Creation-Date: 2013-10-21 19:57+0200\n"
+"PO-Revision-Date: 2013-10-21 18:00+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,16 +26,16 @@ msgstr ""
 
 #: thus.py:105
 msgid ""
-"This installer must be run with administrative privileges, and cannot "
+"This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr "A instalação deve ser executada com privilégios administrativos, e não pode continuar sem eles."
+msgstr "A instalação deve ser executada com privilégios administrativos e não pode continuar sem eles."
 
 #: thus.py:111
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
 "\n"
-"If you are sure that the installer is not already running\n"
+"If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
 msgstr "Você não pode executar duas instâncias do instalador. \n\nSe você tem certeza que o instalador não está em execução \nvocê pode excluir manualmente o arquivo % s \ne executar o instalador novamente."
@@ -67,7 +67,7 @@ msgid "What is your boot system type?"
 msgstr "Qual o seu sistema de boot?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
-msgid "BIOS (Common)"
+msgid "BIOS (common)"
 msgstr "BIOS (comum)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
@@ -79,16 +79,16 @@ msgid "i386 UEFI"
 msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
-msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr "Escolha 'cancel' se você não quiser instalar um boot loader"
+msgid "Choose 'Cancel' if you don't want to install a boot loader"
+msgstr "Escolha 'Cancel' se você não quiser instalar um boot loader"
 
 #: src/check.py:68
 msgid "Check your computer"
 msgstr "Checando seu computador"
 
 #: src/check.py:73
-msgid "has at least 3GB available drive space"
-msgstr "Existe pelo menos 3 GB de espaço em disco disponível"
+msgid "has at least 3GB available disk space"
+msgstr "Possua pelo menos 3 GB de espaço em disco disponível"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -104,10 +104,10 @@ msgstr "Para melhores resultados, certifique-se de que este computador:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
-"Manjaro uses third-party software to play Flash, MP3 and other media. Some "
-"of this software is propietary. The software is subject to license terms "
-"included with its documentation."
-msgstr "Manjaro utiliza software de terceiros para reproduzir Flash, MP3 e outros tipos de mídia. Alguns destes programas são proprietários. Cada software está sujeito aos termos de uso da licença que consta em sua documentação."
+"Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
+"media. Some of this software is proprietary. The software is subject to "
+"license terms included with its documentation."
+msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
@@ -126,79 +126,81 @@ msgid "We're connected to a power source."
 msgstr "Há conexão com a rede elétrica."
 
 #: src/check.py:195
-msgid "We have enough space in disk."
+msgid "We have enough disk space."
 msgstr "Espaço suficiente em disco."
 
 #: src/desktop.py:76
 msgid ""
-"Gnome 3 is an easy and elegant way to use your computer. It is designed to "
+"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr "Gnome 3 é uma forma simples e elegante de utilizar seu computador. Ele é projetado para coloca-lo no controle e trazer liberdade para todos que o utilizam. GNOME 3 é desenvolvido pela comunidade GNOME."
+msgstr "GNOME 3 é uma forma simples e elegante de utilizar seu computador. Ele é projetado para coloca-lo no controle e trazer liberdade para todos que o utilizam. GNOME 3 é desenvolvido pela comunidade GNOME."
 
 #: src/desktop.py:83
 msgid ""
-"Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the desktop"
-" metaphor, like GNOME 2"
+"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
+"attempts to provide a more traditional user environment based on the GNOME2 "
+"desktop metaphor"
 msgstr "Cinnamon é derivado do GNOME Shell, desenvolvido por (e para) o Linux Mint. Trata-se da tentativa de proporcionar um ambiente mais tradicional baseado na metáfora do desktop GNOME 2"
 
 #: src/desktop.py:90
 msgid ""
-"Xfce is a lightweight desktop environment for UNIX-like operating systems. "
-"It aims to be fast and low on system resources, while still being visually "
-"appealing and user friendly."
-msgstr "Xfce é um desktop leve para sistemas operacionais do tipo UNIX. É rápido e exige poucos recursos do sistema, embora seja atraente e amigável."
+"XFCE is a lightweight desktop environment which aims to be light on system "
+"resources while still being visually appealing, fully-featured, and easy to "
+"use."
+msgstr ""
 
-#: src/desktop.py:97
+#: src/desktop.py:96
 msgid ""
-"Extremely fast-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard short "
-"cuts and additional features like tabbed file browsing."
-msgstr "Desktop extremamente rápido e com suporte a economia de energia. Com uma interface bonita, suporte a vários idiomas, atalhos de teclado padrão e características adicionais, como navegação de arquivos em abas."
+"LXDE is a high-performing and energy-saving desktop environment. It comes "
+"with a beautiful interface, multi-language support, standard keyboard "
+"shortcuts and additional features like tabbed file browsing."
+msgstr "LXDE é um desktop extremamente rápido e com suporte à economia de energia. Com uma interface bonita, suporte a vários idiomas, atalhos de teclado padrão e características adicionais como navegação de arquivos em abas."
 
-#: src/desktop.py:104
+#: src/desktop.py:103
 msgid ""
-"Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
+"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox é um gerenciador de janelas altamente configurável e com suporte a vários padrões. O estilo visual de *caixa é bastante conhecido por sua aparência minimalista."
+msgstr "Openbox é um gerenciador de janelas altamente configurável e com suporte a vários padrões.\nO estilo visual retilíneo é bastante conhecido por sua aparência minimalista."
 
-#: src/desktop.py:111
+#: src/desktop.py:110
 msgid ""
-"Enlightenment is not just a window manager for Linux/X11 and others, but "
-"also a whole suite of libraries to help you create beautiful user interfaces"
-" with much less work"
-msgstr "Enlightenment não é apenas um gerenciador de janelas para Linux/X11 e outros, mas também todo um conjunto de bibliotecas para ajudá-lo a criar interfaces bonitas com muito menos trabalho"
+"Enlightenment is a lean, fast, modular and very extensible window manager "
+"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
+" you need to operate your desktop (or laptop). "
+msgstr "Enlightenment é um gerenciador de janelas elegante, modular e extensível para X11 e Linux. É classificado como um \"desktop shell\" e disponibiliza todas as funcionalidades necessárias para operar seu desktop (ou notebook)."
 
-#: src/desktop.py:117
+#: src/desktop.py:116
 msgid ""
-"The KDE Community is an international technology team dedicated to creating "
-"a free and user-friendly computing experience, offering an advanced "
-"graphical desktop and a wide variety of applications."
-msgstr "A Comunidade KDE é uma equipe internacional de tecnologia dedicada à criação de uma experiência de computação livre e amigável ao usuário, oferecendo uma área de trabalho gráfica avançada e uma grande variedade de aplicações."
+"The KDE Desktop offers a beautiful looking desktop that takes complete "
+"advantage of modern computing technology. Through the use of visual effects "
+"and scalable graphics, the desktop experience is not only smooth but also "
+"pleasant to the eye."
+msgstr "O KDE disponibiliza um lindo ambiente que tira vantagem de toda a tecnologia dos computadores modernos. Através do uso de efeitos visuais e gráficos escaláveis, a experiência do ambiente de trabalho é responsível e agradável aos olhos. "
 
-#: src/desktop.py:124
+#: src/desktop.py:123
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
 msgstr "Razor-qt é um desktop avançado e fácil de usar baseada nas tecnologias do Qt. Foi construído por usuários que valorizam a simplicidade, rapidez e interfaces intuitivas."
 
-#: src/desktop.py:131
+#: src/desktop.py:130
 msgid ""
-"This will install Manjaro as command-line system, without any desktop at "
-"all. After the installation you can install the desktop you may see fit."
-msgstr "Isto instalará o Manjaro como um sistema de linha de comando, sem nenhum tipo de desktop. Após a instalação você poderá instalar o desktop que achar melhor."
+"This will install Manjaro as command-line system, without any desktop "
+"environment at all. After the installation you can optionally install the "
+"environment of your choice."
+msgstr "Esta opção instalará o Manjaro como um sistema de linha de comando, sem nenhum tipo de desktop. Após a instalação você poderá instalar o desktop que achar melhor."
 
-#: src/desktop.py:143
+#: src/desktop.py:142
 msgid "Select your desktop"
 msgstr "Selecione seu desktop"
 
-#: src/desktop.py:153
+#: src/desktop.py:152
 msgid "Desktops"
 msgstr "Desktops"
 
-#: src/desktop.py:186
+#: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
 msgstr "Isto instalará o Manjaro com o desktop %s"
@@ -244,16 +246,16 @@ msgid "Bluetooth support"
 msgstr "Suporte a Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you can't use Bluetooth devices"
+msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
 msgstr "Sem o suporte a Bluetooth você não poderá utilizar dispositivos Bluetooth"
 
 #: src/features.py:103
-msgid "Printing support (cups)"
-msgstr "Suporte à impressão (cups)"
+msgid "Printing support (CUPS)"
+msgstr "Suporte à impressão (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and manage tools"
-msgstr "Isto inclui drivers de impressora e ferramentas de gerenciamento"
+msgid "This includes printer drivers and management tools"
+msgstr "Inclui drivers de impressora e ferramentas de gerenciamento"
 
 #: src/features.py:110
 msgid "LibreOffice"
@@ -268,15 +270,16 @@ msgid "Visual effects"
 msgstr "Efeitos visuais"
 
 #: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as transparencies, shadows, etc."
-msgstr "Efeitos visuais como transparências, sombras, etc."
+msgid "Visual effects such as window transparency and shadows"
+msgstr "Efeitos visuais como transparências de janela e sombras"
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
 msgstr "Firewall descomplicado"
 
 #: src/features.py:127
-msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
+msgid ""
+"Installs ufw and denies all traffic by default (use gufw to configure it)"
 msgstr "Instala ufw e nega todo o tráfego por padrão (utilize o gufw para configurá-lo)"
 
 #: src/features.py:131
@@ -284,165 +287,165 @@ msgid "Propietary packages"
 msgstr "Pacotes proprietários"
 
 #: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 and other media"
+msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "Software de terceiros para reproduzir Flash, MP3 e outras mídias"
 
-#: src/installation_advanced.py:190 src/installation_advanced.py:481
-#: src/installation_advanced.py:495
+#: src/installation_advanced.py:194 src/installation_advanced.py:485
+#: src/installation_advanced.py:499
 msgid "free space"
 msgstr "espaço livre"
 
-#: src/installation_advanced.py:259 src/installation_alongside.py:166
+#: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Dispositivo"
 
-#: src/installation_advanced.py:262
+#: src/installation_advanced.py:266
 msgid "Type"
 msgstr "Tipo"
 
-#: src/installation_advanced.py:265
+#: src/installation_advanced.py:269
 msgid "Mount point"
 msgstr "Ponto de montagem"
 
-#: src/installation_advanced.py:268
+#: src/installation_advanced.py:272
 msgid "Label"
 msgstr "Etiqueta"
 
-#: src/installation_advanced.py:274 src/installation_advanced.py:1360
+#: src/installation_advanced.py:278 src/installation_advanced.py:1399
 msgid "Format"
 msgstr "Formatar"
 
-#: src/installation_advanced.py:277
+#: src/installation_advanced.py:281
 msgid "Size"
 msgstr "Tamanho"
 
-#: src/installation_advanced.py:280
+#: src/installation_advanced.py:284
 msgid "Used"
 msgstr "Usado"
 
-#: src/installation_advanced.py:283
+#: src/installation_advanced.py:287
 msgid "Flags"
 msgstr "Sinalizações"
 
-#: src/installation_advanced.py:289
+#: src/installation_advanced.py:293
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:464
+#: src/installation_advanced.py:468
 msgid "none"
 msgstr "nenhum"
 
-#: src/installation_advanced.py:516
+#: src/installation_advanced.py:520
 msgid "extended"
 msgstr "extendido"
 
-#: src/installation_advanced.py:641 src/installation_advanced.py:881
-msgid "Cannot use same mount twice..."
+#: src/installation_advanced.py:645 src/installation_advanced.py:885
+msgid "Can't use same mount point twice..."
 msgstr "Não é possível usar mesmo o mesmo ponto de montagem mais de uma vez..."
 
-#: src/installation_advanced.py:643
+#: src/installation_advanced.py:647
 msgid "Root partition must be formatted..."
 msgstr "Partição root precisa ser formatada..."
 
-#: src/installation_advanced.py:902
+#: src/installation_advanced.py:906
 msgid "Creating primary partition"
 msgstr "Criando partição primária"
 
-#: src/installation_advanced.py:913
+#: src/installation_advanced.py:917
 msgid "Creating extended partition"
 msgstr "Criando partição extendida"
 
-#: src/installation_advanced.py:919
+#: src/installation_advanced.py:923
 msgid "Creating logical partition"
 msgstr "Criando partição lógica"
 
-#: src/installation_advanced.py:1006
+#: src/installation_advanced.py:1033
 msgid "Advanced installation mode"
 msgstr "Modo de instalação avançado"
 
-#: src/installation_advanced.py:1010 ui/installation_advanced.ui:962
+#: src/installation_advanced.py:1037 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
 msgstr "Utilizar este dispositivo para a instalação do boot loader:"
 
-#: src/installation_advanced.py:1020 ui/installation_advanced.ui:884
+#: src/installation_advanced.py:1047 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Nova tabela de partição"
 
-#: src/installation_advanced.py:1028
+#: src/installation_advanced.py:1055
 msgid "Change..."
 msgstr "Mudar..."
 
-#: src/installation_advanced.py:1033 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1060 ui/installation_advanced.ui:97
 msgid "Size:"
 msgstr "Tamanho:"
 
-#: src/installation_advanced.py:1037 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1064 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr "Tipo:"
 
-#: src/installation_advanced.py:1041 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1068 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Primária "
 
-#: src/installation_advanced.py:1045 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1072 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Lógica"
 
-#: src/installation_advanced.py:1049 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Extendida"
 
-#: src/installation_advanced.py:1053 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1080 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
 msgstr "Iniciando em"
 
-#: src/installation_advanced.py:1057 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1084 ui/installation_advanced.ui:219
 msgid "End of this space"
 msgstr "Finalizando em"
 
-#: src/installation_advanced.py:1061 src/installation_advanced.py:1078
-#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:581
+#: src/installation_advanced.py:1088 src/installation_advanced.py:1105
+#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
 msgid "Use as:"
 msgstr "Utilizar como:"
 
-#: src/installation_advanced.py:1065 src/installation_advanced.py:1082
-#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:614
+#: src/installation_advanced.py:1092 src/installation_advanced.py:1109
+#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
 msgid "Mount point:"
 msgstr "Ponto de montagem:"
 
-#: src/installation_advanced.py:1069 src/installation_advanced.py:1086
-#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:651
+#: src/installation_advanced.py:1096 src/installation_advanced.py:1113
+#: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
 msgid "Label (optional):"
 msgstr "Rótulo (opcional):"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:412
-#: ui/installation_advanced.ui:718
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:413
+#: ui/installation_advanced.ui:719
 msgid "Encryption options..."
 msgstr "Opções de encriptação..."
 
-#: src/installation_advanced.py:1090 ui/installation_advanced.ui:678
+#: src/installation_advanced.py:1117 ui/installation_advanced.ui:679
 msgid "Format:"
 msgstr "Formato:"
 
-#: src/installation_advanced.py:1095 ui/installation_advanced.ui:486
+#: src/installation_advanced.py:1122 ui/installation_advanced.ui:487
 msgid "Partition table type:"
 msgstr "Tipo da tabela de partição:"
 
-#: src/installation_advanced.py:1100
+#: src/installation_advanced.py:1127
 msgid "Create partition table"
 msgstr "Criar tabela de partições"
 
-#: src/installation_advanced.py:1103 src/installation_alongside.py:144
+#: src/installation_advanced.py:1130 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
 msgid "Install now!"
 msgstr "Instalar agora!"
 
-#: src/installation_advanced.py:1183
+#: src/installation_advanced.py:1210
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Criando uma nova partição do tipo %s no disco %s"
 
-#: src/installation_advanced.py:1282
+#: src/installation_advanced.py:1315
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -450,7 +453,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s está montada como swap.\nPara continuar, a partição deve ser desmontada.\nPressione 'Sim' para desmontar, ou 'Não' para retornar\n"
 
-#: src/installation_advanced.py:1284
+#: src/installation_advanced.py:1317
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -458,42 +461,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s está montada em '%s'.\nPara continuar, a partição deve ser desmontada.\nPressione 'Sim' para desmontar, ou 'Não' para retornar\n"
 
-#: src/installation_advanced.py:1353
+#: src/installation_advanced.py:1392
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "A partição %s será excluída"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Partition"
 msgstr "Partição"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "New"
 msgstr "Novo"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Relabel"
 msgstr "Renomear"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Mount"
 msgstr "Montagem"
 
-#: src/installation_advanced.py:1381
+#: src/installation_advanced.py:1420
 msgid "These disks will have partition actions:"
 msgstr "Estes discos serão particionados:"
 
-#: src/installation_advanced.py:1406
+#: src/installation_advanced.py:1445
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Salvar as alterações feitas em %s"
 
-#: src/installation_advanced.py:1421
+#: src/installation_advanced.py:1463
 #, python-format
-msgid "Creating fs of type %s in %s with label %s"
-msgstr "Criando sistema de arquivo do tipo %s em %s com nome %s"
+msgid "Creating fs of type %s in %s with label %s - format: %s"
+msgstr "Criando sistema de arquivos do tipo %s em %s com nome %s - formato: %s"
 
-#: src/installation_advanced.py:1502
+#: src/installation_advanced.py:1552
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro instalará o bootloader do tipo %s em %s"
@@ -504,7 +507,7 @@ msgid "Can't load %s css"
 msgstr "Não foi possível carregar o css %s"
 
 #: src/installation_alongside.py:136
-msgid "Choose next to which OS you want to install Manjaro"
+msgid "Choose which OS you want to install Manjaro next to"
 msgstr "Escolha o sistema operacional ao lado do qual o Manjaro será instalado"
 
 #: src/installation_alongside.py:140
@@ -520,47 +523,47 @@ msgid "Filesystem"
 msgstr "Sistema de arquivos"
 
 #: src/installation_alongside.py:216
-msgid "In alongside install, can't create list of partitions"
+msgid "In alongside install: can't create list of partitions"
 msgstr "Na instalação conjunta, não foi possível criar lista de partições"
 
 #: src/installation_alongside.py:256
-msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr "Não foi possível encolher a partição (talvez ela esteja quase cheia)"
+msgid "Can't shrink the partition (maybe it's nearly full?)"
+msgstr "Não foi possível encolher a partição (talvez ela esteja quase cheia?)"
 
-#: src/installation_ask.py:110
+#: src/installation_ask.py:114
 msgid "Installation type"
 msgstr "Tipo de instalação"
 
-#: src/installation_ask.py:120 ui/installation_ask.ui:33
+#: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Apagar todo o disco e instalar o Manjaro (automático)"
 
-#: src/installation_ask.py:123
+#: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
 msgstr "Aviso: Isto apagará todos os dados em seu disco"
 
-#: src/installation_ask.py:130
+#: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Instalar o Manjaro ao lado do %s"
 
-#: src/installation_ask.py:133
-msgid "Install this OS alongside the other OSes you have already installed."
+#: src/installation_ask.py:137
+msgid "Install this OS alongside the other OSes you already have installed."
 msgstr "Instalar este sistema operacional ao lado de outros que já estão instalados."
 
-#: src/installation_ask.py:139
-msgid "Manage your partitions where to install Manjaro (advanced)"
+#: src/installation_ask.py:143
+msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "Gerenciar as partições da instação do Manjaro (avançado)"
 
-#: src/installation_ask.py:142
-msgid "Create/delete partitions, and also choose additional mount points."
-msgstr "Criar / apagar partições, e escolher os pontos de montagem adicionais."
+#: src/installation_ask.py:146
+msgid "Create and delete partitions, and choose additional mount points."
+msgstr "Criar e apagar partições, e escolher os pontos de montagem adicionais."
 
-#: src/installation_ask.py:162
+#: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
 msgstr "A instação do Manjaro será criptografada"
 
-#: src/installation_ask.py:165
+#: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro será instalado utilizando-se uma configuração LVM"
 
@@ -574,7 +577,7 @@ msgstr "Selecione o disco:"
 
 #: src/installation_automatic.py:82
 msgid ""
-"WARNING! This installation mode will overwrite everything in your drive!"
+"WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "AVISO! Este modo de instalação irá sobrescrever todo o conteúdo do seu disco!"
 
 #: src/installation_automatic.py:87 ui/installation_automatic.ui:32
@@ -657,96 +660,96 @@ msgstr "Não foi possível desmontar %s"
 msgid "Create fstab."
 msgstr "Criar fstab."
 
-#: src/installation_process.py:654
+#: src/installation_process.py:658
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Instalando o boot loader GRUB(2) BIOS em %s"
 
-#: src/installation_process.py:684
+#: src/installation_process.py:688
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB (2) BIOS foi instalado com sucesso."
 
-#: src/installation_process.py:686
+#: src/installation_process.py:690
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "Erro ao instalar o GRUB (2) BIOS."
 
-#: src/installation_process.py:697
+#: src/installation_process.py:701
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Instalando o GRUB(2) UEFI %s boot loader em %s"
 
-#: src/installation_process.py:725
+#: src/installation_process.py:729
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr "ERRO instalando o arquivo de configuração do GRUB(2)."
+msgstr "ERRO ao instalar arquivo de configuração do GRUB(2)."
 
-#: src/installation_process.py:753
+#: src/installation_process.py:757
 msgid "ERROR installing GRUB(2) locale."
-msgstr "ERRO instalando o locale do GRUB(2)."
+msgstr "ERRO ao instalar o locale do GRUB(2)."
 
-#: src/installation_process.py:767
+#: src/installation_process.py:771
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Erro ao criar hash de senha para o usuário %s"
 
-#: src/installation_process.py:773
+#: src/installation_process.py:777
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Erro ao alterar a senha para o usuário %s"
 
-#: src/installation_process.py:887
+#: src/installation_process.py:892
 msgid "Configuring your new system"
 msgstr "Configurando seu novo sistema"
 
-#: src/installation_process.py:961
+#: src/installation_process.py:966
 msgid "Generating locales..."
 msgstr "Gerando locales..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:986
 msgid "Adjusting hardware clock..."
 msgstr "Ajustando o hardware clock..."
 
-#: src/installation_process.py:987
-msgid "Configuring hardware.."
+#: src/installation_process.py:992
+msgid "Configuring hardware..."
 msgstr "Configurando o hardware..."
 
-#: src/installation_process.py:994
-msgid "Setup graphic card.."
+#: src/installation_process.py:999
+msgid "Set up graphics card..."
 msgstr "Configurando a placa de vídeo..."
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1006
 msgid "Can't execute the MHWD script"
 msgstr "Não foi possível executar o script MHWD"
 
-#: src/installation_process.py:1007
-msgid "Configure display manager.."
+#: src/installation_process.py:1012
+msgid "Configure display manager..."
 msgstr "Configurando o display manager..."
 
-#: src/installation_process.py:1106
-msgid "Configure System.."
+#: src/installation_process.py:1111
+msgid "Configure System..."
 msgstr "Configurando o sistema..."
 
-#: src/installation_process.py:1134
+#: src/installation_process.py:1139
 msgid "Removing live configuration (packages)"
 msgstr "Removendo a confuguração live (pacotes)"
 
-#: src/installation_process.py:1150
+#: src/installation_process.py:1155
 msgid "Configuring package manager"
 msgstr "Configurando o gerenciador de pacotes"
 
-#: src/installation_process.py:1165
+#: src/installation_process.py:1170
 msgid "Finished configuring package manager."
 msgstr "Fim da configuração do gerenciador de pacotes."
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1194
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Habilitar login automático para o usuário %s."
 
-#: src/installation_process.py:1267
+#: src/installation_process.py:1273
 msgid "Running mkinitcpio..."
 msgstr "Executando mkinitcpio..."
 
-#: src/installation_process.py:1270
+#: src/installation_process.py:1276
 msgid "Running mkinitcpio... done"
 msgstr "Executando mkinitcpio... finalizado"
 
@@ -857,7 +860,7 @@ msgstr "Instalação finalizada!\nDeseja reiniciar o sistema ?"
 
 #: src/slides.py:99
 msgid "Installing Manjaro..."
-msgstr "Instando o Manjaro..."
+msgstr "Instalando o Manjaro..."
 
 #: src/slides.py:104
 msgid "Please wait..."
@@ -885,8 +888,8 @@ msgid "Can't autodetect timezone coordinates"
 msgstr "Não foi possível detectar automaticamente as coordenadas de fuso horário"
 
 #: src/timezone.py:279
-msgid "Stoping timezone threads..."
-msgstr "Finalizando as threads de fuso horário..."
+msgid "Stopping timezone threads..."
+msgstr "Parando as threads de fuso horário..."
 
 #: src/timezone.py:309 src/timezone.py:360
 msgid "In timezone, can't get network status"
@@ -895,15 +898,6 @@ msgstr "No fuso horário, não foi possível recuperar o estado da rede"
 #: src/timezone.py:384
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Não é possível obter o código do país usado para criar um mirrorlist do pacman"
-
-#: src/timezone.py:405
-#, python-format
-msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
-msgstr "Transferido a mirrorlist específico para o pacman com base no código do país %s"
-
-#: src/timezone.py:407
-msgid "Couldn't generate mirrorlist for pacman based on country code"
-msgstr "Não foi possível gerar o mirrorlist para o pacman com base no código do país"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
@@ -942,7 +936,7 @@ msgid "Confirm password"
 msgstr "Confimar senha"
 
 #: src/user_info.py:119
-msgid "The name it uses when it talks to other computers."
+msgid "Its name as it appears to other computers."
 msgstr "O nome que ele usa quando conversa com outros computadores."
 
 #: src/user_info.py:123
@@ -1140,9 +1134,8 @@ msgid "Installing %s (%d/%d)"
 msgstr "Instalando %s (%d/%d)"
 
 #: src/pacman/pac.py:407
-#, python-format
-msgid "Checking and loading packages... [%s]"
-msgstr "Checando e carregando pacotes... [%s]"
+msgid "Checking and loading packages..."
+msgstr "Checando e carregando pacotes..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
@@ -1165,8 +1158,8 @@ msgid "<span weight='bold' size='large'>Bluetooth support</span>"
 msgstr "<span weight='bold' size='large'>Suporte ao Bluetooth</span>"
 
 #: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
-msgstr "<span weight='bold' size='large'>Suporte à impressão (cups)</span>"
+msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
+msgstr "<span weight='bold' size='large'>Suporte à impressão (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
@@ -1189,7 +1182,7 @@ msgid "Activates your firewall (closes all ports by default)"
 msgstr "Ativa seu firewall (fecha todas as portas por padrão)"
 
 #: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Propietary packages</span>"
+msgid "<span weight='bold' size='large'>Proprietary packages</span>"
 msgstr "<span weight='bold' size='large'>Pacotes proprietários</span>"
 
 #: ui/installation_advanced.ui:73
@@ -1204,18 +1197,18 @@ msgstr "Localidade:"
 msgid "MB"
 msgstr "MB"
 
-#: ui/installation_advanced.ui:557
+#: ui/installation_advanced.ui:558
 msgid "Edit partition"
 msgstr "Editar partição"
 
-#: ui/installation_advanced.ui:898
+#: ui/installation_advanced.ui:899
 msgid "LVM..."
 msgstr "LVM..."
 
 #: ui/installation_alongside.ui:16
 msgid ""
-"<span size=\"large\">Choose next to which OS you want to install "
-"Manjaro</span>"
+"<span size=\"large\">Choose which OS you want to install Manjaro next "
+"to</span>"
 msgstr "<span size=\"large\">Selecione o sistema operacional ao lado do qual você deseja instalar o Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
@@ -1237,8 +1230,8 @@ msgid ""
 msgstr "<span weight=\"light\" size=\"small\">Aviso: Isto irá apagar todos os programas, documentos, fotos, músicas e todos os outros arquivos do seu disco</span>"
 
 #: ui/installation_ask.ui:69
-msgid "Encrypts the new Manjaro installation for security"
-msgstr "Criptografa a instação do Manjaro por segurança"
+msgid "Encrypts the new Manjaro installation for better security"
+msgstr "Criptografa a nova instação do Manjaro por segurança"
 
 #: ui/installation_ask.ui:90
 msgid ""
@@ -1252,9 +1245,9 @@ msgstr "Utilize o LVM com a instalação do Manjaro"
 
 #: ui/installation_ask.ui:122
 msgid ""
-"<span weight=\"light\" size=\"small\">This will setup LVM allowing to make "
-"snapshots and changing partition sizes in an easy way</span>"
-msgstr "<span weight=\"light\" size=\"small\">Isto irá configurar o LVM permitindo a criação de snapshots e mudança nos tamanhos das partições de forma simplificada</span>"
+"<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
+"make snapshots and change partition sizes in a straightforward way</span>"
+msgstr "<span weight=\"light\" size=\"small\">Isto irá configurar o LVM permitindo a criação de snapshots e a mudança dos tamanhos das partições de forma simplificada</span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
@@ -1263,7 +1256,7 @@ msgstr "Instando junto a outros sistemas operacionais"
 #: ui/installation_ask.ui:159
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
-"installing Manjaro alongside one of the other OSes that you have already "
+"installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Com esta opção o Manjaro será instalado junto a outro sistema operacional que você já possua no computador.</span>"
 
@@ -1280,7 +1273,7 @@ msgstr "<span weight=\"light\" size=\"small\">Você poderá criar/exluir partiç
 
 #: ui/installation_automatic.ui:18
 msgid ""
-"<b>WARNING! This installation mode will overwrite everything in your "
+"<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
 msgstr "<b>AVISO! Este modo de instalação irá sobrescrever todo o conteúdo de seu disco!</b>"
 
@@ -1293,7 +1286,7 @@ msgid ""
 "<span weight='bold'>This is an Alpha version.</span>\n"
 "\n"
 "\n"
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other \" advanced setups.\n"
+"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups.\n"
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
@@ -1328,9 +1321,7 @@ msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
 msgstr "<small><span color=\"darkred\">Você deve digitar um nome</span></small>"
 
 #: ui/user_info.ui:447
-msgid ""
-"<span size=\"small\">The name it uses when it talks to other "
-"computers.</span>"
+msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">O nome utilizado para conversar com outros computadores.</span>"
 
 #: ui/welcome.ui:151

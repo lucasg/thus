@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-15 19:41+0200\n"
-"PO-Revision-Date: 2013-10-15 17:50+0000\n"
+"POT-Creation-Date: 2013-10-21 19:57+0200\n"
+"PO-Revision-Date: 2013-10-21 18:00+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/manjaro-thus/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -23,19 +23,19 @@ msgstr ""
 
 #: thus.py:105
 msgid ""
-"This installer must be run with administrative privileges, and cannot "
+"This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr "Installationen måste köras med administratörsrättigheter och kan inte fortsätta utan det."
+msgstr ""
 
 #: thus.py:111
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
 "\n"
-"If you are sure that the installer is not already running\n"
+"If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Du kan inte köra två installationer samtidigt.\n\nOm du är säker på att installationen inte redan körs kan du manuellt ta bort filen %s och starta om installationen."
+msgstr ""
 
 #: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
@@ -64,8 +64,8 @@ msgid "What is your boot system type?"
 msgstr "Vad är ditt startsystem?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
-msgid "BIOS (Common)"
-msgstr "BIOS (gemensam)"
+msgid "BIOS (common)"
+msgstr ""
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -76,16 +76,16 @@ msgid "i386 UEFI"
 msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
-msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr "Välj 'avbryt' om du inte vill installera en starthanterare"
+msgid "Choose 'Cancel' if you don't want to install a boot loader"
+msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
 msgstr "Kontrollera din dator"
 
 #: src/check.py:73
-msgid "has at least 3GB available drive space"
-msgstr "har åtminstone 3GB tillgängligt diskutrymme"
+msgid "has at least 3GB available disk space"
+msgstr ""
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -101,10 +101,10 @@ msgstr "För bästa resultat, se till att den här datorn:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
-"Manjaro uses third-party software to play Flash, MP3 and other media. Some "
-"of this software is propietary. The software is subject to license terms "
-"included with its documentation."
-msgstr "Manjaro använder tredjepartsmjukvara för att spela upp Flash, MP3 och andra media. Några av dessa mjukvaror är proprietära. I dokumentationen för mjukvarorna finns licensvillkoren."
+"Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
+"media. Some of this software is proprietary. The software is subject to "
+"license terms included with its documentation."
+msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
@@ -123,79 +123,81 @@ msgid "We're connected to a power source."
 msgstr "Vi är ansluten till en kraftkälla."
 
 #: src/check.py:195
-msgid "We have enough space in disk."
-msgstr "Vi har tillräckligt med diskutrymme."
+msgid "We have enough disk space."
+msgstr ""
 
 #: src/desktop.py:76
 msgid ""
-"Gnome 3 is an easy and elegant way to use your computer. It is designed to "
+"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr "Gnome 3 är ett enkel och elegant sätt att använda din dator. Den är designad att låta dig ha kontrollen och ge frihet åt alla. GNOME 3 är utvecklad av Gnome gemenskapen, en internationell grupp av medarbetare."
+msgstr ""
 
 #: src/desktop.py:83
 msgid ""
-"Cinnamon it's a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the desktop"
-" metaphor, like GNOME 2"
-msgstr "Cinnamon är en avknoppning av Gnome Shell, ursprungligen utvecklad av (och för) Linux Mint. Den försöker framställa en mer traditionell användarmiljö baserad på skrivbordens metafor, som Gnome 2."
+"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
+"attempts to provide a more traditional user environment based on the GNOME2 "
+"desktop metaphor"
+msgstr ""
 
 #: src/desktop.py:90
 msgid ""
-"Xfce is a lightweight desktop environment for UNIX-like operating systems. "
-"It aims to be fast and low on system resources, while still being visually "
-"appealing and user friendly."
-msgstr "Xfce är en lättviktsmiljö för skrivbordet för UNIX-liknande operativsystem. Dess mål är att vara snabbt och ta like resurser i anspråk, samtidigt som den är visuellt attraktiv och användarvänlig."
+"XFCE is a lightweight desktop environment which aims to be light on system "
+"resources while still being visually appealing, fully-featured, and easy to "
+"use."
+msgstr ""
 
-#: src/desktop.py:97
+#: src/desktop.py:96
 msgid ""
-"Extremely fast-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard short "
-"cuts and additional features like tabbed file browsing."
-msgstr "Extremt snabb och energibesparande skrivbordsmiljö. Den kommer med ett vackert gränssnitt, stöd för många språk, standardiserade genvägar för tangentbordet samt ytterligare egenskaper som filhanterare med flikar."
+"LXDE is a high-performing and energy-saving desktop environment. It comes "
+"with a beautiful interface, multi-language support, standard keyboard "
+"shortcuts and additional features like tabbed file browsing."
+msgstr ""
 
-#: src/desktop.py:104
+#: src/desktop.py:103
 msgid ""
-"Openbox is a highly configurable, next generation window manager with extensive standards support.\n"
+"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox är en mycket konfigurerbar, nästa generationens fönsterhanterare med stort stöd för standarder. *box-ens visuella stil är välkänd för sitt minimalistiska utseende."
+msgstr ""
 
-#: src/desktop.py:111
+#: src/desktop.py:110
 msgid ""
-"Enlightenment is not just a window manager for Linux/X11 and others, but "
-"also a whole suite of libraries to help you create beautiful user interfaces"
-" with much less work"
-msgstr "Enlightenment är inte bara en fönsterhanterare för Linux/X11 och andra, utan också en hel serie med bibliotek för att hjälpa dig att skapa vackra användargränssnitt med mycket mindre ansträngning."
+"Enlightenment is a lean, fast, modular and very extensible window manager "
+"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
+" you need to operate your desktop (or laptop). "
+msgstr ""
 
-#: src/desktop.py:117
+#: src/desktop.py:116
 msgid ""
-"The KDE Community is an international technology team dedicated to creating "
-"a free and user-friendly computing experience, offering an advanced "
-"graphical desktop and a wide variety of applications."
-msgstr "KDE gemenskapen är en internationell teknologisk grupp engagerad att skapa en fri och användarvänlig datorupplevelse och erbjuder en avancerad grafisk skrivbordsmiljö och en stor bredd på applikationerna."
+"The KDE Desktop offers a beautiful looking desktop that takes complete "
+"advantage of modern computing technology. Through the use of visual effects "
+"and scalable graphics, the desktop experience is not only smooth but also "
+"pleasant to the eye."
+msgstr ""
 
-#: src/desktop.py:124
+#: src/desktop.py:123
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
 msgstr "Razor-qt är en avancerad, lättanvänd och snabb skrivbordsmiljö baserad på Qt teknik. Den har skräddarsytts för användare som värderar enkelhet, snabbhet och ett intuitivt gränssnitt."
 
-#: src/desktop.py:131
+#: src/desktop.py:130
 msgid ""
-"This will install Manjaro as command-line system, without any desktop at "
-"all. After the installation you can install the desktop you may see fit."
-msgstr "Detta installerar Manjaro som ett kommandotolkssystem, utan någon skrivbordsmiljö. Efter installationen kan du installera valfri skrivbordsmiljö."
+"This will install Manjaro as command-line system, without any desktop "
+"environment at all. After the installation you can optionally install the "
+"environment of your choice."
+msgstr ""
 
-#: src/desktop.py:143
+#: src/desktop.py:142
 msgid "Select your desktop"
 msgstr "Välj din skrivbordsmiljö"
 
-#: src/desktop.py:153
+#: src/desktop.py:152
 msgid "Desktops"
 msgstr "Skrivbord"
 
-#: src/desktop.py:186
+#: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
 msgstr "Thus kommer att installera Manjaro med skrivbordsmiljön '%s'."
@@ -241,16 +243,16 @@ msgid "Bluetooth support"
 msgstr "Bluetooth-stöd"
 
 #: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you can't use Bluetooth devices"
-msgstr "Utan Bluetooth-stöd kan du inte använda Bluetooth-anslutna enheter."
+msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
+msgstr ""
 
 #: src/features.py:103
-msgid "Printing support (cups)"
-msgstr "Skrivarstöd (cups)"
+msgid "Printing support (CUPS)"
+msgstr ""
 
 #: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and manage tools"
-msgstr "Detta inkluderar drivrutiner och verktyg för skrivare"
+msgid "This includes printer drivers and management tools"
+msgstr ""
 
 #: src/features.py:110
 msgid "LibreOffice"
@@ -265,181 +267,182 @@ msgid "Visual effects"
 msgstr "Visuella effekter"
 
 #: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as transparencies, shadows, etc."
-msgstr "Visuella effekter såsom genomskinlighet, skuggor och så vidare."
+msgid "Visual effects such as window transparency and shadows"
+msgstr ""
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
 msgstr "Okomplicerad brandvägg"
 
 #: src/features.py:127
-msgid "Installs ufw and denies all traffic by default (use gufw to setup it)"
-msgstr "Installerar ufw (brandvägg) och blockar all trafik som standard (använd gufw för att ställa in den)"
+msgid ""
+"Installs ufw and denies all traffic by default (use gufw to configure it)"
+msgstr ""
 
 #: src/features.py:131
 msgid "Propietary packages"
 msgstr "Proprietära paket"
 
 #: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 and other media"
-msgstr "Tredjepartsmjukvara för att spela Flash, MP3 och andra media"
+msgid "Third-party software to play Flash, MP3 files, and other media"
+msgstr ""
 
-#: src/installation_advanced.py:190 src/installation_advanced.py:481
-#: src/installation_advanced.py:495
+#: src/installation_advanced.py:194 src/installation_advanced.py:485
+#: src/installation_advanced.py:499
 msgid "free space"
 msgstr "tillgängligt utrymme"
 
-#: src/installation_advanced.py:259 src/installation_alongside.py:166
+#: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Enhet"
 
-#: src/installation_advanced.py:262
+#: src/installation_advanced.py:266
 msgid "Type"
 msgstr "Typ"
 
-#: src/installation_advanced.py:265
+#: src/installation_advanced.py:269
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: src/installation_advanced.py:268
+#: src/installation_advanced.py:272
 msgid "Label"
 msgstr "Etikett"
 
-#: src/installation_advanced.py:274 src/installation_advanced.py:1360
+#: src/installation_advanced.py:278 src/installation_advanced.py:1399
 msgid "Format"
 msgstr "Formattera"
 
-#: src/installation_advanced.py:277
+#: src/installation_advanced.py:281
 msgid "Size"
 msgstr "Storlek"
 
-#: src/installation_advanced.py:280
+#: src/installation_advanced.py:284
 msgid "Used"
 msgstr "Använd"
 
-#: src/installation_advanced.py:283
+#: src/installation_advanced.py:287
 msgid "Flags"
 msgstr "Flaggor"
 
-#: src/installation_advanced.py:289
+#: src/installation_advanced.py:293
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:464
+#: src/installation_advanced.py:468
 msgid "none"
 msgstr "ingen"
 
-#: src/installation_advanced.py:516
+#: src/installation_advanced.py:520
 msgid "extended"
 msgstr "utökad"
 
-#: src/installation_advanced.py:641 src/installation_advanced.py:881
-msgid "Cannot use same mount twice..."
-msgstr "Kan inte använda samma monteringspunkt två gånger..."
+#: src/installation_advanced.py:645 src/installation_advanced.py:885
+msgid "Can't use same mount point twice..."
+msgstr ""
 
-#: src/installation_advanced.py:643
+#: src/installation_advanced.py:647
 msgid "Root partition must be formatted..."
 msgstr "Rootpartitionen måste vara formaterad.."
 
-#: src/installation_advanced.py:902
+#: src/installation_advanced.py:906
 msgid "Creating primary partition"
 msgstr "Skapar primär partition"
 
-#: src/installation_advanced.py:913
+#: src/installation_advanced.py:917
 msgid "Creating extended partition"
 msgstr "Skapar utökad partition"
 
-#: src/installation_advanced.py:919
+#: src/installation_advanced.py:923
 msgid "Creating logical partition"
 msgstr "Skapar logisk partition"
 
-#: src/installation_advanced.py:1006
+#: src/installation_advanced.py:1033
 msgid "Advanced installation mode"
 msgstr "Avancerad installationsmetod"
 
-#: src/installation_advanced.py:1010 ui/installation_advanced.ui:962
+#: src/installation_advanced.py:1037 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
 msgstr "Använd den här enheten för att installera starthanteraren:"
 
-#: src/installation_advanced.py:1020 ui/installation_advanced.ui:884
+#: src/installation_advanced.py:1047 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Ny partionstabell"
 
-#: src/installation_advanced.py:1028
+#: src/installation_advanced.py:1055
 msgid "Change..."
 msgstr "Ändra..."
 
-#: src/installation_advanced.py:1033 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1060 ui/installation_advanced.ui:97
 msgid "Size:"
 msgstr "Storlek:"
 
-#: src/installation_advanced.py:1037 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1064 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/installation_advanced.py:1041 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1068 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Primär"
 
-#: src/installation_advanced.py:1045 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1072 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Logisk"
 
-#: src/installation_advanced.py:1049 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Utökad"
 
-#: src/installation_advanced.py:1053 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1080 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
 msgstr "Början av detta utrymme"
 
-#: src/installation_advanced.py:1057 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1084 ui/installation_advanced.ui:219
 msgid "End of this space"
 msgstr "Slutet av detta utrymme"
 
-#: src/installation_advanced.py:1061 src/installation_advanced.py:1078
-#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:581
+#: src/installation_advanced.py:1088 src/installation_advanced.py:1105
+#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
 msgid "Use as:"
 msgstr "Använd som:"
 
-#: src/installation_advanced.py:1065 src/installation_advanced.py:1082
-#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:614
+#: src/installation_advanced.py:1092 src/installation_advanced.py:1109
+#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
 msgid "Mount point:"
 msgstr "Monteringspunkt"
 
-#: src/installation_advanced.py:1069 src/installation_advanced.py:1086
-#: ui/installation_advanced.ui:376 ui/installation_advanced.ui:651
+#: src/installation_advanced.py:1096 src/installation_advanced.py:1113
+#: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
 msgid "Label (optional):"
 msgstr "Etikett (valfritt):"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:412
-#: ui/installation_advanced.ui:718
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:413
+#: ui/installation_advanced.ui:719
 msgid "Encryption options..."
 msgstr "Krypteringsalternativ..."
 
-#: src/installation_advanced.py:1090 ui/installation_advanced.ui:678
+#: src/installation_advanced.py:1117 ui/installation_advanced.ui:679
 msgid "Format:"
 msgstr "Formattera:"
 
-#: src/installation_advanced.py:1095 ui/installation_advanced.ui:486
+#: src/installation_advanced.py:1122 ui/installation_advanced.ui:487
 msgid "Partition table type:"
 msgstr "Typ av partitionstabell:"
 
-#: src/installation_advanced.py:1100
+#: src/installation_advanced.py:1127
 msgid "Create partition table"
 msgstr "Skapa partitionstabell"
 
-#: src/installation_advanced.py:1103 src/installation_alongside.py:144
+#: src/installation_advanced.py:1130 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
 msgid "Install now!"
 msgstr "Installera nu!"
 
-#: src/installation_advanced.py:1183
+#: src/installation_advanced.py:1210
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Skapar en ny partitionstabell med typen %s för disk %s"
 
-#: src/installation_advanced.py:1282
+#: src/installation_advanced.py:1315
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -447,7 +450,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s är monterad som swap.\nFör att fortsätta måste du avmontera den.\nTryck Ja för att avmontera den eller Nej för att gå tillbaka.\n"
 
-#: src/installation_advanced.py:1284
+#: src/installation_advanced.py:1317
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -455,42 +458,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s är monterad i '%s'.\nFör att fortsätta måste den avmonteras.\nKlicka Ja för att avmontera eller Nej för att återgå\n"
 
-#: src/installation_advanced.py:1353
+#: src/installation_advanced.py:1392
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Partition %s kommer att tas bort"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Partition"
 msgstr "Partition"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "New"
 msgstr "Ny"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Relabel"
 msgstr "Ändra etikett"
 
-#: src/installation_advanced.py:1360
+#: src/installation_advanced.py:1399
 msgid "Mount"
 msgstr "Montera"
 
-#: src/installation_advanced.py:1381
+#: src/installation_advanced.py:1420
 msgid "These disks will have partition actions:"
 msgstr "För dessa diskar kommer partitionerna att påverkas:"
 
-#: src/installation_advanced.py:1406
+#: src/installation_advanced.py:1445
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Sparar ändringar gjorda på %s"
 
-#: src/installation_advanced.py:1421
+#: src/installation_advanced.py:1463
 #, python-format
-msgid "Creating fs of type %s in %s with label %s"
-msgstr "Skapar filsystem av typen %s i %s med etiketten %s"
+msgid "Creating fs of type %s in %s with label %s - format: %s"
+msgstr ""
 
-#: src/installation_advanced.py:1502
+#: src/installation_advanced.py:1552
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro kommer att installera bootloadern, av typen %s, på %s"
@@ -501,8 +504,8 @@ msgid "Can't load %s css"
 msgstr "Kan inte ladda %s css"
 
 #: src/installation_alongside.py:136
-msgid "Choose next to which OS you want to install Manjaro"
-msgstr "Välj bredvid vilket operativsystem du vill installera Manjaro"
+msgid "Choose which OS you want to install Manjaro next to"
+msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
@@ -517,47 +520,47 @@ msgid "Filesystem"
 msgstr "Filsystem"
 
 #: src/installation_alongside.py:216
-msgid "In alongside install, can't create list of partitions"
-msgstr "Kan inte skapa lista på partitioner vid installation parallellt."
+msgid "In alongside install: can't create list of partitions"
+msgstr ""
 
 #: src/installation_alongside.py:256
-msgid "Can't shrink the partition (maybe it's nearly full)"
-msgstr "Kan inte krympa partitionen (den kanske saknar tillräckligt med fritt utrymme)"
+msgid "Can't shrink the partition (maybe it's nearly full?)"
+msgstr ""
 
-#: src/installation_ask.py:110
+#: src/installation_ask.py:114
 msgid "Installation type"
 msgstr "Typ av installation"
 
-#: src/installation_ask.py:120 ui/installation_ask.ui:33
+#: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Rensa disken och installera Manjaro (automatisk)"
 
-#: src/installation_ask.py:123
+#: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
 msgstr "Varning: Det här kommer att ta bort all data på din disk"
 
-#: src/installation_ask.py:130
+#: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Installera Manjaro bredvid %s"
 
-#: src/installation_ask.py:133
-msgid "Install this OS alongside the other OSes you have already installed."
-msgstr "Installera det här operativsystemet parallellt med de andra systemen du redan har installerat."
+#: src/installation_ask.py:137
+msgid "Install this OS alongside the other OSes you already have installed."
+msgstr ""
 
-#: src/installation_ask.py:139
-msgid "Manage your partitions where to install Manjaro (advanced)"
-msgstr "Hantera partitionerna där du vill installera Manjaro (avancerat)"
+#: src/installation_ask.py:143
+msgid "Manage your partitions and where to install Manjaro (advanced)"
+msgstr ""
 
-#: src/installation_ask.py:142
-msgid "Create/delete partitions, and also choose additional mount points."
-msgstr "Skapa/ta bort partitioner och även välja ytterligare montagepunkter."
+#: src/installation_ask.py:146
+msgid "Create and delete partitions, and choose additional mount points."
+msgstr ""
 
-#: src/installation_ask.py:162
+#: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
 msgstr "Installationen av Manjaro är krypterad"
 
-#: src/installation_ask.py:165
+#: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro installeras med LVM-uppsättning"
 
@@ -571,8 +574,8 @@ msgstr "Välj enhet:"
 
 #: src/installation_automatic.py:82
 msgid ""
-"WARNING! This installation mode will overwrite everything in your drive!"
-msgstr "VARNING! Den här installationsmetoden kommer att skriva över allt på din disk!"
+"WARNING! This installation mode will overwrite everything on your drive!"
+msgstr ""
 
 #: src/installation_automatic.py:87 ui/installation_automatic.ui:32
 msgid ""
@@ -654,96 +657,96 @@ msgstr ""
 msgid "Create fstab."
 msgstr ""
 
-#: src/installation_process.py:654
+#: src/installation_process.py:658
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installerar GRUB(2) BIOS starthanterare i %s"
 
-#: src/installation_process.py:684
+#: src/installation_process.py:688
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS har installerats utan problem."
 
-#: src/installation_process.py:686
+#: src/installation_process.py:690
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "FEL vid installation av GRUB(2) BIOS."
 
-#: src/installation_process.py:697
+#: src/installation_process.py:701
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installerar GRUB(2) UEFI %s starthanterare i %s"
 
-#: src/installation_process.py:725
+#: src/installation_process.py:729
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr ""
 
-#: src/installation_process.py:753
+#: src/installation_process.py:757
 msgid "ERROR installing GRUB(2) locale."
 msgstr ""
 
-#: src/installation_process.py:767
+#: src/installation_process.py:771
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Fel vid skapande av lösenordskryptering för användare %s"
 
-#: src/installation_process.py:773
+#: src/installation_process.py:777
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Fel när lösenordet ändrades för användare %s"
 
-#: src/installation_process.py:887
+#: src/installation_process.py:892
 msgid "Configuring your new system"
 msgstr "Konfigurerar ditt nya system"
 
-#: src/installation_process.py:961
+#: src/installation_process.py:966
 msgid "Generating locales..."
 msgstr "Genererar språk..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:986
 msgid "Adjusting hardware clock..."
 msgstr "Uppdaterar klockan..."
 
-#: src/installation_process.py:987
-msgid "Configuring hardware.."
-msgstr "Konfigurerar hårdvara..."
+#: src/installation_process.py:992
+msgid "Configuring hardware..."
+msgstr ""
 
-#: src/installation_process.py:994
-msgid "Setup graphic card.."
-msgstr "Installerar grafikkort..."
+#: src/installation_process.py:999
+msgid "Set up graphics card..."
+msgstr ""
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1006
 msgid "Can't execute the MHWD script"
 msgstr "Kan inte exekvera MHWD-skriptet"
 
-#: src/installation_process.py:1007
-msgid "Configure display manager.."
-msgstr "Konfigurerar grafikhanterare..."
+#: src/installation_process.py:1012
+msgid "Configure display manager..."
+msgstr ""
 
-#: src/installation_process.py:1106
-msgid "Configure System.."
-msgstr "Konfigurerar System..."
+#: src/installation_process.py:1111
+msgid "Configure System..."
+msgstr ""
 
-#: src/installation_process.py:1134
+#: src/installation_process.py:1139
 msgid "Removing live configuration (packages)"
 msgstr "Tar bort live-konfiguration (paket)"
 
-#: src/installation_process.py:1150
+#: src/installation_process.py:1155
 msgid "Configuring package manager"
 msgstr "Konfigurerar pakethanterare..."
 
-#: src/installation_process.py:1165
+#: src/installation_process.py:1170
 msgid "Finished configuring package manager."
 msgstr "Konfigurering av pakethanterare klar."
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1194
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr ""
 
-#: src/installation_process.py:1267
+#: src/installation_process.py:1273
 msgid "Running mkinitcpio..."
 msgstr "Kör mkinitcpio..."
 
-#: src/installation_process.py:1270
+#: src/installation_process.py:1276
 msgid "Running mkinitcpio... done"
 msgstr "Kör mkinitcpio... Klar"
 
@@ -882,8 +885,8 @@ msgid "Can't autodetect timezone coordinates"
 msgstr "Kan inte automatiskt känna av koordinaterna för tidszonen"
 
 #: src/timezone.py:279
-msgid "Stoping timezone threads..."
-msgstr "Stoppar trådar för tidszoner..."
+msgid "Stopping timezone threads..."
+msgstr ""
 
 #: src/timezone.py:309 src/timezone.py:360
 msgid "In timezone, can't get network status"
@@ -892,15 +895,6 @@ msgstr "Kan inte kontrollera nätverksstatus i tidszon"
 #: src/timezone.py:384
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Kan inte få språkkoden som används för att skapa lista över spegelservrar för pacman"
-
-#: src/timezone.py:405
-#, python-format
-msgid "Downloaded a specific mirrorlist for pacman based on %s country code"
-msgstr "Laddade ner en specifik lista över speglingsservrar för pacman baserad på landskoden %s"
-
-#: src/timezone.py:407
-msgid "Couldn't generate mirrorlist for pacman based on country code"
-msgstr "Kunde inte generera lista på speglingsservrar baserad på landskoden"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
@@ -939,8 +933,8 @@ msgid "Confirm password"
 msgstr "Bekräfta lösenordet"
 
 #: src/user_info.py:119
-msgid "The name it uses when it talks to other computers."
-msgstr "Namnet den använder för att prata med andra datorer."
+msgid "Its name as it appears to other computers."
+msgstr ""
 
 #: src/user_info.py:123
 msgid "You must enter a name"
@@ -1137,8 +1131,7 @@ msgid "Installing %s (%d/%d)"
 msgstr "Installerar %s (%d/%d)"
 
 #: src/pacman/pac.py:407
-#, python-format
-msgid "Checking and loading packages... [%s]"
+msgid "Checking and loading packages..."
 msgstr ""
 
 #: ui/bootloader.ui:7
@@ -1162,8 +1155,8 @@ msgid "<span weight='bold' size='large'>Bluetooth support</span>"
 msgstr "<span weight='bold' size='large'>Bluetooth-stöd</span>"
 
 #: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (cups)</span>"
-msgstr "<span weight='bold' size='large'>Skrivarstöd (cups)</span>"
+msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
+msgstr ""
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
@@ -1186,8 +1179,8 @@ msgid "Activates your firewall (closes all ports by default)"
 msgstr "Aktiverar din brandvägg (och stänger alla portar som standard)"
 
 #: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Propietary packages</span>"
-msgstr "<span weight='bold' size='large'>Proprietära paket</span>"
+msgid "<span weight='bold' size='large'>Proprietary packages</span>"
+msgstr ""
 
 #: ui/installation_advanced.ui:73
 msgid "Create partition"
@@ -1201,19 +1194,19 @@ msgstr "Plats:"
 msgid "MB"
 msgstr "MB"
 
-#: ui/installation_advanced.ui:557
+#: ui/installation_advanced.ui:558
 msgid "Edit partition"
 msgstr "Redigera partition"
 
-#: ui/installation_advanced.ui:898
+#: ui/installation_advanced.ui:899
 msgid "LVM..."
 msgstr "LVM..."
 
 #: ui/installation_alongside.ui:16
 msgid ""
-"<span size=\"large\">Choose next to which OS you want to install "
-"Manjaro</span>"
-msgstr "<span size=\"large\">Välj vilket operativsystem som Manjaro ska installeras bredvid</span>"
+"<span size=\"large\">Choose which OS you want to install Manjaro next "
+"to</span>"
+msgstr ""
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1234,8 +1227,8 @@ msgid ""
 msgstr "<span weight=\"light\" size=\"small\">Varning: Detta kommer att ta bort allt på disken. Program, dokument, bilder, musik och alla andra filer.</span>"
 
 #: ui/installation_ask.ui:69
-msgid "Encrypts the new Manjaro installation for security"
-msgstr "Krypterar installationen av Manjaro i säkerhetssyfte"
+msgid "Encrypts the new Manjaro installation for better security"
+msgstr ""
 
 #: ui/installation_ask.ui:90
 msgid ""
@@ -1249,9 +1242,9 @@ msgstr "Använd LVM för installationen av Manjaro"
 
 #: ui/installation_ask.ui:122
 msgid ""
-"<span weight=\"light\" size=\"small\">This will setup LVM allowing to make "
-"snapshots and changing partition sizes in an easy way</span>"
-msgstr "<span weight=\"light\" size=\"small\">Detta ställer in LVM och möjliggör snapshots och ändring av paritionsstorlekar på enkelt sätt</span>"
+"<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
+"make snapshots and change partition sizes in a straightforward way</span>"
+msgstr ""
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
@@ -1260,9 +1253,9 @@ msgstr "Installera bredvid andra operativsystem"
 #: ui/installation_ask.ui:159
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
-"installing Manjaro alongside one of the other OSes that you have already "
+"installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Med detta alternativ installeras Manjaro bredvid andra operativsystem som redan finns på datorn.</span>"
+msgstr ""
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
@@ -1277,7 +1270,7 @@ msgstr "<span weight=\"light\" size=\"small\">Du får möjlighet att skapa och t
 
 #: ui/installation_automatic.ui:18
 msgid ""
-"<b>WARNING! This installation mode will overwrite everything in your "
+"<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
 msgstr ""
 
@@ -1290,7 +1283,7 @@ msgid ""
 "<span weight='bold'>This is an Alpha version.</span>\n"
 "\n"
 "\n"
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other \" advanced setups.\n"
+"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups.\n"
 "Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
@@ -1325,10 +1318,8 @@ msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
 msgstr "<small><span color=\"darkred\">Du måste skriva in ett namn</span></small>"
 
 #: ui/user_info.ui:447
-msgid ""
-"<span size=\"small\">The name it uses when it talks to other "
-"computers.</span>"
-msgstr "<span size=\"small\">Namnet den använder för att prata med andra datorer.</span>"
+msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
+msgstr ""
 
 #: ui/welcome.ui:151
 msgid ""
