@@ -134,7 +134,8 @@ import fs_module as fs
 import misc
 import pac
 
-_autopartition_script = 'auto_partition.sh'
+import auto_partition
+
 _postinstall_script = 'postinstall.sh'
 _mhwd_script = 'mhwd.sh'
 
@@ -242,30 +243,18 @@ class InstallationProcess(multiprocessing.Process):
         
         if self.method == 'automatic':
             self.auto_device = self.mount_devices["/boot"].replace("1","")
-            thus_dir = self.settings.get("THUS_DIR")
-            script_path = os.path.join(thus_dir, "scripts", _autopartition_script)
-
-            use_lvm = ""
-            if self.settings.get("use_lvm"):
-                use_lvm = "--lvm"
-
-            use_luks = ""
-            if self.settings.get("use_luks"):
-                use_luks = "--luks"
+            self.queue_event('debug', "Creating partitions and their filesystems...")
 
             try:
-                self.queue_event('debug', "Automatic device: %s" % self.auto_device)
-                self.queue_event('debug', "Running automatic script...")
-                self.queue_event('pulse') 
-                subprocess.check_call(["/usr/bin/bash", script_path, self.auto_device, use_lvm, use_luks])
-                self.queue_event('stop_pulse') 
-                self.queue_event('debug', "Automatic script done.")
-            except subprocess.FileNotFoundError as e:
-                self.queue_fatal_event(_("Can't execute the auto partition script"))
-                return False
+                ap = auto_partition.AutoPartition(self.dest_dir,
+                                                    self.auto_device,
+                                                    self.settings.get("use_luks"), 
+                                                    self.settings.get("use_lvm"))
+                ap.run()
             except subprocess.CalledProcessError as e:
-                self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
-                return False
+                logging.error(e.output)
+                self.queue_event('error', _("Error creating partitions and their filesystems"))
+                return
 
         if self.method == 'alongside':
             # Alongside method shrinks selected partition
@@ -299,7 +288,7 @@ class InstallationProcess(multiprocessing.Process):
             os.mkdir(self.dest_dir)
 
         # Mount root and boot partitions (only if it's needed)
-        # Not doing this in automatic mode as our script (auto_partition.sh) mounts the root and boot devices itself.
+        # Not doing this in automatic mode as our AutoPartition class mounts the root and boot devices itself.
         if self.method == 'alongside' or self.method == 'advanced':
             try:
                 txt = _("Mounting partition %s into %s directory") % (root_partition, self.dest_dir)
@@ -517,7 +506,7 @@ class InstallationProcess(multiprocessing.Process):
                                     stdout=subprocess.PIPE,
                                     stderr=subprocess.STDOUT)
             out = proc.communicate()[0]
-            logging.debug(str(out))
+            logging.debug(out.decode())
         except OSError as e:
             logging.exception("Error running command: %s" % e.strerror)
             raise
