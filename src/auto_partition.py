@@ -3,7 +3,11 @@
 #
 #  auto_partition.py
 #  
-#  Copyright 2013 Antergos
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#  
+#  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -78,21 +82,21 @@ class AutoPartition():
             subprocess.call(["umount", d])
         
         # Remove all previous LVM 
-        if os.path.exists("/dev/mapper/AntergosRoot"):
-            subprocess.checK_call(["lvremove", "-f", "/dev/mapper/AntergosRoot"])
-        if os.path.exists("/dev/mapper/AntergosSwap"):
-            subprocess.checK_call(["lvremove", "-f", "/dev/mapper/AntergosSwap"])
-        if os.path.exists("/dev/AntergosVG"):
-            subprocess.check_call(["vgremove", "-f", "AntergosVG"])
+        if os.path.exists("/dev/mapper/ManjaroRoot"):
+            subprocess.checK_call(["lvremove", "-f", "/dev/mapper/ManjaroRoot"])
+        if os.path.exists("/dev/mapper/ManjaroSwap"):
+            subprocess.checK_call(["lvremove", "-f", "/dev/mapper/ManjaroSwap"])
+        if os.path.exists("/dev/ManjaroVG"):
+            subprocess.check_call(["vgremove", "-f", "ManjaroVG"])
         pvolumes = self.check_output("pvs -o pv_name --noheading").split("\n")
         if len(pvolumes[0]) > 0:
             for pv in pvolumes:
                 pv = pv.strip(" ")
                 subprocess.check_call(["pvremove", "-f", pv])
 
-        # close cryptAntergos (it may have been left open because of a previous failed installation)
-        if os.path.exists("/dev/mapper/cryptAntergos"):
-            subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptAntergos"])
+        # close cryptManjaro (it may have been left open because of a previous failed installation)
+        if os.path.exists("/dev/mapper/cryptManjaro"):
+            subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaro"])
 
 
     def mkfs(self, device, fs_type, mount_point, label_name, fs_options="", btrfs_devices=""):
@@ -178,18 +182,18 @@ class AutoPartition():
             if self.lvm:
                 # LUKS and LVM
                 luks = swap
-                lvm = "/dev/mapper/cryptAntergos"
+                lvm = "/dev/mapper/cryptManjaro"
             else:
                 # LUKS and no LVM
                 luks = root
-                root = "/dev/mapper/cryptAntergos"
+                root = "/dev/mapper/cryptManjaro"
         elif self.lvm:
             # no LUKS and LVM
             lvm = swap
 
         if self.lvm:
-            swap = "/dev/AntergosVG/AntergosSwap"
-            root = "/dev/AntergosVG/AntergosRoot"
+            swap = "/dev/ManjaroVG/ManjaroSwap"
+            root = "/dev/ManjaroVG/ManjaroRoot"
                 
         return (boot, swap, root, luks, lvm)
     
@@ -263,13 +267,13 @@ class AutoPartition():
             # create actual partitions
             subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=1:1M:+%dM' % gpt_bios_grub_part_size, '--typecode=1:EF02', '--change-name=1:BIOS_GRUB', device])
             subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=2:0:+%dM' % uefisys_part_size, '--typecode=2:EF00', '--change-name=2:UEFI_SYSTEM', device])
-            subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=3:0:+%dM' % boot_part_size, '--typecode=3:8300', '--attributes=3:set:2', '--change-name=3:ANTERGOS_BOOT', device])
+            subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=3:0:+%dM' % boot_part_size, '--typecode=3:8300', '--attributes=3:set:2', '--change-name=3:MANJARO_BOOT', device])
 
             if self.lvm:
-                subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % lvm_pv_part_size, '--typecode=4:8200', '--change-name=4:ANTERGOS_LVM', device])
+                subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % lvm_pv_part_size, '--typecode=4:8200', '--change-name=4:MANJARO_LVM', device])
             else:
-                subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % swap_part_size, '--typecode=4:8200', '--change-name=4:ANTERGOS_SWAP', device])
-                subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=5:0:+%dM' % root_part_size, ' --typecode=5:8300', '--change-name=5:ANTERGOS_ROOT', device])
+                subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % swap_part_size, '--typecode=4:8200', '--change-name=4:MANJARO_SWAP', device])
+                subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=5:0:+%dM' % root_part_size, ' --typecode=5:8300', '--change-name=5:MANJARO_ROOT', device])
             
             logging.debug(self.check_output("sgdisk --print %s" % device))
         else:
@@ -320,7 +324,7 @@ class AutoPartition():
             
             # Setup luks
             subprocess.check_call(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", luks_device, key_file])
-            subprocess.check_call(["cryptsetup", "luksOpen", luks_device, "cryptAntergos", "-q", "--key-file", key_file])
+            subprocess.check_call(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file", key_file])
 
         if self.lvm:
             # /dev/sdX1 is /boot
@@ -329,17 +333,17 @@ class AutoPartition():
             logging.debug("Will setup LVM on device %s" % lvm_device)
 
             subprocess.check_call(["pvcreate", "-ff", lvm_device])
-            subprocess.check_call(["vgcreate", "-v", "AntergosVG", lvm_device])
+            subprocess.check_call(["vgcreate", "-v", "ManjaroVG", lvm_device])
             
-            subprocess.check_call(["lvcreate", "-n", "AntergosRoot", "-L", str(int(root_part_size)), "AntergosVG"])
+            subprocess.check_call(["lvcreate", "-n", "ManjaroRoot", "-L", str(int(root_part_size)), "ManjaroVG"])
             
             # Use the remainig space for our swap volume
-            subprocess.check_call(["lvcreate", "-n", "AntergosSwap", "-l", "100%FREE", "AntergosVG"])
+            subprocess.check_call(["lvcreate", "-n", "ManjaroSwap", "-l", "100%FREE", "ManjaroVG"])
 
         ## Make sure the "root" partition is defined first
-        self.mkfs(root_device, "ext4", "/", "AntergosRoot")
-        self.mkfs(swap_device, "swap", "", "AntergosSwap")
-        self.mkfs(boot_device, "ext2", "/boot", "AntergosBoot")
+        self.mkfs(root_device, "ext4", "/", "ManjaroRoot")
+        self.mkfs(swap_device, "swap", "", "ManjaroSwap")
+        self.mkfs(boot_device, "ext2", "/boot", "ManjaroBoot")
         
         if self.luks:
             # https://wiki.archlinux.org/index.php/Encrypted_LVM
