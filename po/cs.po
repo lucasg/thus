@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-21 19:57+0200\n"
-"PO-Revision-Date: 2013-10-21 18:00+0000\n"
+"POT-Creation-Date: 2013-10-23 21:19+0200\n"
+"PO-Revision-Date: 2013-10-23 19:21+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/manjaro-thus/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -289,7 +289,7 @@ msgstr ""
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr ""
 
-#: src/installation_advanced.py:194 src/installation_advanced.py:485
+#: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
 msgid "free space"
 msgstr "volné místo"
@@ -310,7 +310,7 @@ msgstr "Přípojný bod"
 msgid "Label"
 msgstr "Jmenovka"
 
-#: src/installation_advanced.py:278 src/installation_advanced.py:1399
+#: src/installation_advanced.py:278 src/installation_advanced.py:1389
 msgid "Format"
 msgstr "Formát"
 
@@ -330,121 +330,123 @@ msgstr ""
 msgid "SSD"
 msgstr ""
 
-#: src/installation_advanced.py:468
+#: src/installation_advanced.py:471
 msgid "none"
 msgstr "není"
 
-#: src/installation_advanced.py:520
+#: src/installation_advanced.py:520 src/installation_advanced.py:921
+#: src/installation_advanced.py:1271 src/installation_advanced.py:1344
+#: src/installation_advanced.py:1512
 msgid "extended"
 msgstr ""
 
-#: src/installation_advanced.py:645 src/installation_advanced.py:885
+#: src/installation_advanced.py:650 src/installation_advanced.py:891
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:647
+#: src/installation_advanced.py:652
 msgid "Root partition must be formatted..."
 msgstr ""
 
-#: src/installation_advanced.py:906
+#: src/installation_advanced.py:912
 msgid "Creating primary partition"
 msgstr "Vytvářím primární oddíl"
 
-#: src/installation_advanced.py:917
+#: src/installation_advanced.py:923
 msgid "Creating extended partition"
 msgstr "Vytvářím rozšířený oddíl"
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:929
 msgid "Creating logical partition"
 msgstr "Vytvářím logický oddíl"
 
-#: src/installation_advanced.py:1033
+#: src/installation_advanced.py:1034
 msgid "Advanced installation mode"
 msgstr "Rozšířené možnosti instalace"
 
-#: src/installation_advanced.py:1037 ui/installation_advanced.ui:963
+#: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
 msgstr ""
 
-#: src/installation_advanced.py:1047 ui/installation_advanced.ui:885
+#: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Nová tabulka rozdělení disku"
 
-#: src/installation_advanced.py:1055
+#: src/installation_advanced.py:1056
 msgid "Change..."
 msgstr "Zvolte..."
 
-#: src/installation_advanced.py:1060 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
 msgid "Size:"
 msgstr "Velikost:"
 
-#: src/installation_advanced.py:1064 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1065 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr ""
 
-#: src/installation_advanced.py:1068 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1069 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Primární"
 
-#: src/installation_advanced.py:1072 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Logický"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1077 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Rozšířený"
 
-#: src/installation_advanced.py:1080 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1081 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
 msgstr "Začátek této oblasti"
 
-#: src/installation_advanced.py:1084 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1085 ui/installation_advanced.ui:219
 msgid "End of this space"
 msgstr ""
 
-#: src/installation_advanced.py:1088 src/installation_advanced.py:1105
+#: src/installation_advanced.py:1089 src/installation_advanced.py:1106
 #: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
 msgid "Use as:"
 msgstr ""
 
-#: src/installation_advanced.py:1092 src/installation_advanced.py:1109
+#: src/installation_advanced.py:1093 src/installation_advanced.py:1110
 #: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
 msgid "Mount point:"
 msgstr "Přípojný bod:"
 
-#: src/installation_advanced.py:1096 src/installation_advanced.py:1113
+#: src/installation_advanced.py:1097 src/installation_advanced.py:1114
 #: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
 msgid "Label (optional):"
 msgstr "Jmenovka (nepovinné):"
 
-#: src/installation_advanced.py:1100 ui/installation_advanced.ui:413
+#: src/installation_advanced.py:1101 ui/installation_advanced.ui:413
 #: ui/installation_advanced.ui:719
 msgid "Encryption options..."
 msgstr ""
 
-#: src/installation_advanced.py:1117 ui/installation_advanced.ui:679
+#: src/installation_advanced.py:1118 ui/installation_advanced.ui:679
 msgid "Format:"
 msgstr "Formátovat:"
 
-#: src/installation_advanced.py:1122 ui/installation_advanced.ui:487
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:487
 msgid "Partition table type:"
 msgstr "Typ tabulky rozdělení disku:"
 
-#: src/installation_advanced.py:1127
-msgid "Create partition table"
-msgstr "Vytvořte tabulku rozdělení disku"
+#: src/installation_advanced.py:1128
+msgid "Create Partition Table"
+msgstr ""
 
-#: src/installation_advanced.py:1130 src/installation_alongside.py:144
+#: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
 msgid "Install now!"
 msgstr "Instalovat!"
 
-#: src/installation_advanced.py:1210
+#: src/installation_advanced.py:1211
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Vytvářím novou tabulku rozdělení disku typu %s na disku %s"
 
-#: src/installation_advanced.py:1315
+#: src/installation_advanced.py:1307
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -452,7 +454,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1317
+#: src/installation_advanced.py:1309
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -460,42 +462,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1392
+#: src/installation_advanced.py:1382
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Oddíl %s byl vymazán"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "Partition"
 msgstr "Oddíl"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "New"
 msgstr "Nový"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "Relabel"
 msgstr ""
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "Mount"
 msgstr "Připojit"
 
-#: src/installation_advanced.py:1420
+#: src/installation_advanced.py:1410
 msgid "These disks will have partition actions:"
 msgstr ""
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1435
 #, python-format
 msgid "Saving changes done in %s"
 msgstr ""
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1449
 #, python-format
-msgid "Creating fs of type %s in %s with label %s - format: %s"
+msgid "Creating %s filesystem in %s labeled %s"
 msgstr ""
 
-#: src/installation_advanced.py:1552
+#: src/installation_advanced.py:1531
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr ""
@@ -605,150 +607,150 @@ msgstr ""
 msgid "Copying '/%s'"
 msgstr ""
 
-#: src/installation_process.py:163
+#: src/installation_process.py:164
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr ""
 
-#: src/installation_process.py:264
-msgid "Can't execute the auto partition script"
+#: src/installation_process.py:256
+msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:305 src/installation_process.py:329
+#: src/installation_process.py:294 src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr ""
 
-#: src/installation_process.py:311
+#: src/installation_process.py:300
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr ""
 
-#: src/installation_process.py:315
+#: src/installation_process.py:304
 msgid "Couldn't mount root and boot partitions"
 msgstr ""
 
-#: src/installation_process.py:334
+#: src/installation_process.py:323
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr ""
 
-#: src/installation_process.py:357
+#: src/installation_process.py:346
 msgid "Can't create necessary directories on destination system"
 msgstr ""
 
-#: src/installation_process.py:454
+#: src/installation_process.py:443
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr ""
 
-#: src/installation_process.py:467
+#: src/installation_process.py:456
 msgid "Special dirs already mounted."
 msgstr ""
 
-#: src/installation_process.py:493
+#: src/installation_process.py:482
 msgid "Special dirs already not mounted."
 msgstr ""
 
-#: src/installation_process.py:503
+#: src/installation_process.py:492
 #, python-format
 msgid "Unable to umount %s"
 msgstr ""
 
-#: src/installation_process.py:554
+#: src/installation_process.py:543
 msgid "Create fstab."
 msgstr ""
 
-#: src/installation_process.py:658
+#: src/installation_process.py:647
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr ""
 
-#: src/installation_process.py:688
+#: src/installation_process.py:677
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr ""
 
-#: src/installation_process.py:690
+#: src/installation_process.py:679
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr ""
 
-#: src/installation_process.py:701
+#: src/installation_process.py:690
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr ""
 
-#: src/installation_process.py:729
+#: src/installation_process.py:718
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr ""
 
-#: src/installation_process.py:757
+#: src/installation_process.py:746
 msgid "ERROR installing GRUB(2) locale."
 msgstr ""
 
-#: src/installation_process.py:771
+#: src/installation_process.py:760
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr ""
 
-#: src/installation_process.py:777
+#: src/installation_process.py:766
 #, python-format
 msgid "Error changing password for user %s"
 msgstr ""
 
-#: src/installation_process.py:892
+#: src/installation_process.py:881
 msgid "Configuring your new system"
 msgstr ""
 
-#: src/installation_process.py:966
+#: src/installation_process.py:955
 msgid "Generating locales..."
 msgstr ""
 
-#: src/installation_process.py:986
+#: src/installation_process.py:975
 msgid "Adjusting hardware clock..."
 msgstr ""
 
-#: src/installation_process.py:992
+#: src/installation_process.py:981
 msgid "Configuring hardware..."
 msgstr ""
 
-#: src/installation_process.py:999
+#: src/installation_process.py:988
 msgid "Set up graphics card..."
 msgstr ""
 
-#: src/installation_process.py:1006
+#: src/installation_process.py:995
 msgid "Can't execute the MHWD script"
 msgstr ""
 
-#: src/installation_process.py:1012
+#: src/installation_process.py:1001
 msgid "Configure display manager..."
 msgstr ""
 
-#: src/installation_process.py:1111
+#: src/installation_process.py:1100
 msgid "Configure System..."
 msgstr ""
 
-#: src/installation_process.py:1139
+#: src/installation_process.py:1128
 msgid "Removing live configuration (packages)"
 msgstr ""
 
-#: src/installation_process.py:1155
+#: src/installation_process.py:1144
 msgid "Configuring package manager"
 msgstr ""
 
-#: src/installation_process.py:1170
+#: src/installation_process.py:1159
 msgid "Finished configuring package manager."
 msgstr ""
 
-#: src/installation_process.py:1194
+#: src/installation_process.py:1183
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr ""
 
-#: src/installation_process.py:1273
+#: src/installation_process.py:1262
 msgid "Running mkinitcpio..."
 msgstr ""
 
-#: src/installation_process.py:1276
+#: src/installation_process.py:1265
 msgid "Running mkinitcpio... done"
 msgstr ""
 
@@ -774,26 +776,26 @@ msgid "Please choose your language:"
 msgstr ""
 
 #: src/language.py:83
-msgid "This is an Alpha version."
+msgid "Notice: The Thus Installer is beta software."
 msgstr ""
 
 #: src/language.py:84
 msgid ""
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
-"Please proceed with caution as data loss is possible! \n"
+"Thus is pre-release beta software that is under active development. \n"
+"It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
-"If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+"If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:92 src/welcome.py:102
+#: src/language.py:91 src/welcome.py:102
 msgid "Welcome to Manjaro!"
 msgstr ""
 
-#: src/language.py:109
+#: src/language.py:108
 msgid "Languages"
 msgstr ""
 
-#: src/language.py:129
+#: src/language.py:128
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr ""
@@ -890,11 +892,7 @@ msgstr ""
 msgid "Stopping timezone threads..."
 msgstr ""
 
-#: src/timezone.py:309 src/timezone.py:360
-msgid "In timezone, can't get network status"
-msgstr ""
-
-#: src/timezone.py:384
+#: src/timezone.py:388
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr ""
 
@@ -1282,11 +1280,9 @@ msgstr ""
 
 #: ui/language.ui:88
 msgid ""
-"<span weight='bold'>This is an Alpha version.</span>\n"
+"<span weight='bold'>Notice: The Thus Installer is beta software.</span>\n"
 "\n"
-"\n"
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups.\n"
-"Please proceed with caution as data loss is possible! \n"
+"Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""

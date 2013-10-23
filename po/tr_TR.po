@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-21 19:57+0200\n"
-"PO-Revision-Date: 2013-10-21 18:00+0000\n"
+"POT-Creation-Date: 2013-10-23 21:19+0200\n"
+"PO-Revision-Date: 2013-10-23 19:21+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/manjaro-thus/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -150,7 +150,7 @@ msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr ""
+msgstr "XFCE ; hem görsel olarak çekici, hemde tüm özellikleri barındırarak kullanımı kolay, sistem kaynaklarını yormayan hafif bir masaüstü ortamı sağlar."
 
 #: src/desktop.py:96
 msgid ""
@@ -292,7 +292,7 @@ msgstr "Sahipli paketler"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "MP3, Flash ve diğer ortamları oynatabilmek için üçüncü parti yazılım "
 
-#: src/installation_advanced.py:194 src/installation_advanced.py:485
+#: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
 msgid "free space"
 msgstr "boş alan"
@@ -313,7 +313,7 @@ msgstr "Bağlama noktası"
 msgid "Label"
 msgstr "Etiket"
 
-#: src/installation_advanced.py:278 src/installation_advanced.py:1399
+#: src/installation_advanced.py:278 src/installation_advanced.py:1389
 msgid "Format"
 msgstr "Biçimle/Formatla"
 
@@ -333,121 +333,123 @@ msgstr "Bayraklar"
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:468
+#: src/installation_advanced.py:471
 msgid "none"
 msgstr "-"
 
-#: src/installation_advanced.py:520
+#: src/installation_advanced.py:520 src/installation_advanced.py:921
+#: src/installation_advanced.py:1271 src/installation_advanced.py:1344
+#: src/installation_advanced.py:1512
 msgid "extended"
 msgstr "uzatılmış"
 
-#: src/installation_advanced.py:645 src/installation_advanced.py:885
+#: src/installation_advanced.py:650 src/installation_advanced.py:891
 msgid "Can't use same mount point twice..."
 msgstr "Aynı bağlama noktası iki defa kullanılamaz..."
 
-#: src/installation_advanced.py:647
+#: src/installation_advanced.py:652
 msgid "Root partition must be formatted..."
 msgstr "Kök bölümü biçimlendirilmiş olmalıdır..."
 
-#: src/installation_advanced.py:906
+#: src/installation_advanced.py:912
 msgid "Creating primary partition"
 msgstr "Birincil bölüm oluşturuluyor"
 
-#: src/installation_advanced.py:917
+#: src/installation_advanced.py:923
 msgid "Creating extended partition"
 msgstr "Uzatılmış bölüm oluşturuluyor"
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:929
 msgid "Creating logical partition"
 msgstr "Mantıksal bölüm oluşturuluyor"
 
-#: src/installation_advanced.py:1033
+#: src/installation_advanced.py:1034
 msgid "Advanced installation mode"
 msgstr "Gelişmiş kurulum kipi"
 
-#: src/installation_advanced.py:1037 ui/installation_advanced.ui:963
+#: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
 msgstr "Önyükleyici kurulumu için bu aygıtı kullan:"
 
-#: src/installation_advanced.py:1047 ui/installation_advanced.ui:885
+#: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
 msgid "New partition table"
 msgstr "Yeni bölüm tablosu"
 
-#: src/installation_advanced.py:1055
+#: src/installation_advanced.py:1056
 msgid "Change..."
 msgstr "Değiştir..."
 
-#: src/installation_advanced.py:1060 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
 msgid "Size:"
 msgstr "Boyut:"
 
-#: src/installation_advanced.py:1064 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1065 ui/installation_advanced.ui:295
 msgid "Type:"
 msgstr "Tür:"
 
-#: src/installation_advanced.py:1068 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1069 ui/installation_advanced.ui:312
 msgid "Primary"
 msgstr "Birincil"
 
-#: src/installation_advanced.py:1072 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:330
 msgid "Logical"
 msgstr "Mantıksal"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1077 ui/installation_advanced.ui:348
 msgid "Extended"
 msgstr "Uzatılmış"
 
-#: src/installation_advanced.py:1080 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1081 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
 msgstr "Bu boşluğun başlangıcı"
 
-#: src/installation_advanced.py:1084 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1085 ui/installation_advanced.ui:219
 msgid "End of this space"
 msgstr "Bu boşluğun sonu"
 
-#: src/installation_advanced.py:1088 src/installation_advanced.py:1105
+#: src/installation_advanced.py:1089 src/installation_advanced.py:1106
 #: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
 msgid "Use as:"
 msgstr "Dosya sistemi:"
 
-#: src/installation_advanced.py:1092 src/installation_advanced.py:1109
+#: src/installation_advanced.py:1093 src/installation_advanced.py:1110
 #: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
 msgid "Mount point:"
 msgstr "Bağlama noktası:"
 
-#: src/installation_advanced.py:1096 src/installation_advanced.py:1113
+#: src/installation_advanced.py:1097 src/installation_advanced.py:1114
 #: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
 msgid "Label (optional):"
 msgstr "Etiket (isteğe bağlı):"
 
-#: src/installation_advanced.py:1100 ui/installation_advanced.ui:413
+#: src/installation_advanced.py:1101 ui/installation_advanced.ui:413
 #: ui/installation_advanced.ui:719
 msgid "Encryption options..."
 msgstr "Şifreleme seçenekleri..."
 
-#: src/installation_advanced.py:1117 ui/installation_advanced.ui:679
+#: src/installation_advanced.py:1118 ui/installation_advanced.ui:679
 msgid "Format:"
 msgstr "Biçimle/Formatla:"
 
-#: src/installation_advanced.py:1122 ui/installation_advanced.ui:487
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:487
 msgid "Partition table type:"
 msgstr "Bölüm tablosu türü:"
 
-#: src/installation_advanced.py:1127
-msgid "Create partition table"
-msgstr "Bölüm tablosu oluştur"
+#: src/installation_advanced.py:1128
+msgid "Create Partition Table"
+msgstr ""
 
-#: src/installation_advanced.py:1130 src/installation_alongside.py:144
+#: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:91
 msgid "Install now!"
 msgstr "Şimdi Yükle!"
 
-#: src/installation_advanced.py:1210
+#: src/installation_advanced.py:1211
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "%s diski için %s türünde bölüm tablosu oluşturuluyor"
 
-#: src/installation_advanced.py:1315
+#: src/installation_advanced.py:1307
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -455,7 +457,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s takas-swap olarak bağlandı\nDevam etmek için bağlanmamış olması gerekir\nAyırmak için Eveti tıklayın, veya Hayır deyip geri dönün\n"
 
-#: src/installation_advanced.py:1317
+#: src/installation_advanced.py:1309
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -463,42 +465,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s %s içerisinde bağlanmış.\n"
 
-#: src/installation_advanced.py:1392
+#: src/installation_advanced.py:1382
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s bölümü silinecek"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "Partition"
 msgstr "Bölüm"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "New"
 msgstr "Yeni"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "Relabel"
 msgstr "Tekrar etiketle"
 
-#: src/installation_advanced.py:1399
+#: src/installation_advanced.py:1389
 msgid "Mount"
 msgstr "Bağla"
 
-#: src/installation_advanced.py:1420
+#: src/installation_advanced.py:1410
 msgid "These disks will have partition actions:"
 msgstr "Bu disklerde yapılacak bölümlendirme işlemleri:"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1435
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s yapılan değişiklikler kaydediliyor"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1449
 #, python-format
-msgid "Creating fs of type %s in %s with label %s - format: %s"
-msgstr "Etiket %s ile %s türü %s fs oluşturuldu: %s"
+msgid "Creating %s filesystem in %s labeled %s"
+msgstr ""
 
-#: src/installation_advanced.py:1552
+#: src/installation_advanced.py:1531
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro %s türü %s önyükleyiciyi kuracak"
@@ -606,152 +608,152 @@ msgstr "Thus önyükleyici olarak %s üzerine %s kuracak"
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr "Kopyalanıyor '/%s'"
+msgstr "Kopyalaniyor '/%s'"
 
-#: src/installation_process.py:163
+#: src/installation_process.py:164
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "'%s' yöntemini kullanarak yükleme"
 
-#: src/installation_process.py:264
-msgid "Can't execute the auto partition script"
-msgstr "Otomatik bölümleme komutu yürütülemiyor"
+#: src/installation_process.py:256
+msgid "Error creating partitions and their filesystems"
+msgstr ""
 
-#: src/installation_process.py:305 src/installation_process.py:329
+#: src/installation_process.py:294 src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Bölüme bağlanıyor %s dizinine %s dizini"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:300
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Bölüme bağlanıyor %s dizinine %s/boot dizini"
 
-#: src/installation_process.py:315
+#: src/installation_process.py:304
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kök-Root ve önyükleme bölümleri bağlanamadı"
 
-#: src/installation_process.py:334
+#: src/installation_process.py:323
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Bağlanamadı %s in %s"
 
-#: src/installation_process.py:357
+#: src/installation_process.py:346
 msgid "Can't create necessary directories on destination system"
 msgstr "Hedef sistemde gerekli dizinleri oluşturulamıyor"
 
-#: src/installation_process.py:454
+#: src/installation_process.py:443
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Meta-bilgi geri yükleme %s"
 
-#: src/installation_process.py:467
+#: src/installation_process.py:456
 msgid "Special dirs already mounted."
 msgstr "Özel disk zaten bağlı."
 
-#: src/installation_process.py:493
+#: src/installation_process.py:482
 msgid "Special dirs already not mounted."
 msgstr "Özel disk zaten bağlı değil."
 
-#: src/installation_process.py:503
+#: src/installation_process.py:492
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Ayırma işlemi yapılamadı %s"
 
-#: src/installation_process.py:554
+#: src/installation_process.py:543
 msgid "Create fstab."
 msgstr "fstab oluştur."
 
-#: src/installation_process.py:658
+#: src/installation_process.py:647
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr "GRUB(2) yükleniyor BIOS önyükleyici oluşturuluyor %s"
+msgstr "%s üzerine GRUB(2) yükleniyor ve BIOS önyükleyici oluşturuluyor"
 
-#: src/installation_process.py:688
+#: src/installation_process.py:677
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS başarıyla yüklenmiştir."
 
-#: src/installation_process.py:690
+#: src/installation_process.py:679
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS yükleme hatası."
 
-#: src/installation_process.py:701
+#: src/installation_process.py:690
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI yükleniyor %s Önyükleyici oluşturuluyor %s"
 
-#: src/installation_process.py:729
+#: src/installation_process.py:718
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "Yükleme hatası GRUB(2) konfigürasyon dosyası."
 
-#: src/installation_process.py:757
+#: src/installation_process.py:746
 msgid "ERROR installing GRUB(2) locale."
 msgstr "Yükleme hatası GRUB(2) yerel."
 
-#: src/installation_process.py:771
+#: src/installation_process.py:760
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Kullanıcı karma parola değiştirme hatası %s"
 
-#: src/installation_process.py:777
+#: src/installation_process.py:766
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Kullanıcı parola değiştirme hatası %s"
 
-#: src/installation_process.py:892
+#: src/installation_process.py:881
 msgid "Configuring your new system"
-msgstr "Yeni sistem yapılandırılıyor"
+msgstr "Kurulan sistem yapılandırılıyor..."
 
-#: src/installation_process.py:966
+#: src/installation_process.py:955
 msgid "Generating locales..."
 msgstr "Yereliniz yapılandrılıyor..."
 
-#: src/installation_process.py:986
+#: src/installation_process.py:975
 msgid "Adjusting hardware clock..."
 msgstr "Donanım saati ayarlanıyor..."
 
-#: src/installation_process.py:992
+#: src/installation_process.py:981
 msgid "Configuring hardware..."
 msgstr "Donanım yapılandırılıyor.."
 
-#: src/installation_process.py:999
+#: src/installation_process.py:988
 msgid "Set up graphics card..."
 msgstr "Ekran kartı kurulumu.."
 
-#: src/installation_process.py:1006
+#: src/installation_process.py:995
 msgid "Can't execute the MHWD script"
 msgstr "MHWD komut dosyasını yürütemedi"
 
-#: src/installation_process.py:1012
+#: src/installation_process.py:1001
 msgid "Configure display manager..."
 msgstr "Görüntü yöneticisi yapılandırılıyor.."
 
-#: src/installation_process.py:1111
+#: src/installation_process.py:1100
 msgid "Configure System..."
 msgstr "Sistem Yapılandılıyor.."
 
-#: src/installation_process.py:1139
+#: src/installation_process.py:1128
 msgid "Removing live configuration (packages)"
 msgstr "Geçici konfigürasyonlar kaldırılıyor (paketler)"
 
-#: src/installation_process.py:1155
+#: src/installation_process.py:1144
 msgid "Configuring package manager"
 msgstr "Paket yöneticisi yapılandırılıyor"
 
-#: src/installation_process.py:1170
+#: src/installation_process.py:1159
 msgid "Finished configuring package manager."
 msgstr "Paket yönetici yapılandırması tamamlandı."
 
-#: src/installation_process.py:1194
+#: src/installation_process.py:1183
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Kullanıcı için otomatik giriş etkin %s."
 
-#: src/installation_process.py:1273
+#: src/installation_process.py:1262
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpio çalıştırılıyor..."
 
-#: src/installation_process.py:1276
+#: src/installation_process.py:1265
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpio çalıştırılıyor... tamamlandı"
 
@@ -777,26 +779,26 @@ msgid "Please choose your language:"
 msgstr "Lütfen dil tercihi yapınız:"
 
 #: src/language.py:83
-msgid "This is an Alpha version."
-msgstr "\"Thus\" sistem yükleyisi, alfa sürüm aşamasındadır."
+msgid "Notice: The Thus Installer is beta software."
+msgstr ""
 
 #: src/language.py:84
 msgid ""
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups. \n"
-"Please proceed with caution as data loss is possible! \n"
+"Thus is pre-release beta software that is under active development. \n"
+"It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
-"If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Bu sistem yükleyicisi halen geliştirilmektedir. LVM, RAID, btrfs subvolumes ve diğer gelişmiş kurulumlarla ilgili hatalarla karşılaşma olasılığınız vardır. \nVeri kaybına uğramamak için lütfen dikkatli olunuz! \n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+"If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr ""
 
-#: src/language.py:92 src/welcome.py:102
+#: src/language.py:91 src/welcome.py:102
 msgid "Welcome to Manjaro!"
 msgstr "Manjaro'ya Hoşgeldiniz!"
 
-#: src/language.py:109
+#: src/language.py:108
 msgid "Languages"
 msgstr "Diller"
 
-#: src/language.py:129
+#: src/language.py:128
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "%s dili için çeviri dosyası bulunmuyor"
@@ -874,11 +876,11 @@ msgstr "Neredesiniz?"
 
 #: src/timezone.py:116 ui/timezone.ui:34
 msgid "Zone:"
-msgstr "Alan:"
+msgstr "Hangi Kıtadasınız:"
 
 #: src/timezone.py:120 ui/timezone.ui:79
 msgid "Region:"
-msgstr "Bölge:"
+msgstr "Ülke/Şehir:"
 
 #: src/timezone.py:131
 #, python-format
@@ -893,11 +895,7 @@ msgstr "Zaman dilimi koordinatları otomatik olarak algılanamadı"
 msgid "Stopping timezone threads..."
 msgstr "Zaman dilimi ayarlanıyor..."
 
-#: src/timezone.py:309 src/timezone.py:360
-msgid "In timezone, can't get network status"
-msgstr "Zaman dilimi, ağ durumu alınamıyor"
-
-#: src/timezone.py:384
+#: src/timezone.py:388
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Pacman mirrorlist oluşturmak için tercih edilen ülke kodu alınamıyor"
 
@@ -1285,14 +1283,12 @@ msgstr "<span weight=\"bold\">Lütfen kullanacağınız dili seçiniz:</span>"
 
 #: ui/language.ui:88
 msgid ""
-"<span weight='bold'>This is an Alpha version.</span>\n"
+"<span weight='bold'>Notice: The Thus Installer is beta software.</span>\n"
 "\n"
-"\n"
-"Still undergoing development. It is known NOT to work yet with LVM, RAID, btrfs subvolumes, and other advanced setups.\n"
-"Please proceed with caution as data loss is possible! \n"
+"Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>\"Thus\" sistem yükleyicisi alfa sürümündedir</span> \\n\n\\n\n\\n\nBu sistem yükleyicisi halen geliştirilmektedir. LVM, RAID, btrfs subvolumes ve diğer gelişmiş kurulumlarla ilgili hatalarla karşılaşma olasılığınız vardır. \\n\nVeri kaybına uğramamak için lütfen dikkatli olunuz! \\n\n\\n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr ""
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
