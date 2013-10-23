@@ -33,7 +33,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Não pode executar duas instâncias do instalador.\\n\\nSe tem certeza que outro instalador não está já em execução\npode apagar manualmente o ficheiro %s\\ne executar este instalador novamente."
+msgstr "Não pode executar duas instâncias do instalador.\n\nSe tem certeza que outro instalador não está já em execução\npode apagar manualmente o ficheiro %s\ne executar este instalador novamente."
 
 #: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
@@ -448,7 +448,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s está montada como swap.\\nPara continuar, a partição deve ser desmontada.\\nPressione 'Sim' para desmontar, ou 'Não' para recuar\\n"
+msgstr "%s está montada como swap.\nPara continuar, a partição deve ser desmontada.\nPressione 'Sim' para desmontar, ou 'Não' para recuar\n"
 
 #: src/installation_advanced.py:1309
 #, python-format
@@ -456,7 +456,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s está montado em '%s'.\\nPara continuar precisa de ser desmontado.\\nClick Sim para desmontar, ou não para recuar\n"
+msgstr "%s está montado em '%s'.\nPara continuar precisa de ser desmontado.\nClick Sim para desmontar, ou não para recuar\n"
 
 #: src/installation_advanced.py:1382
 #, python-format
@@ -581,7 +581,7 @@ msgstr "AVISO! Este modo de instalação irá sobreescrever todo o conteúdo do 
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr "Por favor, escolha o disco em que deseja instalar o Manjaro\\ne pressione o botão abaixo para iniciar o processo."
+msgstr "Por favor, escolha o disco em que deseja instalar o Manjaro\ne pressione o botão abaixo para iniciar o processo."
 
 #: src/installation_automatic.py:134
 #, python-format
@@ -805,7 +805,7 @@ msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr "A localização escolhida será usada para ajudar a seleccionar o sistema local.\\nNormalmente é usado o país aonde você vive.\\nEsta é uma pequena lista de localizações baseada no idioma que você escolheu."
+msgstr "A localização escolhida será usada para ajudar a seleccionar o sistema local.\nNormalmente é usado o país aonde você vive.\nEsta é uma pequena lista de localizações baseada no idioma que você escolheu."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
@@ -853,7 +853,7 @@ msgstr "Instalador do Manjaro - Pergunta"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr "Instalação terminada!\\nDeseja reiniciar seu novo sistema agora?"
+msgstr "Instalação terminada!\nDeseja reiniciar seu novo sistema agora?"
 
 #: src/slides.py:99
 msgid "Installing Manjaro..."
@@ -970,7 +970,7 @@ msgstr "Manjaro utilizará eCryptfs para encriptar a sua pasta pessoal. Infelizm
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "Não se preocupe, pois para a maioria dos propósitos esta deficiência não coloca um problema.\\n\\n"
+msgstr "Não se preocupe, pois para a maioria dos propósitos esta deficiência não coloca um problema.\n\n"
 
 #: src/user_info.py:169
 msgid ""
@@ -982,17 +982,17 @@ msgstr "Contudo, uma aplicação popular e não recomendada do eCryptfs é encri
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Uma solução simples é colocar estes ficheiros dispersos num diretório Público e não encriptado\\n\\n"
+msgstr "Uma solução simples é colocar estes ficheiros dispersos num diretório Público e não encriptado\n\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr "Visite https://wiki.archlinux.org/index.php/ECryptfs para informação detalhada\\n\\n"
+msgstr "Visite https://wiki.archlinux.org/index.php/ECryptfs para informação detalhada\n\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "Tem certeza que deseja encriptar a sua pasta pessoal?\\n"
+msgstr "Tem certeza que deseja encriptar a sua pasta pessoal?\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
@@ -1034,7 +1034,7 @@ msgstr "Senhas não coincidem"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr "Experimente o Manjaro sem modificar o seu disco rígido.\\nOu instale-o no seu PC com uma das duas opções de instalador."
+msgstr "Experimente o Manjaro sem modificar o seu disco rígido.\nOu instale-o no seu PC com uma das duas opções de instalador."
 
 #: src/welcome.py:93 ui/welcome.ui:45
 msgid "Try it"
@@ -1319,4 +1319,4 @@ msgstr "<span size=\"small\">O nome com que se identifica a outros computadores.
 msgid ""
 "You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
 "If you want to install the system to your PC, use one of the two installer options."
-msgstr "Pode experimentar o Manjaro sem modificar seu disco rígido, apenas pressionando \"Experimentar\".\\nSe desejar instalar o sistema no seu PC, utilize uma das duas opções de instalador."
+msgstr "Pode experimentar o Manjaro sem modificar seu disco rígido, apenas pressionando \"Experimentar\".\nSe desejar instalar o sistema no seu PC, utilize uma das duas opções de instalador."
