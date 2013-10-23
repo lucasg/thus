@@ -459,7 +459,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s está montada como swap.\\nPara continuar, a partição deve ser desmontada.\\nPressione 'Sim' para desmontar, ou 'Não' para retornar\\n"
+msgstr "%s está montada como swap.\nPara continuar, a partição deve ser desmontada.\nPressione 'Sim' para desmontar, ou 'Não' para retornar\n"
 
 #: src/installation_advanced.py:1309
 #, python-format
@@ -467,7 +467,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s está montado em '%s'.\\nPara continuar precisa de ser desmontado.\\nClick Sim para desmontar, ou não para retornar\\n"
+msgstr "%s está montado em '%s'.\nPara continuar precisa de ser desmontado.\nClick Sim para desmontar, ou não para retornar\n"
 
 #: src/installation_advanced.py:1382
 #, python-format
@@ -975,35 +975,35 @@ msgstr "Quem é você?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro utilizará eCryptfs para encriptar a sua pasta pessoal. Infelizmente, eCryptfs não funciona muito bem com ficheiros dispersos.\\n\\n"
+msgstr "Manjaro utilizará eCryptfs para encriptar a sua pasta pessoal. Infelizmente, eCryptfs não funciona muito bem com ficheiros dispersos.\n\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "Não se preocupe, pois para a maioria dos propósitos esta deficiência não coloca um problema.\\n\\n"
+msgstr "Não se preocupe, pois para a maioria dos propósitos esta deficiência não coloca um problema.\n\n"
 
 #: src/user_info.py:169
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "Contudo, uma aplicação popular e não recomendada do eCryptfs é encriptar a pasta de downloads do BitTorrent pois isto requer frequentemente que o eCryptfs lide com ficheiros dispersos de 10 GB ou mais e pode levar ao esgotamento intenso do disco.\\n\\n"
+msgstr "Contudo, uma aplicação popular e não recomendada do eCryptfs é encriptar a pasta de downloads do BitTorrent pois isto requer frequentemente que o eCryptfs lide com ficheiros dispersos de 10 GB ou mais e pode levar ao esgotamento intenso do disco.\n\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Uma solução simples é colocar estes ficheiros dispersos num diretório Público e não encriptado\\n\\n"
+msgstr "Uma solução simples é colocar estes ficheiros dispersos num diretório Público e não encriptado\n\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr "Visite https://wiki.archlinux.org/index.php/ECryptfs para informação detalhada\\n\\n"
+msgstr "Visite https://wiki.archlinux.org/index.php/ECryptfs para informação detalhada\n\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "Tem certeza que deseja encriptar a sua pasta pessoal?\\n"
+msgstr "Tem certeza que deseja encriptar a sua pasta pessoal?\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
