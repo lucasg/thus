@@ -28,19 +28,12 @@ import os
 import subprocess
 import logging
 import time
-import sys
-
-# Insert the src/parted directory at the front of the path.
-base_dir = os.path.dirname(__file__) or '.'
-parted_dir = os.path.join(base_dir, 'parted')
-sys.path.insert(0, parted_dir)
-
-import lvm
 
 class AutoPartition():
-    def __init__(self, dest_dir, auto_device, use_luks, use_lvm):
+    def __init__(self, dest_dir, auto_device, use_luks, use_lvm, luks_key_pass):
         self.dest_dir = dest_dir
         self.auto_device = auto_device
+        self.luks_key_pass = luks_key_pass
 
         self.uefi = False
         
@@ -73,24 +66,24 @@ class AutoPartition():
         mount = subprocess.check_output("mount").decode().split("\n")
 
         # Umount all devices mounted inside self.dest_dir (if any)
-        devices = []
+        dirs = []
         for m in mount:
-            if self.dest_dir+"/" in m:
-                devices.append(m.split()[0])
+            if self.dest_dir in m:
+                d = m.split()[0]
+                # Do not unmount self.dest_dir now (we will do it later)
+                if d is not self.dest_dir:
+                    dirs.append(d)
 
-        for d in devices:
+        for d in dirs:
+            logging.warning("Unmounting %s" % d)
             subprocess.call(["umount", d])
 
         # Umount the device that is mounted in self.dest_dir (if any)
-        devices = []
-        for m in mount:
-            if self.dest_dir+" " in m:
-                devices.append(m.split()[0])
-
-        for d in devices:
-            subprocess.call(["umount", d])
+        logging.warning("Unmounting %s" % self.dest_dir)
+        subprocess.call(["umount", self.dest_dir])
         
         # Remove all previous Manjaro LVM volumes
+        # (it may have been left created due to a previous failed installation)
         if os.path.exists("/dev/mapper/ManjaroRoot"):
             subprocess.checK_call(["lvremove", "-f", "/dev/mapper/ManjaroRoot"])
         if os.path.exists("/dev/mapper/ManjaroSwap"):
@@ -106,17 +99,6 @@ class AutoPartition():
         # Close cryptManjaro (it may have been left open because of a previous failed installation)
         if os.path.exists("/dev/mapper/cryptManjaro"):
             subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaro"])
-
-        # TODO : Test that this is really working
-        # Check if there're still LVM volumes arround and delete them
-        # Delete all volume groups (and its logical volumes)
-        lvm_volume_groups = lvm.get_volume_groups()
-        for vg in lvm_volume_groups:
-            lvm.remove_volume_group(vg)
-        # Delete all physical volumes left
-        lvm_physical_volumes = lvm.get_lvm_partitions()
-        for pv in lvm_physical_volumes:
-            lvm.remove_physical_volume(pv)
         
     def mkfs(self, device, fs_type, mount_point, label_name, fs_options="", btrfs_devices=""):
         # We have two main cases: "swap" and everything else.
@@ -215,6 +197,22 @@ class AutoPartition():
             root = "/dev/ManjaroVG/ManjaroRoot"
                 
         return (boot, swap, root, luks, lvm)
+
+    # mount_devices will be used when configuring GRUB in modify_grub_default() in installation_process.py)
+    def get_mount_devices(self):
+        (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
+        
+        mount_devices = {}
+        
+        mount_devices["/boot"] = boot_device
+        
+        if self.luks:
+            mount_devices["/"] = luks_device
+        else:
+            mount_devices["/"] = root_device
+        
+        return mount_devices
+
     
     def run(self):
         key_file = "/tmp/.keyfile"
@@ -338,12 +336,24 @@ class AutoPartition():
             # If in doubt, just be generous and overwrite the first 10MB or so
             subprocess.check_call(["dd", "if=/dev/zero", "of=%s" % luks_device, "bs=512", "count=20480", "status=noxfer"])
         
-            # Create a random keyfile
-            subprocess.check_call(["dd", "if=/dev/urandom", "of=%s" % key_file, "bs=1024", "count=4", "status=noxfer"])
+            if self.luks_key_pass == "":
+                # No key password given, let's create a random keyfile
+                subprocess.check_call(["dd", "if=/dev/urandom", "of=%s" % key_file, "bs=1024", "count=4", "status=noxfer"])
             
-            # Set up luks
-            subprocess.check_call(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", luks_device, key_file])
-            subprocess.check_call(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file", key_file])
+                # Set up luks with a keyfile
+                subprocess.check_call(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", luks_device, key_file])
+                subprocess.check_call(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file", key_file])
+            else:
+                # Set up luks with a password key
+                luks_key_pass_bytes = bytes(self.luks_key_pass, 'UTF-8')
+
+                p = subprocess.Popen(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", "--key-file=-", luks_device],
+                    stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
+                p.communicate(input=luks_key_pass_bytes)[0]
+                
+                p = subprocess.Popen(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file=-"],
+                    stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
+                p.communicate(input=luks_key_pass_bytes)[0]
 
         if self.lvm:
             # /dev/sdX1 is /boot
@@ -352,7 +362,7 @@ class AutoPartition():
             logging.debug("Will setup LVM on device %s" % lvm_device)
 
             subprocess.check_call(["pvcreate", "-ff", lvm_device])
-            subprocess.check_call(["vgcreate", "-v", "ManjaroVG", lvm_device])
+            subprocess.check_call(["vgcreate", "ManjaroVG", lvm_device])
             
             subprocess.check_call(["lvcreate", "-n", "ManjaroRoot", "-L", str(int(root_part_size)), "ManjaroVG"])
             
@@ -364,15 +374,14 @@ class AutoPartition():
         self.mkfs(swap_device, "swap", "", "ManjaroSwap")
         self.mkfs(boot_device, "ext2", "/boot", "ManjaroBoot")
         
-        if self.luks:
-            # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py
-            # NOTE: /etc/default/grub will be modified in installation_process.py, too.
-            
+        # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py if necessary
+        # NOTE: /etc/default/grub will be modified in installation_process.py, too.
+
+        if self.luks and self.luks_key_pass == "":
             # Copy keyfile to boot partition, user will choose what to do with it
             # THIS IS NONSENSE (BIG SECURITY HOLE), BUT WE TRUST THE USER TO FIX THIS
             # User shouldn't store the keyfiles unencrypted unless the medium itself is reasonably safe
             # (boot partition is not)
-            # TODO: Maybe instead of using a keyfile we should use a password.
             subprocess.check_call(['chmod', '0400', key_file])
             subprocess.check_call(['cp', key_file, '%s/boot' % self.dest_dir])
             subprocess.check_call(['rm', key_file])
@@ -386,5 +395,5 @@ if __name__ == '__main__':
     sh.setFormatter(formatter)
     logger.addHandler(sh)
 
-    ap = AutoPartition("/install", "/dev/sdb", use_luks=False, use_lvm=True)
+    ap = AutoPartition("/install", "/dev/sdb", use_luks=False, use_lvm=True, luks_key_pass="")
     ap.run()

@@ -88,6 +88,14 @@ class InstallationAutomatic(Gtk.Box):
         txt = "%s" % txt
         label.set_markup(txt)
 
+        label = self.ui.get_object('label_luks_password')
+        txt = _("Choose a password for your LUKS device:")
+        label.set_markup(txt)
+
+        label = self.ui.get_object('label_luks_password_confirm')
+        txt = _("Confirm your password for your LUKS device:")
+        label.set_markup(txt)
+
         txt = _("Install now!")
         self.forward_button.set_label(txt)
 
@@ -126,12 +134,21 @@ class InstallationAutomatic(Gtk.Box):
         self.translate_ui()
         self.populate_devices()
         self.show_all()
+
+        if not self.settings.get('use_luks'):
+            f = self.ui.get_object('frame_luks')
+            f.hide()
+
         #self.forward_button.set_sensitive(False)
 
     def store_values(self):
-        #self.forward_button.set_sensitive(True)
-        #installer_settings['auto_device'] = self.auto_device
-        logging.info(_("Automatic install using %s device") % self.auto_device)
+        entry = self.ui.get_object('entry_luks_password')
+        luks_password = entry.get_text()
+        self.settings.set('luks_key_pass', luks_password)
+        if luks_password != "":
+            logging.debug("A LUKS password has been set")
+            
+        logging.info(_("Automatic install on %s") % self.auto_device)
         self.start_installation()
         return True
 
@@ -161,26 +178,15 @@ class InstallationAutomatic(Gtk.Box):
         else:
             logging.warning("Thus will not install any boot loader")
 
-        if self.settings.get('use_lvm'):
-            # WARNING! : This must be the same that appears in auto_partition.sh
-            root_partition = "/dev/ManjaroVG/ManjaroRoot"
-        else:
-            root_partition = self.auto_device + "3"
-
-        boot_partition = self.auto_device + "1"
-        
-        # TODO: UEFI Install (must update auto_partition.sh)
-        if self.settings.get('bootloader_type') != "GRUB2":
-            root_partition = self.auto_device + "5"
-            boot_partition = self.atuo_device + "3"
+        # We don't need to pass neither which devices will be mounted nor which filesystems
+        # the devices will be formated with, as auto_partition.py takes care of everything
+        # in an automatic installation.
 
         mount_devices = {}
-        mount_devices["/"] = root_partition 
-        mount_devices["/boot"] = boot_partition
 
         fs_devices = {}
-        fs_devices[boot_partition] = "ext2"
-        fs_devices[root_partition] = "ext4"
+
+        self.settings.set('auto_device', self.auto_device)
 
         self.process = installation_process.InstallationProcess( \
                         self.settings, \

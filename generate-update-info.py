@@ -3,7 +3,11 @@
 #
 #  generate-update-info.py
 #  
-#  Copyright 2013 Antergos, Manjaro
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#  
+#  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -19,14 +23,6 @@
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
-#  
-#  Antergos Team:
-#   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
-#   Raúl Granados (pollitux) <raulgranados.antergos.com>
-#   Gustau Castells (karasu) <karasu.antergos.com>
-#   Kirill Omelchenko (omelcheck) <omelchek.antergos.com>
-#   Marc Miralles (arcnexus) <arcnexus.antergos.com>
-#   Alex Skinner (skinner) <skinner.antergos.com>
 
 import os
 import sys
@@ -71,6 +67,24 @@ if __name__ == '__main__':
              
     # Get all in data dir
     data_dir = os.path.join(base_dir, "data")
+    for root, dirs, filenames in os.walk(data_dir, topdown=False):
+        for f in filenames:
+            files.append(os.path.join(root[2:], f))
+
+    # Get all in po dir
+    data_dir = os.path.join(base_dir, "po")
+    for root, dirs, filenames in os.walk(data_dir, topdown=False):
+        for f in filenames:
+            files.append(os.path.join(root[2:], f))
+
+    # Get all in ui dir
+    data_dir = os.path.join(base_dir, "ui")
+    for root, dirs, filenames in os.walk(data_dir, topdown=False):
+        for f in filenames:
+            files.append(os.path.join(root[2:], f))
+
+    # Get all in scripts dir
+    data_dir = os.path.join(base_dir, "scripts")
     for root, dirs, filenames in os.walk(data_dir, topdown=False):
         for f in filenames:
             files.append(os.path.join(root[2:], f))

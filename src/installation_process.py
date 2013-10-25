@@ -239,18 +239,28 @@ class InstallationProcess(multiprocessing.Process):
 
         self.arch = os.uname()[-1]
                 
-        ## Create/Format partitions
+        # Create and format partitions
         
         if self.method == 'automatic':
-            self.auto_device = self.mount_devices["/boot"].replace("1","")
-            self.queue_event('debug', "Creating partitions and their filesystems...")
+            self.auto_device = self.settings.get('auto_device')
+
+            self.queue_event('debug', "Creating partitions and their filesystems in %s" % self.auto_device)
+            
+            # TODO: Ask for a key password if we are using LUKS (in installation_automatic.py)
+            # if no key password is given a key file is generated and stored in /boot
+            # (see auto_partition.py)
 
             try:
                 ap = auto_partition.AutoPartition(self.dest_dir,
                                                     self.auto_device,
                                                     self.settings.get("use_luks"), 
-                                                    self.settings.get("use_lvm"))
+                                                    self.settings.get("use_lvm"),
+                                                    self.settings.get("luks_key_pass"))
                 ap.run()
+
+                # Get mount_devices
+                # (mount_devices will be used when configuring GRUB in modify_grub_default)
+                self.mount_devices = ap.get_mount_devices()
             except subprocess.CalledProcessError as e:
                 logging.error(e.output)
                 self.queue_event('error', _("Error creating partitions and their filesystems"))
@@ -281,14 +291,14 @@ class InstallationProcess(multiprocessing.Process):
             else:
                 swap_partition = ""
 
-            # Advanced method formats root by default in installation_advanced
+            # NOTE: Advanced method formats root by default in installation_advanced
 
         # Create the directory where we will mount our new root partition
         if not os.path.exists(self.dest_dir):
             os.mkdir(self.dest_dir)
 
         # Mount root and boot partitions (only if it's needed)
-        # Not doing this in automatic mode as our AutoPartition class mounts the root and boot devices itself.
+        # Not doing this in automatic mode as AutoPartition class mounts the root and boot devices itself.
         if self.method == 'alongside' or self.method == 'advanced':
             try:
                 txt = _("Mounting partition %s into %s directory") % (root_partition, self.dest_dir)
@@ -308,8 +318,6 @@ class InstallationProcess(multiprocessing.Process):
         if self.method == 'advanced':
             for path in self.mount_devices:
                 mp = self.mount_devices[path]
-                # Root and Boot are already mounted.
-                # Just try to mount all the rest.
                 if mp != root_partition and mp != boot_partition and mp != swap_partition:
                     try:
                         mount_dir = self.dest_dir + path
@@ -319,10 +327,8 @@ class InstallationProcess(multiprocessing.Process):
                         self.queue_event('debug', txt)
                         subprocess.check_call(['mount', mp, mount_dir])
                     except subprocess.CalledProcessError as e:
-                        # we try to continue as root and boot mounted ok
+                        # We will continue as root and boot are already mounted
                         self.queue_event('debug', _("Can't mount %s in %s") % (mp, mount_dir))
-                        # self.queue_fatal_event(_("Couldn't mount %s") % mount_dir)
-                        # return False
 
 
         # Nasty workaround:
@@ -495,7 +501,7 @@ class InstallationProcess(multiprocessing.Process):
 
 
     def chroot(self, cmd, stdin=None, stdout=None):
-        run = ['chroot', self.dest_dir]
+        run = [ 'chroot', self.dest_dir ]
         
         for c in cmd:
             run.append(c)
@@ -624,11 +630,15 @@ class InstallationProcess(multiprocessing.Process):
             root_device = self.mount_devices["/"]
             boot_device = self.mount_devices["/boot"]
 
-            # Let GRUB automatically add the kernel parameters for root encryption
-            default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro cryptkey=%s:ext2:/.keyfile"' % (root_device, boot_device)
-
-            #Also, disable the usage of UUIDs for the rootfs:
+            if self.settings.get("luks_key_pass") == "":
+                default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro cryptkey=%s:ext2:/.keyfile"' % (root_device, boot_device)
+            else:
+                default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro"' % root_device
+                
+            # Disable the usage of UUIDs for the rootfs:
             disable_uuid_line = 'GRUB_DISABLE_LINUX_UUID=true'
+
+            default_grub = os.path.join(default_dir, "grub")
             
             with open(default_grub) as f:
                 lines = [x.strip() for x in f.readlines()]
@@ -830,27 +840,37 @@ class InstallationProcess(multiprocessing.Process):
                     line = line[1:]
                 gen.write(line)
 
+    def check_output(self, command):
+        return subprocess.check_output(command.split()).decode().strip("\n")
+
     def encrypt_home(self):
-        # TODO: ecryptfs-utils, rsync and lsof packages are needed.
+        # WARNING: ecryptfs-utils, rsync and lsof packages are needed.
         # They should be added in the livecd AND in the "to install packages" xml list
         
         # Load ecryptfs module
         subprocess.check_call(['modprobe', 'ecryptfs'])
+
+        # Add it to /install/etc/modules-load.d/
+        with open("%s/etc/modules-load.d/ecryptfs.conf", "wt") as f:
+            f.write("ecryptfs\n")
         
         # Get the username and passwd
         username = self.settings.get('username')
         passwd = self.settings.get('password')
         
         # Migrate user home directory
-        command = "LOGINPASS=%s ecryptfs-migrate-home -u %s" % (passwd, username)
-        outp = subprocess.check_output(command)
+        # See http://blog.dustinkirkland.com/2011/02/long-overdue-introduction-ecryptfs.html
+        self.chroot_mount_special_dirs()
+        command = "LOGINPASS=%s chroot %s ecryptfs-migrate-home -u %s" % (passwd, self.dest_dir, username)
+        outp = self.check_output(command)
+        self.chroot_umount_special_dirs()
         
         with open(os.path.join(self.dest_dir, "tmp/thus-ecryptfs.log", "wt")) as f:
             f.write(outp)
                 
-        subprocess.check_call(['su', username])
-        
+        # Critically important, USER must login before the next reboot to complete the migration
         # User should run ecryptfs-unwrap-passphrase and write down the generated passphrase
+        subprocess.check_call(['su', username])
 
     # TODO: remove this backport from live-installer
 
@@ -908,7 +928,10 @@ class InstallationProcess(multiprocessing.Process):
         # Wait FOREVER until the user sets his params
         while self.settings.get('user_info_done') is False:
             # wait five seconds and try again
-            time.sleep(5)         
+            time.sleep(5)  
+
+        if self.settings.get("use_ntp"):
+            self.enable_services(["ntpd"])       
 
         # Set user parameters
         username = self.settings.get('username')

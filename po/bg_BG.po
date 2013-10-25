@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 21:19+0200\n"
-"PO-Revision-Date: 2013-10-23 19:21+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-25 19:18+0000\n"
+"Last-Translator: Fingli\n"
 "Language-Team: Bulgarian (Bulgaria) (http://www.transifex.com/projects/p/manjaro-thus/language/bg_BG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Language: bg_BG\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:103
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr " За да работи инсталаторът трябва да притежава права на администратор и не може да продължи без тях."
 
-#: thus.py:111
+#: thus.py:109
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -36,20 +36,20 @@ msgid ""
 "and run this installer again."
 msgstr "Не е възможно да работят два инсталатора едновременно.\\n\\n Ако сте сигурни, че инсталаторът не е стартиран\\n можете да изтриете файла %s\\n и да започнете отново."
 
-#: thus.py:209
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Използване на Aria2 за сваляне на пакети - ЕКСПЕРИМЕНТАЛНО"
 
-#: thus.py:227
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Използване на файл '%s' като списък с пакети."
 
-#: thus.py:247 src/slides.py:258
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Манджаро инсталатор"
 
-#: thus.py:315
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Спиране на инсталатора..."
 
@@ -431,10 +431,10 @@ msgstr "Вид дялова таблица:"
 
 #: src/installation_advanced.py:1128
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Създаване на дялова таблица"
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:91
+#: src/installation_automatic.py:99
 msgid "Install now!"
 msgstr "Инсталирай!"
 
@@ -492,7 +492,7 @@ msgstr "Промените на %s са записани"
 #: src/installation_advanced.py:1449
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Създаване на %s файлова система в %s с етикет %s"
 
 #: src/installation_advanced.py:1531
 #, python-format
@@ -569,7 +569,7 @@ msgstr "Манджаро ще се инсталира използвайки LVM
 msgid "Automatic installation mode"
 msgstr "Режим автоматично инсталиране"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:69
+#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Избор на устройство:"
 
@@ -578,23 +578,31 @@ msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "ВНИМАНИЕ! Този режим на инсталиране ще унищожи всички предишни файлове на диска."
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:32
+#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Моля, изберете устройство, където желаете да инсталирате Манджаро\nи натиснете бутона по-долу, за да стартирате процеса."
 
-#: src/installation_automatic.py:134
-#, python-format
-msgid "Automatic install using %s device"
-msgstr "Автоматично инсталиране, използвайки устройство %s"
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+msgid "Choose a password for your LUKS device:"
+msgstr "Изберете парола за LUKS устройството:"
 
-#: src/installation_automatic.py:150
+#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+msgid "Confirm your password for your LUKS device:"
+msgstr "Потвърдете паролата за LUKS устройството:"
+
+#: src/installation_automatic.py:151
+#, python-format
+msgid "Automatic install on %s"
+msgstr "Автоматично инсталиране в %s"
+
+#: src/installation_automatic.py:167
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus ще използва %s устройството за инсталацията."
 
-#: src/installation_automatic.py:159
+#: src/installation_automatic.py:176
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus ще инсталира bootloader-a от тип %s в %s"
@@ -609,145 +617,145 @@ msgstr "Копиране '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Инсталиране използвайки '/%s' метод"
 
-#: src/installation_process.py:256
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Грешка при създаването на дялове и тяхната файлова система"
 
-#: src/installation_process.py:294 src/installation_process.py:318
+#: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Монтиране на дял %s в директория %s"
 
-#: src/installation_process.py:300
+#: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Монтиране на дял %s в %s/boot "
 
-#: src/installation_process.py:304
+#: src/installation_process.py:314
 msgid "Couldn't mount root and boot partitions"
 msgstr "Не е възможно да се монтират кореновият и стартиращият дялове"
 
-#: src/installation_process.py:323
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Не е възможно да се монтира %s в %s"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
 msgstr "Не е възможно да се създадат необходимите директории на системата"
 
-#: src/installation_process.py:443
+#: src/installation_process.py:449
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Възстановяване на мета-информацията на %s"
 
-#: src/installation_process.py:456
+#: src/installation_process.py:462
 msgid "Special dirs already mounted."
 msgstr "Специалните директории вече са монтирани."
 
-#: src/installation_process.py:482
+#: src/installation_process.py:488
 msgid "Special dirs already not mounted."
 msgstr "Специалните директории все още не са монтирани."
 
-#: src/installation_process.py:492
+#: src/installation_process.py:498
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Не беше възможно размонтиране на %s"
 
-#: src/installation_process.py:543
+#: src/installation_process.py:549
 msgid "Create fstab."
 msgstr "Създаване на fstab."
 
-#: src/installation_process.py:647
+#: src/installation_process.py:657
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Инсталиране на GRUB(2) BIOS мениджър на зареждането в %s"
 
-#: src/installation_process.py:677
+#: src/installation_process.py:687
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS е успешно инсталиран."
 
-#: src/installation_process.py:679
+#: src/installation_process.py:689
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ГРЕШКА при инсталиране на GRUB(2) BIOS"
 
-#: src/installation_process.py:690
+#: src/installation_process.py:700
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Инсталиране на GRUB(2) UEFI %s мениджър на зареждане в %s"
 
-#: src/installation_process.py:718
+#: src/installation_process.py:728
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "ГРЕШКА при инсталирането на файла за конфигурация на GRUB(2)."
 
-#: src/installation_process.py:746
+#: src/installation_process.py:756
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ГРЕШКА при инсталиране превод на GRUB(2)"
 
-#: src/installation_process.py:760
+#: src/installation_process.py:770
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Грешка при създаване на хаш-парола за потребител %s"
 
-#: src/installation_process.py:766
+#: src/installation_process.py:776
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Грешка при промяна на паролата на потребител %s"
 
-#: src/installation_process.py:881
+#: src/installation_process.py:901
 msgid "Configuring your new system"
 msgstr "Конфигуриране на Вашата нова система"
 
-#: src/installation_process.py:955
+#: src/installation_process.py:978
 msgid "Generating locales..."
 msgstr "Създаване на локализации..."
 
-#: src/installation_process.py:975
+#: src/installation_process.py:998
 msgid "Adjusting hardware clock..."
 msgstr "Сверяване на хардуерния часовник..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:1004
 msgid "Configuring hardware..."
 msgstr "Конфигуриране на хардуер..."
 
-#: src/installation_process.py:988
+#: src/installation_process.py:1011
 msgid "Set up graphics card..."
 msgstr "Настройване на видео картата..."
 
-#: src/installation_process.py:995
+#: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
 msgstr "Не е възможно да се изпълни MHWD скрипт"
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1024
 msgid "Configure display manager..."
 msgstr "Конфигуриране мениджъра на прозорци..."
 
-#: src/installation_process.py:1100
+#: src/installation_process.py:1123
 msgid "Configure System..."
 msgstr "Конфигуриране на системата..."
 
-#: src/installation_process.py:1128
+#: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
 msgstr "Премахване пакети принадлежащи на (живия) инсталатор"
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1167
 msgid "Configuring package manager"
 msgstr "Конфигуриране мениджъра на пакети"
 
-#: src/installation_process.py:1159
+#: src/installation_process.py:1182
 msgid "Finished configuring package manager."
 msgstr "Край на конфигурирането мениджър на пакети."
 
-#: src/installation_process.py:1183
+#: src/installation_process.py:1206
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Активиране на автоматичния вход за потребител %s"
 
-#: src/installation_process.py:1262
+#: src/installation_process.py:1285
 msgid "Running mkinitcpio..."
 msgstr "Изпълнение на mkinitcpio..."
 
-#: src/installation_process.py:1265
+#: src/installation_process.py:1288
 msgid "Running mkinitcpio... done"
 msgstr "Изпълнение на mkinitcpio... готово"
 
@@ -768,31 +776,31 @@ msgstr "Варианти"
 msgid "keyboard_layout is %s"
 msgstr "keyboard_layout е %s"
 
-#: src/language.py:78
+#: src/language.py:80
 msgid "Please choose your language:"
 msgstr "Моля, изберете език:"
 
-#: src/language.py:83
+#: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Бележка: Инсталаторът Thus е все още в бета-стадий"
 
-#: src/language.py:84
+#: src/language.py:86
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus е бета-версия на софтуер, който е в активно разработване.\\n Той все още не може да работи добре с RAID, btrfs и други усложнени инталатори. Моля, използвайте го предпазливо, защото е възможно да загубите данни.\\n\\n Ако попаднете на някакви бъгове, моля, посетете <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: src/language.py:91 src/welcome.py:102
+#: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
 msgstr "Добре дошли в Манджаро!"
 
-#: src/language.py:108
+#: src/language.py:110
 msgid "Languages"
 msgstr "Езици"
 
-#: src/language.py:128
+#: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Не е възможно да се намери преведеният файл за %s език"
@@ -868,28 +876,32 @@ msgstr "Моля, изчакайте..."
 msgid "Where are you?"
 msgstr "Вашето местоположение"
 
-#: src/timezone.py:116 ui/timezone.ui:34
+#: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
 msgstr "Зона:"
 
-#: src/timezone.py:120 ui/timezone.ui:79
+#: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
 msgstr "Регион:"
 
-#: src/timezone.py:131
+#: src/timezone.py:124 ui/timezone.ui:104
+msgid "Use Network Time Protocol for clock synchronization:"
+msgstr "Използване на Network Time Protocol за синхронизиране на часовника:"
+
+#: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
 msgstr "Местоположението е сменено на: %s"
 
-#: src/timezone.py:219
+#: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
 msgstr "Не е възможно да се открият данни за часовата зона"
 
-#: src/timezone.py:279
+#: src/timezone.py:283
 msgid "Stopping timezone threads..."
 msgstr "Спиране настройването на часовата зона"
 
-#: src/timezone.py:388
+#: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Не е възможно да се получи кодът на държавата, за създаване на списък с огледала за pacman"
 
@@ -1007,127 +1019,117 @@ msgstr "Потребителското име не трябва да съдър�
 msgid "Too many characters"
 msgstr "Твърде много знаци"
 
-#: src/validation.py:144
+#: src/validation.py:131
 msgid "password is too short"
 msgstr "паролата е твърде кратка"
 
-#: src/validation.py:147
+#: src/validation.py:134
 msgid "weak password"
 msgstr "слаба парола"
 
-#: src/validation.py:150
+#: src/validation.py:137
 msgid "fair password"
 msgstr "задоволителна парола"
 
-#: src/validation.py:153
+#: src/validation.py:140
 msgid "good password"
 msgstr "добра парола"
 
-#: src/validation.py:156
+#: src/validation.py:143
 msgid "strong password"
 msgstr "силна парола"
 
-#: src/validation.py:171
+#: src/validation.py:158
 msgid "Passwords do not match"
 msgstr "Паролите не съвпадат"
 
-#: src/welcome.py:88
+#: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
 msgstr "Опитайте Манджаро без да променяте харддиска си.\nИли го инсталирайте чрез една от двете опции."
 
-#: src/welcome.py:93 ui/welcome.ui:45
+#: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
 msgstr "Опитайте"
 
-#: src/welcome.py:96 ui/welcome.ui:83
+#: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "Конзолен /CLI/ инсталатор"
 
-#: src/welcome.py:99 ui/welcome.ui:121
+#: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "Графичен инсталатор"
 
-#: src/welcome.py:123
+#: src/welcome.py:119
 msgid "Can't load the CLI installer"
 msgstr "Не е възможно да се зареди CLI инсталатора"
 
-#: src/pacman/pac.py:237
+#: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
 msgstr "Пакет %s не може да бъде открит в никое репо!"
 
-#: src/pacman/pac.py:290
+#: src/pacman/pac.py:289
 msgid "Checking dependencies..."
 msgstr "Проверяване на зависимости..."
 
-#: src/pacman/pac.py:292
+#: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
 msgstr "Проверяване за файлови конфликти"
 
-#: src/pacman/pac.py:294
+#: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
 msgstr "Решаване на зависимости..."
 
-#: src/pacman/pac.py:296
+#: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
 msgstr "Проверяване за вътрешни конфликти..."
 
-#: src/pacman/pac.py:301
+#: src/pacman/pac.py:300
 msgid "Removing..."
 msgstr "Премахване..."
 
-#: src/pacman/pac.py:303
+#: src/pacman/pac.py:302
 msgid "Upgrading..."
 msgstr "Надстройване..."
 
-#: src/pacman/pac.py:305
+#: src/pacman/pac.py:304
 msgid "Checking integrity..."
 msgstr "Проверка на цялостта..."
 
-#: src/pacman/pac.py:308
+#: src/pacman/pac.py:307
 msgid "Loading packages files..."
 msgstr "Зареждане на пакетни файлове..."
 
-#: src/pacman/pac.py:311
+#: src/pacman/pac.py:310
 msgid "Configuring..."
 msgstr "Конфигуриране..."
 
-#: src/pacman/pac.py:312
+#: src/pacman/pac.py:311
 msgid "Configuring a package"
 msgstr "Конфигуриране на пакет"
 
-#: src/pacman/pac.py:314
+#: src/pacman/pac.py:313
 msgid "Downloading a file"
 msgstr "Изтегляне на файл"
 
-#: src/pacman/pac.py:338
-#, python-format
-msgid "ERROR: %s"
-msgstr "ГРЕШКА: %s"
-
-#: src/pacman/pac.py:345
-#, python-format
-msgid "WARNING: %s"
-msgstr "ПРЕДУПРЕЖДЕНИЕ: %s"
-
-#: src/pacman/pac.py:386
+#: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
 msgstr "Изтегляне на %s..."
 
-#: src/pacman/pac.py:395
+#: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
 msgstr "Обновяване на %s..."
 
-#: src/pacman/pac.py:404
+#: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
 msgstr "Инсталиране на %s (%d/%d)"
 
-#: src/pacman/pac.py:407
+#: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
 msgstr "Проверяване и зареждане на пакети..."
 
@@ -1265,7 +1267,7 @@ msgid ""
 " points.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Ще имате възможност да създавате/изтривате дялове, да изберете къде да инсталирате Манджаро и избор на допълнителни точки на монтиране.</span>"
 
-#: ui/installation_automatic.ui:18
+#: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
@@ -1282,7 +1284,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Бележка: Инсталаторът е в бета-стадий.</span>\\n\\n Thus все още е в активна разработка. Знае се, че НЕ работи с RAID, btrfs и други специални конфигурации.\\n Моля, бъдете внимателни , защото е възможна загуба на данни.\\n\\n Ако попаднете на бъг, моля, посетете <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "

@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 21:19+0200\n"
-"PO-Revision-Date: 2013-10-23 19:21+0000\n"
+"POT-Creation-Date: 2013-10-25 20:32+0200\n"
+"PO-Revision-Date: 2013-10-25 18:34+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -25,13 +25,13 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: thus.py:105
+#: thus.py:103
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "A instalação deve ser executada com privilégios administrativos e não pode continuar sem eles."
 
-#: thus.py:111
+#: thus.py:109
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -41,20 +41,20 @@ msgid ""
 "and run this installer again."
 msgstr "Você não pode executar duas instâncias do instalador. \n\nSe você tem certeza que o instalador não está em execução \nvocê pode excluir manualmente o arquivo % s \ne executar o instalador novamente."
 
-#: thus.py:209
+#: thus.py:207
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Usando Aria2 para baixar pacotes - EXPERIMENTAL"
 
-#: thus.py:227
+#: thus.py:225
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Usando o arquivo %s como lista de pacotes"
 
-#: thus.py:247 src/slides.py:258
+#: thus.py:245
 msgid "Manjaro Installer"
 msgstr "Instalador do Manjaro"
 
-#: thus.py:315
+#: thus.py:313
 msgid "Quiting installer..."
 msgstr "Saindo do instalador..."
 
@@ -439,7 +439,7 @@ msgid "Create Partition Table"
 msgstr ""
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:91
+#: src/installation_automatic.py:99
 msgid "Install now!"
 msgstr "Instalar agora!"
 
@@ -574,7 +574,7 @@ msgstr "Manjaro será instalado utilizando-se uma configuração LVM"
 msgid "Automatic installation mode"
 msgstr "Modo de instalação automático"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:69
+#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Selecione o disco:"
 
@@ -583,23 +583,31 @@ msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "AVISO! Este modo de instalação irá sobrescrever todo o conteúdo do seu disco!"
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:32
+#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Por favor, escolha o disco em que deseja instalar o Manjaro\ne pressione o botão abaixo para iniciar o processo."
 
-#: src/installation_automatic.py:134
-#, python-format
-msgid "Automatic install using %s device"
-msgstr "Instalação automática usando o dispositivo %s"
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+msgid "Choose a password for your LUKS device:"
+msgstr ""
 
-#: src/installation_automatic.py:150
+#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+msgid "Confirm your password for your LUKS device:"
+msgstr ""
+
+#: src/installation_automatic.py:151
+#, python-format
+msgid "Automatic install on %s"
+msgstr ""
+
+#: src/installation_automatic.py:167
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Manjaro utilizará %s como dispositivo de instalação"
 
-#: src/installation_automatic.py:159
+#: src/installation_automatic.py:176
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus instalará o bootloader do tipo %s em %s"
@@ -614,145 +622,145 @@ msgstr "Copiando '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Instalar usando o método '%s'"
 
-#: src/installation_process.py:256
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:294 src/installation_process.py:318
+#: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Montando partição %s no diretório %s"
 
-#: src/installation_process.py:300
+#: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Montando partição %s no diretório %s/boot"
 
-#: src/installation_process.py:304
+#: src/installation_process.py:314
 msgid "Couldn't mount root and boot partitions"
 msgstr "Não foi possível montar as partições root e boot"
 
-#: src/installation_process.py:323
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Não foi possível montar %s em %s"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
 msgstr "Não é possível criar os diretórios necessários no sistema de destino"
 
-#: src/installation_process.py:443
+#: src/installation_process.py:449
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Restaurando meta-information em %s"
 
-#: src/installation_process.py:456
+#: src/installation_process.py:462
 msgid "Special dirs already mounted."
 msgstr "Diretórios especiais já estão montados."
 
-#: src/installation_process.py:482
+#: src/installation_process.py:488
 msgid "Special dirs already not mounted."
 msgstr "Diretórios especiais já estão desmontados."
 
-#: src/installation_process.py:492
+#: src/installation_process.py:498
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Não foi possível desmontar %s"
 
-#: src/installation_process.py:543
+#: src/installation_process.py:549
 msgid "Create fstab."
 msgstr "Criar fstab."
 
-#: src/installation_process.py:647
+#: src/installation_process.py:657
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Instalando o boot loader GRUB(2) BIOS em %s"
 
-#: src/installation_process.py:677
+#: src/installation_process.py:687
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB (2) BIOS foi instalado com sucesso."
 
-#: src/installation_process.py:679
+#: src/installation_process.py:689
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "Erro ao instalar o GRUB (2) BIOS."
 
-#: src/installation_process.py:690
+#: src/installation_process.py:700
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Instalando o GRUB(2) UEFI %s boot loader em %s"
 
-#: src/installation_process.py:718
+#: src/installation_process.py:728
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "ERRO ao instalar arquivo de configuração do GRUB(2)."
 
-#: src/installation_process.py:746
+#: src/installation_process.py:756
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ERRO ao instalar o locale do GRUB(2)."
 
-#: src/installation_process.py:760
+#: src/installation_process.py:770
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Erro ao criar hash de senha para o usuário %s"
 
-#: src/installation_process.py:766
+#: src/installation_process.py:776
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Erro ao alterar a senha para o usuário %s"
 
-#: src/installation_process.py:881
+#: src/installation_process.py:901
 msgid "Configuring your new system"
 msgstr "Configurando seu novo sistema"
 
-#: src/installation_process.py:955
+#: src/installation_process.py:978
 msgid "Generating locales..."
 msgstr "Gerando locales..."
 
-#: src/installation_process.py:975
+#: src/installation_process.py:998
 msgid "Adjusting hardware clock..."
 msgstr "Ajustando o hardware clock..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:1004
 msgid "Configuring hardware..."
 msgstr "Configurando o hardware..."
 
-#: src/installation_process.py:988
+#: src/installation_process.py:1011
 msgid "Set up graphics card..."
 msgstr "Configurando a placa de vídeo..."
 
-#: src/installation_process.py:995
+#: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
 msgstr "Não foi possível executar o script MHWD"
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1024
 msgid "Configure display manager..."
 msgstr "Configurando o display manager..."
 
-#: src/installation_process.py:1100
+#: src/installation_process.py:1123
 msgid "Configure System..."
 msgstr "Configurando o sistema..."
 
-#: src/installation_process.py:1128
+#: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
 msgstr "Removendo a confuguração live (pacotes)"
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1167
 msgid "Configuring package manager"
 msgstr "Configurando o gerenciador de pacotes"
 
-#: src/installation_process.py:1159
+#: src/installation_process.py:1182
 msgid "Finished configuring package manager."
 msgstr "Fim da configuração do gerenciador de pacotes."
 
-#: src/installation_process.py:1183
+#: src/installation_process.py:1206
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Habilitar login automático para o usuário %s."
 
-#: src/installation_process.py:1262
+#: src/installation_process.py:1285
 msgid "Running mkinitcpio..."
 msgstr "Executando mkinitcpio..."
 
-#: src/installation_process.py:1265
+#: src/installation_process.py:1288
 msgid "Running mkinitcpio... done"
 msgstr "Executando mkinitcpio... finalizado"
 
@@ -773,15 +781,15 @@ msgstr "Variações"
 msgid "keyboard_layout is %s"
 msgstr "o layout do teclado é %s"
 
-#: src/language.py:78
+#: src/language.py:80
 msgid "Please choose your language:"
 msgstr "Por favor, escolha o seu idioma:"
 
-#: src/language.py:83
+#: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
 msgstr ""
 
-#: src/language.py:84
+#: src/language.py:86
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -789,15 +797,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:91 src/welcome.py:102
+#: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
 msgstr "Bem vindo ao Manjaro!"
 
-#: src/language.py:108
+#: src/language.py:110
 msgid "Languages"
 msgstr "Idiomas"
 
-#: src/language.py:128
+#: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Não foi possível encontrar o arquivo de tradução para o idioma %s"
@@ -873,28 +881,32 @@ msgstr "Aguarde um momento..."
 msgid "Where are you?"
 msgstr "Onde você está?"
 
-#: src/timezone.py:116 ui/timezone.ui:34
+#: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
 msgstr "Zona:"
 
-#: src/timezone.py:120 ui/timezone.ui:79
+#: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
 msgstr "Região:"
 
-#: src/timezone.py:131
+#: src/timezone.py:124 ui/timezone.ui:104
+msgid "Use Network Time Protocol for clock synchronization:"
+msgstr ""
+
+#: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
 msgstr "localização alterada para: %s"
 
-#: src/timezone.py:219
+#: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
 msgstr "Não foi possível detectar automaticamente as coordenadas de fuso horário"
 
-#: src/timezone.py:279
+#: src/timezone.py:283
 msgid "Stopping timezone threads..."
 msgstr "Parando as threads de fuso horário..."
 
-#: src/timezone.py:388
+#: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Não é possível obter o código do país usado para criar um mirrorlist do pacman"
 
@@ -1012,127 +1024,117 @@ msgstr "O nome de usuário não pode conter pontos"
 msgid "Too many characters"
 msgstr "Muitos caracteres"
 
-#: src/validation.py:144
+#: src/validation.py:131
 msgid "password is too short"
 msgstr "senha muito curta"
 
-#: src/validation.py:147
+#: src/validation.py:134
 msgid "weak password"
 msgstr "senha fraca"
 
-#: src/validation.py:150
+#: src/validation.py:137
 msgid "fair password"
 msgstr "senha razoável"
 
-#: src/validation.py:153
+#: src/validation.py:140
 msgid "good password"
 msgstr "senha boa"
 
-#: src/validation.py:156
+#: src/validation.py:143
 msgid "strong password"
 msgstr "senha forte"
 
-#: src/validation.py:171
+#: src/validation.py:158
 msgid "Passwords do not match"
 msgstr "As senhas não coincidem"
 
-#: src/welcome.py:88
+#: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
 msgstr "Experimente o Manjaro sem modificar o seu disco rígido.\nOu instale-o no seu computador com uma das duas opções de instalador."
 
-#: src/welcome.py:93 ui/welcome.ui:45
+#: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
 msgstr "Experimente"
 
-#: src/welcome.py:96 ui/welcome.ui:83
+#: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "Instalação pela linha de comando"
 
-#: src/welcome.py:99 ui/welcome.ui:121
+#: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "Instalação gráfica"
 
-#: src/welcome.py:123
+#: src/welcome.py:119
 msgid "Can't load the CLI installer"
 msgstr "Não foi possível ler a instalação pela linha de comando"
 
-#: src/pacman/pac.py:237
+#: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
 msgstr "Pacote %s não foi encontrado em nenhum repositório!"
 
-#: src/pacman/pac.py:290
+#: src/pacman/pac.py:289
 msgid "Checking dependencies..."
 msgstr "Checando dependências..."
 
-#: src/pacman/pac.py:292
+#: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
 msgstr "Verificando conflitos de arquivo ..."
 
-#: src/pacman/pac.py:294
+#: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
 msgstr "Resolvendo dependências ..."
 
-#: src/pacman/pac.py:296
+#: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
 msgstr "Checando conflitos inter-relacionados..."
 
-#: src/pacman/pac.py:301
+#: src/pacman/pac.py:300
 msgid "Removing..."
 msgstr "Removendo..."
 
-#: src/pacman/pac.py:303
+#: src/pacman/pac.py:302
 msgid "Upgrading..."
 msgstr "Atualizando ..."
 
-#: src/pacman/pac.py:305
+#: src/pacman/pac.py:304
 msgid "Checking integrity..."
 msgstr "Verificando integridade ..."
 
-#: src/pacman/pac.py:308
+#: src/pacman/pac.py:307
 msgid "Loading packages files..."
 msgstr "Lendo arquivos de pacotes..."
 
-#: src/pacman/pac.py:311
+#: src/pacman/pac.py:310
 msgid "Configuring..."
 msgstr "Configurando..."
 
-#: src/pacman/pac.py:312
+#: src/pacman/pac.py:311
 msgid "Configuring a package"
 msgstr "Configurando um pacote"
 
-#: src/pacman/pac.py:314
+#: src/pacman/pac.py:313
 msgid "Downloading a file"
 msgstr "Baixando um arquivo"
 
-#: src/pacman/pac.py:338
-#, python-format
-msgid "ERROR: %s"
-msgstr "ERRO: %s"
-
-#: src/pacman/pac.py:345
-#, python-format
-msgid "WARNING: %s"
-msgstr "AVISO: %s"
-
-#: src/pacman/pac.py:386
+#: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
 msgstr "Baixando %s..."
 
-#: src/pacman/pac.py:395
+#: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
 msgstr "Atualizando %s..."
 
-#: src/pacman/pac.py:404
+#: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
 msgstr "Instalando %s (%d/%d)"
 
-#: src/pacman/pac.py:407
+#: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
 msgstr "Checando e carregando pacotes..."
 
@@ -1270,7 +1272,7 @@ msgid ""
 " points.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Você poderá criar/exluir partições, escolher onde instalar o Manjaro bem como selecionar outros pontos de montagem.</span>"
 
-#: ui/installation_automatic.ui:18
+#: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"

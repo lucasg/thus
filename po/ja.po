@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 21:19+0200\n"
-"PO-Revision-Date: 2013-10-23 19:21+0000\n"
+"POT-Creation-Date: 2013-10-25 20:32+0200\n"
+"PO-Revision-Date: 2013-10-25 18:34+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: thus.py:105
+#: thus.py:103
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "このインストーラーは管理者特権で動作させる必要があり、特権がないと続行ができません。"
 
-#: thus.py:111
+#: thus.py:109
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -37,20 +37,20 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:209
+#: thus.py:207
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "EXPERIMENTALのパッケージのダウンロードにAria2を使用"
 
-#: thus.py:227
+#: thus.py:225
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "パッケージのリストとして'%s' のファイルを使用"
 
-#: thus.py:247 src/slides.py:258
+#: thus.py:245
 msgid "Manjaro Installer"
 msgstr "Manjaro インストーラー"
 
-#: thus.py:315
+#: thus.py:313
 msgid "Quiting installer..."
 msgstr "インストーラを終了しています..."
 
@@ -65,7 +65,7 @@ msgstr "ブートシステムタイプは何ですか？"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS(共通)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -77,7 +77,7 @@ msgstr "i386 UEFI "
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "ブートローダーをインストールしない場合は'Cancel'を選択してください"
 
 #: src/check.py:68
 msgid "Check your computer"
@@ -85,7 +85,7 @@ msgstr "コンピューターを確認して下さい"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr ""
+msgstr "3GB 以上の空き領域がドライブにあること"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -435,7 +435,7 @@ msgid "Create Partition Table"
 msgstr ""
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:91
+#: src/installation_automatic.py:99
 msgid "Install now!"
 msgstr "インストール"
 
@@ -570,7 +570,7 @@ msgstr "ManjaroはLVM setupを使用してインストールされます"
 msgid "Automatic installation mode"
 msgstr "自動インストール"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:69
+#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "ドライブの選択:"
 
@@ -579,23 +579,31 @@ msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr ""
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:32
+#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Manjaroをインストールしたいドライブを選択し、\n下のstart the processをクリックしてください。"
 
-#: src/installation_automatic.py:134
-#, python-format
-msgid "Automatic install using %s device"
-msgstr "%s デバイスを使用して自動インストール"
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+msgid "Choose a password for your LUKS device:"
+msgstr ""
 
-#: src/installation_automatic.py:150
+#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+msgid "Confirm your password for your LUKS device:"
+msgstr ""
+
+#: src/installation_automatic.py:151
+#, python-format
+msgid "Automatic install on %s"
+msgstr ""
+
+#: src/installation_automatic.py:167
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thusは %s をインストールデバイスとして使用します。"
 
-#: src/installation_automatic.py:159
+#: src/installation_automatic.py:176
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thusは  %s に タイプ %s のブートローダーをインストールします"
@@ -610,145 +618,145 @@ msgstr "'/%s' をコピー"
 msgid "Installing using the '%s' method"
 msgstr "'%s' メソッドを使用してインストール"
 
-#: src/installation_process.py:256
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:294 src/installation_process.py:318
+#: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "パーティション %s を %s ディレクトリにマウント"
 
-#: src/installation_process.py:300
+#: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "パーティション %s を %s/ブートディレクトリにマウント"
 
-#: src/installation_process.py:304
+#: src/installation_process.py:314
 msgid "Couldn't mount root and boot partitions"
 msgstr "ルート及びブート用パーティションをマウントできません"
 
-#: src/installation_process.py:323
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "%s を %s にマウントできません"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
 msgstr "システムに必要なディレクトリを作成することができません。"
 
-#: src/installation_process.py:443
+#: src/installation_process.py:449
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "%s 上のメタインフォメーションを復元しています"
 
-#: src/installation_process.py:456
+#: src/installation_process.py:462
 msgid "Special dirs already mounted."
 msgstr "Special dirs は既にマウントされています。"
 
-#: src/installation_process.py:482
+#: src/installation_process.py:488
 msgid "Special dirs already not mounted."
 msgstr "Special dirs はマウントされていません。"
 
-#: src/installation_process.py:492
+#: src/installation_process.py:498
 #, python-format
 msgid "Unable to umount %s"
 msgstr "%s をアンマウントできないようにします"
 
-#: src/installation_process.py:543
+#: src/installation_process.py:549
 msgid "Create fstab."
 msgstr "fstab の作成"
 
-#: src/installation_process.py:647
+#: src/installation_process.py:657
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "GRUB(2) BIOS ブートローダーを %s にインストールしています"
 
-#: src/installation_process.py:677
+#: src/installation_process.py:687
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) のインストールは完了しました。"
 
-#: src/installation_process.py:679
+#: src/installation_process.py:689
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) のインストール中にエラーが発生しました。"
 
-#: src/installation_process.py:690
+#: src/installation_process.py:700
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI %s ブートローダーを %s にインストールしています"
 
-#: src/installation_process.py:718
+#: src/installation_process.py:728
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "GRUB(2) 設定ファイルのインストールエラー  "
 
-#: src/installation_process.py:746
+#: src/installation_process.py:756
 msgid "ERROR installing GRUB(2) locale."
 msgstr "GRUB(2) インストールにおけるロケールエラー"
 
-#: src/installation_process.py:760
+#: src/installation_process.py:770
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "ユーザー %s のパスワードハッシュの作成エラー"
 
-#: src/installation_process.py:766
+#: src/installation_process.py:776
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "ユーザー %s のパスワードの変更エラー"
 
-#: src/installation_process.py:881
+#: src/installation_process.py:901
 msgid "Configuring your new system"
 msgstr "新しいシステムを設定しています"
 
-#: src/installation_process.py:955
+#: src/installation_process.py:978
 msgid "Generating locales..."
 msgstr "ロケールの生成中..."
 
-#: src/installation_process.py:975
+#: src/installation_process.py:998
 msgid "Adjusting hardware clock..."
 msgstr "ハードウェアの時計を調整しています..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:1004
 msgid "Configuring hardware..."
 msgstr ""
 
-#: src/installation_process.py:988
+#: src/installation_process.py:1011
 msgid "Set up graphics card..."
 msgstr ""
 
-#: src/installation_process.py:995
+#: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
 msgstr "MHWDスクリプトが実行できません"
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1024
 msgid "Configure display manager..."
 msgstr ""
 
-#: src/installation_process.py:1100
+#: src/installation_process.py:1123
 msgid "Configure System..."
 msgstr ""
 
-#: src/installation_process.py:1128
+#: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
 msgstr "ライブ設定(パッケージ)を削除"
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1167
 msgid "Configuring package manager"
 msgstr "パッケージマネージャーの設定"
 
-#: src/installation_process.py:1159
+#: src/installation_process.py:1182
 msgid "Finished configuring package manager."
 msgstr "パッケージマネージャーの設定が完了しました。"
 
-#: src/installation_process.py:1183
+#: src/installation_process.py:1206
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: ユーザー %s の自動ログインを可能にします"
 
-#: src/installation_process.py:1262
+#: src/installation_process.py:1285
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpioを実行..."
 
-#: src/installation_process.py:1265
+#: src/installation_process.py:1288
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpioを実行... 完了"
 
@@ -769,15 +777,15 @@ msgstr "相違点"
 msgid "keyboard_layout is %s"
 msgstr "キーボードレイアウトは %s です"
 
-#: src/language.py:78
+#: src/language.py:80
 msgid "Please choose your language:"
 msgstr "言語を選択してください:"
 
-#: src/language.py:83
+#: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
 msgstr ""
 
-#: src/language.py:84
+#: src/language.py:86
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -785,15 +793,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:91 src/welcome.py:102
+#: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
 msgstr "Manjaro へようこそ！"
 
-#: src/language.py:108
+#: src/language.py:110
 msgid "Languages"
 msgstr "言語"
 
-#: src/language.py:128
+#: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "言語 %s の翻訳ファイルが見つかりません"
@@ -869,28 +877,32 @@ msgstr "お待ち下さい..."
 msgid "Where are you?"
 msgstr "どこに住んでいますか？"
 
-#: src/timezone.py:116 ui/timezone.ui:34
+#: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
 msgstr "タイムゾーン:"
 
-#: src/timezone.py:120 ui/timezone.ui:79
+#: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
 msgstr "地域:"
 
-#: src/timezone.py:131
+#: src/timezone.py:124 ui/timezone.ui:104
+msgid "Use Network Time Protocol for clock synchronization:"
+msgstr ""
+
+#: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
 msgstr "ロケーションが %s に変更されました。"
 
-#: src/timezone.py:219
+#: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
 msgstr "タイムゾーンを自動検出できません"
 
-#: src/timezone.py:279
+#: src/timezone.py:283
 msgid "Stopping timezone threads..."
 msgstr ""
 
-#: src/timezone.py:388
+#: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "pacmanのミラーリストの作成に使用する国コードが取得できません"
 
@@ -1008,127 +1020,117 @@ msgstr "ユーザー名にドットは使えません"
 msgid "Too many characters"
 msgstr "文字数が多過ぎます"
 
-#: src/validation.py:144
+#: src/validation.py:131
 msgid "password is too short"
 msgstr "パスワードが短過ぎます"
 
-#: src/validation.py:147
+#: src/validation.py:134
 msgid "weak password"
 msgstr "弱いパスワード"
 
-#: src/validation.py:150
+#: src/validation.py:137
 msgid "fair password"
 msgstr "まあまあなパスワード"
 
-#: src/validation.py:153
+#: src/validation.py:140
 msgid "good password"
 msgstr "良いパスワード"
 
-#: src/validation.py:156
+#: src/validation.py:143
 msgid "strong password"
 msgstr "強固なパスワード"
 
-#: src/validation.py:171
+#: src/validation.py:158
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
-#: src/welcome.py:88
+#: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
 msgstr "ドライブ構成の変更なしにManjaroを試してください。\nあるいはPCに2つのオプションのうち1つを使ってインストールしてください。"
 
-#: src/welcome.py:93 ui/welcome.ui:45
+#: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
 msgstr "試す"
 
-#: src/welcome.py:96 ui/welcome.ui:83
+#: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "コマンドライン インストーラー"
 
-#: src/welcome.py:99 ui/welcome.ui:121
+#: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "グラフィカル インストーラー"
 
-#: src/welcome.py:123
+#: src/welcome.py:119
 msgid "Can't load the CLI installer"
 msgstr "コマンドライン インストーラーを読み込めません。"
 
-#: src/pacman/pac.py:237
+#: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
 msgstr "パッケージ %s がどのリポジトリにも見つかりません!"
 
-#: src/pacman/pac.py:290
+#: src/pacman/pac.py:289
 msgid "Checking dependencies..."
 msgstr "依存関係をチェックしています..."
 
-#: src/pacman/pac.py:292
+#: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
 msgstr "ファイルの衝突をチェックしています..."
 
-#: src/pacman/pac.py:294
+#: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
 msgstr "依存関係を解決しています..."
 
-#: src/pacman/pac.py:296
+#: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
 msgstr "内部衝突をチェックしています..."
 
-#: src/pacman/pac.py:301
+#: src/pacman/pac.py:300
 msgid "Removing..."
 msgstr "削除しています..."
 
-#: src/pacman/pac.py:303
+#: src/pacman/pac.py:302
 msgid "Upgrading..."
 msgstr "アップグレード中..."
 
-#: src/pacman/pac.py:305
+#: src/pacman/pac.py:304
 msgid "Checking integrity..."
 msgstr "ファイルの損傷をチェックしています..."
 
-#: src/pacman/pac.py:308
+#: src/pacman/pac.py:307
 msgid "Loading packages files..."
 msgstr "パッケージファイルを読み込んでいます..."
 
-#: src/pacman/pac.py:311
+#: src/pacman/pac.py:310
 msgid "Configuring..."
 msgstr "設定中..."
 
-#: src/pacman/pac.py:312
+#: src/pacman/pac.py:311
 msgid "Configuring a package"
 msgstr "パッケージを設定中"
 
-#: src/pacman/pac.py:314
+#: src/pacman/pac.py:313
 msgid "Downloading a file"
 msgstr "ファイルをダウンロード中"
 
-#: src/pacman/pac.py:338
-#, python-format
-msgid "ERROR: %s"
-msgstr "エラー: %s"
-
-#: src/pacman/pac.py:345
-#, python-format
-msgid "WARNING: %s"
-msgstr "警告: %s"
-
-#: src/pacman/pac.py:386
+#: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
 msgstr "%s をダウンロード中..."
 
-#: src/pacman/pac.py:395
+#: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
 msgstr "%s を更新しています..."
 
-#: src/pacman/pac.py:404
+#: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
 msgstr "%s をインストールしています (%d/%d)"
 
-#: src/pacman/pac.py:407
+#: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
 msgstr ""
 
@@ -1266,7 +1268,7 @@ msgid ""
 " points.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Manjaroのインストールの場所の選択及びマウントポイントの追加により、パーティションの作成/削除を行うことが可能になります。</span>"
 
-#: ui/installation_automatic.ui:18
+#: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"

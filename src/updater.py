@@ -3,7 +3,11 @@
 #
 #  updater.py
 #  
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#  
 #  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -31,22 +35,23 @@ import info
 
 import logging
 
-url_prefix = "http://git.manjaro.org/core/thus/raw/master/"
+#_url_prefix = "http://git.manjaro.org/core/thus/raw/development/"
+_url_prefix = "http://git.manjaro.org/core/thus/raw/master/"
 
-src_dir = os.path.dirname(__file__) or '.'
-base_dir = os.path.join(src_dir, "..")
+_src_dir = os.path.dirname(__file__) or '.'
+_base_dir = os.path.join(_src_dir, "..")
 
 class Updater():
-    def __init__(self, force_update=False):
+    def __init__(self, force_update):
         self.web_version = ""
         self.web_files = []
         
         response = ""
         try: 
-            update_info_url = url_prefix + "update.info"
+            update_info_url = _url_prefix + "update.info"
             request = urlopen(update_info_url)
             response = request.read().decode('utf-8')
-                    
+            
         except urllib.HTTPError as e:
             logging.exception('Unable to get latest version info - HTTPError = %s' % e.reason)
         except urllib.URLError as e:
@@ -63,7 +68,7 @@ class Updater():
             self.web_version = updateInfo['version']
             self.web_files = updateInfo['files']
         
-            logging.info("web version: %s" % self.web_version)
+            logging.info("Thus Internet version: %s" % self.web_version)
             
             self.force = force_update
             
@@ -93,12 +98,17 @@ class Updater():
     def update(self):
         if self.is_web_version_newer():
             logging.info("New version found. Updating installer...")
+            num_files = len(self.web_files)
+            i = 1
             for f in self.web_files:
                 name = f['name']
                 md5 = f['md5']
+                print("Downloading %s (%d/%d)" % (name, i, num_files))
                 if self.download(name, md5) is False:
                     # download has failed
+                    logging.error("Download of %s has failed" % name)
                     return False
+                i = i + 1
             # replace old files with the new ones
             self.replace_old_with_new_versions()                
             return True
@@ -111,7 +121,7 @@ class Updater():
         return md5.hexdigest()
 
     def download(self, name, md5):
-        url = url_prefix + name
+        url = _url_prefix + name
         response = ""
         try: 
             request = urlopen(url)
@@ -137,7 +147,7 @@ class Updater():
             logging.error("Checksum error in %s. Download aborted" % name)
             return False
         
-        new_name = os.path.join(base_dir, name + "." + self.web_version.replace(".", "_"))
+        new_name = os.path.join(_base_dir, name + "." + self.web_version.replace(".", "_"))
         
         with open(new_name, "wb") as f:
             f.write(txt)
@@ -148,18 +158,12 @@ class Updater():
         logging.info("Replacing version %s with version %s..." % (info.thus_VERSION, self.web_version))
         for f in self.web_files:
             name = f['name']
-            old_name = os.path.join(base_dir, name + "." + info.thus_VERSION.replace(".", "_"))
-            new_name = os.path.join(base_dir, name + "." + self.web_version.replace(".", "_"))
-            cur_name = os.path.join(base_dir, name)
+            old_name = os.path.join(_base_dir, name + "." + info.thus_VERSION.replace(".", "_"))
+            new_name = os.path.join(_base_dir, name + "." + self.web_version.replace(".", "_"))
+            cur_name = os.path.join(_base_dir, name)
             
             if os.path.exists(name):
                 os.rename(name, old_name)
             
             if os.path.exists(new_name):
                 os.rename(new_name, cur_name)
-
-
-if __name__ == '__main__':
-    updater = Updater(force_update=True)
-    updater.update()
-            

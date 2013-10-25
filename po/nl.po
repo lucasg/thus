@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 21:19+0200\n"
-"PO-Revision-Date: 2013-10-23 19:21+0000\n"
+"POT-Creation-Date: 2013-10-25 20:32+0200\n"
+"PO-Revision-Date: 2013-10-25 18:34+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:103
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "De installer moet geladen onder administratie rechten anders kan het niet verder."
 
-#: thus.py:111
+#: thus.py:109
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -37,20 +37,20 @@ msgid ""
 "and run this installer again."
 msgstr "Je kan geen twee sessies laden van deze installer\n\nWeet je zeker dat andere installer niet al draait\nje kan handmatige verwijderen van bestand %s\nen start de installer opnieuw"
 
-#: thus.py:209
+#: thus.py:207
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Gebruikt Aria2 om pakketten te downloaden - EXPERIMENTEEL"
 
-#: thus.py:227
+#: thus.py:225
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Gebruikt bestand '%s' als pakket lijst"
 
-#: thus.py:247 src/slides.py:258
+#: thus.py:245
 msgid "Manjaro Installer"
 msgstr "Manjaro Installatieprogramma"
 
-#: thus.py:315
+#: thus.py:313
 msgid "Quiting installer..."
 msgstr "Installatieprogramma afsluiten..."
 
@@ -435,7 +435,7 @@ msgid "Create Partition Table"
 msgstr ""
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:91
+#: src/installation_automatic.py:99
 msgid "Install now!"
 msgstr "Installeerd nu!"
 
@@ -570,7 +570,7 @@ msgstr "Manjaro zal worden geinstalleerd d.m.v een LVM setup"
 msgid "Automatic installation mode"
 msgstr "Automatische installatie modus"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:69
+#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Selecteer schijf:"
 
@@ -579,23 +579,31 @@ msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "Waarschuwing! Dit installatie modus zal alles worden overgeschreven op je schijf!"
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:32
+#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Kies alstublieft op welke schijf Manjaro wilt installeren⏎\nen klik de knop hier onder om de proces te starten."
 
-#: src/installation_automatic.py:134
-#, python-format
-msgid "Automatic install using %s device"
-msgstr "Automatische installatie gebruikt %s apparaat"
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+msgid "Choose a password for your LUKS device:"
+msgstr ""
 
-#: src/installation_automatic.py:150
+#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+msgid "Confirm your password for your LUKS device:"
+msgstr ""
+
+#: src/installation_automatic.py:151
+#, python-format
+msgid "Automatic install on %s"
+msgstr ""
+
+#: src/installation_automatic.py:167
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus zal %s gebruiken als installatie apparaat"
 
-#: src/installation_automatic.py:159
+#: src/installation_automatic.py:176
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus zal de bootlader installeren van type %s in %s"
@@ -610,145 +618,145 @@ msgstr "Kopieer '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Installeer volgens de '%s\" methode"
 
-#: src/installation_process.py:256
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:294 src/installation_process.py:318
+#: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Koppellen partitie %s naar %s map"
 
-#: src/installation_process.py:300
+#: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Koppelen partitie %s naar %s/boot map"
 
-#: src/installation_process.py:304
+#: src/installation_process.py:314
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kon niet root en boot partitie koppelen."
 
-#: src/installation_process.py:323
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Kan niet %s op %s koppelen"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
 msgstr "Kan niet benodigde mappen creeeren op bestemming systeem"
 
-#: src/installation_process.py:443
+#: src/installation_process.py:449
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Herstellen van meta-informatie op %s"
 
-#: src/installation_process.py:456
+#: src/installation_process.py:462
 msgid "Special dirs already mounted."
 msgstr "Speciale Mappen is al aangekoppeld."
 
-#: src/installation_process.py:482
+#: src/installation_process.py:488
 msgid "Special dirs already not mounted."
 msgstr "Speciale Mappen is al niet aangekoppeld."
 
-#: src/installation_process.py:492
+#: src/installation_process.py:498
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Onmogelijk te umount %s"
 
-#: src/installation_process.py:543
+#: src/installation_process.py:549
 msgid "Create fstab."
 msgstr "Aanmaken fstab"
 
-#: src/installation_process.py:647
+#: src/installation_process.py:657
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installeer GRUB(2) BIOS bootlader in %s"
 
-#: src/installation_process.py:677
+#: src/installation_process.py:687
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS is succesvol geinstalleerd."
 
-#: src/installation_process.py:679
+#: src/installation_process.py:689
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "FOUT bij installeren GRUB(2) BIOS."
 
-#: src/installation_process.py:690
+#: src/installation_process.py:700
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installeer GRUB(2) UEFI %s bootlader op %s"
 
-#: src/installation_process.py:718
+#: src/installation_process.py:728
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "FOUT installeren GRUB(2) configuratie bestand."
 
-#: src/installation_process.py:746
+#: src/installation_process.py:756
 msgid "ERROR installing GRUB(2) locale."
 msgstr "FOUT installeren GRUB(2) locale."
 
-#: src/installation_process.py:760
+#: src/installation_process.py:770
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Fout bij creeeren wachtwoord hash voor gebruiker %s"
 
-#: src/installation_process.py:766
+#: src/installation_process.py:776
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Fout veranderen wachtwoord voor gebruiker %s"
 
-#: src/installation_process.py:881
+#: src/installation_process.py:901
 msgid "Configuring your new system"
 msgstr "Instellen van je nieuwe systeem"
 
-#: src/installation_process.py:955
+#: src/installation_process.py:978
 msgid "Generating locales..."
 msgstr "Genereer Locales.."
 
-#: src/installation_process.py:975
+#: src/installation_process.py:998
 msgid "Adjusting hardware clock..."
 msgstr "Bijstellen hardware klok.."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:1004
 msgid "Configuring hardware..."
 msgstr "Configureren van hardware.."
 
-#: src/installation_process.py:988
+#: src/installation_process.py:1011
 msgid "Set up graphics card..."
 msgstr "Setup grafische kaart.."
 
-#: src/installation_process.py:995
+#: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
 msgstr "Kan niet MHWD script uitvoeren"
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1024
 msgid "Configure display manager..."
 msgstr "Configureer  display manager.."
 
-#: src/installation_process.py:1100
+#: src/installation_process.py:1123
 msgid "Configure System..."
 msgstr "Configureer systeem.."
 
-#: src/installation_process.py:1128
+#: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
 msgstr "Verwijderen live configuratie (pakketten)"
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1167
 msgid "Configuring package manager"
 msgstr "Configureren pakket beheerder"
 
-#: src/installation_process.py:1159
+#: src/installation_process.py:1182
 msgid "Finished configuring package manager."
 msgstr "Klaar met pakket beheerder configureren."
 
-#: src/installation_process.py:1183
+#: src/installation_process.py:1206
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s Inschakelen automatische login voor gebruikers %s."
 
-#: src/installation_process.py:1262
+#: src/installation_process.py:1285
 msgid "Running mkinitcpio..."
 msgstr "Laad mkinitcpio.."
 
-#: src/installation_process.py:1265
+#: src/installation_process.py:1288
 msgid "Running mkinitcpio... done"
 msgstr "Laden mkinitcpio.. klaar"
 
@@ -769,15 +777,15 @@ msgstr "Varianten"
 msgid "keyboard_layout is %s"
 msgstr "Toetsenbord_Schema is %s"
 
-#: src/language.py:78
+#: src/language.py:80
 msgid "Please choose your language:"
 msgstr "Kies uw taal alstublieft."
 
-#: src/language.py:83
+#: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
 msgstr ""
 
-#: src/language.py:84
+#: src/language.py:86
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -785,15 +793,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:91 src/welcome.py:102
+#: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
 msgstr "Welkom bij Manjaro!"
 
-#: src/language.py:108
+#: src/language.py:110
 msgid "Languages"
 msgstr "Talen"
 
-#: src/language.py:128
+#: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Kan geen vertaal bestand vinden voor de %s taal"
@@ -869,28 +877,32 @@ msgstr "Alstublieft wachten.."
 msgid "Where are you?"
 msgstr "Waar ben je?"
 
-#: src/timezone.py:116 ui/timezone.ui:34
+#: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
 msgstr "Zone:"
 
-#: src/timezone.py:120 ui/timezone.ui:79
+#: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
 msgstr "Regio:"
 
-#: src/timezone.py:131
+#: src/timezone.py:124 ui/timezone.ui:104
+msgid "Use Network Time Protocol for clock synchronization:"
+msgstr ""
+
+#: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
 msgstr "lokatie veranderd naar : %s"
 
-#: src/timezone.py:219
+#: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
 msgstr "Kan de tijdzone coordinaten niet automatisch detecteren"
 
-#: src/timezone.py:279
+#: src/timezone.py:283
 msgid "Stopping timezone threads..."
 msgstr "Stoppen met tijdzone threads..."
 
-#: src/timezone.py:388
+#: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Kan  niet de gebruikte land´s code krijgen om pacman mirrorlist te maken"
 
@@ -1008,127 +1020,117 @@ msgstr "Gebruikersnaam kan geen punten bevatten"
 msgid "Too many characters"
 msgstr "Te veel karakters"
 
-#: src/validation.py:144
+#: src/validation.py:131
 msgid "password is too short"
 msgstr "Wachtwoord is te kort"
 
-#: src/validation.py:147
+#: src/validation.py:134
 msgid "weak password"
 msgstr "Zwakke wachtwoord"
 
-#: src/validation.py:150
+#: src/validation.py:137
 msgid "fair password"
 msgstr "Gemiddelde wachtwoord"
 
-#: src/validation.py:153
+#: src/validation.py:140
 msgid "good password"
 msgstr "Goede wachtwoord"
 
-#: src/validation.py:156
+#: src/validation.py:143
 msgid "strong password"
 msgstr "Sterke wachtwoord"
 
-#: src/validation.py:171
+#: src/validation.py:158
 msgid "Passwords do not match"
 msgstr "Wachtwoord komt niet overheen"
 
-#: src/welcome.py:88
+#: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
 msgstr "Probeer Manjaro zonder je hardeschijf te wijzigen.⏎\nOf installer het naar je pc met een of twee installer opties."
 
-#: src/welcome.py:93 ui/welcome.ui:45
+#: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
 msgstr "Probeer het"
 
-#: src/welcome.py:96 ui/welcome.ui:83
+#: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "CLI installer"
 
-#: src/welcome.py:99 ui/welcome.ui:121
+#: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "Grafische Installer"
 
-#: src/welcome.py:123
+#: src/welcome.py:119
 msgid "Can't load the CLI installer"
 msgstr "Kan CLI installer niet laden"
 
-#: src/pacman/pac.py:237
+#: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
 msgstr "Pakket %s niet gevonden in welke repo ook"
 
-#: src/pacman/pac.py:290
+#: src/pacman/pac.py:289
 msgid "Checking dependencies..."
 msgstr "Controlleren afhankelijkheden"
 
-#: src/pacman/pac.py:292
+#: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
 msgstr "Controlleren bestand conflicten.."
 
-#: src/pacman/pac.py:294
+#: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
 msgstr "Oplossen afhankelijkheden.."
 
-#: src/pacman/pac.py:296
+#: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
 msgstr "Controlleren inter conflicts..."
 
-#: src/pacman/pac.py:301
+#: src/pacman/pac.py:300
 msgid "Removing..."
 msgstr "Verwijderen..."
 
-#: src/pacman/pac.py:303
+#: src/pacman/pac.py:302
 msgid "Upgrading..."
 msgstr "Opwaarderen..."
 
-#: src/pacman/pac.py:305
+#: src/pacman/pac.py:304
 msgid "Checking integrity..."
 msgstr "Controlleren intergriteit.."
 
-#: src/pacman/pac.py:308
+#: src/pacman/pac.py:307
 msgid "Loading packages files..."
 msgstr "Laden van pakket bestanden..."
 
-#: src/pacman/pac.py:311
+#: src/pacman/pac.py:310
 msgid "Configuring..."
 msgstr "Instellenen.."
 
-#: src/pacman/pac.py:312
+#: src/pacman/pac.py:311
 msgid "Configuring a package"
 msgstr "Instellen van een pakket"
 
-#: src/pacman/pac.py:314
+#: src/pacman/pac.py:313
 msgid "Downloading a file"
 msgstr "Downloaden van een bestand"
 
-#: src/pacman/pac.py:338
-#, python-format
-msgid "ERROR: %s"
-msgstr "FOUT: %s"
-
-#: src/pacman/pac.py:345
-#, python-format
-msgid "WARNING: %s"
-msgstr "WAARSCHUWING: %s"
-
-#: src/pacman/pac.py:386
+#: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
 msgstr "Downloaden %s..."
 
-#: src/pacman/pac.py:395
+#: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
 msgstr "Verversen %s..."
 
-#: src/pacman/pac.py:404
+#: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
 msgstr "Installeren %s (%d/%d)"
 
-#: src/pacman/pac.py:407
+#: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
 msgstr "Controlleren en laden pakketten..."
 
@@ -1266,7 +1268,7 @@ msgid ""
 " points.</span>"
 msgstr "<span weight=\"light\" size=\"small\">U zal in staat zijn om partities te creeeren / verwijderen, en kiezen waar Manjaro word geinstalleerd en ook kiezen voor een extra koppel punt.</span>"
 
-#: ui/installation_automatic.ui:18
+#: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"

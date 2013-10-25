@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 21:19+0200\n"
-"PO-Revision-Date: 2013-10-23 19:21+0000\n"
+"POT-Creation-Date: 2013-10-25 20:32+0200\n"
+"PO-Revision-Date: 2013-10-25 18:34+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,13 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:103
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "Ezt a telepítőt adminisztrátor jogokkal kell futtatni, nem lehet enélkül folytatni."
 
-#: thus.py:111
+#: thus.py:109
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -38,20 +38,20 @@ msgid ""
 "and run this installer again."
 msgstr "Nem lehet egyszerre két telepítőt futtatni.\n\n Ha biztos benne, hogy a másik telepítő már nem fut, törölje a %s fájlt\n és indítsa újra a telepítőt."
 
-#: thus.py:209
+#: thus.py:207
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Aria2 használata a csomagok letöltésére - Kísérleti"
 
-#: thus.py:227
+#: thus.py:225
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "'%s' fájl használata mint csomag lista"
 
-#: thus.py:247 src/slides.py:258
+#: thus.py:245
 msgid "Manjaro Installer"
 msgstr "Manjaro Telepítő"
 
-#: thus.py:315
+#: thus.py:313
 msgid "Quiting installer..."
 msgstr "Kilépés a telepítőből..."
 
@@ -436,7 +436,7 @@ msgid "Create Partition Table"
 msgstr ""
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:91
+#: src/installation_automatic.py:99
 msgid "Install now!"
 msgstr "Telepítés most!"
 
@@ -571,7 +571,7 @@ msgstr "Manjaro telepítve lesz LVM használatával"
 msgid "Automatic installation mode"
 msgstr "Automatikus telepítési mód"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:69
+#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Meghajtó kiválasztása:"
 
@@ -580,23 +580,31 @@ msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!"
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:32
+#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Kérem válassza ki a meghajtót ahova telepíteni akarja a Manjaro-t\nés kattintson az alábbi gombra a folyamat megkezdéséhez."
 
-#: src/installation_automatic.py:134
-#, python-format
-msgid "Automatic install using %s device"
-msgstr "Automatikus telepítés, használva ezt az eszközt:  %s"
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+msgid "Choose a password for your LUKS device:"
+msgstr ""
 
-#: src/installation_automatic.py:150
+#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+msgid "Confirm your password for your LUKS device:"
+msgstr ""
+
+#: src/installation_automatic.py:151
+#, python-format
+msgid "Automatic install on %s"
+msgstr ""
+
+#: src/installation_automatic.py:167
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus használni fogja a következő telepítési eszközt: %s"
 
-#: src/installation_automatic.py:159
+#: src/installation_automatic.py:176
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Manjaro telepíteni fogja a rendszerbetöltőt a %s - %s"
@@ -611,145 +619,145 @@ msgstr "Másolás '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Telepítés a következő módszerrel: '%s'"
 
-#: src/installation_process.py:256
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:294 src/installation_process.py:318
+#: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "%s partíció csatolása a %s könyvtárba"
 
-#: src/installation_process.py:300
+#: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "%s partíció csatolása a %s/boot könyvtárba"
 
-#: src/installation_process.py:304
+#: src/installation_process.py:314
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nem sikerült csatlakoztatni a root és boot partíciókat"
 
-#: src/installation_process.py:323
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Nem lehet csatlakoztatni %s ebben %s"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
 msgstr "Nem hozhatsz létre szükséges könyvtárakat a cél rendszeren"
 
-#: src/installation_process.py:443
+#: src/installation_process.py:449
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "meta információk visszaállítása a %s"
 
-#: src/installation_process.py:456
+#: src/installation_process.py:462
 msgid "Special dirs already mounted."
 msgstr "Speciális könyvtárak már csatolva vannak."
 
-#: src/installation_process.py:482
+#: src/installation_process.py:488
 msgid "Special dirs already not mounted."
 msgstr "Speciális könyvtárak már nincsenek csatolva."
 
-#: src/installation_process.py:492
+#: src/installation_process.py:498
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Nem lehet csatolni %s"
 
-#: src/installation_process.py:543
+#: src/installation_process.py:549
 msgid "Create fstab."
 msgstr "fstab létrehozása."
 
-#: src/installation_process.py:647
+#: src/installation_process.py:657
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "GRUB(2) rendszerbetöltő telepítése a %s"
 
-#: src/installation_process.py:677
+#: src/installation_process.py:687
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS telepítése sikeres."
 
-#: src/installation_process.py:679
+#: src/installation_process.py:689
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "HIBA a GRUB(2) BIOS telepítése során."
 
-#: src/installation_process.py:690
+#: src/installation_process.py:700
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI %s rendszerbetöltő telepítése a %s"
 
-#: src/installation_process.py:718
+#: src/installation_process.py:728
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "HIBA a GRUB(2) konfigurációs fájl telepítésekor."
 
-#: src/installation_process.py:746
+#: src/installation_process.py:756
 msgid "ERROR installing GRUB(2) locale."
 msgstr "HIBA a GRUB(2) lokális változók telepítésekor."
 
-#: src/installation_process.py:760
+#: src/installation_process.py:770
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Jelszó hash nem került létrehozásra a következő felhasználónak: %s"
 
-#: src/installation_process.py:766
+#: src/installation_process.py:776
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Hiba a jelszó megváltoztatásánál a következő felhasználónál: %s"
 
-#: src/installation_process.py:881
+#: src/installation_process.py:901
 msgid "Configuring your new system"
 msgstr "Rendszer testreszabása"
 
-#: src/installation_process.py:955
+#: src/installation_process.py:978
 msgid "Generating locales..."
 msgstr "Lokális változók generálása..."
 
-#: src/installation_process.py:975
+#: src/installation_process.py:998
 msgid "Adjusting hardware clock..."
 msgstr "Hardware óra beállítása..."
 
-#: src/installation_process.py:981
+#: src/installation_process.py:1004
 msgid "Configuring hardware..."
 msgstr "Hardware konfigurálása..."
 
-#: src/installation_process.py:988
+#: src/installation_process.py:1011
 msgid "Set up graphics card..."
 msgstr "Grafikus kártya beállítása..."
 
-#: src/installation_process.py:995
+#: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
 msgstr "Nem lehet futtatni az MHWD \"Manjaro Hardware Detection\" scriptet"
 
-#: src/installation_process.py:1001
+#: src/installation_process.py:1024
 msgid "Configure display manager..."
 msgstr "Képernyő kezelő konfigurálása..."
 
-#: src/installation_process.py:1100
+#: src/installation_process.py:1123
 msgid "Configure System..."
 msgstr "Rendszer konfigurálása..."
 
-#: src/installation_process.py:1128
+#: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
 msgstr "Lemezről betöltött \"élő\" konfiguráció (csomagok) eltávolítása "
 
-#: src/installation_process.py:1144
+#: src/installation_process.py:1167
 msgid "Configuring package manager"
 msgstr "Csomagkezelő konfigurálása"
 
-#: src/installation_process.py:1159
+#: src/installation_process.py:1182
 msgid "Finished configuring package manager."
 msgstr "Csomagkezelő konfigurálása befejeződött."
 
-#: src/installation_process.py:1183
+#: src/installation_process.py:1206
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Automatikus bejelentkezés engedélyezése a felhasználónak: %s"
 
-#: src/installation_process.py:1262
+#: src/installation_process.py:1285
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpio futtatása..."
 
-#: src/installation_process.py:1265
+#: src/installation_process.py:1288
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpio futtatása... befejezve"
 
@@ -770,15 +778,15 @@ msgstr "Variációk"
 msgid "keyboard_layout is %s"
 msgstr "A billentyűzetkiosztás ez: %s"
 
-#: src/language.py:78
+#: src/language.py:80
 msgid "Please choose your language:"
 msgstr "Válassz nyelvet:"
 
-#: src/language.py:83
+#: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
 msgstr ""
 
-#: src/language.py:84
+#: src/language.py:86
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -786,15 +794,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:91 src/welcome.py:102
+#: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
 msgstr "Üdvözli önt a Manjaro!"
 
-#: src/language.py:108
+#: src/language.py:110
 msgid "Languages"
 msgstr "Nyelvek"
 
-#: src/language.py:128
+#: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Nem található fordítási fájl a következő nyelvhez: %s"
@@ -870,28 +878,32 @@ msgstr "Kérlek várj..."
 msgid "Where are you?"
 msgstr "Hol vagy?"
 
-#: src/timezone.py:116 ui/timezone.ui:34
+#: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
 msgstr "Terület:"
 
-#: src/timezone.py:120 ui/timezone.ui:79
+#: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
 msgstr "Régió:"
 
-#: src/timezone.py:131
+#: src/timezone.py:124 ui/timezone.ui:104
+msgid "Use Network Time Protocol for clock synchronization:"
+msgstr ""
+
+#: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
 msgstr "Helység megváltoztatva: %s"
 
-#: src/timezone.py:219
+#: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
 msgstr "Nem választódtak ki az időzónai koordináták:"
 
-#: src/timezone.py:279
+#: src/timezone.py:283
 msgid "Stopping timezone threads..."
 msgstr "Időzónai szálak leállítása..."
 
-#: src/timezone.py:388
+#: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "Nem található ország kód, a pacman tükörlista elkészítéséhez"
 
@@ -1009,127 +1021,117 @@ msgstr "Felhasználónév nem tartalmazhat pontokat"
 msgid "Too many characters"
 msgstr "Túl sok karakter"
 
-#: src/validation.py:144
+#: src/validation.py:131
 msgid "password is too short"
 msgstr "Jelszó túl rövid"
 
-#: src/validation.py:147
+#: src/validation.py:134
 msgid "weak password"
 msgstr "Gyenge jelszó"
 
-#: src/validation.py:150
+#: src/validation.py:137
 msgid "fair password"
 msgstr "Egyező jelszó"
 
-#: src/validation.py:153
+#: src/validation.py:140
 msgid "good password"
 msgstr "Jó jelszó"
 
-#: src/validation.py:156
+#: src/validation.py:143
 msgid "strong password"
 msgstr "Erős jelszó"
 
-#: src/validation.py:171
+#: src/validation.py:158
 msgid "Passwords do not match"
 msgstr "A jelszavak nem egyeznek"
 
-#: src/welcome.py:88
+#: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
 msgstr "Próbálja ki a Manjaro-t a merevlemez módosítása nélkül.\nVagy telepítse a számítógépére a két telepítési opció egyikével."
 
-#: src/welcome.py:93 ui/welcome.ui:45
+#: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
 msgstr "Kipróbálás"
 
-#: src/welcome.py:96 ui/welcome.ui:83
+#: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
 msgstr "CLI telepítő"
 
-#: src/welcome.py:99 ui/welcome.ui:121
+#: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
 msgstr "Grafikus Telepítő"
 
-#: src/welcome.py:123
+#: src/welcome.py:119
 msgid "Can't load the CLI installer"
 msgstr "Nem sikerült betölteni a CLI telepítőt"
 
-#: src/pacman/pac.py:237
+#: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
 msgstr "A csomag %s nem található egy tárolóban sem!"
 
-#: src/pacman/pac.py:290
+#: src/pacman/pac.py:289
 msgid "Checking dependencies..."
 msgstr "Függőségek ellenőrzése..."
 
-#: src/pacman/pac.py:292
+#: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
 msgstr "Fájlütközések ellenőrzése..."
 
-#: src/pacman/pac.py:294
+#: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
 msgstr "Függőségek feloldása..."
 
-#: src/pacman/pac.py:296
+#: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
 msgstr "Belső konfliktusok ellenőrzése..."
 
-#: src/pacman/pac.py:301
+#: src/pacman/pac.py:300
 msgid "Removing..."
 msgstr "Eltávolítás..."
 
-#: src/pacman/pac.py:303
+#: src/pacman/pac.py:302
 msgid "Upgrading..."
 msgstr "Frissítés..."
 
-#: src/pacman/pac.py:305
+#: src/pacman/pac.py:304
 msgid "Checking integrity..."
 msgstr "Integritás ellenőrzése..."
 
-#: src/pacman/pac.py:308
+#: src/pacman/pac.py:307
 msgid "Loading packages files..."
 msgstr "Csomagfájlok betöltése..."
 
-#: src/pacman/pac.py:311
+#: src/pacman/pac.py:310
 msgid "Configuring..."
 msgstr "Konfigurálás..."
 
-#: src/pacman/pac.py:312
+#: src/pacman/pac.py:311
 msgid "Configuring a package"
 msgstr "Csomag konfigurálása"
 
-#: src/pacman/pac.py:314
+#: src/pacman/pac.py:313
 msgid "Downloading a file"
 msgstr "Fájl letöltése"
 
-#: src/pacman/pac.py:338
-#, python-format
-msgid "ERROR: %s"
-msgstr "HIBA: %s"
-
-#: src/pacman/pac.py:345
-#, python-format
-msgid "WARNING: %s"
-msgstr "FIGYELMEZTETÉS: %s"
-
-#: src/pacman/pac.py:386
+#: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
 msgstr "Letöltés %s..."
 
-#: src/pacman/pac.py:395
+#: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
 msgstr "Frissítése: %s"
 
-#: src/pacman/pac.py:404
+#: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
 msgstr "Telepítés %s (%d/%d)"
 
-#: src/pacman/pac.py:407
+#: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
 msgstr "Csomagok ellenőrzése és betöltése..."
 
@@ -1267,7 +1269,7 @@ msgid ""
 " points.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Létrehozhat, törölhet partíciókat. Válassza ki hova települjön a Manjaro és válasszon csatolási pontokat.</span>"
 
-#: ui/installation_automatic.ui:18
+#: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"

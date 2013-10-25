@@ -78,27 +78,25 @@ _update = False
 _force_grub_type = False
 
 # Useful vars for gettext (translations)
-APP = "thus"
-DIR = "/usr/share/locale"
+APP_NAME = "thus"
+LOCALE_DIR = "/usr/share/locale"
 
 _main_window_width = 800
 _main_window_height = 526
-
-_debug = False
 
 class Main(Gtk.Window):
 
     def __init__(self):
         # This allows to translate all py texts (not the glade ones)
-        gettext.textdomain(APP)
-        gettext.bindtextdomain(APP, DIR)
+        gettext.textdomain(APP_NAME)
+        gettext.bindtextdomain(APP_NAME, LOCALE_DIR)
 
         locale_code, encoding = locale.getdefaultlocale()
-        lang = gettext.translation (APP, DIR, [locale_code], None, True)
+        lang = gettext.translation (APP_NAME, LOCALE_DIR, [locale_code], None, True)
         lang.install()
 
         # With this we can use _("string") to translate
-        gettext.install(APP, localedir=DIR, codeset=None, names=[locale_code])
+        gettext.install(APP_NAME, localedir=LOCALE_DIR, codeset=None, names=[locale_code])
 
         # check if we have administrative privileges
         if os.getuid() != 0:
@@ -115,8 +113,6 @@ class Main(Gtk.Window):
             sys.exit(1)
                 
         super().__init__()
-        
-        self.setup_logging()
 
         # workaround for dconf
         os.system("mkdir -p /root/.cache/dconf")
@@ -147,19 +143,19 @@ class Main(Gtk.Window):
         logging.debug("[%d] %s started" % (p.pid, p.name))
         
         self.settings = config.Settings()        
-        self.ui_dir = self.settings.get("UI_DIR")
+        self.ui_dir = self.settings.get("ui")
 
         if not os.path.exists(self.ui_dir):
             thus_dir = os.path.join(os.path.dirname(__file__), './')
-            self.settings.set("THUS_DIR", thus_dir)
+            self.settings.set("thus", thus_dir)
             
             ui_dir = os.path.join(os.path.dirname(__file__), 'ui/')
-            self.settings.set("UI_DIR", ui_dir)
+            self.settings.set("ui", ui_dir)
             
             data_dir = os.path.join(os.path.dirname(__file__), 'data/')
-            self.settings.set("DATA_DIR", data_dir)
+            self.settings.set("data", data_dir)
             
-            self.ui_dir = self.settings.get("UI_DIR")
+            self.ui_dir = self.settings.get("ui")
             
         # set enabled desktops
         self.settings.set("desktops", _desktops)
@@ -172,13 +168,14 @@ class Main(Gtk.Window):
 
         self.add(self.ui.get_object("main"))
 
-        self.header = self.ui.get_object("box5")
+        self.header = self.ui.get_object("header")
 
         self.forward_button = self.ui.get_object("forward_button")
 
         self.logo = self.ui.get_object("logo")
 
-        logo_dir = os.path.join(self.settings.get("DATA_DIR"), "manjaro-logo-mini.png")
+        data_dir = self.settings.get('data')
+        logo_dir = os.path.join(data_dir,  "manjaro-logo-mini.png")
                                 
         self.logo.set_from_file(logo_dir)
 
@@ -197,7 +194,6 @@ class Main(Gtk.Window):
         
         # Create a queue. Will be used to report pacman messages (pac.py)
         # to the main thread (installer_*.py)
-        #self.callback_queue = multiprocessing.Queue()
         self.callback_queue = multiprocessing.JoinableQueue()
 
         # save in config if we have enabled staging features
@@ -250,7 +246,7 @@ class Main(Gtk.Window):
         self.set_size_request(_main_window_width, _main_window_height);
 
         # set window icon
-        icon_dir = os.path.join(self.settings.get("DATA_DIR"), 'manjaro-icon.png')
+        icon_dir = os.path.join(data_dir, 'manjaro-icon.png')
         
         self.set_icon_from_file(icon_dir)
 
@@ -262,7 +258,7 @@ class Main(Gtk.Window):
         # Header style testing
         style_provider = Gtk.CssProvider()
 
-        style_css = os.path.join(self.settings.get("DATA_DIR"), "css", "gtk-style.css")
+        style_css = os.path.join(data_dir, "css", "gtk-style.css")
 
         with open(style_css, 'rb') as css:
             css_data = css.read()
@@ -370,34 +366,35 @@ class Main(Gtk.Window):
                     # we're at the first page
                     self.backwards_button.hide()
 
-    def setup_logging(self):
-        logger = logging.getLogger()
-        logger.setLevel(_log_level)
-        # log format
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        # create file handler
-        fh = logging.FileHandler('/tmp/thus.log', mode='w')
-        fh.setLevel(_log_level)
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
+def setup_logging():
+    logger = logging.getLogger()
+    logger.setLevel(_log_level)
+    # log format
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    # create file handler
+    fh = logging.FileHandler('/tmp/cnchi.log', mode='w')
+    fh.setLevel(_log_level)
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
 
-        if _verbose:
-            sh = logging.StreamHandler()
-            sh.setLevel(_log_level)
-            sh.setFormatter(formatter)
-            logger.addHandler(sh)
+    if _verbose:
+        # Show log messages to stdout
+        sh = logging.StreamHandler()
+        sh.setLevel(_log_level)
+        sh.setFormatter(formatter)
+        logger.addHandler(sh)
         
 
 def show_help():
     print("Thus Manjaro Installer")
     print("Advanced options:")
-    print("-a, --aria2 : Use aria2 to download Manjaro packages (EXPERIMENTAL)")
+    #print("-a, --aria2 : Use aria2 to download Manjaro packages (EXPERIMENTAL)")
     print("-d, --debug : Show debug messages")
+    print("-g type, --force-grub-type type : force grub type to install, type can be bios, efi, ask or none")
+    print("-h, --help : Show this help message")
+    #print("-p file.xml, --packages file.xml : Manjaro will install the packages referenced by file.xml instead of the default ones")
     print("-s, --staging : Enable stating options")
     print("-v, --verbose : Show logging messages to stdout")
-    print("-g type, --force-grub-type type : force grub type to install, type can be bios, efi, ask or none")
-    print("-p file.xml, --packages file.xml : Manjaro will install the packages referenced by file.xml instead of the default ones")
-    print("-h, --help : Show this help message")
 
 if __name__ == '__main__':
     
@@ -435,16 +432,25 @@ if __name__ == '__main__':
         else:
             assert False, "unhandled option"
         
-    # Check if program needs to be updated
+    setup_logging()
+        
     if _update:
-        upd = updater.Updater()
+        # Check if program needs to be updated
+        upd = updater.Updater(_force_update)
         if upd.update():
-            print("Program updated! Restarting...")
-            # Remove /tmp/.setup-running
+            # Remove /tmp/.setup-running to be able to run another
+            # instance of Cnchi
             p = "/tmp/.setup-running"
             if os.path.exists(p):
                 os.remove(p)
-            os.execl(sys.executable, *([sys.executable] + sys.argv))
+            if not _force_update:
+                print("Program updated! Restarting...")
+                # Run another instance of Cnchi (which will be the new version)
+                os.execl(sys.executable, *([sys.executable] + sys.argv))
+            else:
+                print("Program updated! Please restart Cnchi.")
+
+            # Exit and let the new instance do all the hard work
             sys.exit(0)
 
     # Start Gdk stuff and main window app
