@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 14:24+0000\n"
+"Last-Translator: lajos <mrlajos@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,20 +38,20 @@ msgid ""
 "and run this installer again."
 msgstr "Nem lehet egyszerre két telepítőt futtatni.\n\n Ha biztos benne, hogy a másik telepítő már nem fut, törölje a %s fájlt\n és indítsa újra a telepítőt."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Aria2 használata a csomagok letöltésére - Kísérleti"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "'%s' fájl használata mint csomag lista"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Manjaro Telepítő"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Kilépés a telepítőből..."
 
@@ -433,7 +433,7 @@ msgstr "Partíciós táblat típusa:"
 
 #: src/installation_advanced.py:1128
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Partíciós tábla létrehozása"
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
@@ -494,7 +494,7 @@ msgstr "Beállítások mentve ide %s"
 #: src/installation_advanced.py:1449
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Fájlrendszer %s létrehozása a %s címke: %s"
 
 #: src/installation_advanced.py:1531
 #, python-format
@@ -588,16 +588,16 @@ msgstr "Kérem válassza ki a meghajtót ahova telepíteni akarja a Manjaro-t\n�
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Adjon meg jelszót a LUKS eszközhöz:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Jelszó megerősítése a LUKS eszközhöz:"
 
 #: src/installation_automatic.py:151
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Automatikus telepítés itt %s"
 
 #: src/installation_automatic.py:167
 #, python-format
@@ -621,7 +621,7 @@ msgstr "Telepítés a következő módszerrel: '%s'"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Hiba a partíciók és fájlrendszereik létrehozásakor"
 
 #: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
@@ -784,7 +784,7 @@ msgstr "Válassz nyelvet:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Figyelem: A \"Thus\" telepítő béta szoftver."
 
 #: src/language.py:86
 msgid ""
@@ -792,7 +792,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "The szoftvare \"Thus\" béta állapotú és jelenleg is fejlesztés alatt áll.\nMég nem tökéletesen kezeli a RAID, btrfs köteteket vagy egyéb haladó beállításokat. Kérem körültekintően járjon el mivel adatvesztés lehetséges!\n\nHa bármilyen hibát észlel itt jelentheti: <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -888,7 +888,7 @@ msgstr "Régió:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Használjon NTP-t \"Network Time Protocol\" az óra szinkronizáláshoz"
 
 #: src/timezone.py:135
 #, python-format
@@ -1286,7 +1286,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Figyelem: A \"Thus\" telepítő béta szoftver.</span>\n\nThe szoftvare \"Thus\" béta állapotú és jelenleg is fejlesztés alatt áll.\nMég nem tökéletesen kezeli a RAID, btrfs köteteket vagy egyéb haladó beállításokat. Kérem körültekintően járjon el mivel adatvesztés lehetséges!\n\nHa bármilyen hibát észlel itt jelentheti: <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
