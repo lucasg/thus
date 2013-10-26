@@ -1010,7 +1010,7 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("/opt/manjaro/pacman-gfx.conf"):
             self.queue_event('info', _("Set up graphics card..."))
             self.queue_event('pulse') 
-            mhwd_script_path = os.path.join(self.settings.get("THUS_DIR"), "scripts", _mhwd_script)  
+            mhwd_script_path = os.path.join(self.settings.get("thus"), "scripts", _mhwd_script)  
             try:
                 subprocess.check_call(["/usr/bin/bash", mhwd_script_path])
                 self.queue_event('debug', "Setup graphic card done.")
@@ -1288,7 +1288,7 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('info', _("Running mkinitcpio... done"))
         
         '''# Call post-install script to execute gsettings commands
-        script_path_postinstall = os.path.join(self.settings.get("THUS_DIR"), \
+        script_path_postinstall = os.path.join(self.settings.get("thus"), \
             "scripts", _postinstall_script)
         subprocess.check_call(["/usr/bin/bash", script_path_postinstall, \
             username, self.dest_dir, self.desktop, keyboard_layout, keyboard_variant])'''
