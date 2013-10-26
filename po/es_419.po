@@ -13,14 +13,15 @@
 # leonelhermetica <leonelmalon@gmail.com>, 2013
 # neiko <neikokz+tsfx@gmail.com>, 2011
 # Pablo Lezaeta <prflr88@gmail.com>, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # Rodrigo Cares <rcares@gmail.com>, 2012
 # Stif <saibot22@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 08:08+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/projects/p/manjaro-thus/language/es_419/)\n"
 "MIME-Version: 1.0\n"
@@ -45,20 +46,20 @@ msgid ""
 "and run this installer again."
 msgstr "No puede ejecutar dos instancias del instalador.\n\nSi está seguro de que el instalador no se está ejecutando\npuede eliminar manualmente el archivo %s\ny ejecutar el instalador de nuevo."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Usando Aria2 para descargar los paquetes - EXPERIMENTAL"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Usando el archivo '%s' como lista de paquetes"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Instalador de Manjaro"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Saliendo del instalador..."
 
@@ -595,16 +596,16 @@ msgstr "Por favor seleccione la unidad donde desea instalar Manjaro\ny presione 
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Eliga una contraseña para su dispositivo LUKS:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Confirme su contraseña para su dispositivo LUKS:"
 
 #: src/installation_automatic.py:151
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Instalación automática en %s"
 
 #: src/installation_automatic.py:167
 #, python-format
@@ -799,7 +800,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus es un programa pre-lanzado en fase beta lo cuál implica que todavía se encuentra bajo desarrollo. Esto hace que todavía no se maneje apropiadamente RAID, subvolúmenes BTRFS, y otras configuraciones avanzadas. Por favor proceda con cautela ya que pérdida de datos es posible! Si encuentra cualquiera bug o error, por favor reportelo a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "Thus es un programa pre-lanzado en fase beta lo cuál implica que todavía se encuentra bajo desarrollo. \nEsto hace que todavía no se maneje apropiadamente RAID, subvolúmenes BTRFS, y otras configuraciones avanzadas. Por favor proceda con cautela ya que pérdida de datos es posible! \n\nSi encuentra cualquiera bug o error, por favor reportelo a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -895,7 +896,7 @@ msgstr "Región:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Utilice el protocolo de tiempo de red para la sincronización del reloj:"
 
 #: src/timezone.py:135
 #, python-format
@@ -1293,7 +1294,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Noticia: El instalador de Thus es un programa en fase beta.</span>\n\nThus es un programa pre-lanzado en fase beta lo cuál implica que todavía se encuentra bajo desarrollo. Esto hace que todavía no se maneje apropiadamente RAID, subvolúmenes BTRFS, y otras configuraciones avanzadas. Por favor proceda con cautela ya que pérdida de datos es posible!\n\nSi encuentra cualquiera bug o error, por favor reportelo a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "

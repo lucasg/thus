@@ -8,14 +8,15 @@
 # galkowskit <galkowski.t@gmail.com>, 2013
 # kichawa <boxbolky@gmail.com>, 2013
 # Mateusz Mikołajczyk <mikolajczyk.mateusz@gmail.com>, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # Pieter19 <pieter1911@gmail.com>, 2013
 # Piotr Strębski <strebski@o2.pl>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 08:12+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/manjaro-thus/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -40,20 +41,20 @@ msgid ""
 "and run this installer again."
 msgstr "Nie możesz uruchomić dwóch instalatorów na raz.\n\nJeśli jesteś pewny, że inny instalator nie jest już uruchomiony\nmożesz ręcznie usunąć plik %s\ni uruchomić ten instalator ponownie."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Używanie Aria2 do pobrania pakietów - EKSPERYMENTALNE"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Używanie pliku '%s' jako listy pakietów"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Instalator Manjaro"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Zamykanie instalatora..."
 
@@ -1288,7 +1289,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Uwaga: Instalator Thus jest oprogramowaniem w wersji beta.</span>\n\nThus jest oprogramowaniem w wersji beta, przed oficjalnym wydaniem, wciąż w procesie rozwojowym.\nNie obsługuje jeszcze poprawnie RAID, podwoluminów btrfs i innych zaawansowanych ustawień. Proszę liczyć się z możliwością utraty danych!\n\nJeśli odnajdziesz jakiś błąd, proszę odwiedzić <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>."
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "

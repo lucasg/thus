@@ -9,14 +9,16 @@
 # flamelab <panosfilip@gmail.com>, 2011
 # gasdim <gasdim@hotmail.gr>, 2013
 # ifaigios <ifaigios@gmail.com>, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # rtnpro_test <rtnpro@gmail.com>, 2011
+# gasdim <gasdim@hotmail.gr>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 08:13+0000\n"
+"Last-Translator: gasdim <gasdim@hotmail.gr>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/manjaro-thus/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,20 +42,20 @@ msgid ""
 "and run this installer again."
 msgstr "Δεν μπορείτε να τρέξετε δύο περιπτώσεις απο αυτόν τον εγκαταστάτη.\n\nΑν είστε σίγουροι οτι δεν τρέχει ήση άλλος εγκαταστάτης\nμπορείτε να διαγράψετε χειροκείνητα το αρχείο %s\nκαι τρέξτε τον εγκαταστάτη ξανά."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Χρησιμοποιώντας Aria2 για να κατεβάσετε πακέτα - ΠΕΙΡΑΜΑΤΙΚΟ"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Χρήση του '%s' αρχείου σαν λίστα πακέτων"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Εγκαταστάτης Manjaro"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Κλείνοντας τον εγκαταστάτη"
 
@@ -590,16 +592,16 @@ msgstr "Παρακαλώ επιλέξτε τον οδηγό για το που �
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Επιλέξτε ένα κωδικό για την LUKS συσκευή σας:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Επιβεβαιώστε τον κωδικό για την LUKS συσκευή σας:"
 
 #: src/installation_automatic.py:151
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Αυτόματη εγκατάσταση στο %s"
 
 #: src/installation_automatic.py:167
 #, python-format
@@ -890,7 +892,7 @@ msgstr "Περιοχή:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Χρηση του Προτόκολλου Ώρας Δικτύου για τον συχρονισμό της ώρας:"
 
 #: src/timezone.py:135
 #, python-format
@@ -1288,7 +1290,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Προσοχή: Ο εγκαταστάτης Thus είναι λογισμικό σε δοκιμαστική φάση.</span>\n\nΑυτό είναι δοκιμαστικό πριν την έκδοση λογισμικό και κάτω απο ενεργή ανάπτυξη.\nΑκόμη δεν χειρείζετε σωστά το RAID, brtfs, υπο-τόμους, η άλλες προχωρημένες διευθετήσεις. Παρακαλώ προχωρήστε με προσοχή επειδή  η απώλεια δεδομένων είναι πιθανή!\n\nΑν βρείτε κάποιο σφάλμα, παρακαλώ , επισκεφθείτε <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> "
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
