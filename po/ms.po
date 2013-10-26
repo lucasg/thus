@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 11:41+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/manjaro-thus/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -34,20 +34,20 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Mengunakan Aria2 untuk memuat turun pakej - EKSPERIMENTAL"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Mengunakan fail '%s' sebagai senarai pakej"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr ""
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Menutup pemasang..."
 
@@ -1129,7 +1129,7 @@ msgstr "Memasang %s (%d/%d)"
 
 #: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
-msgstr ""
+msgstr "Semakan dan memuatkan pakej..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"

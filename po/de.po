@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:41+0000\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 13:05+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -38,20 +38,20 @@ msgid ""
 "and run this installer again."
 msgstr "Es ist nicht möglich zwei Instanzen des Installers zu starten.\\n\\nWenn Sie sich sicher sind, dass der Installer nicht bereits ausgeführt wird, \\nso können Sie manuell die Datei %s löschen\\nund den Installer erneut starten."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Benutze Aria2 um Pakete herunter zu laden - EXPERIMENTELL"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Benutze '%s' Datei als Paket Liste"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Manjaro Installer"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Beende Installtionsprogramm ..."
 
@@ -888,7 +888,7 @@ msgstr "Region:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr "Nutze Netzwerk-Zeit-Protokol (NTP) für Uhrensynchonisation:"
+msgstr "Nutze das Network Time Protocol zur Uhren-Synchronisation:"
 
 #: src/timezone.py:135
 #, python-format
