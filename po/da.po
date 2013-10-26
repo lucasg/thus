@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-25 21:18+0200\n"
-"PO-Revision-Date: 2013-10-26 14:30+0000\n"
+"PO-Revision-Date: 2013-10-26 14:48+0000\n"
 "Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/manjaro-thus/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -145,27 +145,27 @@ msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr ""
+msgstr "XFCE er et letvægts-skrivebordsmiljø, hvis mål er at bruge begrænsede systemressourcer og samtidig være visuelt tiltalende, have bred funktionalitet og være let tilgængelig."
 
 #: src/desktop.py:96
 msgid ""
 "LXDE is a high-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard "
 "shortcuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "Lxde er et højtydende og energibesparende skrivebordsmiljø. Det leveres med en nydelig brugerflade, understøttelse af flere sprog, standardtastaturgenveje og andre features som faneblade i filhåndteringen."
 
 #: src/desktop.py:103
 msgid ""
 "Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox er en særdeles fleksibel moderne window manager med understøttelse af talrige standarder.\n*box-stilen er velkendt for sin minimalistiske fremtræden."
 
 #: src/desktop.py:110
 msgid ""
 "Enlightenment is a lean, fast, modular and very extensible window manager "
 "for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
 " you need to operate your desktop (or laptop). "
-msgstr ""
+msgstr "Enlightenment er en slank, hurtigt og modulær window manager med talrige udvidelsesmuligheder, udviklet for X11 og Linux. Den beskrives som en \"desktop shell\", som giver dig det, du skal bruge for at anvende din desktop (eller laptop)."
 
 #: src/desktop.py:116
 msgid ""
@@ -173,7 +173,7 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr ""
+msgstr "KDE-skrivebordsmiljøet  byder på en smuk desktop, der drager det fulde udbytte af moderne computerteknologi. Ved hjælp af visuelle effekter og skalerbar grafik er oplevelsen af dette skrivebordsmiljø både noget, der glider glat og er behageligt at se på."
 
 #: src/desktop.py:123
 msgid ""
@@ -187,7 +187,7 @@ msgid ""
 "This will install Manjaro as command-line system, without any desktop "
 "environment at all. After the installation you can optionally install the "
 "environment of your choice."
-msgstr ""
+msgstr "Dette vil installere Manjaro som kommando-liniebaseret system uden noget skrivebordsmiljø. Efter installation kan man efterfølgende installere det miljø, man ønsker at gå videre med."
 
 #: src/desktop.py:142
 msgid "Select your desktop"
@@ -244,7 +244,7 @@ msgstr "Bluetooth-understøttelse"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr ""
+msgstr "Uden Bluetooth-understøttelse vil du ikke kunne anvende Bluetooth-enheder"
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
@@ -791,7 +791,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus er beta-software i pre-release-stadiet, som er under aktiv udvikling.\nDen håndterer endnu ikke RAID, btrfs-underenheder eller andre avancerede opsætninger. Fortsæt med forsigtighed, da datatab er en mulighed!\n\nHvis du finder fejl, bedes du oplyse dem på <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -978,31 +978,31 @@ msgstr "Hvem er du?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro vil anvende eCryptfs til at kryptere din home-mappe. Beklageligvis er eCryptfs ikke god til at håndtere alrige spredte filer.\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "Bare rolig: I de fleste sammenhænge udgør denne svaghed ikke et problem.\n"
 
 #: src/user_info.py:169
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "En populær, men ikke særligt fornuftig anvendelse af eCryptfs er at kryptere en mappe til BitTorrent-downloads - hvilket kræver, at eCryptfs følgende skal håndtere fragmenterede filer på 10 GB eller mere, hvilket kan give en flaskehals for disken.\n\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "En enkel løsning på dette problem er at placere disse i en ukrypteret .Public-mappe\n\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Se https://wiki.archlinux.org/index.php/ECryptfs for mere detaljeret information\n\n\n\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
