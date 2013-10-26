@@ -3,12 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# aaditya <aaditya_gnulinux@zoho.com>, 2013
+# SWAGh <saheelwagh@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-25 21:18+0200\n"
-"PO-Revision-Date: 2013-10-26 11:29+0000\n"
+"PO-Revision-Date: 2013-10-26 15:25+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/manjaro-thus/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +37,7 @@ msgstr ""
 
 #: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Aria2 का एस्टेमाल करना - एक्सपेरिमेंटल"
 
 #: thus.py:223
 #, python-format
@@ -53,7 +55,7 @@ msgstr ""
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "अनजान "
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -77,7 +79,7 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "अपने कंप्यूटर को चेक करें"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
@@ -85,11 +87,11 @@ msgstr ""
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "पवर सोर्स से जुड़ा हुआ है"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "इंटरनेट से जुड़ा हुआ है"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
@@ -187,11 +189,11 @@ msgstr ""
 
 #: src/desktop.py:142
 msgid "Select your desktop"
-msgstr ""
+msgstr "अपनी पसंद का डेस्कटॉप चुनिए "
 
 #: src/desktop.py:152
 msgid "Desktops"
-msgstr ""
+msgstr "डेस्कटॉप "
 
 #: src/desktop.py:185
 #, python-format
@@ -252,7 +254,7 @@ msgstr ""
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "लिब्रे ऑफिस "
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
@@ -286,7 +288,7 @@ msgstr ""
 #: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
 msgid "free space"
-msgstr ""
+msgstr "मुक्त जगह "
 
 #: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
@@ -322,7 +324,7 @@ msgstr ""
 
 #: src/installation_advanced.py:293
 msgid "SSD"
-msgstr ""
+msgstr "सॉलिड स्टेट ड्राइव "
 
 #: src/installation_advanced.py:471
 msgid "none"
@@ -368,7 +370,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1056
 msgid "Change..."
-msgstr ""
+msgstr "बदले"
 
 #: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
 msgid "Size:"
@@ -467,7 +469,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1389
 msgid "New"
-msgstr ""
+msgstr "नया "
 
 #: src/installation_advanced.py:1389
 msgid "Relabel"
@@ -535,12 +537,12 @@ msgstr ""
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "सूचना : यह क्रिया आप के हार्ड से सब data निकाल देगी "
 
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "%s के साथ इनस्टॉल करें "
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
@@ -568,7 +570,7 @@ msgstr ""
 
 #: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "ड्राइव चुने :"
 
 #: src/installation_automatic.py:82
 msgid ""
@@ -795,7 +797,7 @@ msgstr ""
 
 #: src/language.py:110
 msgid "Languages"
-msgstr ""
+msgstr "भाषाएँ"
 
 #: src/language.py:130
 #, python-format
@@ -815,7 +817,7 @@ msgstr ""
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "देश , राज्य या शहर "
 
 #: src/location.py:197
 #, python-format
@@ -849,17 +851,17 @@ msgstr ""
 
 #: src/show_message.py:74
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "मंजारो Installer के बारे में जानकारी   "
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "मंजारो Installer के बारे में प्रश्न "
 
 #: src/slides.py:91 src/slides.py:106
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "मंजारो इनस्टॉल हो चूका है ⏎\nक्या आप restart करना चाहेन्गे ?"
 
 #: src/slides.py:99
 msgid "Installing Manjaro..."
@@ -867,11 +869,11 @@ msgstr ""
 
 #: src/slides.py:104
 msgid "Please wait..."
-msgstr ""
+msgstr "कृपया प्रतीक्षा करें ..."
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "आप कहाँ के रहिवासी हैं ?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
@@ -904,11 +906,11 @@ msgstr ""
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
-msgstr ""
+msgstr "आप का नाम:"
 
 #: src/user_info.py:87
 msgid "Your name"
-msgstr ""
+msgstr "आप का नाम"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
@@ -1132,7 +1134,7 @@ msgstr ""
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "बूट "
 
 #: ui/check.ui:28
 msgid ""
@@ -1180,7 +1182,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:73
 msgid "Create partition"
-msgstr ""
+msgstr "नये Partitoin  का निर्माण करें "
 
 #: ui/installation_advanced.ui:113
 msgid "Location:"
@@ -1188,7 +1190,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:272
 msgid "MB"
-msgstr ""
+msgstr "मेगाबाय्ट्स "
 
 #: ui/installation_advanced.ui:558
 msgid "Edit partition"
@@ -1214,7 +1216,7 @@ msgstr ""
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "मंजारो "
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1244,7 +1246,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "दूसरे  OS के साथ "
 
 #: ui/installation_ask.ui:159
 msgid ""
@@ -1272,7 +1274,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">कृपया अपनी भाषा चुने </span>"
 
 #: ui/language.ui:88
 msgid ""
@@ -1289,11 +1291,11 @@ msgstr ""
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "प्रगती "
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">मंजारो में आप का स्वागत है  </span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"

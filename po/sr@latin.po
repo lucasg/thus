@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 15:45+0000\n"
+"Last-Translator: Vladimir Rujević <vladimir.rujevic95@gmail.com>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/manjaro-thus/language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,20 +37,20 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Koristeći Aria2 za preuzimanje paketa - EKSPERIMENTALNO"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Koristeći fajl %s kao listu paketa"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Manjaro Instaler"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Zatvaram instaler..."
 
@@ -205,21 +205,21 @@ msgstr "Thus će instalirati Manjaro sa %s radnim okruženjem"
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Greška pri kreiranju metalink-a za paket %s"
 
 #: src/download.py:84
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Greška pri dodavanju metalink-a za paket %s"
 
 #: src/download.py:133
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Preuzimam paket %s"
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Nemoguća veza sa Aria 2. Nije moguće ubrzati preuzimanje."
 
 #: src/download.py:228
 #, python-format
@@ -228,7 +228,7 @@ msgstr ""
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Ne mogu naći ove pakete:"
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
@@ -240,7 +240,7 @@ msgstr ""
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Podrška za Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
@@ -256,15 +256,15 @@ msgstr ""
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Office paket (program za obradu teksta, proračunskih tablica, ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Vizuelni efekti"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
@@ -272,7 +272,7 @@ msgstr ""
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Nekomplikovani firewall"
 
 #: src/features.py:127
 msgid ""
@@ -281,7 +281,7 @@ msgstr ""
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Vlasnički paketi"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
@@ -290,15 +290,15 @@ msgstr ""
 #: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
 msgid "free space"
-msgstr ""
+msgstr "slobodan prostor"
 
 #: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
-msgstr ""
+msgstr "Uređaj"
 
 #: src/installation_advanced.py:266
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: src/installation_advanced.py:269
 msgid "Mount point"
@@ -306,19 +306,19 @@ msgstr ""
 
 #: src/installation_advanced.py:272
 msgid "Label"
-msgstr ""
+msgstr "Naslov"
 
 #: src/installation_advanced.py:278 src/installation_advanced.py:1389
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: src/installation_advanced.py:281
 msgid "Size"
-msgstr ""
+msgstr "Veličina"
 
 #: src/installation_advanced.py:284
 msgid "Used"
-msgstr ""
+msgstr "Iskorišteno"
 
 #: src/installation_advanced.py:287
 msgid "Flags"
@@ -326,7 +326,7 @@ msgstr ""
 
 #: src/installation_advanced.py:293
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:471
 msgid "none"
@@ -336,7 +336,7 @@ msgstr ""
 #: src/installation_advanced.py:1271 src/installation_advanced.py:1344
 #: src/installation_advanced.py:1512
 msgid "extended"
-msgstr ""
+msgstr "proširena"
 
 #: src/installation_advanced.py:650 src/installation_advanced.py:891
 msgid "Can't use same mount point twice..."
@@ -344,23 +344,23 @@ msgstr ""
 
 #: src/installation_advanced.py:652
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Root particija mora biti formatirana..."
 
 #: src/installation_advanced.py:912
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Kreiram primarnu particiju"
 
 #: src/installation_advanced.py:923
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Kreiram proširenu particiju"
 
 #: src/installation_advanced.py:929
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Kreiram logičku particiju"
 
 #: src/installation_advanced.py:1034
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Napredna instalacija"
 
 #: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
@@ -368,44 +368,44 @@ msgstr ""
 
 #: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
 msgid "New partition table"
-msgstr ""
+msgstr "Nova tabela particija"
 
 #: src/installation_advanced.py:1056
 msgid "Change..."
-msgstr ""
+msgstr "Promijeni..."
 
 #: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
 msgid "Size:"
-msgstr ""
+msgstr "Veličina:"
 
 #: src/installation_advanced.py:1065 ui/installation_advanced.ui:295
 msgid "Type:"
-msgstr ""
+msgstr "Vrsta:"
 
 #: src/installation_advanced.py:1069 ui/installation_advanced.ui:312
 msgid "Primary"
-msgstr ""
+msgstr "Primarna"
 
 #: src/installation_advanced.py:1073 ui/installation_advanced.ui:330
 msgid "Logical"
-msgstr ""
+msgstr "Logička"
 
 #: src/installation_advanced.py:1077 ui/installation_advanced.ui:348
 msgid "Extended"
-msgstr ""
+msgstr "Proširena"
 
 #: src/installation_advanced.py:1081 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Početak ovog prostora"
 
 #: src/installation_advanced.py:1085 ui/installation_advanced.ui:219
 msgid "End of this space"
-msgstr ""
+msgstr "Kraj ovog prostora"
 
 #: src/installation_advanced.py:1089 src/installation_advanced.py:1106
 #: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
 msgid "Use as:"
-msgstr ""
+msgstr "Koristi kao:"
 
 #: src/installation_advanced.py:1093 src/installation_advanced.py:1110
 #: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
@@ -415,20 +415,20 @@ msgstr ""
 #: src/installation_advanced.py:1097 src/installation_advanced.py:1114
 #: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
 msgid "Label (optional):"
-msgstr ""
+msgstr "Naslov (opciono):"
 
 #: src/installation_advanced.py:1101 ui/installation_advanced.ui:413
 #: ui/installation_advanced.ui:719
 msgid "Encryption options..."
-msgstr ""
+msgstr "Opcije enkripcije..."
 
 #: src/installation_advanced.py:1118 ui/installation_advanced.ui:679
 msgid "Format:"
-msgstr ""
+msgstr "Format:"
 
 #: src/installation_advanced.py:1123 ui/installation_advanced.ui:487
 msgid "Partition table type:"
-msgstr ""
+msgstr "Vrsta tabele particija:"
 
 #: src/installation_advanced.py:1128
 msgid "Create Partition Table"
@@ -437,12 +437,12 @@ msgstr ""
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
 msgid "Install now!"
-msgstr ""
+msgstr "Instaliraj!"
 
 #: src/installation_advanced.py:1211
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Kreiram novu tabelu particija tipa %s za disk %s"
 
 #: src/installation_advanced.py:1307
 #, python-format
@@ -463,19 +463,19 @@ msgstr ""
 #: src/installation_advanced.py:1382
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Particija %s će biti obrisana"
 
 #: src/installation_advanced.py:1389
 msgid "Partition"
-msgstr ""
+msgstr "Particija"
 
 #: src/installation_advanced.py:1389
 msgid "New"
-msgstr ""
+msgstr "Nova"
 
 #: src/installation_advanced.py:1389
 msgid "Relabel"
-msgstr ""
+msgstr "Promjeni naslov"
 
 #: src/installation_advanced.py:1389
 msgid "Mount"
@@ -488,7 +488,7 @@ msgstr ""
 #: src/installation_advanced.py:1435
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Čuvam promjene na %s"
 
 #: src/installation_advanced.py:1449
 #, python-format
@@ -511,11 +511,11 @@ msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro pored drugog operativnog sistema"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr ""
+msgstr "Pronađen drugi operativni sistem"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
@@ -531,20 +531,20 @@ msgstr ""
 
 #: src/installation_ask.py:114
 msgid "Installation type"
-msgstr ""
+msgstr "Tip instalacije"
 
 #: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Obriši disk i instaliraj Manjaro (automatski)"
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Upozorenje: Ovo će obrisati sve podatke na vašem disku"
 
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Instaliraj Manjaro pored %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
@@ -560,7 +560,7 @@ msgstr ""
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "Instalacija Manjara će biti enkriptovana"
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
@@ -572,7 +572,7 @@ msgstr ""
 
 #: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "Odaberi disk:"
 
 #: src/installation_automatic.py:82
 msgid ""

@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 17:04+0000\n"
+"Last-Translator: Ringo Be <ringodekroon@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,20 +37,20 @@ msgid ""
 "and run this installer again."
 msgstr "Je kan geen twee sessies laden van deze installer\n\nWeet je zeker dat andere installer niet al draait\nje kan handmatige verwijderen van bestand %s\nen start de installer opnieuw"
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Gebruikt Aria2 om pakketten te downloaden - EXPERIMENTEEL"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Gebruikt bestand '%s' als pakket lijst"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Manjaro Installatieprogramma"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Installatieprogramma afsluiten..."
 
@@ -432,7 +432,7 @@ msgstr "Partitie tabel type:"
 
 #: src/installation_advanced.py:1128
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Maak een partitie tabel"
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
@@ -493,7 +493,7 @@ msgstr "Wijzigingen opslaan gebeurt in %s"
 #: src/installation_advanced.py:1449
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Maak %s bestandsysteem in %s labeled %s"
 
 #: src/installation_advanced.py:1531
 #, python-format
@@ -587,16 +587,16 @@ msgstr "Kies alstublieft op welke schijf Manjaro wilt installeren⏎\nen klik de
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Kies een wachtwoord voor je LUKS apparaat:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Bevestig wachtwoord voor uw Luks apparaat:"
 
 #: src/installation_automatic.py:151
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Automatisch installatie op %s"
 
 #: src/installation_automatic.py:167
 #, python-format
@@ -620,7 +620,7 @@ msgstr "Installeer volgens de '%s\" methode"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Fout bij maken partities en de bestandsystemen"
 
 #: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
@@ -783,7 +783,7 @@ msgstr "Kies uw taal alstublieft."
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Notitie: Thus installateur is beta software"
 
 #: src/language.py:86
 msgid ""
@@ -791,7 +791,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus is pre-uitgave software dat onder actieve  ontwikkeling staat.\nHet doet Raid niet keurig behandelen eveneens btrfs subvolumes en andere geadvanceerde Setups. Alstublieft wees voorzichtig en oppassen van verlies van data.\n\nAls u bugs vind, geef het door op <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -887,7 +887,7 @@ msgstr "Regio:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Gebruik Network Time Protocol vor klok synchonisatie:"
 
 #: src/timezone.py:135
 #, python-format
@@ -1285,7 +1285,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Notice: The Thus Installer is beta software.</span>⏎\n⏎\nThus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! ⏎\n⏎\nIf you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
