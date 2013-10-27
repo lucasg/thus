@@ -1057,7 +1057,7 @@ class InstallationProcess(multiprocessing.Process):
 
         # set pulse
         if os.path.exists("/usr/bin/pulseaudio-ctl"):
-            self.do_run_in_chroot("pulseaudio-ctl full")
+            self.do_run_in_chroot("pulseaudio-ctl normal")
 
         # save settings
         self.do_run_in_chroot("alsactl -f /etc/asound.state store")
