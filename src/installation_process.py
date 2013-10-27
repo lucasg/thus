@@ -1006,6 +1006,62 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("/etc/X11/xorg.conf"):
             os.system("cp /etc/X11/xorg.conf /install/etc/X11/xorg.conf")
 
+        # configure alsa / pulse
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Front 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Side 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Surround 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Center 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset LFE 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Headphone 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Speaker 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Line 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset External 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset FM 50% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Mono 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Digital 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Analog Mix 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Aux 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Aux2 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Center 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Front 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM LFE 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Side 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Surround 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Playback 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM,1 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset DAC 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset DAC,0 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset DAC,1 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Synth 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset CD 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Wave 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Music 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset AC97 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Analog Front 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,0 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,1 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,2 70% unmute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,3 70% unmute &> /dev/null")
+
+        # set input levels
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Mic 70% mute &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset IEC958 70% mute &> /dev/null")
+
+        # special stuff
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Playback Switch on &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Surround on &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset SB Live Analog/Digital Output Jack off &> /dev/null")
+        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Audigy Analog/Digital Output Jack off &> /dev/null")
+
+        # set pulse
+        if os.path.exists("/usr/bin/pulseaudio-ctl"):
+            self.do_run_in_chroot("pulseaudio-ctl full")
+
+        # save settings
+        self.do_run_in_chroot("alsactl -f /etc/asound.state store")
+
         # Install xf86-video driver
         if os.path.exists("/opt/manjaro/pacman-gfx.conf"):
             self.queue_event('info', _("Set up graphics card..."))
