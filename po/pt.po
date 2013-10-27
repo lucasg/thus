@@ -21,9 +21,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-26 22:23+0000\n"
+"Last-Translator: arcorreia <arcorreia@gmx.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/manjaro-thus/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,20 +47,20 @@ msgid ""
 "and run this installer again."
 msgstr "Não pode executar duas instâncias do instalador.\n\nSe tem certeza que outro instalador não está já em execução\npode apagar manualmente o ficheiro %s\ne executar este instalador novamente."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "A usar Aria2 para descarregar os pacotes - EXPERIMENTAL"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Usar o ficheiro '%s' como lista de pacotes"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Instalador do Manjaro"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "A encerrar o instalador..."
 
@@ -442,7 +442,7 @@ msgstr "tipo de tabela de partição:"
 
 #: src/installation_advanced.py:1128
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Criar Tabela de Partições"
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
@@ -503,7 +503,7 @@ msgstr "Guardar alterações efectuadas em %s"
 #: src/installation_advanced.py:1449
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Criando sistema de ficheiros %s em %s com nome %s"
 
 #: src/installation_advanced.py:1531
 #, python-format
@@ -597,16 +597,16 @@ msgstr "Por favor, escolha o disco em que deseja instalar o Manjaro\ne pressione
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Escolha uma senha para o seu dispositivo LUKS:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Confirme a senha para o dispositivo LUKS:"
 
 #: src/installation_automatic.py:151
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Instalação automática em %s"
 
 #: src/installation_automatic.py:167
 #, python-format
@@ -630,7 +630,7 @@ msgstr "Usando o método de instalação '%s'"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Erro ao criar as partições e seus sistemas de ficheiros"
 
 #: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
@@ -793,7 +793,7 @@ msgstr "Por favor escolha seu idioma:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Aviso: O Instalador Thus é um software Beta."
 
 #: src/language.py:86
 msgid ""
@@ -801,7 +801,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus é um software Beta, ainda em constante desenvolvimento.\nDe momento não lida correctamente com RAID, subvolumes btrfs ou outras configurações avançadas. Por favor, proceda com cautela uma vez que a perda de dados é possível!\n\nSe você encontrar qualquer problema, favor reportá-lo em <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -897,7 +897,7 @@ msgstr "Região:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Usar o Network Time Protocol para sincronização do relógio:"
 
 #: src/timezone.py:135
 #, python-format
@@ -1000,13 +1000,13 @@ msgstr "Não se preocupe, pois para a maioria dos propósitos esta deficiência 
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "Contudo, uma aplicação popular e não recomendada do eCryptfs é encriptar a pasta de downloads do BitTorrent pois isto requer frequentemente que o eCryptfs lide com ficheiros dispersos de 10 GB ou mais e pode levar ao esgotamento intenso do disco.\n\n"
+msgstr "Contudo, uma aplicação popular e não recomendada do eCryptfs é encriptar a pasta de downloads do BitTorrent pois isto requer frequentemente que o eCryptfs lide com ficheiros dispersos de 10 GB ou mais e pode levar ao esgotamento intenso do disco.\n\n\n\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Uma solução simples é colocar estes ficheiros dispersos num diretório Público e não encriptado\n\n"
+msgstr "Uma solução simples é colocar estes ficheiros dispersos num diretório Público e não encriptado\n\n\n\n"
 
 #: src/user_info.py:171
 msgid ""
@@ -1295,7 +1295,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Aviso: O Instalador Thus é um software Beta.</span>\n\nThus é um software de qualidade Beta, ainda em constante desenvolvimento. No momento ele não é compatível com RAID, subvolumes btrfs e outros tipos de configurações avançadas. Por favor, proceda com cautela uma vez que a perda de dados é possível!\n\nSe encontrar qualquer problema, favor acessar <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
