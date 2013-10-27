@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-25 21:18+0200\n"
-"PO-Revision-Date: 2013-10-26 21:18+0000\n"
+"PO-Revision-Date: 2013-10-27 12:00+0000\n"
 "Last-Translator: zubr139 <zubr139@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/manjaro-thus/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr ""
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "невідоме"
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -68,11 +68,11 @@ msgstr ""
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "Перевірте свій комп'ютер"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
@@ -88,15 +88,15 @@ msgstr ""
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "підключений до джерела живлення"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "підключений до Інтернету"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "Для досягнення найкращих результатів, будь ласка, переконайтеся, що цей комп'ютер:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -586,7 +586,7 @@ msgstr ""
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Оберіть пароль для вашого пристрою LUKS:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
