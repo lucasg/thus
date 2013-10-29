@@ -5,13 +5,14 @@
 # Translators:
 # aaditya <aaditya_gnulinux@zoho.com>, 2013
 # SWAGh <saheelwagh@gmail.com>, 2013
+# aaditya <aaditya_gnulinux@zoho.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-25 21:18+0200\n"
-"PO-Revision-Date: 2013-10-26 15:25+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-10-28 09:59+0000\n"
+"Last-Translator: aaditya <aaditya_gnulinux@zoho.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/manjaro-thus/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,15 +43,15 @@ msgstr "Aria2 का एस्टेमाल करना - एक्सपे�
 #: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "%s फाइल को पॅकेज लिस्ट की तरह एस्टेमाल करना"
 
 #: thus.py:243
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "मानजारो इंस्टॉलर"
 
 #: thus.py:311
 msgid "Quiting installer..."
-msgstr ""
+msgstr "इंस्टॉलर बंद होने जा रहा है"
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
@@ -59,7 +60,7 @@ msgstr "अनजान "
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "आपका बूट सिस्टम कोन्से प्रकार का है?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -67,11 +68,11 @@ msgstr ""
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -95,7 +96,7 @@ msgstr "इंटरनेट से जुड़ा हुआ है"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "अत्त्युत्तम परिणामों के लिए सुनिश्चित करें की यह कंप्यूटर:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -106,19 +107,19 @@ msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "इस तीसरी पार्टी सॉफ्टवेर को इनस्टॉल करे"
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "नेटवर्क स्थिति नहीं प्राप्त हो पा रही है"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "इन्टरनेट से जूडा हुआ हैं "
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "पवर सोर्स से जुड़ा हुआ है"
 
 #: src/check.py:195
 msgid "We have enough disk space."
@@ -178,7 +179,7 @@ msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "रेज़र क्ट एक"
 
 #: src/desktop.py:130
 msgid ""
@@ -198,12 +199,12 @@ msgstr "डेस्कटॉप "
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus मानजारो को %s डेस्कटॉप के साथ इनस्टॉल करेगा"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "पैकेज %s के लिये  मेटा लिंक  बनाने में त्रुटि"
 
 #: src/download.py:84
 #, python-format
@@ -217,7 +218,7 @@ msgstr ""
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Aria2 से संपर्क नही हो पा रहा है. डाउनलोड की गति नही बढ़ा पाएँगे."
 
 #: src/download.py:228
 #, python-format
@@ -226,15 +227,15 @@ msgstr ""
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "यह पैकेज ढूँढने में असफलता"
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "चेतावनी! इन निर्भरताएँ को हल नहीं कर सकता:"
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Aria2 से संपर्क नही हो पा रहा है"
 
 #: src/features.py:96
 msgid "Bluetooth support"
@@ -288,7 +289,7 @@ msgstr ""
 #: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
 msgid "free space"
-msgstr "मुक्त जगह "
+msgstr "खाली जगह "
 
 #: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
@@ -296,15 +297,15 @@ msgstr ""
 
 #: src/installation_advanced.py:266
 msgid "Type"
-msgstr ""
+msgstr "प्रकार"
 
 #: src/installation_advanced.py:269
 msgid "Mount point"
-msgstr ""
+msgstr "माउंट पॉइंट"
 
 #: src/installation_advanced.py:272
 msgid "Label"
-msgstr ""
+msgstr "नाम"
 
 #: src/installation_advanced.py:278 src/installation_advanced.py:1389
 msgid "Format"
@@ -316,7 +317,7 @@ msgstr ""
 
 #: src/installation_advanced.py:284
 msgid "Used"
-msgstr ""
+msgstr "इस्तेमाल हुई"
 
 #: src/installation_advanced.py:287
 msgid "Flags"
@@ -362,11 +363,11 @@ msgstr ""
 
 #: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "इस डिवाइस को बूट लोडर के लिए एस्टेमाल करे"
 
 #: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
 msgid "New partition table"
-msgstr ""
+msgstr "नया पारटिशन टेबल"
 
 #: src/installation_advanced.py:1056
 msgid "Change..."
@@ -408,7 +409,7 @@ msgstr ""
 #: src/installation_advanced.py:1093 src/installation_advanced.py:1110
 #: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
 msgid "Mount point:"
-msgstr ""
+msgstr "माउंट पॉइंट:"
 
 #: src/installation_advanced.py:1097 src/installation_advanced.py:1114
 #: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
@@ -435,7 +436,7 @@ msgstr ""
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
 msgid "Install now!"
-msgstr ""
+msgstr "इनस्टॉल करें!"
 
 #: src/installation_advanced.py:1211
 #, python-format

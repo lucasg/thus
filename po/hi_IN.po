@@ -4,14 +4,15 @@
 # 
 # Translators:
 # SWAGh <saheelwagh@gmail.com>, 2013
+# sdch <sdch@in.com>, 2013
 # aaditya <aaditya_gnulinux@zoho.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-25 21:18+0200\n"
-"PO-Revision-Date: 2013-10-26 13:06+0000\n"
-"Last-Translator: aaditya <aaditya_gnulinux@zoho.com>\n"
+"PO-Revision-Date: 2013-10-28 10:12+0000\n"
+"Last-Translator: sdch <sdch@in.com>\n"
 "Language-Team: Hindi (India) (http://www.transifex.com/projects/p/manjaro-thus/language/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,15 +43,15 @@ msgstr "Aria2 का एस्टेमाल करना - एक्सपे�
 #: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "'%s' का इस्तेमाल  package list के लिए किया जा रहा हैं "
 
 #: thus.py:243
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "मानजारो इंस्टॉलर"
 
 #: thus.py:311
 msgid "Quiting installer..."
-msgstr ""
+msgstr "इंस्टॉलर बंद होने जा रहा है"
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
@@ -59,7 +60,7 @@ msgstr "अनजान "
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "आपका बूट सिस्टम कोन्से प्रकार का है?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -67,11 +68,11 @@ msgstr ""
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -87,7 +88,7 @@ msgstr ""
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr "पवर सोर्स से जुड़ा हुआ है"
+msgstr "पॉवर  सोर्स से जुडा  हुआ है"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
@@ -95,7 +96,7 @@ msgstr "इंटरनेट से जुड़ा हुआ है"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "अत्त्युत्तम परिणामों के लिए इन्टरनेट से जोडें "
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -106,19 +107,19 @@ msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "इस तीसरी पार्टी सॉफ्टवेर को इनस्टॉल करे"
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "नेटवर्क स्थिति प्राप्त नहीं कर सकता"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "इन्टरनेट जूडा हुआ हैं "
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "पॉवर सोर्स जूडा हुआ हैं "
 
 #: src/check.py:195
 msgid "We have enough disk space."
@@ -198,12 +199,12 @@ msgstr "डेस्कटॉप "
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus मानजारो को %s डेस्कटॉप के साथ इनस्टॉल करेगा"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "पैकेज %s के लिये  मेटा लिंक  बनाने में त्रुटि"
 
 #: src/download.py:84
 #, python-format
@@ -217,7 +218,7 @@ msgstr ""
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Aria2 से संपर्क नही हो पा रहा है. डाउनलोड की गति नही बढ़ा पाएँगे."
 
 #: src/download.py:228
 #, python-format
@@ -226,19 +227,19 @@ msgstr ""
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "यह पैकेज ढूँढने में असफलता "
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "चेतावनी! इन निर्भरताएँ को हल नहीं कर सकता:"
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "सुविधा चयन"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "ब्लूटूथ समर्थन"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
@@ -296,19 +297,19 @@ msgstr ""
 
 #: src/installation_advanced.py:266
 msgid "Type"
-msgstr ""
+msgstr "प्रकार"
 
 #: src/installation_advanced.py:269
 msgid "Mount point"
-msgstr ""
+msgstr "माउंट पॉइंट"
 
 #: src/installation_advanced.py:272
 msgid "Label"
-msgstr ""
+msgstr "नाम"
 
 #: src/installation_advanced.py:278 src/installation_advanced.py:1389
 msgid "Format"
-msgstr ""
+msgstr "फॉरमेट "
 
 #: src/installation_advanced.py:281
 msgid "Size"
@@ -316,7 +317,7 @@ msgstr ""
 
 #: src/installation_advanced.py:284
 msgid "Used"
-msgstr ""
+msgstr "इस्तेंमाल में है "
 
 #: src/installation_advanced.py:287
 msgid "Flags"
@@ -328,13 +329,13 @@ msgstr "सॉलिड स्टेट ड्राइव "
 
 #: src/installation_advanced.py:471
 msgid "none"
-msgstr ""
+msgstr "कोई भी नहीं "
 
 #: src/installation_advanced.py:520 src/installation_advanced.py:921
 #: src/installation_advanced.py:1271 src/installation_advanced.py:1344
 #: src/installation_advanced.py:1512
 msgid "extended"
-msgstr ""
+msgstr "विस्तारित"
 
 #: src/installation_advanced.py:650 src/installation_advanced.py:891
 msgid "Can't use same mount point twice..."
@@ -342,7 +343,7 @@ msgstr ""
 
 #: src/installation_advanced.py:652
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "रूट पार्टीशन फॉरमट किया जाना चाहिए ..."
 
 #: src/installation_advanced.py:912
 msgid "Creating primary partition"
@@ -366,7 +367,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
 msgid "New partition table"
-msgstr ""
+msgstr "नया पारटिशन टेबल"
 
 #: src/installation_advanced.py:1056
 msgid "Change..."
@@ -374,11 +375,11 @@ msgstr "बदले"
 
 #: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
 msgid "Size:"
-msgstr ""
+msgstr "आकार"
 
 #: src/installation_advanced.py:1065 ui/installation_advanced.ui:295
 msgid "Type:"
-msgstr ""
+msgstr "प्रकार:"
 
 #: src/installation_advanced.py:1069 ui/installation_advanced.ui:312
 msgid "Primary"
@@ -394,11 +395,11 @@ msgstr ""
 
 #: src/installation_advanced.py:1081 ui/installation_advanced.ui:201
 msgid "Beginning of this space"
-msgstr ""
+msgstr "इस स्थान की शुरुआत"
 
 #: src/installation_advanced.py:1085 ui/installation_advanced.ui:219
 msgid "End of this space"
-msgstr ""
+msgstr "इस स्थान का अंत"
 
 #: src/installation_advanced.py:1089 src/installation_advanced.py:1106
 #: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
@@ -435,7 +436,7 @@ msgstr ""
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
 msgid "Install now!"
-msgstr ""
+msgstr "इनस्टॉल करें!"
 
 #: src/installation_advanced.py:1211
 #, python-format
@@ -477,7 +478,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1389
 msgid "Mount"
-msgstr ""
+msgstr "माउंट"
 
 #: src/installation_advanced.py:1410
 msgid "These disks will have partition actions:"
@@ -509,11 +510,11 @@ msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "कोई अन्य OS के साथ Manjaro"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr ""
+msgstr "पता लगाया गया OS"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
@@ -781,7 +782,7 @@ msgstr ""
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "सूचना: Thus इंस्टालर बीटा सॉफ्टवेयर है."
 
 #: src/language.py:86
 msgid ""
@@ -806,7 +807,7 @@ msgstr ""
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr ""
+msgstr "अपने स्थान का चयन करें"
 
 #: src/location.py:68 ui/location.ui:21
 msgid ""
@@ -914,7 +915,7 @@ msgstr "आप का नाम"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
-msgstr ""
+msgstr "आपके कंप्यूटर का नाम:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
@@ -1246,7 +1247,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr "दूसरे  OS के साथ "
+msgstr ""
 
 #: ui/installation_ask.ui:159
 msgid ""

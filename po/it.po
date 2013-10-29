@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-27 23:43+0000\n"
+"Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Questo installer deve essere eseguito con privilegi di amministratore e non può continuare senza."
 
 #: thus.py:109
 #, python-format
@@ -35,22 +35,22 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Non è possibile eseguire due istanze di questo installer.\n\nSe si è sicuri che un altro installer non è già in esecuzione\nè possibile eliminare manualmente il file %s\ned eseguire nuovamente questo installer."
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Utilizzo di Aria2 per scaricare i pacchetti - SPERIMENTALE"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Utilizzo il file '%s' come lista dei pacchetti"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Manjaro Installer"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Uscendo dell'installer..."
 
@@ -65,7 +65,7 @@ msgstr "Qual è il vostro tipo di sistema di avvio?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (common)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -77,7 +77,7 @@ msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Scegliere 'Cancel' se non si desidera installare un boot loader"
 
 #: src/check.py:68
 msgid "Check your computer"
@@ -85,7 +85,7 @@ msgstr "Controlla il tuo computer"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr ""
+msgstr "ha almeno 3 GB di spazio disponibile sul disco"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -104,7 +104,7 @@ msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
-msgstr ""
+msgstr "Manjaro utilizza software di terze parti per riprodurre Adobe Flash, file MP3, e altri media. Alcuni di questi software sono proprietari. Il software è soggetto alle condizioni di licenza fornite con la documentazione"
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
@@ -124,48 +124,48 @@ msgstr "Connesso alla corrente elettrica."
 
 #: src/check.py:195
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Abbiamo spazio su disco sufficiente."
 
 #: src/desktop.py:76
 msgid ""
 "GNOME 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr ""
+msgstr "GNOME 3 è un modo semplice ed elegante per utilizzare il computer. È stato progettato per dare il massimo controllo e libertà a tutti. GNOME 3 è sviluppato dalla comunità di GNOME."
 
 #: src/desktop.py:83
 msgid ""
 "Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
 "attempts to provide a more traditional user environment based on the GNOME2 "
 "desktop metaphor"
-msgstr ""
+msgstr "Cinnamon è un fork di GNOME Shell, sviluppato da (e per) Linux Mint. Si tenta di fornire un ambiente utente più tradizionale basato sulla metafora del desktop GNOME2"
 
 #: src/desktop.py:90
 msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr ""
+msgstr "XFCE è un ambiente desktop leggero, che punta ad essere leggero sulle risorse di sistema pur essendo visivamente accattivante, pieno di funzionalità e facile da usare."
 
 #: src/desktop.py:96
 msgid ""
 "LXDE is a high-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard "
 "shortcuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "LXDE è un ambiente desktop ad alte prestazioni e risparmio energetico. Viene fornito con una bella interfaccia, supporto multi-lingua, le scorciatoie da tastiera standard e funzionalità aggiuntive come la navigazione a schede."
 
 #: src/desktop.py:103
 msgid ""
 "Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox è un window manager altamente configurabile, di nuova generazione con un ampio supporto standard.\nIl stile visivo *box  è ben noto per il suo aspetto minimalista."
 
 #: src/desktop.py:110
 msgid ""
 "Enlightenment is a lean, fast, modular and very extensible window manager "
 "for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
 " you need to operate your desktop (or laptop). "
-msgstr ""
+msgstr "Enlightenment è un window manager veloce, modulare e molto estensibile per X11 e Linux. E 'classificato come un \"desktop shell\" che fornisce le cose necessarie per operare il vostro desktop (o portatile). "
 
 #: src/desktop.py:116
 msgid ""
@@ -173,7 +173,7 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr ""
+msgstr "Il Desktop KDE offre una bella scrivania che prende pieno vantaggio della moderna tecnologia informatica. Attraverso l'uso di effetti visivi e la grafica scalabile, l'esperienza desktop non è solo liscia, ma anche piacevole per l'occhio."
 
 #: src/desktop.py:123
 msgid ""
@@ -187,7 +187,7 @@ msgid ""
 "This will install Manjaro as command-line system, without any desktop "
 "environment at all. After the installation you can optionally install the "
 "environment of your choice."
-msgstr ""
+msgstr "Questo installerà Manjaro come sistema a riga di comando, senza alcun ambiente desktop. Dopo l'installazione è possibile scegliere di installare l'ambiente di vostra scelta."
 
 #: src/desktop.py:142
 msgid "Select your desktop"
@@ -244,15 +244,15 @@ msgstr "Supporto Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr ""
+msgstr "Senza il supporto Bluetooth non sarà in grado di utilizzare i dispositivi Bluetooth"
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
-msgstr ""
+msgstr "Supporto di stampa (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and management tools"
-msgstr ""
+msgstr "Questo include i driver di stampa e strumenti di gestione"
 
 #: src/features.py:110
 msgid "LibreOffice"
@@ -268,7 +268,7 @@ msgstr "Effetti visivi"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
-msgstr ""
+msgstr "Gli effetti visivi quali la trasparenza delle finestre e ombre"
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
@@ -277,7 +277,7 @@ msgstr "Firewall senza complicazioni"
 #: src/features.py:127
 msgid ""
 "Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr ""
+msgstr "Installa ufw e nega tutto il traffico di default (utilizzare gufw per configurarlo)"
 
 #: src/features.py:131
 msgid "Propietary packages"
@@ -285,7 +285,7 @@ msgstr "Pacchetti proprietari"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr ""
+msgstr "Software di terze parti per riprodurre Flash, file MP3, e altri media"
 
 #: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
@@ -340,7 +340,7 @@ msgstr "estesa"
 
 #: src/installation_advanced.py:650 src/installation_advanced.py:891
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Non è possibile usare lo stesso punto di montaggio due volte..."
 
 #: src/installation_advanced.py:652
 msgid "Root partition must be formatted..."
@@ -432,7 +432,7 @@ msgstr "Tipo tabella partizione:"
 
 #: src/installation_advanced.py:1128
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Crea tabella delle partizioni"
 
 #: src/installation_advanced.py:1131 src/installation_alongside.py:144
 #: src/installation_automatic.py:99
@@ -493,7 +493,7 @@ msgstr "Salvataggio delle modifiche apportate in %s"
 #: src/installation_advanced.py:1449
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Creazione di file system %s in %s etichettato %s"
 
 #: src/installation_advanced.py:1531
 #, python-format
@@ -507,7 +507,7 @@ msgstr "Impossibile caricare %s css"
 
 #: src/installation_alongside.py:136
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Scegliere quale sistema operativo si desidera installare accanto a Manjaro"
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
@@ -523,11 +523,11 @@ msgstr "Filesystem"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
-msgstr ""
+msgstr "In una installazione condivisa: non è possibile creare lista delle partizioni"
 
 #: src/installation_alongside.py:256
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Non è possibile ridurre la partizione (forse è quasi piena?)"
 
 #: src/installation_ask.py:114
 msgid "Installation type"
@@ -548,15 +548,15 @@ msgstr "Installare Manjaro accanta a %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
-msgstr ""
+msgstr "Installare questo SO accanto agli altri SO già installati."
 
 #: src/installation_ask.py:143
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Gestione delle partizioni e dove installare Manjaro (avanzato)"
 
 #: src/installation_ask.py:146
 msgid "Create and delete partitions, and choose additional mount points."
-msgstr ""
+msgstr "Creare e cancellare partizioni e scegliere i punti di montaggio aggiuntivi."
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
@@ -577,7 +577,7 @@ msgstr "Selezionare il disco:"
 #: src/installation_automatic.py:82
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "ATTENZIONE! Questa modalità di installazione sovrascriverà tutto sul disco!"
 
 #: src/installation_automatic.py:87 ui/installation_automatic.ui:59
 msgid ""
@@ -587,16 +587,16 @@ msgstr "Scegliere l'unità in cui si vuole installare Manjaro\ne fare clic sul p
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Scegliere una password per il dispositivo LUKS:"
 
 #: src/installation_automatic.py:96 ui/installation_automatic.ui:162
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Conferma la tua password per il dispositivo LUKS:"
 
 #: src/installation_automatic.py:151
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Installazione automatica su %s"
 
 #: src/installation_automatic.py:167
 #, python-format
@@ -620,7 +620,7 @@ msgstr "Per l'installazione verrà utilizzato il metodo '%s'"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Errore durante la creazione delle partizioni e i loro filesystem"
 
 #: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
@@ -717,11 +717,11 @@ msgstr "Regolazione orologio hardware..."
 
 #: src/installation_process.py:1004
 msgid "Configuring hardware..."
-msgstr ""
+msgstr "Configurazione hardware..."
 
 #: src/installation_process.py:1011
 msgid "Set up graphics card..."
-msgstr ""
+msgstr "Impostazione scheda grafica..."
 
 #: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
@@ -729,11 +729,11 @@ msgstr "Impossibile eseguire lo script MHWD"
 
 #: src/installation_process.py:1024
 msgid "Configure display manager..."
-msgstr ""
+msgstr "Configurazione display manager..."
 
 #: src/installation_process.py:1123
 msgid "Configure System..."
-msgstr ""
+msgstr "Configurazione di sistema..."
 
 #: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
@@ -783,7 +783,7 @@ msgstr "Si prega di scegliere la lingua:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Avviso: L'Installer Thus è un software beta."
 
 #: src/language.py:86
 msgid ""
@@ -791,7 +791,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus è un software pre-release beta che è in fase di sviluppo attivo. \nE ancora non gestisce correttamente RAID, btrfs subvolumes, o altre impostazioni avanzate. Si prega di procedere con cautela,  è possibile la perdita di dati!  \n\nSe trovate qualche bug, si prega di segnalarlo a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -887,7 +887,7 @@ msgstr "Regione:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Utilizzare Network Time Protocol per la sincronizzazione dell'orologio:"
 
 #: src/timezone.py:135
 #, python-format
@@ -900,7 +900,7 @@ msgstr "Non è possibile determinare automaticamente le coordinate per il timezo
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Ferma thread di fuso orario..."
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
@@ -944,7 +944,7 @@ msgstr "Conferma password"
 
 #: src/user_info.py:119
 msgid "Its name as it appears to other computers."
-msgstr ""
+msgstr "Il nome che verrà visualizzato da gli altri computer."
 
 #: src/user_info.py:123
 msgid "You must enter a name"
@@ -1132,7 +1132,7 @@ msgstr "Installazione %s (%d/%d)"
 
 #: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
-msgstr ""
+msgstr "Controllo e caricamento di pacchetti..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
@@ -1156,7 +1156,7 @@ msgstr "<span weight='bold' size='large'>Supporto Bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Supporto di stampa (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
@@ -1180,7 +1180,7 @@ msgstr "Attiva il firewall (chiude tutte le porte di default)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Pacchetti proprietari</span>"
 
 #: ui/installation_advanced.ui:73
 msgid "Create partition"
@@ -1206,7 +1206,7 @@ msgstr "LVM..."
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Scegliere quale sistema operativo si desidera installare accanto a Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1228,7 +1228,7 @@ msgstr "<span weight=\"light\" size=\"small\">Attenzione: Questo cancellerà tut
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "Crittografa la nuova installazione di Manjaro per una maggiore sicurezza"
 
 #: ui/installation_ask.ui:90
 msgid ""
@@ -1244,7 +1244,7 @@ msgstr "Utilizzare LVM con la nuova installazione di Manjaro"
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Questo imposterà LVM consentendo di creare delle istantanee e modificare le dimensioni delle partizioni in modo semplice</span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
@@ -1255,7 +1255,7 @@ msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Con questa opzione verrà installato Manjaro accanto a uno degli altri sistemi operativi già installati.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
@@ -1272,7 +1272,7 @@ msgstr "<span weight=\"light\" size=\"small\">Sarete in grado di creare/cancella
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>ATTENZIONE! Questa modalità di installazione sovrascriverà tutto sul disco!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
@@ -1285,7 +1285,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Avviso: L'nstaller Thus è un software beta.</span>\n\nThus è un software pre-release beta che è in fase di sviluppo attivo. E ancora non gestisce correttamente RAID, btrfs subvolumes, o altre impostazioni avanzate. Si prega di procedere con cautela,  è possibile la perdita di dati! \n\nSe trovate qualche bug, si prega di  visitare <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
@@ -1317,7 +1317,7 @@ msgstr "<small><span color=\"darkred\">Deve immettere un nome</span></small>"
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Il nome che verrà visualizzato da gli altri computer.</span>"
 
 #: ui/welcome.ui:151
 msgid ""

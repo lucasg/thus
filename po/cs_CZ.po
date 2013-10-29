@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-27 18:49+0000\n"
+"Last-Translator: Libor Schejbal <libor.schejbal@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/manjaro-thus/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,20 +41,20 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Ke stažení balíčků bude použit program Aria2 - EXPERIMENTÁLNĚ"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr " Soubor '% s' bude použit jako seznam balíčků"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
 msgstr "Manjaro instalátor"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
 msgstr "Instalace zastavena..."
 
@@ -446,7 +446,7 @@ msgstr "Instalovat nyní!"
 #: src/installation_advanced.py:1211
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Vytvářím novou tabulky oddílů formátu % s na disk % s"
 
 #: src/installation_advanced.py:1307
 #, python-format
@@ -454,7 +454,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "% s je připojen jako odkládací prostor swap.⏎\nChcete-li pokračovat, musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
 #: src/installation_advanced.py:1309
 #, python-format
@@ -462,37 +462,37 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s je připojen k '%s'.⏎\nPro pokračování musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
 #: src/installation_advanced.py:1382
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Diskový oddíl %s bude odstraněn"
 
 #: src/installation_advanced.py:1389
 msgid "Partition"
-msgstr ""
+msgstr "Diskový oddíl"
 
 #: src/installation_advanced.py:1389
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 #: src/installation_advanced.py:1389
 msgid "Relabel"
-msgstr ""
+msgstr "Přeštítkovat"
 
 #: src/installation_advanced.py:1389
 msgid "Mount"
-msgstr ""
+msgstr "Připojit"
 
 #: src/installation_advanced.py:1410
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Na těchto discích budou provedeny tyto akce s oddíly:"
 
 #: src/installation_advanced.py:1435
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Ukládám změny provedené v %s"
 
 #: src/installation_advanced.py:1449
 #, python-format
@@ -502,12 +502,12 @@ msgstr ""
 #: src/installation_advanced.py:1531
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro nainstaluje zavaděč %s do %s"
 
 #: src/installation_alongside.py:109
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Nelze načíst CSS %s"
 
 #: src/installation_alongside.py:136
 msgid "Choose which OS you want to install Manjaro next to"
@@ -515,15 +515,15 @@ msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro vedle jiného operačního systému"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr ""
+msgstr "Detekován jiný operační systém"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
-msgstr ""
+msgstr "Souborový systém"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
@@ -535,20 +535,20 @@ msgstr ""
 
 #: src/installation_ask.py:114
 msgid "Installation type"
-msgstr ""
+msgstr "Typ instalace"
 
 #: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Vymazat disk a nainstalovat Manjaro (automaticky)"
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Upozornění: Dojde k vymazání všech dat na disku"
 
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Nainstalovat Manjaro vedle %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
@@ -564,19 +564,19 @@ msgstr ""
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "instalace Manjaro zašifrována"
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro Linux bude nainstalován pomocí nastavení LVM"
 
 #: src/installation_automatic.py:74
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "Automatický režim instalace"
 
 #: src/installation_automatic.py:78 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "Vyberte jednotku:"
 
 #: src/installation_automatic.py:82
 msgid ""
@@ -587,7 +587,7 @@ msgstr ""
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Prosím, vyberte jednotku, kam se má Manjaro nainstalovat⏎\na klikněte na tlačítko níže pro spuštění procesu."
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:177
 msgid "Choose a password for your LUKS device:"
@@ -615,12 +615,12 @@ msgstr ""
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Kopíruji '/%s'"
 
 #: src/installation_process.py:164
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "Instalace pomocí metody '%s'"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
@@ -629,30 +629,30 @@ msgstr ""
 #: src/installation_process.py:304 src/installation_process.py:326
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "Připojuji oddíl %s do adresáře %s"
 
 #: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "Připojuji oddíl %s do bootovacího adresáře %s"
 
 #: src/installation_process.py:314
 msgid "Couldn't mount root and boot partitions"
-msgstr ""
+msgstr "Nelze připojit kořenový a bootovací oddíl"
 
 #: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "Nelze připojit %s k %s"
 
 #: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "Nelze vytvořit potřebné adresáře na cílovém systému"
 
 #: src/installation_process.py:449
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Obnovení metainformací na %s"
 
 #: src/installation_process.py:462
 msgid "Special dirs already mounted."
@@ -674,20 +674,20 @@ msgstr ""
 #: src/installation_process.py:657
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr ""
+msgstr "Instaluji zavaděč GRUB(2) do %s"
 
 #: src/installation_process.py:687
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "Zavaděč GRUB(2) byl úspěšně nainstalován."
 
 #: src/installation_process.py:689
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr ""
+msgstr "Chyba při instalaci zavaděče GRUB(2)"
 
 #: src/installation_process.py:700
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
-msgstr ""
+msgstr "Instalace zavaděče GRUB(2) UEFI %s do %s"
 
 #: src/installation_process.py:728
 msgid "ERROR installing GRUB(2) configuration file."
@@ -700,24 +700,24 @@ msgstr ""
 #: src/installation_process.py:770
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr ""
+msgstr "Chyba při vytváření hesla pro uživatele %s"
 
 #: src/installation_process.py:776
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "Chyba při změně hesla pro uživatele %s"
 
 #: src/installation_process.py:901
 msgid "Configuring your new system"
-msgstr ""
+msgstr "Konfiguruji váš nový systém"
 
 #: src/installation_process.py:978
 msgid "Generating locales..."
-msgstr ""
+msgstr "Generuji národní prostředí ..."
 
 #: src/installation_process.py:998
 msgid "Adjusting hardware clock..."
-msgstr ""
+msgstr "Nastavuji hardwarové hodiny ..."
 
 #: src/installation_process.py:1004
 msgid "Configuring hardware..."
@@ -729,7 +729,7 @@ msgstr ""
 
 #: src/installation_process.py:1018
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "Nelze spustit skript MHWD"
 
 #: src/installation_process.py:1024
 msgid "Configure display manager..."
@@ -741,15 +741,15 @@ msgstr ""
 
 #: src/installation_process.py:1151
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Odstranění live konfigurace (balíčků)"
 
 #: src/installation_process.py:1167
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Konfiguruji správce balíčků"
 
 #: src/installation_process.py:1182
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Konfigurace správce balíčků dokončena."
 
 #: src/installation_process.py:1206
 #, python-format
@@ -758,32 +758,32 @@ msgstr ""
 
 #: src/installation_process.py:1285
 msgid "Running mkinitcpio..."
-msgstr ""
+msgstr "Spouštím mkinitcpio ..."
 
 #: src/installation_process.py:1288
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "Spuštění mkinitcpio... hotovo"
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Vyberte rozložení klávesnice"
 
 #: src/keymap.py:70
 msgid "Layouts"
-msgstr ""
+msgstr "Rozložení"
 
 #: src/keymap.py:76
 msgid "Variants"
-msgstr ""
+msgstr "Varianty"
 
 #: src/keymap.py:98
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "rozložení klávesnice je %s"
 
 #: src/language.py:80
 msgid "Please choose your language:"
-msgstr ""
+msgstr "Prosím, vyberte svůj jazyk:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
@@ -799,45 +799,45 @@ msgstr ""
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Vítejte v Manjaro"
 
 #: src/language.py:110
 msgid "Languages"
-msgstr ""
+msgstr "Jazyky"
 
 #: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
-msgstr ""
+msgstr "Nelze najít překlad souboru v jazyce %s"
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr ""
+msgstr "Vyberte své umístění"
 
 #: src/location.py:68 ui/location.ui:21
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr ""
+msgstr "Vybrané umístění bude použit jako národní prostředí systému.⏎\nZa normálních okolností by to mělo být v zemi, kde žijete.⏎\nJedná se o užší výběr míst, založených na jazyce, který jste si zvolili."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "Země, území nebo oblast:"
 
 #: src/location.py:197
 #, python-format
 msgid "locale changed to : %s"
-msgstr ""
+msgstr "Národní prostředí bude změněno na: %s"
 
 #: src/location.py:199
 #, python-format
 msgid "Can't change to locale '%s'"
-msgstr ""
+msgstr "Nelze změnit národní prostředí na '%s'"
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
-msgstr ""
+msgstr "V rankmirroru nelze zjistit stav sítě"
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
@@ -845,49 +845,49 @@ msgstr ""
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
-msgstr ""
+msgstr "Nelze provést automatický výběr mirrorů"
 
 #: src/show_message.py:52
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro instalátor - Chyba"
 
 #: src/show_message.py:63
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Manjaro instalátor - upozornění"
 
 #: src/show_message.py:74
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro instalátor - Informace"
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro instalátor - Dotaz"
 
 #: src/slides.py:91 src/slides.py:106
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Instalace dokončena⏎\nChcete restartovat váš systém?"
 
 #: src/slides.py:99
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Instaluji Manjaro..."
 
 #: src/slides.py:104
 msgid "Please wait..."
-msgstr ""
+msgstr "Čekejte..."
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "Kde jste?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
-msgstr ""
+msgstr "Oblast:"
 
 #: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
-msgstr ""
+msgstr "Region:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
@@ -896,11 +896,11 @@ msgstr ""
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "umístění změněno na : %s"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr ""
+msgstr "Nelze rozpoznat časové pásmo"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
@@ -908,43 +908,43 @@ msgstr ""
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "Nelze získat kód země potřebný k vytvoření pacman mirrorlistu"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
-msgstr ""
+msgstr "Vaše jméno:"
 
 #: src/user_info.py:87
 msgid "Your name"
-msgstr ""
+msgstr "Vaše jméno"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
-msgstr ""
+msgstr "Název počítače:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
-msgstr ""
+msgstr "Vyberte si uživatelské jméno:"
 
 #: src/user_info.py:99
 msgid "Username"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 #: src/user_info.py:103 ui/user_info.ui:63
 msgid "Choose a password:"
-msgstr ""
+msgstr "Zvolte heslo:"
 
 #: src/user_info.py:107
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: src/user_info.py:111 ui/user_info.ui:78
 msgid "Confirm your password:"
-msgstr ""
+msgstr "Heslo ještě jednou:"
 
 #: src/user_info.py:115
 msgid "Confirm password"
-msgstr ""
+msgstr "Potvrzení hesla"
 
 #: src/user_info.py:119
 msgid "Its name as it appears to other computers."
@@ -952,43 +952,43 @@ msgstr ""
 
 #: src/user_info.py:123
 msgid "You must enter a name"
-msgstr ""
+msgstr "Musíte zadat jméno"
 
 #: src/user_info.py:127
 msgid "You must enter a username"
-msgstr ""
+msgstr "Musíte zadat uživatelské jméno"
 
 #: src/user_info.py:131
 msgid "You must enter a password"
-msgstr ""
+msgstr "Musíte zadat heslo"
 
 #: src/user_info.py:135 ui/user_info.ui:96
 msgid "Log in automatically"
-msgstr ""
+msgstr "Automatické přihlášení"
 
 #: src/user_info.py:136 ui/user_info.ui:113
 msgid "Require my password to log in"
-msgstr ""
+msgstr "Vyžadovat heslo pro přihlášení"
 
 #: src/user_info.py:137 ui/user_info.ui:134
 msgid "Encrypt my home folder"
-msgstr ""
+msgstr "Šifrování mé domovské složky"
 
 #: src/user_info.py:139
 msgid "Who are you?"
-msgstr ""
+msgstr "Kdo jste?"
 
 #: src/user_info.py:167
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro bude používat eCryptfs pro šifrování domovského adresáře. Bohužel, eCryptfs nezpracoval všechny soubory stejně.⏎\n⏎\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "Neobávejte se, pro většinu vašich záměrů a pro vaše účely tento nedostatek nepředstavuje problém.⏎\n⏎\n"
 
 #: src/user_info.py:169
 msgid ""

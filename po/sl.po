@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# holden1987 <latinovicnenad@myopera.com>, 2013
 # smlu <smluprenos@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-10-25 21:18+0200\n"
+"PO-Revision-Date: 2013-10-28 20:54+0000\n"
+"Last-Translator: holden1987 <latinovicnenad@myopera.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/manjaro-thus/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,31 +35,31 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Uporabi Aria2 za prenos paketov - EKSPERIMENTALNO"
 
-#: thus.py:225
+#: thus.py:223
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "Uporabi datoteko '%s' kot seznam paketov"
 
-#: thus.py:245
+#: thus.py:243
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro nameščevalnik"
 
-#: thus.py:313
+#: thus.py:311
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Končujem nameščevalnik..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "neznan"
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Kateri tip zagonskega sistema imate?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -66,11 +67,11 @@ msgstr ""
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -78,7 +79,7 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "Preverite svoj računalnik"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
@@ -86,15 +87,15 @@ msgstr ""
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "je priključen na napajanje"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "je povezan na internet"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "Za najboljše rezultate, prosim zagotovite, da je računalnik:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -105,19 +106,19 @@ msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "Namesti to programsko opremo tretje osebe"
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "Ne morem pridobiti statusa omrežja"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "Imamo internetno povezavo."
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "Povezani smo na vir napajanja."
 
 #: src/check.py:195
 msgid "We have enough disk space."
@@ -177,7 +178,7 @@ msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "Razor-qt je napredno, enostavno za uporabo in hitro namizno okolje, ki temelji na Qt tehnologiji. Prilagojen je uporabnikom, ki cenijo enostavnost, hitrost in intuitiven vmesnik."
 
 #: src/desktop.py:130
 msgid ""
@@ -188,56 +189,56 @@ msgstr ""
 
 #: src/desktop.py:142
 msgid "Select your desktop"
-msgstr ""
+msgstr "Izberite svoje namizje"
 
 #: src/desktop.py:152
 msgid "Desktops"
-msgstr ""
+msgstr "Namizja"
 
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Tako bo namestil Manjaro z '%s' namizjem"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Napaka pri ustvarjanju metapovezave za paket %s"
 
 #: src/download.py:84
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Napaka pri dodajanju metapovezave za paket %s"
 
 #: src/download.py:133
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Prenašam paket '%s'..."
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Ne morem povezati z Aria2. Ne bo možno pospešiti prenosa."
 
 #: src/download.py:228
 #, python-format
 msgid "Unable to create download queue for package %s"
-msgstr ""
+msgstr "Ne morem ustvariti vrste za prenos za paket %s"
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Ne najdem sledečih paketov:"
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Opozorilo! Ni možno razrešiti sledečih odvisnosti:"
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Izbira značilnosti"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bluetooth podpora"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
@@ -253,15 +254,15 @@ msgstr ""
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Pisarniški programski paket (urejevalnik besedil, preglednice,...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Vizualni efekti"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
@@ -269,7 +270,7 @@ msgstr ""
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Nezapleten požarni zid"
 
 #: src/features.py:127
 msgid ""
@@ -278,7 +279,7 @@ msgstr ""
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Lastniški paketi"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
@@ -287,53 +288,53 @@ msgstr ""
 #: src/installation_advanced.py:195 src/installation_advanced.py:485
 #: src/installation_advanced.py:499
 msgid "free space"
-msgstr ""
+msgstr "prazen prostor"
 
 #: src/installation_advanced.py:263 src/installation_alongside.py:166
 msgid "Device"
-msgstr ""
+msgstr "Naprava"
 
 #: src/installation_advanced.py:266
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #: src/installation_advanced.py:269
 msgid "Mount point"
-msgstr ""
+msgstr "Priklopna točka"
 
 #: src/installation_advanced.py:272
 msgid "Label"
-msgstr ""
+msgstr "Oznaka"
 
 #: src/installation_advanced.py:278 src/installation_advanced.py:1389
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: src/installation_advanced.py:281
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: src/installation_advanced.py:284
 msgid "Used"
-msgstr ""
+msgstr "Uporabljeno"
 
 #: src/installation_advanced.py:287
 msgid "Flags"
-msgstr ""
+msgstr "Zastavice"
 
 #: src/installation_advanced.py:293
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:471
 msgid "none"
-msgstr ""
+msgstr "nič"
 
 #: src/installation_advanced.py:520 src/installation_advanced.py:921
 #: src/installation_advanced.py:1271 src/installation_advanced.py:1344
 #: src/installation_advanced.py:1512
 msgid "extended"
-msgstr ""
+msgstr "podaljšan"
 
 #: src/installation_advanced.py:650 src/installation_advanced.py:891
 msgid "Can't use same mount point twice..."
@@ -341,23 +342,23 @@ msgstr ""
 
 #: src/installation_advanced.py:652
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Korenski razdelek je potrebno formatirati..."
 
 #: src/installation_advanced.py:912
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Ustvarjam primarni razdelek"
 
 #: src/installation_advanced.py:923
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Ustvarjam podaljšani razdelek"
 
 #: src/installation_advanced.py:929
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Ustvarjam logični razdelek"
 
 #: src/installation_advanced.py:1034
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Način napredne namestitve"
 
 #: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
 msgid "Use this device for boot loader installation:"
