@@ -574,7 +574,11 @@ class InstallationProcess(multiprocessing.Process):
                 # It hasn't any filesystem defined
                 continue
 
-            logging.debug("Adding %s with filesystem %s to fstab" % (parti, myfmt))  
+            # TODO: Take care of swap partitions
+            if "swap" in myfmt:
+                logging.debug("Add to fstab : UUID=%s %s %s %s 0 %s" % (uuid, path, myfmt, opts, chk))
+                #all_lines.append("UUID=%s %s %s %s 0 %s" % (uuid, path, myfmt, opts, chk))
+                continue  
           
             # Avoid adding a partition to fstab when
             # it has no mount point (except swap, of course)
@@ -606,6 +610,7 @@ class InstallationProcess(multiprocessing.Process):
             all_lines.append("tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0")
 
         full_text = '\n'.join(all_lines)
+        full_text += '\n'
 
         with open('%s/etc/fstab' % self.dest_dir, 'w') as f:
             f.write(full_text)
@@ -623,7 +628,6 @@ class InstallationProcess(multiprocessing.Process):
         # This scheme can be used in the automatic installation option only (at this time)
         if self.method == 'automatic' and self.settings.get('use_luks'):
             default_dir = os.path.join(self.dest_dir, "etc/default")
-            default_grub = os.path.join(default_dir, "grub")
 
             if not os.path.exists(default_dir):
                 os.mkdir(default_dir)
@@ -631,6 +635,7 @@ class InstallationProcess(multiprocessing.Process):
             root_device = self.mount_devices["/"]
             boot_device = self.mount_devices["/boot"]
 
+            # Let GRUB automatically add the kernel parameters for root encryption
             if self.settings.get("luks_key_pass") == "":
                 default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro cryptkey=%s:ext2:/.keyfile"' % (root_device, boot_device)
             else:
@@ -638,8 +643,7 @@ class InstallationProcess(multiprocessing.Process):
                 
             # Disable the usage of UUIDs for the rootfs:
             disable_uuid_line = 'GRUB_DISABLE_LINUX_UUID=true'
-
-            default_grub = os.path.join(default_dir, "grub")
+            default_grub = os.path.join(default_dir, "grub") 
             
             with open(default_grub) as f:
                 lines = [x.strip() for x in f.readlines()]
@@ -920,6 +924,9 @@ class InstallationProcess(multiprocessing.Process):
             # wait five seconds and try again
             time.sleep(5)
 
+        if self.settings.get("use_ntp"):
+            self.enable_services(["ntpd"])
+
         # set timezone
         zoneinfo_path = os.path.join("/usr/share/zoneinfo", self.settings.get("timezone_zone"))
         self.chroot(['ln', '-s', zoneinfo_path, "/etc/localtime"])
@@ -929,10 +936,7 @@ class InstallationProcess(multiprocessing.Process):
         # Wait FOREVER until the user sets his params
         while self.settings.get('user_info_done') is False:
             # wait five seconds and try again
-            time.sleep(5)  
-
-        if self.settings.get("use_ntp"):
-            self.enable_services(["ntpd"])       
+            time.sleep(5)     
 
         # Set user parameters
         username = self.settings.get('username')

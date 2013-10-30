@@ -198,7 +198,7 @@ class AutoPartition():
                 
         return (boot, swap, root, luks, lvm)
 
-    # mount_devices will be used when configuring GRUB in modify_grub_default() in installation_process.py)
+    # mount_devices will be used when configuring GRUB in modify_grub_default() in installation_process.py
     def get_mount_devices(self):
         (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
         
@@ -206,18 +206,36 @@ class AutoPartition():
         
         mount_devices["/boot"] = boot_device
         
+        # TODO: Check that this works using LVM on LUKS
         if self.luks:
             mount_devices["/"] = luks_device
         else:
             mount_devices["/"] = root_device
+            
+        for m in mount_devices:
+            logging.debug("mount_devices[%s] = %s" % (m, mount_devices[m]))
         
         return mount_devices
 
-    def get_fs_devices(self):
-        mount_devices = {}
-        fs_devices = {}         
+    # fs_devices  will be used when configuring the fstab file in installation_process.py
+    def get_fs_devices(self):        
+        (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
+
+        fs_devices = {}
         
-        #for d in mount_devices:
+        fs_devices[boot_device] = "ext2"
+        fs_devices[swap_device] = "swap"
+
+        # TODO: Check that this works using LVM on LUKS
+        if self.luks:
+            fs_devices[luks_device] = "ext4"
+        else:
+            fs_devices[root_device] = "ext4"
+            
+        for f in fs_devices:
+            logging.debug("fs_devices[%s] = %s" % (f, fs_devices[f]))
+
+        return fs_devices
     
     def run(self):
         key_file = "/tmp/.keyfile"
@@ -242,7 +260,7 @@ class AutoPartition():
             
             disc_size = ((logical_block_size * size) / 1024) / 1024
         else:
-            logging.error("Setup cannot detect size of your device, please use normal "
+            logging.error("Setup cannot detect size of your device, please use normal " \
                 "installation routine for partitioning and mounting devices.")
             return
         

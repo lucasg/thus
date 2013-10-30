@@ -138,7 +138,6 @@ and click the button below to start the process.</property>
     </child>
     <child>
       <object class="GtkFrame" id="frame_luks">
-        <property name="name">frame_luks</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_left">144</property>
@@ -188,6 +187,7 @@ and click the button below to start the process.</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="visibility">False</property>
+                <signal name="changed" handler="on_luks_password_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -201,6 +201,7 @@ and click the button below to start the process.</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="visibility">False</property>
+                <signal name="changed" handler="on_luks_password_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -208,6 +209,21 @@ and click the button below to start the process.</property>
                 <property name="width">1</property>
                 <property name="height">1</property>
               </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="image_password_ok">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
           </object>
         </child>

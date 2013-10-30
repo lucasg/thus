@@ -62,8 +62,13 @@ class InstallationAutomatic(Gtk.Box):
         self.ui.connect_signals(self)
 
         self.device_store = self.ui.get_object('part_auto_select_drive')
-
         self.device_label = self.ui.get_object('part_auto_select_drive_label')
+
+        self.entry = {}
+        self.entry['luks_password'] = self.ui.get_object('entry_luks_password')
+        self.entry['luks_password_confirm']= self.ui.get_object('entry_luks_password_confirm')
+        
+        self.image_password_ok = self.ui.get_object('image_password_ok')
 
         super().add(self.ui.get_object("installation_automatic"))
 
@@ -142,8 +147,7 @@ class InstallationAutomatic(Gtk.Box):
         #self.forward_button.set_sensitive(False)
 
     def store_values(self):
-        entry = self.ui.get_object('entry_luks_password')
-        luks_password = entry.get_text()
+        luks_password = self.entry['luks_password'].get_text()
         self.settings.set('luks_key_pass', luks_password)
         if luks_password != "":
             logging.debug("A LUKS password has been set")
@@ -161,6 +165,24 @@ class InstallationAutomatic(Gtk.Box):
     def refresh(self):
         while Gtk.events_pending():
             Gtk.main_iteration()
+
+    def on_luks_password_changed(self, widget):
+        luks_password = self.entry['luks_password'].get_text()
+        luks_password_confirm = self.entry['luks_password_confirm'].get_text()
+        install_ok = True
+        if len(luks_password) <= 0:
+            self.image_password_ok.hide()
+            self.forward_button.set_sensitive(True)
+        else:
+            if luks_password == luks_password_confirm:
+                icon = "gtk-yes"
+            else:
+                icon = "gtk-no"
+                install_ok = False
+            self.image_password_ok.set_from_stock(icon, Gtk.IconSize.BUTTON)
+            self.image_password_ok.show()
+ 
+        self.forward_button.set_sensitive(install_ok)
 
     def start_installation(self):
         #self.install_progress.set_sensitive(True)
