@@ -310,7 +310,7 @@ class Main(Gtk.Window):
     def on_exit_button_clicked(self, widget, data=None):
         self.remove_temp_files()
         logging.info(_("Quiting installer..."))
-        Gtk.main_quit()
+        os._exit(0)
 
     def set_progressbar_step(self, add_value):
         new_value = self.progressbar.get_fraction() + add_value
