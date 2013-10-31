@@ -50,16 +50,15 @@ class Slides(Gtk.Box):
         self.exit_button = params['exit_button']
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
+        self.main_progressbar = params['main_progressbar']
         self.should_pulse = False
         self.dest_dir = "/install"
 
         super().__init__()
-        Gdk.threads_init()
 
         builder = Gtk.Builder()
 
         builder.add_from_file(os.path.join(self.ui_dir, "slides.ui"))
-        self.connect("delete-event", Gtk.main_quit)
         builder.connect_signals(self)
 
         self.progress_bar = builder.get_object("progressbar")
@@ -115,6 +114,9 @@ class Slides(Gtk.Box):
         self.translate_ui()
         self.show_all()
 
+        # Last screen reached, hide main progress bar.
+        self.main_progressbar.hide()
+
         self.global_progress_bar.hide()
         self.global_progress_bar_is_hidden = True
 
@@ -146,9 +148,7 @@ class Slides(Gtk.Box):
         def pbar_pulse():
             if(not self.should_pulse):
                 return False
-            Gdk.threads_enter()
             self.progress_bar.pulse()
-            Gdk.threads_leave()
             return self.should_pulse
         if(not self.should_pulse):
             self.should_pulse = True
@@ -213,7 +213,7 @@ class Slides(Gtk.Box):
                     (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
                     if fsname:
                         subprocess.check_call(['umount', self.dest_dir])
-                    os._exit(0)
+                    Gtk.main_quit()
                         
                 self.exit_button.show()
                 return False

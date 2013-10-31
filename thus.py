@@ -217,6 +217,7 @@ class Main(Gtk.Window):
         params['exit_button'] = self.exit_button
         params['callback_queue'] = self.callback_queue
         params['settings'] = self.settings
+        params['main_progressbar'] = self.ui.get_object('progressbar1')
         params['alternate_package_list'] = _alternate_package_list
         
         if len(_alternate_package_list) > 0:
@@ -309,7 +310,7 @@ class Main(Gtk.Window):
     def on_exit_button_clicked(self, widget, data=None):
         self.remove_temp_files()
         logging.info(_("Quiting installer..."))
-        os._exit(0)
+        Gtk.main_quit()
 
     def set_progressbar_step(self, add_value):
         new_value = self.progressbar.get_fraction() + add_value
@@ -455,10 +456,7 @@ if __name__ == '__main__':
 
     # Start Gdk stuff and main window app
     GObject.threads_init()
-    Gdk.threads_init()
 
     app = Main()
     
-    Gdk.threads_enter()
     Gtk.main()
-    Gdk.threads_leave()

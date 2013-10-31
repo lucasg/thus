@@ -141,6 +141,9 @@ class InstallationAdvanced(Gtk.Box):
         self.partition_list_store = None
         self.prepare_partition_list()
 
+        # Get encryption (LUKS) options dialog
+        self.luks_dialog = self.ui.get_object('luks_dialog')
+
         # Connect changing selection in the partition list treeview
         select = self.partition_list.get_selection()
         select.connect("changed", self.on_partition_list_treeview_selection_changed)
@@ -600,6 +603,7 @@ class InstallationAdvanced(Gtk.Box):
         
         # Can't edit an partition with LVM filesystem type
         if "lvm2" in fs.lower():
+            logging.warning("Can't edit an partition with LVM filesystem type")
             return 
         
         # Set fs in dialog combobox
@@ -944,6 +948,30 @@ class InstallationAdvanced(Gtk.Box):
                 self.fill_partition_list()
 
         self.create_partition_dialog.hide()
+
+    # TODO: Load previous user choices (if any)
+    # show LUKS encryption options dialog
+    # save user choices
+    def on_partition_encryption_settings_clicked(self, widget):
+        response = self.luks_dialog.run()
+        if response == Gtk.ResponseType.OK:
+            pass
+
+    def on_switch_use_luks_activate(self, widget):
+        enable_luks_dialog_options(widget.get_activate())
+
+    def enable_luks_dialog_options(self, status):
+        w_sensitive = [ 'label_luks_vol_name', 'label_luks_password', 
+            'label_luks_password_confirm', 'entry_luks_vol_name',
+            'entry_luks_password', 'entry_luks_password_confirm' ]
+        w_hide = [ 'image_luks_password_confirm', 'label_luks_password_status' ]
+        
+        for w in w_sensitive:
+            w.set_sensitive(status)
+        
+        if status is False:
+            for w in w_hide:
+                w.hide()
     
     def on_partition_create_type_extended_toggled(self, widget):
         partition = {}

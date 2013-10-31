@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+#
+#  info.py
+#
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #  
@@ -20,7 +23,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-thus_VERSION = "0.8.7.906"
+thus_VERSION = "0.8.7.907"
 thus_LAST_STABLE = "0.8.7"
 thus_WEBSITE = "http://www.manjaro.org"
 thus_AUTHORS = "philm,  toudi, faidoc, karasu, skinner, arcnexus, omelchek"
