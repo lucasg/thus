@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 21:18+0200\n"
-"PO-Revision-Date: 2013-10-26 14:24+0000\n"
-"Last-Translator: lajos <mrlajos@gmail.com>\n"
+"POT-Creation-Date: 2013-10-31 22:44+0100\n"
+"PO-Revision-Date: 2013-10-31 21:48+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,16 +42,16 @@ msgstr "Nem lehet egyszerre két telepítőt futtatni.\n\n Ha biztos benne, hogy
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Aria2 használata a csomagok letöltésére - Kísérleti"
 
-#: thus.py:223
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "'%s' fájl használata mint csomag lista"
 
-#: thus.py:243
+#: thus.py:244
 msgid "Manjaro Installer"
 msgstr "Manjaro Telepítő"
 
-#: thus.py:311
+#: thus.py:312
 msgid "Quiting installer..."
 msgstr "Kilépés a telepítőből..."
 
@@ -288,164 +288,164 @@ msgstr "Tulajdonosi \"zárt\" csomagok"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "Harmadik féltől származó szoftware Flash, MP3 és egyéb média lejátszásra"
 
-#: src/installation_advanced.py:195 src/installation_advanced.py:485
-#: src/installation_advanced.py:499
+#: src/installation_advanced.py:198 src/installation_advanced.py:488
+#: src/installation_advanced.py:502
 msgid "free space"
 msgstr "szabad hely"
 
-#: src/installation_advanced.py:263 src/installation_alongside.py:166
+#: src/installation_advanced.py:266 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Eszköz"
 
-#: src/installation_advanced.py:266
+#: src/installation_advanced.py:269
 msgid "Type"
 msgstr "Típus"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:272
 msgid "Mount point"
 msgstr "Csatolási pont"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:275
 msgid "Label"
 msgstr "Címke"
 
-#: src/installation_advanced.py:278 src/installation_advanced.py:1389
+#: src/installation_advanced.py:281 src/installation_advanced.py:1417
 msgid "Format"
 msgstr "Formatálás"
 
-#: src/installation_advanced.py:281
+#: src/installation_advanced.py:284
 msgid "Size"
 msgstr "Méret"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:287
 msgid "Used"
 msgstr "Használva"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:290
 msgid "Flags"
 msgstr "Zászlók"
 
-#: src/installation_advanced.py:293
+#: src/installation_advanced.py:296
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:471
+#: src/installation_advanced.py:474
 msgid "none"
 msgstr "semmi"
 
-#: src/installation_advanced.py:520 src/installation_advanced.py:921
-#: src/installation_advanced.py:1271 src/installation_advanced.py:1344
-#: src/installation_advanced.py:1512
+#: src/installation_advanced.py:523 src/installation_advanced.py:925
+#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
+#: src/installation_advanced.py:1540
 msgid "extended"
 msgstr "kiterjesztett"
 
-#: src/installation_advanced.py:650 src/installation_advanced.py:891
+#: src/installation_advanced.py:654 src/installation_advanced.py:895
 msgid "Can't use same mount point twice..."
 msgstr "Nem lehet kétszer használni ugyanazt a csatolási pontot..."
 
-#: src/installation_advanced.py:652
+#: src/installation_advanced.py:656
 msgid "Root partition must be formatted..."
 msgstr "A Root partíciót szükséges formázni..."
 
-#: src/installation_advanced.py:912
+#: src/installation_advanced.py:916
 msgid "Creating primary partition"
 msgstr "Elsődleges partíció létrehozása"
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:927
 msgid "Creating extended partition"
 msgstr "Kiterjesztett partíció létrehozása"
 
-#: src/installation_advanced.py:929
+#: src/installation_advanced.py:933
 msgid "Creating logical partition"
 msgstr "Logikai partíció létrehozása"
 
-#: src/installation_advanced.py:1034
+#: src/installation_advanced.py:1062
 msgid "Advanced installation mode"
 msgstr "Haladó telepítési mód"
 
-#: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
+#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Használja ezt az eszközt a rendszer betöltő telepítésére: "
 
-#: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Új partíciós tábla"
 
-#: src/installation_advanced.py:1056
+#: src/installation_advanced.py:1084
 msgid "Change..."
 msgstr "Változás..."
 
-#: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Méret:"
 
-#: src/installation_advanced.py:1065 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Típus:"
 
-#: src/installation_advanced.py:1069 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Elsődleges"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logikai"
 
-#: src/installation_advanced.py:1077 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Kiterjesztett"
 
-#: src/installation_advanced.py:1081 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Az elején ennek a helynek"
 
-#: src/installation_advanced.py:1085 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "A végen ennek a helynek"
 
-#: src/installation_advanced.py:1089 src/installation_advanced.py:1106
-#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
+#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Használja mint:"
 
-#: src/installation_advanced.py:1093 src/installation_advanced.py:1110
-#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
+#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Csatolási pont:"
 
-#: src/installation_advanced.py:1097 src/installation_advanced.py:1114
-#: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
+#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Címke (opcionális):"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:413
-#: ui/installation_advanced.ui:719
+#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Titkosítási beállítások..."
 
-#: src/installation_advanced.py:1118 ui/installation_advanced.ui:679
+#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Formatálás:"
 
-#: src/installation_advanced.py:1123 ui/installation_advanced.ui:487
+#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Partíciós táblat típusa:"
 
-#: src/installation_advanced.py:1128
+#: src/installation_advanced.py:1156
 msgid "Create Partition Table"
 msgstr "Partíciós tábla létrehozása"
 
-#: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:99
+#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "Telepítés most!"
 
-#: src/installation_advanced.py:1211
+#: src/installation_advanced.py:1239
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Új %s partíciós táblázat létrehozása a %s lemez számára"
 
-#: src/installation_advanced.py:1307
+#: src/installation_advanced.py:1335
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -453,7 +453,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s csatolva mint swap.\nA folytatáshoz le kell csatolni.\nKattints az Igen-re lecsatoláshoz, vagy a Nem-re visszatérni\n"
 
-#: src/installation_advanced.py:1309
+#: src/installation_advanced.py:1337
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -461,42 +461,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s csatlakoztatva ide '%s'.\nA folytatáshoz le kell csatolni.\nKattints az Igen-re a lecsatlakoztatáshoz, vagy a Nem-re a vissza lépéshez\n"
 
-#: src/installation_advanced.py:1382
+#: src/installation_advanced.py:1410
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s partíció törlődni fog"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "Partition"
 msgstr "Partíció"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "New"
 msgstr "Új"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "Relabel"
 msgstr "Újracímkézés"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "Mount"
 msgstr "Csatolás"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1438
 msgid "These disks will have partition actions:"
 msgstr "Ennek a lemeznek ezek a partíciós beállításai lesznek:"
 
-#: src/installation_advanced.py:1435
+#: src/installation_advanced.py:1463
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Beállítások mentve ide %s"
 
-#: src/installation_advanced.py:1449
+#: src/installation_advanced.py:1477
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Fájlrendszer %s létrehozása a %s címke: %s"
 
-#: src/installation_advanced.py:1531
+#: src/installation_advanced.py:1559
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro telepíteni fogja a rendszer betöltőt a %s - %s"
@@ -567,44 +567,44 @@ msgstr "A telepített Manjaro titkosítva lesz"
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro telepítve lesz LVM használatával"
 
-#: src/installation_automatic.py:74
+#: src/installation_automatic.py:79
 msgid "Automatic installation mode"
 msgstr "Automatikus telepítési mód"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
+#: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Meghajtó kiválasztása:"
 
-#: src/installation_automatic.py:82
+#: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!"
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Kérem válassza ki a meghajtót ahova telepíteni akarja a Manjaro-t\nés kattintson az alábbi gombra a folyamat megkezdéséhez."
 
-#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+#: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
 msgstr "Adjon meg jelszót a LUKS eszközhöz:"
 
-#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+#: src/installation_automatic.py:101 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
 msgstr "Jelszó megerősítése a LUKS eszközhöz:"
 
-#: src/installation_automatic.py:151
+#: src/installation_automatic.py:155
 #, python-format
 msgid "Automatic install on %s"
 msgstr "Automatikus telepítés itt %s"
 
-#: src/installation_automatic.py:167
+#: src/installation_automatic.py:189
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus használni fogja a következő telepítési eszközt: %s"
 
-#: src/installation_automatic.py:176
+#: src/installation_automatic.py:198
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Manjaro telepíteni fogja a rendszerbetöltőt a %s - %s"
@@ -619,145 +619,145 @@ msgstr "Másolás '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Telepítés a következő módszerrel: '%s'"
 
-#: src/installation_process.py:266
+#: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
 msgstr "Hiba a partíciók és fájlrendszereik létrehozásakor"
 
-#: src/installation_process.py:304 src/installation_process.py:326
+#: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "%s partíció csatolása a %s könyvtárba"
 
-#: src/installation_process.py:310
+#: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "%s partíció csatolása a %s/boot könyvtárba"
 
-#: src/installation_process.py:314
+#: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nem sikerült csatlakoztatni a root és boot partíciókat"
 
-#: src/installation_process.py:331
+#: src/installation_process.py:332
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Nem lehet csatlakoztatni %s ebben %s"
 
-#: src/installation_process.py:352
+#: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
 msgstr "Nem hozhatsz létre szükséges könyvtárakat a cél rendszeren"
 
-#: src/installation_process.py:449
+#: src/installation_process.py:450
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "meta információk visszaállítása a %s"
 
-#: src/installation_process.py:462
+#: src/installation_process.py:463
 msgid "Special dirs already mounted."
 msgstr "Speciális könyvtárak már csatolva vannak."
 
-#: src/installation_process.py:488
+#: src/installation_process.py:489
 msgid "Special dirs already not mounted."
 msgstr "Speciális könyvtárak már nincsenek csatolva."
 
-#: src/installation_process.py:498
+#: src/installation_process.py:499
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Nem lehet csatolni %s"
 
-#: src/installation_process.py:549
+#: src/installation_process.py:550
 msgid "Create fstab."
 msgstr "fstab létrehozása."
 
-#: src/installation_process.py:657
+#: src/installation_process.py:662
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "GRUB(2) rendszerbetöltő telepítése a %s"
 
-#: src/installation_process.py:687
+#: src/installation_process.py:692
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS telepítése sikeres."
 
-#: src/installation_process.py:689
+#: src/installation_process.py:694
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "HIBA a GRUB(2) BIOS telepítése során."
 
-#: src/installation_process.py:700
+#: src/installation_process.py:705
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI %s rendszerbetöltő telepítése a %s"
 
-#: src/installation_process.py:728
+#: src/installation_process.py:733
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "HIBA a GRUB(2) konfigurációs fájl telepítésekor."
 
-#: src/installation_process.py:756
+#: src/installation_process.py:761
 msgid "ERROR installing GRUB(2) locale."
 msgstr "HIBA a GRUB(2) lokális változók telepítésekor."
 
-#: src/installation_process.py:770
+#: src/installation_process.py:775
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Jelszó hash nem került létrehozásra a következő felhasználónak: %s"
 
-#: src/installation_process.py:776
+#: src/installation_process.py:781
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Hiba a jelszó megváltoztatásánál a következő felhasználónál: %s"
 
-#: src/installation_process.py:901
+#: src/installation_process.py:906
 msgid "Configuring your new system"
 msgstr "Rendszer testreszabása"
 
-#: src/installation_process.py:978
+#: src/installation_process.py:983
 msgid "Generating locales..."
 msgstr "Lokális változók generálása..."
 
-#: src/installation_process.py:998
+#: src/installation_process.py:1003
 msgid "Adjusting hardware clock..."
 msgstr "Hardware óra beállítása..."
 
-#: src/installation_process.py:1004
+#: src/installation_process.py:1009
 msgid "Configuring hardware..."
 msgstr "Hardware konfigurálása..."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1072
 msgid "Set up graphics card..."
 msgstr "Grafikus kártya beállítása..."
 
-#: src/installation_process.py:1018
+#: src/installation_process.py:1079
 msgid "Can't execute the MHWD script"
 msgstr "Nem lehet futtatni az MHWD \"Manjaro Hardware Detection\" scriptet"
 
-#: src/installation_process.py:1024
+#: src/installation_process.py:1085
 msgid "Configure display manager..."
 msgstr "Képernyő kezelő konfigurálása..."
 
-#: src/installation_process.py:1123
+#: src/installation_process.py:1184
 msgid "Configure System..."
 msgstr "Rendszer konfigurálása..."
 
-#: src/installation_process.py:1151
+#: src/installation_process.py:1212
 msgid "Removing live configuration (packages)"
 msgstr "Lemezről betöltött \"élő\" konfiguráció (csomagok) eltávolítása "
 
-#: src/installation_process.py:1167
+#: src/installation_process.py:1228
 msgid "Configuring package manager"
 msgstr "Csomagkezelő konfigurálása"
 
-#: src/installation_process.py:1182
+#: src/installation_process.py:1243
 msgid "Finished configuring package manager."
 msgstr "Csomagkezelő konfigurálása befejeződött."
 
-#: src/installation_process.py:1206
+#: src/installation_process.py:1267
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Automatikus bejelentkezés engedélyezése a felhasználónak: %s"
 
-#: src/installation_process.py:1285
+#: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpio futtatása..."
 
-#: src/installation_process.py:1288
+#: src/installation_process.py:1349
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpio futtatása... befejezve"
 
@@ -860,17 +860,17 @@ msgstr "Manjaro telepítő - Információ"
 msgid "Manjaro Installer - Question"
 msgstr "Manjaro telepítő - Kérdés"
 
-#: src/slides.py:91 src/slides.py:106
+#: src/slides.py:90 src/slides.py:105
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
 msgstr "A rendszertelepítés befejeződött.\nÚjraindítja a rendszert most?"
 
-#: src/slides.py:99
+#: src/slides.py:98
 msgid "Installing Manjaro..."
 msgstr "Manjaro telepítése..."
 
-#: src/slides.py:104
+#: src/slides.py:103
 msgid "Please wait..."
 msgstr "Kérlek várj..."
 
@@ -1183,25 +1183,41 @@ msgstr "Tűzfal aktiválása (lezárja az összes portot alapértelmezetten)"
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
 msgstr "<span weight='bold' size='large'>Cégfüggő \"zárt\" csomagok</span>"
 
-#: ui/installation_advanced.ui:73
+#: ui/installation_advanced.ui:74
 msgid "Create partition"
 msgstr "Partíció létrehozása"
 
-#: ui/installation_advanced.ui:113
+#: ui/installation_advanced.ui:114
 msgid "Location:"
 msgstr "Hely:"
 
-#: ui/installation_advanced.ui:272
+#: ui/installation_advanced.ui:277
 msgid "MB"
 msgstr "MB"
 
-#: ui/installation_advanced.ui:558
+#: ui/installation_advanced.ui:577
 msgid "Edit partition"
 msgstr "Partíció szerkesztése"
 
-#: ui/installation_advanced.ui:899
+#: ui/installation_advanced.ui:931
 msgid "LVM..."
 msgstr "LVM..."
+
+#: ui/installation_advanced.ui:1100
+msgid "LUKS volume name:"
+msgstr ""
+
+#: ui/installation_advanced.ui:1114
+msgid "Password:"
+msgstr ""
+
+#: ui/installation_advanced.ui:1128
+msgid "Confirm password:"
+msgstr ""
+
+#: ui/installation_advanced.ui:1158
+msgid "Use LUKS encryption: "
+msgstr ""
 
 #: ui/installation_alongside.ui:16
 msgid ""

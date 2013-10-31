@@ -4,6 +4,7 @@
 # 
 # Translators:
 # AlexanderR <alexander.r@gmx.com>, 2012
+# Alex Talker <alextalker7@gmail.com>, 2013
 # Barigosha <artisho5@gmail.com>, 2013
 # faidoc <faidoc@gmail.com>, 2013
 # Ivan Yurasov <vdk@gmx.us>, 2011
@@ -13,12 +14,13 @@
 # Umidjon Almasov <u.almasov@gmail.com>, 2013
 # Valentine Zgonnik <noisyislands@gmail.com>, 2013
 # VVS <vitaliy.star@gmail.com>, 2011
+# cetjs2 <andrey0bolkonsky@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 20:32+0200\n"
-"PO-Revision-Date: 2013-10-25 18:34+0000\n"
+"POT-Creation-Date: 2013-10-31 22:44+0100\n"
+"PO-Revision-Date: 2013-10-31 21:48+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/manjaro-thus/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +33,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Программа установки должна быть запущена с правами администратора, дальнейшее выполнение не возможно."
 
 #: thus.py:109
 #, python-format
@@ -43,20 +45,20 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:207
+#: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Использовать Aria2 для загрузки пакетов - ЭКСПЕРИМЕНТАЛЬНАЯ ОПЦИЯ"
 
-#: thus.py:225
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Использовать '%s' файл,  как список пакетов "
 
-#: thus.py:245
+#: thus.py:244
 msgid "Manjaro Installer"
 msgstr "Установщик Manjaro"
 
-#: thus.py:313
+#: thus.py:312
 msgid "Quiting installer..."
 msgstr "Закрытие установщика..."
 
@@ -71,7 +73,7 @@ msgstr "Какой ваш тип загрузки ?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (обычный)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -83,7 +85,7 @@ msgstr "i3486 Uefi"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Выберите 'Отмена', если вы не хотите устанавливать загрузчик"
 
 #: src/check.py:68
 msgid "Check your computer"
@@ -91,7 +93,7 @@ msgstr "Проверьте свой компьютер"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr ""
+msgstr "Имеет как минимум 3 Гб свободного места на диске"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -110,7 +112,7 @@ msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
-msgstr ""
+msgstr "Manjaro использует стороннее программное обеспечение для воспроизведения Adobe Flash, MP3-файлы и другого мультимедийного  контента. Некоторое из этого программного обеспечения является частной собственностью.Программное обеспечение подпадает под лицензионные условия, включенные в документацию к нему."
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
@@ -130,7 +132,7 @@ msgstr "Мы подключены к источнику питания."
 
 #: src/check.py:195
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Имеется достаточно места на диске."
 
 #: src/desktop.py:76
 msgid ""
@@ -179,7 +181,7 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr ""
+msgstr "KDE Desktop предлагает красивый рабочий стол, который использует все преимущества современных компьютеров. Благодаря использованию визуальных эффектов и масштабируемой графики, рабочий стол не только гладкий, но и приятный для глаз."
 
 #: src/desktop.py:123
 msgid ""
@@ -206,7 +208,7 @@ msgstr "Графическое Окружение"
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus установил Manjaro с рабочим столом '%s'"
 
 #: src/download.py:78
 #, python-format
@@ -242,7 +244,7 @@ msgstr "Внимание! Не удается разрешить эти зави
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Функция выбора"
 
 #: src/features.py:96
 msgid "Bluetooth support"
@@ -254,11 +256,11 @@ msgstr ""
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
-msgstr ""
+msgstr "Поддержка печати (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and management tools"
-msgstr ""
+msgstr "Это включает в себя драйверы принтера и инструменты управления"
 
 #: src/features.py:110
 msgid "LibreOffice"
@@ -274,7 +276,7 @@ msgstr "Визуальные эффекты"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
-msgstr ""
+msgstr "Визуальные эффекты, такие как прозрачность, тени и т.д."
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
@@ -291,174 +293,174 @@ msgstr "Проприетарные пакеты"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr ""
+msgstr "Стороннее прог8раммное обеспечение для проигрывания Flash, MP3 файлов, и другогомультимедийного контента"
 
-#: src/installation_advanced.py:195 src/installation_advanced.py:485
-#: src/installation_advanced.py:499
+#: src/installation_advanced.py:198 src/installation_advanced.py:488
+#: src/installation_advanced.py:502
 msgid "free space"
 msgstr "свободное место"
 
-#: src/installation_advanced.py:263 src/installation_alongside.py:166
+#: src/installation_advanced.py:266 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Устройство"
 
-#: src/installation_advanced.py:266
+#: src/installation_advanced.py:269
 msgid "Type"
 msgstr "Тип"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:272
 msgid "Mount point"
 msgstr "Присоединить как..."
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:275
 msgid "Label"
 msgstr "Метка"
 
-#: src/installation_advanced.py:278 src/installation_advanced.py:1389
+#: src/installation_advanced.py:281 src/installation_advanced.py:1417
 msgid "Format"
 msgstr "Форматировать?"
 
-#: src/installation_advanced.py:281
+#: src/installation_advanced.py:284
 msgid "Size"
 msgstr "Размер"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:287
 msgid "Used"
 msgstr "Использовано"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:290
 msgid "Flags"
 msgstr "Признаки"
 
-#: src/installation_advanced.py:293
+#: src/installation_advanced.py:296
 msgid "SSD"
 msgstr "Твердотельный накопитель"
 
-#: src/installation_advanced.py:471
+#: src/installation_advanced.py:474
 msgid "none"
 msgstr "пусто"
 
-#: src/installation_advanced.py:520 src/installation_advanced.py:921
-#: src/installation_advanced.py:1271 src/installation_advanced.py:1344
-#: src/installation_advanced.py:1512
+#: src/installation_advanced.py:523 src/installation_advanced.py:925
+#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
+#: src/installation_advanced.py:1540
 msgid "extended"
 msgstr "расширенный"
 
-#: src/installation_advanced.py:650 src/installation_advanced.py:891
+#: src/installation_advanced.py:654 src/installation_advanced.py:895
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Нельзя использовать две одинаковые точки монтирования..."
 
-#: src/installation_advanced.py:652
+#: src/installation_advanced.py:656
 msgid "Root partition must be formatted..."
 msgstr "Корневой раздел должен быть отформатирован ..."
 
-#: src/installation_advanced.py:912
+#: src/installation_advanced.py:916
 msgid "Creating primary partition"
 msgstr "Создать основной раздел"
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:927
 msgid "Creating extended partition"
 msgstr "Создать расширенный раздел"
 
-#: src/installation_advanced.py:929
+#: src/installation_advanced.py:933
 msgid "Creating logical partition"
 msgstr "Создать логический раздел"
 
-#: src/installation_advanced.py:1034
+#: src/installation_advanced.py:1062
 msgid "Advanced installation mode"
 msgstr "Режим установки для опытных"
 
-#: src/installation_advanced.py:1038 ui/installation_advanced.ui:963
+#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Использовать это устройство для установки загрузчика:"
 
-#: src/installation_advanced.py:1048 ui/installation_advanced.ui:885
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Новая таблица разделов"
 
-#: src/installation_advanced.py:1056
+#: src/installation_advanced.py:1084
 msgid "Change..."
 msgstr "Изменить..."
 
-#: src/installation_advanced.py:1061 ui/installation_advanced.ui:97
+#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Размер:"
 
-#: src/installation_advanced.py:1065 ui/installation_advanced.ui:295
+#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Тип:"
 
-#: src/installation_advanced.py:1069 ui/installation_advanced.ui:312
+#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Основной"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:330
+#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Логический"
 
-#: src/installation_advanced.py:1077 ui/installation_advanced.ui:348
+#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Расширенный"
 
-#: src/installation_advanced.py:1081 ui/installation_advanced.ui:201
+#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Начало этого пространства"
 
-#: src/installation_advanced.py:1085 ui/installation_advanced.ui:219
+#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "Конец этого пространства"
 
-#: src/installation_advanced.py:1089 src/installation_advanced.py:1106
-#: ui/installation_advanced.ui:128 ui/installation_advanced.ui:582
+#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Использовать как:"
 
-#: src/installation_advanced.py:1093 src/installation_advanced.py:1110
-#: ui/installation_advanced.ui:161 ui/installation_advanced.ui:615
+#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Точка монтирования:"
 
-#: src/installation_advanced.py:1097 src/installation_advanced.py:1114
-#: ui/installation_advanced.ui:377 ui/installation_advanced.ui:652
+#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Метка (не обяз.):"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:413
-#: ui/installation_advanced.ui:719
+#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Варианты шифрования..."
 
-#: src/installation_advanced.py:1118 ui/installation_advanced.ui:679
+#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Файловая система:"
 
-#: src/installation_advanced.py:1123 ui/installation_advanced.ui:487
+#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Тип таблицы разделов:"
 
-#: src/installation_advanced.py:1128
+#: src/installation_advanced.py:1156
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Создать таблицу разделов"
 
-#: src/installation_advanced.py:1131 src/installation_alongside.py:144
-#: src/installation_automatic.py:99
+#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "Установить сейчас!"
 
-#: src/installation_advanced.py:1211
+#: src/installation_advanced.py:1239
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Создать новую %s таблицу разделов на диске %s"
 
-#: src/installation_advanced.py:1307
+#: src/installation_advanced.py:1335
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s подключен как раздел подкачки.\nДля продолжения нужно отключить.\nВыберите Да для отключения или Нет для отмены.\n"
 
-#: src/installation_advanced.py:1309
+#: src/installation_advanced.py:1337
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -466,45 +468,45 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s монтирован как '%s'.\nДля продолжения следует отсоеденить раздел.\nНажми Да, чтобы отсоединить, или Нет, чтобы вернуться назад\n"
 
-#: src/installation_advanced.py:1382
+#: src/installation_advanced.py:1410
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Раздел %s будет удален"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "Partition"
 msgstr "Раздел"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "New"
 msgstr "Новый"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "Relabel"
 msgstr "Переметить"
 
-#: src/installation_advanced.py:1389
+#: src/installation_advanced.py:1417
 msgid "Mount"
 msgstr "Присоединить"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1438
 msgid "These disks will have partition actions:"
 msgstr "На дисках будут произведены следующие действия:"
 
-#: src/installation_advanced.py:1435
+#: src/installation_advanced.py:1463
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Сохранение внесенных изменений на %s"
 
-#: src/installation_advanced.py:1449
+#: src/installation_advanced.py:1477
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Создание файловой системы %s на разделе %s с меткой %s"
 
-#: src/installation_advanced.py:1531
+#: src/installation_advanced.py:1559
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro установил загрузчик %s в %s"
 
 #: src/installation_alongside.py:109
 #, python-format
@@ -513,11 +515,11 @@ msgstr "Не удалось загрузить %s css"
 
 #: src/installation_alongside.py:136
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Выберите, рядом с какой ОС вы будете устанавливать Manjaro"
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro рядом с другой ОС"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
@@ -533,7 +535,7 @@ msgstr ""
 
 #: src/installation_alongside.py:256
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Невозможно сжать раздел (возможно, это почти полный?)"
 
 #: src/installation_ask.py:114
 msgid "Installation type"
@@ -550,19 +552,19 @@ msgstr "Внимание: Данное действие приведет к по
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Установить Manjaro рядом с %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
-msgstr ""
+msgstr "Двойная загрузка ОС, рядом с  уже установленой."
 
 #: src/installation_ask.py:143
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Редактор разделов и куда устанавливать Manjaro (опционально)"
 
 #: src/installation_ask.py:146
 msgid "Create and delete partitions, and choose additional mount points."
-msgstr ""
+msgstr "Создание и удаление разделов, а также выброр дополнительных точек подключения."
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
@@ -570,49 +572,49 @@ msgstr ""
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro будет установлен используя настройки LVM"
 
-#: src/installation_automatic.py:74
+#: src/installation_automatic.py:79
 msgid "Automatic installation mode"
 msgstr "Установка в автоматическом режиме"
 
-#: src/installation_automatic.py:78 ui/installation_automatic.ui:96
+#: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Выбранный диск:"
 
-#: src/installation_automatic.py:82
+#: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "ВНИМАНИЕ! Этот режим установки удалит все данные на вашем жестком диске!"
 
-#: src/installation_automatic.py:87 ui/installation_automatic.ui:59
+#: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Пожалуйста, выберите диск, на котором вы хотите установить Manjaro\nи нажмите на кнопку ниже, чтобы начать процесс."
 
-#: src/installation_automatic.py:92 ui/installation_automatic.ui:177
+#: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Выберите пароль для вашего устройства LUKS"
 
-#: src/installation_automatic.py:96 ui/installation_automatic.ui:162
+#: src/installation_automatic.py:101 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Подтвердите ваш пароль для вашего устройства LUKS"
 
-#: src/installation_automatic.py:151
+#: src/installation_automatic.py:155
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Автоматическая установка на %s"
 
-#: src/installation_automatic.py:167
+#: src/installation_automatic.py:189
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Thus будет использовать %s как устройство установки"
 
-#: src/installation_automatic.py:176
+#: src/installation_automatic.py:198
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Thus установит загрузчик %s в %s"
 
 #: src/installation_process.py:82
 #, python-format
@@ -624,147 +626,147 @@ msgstr "Копирование '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Установка с помощью режима '%s' "
 
-#: src/installation_process.py:266
+#: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Ошибка при создании разделов и их файловых систем"
 
-#: src/installation_process.py:304 src/installation_process.py:326
+#: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Монтирование раздела %s в %s директорию"
 
-#: src/installation_process.py:310
+#: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Монтирование раздела %s в %s/boot директорию"
 
-#: src/installation_process.py:314
+#: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
 msgstr "Не удается присоединить \"root\" и \"boot\" разделы"
 
-#: src/installation_process.py:331
+#: src/installation_process.py:332
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Не удается подключить %s в %s"
 
-#: src/installation_process.py:352
+#: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
 msgstr "Не удается создать необходимые каталоги на целевой системе"
 
-#: src/installation_process.py:449
+#: src/installation_process.py:450
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Восстановление метаинформации о %s"
 
-#: src/installation_process.py:462
+#: src/installation_process.py:463
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Специальные каталоги уже подключены."
 
-#: src/installation_process.py:488
+#: src/installation_process.py:489
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "Специальные каталоги еще не подключены."
 
-#: src/installation_process.py:498
+#: src/installation_process.py:499
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Невозможно отключить %s"
 
-#: src/installation_process.py:549
+#: src/installation_process.py:550
 msgid "Create fstab."
-msgstr ""
+msgstr "Создать fstab"
 
-#: src/installation_process.py:657
+#: src/installation_process.py:662
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Установка GRUB(2) BIOS загрузчика в %s"
 
-#: src/installation_process.py:687
+#: src/installation_process.py:692
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS установлен успешно."
 
-#: src/installation_process.py:689
+#: src/installation_process.py:694
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ERROR установки GRUB(2) BIOS."
 
-#: src/installation_process.py:700
+#: src/installation_process.py:705
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Установка GRUB(2) UEFI %s загрузчика в %s"
 
-#: src/installation_process.py:728
+#: src/installation_process.py:733
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "ОШИБКА при установке конфигурационного файла GRUB(2)."
 
-#: src/installation_process.py:756
+#: src/installation_process.py:761
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "ОШИБКА при установке локали GRUB(2)."
 
-#: src/installation_process.py:770
+#: src/installation_process.py:775
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Ошибка при создании хэша пароля для пользователя %s"
 
-#: src/installation_process.py:776
+#: src/installation_process.py:781
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Ошибка при изменении пароля для пользователя %s"
 
-#: src/installation_process.py:901
+#: src/installation_process.py:906
 msgid "Configuring your new system"
 msgstr "Настройка вашей новой системы"
 
-#: src/installation_process.py:978
+#: src/installation_process.py:983
 msgid "Generating locales..."
 msgstr "Генерация системного языка"
 
-#: src/installation_process.py:998
+#: src/installation_process.py:1003
 msgid "Adjusting hardware clock..."
 msgstr "Настройка аппаратных часов ..."
 
-#: src/installation_process.py:1004
+#: src/installation_process.py:1009
 msgid "Configuring hardware..."
-msgstr ""
+msgstr "Настройка оборудования..."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1072
 msgid "Set up graphics card..."
-msgstr ""
+msgstr "Настройка видео-карты..."
 
-#: src/installation_process.py:1018
+#: src/installation_process.py:1079
 msgid "Can't execute the MHWD script"
 msgstr "Невозможно запустить скрипт MHWD"
 
-#: src/installation_process.py:1024
+#: src/installation_process.py:1085
 msgid "Configure display manager..."
-msgstr ""
+msgstr "Настройка менеджера дисплея..."
 
-#: src/installation_process.py:1123
+#: src/installation_process.py:1184
 msgid "Configure System..."
-msgstr ""
+msgstr "Настройка системы..."
 
-#: src/installation_process.py:1151
+#: src/installation_process.py:1212
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Удаление конфигурации для \"живых\" образов (пакетов)"
 
-#: src/installation_process.py:1167
+#: src/installation_process.py:1228
 msgid "Configuring package manager"
 msgstr "Настройка менеджера пакетов"
 
-#: src/installation_process.py:1182
+#: src/installation_process.py:1243
 msgid "Finished configuring package manager."
 msgstr "Настройка менеджера пакетов завершена."
 
-#: src/installation_process.py:1206
+#: src/installation_process.py:1267
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Включить автоматический вход пользователя %s."
 
-#: src/installation_process.py:1285
+#: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
 msgstr "Запуск mkinitcpio"
 
-#: src/installation_process.py:1288
+#: src/installation_process.py:1349
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "Запуск mkinitcpio... Выполнено!"
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
@@ -789,7 +791,7 @@ msgstr "Пожалуйста выберите ваш язык:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Замечание: Установщик Thus является сейчас нестабильным ПО."
 
 #: src/language.py:86
 msgid ""
@@ -797,7 +799,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus является частью предварительной бета-версии, что находится в стадии активного развития.\nОн еще не правильно обрабатывает RAID, Btrfs подобъемов или другие  настройки. Пожалуйста, соблюдайте осторожность, так как возможна потеря данных!\n\nЕсли вы обнаружите какие-либо ошибки, пожалуйста, сообщите о них по адресу <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -843,7 +845,7 @@ msgstr "В rankmirrors, не удается получить статус сет
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Не найден скрипт поиска быстрых зеркал"
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
@@ -863,19 +865,19 @@ msgstr "Установщик Manjaro - Информация"
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Установщик Manjaro - Вопросы"
 
-#: src/slides.py:91 src/slides.py:106
+#: src/slides.py:90 src/slides.py:105
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
 msgstr "Установка завершена!\nХотите перезагрузить компьютер прямо сейчас?"
 
-#: src/slides.py:99
+#: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Установка Manjaro..."
 
-#: src/slides.py:104
+#: src/slides.py:103
 msgid "Please wait..."
 msgstr "Подождите..."
 
@@ -893,7 +895,7 @@ msgstr "Регион:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Использовать Network Time Protocol для синхронизации часов"
 
 #: src/timezone.py:135
 #, python-format
@@ -906,7 +908,7 @@ msgstr "Не удается автоматически определить вр
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Остановка определения временных зон..."
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
@@ -1008,7 +1010,7 @@ msgstr ""
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Посетите https://wiki.archlinux.org/index.php/ECryptfs для получения дополнительной информации.\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
@@ -1138,35 +1140,35 @@ msgstr "Установка %s (%d/%d)"
 
 #: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
-msgstr ""
+msgstr "Проверка и загрузка пакетов..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Загрузка"
 
 #: ui/check.ui:28
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Для достижения лучших результатов, пожалуйста, убедитесь, что этот компьютер:</span>"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "метка"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Поддержка Bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Поддержка печати (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Libre Office</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
@@ -1186,33 +1188,49 @@ msgstr "Включает брандмауэр (закрывает все пор�
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Проприетарные пакеты</span>"
 
-#: ui/installation_advanced.ui:73
+#: ui/installation_advanced.ui:74
 msgid "Create partition"
 msgstr "Создание раздела"
 
-#: ui/installation_advanced.ui:113
+#: ui/installation_advanced.ui:114
 msgid "Location:"
 msgstr "Расположение:"
 
-#: ui/installation_advanced.ui:272
+#: ui/installation_advanced.ui:277
 msgid "MB"
 msgstr "МБ"
 
-#: ui/installation_advanced.ui:558
+#: ui/installation_advanced.ui:577
 msgid "Edit partition"
 msgstr "Изменение раздела"
 
-#: ui/installation_advanced.ui:899
+#: ui/installation_advanced.ui:931
 msgid "LVM..."
 msgstr "LVM..."
+
+#: ui/installation_advanced.ui:1100
+msgid "LUKS volume name:"
+msgstr ""
+
+#: ui/installation_advanced.ui:1114
+msgid "Password:"
+msgstr ""
+
+#: ui/installation_advanced.ui:1128
+msgid "Confirm password:"
+msgstr ""
+
+#: ui/installation_advanced.ui:1158
+msgid "Use LUKS encryption: "
+msgstr ""
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Выберите, рядом с какой ОС вы будете устанавливать Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1224,7 +1242,7 @@ msgstr "Другая ОС"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1240,17 +1258,17 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">У вас попросят ключ для шифрования на следующем шаге</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Использовать LVM при новой установке Manjaro"
 
 #: ui/installation_ask.ui:122
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Эта настройка LVM позволяет сделать снимки и изменение размеров разделов простым</ span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
@@ -1261,7 +1279,7 @@ msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">С этой опцией вы сможете установить Manjaro рядом с одной из уже установленных ОС.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
@@ -1272,13 +1290,13 @@ msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Вы сможете создавать/удалять разделы, решить, куда устанавливать Manjaro, а также выбрать дополнительные точки подключения.</ span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>ВНИМАНИЕ! Этот режим установки удалит все данные на вашем жестком диске!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
@@ -1291,7 +1309,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Notice: Установщик Thus это бета-ПО.</span>⏎\nThus является частью предварительной бета-версии, что находится в стадии активного развития.\nОн еще не правильно обрабатывает RAID, Btrfs подобъемов или другие  настройки. Пожалуйста, соблюдайте осторожность, так как возможна потеря данных!\n\nЕсли вы обнаружите какие-либо ошибки, пожалуйста, сообщите о них по адресу <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
@@ -1299,7 +1317,7 @@ msgstr " "
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "Прогресс"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
@@ -1307,19 +1325,19 @@ msgstr "<span weight=\"bold\" size=\"large\">Добро пожаловать в 
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Надежный пароль</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Вы не ввели пароль</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Вы не ввели имя учетной записи</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Вы не ввели свое имя</span></small>"
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
