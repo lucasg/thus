@@ -144,6 +144,13 @@ class InstallationAdvanced(Gtk.Box):
         # Get encryption (LUKS) options dialog
         self.luks_dialog = self.ui.get_object('luks_dialog')
 
+        # TODO: get LUKS ready
+        partition_encryption_settings = self.ui.get_object('partition_encryption_settings')
+        partition_encryption_settings2 = self.ui.get_object('partition_encryption_settings2')
+        if not self.settings.get("use_staging"):
+            partition_encryption_settings.set_visible(False)
+            partition_encryption_settings2.set_visible(False)
+
         # Connect changing selection in the partition list treeview
         select = self.partition_list.get_selection()
         select.connect("changed", self.on_partition_list_treeview_selection_changed)
@@ -829,7 +836,6 @@ class InstallationAdvanced(Gtk.Box):
         primary_radio = self.ui.get_object('partition_create_type_primary')
         logical_radio = self.ui.get_object('partition_create_type_logical')
         extended_radio = self.ui.get_object('partition_create_type_extended')
-        partition_encryption_settings = self.ui.get_object('partition_encryption_settings')
 
         primary_radio.set_active(True)
         logical_radio.set_active(False)
@@ -838,10 +844,6 @@ class InstallationAdvanced(Gtk.Box):
         logical_radio.set_visible(True)
         primary_radio.set_visible(True)
         extended_radio.set_visible(True)
-
-        # TODO: get LUKS ready
-        if not self.settings.get("use_staging"):
-            partition_encryption_settings.set_visible(False)
 
         if not supports_extended:
             extended_radio.set_visible(False)
