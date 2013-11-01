@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-10-31 22:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-11-01 10:21+0000\n"
+"Last-Translator: Tangim Hossain <tangimhossain1@gmail.com>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/manjaro-thus/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -126,7 +126,7 @@ msgstr "আমরা বৈদ্যুতিক উৎসের সঙ্গে
 
 #: src/check.py:195
 msgid "We have enough disk space."
-msgstr ""
+msgstr "আমাদের ডিস্কে পর্যাপ্ত জায়গা আছে।"
 
 #: src/desktop.py:76
 msgid ""
@@ -246,7 +246,7 @@ msgstr "ব্লুটুথ সমর্থন"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "Bluetooth সহায়তা ছাড়া Bluetooth ডিভাইস ব্যবহার করা সম্ভব নয়।"
+msgstr "ব্লুটুথ সমর্থন ছাড়া ব্লুটুথ ডিভাইস ব্যবহার করা সম্ভব নয়"
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
@@ -654,11 +654,11 @@ msgstr "%s তে মেটা-তথ্য পুনরুদ্ধার ক�
 
 #: src/installation_process.py:463
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "বিশেষ ডিরেক্টরই সমূহ ইতিমদ্ধেই মাউন্ট করা।"
 
 #: src/installation_process.py:489
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "বিশেষ ডিরেক্টরই সমূহ ইতিমদ্ধেই মাউন্ট করা নয়।"
 
 #: src/installation_process.py:499
 #, python-format
@@ -752,7 +752,7 @@ msgstr "প্যাকেজ ম্যানেজার কনফিগার 
 #: src/installation_process.py:1267
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr "%s: %s-এর জন্য স্বয়ংক্রিয় login ব্যবস্থা সক্রিয় করুন।    "
+msgstr "%s: %s-এর জন্য স্বয়ংক্রিয় লগইন ব্যবস্থা সক্রিয় করুন।    "
 
 #: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
@@ -889,7 +889,7 @@ msgstr "অঞ্চল:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "ঘড়ির সামঞ্জস্যতা রক্ষার জন্য Network Time Protocol ব্যবহার করুনঃ"
 
 #: src/timezone.py:135
 #, python-format
@@ -1099,7 +1099,7 @@ msgstr "উন্নত করা হচ্ছে... "
 
 #: src/pacman/pac.py:304
 msgid "Checking integrity..."
-msgstr ""
+msgstr "বিশুদ্ধতা পরীক্ষা করা হচ্ছে..."
 
 #: src/pacman/pac.py:307
 msgid "Loading packages files..."
@@ -1144,7 +1144,7 @@ msgstr "বুট"
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">উত্তম ফলাফলের জন্য, দয়া করে নিশ্চিত করুন যে এই কম্পিউটার:</span>"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
@@ -1178,7 +1178,7 @@ msgstr "<span weight='bold' size='large'>ফায়ারওয়াল</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "আপনার ফায়ারওয়ালকে সক্রিয় করবে (ডিফল্টভাবে সকল পোর্ট বন্ধ হয়ে যাবে)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
@@ -1198,7 +1198,7 @@ msgstr "মেগাবাইট"
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"
-msgstr ""
+msgstr "পার্টিশনে পরিবর্তন আনুন"
 
 #: ui/installation_advanced.ui:931
 msgid "LVM..."
@@ -1206,19 +1206,19 @@ msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "LUKS ভলিউমের নামঃ"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "পাসওয়ার্ডঃ"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "পাসওয়ার্ড নিশ্চিত করুনঃ"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "LUKS এঙ্ক্রিপসন ব্যাবহার করুনঃ"
 
 #: ui/installation_alongside.ui:16
 msgid ""
@@ -1242,7 +1242,7 @@ msgstr "Manjaro"
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">সতর্কবাণীঃ এতে আপনার ডিস্ক এর ভিতরে থাকা সকল প্রোগ্রাম, ছবি, সঙ্গীত এবং অন্যান্য সকল ফাইল ডিলেট হয়ে যাবে</span>"
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1252,11 +1252,11 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">পরের পদক্ষেপে আপনাকে এঙ্ক্রিপসন কি দিতে বলা হবে</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "নতুন Manjaro ইন্সটলেশনের সঙ্গে LVM কে ব্যবহার করুন"
 
 #: ui/installation_ask.ui:122
 msgid ""
@@ -1277,14 +1277,14 @@ msgstr ""
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "আপনার পার্টিশন পরিচালনা করুন এবং কোথায় Manjaro কোথায় ইন্সটল করা হবে তা বাছাই করুন (অ্যাডভান্সড)"
 
 #: ui/installation_ask.ui:197
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">আপনি পার্টিশন তৈরি/ডিলেট, Manjaro ইন্সটলের জায়গা বাছাই এবং অতিরিক্ত মাউন্ট পয়েন্ট বাছাই করতে পারবেন</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
@@ -1303,7 +1303,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>নোটিশঃ Thus ইন্সটলার একটি বেটা সফটওয়্যার।</span>\\n\n\\n\nThus হল বেটা সফটওয়্যার যার এখন উন্নয়ন হচ্ছে। এটা এখনও সঠিকভাবে, RAID, Btrfs subvolumes, বা অন্যান্য উন্নত সেটআপ সমূহ সম্পাদনা করতে পারে না। তথ্য হারানো সম্ভব, দয়া করে সাবধানতার সাথে এগিয়ে যান!\\n\n\\n\nযদি আপনি কোন বাগ খুঁজে পান তাহলে দয়া করে এখানে যান <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
