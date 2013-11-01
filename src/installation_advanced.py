@@ -829,6 +829,7 @@ class InstallationAdvanced(Gtk.Box):
         primary_radio = self.ui.get_object('partition_create_type_primary')
         logical_radio = self.ui.get_object('partition_create_type_logical')
         extended_radio = self.ui.get_object('partition_create_type_extended')
+        partition_encryption_settings = self.ui.get_object('partition_encryption_settings')
 
         primary_radio.set_active(True)
         logical_radio.set_active(False)
@@ -837,6 +838,10 @@ class InstallationAdvanced(Gtk.Box):
         logical_radio.set_visible(True)
         primary_radio.set_visible(True)
         extended_radio.set_visible(True)
+
+        # TODO: get LUKS ready
+        if not self.settings.get("use_staging"):
+            partition_encryption_settings.set_visible(False)
 
         if not supports_extended:
             extended_radio.set_visible(False)
