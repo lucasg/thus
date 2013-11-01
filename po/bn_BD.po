@@ -4,14 +4,17 @@
 # 
 # Translators:
 # hussain0613 <omanush0@gmail.com>, 2013
+# hussain0613 <omanush0@gmail.com>, 2013
 # xxmate <nahian2546@gmail.com>, 2013
 # Tangim Hossain <tangimhossain1@gmail.com>, 2013
+# Tangim Hossain <tangimhossain1@gmail.com>, 2013
+# xxmate <nahian2546@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:49+0000\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-10-31 22:09+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/manjaro-thus/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
@@ -286,164 +289,164 @@ msgstr "মালিকানাধিন প্যাকেজসমূহ"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "তৃতীয় পক্ষের সফটওয়্যার Flash, MP3 এবং অন্যান্য মিডিয়া ফাইল চালাবার জন্য"
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
 msgstr "ফাঁকা জায়গা"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
 msgstr "ডিভাইস"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
 msgstr "প্রকার"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
 msgstr "মাউন্ট পয়েন্ট"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
 msgstr "লেবেল"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
 msgstr "ফরম্যাট"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
 msgstr "আকার"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
 msgstr "ব্যবহার হয়েছে"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
 msgstr "পতাকা সমূহ"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr "এস এস ডি"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr "কোনটি নয়"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr "বর্ধিত"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr "একই মাউন্ট পয়েন্ট দুইবার ব্যবহার করা যাবে না..."
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
 msgstr "Root পার্টিশন অবশ্যই ফরম্যাট করা হতে হবে..."
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
 msgstr "প্রাইমারী পার্টিশন তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
 msgstr "বর্ধিত পার্টিশন তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
 msgstr "লজিকাল পার্টিশন তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
 msgstr "ইনস্টলেশন সংক্রান্ত উন্নত মোড"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "এই ডিভাইসটি boot loader এর জন্য ব্যবহার করুনঃ"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "নতুন পার্টিশন টেবিল"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
 msgstr "পরিবর্তন..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "আয়তনঃ"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "প্রকারঃ"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "প্রাথমিক"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "লজিক্যাল"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "বর্ধিত"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "এই স্থানের শুরু থেকে"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "এই স্থানের শেষের থেকে"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "যা হিসেবে ব্যাবহার করতে চানঃ"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "মাউন্ট পয়েন্ট"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "লেবেল (ঐচ্ছিক):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "এনক্রিপশন অপশনসমূহ..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "ফরম্যাট"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "পার্টিশন টেবিলের প্রকারঃ"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
 msgstr "পার্টিশন টেবিল তৈরি করুন"
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "এখনি ইন্সটল করুন !"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "%s এই প্রকার এর পার্টিশন %s ডিস্ক এর জন্য তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -451,7 +454,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s সোয়াপ হিসেবে মাউন্টেড হয়েছে।\nসামনে এগিয়ে যাওয়ার জন্য এটাকে অবশ্যই আনমাউন্টেড হতে হবে\nআনমাউন্টেড করার জন্য Yes, বা ফিরে যাওয়ার জন্য No ক্লিক করুন\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -459,42 +462,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s মাউন্ট হয়েছে '%s' তে।\nসামনে এগিয়ে যাবার জন্য এটাকে অবশ্যই আন-মাউন্ট করতে হবে।\nআন-মাউন্ট করবার জন্য Yes বা পিছনে যাবার জন্য No তে ক্লিক করুন\n"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s পার্টিশনটি মুছে যাবে"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
 msgstr "পার্টিশন"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
 msgstr "নতুন"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr "পুনরায় লেবেল"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr "মাউন্ট"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
 msgstr "এই ডিস্কগুলোতে পার্টিশন ক্রিয়া থাকবেঃ"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s এর মধ্যে পরিবর্তন গুলো সংরক্ষণ হয়েছে"
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "%s ফাইলসিস্টেম তৈরি হচ্ছে %s এর ভিতরে %s লেবেল হয়ে"
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro %s প্রকারের bootloader কে %s এর ভিতরে ইন্সটল করবে"
