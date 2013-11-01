@@ -102,6 +102,8 @@ class Main(Gtk.Window):
         if os.getuid() != 0:
             show.fatal_error(_('This installer must be run with administrative'
                          ' privileges and cannot continue without them.'))
+
+        setup_logging()
         
         # check if we're already running
         tmp_running = "/tmp/.setup-running"
@@ -433,9 +435,8 @@ if __name__ == '__main__':
         else:
             assert False, "unhandled option"
         
-    setup_logging()
-        
     if _update:
+        setup_logging()
         # Check if program needs to be updated
         upd = updater.Updater(_force_update)
         if upd.update():
