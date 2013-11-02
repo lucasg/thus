@@ -5,6 +5,7 @@
 # Translators:
 # allanmcrae <allan@archlinux.org>, 2013
 # David Kolibáč <david@kolibac.cz>, 2011
+# dasebek <dasebek@gmail.com>, 2013
 # hor410 <hor410@gmail.com>, 2013
 # Libor Schejbal <libor.schejbal@gmail.com>, 2013
 # Marek Otahal <markotahalREMOVETHIS@gmail.com>, 2011
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-02 20:47+0000\n"
+"Last-Translator: dasebek <dasebek@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/manjaro-thus/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,7 +82,7 @@ msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Zvolte \"Storno\", pokud nechcete nainstalovat zavaděč"
 
 #: src/check.py:68
 msgid "Check your computer"
@@ -89,7 +90,7 @@ msgstr "Kontrola vašeho počítače"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr ""
+msgstr "má alespoň 3 GB volného místa na disku"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -149,7 +150,7 @@ msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr ""
+msgstr "XFCE je odlehčené pracovní prostředí, jehož cílem je nenáročnost na systém při zachování přitažlivého vzhledu, plnohodnotnosti a jednoduchého používaní."
 
 #: src/desktop.py:96
 msgid ""
@@ -248,11 +249,11 @@ msgstr "Podpora bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr ""
+msgstr "Bez podpory bluetooth nebudete schopen používat zařízení bluetooth"
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
-msgstr ""
+msgstr "Podpora tisku (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and management tools"
@@ -291,164 +292,164 @@ msgstr "Proprietární balíčky"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr ""
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
 msgstr "volné místo"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Zařízení"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
 msgstr "Typ"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
 msgstr "Přípojný bod"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
 msgstr "Štítek"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
 msgstr "Formát"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
 msgstr "Velikost"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
 msgstr "Využito"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
 msgstr "Vlajky"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr "žádný"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr "prodloužený"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
 msgstr "Oddíl pro kořenový adresář musí být formátován ..."
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
 msgstr "Vytvářím primární oddíl"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
 msgstr "Vytvářím rozšířený oddíl"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
 msgstr "Vytvářím logický oddíl"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
 msgstr "Pokročilý režim instalace"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Použít toto zařízení pro instalaci zavaděče:"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Nová tabulka oddílů"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
 msgstr "Změna..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Velikost:"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Primární"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logický"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Rozšířený"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Začátek prostoru"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "Konec prostoru"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Použít jako:"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Přípojný bod:"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Štítek (nepovinné):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Možnosti šifrování ..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Formát:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Tabulka typů oddílů:"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Vytvoření tabulky oddílů"
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "Instalovat nyní!"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Vytvářím novou tabulky oddílů formátu % s na disk % s"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -456,7 +457,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "% s je připojen jako odkládací prostor swap.⏎\nChcete-li pokračovat, musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -464,42 +465,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s je připojen k '%s'.⏎\nPro pokračování musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Diskový oddíl %s bude odstraněn"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
 msgstr "Diskový oddíl"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
 msgstr "Nový"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr "Přeštítkovat"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr "Připojit"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
 msgstr "Na těchto discích budou provedeny tyto akce s oddíly:"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Ukládám změny provedené v %s"
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Vytváření %s souborového systému na %s pojmenovaného %s"
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro nainstaluje zavaděč %s do %s"
@@ -591,16 +592,16 @@ msgstr "Prosím, vyberte jednotku, kam se má Manjaro nainstalovat⏎\na klikně
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Vyberte heslo pro zařízení LUKS:"
 
 #: src/installation_automatic.py:101 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Potvrďte svoje heslo pro zařízení LUKS:"
 
 #: src/installation_automatic.py:155
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Automaticky instalovat na %s"
 
 #: src/installation_automatic.py:189
 #, python-format
@@ -624,7 +625,7 @@ msgstr "Instalace pomocí metody '%s'"
 
 #: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Došlo k chybě při vytváření oddílů a jejich souborových systémů"
 
 #: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
@@ -656,7 +657,7 @@ msgstr "Obnovení metainformací na %s"
 
 #: src/installation_process.py:463
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Speciální adresáře jsou už připojené."
 
 #: src/installation_process.py:489
 msgid "Special dirs already not mounted."
@@ -665,11 +666,11 @@ msgstr ""
 #: src/installation_process.py:499
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Není možné odpojit %s"
 
 #: src/installation_process.py:550
 msgid "Create fstab."
-msgstr ""
+msgstr "Vytvořit fstab"
 
 #: src/installation_process.py:662
 #, python-format
@@ -691,11 +692,11 @@ msgstr "Instalace zavaděče GRUB(2) UEFI %s do %s"
 
 #: src/installation_process.py:733
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "CHYBA instalace GRUB(2) konfiguračního souboru."
 
 #: src/installation_process.py:761
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "CHYBA instalace GRUB(2) lokálů."
 
 #: src/installation_process.py:775
 #, python-format
@@ -754,7 +755,7 @@ msgstr "Konfigurace správce balíčků dokončena."
 #: src/installation_process.py:1267
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Povolit automatické přihlášení pro uživatele %s."
 
 #: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
@@ -787,7 +788,7 @@ msgstr "Prosím, vyberte svůj jazyk:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Upozornění: Instalátor Thus je ve fázi beta."
 
 #: src/language.py:86
 msgid ""
@@ -891,7 +892,7 @@ msgstr "Region:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Použít síťový protokol NTP pro synchronizaci času:"
 
 #: src/timezone.py:135
 #, python-format
@@ -1014,125 +1015,125 @@ msgstr ""
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "Zadal jste neplatné znaky"
 
 #: src/user_info.py:234
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "Uživatelské jméno nemůže obsahovat tečky"
 
 #: src/user_info.py:238
 msgid "Too many characters"
-msgstr ""
+msgstr "Příliš mnoho znaků"
 
 #: src/validation.py:131
 msgid "password is too short"
-msgstr ""
+msgstr "heslo je příliš krátké"
 
 #: src/validation.py:134
 msgid "weak password"
-msgstr ""
+msgstr "slabé heslo"
 
 #: src/validation.py:137
 msgid "fair password"
-msgstr ""
+msgstr "ucházející heslo"
 
 #: src/validation.py:140
 msgid "good password"
-msgstr ""
+msgstr "dobré heslo"
 
 #: src/validation.py:143
 msgid "strong password"
-msgstr ""
+msgstr "silné heslo"
 
 #: src/validation.py:158
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Hesla se neshodují"
 
 #: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr ""
+msgstr "Vyzkoušejte Manjaro bez upravování vašeho pevného disku.⏎\nNebo ho nainstalujte na váš počítač s jednou ze dvou možností instalace."
 
 #: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
-msgstr ""
+msgstr "Vyzkoušet"
 
 #: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
-msgstr ""
+msgstr "Textový instalátor"
 
 #: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
-msgstr ""
+msgstr "Grafický instalátor"
 
 #: src/welcome.py:119
 msgid "Can't load the CLI installer"
-msgstr ""
+msgstr "Nelze načíst textový instalátor"
 
 #: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
-msgstr ""
+msgstr "Balíček %s nebyl nalezen v žádném repozitáři!"
 
 #: src/pacman/pac.py:289
 msgid "Checking dependencies..."
-msgstr ""
+msgstr "Kontrola závislostí..."
 
 #: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
-msgstr ""
+msgstr "Kontrola souborových konfliktů..."
 
 #: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
-msgstr ""
+msgstr "Řešení závislostí..."
 
 #: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
-msgstr ""
+msgstr "Kontrola vnitřních konfliktů..."
 
 #: src/pacman/pac.py:300
 msgid "Removing..."
-msgstr ""
+msgstr "Odebírání..."
 
 #: src/pacman/pac.py:302
 msgid "Upgrading..."
-msgstr ""
+msgstr "Upgradování..."
 
 #: src/pacman/pac.py:304
 msgid "Checking integrity..."
-msgstr ""
+msgstr "Kontrola integrity..."
 
 #: src/pacman/pac.py:307
 msgid "Loading packages files..."
-msgstr ""
+msgstr "Nahrávání balíčkových souborů..."
 
 #: src/pacman/pac.py:310
 msgid "Configuring..."
-msgstr ""
+msgstr "Konfiguruji..."
 
 #: src/pacman/pac.py:311
 msgid "Configuring a package"
-msgstr ""
+msgstr "Konfiguruji balíček"
 
 #: src/pacman/pac.py:313
 msgid "Downloading a file"
-msgstr ""
+msgstr "Stahuji soubor"
 
 #: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
-msgstr ""
+msgstr "Stahuji %s..."
 
 #: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
-msgstr ""
+msgstr "Obnovuji %s..."
 
 #: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
-msgstr ""
+msgstr "Instaluji %s (%d/%d)"
 
 #: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
@@ -1146,17 +1147,17 @@ msgstr ""
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "Pro dosažení nejlepších výsledků se ujistěte, že tento počítač:"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "označení"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Podpora bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
@@ -1164,23 +1165,23 @@ msgstr ""
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "Kancelářská sada (textový procesor, tabulky, atd.)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Efekty</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Firewall</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "Aktivuje firewall (normálně uzavírá všechny porty)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
@@ -1188,39 +1189,39 @@ msgstr ""
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
-msgstr ""
+msgstr "Vytvořit oddíl"
 
 #: ui/installation_advanced.ui:114
 msgid "Location:"
-msgstr ""
+msgstr "Umístění:"
 
 #: ui/installation_advanced.ui:277
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"
-msgstr ""
+msgstr "Upravit oddíl"
 
 #: ui/installation_advanced.ui:931
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "Jméno LUKS svazku:"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "Heslo:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "Potvrdit heslo:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "Použít LUKS šifrování:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
@@ -1230,21 +1231,21 @@ msgstr ""
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "Vybrat novou velikost"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "Jiný OS"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Varování: Toto smaže veškeré programy, dokumenty, fotografie, hudbu a jakékoliv jiné soubory na vašem disku</span>"
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1254,11 +1255,11 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">O šifrovací klíč budete požádán v dalším kroku</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Použít LVM s novou instalací Manjaro"
 
 #: ui/installation_ask.ui:122
 msgid ""
@@ -1268,7 +1269,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "Nainstalovat vedle jiných operačních systémů"
 
 #: ui/installation_ask.ui:159
 msgid ""
@@ -1279,14 +1280,14 @@ msgstr ""
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Spravovat oddíly a vybrat kam nainstalovat Manjaro (pokročilé)"
 
 #: ui/installation_ask.ui:197
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Budete schopen vytvořit/smazat oddíly, vybrat kam nainstalovat Manjaro a také vybrat dodatečné body připojení.</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
@@ -1296,7 +1297,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Vyberte váš jazyk:</span>"
 
 #: ui/language.ui:88
 msgid ""
@@ -1313,27 +1314,27 @@ msgstr ""
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "Postup"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Vítejte v Manjaru</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Silné heslo</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Musíte zadat heslo</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Musíte zadat uživatelské jméno</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Musíte zadat jméno</span></small>"
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
