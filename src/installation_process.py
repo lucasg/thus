@@ -966,9 +966,8 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot(['chown', '-R', '%s:users' % username, "/home/%s" % username])
         
         hostname_path = os.path.join(self.dest_dir, "etc/hostname")
-        if not os.path.exists(hostname_path):
-            with open(hostname_path, "wt") as f:
-                f.write(hostname)
+        with open(hostname_path, "wt") as f:
+            f.write(hostname)
 
         self.queue_event('debug', 'Hostname  %s set.' % hostname)
         
