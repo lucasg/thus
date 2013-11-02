@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-01 15:35+0000\n"
+"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/manjaro-thus/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,16 +44,16 @@ msgstr ""
 
 #: thus.py:244
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "מתקין Manjaro"
 
 #: thus.py:312
 msgid "Quiting installer..."
-msgstr ""
+msgstr "כעת יוצא מתוך מתקין..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "לא מוכר"
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "‏BIOS (שכיח)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -77,23 +77,23 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "בדוק את המחשב"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr ""
+msgstr "מכיל נפח פנוי של של לפחות 3GB"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "מחובר אל מקור חשמל"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "מחובר אל האינטרנט"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "למען תוצאות מיטביות, אנא ודאו כי מחשב זה:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -108,19 +108,19 @@ msgstr ""
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "אין אפשרות להשיג מצב רשת תקשורת"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "יש לנו חיבור אינטרנט."
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "אנחנו מחוברים אל מקור חשמל."
 
 #: src/check.py:195
 msgid "We have enough disk space."
-msgstr ""
+msgstr "יש לנו נפח כונן מספיק."
 
 #: src/desktop.py:76
 msgid ""
@@ -141,7 +141,7 @@ msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr ""
+msgstr "‏XFCE הינה סביבת עבודה קלת משקל אשר שואפת להיות קלה על משאבי מערכת ובה בעת להיות גם מושכת מבחינה חזותית, רב תכליתית, וקלה לשימוש."
 
 #: src/desktop.py:96
 msgid ""
@@ -161,7 +161,7 @@ msgid ""
 "Enlightenment is a lean, fast, modular and very extensible window manager "
 "for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
 " you need to operate your desktop (or laptop). "
-msgstr ""
+msgstr "‏Enlightenment הינו מנהל חלונות דל, מהיר, מודולרי וכן בר הרחבה ביותר עבור X11 וגם Linux. זה משוייך בתור \"מעטפת שולחן עבודה\" אשר מספקת את הדברים הנחוצים לכם כדי להפעיל מחשב (או מחשב נייד). "
 
 #: src/desktop.py:116
 msgid ""
@@ -169,14 +169,14 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr ""
+msgstr "שולחן העבודה KDE מציע שולחן עבודה יפה אשר מנצל את כל היתרונות של טכנולוגיית מחשוב מודרנית. מבעד לשימוש של אפקטים חזותיים וגרפיקה דינמית, חווית שולחן העבודה איננה רק חלקה אך גם נעימה לעיניים."
 
 #: src/desktop.py:123
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "‏Razor-qt הינה סביבת עבודה מתקדמת, קלה לשימוש, ומהירה אשר מבוססת על טכנולוגיות Qt. זו חויטה עבור משתמשים אשר אשר מעריכים פשטות, מהירות, וממשק אינטואיטיבי."
 
 #: src/desktop.py:130
 msgid ""
@@ -187,11 +187,11 @@ msgstr ""
 
 #: src/desktop.py:142
 msgid "Select your desktop"
-msgstr ""
+msgstr "בחר את שולחן העבודה שלך"
 
 #: src/desktop.py:152
 msgid "Desktops"
-msgstr ""
+msgstr "שולחנות עבודה"
 
 #: src/desktop.py:185
 #, python-format
@@ -211,7 +211,7 @@ msgstr ""
 #: src/download.py:133
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "כעת מוריד חבילה '%s'..."
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
@@ -224,27 +224,27 @@ msgstr ""
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "אין אפשרות למצוא את חבילות אלה: "
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "אזהרה! אין אפשרות לפתור את תלויות אלה: "
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "מבחר תכונות"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "תמיכת Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr ""
+msgstr "ללא תמיכת Bluetooth לא תהיה ביכולתך להשתמש בהתקני Bluetooth"
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
-msgstr ""
+msgstr "תמיכת הדפסה (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and management tools"
@@ -256,19 +256,19 @@ msgstr ""
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "חבילה משרדית (מעבד תמלילים, גיליון אלקטרוני, ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "אפקטים חזותיים"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
-msgstr ""
+msgstr "אפקטים חזותיים כגון שקיפות חלון וצללים"
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "חומת אש לא מסובכת"
 
 #: src/features.py:127
 msgid ""
@@ -277,170 +277,170 @@ msgstr ""
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "חבילות קנייניות"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr ""
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
-msgstr ""
+msgstr "נפח חופשי"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
-msgstr ""
+msgstr "התקן"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
-msgstr ""
+msgstr "טיפוס"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
-msgstr ""
+msgstr "נקודת עגינה"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
-msgstr ""
+msgstr "סיווג"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
-msgstr ""
+msgstr "פורמט"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
-msgstr ""
+msgstr "גודל"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
-msgstr ""
+msgstr "בשימוש"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
-msgstr ""
+msgstr "דגלים"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr ""
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr ""
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr ""
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
 msgstr ""
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
 msgstr ""
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
 msgstr ""
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
 msgstr ""
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "מצב הצקנה מתקדם"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr ""
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
-msgstr ""
+msgstr "טבלת מחיצה חדשה"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
-msgstr ""
+msgstr "שינוי..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
-msgstr ""
+msgstr "גודל:"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
-msgstr ""
+msgstr "טיפוס:"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr ""
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr ""
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr ""
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
-msgstr ""
+msgstr "תחילת נפח זה"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
-msgstr ""
+msgstr "סוף נפח זה"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr ""
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
-msgstr ""
+msgstr "נקודת עגינה:"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
-msgstr ""
+msgstr "סיווג (רשות):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
-msgstr ""
+msgstr "אפשרויות הצפנה..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
-msgstr ""
+msgstr "פורמט:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
-msgstr ""
+msgstr "טיפוס טבלת מחיצה:"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
-msgstr ""
+msgstr "צור טבלת מחיצה"
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
-msgstr ""
+msgstr "התקן עכשיו!"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr ""
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -448,7 +448,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -456,42 +456,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr ""
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
-msgstr ""
+msgstr "מחיצה"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
-msgstr ""
+msgstr "חדש"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr ""
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr ""
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
 msgstr ""
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr ""
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr ""
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr ""
@@ -511,11 +511,11 @@ msgstr ""
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr ""
+msgstr "מערכת הפעלה שאותרה"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
-msgstr ""
+msgstr "מערכת קבצים"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
@@ -527,20 +527,20 @@ msgstr ""
 
 #: src/installation_ask.py:114
 msgid "Installation type"
-msgstr ""
+msgstr "טיפוס התקנה"
 
 #: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "מחק כונן והתקן Manjaro (אוטומטי)"
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "אזהרה: זו תמחק לך את כל הנתונים בכונן שלך"
 
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "התקן Manjaro לצד %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
@@ -556,24 +556,24 @@ msgstr ""
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "התקנת Manjaro תוצפן"
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "‏Manjaro יותקן באמצעות התקנת LVM"
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "מצב התקנה אוטומטי"
 
 #: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "בחר כונן:"
 
 #: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "אזהרה! התקנה זו תכתוב מחדש על כל הכונן שלך!"
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
@@ -607,7 +607,7 @@ msgstr ""
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "כעת מעתיק '/%s'"
 
 #: src/installation_process.py:164
 #, python-format
@@ -635,7 +635,7 @@ msgstr ""
 #: src/installation_process.py:332
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "אין אפשרות לעגן את %s בתוך %s"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
@@ -661,7 +661,7 @@ msgstr ""
 
 #: src/installation_process.py:550
 msgid "Create fstab."
-msgstr ""
+msgstr "צור fstab."
 
 #: src/installation_process.py:662
 #, python-format
@@ -705,19 +705,19 @@ msgstr ""
 
 #: src/installation_process.py:983
 msgid "Generating locales..."
-msgstr ""
+msgstr "כעת מחולל מקומיות..."
 
 #: src/installation_process.py:1003
 msgid "Adjusting hardware clock..."
-msgstr ""
+msgstr "כעת מסגל שעון חומרה..."
 
 #: src/installation_process.py:1009
 msgid "Configuring hardware..."
-msgstr ""
+msgstr "כעת מגדיר חומרה..."
 
 #: src/installation_process.py:1072
 msgid "Set up graphics card..."
-msgstr ""
+msgstr "קביעת כרטיס מסך..."
 
 #: src/installation_process.py:1079
 msgid "Can't execute the MHWD script"
@@ -725,11 +725,11 @@ msgstr ""
 
 #: src/installation_process.py:1085
 msgid "Configure display manager..."
-msgstr ""
+msgstr "כעת מגדיר מנהל תצוגה..."
 
 #: src/installation_process.py:1184
 msgid "Configure System..."
-msgstr ""
+msgstr "כעת מגדיר מערכת..."
 
 #: src/installation_process.py:1212
 msgid "Removing live configuration (packages)"
@@ -750,7 +750,7 @@ msgstr ""
 
 #: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
-msgstr ""
+msgstr "כעת מריץ mkinitcpio..."
 
 #: src/installation_process.py:1349
 msgid "Running mkinitcpio... done"
@@ -766,7 +766,7 @@ msgstr ""
 
 #: src/keymap.py:76
 msgid "Variants"
-msgstr ""
+msgstr "משתנים"
 
 #: src/keymap.py:98
 #, python-format
@@ -775,7 +775,7 @@ msgstr ""
 
 #: src/language.py:80
 msgid "Please choose your language:"
-msgstr ""
+msgstr "אנא בחר את שפתך:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
@@ -791,11 +791,11 @@ msgstr ""
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "ברוך בואך אל Manjaro!"
 
 #: src/language.py:110
 msgid "Languages"
-msgstr ""
+msgstr "שפות"
 
 #: src/language.py:130
 #, python-format
@@ -804,7 +804,7 @@ msgstr ""
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr ""
+msgstr "בחר את מיקומך"
 
 #: src/location.py:68 ui/location.ui:21
 msgid ""
@@ -815,12 +815,12 @@ msgstr ""
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "מדינה, טריטוריה או אזור:"
 
 #: src/location.py:197
 #, python-format
 msgid "locale changed to : %s"
-msgstr ""
+msgstr "מקומיות שונתה אל : %s"
 
 #: src/location.py:199
 #, python-format
@@ -841,19 +841,19 @@ msgstr ""
 
 #: src/show_message.py:52
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "מתקין Manjaro - שגיאה"
 
 #: src/show_message.py:63
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "מתקין Manjaro - אזהרה"
 
 #: src/show_message.py:74
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "מתקין Manjaro - מידע"
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "מתקין Manjaro - שאלה"
 
 #: src/slides.py:90 src/slides.py:105
 msgid ""
@@ -863,23 +863,23 @@ msgstr ""
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "כעת מתקין Manjaro..."
 
 #: src/slides.py:103
 msgid "Please wait..."
-msgstr ""
+msgstr "אנא המתן..."
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "היכן את/ה?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
-msgstr ""
+msgstr "תחום:"
 
 #: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
-msgstr ""
+msgstr "אזור:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
@@ -904,39 +904,39 @@ msgstr ""
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
-msgstr ""
+msgstr "שמך:"
 
 #: src/user_info.py:87
 msgid "Your name"
-msgstr ""
+msgstr "שמך"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
-msgstr ""
+msgstr "שם מחשבך:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
-msgstr ""
+msgstr "בחר שם משתמש:"
 
 #: src/user_info.py:99
 msgid "Username"
-msgstr ""
+msgstr "שם משתמש"
 
 #: src/user_info.py:103 ui/user_info.ui:63
 msgid "Choose a password:"
-msgstr ""
+msgstr "בחר סיסמה:"
 
 #: src/user_info.py:107
 msgid "Password"
-msgstr ""
+msgstr "סיסמה"
 
 #: src/user_info.py:111 ui/user_info.ui:78
 msgid "Confirm your password:"
-msgstr ""
+msgstr "אמת את הסיסמה שלך:"
 
 #: src/user_info.py:115
 msgid "Confirm password"
-msgstr ""
+msgstr "אמת סיסמה"
 
 #: src/user_info.py:119
 msgid "Its name as it appears to other computers."
@@ -944,31 +944,31 @@ msgstr ""
 
 #: src/user_info.py:123
 msgid "You must enter a name"
-msgstr ""
+msgstr "עליך להזין שם"
 
 #: src/user_info.py:127
 msgid "You must enter a username"
-msgstr ""
+msgstr "עליך להזין שם משתמש"
 
 #: src/user_info.py:131
 msgid "You must enter a password"
-msgstr ""
+msgstr "עליך להזין סיסמה"
 
 #: src/user_info.py:135 ui/user_info.ui:96
 msgid "Log in automatically"
-msgstr ""
+msgstr "היכנס אוטומטית"
 
 #: src/user_info.py:136 ui/user_info.ui:113
 msgid "Require my password to log in"
-msgstr ""
+msgstr "דרוש את סיסמתי כדי להתחבר"
 
 #: src/user_info.py:137 ui/user_info.ui:134
 msgid "Encrypt my home folder"
-msgstr ""
+msgstr "רוקן את תיקיית הבית שלי"
 
 #: src/user_info.py:139
 msgid "Who are you?"
-msgstr ""
+msgstr "מי את/ה?"
 
 #: src/user_info.py:167
 msgid ""
@@ -998,65 +998,65 @@ msgstr ""
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "ראה https://wiki.archlinux.org/index.php/ECryptfs למידע מפורט\n\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "האם אתה בטוח כי ברצונך להצפין את תיקיית הבית שלך?\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "הוזן תו לא תקין"
 
 #: src/user_info.py:234
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "שם משתמש לא יכול להכיל נקודות"
 
 #: src/user_info.py:238
 msgid "Too many characters"
-msgstr ""
+msgstr "יותר מדי תווים"
 
 #: src/validation.py:131
 msgid "password is too short"
-msgstr ""
+msgstr "סיסמה קצרה מדי"
 
 #: src/validation.py:134
 msgid "weak password"
-msgstr ""
+msgstr "סיסמה חלשה"
 
 #: src/validation.py:137
 msgid "fair password"
-msgstr ""
+msgstr "סיסמה סבירה"
 
 #: src/validation.py:140
 msgid "good password"
-msgstr ""
+msgstr "סיסמה טובה"
 
 #: src/validation.py:143
 msgid "strong password"
-msgstr ""
+msgstr "סיסמה חזקה"
 
 #: src/validation.py:158
 msgid "Passwords do not match"
-msgstr ""
+msgstr "סיסמאות לא תואמות"
 
 #: src/welcome.py:84
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr ""
+msgstr "נסו את Manjaro בלי לשנות את הכונן הקשיח שלכם.\nאו התקינו אותו על מחשבכם בעזרת אחת מן אפשרויות ההתקנה."
 
 #: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
-msgstr ""
+msgstr "נסו אותי"
 
 #: src/welcome.py:92 ui/welcome.ui:83
 msgid "CLI Installer"
-msgstr ""
+msgstr "מתקין CLI"
 
 #: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
-msgstr ""
+msgstr "מתקין גרפי"
 
 #: src/welcome.py:119
 msgid "Can't load the CLI installer"
@@ -1069,15 +1069,15 @@ msgstr ""
 
 #: src/pacman/pac.py:289
 msgid "Checking dependencies..."
-msgstr ""
+msgstr "כעת בודק תלויות..."
 
 #: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
-msgstr ""
+msgstr "כעת בודק התנגשויות קובץ..."
 
 #: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
-msgstr ""
+msgstr "כעת פותר תלויות..."
 
 #: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
@@ -1085,46 +1085,46 @@ msgstr ""
 
 #: src/pacman/pac.py:300
 msgid "Removing..."
-msgstr ""
+msgstr "כעת מסיר..."
 
 #: src/pacman/pac.py:302
 msgid "Upgrading..."
-msgstr ""
+msgstr "כעת משדרג..."
 
 #: src/pacman/pac.py:304
 msgid "Checking integrity..."
-msgstr ""
+msgstr "כעת בודק מצב תקינות..."
 
 #: src/pacman/pac.py:307
 msgid "Loading packages files..."
-msgstr ""
+msgstr "כעת טוען קבצי חבילות..."
 
 #: src/pacman/pac.py:310
 msgid "Configuring..."
-msgstr ""
+msgstr "כעת מגדיר..."
 
 #: src/pacman/pac.py:311
 msgid "Configuring a package"
-msgstr ""
+msgstr "הגדרת חבילה"
 
 #: src/pacman/pac.py:313
 msgid "Downloading a file"
-msgstr ""
+msgstr "הורדת קובץ"
 
 #: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
-msgstr ""
+msgstr "כעת מוריד %s..."
 
 #: src/pacman/pac.py:398
 #, python-format
 msgid "Refreshing %s..."
-msgstr ""
+msgstr "כעת מרענן %s..."
 
 #: src/pacman/pac.py:407
 #, python-format
 msgid "Installing %s (%d/%d)"
-msgstr ""
+msgstr "כעת מתקין %s (%d/%d)"
 
 #: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
@@ -1138,21 +1138,21 @@ msgstr ""
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">למען תוצאות מיטביות, אנא ודאו כי מחשב זה::</span>"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "סיווג"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>תמיכת Bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>תמיכת הדפסה (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
@@ -1160,15 +1160,15 @@ msgstr ""
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "חבילה משרדית (מעבד תמלילים, גיליון אלקטרוני, וכו׳)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>אפקטים חזותיים</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>חומת אש</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
@@ -1176,15 +1176,15 @@ msgstr ""
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>חבילות קנייניות</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
-msgstr ""
+msgstr "צור מחיצה"
 
 #: ui/installation_advanced.ui:114
 msgid "Location:"
-msgstr ""
+msgstr "מיקום:"
 
 #: ui/installation_advanced.ui:277
 msgid "MB"
@@ -1192,7 +1192,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"
-msgstr ""
+msgstr "ערוך מחיצה"
 
 #: ui/installation_advanced.ui:931
 msgid "LVM..."
@@ -1204,11 +1204,11 @@ msgstr ""
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "סיסמה:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "אמת סיסמה:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
@@ -1218,7 +1218,7 @@ msgstr ""
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">בחר לצד איזו מערכת הפעלה ברצונך להתקין את Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1226,7 +1226,7 @@ msgstr ""
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "מערכת הפעלה אחרת"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
@@ -1260,7 +1260,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "התקן לצד מערכות הפעלה אחרות"
 
 #: ui/installation_ask.ui:159
 msgid ""
@@ -1305,7 +1305,7 @@ msgstr ""
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "התקדמות"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
