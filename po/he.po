@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# GenghisKhan <genghiskhan@gmx.ca>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-01 15:35+0000\n"
+"PO-Revision-Date: 2013-11-03 07:31+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/manjaro-thus/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -35,12 +36,12 @@ msgstr ""
 
 #: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "שימוש ביישום Aria2 כדי להוריד חבילות - ניסיוני"
 
 #: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "שימוש בקובץ '%s' בתור רשימת חבילה"
 
 #: thus.py:244
 msgid "Manjaro Installer"
@@ -196,17 +197,17 @@ msgstr "שולחנות עבודה"
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "‏Thus יתקין את Manjaro עם שולחן העבודה '%s'"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "שגיאה ביצירת metalink לחבילה %s"
 
 #: src/download.py:84
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "שגיאה בהוספת metalink לחבילה %s"
 
 #: src/download.py:133
 #, python-format
@@ -215,7 +216,7 @@ msgstr "כעת מוריד חבילה '%s'..."
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "אין אפשרות להתחבר אל Aria2. לא תהיה אפשרות להאיץ את ההורדה."
 
 #: src/download.py:228
 #, python-format
@@ -340,19 +341,19 @@ msgstr ""
 
 #: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "על מחיצת שורש להיות מפורמטת..."
 
 #: src/installation_advanced.py:923
 msgid "Creating primary partition"
-msgstr ""
+msgstr "יצירת מחיצה יסודית"
 
 #: src/installation_advanced.py:934
 msgid "Creating extended partition"
-msgstr ""
+msgstr "יצירת מחיצה מורחבת"
 
 #: src/installation_advanced.py:940
 msgid "Creating logical partition"
-msgstr ""
+msgstr "יצירת מחיצה לוגית"
 
 #: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
@@ -380,15 +381,15 @@ msgstr "טיפוס:"
 
 #: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
-msgstr ""
+msgstr "יסודית"
 
 #: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
-msgstr ""
+msgstr "לוגית"
 
 #: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
-msgstr ""
+msgstr "מורחבת"
 
 #: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
@@ -401,7 +402,7 @@ msgstr "סוף נפח זה"
 #: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
-msgstr ""
+msgstr "השתמש בתור:"
 
 #: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
@@ -438,7 +439,7 @@ msgstr "התקן עכשיו!"
 #: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "יצירת טבלת מחיצה חדשה מטיפוס %s עבור כונן %s"
 
 #: src/installation_advanced.py:1342
 #, python-format
@@ -459,7 +460,7 @@ msgstr ""
 #: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "מחיצה %s תימחק"
 
 #: src/installation_advanced.py:1424
 msgid "Partition"
@@ -479,7 +480,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "לכוננים אלו יהיו פעולות מחיצה:"
 
 #: src/installation_advanced.py:1470
 #, python-format
@@ -507,7 +508,7 @@ msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "‏Manjaro לצד מערכת הפעלה אחרת"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
@@ -612,7 +613,7 @@ msgstr "כעת מעתיק '/%s'"
 #: src/installation_process.py:164
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "התקנה באמצעות השיטה '%s'"
 
 #: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
@@ -621,12 +622,12 @@ msgstr ""
 #: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "עגינת מחיצה %s לתוך מדור %s"
 
 #: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "עגינת מחיצה %s לתוך מדור %s/boot"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
@@ -639,7 +640,7 @@ msgstr "אין אפשרות לעגן את %s בתוך %s"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "אין אפשרות ליצור מדורים על מערכת יעד"
 
 #: src/installation_process.py:450
 #, python-format
@@ -670,11 +671,11 @@ msgstr ""
 
 #: src/installation_process.py:692
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "‏GRUB(2) BIOS הותקן בהצלחה."
 
 #: src/installation_process.py:694
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr ""
+msgstr "שגיאה בהתקנת GRUB(2) BIOS."
 
 #: src/installation_process.py:705
 #, python-format
@@ -758,11 +759,11 @@ msgstr ""
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "בחר את מערך המקלדת שלך"
 
 #: src/keymap.py:70
 msgid "Layouts"
-msgstr ""
+msgstr "מערכים"
 
 #: src/keymap.py:76
 msgid "Variants"
@@ -771,7 +772,7 @@ msgstr "משתנים"
 #: src/keymap.py:98
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "‏keyboard_layout הינו %s"
 
 #: src/language.py:80
 msgid "Please choose your language:"
@@ -800,7 +801,7 @@ msgstr "שפות"
 #: src/language.py:130
 #, python-format
 msgid "Can't find translation file for the %s language"
-msgstr ""
+msgstr "אין אפשרות למצוא קובץ תרגום עבור השפה %s"
 
 #: src/location.py:64
 msgid "Select your location"
@@ -859,7 +860,7 @@ msgstr "מתקין Manjaro - שאלה"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "התקנה הסתיימה!\nהאם ברצונך לאתחל את מערכתך כעת?"
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
@@ -888,11 +889,11 @@ msgstr ""
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "מיקום השתנה אל : %s"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr ""
+msgstr "אין אפשרות לאתר קואורדינטות אזור זמן אוטומטית"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
@@ -992,7 +993,7 @@ msgstr ""
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "מעקף פשוט יהיה להשים קבצים זעומים בתוך ספרייה Public. לא מוצפנת\n\n"
 
 #: src/user_info.py:171
 msgid ""
@@ -1060,12 +1061,12 @@ msgstr "מתקין גרפי"
 
 #: src/welcome.py:119
 msgid "Can't load the CLI installer"
-msgstr ""
+msgstr "אין אפשרות לטעון מתקין CLI"
 
 #: src/pacman/pac.py:236
 #, python-format
 msgid "Package %s not found in any repo!"
-msgstr ""
+msgstr "חבילה %s לא נמצאה בשום מאגר!"
 
 #: src/pacman/pac.py:289
 msgid "Checking dependencies..."
@@ -1188,7 +1189,7 @@ msgstr "מיקום:"
 
 #: ui/installation_advanced.ui:277
 msgid "MB"
-msgstr ""
+msgstr "מב"
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"
