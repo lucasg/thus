@@ -6,14 +6,14 @@
 #  <info@astaricsoft.net>, 2013
 # ほたゔぃあ(lindwurm), 2013
 # rago1975, 2013
-# ひよこ大佐 <colonel.hiyoko@gmail.com>, 2013
+# GNU/ひよこ大佐 <thel.vadam2485@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-03 16:54+0000\n"
+"Last-Translator: rago1975\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -287,164 +287,164 @@ msgstr "プロプリエタリーパッケージ"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "Flash、MP3等を再生するサードパーティーのソフトウェア"
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
 msgstr "空き領域"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
 msgstr "デバイス"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
 msgstr "種類"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
 msgstr "マウントポイント"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
 msgstr "ラベル"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
 msgstr "フォーマット"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
 msgstr "サイズ"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
 msgstr "使用済み"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
 msgstr "フラグ"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr "なし"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr "拡張"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr "同じマウントを再度使用することはできません..."
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
 msgstr "Rootパーティションはフォーマットする必要があります..."
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
 msgstr "基本パーティションの作成中"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
 msgstr "拡張パーティションの作成中"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
 msgstr "論理パーティションの作成中"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
 msgstr "高度なインストール"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "ブートローダーのインストールにこのデバイスを使用"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "新しいパーティションテーブル"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
 msgstr "変更..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "サイズ:"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "タイプ:"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "基本パーティション"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "論理パーティション"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "拡張パーティション"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "この領域の始点"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "この領域の終点"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "使用:"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "マウントポイント:"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "ラベル (オプション):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "暗号化オプション..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "フォーマット:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "パーティションテーブルの種類:"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
 msgstr "パーティションテーブルの作成"
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "インストール"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "ディスク %s に対して %s タイプの新しいパーティションテーブルを作成"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -452,7 +452,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s はスワップとしてマウントされました。\n継続するためには、アンマウントしなければなりません。\nYesをクリックしてアンマウントするか、Noをクリックして前に戻ってください。\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -460,42 +460,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s は '%s'にマウントされています。\n継続するためには、アンマウントしなければなりません。\nYesをクリックしてアンマウントするか、Noをクリックして前に戻ってください。\n"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "パーティション %s は削除されます"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
 msgstr "パーティション"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
 msgstr "新規"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr "ラベルの書き換え"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr "マウント"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
 msgstr "これらのディスクはパーティションが変更されます。"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s の変更を保存"
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "%sにラベルされたファイルシステム %sに%sを作成します "
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaroは%s に %sのタイプのブートローダーをインストールします"
@@ -1204,19 +1204,19 @@ msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "LUKS ボリューム名:"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "パスワード:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "パスワードの確認:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "LUKS暗号化の使用:"
 
 #: ui/installation_alongside.ui:16
 msgid ""

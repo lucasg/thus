@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-03 07:31+0000\n"
+"PO-Revision-Date: 2013-11-03 08:48+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/manjaro-thus/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr "בדוק את המחשב"
+msgstr "בדוק את המחשב שלך"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
@@ -142,7 +142,7 @@ msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr "‏XFCE הינה סביבת עבודה קלת משקל אשר שואפת להיות קלה על משאבי מערכת ובה בעת להיות גם מושכת מבחינה חזותית, רב תכליתית, וקלה לשימוש."
+msgstr "‏XFCE הינה סביבת עבודה קלת משקל אשר שואפת להיות קלה על משאבי מערכת ובה בעת להיות גם מושכת מבחינה חזותית, רב תכליתית, וגם קלה לשימוש."
 
 #: src/desktop.py:96
 msgid ""
@@ -170,7 +170,7 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr "שולחן העבודה KDE מציע שולחן עבודה יפה אשר מנצל את כל היתרונות של טכנולוגיית מחשוב מודרנית. מבעד לשימוש של אפקטים חזותיים וגרפיקה דינמית, חווית שולחן העבודה איננה רק חלקה אך גם נעימה לעיניים."
+msgstr "שולחן העבודה KDE מציע שולחן עבודה יפה אשר מנצל את כל היתרונות של טכנולוגיית מחשוב מודרנית. מבעד לשימוש של אפקטים חזותיים וגרפיקה דינמית, חווית שולחן העבודה איננה רק חלקה אלא גם נעימה לעיניים."
 
 #: src/desktop.py:123
 msgid ""
@@ -188,7 +188,7 @@ msgstr ""
 
 #: src/desktop.py:142
 msgid "Select your desktop"
-msgstr "בחר את שולחן העבודה שלך"
+msgstr "בחרו את שולחן העבודה שלכם"
 
 #: src/desktop.py:152
 msgid "Desktops"
@@ -241,7 +241,7 @@ msgstr "תמיכת Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "ללא תמיכת Bluetooth לא תהיה ביכולתך להשתמש בהתקני Bluetooth"
+msgstr "ללא תמיכת Bluetooth לא תהיה באפשרותך להשתמש בהתקני Bluetooth"
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
@@ -357,7 +357,7 @@ msgstr "יצירת מחיצה לוגית"
 
 #: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
-msgstr "מצב הצקנה מתקדם"
+msgstr "מצב התקנה מתקדם"
 
 #: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
@@ -490,7 +490,7 @@ msgstr ""
 #: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "יצירת מערכת קבצים %s בתוך %s סיווג %s"
 
 #: src/installation_advanced.py:1566
 #, python-format
@@ -512,7 +512,7 @@ msgstr "‏Manjaro לצד מערכת הפעלה אחרת"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr "מערכת הפעלה שאותרה"
+msgstr "מערכת הפעלה מאותרת"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
@@ -569,7 +569,7 @@ msgstr "מצב התקנה אוטומטי"
 
 #: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr "בחר כונן:"
+msgstr "בחרו כונן:"
 
 #: src/installation_automatic.py:87
 msgid ""
@@ -580,7 +580,7 @@ msgstr "אזהרה! התקנה זו תכתוב מחדש על כל הכונן ש�
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "אנא בחרו את הכון בו ברצונכם להתקין את Manjaro\nולחצו על הלחצן מטה כדי להתחיל את התהליך."
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
@@ -593,7 +593,7 @@ msgstr ""
 #: src/installation_automatic.py:155
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "התקנה אוטומטית על %s"
 
 #: src/installation_automatic.py:189
 #, python-format
@@ -645,7 +645,7 @@ msgstr "אין אפשרות ליצור מדורים על מערכת יעד"
 #: src/installation_process.py:450
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "שחזור מידע-מוצמד על %s"
 
 #: src/installation_process.py:463
 msgid "Special dirs already mounted."
@@ -658,7 +658,7 @@ msgstr ""
 #: src/installation_process.py:499
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "אין אפשרות לחלץ %s"
 
 #: src/installation_process.py:550
 msgid "Create fstab."
@@ -684,11 +684,11 @@ msgstr ""
 
 #: src/installation_process.py:733
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "שגיאה בהתקנת קובץ תצורת GRUB(2)‎."
 
 #: src/installation_process.py:761
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "שגיאה בהתקנת מקומיות GRUB(2)‎."
 
 #: src/installation_process.py:775
 #, python-format
@@ -722,7 +722,7 @@ msgstr "קביעת כרטיס מסך..."
 
 #: src/installation_process.py:1079
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "אין אפשרות להוציא לפועל תסריט MHWD"
 
 #: src/installation_process.py:1085
 msgid "Configure display manager..."
@@ -759,7 +759,7 @@ msgstr ""
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
-msgstr "בחר את מערך המקלדת שלך"
+msgstr "בחרו את מערך המקלדת שלכם"
 
 #: src/keymap.py:70
 msgid "Layouts"
@@ -776,7 +776,7 @@ msgstr "‏keyboard_layout הינו %s"
 
 #: src/language.py:80
 msgid "Please choose your language:"
-msgstr "אנא בחר את שפתך:"
+msgstr "אנא בחרו את השפה שלכם:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
@@ -788,11 +788,11 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "‏Thus הינו תוכנת טרום-שחרור בשלבי beta אשר מצוי תחת פיתוח פעיל. \nהוא לא מתמודדת כראוי עם RAID, btrfs subvolumes, או עם התקנות מתקדמות אחרות. אנא המשיכו בזהירות כשם איבוד של נתונים הינו אפשרי! \n\nבמידה ואתם מוצאים תקלות כלשהן, אנא דווחו עליהן בכתובת <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
-msgstr "ברוך בואך אל Manjaro!"
+msgstr "ברוכים הבאים אל Manjaro!"
 
 #: src/language.py:110
 msgid "Languages"
@@ -805,7 +805,7 @@ msgstr "אין אפשרות למצוא קובץ תרגום עבור השפה %s"
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr "בחר את מיקומך"
+msgstr "בחרו את המיקום שלכם"
 
 #: src/location.py:68 ui/location.ui:21
 msgid ""
@@ -816,7 +816,7 @@ msgstr ""
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr "מדינה, טריטוריה או אזור:"
+msgstr "ארץ, טריטוריה או אזור:"
 
 #: src/location.py:197
 #, python-format
@@ -826,7 +826,7 @@ msgstr "מקומיות שונתה אל : %s"
 #: src/location.py:199
 #, python-format
 msgid "Can't change to locale '%s'"
-msgstr ""
+msgstr "אין אפשרות לשנות אל מקומיות '%s'"
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
@@ -860,19 +860,19 @@ msgstr "מתקין Manjaro - שאלה"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr "התקנה הסתיימה!\nהאם ברצונך לאתחל את מערכתך כעת?"
+msgstr "התקנה הסתיימה!\nהאם ברצונכם לאתחל את המערכת שלכם כעת?"
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr "כעת מתקין Manjaro..."
+msgstr "כעת מתקין את Manjaro..."
 
 #: src/slides.py:103
 msgid "Please wait..."
-msgstr "אנא המתן..."
+msgstr "אנא המתינו..."
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr "היכן את/ה?"
+msgstr "היכן אתם?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
@@ -905,19 +905,19 @@ msgstr ""
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
-msgstr "שמך:"
+msgstr "השם שלך:"
 
 #: src/user_info.py:87
 msgid "Your name"
-msgstr "שמך"
+msgstr "השם שלך"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
-msgstr "שם מחשבך:"
+msgstr "השם של המחשב שלך:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
-msgstr "בחר שם משתמש:"
+msgstr "בחרו שם משתמש:"
 
 #: src/user_info.py:99
 msgid "Username"
@@ -925,7 +925,7 @@ msgstr "שם משתמש"
 
 #: src/user_info.py:103 ui/user_info.ui:63
 msgid "Choose a password:"
-msgstr "בחר סיסמה:"
+msgstr "בחרו סיסמה:"
 
 #: src/user_info.py:107
 msgid "Password"
@@ -933,11 +933,11 @@ msgstr "סיסמה"
 
 #: src/user_info.py:111 ui/user_info.ui:78
 msgid "Confirm your password:"
-msgstr "אמת את הסיסמה שלך:"
+msgstr "ודא את הסיסמה שלך:"
 
 #: src/user_info.py:115
 msgid "Confirm password"
-msgstr "אמת סיסמה"
+msgstr "ודא סיסמה"
 
 #: src/user_info.py:119
 msgid "Its name as it appears to other computers."
@@ -961,7 +961,7 @@ msgstr "היכנס אוטומטית"
 
 #: src/user_info.py:136 ui/user_info.ui:113
 msgid "Require my password to log in"
-msgstr "דרוש את סיסמתי כדי להתחבר"
+msgstr "דרוש את הסיסמה שלי כדי להתחבר"
 
 #: src/user_info.py:137 ui/user_info.ui:134
 msgid "Encrypt my home folder"
@@ -969,7 +969,7 @@ msgstr "רוקן את תיקיית הבית שלי"
 
 #: src/user_info.py:139
 msgid "Who are you?"
-msgstr "מי את/ה?"
+msgstr "מי אתם?"
 
 #: src/user_info.py:167
 msgid ""
@@ -1003,7 +1003,7 @@ msgstr "ראה https://wiki.archlinux.org/index.php/ECryptfs למידע מפור
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "האם אתה בטוח כי ברצונך להצפין את תיקיית הבית שלך?\n"
+msgstr "האם אתם בטוחים כי ברצונכם להצפין את תיקיית הבית שלכם?\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
@@ -1045,7 +1045,7 @@ msgstr "סיסמאות לא תואמות"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr "נסו את Manjaro בלי לשנות את הכונן הקשיח שלכם.\nאו התקינו אותו על מחשבכם בעזרת אחת מן אפשרויות ההתקנה."
+msgstr "נסו את Manjaro בלי לשנות את הכונן הקשיח שלכם.\nאו התקינו אותו על המחשב שלכם בעזרת אחת מן שתי אפשרויות המתקין."
 
 #: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
@@ -1139,7 +1139,7 @@ msgstr ""
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr "<span weight=\"bold\" size=\"large\">למען תוצאות מיטביות, אנא ודאו כי מחשב זה::</span>"
+msgstr "<span weight=\"bold\" size=\"large\">למען תוצאות מיטביות, אנא ודאו כי מחשב זה:</span>"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
@@ -1173,7 +1173,7 @@ msgstr "<span weight='bold' size='large'>חומת אש</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "הפעלת חומת האש שלך (סגירת כל הפורטים כברירת מחדל)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
@@ -1189,7 +1189,7 @@ msgstr "מיקום:"
 
 #: ui/installation_advanced.ui:277
 msgid "MB"
-msgstr "מב"
+msgstr "מ״ב"
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"
@@ -1201,7 +1201,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "שם נפח LUKS:"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
@@ -1209,17 +1209,17 @@ msgstr "סיסמה:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr "אמת סיסמה:"
+msgstr "ודא סיסמה:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "השתמש בהצפנת LUKS: "
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr "<span size=\"large\">בחר לצד איזו מערכת הפעלה ברצונך להתקין את Manjaro</span>"
+msgstr "<span size=\"large\">בחרו לצד איזו מערכת הפעלה ברצונכם להתקין את Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1289,7 +1289,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">אנא בחרו את השפה שלכם:</span>"
 
 #: ui/language.ui:88
 msgid ""
@@ -1298,7 +1298,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>לתשומת לבכם: המתקין Thus הינו תוכנת beta.</span>\n\nThus הינו תוכנת טרום-שחרור בשלבי beta אשר מצוי תחת פיתוח פעיל. הוא לא מתמודדת כראוי עם RAID, btrfs subvolumes, או עם התקנות מתקדמות אחרות. אנא המשיכו בזהירות כשם איבוד של נתונים הינו אפשרי! \n\nבמידה ואתם מוצאים כל תקלה, אנא, בקרו בכתובת <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
@@ -1310,23 +1310,23 @@ msgstr "התקדמות"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">ברוכים הבאים אל Manjaro</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">סיסמה חזקה</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">עליך להזין סיסמה</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">עליך להזין שם משתמש</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">עליך להזין שם</span></small>"
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
@@ -1336,4 +1336,4 @@ msgstr ""
 msgid ""
 "You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
 "If you want to install the system to your PC, use one of the two installer options."
-msgstr ""
+msgstr "אתם יכולים לנסות את Manjaro מבלי לשנות אתת הכונן הקשיח שלכם, פשוט לחצו על \"נסו אותי\".\nהיה ורצונכם להתקין את המערכת על המחשב שלכם, השתמשו באחת מן שתי אפשרויות המתקין."

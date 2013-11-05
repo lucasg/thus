@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-02 20:47+0000\n"
-"Last-Translator: dasebek <dasebek@gmail.com>\n"
+"PO-Revision-Date: 2013-11-03 12:57+0000\n"
+"Last-Translator: Libor Schejbal <libor.schejbal@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/manjaro-thus/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Tento instalační program je nutné spustit s oprávněními správce, bez nich nelze pokračovat."
 
 #: thus.py:109
 #, python-format
@@ -40,7 +40,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Nelze spustit dvě instance tohoto instalačního programu.⏎\n⏎\nPokud jste si jisti, že další Instalační systém není spuštěn⏎\nmůžete ručně odstranit soubor %s⏎\na poté spusťte instalátor znovu."
 
 #: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
@@ -70,7 +70,7 @@ msgstr "Jaký typ bootování má váš systém?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (společný)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -109,7 +109,7 @@ msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
-msgstr ""
+msgstr "Manjaro používá software třetích stran pro přehrávání Adobe Flash, souborů MP3 a dalších médií. Některý z tohoto softwaru je proprietární. Tento software je předmětem licenčních podmínek, dodaných spolu s jeho dokumentací."
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
@@ -129,21 +129,21 @@ msgstr "Připojeno ke zdroji napájení."
 
 #: src/check.py:195
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Na disku je dostatek místa"
 
 #: src/desktop.py:76
 msgid ""
 "GNOME 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr ""
+msgstr "Gnome 3 je jednoduchý a elegantní způsob, jak používat váš počítač. Je navržen tak, aby vám vyhovoval a přinesl svobodu všem. GNOME 3 je vyvíjeno komunitou GNOME."
 
 #: src/desktop.py:83
 msgid ""
 "Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
 "attempts to provide a more traditional user environment based on the GNOME2 "
 "desktop metaphor"
-msgstr ""
+msgstr "Cinnamon je fork GNOME Shellu, vyvinutý (výhradně) pro Linux Mint. Snaží se poskytnout tradiční uživatelské prostředí, založené na na podobném principu, jako GNOME 2."
 
 #: src/desktop.py:90
 msgid ""
@@ -157,20 +157,20 @@ msgid ""
 "LXDE is a high-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard "
 "shortcuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "Extrémně rychlé, výkonné a energeticky úsporné desktopové prostředí. Dodává se s krásným rozhraním, multi-jazykovou podporou, se standardními klávesovými zkratkami a dalšími funkcemi, jako např. procházení souborů v záložkách."
 
 #: src/desktop.py:103
 msgid ""
 "Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox je další generace vysoce konfigurovatelného správce oken s rozsáhlou podporou standardů. ⏎\n* jeho vizuální styl je dobře známý pro svůj minimalistický vzhled."
 
 #: src/desktop.py:110
 msgid ""
 "Enlightenment is a lean, fast, modular and very extensible window manager "
 "for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
 " you need to operate your desktop (or laptop). "
-msgstr ""
+msgstr "Enlightenment je jednoduchý, rychlý, modulární a velmi rozšiřitelný správce oken pro X11 a Linux. Je klasifikován jako \"desktop shell\", který poskytuje vše co potřebujete pro provoz vašeho počítače (nebo notebooku)."
 
 #: src/desktop.py:116
 msgid ""
@@ -178,7 +178,7 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr ""
+msgstr "KDE nabízí krásné pracovní prostředí, které umožňuje naplno využít možnosti moderní výpočetní techniky. Díky použití vizuálních efektů a škálovatelné grafiky je práce s počítačem je nejen snadná, ale i příjemná na pohled."
 
 #: src/desktop.py:123
 msgid ""
@@ -192,7 +192,7 @@ msgid ""
 "This will install Manjaro as command-line system, without any desktop "
 "environment at all. After the installation you can optionally install the "
 "environment of your choice."
-msgstr ""
+msgstr "Tím dojde k instalaci Manjaro jako systému na příkazovém řádku, bez jakéhokoliv desktopového prostředí. Po dokončení instalace si můžete nainstalovat vámi vybrané desktopové prostředí."
 
 #: src/desktop.py:142
 msgid "Select your desktop"
@@ -257,7 +257,7 @@ msgstr "Podpora tisku (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and management tools"
-msgstr ""
+msgstr "Zahrnuje ovladače tiskárny a nástroje pro správu"
 
 #: src/features.py:110
 msgid "LibreOffice"
@@ -273,7 +273,7 @@ msgstr "Vizuální efekty"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
-msgstr ""
+msgstr "Vizuální efekty, jako je průhlednost okna a stíny"
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
@@ -282,7 +282,7 @@ msgstr "Nekomplikovaný firewall"
 #: src/features.py:127
 msgid ""
 "Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr ""
+msgstr "Instalací ufw zakážete veškerou komunikaci z výchozího nastavení (použitím gufw jej lze konfigurovat)"
 
 #: src/features.py:131
 msgid "Propietary packages"
@@ -290,7 +290,7 @@ msgstr "Proprietární balíčky"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr ""
+msgstr "Software třetích stran pro přehrávání Flash, souborů MP3 a dalších médií"
 
 #: src/installation_advanced.py:205 src/installation_advanced.py:495
 #: src/installation_advanced.py:509
@@ -345,7 +345,7 @@ msgstr "prodloužený"
 
 #: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Nelze použít stejný přípojný bod dvakrát ..."
 
 #: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
@@ -512,7 +512,7 @@ msgstr "Nelze načíst CSS %s"
 
 #: src/installation_alongside.py:136
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Vyberte operační systém, vedle kterého chcete nainstalovat Manjaro"
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
@@ -528,11 +528,11 @@ msgstr "Souborový systém"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
-msgstr ""
+msgstr "Instalace: Nelze vytvořit seznam oblastí"
 
 #: src/installation_alongside.py:256
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Nelze zmenšit oddíl (možná je téměř plný?)"
 
 #: src/installation_ask.py:114
 msgid "Installation type"
@@ -553,15 +553,15 @@ msgstr "Nainstalovat Manjaro vedle %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
-msgstr ""
+msgstr "Nainstaluje tento OS vedle ostatních OS, které jsou již nainstalovány."
 
 #: src/installation_ask.py:143
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Správa oddílů a umístění pro instalaci Manjaro (pokročilé)"
 
 #: src/installation_ask.py:146
 msgid "Create and delete partitions, and choose additional mount points."
-msgstr ""
+msgstr "Vytvoří a odstraní oddíly a vybere přípojné body."
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
@@ -582,7 +582,7 @@ msgstr "Vyberte jednotku:"
 #: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "UPOZORNĚNÍ! Tento způsob instalace přepíše vše na daném disku!"
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
@@ -606,12 +606,12 @@ msgstr "Automaticky instalovat na %s"
 #: src/installation_automatic.py:189
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Bude použito %s jako instalační zařízení"
 
 #: src/installation_automatic.py:198
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Tím se nainstaluje zavaděč %s do %s"
 
 #: src/installation_process.py:82
 #, python-format
@@ -661,7 +661,7 @@ msgstr "Speciální adresáře jsou už připojené."
 
 #: src/installation_process.py:489
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "Speciální adresář již není připojen."
 
 #: src/installation_process.py:499
 #, python-format
@@ -722,11 +722,11 @@ msgstr "Nastavuji hardwarové hodiny ..."
 
 #: src/installation_process.py:1009
 msgid "Configuring hardware..."
-msgstr ""
+msgstr "Konfiguruji hardware..."
 
 #: src/installation_process.py:1072
 msgid "Set up graphics card..."
-msgstr ""
+msgstr "Nastavuji grafickou kartu..."
 
 #: src/installation_process.py:1079
 msgid "Can't execute the MHWD script"
@@ -734,11 +734,11 @@ msgstr "Nelze spustit skript MHWD"
 
 #: src/installation_process.py:1085
 msgid "Configure display manager..."
-msgstr ""
+msgstr "Konfiguruji správce zobrazení"
 
 #: src/installation_process.py:1184
 msgid "Configure System..."
-msgstr ""
+msgstr "Konfiguruji systém..."
 
 #: src/installation_process.py:1212
 msgid "Removing live configuration (packages)"
@@ -796,7 +796,7 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Toto je pre-release beta software, který je v aktivním vývoji.⏎\nJeště neumí správně zacházet s RAID, btrfs subvolumes, nebo jinými pokročilými nastaveními. Postupujte proto opatrně, hrozí ztráta dat!⏎\n⏎\nPokud najdete nějaké chyby, prosím, nahlaste je na <a href='http://bugs.manjaro.org'> http://bugs.manjaro.org</ a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
@@ -842,7 +842,7 @@ msgstr "V rankmirroru nelze zjistit stav sítě"
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Nelze najít rank mirror skript"
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
@@ -905,7 +905,7 @@ msgstr "Nelze rozpoznat časové pásmo"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Zastavuji nastavení časového pásma..."
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
@@ -949,7 +949,7 @@ msgstr "Potvrzení hesla"
 
 #: src/user_info.py:119
 msgid "Its name as it appears to other computers."
-msgstr ""
+msgstr "Tento název je použit u jiných počítačů."
 
 #: src/user_info.py:123
 msgid "You must enter a name"
@@ -995,23 +995,23 @@ msgstr "Neobávejte se, pro většinu vašich záměrů a pro vaše účely tent
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "Mimochodem, jedna populární, leč nevhodná aplikace eCryptfs pro šifrování BitTorrent při stahování. eCryptfs často vyžadujeukládání velkých souborů o velikosti 10 GB nebo i více, což může vést k nedostatku místa na disku.⏎\n⏎\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "Jednoduchým řešením je umístění velkých souborů nešifrovaně. Veřejné adresáře⏎\n⏎\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Pro podrobnější informace se podívejte na https://wiki.archlinux.org/index.php/ECryptfs\n⏎\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "Jste si jisti, že chcete zašifrovat domovský adresář?⏎\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
@@ -1137,11 +1137,11 @@ msgstr "Instaluji %s (%d/%d)"
 
 #: src/pacman/pac.py:410
 msgid "Checking and loading packages..."
-msgstr ""
+msgstr "Kontrola a načítání balíčků..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Bootování"
 
 #: ui/check.ui:28
 msgid ""
@@ -1161,7 +1161,7 @@ msgstr "<span weight='bold' size='large'>Podpora bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Podpora tisku (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
@@ -1185,7 +1185,7 @@ msgstr "Aktivuje firewall (normálně uzavírá všechny porty)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Proprietární balíčky</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1227,7 +1227,7 @@ msgstr "Použít LUKS šifrování:"
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Vyberte operační systém, vedle nějž chcete nainstalovat Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1249,7 +1249,7 @@ msgstr "<span weight=\"light\" size=\"small\">Varování: Toto smaže veškeré 
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "Zašifruje novou instalaci Manjaro pro lepší zabezpečení"
 
 #: ui/installation_ask.ui:90
 msgid ""
@@ -1265,7 +1265,7 @@ msgstr "Použít LVM s novou instalací Manjaro"
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Toto nastavení LVM umožňuje, aby se přímo změnila velikost a obraz diskových oddílů</span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
@@ -1276,7 +1276,7 @@ msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Pomocí této volby nainstalujete Manjaro vedle již nainstalovaného operačního systému.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
@@ -1293,7 +1293,7 @@ msgstr "<span weight=\"light\" size=\"small\">Budete schopen vytvořit/smazat od
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>UPOZORNĚNÍ! Tento způsob instalace přepíše vše na daném disku!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
@@ -1306,7 +1306,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'> Poznámka: Tento instalátor je beta software</ span>⏎.\n⏎\nToto je pre-release beta software, který je v aktivním vývoji. Ještě neumí správně zacházet s RAID, btrfs subvolumes nebo s jinými pokročilými nastaveními. Postupujte proto opatrně, hrozí ztráta dat!⏎\n⏎\nPokud narazíte na nějakou chybu, prosím, navštivte<a href='http://bugs.manjaro.org'> http://bugs.manjaro.org</ a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
@@ -1338,10 +1338,10 @@ msgstr "<small><span color=\"darkred\">Musíte zadat jméno</span></small>"
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Tento název je již použit u jiného počítače</span>"
 
 #: ui/welcome.ui:151
 msgid ""
 "You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
 "If you want to install the system to your PC, use one of the two installer options."
-msgstr ""
+msgstr "Vyzkoušejte Manjaro bez nutnosti úpravy vašeho pevného disku, stačí kliknout na \"Vyzkoušet\". \n⏎\nChcete-li jej nainstalovat do počítače, použijte jednu z těchto dvou možností instalátoru."

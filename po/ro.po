@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-03 21:41+0000\n"
+"Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -290,164 +290,164 @@ msgstr "Pachete proprietare"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "Programe terțe pentru a putea rula Flash, MP3 și alte forme de media"
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
 msgstr "spațiu liber"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Dispozitiv"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
 msgstr "Tip"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
 msgstr "Punct de montare"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
 msgstr "Etichetă"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
 msgstr "Format"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
 msgstr "Mărime"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
 msgstr "Folosită"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
 msgstr "Steaguri"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr "niciuna"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr "extinsă"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr "Nu se poate utiliza același punct de montare de două ori..."
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
 msgstr "Partiția rădăcină trebuie să fie formatată..."
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
 msgstr "Se creează partiția primară"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
 msgstr "Se creează partiția extinsă"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
 msgstr "Se creează partiția logică"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
 msgstr "Mod de instalare avansat"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Utilizați acest dispozitiv pentru a instala încărcătorul de sistem:"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Tabela nouă de partiție"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
 msgstr "Schimbă..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Mărime:"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Tip:"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Primară"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logică"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Extinsă"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Începutul acestui spațiu"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "Sfârșitul acestui spațiu"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Folosește ca:"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Punct de montare:"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Etichetă (opțional):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Opțiuni de criptare..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Formatează:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Tipul tabelei de partiție:"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
 msgstr "Creează tabela de partiție"
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "Instalează acum!"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Se creează o nouă tabelă de partiție de tipul %s pentru discul %s"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -455,7 +455,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s este montată ca swap.\nPentru a continua trebuie să fie demontată.\nClic Da pentru demontare sau Nu pentru a vă întoarce.\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -463,42 +463,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s este montată în '%s'.\nPentru a continua trebuie sa fie demontată.\nClic Da pentru demontare, sau Nu pentru a vă întoarce.\n"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Partiția %s va fi ștearsă"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
 msgstr "Partiție"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
 msgstr "Nouă"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr "Reetichetează"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr "Montează"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
 msgstr "Aceste discuri vor suferi acțiuni de partiționare:"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Se salvează schimbările efectuate în %s"
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Se creează sistemul de fișiere %s în %s cu eticheta %s"
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro va instala încărcătorul de sistem de tipul %s în %s"
@@ -1207,19 +1207,19 @@ msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "Nume volum LUKS:"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "Parolă:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "Confirmați parola:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "Folosește criptare LUKS:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
