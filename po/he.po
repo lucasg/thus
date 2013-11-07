@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-03 08:48+0000\n"
+"PO-Revision-Date: 2013-11-07 10:32+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/manjaro-thus/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "בחרו 'ביטול' אם אין ברצונכם להתקין boot loader"
 
 #: src/check.py:68
 msgid "Check your computer"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "התקן את תוכנת צד ג׳ זו"
 
 #: src/check.py:116
 msgid "Can't get network status"
@@ -282,7 +282,7 @@ msgstr "חבילות קנייניות"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr ""
+msgstr "תוכניות צד ג׳ כדי לנגן Flash, קבצי MP3, ומדיות אחרות"
 
 #: src/installation_advanced.py:205 src/installation_advanced.py:495
 #: src/installation_advanced.py:509
@@ -447,7 +447,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "‏%s מעוגנת בתור swap.\nבכדי להמשיך עליה להיות מחולצת.\nהקליקו כן כדי לבטל עגינה, או לא כדי לחזור\n"
 
 #: src/installation_advanced.py:1344
 #, python-format
@@ -455,7 +455,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "‏%s מעוגנת בתוך '%s'.\nבכדי להמשיך עליה להיות מחולצת.\nהקליקו כן כדי לבטל עגינה, או לא כדי לחזור\n"
 
 #: src/installation_advanced.py:1417
 #, python-format
@@ -485,7 +485,7 @@ msgstr "לכוננים אלו יהיו פעולות מחיצה:"
 #: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "שומר שינויים אשר נערכו בתוך %s"
 
 #: src/installation_advanced.py:1484
 #, python-format
@@ -495,7 +495,7 @@ msgstr "יצירת מערכת קבצים %s בתוך %s סיווג %s"
 #: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "‏Manjaro יתקין bootloader מטיפוס %s בתוך %s"
 
 #: src/installation_alongside.py:109
 #, python-format
@@ -598,12 +598,12 @@ msgstr "התקנה אוטומטית על %s"
 #: src/installation_automatic.py:189
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "‏Thus ישתמש בהתקן %s בתור התקן התקנה"
 
 #: src/installation_automatic.py:198
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "‏Thus יתקין bootloader מטיפוס %s בתוך %s"
 
 #: src/installation_process.py:82
 #, python-format
@@ -693,16 +693,16 @@ msgstr "שגיאה בהתקנת מקומיות GRUB(2)‎."
 #: src/installation_process.py:775
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr ""
+msgstr "שגיאה ביצירת מערבל סיסמה עבור משתמש %s"
 
 #: src/installation_process.py:781
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "שגיאה בשינוי סיסמה עבור משתמש %s"
 
 #: src/installation_process.py:906
 msgid "Configuring your new system"
-msgstr ""
+msgstr "מגדיר את המערכת החדשה שלכם"
 
 #: src/installation_process.py:983
 msgid "Generating locales..."
@@ -738,16 +738,16 @@ msgstr ""
 
 #: src/installation_process.py:1228
 msgid "Configuring package manager"
-msgstr ""
+msgstr "מגדיר מנהל חבילות"
 
 #: src/installation_process.py:1243
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "גומר להגדיר מנהל חבילות."
 
 #: src/installation_process.py:1267
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "‏%s: אפשר כניסה אוטומטית עבור משתמש %s."
 
 #: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
@@ -1237,7 +1237,7 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">אזהרה: זו תמחק את כל התוכניות, המסמכים, התצלומים, המוזיקה וכן כל קובץ אחר על הכונן שלכם</span>"
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for better security"

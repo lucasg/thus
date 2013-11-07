@@ -4,13 +4,14 @@
 # 
 # Translators:
 # abdic88 <abdic88@gmail.com>, 2013
+# branimator <patak4@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-06 23:24+0000\n"
+"Last-Translator: branimator <patak4@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/manjaro-thus/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,29 +37,29 @@ msgstr ""
 
 #: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr ""
+msgstr "Koristim Aria2 za skidanje paketa - eksperimentalno"
 
 #: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "Koristim '%s' datoteku kao listu paketa"
 
 #: thus.py:244
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro instaler"
 
 #: thus.py:312
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Napuštam instaler"
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
 #: src/installation_alongside.py:212
 msgid "unknown"
-msgstr ""
+msgstr "nepoznato"
 
 #: src/bootloader.py:50 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Koji je vaš tip boot sistema?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -66,11 +67,11 @@ msgstr ""
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: src/bootloader.py:63 ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -78,7 +79,7 @@ msgstr ""
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr ""
+msgstr "Provjerite svoje računalo"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
@@ -86,15 +87,15 @@ msgstr ""
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "je uključeno u izvor napajanja"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "je povezano na internet"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "Za najbolje rezultate molim vas osigurajte da je ovo računalo"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -105,19 +106,19 @@ msgstr ""
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "Instaliraj ovaj software treće strane"
 
 #: src/check.py:116
 msgid "Can't get network status"
-msgstr ""
+msgstr "Ne mogu odrediti status mreže"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr ""
+msgstr "Imamo internet povezanost"
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "Povezani smo na izvor napajanja"
 
 #: src/check.py:195
 msgid "We have enough disk space."
@@ -177,7 +178,7 @@ msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr ""
+msgstr "Razor-qt je napredano, lako za korištenje i brzo desktop okruženje temeljeno na Qt tehnologijama. Ono je prilagođeno za korisnike koji cijene jednostavnost, brzinu i intuitivno sučelje."
 
 #: src/desktop.py:130
 msgid ""
@@ -188,35 +189,35 @@ msgstr ""
 
 #: src/desktop.py:142
 msgid "Select your desktop"
-msgstr ""
+msgstr "Izaberite svoju radnu površinu"
 
 #: src/desktop.py:152
 msgid "Desktops"
-msgstr ""
+msgstr "Radne površine"
 
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Thus če instalirati Manjaro sa '%s' radnim okruženjem"
 
 #: src/download.py:78
 #, python-format
 msgid "Error creating metalink for package %s"
-msgstr ""
+msgstr "Greška u stvaranju metalinka za paket %s"
 
 #: src/download.py:84
 #, python-format
 msgid "Error adding metalink for package %s"
-msgstr ""
+msgstr "Greška prilikom dodavanja metalinka za paket %s"
 
 #: src/download.py:133
 #, python-format
 msgid "Downloading package '%s'..."
-msgstr ""
+msgstr "Skidanje paketa  %s...."
 
 #: src/download.py:157
 msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr ""
+msgstr "Ne mogu se povezati s Aria2. Neće biti moguće ubrzanje skidanja."
 
 #: src/download.py:228
 #, python-format
@@ -225,11 +226,11 @@ msgstr ""
 
 #: src/download.py:232
 msgid "Can't find these packages: "
-msgstr ""
+msgstr "Ne mogu pronaći ove pakete"
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Upozorenje! Ne mogu riješiti ove zavisnosti."
 
 #: src/features.py:91
 msgid "Feature selection"
@@ -237,7 +238,7 @@ msgstr ""
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Bouetooth podrška"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
@@ -253,15 +254,15 @@ msgstr ""
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Uredski paket (program za obradu teksta, proračunska tablica,...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Vizualni efekti"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
@@ -269,7 +270,7 @@ msgstr ""
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Jednostavan vatrozid"
 
 #: src/features.py:127
 msgid ""
@@ -278,229 +279,229 @@ msgstr ""
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Vlasnički paketi"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr ""
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
-msgstr ""
+msgstr "slobodan prostor"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
-msgstr ""
+msgstr "Uređaj"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
-msgstr ""
+msgstr "Točka montiranja"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
-msgstr ""
+msgstr "Etiketa"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
-msgstr ""
+msgstr "Veličina"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
-msgstr ""
+msgstr "Korišten"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
-msgstr ""
+msgstr "Oznake"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
-msgstr ""
+msgstr "SDD"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
-msgstr ""
+msgstr "Nijedan"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
-msgstr ""
+msgstr "Produžen"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "Root particija mora biti formatirana"
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Stvaranje primarne particije"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Stvaranje produžene particije"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Stvaranje logičke particije"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Napredni oblik instalacije"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Koristi ovaj uređaj za instalaciju boot loadera"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
-msgstr ""
+msgstr "Nova particijska tablica"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
-msgstr ""
+msgstr "Promijeni"
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
-msgstr ""
+msgstr "Veličina"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
-msgstr ""
+msgstr "Tip"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
-msgstr ""
+msgstr "Primarno"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
-msgstr ""
+msgstr "Logički"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
-msgstr ""
+msgstr "Produženo"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Početak ovog prostora"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
-msgstr ""
+msgstr "Završetak ovog prostora"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
-msgstr ""
+msgstr "Uptrijebi kao"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
-msgstr ""
+msgstr "Točka montiranja"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
-msgstr ""
+msgstr "Etiketa (opcionalno):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
-msgstr ""
+msgstr "Mogućnosti enkripcije"
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
-msgstr ""
+msgstr "Fromat:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
-msgstr ""
+msgstr "Vrsta particijske tablice"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
 msgstr ""
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
-msgstr ""
+msgstr "Instaliraj sada!"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Stvaranje nove particijske tablice tipa n%s za disk %s"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s je montiran kao swap.\nDa bi nastavio  mora biti demontiratan.\nKliknite Da za demontiranje ili Ne za povratak\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s je montiran na '%s'.\nDa bi nastavio mora biti demontiran.\nKliknite Da za demontiranje ili Ne za povratak\n"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Particija %s će biti uklonjena"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
-msgstr ""
+msgstr "Particija"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
-msgstr ""
+msgstr "Novi"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
-msgstr ""
+msgstr "Ponovno označi"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
-msgstr ""
+msgstr "Montiraj"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Ovi diskovi će imat radnje particije:"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Spremanje promjena završeno u %s"
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr ""
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro će instalirati bootloader tipa %s u $s"
 
 #: src/installation_alongside.py:109
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Ne mogu učitati %s css"
 
 #: src/installation_alongside.py:136
 msgid "Choose which OS you want to install Manjaro next to"
@@ -508,15 +509,15 @@ msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro pored drugog OS-a"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
-msgstr ""
+msgstr "Otkriven OS"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
-msgstr ""
+msgstr "Datotečni sustav"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
@@ -528,20 +529,20 @@ msgstr ""
 
 #: src/installation_ask.py:114
 msgid "Installation type"
-msgstr ""
+msgstr "Tip instalacije"
 
 #: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Izbriši disk i instaliraj Manjaro (automatski)"
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Upozorenje: Ovo će izbrisati sve podatke na vašem disku"
 
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Instaliraj manjaro pored %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
@@ -557,19 +558,19 @@ msgstr ""
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "Manjaro instalacija će biti šifrirana"
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro će biti instaliran pomoću LMV postavki"
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "Automatski način instalacije"
 
 #: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "Izaberi tvrdi disk:"
 
 #: src/installation_automatic.py:87
 msgid ""
@@ -580,7 +581,7 @@ msgstr ""
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Molimo izaberite disk na koji želite instalirati Manjaro\ni kliknite na gumb ispod da započnete postupak."
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
@@ -608,12 +609,12 @@ msgstr ""
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Kopiranje '%s'"
 
 #: src/installation_process.py:164
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "Instaliranje pomoću '%s' metode"
 
 #: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
@@ -622,30 +623,30 @@ msgstr ""
 #: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "Montiranje particije %s u %s direktorij"
 
 #: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "Montiranje %s u %s/boot direktorij"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
-msgstr ""
+msgstr "Nije bilo moguće montiranje root i boot particija"
 
 #: src/installation_process.py:332
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "Ne mogu montirati %s u %s"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "Ne mogu stvoriti potrebne direktorije na odredišnom sustavu"
 
 #: src/installation_process.py:450
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Obnavljanje meta-informacija na %s"
 
 #: src/installation_process.py:463
 msgid "Special dirs already mounted."
