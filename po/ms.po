@@ -4,13 +4,14 @@
 # 
 # Translators:
 # terabit <akimlinux@gmail.com>, 2013
+# Puretech <terjemah.puretech@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-09 18:55+0000\n"
+"Last-Translator: Puretech <terjemah.puretech@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/manjaro-thus/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Pemasang ini mesti dijalankan dengan keizinan pentadbir, dan tidak boleh diteruskan tanpanya."
 
 #: thus.py:109
 #, python-format
@@ -32,20 +33,20 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Anda tidak boleh menjalankan  2 pemasangan sekaligus. /n\n/n\nJika anda pasti tiada pemasangan lain sedang berjalan /n\nanda boleh hapuskan fail %s secara manual /n\ndan jalankan pemasangan ini sekali lagi."
 
 #: thus.py:205
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
-msgstr "Mengunakan Aria2 untuk memuat turun pakej - EKSPERIMENTAL"
+msgstr "Menggunakan Aria2 untuk memuat turun pakej - EKSPERIMENTAL"
 
 #: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr "Mengunakan fail '%s' sebagai senarai pakej"
+msgstr "Menggunakan fail '%s' sebagai senarai pakej"
 
 #: thus.py:244
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Pemasang Manjaro"
 
 #: thus.py:312
 msgid "Quiting installer..."
@@ -62,7 +63,7 @@ msgstr "Apakan jenis boot sistem anda?"
 
 #: src/bootloader.py:55 ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (biasa)"
 
 #: src/bootloader.py:59 ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -74,7 +75,7 @@ msgstr "i386 UEFI"
 
 #: src/bootloader.py:67 ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Pilih 'Batal' jika anda tidak mahu memasang pemuat boot"
 
 #: src/check.py:68
 msgid "Check your computer"
@@ -82,30 +83,30 @@ msgstr "Memeriksa komputer anda"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr ""
+msgstr "mempunyai sekurang-kurangnya 3GB ruang cakera yang tersedia"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
-msgstr "telah diplagkan kepada sumber kuasa"
+msgstr "telah dipalamkan ke sumber kuasa"
 
 #: src/check.py:81
 msgid "is connected to the Internet"
-msgstr "telah disambungkan kepada Internet"
+msgstr "telah disambungkan ke Internet"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr "Untuk keputusan yang terbaik, sila pastikan bahawa komputer ini:"
+msgstr "Untuk keputusan yang terbaik, sila pastikan komputer ini:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
-msgstr ""
+msgstr "Manjaro menggunakan perisian pihak ketiga untuk memain Flash, fail MP3 dan media lain. Sesetengah perisian tersebut adalah perisian hak milik. Perisian tersebut adalah tertakluk kepada terma-terma lesen yang disertakan dengan dokumentasi."
 
 #: src/check.py:96 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr "Pasang perisian pihak-ketiga ini"
+msgstr "Pasang perisian pihak ketiga ini"
 
 #: src/check.py:116
 msgid "Can't get network status"
@@ -113,56 +114,56 @@ msgstr "Tidak boleh mendapatkan status rangkaian"
 
 #: src/check.py:193
 msgid "We have Internet connection."
-msgstr "Kami mempunyai sambungan Internet."
+msgstr "Kita mempunyai sambungan Internet."
 
 #: src/check.py:194
 msgid "We're connected to a power source."
-msgstr "Kami telah disambung kepada sumber kuasa"
+msgstr "Kita telah disambung ke sumber kuasa"
 
 #: src/check.py:195
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Kita mempunyai ruang yang cukup dalam cakera."
 
 #: src/desktop.py:76
 msgid ""
 "GNOME 3 is an easy and elegant way to use your computer. It is designed to "
 "put you in control and bring freedom to everybody. GNOME 3 is developed by "
 "the GNOME community."
-msgstr ""
+msgstr "Gnome 3 adalah cara yang mudah dan elegan untuk menggunakan komputer anda. Ia direka untuk meletakkan anda dalam kawalan dan membawa kebebasan kepada semua orang. GNOME 3 dibangunkan oleh komuniti GNOME."
 
 #: src/desktop.py:83
 msgid ""
 "Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
 "attempts to provide a more traditional user environment based on the GNOME2 "
 "desktop metaphor"
-msgstr ""
+msgstr "Cinnamon adalah cabang dari GNOME Shell, dibangunkan oleh (dan untuk) Linux Mint. Ia cuba menyediakan persekitaran pengguna yang lebih tradisional berasaskan metafora desktop seperti GNOME 2"
 
 #: src/desktop.py:90
 msgid ""
 "XFCE is a lightweight desktop environment which aims to be light on system "
 "resources while still being visually appealing, fully-featured, and easy to "
 "use."
-msgstr ""
+msgstr "Xfce adalah persekitaran desktop ringan yang menyasarkan untuk menjadi pantas dan rendah pada sumber sistem, sementara masih mengekalkan visual yang menarik dan mesra pengguna."
 
 #: src/desktop.py:96
 msgid ""
 "LXDE is a high-performing and energy-saving desktop environment. It comes "
 "with a beautiful interface, multi-language support, standard keyboard "
 "shortcuts and additional features like tabbed file browsing."
-msgstr ""
+msgstr "LXDE adalah persekitaran desktop yang berprestasi tinggi dan menjimatkan tenaga. Ia datang dengan antara muka yang cantik, sokongan pelbagai bahasa, pintasan papan kekunci standard dan ciri-ciri tambahan seperti tab melayari fail."
 
 #: src/desktop.py:103
 msgid ""
 "Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
 "The *box visual style is well known for its minimalistic appearance."
-msgstr ""
+msgstr "Openbox adalah pengurus tetingkap generasi akan datang yang sangat boleh dikonfigurasi dengan sokongan standard yang meluas. /n\nGaya visual *box sangat terkenal dengan penampilan yang ringkas."
 
 #: src/desktop.py:110
 msgid ""
 "Enlightenment is a lean, fast, modular and very extensible window manager "
 "for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
 " you need to operate your desktop (or laptop). "
-msgstr ""
+msgstr "Enlightenment adalah pengurus tetingkap yang ramping, cepat, bermodul dan sangat boleh dilanjutkan untuk X11 dan Linux. Ia didalam kelas \"desktop shell\" memberikan keperluan untuk operasi desktop (atau laptop) anda."
 
 #: src/desktop.py:116
 msgid ""
@@ -170,21 +171,21 @@ msgid ""
 "advantage of modern computing technology. Through the use of visual effects "
 "and scalable graphics, the desktop experience is not only smooth but also "
 "pleasant to the eye."
-msgstr ""
+msgstr "Desktop KDE menawarkan penampilan desktop yang cantik menggunakan sepenuhnya kelebihan teknologi komputer moden. Melalui penggunaan kesan visual dan grafik berskala, pengalaman desktop bukan sahaja lancar tetapi juga selesa untuk mata."
 
 #: src/desktop.py:123
 msgid ""
 "Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
 "Qt technologies. It has been tailored for users who value simplicity, speed,"
 " and an intuitive interface."
-msgstr "Razor-qt adalah termaju, mudah untuk menggunakan, dan persekitaran desktop yang pantas berdasarkan teknologi Qt. Ia telah direka untuk pengguna yang menghargai kesederhanaan, kelajuan, dan antara muka intuitif."
+msgstr "Razor-qt adalah persekitaran desktop termaju, mudah untuk menggunakan, dan pantas berdasarkan teknologi Qt. Ia direka untuk pengguna yang menghargai kesederhanaan, kelajuan, dan antara muka intuitif."
 
 #: src/desktop.py:130
 msgid ""
 "This will install Manjaro as command-line system, without any desktop "
 "environment at all. After the installation you can optionally install the "
 "environment of your choice."
-msgstr ""
+msgstr "Ini akan memasang Manjaro sebagai sistem baris arahan, tanpa mana-mana persekitaran desktop sama sekali. Selepas pemasangan anda boleh memilih untuk memasang persekitaran pilihan anda."
 
 #: src/desktop.py:142
 msgid "Select your desktop"
@@ -197,7 +198,7 @@ msgstr "Desktop"
 #: src/desktop.py:185
 #, python-format
 msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr ""
+msgstr "Akan memasang Manjaro dengan desktop '%s'"
 
 #: src/download.py:78
 #, python-format
@@ -229,273 +230,273 @@ msgstr "Tidak dapat mencari pakej ini:"
 
 #: src/download.py:238
 msgid "Warning! Can't resolve these dependencies: "
-msgstr ""
+msgstr "Amaran! Tidak dapat menangani kebergantungan ini:"
 
 #: src/features.py:91
 msgid "Feature selection"
-msgstr ""
+msgstr "Pilihan tambahan"
 
 #: src/features.py:96
 msgid "Bluetooth support"
-msgstr ""
+msgstr "Sokongan Bluetooth"
 
 #: src/features.py:99 ui/features.ui:55
 msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr ""
+msgstr "Tanpa sokongan  anda tidak boleh menggunakan peranti "
 
 #: src/features.py:103
 msgid "Printing support (CUPS)"
-msgstr ""
+msgstr "Sokongan mencetak (CUPS)"
 
 #: src/features.py:106 ui/features.ui:135
 msgid "This includes printer drivers and management tools"
-msgstr ""
+msgstr "Ini termasuk pemacu pencetak dan alat mengurus"
 
 #: src/features.py:110
 msgid "LibreOffice"
-msgstr ""
+msgstr "LibreOffice"
 
 #: src/features.py:113
 msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr ""
+msgstr "Office suite (word processor, spreadsheet, ...)"
 
 #: src/features.py:117
 msgid "Visual effects"
-msgstr ""
+msgstr "Kesan visual"
 
 #: src/features.py:120 ui/features.ui:295
 msgid "Visual effects such as window transparency and shadows"
-msgstr ""
+msgstr "Efek visual seperti ketelusan tetingkap dan bayang-bayang"
 
 #: src/features.py:124
 msgid "Uncomplicated firewall"
-msgstr ""
+msgstr "Firewall mudah"
 
 #: src/features.py:127
 msgid ""
 "Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr ""
+msgstr "Pasang ufw dan nafikan semua trafik secara lalai (guna gufw untuk mengkonfigurasikannya)"
 
 #: src/features.py:131
 msgid "Propietary packages"
-msgstr ""
+msgstr "Pakej berhakmilik"
 
 #: src/features.py:134 ui/features.ui:455
 msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr ""
+msgstr "Perisian pihak ketiga untuk memainkan Flash, fail MP3 dan media lain"
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
-msgstr "ruang bebas"
+msgstr "ruang kosong"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Peranti"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
 msgstr "Jenis"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
 msgstr "Titik lekap"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
 msgstr "Label"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
 msgstr "Format"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
 msgstr "Saiz"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
 msgstr "Digunakan"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
 msgstr "Penanda "
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr "tiada"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr "lanjutan"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Tidak boleh menggunakan titik lekap yang sama dua kali"
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
-msgstr "Partisyen Root mesti diformat... "
+msgstr "Sekatan Root mesti diformat... "
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
-msgstr "Mewujudkan partisyen utama"
+msgstr "Membina sekatan utama"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
-msgstr "Mewujudkan partisyen terlanjut"
+msgstr "Membina sekatan lanjutan"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
-msgstr "Mewujudkan logikal partisyen"
+msgstr "Membina sekatan logikal"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
 msgstr "Mod pemasangan Terperinci"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Gunakan peranti ini untuk pemasangan pemuat boot:"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
-msgstr "Jadual partisyen baru"
+msgstr "Jadual sekatan baharu"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
 msgstr "Ubah..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Saiz:"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Jenis:"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Utama"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logikal"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Lanjutan"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
-msgstr "Permulaan daripada ruang ini"
+msgstr "Permulaan ruang ini"
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
-msgstr "Akhir daripada ruang ini"
+msgstr "Akhir ruang ini"
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Guna sebagai:"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Titik lekap:"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Label (pilihan):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
-msgstr "Opsyen penyulitan ..."
+msgstr "Pilihan penyulitan ..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Format:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
-msgstr "Jenis jadual partisyen:"
+msgstr "Jenis jadual sekatan:"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Bina Jadual Sekatan"
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "Pasang sekarang!"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr "Mewujudkan jadual partisyen baru dari jenis %s untuk cakera %s"
+msgstr "Membina jadual sekatan baharu dari jenis %s untuk cakera %s"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s dilekapkan sebagai swap. /n\nUntuk teruskan ia perlu dinyahlekap. /n\nKlik Ya untuk nyahlekap, atau Tidak untuk kembali\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s Dilekapkan dalam '%s'. \\n\nUntuk meneruskan ia perlu dinyahlekap. \\n\nKlik Ya untuk dinyahlekap, atau Tidak untuk kembali \\n\n"
+msgstr "%s dilekapkan dalam '%s'. /n\nUntuk meneruskan ia perlu dinyahlekap. /n\nKlik Ya untuk dinyahlekap, atau Tidak untuk kembali\n"
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr "Partisyen %s akan dipadamkan"
+msgstr "Sekatan %s akan dipadamkan"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
-msgstr "Partisyen"
+msgstr "Sekatan"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
-msgstr "Baru"
+msgstr "Baharu"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr "Melabel semula"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr "Lekap"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Cakera ini akan mempunyai tindakan sekatan:"
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Perubahan simpanan telah dilakukan di %s"
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Bina %s sistemfail di %s label %s"
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro akan memasang pemuatboot jenis %s di %s"
 
 #: src/installation_alongside.py:109
 #, python-format
@@ -504,11 +505,11 @@ msgstr "Tidak boleh memuat %s css"
 
 #: src/installation_alongside.py:136
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Pilih anda selepas OS mana anda mahu pasangkan Manjaro"
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro bersama OS lain"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
@@ -516,15 +517,15 @@ msgstr "OS Dikesan"
 
 #: src/installation_alongside.py:172
 msgid "Filesystem"
-msgstr "fail sistem"
+msgstr "Fail sistem"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
-msgstr ""
+msgstr "Dalam pemasangan bersama: tidak boleh membina senarai sekatan"
 
 #: src/installation_alongside.py:256
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Tidak dapat mengecilkan sekatan (mungkin hampir penuh?)"
 
 #: src/installation_ask.py:114
 msgid "Installation type"
@@ -532,7 +533,7 @@ msgstr "Jenis Pemasangan"
 
 #: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Padam cakera dan pasang Manjaro (automatik)"
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
@@ -541,27 +542,27 @@ msgstr "Amaran: Ini boleh memyebabkan semua data dipadam dalam cakera anda"
 #: src/installation_ask.py:134
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Memasang Manjaro bersama %s"
 
 #: src/installation_ask.py:137
 msgid "Install this OS alongside the other OSes you already have installed."
-msgstr ""
+msgstr "Pasang OS ini bersama-sama dengan OS lain yang anda telah pasang."
 
 #: src/installation_ask.py:143
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Mengurus sekatan anda dan memilih dimana untuk memasang Manjaro (lanjutan)"
 
 #: src/installation_ask.py:146
 msgid "Create and delete partitions, and choose additional mount points."
-msgstr ""
+msgstr "Membina/memadam sekatan, dan juga memilih titik lekap tambahan."
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "Pemasangan Manjaro akan disulitkan"
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
-msgstr ""
+msgstr "Manjaro akan menggunakan penetapan LVM"
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -574,41 +575,41 @@ msgstr "Pilih pemacu:"
 #: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "AMARAN! Mod pemasangan ini akan menulis ganti kesemuanya di pemacu anda!"
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Sila pilih pemacu untuk memasang Manjaro /n\ndan klik butang dibawah untuk memulakan proses."
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
-msgstr ""
+msgstr "Pilih kata laluan untuk peranti LUKS anda:"
 
 #: src/installation_automatic.py:101 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
-msgstr ""
+msgstr "Sahkan kata laluan peranti LUKS anda:"
 
 #: src/installation_automatic.py:155
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Pasang automatik pada %s"
 
 #: src/installation_automatic.py:189
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Thus akan menggunakan %s sebagai peranti pemasangan"
 
 #: src/installation_automatic.py:198
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Thus akan memasang pemuatboot jenis %s pada %s"
 
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Menyalin '/%s'"
 
 #: src/installation_process.py:164
 #, python-format
@@ -617,21 +618,21 @@ msgstr "Memasang menggunakan kaedah '%s'"
 
 #: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Ralat membina sekatan dan sistemfailnya"
 
 #: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr "Melekap partisyen %s ke dalam direktori %s"
+msgstr "Melekap sekatan %s ke dalam direktori %s"
 
 #: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr "Melekap partisyen %s ke dalam direktori %s/boot"
+msgstr "Melekap sekatan %s ke dalam direktori %s/boot"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
-msgstr "Tidak dapat lekap root dan but partisyen"
+msgstr "Tidak dapat lekap sekatan root dan but"
 
 #: src/installation_process.py:332
 #, python-format
@@ -640,29 +641,29 @@ msgstr "Tidak boleh lekap %s di %s"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
-msgstr "Tidak boleh mewujudkan direktori yang diperlukan pada sistem destinasi"
+msgstr "Tidak boleh membina direktori yang diperlukan pada sistem destinasi"
 
 #: src/installation_process.py:450
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Memulihkan informasi-meta pada %s"
 
 #: src/installation_process.py:463
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Dir khas telah dilekapkan."
 
 #: src/installation_process.py:489
 msgid "Special dirs already not mounted."
-msgstr ""
+msgstr "Dir khas telah dinyahlekap."
 
 #: src/installation_process.py:499
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Tidak dapat nyahlekap %s"
 
 #: src/installation_process.py:550
 msgid "Create fstab."
-msgstr ""
+msgstr "Membina fstab."
 
 #: src/installation_process.py:662
 #, python-format
@@ -684,16 +685,16 @@ msgstr "Memasang GRUB(2) UEFI %s pemuat boot di %s"
 
 #: src/installation_process.py:733
 msgid "ERROR installing GRUB(2) configuration file."
-msgstr ""
+msgstr "RALAT memasang fail konfigurasi GRUB(2)."
 
 #: src/installation_process.py:761
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "RALAT memasang penempatan GRUB(2)."
 
 #: src/installation_process.py:775
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr "Ralat mewujudkan hash kata laluan untuk pengguna %s"
+msgstr "Ralat membina hash kata laluan untuk pengguna %s"
 
 #: src/installation_process.py:781
 #, python-format
@@ -702,7 +703,7 @@ msgstr "Ralat menukar kata laluan untuk pengguna %s"
 
 #: src/installation_process.py:906
 msgid "Configuring your new system"
-msgstr "Konfigurasi sistem baru anda"
+msgstr "Mengkonfigurasi sistem baru anda"
 
 #: src/installation_process.py:983
 msgid "Generating locales..."
@@ -714,40 +715,40 @@ msgstr "Melaraskan jam perkakasan..."
 
 #: src/installation_process.py:1009
 msgid "Configuring hardware..."
-msgstr ""
+msgstr "Mengkonfigurasi perkakasan..."
 
 #: src/installation_process.py:1072
 msgid "Set up graphics card..."
-msgstr ""
+msgstr "Menetapkan kad grafik..."
 
 #: src/installation_process.py:1079
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "Tidak boleh melaksanakan skrip MHWD"
 
 #: src/installation_process.py:1085
 msgid "Configure display manager..."
-msgstr ""
+msgstr "Konfigurasikan pengurus pakej..."
 
 #: src/installation_process.py:1184
 msgid "Configure System..."
-msgstr ""
+msgstr "Konfigurasikan Sistem..."
 
 #: src/installation_process.py:1212
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Membuang konfigurasi langsung (pakej)"
 
 #: src/installation_process.py:1228
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Mengkonfigurasi pengurus pakej"
 
 #: src/installation_process.py:1243
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Selesai mengkonfigurasi pengurus pakej."
 
 #: src/installation_process.py:1267
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Benarkan log masuk automatik pengguna %s."
 
 #: src/installation_process.py:1346
 msgid "Running mkinitcpio..."
@@ -755,7 +756,7 @@ msgstr "Menjalankan mkinitcpio... "
 
 #: src/installation_process.py:1349
 msgid "Running mkinitcpio... done"
-msgstr ""
+msgstr "Menjalankan mkinitcpio... selesai"
 
 #: src/keymap.py:62
 msgid "Select your keyboard layout"
@@ -780,7 +781,7 @@ msgstr "Sila pilih bahasa anda:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Notis: Pemasang Thus adalah aplikasi beta."
 
 #: src/language.py:86
 msgid ""
@@ -788,11 +789,11 @@ msgid ""
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus adalah perisian pra-keluaran beta sedang dalam pembinaan. /n\nIa masih belum boleh mengendalikan RADI, btrfs subvolumes, atau lain-lain tetapan lanjut dengan betul. Sila teruskan dengan berhati-hati kerana kehilangan data mungkin boleh berlaku!. /n\n/n\nJika anda menjumpai sebarang pepijat, sila laporkan di <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93 src/welcome.py:98
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Selamat Datang ke Manjaro!"
 
 #: src/language.py:110
 msgid "Languages"
@@ -812,7 +813,7 @@ msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr "Lokasi yang dipilih akan digunakan untuk membantu memilih penempatan sistem. \\n\nBiasanya ini sepatutnya menjadi negara di mana anda tinggal. \\n\nIni adalah senarai pendek lokasi berdasarkan bahasa yang anda pilih."
+msgstr "Lokasi yang dipilih akan digunakan untuk membantu memilih penempatan sistem. \\n\nBiasanya ia sepatutnya menjadi negara di mana anda tinggal. \\n\nIni adalah senarai pendek lokasi berdasarkan bahasa yang anda pilih."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
@@ -821,7 +822,7 @@ msgstr "Negara, wilayah atau kawasan:"
 #: src/location.py:197
 #, python-format
 msgid "locale changed to : %s"
-msgstr "Penempatan ditukar kepada: %s"
+msgstr "penempatan ditukar kepada: %s"
 
 #: src/location.py:199
 #, python-format
@@ -830,11 +831,11 @@ msgstr "Tidak boleh menukar penempatan kepada '%s'"
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
-msgstr "Dalam rankmirrors, Tidak boleh mendapatkan status rangkaian"
+msgstr "Dalam rankmirrors, tidak boleh mendapatkan status rangkaian"
 
 #: src/rank_mirrors.py:70
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Tidak dapat mencari skrip taraf cermin"
 
 #: src/rank_mirrors.py:77
 msgid "Couldn't execute auto mirroring selection"
@@ -842,29 +843,29 @@ msgstr "Tidak dapat melaksanakan pemilihan pencerminan auto"
 
 #: src/show_message.py:52
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Pemasang Manjaro - Ralat"
 
 #: src/show_message.py:63
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Pemasang Manjaro - Amaran"
 
 #: src/show_message.py:74
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Pemasang Manjaro - Informasi"
 
 #: src/show_message.py:84
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Pemasang Manjaro - Soalan"
 
 #: src/slides.py:90 src/slides.py:105
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr "Pemasangan selesai!⏎\nAdakah anda ingin untuk memulakan semula sistem anda sekarang?"
+msgstr "Pemasangan selesai! /n\nAdakah anda ingin untuk memulakan semula sistem anda sekarang?"
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Memasang Manjaro..."
 
 #: src/slides.py:103
 msgid "Please wait..."
@@ -884,7 +885,7 @@ msgstr "Wilayah:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Gunakan Protokol Waktu Rangkaian untuk segerakkan jam:"
 
 #: src/timezone.py:135
 #, python-format
@@ -893,15 +894,15 @@ msgstr "lokasi ditukar kepada: %s"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr "Tidak boleh autokesan Koordinat zon masa"
+msgstr "Tidak boleh autokesan koordinat zon masa"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Menghentikan urutan zon masa"
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "Tidak boleh mendapatkan kod negara diguna untuk membina senarai cermin pacman"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
@@ -913,7 +914,7 @@ msgstr "Nama anda"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
-msgstr "Nama kumputer anda:"
+msgstr "Nama komputer anda:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
@@ -941,7 +942,7 @@ msgstr "Pengesahan kata laluan"
 
 #: src/user_info.py:119
 msgid "Its name as it appears to other computers."
-msgstr ""
+msgstr "Nama ketika ia muncul pada komputer lain."
 
 #: src/user_info.py:123
 msgid "You must enter a name"
@@ -975,35 +976,35 @@ msgstr "Siapakah anda?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro akan menggunakan eCryptfs untuk menyulitkan direktori home anda. Malangnya eCryptfs tidak mengendalikan fail jarang dengan baik. /n\n/n\n"
 
 #: src/user_info.py:168
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "Jangan risau, bagi kebanyakan tujuan dan maksud kekurangan ini tidak menimbulkan masalah. /n\n/n\n"
 
 #: src/user_info.py:169
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "Bagaimanapun, penggunaan popular dan tidak digalakkan eCryptfs adalah untuk menyulitkan lokasi muat turun BitTorrent kerana ini sering memerlukan eCryptfs untuk mengendalikan fail jarang 10 GB atau lebih dan boleh membawa kepada pembaziran cakera yang ketara. /n\n/n\n"
 
 #: src/user_info.py:170
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "Penyelesaian mudah adalah meletakkan fail jarang dalam direktori .Public tanpa penyulitan. /n\n/n\n"
 
 #: src/user_info.py:171
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Lihat di https://wiki.archlinux.org/index.php/ECryptfs untuk keterangan lanjut /n\n/n\n\n\n"
 
 #: src/user_info.py:172
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "Adakah anda pasti ingin menyulitkan direktori home anda? /n\n"
 
 #: src/user_info.py:230
 msgid "Invalid characters entered"
@@ -1045,7 +1046,7 @@ msgstr "Kata laluan tidak sepadan"
 msgid ""
 "Try Manjaro without modifying your hard drive.\n"
 "Or install it to your PC with one of the two installer options."
-msgstr ""
+msgstr "Anda boleh mencuba Manjaro tanpa mengubahsuai cakera keras. /n\nAtau pasangkan pada PC anda menggunakan salah satu daripada 2 pilihan pemasangan."
 
 #: src/welcome.py:89 ui/welcome.ui:45
 msgid "Try it"
@@ -1070,7 +1071,7 @@ msgstr "Pakej %s tidak terdapat dalam mana-mana repo!"
 
 #: src/pacman/pac.py:289
 msgid "Checking dependencies..."
-msgstr ""
+msgstr "Memeriksa kebergantungan..."
 
 #: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
@@ -1078,11 +1079,11 @@ msgstr "Memeriksa konflik fail..."
 
 #: src/pacman/pac.py:293
 msgid "Resolving dependencies..."
-msgstr ""
+msgstr "Menyelesaikan kebergantungan..."
 
 #: src/pacman/pac.py:295
 msgid "Checking inter conflicts..."
-msgstr ""
+msgstr "Memeriksa diantara konflik"
 
 #: src/pacman/pac.py:300
 msgid "Removing..."
@@ -1133,163 +1134,163 @@ msgstr "Semakan dan memuatkan pakej..."
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Boot"
 
 #: ui/check.ui:28
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">For best results, please ensure that this computer:</span>"
 
 #: ui/desktop.ui:106 ui/installation_alongside.ui:193
 #: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: ui/features.ui:40
 msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Sokongan Bluetooth</span>"
 
 #: ui/features.ui:120
 msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Sokongan pencetak (CUPS)</span>"
 
 #: ui/features.ui:200
 msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>LibreOffice</span>"
 
 #: ui/features.ui:215
 msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr ""
+msgstr "Office suite (word processor, spreadsheet, dsb.)"
 
 #: ui/features.ui:280
 msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Efek visual</span>"
 
 #: ui/features.ui:360
 msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Firewall</span>"
 
 #: ui/features.ui:375
 msgid "Activates your firewall (closes all ports by default)"
-msgstr ""
+msgstr "Mengaktifkan firewall anda (menutup semua port secara lalai)"
 
 #: ui/features.ui:440
 msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr ""
+msgstr "<span weight='bold' size='large'>Pakej berhakmilik</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
-msgstr ""
+msgstr "Bina sekatan"
 
 #: ui/installation_advanced.ui:114
 msgid "Location:"
-msgstr ""
+msgstr "Lokasi:"
 
 #: ui/installation_advanced.ui:277
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"
-msgstr ""
+msgstr "Sunting sekatan"
 
 #: ui/installation_advanced.ui:931
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "Nama volum LUKS:"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "Kata laluan:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "Sahkan kata laluan:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "Guna penyulitan LUKS:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Pilih anda selepas OS mana anda mahu pasangkan Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "Pilih saiz baharu"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "OS lain"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_ask.ui:57
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Amaran: Ini akan memadam semua program, dokumen, foto, musik dan semua fail lain pada cakera anda</span>"
 
 #: ui/installation_ask.ui:69
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "Sulitkan pemasangan baharu Manjaro untuk lebih selamat"
 
 #: ui/installation_ask.ui:90
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Anda akan diminta kekunci penyulitan pada langkah seterusnya</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Guna LVM dengan pemasangan baharu Manjaro"
 
 #: ui/installation_ask.ui:122
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Ini akan menetapkan LVM untuk membolehkan anda membuat snapshot dan mengubah saiz partition dalam cara yang jelas dan mudah</span>"
 
 #: ui/installation_ask.ui:133
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "Memasang bersama OS lain"
 
 #: ui/installation_ask.ui:159
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Dengan pilihan ini anda memasang Manjaro bersama-sama dengan OS lain yang anda telah pasang.</span>"
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Mengurus sekatan anda dan memilih dimana untuk memasang Manjaro (lanjutan)"
 
 #: ui/installation_ask.ui:197
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Anda akan boleh membina/memadam sekatan, memilih dimana untuk memasang Manjaro dan memilih titik lekap tambahan</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>AMARAN! Mod pemasangan ini akan menulis ganti kesemuanya di pemacu anda!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Sila pilih bahasa anda:</span>"
 
 #: ui/language.ui:88
 msgid ""
@@ -1298,42 +1299,42 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Nota: Pemasang Thus adalah paerisian beta</span> /n\n/n\nThus adalah perisian pra-keluaran beta sedang dalam pembinaan. /n\nIa masih belum boleh mengendalikan RADI, btrfs subvolumes, atau lain-lain tetapan lanjut dengan betul. Sila teruskan dengan berhati-hati kerana kehilangan data mungkin boleh berlaku!. /n\n/n\nJika anda menjumpai sebarang pepijat, kunjungi <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/pac.ui:43
 msgid "Progress"
-msgstr ""
+msgstr "Perkembangan"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Selamat Datang ke Manjaro</span>"
 
 #: ui/user_info.ui:188
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Kata laluan kukuh</span></small>"
 
 #: ui/user_info.ui:247
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Anda mesti masukkan kata laluan</span></small>"
 
 #: ui/user_info.ui:348
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Anda mesti masukkan nama pengguna</span></small>"
 
 #: ui/user_info.ui:425
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Anda mesti masukkan nama</span></small>"
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Nama ketika ia muncul pada komputer lain.</span>"
 
 #: ui/welcome.ui:151
 msgid ""
 "You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
 "If you want to install the system to your PC, use one of the two installer options."
-msgstr ""
+msgstr "Anda boleh mencuba Manjaro tanpa mengubahsuai cakera keras, hanya klik pada \"Cuba ia\" /n\nJika anda mahu memasang sistem pada PC anda, gunakan salah satu daripada 2 pilihan pemasangan."

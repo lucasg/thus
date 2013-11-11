@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 22:44+0100\n"
-"PO-Revision-Date: 2013-10-31 21:48+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-11-01 01:56+0100\n"
+"PO-Revision-Date: 2013-11-09 10:19+0000\n"
+"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/manjaro-thus/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -285,164 +285,164 @@ msgstr "Proprietar paketlar"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr ""
 
-#: src/installation_advanced.py:198 src/installation_advanced.py:488
-#: src/installation_advanced.py:502
+#: src/installation_advanced.py:205 src/installation_advanced.py:495
+#: src/installation_advanced.py:509
 msgid "free space"
 msgstr "bo'sh joy"
 
-#: src/installation_advanced.py:266 src/installation_alongside.py:166
+#: src/installation_advanced.py:273 src/installation_alongside.py:166
 msgid "Device"
 msgstr "Qurilma"
 
-#: src/installation_advanced.py:269
+#: src/installation_advanced.py:276
 msgid "Type"
 msgstr "Turi"
 
-#: src/installation_advanced.py:272
+#: src/installation_advanced.py:279
 msgid "Mount point"
 msgstr "Ulash nuqtasi"
 
-#: src/installation_advanced.py:275
+#: src/installation_advanced.py:282
 msgid "Label"
 msgstr "Belgi"
 
-#: src/installation_advanced.py:281 src/installation_advanced.py:1417
+#: src/installation_advanced.py:288 src/installation_advanced.py:1424
 msgid "Format"
 msgstr "Formatlash"
 
-#: src/installation_advanced.py:284
+#: src/installation_advanced.py:291
 msgid "Size"
 msgstr "Hajmi"
 
-#: src/installation_advanced.py:287
+#: src/installation_advanced.py:294
 msgid "Used"
 msgstr "Foydalanilgan"
 
-#: src/installation_advanced.py:290
+#: src/installation_advanced.py:297
 msgid "Flags"
 msgstr "Bayroqlar"
 
-#: src/installation_advanced.py:296
+#: src/installation_advanced.py:303
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:474
+#: src/installation_advanced.py:481
 msgid "none"
 msgstr "mavjud emas"
 
-#: src/installation_advanced.py:523 src/installation_advanced.py:925
-#: src/installation_advanced.py:1299 src/installation_advanced.py:1372
-#: src/installation_advanced.py:1540
+#: src/installation_advanced.py:530 src/installation_advanced.py:932
+#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
+#: src/installation_advanced.py:1547
 msgid "extended"
 msgstr "kengaytirilgan"
 
-#: src/installation_advanced.py:654 src/installation_advanced.py:895
+#: src/installation_advanced.py:661 src/installation_advanced.py:902
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:656
+#: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
 msgstr "Tub bo'limi formatlangan bo'lishi shart..."
 
-#: src/installation_advanced.py:916
+#: src/installation_advanced.py:923
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Birlamchi bo'lim yaratilmoqda"
 
-#: src/installation_advanced.py:927
+#: src/installation_advanced.py:934
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Kengaytirilgan bo'lim yaratilmoqda"
 
-#: src/installation_advanced.py:933
+#: src/installation_advanced.py:940
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Mantiqiy bo'lim yaratilmoqda"
 
-#: src/installation_advanced.py:1062
+#: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Qo'shimcha o'rnatish usuli"
 
-#: src/installation_advanced.py:1066 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Ushbu qurilmani yuklovchi o'rnatish uchun qo'llash:"
 
-#: src/installation_advanced.py:1076 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Yangi bo'lim jadvali"
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1091
 msgid "Change..."
 msgstr "O'zgartirish..."
 
-#: src/installation_advanced.py:1089 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Hajmi:"
 
-#: src/installation_advanced.py:1093 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Turi:"
 
-#: src/installation_advanced.py:1097 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Birlamchi"
 
-#: src/installation_advanced.py:1101 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Mantiqiy"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Kengaytirilgan"
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr ""
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr ""
 
-#: src/installation_advanced.py:1117 src/installation_advanced.py:1134
+#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Qo'llash:"
 
-#: src/installation_advanced.py:1121 src/installation_advanced.py:1138
+#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Ulash nuqtasi:"
 
-#: src/installation_advanced.py:1125 src/installation_advanced.py:1142
+#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Belgi (ixtiyoriy):"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Shifrlash parametrlari..."
 
-#: src/installation_advanced.py:1146 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Formatlash:"
 
-#: src/installation_advanced.py:1151 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Bo‘limlar jadvali turi:"
 
-#: src/installation_advanced.py:1156
+#: src/installation_advanced.py:1163
 msgid "Create Partition Table"
 msgstr ""
 
-#: src/installation_advanced.py:1159 src/installation_alongside.py:144
+#: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
 msgstr "O'rnatish!"
 
-#: src/installation_advanced.py:1239
+#: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "%s turdagi %s diski uchun yangi bo'limlar jadvalini yaratish"
 
-#: src/installation_advanced.py:1335
+#: src/installation_advanced.py:1342
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -450,7 +450,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s swap sifatida ulangan.\nDavom ettirish uchun uni ajratish kerak.\nAjratish uchun Ha yoki qaytish uchun Yo'q bosing\n"
 
-#: src/installation_advanced.py:1337
+#: src/installation_advanced.py:1344
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -458,42 +458,42 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1410
+#: src/installation_advanced.py:1417
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s bo'limi o'chiriladi"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Partition"
 msgstr "Bo'lim"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "New"
 msgstr "Yangi"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Relabel"
 msgstr ""
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1424
 msgid "Mount"
 msgstr "Ulash"
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1445
 msgid "These disks will have partition actions:"
 msgstr ""
 
-#: src/installation_advanced.py:1463
+#: src/installation_advanced.py:1470
 #, python-format
 msgid "Saving changes done in %s"
 msgstr ""
 
-#: src/installation_advanced.py:1477
+#: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr ""
 
-#: src/installation_advanced.py:1559
+#: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr ""
@@ -817,7 +817,7 @@ msgstr ""
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "Mamlakat, hudud yoki maydon:"
 
 #: src/location.py:197
 #, python-format
@@ -861,7 +861,7 @@ msgstr "Manjaro o'rnatuvchisi - Savol"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "O'rnatish tugatildi!\nTizimni qayta ishga tushirishni istaysizmi?"
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."
@@ -873,15 +873,15 @@ msgstr "Kutib turing..."
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "Siz qayerdasiz?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
-msgstr ""
+msgstr "Mintaqa:"
 
 #: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
-msgstr ""
+msgstr "Viloyat:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
@@ -890,11 +890,11 @@ msgstr ""
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "Joylashuv %s'ga o'zgardi"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr ""
+msgstr "Vaqt mintaqasi koordinatlarini avtomatik ravishda aniqlab bo'lmadi"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
@@ -902,7 +902,7 @@ msgstr ""
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "Pacman ko'zgular ro'yxatini yaratish uchun mamlakat kodini olib bo'lmadi"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
@@ -914,11 +914,11 @@ msgstr "Ismingiz"
 
 #: src/user_info.py:91 ui/user_info.ui:474
 msgid "Your computer's name:"
-msgstr ""
+msgstr "Kompyuter nomi:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
-msgstr ""
+msgstr "Foydalanuvchi nomini tanlash:"
 
 #: src/user_info.py:99
 msgid "Username"
@@ -946,15 +946,15 @@ msgstr ""
 
 #: src/user_info.py:123
 msgid "You must enter a name"
-msgstr ""
+msgstr "Nom kiritish lozim"
 
 #: src/user_info.py:127
 msgid "You must enter a username"
-msgstr ""
+msgstr "Foydalanuvchi nomini kiritish lozim"
 
 #: src/user_info.py:131
 msgid "You must enter a password"
-msgstr ""
+msgstr "Parolni kiritish lozim"
 
 #: src/user_info.py:135 ui/user_info.ui:96
 msgid "Log in automatically"
