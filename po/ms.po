@@ -3,6 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Puretech <terjemah.puretech@gmail.com>, 2013
+# Puretech <terjemah.puretech@gmail.com>, 2013
 # terabit <akimlinux@gmail.com>, 2013
 # Puretech <terjemah.puretech@gmail.com>, 2013
 msgid ""
@@ -10,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-09 18:55+0000\n"
+"PO-Revision-Date: 2013-11-12 10:33+0000\n"
 "Last-Translator: Puretech <terjemah.puretech@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/manjaro-thus/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -346,15 +348,15 @@ msgstr "Sekatan Root mesti diformat... "
 
 #: src/installation_advanced.py:923
 msgid "Creating primary partition"
-msgstr "Membina sekatan utama"
+msgstr "Mencipta sekatan utama"
 
 #: src/installation_advanced.py:934
 msgid "Creating extended partition"
-msgstr "Membina sekatan lanjutan"
+msgstr "Mencipta sekatan lanjutan"
 
 #: src/installation_advanced.py:940
 msgid "Creating logical partition"
-msgstr "Membina sekatan logikal"
+msgstr "Mencipta sekatan logikal"
 
 #: src/installation_advanced.py:1069
 msgid "Advanced installation mode"
@@ -430,7 +432,7 @@ msgstr "Jenis jadual sekatan:"
 
 #: src/installation_advanced.py:1163
 msgid "Create Partition Table"
-msgstr "Bina Jadual Sekatan"
+msgstr "Cipta Jadual Sekatan"
 
 #: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
@@ -440,7 +442,7 @@ msgstr "Pasang sekarang!"
 #: src/installation_advanced.py:1246
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr "Membina jadual sekatan baharu dari jenis %s untuk cakera %s"
+msgstr "Mencipta jadual sekatan baharu dari jenis %s untuk cakera %s"
 
 #: src/installation_advanced.py:1342
 #, python-format
@@ -491,7 +493,7 @@ msgstr "Perubahan simpanan telah dilakukan di %s"
 #: src/installation_advanced.py:1484
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr "Bina %s sistemfail di %s label %s"
+msgstr "Mencipta %s sistemfail di %s label %s"
 
 #: src/installation_advanced.py:1566
 #, python-format
@@ -521,7 +523,7 @@ msgstr "Fail sistem"
 
 #: src/installation_alongside.py:216
 msgid "In alongside install: can't create list of partitions"
-msgstr "Dalam pemasangan bersama: tidak boleh membina senarai sekatan"
+msgstr "Dalam pemasangan bersama: tidak boleh mencipta senarai sekatan"
 
 #: src/installation_alongside.py:256
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -554,7 +556,7 @@ msgstr "Mengurus sekatan anda dan memilih dimana untuk memasang Manjaro (lanjuta
 
 #: src/installation_ask.py:146
 msgid "Create and delete partitions, and choose additional mount points."
-msgstr "Membina/memadam sekatan, dan juga memilih titik lekap tambahan."
+msgstr "Cipta dan padam sekatan, dan juga memilih titik lekap tambahan."
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
@@ -618,7 +620,7 @@ msgstr "Memasang menggunakan kaedah '%s'"
 
 #: src/installation_process.py:267
 msgid "Error creating partitions and their filesystems"
-msgstr "Ralat membina sekatan dan sistemfailnya"
+msgstr "Ralat mencipta sekatan dan sistemfailnya"
 
 #: src/installation_process.py:305 src/installation_process.py:327
 #, python-format
@@ -641,7 +643,7 @@ msgstr "Tidak boleh lekap %s di %s"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
-msgstr "Tidak boleh membina direktori yang diperlukan pada sistem destinasi"
+msgstr "Tidak boleh mencipta direktori yang diperlukan pada sistem destinasi"
 
 #: src/installation_process.py:450
 #, python-format
@@ -663,7 +665,7 @@ msgstr "Tidak dapat nyahlekap %s"
 
 #: src/installation_process.py:550
 msgid "Create fstab."
-msgstr "Membina fstab."
+msgstr "Mencipta fstab."
 
 #: src/installation_process.py:662
 #, python-format
@@ -694,7 +696,7 @@ msgstr "RALAT memasang penempatan GRUB(2)."
 #: src/installation_process.py:775
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr "Ralat membina hash kata laluan untuk pengguna %s"
+msgstr "Ralat mencipta hash kata laluan untuk pengguna %s"
 
 #: src/installation_process.py:781
 #, python-format
@@ -902,7 +904,7 @@ msgstr "Menghentikan urutan zon masa"
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr "Tidak boleh mendapatkan kod negara diguna untuk membina senarai cermin pacman"
+msgstr "Tidak boleh mendapatkan kod negara diguna untuk mencipta senarai cermin pacman"
 
 #: src/user_info.py:83 ui/user_info.ui:34
 msgid "Your name:"
@@ -1182,7 +1184,7 @@ msgstr "<span weight='bold' size='large'>Pakej berhakmilik</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
-msgstr "Bina sekatan"
+msgstr "Cipta sekatan"
 
 #: ui/installation_advanced.ui:114
 msgid "Location:"
@@ -1280,7 +1282,7 @@ msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Anda akan boleh membina/memadam sekatan, memilih dimana untuk memasang Manjaro dan memilih titik lekap tambahan</span>"
+msgstr "<span weight=\"light\" size=\"small\">Anda boleh mencipta/memadam sekatan, memilih dimana untuk memasang Manjaro dan memilih titik lekap tambahan</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""

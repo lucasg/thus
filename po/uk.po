@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-05 16:43+0000\n"
+"PO-Revision-Date: 2013-11-12 20:54+0000\n"
 "Last-Translator: zubr139 <zubr139@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/manjaro-thus/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: thus.py:244
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Інсталятор Manjaro"
 
 #: thus.py:312
 msgid "Quiting installer..."
@@ -436,7 +436,7 @@ msgstr ""
 #: src/installation_advanced.py:1166 src/installation_alongside.py:144
 #: src/installation_automatic.py:104
 msgid "Install now!"
-msgstr ""
+msgstr "Встановити зараз!"
 
 #: src/installation_advanced.py:1246
 #, python-format
@@ -510,7 +510,7 @@ msgstr ""
 
 #: src/installation_alongside.py:140
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro поряд з іншою ОС"
 
 #: src/installation_alongside.py:169
 msgid "Detected OS"
@@ -559,7 +559,7 @@ msgstr ""
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
-msgstr ""
+msgstr "Встановлення Manjaro буде зашифроване"
 
 #: src/installation_ask.py:169
 msgid "Manjaro will be installed using a LVM setup"
@@ -610,7 +610,7 @@ msgstr ""
 #: src/installation_process.py:82
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Копіювання '/%s'"
 
 #: src/installation_process.py:164
 #, python-format
@@ -673,7 +673,7 @@ msgstr ""
 
 #: src/installation_process.py:692
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) BIOS успішно встановлений."
 
 #: src/installation_process.py:694
 msgid "ERROR installing GRUB(2) BIOS."
@@ -919,7 +919,7 @@ msgstr "Ім'я вашого комп'ютера:"
 
 #: src/user_info.py:95 ui/user_info.ui:48
 msgid "Pick a username:"
-msgstr ""
+msgstr "Оберіть ім'я користувача:"
 
 #: src/user_info.py:99
 msgid "Username"
@@ -927,7 +927,7 @@ msgstr "Ім'я користувача"
 
 #: src/user_info.py:103 ui/user_info.ui:63
 msgid "Choose a password:"
-msgstr ""
+msgstr "Вибір пароля:"
 
 #: src/user_info.py:107
 msgid "Password"
@@ -959,15 +959,15 @@ msgstr "Ви повинні увести пароль"
 
 #: src/user_info.py:135 ui/user_info.ui:96
 msgid "Log in automatically"
-msgstr ""
+msgstr "Входити автоматично"
 
 #: src/user_info.py:136 ui/user_info.ui:113
 msgid "Require my password to log in"
-msgstr ""
+msgstr "Вимагати пароль для входу"
 
 #: src/user_info.py:137 ui/user_info.ui:134
 msgid "Encrypt my home folder"
-msgstr ""
+msgstr "Зашифрувати мою домашню теку"
 
 #: src/user_info.py:139
 msgid "Who are you?"
@@ -1059,7 +1059,7 @@ msgstr ""
 
 #: src/welcome.py:95 ui/welcome.ui:121
 msgid "Graphical Installer"
-msgstr ""
+msgstr "Встановлення з графічним інтерфейсом"
 
 #: src/welcome.py:119
 msgid "Can't load the CLI installer"
@@ -1072,7 +1072,7 @@ msgstr ""
 
 #: src/pacman/pac.py:289
 msgid "Checking dependencies..."
-msgstr ""
+msgstr "Перевірка залежностей..."
 
 #: src/pacman/pac.py:291
 msgid "Checking file conflicts..."
@@ -1104,7 +1104,7 @@ msgstr ""
 
 #: src/pacman/pac.py:310
 msgid "Configuring..."
-msgstr ""
+msgstr "Налаштування..."
 
 #: src/pacman/pac.py:311
 msgid "Configuring a package"
@@ -1117,7 +1117,7 @@ msgstr ""
 #: src/pacman/pac.py:389
 #, python-format
 msgid "Downloading %s..."
-msgstr ""
+msgstr "Завантаження %s..."
 
 #: src/pacman/pac.py:398
 #, python-format
