@@ -1067,7 +1067,7 @@ class InstallationProcess(multiprocessing.Process):
         self.do_run_in_chroot("alsactl -f /etc/asound.state store")
 
         # Install xf86-video driver
-        if os.path.exists("/opt/lived/pacman-gfx.conf"):
+        if os.path.exists("/opt/livecd/pacman-gfx.conf"):
             self.queue_event('info', _("Set up graphics card..."))
             self.queue_event('pulse') 
             mhwd_script_path = os.path.join(self.settings.get("thus"), "scripts", _mhwd_script)  
