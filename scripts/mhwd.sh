@@ -46,25 +46,25 @@ echo "MHWD-Video: ${VIDEO}"
 
 chroot_mount
 
-mkdir -p ${DESTDIR}/opt/manjaro
-mount -o bind /opt/manjaro ${DESTDIR}/opt/manjaro > /tmp/mount.pkgs.log
-ls ${DESTDIR}/opt/manjaro >> /tmp/mount.pkgs.log
+mkdir -p ${DESTDIR}/opt/livecd
+mount -o bind /opt/livecd ${DESTDIR}/opt/livecd > /tmp/mount.pkgs.log
+ls ${DESTDIR}/opt/livecd >> /tmp/mount.pkgs.log
 
 if  [ "${USENONFREE}" == "yes" ] || [ "${USENONFREE}" == "true" ]; then
 	if  [ "${VIDEO}" == "vesa" ]; then
-		chroot ${DESTDIR} mhwd --install pci video-vesa --pmconfig "/opt/manjaro/pacman-gfx.conf" 
+		chroot ${DESTDIR} mhwd --install pci video-vesa --pmconfig "/opt/livecd/pacman-gfx.conf" 
 	else
-		chroot ${DESTDIR} mhwd --auto pci nonfree 0300 --pmconfig "/opt/manjaro/pacman-gfx.conf" 
+		chroot ${DESTDIR} mhwd --auto pci nonfree 0300 --pmconfig "/opt/livecd/pacman-gfx.conf" 
 	fi
 else
 	if  [ "${VIDEO}" == "vesa" ]; then
-		chroot ${DESTDIR} mhwd --install pci video-vesa --pmconfig "/opt/manjaro/pacman-gfx.conf" 
+		chroot ${DESTDIR} mhwd --install pci video-vesa --pmconfig "/opt/livecd/pacman-gfx.conf" 
 	else
-		chroot ${DESTDIR} mhwd --auto pci free 0300 --pmconfig "/opt/manjaro/pacman-gfx.conf" 
+		chroot ${DESTDIR} mhwd --auto pci free 0300 --pmconfig "/opt/livecd/pacman-gfx.conf" 
 	fi
 fi
 
-umount ${DESTDIR}/opt/manjaro
-rmdir ${DESTDIR}/opt/manjaro
+umount ${DESTDIR}/opt/livecd
+rmdir ${DESTDIR}/opt/livecd
 
 chroot_umount
