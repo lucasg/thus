@@ -111,7 +111,9 @@ class InstallationAdvanced(Gtk.Box):
         combo = self.ui.get_object('partition_types_combo')
         combo.remove_all()
         combo.append_text("msdos (aka MBR)")
-        combo.append_text("GUID Partition Table (GPT)")
+        # TODO: get GPT ready (see also: https://github.com/Antergos/Cnchi/issues/63
+        if self.settings.get("use_staging"):
+            combo.append_text("GUID Partition Table (GPT)")
         
         # Automatically select first entry
         self.select_first_combobox_item(combo)
