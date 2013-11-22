@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-20 11:35+0000\n"
-"Last-Translator: xxmate <nahian2546@gmail.com>\n"
+"POT-Creation-Date: 2013-11-22 18:44+0100\n"
+"PO-Revision-Date: 2013-11-22 18:01+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/manjaro-thus/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,13 +23,13 @@ msgstr ""
 "Language: bn_BD\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:103
+#: thus.py:105
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr ""
 
-#: thus.py:109
+#: thus.py:113
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -39,25 +39,25 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:205
+#: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "প্যাকেজ সমূহ ডাউনলোডের জন্য Aria2 ব্যবহার করা হচ্ছে - পরীক্ষামূলক"
 
-#: thus.py:224
+#: thus.py:229
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "'%s' ফাইলটি প্যাকেজ তালিকা হিসেবে ব্যবহার হচ্ছে"
 
-#: thus.py:244
+#: thus.py:249
 msgid "Manjaro Installer"
 msgstr "Manjaro ইনস্টলার"
 
-#: thus.py:312
+#: thus.py:317
 msgid "Quiting installer..."
 msgstr "ইন্সটলার বন্ধ হচ্ছে..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
-#: src/installation_alongside.py:212
+#: src/installation_alongside.py:214
 msgid "unknown"
 msgstr "অজ্ঞাত"
 
@@ -289,164 +289,164 @@ msgstr "মালিকানাধিন প্যাকেজসমূহ"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "তৃতীয় পক্ষের সফটওয়্যার Flash, MP3 এবং অন্যান্য মিডিয়া ফাইল চালাবার জন্য"
 
-#: src/installation_advanced.py:205 src/installation_advanced.py:495
-#: src/installation_advanced.py:509
+#: src/installation_advanced.py:208 src/installation_advanced.py:498
+#: src/installation_advanced.py:512
 msgid "free space"
 msgstr "ফাঁকা জায়গা"
 
-#: src/installation_advanced.py:273 src/installation_alongside.py:166
+#: src/installation_advanced.py:276 src/installation_alongside.py:168
 msgid "Device"
 msgstr "ডিভাইস"
 
-#: src/installation_advanced.py:276
+#: src/installation_advanced.py:279
 msgid "Type"
 msgstr "প্রকার"
 
-#: src/installation_advanced.py:279
+#: src/installation_advanced.py:282
 msgid "Mount point"
 msgstr "মাউন্ট পয়েন্ট"
 
-#: src/installation_advanced.py:282
+#: src/installation_advanced.py:285
 msgid "Label"
 msgstr "লেবেল"
 
-#: src/installation_advanced.py:288 src/installation_advanced.py:1424
+#: src/installation_advanced.py:291 src/installation_advanced.py:1430
 msgid "Format"
 msgstr "ফরম্যাট"
 
-#: src/installation_advanced.py:291
+#: src/installation_advanced.py:294
 msgid "Size"
 msgstr "আকার"
 
-#: src/installation_advanced.py:294
+#: src/installation_advanced.py:297
 msgid "Used"
 msgstr "ব্যবহার হয়েছে"
 
-#: src/installation_advanced.py:297
+#: src/installation_advanced.py:300
 msgid "Flags"
 msgstr "পতাকা সমূহ"
 
-#: src/installation_advanced.py:303
+#: src/installation_advanced.py:306
 msgid "SSD"
 msgstr "এস এস ডি"
 
-#: src/installation_advanced.py:481
+#: src/installation_advanced.py:484
 msgid "none"
 msgstr "কোনটি নয়"
 
-#: src/installation_advanced.py:530 src/installation_advanced.py:932
-#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
-#: src/installation_advanced.py:1547
+#: src/installation_advanced.py:533 src/installation_advanced.py:935
+#: src/installation_advanced.py:1309 src/installation_advanced.py:1385
+#: src/installation_advanced.py:1553
 msgid "extended"
 msgstr "বর্ধিত"
 
-#: src/installation_advanced.py:661 src/installation_advanced.py:902
+#: src/installation_advanced.py:664 src/installation_advanced.py:905
 msgid "Can't use same mount point twice..."
 msgstr "একই মাউন্ট পয়েন্ট দুইবার ব্যবহার করা যাবে না..."
 
-#: src/installation_advanced.py:663
+#: src/installation_advanced.py:666
 msgid "Root partition must be formatted..."
 msgstr "Root পার্টিশন অবশ্যই ফরম্যাট করা হতে হবে..."
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:926
 msgid "Creating primary partition"
 msgstr "প্রাইমারী পার্টিশন তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:934
+#: src/installation_advanced.py:937
 msgid "Creating extended partition"
 msgstr "বর্ধিত পার্টিশন তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:940
+#: src/installation_advanced.py:943
 msgid "Creating logical partition"
 msgstr "লজিকাল পার্টিশন তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:1069
+#: src/installation_advanced.py:1072
 msgid "Advanced installation mode"
 msgstr "ইনস্টলেশন সংক্রান্ত উন্নত মোড"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "এই ডিভাইসটি boot loader এর জন্য ব্যবহার করুনঃ"
 
-#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1086 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "নতুন পার্টিশন টেবিল"
 
-#: src/installation_advanced.py:1091
+#: src/installation_advanced.py:1094
 msgid "Change..."
 msgstr "পরিবর্তন..."
 
-#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1099 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "আয়তনঃ"
 
-#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1103 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "প্রকারঃ"
 
-#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1107 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "প্রাথমিক"
 
-#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1111 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "লজিক্যাল"
 
-#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "বর্ধিত"
 
-#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "এই স্থানের শুরু থেকে"
 
-#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "এই স্থানের শেষের থেকে"
 
-#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
+#: src/installation_advanced.py:1127 src/installation_advanced.py:1144
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "যা হিসেবে ব্যাবহার করতে চানঃ"
 
-#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
+#: src/installation_advanced.py:1131 src/installation_advanced.py:1148
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "মাউন্ট পয়েন্ট"
 
-#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
+#: src/installation_advanced.py:1135 src/installation_advanced.py:1152
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "লেবেল (ঐচ্ছিক):"
 
-#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1139 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "এনক্রিপশন অপশনসমূহ..."
 
-#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1156 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "ফরম্যাট"
 
-#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1161 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "পার্টিশন টেবিলের প্রকারঃ"
 
-#: src/installation_advanced.py:1163
+#: src/installation_advanced.py:1166
 msgid "Create Partition Table"
 msgstr "পার্টিশন টেবিল তৈরি করুন"
 
-#: src/installation_advanced.py:1166 src/installation_alongside.py:144
-#: src/installation_automatic.py:104
+#: src/installation_advanced.py:1169 src/installation_alongside.py:146
+#: src/installation_automatic.py:105
 msgid "Install now!"
 msgstr "এখনি ইন্সটল করুন !"
 
-#: src/installation_advanced.py:1246
+#: src/installation_advanced.py:1249
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "%s এই প্রকার এর পার্টিশন %s ডিস্ক এর জন্য তৈরি হচ্ছে"
 
-#: src/installation_advanced.py:1342
+#: src/installation_advanced.py:1345
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -454,7 +454,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s সোয়াপ হিসেবে মাউন্টেড হয়েছে।\nসামনে এগিয়ে যাওয়ার জন্য এটাকে অবশ্যই আনমাউন্টেড হতে হবে\nআনমাউন্টেড করার জন্য Yes, বা ফিরে যাওয়ার জন্য No ক্লিক করুন\n"
 
-#: src/installation_advanced.py:1344
+#: src/installation_advanced.py:1347
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -462,72 +462,81 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s মাউন্ট হয়েছে '%s' তে।\nসামনে এগিয়ে যাবার জন্য এটাকে অবশ্যই আন-মাউন্ট করতে হবে।\nআন-মাউন্ট করবার জন্য Yes বা পিছনে যাবার জন্য No তে ক্লিক করুন\n"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1367
+#, python-format
+msgid "%s shows as mounted (busy) but it has no mount point"
+msgstr ""
+
+#: src/installation_advanced.py:1423
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s পার্টিশনটি মুছে যাবে"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Partition"
 msgstr "পার্টিশন"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "New"
 msgstr "নতুন"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Relabel"
 msgstr "পুনরায় লেবেল"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Mount"
 msgstr "মাউন্ট"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1451
 msgid "These disks will have partition actions:"
 msgstr "এই ডিস্কগুলোতে পার্টিশন ক্রিয়া থাকবেঃ"
 
-#: src/installation_advanced.py:1470
+#: src/installation_advanced.py:1476
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s এর মধ্যে পরিবর্তন গুলো সংরক্ষণ হয়েছে"
 
-#: src/installation_advanced.py:1484
+#: src/installation_advanced.py:1490
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "%s ফাইলসিস্টেম তৈরি হচ্ছে %s এর ভিতরে %s লেবেল হয়ে"
 
-#: src/installation_advanced.py:1566
+#: src/installation_advanced.py:1572
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro %s প্রকারের bootloader কে %s এর ভিতরে ইন্সটল করবে"
 
-#: src/installation_alongside.py:109
+#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+msgid "Testing mode. Thus won't apply any changes to your system!"
+msgstr ""
+
+#: src/installation_alongside.py:111
 #, python-format
 msgid "Can't load %s css"
 msgstr "%s css লোড হচ্ছে না "
 
-#: src/installation_alongside.py:136
+#: src/installation_alongside.py:138
 msgid "Choose which OS you want to install Manjaro next to"
 msgstr ""
 
-#: src/installation_alongside.py:140
+#: src/installation_alongside.py:142
 msgid "Manjaro alongside another OS"
 msgstr "Manjaro অন্য OS এর পাশাপাশি"
 
-#: src/installation_alongside.py:169
+#: src/installation_alongside.py:171
 msgid "Detected OS"
 msgstr "অপারেটিং সিস্টেম সনাক্ত হয়েছে"
 
-#: src/installation_alongside.py:172
+#: src/installation_alongside.py:174
 msgid "Filesystem"
 msgstr "ফাইল সিস্টেম"
 
-#: src/installation_alongside.py:216
+#: src/installation_alongside.py:218
 msgid "In alongside install: can't create list of partitions"
 msgstr ""
 
-#: src/installation_alongside.py:256
+#: src/installation_alongside.py:258
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr ""
 
@@ -568,44 +577,44 @@ msgstr "Manjaro ইনস্টলেশন এনক্রিপ্ট কর�
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "manjaro LVM এর সাহায্যে ইন্সটল হবে"
 
-#: src/installation_automatic.py:79
+#: src/installation_automatic.py:80
 msgid "Automatic installation mode"
 msgstr "স্বয়ংক্রিয় ইন্সটলেশন প্রক্রিয়া"
 
-#: src/installation_automatic.py:83 ui/installation_automatic.ui:96
+#: src/installation_automatic.py:84 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "ড্রাইভ সিলেক্ট করুনঃ"
 
-#: src/installation_automatic.py:87
+#: src/installation_automatic.py:88
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "সতর্কবাণী! এই ইনস্টালশন মোড আপনার ড্রাইভের সবকিছু ওভাররাইট করবে!"
 
-#: src/installation_automatic.py:92 ui/installation_automatic.ui:59
+#: src/installation_automatic.py:93 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "আপনি যে ড্রাইভে Manjaro ইন্সটল করতে চান তা নির্বাচন করুন \nএবং প্রক্রিয়া শুরু করতে নিচের বাটনে ক্লিক করুন।"
 
-#: src/installation_automatic.py:97 ui/installation_automatic.ui:176
+#: src/installation_automatic.py:98 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
 msgstr "LUKS ডিভাইস এর জন্য পাসওয়ার্ড বাছাই করুনঃ"
 
-#: src/installation_automatic.py:101 ui/installation_automatic.ui:161
+#: src/installation_automatic.py:102 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
 msgstr "LUKS ডিভাইস এর জন্য পাসওয়ার্ড নিশ্চিত করুনঃ"
 
-#: src/installation_automatic.py:155
+#: src/installation_automatic.py:156
 #, python-format
 msgid "Automatic install on %s"
 msgstr "স্বয়ংক্রিয়ভাবে ইন্সটল হও %s এ"
 
-#: src/installation_automatic.py:189
+#: src/installation_automatic.py:190
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus ভবিষ্যতে %s কে ইন্সটলেশন ডিভাইস হিসাবে ব্যবহার করবে"
 
-#: src/installation_automatic.py:198
+#: src/installation_automatic.py:199
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus %s ধরনের Bootloader-কে %s-এ ইন্সটল করবে।"
@@ -615,166 +624,166 @@ msgstr "Thus %s ধরনের Bootloader-কে %s-এ ইন্সটল ক�
 msgid "Copying '/%s'"
 msgstr "'/%s' কপি হচ্ছে "
 
-#: src/installation_process.py:164
+#: src/installation_process.py:173
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "'%s' পদ্ধতিতে ইন্সটল হচ্ছে"
 
-#: src/installation_process.py:267
+#: src/installation_process.py:276
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:305 src/installation_process.py:327
+#: src/installation_process.py:314 src/installation_process.py:336
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "%s কে %s ডিরেক্টরিতে মাউন্ট করা হচ্ছে"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:320
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "%s মাউন্ট হচ্ছে %s/boot ডিরেক্টরিতে"
 
-#: src/installation_process.py:315
+#: src/installation_process.py:324
 msgid "Couldn't mount root and boot partitions"
 msgstr "root এবং boot পার্টিশন মাউন্ট হচ্ছে না"
 
-#: src/installation_process.py:332
+#: src/installation_process.py:341
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "%s কে %s এর ভিতরে মাউন্ট করা যাচ্ছে না"
 
-#: src/installation_process.py:353
+#: src/installation_process.py:362
 msgid "Can't create necessary directories on destination system"
 msgstr "গন্তব্য সিস্টেমে প্রয়োজনীয় ডিরেক্টরি তৈরি করা যাচ্ছে না"
 
-#: src/installation_process.py:450
+#: src/installation_process.py:459
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "%s তে মেটা-তথ্য পুনরুদ্ধার করা হচ্ছে"
 
-#: src/installation_process.py:463
+#: src/installation_process.py:472
 msgid "Special dirs already mounted."
 msgstr "বিশেষ ডিরেক্টরই সমূহ ইতিমদ্ধেই মাউন্ট করা।"
 
-#: src/installation_process.py:489
+#: src/installation_process.py:498
 msgid "Special dirs already not mounted."
 msgstr "বিশেষ ডিরেক্টরই সমূহ ইতিমদ্ধেই মাউন্ট করা নয়।"
 
-#: src/installation_process.py:499
+#: src/installation_process.py:508
 #, python-format
 msgid "Unable to umount %s"
 msgstr "%s আন-মাউন্ট করতে অক্ষম"
 
-#: src/installation_process.py:550
+#: src/installation_process.py:559
 msgid "Create fstab."
 msgstr "fstab তৈরি করুন।"
 
-#: src/installation_process.py:662
+#: src/installation_process.py:671
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "%s এর ভিতরে GRUB(2) BIOS boot loader ইন্সটল করা হচ্ছে"
 
-#: src/installation_process.py:692
+#: src/installation_process.py:701
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS সফলভাবে ইন্সটল হয়েছে।"
 
-#: src/installation_process.py:694
+#: src/installation_process.py:703
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS ইন্সটলের সময় ত্রুটি হচ্ছে।"
 
-#: src/installation_process.py:705
+#: src/installation_process.py:714
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI %s boot loader ইন্সটল হচ্ছে %s ভিতরে"
 
-#: src/installation_process.py:733
+#: src/installation_process.py:742
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr ""
 
-#: src/installation_process.py:761
+#: src/installation_process.py:770
 msgid "ERROR installing GRUB(2) locale."
 msgstr ""
 
-#: src/installation_process.py:775
+#: src/installation_process.py:784
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "ব্যবহারকারী % s এর জন্য পাসওয়ার্ড হ্যাশ তৈরি করার সময় ত্রুটি হচ্ছে"
 
-#: src/installation_process.py:781
+#: src/installation_process.py:790
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "ব্যবহারকারী % s এর পাসওয়ার্ড পাসওয়ার্ড পরিবর্তনের সময় ত্রুটি পাওয়া হচ্ছে"
 
-#: src/installation_process.py:906
+#: src/installation_process.py:915
 msgid "Configuring your new system"
 msgstr "নতুন সিস্টেম কনফিগার করা হচ্ছে"
 
-#: src/installation_process.py:983
+#: src/installation_process.py:991
 msgid "Generating locales..."
 msgstr ""
 
-#: src/installation_process.py:1003
+#: src/installation_process.py:1011
 msgid "Adjusting hardware clock..."
 msgstr "হার্ডওয়্যার ঘড়ি সামঞ্জস্য করা হচ্ছে..."
 
-#: src/installation_process.py:1009
+#: src/installation_process.py:1017
 msgid "Configuring hardware..."
 msgstr "হার্ডওয়্যার কনফিগার হচ্ছে..."
 
-#: src/installation_process.py:1072
+#: src/installation_process.py:1080
 msgid "Set up graphics card..."
 msgstr "সেট আপ গ্রাফিক্স কার্ড..."
 
-#: src/installation_process.py:1079
+#: src/installation_process.py:1087
 msgid "Can't execute the MHWD script"
 msgstr "MHWD স্ক্রিপ্টটি চালানো যাচ্ছে না"
 
-#: src/installation_process.py:1085
+#: src/installation_process.py:1093
 msgid "Configure display manager..."
 msgstr "কনফিগার ডিসপ্লে ম্যানেজার..."
 
-#: src/installation_process.py:1184
+#: src/installation_process.py:1192
 msgid "Configure System..."
 msgstr "কনফিগার সিস্টেম..."
 
-#: src/installation_process.py:1212
+#: src/installation_process.py:1220
 msgid "Removing live configuration (packages)"
 msgstr "লাইভ কনফিগারেশন (packages) মুছে ফেলা হচ্ছে"
 
-#: src/installation_process.py:1228
+#: src/installation_process.py:1236
 msgid "Configuring package manager"
 msgstr "প্যাকেজ ম্যানেজার কনফিগার করা হচ্ছে"
 
-#: src/installation_process.py:1243
+#: src/installation_process.py:1251
 msgid "Finished configuring package manager."
 msgstr "প্যাকেজ ম্যানেজার কনফিগার করা শেষ"
 
-#: src/installation_process.py:1267
+#: src/installation_process.py:1275
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: %s-এর জন্য স্বয়ংক্রিয় লগইন ব্যবস্থা সক্রিয় করুন।    "
 
-#: src/installation_process.py:1346
+#: src/installation_process.py:1354
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpio চলছে..."
 
-#: src/installation_process.py:1349
+#: src/installation_process.py:1357
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpio চলছে... সম্পন্ন হল"
 
-#: src/keymap.py:62
+#: src/keymap.py:64
 msgid "Select your keyboard layout"
 msgstr "আপনার কি বোর্ড লে-আউট পছন্দ করুন"
 
-#: src/keymap.py:70
+#: src/keymap.py:72
 msgid "Layouts"
 msgstr "লে-আউট সমূহ"
 
-#: src/keymap.py:76
+#: src/keymap.py:78
 msgid "Variants"
 msgstr "বিকল্পসমূহ"
 
-#: src/keymap.py:98
+#: src/keymap.py:100
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "কিবোর্ড লে-আউট %s"
@@ -874,6 +883,10 @@ msgstr "Manjaro ইনস্টাল হচ্ছে"
 #: src/slides.py:103
 msgid "Please wait..."
 msgstr "অপেক্ষা করুন..."
+
+#: src/slides.py:226
+msgid "Do you want to retry?"
+msgstr ""
 
 #: src/timezone.py:111
 msgid "Where are you?"

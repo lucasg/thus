@@ -5,8 +5,10 @@
 # Translators:
 # Ayceman <alexandru.ianu@gmail.com>, 2013
 # Arthur Titeica <arthur@psw.ro>, 2013
+# Ayceman <alexandru.ianu@gmail.com>, 2013
 # cantabile <cantabile.desu@gmail.com>, 2011
 # LinuxVideoRO, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # Mihai Coman <mihai@m1x.ro>, 2011,2013
 # manjarolinux <philm@manjaro.org>, 2013
 # roentgen <arthur.titeica@gmail.com>, 2013
@@ -14,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-20 11:35+0000\n"
-"Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
+"POT-Creation-Date: 2013-11-22 18:44+0100\n"
+"PO-Revision-Date: 2013-11-22 18:01+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,13 +26,13 @@ msgstr ""
 "Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: thus.py:103
+#: thus.py:105
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "Acest program de instalare trebuie rulat cu drepturi administrative și nu poate continua fără acestea."
 
-#: thus.py:109
+#: thus.py:113
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -40,25 +42,25 @@ msgid ""
 "and run this installer again."
 msgstr "Nu puteți rula două instanțe ale acestui program de instalare.\n\nDacă sunteți siguri că nu rulează deja un alt program\nputeți să ștergeți manual fișierul %s\nși să rulați instalatorul din nou."
 
-#: thus.py:205
+#: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Se folosește Aria2 pentru descărcarea pachetelor - EXPERIMENTAL"
 
-#: thus.py:224
+#: thus.py:229
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Se folosește fișierul '%s' ca listă de pachete"
 
-#: thus.py:244
+#: thus.py:249
 msgid "Manjaro Installer"
 msgstr "Instalator Manjaro"
 
-#: thus.py:312
+#: thus.py:317
 msgid "Quiting installer..."
 msgstr "Se iese din instalator..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
-#: src/installation_alongside.py:212
+#: src/installation_alongside.py:214
 msgid "unknown"
 msgstr "necunoscut"
 
@@ -290,164 +292,164 @@ msgstr "Pachete proprietare"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "Programe terțe pentru a putea rula Flash, MP3 și alte forme de media"
 
-#: src/installation_advanced.py:205 src/installation_advanced.py:495
-#: src/installation_advanced.py:509
+#: src/installation_advanced.py:208 src/installation_advanced.py:498
+#: src/installation_advanced.py:512
 msgid "free space"
 msgstr "spațiu liber"
 
-#: src/installation_advanced.py:273 src/installation_alongside.py:166
+#: src/installation_advanced.py:276 src/installation_alongside.py:168
 msgid "Device"
 msgstr "Dispozitiv"
 
-#: src/installation_advanced.py:276
+#: src/installation_advanced.py:279
 msgid "Type"
 msgstr "Tip"
 
-#: src/installation_advanced.py:279
+#: src/installation_advanced.py:282
 msgid "Mount point"
 msgstr "Punct de montare"
 
-#: src/installation_advanced.py:282
+#: src/installation_advanced.py:285
 msgid "Label"
 msgstr "Etichetă"
 
-#: src/installation_advanced.py:288 src/installation_advanced.py:1424
+#: src/installation_advanced.py:291 src/installation_advanced.py:1430
 msgid "Format"
 msgstr "Format"
 
-#: src/installation_advanced.py:291
+#: src/installation_advanced.py:294
 msgid "Size"
 msgstr "Mărime"
 
-#: src/installation_advanced.py:294
+#: src/installation_advanced.py:297
 msgid "Used"
 msgstr "Folosită"
 
-#: src/installation_advanced.py:297
+#: src/installation_advanced.py:300
 msgid "Flags"
 msgstr "Steaguri"
 
-#: src/installation_advanced.py:303
+#: src/installation_advanced.py:306
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:481
+#: src/installation_advanced.py:484
 msgid "none"
 msgstr "niciuna"
 
-#: src/installation_advanced.py:530 src/installation_advanced.py:932
-#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
-#: src/installation_advanced.py:1547
+#: src/installation_advanced.py:533 src/installation_advanced.py:935
+#: src/installation_advanced.py:1309 src/installation_advanced.py:1385
+#: src/installation_advanced.py:1553
 msgid "extended"
 msgstr "extinsă"
 
-#: src/installation_advanced.py:661 src/installation_advanced.py:902
+#: src/installation_advanced.py:664 src/installation_advanced.py:905
 msgid "Can't use same mount point twice..."
 msgstr "Nu se poate utiliza același punct de montare de două ori..."
 
-#: src/installation_advanced.py:663
+#: src/installation_advanced.py:666
 msgid "Root partition must be formatted..."
 msgstr "Partiția rădăcină trebuie să fie formatată..."
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:926
 msgid "Creating primary partition"
 msgstr "Se creează partiția primară"
 
-#: src/installation_advanced.py:934
+#: src/installation_advanced.py:937
 msgid "Creating extended partition"
 msgstr "Se creează partiția extinsă"
 
-#: src/installation_advanced.py:940
+#: src/installation_advanced.py:943
 msgid "Creating logical partition"
 msgstr "Se creează partiția logică"
 
-#: src/installation_advanced.py:1069
+#: src/installation_advanced.py:1072
 msgid "Advanced installation mode"
 msgstr "Mod de instalare avansat"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Utilizați acest dispozitiv pentru a instala încărcătorul de sistem:"
 
-#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1086 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Tabela nouă de partiție"
 
-#: src/installation_advanced.py:1091
+#: src/installation_advanced.py:1094
 msgid "Change..."
 msgstr "Schimbă..."
 
-#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1099 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Mărime:"
 
-#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1103 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Tip:"
 
-#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1107 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Primară"
 
-#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1111 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logică"
 
-#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Extinsă"
 
-#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Începutul acestui spațiu"
 
-#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "Sfârșitul acestui spațiu"
 
-#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
+#: src/installation_advanced.py:1127 src/installation_advanced.py:1144
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Folosește ca:"
 
-#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
+#: src/installation_advanced.py:1131 src/installation_advanced.py:1148
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Punct de montare:"
 
-#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
+#: src/installation_advanced.py:1135 src/installation_advanced.py:1152
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Etichetă (opțional):"
 
-#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1139 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Opțiuni de criptare..."
 
-#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1156 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Formatează:"
 
-#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1161 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Tipul tabelei de partiție:"
 
-#: src/installation_advanced.py:1163
+#: src/installation_advanced.py:1166
 msgid "Create Partition Table"
 msgstr "Creează tabela de partiție"
 
-#: src/installation_advanced.py:1166 src/installation_alongside.py:144
-#: src/installation_automatic.py:104
+#: src/installation_advanced.py:1169 src/installation_alongside.py:146
+#: src/installation_automatic.py:105
 msgid "Install now!"
 msgstr "Instalează acum!"
 
-#: src/installation_advanced.py:1246
+#: src/installation_advanced.py:1249
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Se creează o nouă tabelă de partiție de tipul %s pentru discul %s"
 
-#: src/installation_advanced.py:1342
+#: src/installation_advanced.py:1345
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -455,7 +457,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s este montată ca swap.\nPentru a continua trebuie să fie demontată.\nClic Da pentru demontare sau Nu pentru a vă întoarce.\n"
 
-#: src/installation_advanced.py:1344
+#: src/installation_advanced.py:1347
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -463,72 +465,81 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s este montată în '%s'.\nPentru a continua trebuie sa fie demontată.\nClic Da pentru demontare, sau Nu pentru a vă întoarce.\n"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1367
+#, python-format
+msgid "%s shows as mounted (busy) but it has no mount point"
+msgstr ""
+
+#: src/installation_advanced.py:1423
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Partiția %s va fi ștearsă"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Partition"
 msgstr "Partiție"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "New"
 msgstr "Nouă"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Relabel"
 msgstr "Reetichetează"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Mount"
 msgstr "Montează"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1451
 msgid "These disks will have partition actions:"
 msgstr "Aceste discuri vor suferi acțiuni de partiționare:"
 
-#: src/installation_advanced.py:1470
+#: src/installation_advanced.py:1476
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Se salvează schimbările efectuate în %s"
 
-#: src/installation_advanced.py:1484
+#: src/installation_advanced.py:1490
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Se creează sistemul de fișiere %s în %s cu eticheta %s"
 
-#: src/installation_advanced.py:1566
+#: src/installation_advanced.py:1572
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro va instala încărcătorul de sistem de tipul %s în %s"
 
-#: src/installation_alongside.py:109
+#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+msgid "Testing mode. Thus won't apply any changes to your system!"
+msgstr ""
+
+#: src/installation_alongside.py:111
 #, python-format
 msgid "Can't load %s css"
 msgstr "Nu se poate încărca css %s"
 
-#: src/installation_alongside.py:136
+#: src/installation_alongside.py:138
 msgid "Choose which OS you want to install Manjaro next to"
 msgstr "Alegeți lângă ce SO doriți să instalați Manjaro"
 
-#: src/installation_alongside.py:140
+#: src/installation_alongside.py:142
 msgid "Manjaro alongside another OS"
 msgstr "Manjaro lângă un alt SO"
 
-#: src/installation_alongside.py:169
+#: src/installation_alongside.py:171
 msgid "Detected OS"
 msgstr "SO detectat"
 
-#: src/installation_alongside.py:172
+#: src/installation_alongside.py:174
 msgid "Filesystem"
 msgstr "Sistem de fișiere"
 
-#: src/installation_alongside.py:216
+#: src/installation_alongside.py:218
 msgid "In alongside install: can't create list of partitions"
 msgstr "În instalarea alăturată: nu se poate crea lista de partiții"
 
-#: src/installation_alongside.py:256
+#: src/installation_alongside.py:258
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Nu se poate micșora partiția (poate este aproape plină)"
 
@@ -569,44 +580,44 @@ msgstr "Instalarea Manjaro va fi criptată"
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro va fi instalat folosind o configurație LVM"
 
-#: src/installation_automatic.py:79
+#: src/installation_automatic.py:80
 msgid "Automatic installation mode"
 msgstr "Mod de instalare automat"
 
-#: src/installation_automatic.py:83 ui/installation_automatic.ui:96
+#: src/installation_automatic.py:84 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Selectați discul:"
 
-#: src/installation_automatic.py:87
+#: src/installation_automatic.py:88
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "ATENȚIE! Acest mod de instalare va suprascrie toată unitatea!"
 
-#: src/installation_automatic.py:92 ui/installation_automatic.ui:59
+#: src/installation_automatic.py:93 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Alegeți unitatea pe care doriți să instalați Manjaro\nși apăsați butonul de mai jos pentru a începe"
 
-#: src/installation_automatic.py:97 ui/installation_automatic.ui:176
+#: src/installation_automatic.py:98 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
 msgstr "Alegeți o parolă pentru dispozitivul LUKS:"
 
-#: src/installation_automatic.py:101 ui/installation_automatic.ui:161
+#: src/installation_automatic.py:102 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
 msgstr "Confirmați parola pentru dispozitivul LUKS:"
 
-#: src/installation_automatic.py:155
+#: src/installation_automatic.py:156
 #, python-format
 msgid "Automatic install on %s"
 msgstr "Instalare automată pe %s"
 
-#: src/installation_automatic.py:189
+#: src/installation_automatic.py:190
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus va folosi %s ca dispozitiv de instalare"
 
-#: src/installation_automatic.py:198
+#: src/installation_automatic.py:199
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus va instala încărcătorul de sistem de tipul %s în %s"
@@ -616,166 +627,166 @@ msgstr "Thus va instala încărcătorul de sistem de tipul %s în %s"
 msgid "Copying '/%s'"
 msgstr "Se copiază '%s'"
 
-#: src/installation_process.py:164
+#: src/installation_process.py:173
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Se instalează folosind metoda '%s'"
 
-#: src/installation_process.py:267
+#: src/installation_process.py:276
 msgid "Error creating partitions and their filesystems"
 msgstr "Eroare la crearea partițiilor și a sistemelor lor de fișiere"
 
-#: src/installation_process.py:305 src/installation_process.py:327
+#: src/installation_process.py:314 src/installation_process.py:336
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Se montează partiția %s în dosarul %s"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:320
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Se montează partiția %s în dosarul %s/boot"
 
-#: src/installation_process.py:315
+#: src/installation_process.py:324
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nu pot fi montate partițiile rădăcină și de inițializare"
 
-#: src/installation_process.py:332
+#: src/installation_process.py:341
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Nu se poate monta %s în %s"
 
-#: src/installation_process.py:353
+#: src/installation_process.py:362
 msgid "Can't create necessary directories on destination system"
 msgstr "Nu se pot crea dosarele necesare pe sistemul destinație"
 
-#: src/installation_process.py:450
+#: src/installation_process.py:459
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Se restaurează meta-informația pe %s"
 
-#: src/installation_process.py:463
+#: src/installation_process.py:472
 msgid "Special dirs already mounted."
 msgstr "Dosarele speciale sunt deja montate."
 
-#: src/installation_process.py:489
+#: src/installation_process.py:498
 msgid "Special dirs already not mounted."
 msgstr "Dosarele speciale nu sunt montate."
 
-#: src/installation_process.py:499
+#: src/installation_process.py:508
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Nu se poate demonta %s"
 
-#: src/installation_process.py:550
+#: src/installation_process.py:559
 msgid "Create fstab."
 msgstr "Creează fstab."
 
-#: src/installation_process.py:662
+#: src/installation_process.py:671
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Se instalează încărcătorul de sistem GRUB(2) BIOS în %s"
 
-#: src/installation_process.py:692
+#: src/installation_process.py:701
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS a fost instalat cu succes."
 
-#: src/installation_process.py:694
+#: src/installation_process.py:703
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "EROARE la instalarea GRUB(2) BIOS."
 
-#: src/installation_process.py:705
+#: src/installation_process.py:714
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Se instalează încărcătorul de sistem GRUB(2) UEFI %s în %s"
 
-#: src/installation_process.py:733
+#: src/installation_process.py:742
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "EROARE la instalarea configurației GRUB(2)."
 
-#: src/installation_process.py:761
+#: src/installation_process.py:770
 msgid "ERROR installing GRUB(2) locale."
 msgstr "EROARE la instalarea localizării GRUB(2)."
 
-#: src/installation_process.py:775
+#: src/installation_process.py:784
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Eroare la crearea valorii de dispersie pentru parola utilizatorului %s"
 
-#: src/installation_process.py:781
+#: src/installation_process.py:790
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Eroare la schimbarea parolei utilizatoruli %s"
 
-#: src/installation_process.py:906
+#: src/installation_process.py:915
 msgid "Configuring your new system"
 msgstr "Se configurează noul tău sistem"
 
-#: src/installation_process.py:983
+#: src/installation_process.py:991
 msgid "Generating locales..."
 msgstr "Se generează localizarea..."
 
-#: src/installation_process.py:1003
+#: src/installation_process.py:1011
 msgid "Adjusting hardware clock..."
 msgstr "Se ajustează ceasul calculatorului..."
 
-#: src/installation_process.py:1009
+#: src/installation_process.py:1017
 msgid "Configuring hardware..."
 msgstr "Se configurează componentele fizice..."
 
-#: src/installation_process.py:1072
+#: src/installation_process.py:1080
 msgid "Set up graphics card..."
 msgstr "Se configurează placa grafică..."
 
-#: src/installation_process.py:1079
+#: src/installation_process.py:1087
 msgid "Can't execute the MHWD script"
 msgstr "Nu se poate executa scriptul MHWD"
 
-#: src/installation_process.py:1085
+#: src/installation_process.py:1093
 msgid "Configure display manager..."
 msgstr "Se configurează administratorul de ecran..."
 
-#: src/installation_process.py:1184
+#: src/installation_process.py:1192
 msgid "Configure System..."
 msgstr "Se configurează sistemul..."
 
-#: src/installation_process.py:1212
+#: src/installation_process.py:1220
 msgid "Removing live configuration (packages)"
 msgstr "Se elimină configurația live (pachete)"
 
-#: src/installation_process.py:1228
+#: src/installation_process.py:1236
 msgid "Configuring package manager"
 msgstr "Se configurează gestionarul de pachete"
 
-#: src/installation_process.py:1243
+#: src/installation_process.py:1251
 msgid "Finished configuring package manager."
 msgstr "S-a terminat configurarea gestionarului de pachete."
 
-#: src/installation_process.py:1267
+#: src/installation_process.py:1275
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Activează logarea automată pentru utilizatorul %s."
 
-#: src/installation_process.py:1346
+#: src/installation_process.py:1354
 msgid "Running mkinitcpio..."
 msgstr "Se rulează mkinitcpio..."
 
-#: src/installation_process.py:1349
+#: src/installation_process.py:1357
 msgid "Running mkinitcpio... done"
 msgstr "Se rulează mkinitcpio... terminat"
 
-#: src/keymap.py:62
+#: src/keymap.py:64
 msgid "Select your keyboard layout"
 msgstr "Selectați-vă aranjamentul tastaturii"
 
-#: src/keymap.py:70
+#: src/keymap.py:72
 msgid "Layouts"
 msgstr "Aranjamente"
 
-#: src/keymap.py:76
+#: src/keymap.py:78
 msgid "Variants"
 msgstr "Variante"
 
-#: src/keymap.py:98
+#: src/keymap.py:100
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "aranjamentul_tastaturii este %s"
@@ -875,6 +886,10 @@ msgstr "Se instalează Manjaro..."
 #: src/slides.py:103
 msgid "Please wait..."
 msgstr "Vă rugăm așteptați..."
+
+#: src/slides.py:226
+msgid "Do you want to retry?"
+msgstr ""
 
 #: src/timezone.py:111
 msgid "Where are you?"

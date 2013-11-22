@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-20 11:35+0000\n"
-"Last-Translator: Puretech <terjemah.puretech@gmail.com>\n"
+"POT-Creation-Date: 2013-11-22 18:44+0100\n"
+"PO-Revision-Date: 2013-11-22 18:10+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/manjaro-thus/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: ms\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: thus.py:103
+#: thus.py:105
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "Pemasang ini mesti dijalankan dengan keizinan pentadbir, dan tidak boleh diteruskan tanpanya."
 
-#: thus.py:109
+#: thus.py:113
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -37,25 +37,25 @@ msgid ""
 "and run this installer again."
 msgstr "Anda tidak boleh menjalankan  2 pemasangan sekaligus. /n\n/n\nJika anda pasti tiada pemasangan lain sedang berjalan /n\nanda boleh hapuskan fail %s secara manual /n\ndan jalankan pemasangan ini sekali lagi."
 
-#: thus.py:205
+#: thus.py:209
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Menggunakan Aria2 untuk memuat turun pakej - EKSPERIMENTAL"
 
-#: thus.py:224
+#: thus.py:229
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Menggunakan fail '%s' sebagai senarai pakej"
 
-#: thus.py:244
+#: thus.py:249
 msgid "Manjaro Installer"
 msgstr "Pemasang Manjaro"
 
-#: thus.py:312
+#: thus.py:317
 msgid "Quiting installer..."
 msgstr "Menutup pemasang..."
 
 #: src/bootinfo.py:35 src/bootinfo.py:55 src/bootinfo.py:60 src/bootinfo.py:81
-#: src/installation_alongside.py:212
+#: src/installation_alongside.py:214
 msgid "unknown"
 msgstr "tidak diketahui"
 
@@ -287,164 +287,164 @@ msgstr "Pakej berhakmilik"
 msgid "Third-party software to play Flash, MP3 files, and other media"
 msgstr "Perisian pihak ketiga untuk memainkan Flash, fail MP3 dan media lain"
 
-#: src/installation_advanced.py:205 src/installation_advanced.py:495
-#: src/installation_advanced.py:509
+#: src/installation_advanced.py:208 src/installation_advanced.py:498
+#: src/installation_advanced.py:512
 msgid "free space"
 msgstr "ruang kosong"
 
-#: src/installation_advanced.py:273 src/installation_alongside.py:166
+#: src/installation_advanced.py:276 src/installation_alongside.py:168
 msgid "Device"
 msgstr "Peranti"
 
-#: src/installation_advanced.py:276
+#: src/installation_advanced.py:279
 msgid "Type"
 msgstr "Jenis"
 
-#: src/installation_advanced.py:279
+#: src/installation_advanced.py:282
 msgid "Mount point"
 msgstr "Titik lekap"
 
-#: src/installation_advanced.py:282
+#: src/installation_advanced.py:285
 msgid "Label"
 msgstr "Label"
 
-#: src/installation_advanced.py:288 src/installation_advanced.py:1424
+#: src/installation_advanced.py:291 src/installation_advanced.py:1430
 msgid "Format"
 msgstr "Format"
 
-#: src/installation_advanced.py:291
+#: src/installation_advanced.py:294
 msgid "Size"
 msgstr "Saiz"
 
-#: src/installation_advanced.py:294
+#: src/installation_advanced.py:297
 msgid "Used"
 msgstr "Digunakan"
 
-#: src/installation_advanced.py:297
+#: src/installation_advanced.py:300
 msgid "Flags"
 msgstr "Penanda "
 
-#: src/installation_advanced.py:303
+#: src/installation_advanced.py:306
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation_advanced.py:481
+#: src/installation_advanced.py:484
 msgid "none"
 msgstr "tiada"
 
-#: src/installation_advanced.py:530 src/installation_advanced.py:932
-#: src/installation_advanced.py:1306 src/installation_advanced.py:1379
-#: src/installation_advanced.py:1547
+#: src/installation_advanced.py:533 src/installation_advanced.py:935
+#: src/installation_advanced.py:1309 src/installation_advanced.py:1385
+#: src/installation_advanced.py:1553
 msgid "extended"
 msgstr "lanjutan"
 
-#: src/installation_advanced.py:661 src/installation_advanced.py:902
+#: src/installation_advanced.py:664 src/installation_advanced.py:905
 msgid "Can't use same mount point twice..."
 msgstr "Tidak boleh menggunakan titik lekap yang sama dua kali"
 
-#: src/installation_advanced.py:663
+#: src/installation_advanced.py:666
 msgid "Root partition must be formatted..."
 msgstr "Sekatan Root mesti diformat... "
 
-#: src/installation_advanced.py:923
+#: src/installation_advanced.py:926
 msgid "Creating primary partition"
 msgstr "Mencipta sekatan utama"
 
-#: src/installation_advanced.py:934
+#: src/installation_advanced.py:937
 msgid "Creating extended partition"
 msgstr "Mencipta sekatan lanjutan"
 
-#: src/installation_advanced.py:940
+#: src/installation_advanced.py:943
 msgid "Creating logical partition"
 msgstr "Mencipta sekatan logikal"
 
-#: src/installation_advanced.py:1069
+#: src/installation_advanced.py:1072
 msgid "Advanced installation mode"
 msgstr "Mod pemasangan Terperinci"
 
-#: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1076 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Gunakan peranti ini untuk pemasangan pemuat boot:"
 
-#: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1086 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Jadual sekatan baharu"
 
-#: src/installation_advanced.py:1091
+#: src/installation_advanced.py:1094
 msgid "Change..."
 msgstr "Ubah..."
 
-#: src/installation_advanced.py:1096 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1099 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Saiz:"
 
-#: src/installation_advanced.py:1100 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1103 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Jenis:"
 
-#: src/installation_advanced.py:1104 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1107 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Utama"
 
-#: src/installation_advanced.py:1108 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1111 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logikal"
 
-#: src/installation_advanced.py:1112 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Lanjutan"
 
-#: src/installation_advanced.py:1116 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Permulaan ruang ini"
 
-#: src/installation_advanced.py:1120 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "Akhir ruang ini"
 
-#: src/installation_advanced.py:1124 src/installation_advanced.py:1141
+#: src/installation_advanced.py:1127 src/installation_advanced.py:1144
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Guna sebagai:"
 
-#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
+#: src/installation_advanced.py:1131 src/installation_advanced.py:1148
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Titik lekap:"
 
-#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
+#: src/installation_advanced.py:1135 src/installation_advanced.py:1152
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Label (pilihan):"
 
-#: src/installation_advanced.py:1136 ui/installation_advanced.ui:424
+#: src/installation_advanced.py:1139 ui/installation_advanced.ui:424
 #: ui/installation_advanced.ui:740
 msgid "Encryption options..."
 msgstr "Pilihan penyulitan ..."
 
-#: src/installation_advanced.py:1153 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1156 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Format:"
 
-#: src/installation_advanced.py:1158 ui/installation_advanced.ui:504
+#: src/installation_advanced.py:1161 ui/installation_advanced.ui:504
 msgid "Partition table type:"
 msgstr "Jenis jadual sekatan:"
 
-#: src/installation_advanced.py:1163
+#: src/installation_advanced.py:1166
 msgid "Create Partition Table"
 msgstr "Cipta Jadual Sekatan"
 
-#: src/installation_advanced.py:1166 src/installation_alongside.py:144
-#: src/installation_automatic.py:104
+#: src/installation_advanced.py:1169 src/installation_alongside.py:146
+#: src/installation_automatic.py:105
 msgid "Install now!"
 msgstr "Pasang sekarang!"
 
-#: src/installation_advanced.py:1246
+#: src/installation_advanced.py:1249
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Mencipta jadual sekatan baharu dari jenis %s untuk cakera %s"
 
-#: src/installation_advanced.py:1342
+#: src/installation_advanced.py:1345
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -452,7 +452,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s dilekapkan sebagai swap. /n\nUntuk teruskan ia perlu dinyahlekap. /n\nKlik Ya untuk nyahlekap, atau Tidak untuk kembali\n"
 
-#: src/installation_advanced.py:1344
+#: src/installation_advanced.py:1347
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -460,72 +460,81 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s dilekapkan dalam '%s'. /n\nUntuk meneruskan ia perlu dinyahlekap. /n\nKlik Ya untuk dinyahlekap, atau Tidak untuk kembali\n"
 
-#: src/installation_advanced.py:1417
+#: src/installation_advanced.py:1367
+#, python-format
+msgid "%s shows as mounted (busy) but it has no mount point"
+msgstr ""
+
+#: src/installation_advanced.py:1423
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Sekatan %s akan dipadamkan"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Partition"
 msgstr "Sekatan"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "New"
 msgstr "Baharu"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Relabel"
 msgstr "Melabel semula"
 
-#: src/installation_advanced.py:1424
+#: src/installation_advanced.py:1430
 msgid "Mount"
 msgstr "Lekap"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1451
 msgid "These disks will have partition actions:"
 msgstr "Cakera ini akan mempunyai tindakan sekatan:"
 
-#: src/installation_advanced.py:1470
+#: src/installation_advanced.py:1476
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Perubahan simpanan telah dilakukan di %s"
 
-#: src/installation_advanced.py:1484
+#: src/installation_advanced.py:1490
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Mencipta %s sistemfail di %s label %s"
 
-#: src/installation_advanced.py:1566
+#: src/installation_advanced.py:1572
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro akan memasang pemuatboot jenis %s di %s"
 
-#: src/installation_alongside.py:109
+#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+msgid "Testing mode. Thus won't apply any changes to your system!"
+msgstr ""
+
+#: src/installation_alongside.py:111
 #, python-format
 msgid "Can't load %s css"
 msgstr "Tidak boleh memuat %s css"
 
-#: src/installation_alongside.py:136
+#: src/installation_alongside.py:138
 msgid "Choose which OS you want to install Manjaro next to"
 msgstr "Pilih anda selepas OS mana anda mahu pasangkan Manjaro"
 
-#: src/installation_alongside.py:140
+#: src/installation_alongside.py:142
 msgid "Manjaro alongside another OS"
 msgstr "Manjaro bersama OS lain"
 
-#: src/installation_alongside.py:169
+#: src/installation_alongside.py:171
 msgid "Detected OS"
 msgstr "OS Dikesan"
 
-#: src/installation_alongside.py:172
+#: src/installation_alongside.py:174
 msgid "Filesystem"
 msgstr "Fail sistem"
 
-#: src/installation_alongside.py:216
+#: src/installation_alongside.py:218
 msgid "In alongside install: can't create list of partitions"
 msgstr "Dalam pemasangan bersama: tidak boleh mencipta senarai sekatan"
 
-#: src/installation_alongside.py:256
+#: src/installation_alongside.py:258
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Tidak dapat mengecilkan sekatan (mungkin hampir penuh?)"
 
@@ -566,44 +575,44 @@ msgstr "Pemasangan Manjaro akan disulitkan"
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro akan menggunakan penetapan LVM"
 
-#: src/installation_automatic.py:79
+#: src/installation_automatic.py:80
 msgid "Automatic installation mode"
 msgstr "Mod pemasangan automatik"
 
-#: src/installation_automatic.py:83 ui/installation_automatic.ui:96
+#: src/installation_automatic.py:84 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Pilih pemacu:"
 
-#: src/installation_automatic.py:87
+#: src/installation_automatic.py:88
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "AMARAN! Mod pemasangan ini akan menulis ganti kesemuanya di pemacu anda!"
 
-#: src/installation_automatic.py:92 ui/installation_automatic.ui:59
+#: src/installation_automatic.py:93 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Sila pilih pemacu untuk memasang Manjaro /n\ndan klik butang dibawah untuk memulakan proses."
 
-#: src/installation_automatic.py:97 ui/installation_automatic.ui:176
+#: src/installation_automatic.py:98 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
 msgstr "Pilih kata laluan untuk peranti LUKS anda:"
 
-#: src/installation_automatic.py:101 ui/installation_automatic.ui:161
+#: src/installation_automatic.py:102 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
 msgstr "Sahkan kata laluan peranti LUKS anda:"
 
-#: src/installation_automatic.py:155
+#: src/installation_automatic.py:156
 #, python-format
 msgid "Automatic install on %s"
 msgstr "Pasang automatik pada %s"
 
-#: src/installation_automatic.py:189
+#: src/installation_automatic.py:190
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus akan menggunakan %s sebagai peranti pemasangan"
 
-#: src/installation_automatic.py:198
+#: src/installation_automatic.py:199
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus akan memasang pemuatboot jenis %s pada %s"
@@ -613,166 +622,166 @@ msgstr "Thus akan memasang pemuatboot jenis %s pada %s"
 msgid "Copying '/%s'"
 msgstr "Menyalin '/%s'"
 
-#: src/installation_process.py:164
+#: src/installation_process.py:173
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Memasang menggunakan kaedah '%s'"
 
-#: src/installation_process.py:267
+#: src/installation_process.py:276
 msgid "Error creating partitions and their filesystems"
 msgstr "Ralat mencipta sekatan dan sistemfailnya"
 
-#: src/installation_process.py:305 src/installation_process.py:327
+#: src/installation_process.py:314 src/installation_process.py:336
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Melekap sekatan %s ke dalam direktori %s"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:320
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Melekap sekatan %s ke dalam direktori %s/boot"
 
-#: src/installation_process.py:315
+#: src/installation_process.py:324
 msgid "Couldn't mount root and boot partitions"
 msgstr "Tidak dapat lekap sekatan root dan but"
 
-#: src/installation_process.py:332
+#: src/installation_process.py:341
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Tidak boleh lekap %s di %s"
 
-#: src/installation_process.py:353
+#: src/installation_process.py:362
 msgid "Can't create necessary directories on destination system"
 msgstr "Tidak boleh mencipta direktori yang diperlukan pada sistem destinasi"
 
-#: src/installation_process.py:450
+#: src/installation_process.py:459
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Memulihkan informasi-meta pada %s"
 
-#: src/installation_process.py:463
+#: src/installation_process.py:472
 msgid "Special dirs already mounted."
 msgstr "Dir khas telah dilekapkan."
 
-#: src/installation_process.py:489
+#: src/installation_process.py:498
 msgid "Special dirs already not mounted."
 msgstr "Dir khas telah dinyahlekap."
 
-#: src/installation_process.py:499
+#: src/installation_process.py:508
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Tidak dapat nyahlekap %s"
 
-#: src/installation_process.py:550
+#: src/installation_process.py:559
 msgid "Create fstab."
 msgstr "Mencipta fstab."
 
-#: src/installation_process.py:662
+#: src/installation_process.py:671
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Memasang GRUB(2) BIOS pemuat boot di %s"
 
-#: src/installation_process.py:692
+#: src/installation_process.py:701
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS telah berjaya dipasang."
 
-#: src/installation_process.py:694
+#: src/installation_process.py:703
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "RALAT memasang GRUB(2) BIOS."
 
-#: src/installation_process.py:705
+#: src/installation_process.py:714
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Memasang GRUB(2) UEFI %s pemuat boot di %s"
 
-#: src/installation_process.py:733
+#: src/installation_process.py:742
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "RALAT memasang fail konfigurasi GRUB(2)."
 
-#: src/installation_process.py:761
+#: src/installation_process.py:770
 msgid "ERROR installing GRUB(2) locale."
 msgstr "RALAT memasang penempatan GRUB(2)."
 
-#: src/installation_process.py:775
+#: src/installation_process.py:784
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Ralat mencipta hash kata laluan untuk pengguna %s"
 
-#: src/installation_process.py:781
+#: src/installation_process.py:790
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Ralat menukar kata laluan untuk pengguna %s"
 
-#: src/installation_process.py:906
+#: src/installation_process.py:915
 msgid "Configuring your new system"
 msgstr "Mengkonfigurasi sistem baru anda"
 
-#: src/installation_process.py:983
+#: src/installation_process.py:991
 msgid "Generating locales..."
 msgstr "Menjana penempatan..."
 
-#: src/installation_process.py:1003
+#: src/installation_process.py:1011
 msgid "Adjusting hardware clock..."
 msgstr "Melaraskan jam perkakasan..."
 
-#: src/installation_process.py:1009
+#: src/installation_process.py:1017
 msgid "Configuring hardware..."
 msgstr "Mengkonfigurasi perkakasan..."
 
-#: src/installation_process.py:1072
+#: src/installation_process.py:1080
 msgid "Set up graphics card..."
 msgstr "Menetapkan kad grafik..."
 
-#: src/installation_process.py:1079
+#: src/installation_process.py:1087
 msgid "Can't execute the MHWD script"
 msgstr "Tidak boleh melaksanakan skrip MHWD"
 
-#: src/installation_process.py:1085
+#: src/installation_process.py:1093
 msgid "Configure display manager..."
 msgstr "Konfigurasikan pengurus pakej..."
 
-#: src/installation_process.py:1184
+#: src/installation_process.py:1192
 msgid "Configure System..."
 msgstr "Konfigurasikan Sistem..."
 
-#: src/installation_process.py:1212
+#: src/installation_process.py:1220
 msgid "Removing live configuration (packages)"
 msgstr "Membuang konfigurasi langsung (pakej)"
 
-#: src/installation_process.py:1228
+#: src/installation_process.py:1236
 msgid "Configuring package manager"
 msgstr "Mengkonfigurasi pengurus pakej"
 
-#: src/installation_process.py:1243
+#: src/installation_process.py:1251
 msgid "Finished configuring package manager."
 msgstr "Selesai mengkonfigurasi pengurus pakej."
 
-#: src/installation_process.py:1267
+#: src/installation_process.py:1275
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Benarkan log masuk automatik pengguna %s."
 
-#: src/installation_process.py:1346
+#: src/installation_process.py:1354
 msgid "Running mkinitcpio..."
 msgstr "Menjalankan mkinitcpio... "
 
-#: src/installation_process.py:1349
+#: src/installation_process.py:1357
 msgid "Running mkinitcpio... done"
 msgstr "Menjalankan mkinitcpio... selesai"
 
-#: src/keymap.py:62
+#: src/keymap.py:64
 msgid "Select your keyboard layout"
 msgstr "Pilih susun atur papan kekunci"
 
-#: src/keymap.py:70
+#: src/keymap.py:72
 msgid "Layouts"
 msgstr "Susun atur"
 
-#: src/keymap.py:76
+#: src/keymap.py:78
 msgid "Variants"
 msgstr "Varian"
 
-#: src/keymap.py:98
+#: src/keymap.py:100
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "susun atur_papan kekunci adalah %s"
@@ -872,6 +881,10 @@ msgstr "Memasang Manjaro..."
 #: src/slides.py:103
 msgid "Please wait..."
 msgstr "Sila tunggu..."
+
+#: src/slides.py:226
+msgid "Do you want to retry?"
+msgstr ""
 
 #: src/timezone.py:111
 msgid "Where are you?"
