@@ -30,6 +30,7 @@ import subprocess
 import syslog
 import socket
 import osextras
+import logging
 
 def copytree(src, dst, symlinks=False, ignore=None):
     for item in os.listdir(src):
@@ -833,6 +834,11 @@ def get_prop(obj, iface, prop):
         else:
             raise
 
+def is_wireless_enabled():
+    import dbus
+    bus = dbus.SystemBus()
+    manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
+    return get_prop(manager, NM, 'WirelessEnabled')
 
 def has_connection():
     import dbus
@@ -912,3 +918,17 @@ def get_network():
     else:
         ipran = '.'.join(spip)
     return ipran
+
+def sort_list(mylist, mylocale=""):
+    import locale
+    import functools
+
+    if mylocale != "":
+        try:
+            locale.setlocale(locale.LC_ALL, mylocale)
+        except:
+            logging.warning(_("Can't set locale %s") % mylocale)
+        
+    sorted_list = sorted(mylist,  key=functools.cmp_to_key(locale.strcoll))
+
+    return sorted_list
