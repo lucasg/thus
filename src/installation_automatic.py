@@ -54,6 +54,7 @@ class InstallationAutomatic(Gtk.Box):
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
         self.alternate_package_list = params['alternate_package_list']
+        self.testing = params['testing']
         
         super().__init__()
         self.ui = Gtk.Builder()
@@ -171,7 +172,7 @@ class InstallationAutomatic(Gtk.Box):
         luks_password_confirm = self.entry['luks_password_confirm'].get_text()
         install_ok = True
         if len(luks_password) <= 0:
-            self.image_password_ok.hide()
+            self.image_password_ok.set_opacity(0)
             self.forward_button.set_sensitive(True)
         else:
             if luks_password == luks_password_confirm:
@@ -180,7 +181,7 @@ class InstallationAutomatic(Gtk.Box):
                 icon = "gtk-no"
                 install_ok = False
             self.image_password_ok.set_from_stock(icon, Gtk.IconSize.BUTTON)
-            self.image_password_ok.show()
+            self.image_password_ok.set_opacity(1)
  
         self.forward_button.set_sensitive(install_ok)
 
@@ -210,12 +211,15 @@ class InstallationAutomatic(Gtk.Box):
 
         self.settings.set('auto_device', self.auto_device)
 
-        self.process = installation_process.InstallationProcess( \
-                        self.settings, \
-                        self.callback_queue, \
-                        mount_devices, \
-                        fs_devices, \
-                        None, \
-                        self.alternate_package_list)
-                        
-        self.process.start()
+        if not self.testing:
+            self.process = installation_process.InstallationProcess( \
+                            self.settings, \
+                            self.callback_queue, \
+                            mount_devices, \
+                            fs_devices, \
+                            None, \
+                            self.alternate_package_list)
+                            
+            self.process.start()
+        else:
+            logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))

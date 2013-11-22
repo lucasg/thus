@@ -154,9 +154,18 @@ class InstallationProcess(multiprocessing.Process):
         
         self.callback_queue = callback_queue
         self.settings = settings
-
-        # Used to know if there is a lvm partition (from advanced install)
-        # so we'll have to add the lvm2 hook to mkinitcpio
+       
+        # Save how we have been called
+        # We need this in case we have to retry the installation
+        p = {'mount_devices' : mount_devices,
+         'fs_devices' : fs_devices,
+         'ssd' : ssd,
+         'alternate_package_list' : alternate_package_list,
+         'blvm': blvm }
+        self.settings.set('installer_thread_call', p)
+        
+        # This flag tells us if there is a lvm partition (from advanced install)
+        # If it's true we'll have to add the 'lvm2' hook to mkinitcpio
         self.blvm = blvm
 
         self.method = self.settings.get('partition_mode')
@@ -581,8 +590,8 @@ class InstallationProcess(multiprocessing.Process):
                 continue  
           
             # Avoid adding a partition to fstab when
-            # it has no mount point (except swap, of course)
-            if path == "" and "swap" not in myfmt:
+            # it has no mount point (swap has been checked before)
+            if path == "":
                 continue
 
             if path == '/':

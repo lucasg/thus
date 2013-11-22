@@ -70,7 +70,7 @@ class Check(Gtk.Box):
         self.title.set_markup(txt)
 
         self.prepare_enough_space = self.ui.get_object("prepare_enough_space")
-        txt = _("has at least 3GB available disk space")
+        txt = _("has at least 5GB available disk space")
         self.prepare_enough_space.props.label = txt
 
         self.prepare_power_source = self.ui.get_object("prepare_power_source")
@@ -168,8 +168,8 @@ class Check(Gtk.Box):
                     size = int(col[3])
                     if size > max_size:
                         max_size = size
-        # we need 3GB
-        if max_size >= 3221225472:
+        # we need 5GB
+        if max_size >= 5000000000:
             return True
 
         return False

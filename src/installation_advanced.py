@@ -63,6 +63,7 @@ class InstallationAdvanced(Gtk.Box):
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
         self.alternate_package_list = params['alternate_package_list']
+        self.testing = params['testing']
         self.lv_partitions = []
         self.disks_changed = []
         self.my_first_time = True
@@ -1350,9 +1351,10 @@ class InstallationAdvanced(Gtk.Box):
                                     # some mounted directories. Unmount them without asking.
                                     subp = subprocess.Popen(['umount', partition_path], stdout=subprocess.PIPE)
                                     logging.debug("%s unmounted" % mount_point)
-                                else:
+                                elif len(mount_point) > 0:
                                     response = show.question(msg)
                                     if response != Gtk.ResponseType.YES:
+                                        # User doesn't want to unmount, we can't go on.
                                         return []
                                     else:
                                         # unmount it!
@@ -1361,6 +1363,8 @@ class InstallationAdvanced(Gtk.Box):
                                         else:
                                             subp = subprocess.Popen(['umount', partition_path], stdout=subprocess.PIPE)
                                             logging.debug("%s unmounted" % mount_point)
+                                else:
+                                    logging.warning(_("%s shows as mounted (busy) but it has no mount point") % partition_path)
                                 
                         (is_new, lbl, mnt, fs, fmt) = self.stage_opts[self.gen_partition_uid(path=partition_path)]
                         
@@ -1570,13 +1574,16 @@ class InstallationAdvanced(Gtk.Box):
         else:
             logging.warning("Thus will not install any boot loader")
 
-        self.process = installation_process.InstallationProcess( \
-                    self.settings, \
-                    self.callback_queue, \
-                    mount_devices, \
-                    fs_devices, \
-                    self.ssd, \
-                    self.alternate_package_list, \
-                    self.blvm)
-                    
-        self.process.start()
+        if not self.testing:
+            self.process = installation_process.InstallationProcess( \
+                        self.settings, \
+                        self.callback_queue, \
+                        mount_devices, \
+                        fs_devices, \
+                        self.ssd, \
+                        self.alternate_package_list, \
+                        self.blvm)
+                        
+            self.process.start()
+        else:
+            logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))

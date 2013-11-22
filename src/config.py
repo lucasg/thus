@@ -51,6 +51,7 @@ class Settings():
             'fullname' : '', \
             'hostname' : 'manjaro', \
             'install_bootloader' : True, \
+            'installer_thread_call' : {}, \
             'keyboard_layout' : '', \
             'keyboard_variant' : '', \
             'language_name' : '', \

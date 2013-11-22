@@ -52,8 +52,8 @@ import installation_process
 _next_page = "timezone"
 _prev_page = "installation_ask"
 
-# leave at least 3.5GB for Manjaro when shrinking
-_minimum_space_for_manjaro = 3500
+# leave at least 5GB for Manjaro when shrinking
+_minimum_space_for_manjaro = 5000
 
 class InstallationAlongside(Gtk.Box):
     def __init__(self, params):
@@ -64,6 +64,8 @@ class InstallationAlongside(Gtk.Box):
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
         self.alternate_package_list = params['alternate_package_list']
+
+        self.testing = params['testing']
 
         super().__init__()
         self.ui = Gtk.Builder()
@@ -404,14 +406,16 @@ class InstallationAlongside(Gtk.Box):
         else:
             logging.warning("Thus will not install any boot loader")
 
-
-        self.process = installation_process.InstallationProcess( \
-                        self.settings, \
-                        self.callback_queue, \
-                        mount_devices, \
-                        fs_devices, \
-                        None, \
-                        self.alternate_package_list)
-        
-        self.process.start()
+        if not self.testing:
+            self.process = installation_process.InstallationProcess( \
+                            self.settings, \
+                            self.callback_queue, \
+                            mount_devices, \
+                            fs_devices, \
+                            None, \
+                            self.alternate_package_list)
+            
+            self.process.start()
+        else:
+            logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))
         '''

@@ -76,6 +76,8 @@ _log_level = logging.INFO
 _verbose = False
 _update = False
 _force_grub_type = False
+# Do not perform any changes (this is just for testing purposes)
+_testing = False
 
 # Useful vars for gettext (translations)
 APP_NAME = "thus"
@@ -221,6 +223,7 @@ class Main(Gtk.Window):
         params['settings'] = self.settings
         params['main_progressbar'] = self.ui.get_object('progressbar1')
         params['alternate_package_list'] = _alternate_package_list
+        params['testing'] = _testing
         
         if len(_alternate_package_list) > 0:
             logging.info(_("Using '%s' file as package list") % _alternate_package_list)
@@ -397,6 +400,7 @@ def show_help():
     print("-h, --help : Show this help message")
     #print("-p file.xml, --packages file.xml : Manjaro will install the packages referenced by file.xml instead of the default ones")
     print("-s, --staging : Enable stating options")
+    print("-t, --testing : Do not perform any changes (useful for developers)")
     print("-v, --verbose : Show logging messages to stdout")
 
 if __name__ == '__main__':
@@ -405,13 +409,15 @@ if __name__ == '__main__':
     argv = sys.argv[1:]
     
     try:
-        opts, args = getopt.getopt(argv, "adp:usvg:h",
-         ["aria2", "debug", "packages=", "staging", "update", "verbose", \
+        opts, args = getopt.getopt(argv, "adp:ustvg:h",
+         ["aria2", "debug", "packages=", "staging", "testing", "update", "verbose", \
           "force-grub=", "help"])
     except getopt.GetoptError as e:
         show_help()
         print(str(e))
         sys.exit(2)
+
+    print(opts)
     
     for opt, arg in opts:
         if opt in ('-d', '--debug'):
@@ -420,6 +426,8 @@ if __name__ == '__main__':
             _verbose = True
         elif opt in ('-s', '--staging'):
             _use_staging = True
+        elif opt in ('-t', '--testing'):
+            _testing = True
         elif opt in ('-u', '--update'):
             _update = True
         elif opt in ('-p', '--packages'):
