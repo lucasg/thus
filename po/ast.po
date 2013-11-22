@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-01 01:56+0100\n"
-"PO-Revision-Date: 2013-11-20 11:35+0000\n"
+"PO-Revision-Date: 2013-11-22 15:51+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/manjaro-thus/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -78,11 +78,11 @@ msgstr "Esbilla 'Encaboxar' si nun quies instalar un xestor d'arranque"
 
 #: src/check.py:68
 msgid "Check your computer"
-msgstr "Comprueba si l'ordenador to"
+msgstr "Comprobaciones enantes d'instalar"
 
 #: src/check.py:73
 msgid "has at least 3GB available disk space"
-msgstr "polo menos 3 GB d'espaciu llibre en discu disponibles"
+msgstr "tien polo menos 3 GB d'espaciu llibre en discu disponibles"
 
 #: src/check.py:77
 msgid "is plugged in to a power source"
@@ -94,7 +94,7 @@ msgstr "ta coneutáu a internet"
 
 #: src/check.py:85
 msgid "For best results, please ensure that this computer:"
-msgstr "Pa meyores resultaos, por favor asegúrate qu'esti ordenador:"
+msgstr "Pa nun tener cuasi torgues, tate seguru por favor qu'esti ordenador:"
 
 #: src/check.py:90 ui/check.ui:106
 msgid ""
@@ -361,7 +361,7 @@ msgstr "Mou d'instalación avanzáu"
 
 #: src/installation_advanced.py:1073 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
-msgstr "Usar esti preséu pa la instalación del cargador d'arranque:"
+msgstr "Usar esti preséu pa la instalación del xestor d'arranque:"
 
 #: src/installation_advanced.py:1083 ui/installation_advanced.ui:915
 msgid "New partition table"
@@ -495,7 +495,7 @@ msgstr "En creando sistema d'archivos %s en %s etiquetáu como %s"
 #: src/installation_advanced.py:1566
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro instalará la triba del cargador d'arranque %s en %s"
+msgstr "Manjaro instalará la triba del xestor d'arranque %s en %s"
 
 #: src/installation_alongside.py:109
 #, python-format
@@ -528,15 +528,15 @@ msgstr "Nun pue acurtiase la partición (¿quiciabes tea cuasi enllena?)"
 
 #: src/installation_ask.py:114
 msgid "Installation type"
-msgstr "Tipu d'instalación"
+msgstr "Triba d'instalación"
 
 #: src/installation_ask.py:124 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr "Esniciar discu ya instalar Manjaro (automático)"
+msgstr "Esnicia'l discu dafechu ya instala Manjaro (automático)"
 
 #: src/installation_ask.py:127
 msgid "Warning: This will delete all data on your disk"
-msgstr "¡CURIÁU!: Esto esniciará tolos datos nel discu to"
+msgstr "¡CURIÁU!: Esto esniciará dafechu tolos datos nel discu to"
 
 #: src/installation_ask.py:134
 #, python-format
@@ -553,7 +553,7 @@ msgstr "Alministra les particiones to ya u quies instalar Manjaro (avanzao)"
 
 #: src/installation_ask.py:146
 msgid "Create and delete partitions, and choose additional mount points."
-msgstr "Crea ya esnicia particiones, ya esbilla puntos de montax adicionales."
+msgstr "Crea o esnicia particiones, ya esbilla puntos de montax adicionales."
 
 #: src/installation_ask.py:166
 msgid "Manjaro installation will be encrypted"
@@ -603,7 +603,7 @@ msgstr "Thus usará %s como preséu d'instalación"
 #: src/installation_automatic.py:198
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus instalará'l cargador d'arranque de la triba %s en %s"
+msgstr "Thus instalará'l xestor d'arranque de la triba %s en %s"
 
 #: src/installation_process.py:82
 #, python-format
@@ -776,7 +776,7 @@ msgstr "keyboard_layout ye %s"
 
 #: src/language.py:80
 msgid "Please choose your language:"
-msgstr "Por favor esbilla la llingua to:"
+msgstr "Por favor, esbilla la llingua to:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
@@ -805,7 +805,7 @@ msgstr "Nun pue alcontrase'l ficheru de torna pal idioma %s"
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr "Esbilla l'asitiamientu to"
+msgstr "¿Ú t'afayes?"
 
 #: src/location.py:68 ui/location.ui:21
 msgid ""
@@ -1272,7 +1272,7 @@ msgstr "<span weight=\"light\" size=\"small\">Con esta opción instalaráse Manj
 
 #: ui/installation_ask.ui:171
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr "Alministrar les particiones to ya esbillar u instalar Manjaro (avanzao)"
+msgstr "Alministra les particiones to ya esbilla u quies instalar Manjaro (avanzao)"
 
 #: ui/installation_ask.ui:197
 msgid ""
