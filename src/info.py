@@ -23,7 +23,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-thus_VERSION = "0.8.7.913"
+thus_VERSION = "0.8.8"
 thus_LAST_STABLE = "0.8.7"
 thus_WEBSITE = "http://www.manjaro.org"
 thus_AUTHORS = "philm,  toudi, faidoc, karasu, skinner, arcnexus, omelchek"
