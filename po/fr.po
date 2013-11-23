@@ -16,6 +16,7 @@
 # Gatien Bovyn <gatien.bovyn@hotmail.com>, 2013
 # gilles74 <gillessoixantequatorze@orange.fr>, 2013
 # Loubrix <david30160@gmail.com>, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # shining <chantry.xavier@gmail.com>, 2011
 # solstice <solstice.dhiver@gmail.com>, 2012
 # Ti_Paul <tipaul2003@hotmail.com>, 2013
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 18:01+0000\n"
+"PO-Revision-Date: 2013-11-23 10:59+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/manjaro-thus/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -476,7 +477,7 @@ msgstr "%s est monté sous '%s'.\nPour continuer il faut le démonter.\nCliquez 
 #: src/installation_advanced.py:1367
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s montre que monté (occupé), mais il n'a pas de point de montage"
 
 #: src/installation_advanced.py:1423
 #, python-format
@@ -520,7 +521,7 @@ msgstr "Manjaro installera le chargeur d’amorçage de type %s sur la partition
 
 #: src/installation_advanced.py:1589 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Mode test. Ce programme ne fera aucune modification sur votre système."
 
 #: src/installation_alongside.py:111
 #, python-format
@@ -897,7 +898,7 @@ msgstr "Patientez s'il vous plaît..."
 
 #: src/slides.py:226
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Voulez-vous recommencer?"
 
 #: src/timezone.py:111
 msgid "Where are you?"
