@@ -2,23 +2,23 @@
 # -*- coding: utf-8 -*-
 #
 #  timezone.py
-#  
+#
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -60,7 +60,7 @@ class Timezone(Gtk.Box):
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
-        
+
         super().__init__()
 
         self.ui = Gtk.Builder()
@@ -97,7 +97,7 @@ class Timezone(Gtk.Box):
         # thread to try to determine timezone.
         self.auto_timezone_thread = None
         self.start_auto_timezone_thread()
-        
+
         # thread to generate a pacman mirrorlist based on country code
         # Why do this? There're foreign mirrors faster than the Spanish ones... - Karasu
         self.mirrorlist_thread = None
@@ -232,7 +232,7 @@ class Timezone(Gtk.Box):
 
         # restore forward button text (from install now! to next)
         self.forward_button.set_label("gtk-go-forward")
-        
+
         self.show_all()
 
     def start_auto_timezone_thread(self):
@@ -246,7 +246,7 @@ class Timezone(Gtk.Box):
 
     def store_values(self):
         loc = self.tzdb.get_loc(self.timezone)
-        
+
         if loc:
             self.settings.set("timezone_human_zone", loc.human_zone)
             self.settings.set("timezone_country", loc.country)
@@ -270,7 +270,7 @@ class Timezone(Gtk.Box):
 
         # this way installer_process will know all info has been entered
         self.settings.set("timezone_done", True)
-        
+
         return True
 
     def get_prev_page(self):
@@ -278,7 +278,7 @@ class Timezone(Gtk.Box):
 
     def get_next_page(self):
         return _next_page
-        
+
     def stop_threads(self):
         logging.debug(_("Stopping timezone threads..."))
         if self.auto_timezone_thread != None:
@@ -306,7 +306,7 @@ class AutoTimezoneThread(threading.Thread):
                 return None
             else:
                 raise
-        
+
     def has_connection(self):
         # Workaround since we have no geo-service yet.
         return False
@@ -334,7 +334,7 @@ class AutoTimezoneThread(threading.Thread):
             coords = conn.read().decode('utf-8').strip()
         except:
             coords = 'error'
-        
+
         if coords != 'error':
             coords = coords.split()
             self.coords_queue.put(coords)
@@ -359,7 +359,7 @@ class GenerateMirrorListThread(threading.Thread):
                 return None
             else:
                 raise
-        
+
     def has_connection(self):
         # Workaround since we have no geo-service yet.
         return False
@@ -381,7 +381,7 @@ class GenerateMirrorListThread(threading.Thread):
                 return
 
         timezone = ""
-        
+
         try:
             coords = self.coords_queue.get(True)
             self.coords_queue.put_nowait(coords)
@@ -416,5 +416,5 @@ class GenerateMirrorListThread(threading.Thread):
                 logging.info(_("Downloaded a specific mirrorlist for pacman based on %s country code") % timezone)
         except subprocess.CalledProcessError as e:
             logging.warning(_("Couldn't generate mirrorlist for pacman based on country code"))'''
-        
-        
+
+

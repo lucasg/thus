@@ -2,23 +2,23 @@
 # -*- coding: utf-8 -*-
 #
 #  installation_automatic.py
-#  
+#
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -55,7 +55,7 @@ class InstallationAutomatic(Gtk.Box):
         self.settings = params['settings']
         self.alternate_package_list = params['alternate_package_list']
         self.testing = params['testing']
-        
+
         super().__init__()
         self.ui = Gtk.Builder()
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_automatic.ui"))
@@ -68,7 +68,7 @@ class InstallationAutomatic(Gtk.Box):
         self.entry = {}
         self.entry['luks_password'] = self.ui.get_object('entry_luks_password')
         self.entry['luks_password_confirm']= self.ui.get_object('entry_luks_password_confirm')
-        
+
         self.image_password_ok = self.ui.get_object('image_password_ok')
 
         super().add(self.ui.get_object("installation_automatic"))
@@ -108,10 +108,10 @@ class InstallationAutomatic(Gtk.Box):
     @misc.raise_privileges
     def populate_devices(self):
         device_list = parted.getAllDevices()
-        
+
         self.device_store.remove_all()
         self.devices = {}
-                   
+
         for dev in device_list:
             ## avoid cdrom and any raid, lvm volumes or encryptfs
             if not dev.path.startswith("/dev/sr") and \
@@ -152,7 +152,7 @@ class InstallationAutomatic(Gtk.Box):
         self.settings.set('luks_key_pass', luks_password)
         if luks_password != "":
             logging.debug("A LUKS password has been set")
-            
+
         logging.info(_("Automatic install on %s") % self.auto_device)
         self.start_installation()
         return True
@@ -182,7 +182,7 @@ class InstallationAutomatic(Gtk.Box):
                 install_ok = False
             self.image_password_ok.set_from_stock(icon, Gtk.IconSize.BUTTON)
             self.image_password_ok.set_opacity(1)
- 
+
         self.forward_button.set_sensitive(install_ok)
 
     def start_installation(self):
@@ -193,7 +193,7 @@ class InstallationAutomatic(Gtk.Box):
         import bootloader
         bl = bootloader.BootLoader(self.settings)
         bl.ask()
- 
+
         if self.settings.get('install_bootloader'):
             self.settings.set('bootloader_device', self.auto_device)
             logging.info(_("Thus will install the bootloader of type %s in %s") % \
@@ -219,7 +219,7 @@ class InstallationAutomatic(Gtk.Box):
                             fs_devices, \
                             None, \
                             self.alternate_package_list)
-                            
+
             self.process.start()
         else:
             logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))

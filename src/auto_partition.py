@@ -2,23 +2,23 @@
 # -*- coding: utf-8 -*-
 #
 #  auto_partition.py
-#  
+#
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -36,23 +36,23 @@ class AutoPartition():
         self.luks_key_pass = luks_key_pass
 
         self.uefi = False
-        
+
         if os.path.exists("/sys/firmware/efi/systab"):
             # TODO: Check if UEFI works
             self.uefi = True
 
         self.luks = use_luks
         self.lvm = use_lvm
-        
+
     def check_output(self, command):
         return subprocess.check_output(command.split()).decode().strip("\n")
-    
+
     def get_fs_uuid(self, device):
         return self.check_output("blkid -p -i -s UUID -o value %s" % device)
-    
+
     def get_fs_label(self, device):
         return self.check_output("blkid -p -i -s LABEL -o value %s" % device)
-        
+
     def printk(self, enable):
         with open("/proc/sys/kernel/printk", "wt") as f:
             if enable:
@@ -81,7 +81,7 @@ class AutoPartition():
         # Umount the device that is mounted in self.dest_dir (if any)
         logging.warning("Unmounting %s" % self.dest_dir)
         subprocess.call(["umount", self.dest_dir])
-        
+
         # Remove all previous Manjaro LVM volumes
         # (it may have been left created due to a previous failed installation)
         if os.path.exists("/dev/mapper/ManjaroRoot"):
@@ -99,7 +99,7 @@ class AutoPartition():
         # Close cryptManjaro (it may have been left open because of a previous failed installation)
         if os.path.exists("/dev/mapper/cryptManjaro"):
             subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaro"])
-        
+
     def mkfs(self, device, fs_type, mount_point, label_name, fs_options="", btrfs_devices=""):
         # We have two main cases: "swap" and everything else.
         if fs_type == "swap":
@@ -127,9 +127,9 @@ class AutoPartition():
             if fs_type not in mkfs.keys():
                 logging.error("Unkown filesystem type %s" % fs_type)
                 return
-            
+
             command = mkfs[fs_type]
-            
+
             try:
                 subprocess.check_call(command.split())
             except subprocess.CalledProcessError as e:
@@ -148,26 +148,26 @@ class AutoPartition():
             # Change permission of base directories to correct permission
             # to avoid btrfs issues
             mode = "755"
-            
+
             if mount_point == "/tmp":
                 mode = "1777"
             elif mount_point == "/root":
                 mode = "750"
-                    
+
             subprocess.check_call(["chmod", mode, path])
-        
+
         fs_uuid = self.get_fs_uuid(device)
         fs_label = self.get_fs_label(device)
         logging.debug("Device details: %s UUID=%s LABEL=%s" % (device, fs_uuid, fs_label))
 
     def get_devices(self):
         d = self.auto_device
-        
+
         boot = ""
         swap = ""
         root = ""
 
-        luks = ""    
+        luks = ""
         lvm = ""
 
         if self.uefi:
@@ -195,17 +195,17 @@ class AutoPartition():
         if self.lvm:
             swap = "/dev/ManjaroVG/ManjaroSwap"
             root = "/dev/ManjaroVG/ManjaroRoot"
-                
+
         return (boot, swap, root, luks, lvm)
 
     # mount_devices will be used when configuring GRUB in modify_grub_default() in installation_process.py
     def get_mount_devices(self):
         (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
-        
+
         mount_devices = {}
-        
+
         mount_devices["/boot"] = boot_device
-        
+
         # TODO: Check that this works using LVM on LUKS
         if self.luks:
             mount_devices["/"] = luks_device
@@ -213,18 +213,18 @@ class AutoPartition():
             mount_devices["/"] = root_device
 
         mount_devices["swap"] = swap_device
-            
+
         for m in mount_devices:
             logging.debug("mount_devices[%s] = %s" % (m, mount_devices[m]))
-        
+
         return mount_devices
 
     # fs_devices  will be used when configuring the fstab file in installation_process.py
-    def get_fs_devices(self):        
+    def get_fs_devices(self):
         (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
 
         fs_devices = {}
-        
+
         fs_devices[boot_device] = "ext2"
         fs_devices[swap_device] = "swap"
 
@@ -233,15 +233,15 @@ class AutoPartition():
             fs_devices[luks_device] = "ext4"
         else:
             fs_devices[root_device] = "ext4"
-            
+
         for f in fs_devices:
             logging.debug("fs_devices[%s] = %s" % (f, fs_devices[f]))
 
         return fs_devices
-    
+
     def run(self):
         key_file = "/tmp/.keyfile"
-    
+
         if self.uefi:
             guid_part_size = 2
             uefisys_part_size = 512
@@ -259,18 +259,18 @@ class AutoPartition():
                 logical_block_size = int(f.read())
             with open("%s/size" % base_path, "rt") as f:
                 size = int(f.read())
-            
+
             disc_size = ((logical_block_size * size) / 1024) / 1024
         else:
             logging.error("Setup cannot detect size of your device, please use normal " \
                 "installation routine for partitioning and mounting devices.")
             return
-        
+
         boot_part_size = 256
-        
+
         mem_total = self.check_output("grep MemTotal /proc/meminfo")
         mem_total = int(mem_total.split()[1])
-        
+
         swap_part_size = 1536
         if mem_total <= 1572864:
             swap_part_size = mem_total / 1024
@@ -278,15 +278,15 @@ class AutoPartition():
         root_part_size = disc_size - (guid_part_size + uefisys_part_size + boot_part_size + swap_part_size)
 
         lvm_pv_part_size = swap_part_size + root_part_size
-        
+
         logging.debug("disc_size %dMB" % disc_size)
         logging.debug("guid_part_size %dMB" % guid_part_size)
         logging.debug("uefisys_part_size %dMB" % uefisys_part_size)
         logging.debug("boot_part_size %dMB" % boot_part_size)
-        
+
         if self.lvm:
             logging.debug("lvm_pv_part_size %dMB" % lvm_pv_part_size)
-            
+
         logging.debug("swap_part_size %dMB" % swap_part_size)
         logging.debug("root_part_size %dMB" % root_part_size)
 
@@ -294,7 +294,7 @@ class AutoPartition():
         self.umount_all()
 
         self.printk(False)
-                
+
         # We assume a /dev/hdX format (or /dev/sdX)
         if self.uefi:
             # GPT (GUID) is supported only by 'parted' or 'sgdisk'
@@ -316,7 +316,7 @@ class AutoPartition():
             else:
                 subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % swap_part_size, '--typecode=4:8200', '--change-name=4:MANJARO_SWAP', device])
                 subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=5:0:+%dM' % root_part_size, ' --typecode=5:8300', '--change-name=5:MANJARO_ROOT', device])
-            
+
             logging.debug(self.check_output("sgdisk --print %s" % device))
         else:
             # Start at sector 1 for 4k drive compatibility and correct alignment
@@ -330,7 +330,7 @@ class AutoPartition():
             # Create boot partition
             subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", "1", str(boot_part_size)])
             subprocess.check_call(["parted", "-a", "optimal", "-s", device, "set", "1", "boot", "on"])
-            
+
             if self.lvm:
                 start = boot_part_size
                 end = start + lvm_pv_part_size
@@ -348,23 +348,23 @@ class AutoPartition():
 
         # Wait until /dev initialized correct devices
         subprocess.check_call(["udevadm", "settle"])
-        
+
         (boot_device, swap_device, root_device, luks_device, lvm_device) = self.get_devices()
-        
+
         logging.debug("Boot %s, Swap %s, Root %s" % (boot_device, swap_device, root_device))
-        
+
         if self.luks:
             logging.debug("Will setup LUKS on device %s" % luks_device)
-                        
+
             # Wipe LUKS header (just in case we're installing on a pre LUKS setup)
             # For 512 bit key length the header is 2MB
             # If in doubt, just be generous and overwrite the first 10MB or so
             subprocess.check_call(["dd", "if=/dev/zero", "of=%s" % luks_device, "bs=512", "count=20480", "status=noxfer"])
-        
+
             if self.luks_key_pass == "":
                 # No key password given, let's create a random keyfile
                 subprocess.check_call(["dd", "if=/dev/urandom", "of=%s" % key_file, "bs=1024", "count=4", "status=noxfer"])
-            
+
                 # Set up luks with a keyfile
                 subprocess.check_call(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", luks_device, key_file])
                 subprocess.check_call(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file", key_file])
@@ -375,7 +375,7 @@ class AutoPartition():
                 p = subprocess.Popen(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", "--key-file=-", luks_device],
                     stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
                 p.communicate(input=luks_key_pass_bytes)[0]
-                
+
                 p = subprocess.Popen(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file=-"],
                     stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
                 p.communicate(input=luks_key_pass_bytes)[0]
@@ -383,14 +383,14 @@ class AutoPartition():
         if self.lvm:
             # /dev/sdX1 is /boot
             # /dev/sdX2 is the PV
-            
+
             logging.debug("Will setup LVM on device %s" % lvm_device)
 
             subprocess.check_call(["pvcreate", "-ff", lvm_device])
             subprocess.check_call(["vgcreate", "ManjaroVG", lvm_device])
-            
+
             subprocess.check_call(["lvcreate", "-n", "ManjaroRoot", "-L", str(int(root_part_size)), "ManjaroVG"])
-            
+
             # Use the remainig space for our swap volume
             subprocess.check_call(["lvcreate", "-n", "ManjaroSwap", "-l", "100%FREE", "ManjaroVG"])
 
@@ -398,7 +398,7 @@ class AutoPartition():
         self.mkfs(root_device, "ext4", "/", "ManjaroRoot")
         self.mkfs(swap_device, "swap", "", "ManjaroSwap")
         self.mkfs(boot_device, "ext2", "/boot", "ManjaroBoot")
-        
+
         # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py if necessary
         # NOTE: /etc/default/grub will be modified in installation_process.py, too.
 

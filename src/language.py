@@ -4,17 +4,17 @@
 #  language.py
 #
 #  Copyright 2013 Antergos (http://antergos.com/)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -63,10 +63,10 @@ class Language(Gtk.Box):
         self.current_locale = locale.getdefaultlocale()[0]
         self.language_list = os.path.join(data_dir, "languagelist.data.gz")
         self.set_languages_list()
-        
+
         image1 = self.ui.get_object("image1")
         image1.set_from_file(os.path.join(data_dir, "languages.png"))
-        
+
         label = self.ui.get_object("welcome_label")
         label.set_name("WelcomeMessage")
 
@@ -80,7 +80,7 @@ class Language(Gtk.Box):
         txt = _("Please choose your language:")
         txt = '<span weight="bold">%s</span>' % txt
         self.label_choose_language.set_markup(txt)
-        
+
         label = self.ui.get_object("welcome_label")
         txt_bold = _("Notice: The Thus Installer is beta software.")
         txt = _("Thus is pre-release beta software that is under active development. \n" \
@@ -93,12 +93,12 @@ class Language(Gtk.Box):
         txt = _("Welcome to Manjaro!")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
-    
+
     def langcode_to_lang(self, display_map):
         # Special cases in which we need the complete current_locale string
         if self.current_locale not in ('pt_BR', 'zh_CN', 'zh_TW'):
             self.current_locale = self.current_locale.split("_")[0]
-    
+
         for lang, lang_code in display_map.items():
             if lang_code[1] == self.current_locale:
                 return lang
@@ -128,9 +128,9 @@ class Language(Gtk.Box):
             self.translate_ui()
         except IOError:
             logging.error(_("Can't find translation file for the %s language") % locale_code)
-    
+
     # Select language loaded on boot as default
-    def select_default_row(self, treeview, language):   
+    def select_default_row(self, treeview, language):
         model = treeview.get_model()
         iterator = model.iter_children(None)
         while iterator is not None:
@@ -145,7 +145,7 @@ class Language(Gtk.Box):
     def scroll_to_cell(self, treeview, path):
         treeview.scroll_to_cell(path)
         return False
-                
+
     def on_treeview_language_cursor_changed(self, treeview):
         selected = treeview.get_selection()
         if selected:
@@ -166,7 +166,7 @@ class Language(Gtk.Box):
 
         self.settings.set("language_name", display_map[language][0])
         self.settings.set("language_code", display_map[language][1])
-        
+
         return True
 
     def scroll_to_selected_item(self, treeview):
@@ -182,10 +182,10 @@ class Language(Gtk.Box):
     def prepare(self, direction):
         self.translate_ui()
         self.backwards_button.hide()
-        
+
         # scroll language treeview to selected item
         self.scroll_to_selected_item(self.treeview_language)
-        
+
         self.show_all()
 
     def get_prev_page(self):

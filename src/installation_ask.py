@@ -2,23 +2,23 @@
 # -*- coding: utf-8 -*-
 #
 #  installation_ask.py
-#  
+#
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -44,7 +44,7 @@ class InstallationAsk(Gtk.Box):
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
-        
+
         super().__init__()
         self.ui = Gtk.Builder()
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_ask.ui"))
@@ -66,15 +66,15 @@ class InstallationAsk(Gtk.Box):
         self.ui.connect_signals(self)
 
         super().add(self.ui.get_object("installation_ask"))
-        
+
         oses = {}
         oses = bootinfo.get_os_dict()
-        
+
         self.otherOS = ""
         for k in oses:
             if "sda" in k and oses[k] != "unknown":
                 self.otherOS = oses[k]
-                
+
         # by default, select automatic installation
         self.next_page = "installation_automatic"
 
@@ -83,11 +83,11 @@ class InstallationAsk(Gtk.Box):
         for o in objects:
             ob = self.ui.get_object(o)
             ob.set_sensitive(status)
-        
+
     def prepare(self, direction):
         self.translate_ui()
         self.show_all()
-        
+
         # Hide alongside option if no existing OS has been detected
         if self.otherOS == "":
             radio = self.ui.get_object("alongside_radiobutton")
@@ -114,7 +114,7 @@ class InstallationAsk(Gtk.Box):
         txt = _("Installation type")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
-        
+
         # In case we're coming from an installer screen, we change
         # to forward stock button and we activate it
         self.forward_button.set_label("gtk-go-forward")
@@ -128,7 +128,7 @@ class InstallationAsk(Gtk.Box):
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
         label.set_line_wrap(True)
-        
+
         # alongside is still experimental. Needs a lot of testing.
         radio = self.ui.get_object("alongside_radiobutton")
         radio.set_label(_("Install Manjaro alongside %s") % self.otherOS)
@@ -151,10 +151,10 @@ class InstallationAsk(Gtk.Box):
     def store_values(self):
         check = self.ui.get_object("encrypt_checkbutton")
         use_luks = check.get_active()
-        
+
         check = self.ui.get_object("lvm_checkbutton")
         use_lvm = check.get_active()
-                
+
         if self.next_page == "installation_automatic":
             self.settings.set('use_lvm', use_lvm)
             self.settings.set('use_luks', use_luks)
@@ -164,17 +164,17 @@ class InstallationAsk(Gtk.Box):
 
         if self.settings.get('use_luks'):
             logging.info(_("Manjaro installation will be encrypted"))
-            
+
         if self.settings.get('use_lvm'):
             logging.info(_("Manjaro will be installed using a LVM setup"))
-            
+
         if self.next_page == "installation_alongside":
             self.settings.set('partition_mode', 'alongside')
         elif self.next_page == "installation_advanced":
             self.settings.set('partition_mode', 'advanced')
         elif self.next_page == "installation_automatic":
             self.settings.set('partition_mode', 'automatic')
-                
+
         return True
 
     def get_next_page(self):

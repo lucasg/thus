@@ -2,24 +2,24 @@
 # -*- coding: utf-8 -*-
 #
 #  thus.py
-#  
+#
 #  Copyright 2013 Antergos, Manjaro
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
-#  
+#
 #  Antergos Team:
 #   Alex Filgueira (faidoc) <alexfilgueira.antergos.com>
 #   Raúl Granados (pollitux) <raulgranados.antergos.com>
@@ -106,7 +106,7 @@ class Main(Gtk.Window):
                          ' privileges and cannot continue without them.'))
 
         setup_logging()
-        
+
         # check if we're already running
         tmp_running = "/tmp/.setup-running"
         if os.path.exists(tmp_running):
@@ -115,7 +115,7 @@ class Main(Gtk.Window):
                           'you can manually delete the file %s\n'
                           'and run this installer again.') % tmp_running)
             sys.exit(1)
-                
+
         super().__init__()
 
         # workaround for dconf
@@ -139,31 +139,31 @@ class Main(Gtk.Window):
         # now we can unmount /install
         (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
         if fsname:
-            subprocess.check_call(['umount', self.dest_dir])      
-        
+            subprocess.check_call(['umount', self.dest_dir])
+
         logging.info("Thus installer version %s" % info.thus_VERSION)
-        
+
         p = multiprocessing.current_process()
         logging.debug("[%d] %s started" % (p.pid, p.name))
-        
-        self.settings = config.Settings()        
+
+        self.settings = config.Settings()
         self.ui_dir = self.settings.get("ui")
 
         if not os.path.exists(self.ui_dir):
             thus_dir = os.path.join(os.path.dirname(__file__), './')
             self.settings.set("thus", thus_dir)
-            
+
             ui_dir = os.path.join(os.path.dirname(__file__), 'ui/')
             self.settings.set("ui", ui_dir)
-            
+
             data_dir = os.path.join(os.path.dirname(__file__), 'data/')
             self.settings.set("data", data_dir)
-            
+
             self.ui_dir = self.settings.get("ui")
-            
+
         # set enabled desktops
         self.settings.set("desktops", _desktops)
-        
+
         # set if a grub type must be installed (user choice)
         self.settings.set("force_grub_type", _force_grub_type)
 
@@ -180,7 +180,7 @@ class Main(Gtk.Window):
 
         data_dir = self.settings.get('data')
         logo_dir = os.path.join(data_dir,  "manjaro-logo-mini.png")
-                                
+
         self.logo.set_from_file(logo_dir)
 
         self.title = self.ui.get_object("title")
@@ -195,7 +195,7 @@ class Main(Gtk.Window):
         self.forward_button = self.ui.get_object("forward_button")
         self.exit_button = self.ui.get_object("exit_button")
         self.backwards_button = self.ui.get_object("backwards_button")
-        
+
         # Create a queue. Will be used to report pacman messages (pac.py)
         # to the main thread (installer_*.py)
         self.callback_queue = multiprocessing.JoinableQueue()
@@ -224,10 +224,10 @@ class Main(Gtk.Window):
         params['main_progressbar'] = self.ui.get_object('progressbar1')
         params['alternate_package_list'] = _alternate_package_list
         params['testing'] = _testing
-        
+
         if len(_alternate_package_list) > 0:
             logging.info(_("Using '%s' file as package list") % _alternate_package_list)
-        
+
         #self.pages["welcome"] = welcome.Welcome(params)
         self.pages["language"] = language.Language(params)
         self.pages["location"] = location.Location(params)
@@ -253,7 +253,7 @@ class Main(Gtk.Window):
 
         # set window icon
         icon_dir = os.path.join(data_dir, 'manjaro-icon.png')
-        
+
         self.set_icon_from_file(icon_dir)
 
         # set the first page to show
@@ -272,7 +272,7 @@ class Main(Gtk.Window):
         style_provider.load_from_data(css_data)
 
         Gtk.StyleContext.add_provider_for_screen(
-            Gdk.Screen.get_default(), style_provider,     
+            Gdk.Screen.get_default(), style_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
@@ -287,7 +287,7 @@ class Main(Gtk.Window):
         # Hide titlebar but show border decoration
         self.get_window().set_accept_focus(True)
         #self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
-        
+
         # hide progress bar as it's value is zero
         self.progressbar.set_fraction(0)
         self.progressbar.hide()
@@ -311,7 +311,7 @@ class Main(Gtk.Window):
             p = os.path.join("/tmp", t)
             if os.path.exists(p):
                 os.remove(p)
-         
+
     def on_exit_button_clicked(self, widget, data=None):
         self.remove_temp_files()
         logging.info(_("Quiting installer..."))
@@ -323,7 +323,7 @@ class Main(Gtk.Window):
             new_value = 1
         if new_value < 0:
             new_value = 0
-        self.progressbar.set_fraction(new_value)        
+        self.progressbar.set_fraction(new_value)
         if new_value > 0:
             self.progressbar.show()
         else:
@@ -334,9 +334,9 @@ class Main(Gtk.Window):
 
         if next_page != None:
             stored = self.current_page.store_values()
-            
+
             if stored != False:
-                self.set_progressbar_step(self.progressbar_step)     
+                self.set_progressbar_step(self.progressbar_step)
                 self.main_box.remove(self.current_page)
 
                 self.current_page = self.pages[next_page]
@@ -360,7 +360,7 @@ class Main(Gtk.Window):
 
             # if we go backwards, don't store user changes
             #self.current_page.store_values()
-            
+
             self.main_box.remove(self.current_page)
             self.current_page = self.pages[prev_page]
 
@@ -389,7 +389,7 @@ def setup_logging():
         sh.setLevel(_log_level)
         sh.setFormatter(formatter)
         logger.addHandler(sh)
-        
+
 
 def show_help():
     print("Thus Manjaro Installer")
@@ -404,10 +404,10 @@ def show_help():
     print("-v, --verbose : Show logging messages to stdout")
 
 if __name__ == '__main__':
-    
+
     # Check program args
     argv = sys.argv[1:]
-    
+
     try:
         opts, args = getopt.getopt(argv, "adp:ustvg:h",
          ["aria2", "debug", "packages=", "staging", "testing", "update", "verbose", \
@@ -418,7 +418,7 @@ if __name__ == '__main__':
         sys.exit(2)
 
     print(opts)
-    
+
     for opt, arg in opts:
         if opt in ('-d', '--debug'):
             _log_level = logging.DEBUG
@@ -442,7 +442,7 @@ if __name__ == '__main__':
             sys.exit(0)
         else:
             assert False, "unhandled option"
-        
+
     if _update:
         setup_logging()
         # Check if program needs to be updated
@@ -467,5 +467,5 @@ if __name__ == '__main__':
     GObject.threads_init()
 
     app = Main()
-    
+
     Gtk.main()

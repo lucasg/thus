@@ -2,23 +2,23 @@
 # -*- coding: utf-8 -*-
 #
 #  slides.py
-#  
+#
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -63,7 +63,7 @@ class Slides(Gtk.Box):
 
         self.progress_bar = builder.get_object("progressbar")
         self.progress_bar.set_show_text(True)
-        
+
         self.global_progress_bar = builder.get_object("global_progressbar")
         self.global_progress_bar.set_show_text(True)
 
@@ -71,12 +71,12 @@ class Slides(Gtk.Box):
         self.scrolled_window = builder.get_object("scrolledwindow")
 
         self.webview = WebKit.WebView()
-        
+
         if self.settings == None:
             html_file = '/usr/share/thus/data/slides.html'
         else:
             html_file = os.path.join(self.settings.get("data"), 'slides.html')
-        
+
         try:
             with open(html_file) as html_stream:
                 html = html_stream.read(None)
@@ -84,16 +84,16 @@ class Slides(Gtk.Box):
                 self.webview.load_html_string(html, "file://" + data)
         except IOError:
             pass
-        
+
         self.scrolled_window.add(self.webview)
-        
+
         self.install_ok = _("Installation finished!\n" \
                             "Do you want to restart your system now?")
 
         super().add(builder.get_object("slides"))
-        
+
         self.fatal_error = False
-        
+
     def translate_ui(self):
         txt = _("Installing Manjaro...")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
@@ -101,7 +101,7 @@ class Slides(Gtk.Box):
 
         if len(self.info_label.get_label()) <= 0:
             self.set_message(_("Please wait..."))
-        
+
         self.install_ok = _("Installation finished!\n" \
                             "Do you want to restart your system now?")
 
@@ -214,7 +214,7 @@ class Slides(Gtk.Box):
                     if fsname:
                         subprocess.check_call(['umount', self.dest_dir])
                     os._exit(0)
-                        
+
                 return False
             elif event[0] == 'error':
                 self.callback_queue.task_done()
@@ -228,7 +228,7 @@ class Slides(Gtk.Box):
                     # Restart installation process
                     logging.debug("Restarting installation process...")
                     p = self.settings.get('installer_thread_call')
-                    
+
                     self.process = installation_process.InstallationProcess( \
                         self.settings, \
                         self.callback_queue, \
@@ -237,7 +237,7 @@ class Slides(Gtk.Box):
                         p['ssd'], \
                         p['alternate_package_list'], \
                         p['blvm'])
-                    
+
                     self.process.start()
                     return True
                 else:
@@ -253,11 +253,11 @@ class Slides(Gtk.Box):
                 #       use the one at pac.py:queue_event)
                 logging.info(event[1])
                 self.set_message(event[1])
-                            
+
             self.callback_queue.task_done()
-        
+
         return True
-        
+
     def empty_queue(self):
         while self.callback_queue.empty() == False:
             try:

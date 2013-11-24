@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 #
 #  location.py
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -53,27 +53,27 @@ class Location(Gtk.Box):
         self.label_help = self.ui.get_object("label_help")
 
         self.treeview_items = 0
-        
+
         self.create_toolview()
-        
+
         self.load_locales()
-        
+
         super().add(self.ui.get_object("location"))
 
     def translate_ui(self):
         txt = _("Select your location")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
-        
+
         txt = _("The selected location will be used to help select the system locale.\n" \
             "Normally this should be the country where you live.\n" \
             "This is a shortlist of locations based on the language you selected.")
         self.label_help.set_markup(txt)
-        
+
         txt = _("Country, territory or area:")
         txt = "<span weight='bold'>%s</span>" % txt
         self.label_choose_country.set_markup(txt)
-        
+
     def create_toolview(self):
         render = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn("", render, text=0)
@@ -81,7 +81,7 @@ class Location(Gtk.Box):
         self.treeview.append_column(col)
         self.treeview.set_model(liststore)
         self.treeview.set_headers_visible(False)
-        
+
     def select_first_treeview_item(self):
         model = self.treeview.get_model()
         treeiter = model.get_iter(0)
@@ -105,7 +105,7 @@ class Location(Gtk.Box):
     def prepare(self, direction):
         self.hide_all()
         self.fill_treeview()
-        
+
         if self.treeview_items == 1:
             # If we have only one option, don't bother our beloved user
             self.store_values()
@@ -115,18 +115,18 @@ class Location(Gtk.Box):
                 GLib.idle_add(self.backwards_button.clicked)
         else:
             self.select_first_treeview_item()
-            self.translate_ui()       
-        
+            self.translate_ui()
+
         # If I don't do this, check page is not shown well when skipping this page (location)
         # If I do this, we can see location page for a second (it's ugly)
         self.show_all()
-        
+
     def load_locales(self):
         data_dir = self.settings.get('data')
         xml_path = os.path.join(data_dir, "locales.xml")
-        
+
         self.locales = {}
-        
+
         tree = etree.parse(xml_path)
         root = tree.getroot()
         for child in root.iter("language"):
@@ -136,18 +136,18 @@ class Location(Gtk.Box):
                 elif item.tag == 'locale_name':
                     locale_name = item.text
             self.locales[locale_name] = language_name
-            
+
         xml_path = os.path.join(data_dir, "iso3366-1.xml")
-        
+
         countries = {}
-        
+
         tree = etree.parse(xml_path)
         root = tree.getroot()
         for child in root:
             code = child.attrib['value']
             name = child.text
             countries[code] = name
-            
+
         for locale_name in self.locales:
             language_name = self.locales[locale_name]
             for country_code in countries:
@@ -162,7 +162,7 @@ class Location(Gtk.Box):
                 areas.append(self.locales[locale_name])
         liststore = self.treeview.get_model()
         liststore.clear()
-        
+
         # FIXME: What do we have to do when can't find any country?
         # Right now we put them all!
         # I've observed this with Esperanto and Asturianu at least.
@@ -171,12 +171,12 @@ class Location(Gtk.Box):
                 areas.append(self.locales[locale_name])
 
         self.treeview_items = len(areas)
-        
+
         areas.sort()
-        
+
         for area in areas:
             liststore.append([area])
-            
+
 
     def store_values(self):
         selected = self.treeview.get_selection()

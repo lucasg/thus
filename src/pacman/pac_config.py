@@ -5,20 +5,20 @@
 #
 #  This file has fragments of code from pamac (package manager from Manjaro)
 #  Check it at http://git.manjaro.org/core/pamac
-#  
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
 #  Copyright 2013 Manjaro (http://manjaro.org)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -140,11 +140,11 @@ class PacmanConfig(object):
         self.options["GPGDir"]  = "/install/etc/pacman.d/gnupg/"
         self.options["LogFile"] = "/install/var/log/pacman.log"
         self.options["Architecture"] = os.uname()[-1]
-        
+
         # If a pacman.conf file is given, we parse it
         if conf is not None:
             self.load_from_file(conf)
-            
+
         # If an options array is given, we add it
         if options is not None:
             self.load_from_options(options)

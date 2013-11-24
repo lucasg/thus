@@ -6,25 +6,25 @@
 #  This file has fragments of code from 'pamac'
 #  (pamac is a package manager from Manjaro team)
 #  Check it at http://git.manjaro.org/core/pamac
-#  
+#
 #  Copyright 2013 Manjaro (http://manjaro.org)
 #  Copyright 2013 Antergos (http://antergos.com/)
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
-    
+
 import traceback
 import sys
 import locale
@@ -42,7 +42,7 @@ except:
 
 class Pac(object):
     def __init__(self, conf, callback_queue):
-        
+
         self.callback_queue = callback_queue
         self.t = None
         self.conflict_to_remove = None
@@ -50,25 +50,25 @@ class Pac(object):
         self.to_add = []
         self.to_update = []
         self.to_provide = []
-        
+
         self.target = ""
-        
+
         # Packages to be removed
         # E.g: connman conflicts with netctl(openresolv), which is installed
         # by default with base group
         self.conflicts = []
-        
+
         # avoid adding a package that has been added in the past
         self.listofpackages = []
-        
+
         self.action = ""
         self.percent = 0
-        
+
         self.already_transferred = 0
         self.total_size = 0
-        
+
         self.last_event = {}
-        
+
         if conf != None:
             self.pacman_conf = pac_config.PacmanConfig(conf)
             self.handle = self.pacman_conf.initialize_alpm()
@@ -99,13 +99,13 @@ class Pac(object):
                 self.t = None
             except pyalpm.error:
                 self.queue_event("error", traceback.format_exc())
-        
+
     # Sync databases like pacman -Sy
     def do_refresh(self):
         self.release_transaction()
         for db in self.handle.get_syncdbs():
             try:
-                self.t = self.init_transaction()                
+                self.t = self.init_transaction()
                 db.update(force=False)
                 if self.t != None:
                     self.t.release()
@@ -132,7 +132,7 @@ class Pac(object):
 
         self.to_remove = []
 
-        if self.to_add and self.t_lock is False:    
+        if self.to_add and self.t_lock is False:
             self.t = self.init_transaction()
             if self.t is not False:
                 for pkgname in self.to_add:
@@ -195,9 +195,9 @@ class Pac(object):
                                 self.t.add_pkg(pakg)
         except pyalpm.error:
             line = traceback.format_exc()
-            self.queue_event("error", line)    
+            self.queue_event("error", line)
     '''
-    
+
     def add_package(self, pkgname):
         #print("searching %s" % pkgname)
         found = False
@@ -213,7 +213,7 @@ class Pac(object):
                         found = True
                         break
                     else:
-                        # Couldn't find package in repo, 
+                        # Couldn't find package in repo,
                         # maybe it's a group of packages.
                         group_list = self.select_from_groups([repo], pkgname)
                         if group_list:
@@ -231,7 +231,7 @@ class Pac(object):
                 pass
             else:
                 self.queue_event("error", line)
-                
+
         if not found:
             print(_("Package %s not found in any repo!") % pkgname)
 
@@ -255,9 +255,9 @@ class Pac(object):
             if self.last_event[event_type] == event_text:
                 # do not repeat same event
                 return
-        
+
         self.last_event[event_type] = event_text
-                
+
         if event_type == "error":
             # format message to show file, function, and line where the error
             # was issued
@@ -275,15 +275,15 @@ class Pac(object):
 
         #if event_type != "percent":
         #    logging.info(event_text)
-        
+
         if event_type == "error":
             # We've queued a fatal event so we must exit installer_process process
             # wait until queue is empty (is emptied in slides.py), then exit
             self.callback_queue.join()
             sys.exit(1)
 
-         
-    # Callback functions 
+
+    # Callback functions
     def cb_event(self, ID, event, tupel):
         if ID is 1:
             self.action = _('Checking dependencies...')
@@ -336,7 +336,7 @@ class Pac(object):
             # Even if there is a real error we're not sure we want to abort all installation
             # Instead of issuing a fatal error we just log an error message
             logging.error(line)
-        
+
         '''
         if level & pyalpm.LOG_ERROR:
             if 'linux' not in self.target and 'lxdm' not in self.target:
