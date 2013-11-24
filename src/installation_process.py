@@ -35,8 +35,6 @@ import shutil
 import xml.etree.ElementTree as etree
 import urllib.request
 import urllib.error
-import crypt
-#import download
 import config
 import logging
 import info
@@ -132,7 +130,6 @@ sys.path.insert(0, parted_dir)
 
 import fs_module as fs
 import misc
-import pac
 
 import auto_partition
 

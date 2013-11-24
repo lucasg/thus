@@ -44,12 +44,9 @@ sys.path.insert(0, src_dir)
 
 import config
 
-#import welcome
 import language
 import location
 import check
-#import desktop
-#import features
 import keymap
 import timezone
 import installation_ask
@@ -228,12 +225,9 @@ class Main(Gtk.Window):
         if len(_alternate_package_list) > 0:
             logging.info(_("Using '%s' file as package list") % _alternate_package_list)
 
-        #self.pages["welcome"] = welcome.Welcome(params)
         self.pages["language"] = language.Language(params)
         self.pages["location"] = location.Location(params)
         self.pages["check"] = check.Check(params)
-        #self.pages["desktop"] = desktop.DesktopAsk(params)
-        #self.pages["features"] = features.Features(params)
         self.pages["keymap"] = keymap.Keymap(params)
         self.pages["timezone"] = timezone.Timezone(params)
         self.pages["installation_ask"] = installation_ask.InstallationAsk(params)
