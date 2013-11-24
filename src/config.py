@@ -75,7 +75,6 @@ class Settings():
             'tmp' : '/tmp', \
             'thus' : '/usr/share/thus/', \
             'ui' : '/usr/share/thus/ui/', \
-            'use_aria2' : False, \
             'use_luks' : False, \
             'use_lvm' : False, \
             'use_ntp' : True, \

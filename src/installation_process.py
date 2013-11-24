@@ -35,6 +35,7 @@ import shutil
 import xml.etree.ElementTree as etree
 import urllib.request
 import urllib.error
+import crypt
 import config
 import logging
 import info
@@ -1375,15 +1376,6 @@ class InstallationProcess(multiprocessing.Process):
                     if 'default_user' in line:
                         line = 'default_user %s\n' % username
                     slim_conf.write(line)
-
-        '''# Setup ufw if it's an user wanted feature
-        if self.settings.get("feature_firewall"):
-            pass
-            # ufw default deny
-            # ufw allow Transmission
-            # ufw enable
-            # systemctl enable ufw.service'''
-
 
         # encrypt home directory if requested
         if self.settings.get('encrypt_home'):

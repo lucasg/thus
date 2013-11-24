@@ -151,9 +151,8 @@ class UserInfo(Gtk.Box):
 
         self.password_strength.hide()
 
-        # Disable staging features
-        if not self.settings.get("use_staging"):
-            self.login['encrypt'].hide()
+        # Disable broken feature
+        self.login['encrypt'].hide()
 
     def store_values(self):
         self.settings.set('fullname', self.entry['fullname'].get_text())
