@@ -55,13 +55,8 @@ if __name__ == '__main__':
          if os.path.isfile(os.path.join(src_dir, f)) and f[0] != "."  and f[-3:] == ".py":
              files.append("src/" + f)
 
-    pacman_dir = os.path.join(src_dir, "pacman")
-    for f in os.listdir(pacman_dir):
-         if os.path.isfile(os.path.join(pacman_dir, f)) and f[0] != "."  and f[-3:] == ".py":
-             files.append("src/pacman/" + f)
-
     parted_dir = os.path.join(src_dir, "parted")
-    for f in os.listdir(pacman_dir):
+    for f in os.listdir(parted_dir):
          if os.path.isfile(os.path.join(parted_dir, f)) and f[0] != "."  and f[-3:] == ".py":
              files.append("src/parted/" + f)
 
