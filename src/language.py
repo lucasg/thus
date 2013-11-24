@@ -35,7 +35,6 @@ import config
 import i18n
 
 _next_page = "location"
-#_prev_page = "welcome"
 _prev_page = None
 
 class Language(Gtk.Box):
