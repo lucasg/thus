@@ -262,11 +262,13 @@ class InstallationProcess(multiprocessing.Process):
                                                     self.auto_device,
                                                     self.settings.get("use_luks"),
                                                     self.settings.get("use_lvm"),
-                                                    self.settings.get("luks_key_pass"))
+                                                    self.settings.get("luks_key_pass"),
+                                                    self.callback_queue)
                 ap.run()
 
-                # Get mount_devices
+                # Get mount_devices and fs_devices
                 # (mount_devices will be used when configuring GRUB in modify_grub_default)
+                # (fs_devices  will be used when configuring the fstab file)
                 self.mount_devices = ap.get_mount_devices()
                 self.fs_devices = ap.get_fs_devices()
             except subprocess.CalledProcessError as e:
@@ -465,7 +467,7 @@ class InstallationProcess(multiprocessing.Process):
             traceback.print_tb(exc_traceback, limit=1, file=sys.stdout)
 
     def chroot_mount_special_dirs(self):
-        # do not remount
+        # Do not remount
         if self.special_dirs_mounted:
             self.queue_event('debug', _("Special dirs already mounted."))
             return

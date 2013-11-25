@@ -30,19 +30,21 @@ import logging
 import time
 
 class AutoPartition():
-    def __init__(self, dest_dir, auto_device, use_luks, use_lvm, luks_key_pass):
+    def __init__(self, dest_dir, auto_device, use_luks, use_lvm, luks_key_pass, callback_queue):
         self.dest_dir = dest_dir
         self.auto_device = auto_device
         self.luks_key_pass = luks_key_pass
+        self.luks = use_luks
+        self.lvm = use_lvm
+
+        # Will use these queue to show progress info to the user
+        self.callback_queue = callback_queue
 
         self.uefi = False
 
         if os.path.exists("/sys/firmware/efi/systab"):
             # TODO: Check if UEFI works
             self.uefi = True
-
-        self.luks = use_luks
-        self.lvm = use_lvm
 
     def check_output(self, command):
         return subprocess.check_output(command.split()).decode().strip("\n")
@@ -78,7 +80,7 @@ class AutoPartition():
             logging.warning("Unmounting %s" % d)
             subprocess.call(["umount", d])
 
-        # Umount the device that is mounted in self.dest_dir (if any)
+        # Now is the time to unmount the device that is mounted in self.dest_dir (if any)
         logging.warning("Unmounting %s" % self.dest_dir)
         subprocess.call(["umount", self.dest_dir])
 
@@ -408,8 +410,7 @@ class AutoPartition():
             # User shouldn't store the keyfiles unencrypted unless the medium itself is reasonably safe
             # (boot partition is not)
             subprocess.check_call(['chmod', '0400', key_file])
-            subprocess.check_call(['cp', key_file, '%s/boot' % self.dest_dir])
-            subprocess.check_call(['rm', key_file])
+            subprocess.check_call(['mv', key_file, '%s/boot' % self.dest_dir])
 
 if __name__ == '__main__':
     logger = logging.getLogger()
@@ -420,5 +421,5 @@ if __name__ == '__main__':
     sh.setFormatter(formatter)
     logger.addHandler(sh)
 
-    ap = AutoPartition("/install", "/dev/sdb", use_luks=False, use_lvm=True, luks_key_pass="")
+    ap = AutoPartition("/install", "/dev/sdb", use_luks=False, use_lvm=True, luks_key_pass="", callback_queue=None)
     ap.run()
