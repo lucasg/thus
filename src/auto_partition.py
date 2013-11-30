@@ -287,7 +287,7 @@ class AutoPartition(object):
         # For now, we we'll use the same password for root and /home
         # If instead user wants to use a key file, we'll have two different key files.
         
-        logging.debug(_("Cnchi will setup LUKS on device %s"), luks_device)
+        logging.debug(_("Thus will setup LUKS on device %s"), luks_device)
 
         # Wipe LUKS header (just in case we're installing on a pre LUKS setup)
         # For 512 bit key length the header is 2MB
