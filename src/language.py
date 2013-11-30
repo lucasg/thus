@@ -32,7 +32,7 @@ LOCALE_DIR = "/usr/share/locale"
 
 # Import functions
 import config
-import i18n
+import canonical.i18n as i18n
 
 _next_page = "location"
 _prev_page = None
@@ -83,7 +83,7 @@ class Language(Gtk.Box):
         label = self.ui.get_object("welcome_label")
         txt_bold = _("Notice: The Thus Installer is beta software.")
         txt = _("Thus is pre-release beta software that is under active development. \n" \
-        "It does not yet properly handle RAID, btrfs subvolumes, or other " \
+        "It does not yet properly handle RAID, btrfs subvolumes, or other  \n" \
         "advanced setups. Please proceed with caution as data loss is possible! \n\n" \
         "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>")
         txt = "<span weight='bold'>%s</span>\n\n" % txt_bold + txt

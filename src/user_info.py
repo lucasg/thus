@@ -23,7 +23,7 @@
 from gi.repository import Gtk
 
 import os
-import validation
+import canonical.validation as validation
 import config
 import show_message as show
 
@@ -31,7 +31,7 @@ _next_page = "slides"
 _prev_page = "keymap"
 
 class UserInfo(Gtk.Box):
-
+    """ Asks for user information """
     def __init__(self, params):
 
         self.title = params['title']
@@ -46,11 +46,11 @@ class UserInfo(Gtk.Box):
 
         self.ui.add_from_file(os.path.join(self.ui_dir, "user_info.ui"))
 
-        self.ok = dict()
-        self.ok['fullname'] = self.ui.get_object('fullname_ok')
-        self.ok['hostname'] = self.ui.get_object('hostname_ok')
-        self.ok['username'] = self.ui.get_object('username_ok')
-        self.ok['password'] = self.ui.get_object('password_ok')
+        self.is_ok = dict()
+        self.is_ok['fullname'] = self.ui.get_object('fullname_ok')
+        self.is_ok['hostname'] = self.ui.get_object('hostname_ok')
+        self.is_ok['username'] = self.ui.get_object('username_ok')
+        self.is_ok['password'] = self.ui.get_object('password_ok')
 
         self.error_label = dict()
         self.error_label['hostname'] = self.ui.get_object('hostname_error_label')
@@ -79,6 +79,7 @@ class UserInfo(Gtk.Box):
         super().add(self.ui.get_object("user_info"))
 
     def translate_ui(self):
+        """ Translate all widgets """
         label = self.ui.get_object('fullname_label')
         txt = _("Your name:")
         label.set_markup(txt)
@@ -141,9 +142,10 @@ class UserInfo(Gtk.Box):
         self.title.set_markup(txt)
 
     def hide_widgets(self):
-        ok_widgets = self.ok.values()
-        for ok in ok_widgets:
-            ok.hide()
+        """ Hide unused and message widgets """
+        ok_widgets = self.is_ok.values()
+        for ok_widget in ok_widgets:
+            ok_widget.hide()
 
         error_label_widgets = self.error_label.values()
         for error_label in error_label_widgets:
@@ -151,10 +153,11 @@ class UserInfo(Gtk.Box):
 
         self.password_strength.hide()
 
-        # Disable broken feature
+        # TODO: Fix home encryption and stop hidding its widget
         self.login['encrypt'].hide()
 
     def store_values(self):
+        """ Store all user values in self.settings """
         self.settings.set('fullname', self.entry['fullname'].get_text())
         self.settings.set('hostname', self.entry['hostname'].get_text())
         self.settings.set('username', self.entry['username'].get_text())
@@ -177,6 +180,7 @@ class UserInfo(Gtk.Box):
         self.settings.set('user_info_done', True)
 
     def prepare(self, direction):
+        """ Prepare screen """
         self.translate_ui()
         self.show_all()
         self.hide_widgets()
@@ -211,19 +215,20 @@ class UserInfo(Gtk.Box):
                 self.encrypt_home = False
 
     def validate(self, element, value):
+        """ Check that what the user is typing is ok """
         if len(value) == 0:
-            self.ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
-            self.ok[element].show()
+            self.is_ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
+            self.is_ok[element].show()
             self.error_label[element].show()
         else:
             result = validation.check(element, value)
             if len(result) == 0:
-                self.ok[element].set_from_stock("gtk-yes", Gtk.IconSize.BUTTON)
-                self.ok[element].show()
+                self.is_ok[element].set_from_stock("gtk-yes", Gtk.IconSize.BUTTON)
+                self.is_ok[element].show()
                 self.error_label[element].hide()
             else:
-                self.ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
-                self.ok[element].show()
+                self.is_ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
+                self.is_ok[element].show()
 
                 if validation.NAME_BADCHAR in result:
                     txt = _("Invalid characters entered")
@@ -242,14 +247,14 @@ class UserInfo(Gtk.Box):
 
 
     def info_loop(self, widget):
-        # user has introduced new information. Check it here.
+        """ User has introduced new information. Check it here. """
 
         if widget == self.entry['fullname']:
             fullname = self.entry['fullname'].get_text()
             if len(fullname) > 0:
-                self.ok['fullname'].show()
+                self.is_ok['fullname'].show()
             else:
-                self.ok['fullname'].hide()
+                self.is_ok['fullname'].hide()
 
         if widget == self.entry['hostname']:
             hostname = self.entry['hostname'].get_text()
@@ -263,16 +268,16 @@ class UserInfo(Gtk.Box):
                 widget == self.entry['verified_password']:
             validation.check_password(self.entry['password'], \
                     self.entry['verified_password'], \
-                    self.ok['password'], \
+                    self.is_ok['password'], \
                     self.error_label['password'], \
                     self.password_strength)
 
         # check if all fields are filled and ok
         all_ok = True
-        ok_widgets = self.ok.values()
-        for ok in ok_widgets:
-            (icon_name, icon_size) = ok.get_stock()
-            visible = ok.get_visible()
+        ok_widgets = self.is_ok.values()
+        for ok_widget in ok_widgets:
+            (icon_name, icon_size) = ok_widget.get_stock()
+            visible = ok_widget.get_visible()
             if visible == False or icon_name != "gtk-yes":
                 all_ok = False
 

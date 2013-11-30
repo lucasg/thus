@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 18:06+0000\n"
+"POT-Creation-Date: 2013-11-25 00:15+0100\n"
+"PO-Revision-Date: 2013-11-24 23:24+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/manjaro-thus/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:100
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "Dette installationsprogram kræver administratorrettigheder og kan ikke fortsætte uden."
 
-#: thus.py:113
+#: thus.py:108
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -37,20 +37,20 @@ msgid ""
 "and run this installer again."
 msgstr "Du kan ikke køre to instanser af dette installationsprogram samtidig.\n\nHvis du er sikker på, at der ikke kører andre instanser af programmet end denne,\nså kan du slette filen %s\nog starte installationsprogrammet påny."
 
-#: thus.py:209
+#: thus.py:204
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Anvender Aria2 til at downloade pakker med - EKSPERIMENTALT"
 
-#: thus.py:229
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Bruger filen '%s' som pakkeliste"
 
-#: thus.py:249
+#: thus.py:241
 msgid "Manjaro Installer"
 msgstr "Installationsprogram for Manjaro"
 
-#: thus.py:317
+#: thus.py:309
 msgid "Quiting installer..."
 msgstr "Afslutter installationsprogram..."
 
@@ -79,213 +79,52 @@ msgstr "i386 UEFI"
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
 msgstr "Tryk 'Fortryd', hvis du ikke ønsker at installere en bootloader"
 
-#: src/check.py:68
+#: src/check.py:67
 msgid "Check your computer"
 msgstr "Check, at din computer"
 
-#: src/check.py:73
+#: src/check.py:72
 msgid "has at least 5GB available disk space"
 msgstr "har mindst 5GB diskplads til rådighed"
 
-#: src/check.py:77
+#: src/check.py:76
 msgid "is plugged in to a power source"
 msgstr "er sat til strøm"
 
-#: src/check.py:81
+#: src/check.py:80
 msgid "is connected to the Internet"
 msgstr "er forbundet med internettet"
 
-#: src/check.py:85
+#: src/check.py:84
 msgid "For best results, please ensure that this computer:"
 msgstr "For at få de bedste resultater skal du sikre dig, at denne computer:"
 
-#: src/check.py:90 ui/check.ui:106
+#: src/check.py:89 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
 msgstr "Manjaro bruger tredjepartsprogrammer til at afspille Adobe Flash, MP3-filer og andre medietyper. Noget af denne software er proprietær. Denne software er underlagt særlige licensforhold, der inkluderes med dens dokumentation."
 
-#: src/check.py:96 ui/check.ui:117
+#: src/check.py:95 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "installer dette tredjepartsprogram"
 
-#: src/check.py:116
+#: src/check.py:115
 msgid "Can't get network status"
 msgstr "Kan ikke fastslå netværksstatus"
 
-#: src/check.py:193
+#: src/check.py:192
 msgid "We have Internet connection."
 msgstr "Vi har internetforbindelse."
 
-#: src/check.py:194
+#: src/check.py:193
 msgid "We're connected to a power source."
 msgstr "Vi er sat til strøm"
 
-#: src/check.py:195
+#: src/check.py:194
 msgid "We have enough disk space."
 msgstr "Vi har ikke tilstrækkelig diskplads."
-
-#: src/desktop.py:76
-msgid ""
-"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
-"put you in control and bring freedom to everybody. GNOME 3 is developed by "
-"the GNOME community."
-msgstr "GNOME 3 er en let og elegant måde at bruge din computer. Den er beregnet til at give dig kontrol og bruge frihed til alle. GNOME 3 er udviklet af GNOME-community'et."
-
-#: src/desktop.py:83
-msgid ""
-"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the GNOME2 "
-"desktop metaphor"
-msgstr "Cinnamon er afledt af GNOME Shell, udviklet af (og til) Linux Mint. Formålet er at levere et mere traditionelt brugermiljø inspireret af GNOME 2s skrivebordsmiljø"
-
-#: src/desktop.py:90
-msgid ""
-"XFCE is a lightweight desktop environment which aims to be light on system "
-"resources while still being visually appealing, fully-featured, and easy to "
-"use."
-msgstr "XFCE er et letvægts-skrivebordsmiljø, hvis mål er at bruge begrænsede systemressourcer og samtidig være visuelt tiltalende, have bred funktionalitet og være let tilgængelig."
-
-#: src/desktop.py:96
-msgid ""
-"LXDE is a high-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard "
-"shortcuts and additional features like tabbed file browsing."
-msgstr "Lxde er et højtydende og energibesparende skrivebordsmiljø. Det leveres med en nydelig brugerflade, understøttelse af flere sprog, standardtastaturgenveje og andre features som faneblade i filhåndteringen."
-
-#: src/desktop.py:103
-msgid ""
-"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
-"The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox er en særdeles fleksibel moderne window manager med understøttelse af talrige standarder.\n*box-stilen er velkendt for sin minimalistiske fremtræden."
-
-#: src/desktop.py:110
-msgid ""
-"Enlightenment is a lean, fast, modular and very extensible window manager "
-"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
-" you need to operate your desktop (or laptop). "
-msgstr "Enlightenment er en slank, hurtigt og modulær window manager med talrige udvidelsesmuligheder, udviklet for X11 og Linux. Den beskrives som en \"desktop shell\", som giver dig det, du skal bruge for at anvende din desktop (eller laptop)."
-
-#: src/desktop.py:116
-msgid ""
-"The KDE Desktop offers a beautiful looking desktop that takes complete "
-"advantage of modern computing technology. Through the use of visual effects "
-"and scalable graphics, the desktop experience is not only smooth but also "
-"pleasant to the eye."
-msgstr "KDE-skrivebordsmiljøet  byder på en smuk desktop, der drager det fulde udbytte af moderne computerteknologi. Ved hjælp af visuelle effekter og skalerbar grafik er oplevelsen af dette skrivebordsmiljø både noget, der glider glat og er behageligt at se på."
-
-#: src/desktop.py:123
-msgid ""
-"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
-"Qt technologies. It has been tailored for users who value simplicity, speed,"
-" and an intuitive interface."
-msgstr "Razor-QT er et avanceret, lettilgængeligt og hurtigt skrivebordsmiljø baseret på QT-teknologi. Det er lavet med henblik på brugere, der sætter pris på en enkel, hurtig og intuitiv brugerflade."
-
-#: src/desktop.py:130
-msgid ""
-"This will install Manjaro as command-line system, without any desktop "
-"environment at all. After the installation you can optionally install the "
-"environment of your choice."
-msgstr "Dette vil installere Manjaro som kommando-liniebaseret system uden noget skrivebordsmiljø. Efter installation kan man efterfølgende installere det miljø, man ønsker at gå videre med."
-
-#: src/desktop.py:142
-msgid "Select your desktop"
-msgstr "Vælg dit skrivebord"
-
-#: src/desktop.py:152
-msgid "Desktops"
-msgstr "Skriveborde"
-
-#: src/desktop.py:185
-#, python-format
-msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Dette vil installere Manjaro med skrivebordet '%s'"
-
-#: src/download.py:78
-#, python-format
-msgid "Error creating metalink for package %s"
-msgstr "Fejl ved etablering af metalink for pakken %s"
-
-#: src/download.py:84
-#, python-format
-msgid "Error adding metalink for package %s"
-msgstr "Fejl ved tilføjelse af metalink for pakken %s"
-
-#: src/download.py:133
-#, python-format
-msgid "Downloading package '%s'..."
-msgstr "Downloader pakken '%s'..."
-
-#: src/download.py:157
-msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr "Kan ikke få forbindelse til Aria2. Vil ikke kunne accelerere download."
-
-#: src/download.py:228
-#, python-format
-msgid "Unable to create download queue for package %s"
-msgstr "Kan ikke oprette downloadko for pakken %s"
-
-#: src/download.py:232
-msgid "Can't find these packages: "
-msgstr "Kan ikke finde disse pakker:"
-
-#: src/download.py:238
-msgid "Warning! Can't resolve these dependencies: "
-msgstr "Advarsel! Kan ikke udrede disse afhængigheder:"
-
-#: src/features.py:91
-msgid "Feature selection"
-msgstr "Valg af funktionalitet"
-
-#: src/features.py:96
-msgid "Bluetooth support"
-msgstr "Bluetooth-understøttelse"
-
-#: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "Uden Bluetooth-understøttelse vil du ikke kunne anvende Bluetooth-enheder"
-
-#: src/features.py:103
-msgid "Printing support (CUPS)"
-msgstr "Printerunderstøttelse (CUPS)"
-
-#: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and management tools"
-msgstr "Dette inkluderer printerdrivere og administrationsværktøjer"
-
-#: src/features.py:110
-msgid "LibreOffice"
-msgstr "LibreOffice"
-
-#: src/features.py:113
-msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr "Kontorpakke (tekstbehandling, regneark, ...)"
-
-#: src/features.py:117
-msgid "Visual effects"
-msgstr "Visuelle effekter"
-
-#: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as window transparency and shadows"
-msgstr "Visuelle effekter såsom vinduers transparens og skygger"
-
-#: src/features.py:124
-msgid "Uncomplicated firewall"
-msgstr "Ukompliceret firewall"
-
-#: src/features.py:127
-msgid ""
-"Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr "Installerer ufw og blokerer al trafik som standard (brug gufw til at konfigurere den)"
-
-#: src/features.py:131
-msgid "Propietary packages"
-msgstr "Proprietære pakker"
-
-#: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr "Tredjepartsprogrammer til at afspille Flash, MP3-filer og andre medietyper"
 
 #: src/installation_advanced.py:208 src/installation_advanced.py:498
 #: src/installation_advanced.py:512
@@ -334,7 +173,7 @@ msgstr "intet"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:935
 #: src/installation_advanced.py:1309 src/installation_advanced.py:1385
-#: src/installation_advanced.py:1553
+#: src/installation_advanced.py:1570
 msgid "extended"
 msgstr "udvidet"
 
@@ -490,22 +329,22 @@ msgstr "Monter"
 msgid "These disks will have partition actions:"
 msgstr "Disse diske vil indgå i partitionering:"
 
-#: src/installation_advanced.py:1476
+#: src/installation_advanced.py:1503
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Gemmer ændringer foretaget i %s"
 
-#: src/installation_advanced.py:1490
+#: src/installation_advanced.py:1517
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Opretter et %s-filsystem på %s med mærket %s"
 
-#: src/installation_advanced.py:1572
+#: src/installation_advanced.py:1589
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro vil installere en bootloader af typen %s i %s"
 
-#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+#: src/installation_advanced.py:1606 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
 
@@ -538,40 +377,40 @@ msgstr "Ved sideordnet installation: Kan ikke vise partitionsliste"
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Kan ikke reducere partitionens størrelse (måske er den næsten fuld?)"
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:113
 msgid "Installation type"
 msgstr "Installationstype"
 
-#: src/installation_ask.py:124 ui/installation_ask.ui:33
+#: src/installation_ask.py:123 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Slet disk og installer Manjaro (automatisk)"
 
-#: src/installation_ask.py:127
+#: src/installation_ask.py:126
 msgid "Warning: This will delete all data on your disk"
 msgstr "Advarsel: Dette vil slette alle data på disken"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:133
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Installer Manjaro ved siden af %s"
 
-#: src/installation_ask.py:137
+#: src/installation_ask.py:136
 msgid "Install this OS alongside the other OSes you already have installed."
 msgstr "Installerer dette OS ved siden af de andre OS'er, du allerede har installeret-"
 
-#: src/installation_ask.py:143
+#: src/installation_ask.py:142
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "Opsæt dine partitioner og vælg hvor du ønsker at installere Manjaro (avanceret)"
 
-#: src/installation_ask.py:146
+#: src/installation_ask.py:145
 msgid "Create and delete partitions, and choose additional mount points."
 msgstr "Opret og slet partitioner og vælg yderligere monteringspunkter."
 
-#: src/installation_ask.py:166
+#: src/installation_ask.py:165
 msgid "Manjaro installation will be encrypted"
 msgstr "Manjaro-installationen vil blive krypteret"
 
-#: src/installation_ask.py:169
+#: src/installation_ask.py:168
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro vil blive installeret med en LVM-opsætning"
 
@@ -617,155 +456,155 @@ msgstr "Thus vil bruge %s som enhed for installation"
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus vil installere bootloaderen %s på %s"
 
-#: src/installation_process.py:82
+#: src/installation_process.py:81
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Kopierer '/%s'"
 
-#: src/installation_process.py:173
+#: src/installation_process.py:171
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Installer ved hjælp af metoden '%s'"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:274
 msgid "Error creating partitions and their filesystems"
 msgstr "Fejl ved oprettelse af partitionerne og deres filsystemer"
 
-#: src/installation_process.py:314 src/installation_process.py:336
+#: src/installation_process.py:312 src/installation_process.py:334
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Monterer partitionen %s på mappen %s"
 
-#: src/installation_process.py:320
+#: src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Monterer partitionen %s på mappen %s/boot"
 
-#: src/installation_process.py:324
+#: src/installation_process.py:322
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kunne ikke montere partitionerne root og boot"
 
-#: src/installation_process.py:341
+#: src/installation_process.py:339
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Kan ikke montere %s på %s"
 
-#: src/installation_process.py:362
+#: src/installation_process.py:360
 msgid "Can't create necessary directories on destination system"
 msgstr "Kan ikke oprette de nødvendige mapper på systemet"
 
-#: src/installation_process.py:459
+#: src/installation_process.py:457
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Gendanner metaoplysninger på %s"
 
-#: src/installation_process.py:472
+#: src/installation_process.py:470
 msgid "Special dirs already mounted."
 msgstr "Specialmapper er allerede monteret."
 
-#: src/installation_process.py:498
+#: src/installation_process.py:496
 msgid "Special dirs already not mounted."
 msgstr "Specialmapper er ikke monteret."
 
-#: src/installation_process.py:508
+#: src/installation_process.py:506
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Ude af stand til at montere %s"
 
-#: src/installation_process.py:559
+#: src/installation_process.py:557
 msgid "Create fstab."
 msgstr "Opret fstab."
 
-#: src/installation_process.py:671
+#: src/installation_process.py:669
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installerer Grub(2) BIOS bootloader på %s"
 
-#: src/installation_process.py:701
+#: src/installation_process.py:699
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS har installeret korrekt."
 
-#: src/installation_process.py:703
+#: src/installation_process.py:701
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "Fejl ved installation af GRUB(2) BIOS."
 
-#: src/installation_process.py:714
+#: src/installation_process.py:712
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installerer GRUB(2) UEFI %s bootloader på %s"
 
-#: src/installation_process.py:742
+#: src/installation_process.py:740
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "Fejl ved installation af konfigurationsfilen for GRUB(2)."
 
-#: src/installation_process.py:770
+#: src/installation_process.py:768
 msgid "ERROR installing GRUB(2) locale."
 msgstr "Fejl ved installation af lokaldata for GRUB(2)."
 
-#: src/installation_process.py:784
+#: src/installation_process.py:782
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Fejl ved etablering af hash for adgangskode for brugeren %s"
 
-#: src/installation_process.py:790
+#: src/installation_process.py:788
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Fejl ved ændring af af adgangskode for brugeren %s"
 
-#: src/installation_process.py:915
+#: src/installation_process.py:913
 msgid "Configuring your new system"
 msgstr "Konfigurerer dit nye system"
 
-#: src/installation_process.py:991
+#: src/installation_process.py:989
 msgid "Generating locales..."
 msgstr "Genererer data for region..."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1009
 msgid "Adjusting hardware clock..."
 msgstr "Justerer hardware-uret..."
 
-#: src/installation_process.py:1017
+#: src/installation_process.py:1015
 msgid "Configuring hardware..."
 msgstr "Konfigurerer hardware..."
 
-#: src/installation_process.py:1080
+#: src/installation_process.py:1078
 msgid "Set up graphics card..."
 msgstr "Opsæt grafikkort..."
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1085
 msgid "Can't execute the MHWD script"
 msgstr "Kan ikke køre KHWD-scriptet"
 
-#: src/installation_process.py:1093
+#: src/installation_process.py:1091
 msgid "Configure display manager..."
 msgstr "Opsæt display manager..."
 
-#: src/installation_process.py:1192
+#: src/installation_process.py:1190
 msgid "Configure System..."
 msgstr "Opsæt system..."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1218
 msgid "Removing live configuration (packages)"
 msgstr "Fjerner livekonfiguration (pakker)"
 
-#: src/installation_process.py:1236
+#: src/installation_process.py:1234
 msgid "Configuring package manager"
 msgstr "Konfigurerer pakkestyringsprogram"
 
-#: src/installation_process.py:1251
+#: src/installation_process.py:1249
 msgid "Finished configuring package manager."
 msgstr "Konfiguration af pakkestyringsprogram fuldført."
 
-#: src/installation_process.py:1275
+#: src/installation_process.py:1273
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Aktiver automatisk login for brugeren %s."
 
-#: src/installation_process.py:1354
+#: src/installation_process.py:1352
 msgid "Running mkinitcpio..."
 msgstr "Kører mkinitcpio..."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1355
 msgid "Running mkinitcpio... done"
 msgstr "Kører mkinitcpio... færdig"
 
@@ -786,15 +625,15 @@ msgstr "Varianter"
 msgid "keyboard_layout is %s"
 msgstr "keyboard_layout er %s"
 
-#: src/language.py:80
+#: src/language.py:79
 msgid "Please choose your language:"
 msgstr "Vælg dit sprog:"
 
-#: src/language.py:85
+#: src/language.py:84
 msgid "Notice: The Thus Installer is beta software."
 msgstr "Bemærk: Thus-installeren er beta-software."
 
-#: src/language.py:86
+#: src/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -802,15 +641,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Thus er beta-software i pre-release-stadiet, som er under aktiv udvikling.\nDen håndterer endnu ikke RAID, btrfs-underenheder eller andre avancerede opsætninger. Fortsæt med forsigtighed, da datatab er en mulighed!\n\nHvis du finder fejl, bedes du oplyse dem på <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: src/language.py:93 src/welcome.py:98
+#: src/language.py:92
 msgid "Welcome to Manjaro!"
 msgstr "Velkommen til Manjaro!"
 
-#: src/language.py:110
+#: src/language.py:109
 msgid "Languages"
 msgstr "Sprog"
 
-#: src/language.py:130
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Kan ikke finde oversættelsesfil for sproget %s"
@@ -839,6 +678,11 @@ msgstr "Lokaldata ændret til : %s"
 #, python-format
 msgid "Can't change to locale '%s'"
 msgstr "Kan ikke ændre lokaldata til '%s'"
+
+#: src/misc.py:930
+#, python-format
+msgid "Can't set locale %s"
+msgstr ""
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
@@ -1057,96 +901,6 @@ msgstr "stærk adgangskode"
 msgid "Passwords do not match"
 msgstr "Adgangskoder matcher ikke"
 
-#: src/welcome.py:84
-msgid ""
-"Try Manjaro without modifying your hard drive.\n"
-"Or install it to your PC with one of the two installer options."
-msgstr "Prøv Manjaro uden at gøre noget ved din harddisk.\nEller installer den på din PC med et af de to installationsprogrammer."
-
-#: src/welcome.py:89 ui/welcome.ui:45
-msgid "Try it"
-msgstr "Prøv den"
-
-#: src/welcome.py:92 ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "CLI-installation"
-
-#: src/welcome.py:95 ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "Grafisk installation"
-
-#: src/welcome.py:119
-msgid "Can't load the CLI installer"
-msgstr "Kan ikke indlæse CLI-installation"
-
-#: src/pacman/pac.py:236
-#, python-format
-msgid "Package %s not found in any repo!"
-msgstr "Pakken %s kunne ikke findes i noget repo!"
-
-#: src/pacman/pac.py:289
-msgid "Checking dependencies..."
-msgstr "Checker afhængigheder..."
-
-#: src/pacman/pac.py:291
-msgid "Checking file conflicts..."
-msgstr "Checker filkonflikter..."
-
-#: src/pacman/pac.py:293
-msgid "Resolving dependencies..."
-msgstr "Udreder afhængigheder..."
-
-#: src/pacman/pac.py:295
-msgid "Checking inter conflicts..."
-msgstr "Checker efter konflikter..."
-
-#: src/pacman/pac.py:300
-msgid "Removing..."
-msgstr "Fjerner..."
-
-#: src/pacman/pac.py:302
-msgid "Upgrading..."
-msgstr "Opgraderer..."
-
-#: src/pacman/pac.py:304
-msgid "Checking integrity..."
-msgstr "Checker integritet..."
-
-#: src/pacman/pac.py:307
-msgid "Loading packages files..."
-msgstr "Indlæser pakkefiler..."
-
-#: src/pacman/pac.py:310
-msgid "Configuring..."
-msgstr "Konfigurerer..."
-
-#: src/pacman/pac.py:311
-msgid "Configuring a package"
-msgstr "Konfigurerer pakke"
-
-#: src/pacman/pac.py:313
-msgid "Downloading a file"
-msgstr "Downloader fil"
-
-#: src/pacman/pac.py:389
-#, python-format
-msgid "Downloading %s..."
-msgstr "Downloader %s..."
-
-#: src/pacman/pac.py:398
-#, python-format
-msgid "Refreshing %s..."
-msgstr "Opdaterer %s..."
-
-#: src/pacman/pac.py:407
-#, python-format
-msgid "Installing %s (%d/%d)"
-msgstr "Installerer %s (%d/%d)"
-
-#: src/pacman/pac.py:410
-msgid "Checking and loading packages..."
-msgstr "Checker og indlæser pakker..."
-
 #: ui/bootloader.ui:7
 msgid "Boot"
 msgstr "Boot"
@@ -1156,44 +910,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">For at få de bedste resultater skal du sikre dig, at denne computer:</span>"
-
-#: ui/desktop.ui:106 ui/installation_alongside.ui:193
-#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:74
-msgid "label"
-msgstr "mærkat"
-
-#: ui/features.ui:40
-msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr "<span weight='bold' size='large'>Bluetooth-understøttelse</span>"
-
-#: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr "<span weight='bold' size='large'>Printerunderstøttelse (CUPS)</span>"
-
-#: ui/features.ui:200
-msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr "<span weight='bold' size='large'>LibreOffice</span>"
-
-#: ui/features.ui:215
-msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr "Kontorpakke (tekstbehandling, regneark, osv.)"
-
-#: ui/features.ui:280
-msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr "<span weight='bold' size='large'>Visuelle effekter</span>"
-
-#: ui/features.ui:360
-msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr "<span weight='bold' size='large'>Firewall</span>"
-
-#: ui/features.ui:375
-msgid "Activates your firewall (closes all ports by default)"
-msgstr "Aktiverer din firewall (lukker alle porte som standard)"
-
-#: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr "<span weight='bold' size='large'>Proprietære pakker</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1248,6 +964,11 @@ msgstr "Andet OS"
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
 msgstr "Manjaro"
+
+#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
+#: ui/location.ui:36 ui/slides.ui:74
+msgid "label"
+msgstr "mærkat"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1316,14 +1037,6 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "<span weight='bold'>Bemærk:Thus-installeren er beta-software.</span>\n\nDette er beta-software i pre-release-stadiet, som er under aktiv udvikling. Den håndterer endnu ikke RAID, btrfs-underenheder eller andre avancerede opsætninger. Fortsæt med forsigtighed, da datatab er en mulighed!\n\nHvis du finder fejl, bedes du besøge <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
-msgid " "
-msgstr " "
-
-#: ui/pac.ui:43
-msgid "Progress"
-msgstr "Fremskridt"
-
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Velkommen til Manjaro</span>"
@@ -1347,9 +1060,3 @@ msgstr "<small><span color=\"darkred\">Du skal indtaste et navn</span></small>"
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Dens navn, som det vises for andre computere.</span>"
-
-#: ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "Du kan prøve Manjaro uden at gøre noget ved din harddisk, bare klik på \"Prøv den\".\nhvis du ønsker at installere systemet på din PC, kan du gøre det med et af de to installationsprogrammer."

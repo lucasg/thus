@@ -8,6 +8,7 @@
 # Validation library.
 # Created by Antonio Olmo <aolmo#emergya._info> on 26 jul 2005.
 
+
 def check_grub_device(device):
     """Check that the user entered a valid boot device.
         @return True if the device is valid, False if it is not."""

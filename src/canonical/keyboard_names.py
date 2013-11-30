@@ -27,7 +27,7 @@ import io
 # TODO: fix this as it's not clean to have a full path here
 #_default_filename = "/usr/lib/ubiquity/console-setup/kbdnames.gz"
 #_default_filename = "data/kbdnames.gz"
-_default_filename = '/usr/share/thus/data/kbdnames.gz'
+_default_filename = '/usr/share/cnchi/data/kbdnames.gz'
 
 class KeyboardNames:
     def __init__(self, filename):

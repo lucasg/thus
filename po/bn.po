@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 18:03+0000\n"
+"POT-Creation-Date: 2013-11-25 00:15+0100\n"
+"PO-Revision-Date: 2013-11-24 23:24+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Bengali (http://www.transifex.com/projects/p/manjaro-thus/language/bn/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: bn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:100
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr ""
 
-#: thus.py:113
+#: thus.py:108
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -37,20 +37,20 @@ msgid ""
 "and run this installer again."
 msgstr ""
 
-#: thus.py:209
+#: thus.py:204
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "প্যাকেজ সমূহ ডাউনলোডের জন্য Aria2 ব্যবহার করা হচ্ছে - পরীক্ষামূলক"
 
-#: thus.py:229
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "'%s' ফাইলটি প্যাকেজ তালিকা হিসেবে ব্যবহার হচ্ছে"
 
-#: thus.py:249
+#: thus.py:241
 msgid "Manjaro Installer"
 msgstr "Manjaro ইনস্টলার"
 
-#: thus.py:317
+#: thus.py:309
 msgid "Quiting installer..."
 msgstr "ইন্সটলার বন্ধ হচ্ছে..."
 
@@ -79,213 +79,52 @@ msgstr "i386 UEFI"
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
 msgstr ""
 
-#: src/check.py:68
+#: src/check.py:67
 msgid "Check your computer"
 msgstr "আপনার কম্পিউটার পরীক্ষা করে দেখুন"
 
-#: src/check.py:73
+#: src/check.py:72
 msgid "has at least 5GB available disk space"
 msgstr "কমপক্ষে 3 জিবি জায়গা লভ্য"
 
-#: src/check.py:77
+#: src/check.py:76
 msgid "is plugged in to a power source"
 msgstr "একটি বৈদ্যুতিক উৎসের সঙ্গে সংযুক্ত আছে"
 
-#: src/check.py:81
+#: src/check.py:80
 msgid "is connected to the Internet"
 msgstr "ইন্টারনেট এর সঙ্গে সংযোগ আছে"
 
-#: src/check.py:85
+#: src/check.py:84
 msgid "For best results, please ensure that this computer:"
 msgstr "উত্তম ফলাফলের জন্য, দয়া করে নিশ্চিত করুন যে এই কম্পিউটার:"
 
-#: src/check.py:90 ui/check.ui:106
+#: src/check.py:89 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
 msgstr ""
 
-#: src/check.py:96 ui/check.ui:117
+#: src/check.py:95 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "তৃতীয় পক্ষের সফটওয়্যার গুলো ইন্সটল করুন"
 
-#: src/check.py:116
+#: src/check.py:115
 msgid "Can't get network status"
 msgstr "নেটওয়ার্ক স্ট্যাটাস পাচ্ছেনা"
 
-#: src/check.py:193
+#: src/check.py:192
 msgid "We have Internet connection."
 msgstr "আমরাদের ইন্টারনেট সংযোগ আছে."
 
-#: src/check.py:194
+#: src/check.py:193
 msgid "We're connected to a power source."
 msgstr "আমরা বৈদ্যুতিক উৎসের সঙ্গে সংযুক্ত আছি"
 
-#: src/check.py:195
+#: src/check.py:194
 msgid "We have enough disk space."
 msgstr "আমাদের ডিস্কে পর্যাপ্ত জায়গা আছে।"
-
-#: src/desktop.py:76
-msgid ""
-"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
-"put you in control and bring freedom to everybody. GNOME 3 is developed by "
-"the GNOME community."
-msgstr ""
-
-#: src/desktop.py:83
-msgid ""
-"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the GNOME2 "
-"desktop metaphor"
-msgstr ""
-
-#: src/desktop.py:90
-msgid ""
-"XFCE is a lightweight desktop environment which aims to be light on system "
-"resources while still being visually appealing, fully-featured, and easy to "
-"use."
-msgstr ""
-
-#: src/desktop.py:96
-msgid ""
-"LXDE is a high-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard "
-"shortcuts and additional features like tabbed file browsing."
-msgstr ""
-
-#: src/desktop.py:103
-msgid ""
-"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
-"The *box visual style is well known for its minimalistic appearance."
-msgstr ""
-
-#: src/desktop.py:110
-msgid ""
-"Enlightenment is a lean, fast, modular and very extensible window manager "
-"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
-" you need to operate your desktop (or laptop). "
-msgstr ""
-
-#: src/desktop.py:116
-msgid ""
-"The KDE Desktop offers a beautiful looking desktop that takes complete "
-"advantage of modern computing technology. Through the use of visual effects "
-"and scalable graphics, the desktop experience is not only smooth but also "
-"pleasant to the eye."
-msgstr ""
-
-#: src/desktop.py:123
-msgid ""
-"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
-"Qt technologies. It has been tailored for users who value simplicity, speed,"
-" and an intuitive interface."
-msgstr "Razor-qt একটি উন্নত, ব্যাবহারে সহজ এবং দ্রুত ডেস্কটপ পরিবেশ যেটা Qt প্রযুক্তি উপর ভিত্তি করে করা। এটা তৈরি করা হয়েছে তাদের জন্য যারা সরলতা, দ্রুততা, এবং একটি স্বজ্ঞামূলক ইন্টারফেস কে মুল্য দেয়."
-
-#: src/desktop.py:130
-msgid ""
-"This will install Manjaro as command-line system, without any desktop "
-"environment at all. After the installation you can optionally install the "
-"environment of your choice."
-msgstr ""
-
-#: src/desktop.py:142
-msgid "Select your desktop"
-msgstr "আপনার ডেস্কটপ নির্বাচন করুন"
-
-#: src/desktop.py:152
-msgid "Desktops"
-msgstr "ডেস্কটপস"
-
-#: src/desktop.py:185
-#, python-format
-msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Thus Manjaro কে '%s' ডেস্কটপ এর সাথে ইন্সটল করবে"
-
-#: src/download.py:78
-#, python-format
-msgid "Error creating metalink for package %s"
-msgstr "প্যাকেজ %s এর জন্য metalink তৈরিতে ত্রুটি হচ্ছে"
-
-#: src/download.py:84
-#, python-format
-msgid "Error adding metalink for package %s"
-msgstr "প্যাকেজ %s এ metalink যোগে ত্রুটি হচ্ছে"
-
-#: src/download.py:133
-#, python-format
-msgid "Downloading package '%s'..."
-msgstr "প্যাকেজ ডাউনলোড হচ্ছে '%s'..."
-
-#: src/download.py:157
-msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr "Aria2 এর সঙ্গে সংযোগ হচ্ছে না। ডাউনলোড স্পীড বৃদ্ধি করা সম্ভব নয়"
-
-#: src/download.py:228
-#, python-format
-msgid "Unable to create download queue for package %s"
-msgstr "প্যাকেজ %s এর জন্য ডাউনলোড সারি তৈরি করতে অক্ষম"
-
-#: src/download.py:232
-msgid "Can't find these packages: "
-msgstr "যে প্যাকেজ গুলো পাওয়া যাচ্ছে নাঃ"
-
-#: src/download.py:238
-msgid "Warning! Can't resolve these dependencies: "
-msgstr "সতর্কবাণী! এই ডিপেন্ডেন্সি গুলো সমাধান করা যাচ্ছে নাঃ"
-
-#: src/features.py:91
-msgid "Feature selection"
-msgstr "বৈশিষ্ট্য নির্বাচন"
-
-#: src/features.py:96
-msgid "Bluetooth support"
-msgstr "ব্লুটুথ সমর্থন"
-
-#: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "ব্লুটুথ সমর্থন ছাড়া ব্লুটুথ ডিভাইস ব্যবহার করা সম্ভব নয়"
-
-#: src/features.py:103
-msgid "Printing support (CUPS)"
-msgstr ""
-
-#: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and management tools"
-msgstr "এটা প্রিন্টারের ড্রাইভার এবং পরিচালনার সরঞ্জাম অন্তর্ভুক্ত করবে"
-
-#: src/features.py:110
-msgid "LibreOffice"
-msgstr "লিব্রেঅফিস"
-
-#: src/features.py:113
-msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr "অফিস স্যুট (ওয়ার্ড প্রসেসর, স্প্রেডশীট, ...)"
-
-#: src/features.py:117
-msgid "Visual effects"
-msgstr "ভিজুয়াল এফেক্টস"
-
-#: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as window transparency and shadows"
-msgstr "ভিজুয়াল এফেক্ট যেমন উইন্ডো -এর স্বচ্ছতা এবং ছায়া"
-
-#: src/features.py:124
-msgid "Uncomplicated firewall"
-msgstr "জটিলতা বিহীন ফায়ারওয়াল"
-
-#: src/features.py:127
-msgid ""
-"Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr ""
-
-#: src/features.py:131
-msgid "Propietary packages"
-msgstr "মালিকানাধিন প্যাকেজসমূহ"
-
-#: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr "তৃতীয় পক্ষের সফটওয়্যার Flash, MP3 এবং অন্যান্য মিডিয়া ফাইল চালাবার জন্য"
 
 #: src/installation_advanced.py:208 src/installation_advanced.py:498
 #: src/installation_advanced.py:512
@@ -334,7 +173,7 @@ msgstr "কোনটি নয়"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:935
 #: src/installation_advanced.py:1309 src/installation_advanced.py:1385
-#: src/installation_advanced.py:1553
+#: src/installation_advanced.py:1570
 msgid "extended"
 msgstr "বর্ধিত"
 
@@ -490,22 +329,22 @@ msgstr "মাউন্ট"
 msgid "These disks will have partition actions:"
 msgstr "এই ডিস্কগুলোতে পার্টিশন ক্রিয়া থাকবেঃ"
 
-#: src/installation_advanced.py:1476
+#: src/installation_advanced.py:1503
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s এর মধ্যে পরিবর্তন গুলো সংরক্ষণ হয়েছে"
 
-#: src/installation_advanced.py:1490
+#: src/installation_advanced.py:1517
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "%s ফাইলসিস্টেম তৈরি হচ্ছে %s এর ভিতরে %s লেবেল হয়ে"
 
-#: src/installation_advanced.py:1572
+#: src/installation_advanced.py:1589
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro %s প্রকারের bootloader কে %s এর ভিতরে ইন্সটল করবে"
 
-#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+#: src/installation_advanced.py:1606 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
 
@@ -538,40 +377,40 @@ msgstr ""
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr ""
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:113
 msgid "Installation type"
 msgstr "ইন্সটলেশনের প্রকার"
 
-#: src/installation_ask.py:124 ui/installation_ask.ui:33
+#: src/installation_ask.py:123 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "ডিস্ক মুছে Manjaro ইন্সটল করুন (স্বয়ংক্রিয়)"
 
-#: src/installation_ask.py:127
+#: src/installation_ask.py:126
 msgid "Warning: This will delete all data on your disk"
 msgstr "সতর্কবাণীঃ এতে আপনার Disk-এর সকল ডাটা মুছে যাবে"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:133
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "manjaro কে %s এর পাশাপাশি ইন্সটল করুন"
 
-#: src/installation_ask.py:137
+#: src/installation_ask.py:136
 msgid "Install this OS alongside the other OSes you already have installed."
 msgstr ""
 
-#: src/installation_ask.py:143
+#: src/installation_ask.py:142
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr ""
 
-#: src/installation_ask.py:146
+#: src/installation_ask.py:145
 msgid "Create and delete partitions, and choose additional mount points."
 msgstr ""
 
-#: src/installation_ask.py:166
+#: src/installation_ask.py:165
 msgid "Manjaro installation will be encrypted"
 msgstr "Manjaro ইনস্টলেশন এনক্রিপ্ট করা হবে"
 
-#: src/installation_ask.py:169
+#: src/installation_ask.py:168
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "manjaro LVM এর সাহায্যে ইন্সটল হবে"
 
@@ -617,155 +456,155 @@ msgstr "Thus ভবিষ্যতে %s কে ইন্সটলেশন ড�
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus %s ধরনের Bootloader-কে %s-এ ইন্সটল করবে।"
 
-#: src/installation_process.py:82
+#: src/installation_process.py:81
 #, python-format
 msgid "Copying '/%s'"
 msgstr "'/%s' কপি হচ্ছে "
 
-#: src/installation_process.py:173
+#: src/installation_process.py:171
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "'%s' পদ্ধতিতে ইন্সটল হচ্ছে"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:274
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation_process.py:314 src/installation_process.py:336
+#: src/installation_process.py:312 src/installation_process.py:334
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "%s কে %s ডিরেক্টরিতে মাউন্ট করা হচ্ছে"
 
-#: src/installation_process.py:320
+#: src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "%s মাউন্ট হচ্ছে %s/boot ডিরেক্টরিতে"
 
-#: src/installation_process.py:324
+#: src/installation_process.py:322
 msgid "Couldn't mount root and boot partitions"
 msgstr "root এবং boot পার্টিশন মাউন্ট হচ্ছে না"
 
-#: src/installation_process.py:341
+#: src/installation_process.py:339
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "%s কে %s এর ভিতরে মাউন্ট করা যাচ্ছে না"
 
-#: src/installation_process.py:362
+#: src/installation_process.py:360
 msgid "Can't create necessary directories on destination system"
 msgstr "গন্তব্য সিস্টেমে প্রয়োজনীয় ডিরেক্টরি তৈরি করা যাচ্ছে না"
 
-#: src/installation_process.py:459
+#: src/installation_process.py:457
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "%s তে মেটা-তথ্য পুনরুদ্ধার করা হচ্ছে"
 
-#: src/installation_process.py:472
+#: src/installation_process.py:470
 msgid "Special dirs already mounted."
 msgstr "বিশেষ ডিরেক্টরই সমূহ ইতিমদ্ধেই মাউন্ট করা।"
 
-#: src/installation_process.py:498
+#: src/installation_process.py:496
 msgid "Special dirs already not mounted."
 msgstr "বিশেষ ডিরেক্টরই সমূহ ইতিমদ্ধেই মাউন্ট করা নয়।"
 
-#: src/installation_process.py:508
+#: src/installation_process.py:506
 #, python-format
 msgid "Unable to umount %s"
 msgstr "%s আন-মাউন্ট করতে অক্ষম"
 
-#: src/installation_process.py:559
+#: src/installation_process.py:557
 msgid "Create fstab."
 msgstr "fstab তৈরি করুন।"
 
-#: src/installation_process.py:671
+#: src/installation_process.py:669
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "%s এর ভিতরে GRUB(2) BIOS boot loader ইন্সটল করা হচ্ছে"
 
-#: src/installation_process.py:701
+#: src/installation_process.py:699
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS সফলভাবে ইন্সটল হয়েছে।"
 
-#: src/installation_process.py:703
+#: src/installation_process.py:701
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS ইন্সটলের সময় ত্রুটি হচ্ছে।"
 
-#: src/installation_process.py:714
+#: src/installation_process.py:712
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI %s boot loader ইন্সটল হচ্ছে %s ভিতরে"
 
-#: src/installation_process.py:742
+#: src/installation_process.py:740
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr ""
 
-#: src/installation_process.py:770
+#: src/installation_process.py:768
 msgid "ERROR installing GRUB(2) locale."
 msgstr ""
 
-#: src/installation_process.py:784
+#: src/installation_process.py:782
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "ব্যবহারকারী % s এর জন্য পাসওয়ার্ড হ্যাশ তৈরি করার সময় ত্রুটি হচ্ছে"
 
-#: src/installation_process.py:790
+#: src/installation_process.py:788
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "ব্যবহারকারী % s এর পাসওয়ার্ড পাসওয়ার্ড পরিবর্তনের সময় ত্রুটি পাওয়া হচ্ছে"
 
-#: src/installation_process.py:915
+#: src/installation_process.py:913
 msgid "Configuring your new system"
 msgstr "নতুন সিস্টেম কনফিগার করা হচ্ছে"
 
-#: src/installation_process.py:991
+#: src/installation_process.py:989
 msgid "Generating locales..."
 msgstr ""
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1009
 msgid "Adjusting hardware clock..."
 msgstr "হার্ডওয়্যার ঘড়ি সামঞ্জস্য করা হচ্ছে..."
 
-#: src/installation_process.py:1017
+#: src/installation_process.py:1015
 msgid "Configuring hardware..."
 msgstr "হার্ডওয়্যার কনফিগার হচ্ছে..."
 
-#: src/installation_process.py:1080
+#: src/installation_process.py:1078
 msgid "Set up graphics card..."
 msgstr "সেট আপ গ্রাফিক্স কার্ড..."
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1085
 msgid "Can't execute the MHWD script"
 msgstr "MHWD স্ক্রিপ্টটি চালানো যাচ্ছে না"
 
-#: src/installation_process.py:1093
+#: src/installation_process.py:1091
 msgid "Configure display manager..."
 msgstr "কনফিগার ডিসপ্লে ম্যানেজার..."
 
-#: src/installation_process.py:1192
+#: src/installation_process.py:1190
 msgid "Configure System..."
 msgstr "কনফিগার সিস্টেম..."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1218
 msgid "Removing live configuration (packages)"
 msgstr "লাইভ কনফিগারেশন (packages) মুছে ফেলা হচ্ছে"
 
-#: src/installation_process.py:1236
+#: src/installation_process.py:1234
 msgid "Configuring package manager"
 msgstr "প্যাকেজ ম্যানেজার কনফিগার করা হচ্ছে"
 
-#: src/installation_process.py:1251
+#: src/installation_process.py:1249
 msgid "Finished configuring package manager."
 msgstr "প্যাকেজ ম্যানেজার কনফিগার করা শেষ"
 
-#: src/installation_process.py:1275
+#: src/installation_process.py:1273
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: %s-এর জন্য স্বয়ংক্রিয় লগইন ব্যবস্থা সক্রিয় করুন।    "
 
-#: src/installation_process.py:1354
+#: src/installation_process.py:1352
 msgid "Running mkinitcpio..."
 msgstr "mkinitcpio চলছে..."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1355
 msgid "Running mkinitcpio... done"
 msgstr "mkinitcpio চলছে... সম্পন্ন হল"
 
@@ -786,15 +625,15 @@ msgstr "বিকল্পসমূহ"
 msgid "keyboard_layout is %s"
 msgstr "কিবোর্ড লে-আউট %s"
 
-#: src/language.py:80
+#: src/language.py:79
 msgid "Please choose your language:"
 msgstr "দয়া করে আপনার ভাষা বেছে নিনঃ"
 
-#: src/language.py:85
+#: src/language.py:84
 msgid "Notice: The Thus Installer is beta software."
 msgstr "নোটিশঃ এই Thus ইন্সটলারটি একটি বেটা সফটওয়্যার।"
 
-#: src/language.py:86
+#: src/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -802,15 +641,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr ""
 
-#: src/language.py:93 src/welcome.py:98
+#: src/language.py:92
 msgid "Welcome to Manjaro!"
 msgstr "Manjaro তে স্বাগতম !"
 
-#: src/language.py:110
+#: src/language.py:109
 msgid "Languages"
 msgstr "ভাষাসমূহ"
 
-#: src/language.py:130
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "%s ভাষার জন্য অনুবাদ খুঁজে পাওয়া যাচ্ছে না"
@@ -838,6 +677,11 @@ msgstr ""
 #: src/location.py:199
 #, python-format
 msgid "Can't change to locale '%s'"
+msgstr ""
+
+#: src/misc.py:930
+#, python-format
+msgid "Can't set locale %s"
 msgstr ""
 
 #: src/rank_mirrors.py:60
@@ -1057,96 +901,6 @@ msgstr "শক্তিশালী পাসওয়ার্ড"
 msgid "Passwords do not match"
 msgstr "পাসওয়ার্ড মিলেনি"
 
-#: src/welcome.py:84
-msgid ""
-"Try Manjaro without modifying your hard drive.\n"
-"Or install it to your PC with one of the two installer options."
-msgstr ""
-
-#: src/welcome.py:89 ui/welcome.ui:45
-msgid "Try it"
-msgstr "এটি ব্যবহার করে দেখুন"
-
-#: src/welcome.py:92 ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "CLI ইন্সটলার"
-
-#: src/welcome.py:95 ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "গ্রাফিক্যাল ইনস্টলার"
-
-#: src/welcome.py:119
-msgid "Can't load the CLI installer"
-msgstr "CLI ইন্সটলার লোড হচ্ছে না"
-
-#: src/pacman/pac.py:236
-#, python-format
-msgid "Package %s not found in any repo!"
-msgstr "কোনও রিপোতে %s প্যাকেজটি পাওয়া যায়নি!"
-
-#: src/pacman/pac.py:289
-msgid "Checking dependencies..."
-msgstr ""
-
-#: src/pacman/pac.py:291
-msgid "Checking file conflicts..."
-msgstr ""
-
-#: src/pacman/pac.py:293
-msgid "Resolving dependencies..."
-msgstr ""
-
-#: src/pacman/pac.py:295
-msgid "Checking inter conflicts..."
-msgstr ""
-
-#: src/pacman/pac.py:300
-msgid "Removing..."
-msgstr "মুছে ফেলা হচ্ছে..."
-
-#: src/pacman/pac.py:302
-msgid "Upgrading..."
-msgstr "উন্নত করা হচ্ছে... "
-
-#: src/pacman/pac.py:304
-msgid "Checking integrity..."
-msgstr "বিশুদ্ধতা পরীক্ষা করা হচ্ছে..."
-
-#: src/pacman/pac.py:307
-msgid "Loading packages files..."
-msgstr "প্যাকেজ সমূহের ফাইল লোড হচ্ছে"
-
-#: src/pacman/pac.py:310
-msgid "Configuring..."
-msgstr "কনফিগার হচ্ছে..."
-
-#: src/pacman/pac.py:311
-msgid "Configuring a package"
-msgstr "একটি প্যাকেজ কনফিগার হচ্ছে"
-
-#: src/pacman/pac.py:313
-msgid "Downloading a file"
-msgstr "একটি ফাইল ডাউনলোড হচ্ছে"
-
-#: src/pacman/pac.py:389
-#, python-format
-msgid "Downloading %s..."
-msgstr "ডাউনলোড হচ্ছে %s..."
-
-#: src/pacman/pac.py:398
-#, python-format
-msgid "Refreshing %s..."
-msgstr "রিফ্রেশ হচ্ছে %s..."
-
-#: src/pacman/pac.py:407
-#, python-format
-msgid "Installing %s (%d/%d)"
-msgstr "ইন্সটল হচ্ছে %s (%d/%d)"
-
-#: src/pacman/pac.py:410
-msgid "Checking and loading packages..."
-msgstr "প্যাকেজসমূহ পরীক্ষা করা হচ্ছে এবং লোড হচ্ছে..."
-
 #: ui/bootloader.ui:7
 msgid "Boot"
 msgstr "বুট"
@@ -1156,44 +910,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">উত্তম ফলাফলের জন্য, দয়া করে নিশ্চিত করুন যে এই কম্পিউটার:</span>"
-
-#: ui/desktop.ui:106 ui/installation_alongside.ui:193
-#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:74
-msgid "label"
-msgstr "লেবেল"
-
-#: ui/features.ui:40
-msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr "<span weight='bold' size='large'>ব্লুটুথ সমর্থন</span>"
-
-#: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr ""
-
-#: ui/features.ui:200
-msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr "<span weight='bold' size='large'>লিব্রেঅফিস</span>"
-
-#: ui/features.ui:215
-msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr "অফিস স্যুট (ওয়ার্ড প্রসেসর, স্প্রেডশীট, অন্যান্য।)"
-
-#: ui/features.ui:280
-msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr "<span weight='bold' size='large'>ভিজুয়াল এফেক্ট</span>"
-
-#: ui/features.ui:360
-msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr "<span weight='bold' size='large'>ফায়ারওয়াল</span>"
-
-#: ui/features.ui:375
-msgid "Activates your firewall (closes all ports by default)"
-msgstr "আপনার ফায়ারওয়ালকে সক্রিয় করবে (ডিফল্টভাবে সকল পোর্ট বন্ধ হয়ে যাবে)"
-
-#: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr ""
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1248,6 +964,11 @@ msgstr "অন্যান্য অপারেটিং সিস্টেম"
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
 msgstr "Manjaro"
+
+#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
+#: ui/location.ui:36 ui/slides.ui:74
+msgid "label"
+msgstr "লেবেল"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1316,14 +1037,6 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "<span weight='bold'>নোটিশঃ Thus ইন্সটলার একটি বেটা সফটওয়্যার।</span>\\n\n\\n\nThus হল বেটা সফটওয়্যার যার এখন উন্নয়ন হচ্ছে। এটা এখনও সঠিকভাবে, RAID, Btrfs subvolumes, বা অন্যান্য উন্নত সেটআপ সমূহ সম্পাদনা করতে পারে না। তথ্য হারানো সম্ভব, দয়া করে সাবধানতার সাথে এগিয়ে যান!\\n\n\\n\nযদি আপনি কোন বাগ খুঁজে পান তাহলে দয়া করে এখানে যান <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
-msgid " "
-msgstr " "
-
-#: ui/pac.ui:43
-msgid "Progress"
-msgstr "অগ্রগতি"
-
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Manjaro তে স্বাগতম</span>"
@@ -1347,9 +1060,3 @@ msgstr "<small><span color=\"darkred\">আপনার অবশই একটি
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr ""
-
-#: ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "আপনি হার্ড ড্রাইভ এর কোন পরিবর্তন করা ছাড়াই Manjaro ব্যবহার করে দেখতে পারবেন, এর জন্য আপনাকে \"Try it\" বাটনে ক্লিক করতে হবে। \nআপনি যদি এটাকে আপনার কম্পিউটারে ইন্সটল করতে চান তাহলে ২ টি ইন্সটলারের মদ্ধে থেকে একটিকে বেছে নিন।"

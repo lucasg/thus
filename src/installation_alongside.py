@@ -3,7 +3,11 @@
 #
 #  installation_alongside.py
 #
-#  Copyright 2013 Antergos, Manjaro
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#
+#  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -26,7 +30,7 @@ from gi.repository import Gtk, Gdk
 
 import sys
 import os
-import misc
+import canonical.misc as misc
 import logging
 import show_message as show
 import bootinfo
@@ -41,11 +45,11 @@ except:
 
 # Insert the src/parted directory at the front of the path.
 base_dir = os.path.dirname(__file__) or '.'
-parted_dir = os.path.join(base_dir, 'parted')
+parted_dir = os.path.join(base_dir, 'parted3')
 sys.path.insert(0, parted_dir)
 
-import partition_module as pm
-import fs_module as fs
+import parted3.partition_module as pm
+import parted3.fs_module as fs
 
 import installation_process
 
@@ -64,7 +68,6 @@ class InstallationAlongside(Gtk.Box):
         self.callback_queue = params['callback_queue']
         self.settings = params['settings']
         self.alternate_package_list = params['alternate_package_list']
-
         self.testing = params['testing']
 
         super().__init__()
@@ -215,7 +218,7 @@ class InstallationAlongside(Gtk.Box):
                                 self.treeview_store.append(None, row)
                         self.partitions[p.path] = p
                 except Exception as e:
-                    logging.warning(_("In alongside install: can't create list of partitions"))
+                    logging.warning(_("Unable to create list of partitions for alongside installation."))
 
         # assign our new model to our treeview
         self.treeview.set_model(self.treeview_store)

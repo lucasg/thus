@@ -28,6 +28,8 @@
 #   Marc Miralles (arcnexus) <arcnexus.antergos.com>
 #   Alex Skinner (skinner) <skinner.antergos.com>
 
+""" Main Thus (Manjaro Installer) module """
+
 from gi.repository import Gtk, Gdk, GObject, GLib
 import os
 import sys
@@ -37,10 +39,10 @@ import locale
 import multiprocessing
 import logging
 
-# Insert the src directory at the front of the path.
-base_dir = os.path.dirname(__file__) or '.'
-src_dir = os.path.join(base_dir, 'src')
-sys.path.insert(0, src_dir)
+# Insert the src directory at the front of the path
+BASE_DIR = os.path.dirname(__file__) or '.'
+SRC_DIR = os.path.join(BASE_DIR, 'src')
+sys.path.insert(0, SRC_DIR)
 
 import config
 
@@ -56,21 +58,21 @@ import installation_advanced
 import user_info
 import slides
 import subprocess
-import misc
+import canonical.misc as misc
 import info
 import updater
 import show_message as show
 
-_desktops = [ "none" ]
+DESKTOPS = [ "none" ]
 
 # Command line options
 _alternate_package_list = ""
-_use_aria2 = False
-_use_staging = False
-_log_level = logging.INFO
-_verbose = False
-_update = False
 _force_grub_type = False
+_log_level = logging.INFO
+_update = False
+_use_staging = False
+_verbose = False
+
 # Do not perform any changes (this is just for testing purposes)
 _testing = False
 
@@ -78,11 +80,27 @@ _testing = False
 APP_NAME = "thus"
 LOCALE_DIR = "/usr/share/locale"
 
-_main_window_width = 800
-_main_window_height = 526
+# Constants (must be uppercase)
+MAIN_WINDOW_WIDTH = 800
+MAIN_WINDOW_HEIGHT = 526
+
+# At least this GTK version is needed
+_gtk_version_needed = "3.9.6"
+
+# Some of these tmp files are created with sudo privileges
+# (this should be fixed) meanwhile, we need sudo privileges to remove them
+@misc.raise_privileges
+def remove_temp_files():
+    """ Remove Thus temporary files """
+    temp_files = [".setup-running", ".km-running", "setup-pacman-running", \
+        "setup-mkinitcpio-running", ".tz-running", ".setup", "thus.log" ]
+    for temp in temp_files:
+        path = os.path.join("/tmp", temp)
+        if os.path.exists(path):
+            os.remove(path)
 
 class Main(Gtk.Window):
-
+    """ Thus main window """
     def __init__(self):
         # This allows to translate all py texts (not the glade ones)
         gettext.textdomain(APP_NAME)
@@ -95,14 +113,14 @@ class Main(Gtk.Window):
         # With this we can use _("string") to translate
         gettext.install(APP_NAME, localedir=LOCALE_DIR, codeset=None, names=[locale_code])
 
-        # check if we have administrative privileges
+        # Check if we have administrative privileges
         if os.getuid() != 0:
             show.fatal_error(_('This installer must be run with administrative'
                          ' privileges and cannot continue without them.'))
 
         setup_logging()
 
-        # check if we're already running
+        # Check if we're already running
         tmp_running = "/tmp/.setup-running"
         if os.path.exists(tmp_running):
             show.error(_('You cannot run two instances of this installer.\n\n'
@@ -136,30 +154,30 @@ class Main(Gtk.Window):
         if fsname:
             subprocess.check_call(['umount', self.dest_dir])
 
-        logging.info("Thus installer version %s" % info.thus_VERSION)
+        logging.info(_("Thus installer version %s"), info.THUS_VERSION)
 
-        p = multiprocessing.current_process()
-        logging.debug("[%d] %s started" % (p.pid, p.name))
+        current_process = multiprocessing.current_process()
+        logging.debug("[%d] %s started", current_process.pid, current_process.name)
 
         self.settings = config.Settings()
-        self.ui_dir = self.settings.get("ui")
+        self.ui_dir = self.settings.get('ui')
 
         if not os.path.exists(self.ui_dir):
             thus_dir = os.path.join(os.path.dirname(__file__), './')
-            self.settings.set("thus", thus_dir)
+            self.settings.set('thus', thus_dir)
 
             ui_dir = os.path.join(os.path.dirname(__file__), 'ui/')
-            self.settings.set("ui", ui_dir)
+            self.settings.set('ui', ui_dir)
 
             data_dir = os.path.join(os.path.dirname(__file__), 'data/')
-            self.settings.set("data", data_dir)
+            self.settings.set('data', data_dir)
 
-            self.ui_dir = self.settings.get("ui")
+            self.ui_dir = self.settings.get('ui')
 
-        # set enabled desktops
-        self.settings.set("desktops", _desktops)
+        # Set enabled desktops
+        self.settings.set("desktops", DESKTOPS)
 
-        # set if a grub type must be installed (user choice)
+        # Set if a grub type must be installed (user choice)
         self.settings.set("force_grub_type", _force_grub_type)
 
         self.ui = Gtk.Builder()
@@ -198,12 +216,7 @@ class Main(Gtk.Window):
         # save in config if we have enabled staging features
         self.settings.set("use_staging", _use_staging)
 
-        # save in config if we have to use aria2 to download pacman packages
-        self.settings.set("use_aria2", _use_aria2)
-        if _use_aria2:
-            logging.info(_("Using Aria2 to download packages - EXPERIMENTAL"))
-
-        # load all pages
+        # Load all pages
         # (each one is a screen, a step in the install process)
 
         self.pages = dict()
@@ -241,14 +254,14 @@ class Main(Gtk.Window):
         self.set_title(_('Manjaro Installer'))
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_resizable(False)
-        self.set_size_request(_main_window_width, _main_window_height);
+        self.set_size_request(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT)
 
-        # set window icon
+        # Set window icon
         icon_dir = os.path.join(data_dir, 'manjaro-icon.png')
 
         self.set_icon_from_file(icon_dir)
 
-        # set the first page to show
+        # Set the first page to show
         self.current_page = self.pages["language"]
 
         self.main_box.add(self.current_page)
@@ -268,12 +281,12 @@ class Main(Gtk.Window):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-        # show main window
+        # Show main window
         self.show_all()
 
         self.current_page.prepare('forwards')
 
-        # hide backwards button
+        # Hide backwards button
         self.backwards_button.hide()
 
         # Hide titlebar but show border decoration
@@ -285,27 +298,14 @@ class Main(Gtk.Window):
         self.progressbar.hide()
         self.progressbar_step = 1.0 / (len(self.pages) - 2)
 
-        # we drop privileges, but where we should do it? before this? ¿?
-        misc.drop_privileges()
-
-        with open(tmp_running, "wt") as tmp_file:
+        with open(tmp_running, "w") as tmp_file:
             tmp_file.write("Thus %d\n" % 1234)
 
         GLib.timeout_add(1000, self.pages["slides"].manage_events_from_cb_queue)
 
-    # TODO: some of these tmp files are created with sudo privileges
-    # (this should be fixed) meanwhile, we need sudo privileges to remove them
-    @misc.raise_privileges
-    def remove_temp_files(self):
-        tmp_files = [".setup-running", ".km-running", "setup-pacman-running", \
-                "setup-mkinitcpio-running", ".tz-running", ".setup", "Thus.log" ]
-        for t in tmp_files:
-            p = os.path.join("/tmp", t)
-            if os.path.exists(p):
-                os.remove(p)
-
     def on_exit_button_clicked(self, widget, data=None):
-        self.remove_temp_files()
+        """ Quit Thus """
+        remove_temp_files()
         logging.info(_("Quiting installer..."))
         os._exit(0)
 
@@ -322,6 +322,7 @@ class Main(Gtk.Window):
             self.progressbar.hide()
 
     def on_forward_button_clicked(self, widget, data=None):
+        """ Show next screen """
         next_page = self.current_page.get_next_page()
 
         if next_page != None:
@@ -338,7 +339,7 @@ class Main(Gtk.Window):
                     self.main_box.add(self.current_page)
 
                     if self.current_page.get_prev_page() != None:
-                        # there is a previous page, show button
+                        # There is a previous page, show button
                         self.backwards_button.show()
                         self.backwards_button.set_sensitive(True)
                     else:
@@ -350,8 +351,8 @@ class Main(Gtk.Window):
         if prev_page != None:
             self.set_progressbar_step(-self.progressbar_step)
 
-            # if we go backwards, don't store user changes
-            #self.current_page.store_values()
+            # If we go backwards, don't store user changes
+            # self.current_page.store_values()
 
             self.main_box.remove(self.current_page)
             self.current_page = self.pages[prev_page]
@@ -361,75 +362,101 @@ class Main(Gtk.Window):
                 self.main_box.add(self.current_page)
 
                 if self.current_page.get_prev_page() == None:
-                    # we're at the first page
+                    # We're at the first page
                     self.backwards_button.hide()
 
 def setup_logging():
     logger = logging.getLogger()
     logger.setLevel(_log_level)
-    # log format
+    # Log format
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    # create file handler
-    fh = logging.FileHandler('/tmp/cnchi.log', mode='w')
-    fh.setLevel(_log_level)
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
+    # Create file handler
+    file_handler = logging.FileHandler('/tmp/thus.log', mode='w')
+    file_handler.setLevel(_log_level)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
 
     if _verbose:
         # Show log messages to stdout
-        sh = logging.StreamHandler()
-        sh.setLevel(_log_level)
-        sh.setFormatter(formatter)
-        logger.addHandler(sh)
+        stream_handler = logging.StreamHandler()
+        stream_handler.setLevel(_log_level)
+        stream_handler.setFormatter(formatter)
+        logger.addHandler(stream_handler)
 
 
 def show_help():
     print("Thus Manjaro Installer")
     print("Advanced options:")
-    #print("-a, --aria2 : Use aria2 to download Manjaro packages (EXPERIMENTAL)")
     print("-d, --debug : Show debug messages")
     print("-g type, --force-grub-type type : force grub type to install, type can be bios, efi, ask or none")
     print("-h, --help : Show this help message")
-    #print("-p file.xml, --packages file.xml : Manjaro will install the packages referenced by file.xml instead of the default ones")
     print("-s, --staging : Enable stating options")
     print("-t, --testing : Do not perform any changes (useful for developers)")
     print("-v, --verbose : Show logging messages to stdout")
 
-if __name__ == '__main__':
+def check_gtk_version():
+    """ Check GTK version """
+    # Check desired GTK Version
+    major_needed = int(_gtk_version_needed.split(".")[0])
+    minor_needed = int(_gtk_version_needed.split(".")[1])
+    micro_needed = int(_gtk_version_needed.split(".")[2])
+
+    # Check system GTK Version
+    major = Gtk.get_major_version()
+    minor = Gtk.get_minor_version()
+    micro = Gtk.get_micro_version()
+
+    # Cnchi will be called from our liveCD that already has the latest GTK version
+    # This is here just to help testing Cnchi in our environment.
+    if major_needed > major or (major_needed == major and minor_needed > minor) or \
+      (major_needed == major and minor_needed == minor and micro_needed > micro):
+        print("Detected GTK %d.%d.%d but %s is needed. Can't run this installer." \
+            % (major, minor, micro, _gtk_version_needed))
+        return False
+    else:
+        print("Using GTK v%d.%d.%d" % (major, minor, micro))
+
+    return True
+
+def init_thus():
+    """ This function initialises Thus """
+
+    # Command line options
+    global _force_grub_type
+    global _force_update
+    global _log_level
+    global _update
+    global _verbose
+    global _staging
+    global _testing
 
     # Check program args
     argv = sys.argv[1:]
 
     try:
-        opts, args = getopt.getopt(argv, "adp:ustvg:h",
-         ["aria2", "debug", "packages=", "staging", "testing", "update", "verbose", \
+        options, args = getopt.getopt(argv, "dstuvg:h",
+         ["debug", "staging", "testing", "update", "verbose", \
           "force-grub=", "help"])
     except getopt.GetoptError as e:
         show_help()
         print(str(e))
         sys.exit(2)
 
-    print(opts)
-
-    for opt, arg in opts:
-        if opt in ('-d', '--debug'):
+    for option, arg in options:
+        if option in ('-d', '--debug'):
             _log_level = logging.DEBUG
-        elif opt in ('-v', '--verbose'):
+        elif option in ('-v', '--verbose'):
             _verbose = True
-        elif opt in ('-s', '--staging'):
+        elif option in ('-s', '--staging'):
             _use_staging = True
-        elif opt in ('-t', '--testing'):
+        elif option in ('-t', '--testing'):
             _testing = True
-        elif opt in ('-u', '--update'):
+        elif option in ('-u', '--update'):
             _update = True
-        elif opt in ('-p', '--packages'):
-            _alternate_package_list = arg
-        elif opt in ('-a', '--aria2'):
-            _use_aria2 = True
-        elif opt in ('-g', '--force-grub-type'):
+        elif option in ('-g', '--force-grub-type'):
             if arg in ('bios', 'efi', 'ask', 'none'):
                 _force_grub_type = arg
-        elif opt in ('-h', '--help'):
+        elif option in ('-h', '--help'):
             show_help()
             sys.exit(0)
         else:
@@ -441,10 +468,8 @@ if __name__ == '__main__':
         upd = updater.Updater(_force_update)
         if upd.update():
             # Remove /tmp/.setup-running to be able to run another
-            # instance of Cnchi
-            p = "/tmp/.setup-running"
-            if os.path.exists(p):
-                os.remove(p)
+            # instance of Thus
+            remove_temp_files()
             if not _force_update:
                 print("Program updated! Restarting...")
                 # Run another instance of Cnchi (which will be the new version)
@@ -455,9 +480,15 @@ if __name__ == '__main__':
             # Exit and let the new instance do all the hard work
             sys.exit(0)
 
+    # Drop root privileges
+    misc.drop_privileges()
+
     # Start Gdk stuff and main window app
     GObject.threads_init()
 
-    app = Main()
+    myapp = Main()
 
     Gtk.main()
+
+if __name__ == '__main__':
+    init_thus()

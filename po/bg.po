@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 18:01+0000\n"
+"POT-Creation-Date: 2013-11-25 00:15+0100\n"
+"PO-Revision-Date: 2013-11-24 23:24+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/manjaro-thus/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:100
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr " За да работи инсталаторът трябва да притежава права на администратор и не може да продължи без тях."
 
-#: thus.py:113
+#: thus.py:108
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -36,20 +36,20 @@ msgid ""
 "and run this installer again."
 msgstr "Не е възможно да работят два инсталатора едновременно.\\n\\n Ако сте сигурни, че инсталаторът не е стартиран\\n можете да изтриете файла %s\\n и да започнете отново."
 
-#: thus.py:209
+#: thus.py:204
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Използване на Aria2 за сваляне на пакети - ЕКСПЕРИМЕНТАЛНО"
 
-#: thus.py:229
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Използване на файл '%s' като списък с пакети."
 
-#: thus.py:249
+#: thus.py:241
 msgid "Manjaro Installer"
 msgstr "Манджаро инсталатор"
 
-#: thus.py:317
+#: thus.py:309
 msgid "Quiting installer..."
 msgstr "Спиране на инсталатора..."
 
@@ -78,213 +78,52 @@ msgstr "i386 UEFI"
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
 msgstr "Изберете \"отказ\" ако не искате да инсталирате мениджър на зареждането"
 
-#: src/check.py:68
+#: src/check.py:67
 msgid "Check your computer"
 msgstr "Проверете компютъра си дали"
 
-#: src/check.py:73
+#: src/check.py:72
 msgid "has at least 5GB available disk space"
 msgstr "има поне 3ГБ свободно място на диска;"
 
-#: src/check.py:77
+#: src/check.py:76
 msgid "is plugged in to a power source"
 msgstr "е включен към електрическата мрежа;"
 
-#: src/check.py:81
+#: src/check.py:80
 msgid "is connected to the Internet"
 msgstr "е свързан с Интернет."
 
-#: src/check.py:85
+#: src/check.py:84
 msgid "For best results, please ensure that this computer:"
 msgstr "За най-добър резултат, моля, убедете се че този компютър:"
 
-#: src/check.py:90 ui/check.ui:106
+#: src/check.py:89 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
 msgstr "Манджаро използва външен софтуер за изпълнение на Flash, MP3 и друга медия. Някой от този софтуер е несвободен. Лицензните условия са посочени в документацията."
 
-#: src/check.py:96 ui/check.ui:117
+#: src/check.py:95 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "Инсталиране на този външен софтуер"
 
-#: src/check.py:116
+#: src/check.py:115
 msgid "Can't get network status"
 msgstr "Не може да се определи състоянието на мрежата"
 
-#: src/check.py:193
+#: src/check.py:192
 msgid "We have Internet connection."
 msgstr "Имаме Интернет връзка."
 
-#: src/check.py:194
+#: src/check.py:193
 msgid "We're connected to a power source."
 msgstr "Свързани сме с електрическата мрежа."
 
-#: src/check.py:195
+#: src/check.py:194
 msgid "We have enough disk space."
 msgstr "Имаме достатъчно място на харддиска."
-
-#: src/desktop.py:76
-msgid ""
-"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
-"put you in control and bring freedom to everybody. GNOME 3 is developed by "
-"the GNOME community."
-msgstr "Графичната среда Gnome 3 е лесен и елегантен начин да използвате компютъра си. Дизайнът й Ви дава пълен контрол и свобода във всичко. GNOME 3 е разработена от GNOME-общността."
-
-#: src/desktop.py:83
-msgid ""
-"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the GNOME2 "
-"desktop metaphor"
-msgstr "Графичната среда Cinnamon е клон на GNOME Shell, разработена от (и за) Linux Mint. Основната й цел е да осигури по-традиционна и удобна работна среда подобна на GNOME 2."
-
-#: src/desktop.py:90
-msgid ""
-"XFCE is a lightweight desktop environment which aims to be light on system "
-"resources while still being visually appealing, fully-featured, and easy to "
-"use."
-msgstr "Xfce е лека графична работна среда за UNIX операционни системи. Тя работи бързо и с изисква малко системни ресурси, в същото време има приятелски и  визуално привлекателен облик."
-
-#: src/desktop.py:96
-msgid ""
-"LXDE is a high-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard "
-"shortcuts and additional features like tabbed file browsing."
-msgstr "LXDE е изключително бърза и енергоспестяваща графична среда. В нея са включени красив интерфейс, мултиезикова поддръжка, клавишни комбинации и допълнителни функции като файлов браузер с табове."
-
-#: src/desktop.py:103
-msgid ""
-"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
-"The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox е лесно настройващ се мениджър на прозорци с широк спектър от поддържани стандарти.\\n Визуалният *box стил е добре известен със своя минимализъм."
-
-#: src/desktop.py:110
-msgid ""
-"Enlightenment is a lean, fast, modular and very extensible window manager "
-"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
-" you need to operate your desktop (or laptop). "
-msgstr "Enlightenment е елегантен, бърз, модален и много гъвкав мениджър на прозорци за Х11 и Линукс. Би могъл да се определи като \"desktop shell\" осигуряващ всичко, което е необходимо за да работите на вашия компютър (или лаптоп)."
-
-#: src/desktop.py:116
-msgid ""
-"The KDE Desktop offers a beautiful looking desktop that takes complete "
-"advantage of modern computing technology. Through the use of visual effects "
-"and scalable graphics, the desktop experience is not only smooth but also "
-"pleasant to the eye."
-msgstr "Графичната среда KDE осигурява красива работна площ, чрез използването на съвременните компютърни технологии. Посредством визуални ефекти и графика, работата с KDE е не само лесна, но и приятна за окото."
-
-#: src/desktop.py:123
-msgid ""
-"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
-"Qt technologies. It has been tailored for users who value simplicity, speed,"
-" and an intuitive interface."
-msgstr "Razor-qt е напредничава и лесна за употреба графична среда базирана на Qt. Предназначена е за потребители ценящи простотата, скоростта и интуитивния интерфейс."
-
-#: src/desktop.py:130
-msgid ""
-"This will install Manjaro as command-line system, without any desktop "
-"environment at all. After the installation you can optionally install the "
-"environment of your choice."
-msgstr "По този начин ще инсталирате Манджаро в конзолен режим, без никаква графична среда. След инсталирането може да добавите графична работна среда по Ваш избор."
-
-#: src/desktop.py:142
-msgid "Select your desktop"
-msgstr "Изберете графична работна среда"
-
-#: src/desktop.py:152
-msgid "Desktops"
-msgstr "Работни среди"
-
-#: src/desktop.py:185
-#, python-format
-msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Thus ще инсталира Манджаро с '%s' графична среда"
-
-#: src/download.py:78
-#, python-format
-msgid "Error creating metalink for package %s"
-msgstr "Грешка при създаване на метавръзка за пакет %s"
-
-#: src/download.py:84
-#, python-format
-msgid "Error adding metalink for package %s"
-msgstr "Грешка при добавянето на метавръзка за пакет %s"
-
-#: src/download.py:133
-#, python-format
-msgid "Downloading package '%s'..."
-msgstr "Изтегляне на пакет '%s'..."
-
-#: src/download.py:157
-msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr "Неуспех при свързването с Aria2. Не е възможно по-бързо изтегляне."
-
-#: src/download.py:228
-#, python-format
-msgid "Unable to create download queue for package %s"
-msgstr "Неуспех при създаване на заявка за изтегляне на пакет %s"
-
-#: src/download.py:232
-msgid "Can't find these packages: "
-msgstr "Не е възможно да се открият следните пакети:"
-
-#: src/download.py:238
-msgid "Warning! Can't resolve these dependencies: "
-msgstr "Внимание! Неуспех при разрешаването на следните зависимости:"
-
-#: src/features.py:91
-msgid "Feature selection"
-msgstr "Избор на функционалности"
-
-#: src/features.py:96
-msgid "Bluetooth support"
-msgstr "Bluetooth"
-
-#: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "Без поддръжката на Bluetooth не бихте могли да използвате Bluetooth-устройства."
-
-#: src/features.py:103
-msgid "Printing support (CUPS)"
-msgstr "Принтер (CUPS)"
-
-#: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and management tools"
-msgstr "Това включва драйвери за принтери и инструменти за управление"
-
-#: src/features.py:110
-msgid "LibreOffice"
-msgstr "LibreOffice"
-
-#: src/features.py:113
-msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr "Офис пакет (текстообработка, таблици и др.)"
-
-#: src/features.py:117
-msgid "Visual effects"
-msgstr "Визуални ефекти"
-
-#: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as window transparency and shadows"
-msgstr "Визуални ефекти като прозрачност на прозорците и сенки"
-
-#: src/features.py:124
-msgid "Uncomplicated firewall"
-msgstr "Опростена защитна стена"
-
-#: src/features.py:127
-msgid ""
-"Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr "Инсталира ufw и спира целия трафик (използвайте gufw за да го настроите)"
-
-#: src/features.py:131
-msgid "Propietary packages"
-msgstr "Несвободен софтуер"
-
-#: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr "Софтуер от външни разработчици за възпроизвеждане на Flash, MP3 и друга медия"
 
 #: src/installation_advanced.py:208 src/installation_advanced.py:498
 #: src/installation_advanced.py:512
@@ -333,7 +172,7 @@ msgstr "няма"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:935
 #: src/installation_advanced.py:1309 src/installation_advanced.py:1385
-#: src/installation_advanced.py:1553
+#: src/installation_advanced.py:1570
 msgid "extended"
 msgstr "разширен"
 
@@ -489,22 +328,22 @@ msgstr "Монтиране"
 msgid "These disks will have partition actions:"
 msgstr "Тези дискове ще претърпят дейности по дяловете:"
 
-#: src/installation_advanced.py:1476
+#: src/installation_advanced.py:1503
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Промените на %s са записани"
 
-#: src/installation_advanced.py:1490
+#: src/installation_advanced.py:1517
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Създаване на %s файлова система в %s с етикет %s"
 
-#: src/installation_advanced.py:1572
+#: src/installation_advanced.py:1589
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Манджаро ще инсталира мениджър на зареждане %s в %s"
 
-#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+#: src/installation_advanced.py:1606 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
 
@@ -537,40 +376,40 @@ msgstr "При успоредно инсталиране: не бе възмож
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Не е възможно свиване на дяла (може би е пълен?)"
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:113
 msgid "Installation type"
 msgstr "Вид инсталиране"
 
-#: src/installation_ask.py:124 ui/installation_ask.ui:33
+#: src/installation_ask.py:123 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Изтриване на диска и инсталиране на Манджаро (автоматично)"
 
-#: src/installation_ask.py:127
+#: src/installation_ask.py:126
 msgid "Warning: This will delete all data on your disk"
 msgstr "Внимание: Това ще изтрие всички данни на диска"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:133
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Инсталиране на Манджаро успоредно с %s"
 
-#: src/installation_ask.py:137
+#: src/installation_ask.py:136
 msgid "Install this OS alongside the other OSes you already have installed."
 msgstr "Инсталиране на тази ОС заедно с други ОС-ми, които вече са инсталирани"
 
-#: src/installation_ask.py:143
+#: src/installation_ask.py:142
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "Управляване на дялове и избор къде да се инсталира Манджаро (за напреднали)"
 
-#: src/installation_ask.py:146
+#: src/installation_ask.py:145
 msgid "Create and delete partitions, and choose additional mount points."
 msgstr "Създаване и изтриване на дялове, както и избиране на допълнителни точки за монтиране."
 
-#: src/installation_ask.py:166
+#: src/installation_ask.py:165
 msgid "Manjaro installation will be encrypted"
 msgstr "Инсталацията на Манджаро ще бъде криптирана"
 
-#: src/installation_ask.py:169
+#: src/installation_ask.py:168
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Манджаро ще се инсталира използвайки LVM"
 
@@ -616,155 +455,155 @@ msgstr "Thus ще използва %s устройството за инстал
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus ще инсталира bootloader-a от тип %s в %s"
 
-#: src/installation_process.py:82
+#: src/installation_process.py:81
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Копиране '/%s'"
 
-#: src/installation_process.py:173
+#: src/installation_process.py:171
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Инсталиране използвайки '/%s' метод"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:274
 msgid "Error creating partitions and their filesystems"
 msgstr "Грешка при създаването на дялове и тяхната файлова система"
 
-#: src/installation_process.py:314 src/installation_process.py:336
+#: src/installation_process.py:312 src/installation_process.py:334
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Монтиране на дял %s в директория %s"
 
-#: src/installation_process.py:320
+#: src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Монтиране на дял %s в %s/boot "
 
-#: src/installation_process.py:324
+#: src/installation_process.py:322
 msgid "Couldn't mount root and boot partitions"
 msgstr "Не е възможно да се монтират кореновият и стартиращият дялове"
 
-#: src/installation_process.py:341
+#: src/installation_process.py:339
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Не е възможно да се монтира %s в %s"
 
-#: src/installation_process.py:362
+#: src/installation_process.py:360
 msgid "Can't create necessary directories on destination system"
 msgstr "Не е възможно да се създадат необходимите директории на системата"
 
-#: src/installation_process.py:459
+#: src/installation_process.py:457
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Възстановяване на мета-информацията на %s"
 
-#: src/installation_process.py:472
+#: src/installation_process.py:470
 msgid "Special dirs already mounted."
 msgstr "Специалните директории вече са монтирани."
 
-#: src/installation_process.py:498
+#: src/installation_process.py:496
 msgid "Special dirs already not mounted."
 msgstr "Специалните директории все още не са монтирани."
 
-#: src/installation_process.py:508
+#: src/installation_process.py:506
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Не беше възможно размонтиране на %s"
 
-#: src/installation_process.py:559
+#: src/installation_process.py:557
 msgid "Create fstab."
 msgstr "Създаване на fstab."
 
-#: src/installation_process.py:671
+#: src/installation_process.py:669
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Инсталиране на GRUB(2) BIOS мениджър на зареждането в %s"
 
-#: src/installation_process.py:701
+#: src/installation_process.py:699
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS е успешно инсталиран."
 
-#: src/installation_process.py:703
+#: src/installation_process.py:701
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ГРЕШКА при инсталиране на GRUB(2) BIOS"
 
-#: src/installation_process.py:714
+#: src/installation_process.py:712
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Инсталиране на GRUB(2) UEFI %s мениджър на зареждане в %s"
 
-#: src/installation_process.py:742
+#: src/installation_process.py:740
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "ГРЕШКА при инсталирането на файла за конфигурация на GRUB(2)."
 
-#: src/installation_process.py:770
+#: src/installation_process.py:768
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ГРЕШКА при инсталиране превод на GRUB(2)"
 
-#: src/installation_process.py:784
+#: src/installation_process.py:782
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Грешка при създаване на хаш-парола за потребител %s"
 
-#: src/installation_process.py:790
+#: src/installation_process.py:788
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Грешка при промяна на паролата на потребител %s"
 
-#: src/installation_process.py:915
+#: src/installation_process.py:913
 msgid "Configuring your new system"
 msgstr "Конфигуриране на Вашата нова система"
 
-#: src/installation_process.py:991
+#: src/installation_process.py:989
 msgid "Generating locales..."
 msgstr "Създаване на локализации..."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1009
 msgid "Adjusting hardware clock..."
 msgstr "Сверяване на хардуерния часовник..."
 
-#: src/installation_process.py:1017
+#: src/installation_process.py:1015
 msgid "Configuring hardware..."
 msgstr "Конфигуриране на хардуер..."
 
-#: src/installation_process.py:1080
+#: src/installation_process.py:1078
 msgid "Set up graphics card..."
 msgstr "Настройване на видео картата..."
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1085
 msgid "Can't execute the MHWD script"
 msgstr "Не е възможно да се изпълни MHWD скрипт"
 
-#: src/installation_process.py:1093
+#: src/installation_process.py:1091
 msgid "Configure display manager..."
 msgstr "Конфигуриране мениджъра на прозорци..."
 
-#: src/installation_process.py:1192
+#: src/installation_process.py:1190
 msgid "Configure System..."
 msgstr "Конфигуриране на системата..."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1218
 msgid "Removing live configuration (packages)"
 msgstr "Премахване пакети принадлежащи на (живия) инсталатор"
 
-#: src/installation_process.py:1236
+#: src/installation_process.py:1234
 msgid "Configuring package manager"
 msgstr "Конфигуриране мениджъра на пакети"
 
-#: src/installation_process.py:1251
+#: src/installation_process.py:1249
 msgid "Finished configuring package manager."
 msgstr "Край на конфигурирането мениджър на пакети."
 
-#: src/installation_process.py:1275
+#: src/installation_process.py:1273
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Активиране на автоматичния вход за потребител %s"
 
-#: src/installation_process.py:1354
+#: src/installation_process.py:1352
 msgid "Running mkinitcpio..."
 msgstr "Изпълнение на mkinitcpio..."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1355
 msgid "Running mkinitcpio... done"
 msgstr "Изпълнение на mkinitcpio... готово"
 
@@ -785,15 +624,15 @@ msgstr "Варианти"
 msgid "keyboard_layout is %s"
 msgstr "keyboard_layout е %s"
 
-#: src/language.py:80
+#: src/language.py:79
 msgid "Please choose your language:"
 msgstr "Моля, изберете език:"
 
-#: src/language.py:85
+#: src/language.py:84
 msgid "Notice: The Thus Installer is beta software."
 msgstr "Бележка: Инсталаторът Thus е все още в бета-стадий"
 
-#: src/language.py:86
+#: src/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -801,15 +640,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Thus е бета-версия на софтуер, който е в активно разработване.\\n Той все още не може да работи добре с RAID, btrfs и други усложнени инталатори. Моля, използвайте го предпазливо, защото е възможно да загубите данни.\\n\\n Ако попаднете на някакви бъгове, моля, посетете <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: src/language.py:93 src/welcome.py:98
+#: src/language.py:92
 msgid "Welcome to Manjaro!"
 msgstr "Добре дошли в Манджаро!"
 
-#: src/language.py:110
+#: src/language.py:109
 msgid "Languages"
 msgstr "Езици"
 
-#: src/language.py:130
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Не е възможно да се намери преведеният файл за %s език"
@@ -838,6 +677,11 @@ msgstr "езикът е сменен на: %s"
 #, python-format
 msgid "Can't change to locale '%s'"
 msgstr "Не е възможно да се смени езика с '%s'"
+
+#: src/misc.py:930
+#, python-format
+msgid "Can't set locale %s"
+msgstr ""
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
@@ -1056,96 +900,6 @@ msgstr "силна парола"
 msgid "Passwords do not match"
 msgstr "Паролите не съвпадат"
 
-#: src/welcome.py:84
-msgid ""
-"Try Manjaro without modifying your hard drive.\n"
-"Or install it to your PC with one of the two installer options."
-msgstr "Опитайте Манджаро без да променяте харддиска си.\nИли го инсталирайте чрез една от двете опции."
-
-#: src/welcome.py:89 ui/welcome.ui:45
-msgid "Try it"
-msgstr "Опитайте"
-
-#: src/welcome.py:92 ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "Конзолен /CLI/ инсталатор"
-
-#: src/welcome.py:95 ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "Графичен инсталатор"
-
-#: src/welcome.py:119
-msgid "Can't load the CLI installer"
-msgstr "Не е възможно да се зареди CLI инсталатора"
-
-#: src/pacman/pac.py:236
-#, python-format
-msgid "Package %s not found in any repo!"
-msgstr "Пакет %s не може да бъде открит в никое репо!"
-
-#: src/pacman/pac.py:289
-msgid "Checking dependencies..."
-msgstr "Проверяване на зависимости..."
-
-#: src/pacman/pac.py:291
-msgid "Checking file conflicts..."
-msgstr "Проверяване за файлови конфликти"
-
-#: src/pacman/pac.py:293
-msgid "Resolving dependencies..."
-msgstr "Решаване на зависимости..."
-
-#: src/pacman/pac.py:295
-msgid "Checking inter conflicts..."
-msgstr "Проверяване за вътрешни конфликти..."
-
-#: src/pacman/pac.py:300
-msgid "Removing..."
-msgstr "Премахване..."
-
-#: src/pacman/pac.py:302
-msgid "Upgrading..."
-msgstr "Надстройване..."
-
-#: src/pacman/pac.py:304
-msgid "Checking integrity..."
-msgstr "Проверка на цялостта..."
-
-#: src/pacman/pac.py:307
-msgid "Loading packages files..."
-msgstr "Зареждане на пакетни файлове..."
-
-#: src/pacman/pac.py:310
-msgid "Configuring..."
-msgstr "Конфигуриране..."
-
-#: src/pacman/pac.py:311
-msgid "Configuring a package"
-msgstr "Конфигуриране на пакет"
-
-#: src/pacman/pac.py:313
-msgid "Downloading a file"
-msgstr "Изтегляне на файл"
-
-#: src/pacman/pac.py:389
-#, python-format
-msgid "Downloading %s..."
-msgstr "Изтегляне на %s..."
-
-#: src/pacman/pac.py:398
-#, python-format
-msgid "Refreshing %s..."
-msgstr "Обновяване на %s..."
-
-#: src/pacman/pac.py:407
-#, python-format
-msgid "Installing %s (%d/%d)"
-msgstr "Инсталиране на %s (%d/%d)"
-
-#: src/pacman/pac.py:410
-msgid "Checking and loading packages..."
-msgstr "Проверяване и зареждане на пакети..."
-
 #: ui/bootloader.ui:7
 msgid "Boot"
 msgstr "Зареждане"
@@ -1155,44 +909,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">За най-добри резултати, моля, убедете се че този компютър:</span>"
-
-#: ui/desktop.ui:106 ui/installation_alongside.ui:193
-#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:74
-msgid "label"
-msgstr "етикет"
-
-#: ui/features.ui:40
-msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr "<span weight='bold' size='large'>Bluetooth</span>"
-
-#: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr "<span weight='bold' size='large'>Принтери (CUPS)</span>"
-
-#: ui/features.ui:200
-msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr "<span weight='bold' size='large'>LibreOffice</span>"
-
-#: ui/features.ui:215
-msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr "Офис пакет (текстообработка, таблици и др.)"
-
-#: ui/features.ui:280
-msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr "<span weight='bold' size='large'>Визуални ефекти</span>"
-
-#: ui/features.ui:360
-msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr "<span weight='bold' size='large'>Защитна стена</span>"
-
-#: ui/features.ui:375
-msgid "Activates your firewall (closes all ports by default)"
-msgstr "Включва защитната стена (затваря всички портове)"
-
-#: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr " <span weight='bold' size='large'>Несвободни пакети</span> "
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1247,6 +963,11 @@ msgstr "Друга ОС"
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
 msgstr "Манджаро"
+
+#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
+#: ui/location.ui:36 ui/slides.ui:74
+msgid "label"
+msgstr "етикет"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1315,14 +1036,6 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "<span weight='bold'>Бележка: Инсталаторът е в бета-стадий.</span>\\n\\n Thus все още е в активна разработка. Знае се, че НЕ работи с RAID, btrfs и други специални конфигурации.\\n Моля, бъдете внимателни , защото е възможна загуба на данни.\\n\\n Ако попаднете на бъг, моля, посетете <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
-msgid " "
-msgstr " "
-
-#: ui/pac.ui:43
-msgid "Progress"
-msgstr "Изпълнение"
-
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Добре дошли в Манджаро</span>"
@@ -1346,9 +1059,3 @@ msgstr "<small><span color=\"darkred\">Трябва да въведете име
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Името, което ще се използва когато се свързва с други компютри.</span>"
-
-#: ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "Можете да изпробвате Манджаро без да променяте харддиска си. Просто натиснете \"Опитайте\".\nАко искате да инсталирате системата на вашия ПК, използвайте една от двете опции по-долу. "

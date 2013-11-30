@@ -30,12 +30,11 @@ from gi.repository import Gtk
 import subprocess
 import os
 import sys
-import misc
+import canonical.misc as misc
 import logging
 import installation_process
 
-# To be able to test this installer in other systems
-# that do not have pyparted3 installed
+# To be able to test this installer in other systems that do not have pyparted3 installed
 try:
     import parted
 except:
@@ -151,7 +150,7 @@ class InstallationAutomatic(Gtk.Box):
         luks_password = self.entry['luks_password'].get_text()
         self.settings.set('luks_key_pass', luks_password)
         if luks_password != "":
-            logging.debug("A LUKS password has been set")
+            logging.debug(_("A LUKS password has been set"))
 
         logging.info(_("Automatic install on %s") % self.auto_device)
         self.start_installation()

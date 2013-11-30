@@ -23,11 +23,13 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-thus_VERSION = "0.8.8.0.900"
-thus_LAST_STABLE = "0.8.8"
-thus_WEBSITE = "http://www.manjaro.org"
-thus_AUTHORS = "philm,  toudi, faidoc, karasu, skinner, arcnexus, omelchek"
-thus_LICENSE = '''
+""" Set some Thus global constants """
+
+THUS_VERSION = "0.8.8.0.901"
+THUS_LAST_STABLE = "0.8.8"
+THUS_WEBSITE = "http://www.manjaro.org"
+THUS_AUTHORS = "philm,  toudi, faidoc, karasu, skinner, arcnexus, omelchek"
+THUS_LICENSE = '''
     thus is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 3 of the License, or

@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 17:58+0000\n"
+"POT-Creation-Date: 2013-11-25 00:15+0100\n"
+"PO-Revision-Date: 2013-11-24 23:24+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/manjaro-thus/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -28,13 +28,13 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: thus.py:105
+#: thus.py:100
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "Tento instalační program je nutné spustit s oprávněními správce, bez nich nelze pokračovat."
 
-#: thus.py:113
+#: thus.py:108
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -44,20 +44,20 @@ msgid ""
 "and run this installer again."
 msgstr "Nelze spustit dvě instance tohoto instalačního programu.⏎\n⏎\nPokud jste si jisti, že další Instalační systém není spuštěn⏎\nmůžete ručně odstranit soubor %s⏎\na poté spusťte instalátor znovu."
 
-#: thus.py:209
+#: thus.py:204
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Ke stažení balíčků bude použit program Aria2 - EXPERIMENTÁLNĚ"
 
-#: thus.py:229
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr " Soubor '% s' bude použit jako seznam balíčků"
 
-#: thus.py:249
+#: thus.py:241
 msgid "Manjaro Installer"
 msgstr "Manjaro instalátor"
 
-#: thus.py:317
+#: thus.py:309
 msgid "Quiting installer..."
 msgstr "Instalace zastavena..."
 
@@ -86,213 +86,52 @@ msgstr "i386 UEFI"
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
 msgstr "Zvolte \"Storno\", pokud nechcete nainstalovat zavaděč"
 
-#: src/check.py:68
+#: src/check.py:67
 msgid "Check your computer"
 msgstr "Kontrola vašeho počítače"
 
-#: src/check.py:73
+#: src/check.py:72
 msgid "has at least 5GB available disk space"
 msgstr "má alespoň 3 GB volného místa na disku"
 
-#: src/check.py:77
+#: src/check.py:76
 msgid "is plugged in to a power source"
 msgstr "je připojen ke zdroji napájení"
 
-#: src/check.py:81
+#: src/check.py:80
 msgid "is connected to the Internet"
 msgstr "je připojen k internetu"
 
-#: src/check.py:85
+#: src/check.py:84
 msgid "For best results, please ensure that this computer:"
 msgstr "Pro dosažení nejlepších výsledků se ujistěte, že tento počítač:"
 
-#: src/check.py:90 ui/check.ui:106
+#: src/check.py:89 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
 msgstr "Manjaro používá software třetích stran pro přehrávání Adobe Flash, souborů MP3 a dalších médií. Některý z tohoto softwaru je proprietární. Tento software je předmětem licenčních podmínek, dodaných spolu s jeho dokumentací."
 
-#: src/check.py:96 ui/check.ui:117
+#: src/check.py:95 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "Instaluji software třetích stran"
 
-#: src/check.py:116
+#: src/check.py:115
 msgid "Can't get network status"
 msgstr "Nelze získat stav sítě"
 
-#: src/check.py:193
+#: src/check.py:192
 msgid "We have Internet connection."
 msgstr "Připojeno k internetu."
 
-#: src/check.py:194
+#: src/check.py:193
 msgid "We're connected to a power source."
 msgstr "Připojeno ke zdroji napájení."
 
-#: src/check.py:195
+#: src/check.py:194
 msgid "We have enough disk space."
 msgstr "Na disku je dostatek místa"
-
-#: src/desktop.py:76
-msgid ""
-"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
-"put you in control and bring freedom to everybody. GNOME 3 is developed by "
-"the GNOME community."
-msgstr "Gnome 3 je jednoduchý a elegantní způsob, jak používat váš počítač. Je navržen tak, aby vám vyhovoval a přinesl svobodu všem. GNOME 3 je vyvíjeno komunitou GNOME."
-
-#: src/desktop.py:83
-msgid ""
-"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the GNOME2 "
-"desktop metaphor"
-msgstr "Cinnamon je fork GNOME Shellu, vyvinutý (výhradně) pro Linux Mint. Snaží se poskytnout tradiční uživatelské prostředí, založené na na podobném principu, jako GNOME 2."
-
-#: src/desktop.py:90
-msgid ""
-"XFCE is a lightweight desktop environment which aims to be light on system "
-"resources while still being visually appealing, fully-featured, and easy to "
-"use."
-msgstr "XFCE je odlehčené pracovní prostředí, jehož cílem je nenáročnost na systém při zachování přitažlivého vzhledu, plnohodnotnosti a jednoduchého používaní."
-
-#: src/desktop.py:96
-msgid ""
-"LXDE is a high-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard "
-"shortcuts and additional features like tabbed file browsing."
-msgstr "Extrémně rychlé, výkonné a energeticky úsporné desktopové prostředí. Dodává se s krásným rozhraním, multi-jazykovou podporou, se standardními klávesovými zkratkami a dalšími funkcemi, jako např. procházení souborů v záložkách."
-
-#: src/desktop.py:103
-msgid ""
-"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
-"The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox je další generace vysoce konfigurovatelného správce oken s rozsáhlou podporou standardů. ⏎\n* jeho vizuální styl je dobře známý pro svůj minimalistický vzhled."
-
-#: src/desktop.py:110
-msgid ""
-"Enlightenment is a lean, fast, modular and very extensible window manager "
-"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
-" you need to operate your desktop (or laptop). "
-msgstr "Enlightenment je jednoduchý, rychlý, modulární a velmi rozšiřitelný správce oken pro X11 a Linux. Je klasifikován jako \"desktop shell\", který poskytuje vše co potřebujete pro provoz vašeho počítače (nebo notebooku)."
-
-#: src/desktop.py:116
-msgid ""
-"The KDE Desktop offers a beautiful looking desktop that takes complete "
-"advantage of modern computing technology. Through the use of visual effects "
-"and scalable graphics, the desktop experience is not only smooth but also "
-"pleasant to the eye."
-msgstr "KDE nabízí krásné pracovní prostředí, které umožňuje naplno využít možnosti moderní výpočetní techniky. Díky použití vizuálních efektů a škálovatelné grafiky je práce s počítačem je nejen snadná, ale i příjemná na pohled."
-
-#: src/desktop.py:123
-msgid ""
-"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
-"Qt technologies. It has been tailored for users who value simplicity, speed,"
-" and an intuitive interface."
-msgstr "Razor-qt je moderní, snadno použitelné a rychlé desktopové prostředí, založené na technologii Qt. Je přizpůsobené pro uživatele, kteří ocení jednoduchost, rychlost a intuitivní rozhraní."
-
-#: src/desktop.py:130
-msgid ""
-"This will install Manjaro as command-line system, without any desktop "
-"environment at all. After the installation you can optionally install the "
-"environment of your choice."
-msgstr "Tím dojde k instalaci Manjaro jako systému na příkazovém řádku, bez jakéhokoliv desktopového prostředí. Po dokončení instalace si můžete nainstalovat vámi vybrané desktopové prostředí."
-
-#: src/desktop.py:142
-msgid "Select your desktop"
-msgstr "Vyberte pracovní prostředí"
-
-#: src/desktop.py:152
-msgid "Desktops"
-msgstr "Pracovní prostředí"
-
-#: src/desktop.py:185
-#, python-format
-msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Bude nainstalováno Manjaro s pracovním prostředím '%s'"
-
-#: src/download.py:78
-#, python-format
-msgid "Error creating metalink for package %s"
-msgstr "Chyba při vytváření metalinku pro balík %s"
-
-#: src/download.py:84
-#, python-format
-msgid "Error adding metalink for package %s"
-msgstr "Chyba při přidávání metalinku pro balík %s"
-
-#: src/download.py:133
-#, python-format
-msgid "Downloading package '%s'..."
-msgstr "Stahuji balíček '%s'..."
-
-#: src/download.py:157
-msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr "Nelze se připojit k Aria2. Nebudu schopen urychlit stahování."
-
-#: src/download.py:228
-#, python-format
-msgid "Unable to create download queue for package %s"
-msgstr "Nelze vytvořit frontu stahování pro balík %s"
-
-#: src/download.py:232
-msgid "Can't find these packages: "
-msgstr "Nelze najít tyto balíčky:"
-
-#: src/download.py:238
-msgid "Warning! Can't resolve these dependencies: "
-msgstr "Upozornění! Nelze vyřešit tyto závislosti:"
-
-#: src/features.py:91
-msgid "Feature selection"
-msgstr "Vyberte funkci"
-
-#: src/features.py:96
-msgid "Bluetooth support"
-msgstr "Podpora bluetooth"
-
-#: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "Bez podpory bluetooth nebudete schopen používat zařízení bluetooth"
-
-#: src/features.py:103
-msgid "Printing support (CUPS)"
-msgstr "Podpora tisku (CUPS)"
-
-#: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and management tools"
-msgstr "Zahrnuje ovladače tiskárny a nástroje pro správu"
-
-#: src/features.py:110
-msgid "LibreOffice"
-msgstr "LibreOffice"
-
-#: src/features.py:113
-msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr "Kancelářský balík (textový procesor, tabulkový procesor, ...)"
-
-#: src/features.py:117
-msgid "Visual effects"
-msgstr "Vizuální efekty"
-
-#: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as window transparency and shadows"
-msgstr "Vizuální efekty, jako je průhlednost okna a stíny"
-
-#: src/features.py:124
-msgid "Uncomplicated firewall"
-msgstr "Nekomplikovaný firewall"
-
-#: src/features.py:127
-msgid ""
-"Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr "Instalací ufw zakážete veškerou komunikaci z výchozího nastavení (použitím gufw jej lze konfigurovat)"
-
-#: src/features.py:131
-msgid "Propietary packages"
-msgstr "Proprietární balíčky"
-
-#: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr "Software třetích stran pro přehrávání Flash, souborů MP3 a dalších médií"
 
 #: src/installation_advanced.py:208 src/installation_advanced.py:498
 #: src/installation_advanced.py:512
@@ -341,7 +180,7 @@ msgstr "žádný"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:935
 #: src/installation_advanced.py:1309 src/installation_advanced.py:1385
-#: src/installation_advanced.py:1553
+#: src/installation_advanced.py:1570
 msgid "extended"
 msgstr "prodloužený"
 
@@ -497,22 +336,22 @@ msgstr "Připojit"
 msgid "These disks will have partition actions:"
 msgstr "Na těchto discích budou provedeny tyto akce s oddíly:"
 
-#: src/installation_advanced.py:1476
+#: src/installation_advanced.py:1503
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Ukládám změny provedené v %s"
 
-#: src/installation_advanced.py:1490
+#: src/installation_advanced.py:1517
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Vytváření %s souborového systému na %s pojmenovaného %s"
 
-#: src/installation_advanced.py:1572
+#: src/installation_advanced.py:1589
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro nainstaluje zavaděč %s do %s"
 
-#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+#: src/installation_advanced.py:1606 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
 
@@ -545,40 +384,40 @@ msgstr "Instalace: Nelze vytvořit seznam oblastí"
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Nelze zmenšit oddíl (možná je téměř plný?)"
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:113
 msgid "Installation type"
 msgstr "Typ instalace"
 
-#: src/installation_ask.py:124 ui/installation_ask.ui:33
+#: src/installation_ask.py:123 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Vymazat disk a nainstalovat Manjaro (automaticky)"
 
-#: src/installation_ask.py:127
+#: src/installation_ask.py:126
 msgid "Warning: This will delete all data on your disk"
 msgstr "Upozornění: Dojde k vymazání všech dat na disku"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:133
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Nainstalovat Manjaro vedle %s"
 
-#: src/installation_ask.py:137
+#: src/installation_ask.py:136
 msgid "Install this OS alongside the other OSes you already have installed."
 msgstr "Nainstaluje tento OS vedle ostatních OS, které jsou již nainstalovány."
 
-#: src/installation_ask.py:143
+#: src/installation_ask.py:142
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "Správa oddílů a umístění pro instalaci Manjaro (pokročilé)"
 
-#: src/installation_ask.py:146
+#: src/installation_ask.py:145
 msgid "Create and delete partitions, and choose additional mount points."
 msgstr "Vytvoří a odstraní oddíly a vybere přípojné body."
 
-#: src/installation_ask.py:166
+#: src/installation_ask.py:165
 msgid "Manjaro installation will be encrypted"
 msgstr "instalace Manjaro zašifrována"
 
-#: src/installation_ask.py:169
+#: src/installation_ask.py:168
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro Linux bude nainstalován pomocí nastavení LVM"
 
@@ -624,155 +463,155 @@ msgstr "Bude použito %s jako instalační zařízení"
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Tím se nainstaluje zavaděč %s do %s"
 
-#: src/installation_process.py:82
+#: src/installation_process.py:81
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Kopíruji '/%s'"
 
-#: src/installation_process.py:173
+#: src/installation_process.py:171
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Instalace pomocí metody '%s'"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:274
 msgid "Error creating partitions and their filesystems"
 msgstr "Došlo k chybě při vytváření oddílů a jejich souborových systémů"
 
-#: src/installation_process.py:314 src/installation_process.py:336
+#: src/installation_process.py:312 src/installation_process.py:334
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Připojuji oddíl %s do adresáře %s"
 
-#: src/installation_process.py:320
+#: src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Připojuji oddíl %s do bootovacího adresáře %s"
 
-#: src/installation_process.py:324
+#: src/installation_process.py:322
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nelze připojit kořenový a bootovací oddíl"
 
-#: src/installation_process.py:341
+#: src/installation_process.py:339
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Nelze připojit %s k %s"
 
-#: src/installation_process.py:362
+#: src/installation_process.py:360
 msgid "Can't create necessary directories on destination system"
 msgstr "Nelze vytvořit potřebné adresáře na cílovém systému"
 
-#: src/installation_process.py:459
+#: src/installation_process.py:457
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Obnovení metainformací na %s"
 
-#: src/installation_process.py:472
+#: src/installation_process.py:470
 msgid "Special dirs already mounted."
 msgstr "Speciální adresáře jsou už připojené."
 
-#: src/installation_process.py:498
+#: src/installation_process.py:496
 msgid "Special dirs already not mounted."
 msgstr "Speciální adresář již není připojen."
 
-#: src/installation_process.py:508
+#: src/installation_process.py:506
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Není možné odpojit %s"
 
-#: src/installation_process.py:559
+#: src/installation_process.py:557
 msgid "Create fstab."
 msgstr "Vytvořit fstab"
 
-#: src/installation_process.py:671
+#: src/installation_process.py:669
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Instaluji zavaděč GRUB(2) do %s"
 
-#: src/installation_process.py:701
+#: src/installation_process.py:699
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "Zavaděč GRUB(2) byl úspěšně nainstalován."
 
-#: src/installation_process.py:703
+#: src/installation_process.py:701
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "Chyba při instalaci zavaděče GRUB(2)"
 
-#: src/installation_process.py:714
+#: src/installation_process.py:712
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Instalace zavaděče GRUB(2) UEFI %s do %s"
 
-#: src/installation_process.py:742
+#: src/installation_process.py:740
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "CHYBA instalace GRUB(2) konfiguračního souboru."
 
-#: src/installation_process.py:770
+#: src/installation_process.py:768
 msgid "ERROR installing GRUB(2) locale."
 msgstr "CHYBA instalace GRUB(2) lokálů."
 
-#: src/installation_process.py:784
+#: src/installation_process.py:782
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Chyba při vytváření hesla pro uživatele %s"
 
-#: src/installation_process.py:790
+#: src/installation_process.py:788
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Chyba při změně hesla pro uživatele %s"
 
-#: src/installation_process.py:915
+#: src/installation_process.py:913
 msgid "Configuring your new system"
 msgstr "Konfiguruji váš nový systém"
 
-#: src/installation_process.py:991
+#: src/installation_process.py:989
 msgid "Generating locales..."
 msgstr "Generuji národní prostředí ..."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1009
 msgid "Adjusting hardware clock..."
 msgstr "Nastavuji hardwarové hodiny ..."
 
-#: src/installation_process.py:1017
+#: src/installation_process.py:1015
 msgid "Configuring hardware..."
 msgstr "Konfiguruji hardware..."
 
-#: src/installation_process.py:1080
+#: src/installation_process.py:1078
 msgid "Set up graphics card..."
 msgstr "Nastavuji grafickou kartu..."
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1085
 msgid "Can't execute the MHWD script"
 msgstr "Nelze spustit skript MHWD"
 
-#: src/installation_process.py:1093
+#: src/installation_process.py:1091
 msgid "Configure display manager..."
 msgstr "Konfiguruji správce zobrazení"
 
-#: src/installation_process.py:1192
+#: src/installation_process.py:1190
 msgid "Configure System..."
 msgstr "Konfiguruji systém..."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1218
 msgid "Removing live configuration (packages)"
 msgstr "Odstranění live konfigurace (balíčků)"
 
-#: src/installation_process.py:1236
+#: src/installation_process.py:1234
 msgid "Configuring package manager"
 msgstr "Konfiguruji správce balíčků"
 
-#: src/installation_process.py:1251
+#: src/installation_process.py:1249
 msgid "Finished configuring package manager."
 msgstr "Konfigurace správce balíčků dokončena."
 
-#: src/installation_process.py:1275
+#: src/installation_process.py:1273
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Povolit automatické přihlášení pro uživatele %s."
 
-#: src/installation_process.py:1354
+#: src/installation_process.py:1352
 msgid "Running mkinitcpio..."
 msgstr "Spouštím mkinitcpio ..."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1355
 msgid "Running mkinitcpio... done"
 msgstr "Spuštění mkinitcpio... hotovo"
 
@@ -793,15 +632,15 @@ msgstr "Varianty"
 msgid "keyboard_layout is %s"
 msgstr "rozložení klávesnice je %s"
 
-#: src/language.py:80
+#: src/language.py:79
 msgid "Please choose your language:"
 msgstr "Prosím, vyberte svůj jazyk:"
 
-#: src/language.py:85
+#: src/language.py:84
 msgid "Notice: The Thus Installer is beta software."
 msgstr "Upozornění: Instalátor Thus je ve fázi beta."
 
-#: src/language.py:86
+#: src/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -809,15 +648,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Toto je pre-release beta software, který je v aktivním vývoji.⏎\nJeště neumí správně zacházet s RAID, btrfs subvolumes, nebo jinými pokročilými nastaveními. Postupujte proto opatrně, hrozí ztráta dat!⏎\n⏎\nPokud najdete nějaké chyby, prosím, nahlaste je na <a href='http://bugs.manjaro.org'> http://bugs.manjaro.org</ a>"
 
-#: src/language.py:93 src/welcome.py:98
+#: src/language.py:92
 msgid "Welcome to Manjaro!"
 msgstr "Vítejte v Manjaro"
 
-#: src/language.py:110
+#: src/language.py:109
 msgid "Languages"
 msgstr "Jazyky"
 
-#: src/language.py:130
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Nelze najít překlad souboru v jazyce %s"
@@ -846,6 +685,11 @@ msgstr "Národní prostředí bude změněno na: %s"
 #, python-format
 msgid "Can't change to locale '%s'"
 msgstr "Nelze změnit národní prostředí na '%s'"
+
+#: src/misc.py:930
+#, python-format
+msgid "Can't set locale %s"
+msgstr ""
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
@@ -1064,96 +908,6 @@ msgstr "silné heslo"
 msgid "Passwords do not match"
 msgstr "Hesla se neshodují"
 
-#: src/welcome.py:84
-msgid ""
-"Try Manjaro without modifying your hard drive.\n"
-"Or install it to your PC with one of the two installer options."
-msgstr "Vyzkoušejte Manjaro bez upravování vašeho pevného disku.⏎\nNebo ho nainstalujte na váš počítač s jednou ze dvou možností instalace."
-
-#: src/welcome.py:89 ui/welcome.ui:45
-msgid "Try it"
-msgstr "Vyzkoušet"
-
-#: src/welcome.py:92 ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "Textový instalátor"
-
-#: src/welcome.py:95 ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "Grafický instalátor"
-
-#: src/welcome.py:119
-msgid "Can't load the CLI installer"
-msgstr "Nelze načíst textový instalátor"
-
-#: src/pacman/pac.py:236
-#, python-format
-msgid "Package %s not found in any repo!"
-msgstr "Balíček %s nebyl nalezen v žádném repozitáři!"
-
-#: src/pacman/pac.py:289
-msgid "Checking dependencies..."
-msgstr "Kontrola závislostí..."
-
-#: src/pacman/pac.py:291
-msgid "Checking file conflicts..."
-msgstr "Kontrola souborových konfliktů..."
-
-#: src/pacman/pac.py:293
-msgid "Resolving dependencies..."
-msgstr "Řešení závislostí..."
-
-#: src/pacman/pac.py:295
-msgid "Checking inter conflicts..."
-msgstr "Kontrola vnitřních konfliktů..."
-
-#: src/pacman/pac.py:300
-msgid "Removing..."
-msgstr "Odebírání..."
-
-#: src/pacman/pac.py:302
-msgid "Upgrading..."
-msgstr "Upgradování..."
-
-#: src/pacman/pac.py:304
-msgid "Checking integrity..."
-msgstr "Kontrola integrity..."
-
-#: src/pacman/pac.py:307
-msgid "Loading packages files..."
-msgstr "Nahrávání balíčkových souborů..."
-
-#: src/pacman/pac.py:310
-msgid "Configuring..."
-msgstr "Konfiguruji..."
-
-#: src/pacman/pac.py:311
-msgid "Configuring a package"
-msgstr "Konfiguruji balíček"
-
-#: src/pacman/pac.py:313
-msgid "Downloading a file"
-msgstr "Stahuji soubor"
-
-#: src/pacman/pac.py:389
-#, python-format
-msgid "Downloading %s..."
-msgstr "Stahuji %s..."
-
-#: src/pacman/pac.py:398
-#, python-format
-msgid "Refreshing %s..."
-msgstr "Obnovuji %s..."
-
-#: src/pacman/pac.py:407
-#, python-format
-msgid "Installing %s (%d/%d)"
-msgstr "Instaluji %s (%d/%d)"
-
-#: src/pacman/pac.py:410
-msgid "Checking and loading packages..."
-msgstr "Kontrola a načítání balíčků..."
-
 #: ui/bootloader.ui:7
 msgid "Boot"
 msgstr "Bootování"
@@ -1163,44 +917,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "Pro dosažení nejlepších výsledků se ujistěte, že tento počítač:"
-
-#: ui/desktop.ui:106 ui/installation_alongside.ui:193
-#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:74
-msgid "label"
-msgstr "označení"
-
-#: ui/features.ui:40
-msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr "<span weight='bold' size='large'>Podpora bluetooth</span>"
-
-#: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr "<span weight='bold' size='large'>Podpora tisku (CUPS)</span>"
-
-#: ui/features.ui:200
-msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr "<span weight='bold' size='large'>LibreOffice</span>"
-
-#: ui/features.ui:215
-msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr "Kancelářská sada (textový procesor, tabulky, atd.)"
-
-#: ui/features.ui:280
-msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr "<span weight='bold' size='large'>Efekty</span>"
-
-#: ui/features.ui:360
-msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr "<span weight='bold' size='large'>Firewall</span>"
-
-#: ui/features.ui:375
-msgid "Activates your firewall (closes all ports by default)"
-msgstr "Aktivuje firewall (normálně uzavírá všechny porty)"
-
-#: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr "<span weight='bold' size='large'>Proprietární balíčky</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1255,6 +971,11 @@ msgstr "Jiný OS"
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
 msgstr "Manjaro"
+
+#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
+#: ui/location.ui:36 ui/slides.ui:74
+msgid "label"
+msgstr "označení"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1323,14 +1044,6 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "<span weight='bold'> Poznámka: Tento instalátor je beta software</ span>⏎.\n⏎\nToto je pre-release beta software, který je v aktivním vývoji. Ještě neumí správně zacházet s RAID, btrfs subvolumes nebo s jinými pokročilými nastaveními. Postupujte proto opatrně, hrozí ztráta dat!⏎\n⏎\nPokud narazíte na nějakou chybu, prosím, navštivte<a href='http://bugs.manjaro.org'> http://bugs.manjaro.org</ a>"
 
-#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
-msgid " "
-msgstr " "
-
-#: ui/pac.ui:43
-msgid "Progress"
-msgstr "Postup"
-
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Vítejte v Manjaru</span>"
@@ -1354,9 +1067,3 @@ msgstr "<small><span color=\"darkred\">Musíte zadat jméno</span></small>"
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Tento název je již použit u jiného počítače</span>"
-
-#: ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "Vyzkoušejte Manjaro bez nutnosti úpravy vašeho pevného disku, stačí kliknout na \"Vyzkoušet\". \n⏎\nChcete-li jej nainstalovat do počítače, použijte jednu z těchto dvou možností instalátoru."

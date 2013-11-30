@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 21:00+0000\n"
-"Last-Translator: Ringo Be <ringodekroon@gmail.com>\n"
+"POT-Creation-Date: 2013-11-25 00:15+0100\n"
+"PO-Revision-Date: 2013-11-24 23:24+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,13 +24,13 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:105
+#: thus.py:100
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "De installer moet geladen onder administratie rechten anders kan het niet verder."
 
-#: thus.py:113
+#: thus.py:108
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -40,20 +40,20 @@ msgid ""
 "and run this installer again."
 msgstr "Je kan geen twee sessies laden van deze installer\n\nWeet je zeker dat andere installer niet al draait\nje kan handmatige verwijderen van bestand %s\nen start de installer opnieuw"
 
-#: thus.py:209
+#: thus.py:204
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "Gebruikt Aria2 om pakketten te downloaden - EXPERIMENTEEL"
 
-#: thus.py:229
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "Gebruikt bestand '%s' als pakket lijst"
 
-#: thus.py:249
+#: thus.py:241
 msgid "Manjaro Installer"
 msgstr "Manjaro Installatieprogramma"
 
-#: thus.py:317
+#: thus.py:309
 msgid "Quiting installer..."
 msgstr "Installatieprogramma afsluiten..."
 
@@ -82,213 +82,52 @@ msgstr "i386 UEFI"
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
 msgstr "Kies 'annuleren' als je geen bootloader wil installeren"
 
-#: src/check.py:68
+#: src/check.py:67
 msgid "Check your computer"
 msgstr "Controleer je computer"
 
-#: src/check.py:73
+#: src/check.py:72
 msgid "has at least 5GB available disk space"
 msgstr "heeft minstens 5GB schijfruimte beschikbaar"
 
-#: src/check.py:77
+#: src/check.py:76
 msgid "is plugged in to a power source"
 msgstr "aangesloten is op netstroom"
 
-#: src/check.py:81
+#: src/check.py:80
 msgid "is connected to the Internet"
 msgstr "op het internet is aangesloten"
 
-#: src/check.py:85
+#: src/check.py:84
 msgid "For best results, please ensure that this computer:"
 msgstr "Voor het beste resultaat, zorg er dan voor dat deze computer:"
 
-#: src/check.py:90 ui/check.ui:106
+#: src/check.py:89 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
 msgstr "Manjaro maakt gebruik van software van derden om Flash, MP3 en andere media af te spelen. Sommige van deze software is gepatenteerd. De software is onderhevig aan de licentievoorwaarden opgenomen in de documentatie."
 
-#: src/check.py:96 ui/check.ui:117
+#: src/check.py:95 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "Installeer deze software van derde"
 
-#: src/check.py:116
+#: src/check.py:115
 msgid "Can't get network status"
 msgstr "Kan de status van het netwerk niet verkrijgen"
 
-#: src/check.py:193
+#: src/check.py:192
 msgid "We have Internet connection."
 msgstr "We hebben internet connectie"
 
-#: src/check.py:194
+#: src/check.py:193
 msgid "We're connected to a power source."
 msgstr "We zijn aangesloten aan een stroom bron"
 
-#: src/check.py:195
+#: src/check.py:194
 msgid "We have enough disk space."
 msgstr "Er is hebben genoeg schijfruimte"
-
-#: src/desktop.py:76
-msgid ""
-"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
-"put you in control and bring freedom to everybody. GNOME 3 is developed by "
-"the GNOME community."
-msgstr "Gnome 3 is een eenvoudige en elegante manier om uw computer te gebruiken. Het is ontworpen om u in controle en breng vrijheid voor iedereen. GNOME 3 is ontwikkeld door de GNOME-gemeenschap."
-
-#: src/desktop.py:83
-msgid ""
-"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the GNOME2 "
-"desktop metaphor"
-msgstr "Cinnamon is een fork van GNOME Shell, ontwikkeld door (en voor) Linux Mint. Het probeert om een meer traditionele gebruikersomgeving gebaseerd op de desktop metafoor bieden, zoals GNOME 2"
-
-#: src/desktop.py:90
-msgid ""
-"XFCE is a lightweight desktop environment which aims to be light on system "
-"resources while still being visually appealing, fully-featured, and easy to "
-"use."
-msgstr "Xfce is een lichtgewicht desktop omgeving. Hij streeft naar een snelle en weinig systeembronnen, terwijl het nog steeds visueel aantrekkelijk en gebruiksvriendelijk."
-
-#: src/desktop.py:96
-msgid ""
-"LXDE is a high-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard "
-"shortcuts and additional features like tabbed file browsing."
-msgstr "Extreem snel presterende en energiebesparende desktop omgeving. Het wordt geleverd met een mooie interface, ondersteuning voor meerdere talen, standaard sneltoetsen en extra functies zoals tabbed browsing-bestand."
-
-#: src/desktop.py:103
-msgid ""
-"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
-"The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox is een zeer configureerbare, volgende generatie window manager met uitgebreide ondersteuning van standaarden. ⏎\nDe * box visuele stijl is bekend om zijn minimalistische uitstraling .."
-
-#: src/desktop.py:110
-msgid ""
-"Enlightenment is a lean, fast, modular and very extensible window manager "
-"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
-" you need to operate your desktop (or laptop). "
-msgstr "Enlightenment is een mooi, snelle, modular en uitbreidbare window beheerder voor X11 en linux. Het is geclassificeerd als 'desktop shell' bezorgd je de benodigde zaken om je bureaublad te gebruiken (of laptop)"
-
-#: src/desktop.py:116
-msgid ""
-"The KDE Desktop offers a beautiful looking desktop that takes complete "
-"advantage of modern computing technology. Through the use of visual effects "
-"and scalable graphics, the desktop experience is not only smooth but also "
-"pleasant to the eye."
-msgstr "De KDE Desktop brengt mooi uitziende desktop dat compleer in voordeel van een modern computer technologie.Door het gebruik van visueel effecten en veranderende weergave. De desktop ervaring is niet alleen Smooth maar ook plasant voor de oog."
-
-#: src/desktop.py:123
-msgid ""
-"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
-"Qt technologies. It has been tailored for users who value simplicity, speed,"
-" and an intuitive interface."
-msgstr "Razor-qt is een geavanceerde, eenvoudig te gebruiken en snelle desktop-omgeving gebaseerd op Qt technologieën. Het is op maat gemaakt voor gebruikers die eenvoud, snelheid, en een intuïtieve interface waarderen."
-
-#: src/desktop.py:130
-msgid ""
-"This will install Manjaro as command-line system, without any desktop "
-"environment at all. After the installation you can optionally install the "
-"environment of your choice."
-msgstr "Dit wil de command-line systeem van manjaro installeren, zonder enige desktop.Na de installatie kunt u de desktop zelf naar keuze installeren"
-
-#: src/desktop.py:142
-msgid "Select your desktop"
-msgstr "Selecteer je desktop"
-
-#: src/desktop.py:152
-msgid "Desktops"
-msgstr "Bureaubladen"
-
-#: src/desktop.py:185
-#, python-format
-msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Thus installeerd manjaro met de '%s' desktop"
-
-#: src/download.py:78
-#, python-format
-msgid "Error creating metalink for package %s"
-msgstr "Fout bij creeeren van een metalink voor pakket %s"
-
-#: src/download.py:84
-#, python-format
-msgid "Error adding metalink for package %s"
-msgstr "Fout bij toevoegen metalink voor pakket %s"
-
-#: src/download.py:133
-#, python-format
-msgid "Downloading package '%s'..."
-msgstr "Downloaden pakket '%s'..."
-
-#: src/download.py:157
-msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr "Kan geen verbinding maken met aria2. Zal niet in staat zijn vanwege de download snelheid"
-
-#: src/download.py:228
-#, python-format
-msgid "Unable to create download queue for package %s"
-msgstr "Niet in staat om te downloaden wachtrij te maken voor pakket %s"
-
-#: src/download.py:232
-msgid "Can't find these packages: "
-msgstr "Kan niet dit pakketten vinden:"
-
-#: src/download.py:238
-msgid "Warning! Can't resolve these dependencies: "
-msgstr "Waarschuwing! Kan de afhankelijkheden niet oplossen:"
-
-#: src/features.py:91
-msgid "Feature selection"
-msgstr "Feature selectie"
-
-#: src/features.py:96
-msgid "Bluetooth support"
-msgstr "Bluetooth ondersteuning"
-
-#: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "Zonder Bluetooth ondersteuning kan je geen Bluetooth apparaat gebruiken"
-
-#: src/features.py:103
-msgid "Printing support (CUPS)"
-msgstr "Printen ondersteuning (cups)"
-
-#: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and management tools"
-msgstr "Inclusief printer drivers en beheersgereedschap"
-
-#: src/features.py:110
-msgid "LibreOffice"
-msgstr "LibreOffice"
-
-#: src/features.py:113
-msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr "Office suite (word processor, spreadsheet, ...)"
-
-#: src/features.py:117
-msgid "Visual effects"
-msgstr "Visueel effecten"
-
-#: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as window transparency and shadows"
-msgstr "Visuele effecten zoals transparanties, shaduwen, etc."
-
-#: src/features.py:124
-msgid "Uncomplicated firewall"
-msgstr "Uncomplicated firewall"
-
-#: src/features.py:127
-msgid ""
-"Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr "Installeert ufw en blokkeert standaard alle verkeer (gebruik gufw om in te stellen)"
-
-#: src/features.py:131
-msgid "Propietary packages"
-msgstr "Propietary pakketten"
-
-#: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr "Software van derde om Flash,MP3 en andere media"
 
 #: src/installation_advanced.py:208 src/installation_advanced.py:498
 #: src/installation_advanced.py:512
@@ -337,7 +176,7 @@ msgstr "Geen"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:935
 #: src/installation_advanced.py:1309 src/installation_advanced.py:1385
-#: src/installation_advanced.py:1553
+#: src/installation_advanced.py:1570
 msgid "extended"
 msgstr "extended"
 
@@ -493,22 +332,22 @@ msgstr "Koppel"
 msgid "These disks will have partition actions:"
 msgstr "Deze schijven zal partitie acties hebben:"
 
-#: src/installation_advanced.py:1476
+#: src/installation_advanced.py:1503
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Wijzigingen opslaan gebeurt in %s"
 
-#: src/installation_advanced.py:1490
+#: src/installation_advanced.py:1517
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Maak %s bestandsysteem in %s labeled %s"
 
-#: src/installation_advanced.py:1572
+#: src/installation_advanced.py:1589
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro installerd de bootlader van type %s in %s"
 
-#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+#: src/installation_advanced.py:1606 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Testing modus.Thus wil geen veranderingen door voeren in uw systeem!"
 
@@ -541,40 +380,40 @@ msgstr "In naast install, niet kan lijst met partities maken"
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Kan niet de partitie verkleinen (misschien is bijna vol?)"
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:113
 msgid "Installation type"
 msgstr "Installatie type"
 
-#: src/installation_ask.py:124 ui/installation_ask.ui:33
+#: src/installation_ask.py:123 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Wis disk en installeer Manjaro (automatisch)"
 
-#: src/installation_ask.py:127
+#: src/installation_ask.py:126
 msgid "Warning: This will delete all data on your disk"
 msgstr "Waarschuwing: Dit wil al je gegevens wissen op je disk!"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:133
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Installeer Manjaro naast %s"
 
-#: src/installation_ask.py:137
+#: src/installation_ask.py:136
 msgid "Install this OS alongside the other OSes you already have installed."
 msgstr "Installeer dit OS naast andere bestaande OSes op je systeem."
 
-#: src/installation_ask.py:143
+#: src/installation_ask.py:142
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "Beheer je partities waar Manjaro te installeren (geadvanceerd)"
 
-#: src/installation_ask.py:146
+#: src/installation_ask.py:145
 msgid "Create and delete partitions, and choose additional mount points."
 msgstr "Creeer/verwijder partities, en ook de gekozen toegevoegde koppel punten."
 
-#: src/installation_ask.py:166
+#: src/installation_ask.py:165
 msgid "Manjaro installation will be encrypted"
 msgstr "Manjaro installatie zal worden Versleuteld"
 
-#: src/installation_ask.py:169
+#: src/installation_ask.py:168
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro zal worden geinstalleerd d.m.v een LVM setup"
 
@@ -620,155 +459,155 @@ msgstr "Thus zal %s gebruiken als installatie apparaat"
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus zal de bootlader installeren van type %s in %s"
 
-#: src/installation_process.py:82
+#: src/installation_process.py:81
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Kopieer '/%s'"
 
-#: src/installation_process.py:173
+#: src/installation_process.py:171
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Installeer volgens de '%s\" methode"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:274
 msgid "Error creating partitions and their filesystems"
 msgstr "Fout bij maken partities en de bestandsystemen"
 
-#: src/installation_process.py:314 src/installation_process.py:336
+#: src/installation_process.py:312 src/installation_process.py:334
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Koppellen partitie %s naar %s map"
 
-#: src/installation_process.py:320
+#: src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Koppelen partitie %s naar %s/boot map"
 
-#: src/installation_process.py:324
+#: src/installation_process.py:322
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kon niet root en boot partitie koppelen."
 
-#: src/installation_process.py:341
+#: src/installation_process.py:339
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Kan niet %s op %s koppelen"
 
-#: src/installation_process.py:362
+#: src/installation_process.py:360
 msgid "Can't create necessary directories on destination system"
 msgstr "Kan niet benodigde mappen creeeren op bestemming systeem"
 
-#: src/installation_process.py:459
+#: src/installation_process.py:457
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Herstellen van meta-informatie op %s"
 
-#: src/installation_process.py:472
+#: src/installation_process.py:470
 msgid "Special dirs already mounted."
 msgstr "Speciale Mappen is al aangekoppeld."
 
-#: src/installation_process.py:498
+#: src/installation_process.py:496
 msgid "Special dirs already not mounted."
 msgstr "Speciale Mappen is al niet aangekoppeld."
 
-#: src/installation_process.py:508
+#: src/installation_process.py:506
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Onmogelijk te umount %s"
 
-#: src/installation_process.py:559
+#: src/installation_process.py:557
 msgid "Create fstab."
 msgstr "Aanmaken fstab"
 
-#: src/installation_process.py:671
+#: src/installation_process.py:669
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installeer GRUB(2) BIOS bootlader in %s"
 
-#: src/installation_process.py:701
+#: src/installation_process.py:699
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS is succesvol geinstalleerd."
 
-#: src/installation_process.py:703
+#: src/installation_process.py:701
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "FOUT bij installeren GRUB(2) BIOS."
 
-#: src/installation_process.py:714
+#: src/installation_process.py:712
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installeer GRUB(2) UEFI %s bootlader op %s"
 
-#: src/installation_process.py:742
+#: src/installation_process.py:740
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "FOUT installeren GRUB(2) configuratie bestand."
 
-#: src/installation_process.py:770
+#: src/installation_process.py:768
 msgid "ERROR installing GRUB(2) locale."
 msgstr "FOUT installeren GRUB(2) locale."
 
-#: src/installation_process.py:784
+#: src/installation_process.py:782
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Fout bij creeeren wachtwoord hash voor gebruiker %s"
 
-#: src/installation_process.py:790
+#: src/installation_process.py:788
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Fout veranderen wachtwoord voor gebruiker %s"
 
-#: src/installation_process.py:915
+#: src/installation_process.py:913
 msgid "Configuring your new system"
 msgstr "Instellen van je nieuwe systeem"
 
-#: src/installation_process.py:991
+#: src/installation_process.py:989
 msgid "Generating locales..."
 msgstr "Genereer Locales.."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1009
 msgid "Adjusting hardware clock..."
 msgstr "Bijstellen hardware klok.."
 
-#: src/installation_process.py:1017
+#: src/installation_process.py:1015
 msgid "Configuring hardware..."
 msgstr "Configureren van hardware.."
 
-#: src/installation_process.py:1080
+#: src/installation_process.py:1078
 msgid "Set up graphics card..."
 msgstr "Setup grafische kaart.."
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1085
 msgid "Can't execute the MHWD script"
 msgstr "Kan niet MHWD script uitvoeren"
 
-#: src/installation_process.py:1093
+#: src/installation_process.py:1091
 msgid "Configure display manager..."
 msgstr "Configureer  display manager.."
 
-#: src/installation_process.py:1192
+#: src/installation_process.py:1190
 msgid "Configure System..."
 msgstr "Configureer systeem.."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1218
 msgid "Removing live configuration (packages)"
 msgstr "Verwijderen live configuratie (pakketten)"
 
-#: src/installation_process.py:1236
+#: src/installation_process.py:1234
 msgid "Configuring package manager"
 msgstr "Configureren pakket beheerder"
 
-#: src/installation_process.py:1251
+#: src/installation_process.py:1249
 msgid "Finished configuring package manager."
 msgstr "Klaar met pakket beheerder configureren."
 
-#: src/installation_process.py:1275
+#: src/installation_process.py:1273
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s Inschakelen automatische login voor gebruikers %s."
 
-#: src/installation_process.py:1354
+#: src/installation_process.py:1352
 msgid "Running mkinitcpio..."
 msgstr "Laad mkinitcpio.."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1355
 msgid "Running mkinitcpio... done"
 msgstr "Laden mkinitcpio.. klaar"
 
@@ -789,15 +628,15 @@ msgstr "Varianten"
 msgid "keyboard_layout is %s"
 msgstr "Toetsenbord_Schema is %s"
 
-#: src/language.py:80
+#: src/language.py:79
 msgid "Please choose your language:"
 msgstr "Kies uw taal alstublieft."
 
-#: src/language.py:85
+#: src/language.py:84
 msgid "Notice: The Thus Installer is beta software."
 msgstr "Notitie: Thus installateur is beta software"
 
-#: src/language.py:86
+#: src/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -805,15 +644,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Thus is pre-uitgave software dat onder actieve  ontwikkeling staat.\nHet doet Raid niet keurig behandelen eveneens btrfs subvolumes en andere geadvanceerde Setups. Alstublieft wees voorzichtig en oppassen van verlies van data.\n\nAls u bugs vind, geef het door op <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: src/language.py:93 src/welcome.py:98
+#: src/language.py:92
 msgid "Welcome to Manjaro!"
 msgstr "Welkom bij Manjaro!"
 
-#: src/language.py:110
+#: src/language.py:109
 msgid "Languages"
 msgstr "Talen"
 
-#: src/language.py:130
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "Kan geen vertaal bestand vinden voor de %s taal"
@@ -842,6 +681,11 @@ msgstr "locale veranderd naar : %s"
 #, python-format
 msgid "Can't change to locale '%s'"
 msgstr "Kan locale niet veranderen naar '%s'"
+
+#: src/misc.py:930
+#, python-format
+msgid "Can't set locale %s"
+msgstr ""
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
@@ -1060,96 +904,6 @@ msgstr "Sterke wachtwoord"
 msgid "Passwords do not match"
 msgstr "Wachtwoord komt niet overheen"
 
-#: src/welcome.py:84
-msgid ""
-"Try Manjaro without modifying your hard drive.\n"
-"Or install it to your PC with one of the two installer options."
-msgstr "Probeer Manjaro zonder je hardeschijf te wijzigen.⏎\nOf installer het naar je pc met een of twee installer opties."
-
-#: src/welcome.py:89 ui/welcome.ui:45
-msgid "Try it"
-msgstr "Probeer het"
-
-#: src/welcome.py:92 ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "CLI installer"
-
-#: src/welcome.py:95 ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "Grafische Installer"
-
-#: src/welcome.py:119
-msgid "Can't load the CLI installer"
-msgstr "Kan CLI installer niet laden"
-
-#: src/pacman/pac.py:236
-#, python-format
-msgid "Package %s not found in any repo!"
-msgstr "Pakket %s niet gevonden in welke repo ook"
-
-#: src/pacman/pac.py:289
-msgid "Checking dependencies..."
-msgstr "Controlleren afhankelijkheden"
-
-#: src/pacman/pac.py:291
-msgid "Checking file conflicts..."
-msgstr "Controlleren bestand conflicten.."
-
-#: src/pacman/pac.py:293
-msgid "Resolving dependencies..."
-msgstr "Oplossen afhankelijkheden.."
-
-#: src/pacman/pac.py:295
-msgid "Checking inter conflicts..."
-msgstr "Controlleren inter conflicts..."
-
-#: src/pacman/pac.py:300
-msgid "Removing..."
-msgstr "Verwijderen..."
-
-#: src/pacman/pac.py:302
-msgid "Upgrading..."
-msgstr "Opwaarderen..."
-
-#: src/pacman/pac.py:304
-msgid "Checking integrity..."
-msgstr "Controlleren intergriteit.."
-
-#: src/pacman/pac.py:307
-msgid "Loading packages files..."
-msgstr "Laden van pakket bestanden..."
-
-#: src/pacman/pac.py:310
-msgid "Configuring..."
-msgstr "Instellenen.."
-
-#: src/pacman/pac.py:311
-msgid "Configuring a package"
-msgstr "Instellen van een pakket"
-
-#: src/pacman/pac.py:313
-msgid "Downloading a file"
-msgstr "Downloaden van een bestand"
-
-#: src/pacman/pac.py:389
-#, python-format
-msgid "Downloading %s..."
-msgstr "Downloaden %s..."
-
-#: src/pacman/pac.py:398
-#, python-format
-msgid "Refreshing %s..."
-msgstr "Verversen %s..."
-
-#: src/pacman/pac.py:407
-#, python-format
-msgid "Installing %s (%d/%d)"
-msgstr "Installeren %s (%d/%d)"
-
-#: src/pacman/pac.py:410
-msgid "Checking and loading packages..."
-msgstr "Controlleren en laden pakketten..."
-
 #: ui/bootloader.ui:7
 msgid "Boot"
 msgstr "Boot"
@@ -1159,44 +913,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Voor beste resultaat,Alstublieft zorg dat dit computer: </span>"
-
-#: ui/desktop.ui:106 ui/installation_alongside.ui:193
-#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:74
-msgid "label"
-msgstr "label"
-
-#: ui/features.ui:40
-msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr "span weight='bold' size='large'>Bluetooth ondersteuning</span>"
-
-#: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr "<span weight='bold' size='large'>Printer ondersteuning (cups)</span>"
-
-#: ui/features.ui:200
-msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr "<span weight='bold' size='large'>LibreOffice</span>"
-
-#: ui/features.ui:215
-msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr "Office suite (word processor, spreadsheet, etc.)"
-
-#: ui/features.ui:280
-msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr "<span weight='bold' size='large'>Visueel effecten</span>"
-
-#: ui/features.ui:360
-msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr "<span weight='bold' size='large'>Firewall</span>"
-
-#: ui/features.ui:375
-msgid "Activates your firewall (closes all ports by default)"
-msgstr "Activeerd uw firewall (sluit alle poorten standaard)"
-
-#: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr "<span weight='bold' size='large'>Porpetary pakketten</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1251,6 +967,11 @@ msgstr "Ander OS"
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
 msgstr "Manjaro"
+
+#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
+#: ui/location.ui:36 ui/slides.ui:74
+msgid "label"
+msgstr "label"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1319,14 +1040,6 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "<span weight='bold'>Notice: The Thus Installer is beta software.</span>⏎\n⏎\nThus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! ⏎\n⏎\nIf you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
-#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
-msgid " "
-msgstr "."
-
-#: ui/pac.ui:43
-msgid "Progress"
-msgstr "Progressie"
-
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Welkome to Manjaro</span>"
@@ -1350,9 +1063,3 @@ msgstr "<small><span color=\"darkred\">Je moet een naam invoeren</span></small>"
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Dit naam word gebruikt wanneer communiceerd met andere computers.</span>"
-
-#: ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "Je kan Manjaro proberen zonder je hardeschijf aan te passen, Klik gewoon op Probeer het\".⏎\nAls je wenst te installeren naar je PC, Kies een van de twee installatie opties."

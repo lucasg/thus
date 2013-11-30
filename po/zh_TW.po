@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 18:44+0100\n"
-"PO-Revision-Date: 2013-11-22 18:20+0000\n"
+"POT-Creation-Date: 2013-11-25 00:15+0100\n"
+"PO-Revision-Date: 2013-11-24 23:24+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,13 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: thus.py:105
+#: thus.py:100
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "本安裝程式必須以管理者的身份執行，如果不是以管理者身份就不能繼續。"
 
-#: thus.py:113
+#: thus.py:108
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -39,20 +39,20 @@ msgid ""
 "and run this installer again."
 msgstr "您不能同時執行兩個安裝程式。\n\n如果您確定您並沒有執行其他的安裝程式\n您可以手動刪除這個檔案： %s\n然後再次執行安裝程式。"
 
-#: thus.py:209
+#: thus.py:204
 msgid "Using Aria2 to download packages - EXPERIMENTAL"
 msgstr "使用 Aria2 下載套件 - 實驗性的"
 
-#: thus.py:229
+#: thus.py:224
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "使用 '%s' 檔案做為套件列表"
 
-#: thus.py:249
+#: thus.py:241
 msgid "Manjaro Installer"
 msgstr "Manjaro 安裝程式"
 
-#: thus.py:317
+#: thus.py:309
 msgid "Quiting installer..."
 msgstr "離開安裝程式..."
 
@@ -81,213 +81,52 @@ msgstr "i386 UEFI"
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
 msgstr "如果您不想安裝開機載入器，請選擇 '取消' 。"
 
-#: src/check.py:68
+#: src/check.py:67
 msgid "Check your computer"
 msgstr "檢查您的電腦"
 
-#: src/check.py:73
+#: src/check.py:72
 msgid "has at least 5GB available disk space"
 msgstr "至少 5GB 的可用磁碟空間"
 
-#: src/check.py:77
+#: src/check.py:76
 msgid "is plugged in to a power source"
 msgstr "已經插入電力來源"
 
-#: src/check.py:81
+#: src/check.py:80
 msgid "is connected to the Internet"
 msgstr "已經連上網際網路"
 
-#: src/check.py:85
+#: src/check.py:84
 msgid "For best results, please ensure that this computer:"
 msgstr "為了獲得最佳的體驗，請確保您的電腦："
 
-#: src/check.py:90 ui/check.ui:106
+#: src/check.py:89 ui/check.ui:106
 msgid ""
 "Manjaro uses third-party software to play Adobe Flash, MP3 files, and other "
 "media. Some of this software is proprietary. The software is subject to "
 "license terms included with its documentation."
 msgstr "Manjaro 使用第三方軟體來播放 Adobe Flash 、 MP3檔案 、 以及其他多媒體檔案。其中有一些軟體是閉源的。這些軟體受包含在其文件中的授權條款制約。"
 
-#: src/check.py:96 ui/check.ui:117
+#: src/check.py:95 ui/check.ui:117
 msgid "Install this third-party software"
 msgstr "安裝第三方軟體"
 
-#: src/check.py:116
+#: src/check.py:115
 msgid "Can't get network status"
 msgstr "無法取得網路狀態"
 
-#: src/check.py:193
+#: src/check.py:192
 msgid "We have Internet connection."
 msgstr "我們有網際網路連線。"
 
-#: src/check.py:194
+#: src/check.py:193
 msgid "We're connected to a power source."
 msgstr "我們已經連接到電力來源了。"
 
-#: src/check.py:195
+#: src/check.py:194
 msgid "We have enough disk space."
 msgstr "有足夠的磁碟空間。"
-
-#: src/desktop.py:76
-msgid ""
-"GNOME 3 is an easy and elegant way to use your computer. It is designed to "
-"put you in control and bring freedom to everybody. GNOME 3 is developed by "
-"the GNOME community."
-msgstr "GNOME 3 是易於使用且精緻的桌面環境。它被設計來讓您控制一切且帶給每個人自由。 GNOME 3 是由 GNOME 社群所開發。"
-
-#: src/desktop.py:83
-msgid ""
-"Cinnamon is a fork of GNOME Shell, developed by (and for) Linux Mint. It "
-"attempts to provide a more traditional user environment based on the GNOME2 "
-"desktop metaphor"
-msgstr "Cinnamon 是 GNOME Shell 的一個分支，由（且專為） Linux Mint 開發，它試著提供一個類似於 GNOME 2 的使用者環境"
-
-#: src/desktop.py:90
-msgid ""
-"XFCE is a lightweight desktop environment which aims to be light on system "
-"resources while still being visually appealing, fully-featured, and easy to "
-"use."
-msgstr "XFCE 是一個輕量的桌面環境，其致力於減輕系統負擔，但仍然有具吸引力的外觀，功能齊全，並且易用。"
-
-#: src/desktop.py:96
-msgid ""
-"LXDE is a high-performing and energy-saving desktop environment. It comes "
-"with a beautiful interface, multi-language support, standard keyboard "
-"shortcuts and additional features like tabbed file browsing."
-msgstr "LXDE 是一個高效能且節約能源的桌面環境。它有著美麗的外觀，多語言支援，標準的快捷鍵以及更多特性，像是分頁檔案瀏覽。"
-
-#: src/desktop.py:103
-msgid ""
-"Openbox is a highly configurable, next-generation window manager with extensive standards support.\n"
-"The *box visual style is well known for its minimalistic appearance."
-msgstr "Openbox 是一個高度自訂，新一代的視窗管理員，支援許多擴展標準。\n*box 視覺樣式以其簡約的外觀而聞名。"
-
-#: src/desktop.py:110
-msgid ""
-"Enlightenment is a lean, fast, modular and very extensible window manager "
-"for X11 and Linux. It is classed as a \"desktop shell\" providing the things"
-" you need to operate your desktop (or laptop). "
-msgstr "Enlightenment 是一個快速且模組化，並且擴充性強的 X11 及 Linux 視窗管理員。它被歸類於提供您操作電腦所需的一切事物的「桌面殼層」。"
-
-#: src/desktop.py:116
-msgid ""
-"The KDE Desktop offers a beautiful looking desktop that takes complete "
-"advantage of modern computing technology. Through the use of visual effects "
-"and scalable graphics, the desktop experience is not only smooth but also "
-"pleasant to the eye."
-msgstr "KDE 桌面環境提供了一個美觀的，包含了現代電腦科技的一切優點的桌面。透過使用大量的視覺效果及圖形，提供了不只是平順，更是舒適的使用者體驗。"
-
-#: src/desktop.py:123
-msgid ""
-"Razor-qt is an advanced, easy-to-use, and fast desktop environment based on "
-"Qt technologies. It has been tailored for users who value simplicity, speed,"
-" and an intuitive interface."
-msgstr "Razor-qt 是一個使用Qt技術的高階，易於使用，而且快速的桌面環境。 使用者可以高度自訂，簡單、快速、符合直覺。"
-
-#: src/desktop.py:130
-msgid ""
-"This will install Manjaro as command-line system, without any desktop "
-"environment at all. After the installation you can optionally install the "
-"environment of your choice."
-msgstr "將會以命令列的形式安裝 Manjaro ，沒有任何的桌面環境。安裝完後您可以自由選擇安裝您想要使用的桌面環境。"
-
-#: src/desktop.py:142
-msgid "Select your desktop"
-msgstr "選擇您的桌面環境"
-
-#: src/desktop.py:152
-msgid "Desktops"
-msgstr "桌面環境"
-
-#: src/desktop.py:185
-#, python-format
-msgid "Thus will install Manjaro with the '%s' desktop"
-msgstr "Thus 將會安裝使用 '%s' 桌面環境的Manjaro"
-
-#: src/download.py:78
-#, python-format
-msgid "Error creating metalink for package %s"
-msgstr "在創建套件 %s 的 metalink 時遇到錯誤"
-
-#: src/download.py:84
-#, python-format
-msgid "Error adding metalink for package %s"
-msgstr "在新增套件 %s 的 metalink 時遇到錯誤"
-
-#: src/download.py:133
-#, python-format
-msgid "Downloading package '%s'..."
-msgstr "正在下載套件 '%s'..."
-
-#: src/download.py:157
-msgid "Can't connect to Aria2. Won't be able to speed up the download."
-msgstr "無法連接至 Aria2。將不會加速下載。"
-
-#: src/download.py:228
-#, python-format
-msgid "Unable to create download queue for package %s"
-msgstr "無法創建套件 %s 的下載隊列"
-
-#: src/download.py:232
-msgid "Can't find these packages: "
-msgstr "找不到這些套件："
-
-#: src/download.py:238
-msgid "Warning! Can't resolve these dependencies: "
-msgstr "警告！無法解決這些依賴："
-
-#: src/features.py:91
-msgid "Feature selection"
-msgstr "特性選擇"
-
-#: src/features.py:96
-msgid "Bluetooth support"
-msgstr "藍牙支援"
-
-#: src/features.py:99 ui/features.ui:55
-msgid "Without Bluetooth support you won't be able to use Bluetooth devices"
-msgstr "沒有藍牙支援您就無法使用藍牙裝置"
-
-#: src/features.py:103
-msgid "Printing support (CUPS)"
-msgstr "列印支援（CUPS）"
-
-#: src/features.py:106 ui/features.ui:135
-msgid "This includes printer drivers and management tools"
-msgstr "包含了印表機的驅動程式及管理工具"
-
-#: src/features.py:110
-msgid "LibreOffice"
-msgstr "LibreOffice"
-
-#: src/features.py:113
-msgid "Office suite (word processor, spreadsheet, ...)"
-msgstr "辦公室套裝軟體(文字處理器，試算表，...)"
-
-#: src/features.py:117
-msgid "Visual effects"
-msgstr "視覺效果"
-
-#: src/features.py:120 ui/features.ui:295
-msgid "Visual effects such as window transparency and shadows"
-msgstr "視覺效果，例如漸層及陰影"
-
-#: src/features.py:124
-msgid "Uncomplicated firewall"
-msgstr "Uncomplicated firewall"
-
-#: src/features.py:127
-msgid ""
-"Installs ufw and denies all traffic by default (use gufw to configure it)"
-msgstr "安裝 UFW 並預設拒絕一切連線（使用 GUFW 設定）"
-
-#: src/features.py:131
-msgid "Propietary packages"
-msgstr "專有套件"
-
-#: src/features.py:134 ui/features.ui:455
-msgid "Third-party software to play Flash, MP3 files, and other media"
-msgstr "第三方軟體如播放 Flash 、 MP3檔案、以及其他多媒體檔案"
 
 #: src/installation_advanced.py:208 src/installation_advanced.py:498
 #: src/installation_advanced.py:512
@@ -336,7 +175,7 @@ msgstr "無"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:935
 #: src/installation_advanced.py:1309 src/installation_advanced.py:1385
-#: src/installation_advanced.py:1553
+#: src/installation_advanced.py:1570
 msgid "extended"
 msgstr "延伸"
 
@@ -492,22 +331,22 @@ msgstr "掛載"
 msgid "These disks will have partition actions:"
 msgstr "這個磁碟將會有以下的分割區動作："
 
-#: src/installation_advanced.py:1476
+#: src/installation_advanced.py:1503
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "在 %s 中儲存變更"
 
-#: src/installation_advanced.py:1490
+#: src/installation_advanced.py:1517
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "正在創建 %s 檔案系統在 %s 已加上標籤的 %s"
 
-#: src/installation_advanced.py:1572
+#: src/installation_advanced.py:1589
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro 將會安裝 %s 類型的開機載入器到 %s 上"
 
-#: src/installation_advanced.py:1589 src/installation_automatic.py:225
+#: src/installation_advanced.py:1606 src/installation_automatic.py:225
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
 
@@ -540,40 +379,40 @@ msgstr "共存安裝：無法創建分割區列表"
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "無法縮小分割區（也許它快滿了？）"
 
-#: src/installation_ask.py:114
+#: src/installation_ask.py:113
 msgid "Installation type"
 msgstr "安裝類型"
 
-#: src/installation_ask.py:124 ui/installation_ask.ui:33
+#: src/installation_ask.py:123 ui/installation_ask.ui:33
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "清除磁碟並安裝 Manjaro (自動)"
 
-#: src/installation_ask.py:127
+#: src/installation_ask.py:126
 msgid "Warning: This will delete all data on your disk"
 msgstr "警告：這將會刪除所您磁碟上的所有資料"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:133
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "與 %s 共存安裝 Manjaro"
 
-#: src/installation_ask.py:137
+#: src/installation_ask.py:136
 msgid "Install this OS alongside the other OSes you already have installed."
 msgstr "將這個作業系統與其他已安裝的系統共存安裝。"
 
-#: src/installation_ask.py:143
+#: src/installation_ask.py:142
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "自訂您的分割區並選擇您要安裝 Manjaro 的位置 （進階）"
 
-#: src/installation_ask.py:146
+#: src/installation_ask.py:145
 msgid "Create and delete partitions, and choose additional mount points."
 msgstr "增加及刪除，並選擇額外的掛載點。"
 
-#: src/installation_ask.py:166
+#: src/installation_ask.py:165
 msgid "Manjaro installation will be encrypted"
 msgstr "Manjaro 將會以加密的方式安裝"
 
-#: src/installation_ask.py:169
+#: src/installation_ask.py:168
 msgid "Manjaro will be installed using a LVM setup"
 msgstr "Manjaro 將會使用 LVM 設定來安裝"
 
@@ -619,155 +458,155 @@ msgstr "Thus 將會使用 %s 作為安裝的裝置"
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus 將會安裝 %s 類型的開機載入器到 %s 上"
 
-#: src/installation_process.py:82
+#: src/installation_process.py:81
 #, python-format
 msgid "Copying '/%s'"
 msgstr "正在複製 '/%s'"
 
-#: src/installation_process.py:173
+#: src/installation_process.py:171
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "正在使用 '%s' 方法安裝"
 
-#: src/installation_process.py:276
+#: src/installation_process.py:274
 msgid "Error creating partitions and their filesystems"
 msgstr "在創建分割區及其檔案系統時遇到錯誤"
 
-#: src/installation_process.py:314 src/installation_process.py:336
+#: src/installation_process.py:312 src/installation_process.py:334
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "正在掛載 %s 分割區到 %s 目錄"
 
-#: src/installation_process.py:320
+#: src/installation_process.py:318
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "正在掛載 %s 分割區到 %s/boot 目錄"
 
-#: src/installation_process.py:324
+#: src/installation_process.py:322
 msgid "Couldn't mount root and boot partitions"
 msgstr "無法掛載根目錄及開機分割區"
 
-#: src/installation_process.py:341
+#: src/installation_process.py:339
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "無法掛載 %s 在 %s"
 
-#: src/installation_process.py:362
+#: src/installation_process.py:360
 msgid "Can't create necessary directories on destination system"
 msgstr "無法在目標系統上創建必要的目錄"
 
-#: src/installation_process.py:459
+#: src/installation_process.py:457
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "正在恢復 %s 上的元資訊"
 
-#: src/installation_process.py:472
+#: src/installation_process.py:470
 msgid "Special dirs already mounted."
 msgstr "特殊目錄已經掛載。"
 
-#: src/installation_process.py:498
+#: src/installation_process.py:496
 msgid "Special dirs already not mounted."
 msgstr "特殊目錄已經卸載。"
 
-#: src/installation_process.py:508
+#: src/installation_process.py:506
 #, python-format
 msgid "Unable to umount %s"
 msgstr "無法卸載 %s"
 
-#: src/installation_process.py:559
+#: src/installation_process.py:557
 msgid "Create fstab."
 msgstr "創建 fstab 。"
 
-#: src/installation_process.py:671
+#: src/installation_process.py:669
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "正在安裝 GRUB(2) BIOS 開機載入器到 %s"
 
-#: src/installation_process.py:701
+#: src/installation_process.py:699
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS 已成功安裝。"
 
-#: src/installation_process.py:703
+#: src/installation_process.py:701
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "安裝 GRUB(2)時發生錯誤。"
 
-#: src/installation_process.py:714
+#: src/installation_process.py:712
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "正在安裝 GRUB(2) UEFI 開機載入器到 %s"
 
-#: src/installation_process.py:742
+#: src/installation_process.py:740
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "安裝 GRUB(2) 的配置檔案時遇到錯誤。"
 
-#: src/installation_process.py:770
+#: src/installation_process.py:768
 msgid "ERROR installing GRUB(2) locale."
 msgstr "安裝 GRUB(2) 的語系時遇到錯誤。"
 
-#: src/installation_process.py:784
+#: src/installation_process.py:782
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "創建使用者 %s 的密碼雜湊值時發生錯誤"
 
-#: src/installation_process.py:790
+#: src/installation_process.py:788
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "更改使用者 %s 的密碼時發生錯誤"
 
-#: src/installation_process.py:915
+#: src/installation_process.py:913
 msgid "Configuring your new system"
 msgstr "正在設定新系統"
 
-#: src/installation_process.py:991
+#: src/installation_process.py:989
 msgid "Generating locales..."
 msgstr "正在生成語系碼..."
 
-#: src/installation_process.py:1011
+#: src/installation_process.py:1009
 msgid "Adjusting hardware clock..."
 msgstr "正在調整硬體時鐘..."
 
-#: src/installation_process.py:1017
+#: src/installation_process.py:1015
 msgid "Configuring hardware..."
 msgstr "正在配置硬體..."
 
-#: src/installation_process.py:1080
+#: src/installation_process.py:1078
 msgid "Set up graphics card..."
 msgstr "正在設定顯示卡..."
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1085
 msgid "Can't execute the MHWD script"
 msgstr "無法執行 MHWD 腳本"
 
-#: src/installation_process.py:1093
+#: src/installation_process.py:1091
 msgid "Configure display manager..."
 msgstr "正在設定顯示管理員..."
 
-#: src/installation_process.py:1192
+#: src/installation_process.py:1190
 msgid "Configure System..."
 msgstr "正在設定系統..."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1218
 msgid "Removing live configuration (packages)"
 msgstr "正在移除 live 設定值(套件)"
 
-#: src/installation_process.py:1236
+#: src/installation_process.py:1234
 msgid "Configuring package manager"
 msgstr "正在設定套件管理員"
 
-#: src/installation_process.py:1251
+#: src/installation_process.py:1249
 msgid "Finished configuring package manager."
 msgstr "設定套件管理員完成。"
 
-#: src/installation_process.py:1275
+#: src/installation_process.py:1273
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s ： 啟用使用者 %s 的自動登入。"
 
-#: src/installation_process.py:1354
+#: src/installation_process.py:1352
 msgid "Running mkinitcpio..."
 msgstr "正在執行 mkinitcpio..."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1355
 msgid "Running mkinitcpio... done"
 msgstr "正在執行 mkinitcpio... 完成"
 
@@ -788,15 +627,15 @@ msgstr "變體"
 msgid "keyboard_layout is %s"
 msgstr "鍵盤佈局為 %s"
 
-#: src/language.py:80
+#: src/language.py:79
 msgid "Please choose your language:"
 msgstr "請選擇您的語言："
 
-#: src/language.py:85
+#: src/language.py:84
 msgid "Notice: The Thus Installer is beta software."
 msgstr "注意： Thus 安裝程式是一個測試版的軟體。"
 
-#: src/language.py:86
+#: src/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
@@ -804,15 +643,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Thus 是一個未正式發行的測試版軟體，仍在積極的開發中。它還不能處理 RAID 、btrfs 的子卷系統、以及其他進階設定。請以資料可能會消失的警覺心繼續進行！\n\n如果您發現任何 bug ，請在 <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> 回報"
 
-#: src/language.py:93 src/welcome.py:98
+#: src/language.py:92
 msgid "Welcome to Manjaro!"
 msgstr "歡迎使用 Manjaro！"
 
-#: src/language.py:110
+#: src/language.py:109
 msgid "Languages"
 msgstr "語言"
 
-#: src/language.py:130
+#: src/language.py:129
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "找不到 %s 語言的翻譯檔"
@@ -841,6 +680,11 @@ msgstr "變更語系到： %s"
 #, python-format
 msgid "Can't change to locale '%s'"
 msgstr "無法更改語系到 '%s'"
+
+#: src/misc.py:930
+#, python-format
+msgid "Can't set locale %s"
+msgstr ""
 
 #: src/rank_mirrors.py:60
 msgid "In rankmirrors, can't get network status"
@@ -1059,96 +903,6 @@ msgstr "強壯的密碼"
 msgid "Passwords do not match"
 msgstr "密碼不符合"
 
-#: src/welcome.py:84
-msgid ""
-"Try Manjaro without modifying your hard drive.\n"
-"Or install it to your PC with one of the two installer options."
-msgstr "試用 Manjaro 而不需要更動您的硬碟。\n或是在兩個安裝選項中選擇一個以安裝 Manjaro 到您的電腦上。"
-
-#: src/welcome.py:89 ui/welcome.ui:45
-msgid "Try it"
-msgstr "試試看"
-
-#: src/welcome.py:92 ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "文字安裝"
-
-#: src/welcome.py:95 ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "圖形化安裝"
-
-#: src/welcome.py:119
-msgid "Can't load the CLI installer"
-msgstr "無法載入命令列安裝程式"
-
-#: src/pacman/pac.py:236
-#, python-format
-msgid "Package %s not found in any repo!"
-msgstr " %s 無法在任何套件庫中找到！"
-
-#: src/pacman/pac.py:289
-msgid "Checking dependencies..."
-msgstr "正在檢查依賴關係..."
-
-#: src/pacman/pac.py:291
-msgid "Checking file conflicts..."
-msgstr "正在檢查檔案衝突..."
-
-#: src/pacman/pac.py:293
-msgid "Resolving dependencies..."
-msgstr "正在解決依賴關係..."
-
-#: src/pacman/pac.py:295
-msgid "Checking inter conflicts..."
-msgstr "正在檢查內部衝突..."
-
-#: src/pacman/pac.py:300
-msgid "Removing..."
-msgstr "正在移除......"
-
-#: src/pacman/pac.py:302
-msgid "Upgrading..."
-msgstr "正在升級......"
-
-#: src/pacman/pac.py:304
-msgid "Checking integrity..."
-msgstr "正在檢查軟體包完整性..."
-
-#: src/pacman/pac.py:307
-msgid "Loading packages files..."
-msgstr "正在載入軟體包檔案中..."
-
-#: src/pacman/pac.py:310
-msgid "Configuring..."
-msgstr "正在設定......"
-
-#: src/pacman/pac.py:311
-msgid "Configuring a package"
-msgstr "正在設定一個安裝包"
-
-#: src/pacman/pac.py:313
-msgid "Downloading a file"
-msgstr "正在下載一個檔案"
-
-#: src/pacman/pac.py:389
-#, python-format
-msgid "Downloading %s..."
-msgstr "正在下載 %s..."
-
-#: src/pacman/pac.py:398
-#, python-format
-msgid "Refreshing %s..."
-msgstr "正在更新 %s..."
-
-#: src/pacman/pac.py:407
-#, python-format
-msgid "Installing %s (%d/%d)"
-msgstr "正在安裝 %s (%d/%d)..."
-
-#: src/pacman/pac.py:410
-msgid "Checking and loading packages..."
-msgstr "正在檢查與載入軟體包..."
-
 #: ui/bootloader.ui:7
 msgid "Boot"
 msgstr "開機"
@@ -1158,44 +912,6 @@ msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">要獲得最好的結果，請確保您的電腦：</span>"
-
-#: ui/desktop.ui:106 ui/installation_alongside.ui:193
-#: ui/installation_alongside.ui:205 ui/location.ui:36 ui/pac.ui:84
-#: ui/slides.ui:74
-msgid "label"
-msgstr "標籤"
-
-#: ui/features.ui:40
-msgid "<span weight='bold' size='large'>Bluetooth support</span>"
-msgstr "<span weight='bold' size='large'>藍牙支援</span>"
-
-#: ui/features.ui:120
-msgid "<span weight='bold' size='large'>Printing support (CUPS)</span>"
-msgstr "<span weight='bold' size='large'>列印支援(CUPS)</span>"
-
-#: ui/features.ui:200
-msgid "<span weight='bold' size='large'>LibreOffice</span>"
-msgstr "<span weight='bold' size='large'>LibreOffice</span>"
-
-#: ui/features.ui:215
-msgid "Office suite (word processor, spreadsheet, etc.)"
-msgstr "辦公室套裝軟體（文書處理器，試算表，等等）"
-
-#: ui/features.ui:280
-msgid "<span weight='bold' size='large'>Visual effects</span>"
-msgstr "<span weight='bold' size='large'>視覺效果</span>"
-
-#: ui/features.ui:360
-msgid "<span weight='bold' size='large'>Firewall</span>"
-msgstr "<span weight='bold' size='large'>防火牆</span>"
-
-#: ui/features.ui:375
-msgid "Activates your firewall (closes all ports by default)"
-msgstr "啟動您的防火牆（預設關閉所有連接埠）"
-
-#: ui/features.ui:440
-msgid "<span weight='bold' size='large'>Proprietary packages</span>"
-msgstr "<span weight='bold' size='large'>專有軟體包</span>"
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1250,6 +966,11 @@ msgstr "其他作業系統"
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
 msgstr "Manjaro"
+
+#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
+#: ui/location.ui:36 ui/slides.ui:74
+msgid "label"
+msgstr "標籤"
 
 #: ui/installation_ask.ui:57
 msgid ""
@@ -1318,14 +1039,6 @@ msgid ""
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "<span weight='bold'>注意： Thus 安裝程式是一個測試版的軟體。</span>\n\nThus 是一個未正式發行的測試版軟體，仍在積極的開發中。它還不能處理 RAID 、btrfs 的子卷系統、以及其他進階設定。請以資料可能會消失的警覺心繼續進行！\n\n如果您發現任何 bug ，請在 <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> 回報"
 
-#: ui/pac.ui:7 ui/pac.ui:104 ui/pac.ui:147 ui/pac.ui:179
-msgid " "
-msgstr " "
-
-#: ui/pac.ui:43
-msgid "Progress"
-msgstr "進行"
-
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">歡迎使用 Manjaro</span>"
@@ -1349,9 +1062,3 @@ msgstr "<small><span color=\"darkred\">您必須輸入名稱</span></small>"
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">這個名字似乎已經被在其他電腦使用。</span>"
-
-#: ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "只要按下 \"Try it\" 您就可以試用 Manjaro 而不更動您的硬碟。\n如果您想要安裝 Manjaro 到您的電腦上，可以使用兩個安裝選項的其中一個。"
