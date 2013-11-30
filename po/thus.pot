@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-30 15:31+0100\n"
+"POT-Creation-Date: 2013-11-30 15:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -577,11 +577,31 @@ msgid "Can't create necessary directories on destination system"
 msgstr ""
 
 #: src/installation_process.py:373
-msgid "Installing bootloader..."
+msgid "Installing bootloader ..."
 msgstr ""
 
 #: src/installation_process.py:393
 msgid "Installation finished successfully."
+msgstr ""
+
+#: src/installation_process.py:411
+msgid "Base filesystem does not exist! Critical error (exiting)."
+msgstr ""
+
+#: src/installation_process.py:414
+msgid "Desktop filesystem does not exist! Critical error (exiting)."
+msgstr ""
+
+#: src/installation_process.py:430
+msgid "Indexing files to be copied ..."
+msgstr ""
+
+#: src/installation_process.py:435
+msgid "Extracting root-image ..."
+msgstr ""
+
+#: src/installation_process.py:445
+msgid "Extracting desktop-image ..."
 msgstr ""
 
 #: src/installation_process.py:460
@@ -688,19 +708,19 @@ msgid "Set the same password to root."
 msgstr ""
 
 #: src/installation_process.py:1020
-msgid "Generating locales..."
+msgid "Generating locales ..."
 msgstr ""
 
 #: src/installation_process.py:1040
-msgid "Adjusting hardware clock..."
+msgid "Adjusting hardware clock ..."
 msgstr ""
 
 #: src/installation_process.py:1046
-msgid "Configuring hardware..."
+msgid "Configuring hardware ..."
 msgstr ""
 
 #: src/installation_process.py:1109
-msgid "Set up graphics card..."
+msgid "Set up graphics card ..."
 msgstr ""
 
 #: src/installation_process.py:1116
@@ -708,11 +728,11 @@ msgid "Can't execute the MHWD script"
 msgstr ""
 
 #: src/installation_process.py:1122
-msgid "Configure display manager..."
+msgid "Configure display manager ..."
 msgstr ""
 
 #: src/installation_process.py:1221
-msgid "Configure System..."
+msgid "Configure System ..."
 msgstr ""
 
 #: src/installation_process.py:1249
@@ -733,15 +753,15 @@ msgid "%s: Enable automatic login for user %s."
 msgstr ""
 
 #: src/installation_process.py:1383
-msgid "Running mkinitcpio..."
+msgid "Running mkinitcpio ..."
 msgstr ""
 
 #: src/installation_process.py:1386
-msgid "Running mkinitcpio... done"
+msgid "Running mkinitcpio - done"
 msgstr ""
 
 #: src/installation_process.py:1413
-msgid "Encrypting user home dir..."
+msgid "Encrypting user home dir ..."
 msgstr ""
 
 #: src/installation_process.py:1415

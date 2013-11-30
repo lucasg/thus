@@ -358,19 +358,19 @@ class InstallationProcess(multiprocessing.Process):
         all_ok = True
 
         try:
-            self.queue_event('debug', 'Install System...')
+            self.queue_event('debug', 'Install System ...')
             # very slow ...
             self.install_system()
 
             subprocess.check_call(['mkdir', '-p', '%s/var/log/' % self.dest_dir])
             self.queue_event('debug', 'System installed')
 
-            self.queue_event('debug', 'Configuring system...')
+            self.queue_event('debug', 'Configuring system ...')
             self.configure_system()
             self.queue_event('debug', 'System configured.')
 
             if self.settings.get('install_bootloader'):
-                self.queue_event('debug', _('Installing bootloader...'))
+                self.queue_event('debug', _('Installing bootloader ...'))
                 self.install_bootloader()
         except subprocess.CalledProcessError as err:
             logging.error(err)
@@ -408,10 +408,10 @@ class InstallationProcess(multiprocessing.Process):
                 os.mkdir("/source_desktop")
             # find the squashfs..
             if(not os.path.exists(self.media)):
-                self.queue_event('debug', "Base filesystem does not exist! Critical error (exiting).")
+                self.queue_event('debug', _("Base filesystem does not exist! Critical error (exiting)."))
                 sys.exit(1) # change to report
             if(not os.path.exists(self.media_desktop)):
-                self.queue_event('debug', "Desktop filesystem does not exist! Critical error (exiting).")
+                self.queue_event('debug', _("Desktop filesystem does not exist! Critical error (exiting)."))
                 sys.exit(1) # change to report
 
             # Mount the installation media
@@ -427,12 +427,12 @@ class InstallationProcess(multiprocessing.Process):
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(["wc","-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output1 = p2.communicate()[0]
-            self.queue_event('info', "Indexing files to be copied...")
+            self.queue_event('info', _("Indexing files to be copied ..."))
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media_desktop], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(["wc","-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output2 = p2.communicate()[0]
             our_total = int(float(output1)+float(output2))
-            self.queue_event('info', "Extracting root-image...")
+            self.queue_event('info', _("Extracting root-image ..."))
             our_current = 0
             #t = FileCopyThread(self, our_total, self.media, DEST)
             t = FileCopyThread(self, our_current, our_total, SOURCE, DEST)
@@ -442,7 +442,7 @@ class InstallationProcess(multiprocessing.Process):
             SOURCE = "/source_desktop/"
             DEST = self.dest_dir
             directory_times = []
-            self.queue_event('info', "Extracting desktop-image...")
+            self.queue_event('info', _("Extracting desktop-image ..."))
             our_current = int(output1)
             #t = FileCopyThread(self, our_total, self.media_desktop, DEST)
             t = FileCopyThread(self, our_current, our_total, SOURCE, DEST, t.offset)
@@ -1017,7 +1017,7 @@ class InstallationProcess(multiprocessing.Process):
         keyboard_layout = self.settings.get("keyboard_layout")
         keyboard_variant = self.settings.get("keyboard_variant")
         locale = self.settings.get("locale")
-        self.queue_event('info', _("Generating locales..."))
+        self.queue_event('info', _("Generating locales ..."))
 
         self.uncomment_locale_gen(locale)
 
@@ -1037,13 +1037,13 @@ class InstallationProcess(multiprocessing.Process):
         with open(vconsole_conf_path, "w") as vconsole_conf:
             vconsole_conf.write('KEYMAP=%s \n' % keyboard_layout)
 
-        self.queue_event('info', _("Adjusting hardware clock..."))
+        self.queue_event('info', _("Adjusting hardware clock ..."))
         self.auto_timesetting()
 
         # install configs for root
         os.system("cp -a /install/etc/skel/. /install/root/")
 
-        self.queue_event('info', _("Configuring hardware..."))
+        self.queue_event('info', _("Configuring hardware ..."))
         # copy generated xorg.xonf to target
         if os.path.exists("/etc/X11/xorg.conf"):
             os.system("cp /etc/X11/xorg.conf /install/etc/X11/xorg.conf")
@@ -1106,7 +1106,7 @@ class InstallationProcess(multiprocessing.Process):
 
         # Install xf86-video driver
         if os.path.exists("/opt/livecd/pacman-gfx.conf"):
-            self.queue_event('info', _("Set up graphics card..."))
+            self.queue_event('info', _("Set up graphics card ..."))
             self.queue_event('pulse')
             mhwd_script_path = os.path.join(self.settings.get("thus"), "scripts", MHWS_SCRIPT)
             try:
@@ -1119,7 +1119,7 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
                 return False
 
-        self.queue_event('info', _("Configure display manager..."))
+        self.queue_event('info', _("Configure display manager ..."))
         # setup slim
         if os.path.exists("/usr/bin/slim"):
             self.desktop_manager = 'slim'
@@ -1218,7 +1218,7 @@ class InstallationProcess(multiprocessing.Process):
             self.do_run_in_chroot("update-desktop-database -q")
             self.desktop_manager = 'kdm'
 
-        self.queue_event('info', _("Configure System..."))
+        self.queue_event('info', _("Configure System ..."))
 
         # add BROWSER var
         os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> /install/etc/environment")
@@ -1380,10 +1380,10 @@ class InstallationProcess(multiprocessing.Process):
         # I think it should work out of the box most of the time.
         # This way we don't have to fix deprecated hooks.
         # NOTE: With LUKS or LVM maybe we'll have to fix deprecated hooks.
-        self.queue_event('info', _("Running mkinitcpio..."))
+        self.queue_event('info', _("Running mkinitcpio ..."))
         self.queue_event("pulse")
         self.run_mkinitcpio()
-        self.queue_event('info', _("Running mkinitcpio... done"))
+        self.queue_event('info', _("Running mkinitcpio - done"))
 
         '''# Call post-install script to execute gsettings commands
         script_path_postinstall = os.path.join(self.settings.get("thus"), \
@@ -1410,7 +1410,7 @@ class InstallationProcess(multiprocessing.Process):
 
         # encrypt home directory if requested
         if self.settings.get('encrypt_home'):
-            self.queue_event('debug', _("Encrypting user home dir..."))
+            self.queue_event('debug', _("Encrypting user home dir ..."))
             self.encrypt_home()
             self.queue_event('debug', _("User home dir encrypted"))
 
