@@ -205,7 +205,7 @@ class InstallationAsk(Gtk.Box):
             self.settings.set('use_home', False)
 
         if self.settings.get('use_luks'):
-            logging.info(_("Antergos installation will be encrypted using LUKS"))
+            logging.info(_("Manjaro installation will be encrypted using LUKS"))
 
         if self.settings.get('use_lvm'):
             logging.info(_("Manjaro will be installed using LVM volumes"))
