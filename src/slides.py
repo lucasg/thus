@@ -203,7 +203,7 @@ class Slides(Gtk.Box):
                         (fsname, fstype, writable) = misc.mount_info(p)
                         if fsname:
                             subprocess.check_call(['umount', p])
-                    install_dirs = { "boot", "dev", "proc", "sys", "var" }
+                    install_dirs = { "boot", "dev", "home", "proc", "sys", "var" }
                     for p in install_dirs:
                         p = os.path.join(self.dest_dir, p)
                         (fsname, fstype, writable) = misc.mount_info(p)
