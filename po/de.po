@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-30 15:40+0100\n"
-"PO-Revision-Date: 2013-11-30 15:01+0000\n"
+"PO-Revision-Date: 2013-12-01 12:02+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -473,7 +473,7 @@ msgstr "Organisieren Sie Ihre Partitionen und Installationsart (fortgeschritten)
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr "Hiermit sind Sie in der Lage, Partitionen zu erstellen und diese zu ändern, Auszuwählen, wo Manjaro installiert werden soll und zusätzliche Einhängepunkte auszuwählen."
+msgstr "Hiermit sind Sie in der Lage, Partitionen zu erstellen und diese zu ändern, Auszuwählen, \nwo Manjaro installiert werden soll und zusätzliche Einhängepunkte auszuwählen."
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -808,7 +808,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus ist Vorversions-Beta-Software, welche noch entwickelt wird. Es werden\nnoch keine RAID, BTRFS-Subvolumen sowie andere aufwendige Installationen\nvollständig unterstützt. Fahren Sie unter Vorsich fort. Datenverlusst ist möglich!\n\nFalls Sie Fehler finden, diese auf <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> melden."
+msgstr "Thus ist Vorversions-Beta-Software, welche noch entwickelt wird. Es\nwerden noch keine RAID, BTRFS-Subvolumen sowie andere aufwendige \nInstallationen vollständig unterstützt. Datenverlusst könnte möglich sein!\n\nFalls Sie Fehler finden, diese auf <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> melden."
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -1211,7 +1211,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>Hinweis: Der Thus Installer ist Beta-Software.</span>\n\nThus ist Vorversions-Beta-Software, welche noch entwickelt wird. Es werden noch keine RAID, BTRFS-Subvolumen sowie andere aufwendige Installationen vollständig unterstützt. Fahren Sie unter Vorsich fort. Datenverlusst ist möglich!\n\nFalls Sie Fehler finden, diese auf <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> melden.\""
+msgstr "<span weight='bold'>Hinweis: Der Thus Installer ist Beta-Software.</span>\n\nThus ist Vorversions-Beta-Software, welche noch entwickelt wird. Es werden noch keine RAID, BTRFS-Subvolumen sowie andere aufwendige Installationen vollständig unterstützt. Datenverlusst könnte möglich sein!\n\nFalls Sie Fehler finden, diese auf <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> melden.\""
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
