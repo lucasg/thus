@@ -82,7 +82,7 @@ class Check(Gtk.Box):
         self.title.set_markup(txt)
 
         self.prepare_enough_space = self.ui.get_object("prepare_enough_space")
-        txt = _("has at least %dGB available storage space" % int(MIN_ROOT_SIZE / 1000000000))
+        txt = _("has at least %dGB available storage space") % int(MIN_ROOT_SIZE / 1000000000)
         self.prepare_enough_space.props.label = txt
 
         self.prepare_power_source = self.ui.get_object("prepare_power_source")

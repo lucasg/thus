@@ -86,7 +86,7 @@ class FileCopyThread(Thread):
             self.process.kill()
 
     def update_label(self, text):
-        self.installer.queue_event('info', _("Copying '/%s'" % text))
+        self.installer.queue_event('info', _("Copying '/%s'") % text)
 
     def update_progress(self, num_files):
         progress = (float(num_files)/float(self.total_files))
@@ -457,7 +457,7 @@ class InstallationProcess(multiprocessing.Process):
             for dirtime in directory_times:
                 (directory, atime, mtime) = dirtime
                 try:
-                    self.queue_event('info', _("Restoring meta-information on %s" % directory))
+                    self.queue_event('info', _("Restoring meta-information on %s") % directory)
                     os.utime(directory, (atime, mtime))
                 except OSError:
                     pass
