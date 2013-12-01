@@ -393,19 +393,37 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot_umount_special_dirs()
             source_dirs = { "source", "source_desktop" }
             for p in source_dirs:
-                 p = os.path.join("/", p)
-                 (fsname, fstype, writable) = misc.mount_info(p)
-                 if fsname:
-                     subprocess.check_call(['umount', p])
-            for p in self.mount_devices:
-                 p = os.path.join(self.dest_dir, p)
-                 (fsname, fstype, writable) = misc.mount_info(p)
-                 if fsname:
-                     subprocess.check_call(['umount', p])
+                p = os.path.join("/", p)
+                (fsname, fstype, writable) = misc.mount_info(p)
+                if fsname:
+                    try:
+                        txt = _("Unmounting %s") % p
+                        self.queue_event('debug', txt)
+                        subprocess.check_call(['umount', p])
+                    except subprocess.CalledProcessError as err:
+                        logging.warning(err)
+                        self.queue_event('debug', _("Can't unmount %s") % p)
+            self.queue_event('debug', "Mounted devices: %s" % self.mount_devices)
+            for path in self.mount_devices:
+                mount_part = self.mount_devices[path]
+                if mount_part != self.mount_devices["/"] and mount_part != self.mount_devices["swap"]:
+                    try:
+                        mount_dir = self.dest_dir + path
+                        txt = _("Unmounting %s") % mount_dir
+                        self.queue_event('debug', txt)
+                        subprocess.check_call(['umount', mount_dir])
+                    except subprocess.CalledProcessError as err:
+                        # We will continue as root and boot are already mounted
+                        logging.warning(err)
+                        self.queue_event('debug', _("Can't unmount %s") % mount_dir)
             # now we can unmount /install
             (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
             if fsname:
-                subprocess.check_call(['umount', self.dest_dir])
+                try:
+                    subprocess.check_call(['umount', self.dest_dir])
+                except subprocess.CalledProcessError as err:
+                    logging.warning(err)
+                    self.queue_event('debug', _("Can't unmount %s") % p)
             # Installation finished successfully
             self.queue_event('info', _("Installation finished successfully."))
             self.queue_event("finished")
