@@ -389,6 +389,23 @@ class InstallationProcess(multiprocessing.Process):
         if all_ok is False:
             return False
         else:
+            # Unmount everything
+            self.chroot_umount_special_dirs()
+            source_dirs = { "source", "source_desktop" }
+            for p in source_dirs:
+                 p = os.path.join("/", p)
+                 (fsname, fstype, writable) = misc.mount_info(p)
+                 if fsname:
+                     subprocess.check_call(['umount', p])
+            for p in self.mount_devices:
+                 p = os.path.join(self.dest_dir, p)
+                 (fsname, fstype, writable) = misc.mount_info(p)
+                 if fsname:
+                     subprocess.check_call(['umount', p])
+            # now we can unmount /install
+            (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
+            if fsname:
+                subprocess.check_call(['umount', self.dest_dir])
             # Installation finished successfully
             self.queue_event('info', _("Installation finished successfully."))
             self.queue_event("finished")

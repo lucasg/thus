@@ -135,25 +135,6 @@ class Main(Gtk.Window):
         os.system("mkdir -p /root/.cache/dconf")
         os.system("chmod -R 777 /root/.cache")
 
-        # unmount folders if installer crashed
-        self.dest_dir = "/install"
-        source_dirs = { "source", "source_desktop" }
-        for p in source_dirs:
-            p = os.path.join("/", p)
-            (fsname, fstype, writable) = misc.mount_info(p)
-            if fsname:
-                subprocess.check_call(['umount', p])
-        install_dirs = { "boot", "dev", "proc", "sys", "var" }
-        for p in install_dirs:
-            p = os.path.join(self.dest_dir, p)
-            (fsname, fstype, writable) = misc.mount_info(p)
-            if fsname:
-                subprocess.check_call(['umount', p])
-        # now we can unmount /install
-        (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
-        if fsname:
-            subprocess.check_call(['umount', self.dest_dir])
-
         logging.info(_("Thus installer version %s"), info.THUS_VERSION)
 
         current_process = multiprocessing.current_process()

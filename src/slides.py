@@ -197,22 +197,6 @@ class Slides(Gtk.Box):
                             with misc.raised_privileges():
                                 os.remove(p)
                     self.callback_queue.task_done()
-                    source_dirs = { "source", "source_desktop" }
-                    for p in source_dirs:
-                        p = os.path.join("/", p)
-                        (fsname, fstype, writable) = misc.mount_info(p)
-                        if fsname:
-                            subprocess.check_call(['umount', p])
-                    install_dirs = { "boot", "dev", "home", "proc", "sys", "var" }
-                    for p in install_dirs:
-                        p = os.path.join(self.dest_dir, p)
-                        (fsname, fstype, writable) = misc.mount_info(p)
-                        if fsname:
-                            subprocess.check_call(['umount', p])
-                    # now we can unmount /install
-                    (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
-                    if fsname:
-                        subprocess.check_call(['umount', self.dest_dir])
                     os._exit(0)
 
                 return False
