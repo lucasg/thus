@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-30 15:40+0100\n"
-"PO-Revision-Date: 2013-11-30 14:42+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-12-01 17:37+0100\n"
+"PO-Revision-Date: 2013-12-01 23:32+0000\n"
+"Last-Translator: tulliana <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,7 @@ msgstr "Bu yükleyicinin iki örneğini çalıştıramazsınız.\nYükleyicinin 
 #: thus.py:157
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus sistem yükleyici sürümü %s"
 
 #: thus.py:237
 #, python-format
@@ -62,17 +62,17 @@ msgstr "Yükleyiciden çıkılıyor..."
 #: src/auto_partition.py:74 src/auto_partition.py:80
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Ayrılıyor %s"
 
 #: src/auto_partition.py:290
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus sürücüye LUKS kuracak %s"
 
 #: src/auto_partition.py:476
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "%s aygıtına LVM kuracağız"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -85,19 +85,19 @@ msgstr "Sisteminizin önyükleme tipi nedir ?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (Önerilir)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Eğer bir önyükleyici kurmak istemiyorsanız 'İptal' seçeneğini kullanın."
 
 #: src/canonical/misc.py:923
 #, python-format
@@ -130,12 +130,12 @@ msgstr "Şifreler eşleşmiyor"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "Sistem Kontrol"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "En az %dGB kullanılabilir depolama alanı"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -304,7 +304,7 @@ msgstr "Etiket (isteğe bağlı):"
 
 #: src/installation_advanced.py:1140
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Şifreleme Seçenekleri..."
 
 #: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -312,7 +312,7 @@ msgstr "Biçimle/Formatla:"
 
 #: src/installation_advanced.py:1162
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Disk Bölümü Tablo Tipi:"
 
 #: src/installation_advanced.py:1167
 msgid "Create Partition Table"
@@ -391,7 +391,7 @@ msgstr "Manjaro %s türü %s önyükleyiciyi kuracak"
 
 #: src/installation_advanced.py:1608
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus herhangi bir önyükleyici kurmayacak"
 
 #: src/installation_advanced.py:1622 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -420,7 +420,7 @@ msgstr "Dosya sistemi"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Kurulum için bölüm listesi oluşturulamadı."
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -440,26 +440,26 @@ msgstr "Uyarı: Bu işlem, diğer işletim sisteminin kullandığı ​​disk �
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Güvenlik için bu kurulumu şifreleyebilirsiniz."
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Sonraki adımda şifreleme anahtarı istenecektir"
 
 #: src/installation_ask.py:153
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Disk görüntüsü ve bölümlemelerini LVM kullanarak kolayca hazırlayabilirsiniz"
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Ev Dizini için farklı bir disk bölümü ayarlayın"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Farklı bir bölüme /home yani Ev Dizini oluşturmak sizin tercihinize bağlıdır."
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -474,23 +474,23 @@ msgstr "Bölümleri kendiniz oluşturabilir ve yeniden boyutlandırabilirsiniz y
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Disk bölümleri oluşturman ve silmen mümkün, Manjaro yükleyeceğiniz yeri ve bağlama noktalarını seçin."
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Manjaro kurulumu LUKS kullanılarak şifrelenecek"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro LVM kullanılarak kurulacaktır"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro ayrı bir kısıma /home yani Ev Dizini kullanarak kurulacaktır."
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro ayrı bir diske /home yani Ev Dizini kullanarak kurulacaktır."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -521,7 +521,7 @@ msgstr "LUKS sürücünüz için belirlediğiniz parolayı onaylayın:"
 
 #: src/installation_automatic.py:153
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "Bir LUKS parolası ayarlandı"
 
 #: src/installation_automatic.py:155
 #, python-format
@@ -551,7 +551,7 @@ msgstr "'%s' yöntemini kullanarak yükleme"
 #: src/installation_process.py:243
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Bölümler ve dosya sistemlerii oluşturuluyor %s"
 
 #: src/installation_process.py:265
 msgid "Error creating partitions and their filesystems"
@@ -579,7 +579,7 @@ msgstr "Bağlanamadı %s in %s"
 #: src/installation_process.py:345
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s silindi"
 
 #: src/installation_process.py:355
 msgid "Can't create necessary directories on destination system"
@@ -587,31 +587,31 @@ msgstr "Hedef sistemde gerekli dizinleri oluşturulamıyor"
 
 #: src/installation_process.py:373
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Önyükleyici kuruluyor..."
 
 #: src/installation_process.py:393
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Kurulum başarıyla tamamlandı."
 
 #: src/installation_process.py:411
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Taban dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 
 #: src/installation_process.py:414
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Masaüstü dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 
 #: src/installation_process.py:430
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Dosyalar kopyalanmak üzere listeleniyor ..."
 
 #: src/installation_process.py:435
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "root-imajı aktarılıyor ..."
 
 #: src/installation_process.py:445
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "Masaüstü-imajı Aktarılıyor ..."
 
 #: src/installation_process.py:460
 #, python-format
@@ -634,12 +634,12 @@ msgstr "Ayırma işlemi yapılamadı %s"
 #: src/installation_process.py:531
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Komut hatalı çalışıyor: %s"
 
 #: src/installation_process.py:593
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "fstab içine eklendi : UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:679
 #, python-format
@@ -679,7 +679,7 @@ msgstr "Kullanıcı parola değiştirme hatası %s"
 
 #: src/installation_process.py:822
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "mkinitcpio.conf içine kanca ve modül ayarlanmaları"
 
 #: src/installation_process.py:933 src/installation_process.py:944
 msgid "Configuring your new system"
@@ -687,50 +687,50 @@ msgstr "Kurulan sistem yapılandırılıyor..."
 
 #: src/installation_process.py:936
 msgid "fstab file generated."
-msgstr ""
+msgstr "fstab dosyası oluşturuldu."
 
 #: src/installation_process.py:942
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Ağ yapılandırması kopyalandı."
 
 #: src/installation_process.py:972
 msgid "Timezone set."
-msgstr ""
+msgstr "Saat Zaman Ayarı."
 
 #: src/installation_process.py:992
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "Kullanıcı için sudo yapılandırması %s yapılır."
 
 #: src/installation_process.py:998
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Kullanıcı %s eklendi."
 
 #: src/installation_process.py:1010
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Hostname %s ayarlaması."
 
 #: src/installation_process.py:1014
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Aynı parolayı kök için ayarlayın."
 
 #: src/installation_process.py:1020
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Yereliniz yapılandırılıyor ..."
 
 #: src/installation_process.py:1040
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Donanım saati ayarlanıyor ..."
 
 #: src/installation_process.py:1046
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Donanım yapılandırılıyor ..."
 
 #: src/installation_process.py:1109
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Ekran kartı kuruluyor ve yapılandırılıyor ..."
 
 #: src/installation_process.py:1116
 msgid "Can't execute the MHWD script"
@@ -738,11 +738,11 @@ msgstr "MHWD komut dosyasını yürütemedi"
 
 #: src/installation_process.py:1122
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Ekran yöneticisi yapılandırılıyor ..."
 
 #: src/installation_process.py:1221
 msgid "Configure System ..."
-msgstr ""
+msgstr "Sistem Yapılandırılıyor ..."
 
 #: src/installation_process.py:1249
 msgid "Removing live configuration (packages)"
@@ -763,19 +763,19 @@ msgstr "%s: Kullanıcı için otomatik giriş etkin %s."
 
 #: src/installation_process.py:1383
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "mkinitcpio çalıştırılıyor ..."
 
 #: src/installation_process.py:1386
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "mkinitcpio çalışma sonucu- başarılı"
 
 #: src/installation_process.py:1413
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Kullanıcı Ev Dizini şifreleniyor ..."
 
 #: src/installation_process.py:1415
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Kullanıcı Ev Dizini şifrelendi"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -809,7 +809,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus sistem yükleyicisi halen geliştirilmektedir ve beta önizleme sürümdedir. \\n\nRAID, btrfs, subvolumes veya diğer gelişmiş kurulumlarla ilgili hatalarla \\n\nkarşılaşma olasılığınız vardır. Veri kaybı yaşamamak için lütfen dikkatli olunuz! \\n\n\\n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun http://bugs.manjaro.org"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -852,12 +852,12 @@ msgstr "Yereli '%s' için değiştiremezsiniz"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "%s Sürücünün durumu sağlam değil veya kontrol edilemiyor"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Üzgünüm dosya sistemi %s üzerine oluşturulamaz"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1171,7 +1171,7 @@ msgstr "<span weight=\"light\" size=\"small\">Disk görüntüsü ve bölümlemel
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Farklı bir kısıma yada diske /home yani Ev Dizini oluşturmak sizin tercihinize bağlıdır</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"
