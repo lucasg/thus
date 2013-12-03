@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-30 15:40+0100\n"
-"PO-Revision-Date: 2013-11-30 14:42+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-12-01 17:37+0100\n"
+"PO-Revision-Date: 2013-12-02 18:40+0000\n"
+"Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "Non è possibile eseguire due istanze di questo installer.\n\nSe si è s
 #: thus.py:157
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus installer versione %s"
 
 #: thus.py:237
 #, python-format
@@ -60,7 +60,7 @@ msgstr "Uscendo dell'installer..."
 #: src/auto_partition.py:74 src/auto_partition.py:80
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Smonto %s"
 
 #: src/auto_partition.py:290
 #, python-format
@@ -70,7 +70,7 @@ msgstr ""
 #: src/auto_partition.py:476
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Impostazione LVM sul dispositivo %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -83,24 +83,24 @@ msgstr "Qual è il vostro tipo di sistema di avvio?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (I più comuni)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Selezionare 'Annulla' se non si desidera installare un boot loader."
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "Impossibile impostare locale %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -128,12 +128,12 @@ msgstr "Le password non corrispondono"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "Controllo del sistema"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "ha almeno %dGB di spazio disponibile"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -302,7 +302,7 @@ msgstr "Nome (opzionale):"
 
 #: src/installation_advanced.py:1140
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Opzioni di crittografia..."
 
 #: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -310,7 +310,7 @@ msgstr "Formato:"
 
 #: src/installation_advanced.py:1162
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Tipo di tabella delle partizioni:"
 
 #: src/installation_advanced.py:1167
 msgid "Create Partition Table"
@@ -345,7 +345,7 @@ msgstr "%s è già montato in '%s'.\nPer continuare deve essere smontato.\nPremi
 #: src/installation_advanced.py:1379
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s appare come montato (occupato) ma non ha alcun punto di montaggio"
 
 #: src/installation_advanced.py:1438
 #, python-format
@@ -389,11 +389,11 @@ msgstr "Manjaro installerà il bootloader di tipo %s in %s"
 
 #: src/installation_advanced.py:1608
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus non installerà alcun boot loader"
 
 #: src/installation_advanced.py:1622 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Modalità di test.Thus non applicherà le eventuali modifiche al sistema!"
 
 #: src/installation_alongside.py:114
 #, python-format
@@ -418,7 +418,7 @@ msgstr "Filesystem"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Impossibile creare l'elenco delle partizioni per l'installazione condivisa."
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -897,7 +897,7 @@ msgstr "Attendere prego..."
 
 #: src/slides.py:226
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Vuoi riprovare?"
 
 #: src/timezone.py:111
 msgid "Where are you?"

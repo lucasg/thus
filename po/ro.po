@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-30 15:40+0100\n"
-"PO-Revision-Date: 2013-11-30 14:42+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2013-12-01 17:37+0100\n"
+"PO-Revision-Date: 2013-12-02 19:01+0000\n"
+"Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr "Nu puteți rula două instanțe ale acestui program de instalare.\n\nDac
 #: thus.py:157
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Versiunea %s a instalatorului Thus"
 
 #: thus.py:237
 #, python-format
@@ -63,17 +63,17 @@ msgstr "Se iese din instalator..."
 #: src/auto_partition.py:74 src/auto_partition.py:80
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Se demontează %s"
 
 #: src/auto_partition.py:290
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus va configura LUKS pe dispozitivul %s"
 
 #: src/auto_partition.py:476
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Se va configura LVM pe dispozitivul %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -86,19 +86,19 @@ msgstr "Care este tipul vostru de sistem de inițializare"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (cel mai comun)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "UEFI 64-biți"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "UEFI 32-biți"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Renunțați dacă nu doriți să instalați un încărcător de sistem."
 
 #: src/canonical/misc.py:923
 #, python-format
@@ -131,12 +131,12 @@ msgstr "Parolele nu se potrivesc"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "Verificarea sistemului"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "are cel puțin %d GB disponibili"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -305,7 +305,7 @@ msgstr "Etichetă (opțional):"
 
 #: src/installation_advanced.py:1140
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Opțiuni de criptare..."
 
 #: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -313,7 +313,7 @@ msgstr "Formatează:"
 
 #: src/installation_advanced.py:1162
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Tipul tabelei de partiție:"
 
 #: src/installation_advanced.py:1167
 msgid "Create Partition Table"
@@ -392,7 +392,7 @@ msgstr "Manjaro va instala încărcătorul de sistem de tipul %s în %s"
 
 #: src/installation_advanced.py:1608
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus nu va instala niciun încărcător de sistem"
 
 #: src/installation_advanced.py:1622 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -421,7 +421,7 @@ msgstr "Sistem de fișiere"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Nu se poate crea lista de partiții pentru instalarea alăturată."
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -441,26 +441,26 @@ msgstr "Atenție: Vor fi șterse toate datele de pe disc"
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Criptează această instalare pentru mărirea securității."
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Veți fi întrebat de cheia de criptare în următorul pas"
 
 #: src/installation_ask.py:153
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Aceasta ca configura LVM permițând crearea de instantanee și schimbarea ușoară a mărimii partiților"
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Setați dosarul /home într-o partiție/volum diferit"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Aceasta va seta dosarul /home într-o partiție sau într-un volum diferit."
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -475,23 +475,23 @@ msgstr "Gestionați partițiile și locația instalării Manjaro (avansat)"
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Veți putea să creați/ștergeți partiții, să alegeți unde se instalează Manjaro și să alegeți puncte de montare adiționale."
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Instalarea Manjaro va fi criptată folosind LUKS"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro va fi instalat folosind volume LVM"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro va fi instalat folosind un volum /home separat."
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro va fi instalat folosind o partiție /home separată."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -522,7 +522,7 @@ msgstr "Confirmați parola pentru dispozitivul LUKS:"
 
 #: src/installation_automatic.py:153
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "O parolă LUKS a fost setată"
 
 #: src/installation_automatic.py:155
 #, python-format
@@ -552,7 +552,7 @@ msgstr "Se instalează folosind metoda '%s'"
 #: src/installation_process.py:243
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Se creează partițiile și sistemele lor de fișiere în %s"
 
 #: src/installation_process.py:265
 msgid "Error creating partitions and their filesystems"
@@ -580,7 +580,7 @@ msgstr "Nu se poate monta %s în %s"
 #: src/installation_process.py:345
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s șters"
 
 #: src/installation_process.py:355
 msgid "Can't create necessary directories on destination system"
@@ -588,31 +588,31 @@ msgstr "Nu se pot crea dosarele necesare pe sistemul destinație"
 
 #: src/installation_process.py:373
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Se instalează încărcătorul de sistem ..."
 
 #: src/installation_process.py:393
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Instalare terminată cu succes."
 
 #: src/installation_process.py:411
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Sistemul de fișiere de bază nu există! Eroare critică (ieșire)."
 
 #: src/installation_process.py:414
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Sistemul de fișiere al desktopului nu există! Eroare critică (ieșire)."
 
 #: src/installation_process.py:430
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Se indexează fișierele de copiat ..."
 
 #: src/installation_process.py:435
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Se extrage imaginea-rădăcină ..."
 
 #: src/installation_process.py:445
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "Se extrage imaginea-desktop ..."
 
 #: src/installation_process.py:460
 #, python-format
@@ -635,12 +635,12 @@ msgstr "Nu se poate demonta %s"
 #: src/installation_process.py:531
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Eroare la rularea comenzii: %s"
 
 #: src/installation_process.py:593
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "S-a adăugat la fstab: UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:679
 #, python-format
@@ -680,7 +680,7 @@ msgstr "Eroare la schimbarea parolei utilizatoruli %s"
 
 #: src/installation_process.py:822
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Se setează hooks și module în mkinitcpio.conf"
 
 #: src/installation_process.py:933 src/installation_process.py:944
 msgid "Configuring your new system"
@@ -688,50 +688,50 @@ msgstr "Se configurează noul tău sistem"
 
 #: src/installation_process.py:936
 msgid "fstab file generated."
-msgstr ""
+msgstr "S-a generat fișierul fstab."
 
 #: src/installation_process.py:942
 msgid "Network configuration copied."
-msgstr ""
+msgstr "S-a copiat configurația rețelei."
 
 #: src/installation_process.py:972
 msgid "Timezone set."
-msgstr ""
+msgstr "S-a setat fusul orar."
 
 #: src/installation_process.py:992
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "S-a terminat configurarea sudo pentru utilizatorul %s."
 
 #: src/installation_process.py:998
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Utilizatorul %s a fost adăugat."
 
 #: src/installation_process.py:1010
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "S-a setat numele de gazdă %s."
 
 #: src/installation_process.py:1014
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Setează aceiași parola la root."
 
 #: src/installation_process.py:1020
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Se generează localizări ..."
 
 #: src/installation_process.py:1040
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Se ajustează ceasul hardware ..."
 
 #: src/installation_process.py:1046
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Se configurează componentele fizice ..."
 
 #: src/installation_process.py:1109
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Se configurează placa grafică ..."
 
 #: src/installation_process.py:1116
 msgid "Can't execute the MHWD script"
@@ -739,11 +739,11 @@ msgstr "Nu se poate executa scriptul MHWD"
 
 #: src/installation_process.py:1122
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Se configurează administratorul de ecran ..."
 
 #: src/installation_process.py:1221
 msgid "Configure System ..."
-msgstr ""
+msgstr "Se configurează sistemul ..."
 
 #: src/installation_process.py:1249
 msgid "Removing live configuration (packages)"
@@ -764,19 +764,19 @@ msgstr "%s: Activează logarea automată pentru utilizatorul %s."
 
 #: src/installation_process.py:1383
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Se rulează mkinitcpio ..."
 
 #: src/installation_process.py:1386
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "Se rulează mkinitcpio - terminat"
 
 #: src/installation_process.py:1413
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Se criptează dosarul /home ..."
 
 #: src/installation_process.py:1415
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "S-a criptat dosarul /home al utilizatorului."
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -810,7 +810,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus este soft în beta prelansare, în dezvoltare activă. Nu gestionează \\ncorect încă RAID, subvolume btrfs sau alte configurații avansate. \\nContinuați cu grijă - sunt posibile pierderi de date! \\n\\nDacă găsiți hibe, raportați-le la <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -853,12 +853,12 @@ msgstr "Nu se poate schimba localizarea în '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Nu se poate verifica dacă %s este SSD sau nu"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Sistemul de fișiere %s nu poate fi micșorat"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -997,7 +997,7 @@ msgstr "Cere parolă pentru logare"
 
 #: src/user_info.py:138 ui/user_info.ui:134
 msgid "Encrypt my home folder"
-msgstr "Criptează dosarul acasă"
+msgstr "Criptează dosarul /home"
 
 #: src/user_info.py:140
 msgid "Who are you?"
@@ -1007,7 +1007,7 @@ msgstr "Cine sunteți?"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro va folosi eCryptfs pentru a cripta dosarul vostru acasă. Din păcate, eCryptfs nu manipulează bine fișierele împrăștiate.\n\n"
+msgstr "Manjaro va folosi eCryptfs pentru a cripta dosarul vostru /home. Din păcate, eCryptfs nu manipulează bine fișierele împrăștiate.\n\n"
 
 #: src/user_info.py:170
 msgid ""
@@ -1035,7 +1035,7 @@ msgstr "Vedeți https://wiki.archlinux.org/index.php/ECryptfs pentru detalii\n\n
 
 #: src/user_info.py:174
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "Sunteți sigur că vreți să criptați dosarul acasă?\n"
+msgstr "Sunteți sigur că vreți să criptați dosarul /home?\n"
 
 #: src/user_info.py:234
 msgid "Invalid characters entered"
@@ -1156,7 +1156,7 @@ msgstr "Criptează noua instalare Manjaro pentru securitate"
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr "<span weight=\"light\" size=\"small\">Veți vi întrebat de cheia de criptare în următorul pas</span>"
+msgstr "<span weight=\"light\" size=\"small\">Veți fi întrebat de cheia de criptare în următorul pas</span>"
 
 #: ui/installation_ask.ui:101
 msgid "Use LVM with the new Manjaro installation"
@@ -1172,7 +1172,7 @@ msgstr "<span weight=\"light\" size=\"small\">Aceasta ca configura LVM permițâ
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Aceasta va seta dosarul /home într-o partiție sau într-un volum diferit.</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"
