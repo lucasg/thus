@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-01 17:37+0100\n"
-"PO-Revision-Date: 2013-12-02 18:40+0000\n"
+"PO-Revision-Date: 2013-12-04 18:08+0000\n"
 "Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Smonto %s"
 #: src/auto_partition.py:290
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus imposterà LUKS sul dispositivo %s"
 
 #: src/auto_partition.py:476
 #, python-format
@@ -438,26 +438,26 @@ msgstr "Attenzione: Questo cancellerà tutti i dati sul tuo disco"
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Crittografare questa installazione per una maggiore sicurezza."
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Vi sarà rchiest la chiave di crittografia nella fase success"
 
 #: src/installation_ask.py:153
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Questo imposterà LVM che consente di effettuare snapshot e dimensioni cambiamento delle partizioni in modo semplice."
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Imposta la tua Home in una partizione/volume diverso"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "La directory Hiome verrà impostata su un altro volume o partizione."
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -472,23 +472,23 @@ msgstr "Gestione delle partizioni e dove installare Manjaro (avanzato)"
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Sarete in grado di creare/eliminare partizioni, scegliere dove installare Manjaro e anche scegliere punti di montaggio supplementari."
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "L'installazione di Manjaro sarà crittografata utilizzando LUKS"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro verrà installato utilizzando volumi LVM"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro verrà installato utilizzando un volume /home separato."
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro verrà installato utilizzando una partizione /home separata."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -519,7 +519,7 @@ msgstr "Conferma la tua password per il dispositivo LUKS:"
 
 #: src/installation_automatic.py:153
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "È stata impostata una password LUKS"
 
 #: src/installation_automatic.py:155
 #, python-format
@@ -549,7 +549,7 @@ msgstr "Per l'installazione verrà utilizzato il metodo '%s'"
 #: src/installation_process.py:243
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Creazione delle partizioni ei loro filesystem in %s"
 
 #: src/installation_process.py:265
 msgid "Error creating partitions and their filesystems"
@@ -577,7 +577,7 @@ msgstr "Impossibile montare %s in %s"
 #: src/installation_process.py:345
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s cancellato"
 
 #: src/installation_process.py:355
 msgid "Can't create necessary directories on destination system"
@@ -585,31 +585,31 @@ msgstr "Impossibile creare le directory necessarie sul sistema di destinazione"
 
 #: src/installation_process.py:373
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Installazione del bootloader ..."
 
 #: src/installation_process.py:393
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Installazione è stata completata."
 
 #: src/installation_process.py:411
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "il filesystem Base non esiste! Errore critico (in uscita)."
 
 #: src/installation_process.py:414
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "il filesystem Desktop non esiste! Errore critico (in uscita)."
 
 #: src/installation_process.py:430
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Indicizzazione dei file da copiare ..."
 
 #: src/installation_process.py:435
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Estrazione root-image ..."
 
 #: src/installation_process.py:445
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "Estrazione desktop-image ..."
 
 #: src/installation_process.py:460
 #, python-format
@@ -632,12 +632,12 @@ msgstr "Impossibile smontare %s"
 #: src/installation_process.py:531
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Errore nella esecuzione del comando: %s"
 
 #: src/installation_process.py:593
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Aggiunto al fstab : UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:679
 #, python-format
@@ -677,7 +677,7 @@ msgstr "Errore nel cambiare la password per l'utente %s"
 
 #: src/installation_process.py:822
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Impostazione hooks e moduli in mkinitcpio.conf"
 
 #: src/installation_process.py:933 src/installation_process.py:944
 msgid "Configuring your new system"
@@ -685,50 +685,50 @@ msgstr "Configurazione del nuovo sistema"
 
 #: src/installation_process.py:936
 msgid "fstab file generated."
-msgstr ""
+msgstr "file fstab generato."
 
 #: src/installation_process.py:942
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Configurazione di rete copiata"
 
 #: src/installation_process.py:972
 msgid "Timezone set."
-msgstr ""
+msgstr "fuso orario Impostato."
 
 #: src/installation_process.py:992
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "Configurazione di sudo per l'utente %s fatto."
 
 #: src/installation_process.py:998
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Utente %s aggiunto."
 
 #: src/installation_process.py:1010
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Nome dell'host  %s impostato."
 
 #: src/installation_process.py:1014
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Impostare la stessa password di root."
 
 #: src/installation_process.py:1020
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Generazione locali ..."
 
 #: src/installation_process.py:1040
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Regolazione orologio hardware ..."
 
 #: src/installation_process.py:1046
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Configurazione hardware ..."
 
 #: src/installation_process.py:1109
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Impostazione scheda grafica ..."
 
 #: src/installation_process.py:1116
 msgid "Can't execute the MHWD script"
@@ -736,11 +736,11 @@ msgstr "Impossibile eseguire lo script MHWD"
 
 #: src/installation_process.py:1122
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Configurazione display manager ..."
 
 #: src/installation_process.py:1221
 msgid "Configure System ..."
-msgstr ""
+msgstr "Configurazione Sistema ..."
 
 #: src/installation_process.py:1249
 msgid "Removing live configuration (packages)"
@@ -761,19 +761,19 @@ msgstr "%s: Abilita accesso automatico per l'utente %s."
 
 #: src/installation_process.py:1383
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Esecuzione mkinitcpio ..."
 
 #: src/installation_process.py:1386
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "Esecuzione mkinitcpio - fatto"
 
 #: src/installation_process.py:1413
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Crittografia directory home del utente ..."
 
 #: src/installation_process.py:1415
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Directory Home dell'utente criptato"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -807,7 +807,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus è un software pre-release beta che è in fase di sviluppo attivo.\nAncora non gestisce correttamente RAID, btrfs subvolumes o altre  \nconfigurazioni avanzate. Procedere con cautela in quanto è possibile la perdita di dati! \n\nSe trovate qualche bug, si prega di riferire a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -850,12 +850,12 @@ msgstr "Non è possibile cambiare la località in '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Impossibile verificare se %s è un Solid State Drive o no"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Ci dispiace ma il filesystem %s non può essere ridimensionato"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1169,7 +1169,7 @@ msgstr "<span weight=\"light\" size=\"small\">Questo imposterà LVM consentendo 
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Questo imposterà la vostra directory /home in una partizione o volume diverso.</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"
