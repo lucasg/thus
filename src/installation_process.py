@@ -40,6 +40,7 @@ import urllib.request
 import urllib.error
 import xml.etree.ElementTree as etree
 
+import encfs
 import auto_partition
 import parted3.fs_module as fs
 import canonical.misc as misc
@@ -275,11 +276,13 @@ class InstallationProcess(multiprocessing.Process):
         if self.method == 'advanced':
             root_partition = self.mount_devices["/"]
 
-            # TODO: root_fs is never used! Fix this.
+            # NOTE: Advanced method formats root by default in installation_advanced
+            '''
             if root_partition in self.fs_devices:
                 root_fs = self.fs_devices[root_partition]
             else:
                 root_fs = "ext4"
+            '''
 
             if "/boot" in self.mount_devices:
                 boot_partition = self.mount_devices["/boot"]
@@ -290,8 +293,6 @@ class InstallationProcess(multiprocessing.Process):
                 swap_partition = self.mount_devices["swap"]
             else:
                 swap_partition = ""
-
-            # NOTE: Advanced method formats root by default in installation_advanced
 
         # Create the directory where we will mount our new root partition
         if not os.path.exists(self.dest_dir):
@@ -382,6 +383,7 @@ class InstallationProcess(multiprocessing.Process):
             all_ok = False
         except:
             # unknown error
+            logging.error(_("Unknown error"))
             self.running = False
             self.error = True
             all_ok = False
@@ -916,40 +918,6 @@ class InstallationProcess(multiprocessing.Process):
         """ Helper function to run a command """
         return subprocess.check_output(command.split()).decode().strip("\n")
 
-    def encrypt_home(self):
-        """ Encrypt user's home folder """
-        # TODO: This method is not finished yet! Must be tested and sure it doesn't work as it is now.
-
-        # WARNING: ecryptfs-utils, rsync and lsof packages are needed.
-        # They should be added in the livecd AND in the "to install packages" xml list
-
-        # Load ecryptfs module
-        subprocess.check_call(['modprobe', 'ecryptfs'])
-
-        # Add encryptfs to /install/etc/modules-load.d/
-        path = os.path.join(self.dest_dir, "etc/modules-load.d/ecryptfs.conf")
-        with open(path, "w") as encryptfs_file:
-            encryptfs_file.write("ecryptfs\n")
-
-        # Get the username and passwd
-        username = self.settings.get('username')
-        passwd = self.settings.get('password')
-
-        # Migrate user home directory
-        # See http://blog.dustinkirkland.com/2011/02/long-overdue-introduction-ecryptfs.html
-        self.chroot_mount_special_dirs()
-        command = "LOGINPASS=%s chroot %s ecryptfs-migrate-home -u %s" % (passwd, self.dest_dir, username)
-        outp = self.check_output(command)
-        self.chroot_umount_special_dirs()
-
-        path = os.path.join(self.dest_dir, "root/cnchi-ecryptfs.log")
-        with open(path, "w") as encryptfs_log_file:
-            encryptfs_log_file.write(outp)
-
-        # Critically important, USER must login before the next reboot to complete the migration
-        # User should run ecryptfs-unwrap-passphrase and write down the generated passphrase
-        subprocess.check_call(['su', username])
-
     # TODO: remove this backport from live-installer
 
     def do_run_in_chroot(self, command):
@@ -959,11 +927,12 @@ class InstallationProcess(multiprocessing.Process):
         os.system(cmd)
 
     def configure_system(self):
-        """ Final install steps """
-        # set clock, language, timezone
-        # run mkinitcpio
-        # populate pacman keyring
-        # setup systemd services
+        """ Final install steps
+            Set clock, language, timezone
+            Run mkinitcpio
+            Populate pacman keyring
+            Setup systemd services
+            ... and more """
 
         self.queue_event('action', _("Configuring your new system"))
 
@@ -1443,9 +1412,19 @@ class InstallationProcess(multiprocessing.Process):
                         line = 'default_user %s\n' % username
                     slim_conf.write(line)
 
-        # encrypt home directory if requested
+        # Encrypt user's home directory if requested
         if self.settings.get('encrypt_home'):
             self.queue_event('debug', _("Encrypting user home dir ..."))
-            self.encrypt_home()
+            encfs.setup(username, self.dest_dir)
             self.queue_event('debug', _("User home dir encrypted"))
+ 
+        # Last but not least, copy Cnchi log to new installation
+        datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
+        dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
+        try:
+            shutil.copy("/tmp/thus.log", dst)
+        except FileNotFoundError:
+            logging.warning(_("Can't copy Thus log to /var/log"))
+        except FileExistsError:
+            pass
 

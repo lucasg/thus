@@ -153,6 +153,10 @@ class UserInfo(Gtk.Box):
 
         self.password_strength.hide()
 
+        # Hide encryption if using LUKS encryption (user must use one or the other but not both)
+        if self.settings.get('use_luks'):
+            self.login['encrypt'].hide()
+
         # TODO: Fix home encryption and stop hidding its widget
         self.login['encrypt'].hide()
 
@@ -272,7 +276,7 @@ class UserInfo(Gtk.Box):
                     self.error_label['password'], \
                     self.password_strength)
 
-        # check if all fields are filled and ok
+        # Check if all fields are filled and ok
         all_ok = True
         ok_widgets = self.is_ok.values()
         for ok_widget in ok_widgets:

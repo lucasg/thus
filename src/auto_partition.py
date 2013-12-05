@@ -3,7 +3,7 @@
 #
 #  auto_partition.py
 #
-#  This file was forked from Cnchi (graphical installer from Antergos)
+#  This file was forked from Cnchi (graphical installer from Manjaro)
 #  Check it at https://github.com/antergos
 #
 #  Copyright 2013 Antergos (http://antergos.com/)
@@ -30,7 +30,7 @@ import logging
 import time
 
 # Partition sizes are in MB
-MAX_ROOT_SIZE = 10000
+MAX_ROOT_SIZE = 20000
 
 # TODO: This higly depends on the selected DE! Must be taken into account.
 MIN_ROOT_SIZE = 6000
@@ -82,25 +82,33 @@ def unmount_all(dest_dir):
 
     # Remove all previous Manjaro LVM volumes
     # (it may have been left created due to a previous failed installation)
-    if os.path.exists("/dev/mapper/ManjaroRoot"):
-        subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroRoot"])
-    if os.path.exists("/dev/mapper/ManjaroSwap"):
-        subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroSwap"])
-    if os.path.exists("/dev/mapper/ManjaroHome"):
-        subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroHome"])
-    if os.path.exists("/dev/ManjaroVG"):
-        subprocess.check_call(["vgremove", "-f", "ManjaroVG"])
-    pvolumes = check_output("pvs -o pv_name --noheading").split("\n")
-    if len(pvolumes[0]) > 0:
-        for pv in pvolumes:
-            pv = pv.strip(" ")
-            subprocess.check_call(["pvremove", "-f", pv])
+    try:
+        if os.path.exists("/dev/mapper/ManjaroRoot"):
+            subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroRoot"])
+        if os.path.exists("/dev/mapper/ManjaroSwap"):
+            subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroSwap"])
+        if os.path.exists("/dev/mapper/ManjaroHome"):
+            subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroHome"])
+        if os.path.exists("/dev/ManjaroVG"):
+            subprocess.check_call(["vgremove", "-f", "ManjaroVG"])
+        pvolumes = check_output("pvs -o pv_name --noheading").split("\n")
+        if len(pvolumes[0]) > 0:
+            for pv in pvolumes:
+                pv = pv.strip(" ")
+                subprocess.check_call(["pvremove", "-f", pv])
+    except subprocess.CalledProcessError as err:
+        logging.warning(_("Can't delete existent LVM volumes (see below)"))
+        logging.warning(err)
 
     # Close cryptManjaro (it may have been left open because of a previous failed installation)
-    if os.path.exists("/dev/mapper/cryptManjaro"):
-        subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaro"])
-    if os.path.exists("/dev/mapper/cryptManjaroHome"):
-        subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaroHome"])
+    try:
+        if os.path.exists("/dev/mapper/cryptManjaro"):
+            subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaro"])
+        if os.path.exists("/dev/mapper/cryptManjaroHome"):
+            subprocess.check_call(["cryptsetup", "luksClose", "/dev/mapper/cryptManjaroHome"])
+    except subprocess.CalledProcessError as err:
+        logging.warning(_("Can't close LUKS devices (see below)"))
+        logging.warning(err)
 
 class AutoPartition(object):
     """ Class used by the automatic installation method """
@@ -132,8 +140,8 @@ class AutoPartition(object):
                     subprocess.check_call(["swapoff", device])
                 subprocess.check_call(["mkswap", "-L", label_name, device])
                 subprocess.check_call(["swapon", device])
-            except subprocess.CalledProcessError as e:
-                logging.warning(e.output)
+            except subprocess.CalledProcessError as err:
+                logging.warning(err.output)
         else:
             mkfs = { "xfs" : "mkfs.xfs %s -L %s -f %s" % (fs_options, label_name, device),
                      "jfs" : "yes | mkfs.jfs %s -L %s %s" % (fs_options, label_name, device),
@@ -222,7 +230,7 @@ class AutoPartition(object):
                 if self.home:
                     # In this case we'll have two LUKS devices, one for root
                     # and the other one for /home
-                    luks = [root, home]
+                    luks.append(home)
                     home = "/dev/mapper/cryptManjaroHome"
         elif self.lvm:
             # No LUKS but using LVM
@@ -282,12 +290,12 @@ class AutoPartition(object):
 
         return fs_devices
 
-    def setup_luks(self, luks_device, key_file):
+    def setup_luks(self, luks_device, luks_name, key_file):
         """ Setups a luks device """
         # For now, we we'll use the same password for root and /home
         # If instead user wants to use a key file, we'll have two different key files.
         
-        logging.debug(_("Thus will setup LUKS on device %s"), luks_device)
+        logging.debug(_("Cnchi will setup LUKS on device %s"), luks_device)
 
         # Wipe LUKS header (just in case we're installing on a pre LUKS setup)
         # For 512 bit key length the header is 2MB
@@ -300,7 +308,7 @@ class AutoPartition(object):
 
             # Set up luks with a keyfile
             subprocess.check_call(["cryptsetup", "luksFormat", "-q", "-c", "aes-xts-plain", "-s", "512", luks_device, key_file])
-            subprocess.check_call(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file", key_file])
+            subprocess.check_call(["cryptsetup", "luksOpen", luks_device, luks_name, "-q", "--key-file", key_file])
         else:
             # Set up luks with a password key
             luks_key_pass_bytes = bytes(self.luks_key_pass, 'UTF-8')
@@ -309,9 +317,9 @@ class AutoPartition(object):
                 "--key-file=-", luks_device], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
             p.communicate(input=luks_key_pass_bytes)[0]
 
-            p = subprocess.Popen(["cryptsetup", "luksOpen", luks_device, "cryptManjaro", "-q", "--key-file=-"],
+            p = subprocess.Popen(["cryptsetup", "luksOpen", luks_device, luks_name, "-q", "--key-file=-"],
                 stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
-            p.communicate(input=luks_key_pass_bytes)[0]      
+            p.communicate(input=luks_key_pass_bytes)[0]
 
     def run(self):
         key_files = ["/tmp/.keyfile-root", "/tmp/.keyfile-home"]
@@ -465,9 +473,9 @@ class AutoPartition(object):
             logging.debug("Boot %s, Swap %s, Root %s, Home %s", boot_device, swap_device, root_device, home_device)
 
         if self.luks:
-            self.setup_luks(luks_devices[0], key_files[0])
+            self.setup_luks(luks_devices[0], "cryptManjaro", key_files[0])
             if self.home and not self.lvm:
-                self.setup_luks(luks_devices[1], key_files[1])
+                self.setup_luks(luks_devices[1], "cryptManjaroHome", key_files[1])
 
         if self.lvm:
             # /dev/sdX1 is /boot
@@ -499,7 +507,6 @@ class AutoPartition(object):
         # NOTE: encrypted and/or lvm2 hooks will be added to mkinitcpio.conf in installation_process.py if necessary
         # NOTE: /etc/default/grub will be modified in installation_process.py, too.
 
-        # TODO: This if is too long, rewrite it
         if self.luks:
             if self.home and not self.lvm:
                 # Setup Manjaro to unlock home partition at boot
@@ -507,9 +514,11 @@ class AutoPartition(object):
                     home_keyfile = "none"
                 else:
                     home_keyfile = key_file[1]
+                fname = os.path.join(self.dest_dir, "etc")
+                subprocess.check_call(["mkdir", "-p", fname])
                 fname = os.path.join(self.dest_dir, "etc/crypttab")
                 with open(fname, "a") as crypttab:
-                    line = "cryptManjaroHome %s %s luks" % (luks_device[1], home_keyfile)
+                    line = "cryptManjaroHome %s %s luks" % (luks_devices[1], home_keyfile)
                     crypttab.write(line)
                     logging.debug("Added %s to /etc/crypttab" % line)
 
@@ -541,4 +550,4 @@ if __name__ == '__main__':
         use_home=True,
         callback_queue=None)
 
-    ap.run()
+#    ap.run()
