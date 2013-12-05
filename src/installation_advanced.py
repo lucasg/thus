@@ -112,8 +112,8 @@ class InstallationAdvanced(Gtk.Box):
         combo.remove_all()
         combo.append_text("msdos (aka MBR)")
         # TODO: get GPT ready (see also: https://github.com/Antergos/Cnchi/issues/63
-        #if self.settings.get("use_staging"):
-        combo.append_text("GUID Partition Table (GPT)")
+        if self.settings.get("use_staging"):
+            combo.append_text("GUID Partition Table (GPT)")
 
         # Automatically select first entry
         self.select_first_combobox_item(combo)
@@ -930,7 +930,8 @@ class InstallationAdvanced(Gtk.Box):
                         mymount = ''
                     # No labeling either..
                     mylabel = ''
-                    myfmt = _("extended")
+                    # We can't translate here!
+                    myfmt = "extended"
                     formatme = False
                     logging.debug(_("Creating extended partition"))
                     pm.create_partition(disk, pm.PARTITION_EXTENDED, geometry)
