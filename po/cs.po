@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-30 15:40+0100\n"
-"PO-Revision-Date: 2013-11-30 14:42+0000\n"
+"POT-Creation-Date: 2013-12-05 22:07+0100\n"
+"PO-Revision-Date: 2013-12-05 21:09+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/manjaro-thus/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -44,35 +44,44 @@ msgid ""
 "and run this installer again."
 msgstr "Nelze spustit dvě instance tohoto instalačního programu.⏎\n⏎\nPokud jste si jisti, že další Instalační systém není spuštěn⏎\nmůžete ručně odstranit soubor %s⏎\na poté spusťte instalátor znovu."
 
-#: thus.py:157
+#: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
 msgstr ""
 
-#: thus.py:237
+#: thus.py:218
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr " Soubor '% s' bude použit jako seznam balíčků"
 
-#: thus.py:254
+#: thus.py:235
 msgid "Manjaro Installer"
 msgstr "Manjaro instalátor"
 
-#: thus.py:309
+#: thus.py:290
 msgid "Quiting installer..."
 msgstr "Instalace zastavena..."
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
+#: src/installation_process.py:402 src/installation_process.py:414
 #, python-format
 msgid "Unmounting %s"
 msgstr ""
 
-#: src/auto_partition.py:290
+#: src/auto_partition.py:100
+msgid "Can't delete existent LVM volumes (see below)"
+msgstr ""
+
+#: src/auto_partition.py:110
+msgid "Can't close LUKS devices (see below)"
+msgstr ""
+
+#: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr ""
 
-#: src/auto_partition.py:476
+#: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr ""
@@ -196,7 +205,7 @@ msgstr "Přípojný bod"
 msgid "Label"
 msgstr "Štítek"
 
-#: src/installation_advanced.py:288 src/installation_advanced.py:1445
+#: src/installation_advanced.py:288 src/installation_advanced.py:1517
 msgid "Format"
 msgstr "Formát"
 
@@ -221,8 +230,8 @@ msgid "none"
 msgstr "žádný"
 
 #: src/installation_advanced.py:530 src/installation_advanced.py:933
-#: src/installation_advanced.py:1319 src/installation_advanced.py:1398
-#: src/installation_advanced.py:1586
+#: src/installation_advanced.py:1391 src/installation_advanced.py:1470
+#: src/installation_advanced.py:1663
 msgid "extended"
 msgstr "prodloužený"
 
@@ -331,7 +340,14 @@ msgstr "Instalovat nyní!"
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Vytvářím novou tabulky oddílů formátu % s na disk % s"
 
-#: src/installation_advanced.py:1355
+#: src/installation_advanced.py:1268
+msgid ""
+"GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
+"\n"
+"Thus will create this special partition for you now."
+msgstr ""
+
+#: src/installation_advanced.py:1427
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -339,7 +355,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "% s je připojen jako odkládací prostor swap.⏎\nChcete-li pokračovat, musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
-#: src/installation_advanced.py:1358
+#: src/installation_advanced.py:1430
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -347,56 +363,56 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s je připojen k '%s'.⏎\nPro pokračování musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
-#: src/installation_advanced.py:1379
+#: src/installation_advanced.py:1451
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr ""
 
-#: src/installation_advanced.py:1438
+#: src/installation_advanced.py:1510
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Diskový oddíl %s bude odstraněn"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1517
 msgid "Partition"
 msgstr "Diskový oddíl"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1517
 msgid "New"
 msgstr "Nový"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1517
 msgid "Relabel"
 msgstr "Přeštítkovat"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1517
 msgid "Mount"
 msgstr "Připojit"
 
-#: src/installation_advanced.py:1466
+#: src/installation_advanced.py:1538
 msgid "These disks will have partition actions:"
 msgstr "Na těchto discích budou provedeny tyto akce s oddíly:"
 
-#: src/installation_advanced.py:1519
+#: src/installation_advanced.py:1591
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Ukládám změny provedené v %s"
 
-#: src/installation_advanced.py:1533
+#: src/installation_advanced.py:1605
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Vytváření %s souborového systému na %s pojmenovaného %s"
 
-#: src/installation_advanced.py:1605
+#: src/installation_advanced.py:1682
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro nainstaluje zavaděč %s do %s"
 
-#: src/installation_advanced.py:1608
+#: src/installation_advanced.py:1685
 msgid "Thus will not install any boot loader"
 msgstr ""
 
-#: src/installation_advanced.py:1622 src/installation_automatic.py:224
+#: src/installation_advanced.py:1699 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
 
@@ -541,243 +557,257 @@ msgstr "Bude použito %s jako instalační zařízení"
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Tím se nainstaluje zavaděč %s do %s"
 
-#: src/installation_process.py:89
+#: src/installation_process.py:90
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Kopíruji '/%s'"
 
-#: src/installation_process.py:164
+#: src/installation_process.py:165
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Instalace pomocí metody '%s'"
 
-#: src/installation_process.py:243
+#: src/installation_process.py:244
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr ""
 
-#: src/installation_process.py:265
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
 msgstr "Došlo k chybě při vytváření oddílů a jejich souborových systémů"
 
-#: src/installation_process.py:304 src/installation_process.py:327
+#: src/installation_process.py:305 src/installation_process.py:328
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Připojuji oddíl %s do adresáře %s"
 
-#: src/installation_process.py:310
+#: src/installation_process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Připojuji oddíl %s do bootovacího adresáře %s"
 
-#: src/installation_process.py:315
+#: src/installation_process.py:316
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nelze připojit kořenový a bootovací oddíl"
 
-#: src/installation_process.py:333
+#: src/installation_process.py:334
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Nelze připojit %s k %s"
 
-#: src/installation_process.py:345
+#: src/installation_process.py:346
 #, python-format
 msgid "%s deleted"
 msgstr ""
 
-#: src/installation_process.py:355
+#: src/installation_process.py:356
 msgid "Can't create necessary directories on destination system"
 msgstr "Nelze vytvořit potřebné adresáře na cílovém systému"
 
-#: src/installation_process.py:373
+#: src/installation_process.py:374
 msgid "Installing bootloader ..."
 msgstr ""
 
-#: src/installation_process.py:393
-msgid "Installation finished successfully."
+#: src/installation_process.py:386
+msgid "Unknown error"
 msgstr ""
 
-#: src/installation_process.py:411
-msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
-
-#: src/installation_process.py:414
-msgid "Desktop filesystem does not exist! Critical error (exiting)."
+#: src/installation_process.py:407 src/installation_process.py:420
+#: src/installation_process.py:428
+#, python-format
+msgid "Can't unmount %s"
 msgstr ""
 
 #: src/installation_process.py:430
+msgid "Installation finished successfully."
+msgstr ""
+
+#: src/installation_process.py:448
+msgid "Base filesystem does not exist! Critical error (exiting)."
+msgstr ""
+
+#: src/installation_process.py:451
+msgid "Desktop filesystem does not exist! Critical error (exiting)."
+msgstr ""
+
+#: src/installation_process.py:467
 msgid "Indexing files to be copied ..."
 msgstr ""
 
-#: src/installation_process.py:435
+#: src/installation_process.py:472
 msgid "Extracting root-image ..."
 msgstr ""
 
-#: src/installation_process.py:445
+#: src/installation_process.py:482
 msgid "Extracting desktop-image ..."
 msgstr ""
 
-#: src/installation_process.py:460
+#: src/installation_process.py:497
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Obnovení metainformací na %s"
 
-#: src/installation_process.py:475
+#: src/installation_process.py:512
 msgid "Special dirs already mounted."
 msgstr "Speciální adresáře jsou už připojené."
 
-#: src/installation_process.py:502
+#: src/installation_process.py:539
 msgid "Special dirs already not mounted."
 msgstr "Speciální adresář již není připojen."
 
-#: src/installation_process.py:512
+#: src/installation_process.py:549
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Není možné odpojit %s"
 
-#: src/installation_process.py:531
+#: src/installation_process.py:568
 #, python-format
 msgid "Error running command: %s"
 msgstr ""
 
-#: src/installation_process.py:593
+#: src/installation_process.py:630
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr ""
 
-#: src/installation_process.py:679
+#: src/installation_process.py:716
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Instaluji zavaděč GRUB(2) do %s"
 
-#: src/installation_process.py:702 src/installation_process.py:719
+#: src/installation_process.py:739 src/installation_process.py:756
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "Chyba při instalaci zavaděče GRUB(2)"
 
-#: src/installation_process.py:717
+#: src/installation_process.py:754
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "Zavaděč GRUB(2) byl úspěšně nainstalován."
 
-#: src/installation_process.py:731
+#: src/installation_process.py:768
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Instalace zavaděče GRUB(2) UEFI %s do %s"
 
-#: src/installation_process.py:759
+#: src/installation_process.py:796
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "CHYBA instalace GRUB(2) konfiguračního souboru."
 
-#: src/installation_process.py:788
+#: src/installation_process.py:825
 msgid "ERROR installing GRUB(2) locale."
 msgstr "CHYBA instalace GRUB(2) lokálů."
 
-#: src/installation_process.py:804
+#: src/installation_process.py:841
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Chyba při vytváření hesla pro uživatele %s"
 
-#: src/installation_process.py:810
+#: src/installation_process.py:847
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Chyba při změně hesla pro uživatele %s"
 
-#: src/installation_process.py:822
+#: src/installation_process.py:859
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr ""
 
-#: src/installation_process.py:933 src/installation_process.py:944
+#: src/installation_process.py:937 src/installation_process.py:948
 msgid "Configuring your new system"
 msgstr "Konfiguruji váš nový systém"
 
-#: src/installation_process.py:936
+#: src/installation_process.py:940
 msgid "fstab file generated."
 msgstr ""
 
-#: src/installation_process.py:942
+#: src/installation_process.py:946
 msgid "Network configuration copied."
 msgstr ""
 
-#: src/installation_process.py:972
+#: src/installation_process.py:976
 msgid "Timezone set."
 msgstr ""
 
-#: src/installation_process.py:992
+#: src/installation_process.py:996
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr ""
 
-#: src/installation_process.py:998
+#: src/installation_process.py:1002
 #, python-format
 msgid "User %s added."
 msgstr ""
 
-#: src/installation_process.py:1010
+#: src/installation_process.py:1014
 #, python-format
 msgid "Hostname  %s set."
 msgstr ""
 
-#: src/installation_process.py:1014
+#: src/installation_process.py:1018
 msgid "Set the same password to root."
 msgstr ""
 
-#: src/installation_process.py:1020
+#: src/installation_process.py:1024
 msgid "Generating locales ..."
 msgstr ""
 
-#: src/installation_process.py:1040
+#: src/installation_process.py:1044
 msgid "Adjusting hardware clock ..."
 msgstr ""
 
-#: src/installation_process.py:1046
+#: src/installation_process.py:1050
 msgid "Configuring hardware ..."
 msgstr ""
 
-#: src/installation_process.py:1109
+#: src/installation_process.py:1113
 msgid "Set up graphics card ..."
 msgstr ""
 
-#: src/installation_process.py:1116
+#: src/installation_process.py:1120
 msgid "Can't execute the MHWD script"
 msgstr "Nelze spustit skript MHWD"
 
-#: src/installation_process.py:1122
+#: src/installation_process.py:1126
 msgid "Configure display manager ..."
 msgstr ""
 
-#: src/installation_process.py:1221
+#: src/installation_process.py:1225
 msgid "Configure System ..."
 msgstr ""
 
-#: src/installation_process.py:1249
+#: src/installation_process.py:1253
 msgid "Removing live configuration (packages)"
 msgstr "Odstranění live konfigurace (balíčků)"
 
-#: src/installation_process.py:1265
+#: src/installation_process.py:1269
 msgid "Configuring package manager"
 msgstr "Konfiguruji správce balíčků"
 
-#: src/installation_process.py:1280
+#: src/installation_process.py:1284
 msgid "Finished configuring package manager."
 msgstr "Konfigurace správce balíčků dokončena."
 
-#: src/installation_process.py:1304
+#: src/installation_process.py:1308
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Povolit automatické přihlášení pro uživatele %s."
 
-#: src/installation_process.py:1383
+#: src/installation_process.py:1387
 msgid "Running mkinitcpio ..."
 msgstr ""
 
-#: src/installation_process.py:1386
+#: src/installation_process.py:1390
 msgid "Running mkinitcpio - done"
 msgstr ""
 
-#: src/installation_process.py:1413
+#: src/installation_process.py:1417
 msgid "Encrypting user home dir ..."
 msgstr ""
 
-#: src/installation_process.py:1415
+#: src/installation_process.py:1419
 msgid "User home dir encrypted"
+msgstr ""
+
+#: src/installation_process.py:1427
+msgid "Can't copy Thus log to /var/log"
 msgstr ""
 
 #: src/keymap.py:64
@@ -900,7 +930,7 @@ msgstr "Instaluji Manjaro..."
 msgid "Please wait..."
 msgstr "Čekejte..."
 
-#: src/slides.py:226
+#: src/slides.py:210
 msgid "Do you want to retry?"
 msgstr ""
 
@@ -1005,49 +1035,49 @@ msgstr "Šifrování mé domovské složky"
 msgid "Who are you?"
 msgstr "Kdo jste?"
 
-#: src/user_info.py:169
+#: src/user_info.py:173
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
 msgstr "Manjaro bude používat eCryptfs pro šifrování domovského adresáře. Bohužel, eCryptfs nezpracoval všechny soubory stejně.⏎\n⏎\n"
 
-#: src/user_info.py:170
+#: src/user_info.py:174
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
 msgstr "Neobávejte se, pro většinu vašich záměrů a pro vaše účely tento nedostatek nepředstavuje problém.⏎\n⏎\n"
 
-#: src/user_info.py:171
+#: src/user_info.py:175
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
 msgstr "Mimochodem, jedna populární, leč nevhodná aplikace eCryptfs pro šifrování BitTorrent při stahování. eCryptfs často vyžadujeukládání velkých souborů o velikosti 10 GB nebo i více, což může vést k nedostatku místa na disku.⏎\n⏎\n"
 
-#: src/user_info.py:172
+#: src/user_info.py:176
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
 msgstr "Jednoduchým řešením je umístění velkých souborů nešifrovaně. Veřejné adresáře⏎\n⏎\n"
 
-#: src/user_info.py:173
+#: src/user_info.py:177
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
 msgstr "Pro podrobnější informace se podívejte na https://wiki.archlinux.org/index.php/ECryptfs\n⏎\n"
 
-#: src/user_info.py:174
+#: src/user_info.py:178
 msgid "Are you sure you want to encrypt your home directory?\n"
 msgstr "Jste si jisti, že chcete zašifrovat domovský adresář?⏎\n"
 
-#: src/user_info.py:234
+#: src/user_info.py:238
 msgid "Invalid characters entered"
 msgstr "Zadal jste neplatné znaky"
 
-#: src/user_info.py:238
+#: src/user_info.py:242
 msgid "Username can't contain dots"
 msgstr "Uživatelské jméno nemůže obsahovat tečky"
 
-#: src/user_info.py:242
+#: src/user_info.py:246
 msgid "Too many characters"
 msgstr "Příliš mnoho znaků"
 

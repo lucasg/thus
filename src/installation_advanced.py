@@ -1265,24 +1265,10 @@ class InstallationAdvanced(Gtk.Box):
                 
                 if ptype == 'gpt' and not os.path.exists("/sys/firmware/efi/systab"):
                     # Show warning (see https://github.com/Antergos/Cnchi/issues/63)
-                    show.warning(_('GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, EF02 type code in gdisk '
-                        'or bios_grub flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of '
-                        'post-MBR embed gap in GPT disks. Runtime GPT support in GRUB is provided by the part_gpt '
-                        'module, and is not related to the BIOS Boot Partition requirement\n\n'
-                        'GRUB in BIOS-GPT configuration requires a BIOS boot partition to embed its core.img in the '
-                        'absence of post-MBR gap in GPT partitioned systems (which is taken over by the GPT Primary '
-                        'Header and Primary Partition table). This partition is used by GRUB only in BIOS-GPT setups. '
-                        'No such partition type exists in case of MBR partitioning (at least not for GRUB). This '
-                        'partition is also not required if the system is UEFI based, as no embedding of bootsectors '
-                        'takes place in that case.\n\n'
-                        'For a BIOS-GPT configuration, create a 1007 KiB partition at the beginning of the disk with '
-                        'no filesystem. The size of 1007 KiB will allow for the following partition to be correctly '
-                        'alligned at 1024 KiB. If needed, the partition can also be located somewhere else on the '
-                        'disk, but it should be within the first 2 TiB region. Set the partition type to ef02.\n\n'
-                        'The GPT partition also creates a protective MBR partition to stop unsupported tools from '
-                        'modifying it. You may need to set a bootable flag on this protective MBR or some BIOSes/EFIs '
-                        'will refuse to boot.\n\n'
-                        'Thus will create this special partition for you.'))
+                    show.warning(_('GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, "EF02" type code in gdisk '
+                        'or "bios_grub" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of '
+                        'post-MBR embed gap in GPT disks.\n\n'
+                        'Thus will create this special partition for you now.'))
                     self.create_bios_gpt_boot_partition(disk_path)
 
         dialog.hide()
