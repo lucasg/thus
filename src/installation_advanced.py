@@ -931,7 +931,7 @@ class InstallationAdvanced(Gtk.Box):
                     # No labeling either..
                     mylabel = ''
                     # We can't translate here!
-                    myfmt = "extended"
+                    myfmt = 'extended'
                     formatme = False
                     logging.debug(_("Creating extended partition"))
                     pm.create_partition(disk, pm.PARTITION_EXTENDED, geometry)
@@ -1661,7 +1661,8 @@ class InstallationAdvanced(Gtk.Box):
                 if uid in self.stage_opts:
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
                     # FIX: Do not mount extended partitions
-                    if fs_type == _("extended"):
+                    # We can't translate here!
+                    if fs_type == 'extended':
                         continue
                     mount_devices[mount_point] = partition_path
                     fs_devices[partition_path] = fs_type
