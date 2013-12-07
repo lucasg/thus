@@ -408,9 +408,10 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', "Mounted devices: %s" % self.mount_devices)
             for path in self.mount_devices:
                 mount_part = self.mount_devices[path]
-                if mount_part != self.mount_devices["/"] and mount_part != self.mount_devices["swap"]:
+                mount_dir = self.dest_dir + path
+                if path != '/' and path != 'swap' and path !='':
                     try:
-                        mount_dir = self.dest_dir + path
+                        
                         txt = _("Unmounting %s") % mount_dir
                         self.queue_event('debug', txt)
                         subprocess.check_call(['umount', mount_dir])
@@ -422,6 +423,8 @@ class InstallationProcess(multiprocessing.Process):
             (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
             if fsname:
                 try:
+                    txt = _("Unmounting %s") % self.dest_dir
+                    self.queue_event('debug', txt)
                     subprocess.check_call(['umount', self.dest_dir])
                 except subprocess.CalledProcessError as err:
                     logging.warning(err)
