@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 21:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-07 12:12+0000\n"
+"Last-Translator: Ulseth85 <ulseth85@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/manjaro-thus/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,7 @@ msgstr "Du kan ikke kjøre to forekomster av dette installasjonsprogrammet.\n\nH
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus Installer versjon %s"
 
 #: thus.py:218
 #, python-format
@@ -59,7 +59,7 @@ msgstr "Avslutter installasjonsprogrammet ..."
 #: src/installation_process.py:402 src/installation_process.py:414
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Avmonterer %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
@@ -77,7 +77,7 @@ msgstr ""
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Vil sette opp LVM på enheten %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -90,24 +90,24 @@ msgstr "Hva er din boot system type?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (mest vanlig)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Velg \"Avbryt\" hvis du ikke ønsker å installere en oppstartslaster."
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "Kan ikke sette lokalitet %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -135,12 +135,12 @@ msgstr "Passordene stemmer ikke overens"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "System Check"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "har minst %dGB tilgjengelig lagringsplass"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -309,7 +309,7 @@ msgstr "Etikett (valgfritt):"
 
 #: src/installation_advanced.py:1140
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Krypteringsmuligheter..."
 
 #: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -317,7 +317,7 @@ msgstr "Format:"
 
 #: src/installation_advanced.py:1162
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Partition Table Type:"
 
 #: src/installation_advanced.py:1167
 msgid "Create Partition Table"
@@ -359,7 +359,7 @@ msgstr "%s er montert i '%s'.\nFor å fortsette må den avmonteres.\nKlikk Ja fo
 #: src/installation_advanced.py:1451
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s vises som montert (opptatt), men den ikke har noen monteringspunkt"
 
 #: src/installation_advanced.py:1510
 #, python-format
@@ -403,11 +403,11 @@ msgstr "Manjaro vil installere bootloader av typen %s på %s"
 
 #: src/installation_advanced.py:1685
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus vil ikke installere noen oppstartslaster"
 
 #: src/installation_advanced.py:1699 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Testing modus. Thus vil ikke bruke eventuelle endringer i systemet!"
 
 #: src/installation_alongside.py:114
 #, python-format
@@ -432,7 +432,7 @@ msgstr "Filsystemet"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Kan ikke lage liste over partisjoner for sammen med installasjonen."
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -452,7 +452,7 @@ msgstr "Advarsel: Dette vil slette all innhold på harddisken din"
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Krypter denne installasjonen for økt sikkerhet."
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
@@ -466,12 +466,12 @@ msgstr ""
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Sett ditt Hjem i en annen partisjon/volum"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Dette vil sette opp din /hjemmekatalog i en annen partisjon eller volum."
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -494,11 +494,11 @@ msgstr ""
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro vil bli installert ved hjelp av LVM volumer"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro vil bli installert ved hjelp av en separat /hjem volum."
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
@@ -925,7 +925,7 @@ msgstr "Vennligst vent..."
 
 #: src/slides.py:210
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Ønsker du å prøve på nytt?"
 
 #: src/timezone.py:111
 msgid "Where are you?"

@@ -13,6 +13,7 @@
 # ElVirolo <elvirolo@gmail.com>, 2013
 # ElVirolo <elvirolo@gmail.com>, 2013
 # faidoc <faidoc@gmail.com>, 2013
+# Lilax <fbutz.delaire@mac.com>, 2013
 # Gatien Bovyn <gatien.bovyn@hotmail.com>, 2013
 # gilles74 <gillessoixantequatorze@orange.fr>, 2013
 # Loubrix <david30160@gmail.com>, 2013
@@ -26,8 +27,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 23:03+0000\n"
-"Last-Translator: gilles74 <gillessoixantequatorze@orange.fr>\n"
+"PO-Revision-Date: 2013-12-07 13:00+0000\n"
+"Last-Translator: Lilax <fbutz.delaire@mac.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/manjaro-thus/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +55,7 @@ msgstr "Vous ne pouvez pas lancer deux instances de cet installateur.⏎\n⏎\nS
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Version de l'installateur Thus %s "
 
 #: thus.py:218
 #, python-format
@@ -73,7 +74,7 @@ msgstr "Fermeture de l’installateur…"
 #: src/installation_process.py:402 src/installation_process.py:414
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Démonter %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
@@ -91,7 +92,7 @@ msgstr "Thus configure LUKS sur le dispositif %s"
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Permet de configurer LVM sur le disque %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -417,7 +418,7 @@ msgstr "Manjaro installera le chargeur d’amorçage de type %s sur la partition
 
 #: src/installation_advanced.py:1685
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus n'installera aucun chargeur de démarrage"
 
 #: src/installation_advanced.py:1699 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -470,7 +471,7 @@ msgstr "Chiffrer cette installation pour une meilleure sécurité"
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "la clé de chiffrement vous sera demandé à l'étape suivante."
 
 #: src/installation_ask.py:153
 msgid ""
@@ -480,12 +481,12 @@ msgstr ""
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Mettre votre dossier Home dans une partition ou un volume différent"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Ceci permet d'installer votre répertoire /home sur une autre partition ou volume"
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -715,7 +716,7 @@ msgstr "Erreur durant le changement du mot de passe de l'utilisateur %s"
 
 #: src/installation_process.py:859
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Configurez hooks et les modules dans mkinitcpio.conf"
 
 #: src/installation_process.py:937 src/installation_process.py:948
 msgid "Configuring your new system"
@@ -750,7 +751,7 @@ msgstr ""
 
 #: src/installation_process.py:1018
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Utiliser le même mot de passe pour root"
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
@@ -849,7 +850,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus est un logiciel bêta en pré-version dont le développement est actif.\nIl ne gère pas encore correctement le RAID, les sous-volumes en btrfs, ou d'autres réglages avancés. \nVeuillez procéder avec prudence, les pertes de données sont possibles !\n\nSi vous trouvez des bogues, veuillez les rapporter à http://bugs.manjaro.org "
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"

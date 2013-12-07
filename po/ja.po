@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-06 22:31+0000\n"
+"PO-Revision-Date: 2013-12-07 02:31+0000\n"
 "Last-Translator: rago1975\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -65,16 +65,16 @@ msgstr "%sをアンマウント"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "既存のLVMボリュームを削除することができません(以下を見てください)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "LUKSデバイスを閉じることができません(以下を見てください)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thusはデバイス %sにLUKSをセットアップします"
 
 #: src/auto_partition.py:484
 #, python-format
@@ -340,7 +340,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUBは、GPTディスクにおけるpost-MBR gap が不足するため、BIOSシステムにcore.img を埋め込む際に、BIOSブートパーティション(2メガバイト、ファイルシステムなし、 gdiskの\"EF02\" type code あるいは GNU Partedの\"bios_grub\" フラグ)を必要とします。"
 
 #: src/installation_advanced.py:1427
 #, python-format
@@ -601,17 +601,17 @@ msgstr "システムに必要なディレクトリを作成することができ
 
 #: src/installation_process.py:374
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "ブートローダーをインストール中..."
 
 #: src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "原因不明のエラー"
 
 #: src/installation_process.py:407 src/installation_process.py:420
 #: src/installation_process.py:428
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "%sをアンマウントできません"
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
@@ -619,23 +619,23 @@ msgstr "インストールは無事に終了しました。"
 
 #: src/installation_process.py:448
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Baseのファイルシステムが存在しません!　重大なエラー(終了)。"
 
 #: src/installation_process.py:451
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "デスクトップのファイルシステムが存在しません! 重大なエラー(終了)"
 
 #: src/installation_process.py:467
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "インデックスファイルがコピーされます..."
 
 #: src/installation_process.py:472
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "ルートイメージの抽出中..."
 
 #: src/installation_process.py:482
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "デスクトップイメージの抽出中..."
 
 #: src/installation_process.py:497
 #, python-format
@@ -742,19 +742,19 @@ msgstr "rootと同じパスワードを設定してください。"
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
-msgstr ""
+msgstr "ロケールの生成中..."
 
 #: src/installation_process.py:1044
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "ハードウェアの時計を調整しています..."
 
 #: src/installation_process.py:1050
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "ハードウェアの設定中.."
 
 #: src/installation_process.py:1113
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "グラフィックカードのセットアップ.."
 
 #: src/installation_process.py:1120
 msgid "Can't execute the MHWD script"
@@ -762,11 +762,11 @@ msgstr "MHWDスクリプトが実行できません"
 
 #: src/installation_process.py:1126
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "ディスプレイマネージャーの設定中.."
 
 #: src/installation_process.py:1225
 msgid "Configure System ..."
-msgstr ""
+msgstr "システムの設定中"
 
 #: src/installation_process.py:1253
 msgid "Removing live configuration (packages)"
@@ -787,15 +787,15 @@ msgstr "%s: ユーザー %s の自動ログインを可能にします"
 
 #: src/installation_process.py:1387
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "mkinitcpioを実行..."
 
 #: src/installation_process.py:1390
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "mkinitcpioを実行 - 完了"
 
 #: src/installation_process.py:1417
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "ユーザーホームディレクトリを暗号化 ..."
 
 #: src/installation_process.py:1419
 msgid "User home dir encrypted"
@@ -803,7 +803,7 @@ msgstr "ユーザーのホームディレクトリが暗号化されました。
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
-msgstr ""
+msgstr "Thusのログを /var/log にコピーすることができません"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
