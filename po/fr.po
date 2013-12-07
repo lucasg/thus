@@ -26,8 +26,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 21:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-05 23:03+0000\n"
+"Last-Translator: gilles74 <gillessoixantequatorze@orange.fr>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/manjaro-thus/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,16 +77,16 @@ msgstr ""
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Impossible de supprimer les volumes LVM existants (voir ci dessous)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Impossible de fermer les composants LUKS (voir ci-dessous)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus configure LUKS sur le dispositif %s"
 
 #: src/auto_partition.py:484
 #, python-format
@@ -446,7 +446,7 @@ msgstr "Système de fichier"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Impossible de créer la liste des partitions pour installer plusieurs OS"
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -508,11 +508,11 @@ msgstr "L'installation de Manjaro sera cryptée avec LUKS"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro sera installée en utilisant les volumes LVM"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro sera installée en utilisant une partition /home séparée"
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
@@ -617,13 +617,13 @@ msgstr "Installation du chargeur de démarrage ..."
 
 #: src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "Erreur inconnue"
 
 #: src/installation_process.py:407 src/installation_process.py:420
 #: src/installation_process.py:428
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Impossible de démonter %s"
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
@@ -643,7 +643,7 @@ msgstr ""
 
 #: src/installation_process.py:472
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Extraction de l'image root"
 
 #: src/installation_process.py:482
 msgid "Extracting desktop-image ..."
@@ -815,7 +815,7 @@ msgstr "Rép. home chiffré"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
-msgstr ""
+msgstr "Impossible de copier le logo Thus dans /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -897,7 +897,7 @@ msgstr "Ne pas vérifier si %s est un SSD"
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Désolé, mais le système de fichier %s ne peut pas être réduit"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"

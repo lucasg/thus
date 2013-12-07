@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 21:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-06 00:24+0000\n"
+"Last-Translator: asmolero <alsamolero@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,16 +72,16 @@ msgstr "Desmuntant %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "No es poden esborrar els volums LVM (mireu més avall)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "No es poden tancar els dispositius LUKS (mireu més avall)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "El Thus configurarà LUKS al dispositiu %s"
 
 #: src/auto_partition.py:484
 #, python-format
@@ -347,7 +347,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "El GRUB requereix una partició d'arrencada BIOS (2 MiB sense sistema de fitxers, codi de tipus \"EF02\" al gdisk o senyalador \"bios_grub\" al GNU Parted) en sistemes BIOS per incrustar el fitxer core.img ja que als discos GPT no hi ha espai d'incrustació post-MBR.\n\nEl Thus crearà ara aquesta partició especial. "
 
 #: src/installation_advanced.py:1427
 #, python-format
@@ -471,7 +471,7 @@ msgstr "Se us demanarà la clau d'encriptació al següent pas."
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr "Això configurarà LVM permetent-vos fer instantànies i canviar les mides de les particions d'una forma senzilla."
+msgstr "Això configurarà l'LVM i us permetrà fer instantànies i canviar les mides de les particions d'una forma senzilla."
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
@@ -608,17 +608,17 @@ msgstr "No puc crear els directoris necessaris al sistema de destí"
 
 #: src/installation_process.py:374
 msgid "Installing bootloader ..."
-msgstr "Instal·lant el carregador d'arrencada..."
+msgstr "S'està instal·lant el carregador d'arrencada..."
 
 #: src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "Error desconegut"
 
 #: src/installation_process.py:407 src/installation_process.py:420
 #: src/installation_process.py:428
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "No es pot desmuntar %s"
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
@@ -626,23 +626,23 @@ msgstr "La instal·lació ha acabat correctament."
 
 #: src/installation_process.py:448
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr "El sistema de fitxers base no existeix! Error crític (sortint)."
+msgstr "El sistema de fitxers base no existeix. És un error crític i s'està sortint."
 
 #: src/installation_process.py:451
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr "El sistema de fitxers d'escriptori no existeix! Error crític (sortint)."
+msgstr "El sistema de fitxers d'escriptori no existeix. És un error crític i s'està sortint."
 
 #: src/installation_process.py:467
 msgid "Indexing files to be copied ..."
-msgstr "Indexant fitxers per a copiar..."
+msgstr "S'estan indexant els fitxers per copiar..."
 
 #: src/installation_process.py:472
 msgid "Extracting root-image ..."
-msgstr "Extraient la imatge root..."
+msgstr "S'està extraient la imatge arrel..."
 
 #: src/installation_process.py:482
 msgid "Extracting desktop-image ..."
-msgstr "Extraient la imatge de l'escriptori..."
+msgstr "S'està extraient la imatge de l'escriptori..."
 
 #: src/installation_process.py:497
 #, python-format
@@ -741,7 +741,7 @@ msgstr "Usuari %s afegit."
 #: src/installation_process.py:1014
 #, python-format
 msgid "Hostname  %s set."
-msgstr "Nom de l'ordinador %s configurat."
+msgstr "S'ha configurat %s com a nom de l'ordinador."
 
 #: src/installation_process.py:1018
 msgid "Set the same password to root."
@@ -749,19 +749,19 @@ msgstr "Configureu la mateixa contrasenya per a root."
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
-msgstr "Generant els locals..."
+msgstr "S'estan generant les configuracions locals..."
 
 #: src/installation_process.py:1044
 msgid "Adjusting hardware clock ..."
-msgstr "Ajustant el rellotge de maquinari..."
+msgstr "S'està ajustant el rellotge de maquinari..."
 
 #: src/installation_process.py:1050
 msgid "Configuring hardware ..."
-msgstr "Configurant el maquinari..."
+msgstr "S'està configurant el maquinari..."
 
 #: src/installation_process.py:1113
 msgid "Set up graphics card ..."
-msgstr "Configurant la targeta gràfica..."
+msgstr "S'està configurant la targeta gràfica..."
 
 #: src/installation_process.py:1120
 msgid "Can't execute the MHWD script"
@@ -769,11 +769,11 @@ msgstr "No es pot executar l'script MHWD"
 
 #: src/installation_process.py:1126
 msgid "Configure display manager ..."
-msgstr "Configurant el gestor de visualització..."
+msgstr "S'està configurant el gestor de visualització..."
 
 #: src/installation_process.py:1225
 msgid "Configure System ..."
-msgstr "Configurant el sistema..."
+msgstr "S'està configurant el sistema..."
 
 #: src/installation_process.py:1253
 msgid "Removing live configuration (packages)"
@@ -794,23 +794,23 @@ msgstr "%s: Activa l'inici automàtic de sessió per a l'usuari %s."
 
 #: src/installation_process.py:1387
 msgid "Running mkinitcpio ..."
-msgstr "Executant mkinitcpio..."
+msgstr "S'està executant mkinitcpio..."
 
 #: src/installation_process.py:1390
 msgid "Running mkinitcpio - done"
-msgstr "Executant mkinitcpio - fet"
+msgstr "S'està executant mkinitcpio - fet"
 
 #: src/installation_process.py:1417
 msgid "Encrypting user home dir ..."
-msgstr "Encriptant el directori home de l'usuari..."
+msgstr "S'està encriptant el directori de l'usuari..."
 
 #: src/installation_process.py:1419
 msgid "User home dir encrypted"
-msgstr "Directori home de l'usuari encriptat"
+msgstr "Directori de l'usuari encriptat"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
-msgstr ""
+msgstr "No es pot copiar el registre del Thus a /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -844,7 +844,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "El Thus és programari beta de pre-producció que encara està en desenvolupament.\nEncara no gestiona correctament RAID, subvolums btrfs ni altres configuracions avançades.\nSi us plau, procediu amb precaució ja que hi ha possibilitat de pèrdua de dades!\n\nSi trobeu qualsevol error, si us plau envieu-lo a: <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "El Thus és programari beta de pre-producció que encara està en desenvolupament.\nEncara no gestiona correctament la RAID, els subvolums btrfs ni altres configuracions avançades.\nSi us plau, procediu amb precaució ja que podríeu perdre dades!\n\nSi trobeu qualsevol error, si us plau envieu-lo a: <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -892,7 +892,7 @@ msgstr "No es pot verificar si %s és un disc SSD o no"
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr "Ho sento però el sistema de fiters %s no es pot encongir"
+msgstr "El sistema de fitxers %s no es pot encongir"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1206,7 +1206,7 @@ msgstr "<span weight=\"light\" size=\"small\">Això configurarà l'LVM permetent
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Això configurarà el vostre  directori en una partició o volum diferentf</span>"
+msgstr "<span weight=\"light\" size=\"small\">Això configurarà el vostre  directori d'usuari en una partició o volum diferent</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"

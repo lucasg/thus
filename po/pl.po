@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 21:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-06 10:07+0000\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/manjaro-thus/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +51,7 @@ msgstr "Instalator Thus w wersji %s"
 #: thus.py:218
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr "Używanie pliku '%s' jako listy pakietów"
+msgstr "Wykorzystanie pliku '%s' jako listy pakietów"
 
 #: thus.py:235
 msgid "Manjaro Installer"
@@ -69,21 +69,21 @@ msgstr "Odmontowywanie %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Nie można usunąć istniejących wolumenów LVM (zobacz poniżej)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Nie można zamknąć urządzeń LUKS (zobacz poniżej)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus ustawi LUKS na urządzeniu %s"
 
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Zostanie ustawione LVM na urządzeniu %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -344,7 +344,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB wymaga partycji rozruchowej BIOS (2 MB, bez systemu plików, kod rodzaju \"EF02\" w gdisk lub flaga \"bios_grub\" w GNU Parted) w systemach BIOS, aby móc dodać swój plik core.img w związku z brakiem zapisywalnej luki po MBR w dyskach GPT.\n\nThus za chwilę utworzy tę szczególną partycję dla Ciebie."
 
 #: src/installation_advanced.py:1427
 #, python-format
@@ -438,7 +438,7 @@ msgstr "System plików"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Nie można utworzyć listy partycji dla instalacji systemów obok siebie."
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -458,26 +458,26 @@ msgstr "Uwaga: Ta operacja usunie wszystkie dane na Twoim dysku"
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Zaszyfruj tę instalację dla zwiększenia bezpieczeństwa."
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "W następnym kroku zostaniesz poproszony o klucz szyfrowania."
 
 #: src/installation_ask.py:153
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "To skonfiguruje LVM pozwalając na tworzenie migawek i zmianę w łatwy sposób rozmiaru partycji."
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Ustaw swój Katalog domowy na innej partycji/wolumenie"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "To ustawi Twój katalog /home na innej partycji lub wolumenie."
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -492,7 +492,7 @@ msgstr "Zarządzaj partycjami i wybierz, gdzie zainstalować Manjaro (zaawansowa
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Będziesz mógł tworzyć/usuwać partycje, wybrać gdzie zainstalować Manjaro, a także wybrać dodatkowe punkty montowania."
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -500,15 +500,15 @@ msgstr "Instalacja Manjaro będzie szyfrowana przy użyciu LUKS"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro zostanie zainstalowane z wykorzystaniem wolumenów LVM"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro zostanie zainstalowane z wykorzystaniem odrębnego wolumenu /home."
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro zostanie zainstalowane z wykorzystaniem odrębnej partycji /home."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -564,7 +564,7 @@ msgstr "Kopiowanie '/%s'"
 #: src/installation_process.py:165
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr "Instalacja używając metody '%s'"
+msgstr "Instalacja z wykorzystaniem metody '%s'"
 
 #: src/installation_process.py:244
 #, python-format
@@ -609,13 +609,13 @@ msgstr "Instalowanie programu rozruchowego..."
 
 #: src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "Nieznany błąd"
 
 #: src/installation_process.py:407 src/installation_process.py:420
 #: src/installation_process.py:428
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Nie można odmontować %s"
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
@@ -662,7 +662,7 @@ msgstr "Nie udało się odmontować %s"
 #: src/installation_process.py:568
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Wystąpił błąd podczas uruchamiania polecenia: %s"
 
 #: src/installation_process.py:630
 #, python-format
@@ -707,7 +707,7 @@ msgstr "Wystąpił błąd podczas zmiany hasła dla użytkownika %s"
 
 #: src/installation_process.py:859
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Ustawianie zaczepów i modułów w mkinitcpio.conf"
 
 #: src/installation_process.py:937 src/installation_process.py:948
 msgid "Configuring your new system"
@@ -728,7 +728,7 @@ msgstr "Ustawiono strefę czasową."
 #: src/installation_process.py:996
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "Ukończono konfigurację sudo dla użytkownika %s."
 
 #: src/installation_process.py:1002
 #, python-format
@@ -738,11 +738,11 @@ msgstr "Dodano użytkownika %s."
 #: src/installation_process.py:1014
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Ustawiono nazwę komputera %s."
 
 #: src/installation_process.py:1018
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Ustaw to samo hasło dla roota."
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
@@ -807,7 +807,7 @@ msgstr "Katalog domowy użytkownika został zaszyfrowany"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
-msgstr ""
+msgstr "Nie można skopiować dziennika Thus do /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -841,7 +841,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus jest oprogramowaniem w wersji beta, przed oficjalnym wydaniem,\nwciąż w procesie rozwojowym.\nNie obsługuje jeszcze poprawnie RAID, podwoluminów btrfs i innych\nzaawansowanych ustawień. Proszę liczyć się z możliwością utraty danych!\n\nJeśli odnajdziesz jakiś błąd, proszę odwiedzić <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>."
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -884,12 +884,12 @@ msgstr "Nie można zmienić języka na '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Nie można zweryfikować, czy %s jest urządzeniem Solid State Drive czy nie."
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Przepraszamy, ale nie można zmniejszyć systemu plików %s"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1203,7 +1203,7 @@ msgstr "<span weight=\"light\" size=\"small\">To skonfiguruje LVM pozwalając na
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">To ustawi Twój katalog /home na innej partycji lub wolumenie.</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"
