@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 21:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-08 09:47+0000\n"
+"Last-Translator: Ringo Be <ringodekroon@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +43,7 @@ msgstr "Je kan geen twee sessies laden van deze installer\n\nWeet je zeker dat a
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus installer versie %s"
 
 #: thus.py:218
 #, python-format
@@ -62,25 +62,25 @@ msgstr "Installatieprogramma afsluiten..."
 #: src/installation_process.py:402 src/installation_process.py:414
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Ontkoppel %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Kan niet verwijderen bestaande LVM volumes (zie onder)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Kan niet sluiten LUKS apparaat (zie onder)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus zal LUKS instellen op apparaat %s"
 
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Zal LVM instellen op apparaat %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -93,24 +93,24 @@ msgstr "Wat is je systeem opstart type?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS ( meestal Algemeen)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit uefi"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Selecteer 'Afbreken' als je geen bootlader wilt installeren."
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "Kan locale %s niet instellen"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -138,12 +138,12 @@ msgstr "Wachtwoord komt niet overheen"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "Systeem controllen"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "Heeft minstens %dGB aanwezig op opslag medium"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -312,7 +312,7 @@ msgstr "Label (optioneel):"
 
 #: src/installation_advanced.py:1140
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Encryptie opties"
 
 #: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -320,7 +320,7 @@ msgstr "Format:"
 
 #: src/installation_advanced.py:1162
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Partitie Tabel Type:"
 
 #: src/installation_advanced.py:1167
 msgid "Create Partition Table"
@@ -341,7 +341,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB heeft BIOS Boot partitie nodig (2MiB, gee, bestandsysteem,\"EF02\" type code in gdisk of \"bios_grub\" vlag in GNU parted)  In het BIOS systemen zijn core.img bestand insluiten door gebrek aan post-MBR embed gat in GPT-schijven\n\nThus zal dit speciaal partitie voor jouw maken nu."
 
 #: src/installation_advanced.py:1427
 #, python-format
@@ -406,7 +406,7 @@ msgstr "Manjaro installerd de bootlader van type %s in %s"
 
 #: src/installation_advanced.py:1685
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus zal geen bootlader installeren"
 
 #: src/installation_advanced.py:1699 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -435,7 +435,7 @@ msgstr "Bestandsysteem"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Is onmogelijk om een lijst te maken voor partities ziijdelinks installatie"
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -455,26 +455,26 @@ msgstr "Waarschuwing: Dit wil al je gegevens wissen op je disk!"
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Encrypt dit installatie om beveiliging te bevorderen."
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Je zal worden gevraagd voor encryptie sleutel in de volgende stap."
 
 #: src/installation_ask.py:153
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Dit zal LVM instellen en geeft mogelijkheid om een snapshot the maken van gewijzigd partitie groote in een recht toe recht aan manier."
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Zet je Home in een andere partitie/volume"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Dit zal je /home directory instellen in een andere partitie of volume."
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -489,23 +489,23 @@ msgstr "Beheer je partities waar Manjaro te installeren (geadvanceerd)"
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Je krijgt een mogelijkheid om een partitie te maken/verwijderen,kies waar manjaro te installeren en kies ook toegevoegde koppelpunten."
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Manjaro installatie zal worden geencrypred met LUKS"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro zal worden geinstalleerd gebruik met LVM volumes"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro zal geinstalleerd worden op een aparte /home volume."
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro zal worden geinstalleerd op een aparte /home partitie."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -536,7 +536,7 @@ msgstr "Bevestig wachtwoord voor uw Luks apparaat:"
 
 #: src/installation_automatic.py:153
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "LUKS wachtwoord is ingesteld"
 
 #: src/installation_automatic.py:155
 #, python-format
@@ -566,7 +566,7 @@ msgstr "Installeer volgens de '%s\" methode"
 #: src/installation_process.py:244
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Maak partities en bijbehorende bestandssystemen in %s"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
@@ -594,7 +594,7 @@ msgstr "Kan niet %s op %s koppelen"
 #: src/installation_process.py:346
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s Verwijderd"
 
 #: src/installation_process.py:356
 msgid "Can't create necessary directories on destination system"
@@ -602,41 +602,41 @@ msgstr "Kan niet benodigde mappen creeeren op bestemming systeem"
 
 #: src/installation_process.py:374
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Installeren bootlader ..."
 
 #: src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "Onbekend fout"
 
 #: src/installation_process.py:407 src/installation_process.py:420
 #: src/installation_process.py:428
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Kan niet ontkoppelen %s"
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Installatie is met secces geeindigd."
 
 #: src/installation_process.py:448
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Basis bestandsysteem bestaat niet! kritieke fout (verlaten)"
 
 #: src/installation_process.py:451
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Bureaublad bestandsysteem bestaat niet! Kritieke fout (verlaten)."
 
 #: src/installation_process.py:467
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "indexeren bestanden  te kopieren .."
 
 #: src/installation_process.py:472
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Uitpakken root-image ..."
 
 #: src/installation_process.py:482
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "Uitpakken bureaublad-image"
 
 #: src/installation_process.py:497
 #, python-format
@@ -659,12 +659,12 @@ msgstr "Onmogelijk te umount %s"
 #: src/installation_process.py:568
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Fout lopende commando: %s"
 
 #: src/installation_process.py:630
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Toegevoegd in Fstab : UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:716
 #, python-format
@@ -704,7 +704,7 @@ msgstr "Fout veranderen wachtwoord voor gebruiker %s"
 
 #: src/installation_process.py:859
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Instellen Hooks en modules in mkinitcpio.conf"
 
 #: src/installation_process.py:937 src/installation_process.py:948
 msgid "Configuring your new system"
@@ -712,50 +712,50 @@ msgstr "Instellen van je nieuwe systeem"
 
 #: src/installation_process.py:940
 msgid "fstab file generated."
-msgstr ""
+msgstr "fstab bestand genereerd."
 
 #: src/installation_process.py:946
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Network configuratie gekopieerd."
 
 #: src/installation_process.py:976
 msgid "Timezone set."
-msgstr ""
+msgstr "Tijdzone set."
 
 #: src/installation_process.py:996
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "Sudo configuratie voor gebruikers %s klaar."
 
 #: src/installation_process.py:1002
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Gebruiker %s toegevoegd."
 
 #: src/installation_process.py:1014
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Hostnaam %s set."
 
 #: src/installation_process.py:1018
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Stel de zelfde wachtwoord als root."
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Genereer locales ..."
 
 #: src/installation_process.py:1044
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Bijstellen hardware klok .."
 
 #: src/installation_process.py:1050
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Configureren van hardware ..."
 
 #: src/installation_process.py:1113
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Instellen van graphische kaart .."
 
 #: src/installation_process.py:1120
 msgid "Can't execute the MHWD script"
@@ -763,11 +763,11 @@ msgstr "Kan niet MHWD script uitvoeren"
 
 #: src/installation_process.py:1126
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Configureren Display Manager .."
 
 #: src/installation_process.py:1225
 msgid "Configure System ..."
-msgstr ""
+msgstr "Configureer Systeem .."
 
 #: src/installation_process.py:1253
 msgid "Removing live configuration (packages)"
@@ -788,23 +788,23 @@ msgstr "%s Inschakelen automatische login voor gebruikers %s."
 
 #: src/installation_process.py:1387
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Laad Mkinitcpio ..."
 
 #: src/installation_process.py:1390
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "Laden mkinitcpio - gedaan"
 
 #: src/installation_process.py:1417
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Enctypten gebruikers home dir .."
 
 #: src/installation_process.py:1419
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Gebruiker home map geencrypted"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
-msgstr ""
+msgstr "Kan niet kopieren Thus log naar /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -838,7 +838,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus is pre-uitgave software dat onder actieve  ontwikkeling staat.\nHet doet Raid niet keurig behandelen eveneens btrfs subvolumes en andere geadvanceerde Setups. Alstublieft wees voorzichtig en oppassen van verlies van data.\n\nAls u bugs vind, geef het door op <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -881,12 +881,12 @@ msgstr "Kan locale niet veranderen naar '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Kan niet aantonen dat %s is een Solid Sate Drive of niet."
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Sorry maar bestandsysteem %s kan niet worden verkleint."
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1200,7 +1200,7 @@ msgstr "<span weight=\"light\" size=\"small\">Dit zal LVM setup toestaan ​​o
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\"> Dit zal je /home directory instellen in een andere partitie of volume.</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"

@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-06 17:21+0000\n"
+"PO-Revision-Date: 2013-12-07 23:48+0000\n"
 "Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -225,7 +225,7 @@ msgstr "SSD"
 
 #: src/installation_advanced.py:480
 msgid "none"
-msgstr "niciuna"
+msgstr "niciunul"
 
 #: src/installation_advanced.py:530 src/installation_advanced.py:933
 #: src/installation_advanced.py:1391 src/installation_advanced.py:1470
@@ -343,7 +343,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr "GRUB necesită o partiție de boot BIOS (2 MiB, fără sistem de fișiere, cod tip „EF02” în gdisk sau steag „bios_grub” în GNU Parted) pentru sisteme BIOS pentru a-și încastra fișierul core.img datorită lipsei de spațiu de încastrare post-MBR pe discuri GPT. \\n\\nThus va crea această partiție specială acum."
+msgstr "GRUB necesită o partiție de boot BIOS (2 MiB, fără sistem de fișiere, cod tip „EF02” în gdisk sau steag „bios_grub” în GNU Parted) pentru sisteme BIOS pentru a-și încastra fișierul core.img datorită lipsei de spațiu de încastrare post-MBR pe discuri GPT.\n\nThus va crea această partiție specială acum."
 
 #: src/installation_advanced.py:1427
 #, python-format
@@ -840,7 +840,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus este soft în beta prelansare, în dezvoltare activă. Nu gestionează \\ncorect încă RAID, subvolume btrfs sau alte configurații avansate. \\nContinuați cu grijă - sunt posibile pierderi de date! \\n\\nDacă găsiți hibe, raportați-le la <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "Thus este soft în beta prelansare, în dezvoltare activă. Nu gestionează\ncorect încă RAID, subvolume btrfs sau alte configurații avansate.\nContinuați cu grijă - sunt posibile pierderi de date!\n\nDacă găsiți hibe, raportați-le la <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
