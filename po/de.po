@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-09 14:55+0000\n"
+"POT-Creation-Date: 2013-12-09 17:12+0100\n"
+"PO-Revision-Date: 2013-12-09 16:18+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,8 @@ msgid "Quiting installer..."
 msgstr "Beende Installtionsprogramm ..."
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
-#: src/installation_process.py:402 src/installation_process.py:414
+#: src/installation_process.py:402 src/installation_process.py:415
+#: src/installation_process.py:426
 #, python-format
 msgid "Unmounting %s"
 msgstr "Entferne %s"
@@ -201,7 +202,7 @@ msgstr "Einhängepunkt"
 msgid "Label"
 msgstr "Beschriftung"
 
-#: src/installation_advanced.py:288 src/installation_advanced.py:1517
+#: src/installation_advanced.py:288 src/installation_advanced.py:1518
 msgid "Format"
 msgstr "Format"
 
@@ -225,9 +226,8 @@ msgstr "SSD"
 msgid "none"
 msgstr "keine Angabe"
 
-#: src/installation_advanced.py:530 src/installation_advanced.py:933
-#: src/installation_advanced.py:1391 src/installation_advanced.py:1470
-#: src/installation_advanced.py:1663
+#: src/installation_advanced.py:530 src/installation_advanced.py:1392
+#: src/installation_advanced.py:1471
 msgid "extended"
 msgstr "erweitert"
 
@@ -243,107 +243,107 @@ msgstr "Root Partition muss formatiert werden ..."
 msgid "Creating primary partition"
 msgstr "Primäre Partition wird erstellt"
 
-#: src/installation_advanced.py:935
+#: src/installation_advanced.py:936
 msgid "Creating extended partition"
 msgstr "Erweiterte Partition wird erstellt"
 
-#: src/installation_advanced.py:941
+#: src/installation_advanced.py:942
 msgid "Creating logical partition"
 msgstr "Logische Partition wird erstellt"
 
-#: src/installation_advanced.py:1073
+#: src/installation_advanced.py:1074
 msgid "Advanced installation mode"
 msgstr "Erweiterte Installation"
 
-#: src/installation_advanced.py:1077 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1078 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
 msgstr "Benutze dieses Gerät für Boot Loader Installation:"
 
-#: src/installation_advanced.py:1087 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1088 ui/installation_advanced.ui:915
 msgid "New partition table"
 msgstr "Neue Partitionstabelle"
 
-#: src/installation_advanced.py:1095
+#: src/installation_advanced.py:1096
 msgid "Change..."
 msgstr "Ändern..."
 
-#: src/installation_advanced.py:1100 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1101 ui/installation_advanced.ui:98
 msgid "Size:"
 msgstr "Größe:"
 
-#: src/installation_advanced.py:1104 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1105 ui/installation_advanced.ui:300
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/installation_advanced.py:1108 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1109 ui/installation_advanced.ui:317
 msgid "Primary"
 msgstr "Primäre"
 
-#: src/installation_advanced.py:1112 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1113 ui/installation_advanced.ui:337
 msgid "Logical"
 msgstr "Logische"
 
-#: src/installation_advanced.py:1116 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1117 ui/installation_advanced.ui:357
 msgid "Extended"
 msgstr "Erweiterte"
 
-#: src/installation_advanced.py:1120 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1121 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
 msgstr "Beginn dieses Speichers"
 
-#: src/installation_advanced.py:1124 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1125 ui/installation_advanced.ui:222
 msgid "End of this space"
 msgstr "Ende dieses Speichers"
 
-#: src/installation_advanced.py:1128 src/installation_advanced.py:1145
+#: src/installation_advanced.py:1129 src/installation_advanced.py:1146
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
 msgstr "Benutzen als:"
 
-#: src/installation_advanced.py:1132 src/installation_advanced.py:1149
+#: src/installation_advanced.py:1133 src/installation_advanced.py:1150
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
 msgstr "Einhängepunkt:"
 
-#: src/installation_advanced.py:1136 src/installation_advanced.py:1153
+#: src/installation_advanced.py:1137 src/installation_advanced.py:1154
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
 msgstr "Beschriftung (optional):"
 
-#: src/installation_advanced.py:1140
+#: src/installation_advanced.py:1141
 msgid "Encryption Options..."
 msgstr "Verschlüsselungsoptionen..."
 
-#: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1158 ui/installation_advanced.ui:698
 msgid "Format:"
 msgstr "Format:"
 
-#: src/installation_advanced.py:1162
+#: src/installation_advanced.py:1163
 msgid "Partition Table Type:"
 msgstr "Partitionstabellentyp:"
 
-#: src/installation_advanced.py:1167
+#: src/installation_advanced.py:1168
 msgid "Create Partition Table"
 msgstr "Erstelle Partitionstabelle"
 
-#: src/installation_advanced.py:1170 src/installation_alongside.py:149
-#: src/installation_automatic.py:104
+#: src/installation_advanced.py:1171 src/installation_alongside.py:149
+#: src/installation_automatic.py:107
 msgid "Install now!"
 msgstr "Jetzt Installieren!"
 
-#: src/installation_advanced.py:1258
+#: src/installation_advanced.py:1259
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Eine neue Partition vom Typ %s für die Festplatte %s wird erstellt"
 
-#: src/installation_advanced.py:1268
+#: src/installation_advanced.py:1269
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr "GRUB benötigt eine BIOS Boot Partition (2 MiB, kein Dateisystem, \"EF02\" Typ in gdisk oder \"bios_grub\" Flag in GNU Parted) für BIOS-basierende systeme um seine core.img-Datei wegen Mangel der post-MBR Lücke bei GPT-Laufwerken einbinden zu können.\n\nThus wird diese spezielle Partition für Sie nun erstellen."
 
-#: src/installation_advanced.py:1427
+#: src/installation_advanced.py:1428
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -351,7 +351,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s ist als swap eingehängt.\nUm Fortzufahren muss es ausgehängt werden.\nDrücken Sie \"Ja\", um auszuhängen, \"Nein\" um zurückzukehren.\n"
 
-#: src/installation_advanced.py:1430
+#: src/installation_advanced.py:1431
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -359,56 +359,56 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s ist eingehangen in '%s'.\nUm fortzufahren muss das Medium erst ausgworfen werden.\nKlicken Sie auf Ja um das Medium auszuwerfen oder auf Nein um zurückzukehren\n"
 
-#: src/installation_advanced.py:1451
+#: src/installation_advanced.py:1452
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr "%s wird als eingebunden (busy) angezeigt, hat aber keinen Einhängepunkt"
 
-#: src/installation_advanced.py:1510
+#: src/installation_advanced.py:1511
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "Partition %s wird gelöscht"
 
-#: src/installation_advanced.py:1517
+#: src/installation_advanced.py:1518
 msgid "Partition"
 msgstr "Partition"
 
-#: src/installation_advanced.py:1517
+#: src/installation_advanced.py:1518
 msgid "New"
 msgstr "Neu"
 
-#: src/installation_advanced.py:1517
+#: src/installation_advanced.py:1518
 msgid "Relabel"
 msgstr "Umbenennen"
 
-#: src/installation_advanced.py:1517
+#: src/installation_advanced.py:1518
 msgid "Mount"
 msgstr "Einhängen"
 
-#: src/installation_advanced.py:1538
+#: src/installation_advanced.py:1539
 msgid "These disks will have partition actions:"
 msgstr "An dieser Festplatte werden folgende Änderungen vorgenommen:"
 
-#: src/installation_advanced.py:1591
+#: src/installation_advanced.py:1592
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Speichere Änderungen die in %s gemacht wurden"
 
-#: src/installation_advanced.py:1605
+#: src/installation_advanced.py:1606
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Erstelle %s Dateisystem in %s beschriftet als %s"
 
-#: src/installation_advanced.py:1682
+#: src/installation_advanced.py:1684
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro wird jetzt den Bootloader des Typs %s hier:%s installieren."
 
-#: src/installation_advanced.py:1685
+#: src/installation_advanced.py:1687 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
 msgstr "Thus wird keinen Bootloader installieren"
 
-#: src/installation_advanced.py:1699 src/installation_automatic.py:224
+#: src/installation_advanced.py:1701 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Testmodus. Thus wird keine Veränderung an Ihrem System vornehmen!"
 
@@ -441,69 +441,69 @@ msgstr "Konnte keine Partitionsliste für die Nebeninstallation erstellen."
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Kann die Partition nicht verkleinern (Vielleicht ist sie fast voll?)"
 
-#: src/installation_ask.py:117
+#: src/installation_ask.py:106
 msgid "Installation type"
 msgstr "Installationsart"
 
-#: src/installation_ask.py:131 ui/installation_ask.ui:33
+#: src/installation_ask.py:120 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
 msgstr "Lösche die Festplatte komplett und installiere Manjaro (automatisch)"
 
-#: src/installation_ask.py:134
+#: src/installation_ask.py:123
 msgid "Warning: This will delete all data on your disk"
 msgstr "Warnung: Dies wird alle Daten auf Ihrer Festplatte löschen"
 
-#: src/installation_ask.py:140
+#: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
 msgstr "Verschlüssele diese Installation für mehr Sicherheit."
 
-#: src/installation_ask.py:144
+#: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
 msgstr "Sie werden nach dem Veschlüsselungsschlüssel im nächsten Schritt gefragt."
 
-#: src/installation_ask.py:153
+#: src/installation_ask.py:142
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
 msgstr "Hierdurch wird LVM eingestellt, was es Ihnen ermöglicht, sehr einfach Snapshots zu machen oder die Größe von Partitionen zu ändern."
 
-#: src/installation_ask.py:158 ui/installation_ask.ui:133
+#: src/installation_ask.py:147 ui/installation_ask.ui:136
 msgid "Set your Home in a different partition/volume"
 msgstr "Erstelle eine separate Partition/Volume für Ihr Home-Verzeichnis"
 
-#: src/installation_ask.py:162
+#: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
 msgstr "Ihr /home Verzeichnis wird in einer separaten Partition oder Volumen erstellt."
 
-#: src/installation_ask.py:170 src/installation_ask.py:172
+#: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
 msgid "Install Manjaro alongside %s"
 msgstr "Installiere Manjaro neben %s"
 
-#: src/installation_ask.py:179
+#: src/installation_ask.py:168
 msgid "Manage your partitions and where to install Manjaro (advanced)"
 msgstr "Organisieren Sie Ihre Partitionen und Installationsart (fortgeschritten)"
 
-#: src/installation_ask.py:182
+#: src/installation_ask.py:171
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
 msgstr "Hiermit sind Sie in der Lage, Partitionen zu erstellen und diese zu ändern, Auszuwählen, \nwo Manjaro installiert werden soll und zusätzliche Einhängepunkte auszuwählen."
 
-#: src/installation_ask.py:208
+#: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
 msgstr "Die Manjaro Installation wird mit LUKS verschlüsselt sein"
 
-#: src/installation_ask.py:211
+#: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
 msgstr "Manjaro wird LVM Volumen bei der Installation nutzen"
 
-#: src/installation_ask.py:213
+#: src/installation_ask.py:202
 msgid "Manjaro will be installed using a separate /home volume."
 msgstr "Manjaro wird mit einem separaten /home Volumen installiert."
 
-#: src/installation_ask.py:215
+#: src/installation_ask.py:204
 msgid "Manjaro will be installed using a separate /home partition."
 msgstr "Manjaro wird mit einem separaten /home Partition installiert."
 
@@ -527,28 +527,33 @@ msgid ""
 msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Manjaro installieren wollen.\nDrücken Sie den Knopf unten um den Installationsprozess zu beginnen."
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
-msgid "Choose a password for your LUKS device:"
-msgstr "Wählen Sie ein Verschlüsselungspassword:"
+msgid "Encryption Password:"
+msgstr "Verschlüsselungspasswort:"
 
-#: src/installation_automatic.py:101 ui/installation_automatic.ui:161
-msgid "Confirm your password for your LUKS device:"
-msgstr "Bestätigen Sie das Verschlüsselungspassword:"
+#: src/installation_automatic.py:101 src/user_info.py:112
+#: ui/installation_automatic.ui:161 ui/user_info.ui:78
+msgid "Confirm your password:"
+msgstr "Bestätigen Sie das Passwort:"
 
-#: src/installation_automatic.py:153
+#: src/installation_automatic.py:105 ui/installation_automatic.ui:258
+msgid "show password"
+msgstr "zeige Passwort"
+
+#: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
 msgstr "Ein LUKS-Passwort wurde gesetzt"
 
-#: src/installation_automatic.py:155
+#: src/installation_automatic.py:165
 #, python-format
 msgid "Automatic install on %s"
 msgstr "Automatische Installation auf %s"
 
-#: src/installation_automatic.py:189
+#: src/installation_automatic.py:199
 #, python-format
 msgid "Thus will use %s as installation device"
 msgstr "Thus wird %s als Installations-Laufwerk nutzen. "
 
-#: src/installation_automatic.py:198
+#: src/installation_automatic.py:208
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
 msgstr "Thus wird den Bootloader vom Typ %s in %s installieren"
@@ -608,201 +613,201 @@ msgstr "Installiere Bootloader ..."
 msgid "Unknown error"
 msgstr "Unbekannter Fehler"
 
-#: src/installation_process.py:407 src/installation_process.py:420
-#: src/installation_process.py:428
+#: src/installation_process.py:407 src/installation_process.py:421
+#: src/installation_process.py:431
 #, python-format
 msgid "Can't unmount %s"
 msgstr "Konnte %s nicht aushängen"
 
-#: src/installation_process.py:430
+#: src/installation_process.py:433
 msgid "Installation finished successfully."
 msgstr "Installation war erfolgreich."
 
-#: src/installation_process.py:448
+#: src/installation_process.py:451
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Basis-Dateisystem existiert nicht! Kritischer Fehler (Abbruch)."
 
-#: src/installation_process.py:451
+#: src/installation_process.py:454
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Desktop-Dateisystem existiert nicht! Kritischer Fehler (Abbruch)."
 
-#: src/installation_process.py:467
+#: src/installation_process.py:470
 msgid "Indexing files to be copied ..."
 msgstr "Überprüfe zu kopierende Dateien ..."
 
-#: src/installation_process.py:472
+#: src/installation_process.py:475
 msgid "Extracting root-image ..."
 msgstr "Extrahiere root-image ..."
 
-#: src/installation_process.py:482
+#: src/installation_process.py:485
 msgid "Extracting desktop-image ..."
 msgstr "Extrahiere desktop-image ..."
 
-#: src/installation_process.py:497
+#: src/installation_process.py:500
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Stelle die Meta-Informationen auf %s wieder her."
 
-#: src/installation_process.py:512
+#: src/installation_process.py:515
 msgid "Special dirs already mounted."
 msgstr "Spezialordner sind schon eingebunden."
 
-#: src/installation_process.py:539
+#: src/installation_process.py:542
 msgid "Special dirs already not mounted."
 msgstr "Spezialordner sind noch nicht eingebunden."
 
-#: src/installation_process.py:549
+#: src/installation_process.py:552
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Konnte %s nicht einbinden"
 
-#: src/installation_process.py:568
+#: src/installation_process.py:571
 #, python-format
 msgid "Error running command: %s"
 msgstr "Fehler beim Ausführen von: %s"
 
-#: src/installation_process.py:630
+#: src/installation_process.py:633
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Fstab hinzugefügt : UUID=%s %s %s %s 0 %s"
 
-#: src/installation_process.py:716
+#: src/installation_process.py:719
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installiere GRUB(2) BIOS Boot Loader in %s"
 
-#: src/installation_process.py:739 src/installation_process.py:756
+#: src/installation_process.py:742 src/installation_process.py:759
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "Ein FEHLER trat bei der Installation von GRUB(2) BIOS auf."
 
-#: src/installation_process.py:754
+#: src/installation_process.py:757
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS wurde erfolgreich installiert."
 
-#: src/installation_process.py:768
+#: src/installation_process.py:771
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installiere GRUB(2) UEFI %s Boot Loader in %s"
 
-#: src/installation_process.py:796
+#: src/installation_process.py:799
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "FEHLER beim Installieren der GRUB(2) Configurations-Datei."
 
-#: src/installation_process.py:825
+#: src/installation_process.py:828
 msgid "ERROR installing GRUB(2) locale."
 msgstr "FEHLER beim Installieren der GRUB(2) Lokalisationen."
 
-#: src/installation_process.py:841
+#: src/installation_process.py:844
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Eine Fehler trat bei der Erstellung des Passwortes für den Nutzer %s auf"
 
-#: src/installation_process.py:847
+#: src/installation_process.py:850
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Es trat ein Fehler bei der Änderung des Passwortes von Nutzer %s auf"
 
-#: src/installation_process.py:859
+#: src/installation_process.py:862
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Erstelle Hooks und Module in mkinitcpio.conf"
 
-#: src/installation_process.py:937 src/installation_process.py:948
+#: src/installation_process.py:940 src/installation_process.py:951
 msgid "Configuring your new system"
 msgstr "Ihr neues System wird eingerichtet"
 
-#: src/installation_process.py:940
+#: src/installation_process.py:943
 msgid "fstab file generated."
 msgstr "Fstab-Datei erstellt."
 
-#: src/installation_process.py:946
+#: src/installation_process.py:949
 msgid "Network configuration copied."
 msgstr "Netzwerkkonfiguration kopiert."
 
-#: src/installation_process.py:976
+#: src/installation_process.py:979
 msgid "Timezone set."
 msgstr "Zeitzone gesetzt."
 
-#: src/installation_process.py:996
+#: src/installation_process.py:999
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Sudo-Konfiguration für Benutzer %s erzeugt."
 
-#: src/installation_process.py:1002
+#: src/installation_process.py:1005
 #, python-format
 msgid "User %s added."
 msgstr "Benutzer %s hinzugefügt."
 
-#: src/installation_process.py:1014
+#: src/installation_process.py:1017
 #, python-format
 msgid "Hostname  %s set."
 msgstr "Hostname %s gesetzt."
 
-#: src/installation_process.py:1018
+#: src/installation_process.py:1021
 msgid "Set the same password to root."
 msgstr "Gleiche Passwort für Root gesetzt."
 
-#: src/installation_process.py:1024
+#: src/installation_process.py:1027
 msgid "Generating locales ..."
 msgstr "Erzeuge Lokale ..."
 
-#: src/installation_process.py:1044
+#: src/installation_process.py:1047
 msgid "Adjusting hardware clock ..."
 msgstr "Stelle Hardware-Uhr ein ..."
 
-#: src/installation_process.py:1050
+#: src/installation_process.py:1053
 msgid "Configuring hardware ..."
 msgstr "Konfiguriere Hardware ..."
 
-#: src/installation_process.py:1113
+#: src/installation_process.py:1116
 msgid "Set up graphics card ..."
 msgstr "Konfiguriere Grafikkarte ..."
 
-#: src/installation_process.py:1120
+#: src/installation_process.py:1123
 msgid "Can't execute the MHWD script"
 msgstr "Kann das MHWD-Skript nicht ausführen."
 
-#: src/installation_process.py:1126
+#: src/installation_process.py:1129
 msgid "Configure display manager ..."
 msgstr "Konfiguriere Display-Manager ..."
 
-#: src/installation_process.py:1225
+#: src/installation_process.py:1228
 msgid "Configure System ..."
 msgstr "Konfiguriere System ..."
 
-#: src/installation_process.py:1253
+#: src/installation_process.py:1256
 msgid "Removing live configuration (packages)"
 msgstr "Entferne die Pakete der Live-Konfigurationen."
 
-#: src/installation_process.py:1269
+#: src/installation_process.py:1272
 msgid "Configuring package manager"
 msgstr "Konfiguriere Paketverwaltung"
 
-#: src/installation_process.py:1284
+#: src/installation_process.py:1287
 msgid "Finished configuring package manager."
 msgstr "Die Konfiguration der Paketverwaltung ist beendet."
 
-#: src/installation_process.py:1308
+#: src/installation_process.py:1311
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Aktiviere automatisches Login für Benutzer %s."
 
-#: src/installation_process.py:1387
+#: src/installation_process.py:1390
 msgid "Running mkinitcpio ..."
 msgstr "Führe mkinitcpio aus ..."
 
-#: src/installation_process.py:1390
+#: src/installation_process.py:1393
 msgid "Running mkinitcpio - done"
 msgstr "Ausführung von mkinitcpio durchgeführt."
 
-#: src/installation_process.py:1417
+#: src/installation_process.py:1420
 msgid "Encrypting user home dir ..."
 msgstr "Verschlüssele Home-Verzeichnis ..."
 
-#: src/installation_process.py:1419
+#: src/installation_process.py:1422
 msgid "User home dir encrypted"
 msgstr "Benutzer verwendet verschlüsseltes Home-Verzeichnis."
 
-#: src/installation_process.py:1427
+#: src/installation_process.py:1430
 msgid "Can't copy Thus log to /var/log"
 msgstr "Konnte Thus-Log nicht nach /var/log kopieren"
 
@@ -991,10 +996,6 @@ msgstr "Wählen Sie ein Passwort:"
 msgid "Password"
 msgstr "Passwort"
 
-#: src/user_info.py:112 ui/user_info.ui:78
-msgid "Confirm your password:"
-msgstr "Bestätigen Sie das Passwort:"
-
 #: src/user_info.py:116
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
@@ -1170,54 +1171,54 @@ msgstr "Manjaro"
 msgid "label"
 msgstr "Bezeichnung"
 
-#: ui/installation_ask.ui:57
+#: ui/installation_ask.ui:58
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
 msgstr "<span weight=\"light\" size=\"small\">Achtung: Hiermit werden alle Programme, Dokumente, Fotos, Musikdateien und alle sonstigen Dateien auf Ihrer Festplatte gelöscht !</span>"
 
-#: ui/installation_ask.ui:69
+#: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
 msgstr "Verschlüsselt die neue Manjaro-Installation zur Sicherheit"
 
-#: ui/installation_ask.ui:90
+#: ui/installation_ask.ui:92
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
 msgstr "<span weight=\"light\" size=\"small\">Sie werden sogleich nach Ihrem Schlüssel für die Verschlüsselung gefragt</span>"
 
-#: ui/installation_ask.ui:101
+#: ui/installation_ask.ui:103
 msgid "Use LVM with the new Manjaro installation"
 msgstr "LVM mit der neuen Manjaro-Installation benutzen"
 
-#: ui/installation_ask.ui:122
+#: ui/installation_ask.ui:125
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
 msgstr "<span weight=\\\"light\\\" size=\\\"small\\\">Hierdurch wird LVM eingestellt, was es Ihnen ermöglicht, sehr einfach Snapshots zu machen oder die Größe von Partitionen zu ändern.</span>"
 
-#: ui/installation_ask.ui:154
+#: ui/installation_ask.ui:158
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Ihr /home Verzeichnis wird in einer separaten Partition oder Volumen erstellt.</span>"
 
-#: ui/installation_ask.ui:165
+#: ui/installation_ask.ui:169
 msgid "Install alongside other OSes"
 msgstr "Neben anderen Betriebssystemen installieren"
 
-#: ui/installation_ask.ui:191
+#: ui/installation_ask.ui:195
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
 msgstr "<span weight=\\\"light\\\" size=\\\"small\\\">Hierdurch wird Manjaro neben anderen, von Ihnen bereits installierten Betriebssystemen installiert</span>"
 
-#: ui/installation_ask.ui:203
+#: ui/installation_ask.ui:207
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
 msgstr "Partitionen ändern und auswählen, wo Manjaro installiert werden soll (für Fortgeschrittene)"
 
-#: ui/installation_ask.ui:229
+#: ui/installation_ask.ui:233
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
@@ -1228,7 +1229,7 @@ msgstr "<span weight=\"light\" size=\"small\">Hiermit sind Sie in der Lage, Part
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr "<b>WARNUNG! Dieser Installationsmodus wird alles auf Ihrem Laufwerk überschreiben!</b>"
+msgstr "<b>WARNUNG! Dieser Installationsmodus wird Alles auf Ihrem Gerät überschreiben!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"

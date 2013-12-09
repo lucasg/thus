@@ -1263,7 +1263,7 @@ class InstallationAdvanced(Gtk.Box):
 
                 self.fill_grub_device_entry()
                 self.fill_partition_list()
-                
+
                 if ptype == 'gpt' and not os.path.exists("/sys/firmware/efi/systab"):
                     # Show warning (see https://github.com/Antergos/Cnchi/issues/63)
                     show.warning(_('GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, "EF02" type code in gdisk '
@@ -1278,7 +1278,7 @@ class InstallationAdvanced(Gtk.Box):
         """ Create an unformatted partition with no filesystem and with a bios_grub flag on. """
         # It won't be formated
         formatme = False
-        
+
         part_type = pm.PARTITION_FREESPACE
 
         self.disks_changed.append(disk_path)
@@ -1317,9 +1317,9 @@ class InstallationAdvanced(Gtk.Box):
                                    end_sector, size, beg_var)
 
         part = pm.create_partition(disk, pm.PARTITION_PRIMARY, geometry)
-        
+
         (res, err) = pm.set_flag(pm.PED_PARTITION_BIOS_GRUB, part)
-        
+
         if res:
             logging.error(err)
 
@@ -1574,7 +1574,7 @@ class InstallationAdvanced(Gtk.Box):
     def get_prev_page(self):
         """ Tell which one is our previous page (in our case installation_ask) """
         return _prev_page
-    
+
     def get_next_page(self):
         """ Tell which one is our next page """
         return _next_page

@@ -63,7 +63,7 @@ class Check(Gtk.Box):
         self.ui.connect_signals(self)
 
         self.remove_timer = False
-        
+
         self.thread = None
 
         self.third_party_info = None

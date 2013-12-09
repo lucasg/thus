@@ -94,15 +94,25 @@ class InstallationAutomatic(Gtk.Box):
         label.set_markup(txt)
 
         label = self.ui.get_object('label_luks_password')
-        txt = _("Choose a password for your LUKS device:")
+        txt = _("Encryption Password:")
         label.set_markup(txt)
 
         label = self.ui.get_object('label_luks_password_confirm')
-        txt = _("Confirm your password for your LUKS device:")
+        txt = _("Confirm your password:")
         label.set_markup(txt)
+
+        btn = self.ui.get_object('checkbutton_show_password')
+        btn.set_label(_("show password"))
 
         txt = _("Install now!")
         self.forward_button.set_label(txt)
+
+    def on_checkbutton_show_password_toggled(self, widget):
+        """ show/hide LUKS passwords """
+        btn = self.ui.get_object('checkbutton_show_password')
+        show = btn.get_active()
+        self.entry['luks_password'].set_visibility(show)
+        self.entry['luks_password_confirm'].set_visibility(show)
 
     @misc.raise_privileges
     def populate_devices(self):
@@ -198,14 +208,12 @@ class InstallationAutomatic(Gtk.Box):
             logging.info(_("Thus will install the bootloader of type %s in %s") % \
                 (self.settings.get('bootloader_type'), self.settings.get('bootloader_device')))
         else:
-            logging.warning("Thus will not install any boot loader")
+            logging.warning(_("Thus will not install any boot loader"))
 
         # We don't need to pass neither which devices will be mounted nor which filesystems
         # the devices will be formated with, as auto_partition.py takes care of everything
         # in an automatic installation.
-
         mount_devices = {}
-
         fs_devices = {}
 
         self.settings.set('auto_device', self.auto_device)

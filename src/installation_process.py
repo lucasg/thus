@@ -411,7 +411,7 @@ class InstallationProcess(multiprocessing.Process):
                 mount_dir = self.dest_dir + path
                 if path != '/' and path != 'swap' and path !='':
                     try:
-                        
+
                         txt = _("Unmounting %s") % mount_dir
                         self.queue_event('debug', txt)
                         subprocess.check_call(['umount', mount_dir])
@@ -1420,7 +1420,7 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', _("Encrypting user home dir ..."))
             encfs.setup(username, self.dest_dir)
             self.queue_event('debug', _("User home dir encrypted"))
- 
+
         # Last but not least, copy Cnchi log to new installation
         datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
         dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)

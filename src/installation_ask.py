@@ -248,7 +248,7 @@ class InstallationAsk(Gtk.Box):
     def on_encrypt_checkbutton_toggled(self, widget):
         """ Disable home-dir option when encrypt is checked """
         check = self.ui.get_object("home_checkbutton")
-        if widget.get_active():
+        if widget.get_active() and not self.settings.get("use_staging"):
             check.set_active(False)
             check.set_sensitive(False)
         else:
@@ -257,7 +257,7 @@ class InstallationAsk(Gtk.Box):
     def on_lvm_checkbutton_toggled(self, widget):
         """ Disable home-dir option when lvm is checked """
         check = self.ui.get_object("home_checkbutton")
-        if widget.get_active():
+        if widget.get_active() and not self.settings.get("use_staging"):
             check.set_active(False)
             check.set_sensitive(False)
         else:
@@ -267,7 +267,7 @@ class InstallationAsk(Gtk.Box):
         """ Disable lvm and luks option when home is checked """
         chk1 = self.ui.get_object("encrypt_checkbutton")
         chk2 = self.ui.get_object("lvm_checkbutton")
-        if widget.get_active():
+        if widget.get_active() and not self.settings.get("use_staging"):
             chk1.set_active(False)
             chk1.set_sensitive(False)
             chk2.set_active(False)

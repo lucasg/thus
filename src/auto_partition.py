@@ -75,7 +75,7 @@ def unmount_all(dest_dir):
         subprocess.call(["umount", directory])
 
     # Now is the time to unmount the device that is mounted in dest_dir (if any)
-    
+
     if dest_dir in mount_result:
         logging.warning(_("Unmounting %s"), dest_dir)
         subprocess.call(["umount", dest_dir])
@@ -202,7 +202,7 @@ class AutoPartition(object):
 
         luks = []
         lvm = ""
-        
+
         # self.auto_device is of type /dev/sdX or /dev/hdX
 
         if self.uefi:
@@ -294,7 +294,7 @@ class AutoPartition(object):
         """ Setups a luks device """
         # For now, we we'll use the same password for root and /home
         # If instead user wants to use a key file, we'll have two different key files.
-        
+
         logging.debug(_("Thus will setup LUKS on device %s"), luks_device)
 
         # Wipe LUKS header (just in case we're installing on a pre LUKS setup)
@@ -347,7 +347,7 @@ class AutoPartition(object):
             logging.error("Setup cannot detect size of your device, please use advanced "
                 "installation routine for partitioning and mounting devices.")
             return
-            
+
         # Partition sizes are expressed in MB
 
         boot_part_size = 256
@@ -454,12 +454,12 @@ class AutoPartition(object):
                 start = end
                 end = start + root_part_size
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", str(start), str(end)])
-                
+
                 if self.home:
                     # Create home partition
                     start = end
                     subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", str(start), "100%"])
-                    
+
         printk(True)
 
         # Wait until /dev initialized correct devices
