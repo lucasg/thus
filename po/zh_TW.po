@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-08 14:03+0000\n"
+"PO-Revision-Date: 2013-12-09 11:44+0000\n"
 "Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -65,16 +65,16 @@ msgstr "正在卸載 %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "無法刪除已存在的 LVM 卷 （見下）"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "無法關閉 LUKS 裝置 （見下）"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus 將會在裝置 %s 上設定 LUKS"
 
 #: src/auto_partition.py:484
 #, python-format
@@ -340,7 +340,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB 在 BIOS 系統中需要使用一個 BIOS 開機分割區（2 MiB，沒有檔案系統，在 gdisk 中為 \"EF02\" 類型碼，或是在 GNU Parted 中為 \"bios_grub\" 旗標） 來嵌入 core.img 檔案，因為在 MBR 系統中缺乏對 GPT 磁碟的支援。\n\nThus 將會馬上為您創建這個特殊的分割區。"
 
 #: src/installation_advanced.py:1427
 #, python-format
@@ -458,13 +458,13 @@ msgstr "加密這個安裝以增強安全性。"
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "您將會在下一步被要求輸入加密的密碼。"
 
 #: src/installation_ask.py:153
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "將會設定 LVM 讓您以更簡單的方法產生快照及變更分割區大小。"
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
@@ -488,11 +488,11 @@ msgstr "自訂您的分割區並選擇您要安裝 Manjaro 的位置 （進階�
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "您將要增加/刪除分割區，選擇您要安裝 Manjaro 的地方以及選擇額外的掛載點。"
 
 #: src/installation_ask.py:208
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Manjaro 將會使用 LUKS 加密的方式安裝"
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
@@ -601,17 +601,17 @@ msgstr "無法在目標系統上創建必要的目錄"
 
 #: src/installation_process.py:374
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "正在安裝開機載入器 ..."
 
 #: src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "未知的錯誤"
 
 #: src/installation_process.py:407 src/installation_process.py:420
 #: src/installation_process.py:428
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "無法卸載 %s"
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
@@ -619,23 +619,23 @@ msgstr "安裝已成功完成。"
 
 #: src/installation_process.py:448
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "基礎檔案系統不存在！嚴重錯誤 （正在離開）。"
 
 #: src/installation_process.py:451
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "桌面檔案系統不存在！嚴重錯誤（正在離開）。"
 
 #: src/installation_process.py:467
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "正在複製索引檔案 ..."
 
 #: src/installation_process.py:472
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "正在解壓縮 root-image ..."
 
 #: src/installation_process.py:482
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "正在解壓縮 desktop-image ..."
 
 #: src/installation_process.py:497
 #, python-format
@@ -742,19 +742,19 @@ msgstr "將 root 設定為相同的密碼。"
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
-msgstr ""
+msgstr "正在生成語系碼 ..."
 
 #: src/installation_process.py:1044
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "正在調整硬體時鐘 ..."
 
 #: src/installation_process.py:1050
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "正在配置硬體 ..."
 
 #: src/installation_process.py:1113
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "正在設定顯示卡 ..."
 
 #: src/installation_process.py:1120
 msgid "Can't execute the MHWD script"
@@ -762,11 +762,11 @@ msgstr "無法執行 MHWD 腳本"
 
 #: src/installation_process.py:1126
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "正在設定顯示管理員 ..."
 
 #: src/installation_process.py:1225
 msgid "Configure System ..."
-msgstr ""
+msgstr "正在設定系統 ..."
 
 #: src/installation_process.py:1253
 msgid "Removing live configuration (packages)"
@@ -787,15 +787,15 @@ msgstr "%s ： 啟用使用者 %s 的自動登入。"
 
 #: src/installation_process.py:1387
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "正在執行 mkinitcpio ..."
 
 #: src/installation_process.py:1390
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "正在執行 mkinitcpio - 完成"
 
 #: src/installation_process.py:1417
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "正在加密使用者的家目錄 ..."
 
 #: src/installation_process.py:1419
 msgid "User home dir encrypted"
@@ -803,7 +803,7 @@ msgstr "使用者的家目錄已加密。"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
-msgstr ""
+msgstr "無法複製 Thus 的記錄檔到 /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -880,12 +880,12 @@ msgstr "無法更改語系到 '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "無法確認 %s 是否為固態硬碟"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "抱歉，檔案系統 %s 無法縮小"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1199,7 +1199,7 @@ msgstr "<span weight=\"light\" size=\"small\">將會設定 LVM 讓您以更簡�
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">將會把您的 /home 目錄設定為不同的分割區或容量。</span>"
 
 #: ui/installation_ask.ui:165
 msgid "Install alongside other OSes"

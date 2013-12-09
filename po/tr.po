@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-07 12:20+0000\n"
+"PO-Revision-Date: 2013-12-09 14:01+0000\n"
 "Last-Translator: tulliana <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Bu yükleyicinin iki örneğini çalıştıramazsınız.\nYükleyicinin şu anda çalışmadığından eminseniz\n%s dosyasını silebilirsiniz\nve yükleyiciyi tekrar çalıştırabilirsiniz."
+msgstr "Bu yükleyicinin iki örneğini çalıştıramazsınız.\n\nYükleyicinin şu anda çalışmadığından eminseniz\n%s dosyasını silebilirsiniz\nve yükleyiciyi tekrar çalıştırabilirsiniz."
 
 #: thus.py:138
 #, python-format
@@ -358,7 +358,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s %s içerisinde bağlanmış.\n"
+msgstr "%s %s içerisinde bağlanmış.\nDevam etmek için ayırmalısınız.\nAyırmak için Evet diyin, veya Hayır diyerek geri dönün\n"
 
 #: src/installation_advanced.py:1451
 #, python-format
@@ -839,7 +839,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus sistem yükleyicisi halen geliştirilmektedir ve beta önizleme sürümdedir. \\n\nRAID, btrfs, subvolumes veya diğer gelişmiş kurulumlarla ilgili hatalarla \\n\nkarşılaşma olasılığınız vardır. Veri kaybı yaşamamak için lütfen dikkatli olunuz! \\n\n\\n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun http://bugs.manjaro.org"
+msgstr "Thus sistem yükleyicisi halen geliştirilmektedir ve beta önizleme sürümdedir. \nRAID, btrfs, subvolumes veya diğer gelişmiş kurulumlarla ilgili hatalarla \nkarşılaşma olasılığınız vardır. Veri kaybı yaşamamak için lütfen dikkatli olunuz! \n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun http://bugs.manjaro.org"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -863,7 +863,7 @@ msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr "Ülke seçerek, sistem yerel ayarlarını da tanımlamış olacaksınız.\nYaşadığınız yer normalde seçtiğiniz ülkede olmalıdır.\nAşağıdaki ülkeler dil tercihinize göre listelendi, lütfen ülke belirleyin."
+msgstr "Ülke seçerek, sistem yerel ayarlarını da tanımlamış olacaksınız.\nSeçtiğiniz ülke normalde yaşadığınız yer olmalıdır.\nAşağıdaki ülkeler dil tercihinize göre listelendi, lütfen ülke belirleyin."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
@@ -917,7 +917,7 @@ msgstr "Manjaro Sistem Yükleyici Soruyor !"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr "Kurulum tamamlandı!\nSisteminizi yeniden başlatmak istiyor musunuz?"
+msgstr "Tebrikler.. Kurulum tamamlandı!\nSisteminizi yeniden başlatmak istiyor musunuz?"
 
 #: src/slides.py:98
 msgid "Installing Manjaro..."

@@ -387,8 +387,8 @@ def check_gtk_version():
     minor = Gtk.get_minor_version()
     micro = Gtk.get_micro_version()
 
-    # Cnchi will be called from our liveCD that already has the latest GTK version
-    # This is here just to help testing Cnchi in our environment.
+    # Thus will be called from our liveCD that already has the latest GTK version
+    # This is here just to help testing Thus in our environment.
     if major_needed > major or (major_needed == major and minor_needed > minor) or \
       (major_needed == major and minor_needed == minor and micro_needed > micro):
         print("Detected GTK %d.%d.%d but %s is needed. Can't run this installer." \
@@ -453,10 +453,10 @@ def init_thus():
             remove_temp_files()
             if not _force_update:
                 print("Program updated! Restarting...")
-                # Run another instance of Cnchi (which will be the new version)
+                # Run another instance of Thus (which will be the new version)
                 os.execl(sys.executable, *([sys.executable] + sys.argv))
             else:
-                print("Program updated! Please restart Cnchi.")
+                print("Program updated! Please restart Thus.")
 
             # Exit and let the new instance do all the hard work
             sys.exit(0)

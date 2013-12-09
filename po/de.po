@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-07 00:34+0000\n"
+"PO-Revision-Date: 2013-12-09 14:55+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -528,11 +528,11 @@ msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Manjaro installieren wol
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Choose a password for your LUKS device:"
-msgstr "Wählen Sie ein Passwort für Ihre LUKS Laufwerk:"
+msgstr "Wählen Sie ein Verschlüsselungspassword:"
 
 #: src/installation_automatic.py:101 ui/installation_automatic.ui:161
 msgid "Confirm your password for your LUKS device:"
-msgstr "Bestätigen Sie das Passwort für Ihre LUKS Laufwerk:"
+msgstr "Bestätigen Sie das Verschlüsselungspassword:"
 
 #: src/installation_automatic.py:153
 msgid "A LUKS password has been set"

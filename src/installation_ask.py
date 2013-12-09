@@ -47,10 +47,7 @@ class InstallationAsk(Gtk.Box):
         self.ui = Gtk.Builder()
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_ask.ui"))
 
-        if self.settings.get("use_staging"):
-            partitioner_dir = os.path.join(self.settings.get("data"), "partitioner/small/")
-        else:
-            partitioner_dir = os.path.join(self.settings.get("data"), "partitioner/")
+        partitioner_dir = os.path.join(self.settings.get("data"), "partitioner/small/")
 
         image = self.ui.get_object("automatic_image")
         image.set_from_file(partitioner_dir + "automatic.png")
@@ -92,14 +89,6 @@ class InstallationAsk(Gtk.Box):
 
         # Disable staging features
         if not self.settings.get("use_staging"):
-            radio = self.ui.get_object("encrypt_checkbutton")
-            radio.hide()
-            label = self.ui.get_object("encrypt_label")
-            label.hide()
-            radio = self.ui.get_object("lvm_checkbutton")
-            radio.hide()
-            label = self.ui.get_object("lvm_label")
-            label.hide()
             radio = self.ui.get_object("alongside_radiobutton")
             radio.hide()
             label = self.ui.get_object("alongside_description")
@@ -246,3 +235,43 @@ class InstallationAsk(Gtk.Box):
         if widget.get_active():
             self.next_page = "installation_advanced"
             self.enable_automatic_options(False)
+
+            radio = self.ui.get_object("encrypt_checkbutton")
+            radio.hide()
+            label = self.ui.get_object("encrypt_label")
+            label.hide()
+            radio = self.ui.get_object("lvm_checkbutton")
+            radio.hide()
+            label = self.ui.get_object("lvm_label")
+            label.hide()
+
+    def on_encrypt_checkbutton_toggled(self, widget):
+        """ Disable home-dir option when encrypt is checked """
+        check = self.ui.get_object("encrypt_checkbutton")
+        if widget.get_active():
+            check.set_active(False)
+            check.set_sensitive(False)
+        else:
+            check.set_sensitive(True)
+
+    def on_lvm_checkbutton_toggled(self, widget):
+        """ Disable home-dir option when lvm is checked """
+        check = self.ui.get_object("lvm_checkbutton")
+        if widget.get_active():
+            check.set_active(False)
+            check.set_sensitive(False)
+        else:
+            check.set_sensitive(True)
+
+    def on_home_checkbutton_toggled(self, widget):
+        """ Disable lvm and luks option when home is checked """
+        chk1 = self.ui.get_object("encrypt_checkbutton")
+        chk2 = self.ui.get_object("lvm_checkbutton")
+        if widget.get_active():
+            chk1.set_active(False)
+            chk1.set_sensitive(False)
+            chk2.set_active(False)
+            chk2.set_sensitive(False)
+        else:
+            chk1.set_sensitive(True)
+            chk2.set_sensitive(True)
