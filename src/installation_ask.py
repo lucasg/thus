@@ -236,15 +236,6 @@ class InstallationAsk(Gtk.Box):
             self.next_page = "installation_advanced"
             self.enable_automatic_options(False)
 
-            radio = self.ui.get_object("encrypt_checkbutton")
-            radio.hide()
-            label = self.ui.get_object("encrypt_label")
-            label.hide()
-            radio = self.ui.get_object("lvm_checkbutton")
-            radio.hide()
-            label = self.ui.get_object("lvm_label")
-            label.hide()
-
     def on_encrypt_checkbutton_toggled(self, widget):
         """ Disable home-dir option when encrypt is checked """
         check = self.ui.get_object("home_checkbutton")
