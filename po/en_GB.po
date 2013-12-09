@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 17:12+0100\n"
-"PO-Revision-Date: 2013-12-09 16:16+0000\n"
+"POT-Creation-Date: 2013-12-09 19:37+0100\n"
+"PO-Revision-Date: 2013-12-09 18:42+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/manjaro-thus/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -460,6 +460,10 @@ msgstr "Encrypt this installation for increased security."
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
 msgstr "You will be asked for the encryption key in the next step."
+
+#: src/installation_ask.py:138
+msgid "Use LVM with this installation."
+msgstr "Use LVM with this installation."
 
 #: src/installation_ask.py:142
 msgid ""

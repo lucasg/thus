@@ -135,7 +135,7 @@ class InstallationAsk(Gtk.Box):
         label.set_markup(txt)
 
         button = self.ui.get_object("lvm_checkbutton")
-        txt = "Use LVM with this installation."
+        txt = _("Use LVM with this installation.")
         button.set_label(txt)
 
         label = self.ui.get_object("lvm_label")
