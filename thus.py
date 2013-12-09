@@ -371,7 +371,7 @@ def show_help():
     print("-d, --debug : Show debug messages")
     print("-g type, --force-grub-type type : force grub type to install, type can be bios, efi, ask or none")
     print("-h, --help : Show this help message")
-    print("-s, --staging : Enable stating options")
+    print("-s, --staging : Enable staging options")
     print("-t, --testing : Do not perform any changes (useful for developers)")
     print("-v, --verbose : Show logging messages to stdout")
 
@@ -407,8 +407,8 @@ def init_thus():
     global _force_update
     global _log_level
     global _update
+    global _use_staging
     global _verbose
-    global _staging
     global _testing
 
     # Check program args
