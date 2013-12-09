@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-05 21:09+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-08 14:03+0000\n"
+"Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "您不能同時執行兩個安裝程式。\n\n如果您確定您並沒�
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus 安裝程式版本 %s"
 
 #: thus.py:218
 #, python-format
@@ -61,7 +61,7 @@ msgstr "離開安裝程式..."
 #: src/installation_process.py:402 src/installation_process.py:414
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "正在卸載 %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
@@ -79,7 +79,7 @@ msgstr ""
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "將會在裝置 %s 上設定 LVM"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -92,24 +92,24 @@ msgstr "您的開機系統類型是？"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (較常見)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64位元 UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32位元 UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "如果您不想安裝開機載入器，請選擇 '取消' 。"
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "無法設定為 %s 語系"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -137,12 +137,12 @@ msgstr "密碼不符合"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "系統檢查"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "有至少 %dGB 的可用磁碟空間"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -311,7 +311,7 @@ msgstr "標籤(選擇性)："
 
 #: src/installation_advanced.py:1140
 msgid "Encryption Options..."
-msgstr ""
+msgstr "加密選項..."
 
 #: src/installation_advanced.py:1157 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -319,7 +319,7 @@ msgstr "格式化："
 
 #: src/installation_advanced.py:1162
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "分割表類型："
 
 #: src/installation_advanced.py:1167
 msgid "Create Partition Table"
@@ -361,7 +361,7 @@ msgstr "%s 已被掛載為 '%s' 。\n如要繼續則必須卸載。\n按是卸�
 #: src/installation_advanced.py:1451
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s 已經被掛載(忙碌中)但卻沒有掛載點"
 
 #: src/installation_advanced.py:1510
 #, python-format
@@ -405,11 +405,11 @@ msgstr "Manjaro 將會安裝 %s 類型的開機載入器到 %s 上"
 
 #: src/installation_advanced.py:1685
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus 將不會安裝任何開機載入器"
 
 #: src/installation_advanced.py:1699 src/installation_automatic.py:224
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "測試模式。Thus 將不會對您的系統作出任何改變！"
 
 #: src/installation_alongside.py:114
 #, python-format
@@ -434,7 +434,7 @@ msgstr "檔案系統"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "無法創建並存安裝的分割區列表。"
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -454,7 +454,7 @@ msgstr "警告：這將會刪除所您磁碟上的所有資料"
 
 #: src/installation_ask.py:140
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "加密這個安裝以增強安全性。"
 
 #: src/installation_ask.py:144
 msgid "You will be asked for the encryption key in the next step."
@@ -468,12 +468,12 @@ msgstr ""
 
 #: src/installation_ask.py:158 ui/installation_ask.ui:133
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "將您的家目錄設置為不同的分割區/容量"
 
 #: src/installation_ask.py:162
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "將會把您的 /home 目錄設定為不同的分割區或容量。"
 
 #: src/installation_ask.py:170 src/installation_ask.py:172
 #, python-format
@@ -496,15 +496,15 @@ msgstr ""
 
 #: src/installation_ask.py:211
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro 將會使用 LVM 卷安裝"
 
 #: src/installation_ask.py:213
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro 將會使用分離的 /home 卷來安裝。"
 
 #: src/installation_ask.py:215
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro 將會使用分離的 /home 分割區來安裝。"
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -535,7 +535,7 @@ msgstr "確認您 LUKS 裝置的密碼："
 
 #: src/installation_automatic.py:153
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "LUKS 密碼已被設置"
 
 #: src/installation_automatic.py:155
 #, python-format
@@ -565,7 +565,7 @@ msgstr "正在使用 '%s' 方法安裝"
 #: src/installation_process.py:244
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "在 %s 增加分割區及其檔案系統"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
@@ -593,7 +593,7 @@ msgstr "無法掛載 %s 在 %s"
 #: src/installation_process.py:346
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s 已刪除"
 
 #: src/installation_process.py:356
 msgid "Can't create necessary directories on destination system"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: src/installation_process.py:430
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "安裝已成功完成。"
 
 #: src/installation_process.py:448
 msgid "Base filesystem does not exist! Critical error (exiting)."
@@ -658,12 +658,12 @@ msgstr "無法卸載 %s"
 #: src/installation_process.py:568
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "執行命令時遇到錯誤： %s"
 
 #: src/installation_process.py:630
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "加入 fstab ： UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:716
 #, python-format
@@ -703,7 +703,7 @@ msgstr "更改使用者 %s 的密碼時發生錯誤"
 
 #: src/installation_process.py:859
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "正在設定 mkinitcpio.conf 中的關聯性及模組"
 
 #: src/installation_process.py:937 src/installation_process.py:948
 msgid "Configuring your new system"
@@ -711,34 +711,34 @@ msgstr "正在設定新系統"
 
 #: src/installation_process.py:940
 msgid "fstab file generated."
-msgstr ""
+msgstr "fstab 已產生。"
 
 #: src/installation_process.py:946
 msgid "Network configuration copied."
-msgstr ""
+msgstr "網路組態已複製。"
 
 #: src/installation_process.py:976
 msgid "Timezone set."
-msgstr ""
+msgstr "時區設置。"
 
 #: src/installation_process.py:996
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "使用者 %s 的 Sudo 設定已完成。"
 
 #: src/installation_process.py:1002
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "使用者 %s 已加入。"
 
 #: src/installation_process.py:1014
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "主機名稱  %s 設置。"
 
 #: src/installation_process.py:1018
 msgid "Set the same password to root."
-msgstr ""
+msgstr "將 root 設定為相同的密碼。"
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
@@ -799,7 +799,7 @@ msgstr ""
 
 #: src/installation_process.py:1419
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "使用者的家目錄已加密。"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
@@ -837,7 +837,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus 是一個未正式發行的測試版軟體，仍在積極的開發中。\n它還不能處理 RAID 、btrfs 的子卷系統、以及其他\n進階設定。請以資料可能會消失的警覺心繼續進行！\n\n如果您發現任何 bug ，請在 <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> 回報"
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -927,7 +927,7 @@ msgstr "請燒等......"
 
 #: src/slides.py:210
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "您想要重試嗎？"
 
 #: src/timezone.py:111
 msgid "Where are you?"

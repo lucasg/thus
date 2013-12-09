@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-05 22:07+0100\n"
-"PO-Revision-Date: 2013-12-08 01:17+0000\n"
+"PO-Revision-Date: 2013-12-08 20:31+0000\n"
 "Last-Translator: holmeslinux <holmes_holmes@live.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -727,7 +727,7 @@ msgstr "Configuração de rede copiado."
 
 #: src/installation_process.py:976
 msgid "Timezone set."
-msgstr "Conjunto fuso horário."
+msgstr "Fuso horário defina."
 
 #: src/installation_process.py:996
 #, python-format
@@ -742,11 +742,11 @@ msgstr "Usuário %s adicionado."
 #: src/installation_process.py:1014
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Nome do PC %s defina. "
 
 #: src/installation_process.py:1018
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Defina a mesma senha para o root"
 
 #: src/installation_process.py:1024
 msgid "Generating locales ..."
@@ -807,7 +807,7 @@ msgstr ""
 
 #: src/installation_process.py:1419
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Usuário home dir criptografada"
 
 #: src/installation_process.py:1427
 msgid "Can't copy Thus log to /var/log"
