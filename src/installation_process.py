@@ -945,12 +945,12 @@ class InstallationProcess(multiprocessing.Process):
                          if '[daemon]' in line:
                              line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
                              mdm_conf.write(line)
-                else:
-                    with open(mdm_conf_path, "w") as mdm_conf:
-                        mdm_conf.write('# Thus - Enable automatic login for user\n')
-                        mdm_conf.write('[daemon]\n')
-                        mdm_conf.write('AutomaticLogin=%s\n' % username)
-                        mdm_conf.write('AutomaticLoginEnable=True\n')
+            else:
+                with open(mdm_conf_path, "w") as mdm_conf:
+                    mdm_conf.write('# Thus - Enable automatic login for user\n')
+                    mdm_conf.write('[daemon]\n')
+                    mdm_conf.write('AutomaticLogin=%s\n' % username)
+                    mdm_conf.write('AutomaticLoginEnable=True\n')
         elif self.desktop_manager == 'gdm':
             # Systems with GDM as Desktop Manager
             gdm_conf_path = os.path.join(self.dest_dir, "etc/gdm/custom.conf")
@@ -962,12 +962,12 @@ class InstallationProcess(multiprocessing.Process):
                          if '[daemon]' in line:
                              line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
                              gdm_conf.write(line)
-                else:
-                    with open(gdm_conf_path, "w") as gdm_conf:
-                        gdm_conf.write('# Thus - Enable automatic login for user\n')
-                        gdm_conf.write('[daemon]\n')
-                        gdm_conf.write('AutomaticLogin=%s\n' % username)
-                        gdm_conf.write('AutomaticLoginEnable=True\n')
+            else:
+                with open(gdm_conf_path, "w") as gdm_conf:
+                    gdm_conf.write('# Thus - Enable automatic login for user\n')
+                    gdm_conf.write('[daemon]\n')
+                    gdm_conf.write('AutomaticLogin=%s\n' % username)
+                    gdm_conf.write('AutomaticLoginEnable=True\n')
         elif self.desktop_manager == 'kdm':
             # Systems with KDM as Desktop Manager
             kdm_conf_path = os.path.join(self.dest_dir, "usr/share/config/kdm/kdmrc")
