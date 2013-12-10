@@ -390,6 +390,15 @@ class InstallationProcess(multiprocessing.Process):
         if all_ok is False:
             return False
         else:
+            # Last but not least, copy Thus log to new installation
+            datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
+            dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
+            try:
+                shutil.copy("/tmp/thus.log", dst)
+            except FileNotFoundError:
+                logging.warning(_("Can't copy Thus log to %s") % dst)
+            except FileExistsError:
+                pass
             # Unmount everything
             self.chroot_umount_special_dirs()
             source_dirs = { "source", "source_desktop" }
@@ -428,15 +437,6 @@ class InstallationProcess(multiprocessing.Process):
                 except subprocess.CalledProcessError as err:
                     logging.warning(err)
                     self.queue_event('debug', _("Can't unmount %s") % p)
-            # Last but not least, copy Thus log to new installation
-            datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
-            dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
-            try:
-                shutil.copy("/tmp/thus.log", dst)
-            except FileNotFoundError:
-                logging.warning(_("Can't copy Thus log to %s") % dst)
-            except FileExistsError:
-                pass
             # Installation finished successfully
             self.queue_event('info', _("Installation finished successfully."))
             self.queue_event("finished")
