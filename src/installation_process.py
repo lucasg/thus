@@ -1370,8 +1370,10 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("%s/etc/pacman.d/gnupg" % self.dest_dir):
             os.system("rm -rf %s/etc/pacman.d/gnupg"  % self.dest_dir)
         os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/"  % self.dest_dir)
+        self.chroot_mount_special_dirs()
         self.chroot(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
+        self.chroot_umount_special_dirs()
 
         consolefh = open("%s/etc/keyboard.conf" % self.dest_dir, "r")
         newconsolefh = open("%s/etc/keyboard.new" % self.dest_dir, "w")
@@ -1387,9 +1389,6 @@ class InstallationProcess(multiprocessing.Process):
         newconsolefh.close()
         self.run_in_chroot("mv /etc/keyboard.conf /etc/keyboard.conf.old")
         self.run_in_chroot("mv /etc/keyboard.new /etc/keyboard.conf")
-
-        # Exit chroot system
-        self.chroot_umount_special_dirs()
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
