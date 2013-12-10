@@ -1140,76 +1140,14 @@ class InstallationProcess(multiprocessing.Process):
         # Install configs for root
         self.chroot(['cp', '-av', '/etc/skel/.', '/root/'])
 
+        # Exit chroot system
+        self.chroot_umount_special_dirs()
+
         self.queue_event('info', _("Configuring hardware ..."))
         # Copy generated xorg.xonf to target
         if os.path.exists("/etc/X11/xorg.conf"):
             shutil.copy2('/etc/X11/xorg.conf', \
                     os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
-
-        # Configure ALSA
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Front 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Side 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Surround 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Center 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset LFE 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Headphone 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Speaker 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Line 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset External 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset FM 50% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Mono 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Digital 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Mix 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux2 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Center 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Front 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM LFE 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Side 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Surround 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Playback 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM,1 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,0 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,1 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Synth 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset CD 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Wave 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Music 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset AC97 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Front 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,0 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,1 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,2 70% unmute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,3 70% unmute  &> /dev/null'])
-
-        # set input levels
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Mic 70% mute  &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset IEC958 70% mute  &> /dev/null'])
-
-        # special stuff
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off &> /dev/null'])
-
-        # special stuff
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off &> /dev/null'])
-
-        # Set pulse
-        if os.path.exists("/usr/bin/pulseaudio-ctl"):
-            self.chroot(['pulseaudio-ctl', 'normal'])
-
-        # Save settings
-        self.chroot(['alsactl', '-f', '/etc/asound.state', 'store'])
-
-        # Exit chroot system
-        self.chroot_umount_special_dirs()
 
         # Install xf86-video driver
         if os.path.exists("/opt/livecd/pacman-gfx.conf"):

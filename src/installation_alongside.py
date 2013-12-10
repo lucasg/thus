@@ -159,6 +159,10 @@ class InstallationAlongside(Gtk.Box):
         return True
 
     def get_prev_page(self):
+        # Restore "Next" button's text
+        self.forward_button.set_label("gtk-go-forward")
+        self.forward_button.set_sensitive(True)
+        self.forward_button.set_use_stock(True)
         return _prev_page
 
     def get_next_page(self):
