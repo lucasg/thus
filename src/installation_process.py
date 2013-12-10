@@ -1267,7 +1267,7 @@ class InstallationProcess(multiprocessing.Process):
                     os.system("echo \"XSession=xfce\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 elif os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
                     os.system("echo \"XSession=cinnamon-session\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                elif os.path.exists("%s/usr/bin/mate-session\" % self.dest_dir):
+                elif os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
                     os.system("echo \"XSession=mate\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 elif os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
                     os.system("echo \"XSession=enlightenment\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
