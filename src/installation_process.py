@@ -428,12 +428,6 @@ class InstallationProcess(multiprocessing.Process):
                 except subprocess.CalledProcessError as err:
                     logging.warning(err)
                     self.queue_event('debug', _("Can't unmount %s") % p)
-            # Installation finished successfully
-            self.queue_event('info', _("Installation finished successfully."))
-            self.queue_event("finished")
-            self.running = False
-            self.error = False
-            return True
             # Last but not least, copy Thus log to new installation
             datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
             dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
@@ -443,6 +437,12 @@ class InstallationProcess(multiprocessing.Process):
                 logging.warning(_("Can't copy Thus log to %s") % dst)
             except FileExistsError:
                 pass
+            # Installation finished successfully
+            self.queue_event('info', _("Installation finished successfully."))
+            self.queue_event("finished")
+            self.running = False
+            self.error = False
+            return True
 
     def install_system(self):
         """ Copies all files to target """
