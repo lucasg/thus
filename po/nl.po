@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 14:15+0100\n"
-"PO-Revision-Date: 2013-12-10 13:21+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-10 16:19+0000\n"
+"Last-Translator: Ringo Be <ringodekroon@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -464,7 +464,7 @@ msgstr "Je zal worden gevraagd voor encryptie sleutel in de volgende stap."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Gebruik LVM met dit installatie."
 
 #: src/installation_ask.py:142
 msgid ""
@@ -533,7 +533,7 @@ msgstr "Kies alstublieft op welke schijf Manjaro wilt installeren⏎\nen klik de
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "Encryptie Wachtwoord:"
 
 #: src/installation_automatic.py:101 src/user_info.py:112
 #: ui/installation_automatic.ui:161 ui/user_info.ui:78
@@ -542,7 +542,7 @@ msgstr "Bevestig je wachtwoord"
 
 #: src/installation_automatic.py:105 ui/installation_automatic.ui:258
 msgid "show password"
-msgstr ""
+msgstr "Vertoon Wachtwoord"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -612,19 +612,19 @@ msgstr "Kan niet benodigde mappen creeeren op bestemming systeem"
 
 #: src/installation_process.py:359
 msgid "Install System ..."
-msgstr ""
+msgstr "Installeer systeel..."
 
 #: src/installation_process.py:364
 msgid "System installed."
-msgstr ""
+msgstr "Systeem geinstalleerd."
 
 #: src/installation_process.py:366
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Systeem configureren..."
 
 #: src/installation_process.py:368
 msgid "System configured."
-msgstr ""
+msgstr "Systeem geconfigureerd."
 
 #: src/installation_process.py:372
 msgid "Installing bootloader ..."
@@ -647,7 +647,7 @@ msgstr "Installatie is met secces geeindigd."
 #: src/installation_process.py:443
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "Kan thus log niet kopieren naar %s"
 
 #: src/installation_process.py:459
 msgid "Base filesystem does not exist! Critical error (exiting)."
@@ -726,7 +726,7 @@ msgstr "FOUT installeren GRUB(2) locale."
 #: src/installation_process.py:845
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "Activeerd %s service."
 
 #: src/installation_process.py:852
 #, python-format
