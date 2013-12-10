@@ -342,6 +342,10 @@ class Main(Gtk.Window):
             if self.current_page != None:
                 self.current_page.prepare('backwards')
                 self.main_box.add(self.current_page)
+                # Restore "Next" button's text
+                self.forward_button.set_label("gtk-go-forward")
+                self.forward_button.set_sensitive(True)
+                self.forward_button.set_use_stock(True)
 
                 if self.current_page.get_prev_page() == None:
                     # We're at the first page

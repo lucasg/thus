@@ -1573,10 +1573,6 @@ class InstallationAdvanced(Gtk.Box):
 
     def get_prev_page(self):
         """ Tell which one is our previous page (in our case installation_ask) """
-        # Restore "Next" button's text
-        self.forward_button.set_label("gtk-go-forward")
-        self.forward_button.set_sensitive(True)
-        self.forward_button.set_use_stock(True)
         return _prev_page
 
     def get_next_page(self):
