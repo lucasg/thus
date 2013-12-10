@@ -192,7 +192,7 @@ class InstallationAlongside(Gtk.Box):
         try:
             device_list = parted.getAllDevices()
         except:
-            logging.error("pyparted3 not found!")
+            installation_process.queue_fatal_event(_("pyparted3 not found!"))
             device_list = []
 
         for dev in device_list:
@@ -253,7 +253,7 @@ class InstallationAlongside(Gtk.Box):
             self.max_size = int(x[1]) / 1000
             self.min_size = int(x[2]) / 1000
         except subprocess.CalledProcessError as e:
-            logging.exception("CalledProcessError.output = %s" % e.output)
+            installation_process.queue_fatal_event("CalledProcessError.output = %s" % e.output)
 
         if self.min_size + _minimum_space_for_manjaro < self.max_size:
             self.new_size = self.ask_shrink_size(other_os_name)
@@ -344,7 +344,7 @@ class InstallationAlongside(Gtk.Box):
         logging.debug("primary partitions: %s" % primary_partitions)
 
         if len(primary_partitions) >= 4:
-            logging.error("There are too many primary partitions, can't create a new one")
+            logging.error(_("There are too many primary partitions, can't create a new one"))
             return False
 
         self.extended_path = extended_path
@@ -375,7 +375,7 @@ class InstallationAlongside(Gtk.Box):
             # destroy original partition and create a new resized one
             pm.split_partition(device_path, partition_path, new_size)
         else:
-            logging.error("Can't shrink %s(%s) filesystem" % (otherOS, fs_type))
+            installation_process.queue_fatal_event(_("Can't shrink %s(%s) filesystem") % (otherOS, fs_type))
             return
 
 

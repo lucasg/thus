@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-10 14:15+0100\n"
-"PO-Revision-Date: 2013-12-10 13:21+0000\n"
+"POT-Creation-Date: 2013-12-10 21:57+0100\n"
+"PO-Revision-Date: 2013-12-10 21:01+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -60,8 +60,8 @@ msgid "Quiting installer..."
 msgstr "Yükleyiciden çıkılıyor..."
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
-#: src/installation_process.py:401 src/installation_process.py:414
-#: src/installation_process.py:425
+#: src/installation_process.py:411 src/installation_process.py:424
+#: src/installation_process.py:435
 #, python-format
 msgid "Unmounting %s"
 msgstr "Ayrılıyor %s"
@@ -344,6 +344,10 @@ msgid ""
 "Thus will create this special partition for you now."
 msgstr "GPT disklerde MBR, core.img dosyası ve BIOS sistemleri yüklemek  için gerekli alan bulunamadı. (2 MB, ham bölüme, Gdisk ile \"EF02\" kodu kullan veya \"bios_grub\" bayrağı için GNU Parted kullan). \\n\n\\n\nThus sizin için bu özel bölümü oluşturacaktır."
 
+#: src/installation_advanced.py:1299
+msgid "Can't create BIOS GPT Boot partition!"
+msgstr ""
+
 #: src/installation_advanced.py:1428
 #, python-format
 msgid ""
@@ -434,6 +438,10 @@ msgstr "Başka işletim sistemleri tespit edildi"
 msgid "Filesystem"
 msgstr "Dosya sistemi"
 
+#: src/installation_alongside.py:195
+msgid "pyparted3 not found!"
+msgstr ""
+
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
 msgstr "Kurulum için bölüm listesi oluşturulamadı."
@@ -441,6 +449,15 @@ msgstr "Kurulum için bölüm listesi oluşturulamadı."
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Disk bölümü küçültülemiyor (belki çoğu dolu olabilir)"
+
+#: src/installation_alongside.py:347
+msgid "There are too many primary partitions, can't create a new one"
+msgstr ""
+
+#: src/installation_alongside.py:378
+#, python-format
+msgid "Can't shrink %s(%s) filesystem"
+msgstr ""
 
 #: src/installation_ask.py:106
 msgid "Installation type"
@@ -612,229 +629,229 @@ msgstr "Hedef sistemde gerekli dizinleri oluşturulamıyor"
 
 #: src/installation_process.py:359
 msgid "Install System ..."
-msgstr ""
+msgstr "Sistem Kuruluyor ..."
 
 #: src/installation_process.py:364
 msgid "System installed."
-msgstr ""
+msgstr "Sistem Kuruldu."
 
 #: src/installation_process.py:366
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Sistem yapılandırılıyor ..."
 
 #: src/installation_process.py:368
 msgid "System configured."
-msgstr ""
+msgstr "Sistem yapılandırıldı."
 
 #: src/installation_process.py:372
 msgid "Installing bootloader ..."
 msgstr "Önyükleyici kuruluyor..."
 
-#: src/installation_process.py:385
+#: src/installation_process.py:385 src/installation_process.py:386
 msgid "Unknown error"
 msgstr "Tanımlanamayan hata"
 
-#: src/installation_process.py:406 src/installation_process.py:420
-#: src/installation_process.py:430
+#: src/installation_process.py:400
+#, python-format
+msgid "Can't copy Thus log to %s"
+msgstr "Thus logları %s üzerine kaydedemedi"
+
+#: src/installation_process.py:416 src/installation_process.py:430
+#: src/installation_process.py:440
 #, python-format
 msgid "Can't unmount %s"
 msgstr "%s Ayıramazsınız"
 
-#: src/installation_process.py:432
+#: src/installation_process.py:442
 msgid "Installation finished successfully."
 msgstr "Kurulum başarıyla tamamlandı."
 
-#: src/installation_process.py:443
-#, python-format
-msgid "Can't copy Thus log to %s"
-msgstr ""
-
-#: src/installation_process.py:459
+#: src/installation_process.py:460
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Taban dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 
-#: src/installation_process.py:462
+#: src/installation_process.py:463
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Masaüstü dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 
-#: src/installation_process.py:478
+#: src/installation_process.py:479
 msgid "Indexing files to be copied ..."
 msgstr "Dosyalar kopyalanmak üzere listeleniyor ..."
 
-#: src/installation_process.py:483
+#: src/installation_process.py:484
 msgid "Extracting root-image ..."
 msgstr "root-imajı aktarılıyor ..."
 
-#: src/installation_process.py:493
+#: src/installation_process.py:494
 msgid "Extracting desktop-image ..."
 msgstr "Masaüstü-imajı Aktarılıyor ..."
 
-#: src/installation_process.py:508
+#: src/installation_process.py:509
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Meta-bilgi geri yükleme %s"
 
-#: src/installation_process.py:523
+#: src/installation_process.py:524
 msgid "Special dirs already mounted."
 msgstr "Özel disk zaten bağlı."
 
-#: src/installation_process.py:550
+#: src/installation_process.py:551
 msgid "Special dirs already not mounted."
 msgstr "Özel disk zaten bağlı değil."
 
-#: src/installation_process.py:560
+#: src/installation_process.py:561
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Ayırma işlemi yapılamadı %s"
 
-#: src/installation_process.py:579
+#: src/installation_process.py:580
 #, python-format
 msgid "Error running command: %s"
 msgstr "Komut hatalı çalışıyor: %s"
 
-#: src/installation_process.py:641
+#: src/installation_process.py:642
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "fstab içine eklendi : UUID=%s %s %s %s 0 %s"
 
-#: src/installation_process.py:727
+#: src/installation_process.py:728
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "%s üzerine GRUB(2) yükleniyor ve BIOS önyükleyici oluşturuluyor"
 
-#: src/installation_process.py:750 src/installation_process.py:767
+#: src/installation_process.py:751 src/installation_process.py:768
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS yükleme hatası."
 
-#: src/installation_process.py:765
+#: src/installation_process.py:766
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS başarıyla yüklenmiştir."
 
-#: src/installation_process.py:779
+#: src/installation_process.py:780
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "GRUB(2) UEFI yükleniyor %s Önyükleyici oluşturuluyor %s"
 
-#: src/installation_process.py:807
+#: src/installation_process.py:808
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "Yükleme hatası GRUB(2) konfigürasyon dosyası."
 
-#: src/installation_process.py:836
+#: src/installation_process.py:837
 msgid "ERROR installing GRUB(2) locale."
 msgstr "Yükleme hatası GRUB(2) yerel."
 
-#: src/installation_process.py:845
+#: src/installation_process.py:846
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "%s Servisi etkin."
 
-#: src/installation_process.py:852
+#: src/installation_process.py:853
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Kullanıcı karma parola değiştirme hatası %s"
 
-#: src/installation_process.py:858
+#: src/installation_process.py:859
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Kullanıcı parola değiştirme hatası %s"
 
-#: src/installation_process.py:870
+#: src/installation_process.py:871
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "mkinitcpio.conf içine kanca ve modül ayarlanmaları"
 
-#: src/installation_process.py:934
+#: src/installation_process.py:936
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Kullanıcı için otomatik giriş etkin %s."
 
-#: src/installation_process.py:1030 src/installation_process.py:1041
+#: src/installation_process.py:1031 src/installation_process.py:1042
 msgid "Configuring your new system"
 msgstr "Kurulan sistem yapılandırılıyor..."
 
-#: src/installation_process.py:1033
+#: src/installation_process.py:1034
 msgid "fstab file generated."
 msgstr "fstab dosyası oluşturuldu."
 
-#: src/installation_process.py:1039
+#: src/installation_process.py:1040
 msgid "Network configuration copied."
 msgstr "Ağ yapılandırması kopyalandı."
 
-#: src/installation_process.py:1065
+#: src/installation_process.py:1066
 msgid "Timezone set."
 msgstr "Saat Zaman Ayarı."
 
-#: src/installation_process.py:1085
+#: src/installation_process.py:1086
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Kullanıcı için sudo yapılandırması %s yapılır."
 
-#: src/installation_process.py:1091
+#: src/installation_process.py:1092
 #, python-format
 msgid "User %s added."
 msgstr "Kullanıcı %s eklendi."
 
-#: src/installation_process.py:1103
+#: src/installation_process.py:1104
 #, python-format
 msgid "Hostname  %s set."
 msgstr "Hostname %s ayarlaması."
 
-#: src/installation_process.py:1107
+#: src/installation_process.py:1108
 msgid "Set the same password to root."
 msgstr "Aynı parolayı kök için ayarlayın."
 
-#: src/installation_process.py:1113
+#: src/installation_process.py:1114
 msgid "Generating locales ..."
 msgstr "Yereliniz yapılandırılıyor ..."
 
-#: src/installation_process.py:1134
+#: src/installation_process.py:1135
 msgid "Adjusting hardware clock ..."
 msgstr "Donanım saati ayarlanıyor ..."
 
-#: src/installation_process.py:1143
+#: src/installation_process.py:1144
 msgid "Configuring hardware ..."
 msgstr "Donanım yapılandırılıyor ..."
 
-#: src/installation_process.py:1213
+#: src/installation_process.py:1217
 msgid "Set up graphics card ..."
 msgstr "Ekran kartı kuruluyor ve yapılandırılıyor ..."
 
-#: src/installation_process.py:1220
+#: src/installation_process.py:1224
 msgid "Can't execute the MHWD script"
 msgstr "MHWD komut dosyasını yürütemedi"
 
-#: src/installation_process.py:1226
+#: src/installation_process.py:1233
 msgid "Configure display manager ..."
 msgstr "Ekran yöneticisi yapılandırılıyor ..."
 
-#: src/installation_process.py:1332
+#: src/installation_process.py:1339
 msgid "Configure System ..."
 msgstr "Sistem Yapılandırılıyor ..."
 
-#: src/installation_process.py:1357
+#: src/installation_process.py:1364
 msgid "Removing live configuration (packages)"
 msgstr "Geçici konfigürasyonlar kaldırılıyor (paketler)"
 
-#: src/installation_process.py:1373
+#: src/installation_process.py:1380
 msgid "Configuring package manager"
 msgstr "Paket yöneticisi yapılandırılıyor"
 
-#: src/installation_process.py:1385
+#: src/installation_process.py:1392
 msgid "Finished configuring package manager."
 msgstr "Paket yönetici yapılandırması tamamlandı."
 
-#: src/installation_process.py:1409
+#: src/installation_process.py:1416
 msgid "Running mkinitcpio ..."
 msgstr "mkinitcpio çalıştırılıyor ..."
 
-#: src/installation_process.py:1412
+#: src/installation_process.py:1419
 msgid "Running mkinitcpio - done"
 msgstr "mkinitcpio çalışma sonucu- başarılı"
 
-#: src/installation_process.py:1428
+#: src/installation_process.py:1435
 msgid "Encrypting user home dir ..."
 msgstr "Kullanıcı Ev Dizini şifreleniyor ..."
 
-#: src/installation_process.py:1430
+#: src/installation_process.py:1437
 msgid "User home dir encrypted"
 msgstr "Kullanıcı Ev Dizini şifrelendi"
 

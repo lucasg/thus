@@ -1296,7 +1296,7 @@ class InstallationAdvanced(Gtk.Box):
         # Get how many primary partitions are already created on disk
         if disk.primaryPartitionCount > 0:
             # BIOS GPT Boot partition must be the first one on the disk
-            logging.error("Can't create BIOS GPT Boot partition!")
+            installation_process.queue_fatal_event(_("Can't create BIOS GPT Boot partition!"))
             return
 
         #max_size_mb = int((p.geometry.length * dev.sectorSize) / 1000000) + 1
@@ -1321,7 +1321,7 @@ class InstallationAdvanced(Gtk.Box):
         (res, err) = pm.set_flag(pm.PED_PARTITION_BIOS_GRUB, part)
 
         if res:
-            logging.error(err)
+            installation_process.queue_fatal_event((err)
 
         # Store stage partition info in self.stage_opts
         old_parts = []
@@ -1634,7 +1634,7 @@ class InstallationAdvanced(Gtk.Box):
                                 if error == 0:
                                     logging.info(msg)
                                 else:
-                                    logging.error(msg)
+                                    installation_process.queue_fatal_event(msg)
                         elif partition_path in self.orig_label_dic:
                             if self.orig_label_dic[partition_path] != lbl:
                                 if not self.testing:

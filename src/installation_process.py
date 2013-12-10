@@ -383,6 +383,7 @@ class InstallationProcess(multiprocessing.Process):
         except:
             # unknown error
             logging.error(_("Unknown error"))
+            self.queue_fatal_event(_("Unknown error"))
             self.running = False
             self.error = True
             all_ok = False
