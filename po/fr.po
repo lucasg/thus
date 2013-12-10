@@ -28,8 +28,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 19:37+0100\n"
-"PO-Revision-Date: 2013-12-09 18:41+0000\n"
+"POT-Creation-Date: 2013-12-10 14:15+0100\n"
+"PO-Revision-Date: 2013-12-10 13:21+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/manjaro-thus/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -73,8 +73,8 @@ msgid "Quiting installer..."
 msgstr "Fermeture de l’installateur…"
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
-#: src/installation_process.py:402 src/installation_process.py:415
-#: src/installation_process.py:426
+#: src/installation_process.py:401 src/installation_process.py:414
+#: src/installation_process.py:425
 #, python-format
 msgid "Unmounting %s"
 msgstr "Démonter %s"
@@ -477,7 +477,7 @@ msgstr "la clé de chiffrement vous sera demandé à l'étape suivante."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Utiliser LVM pour cette installation."
 
 #: src/installation_ask.py:142
 msgid ""
@@ -546,7 +546,7 @@ msgstr "Veuillez choisir le disque où vous souhaitez installer Manjaro\net cliq
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "Mot de passe du cryptage :"
 
 #: src/installation_automatic.py:101 src/user_info.py:112
 #: ui/installation_automatic.ui:161 ui/user_info.ui:78
@@ -555,7 +555,7 @@ msgstr "Confirmez votre mot de passe :"
 
 #: src/installation_automatic.py:105 ui/installation_automatic.ui:258
 msgid "show password"
-msgstr ""
+msgstr "Afficher le mot de passe"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -586,248 +586,270 @@ msgstr "Copie de '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Installation à l'aide de la méthode '%s'"
 
-#: src/installation_process.py:244
+#: src/installation_process.py:241
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "Création des partitions et de leur système de fichiers sur %s"
 
-#: src/installation_process.py:266
+#: src/installation_process.py:263
 msgid "Error creating partitions and their filesystems"
 msgstr "Erreur de création des partitions et de leur système de fichiers"
 
-#: src/installation_process.py:305 src/installation_process.py:328
+#: src/installation_process.py:302 src/installation_process.py:325
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Montage de la partition %s dans le répertoire %s"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:308
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Montage de la partition %s dans le répertoire %s/boot"
 
-#: src/installation_process.py:316
+#: src/installation_process.py:313
 msgid "Couldn't mount root and boot partitions"
 msgstr "Impossible de monter les partitions root et boot"
 
-#: src/installation_process.py:334
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Ne peut monter %s sous %s"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
 msgstr "%s supprimé"
 
-#: src/installation_process.py:356
+#: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
 msgstr "Impossible de créer les répertoires nécessaires sur le système de destination"
 
-#: src/installation_process.py:374
+#: src/installation_process.py:359
+msgid "Install System ..."
+msgstr ""
+
+#: src/installation_process.py:364
+msgid "System installed."
+msgstr ""
+
+#: src/installation_process.py:366
+msgid "Configuring system ..."
+msgstr ""
+
+#: src/installation_process.py:368
+msgid "System configured."
+msgstr ""
+
+#: src/installation_process.py:372
 msgid "Installing bootloader ..."
 msgstr "Installation du chargeur de démarrage ..."
 
-#: src/installation_process.py:386
+#: src/installation_process.py:385
 msgid "Unknown error"
 msgstr "Erreur inconnue"
 
-#: src/installation_process.py:407 src/installation_process.py:421
-#: src/installation_process.py:431
+#: src/installation_process.py:406 src/installation_process.py:420
+#: src/installation_process.py:430
 #, python-format
 msgid "Can't unmount %s"
 msgstr "Impossible de démonter %s"
 
-#: src/installation_process.py:433
+#: src/installation_process.py:432
 msgid "Installation finished successfully."
 msgstr "L'installation est terminée avec succès."
 
-#: src/installation_process.py:451
+#: src/installation_process.py:443
+#, python-format
+msgid "Can't copy Thus log to %s"
+msgstr ""
+
+#: src/installation_process.py:459
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Le système de fichiers de base n'existe pas ! Erreur critique (sortie)."
 
-#: src/installation_process.py:454
+#: src/installation_process.py:462
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Le système de fichiers du bureau n'existe pas ! Erreur critique (sortie)."
 
-#: src/installation_process.py:470
+#: src/installation_process.py:478
 msgid "Indexing files to be copied ..."
 msgstr "Indexation des fichiers à copier..."
 
-#: src/installation_process.py:475
+#: src/installation_process.py:483
 msgid "Extracting root-image ..."
 msgstr "Extraction de l'image root"
 
-#: src/installation_process.py:485
+#: src/installation_process.py:493
 msgid "Extracting desktop-image ..."
 msgstr "Extraction de l'image du bureau..."
 
-#: src/installation_process.py:500
+#: src/installation_process.py:508
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Restauration des meta-informations sur %s"
 
-#: src/installation_process.py:515
+#: src/installation_process.py:523
 msgid "Special dirs already mounted."
 msgstr "Répertoires spéciaux déjà montés."
 
-#: src/installation_process.py:542
+#: src/installation_process.py:550
 msgid "Special dirs already not mounted."
 msgstr "Répertoires spéciaux pas encore montés."
 
-#: src/installation_process.py:552
+#: src/installation_process.py:560
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Impossible de démonter %s"
 
-#: src/installation_process.py:571
+#: src/installation_process.py:579
 #, python-format
 msgid "Error running command: %s"
 msgstr "Erreur durant l'exécution de la commande : %s"
 
-#: src/installation_process.py:633
+#: src/installation_process.py:641
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Ajouter au fstab : UUID=%s %s %s %s 0 %s"
 
-#: src/installation_process.py:719
+#: src/installation_process.py:727
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installation du chargeur d’amorçage GRUB(2) BIOS dans %s"
 
-#: src/installation_process.py:742 src/installation_process.py:759
+#: src/installation_process.py:750 src/installation_process.py:767
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ERREUR durant l'installation de GRUB(2) BIOS."
 
-#: src/installation_process.py:757
+#: src/installation_process.py:765
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS a été installé avec succès."
 
-#: src/installation_process.py:771
+#: src/installation_process.py:779
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Installation du chargeur d’amorçage GRUB(2) UEFI %s dans %s"
 
-#: src/installation_process.py:799
+#: src/installation_process.py:807
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "ERREUR d'installation du fichier de configuration de GRUB(2)."
 
-#: src/installation_process.py:828
+#: src/installation_process.py:836
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ERREUR d'installation de la locale de GRUB(2)."
 
-#: src/installation_process.py:844
+#: src/installation_process.py:845
+#, python-format
+msgid "Enabled %s service."
+msgstr ""
+
+#: src/installation_process.py:852
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Erreur de création du hash pour le mot de passe de l'utilisateur %s"
 
-#: src/installation_process.py:850
+#: src/installation_process.py:858
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Erreur durant le changement du mot de passe de l'utilisateur %s"
 
-#: src/installation_process.py:862
+#: src/installation_process.py:870
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Configurez hooks et les modules dans mkinitcpio.conf"
 
-#: src/installation_process.py:940 src/installation_process.py:951
-msgid "Configuring your new system"
-msgstr "Configuration de votre nouveau système"
-
-#: src/installation_process.py:943
-msgid "fstab file generated."
-msgstr "Fichier fstab créé."
-
-#: src/installation_process.py:949
-msgid "Network configuration copied."
-msgstr "Configuration réseau copiée."
-
-#: src/installation_process.py:979
-msgid "Timezone set."
-msgstr "Réglage de la zone horaire."
-
-#: src/installation_process.py:999
-#, python-format
-msgid "Sudo configuration for user %s done."
-msgstr "Configuration sudo pour l'utilisateur %s effectuée"
-
-#: src/installation_process.py:1005
-#, python-format
-msgid "User %s added."
-msgstr "Utilisateur %s ajouté"
-
-#: src/installation_process.py:1017
-#, python-format
-msgid "Hostname  %s set."
-msgstr "Réglage du nom d'hôte de %s."
-
-#: src/installation_process.py:1021
-msgid "Set the same password to root."
-msgstr "Utiliser le même mot de passe pour root"
-
-#: src/installation_process.py:1027
-msgid "Generating locales ..."
-msgstr "Créations des 'locales'"
-
-#: src/installation_process.py:1047
-msgid "Adjusting hardware clock ..."
-msgstr "Ajustement de l’horloge matérielle…"
-
-#: src/installation_process.py:1053
-msgid "Configuring hardware ..."
-msgstr "Configure le matériel ..."
-
-#: src/installation_process.py:1116
-msgid "Set up graphics card ..."
-msgstr "Réglage de la carte graphique..."
-
-#: src/installation_process.py:1123
-msgid "Can't execute the MHWD script"
-msgstr "Le script MHWD ne peut être exécuté ..."
-
-#: src/installation_process.py:1129
-msgid "Configure display manager ..."
-msgstr "Configure le gestionnaire de sessions..."
-
-#: src/installation_process.py:1228
-msgid "Configure System ..."
-msgstr "Configure le système ..."
-
-#: src/installation_process.py:1256
-msgid "Removing live configuration (packages)"
-msgstr "Suppression de la configuration du Live (paquets)"
-
-#: src/installation_process.py:1272
-msgid "Configuring package manager"
-msgstr "Configuration du gestionnaire de paquets"
-
-#: src/installation_process.py:1287
-msgid "Finished configuring package manager."
-msgstr "Fin de la configuration du gestionnaire de paquets."
-
-#: src/installation_process.py:1311
+#: src/installation_process.py:934
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s : Active la connexion automatique pour l'utilisateur %s."
 
-#: src/installation_process.py:1390
+#: src/installation_process.py:1030 src/installation_process.py:1041
+msgid "Configuring your new system"
+msgstr "Configuration de votre nouveau système"
+
+#: src/installation_process.py:1033
+msgid "fstab file generated."
+msgstr "Fichier fstab créé."
+
+#: src/installation_process.py:1039
+msgid "Network configuration copied."
+msgstr "Configuration réseau copiée."
+
+#: src/installation_process.py:1065
+msgid "Timezone set."
+msgstr "Réglage de la zone horaire."
+
+#: src/installation_process.py:1085
+#, python-format
+msgid "Sudo configuration for user %s done."
+msgstr "Configuration sudo pour l'utilisateur %s effectuée"
+
+#: src/installation_process.py:1091
+#, python-format
+msgid "User %s added."
+msgstr "Utilisateur %s ajouté"
+
+#: src/installation_process.py:1103
+#, python-format
+msgid "Hostname  %s set."
+msgstr "Réglage du nom d'hôte de %s."
+
+#: src/installation_process.py:1107
+msgid "Set the same password to root."
+msgstr "Utiliser le même mot de passe pour root"
+
+#: src/installation_process.py:1113
+msgid "Generating locales ..."
+msgstr "Créations des 'locales'"
+
+#: src/installation_process.py:1134
+msgid "Adjusting hardware clock ..."
+msgstr "Ajustement de l’horloge matérielle…"
+
+#: src/installation_process.py:1143
+msgid "Configuring hardware ..."
+msgstr "Configure le matériel ..."
+
+#: src/installation_process.py:1213
+msgid "Set up graphics card ..."
+msgstr "Réglage de la carte graphique..."
+
+#: src/installation_process.py:1220
+msgid "Can't execute the MHWD script"
+msgstr "Le script MHWD ne peut être exécuté ..."
+
+#: src/installation_process.py:1226
+msgid "Configure display manager ..."
+msgstr "Configure le gestionnaire de sessions..."
+
+#: src/installation_process.py:1332
+msgid "Configure System ..."
+msgstr "Configure le système ..."
+
+#: src/installation_process.py:1357
+msgid "Removing live configuration (packages)"
+msgstr "Suppression de la configuration du Live (paquets)"
+
+#: src/installation_process.py:1373
+msgid "Configuring package manager"
+msgstr "Configuration du gestionnaire de paquets"
+
+#: src/installation_process.py:1385
+msgid "Finished configuring package manager."
+msgstr "Fin de la configuration du gestionnaire de paquets."
+
+#: src/installation_process.py:1409
 msgid "Running mkinitcpio ..."
 msgstr "Exécution de mkinitcpio…"
 
-#: src/installation_process.py:1393
+#: src/installation_process.py:1412
 msgid "Running mkinitcpio - done"
 msgstr "Exécution de Mkinitcpio terminée"
 
-#: src/installation_process.py:1420
+#: src/installation_process.py:1428
 msgid "Encrypting user home dir ..."
 msgstr "Crypter le répertoire 'home'"
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1430
 msgid "User home dir encrypted"
 msgstr "Rép. home chiffré"
-
-#: src/installation_process.py:1430
-msgid "Can't copy Thus log to /var/log"
-msgstr "Impossible de copier le logo Thus dans /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"

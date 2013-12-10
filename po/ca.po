@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 19:37+0100\n"
-"PO-Revision-Date: 2013-12-09 18:50+0000\n"
+"POT-Creation-Date: 2013-12-10 14:15+0100\n"
+"PO-Revision-Date: 2013-12-10 13:23+0000\n"
 "Last-Translator: asmolero <alsamolero@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -65,8 +65,8 @@ msgid "Quiting installer..."
 msgstr "S'està sortint de l'instal·lador"
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
-#: src/installation_process.py:402 src/installation_process.py:415
-#: src/installation_process.py:426
+#: src/installation_process.py:401 src/installation_process.py:414
+#: src/installation_process.py:425
 #, python-format
 msgid "Unmounting %s"
 msgstr "Desmuntant %s"
@@ -578,248 +578,270 @@ msgstr "Copiant '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "Instal·lant usant el mètode '%s'"
 
-#: src/installation_process.py:244
+#: src/installation_process.py:241
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "Creant particions i els seus sistemes de fitxers a %s"
 
-#: src/installation_process.py:266
+#: src/installation_process.py:263
 msgid "Error creating partitions and their filesystems"
 msgstr "S'ha produït un error en crear les particions i els sistemes de fitxers"
 
-#: src/installation_process.py:305 src/installation_process.py:328
+#: src/installation_process.py:302 src/installation_process.py:325
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Muntant la partició %s al directori %s"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:308
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Muntant la partició %s al directori %s/boot"
 
-#: src/installation_process.py:316
+#: src/installation_process.py:313
 msgid "Couldn't mount root and boot partitions"
 msgstr "No puc muntar les particions de 'root' i 'boot'"
 
-#: src/installation_process.py:334
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "No es pot muntar %s a %s"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
 msgstr "%s esborrat"
 
-#: src/installation_process.py:356
+#: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
 msgstr "No puc crear els directoris necessaris al sistema de destí"
 
-#: src/installation_process.py:374
+#: src/installation_process.py:359
+msgid "Install System ..."
+msgstr "S'està instal·lant el sistema..."
+
+#: src/installation_process.py:364
+msgid "System installed."
+msgstr "S'ha instal·lat el sistema."
+
+#: src/installation_process.py:366
+msgid "Configuring system ..."
+msgstr "S'està configurant el sistema..."
+
+#: src/installation_process.py:368
+msgid "System configured."
+msgstr "S'ha configurat el sistema."
+
+#: src/installation_process.py:372
 msgid "Installing bootloader ..."
 msgstr "S'està instal·lant el carregador d'arrencada..."
 
-#: src/installation_process.py:386
+#: src/installation_process.py:385
 msgid "Unknown error"
 msgstr "Error desconegut"
 
-#: src/installation_process.py:407 src/installation_process.py:421
-#: src/installation_process.py:431
+#: src/installation_process.py:406 src/installation_process.py:420
+#: src/installation_process.py:430
 #, python-format
 msgid "Can't unmount %s"
 msgstr "No es pot desmuntar %s"
 
-#: src/installation_process.py:433
+#: src/installation_process.py:432
 msgid "Installation finished successfully."
 msgstr "La instal·lació ha acabat correctament."
 
-#: src/installation_process.py:451
+#: src/installation_process.py:443
+#, python-format
+msgid "Can't copy Thus log to %s"
+msgstr "No es pot copiar el registre del Thus a %s"
+
+#: src/installation_process.py:459
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "El sistema de fitxers base no existeix. És un error crític i s'està sortint."
 
-#: src/installation_process.py:454
+#: src/installation_process.py:462
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "El sistema de fitxers d'escriptori no existeix. És un error crític i s'està sortint."
 
-#: src/installation_process.py:470
+#: src/installation_process.py:478
 msgid "Indexing files to be copied ..."
 msgstr "S'estan indexant els fitxers per copiar..."
 
-#: src/installation_process.py:475
+#: src/installation_process.py:483
 msgid "Extracting root-image ..."
 msgstr "S'està extraient la imatge arrel..."
 
-#: src/installation_process.py:485
+#: src/installation_process.py:493
 msgid "Extracting desktop-image ..."
 msgstr "S'està extraient la imatge de l'escriptori..."
 
-#: src/installation_process.py:500
+#: src/installation_process.py:508
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Restauració de meta-informació sobre %s"
 
-#: src/installation_process.py:515
+#: src/installation_process.py:523
 msgid "Special dirs already mounted."
 msgstr "Directoris especials ja estan muntats."
 
-#: src/installation_process.py:542
+#: src/installation_process.py:550
 msgid "Special dirs already not mounted."
 msgstr "Directoris especials no estan muntats."
 
-#: src/installation_process.py:552
+#: src/installation_process.py:560
 #, python-format
 msgid "Unable to umount %s"
 msgstr "No es pot muntar %s"
 
-#: src/installation_process.py:571
+#: src/installation_process.py:579
 #, python-format
 msgid "Error running command: %s"
 msgstr "Error executant la comanda %s"
 
-#: src/installation_process.py:633
+#: src/installation_process.py:641
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Afegit a fstab: UUID=%s %s %s %s 0 %s"
 
-#: src/installation_process.py:719
+#: src/installation_process.py:727
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Instal·lant el carregador d'arrencada GRUB(2) BIOS a %s"
 
-#: src/installation_process.py:742 src/installation_process.py:759
+#: src/installation_process.py:750 src/installation_process.py:767
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ERROR instal·lant el GRUB(2) BIOS."
 
-#: src/installation_process.py:757
+#: src/installation_process.py:765
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "S'ha instal·lat correctament el GRUB(2) BIOS."
 
-#: src/installation_process.py:771
+#: src/installation_process.py:779
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "Instal·lant el carregador d'arrencada GRUB(2) UEFI %s a %s"
 
-#: src/installation_process.py:799
+#: src/installation_process.py:807
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "ERROR instal·lant fitxer de configuració de GRUB(2)."
 
-#: src/installation_process.py:828
+#: src/installation_process.py:836
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ERROR instal·lant la configuració local de GRUB(2)."
 
-#: src/installation_process.py:844
+#: src/installation_process.py:845
+#, python-format
+msgid "Enabled %s service."
+msgstr "S'ha activat el servei %s."
+
+#: src/installation_process.py:852
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Error creant el 'hash' de la contrasenya per l'usuari %s"
 
-#: src/installation_process.py:850
+#: src/installation_process.py:858
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "No puc canviar la contrasenya per l'usuari %s"
 
-#: src/installation_process.py:862
+#: src/installation_process.py:870
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Configurant hooks i mòduls a mkinitcpio.conf"
 
-#: src/installation_process.py:940 src/installation_process.py:951
-msgid "Configuring your new system"
-msgstr "Configurant el sistema"
-
-#: src/installation_process.py:943
-msgid "fstab file generated."
-msgstr "fitxer fstab generat."
-
-#: src/installation_process.py:949
-msgid "Network configuration copied."
-msgstr "Configuració de la xarxa copiada."
-
-#: src/installation_process.py:979
-msgid "Timezone set."
-msgstr "Zona horària configurada."
-
-#: src/installation_process.py:999
-#, python-format
-msgid "Sudo configuration for user %s done."
-msgstr "Configuració sudo per a l'usuari %s finalitzada."
-
-#: src/installation_process.py:1005
-#, python-format
-msgid "User %s added."
-msgstr "Usuari %s afegit."
-
-#: src/installation_process.py:1017
-#, python-format
-msgid "Hostname  %s set."
-msgstr "S'ha configurat %s com a nom de l'ordinador."
-
-#: src/installation_process.py:1021
-msgid "Set the same password to root."
-msgstr "Configureu la mateixa contrasenya per a root."
-
-#: src/installation_process.py:1027
-msgid "Generating locales ..."
-msgstr "S'estan generant les configuracions locals..."
-
-#: src/installation_process.py:1047
-msgid "Adjusting hardware clock ..."
-msgstr "S'està ajustant el rellotge de maquinari..."
-
-#: src/installation_process.py:1053
-msgid "Configuring hardware ..."
-msgstr "S'està configurant el maquinari..."
-
-#: src/installation_process.py:1116
-msgid "Set up graphics card ..."
-msgstr "S'està configurant la targeta gràfica..."
-
-#: src/installation_process.py:1123
-msgid "Can't execute the MHWD script"
-msgstr "No es pot executar l'script MHWD"
-
-#: src/installation_process.py:1129
-msgid "Configure display manager ..."
-msgstr "S'està configurant el gestor de visualització..."
-
-#: src/installation_process.py:1228
-msgid "Configure System ..."
-msgstr "S'està configurant el sistema..."
-
-#: src/installation_process.py:1256
-msgid "Removing live configuration (packages)"
-msgstr "Eliminant la configuració viva (paquets)"
-
-#: src/installation_process.py:1272
-msgid "Configuring package manager"
-msgstr "Configurant el gestor de paquets"
-
-#: src/installation_process.py:1287
-msgid "Finished configuring package manager."
-msgstr "Ha acabat la configuració del gestor de paquets."
-
-#: src/installation_process.py:1311
+#: src/installation_process.py:934
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Activa l'inici automàtic de sessió per a l'usuari %s."
 
-#: src/installation_process.py:1390
+#: src/installation_process.py:1030 src/installation_process.py:1041
+msgid "Configuring your new system"
+msgstr "Configurant el sistema"
+
+#: src/installation_process.py:1033
+msgid "fstab file generated."
+msgstr "fitxer fstab generat."
+
+#: src/installation_process.py:1039
+msgid "Network configuration copied."
+msgstr "Configuració de la xarxa copiada."
+
+#: src/installation_process.py:1065
+msgid "Timezone set."
+msgstr "Zona horària configurada."
+
+#: src/installation_process.py:1085
+#, python-format
+msgid "Sudo configuration for user %s done."
+msgstr "Configuració sudo per a l'usuari %s finalitzada."
+
+#: src/installation_process.py:1091
+#, python-format
+msgid "User %s added."
+msgstr "Usuari %s afegit."
+
+#: src/installation_process.py:1103
+#, python-format
+msgid "Hostname  %s set."
+msgstr "S'ha configurat %s com a nom de l'ordinador."
+
+#: src/installation_process.py:1107
+msgid "Set the same password to root."
+msgstr "Configureu la mateixa contrasenya per a root."
+
+#: src/installation_process.py:1113
+msgid "Generating locales ..."
+msgstr "S'estan generant les configuracions locals..."
+
+#: src/installation_process.py:1134
+msgid "Adjusting hardware clock ..."
+msgstr "S'està ajustant el rellotge de maquinari..."
+
+#: src/installation_process.py:1143
+msgid "Configuring hardware ..."
+msgstr "S'està configurant el maquinari..."
+
+#: src/installation_process.py:1213
+msgid "Set up graphics card ..."
+msgstr "S'està configurant la targeta gràfica..."
+
+#: src/installation_process.py:1220
+msgid "Can't execute the MHWD script"
+msgstr "No es pot executar l'script MHWD"
+
+#: src/installation_process.py:1226
+msgid "Configure display manager ..."
+msgstr "S'està configurant el gestor de visualització..."
+
+#: src/installation_process.py:1332
+msgid "Configure System ..."
+msgstr "S'està configurant el sistema..."
+
+#: src/installation_process.py:1357
+msgid "Removing live configuration (packages)"
+msgstr "Eliminant la configuració viva (paquets)"
+
+#: src/installation_process.py:1373
+msgid "Configuring package manager"
+msgstr "Configurant el gestor de paquets"
+
+#: src/installation_process.py:1385
+msgid "Finished configuring package manager."
+msgstr "Ha acabat la configuració del gestor de paquets."
+
+#: src/installation_process.py:1409
 msgid "Running mkinitcpio ..."
 msgstr "S'està executant mkinitcpio..."
 
-#: src/installation_process.py:1393
+#: src/installation_process.py:1412
 msgid "Running mkinitcpio - done"
 msgstr "S'està executant mkinitcpio - fet"
 
-#: src/installation_process.py:1420
+#: src/installation_process.py:1428
 msgid "Encrypting user home dir ..."
 msgstr "S'està encriptant el directori de l'usuari..."
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1430
 msgid "User home dir encrypted"
 msgstr "Directori de l'usuari encriptat"
-
-#: src/installation_process.py:1430
-msgid "Can't copy Thus log to /var/log"
-msgstr "No es pot copiar el registre del Thus a /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"

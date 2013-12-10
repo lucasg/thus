@@ -247,7 +247,7 @@ class InstallationAlongside(Gtk.Box):
         try:
             subprocess.call(["mount", partition_path, "/mnt"], stderr=subprocess.DEVNULL)
             x = subprocess.check_output(['df', partition_path]).decode()
-            subprocess.call(["umount", "/mnt"], stderr=subprocess.DEVNULL)
+            subprocess.call(["umount", "-l", "/mnt"], stderr=subprocess.DEVNULL)
             x = x.split('\n')
             x = x[1].split()
             self.max_size = int(x[1]) / 1000

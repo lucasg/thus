@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 19:37+0100\n"
-"PO-Revision-Date: 2013-12-09 18:41+0000\n"
+"POT-Creation-Date: 2013-12-10 14:15+0100\n"
+"PO-Revision-Date: 2013-12-10 13:21+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -58,8 +58,8 @@ msgid "Quiting installer..."
 msgstr "離開安裝程式..."
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
-#: src/installation_process.py:402 src/installation_process.py:415
-#: src/installation_process.py:426
+#: src/installation_process.py:401 src/installation_process.py:414
+#: src/installation_process.py:425
 #, python-format
 msgid "Unmounting %s"
 msgstr "正在卸載 %s"
@@ -571,248 +571,270 @@ msgstr "正在複製 '/%s'"
 msgid "Installing using the '%s' method"
 msgstr "正在使用 '%s' 方法安裝"
 
-#: src/installation_process.py:244
+#: src/installation_process.py:241
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "在 %s 增加分割區及其檔案系統"
 
-#: src/installation_process.py:266
+#: src/installation_process.py:263
 msgid "Error creating partitions and their filesystems"
 msgstr "在創建分割區及其檔案系統時遇到錯誤"
 
-#: src/installation_process.py:305 src/installation_process.py:328
+#: src/installation_process.py:302 src/installation_process.py:325
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "正在掛載 %s 分割區到 %s 目錄"
 
-#: src/installation_process.py:311
+#: src/installation_process.py:308
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "正在掛載 %s 分割區到 %s/boot 目錄"
 
-#: src/installation_process.py:316
+#: src/installation_process.py:313
 msgid "Couldn't mount root and boot partitions"
 msgstr "無法掛載根目錄及開機分割區"
 
-#: src/installation_process.py:334
+#: src/installation_process.py:331
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "無法掛載 %s 在 %s"
 
-#: src/installation_process.py:346
+#: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
 msgstr "%s 已刪除"
 
-#: src/installation_process.py:356
+#: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
 msgstr "無法在目標系統上創建必要的目錄"
 
-#: src/installation_process.py:374
+#: src/installation_process.py:359
+msgid "Install System ..."
+msgstr ""
+
+#: src/installation_process.py:364
+msgid "System installed."
+msgstr ""
+
+#: src/installation_process.py:366
+msgid "Configuring system ..."
+msgstr ""
+
+#: src/installation_process.py:368
+msgid "System configured."
+msgstr ""
+
+#: src/installation_process.py:372
 msgid "Installing bootloader ..."
 msgstr "正在安裝開機載入器 ..."
 
-#: src/installation_process.py:386
+#: src/installation_process.py:385
 msgid "Unknown error"
 msgstr "未知的錯誤"
 
-#: src/installation_process.py:407 src/installation_process.py:421
-#: src/installation_process.py:431
+#: src/installation_process.py:406 src/installation_process.py:420
+#: src/installation_process.py:430
 #, python-format
 msgid "Can't unmount %s"
 msgstr "無法卸載 %s"
 
-#: src/installation_process.py:433
+#: src/installation_process.py:432
 msgid "Installation finished successfully."
 msgstr "安裝已成功完成。"
 
-#: src/installation_process.py:451
+#: src/installation_process.py:443
+#, python-format
+msgid "Can't copy Thus log to %s"
+msgstr ""
+
+#: src/installation_process.py:459
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "基礎檔案系統不存在！嚴重錯誤 （正在離開）。"
 
-#: src/installation_process.py:454
+#: src/installation_process.py:462
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "桌面檔案系統不存在！嚴重錯誤（正在離開）。"
 
-#: src/installation_process.py:470
+#: src/installation_process.py:478
 msgid "Indexing files to be copied ..."
 msgstr "正在複製索引檔案 ..."
 
-#: src/installation_process.py:475
+#: src/installation_process.py:483
 msgid "Extracting root-image ..."
 msgstr "正在解壓縮 root-image ..."
 
-#: src/installation_process.py:485
+#: src/installation_process.py:493
 msgid "Extracting desktop-image ..."
 msgstr "正在解壓縮 desktop-image ..."
 
-#: src/installation_process.py:500
+#: src/installation_process.py:508
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "正在恢復 %s 上的元資訊"
 
-#: src/installation_process.py:515
+#: src/installation_process.py:523
 msgid "Special dirs already mounted."
 msgstr "特殊目錄已經掛載。"
 
-#: src/installation_process.py:542
+#: src/installation_process.py:550
 msgid "Special dirs already not mounted."
 msgstr "特殊目錄已經卸載。"
 
-#: src/installation_process.py:552
+#: src/installation_process.py:560
 #, python-format
 msgid "Unable to umount %s"
 msgstr "無法卸載 %s"
 
-#: src/installation_process.py:571
+#: src/installation_process.py:579
 #, python-format
 msgid "Error running command: %s"
 msgstr "執行命令時遇到錯誤： %s"
 
-#: src/installation_process.py:633
+#: src/installation_process.py:641
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "加入 fstab ： UUID=%s %s %s %s 0 %s"
 
-#: src/installation_process.py:719
+#: src/installation_process.py:727
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "正在安裝 GRUB(2) BIOS 開機載入器到 %s"
 
-#: src/installation_process.py:742 src/installation_process.py:759
+#: src/installation_process.py:750 src/installation_process.py:767
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "安裝 GRUB(2)時發生錯誤。"
 
-#: src/installation_process.py:757
+#: src/installation_process.py:765
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS 已成功安裝。"
 
-#: src/installation_process.py:771
+#: src/installation_process.py:779
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "正在安裝 GRUB(2) UEFI 開機載入器到 %s"
 
-#: src/installation_process.py:799
+#: src/installation_process.py:807
 msgid "ERROR installing GRUB(2) configuration file."
 msgstr "安裝 GRUB(2) 的配置檔案時遇到錯誤。"
 
-#: src/installation_process.py:828
+#: src/installation_process.py:836
 msgid "ERROR installing GRUB(2) locale."
 msgstr "安裝 GRUB(2) 的語系時遇到錯誤。"
 
-#: src/installation_process.py:844
+#: src/installation_process.py:845
+#, python-format
+msgid "Enabled %s service."
+msgstr ""
+
+#: src/installation_process.py:852
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "創建使用者 %s 的密碼雜湊值時發生錯誤"
 
-#: src/installation_process.py:850
+#: src/installation_process.py:858
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "更改使用者 %s 的密碼時發生錯誤"
 
-#: src/installation_process.py:862
+#: src/installation_process.py:870
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "正在設定 mkinitcpio.conf 中的關聯性及模組"
 
-#: src/installation_process.py:940 src/installation_process.py:951
-msgid "Configuring your new system"
-msgstr "正在設定新系統"
-
-#: src/installation_process.py:943
-msgid "fstab file generated."
-msgstr "fstab 已產生。"
-
-#: src/installation_process.py:949
-msgid "Network configuration copied."
-msgstr "網路組態已複製。"
-
-#: src/installation_process.py:979
-msgid "Timezone set."
-msgstr "時區設置。"
-
-#: src/installation_process.py:999
-#, python-format
-msgid "Sudo configuration for user %s done."
-msgstr "使用者 %s 的 Sudo 設定已完成。"
-
-#: src/installation_process.py:1005
-#, python-format
-msgid "User %s added."
-msgstr "使用者 %s 已加入。"
-
-#: src/installation_process.py:1017
-#, python-format
-msgid "Hostname  %s set."
-msgstr "主機名稱  %s 設置。"
-
-#: src/installation_process.py:1021
-msgid "Set the same password to root."
-msgstr "將 root 設定為相同的密碼。"
-
-#: src/installation_process.py:1027
-msgid "Generating locales ..."
-msgstr "正在生成語系碼 ..."
-
-#: src/installation_process.py:1047
-msgid "Adjusting hardware clock ..."
-msgstr "正在調整硬體時鐘 ..."
-
-#: src/installation_process.py:1053
-msgid "Configuring hardware ..."
-msgstr "正在配置硬體 ..."
-
-#: src/installation_process.py:1116
-msgid "Set up graphics card ..."
-msgstr "正在設定顯示卡 ..."
-
-#: src/installation_process.py:1123
-msgid "Can't execute the MHWD script"
-msgstr "無法執行 MHWD 腳本"
-
-#: src/installation_process.py:1129
-msgid "Configure display manager ..."
-msgstr "正在設定顯示管理員 ..."
-
-#: src/installation_process.py:1228
-msgid "Configure System ..."
-msgstr "正在設定系統 ..."
-
-#: src/installation_process.py:1256
-msgid "Removing live configuration (packages)"
-msgstr "正在移除 live 設定值(套件)"
-
-#: src/installation_process.py:1272
-msgid "Configuring package manager"
-msgstr "正在設定套件管理員"
-
-#: src/installation_process.py:1287
-msgid "Finished configuring package manager."
-msgstr "設定套件管理員完成。"
-
-#: src/installation_process.py:1311
+#: src/installation_process.py:934
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s ： 啟用使用者 %s 的自動登入。"
 
-#: src/installation_process.py:1390
+#: src/installation_process.py:1030 src/installation_process.py:1041
+msgid "Configuring your new system"
+msgstr "正在設定新系統"
+
+#: src/installation_process.py:1033
+msgid "fstab file generated."
+msgstr "fstab 已產生。"
+
+#: src/installation_process.py:1039
+msgid "Network configuration copied."
+msgstr "網路組態已複製。"
+
+#: src/installation_process.py:1065
+msgid "Timezone set."
+msgstr "時區設置。"
+
+#: src/installation_process.py:1085
+#, python-format
+msgid "Sudo configuration for user %s done."
+msgstr "使用者 %s 的 Sudo 設定已完成。"
+
+#: src/installation_process.py:1091
+#, python-format
+msgid "User %s added."
+msgstr "使用者 %s 已加入。"
+
+#: src/installation_process.py:1103
+#, python-format
+msgid "Hostname  %s set."
+msgstr "主機名稱  %s 設置。"
+
+#: src/installation_process.py:1107
+msgid "Set the same password to root."
+msgstr "將 root 設定為相同的密碼。"
+
+#: src/installation_process.py:1113
+msgid "Generating locales ..."
+msgstr "正在生成語系碼 ..."
+
+#: src/installation_process.py:1134
+msgid "Adjusting hardware clock ..."
+msgstr "正在調整硬體時鐘 ..."
+
+#: src/installation_process.py:1143
+msgid "Configuring hardware ..."
+msgstr "正在配置硬體 ..."
+
+#: src/installation_process.py:1213
+msgid "Set up graphics card ..."
+msgstr "正在設定顯示卡 ..."
+
+#: src/installation_process.py:1220
+msgid "Can't execute the MHWD script"
+msgstr "無法執行 MHWD 腳本"
+
+#: src/installation_process.py:1226
+msgid "Configure display manager ..."
+msgstr "正在設定顯示管理員 ..."
+
+#: src/installation_process.py:1332
+msgid "Configure System ..."
+msgstr "正在設定系統 ..."
+
+#: src/installation_process.py:1357
+msgid "Removing live configuration (packages)"
+msgstr "正在移除 live 設定值(套件)"
+
+#: src/installation_process.py:1373
+msgid "Configuring package manager"
+msgstr "正在設定套件管理員"
+
+#: src/installation_process.py:1385
+msgid "Finished configuring package manager."
+msgstr "設定套件管理員完成。"
+
+#: src/installation_process.py:1409
 msgid "Running mkinitcpio ..."
 msgstr "正在執行 mkinitcpio ..."
 
-#: src/installation_process.py:1393
+#: src/installation_process.py:1412
 msgid "Running mkinitcpio - done"
 msgstr "正在執行 mkinitcpio - 完成"
 
-#: src/installation_process.py:1420
+#: src/installation_process.py:1428
 msgid "Encrypting user home dir ..."
 msgstr "正在加密使用者的家目錄 ..."
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1430
 msgid "User home dir encrypted"
 msgstr "使用者的家目錄已加密。"
-
-#: src/installation_process.py:1430
-msgid "Can't copy Thus log to /var/log"
-msgstr "無法複製 Thus 的記錄檔到 /var/log"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"

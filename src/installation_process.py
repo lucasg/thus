@@ -167,9 +167,6 @@ class InstallationProcess(multiprocessing.Process):
         self.ssd = ssd
         self.mount_devices = mount_devices
 
-        # Check desktop selected to load packages needed
-        self.desktop = self.settings.get('desktop')
-
         # Set defaults
         self.desktop_manager = 'none'
         self.network_manager = 'NetworkManager'
@@ -184,7 +181,7 @@ class InstallationProcess(multiprocessing.Process):
 
         self.special_dirs_mounted = False
 
-        # Initialize some vars that are correctly initialized elsewhere
+        # Initialize some vars that are correctly initialized elsewhere (pylint complains about it)
         self.auto_device = ""
         self.arch = ""
         self.initramfs = ""
@@ -359,20 +356,22 @@ class InstallationProcess(multiprocessing.Process):
         all_ok = True
 
         try:
-            self.queue_event('debug', 'Install System ...')
+            self.queue_event('debug', _('Install System ...'))
             # very slow ...
             self.install_system()
 
             subprocess.check_call(['mkdir', '-p', '%s/var/log/' % self.dest_dir])
-            self.queue_event('debug', 'System installed')
+            self.queue_event('debug', _('System installed.'))
 
-            self.queue_event('debug', 'Configuring system ...')
+            self.queue_event('debug', _('Configuring system ...'))
             self.configure_system()
-            self.queue_event('debug', 'System configured.')
+            self.queue_event('debug', _('System configured.'))
 
+            # Install boot loader (always after running mkinitcpio)
             if self.settings.get('install_bootloader'):
                 self.queue_event('debug', _('Installing bootloader ...'))
                 self.install_bootloader()
+
         except subprocess.CalledProcessError as err:
             logging.error(err)
             self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
@@ -401,7 +400,7 @@ class InstallationProcess(multiprocessing.Process):
                     try:
                         txt = _("Unmounting %s") % p
                         self.queue_event('debug', txt)
-                        subprocess.check_call(['umount', p])
+                        subprocess.check_call(['umount', '-l', p])
                     except subprocess.CalledProcessError as err:
                         logging.warning(err)
                         self.queue_event('debug', _("Can't unmount %s") % p)
@@ -414,7 +413,7 @@ class InstallationProcess(multiprocessing.Process):
 
                         txt = _("Unmounting %s") % mount_dir
                         self.queue_event('debug', txt)
-                        subprocess.check_call(['umount', mount_dir])
+                        subprocess.check_call(['umount', '-l', mount_dir])
                     except subprocess.CalledProcessError as err:
                         # We will continue as root and boot are already mounted
                         logging.warning(err)
@@ -425,7 +424,7 @@ class InstallationProcess(multiprocessing.Process):
                 try:
                     txt = _("Unmounting %s") % self.dest_dir
                     self.queue_event('debug', txt)
-                    subprocess.check_call(['umount', self.dest_dir])
+                    subprocess.check_call(['umount', '-l', self.dest_dir])
                 except subprocess.CalledProcessError as err:
                     logging.warning(err)
                     self.queue_event('debug', _("Can't unmount %s") % p)
@@ -435,9 +434,18 @@ class InstallationProcess(multiprocessing.Process):
             self.running = False
             self.error = False
             return True
+            # Last but not least, copy Thus log to new installation
+            datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
+            dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
+            try:
+                shutil.copy("/tmp/thus.log", dst)
+            except FileNotFoundError:
+                logging.warning(_("Can't copy Thus log to %s") % dst)
+            except FileExistsError:
+                pass
 
-    # Copies all files to target
     def install_system(self):
+        """ Copies all files to target """
         # mount the media location.
         try:
             if(not os.path.exists(self.dest_dir)):
@@ -547,7 +555,7 @@ class InstallationProcess(multiprocessing.Process):
         for s_dir in special_dirs:
             mydir = os.path.join(self.dest_dir, s_dir)
             try:
-                subprocess.check_call(["umount", mydir])
+                subprocess.check_call(["umount", "-l", mydir])
             except:
                 self.queue_event('warning', _("Unable to umount %s") % mydir)
 
@@ -833,8 +841,8 @@ class InstallationProcess(multiprocessing.Process):
     def enable_services(self, services):
         """ Enables all services that are in the list services """
         for name in services:
-            name += '.service'
-            self.chroot(['systemctl', 'enable', name])
+            self.chroot(['systemctl', 'enable', name + ".service"])
+            self.queue_event('debug', _('Enabled %s service.') % name)
 
     def change_user_password(self, user, new_password):
         """ Changes the user's password """
@@ -921,13 +929,95 @@ class InstallationProcess(multiprocessing.Process):
         """ Helper function to run a command """
         return subprocess.check_output(command.split()).decode().strip("\n")
 
-    # TODO: remove this backport from live-installer
+    def set_autologin(self):
+        """ Enables automatic login for the installed desktop manager """
+        self.queue_event('info', _("%s: Enable automatic login for user %s.") % (self.desktop_manager, username))
 
-    def do_run_in_chroot(self, command):
-        cmd = 'chroot /install/ /bin/sh -c "' + command + '"'
-        if '"' in command:
-            cmd = "chroot /install/ /bin/sh -c '" + command + "'"
-        os.system(cmd)
+                
+        if self.desktop_manager == 'mdm':
+            # Systems with MDM as Desktop Manager
+            mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
+            if os.path.exists(mdm_conf_path):
+                with open(mdm_conf_path, "r") as mdm_conf:
+                    text = mdm_conf.readlines()
+                with open(mdm_conf_path, "w") as mdm_conf:
+                    for line in text:
+                         if '[daemon]' in line:
+                             line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
+                             mdm_conf.write(line)
+                else:
+                    with open(mdm_conf_path, "w") as mdm_conf:
+                        mdm_conf.write('# Thus - Enable automatic login for user\n')
+                        mdm_conf.write('[daemon]\n')
+                        mdm_conf.write('AutomaticLogin=%s\n' % username)
+                        mdm_conf.write('AutomaticLoginEnable=True\n')
+        elif self.desktop_manager == 'gdm':
+            # Systems with GDM as Desktop Manager
+            gdm_conf_path = os.path.join(self.dest_dir, "etc/gdm/custom.conf")
+            if os.path.exists(gdm_conf_path):
+                with open(gdm_conf_path, "r") as gdm_conf:
+                    text = gdm_conf.readlines()
+                with open(gdm_conf_path, "w") as gdm_conf:
+                    for line in text:
+                         if '[daemon]' in line:
+                             line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
+                             gdm_conf.write(line)
+                else:
+                    with open(gdm_conf_path, "w") as gdm_conf:
+                        gdm_conf.write('# Thus - Enable automatic login for user\n')
+                        gdm_conf.write('[daemon]\n')
+                        gdm_conf.write('AutomaticLogin=%s\n' % username)
+                        gdm_conf.write('AutomaticLoginEnable=True\n')
+        elif self.desktop_manager == 'kdm':
+            # Systems with KDM as Desktop Manager
+            kdm_conf_path = os.path.join(self.dest_dir, "usr/share/config/kdm/kdmrc")
+            text = []
+            with open(kdm_conf_path, "r") as kdm_conf:
+                text = kdm_conf.readlines()
+            with open(kdm_conf_path, "w") as kdm_conf:
+                for line in text:
+                    if '#AutoLoginEnable=true' in line:
+                        line = 'AutoLoginEnable=true\n'
+                    if 'AutoLoginUser=' in line:
+                        line = 'AutoLoginUser=%s\n' % username
+                    kdm_conf.write(line)
+        elif self.desktop_manager == 'lxdm':
+            # Systems with LXDM as Desktop Manager
+            lxdm_conf_path = os.path.join(self.dest_dir, "etc/lxdm/lxdm.conf")
+            text = []
+            with open(lxdm_conf_path, "r") as lxdm_conf:
+                text = lxdm_conf.readlines()
+            with open(lxdm_conf_path, "w") as lxdm_conf:
+                for line in text:
+                    if '# autologin=dgod' in line:
+                        line = 'autologin=%s\n' % username
+                    lxdm_conf.write(line)
+        elif self.desktop_manager == 'lightdm':
+            # Systems with LightDM as Desktop Manager
+            # Ideally, we should use configparser for the ini conf file,
+            # but we just do a simple text replacement for now, as it worksforme(tm)
+            lightdm_conf_path = os.path.join(self.dest_dir, "etc/lightdm/lightdm.conf")
+            text = []
+            with open(lightdm_conf_path, "r") as lightdm_conf:
+                text = lightdm_conf.readlines()
+            with open(lightdm_conf_path, "w") as lightdm_conf:
+                for line in text:
+                    if '#autologin-user=' in line:
+                        line = 'autologin-user=%s\n' % username
+                    lightdm_conf.write(line)
+        elif self.desktop_manager == 'slim':
+            # Systems with Slim as Desktop Manager
+            slim_conf_path = os.path.join(self.dest_dir, "etc/slim.conf")
+            text = []
+            with open(slim_conf_path, "r") as slim_conf:
+                text = slim_conf.readlines()
+            with open(slim_conf_path, "w") as slim_conf:
+                for line in text:
+                    if 'auto_login' in line:
+                        line = 'auto_login yes\n'
+                    if 'default_user' in line:
+                        line = 'default_user %s\n' % username
+                    slim_conf.write(line)
 
     def configure_system(self):
         """ Final install steps
@@ -958,10 +1048,6 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists(cups_service):
             self.enable_services([ 'cups' ])
 
-        # TODO: we never ask the user about this...
-        if self.settings.get("use_ntp"):
-            self.enable_services(["ntpd"])
-
         self.queue_event('debug', 'Enabled installed services.')
 
         # Wait FOREVER until the user sets the timezone
@@ -972,7 +1058,7 @@ class InstallationProcess(multiprocessing.Process):
         if self.settings.get("use_ntp"):
             self.enable_services(["ntpd"])
 
-        # set timezone
+        # Set timezone
         zoneinfo_path = os.path.join("/usr/share/zoneinfo", self.settings.get("timezone_zone"))
         self.chroot(['ln', '-s', zoneinfo_path, "/etc/localtime"])
 
@@ -1031,85 +1117,96 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot(['locale-gen'])
         locale_conf_path = os.path.join(self.dest_dir, "etc/locale.conf")
         with open(locale_conf_path, "w") as locale_conf:
-            locale_conf.write('LANG=%s \n' % locale)
-            locale_conf.write('LC_MESSAGES=%s \n' % locale)
-            locale_conf.write('LC_COLLATE=C \n')
+            locale_conf.write('LANG=%s\n' % locale)
+            locale_conf.write('LC_MESSAGES=%s\n' % locale)
+            #locale_conf.write('LC_COLLATE=C\n')
+            locale_conf.write('LC_COLLATE=%s\n' % locale)
 
         environment_path = os.path.join(self.dest_dir, "etc/environment")
         with open(environment_path, "w") as environment:
-            environment.write('LANG=%s \n' % locale)
+            environment.write('LANG=%s\n' % locale)
 
         # Set /etc/vconsole.conf
         vconsole_conf_path = os.path.join(self.dest_dir, "etc/vconsole.conf")
         with open(vconsole_conf_path, "w") as vconsole_conf:
-            vconsole_conf.write('KEYMAP=%s \n' % keyboard_layout)
+            vconsole_conf.write('KEYMAP=%s\n' % keyboard_layout)
 
         self.queue_event('info', _("Adjusting hardware clock ..."))
         self.auto_timesetting()
 
-        # install configs for root
-        os.system("cp -a /install/etc/skel/. /install/root/")
+        # Enter chroot system
+        self.chroot_mount_special_dirs()
+
+        # Install configs for root
+        self.chroot(['cp', '-a', '/etc/skel/.', '/root/'])
 
         self.queue_event('info', _("Configuring hardware ..."))
-        # copy generated xorg.xonf to target
+        # Copy generated xorg.xonf to target
         if os.path.exists("/etc/X11/xorg.conf"):
-            os.system("cp /etc/X11/xorg.conf /install/etc/X11/xorg.conf")
+            shutil.copy2('/etc/X11/xorg.conf', \
+                    os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
 
-        # configure alsa / pulse
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Front 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Side 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Surround 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Center 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset LFE 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Headphone 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Speaker 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Line 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset External 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset FM 50% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Mono 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Digital 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Analog Mix 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Aux 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Aux2 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Center 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Front 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM LFE 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Side 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM Surround 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Playback 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset PCM,1 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset DAC 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset DAC,0 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset DAC,1 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Synth 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset CD 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Wave 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Music 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset AC97 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Analog Front 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,0 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,1 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,2 70% unmute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset VIA DXS,3 70% unmute &> /dev/null")
+        # Configure ALSA
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Front', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Side', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Surround', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Center', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'LFE', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Headphone', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Speaker', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Line', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'External', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'FM', '50%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', 'Mono', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', 'Digital', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Analog', 'Mix', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Aux', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Aux2', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM', 'Center', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM', 'Front', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM', 'LFE', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM', 'Side', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM', 'Surround', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Playback', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'PCM,1', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'DAC', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'DAC,0', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'DAC,1', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Synth', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'CD', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Wave', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Music', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'AC97', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Analog', 'Front', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'VIA', 'DXS,0', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'VIA', 'DXS,1', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'VIA', 'DXS,2', '70%', 'unmute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'VIA', 'DXS,3', '70%', 'unmute', '&>', '/dev/null'])
 
-        # set input levels
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Mic 70% mute &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset IEC958 70% mute &> /dev/null")
+        #', 'set', 'input', 'levels
+        self.chroot(['amixer', '-c', '0', 'sset', 'Mic', '70%', 'mute', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'IEC958', '70%', 'mute', '&>', '/dev/null'])
 
-        # special stuff
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Playback Switch on &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Master Surround on &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset SB Live Analog/Digital Output Jack off &> /dev/null")
-        self.do_run_in_chroot("/usr/bin/amixer -c 0 sset Audigy Analog/Digital Output Jack off &> /dev/null")
+        #', 'special', 'stuff
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', 'Playback', 'Switch', 'on', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', 'Surround', 'on', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'SB', 'Live', 'Analog/Digital', 'Output', 'Jack', 'off', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Audigy', 'Analog/Digital', 'Output', 'Jack', 'off', '&>', '/dev/null'])
 
-        # set pulse
+        #', 'special', 'stuff
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', 'Playback', 'Switch', 'on', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Master', 'Surround', 'on', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'SB', 'Live', 'Analog/Digital', 'Output', 'Jack', 'off', '&>', '/dev/null'])
+        self.chroot(['amixer', '-c', '0', 'sset', 'Audigy', 'Analog/Digital', 'Output', 'Jack', 'off', '&>', '/dev/null'])
+
+        # Set pulse
         if os.path.exists("/usr/bin/pulseaudio-ctl"):
-            self.do_run_in_chroot("pulseaudio-ctl normal")
+            self.chroot(['pulseaudio-ctl', 'normal'])
 
-        # save settings
-        self.do_run_in_chroot("alsactl -f /etc/asound.state store")
+        # Save settings
+        self.chroot(['alsactl', '-f', '/etc/asound.state store'])
 
         # Install xf86-video driver
         if os.path.exists("/opt/livecd/pacman-gfx.conf"):
@@ -1127,167 +1224,168 @@ class InstallationProcess(multiprocessing.Process):
                 return False
 
         self.queue_event('info', _("Configure display manager ..."))
-        # setup slim
+        # Setup slim
         if os.path.exists("/usr/bin/slim"):
             self.desktop_manager = 'slim'
 
         # setup lightdm
-        if os.path.exists("/usr/bin/lightdm"):
-            os.system("mkdir -p /install/run/lightdm")
-            self.do_run_in_chroot("getent group lightdm")
-            self.do_run_in_chroot("groupadd -g 620 lightdm")
-            self.do_run_in_chroot("getent passwd lightdm")
-            self.do_run_in_chroot("useradd -c 'LightDM Display Manager' -u 620 -g lightdm -d /var/run/lightdm -s /usr/bin/nologin lightdm")
-            self.do_run_in_chroot("passwd -l lightdm")
-            os.system("chown -R lightdm:lightdm /install/run/lightdm")
-            if os.path.exists("/usr/bin/startxfce4"):
-                os.system("sed -i -e 's/^.*user-session=.*/user-session=xfce/' /install/etc/lightdm/lightdm.conf")
-                os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver /install/usr/bin/gdmflexiserver")
-            os.system("chmod +r /install/etc/lightdm/lightdm.conf")
+        if os.path.exists("%s/usr/bin/lightdm" % self.dest_dir):
+            self.chroot(['mkdir', '-p', '/run/lightdm'])
+            self.chroot(['getent', 'group', 'lightdm'])
+            self.chroot(['groupadd', '-g', '620', 'lightdm'])
+            self.chroot(['getent', 'passwd', 'lightdm'])
+            self.chroot(['useradd', '-c', 'LightDM Display Manager', \
+                         '-u', '620', '-g', 'lightdm', '-d', '/var/run/lightdm', \
+                         '-s', '/usr/bin/nologin lightdm'])
+            self.chroot(['passwd', '-l', 'lightdm'])
+            self.chroot(['chown', '-R', 'lightdm:lightdm', '/run/lightdm'])
+            if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s/^.*user-session=.*/user-session=xfce/\'', \
+                             '/etc/lightdm/lightdm.conf'])
+                self.chroot(['ln', '-s', '/usr/lib/lightdm/lightdm/gdmflexiserver', '/usr/bin/gdmflexiserver'])
+            self.chroot(['chmod', '+r', '/etc/lightdm/lightdm.conf'])
             self.desktop_manager = 'lightdm'
 
-        # setup gdm
-        if os.path.exists("/usr/bin/gdm"):
-            self.do_run_in_chroot("getent group gdm")
-            self.do_run_in_chroot("groupadd -g 120 gdm")
-            self.do_run_in_chroot("getent passwd gdm")
-            self.do_run_in_chroot("useradd -c 'Gnome Display Manager' -u 120 -g gdm -d /var/lib/gdm -s /usr/bin/nologin gdm")
-            self.do_run_in_chroot("passwd -l gdm")
-            self.do_run_in_chroot("chown -R gdm:gdm /var/lib/gdm")
-            if os.path.exists("/install/var/lib/AccountsService/users"):
-                os.system("echo \"[User]\" > /install/var/lib/AccountsService/users/gdm")
-                if os.path.exists("/usr/bin/startxfce4"):
-                    os.system("echo \"XSession=xfce\" >> /install/var/lib/AccountsService/users/gdm")
-                elif os.path.exists("/usr/bin/cinnamon-session"):
-                    os.system("echo \"XSession=cinnamon-session\" >> /install/var/lib/AccountsService/users/gdm")
-                elif os.path.exists("/usr/bin/mate-session"):
-                    os.system("echo \"XSession=mate\" >> /install/var/lib/AccountsService/users/gdm")
-                elif os.path.exists("/usr/bin/enlightenment_start"):
-                    os.system("echo \"XSession=enlightenment\" >> /install/var/lib/AccountsService/users/gdm")
-                elif os.path.exists("/usr/bin/openbox-session"):
-                    os.system("echo \"XSession=openbox\" >> /install/var/lib/AccountsService/users/gdm")
-                elif os.path.exists("/usr/bin/lxsession"):
-                    os.system("echo \"XSession=LXDE\" >> /install/var/lib/AccountsService/users/gdm")
-                os.system("echo \"Icon=\" >> /install/var/lib/AccountsService/users/gdm")
+        # Setup gdm
+        if os.path.exists("%s/usr/bin/gdm" % self.dest_dir):
+            self.chroot(['getent', 'group', 'gdm'])
+            self.chroot(['groupadd', '-g', '120', 'gdm'])
+            self.chroot(['getent', 'passwd', 'gdm'])
+            self.chroot(['useradd', '-c', 'Gnome Display Manager', \
+                         '-u', '120', '-g', 'gdm', '-d', '/var/lib/gdm', \
+                         '-s', '/usr/bin/nologin gdm'])
+            self.chroot(['passwd', '-l', 'gdm'])
+            self.chroot(['chown', '-R', 'gdm:gdm', '/var/lib/gdm'])
+            if os.path.exists("%s/var/lib/AccountsService/users" % self.dest_dir):
+                self.chroot(['echo', '[User]', '>', '/var/lib/AccountsService/users/gdm'])
+                if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
+                    self.chroot(['echo', 'XSession=xfce', '>>', '/var/lib/AccountsService/users/gdm'])
+                elif os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
+                    self.chroot(['echo', 'XSession=cinnamon-session', '>>', '/var/lib/AccountsService/users/gdm'])
+                elif os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
+                    self.chroot(['echo', 'XSession=mate', '>>', '/var/lib/AccountsService/users/gdm'])
+                elif os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
+                    self.chroot(['echo', 'XSession=enlightenment', '>>', '/var/lib/AccountsService/users/gdm'])
+                elif os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
+                    self.chroot(['echo', 'XSession=openbox', '>>', '/var/lib/AccountsService/users/gdm'])
+                elif os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
+                    self.chroot(['echo', 'XSession=LXDE', '>>', '/var/lib/AccountsService/users/gdm'])
+                self.chroot(['echo', 'Icon=', '>>', '/var/lib/AccountsService/users/gdm'])
             self.desktop_manager = 'gdm'
 
-        # setup mdm
-        if os.path.exists("/usr/bin/mdm"):
-            self.do_run_in_chroot("getent group mdm")
-            self.do_run_in_chroot("groupadd -g 128 mdm")
-            self.do_run_in_chroot("getent passwd mdm")
-            self.do_run_in_chroot("useradd -c 'Linux Mint Display Manager' -u 128 -g mdm -d /var/lib/mdm -s /usr/bin/nologin mdm")
-            self.do_run_in_chroot("passwd -l mdm")
-            self.do_run_in_chroot("chown root:mdm /var/lib/mdm")
-            self.do_run_in_chroot("chmod 1770 /var/lib/mdm")
-            if os.path.exists("/usr/bin/startxfce4"):
-                os.system("sed -i 's|default.desktop|xfce.desktop|g' /install/etc/mdm/custom.conf")
-            if os.path.exists("/usr/bin/cinnamon-session"):
-                os.system("sed -i 's|default.desktop|cinnamon.desktop|g' /install/etc/mdm/custom.conf")
-            if os.path.exists("/usr/bin/openbox-session"):
-                os.system("sed -i 's|default.desktop|openbox.desktop|g' /install/etc/mdm/custom.conf")
-            if os.path.exists("/usr/bin/mate-session"):
-                os.system("sed -i 's|default.desktop|mate.desktop|g' /install/etc/mdm/custom.conf")
-            if os.path.exists("/usr/bin/lxsession"):
-                os.system("sed -i 's|default.desktop|LXDE.desktop|g' /install/etc/mdm/custom.conf")
-            if os.path.exists("/usr/bin/enlightenment_start"):
-                os.system("sed -i 's|default.desktop|enlightenment.desktop|g' /install/etc/mdm/custom.conf")
+        # Setup mdm
+        if os.path.exists("%s/usr/bin/mdm" % self.dest_dir):
+            self.chroot(['getent', 'group', 'mdm'])
+            self.chroot(['groupadd', '-g', '128', 'mdm'])
+            self.chroot(['getent', 'passwd', 'mdm'])
+            self.chroot(['useradd', '-c', 'Linux Mint Display Manager', \
+                         '-u', '128', '-g', 'mdm', '-d', '/var/lib/mdm', '-s', '/usr/bin/nologin mdm'])
+            self.chroot(['passwd -l mdm'])
+            self.chroot(['chown root:mdm /var/lib/mdm'])
+            self.chroot(['chmod 1770 /var/lib/mdm'])
+            if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|default.desktop|xfce.desktop|g\'', '/etc/mdm/custom.conf'])
+            if os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|default.desktop|cinnamon.desktop|g\'', '/etc/mdm/custom.conf'])
+            if os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|default.desktop|openbox.desktop|g\'', '/etc/mdm/custom.conf'])
+            if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|default.desktop|mate.desktop|g\'', '/etc/mdm/custom.conf'])
+            if os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|default.desktop|LXDE.desktop|g\'', '/etc/mdm/custom.conf'])
+            if os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|default.desktop|enlightenment.desktop|g\'', '/etc/mdm/custom.conf'])
             self.desktop_manager = 'mdm'
 
-        # setup lxdm
-        if os.path.exists("/usr/bin/lxdm"):
-            self.do_run_in_chroot("groupadd --system lxdm")
-            if os.path.exists("/usr/bin/startxfce4"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/startxfce4|' /install/etc/lxdm/lxdm.conf")
-            elif os.path.exists("/usr/bin/cinnamon-session"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/cinnamon-session|' /install/etc/lxdm/lxdm.conf")
-            elif os.path.exists("/usr/bin/mate-session"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/mate-session|' /install/etc/lxdm/lxdm.conf")
-            elif os.path.exists("/usr/bin/enlightenment_start"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/enlightenment_start|' /install/etc/lxdm/lxdm.conf")
-            elif os.path.exists("/usr/bin/openbox-session"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/openbox-session|' /install/etc/lxdm/lxdm.conf")
-            elif os.path.exists("/usr/bin/lxsession"):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/lxsession|' /install/etc/lxdm/lxdm.conf")
-            os.system("chgrp -R lxdm /install/var/lib/lxdm")
-            os.system("chgrp lxdm /install/etc/lxdm/lxdm.conf")
-            os.system("chmod +r /install/etc/lxdm/lxdm.conf")
+        # Setup lxdm
+        if os.path.exists("%s/usr/bin/lxdm" % self.dest_dir):
+            self.chroot(['groupadd --system lxdm'])
+            if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|^.*session=.*|session=/usr/bin/startxfce4|\'', '/etc/lxdm/lxdm.conf'])
+            elif os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|^.*session=.*|session=/usr/bin/cinnamon-session|\'', '/etc/lxdm/lxdm.conf'])
+            elif os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|^.*session=.*|session=/usr/bin/mate-session|\'', '/etc/lxdm/lxdm.conf'])
+            elif os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|^.*session=.*|session=/usr/bin/enlightenment_start|\'', '/etc/lxdm/lxdm.conf'])
+            elif os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|^.*session=.*|session=/usr/bin/openbox-session|\'', '/etc/lxdm/lxdm.conf'])
+            elif os.path.exists("%s/usr/bin/lxsession'" % self.dest_dir):
+                self.chroot(['sed', '-i', '\'s|^.*session=.*|session=/usr/bin/lxsession|\'', '/etc/lxdm/lxdm.conf'])
+            self.chroot(['chgrp', '-R', 'lxdm', '/var/lib/lxdm'])
+            self.chroot(['chgrp', 'lxdm', '/etc/lxdm/lxdm.conf'])
+            self.chroot(['chmod', '+r', '/etc/lxdm/lxdm.conf'])
             self.desktop_manager = 'lxdm'
 
-        # setup kdm
-        if os.path.exists("/usr/bin/kdm"):
-            self.do_run_in_chroot("getent group kdm")
-            self.do_run_in_chroot("groupadd -g 135 kdm")
-            self.do_run_in_chroot("getent passwd kdm")
-            self.do_run_in_chroot("useradd -u 135 -g kdm -d /var/lib/kdm -s /bin/false -r -M kdm")
-            self.do_run_in_chroot("chown -R 135:135 var/lib/kdm")
-            self.do_run_in_chroot("xdg-icon-resource forceupdate --theme hicolor")
-            self.do_run_in_chroot("update-desktop-database -q")
+        # Setup kdm
+        if os.path.exists("%s/usr/bin/kdm" % self.dest_dir):
+            self.chroot(['getent', 'group', 'kdm'])
+            self.chroot(['groupadd', '-g', '135', 'kdm'])
+            self.chroot(['getent', 'passwd', 'kdm'])
+            self.chroot(['useradd', '-u', '135', '-g', 'kdm', '-d', \
+                         '/var/lib/kdm', '-s', '/bin/false', '-r', '-M', 'kdm'])
+            self.chroot(['chown', '-R', '135:135', 'var/lib/kdm'])
+            self.chroot(['xdg-icon-resource forceupdate', '--theme', 'hicolor'])
+            self.chroot(['update-desktop-database', '-q'])
             self.desktop_manager = 'kdm'
 
         self.queue_event('info', _("Configure System ..."))
 
-        # add BROWSER var
-        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> /install/etc/environment")
-        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> /install/etc/skel/.bashrc")
-        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> /install/etc/profile")
-        # add TERM var
-        if os.path.exists("/usr/bin/mate-session"):
-            os.system("echo \"TERM=mate-terminal\" >> /install/etc/environment")
-            os.system("echo \"TERM=mate-terminal\" >> /install/etc/profile")
+        # Add BROWSER var
+        self.chroot(['echo', 'BROWSER=/usr/bin/xdg-open', '>>', '/etc/environment'])
+        self.chroot(['echo', 'BROWSER=/usr/bin/xdg-open', '>>', '/etc/skel/.bashrc'])
+        self.chroot(['echo', 'BROWSER=/usr/bin/xdg-open', '>>', '/etc/profile'])
+        # Add TERM var
+        if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
+            self.chroot(['echo', 'TERM=mate-terminal', '>>', '/etc/environment'])
+            self.chroot(['echo', 'TERM=mate-terminal', '>>', '/etc/profile'])
 
-        # fix_gnome_apps
-        self.do_run_in_chroot("glib-compile-schemas /usr/share/glib-2.0/schemas")
-        self.do_run_in_chroot("gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor")
-        self.do_run_in_chroot("dconf update")
+        # Fix_gnome_apps
+        self.chroot(['glib-compile-schemas', '/usr/share/glib-2.0/schemas'])
+        self.chroot(['gtk-update-icon-cache', '-q', '-t', '-f', '/usr/share/icons/hicolor'])
+        self.chroot(['dconf', 'update'])
 
-        if os.path.exists("/usr/bin/gnome-keyring-daemon"):
-            self.do_run_in_chroot("setcap cap_ipc_lock=ep /usr/bin/gnome-keyring-daemon")
+        if os.path.exists("%s/usr/bin/gnome-keyring-daemon" % self.dest_dir):
+            self.chroot(['setcap', 'cap_ipc_lock=ep', '/usr/bin/gnome-keyring-daemon'])
 
-        # fix_ping_installation
-        self.do_run_in_chroot("setcap cap_net_raw=ep /usr/bin/ping")
-        self.do_run_in_chroot("setcap cap_net_raw=ep /usr/bin/ping6")
+        # Fix_ping_installation
+        self.chroot(['setcap', 'cap_net_raw=ep', '/usr/bin/ping'])
+        self.chroot(['setcap', 'cap_net_raw=ep', '/usr/bin/ping6'])
 
-        # remove .manjaro-chroot
-        #os.system("rm /install/.manjaro-chroot")
-
-        # remove thus
+        # Remove thus
         if os.path.exists("%s/usr/bin/thus" % self.dest_dir):
             self.queue_event('info', _("Removing live configuration (packages)"))
-            self.do_run_in_chroot("pacman -R --noconfirm thus")
+            self.chroot(['pacman', '-R', '--noconfirm', 'thus'])
 
-        # remove virtualbox driver on real hardware
+        # Remove virtualbox driver on real hardware
         p1 = subprocess.Popen(["mhwd"], stdout=subprocess.PIPE)
         p2 = subprocess.Popen(["grep","0300:80ee:beef"], stdin=p1.stdout, stdout=subprocess.PIPE)
         num_res = p2.communicate()[0]
         if num_res == "0":
-             self.do_run_in_chroot("pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)")
+             self.chroot(['sh', '-c', 'pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)'])
 
-        # set unique machine-id
-        self.do_run_in_chroot("dbus-uuidgen --ensure=/etc/machine-id")
-        self.do_run_in_chroot("dbus-uuidgen --ensure=/var/lib/dbus/machine-id")
+        # Set unique machine-id
+        self.chroot(['dbus-uuidgen', '--ensure=/etc/machine-id'])
+        self.chroot(['dbus-uuidgen', '--ensure=/var/lib/dbus/machine-id'])
 
 
-        # setup pacman
+        # Setup pacman
         self.queue_event("action", _("Configuring package manager"))
         self.queue_event("pulse")
 
-        # copy mirror list
+        # Copy mirror list
         shutil.copy2('/etc/pacman.d/mirrorlist', \
                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
 
-        # copy random generated keys by pacman-init to target
-        if os.path.exists("/install/etc/pacman.d/gnupg"):
-            os.system("rm -rf /install/etc/pacman.d/gnupg")
-        os.system("cp -a /etc/pacman.d/gnupg /install/etc/pacman.d/")
-        self.chroot_mount_special_dirs()
-        self.do_run_in_chroot("pacman-key --populate archlinux manjaro")
-        self.chroot_umount_special_dirs()
-
+        # Copy random generated keys by pacman-init to target
+        if os.path.exists("%s/etc/pacman.d/gnupg" % self.dest_dir):
+            os.system("rm -rf %s/etc/pacman.d/gnupg"  % self.dest_dir)
+        os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/"  % self.dest_dir)
+        self.chroot(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
-        consolefh = open("/install/etc/keyboard.conf", "r")
-        newconsolefh = open("/install/etc/keyboard.new", "w")
+        consolefh = open("%s/etc/keyboard.conf" % self.dest_dir, "r")
+        newconsolefh = open("%s/etc/keyboard.new" % self.dest_dir, "w")
         for line in consolefh:
             line = line.rstrip("\r\n")
             if(line.startswith("XKBLAYOUT=")):
@@ -1298,90 +1396,11 @@ class InstallationProcess(multiprocessing.Process):
                 newconsolefh.write("%s\n" % line)
         consolefh.close()
         newconsolefh.close()
-        os.system("mv /install/etc/keyboard.conf /install/etc/keyboard.conf.old")
-        os.system("mv /install/etc/keyboard.new /install/etc/keyboard.conf")
+        self.chroot(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
+        self.chroot(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
 
-        #desktop = self.settings.get('desktop')
-
-        desktop = "x"
-
-        if desktop != "nox":
-            # Set autologin if selected
-            if self.settings.get('require_password') is False:
-                self.queue_event('info', _("%s: Enable automatic login for user %s.") % (self.desktop_manager, username))
-                # Systems with GDM as Desktop Manager
-                if self.desktop_manager == 'gdm':
-                    gdm_conf_path = os.path.join(self.dest_dir, "etc/gdm/custom.conf")
-                    with open(gdm_conf_path, "wt") as gdm_conf:
-                        gdm_conf.write('# Enable automatic login for user\n')
-                        gdm_conf.write('[daemon]\n')
-                        gdm_conf.write('AutomaticLogin=%s\n' % username)
-                        gdm_conf.write('AutomaticLoginEnable=True\n')
-
-                # Systems with MDM as Desktop Manager
-                elif self.desktop_manager == 'mdm':
-                    mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
-                    if os.path.exists(mdm_conf_path):
-                        with open(mdm_conf_path, "r") as mdm_conf:
-                            text = mdm_conf.readlines()
-
-                        with open(mdm_conf_path, "w") as mdm_conf:
-                            for line in text:
-                                if '[daemon]' in line:
-                                    line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
-                                mdm_conf.write(line)
-                    else:
-                        with open(mdm_conf_path, "w") as mdm_conf:
-                            mdm_conf.write('# Enable automatic login for user\n')
-                            mdm_conf.write('[daemon]\n')
-                            mdm_conf.write('AutomaticLogin=%s\n' % username)
-                            mdm_conf.write('AutomaticLoginEnable=True\n')
-
-                # Systems with KDM as Desktop Manager
-                elif self.desktop_manager == 'kdm':
-                    kdm_conf_path = os.path.join(self.dest_dir, "usr/share/config/kdm/kdmrc")
-                    text = []
-                    with open(kdm_conf_path, "r") as kdm_conf:
-                        text = kdm_conf.readlines()
-
-                    with open(kdm_conf_path, "w") as kdm_conf:
-                        for line in text:
-                            if '#AutoLoginEnable=true' in line:
-                                line = '#AutoLoginEnable=true \n'
-                                line = line[1:]
-                            if 'AutoLoginUser=' in line:
-                                line = 'AutoLoginUser=%s \n' % username
-                            kdm_conf.write(line)
-
-                # Systems with LXDM as Desktop Manager
-                elif self.desktop_manager == 'lxdm':
-                    lxdm_conf_path = os.path.join(self.dest_dir, "etc/lxdm/lxdm.conf")
-                    text = []
-                    with open(lxdm_conf_path, "r") as lxdm_conf:
-                        text = lxdm_conf.readlines()
-
-                    with open(lxdm_conf_path, "w") as lxdm_conf:
-                        for line in text:
-                            if '# autologin=dgod' in line and line[0] == "#":
-                                # uncomment line
-                                line = '# autologin=%s' % username
-                                line = line[1:]
-                            lxdm_conf.write(line)
-
-                # Systems with LightDM as the Desktop Manager
-                elif self.desktop_manager == 'lightdm':
-                    lightdm_conf_path = os.path.join(self.dest_dir, "etc/lightdm/lightdm.conf")
-                    # Ideally, use configparser for the ini conf file, but just do
-                    # a simple text replacement for now
-                    text = []
-                    with open(lightdm_conf_path, "r") as lightdm_conf:
-                        text = lightdm_conf.readlines()
-
-                    with open(lightdm_conf_path, "w") as lightdm_conf:
-                        for line in text:
-                            if '#autologin-user=' in line:
-                                line = 'autologin-user=%s\n' % username
-                            lightdm_conf.write(line)
+        # Exit chroot system
+        self.chroot_umount_special_dirs()
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
@@ -1398,36 +1417,15 @@ class InstallationProcess(multiprocessing.Process):
         subprocess.check_call(["/usr/bin/bash", script_path_postinstall, \
             username, self.dest_dir, self.desktop, keyboard_layout, keyboard_variant])'''
 
-        # In openbox "desktop", the postinstall script writes /etc/slim.conf
-        # so we have to modify it here (after running the script).
         # Set autologin if selected
-        if self.settings.get('require_password') is False and \
-           self.desktop_manager == 'slim':
-            slim_conf_path = os.path.join(self.dest_dir, "etc/slim.conf")
-            text = []
-            with open(slim_conf_path, "r") as slim_conf:
-                text = slim_conf.readlines()
-            with open(slim_conf_path, "w") as slim_conf:
-                for line in text:
-                    if 'auto_login' in line:
-                        line = 'auto_login yes\n'
-                    if 'default_user' in line:
-                        line = 'default_user %s\n' % username
-                    slim_conf.write(line)
+        # Warning: In openbox "desktop", the post-install script writes /etc/slim.conf
+        # so we always have to call set_autologin AFTER the post-install script call.
+        if self.settings.get('require_password') is False:
+            self.set_autologin()
 
-        # Encrypt user's home directory if requested
+        # Encrypt user's home directory if requested (NOT FINISHED YET)
         if self.settings.get('encrypt_home'):
             self.queue_event('debug', _("Encrypting user home dir ..."))
             encfs.setup(username, self.dest_dir)
             self.queue_event('debug', _("User home dir encrypted"))
-
-        # Last but not least, copy Cnchi log to new installation
-        datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
-        dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
-        try:
-            shutil.copy("/tmp/thus.log", dst)
-        except FileNotFoundError:
-            logging.warning(_("Can't copy Thus log to /var/log"))
-        except FileExistsError:
-            pass
 

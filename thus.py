@@ -274,7 +274,7 @@ class Main(Gtk.Window):
         self.get_window().set_accept_focus(True)
         #self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
 
-        # hide progress bar as it's value is zero
+        # Hide progress bar as it's value is zero
         self.progressbar.set_fraction(0)
         self.progressbar.hide()
         self.progressbar_step = 1.0 / (len(self.pages) - 2)
@@ -327,6 +327,7 @@ class Main(Gtk.Window):
                         self.backwards_button.hide()
 
     def on_backwards_button_clicked(self, widget, data=None):
+        """ Show previous screen """
         prev_page = self.current_page.get_prev_page()
 
         if prev_page != None:
@@ -347,6 +348,7 @@ class Main(Gtk.Window):
                     self.backwards_button.hide()
 
 def setup_logging():
+    """ Configure our logger """
     logger = logging.getLogger()
     logger.setLevel(_log_level)
     # Log format
@@ -366,6 +368,7 @@ def setup_logging():
 
 
 def show_help():
+    """ Show Thus command line options """
     print("Thus Manjaro Installer")
     print("Advanced options:")
     print("-d, --debug : Show debug messages")
@@ -411,11 +414,14 @@ def init_thus():
     global _verbose
     global _testing
 
-    # Check program args
-    argv = sys.argv[1:]
+    if not check_gtk_version():
+        sys.exit(1)
+
+    # Check program arguments
+    arguments_vector = sys.argv[1:]
 
     try:
-        options, args = getopt.getopt(argv, "dstuvg:h",
+        options, arguments = getopt.getopt(arguments_vector, "dstuvg:h",
          ["debug", "staging", "testing", "update", "verbose", \
           "force-grub=", "help"])
     except getopt.GetoptError as e:
@@ -423,25 +429,25 @@ def init_thus():
         print(str(e))
         sys.exit(2)
 
-    for option, arg in options:
+    for option, argument in options:
         if option in ('-d', '--debug'):
             _log_level = logging.DEBUG
-        elif option in ('-v', '--verbose'):
-            _verbose = True
+        elif option in ('-g', '--force-grub-type'):
+            if argument in ('bios', 'efi', 'ask', 'none'):
+                _force_grub_type = argument
+        elif option in ('-h', '--help'):
+            show_help()
+            sys.exit(0)
         elif option in ('-s', '--staging'):
             _use_staging = True
         elif option in ('-t', '--testing'):
             _testing = True
         elif option in ('-u', '--update'):
             _update = True
-        elif option in ('-g', '--force-grub-type'):
-            if arg in ('bios', 'efi', 'ask', 'none'):
-                _force_grub_type = arg
-        elif option in ('-h', '--help'):
-            show_help()
-            sys.exit(0)
+        elif option in ('-v', '--verbose'):
+            _verbose = True
         else:
-            assert False, "unhandled option"
+            assert False, "Unhandled option"
 
     if _update:
         setup_logging()
