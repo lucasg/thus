@@ -1321,7 +1321,7 @@ class InstallationAdvanced(Gtk.Box):
         (res, err) = pm.set_flag(pm.PED_PARTITION_BIOS_GRUB, part)
 
         if res:
-            installation_process.queue_fatal_event((err)
+            installation_process.queue_fatal_event(err)
 
         # Store stage partition info in self.stage_opts
         old_parts = []
