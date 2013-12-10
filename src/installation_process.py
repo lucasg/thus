@@ -1138,7 +1138,7 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot_mount_special_dirs()
 
         # Install configs for root
-        self.chroot(['cp', '-a', '/etc/skel/.', '/root/'])
+        self.chroot(['cp', '-av', '/etc/skel/.', '/root/'])
 
         self.queue_event('info', _("Configuring hardware ..."))
         # Copy generated xorg.xonf to target
@@ -1147,59 +1147,59 @@ class InstallationProcess(multiprocessing.Process):
                     os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
 
         # Configure ALSA
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Front 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Side 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Surround 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Center 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset LFE 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Headphone 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Speaker 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Line 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset External 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset FM 50% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Mono 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Digital 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Mix 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux2 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Center 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Front 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM LFE 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Side 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Surround 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Playback 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM,1 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,0 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,1 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Synth 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset CD 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Wave 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Music 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset AC97 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Front 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,0 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,1 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,2 70% unmute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,3 70% unmute &> /dev/null'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Front 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Side 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Surround 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Center 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset LFE 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Headphone 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Speaker 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Line 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset External 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset FM 50% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Mono 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Digital 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Mix 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux2 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Center 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Front 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM LFE 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Side 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Surround 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Playback 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM,1 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,0 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,1 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Synth 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset CD 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Wave 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Music 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset AC97 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Front 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,0 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,1 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,2 70% unmute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,3 70% unmute'])
 
         # set input levels
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Mic 70% mute &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset IEC958 70% mute &> /dev/null'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Mic 70% mute'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset IEC958 70% mute'])
 
         # special stuff
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off &> /dev/null'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off'])
 
         # special stuff
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off &> /dev/null'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off &> /dev/null'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off'])
+        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off'])
 
         # Set pulse
         if os.path.exists("/usr/bin/pulseaudio-ctl"):
@@ -1246,10 +1246,9 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['passwd', '-l', 'lightdm'])
             self.chroot(['chown', '-R', 'lightdm:lightdm', '/run/lightdm'])
             if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s/^.*user-session=.*/user-session=xfce/"', \
-                             '/etc/lightdm/lightdm.conf'])
-                self.chroot(['ln', '-s', '/usr/lib/lightdm/lightdm/gdmflexiserver', '/usr/bin/gdmflexiserver'])
-            self.chroot(['chmod', '+r', '/etc/lightdm/lightdm.conf'])
+                os.system("sed -i -e 's/^.*user-session=.*/user-session=xfce/' %s/etc/lightdm/lightdm.conf" % self.dest_dir)
+                os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver %s/usr/bin/gdmflexiserver" % self.dest_dir)
+            os.system("chmod +r %s/etc/lightdm/lightdm.conf" % self.dest_dir)
             self.desktop_manager = 'lightdm'
 
         # Setup gdm
@@ -1263,20 +1262,20 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['passwd', '-l', 'gdm'])
             self.chroot(['chown', '-R', 'gdm:gdm', '/var/lib/gdm'])
             if os.path.exists("%s/var/lib/AccountsService/users" % self.dest_dir):
-                self.chroot(['sh', '-c', 'echo "[User]" > /var/lib/AccountsService/users/gdm'])
+                os.system("echo \"[User]\" > %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                    self.chroot(['sh', '-c', 'echo "XSession=xfce" >> /var/lib/AccountsService/users/gdm'])
+                    os.system("echo \"XSession=xfce\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 elif os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
-                    self.chroot(['sh', '-c', 'echo "XSession=cinnamon-session" >> /var/lib/AccountsService/users/gdm'])
-                elif os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-                    self.chroot(['sh', '-c', 'echo "XSession=mate" >> /var/lib/AccountsService/users/gdm'])
+                    os.system("echo \"XSession=cinnamon-session\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
+                elif os.path.exists("%s/usr/bin/mate-session\" % self.dest_dir):
+                    os.system("echo \"XSession=mate\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 elif os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
-                    self.chroot(['sh', '-c', 'echo "XSession=enlightenment" >> /var/lib/AccountsService/users/gdm'])
+                    os.system("echo \"XSession=enlightenment\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 elif os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
-                    self.chroot(['sh', '-c', 'echo "XSession=openbox" >> /var/lib/AccountsService/users/gdm'])
+                    os.system("echo \"XSession=openbox\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
                 elif os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
-                    self.chroot(['sh', '-c', 'echo "XSession=LXDE" >> /var/lib/AccountsService/users/gdm'])
-                self.chroot(['sh', '-c', 'echo "Icon=" >> /var/lib/AccountsService/users/gdm'])
+                    os.system("echo \"XSession=LXDE\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
+                os.system("echo \"Icon=\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
             self.desktop_manager = 'gdm'
 
         # Setup mdm
@@ -1291,37 +1290,37 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['chown', 'root:mdm', '/var/lib/mdm'])
             self.chroot(['chmod', '1770', '/var/lib/mdm'])
             if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|default.desktop|xfce.desktop|g"', '/etc/mdm/custom.conf'])
+                os.system("sed -i 's|default.desktop|xfce.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
             if os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|default.desktop|cinnamon.desktop|g"', '/etc/mdm/custom.conf'])
+                os.system("sed -i 's|default.desktop|cinnamon.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
             if os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|default.desktop|openbox.desktop|g"', '/etc/mdm/custom.conf'])
+                os.system("sed -i 's|default.desktop|openbox.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
             if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|default.desktop|mate.desktop|g"', '/etc/mdm/custom.conf'])
+                os.system("sed -i 's|default.desktop|mate.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
             if os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|default.desktop|LXDE.desktop|g"', '/etc/mdm/custom.conf'])
+                os.system("sed -i 's|default.desktop|LXDE.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
             if os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|default.desktop|enlightenment.desktop|g"', '/etc/mdm/custom.conf'])
+                os.system("sed -i 's|default.desktop|enlightenment.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
             self.desktop_manager = 'mdm'
 
         # Setup lxdm
         if os.path.exists("%s/usr/bin/lxdm" % self.dest_dir):
-            self.chroot(['groupadd --system lxdm'])
+            self.chroot(['groupadd', '--system', 'lxdm'])
             if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|^.*session=.*|session=/usr/bin/startxfce4|"', '/etc/lxdm/lxdm.conf'])
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/startxfce4|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             elif os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|^.*session=.*|session=/usr/bin/cinnamon-session|"', '/etc/lxdm/lxdm.conf'])
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/cinnamon-session|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             elif os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|^.*session=.*|session=/usr/bin/mate-session|"', '/etc/lxdm/lxdm.conf'])
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/mate-session|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             elif os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|^.*session=.*|session=/usr/bin/enlightenment_start|"', '/etc/lxdm/lxdm.conf'])
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/enlightenment_start|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             elif os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|^.*session=.*|session=/usr/bin/openbox-session|"', '/etc/lxdm/lxdm.conf'])
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/openbox-session|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             elif os.path.exists("%s/usr/bin/lxsession'" % self.dest_dir):
-                self.chroot(['sed', '-i', '"s|^.*session=.*|session=/usr/bin/lxsession|"', '/etc/lxdm/lxdm.conf'])
-            self.chroot(['chgrp', '-R', 'lxdm', '/var/lib/lxdm'])
-            self.chroot(['chgrp', 'lxdm', '/etc/lxdm/lxdm.conf'])
-            self.chroot(['chmod', '+r', '/etc/lxdm/lxdm.conf'])
+                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/lxsession|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
+            os.system("chgrp -R lxdm %s/var/lib/lxdm" % self.dest_dir)
+            os.system("chgrp lxdm %s/etc/lxdm/lxdm.conf" % self.dest_dir)
+            os.system("chmod +r %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             self.desktop_manager = 'lxdm'
 
         # Setup kdm
@@ -1339,13 +1338,13 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('info', _("Configure System ..."))
 
         # Add BROWSER var
-        self.chroot(['sh', '-c', 'echo "BROWSER=/usr/bin/xdg-open" >> /etc/environment'])
-        self.chroot(['sh', '-c', 'echo "BROWSER=/usr/bin/xdg-open" >> /etc/skel/.bashrc'])
-        self.chroot(['sh', '-c', 'echo "BROWSER=/usr/bin/xdg-open" >> /etc/profile'])
+        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/environment" % self.dest_dir)
+        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/skel/.bashrc" % self.dest_dir)
+        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/profile" % self.dest_dir)
         # Add TERM var
         if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-            self.chroot(['sh', '-c', 'echo "TERM=mate-terminal" >> /etc/environment'])
-            self.chroot(['sh', '-c', 'echo "TERM=mate-terminal" >> /etc/profile'])
+            os.system("echo \"TERM=mate-terminal\" >> %s/etc/environment" % self.dest_dir)
+            os.system("echo \"TERM=mate-terminal\" >> %s/etc/profile" % self.dest_dir)
 
         # Fix_gnome_apps
         self.chroot(['glib-compile-schemas', '/usr/share/glib-2.0/schemas'])
