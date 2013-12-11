@@ -24,6 +24,8 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
+""" Shows slides while installing. Also manages installing messages and progress bars """
+
 from gi.repository import Gtk, WebKit, Gdk, GLib
 import config
 import os
@@ -36,13 +38,14 @@ import logging
 import subprocess
 import canonical.misc as misc
 
-# when we reach this page we can't go neither backwards nor forwards
+# When we reach this page we can't go neither backwards nor forwards
 _next_page = None
 _prev_page = None
 
 class Slides(Gtk.Box):
 
     def __init__(self, params):
+        """ Initialize class and its vars """
         self.title = params['title']
         self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
@@ -70,6 +73,7 @@ class Slides(Gtk.Box):
         self.info_label = builder.get_object("info_label")
         self.scrolled_window = builder.get_object("scrolledwindow")
 
+        # Add a webkit view to show the slides
         self.webview = WebKit.WebView()
 
         if self.settings == None:
@@ -117,6 +121,7 @@ class Slides(Gtk.Box):
         # Last screen reached, hide main progress bar.
         self.main_progressbar.hide()
 
+        # Hide global progress bar
         self.global_progress_bar.hide()
         self.global_progress_bar_is_hidden = True
 
@@ -125,26 +130,28 @@ class Slides(Gtk.Box):
         self.exit_button.hide()
 
     def store_values(self):
+        """ Nothing to be done here """
         return False
 
     def get_prev_page(self):
+        """ No previous page available """
         return _prev_page
 
     def get_next_page(self):
+        """ This is the last page """
         return _next_page
 
-    def refresh(self):
-        while Gtk.events_pending():
-            Gtk.main_iteration()
-
     def set_message(self, txt):
+        """ Show information message """
         txt = "<span color='darkred'>%s</span>" % txt
         self.info_label.set_markup(txt)
 
     def stop_pulse(self):
+        """ Stop pulsing progressbar """
         self.should_pulse = False
 
     def do_progress_pulse(self):
+        """ Pulsing progressbar """
         def pbar_pulse():
             if(not self.should_pulse):
                 return False
@@ -158,10 +165,10 @@ class Slides(Gtk.Box):
             self.should_pulse = True
             pbar_pulse()
 
-    # This function is called from thus.py with a timeout function
-    # We should do as less as possible here, we want to maintain our
-    # queue message as empty as possible
     def manage_events_from_cb_queue(self):
+        """ This function is called from cnchi.py with a timeout function
+            We should do as less as possible here, we want to maintain our
+            queue message as empty as possible """
         if self.fatal_error:
             return False
 
@@ -202,7 +209,7 @@ class Slides(Gtk.Box):
                 return False
             elif event[0] == 'error':
                 self.callback_queue.task_done()
-                # a fatal error has been issued. We empty the queue
+                # A fatal error has been issued. We empty the queue
                 self.empty_queue()
                 self.fatal_error = True
                 show.fatal_error(event[1])
@@ -232,9 +239,6 @@ class Slides(Gtk.Box):
             elif event[0] == 'warning':
                 logging.warning(event[1])
             else:
-                # TODO: Check if logging slows down showing messages
-                #       remove logging.info in that case (and at least
-                #       use the one at pac.py:queue_event)
                 logging.info(event[1])
                 self.set_message(event[1])
 
@@ -243,6 +247,7 @@ class Slides(Gtk.Box):
         return True
 
     def empty_queue(self):
+        """ Empties messages queue """
         while self.callback_queue.empty() == False:
             try:
                 event = self.callback_queue.get_nowait()
@@ -252,5 +257,6 @@ class Slides(Gtk.Box):
 
     @misc.raise_privileges
     def reboot(self):
+        """ Reboots the system, used when installation is finished """
         os.system("sync")
         subprocess.call(["/usr/bin/systemctl", "reboot", "--force", "--no-wall"])
