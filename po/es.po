@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 21:57+0100\n"
-"PO-Revision-Date: 2013-12-10 21:01+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-11 12:01+0000\n"
+"Last-Translator: kirek <rbuldo@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/manjaro-thus/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -354,7 +354,7 @@ msgstr "GRUB requiere una partición de arranque de la BIOS (2 ​​MiB, ningú
 
 #: src/installation_advanced.py:1299
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "¡No se puede crear la partición de arranque BIOS GPT!"
 
 #: src/installation_advanced.py:1428
 #, python-format
@@ -448,7 +448,7 @@ msgstr "Sistema de archivos"
 
 #: src/installation_alongside.py:195
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "¡No se encontro pyparted3!"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
@@ -460,12 +460,12 @@ msgstr "No se puede reducir la partición (¿tal vez está casi llena?)"
 
 #: src/installation_alongside.py:347
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "Hay demasiadas particiones, no se puede crear ninguna más"
 
 #: src/installation_alongside.py:378
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "No se puede reducir el sistema de ficheros %s(%s)"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
@@ -489,7 +489,7 @@ msgstr "Se le preguntará por la llave de cifrado en el siguiente paso."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr "Usar LVM con esta instalación"
+msgstr "Usar LVM con esta instalación."
 
 #: src/installation_ask.py:142
 msgid ""
@@ -637,19 +637,19 @@ msgstr "No se puede crear los directorios necesarios en el sistema de destino"
 
 #: src/installation_process.py:359
 msgid "Install System ..."
-msgstr ""
+msgstr "Instalar el Sistema..."
 
 #: src/installation_process.py:364
 msgid "System installed."
-msgstr ""
+msgstr "Sistema instalado."
 
 #: src/installation_process.py:366
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Configurando el sistema..."
 
 #: src/installation_process.py:368
 msgid "System configured."
-msgstr ""
+msgstr "Sistema configurado."
 
 #: src/installation_process.py:372
 msgid "Installing bootloader ..."
@@ -662,7 +662,7 @@ msgstr "Error desconocido"
 #: src/installation_process.py:400
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "No se puede copiar el registro de Thus a %s"
 
 #: src/installation_process.py:416 src/installation_process.py:430
 #: src/installation_process.py:440
@@ -751,7 +751,7 @@ msgstr "ERROR al instalar configuración local de GRUB(2)."
 #: src/installation_process.py:846
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "Habilitado el servicio %s."
 
 #: src/installation_process.py:853
 #, python-format
