@@ -483,8 +483,8 @@ class AutoPartition(object):
 
             logging.debug(_("Will setup LVM on device %s"), lvm_device)
 
-            subprocess.check_call(["pvcreate", "-ff", lvm_device])
-            subprocess.check_call(["vgcreate", "ManjaroVG", lvm_device])
+            subprocess.check_call(["pvcreate", "-ff", "-y", lvm_device])
+            subprocess.check_call(["vgcreate", "-ff", "-y", "ManjaroVG", lvm_device])
 
             subprocess.check_call(["lvcreate", "-n", "ManjaroRoot", "-L", str(int(root_part_size)), "ManjaroVG"])
 
