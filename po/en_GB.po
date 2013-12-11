@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 21:57+0100\n"
-"PO-Revision-Date: 2013-12-10 21:01+0000\n"
+"PO-Revision-Date: 2013-12-10 22:15+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/manjaro-thus/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -345,7 +345,7 @@ msgstr "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type
 
 #: src/installation_advanced.py:1299
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "Can't create BIOS GPT Boot partition!"
 
 #: src/installation_advanced.py:1428
 #, python-format
@@ -439,7 +439,7 @@ msgstr "Filesystem"
 
 #: src/installation_alongside.py:195
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3 not found!"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
@@ -451,12 +451,12 @@ msgstr "Can't shrink the partition (maybe it's nearly full?)"
 
 #: src/installation_alongside.py:347
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "There are too many primary partitions, can't create a new one"
 
 #: src/installation_alongside.py:378
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "Can't shrink %s(%s) filesystem"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
