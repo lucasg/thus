@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# lego37yoon <lego37yoon@outlook.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 21:57+0100\n"
-"PO-Revision-Date: 2013-12-10 21:01+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-13 10:09+0000\n"
+"Last-Translator: lego37yoon <lego37yoon@outlook.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/manjaro-thus/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,15 +42,15 @@ msgstr ""
 #: thus.py:218
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "'%s'파일을 꾸러미 목록으로 사용합니다."
 
 #: thus.py:235
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "만자로 설치기"
 
 #: thus.py:290
 msgid "Quiting installer..."
-msgstr ""
+msgstr "설치기를 종료하는 중 입니다."
 
 #: src/auto_partition.py:74 src/auto_partition.py:80
 #: src/installation_process.py:411 src/installation_process.py:424
@@ -79,11 +80,11 @@ msgstr ""
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
 msgid "unknown"
-msgstr ""
+msgstr "알수 없음"
 
 #: src/bootloader.py:53 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "당신의 시스템 타입은 무엇입니까?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
@@ -141,11 +142,11 @@ msgstr ""
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "가 플러그에 연결되어있음"
 
 #: src/check.py:93
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "가 인터넷에 연결되어 있음."
 
 #: src/check.py:97
 msgid "For best results, please ensure that this computer:"
@@ -160,15 +161,15 @@ msgstr ""
 
 #: src/check.py:108 ui/check.ui:117
 msgid "Install this third-party software"
-msgstr ""
+msgstr "이 서드파티 꾸러미 설치하기"
 
 #: src/check.py:185
 msgid "We have Internet connection."
-msgstr ""
+msgstr "우리는 인터넷 연결을 가지고 있습니다."
 
 #: src/check.py:186
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "우리는 플러그에 연결되어있습니다."
 
 #: src/check.py:187
 msgid "We have enough disk space."
@@ -177,47 +178,47 @@ msgstr ""
 #: src/installation_advanced.py:205 src/installation_advanced.py:494
 #: src/installation_advanced.py:508
 msgid "free space"
-msgstr ""
+msgstr "여유공간"
 
 #: src/installation_advanced.py:273 src/installation_alongside.py:171
 msgid "Device"
-msgstr ""
+msgstr "기기"
 
 #: src/installation_advanced.py:276
 msgid "Type"
-msgstr ""
+msgstr "형태"
 
 #: src/installation_advanced.py:279
 msgid "Mount point"
-msgstr ""
+msgstr "마운트 지점"
 
 #: src/installation_advanced.py:282
 msgid "Label"
-msgstr ""
+msgstr "라벨"
 
 #: src/installation_advanced.py:288 src/installation_advanced.py:1518
 msgid "Format"
-msgstr ""
+msgstr "포맷"
 
 #: src/installation_advanced.py:291
 msgid "Size"
-msgstr ""
+msgstr "크기"
 
 #: src/installation_advanced.py:294
 msgid "Used"
-msgstr ""
+msgstr "사용됨"
 
 #: src/installation_advanced.py:297
 msgid "Flags"
-msgstr ""
+msgstr "플래그"
 
 #: src/installation_advanced.py:303
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:480
 msgid "none"
-msgstr ""
+msgstr "없음"
 
 #: src/installation_advanced.py:530 src/installation_advanced.py:1392
 #: src/installation_advanced.py:1471
@@ -230,11 +231,11 @@ msgstr ""
 
 #: src/installation_advanced.py:663
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "루트 파티션은 반드시 포맷되야 합니다."
 
 #: src/installation_advanced.py:924
 msgid "Creating primary partition"
-msgstr ""
+msgstr "프리마리 파티션을 만들고 있습니다."
 
 #: src/installation_advanced.py:936
 msgid "Creating extended partition"
@@ -246,31 +247,31 @@ msgstr ""
 
 #: src/installation_advanced.py:1074
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "전문적인 설치모드"
 
 #: src/installation_advanced.py:1078 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "부트로더를 설치하기 위해 사용하는 기기:"
 
 #: src/installation_advanced.py:1088 ui/installation_advanced.ui:915
 msgid "New partition table"
-msgstr ""
+msgstr "새로운 파티션 테이블"
 
 #: src/installation_advanced.py:1096
 msgid "Change..."
-msgstr ""
+msgstr "바뀜...."
 
 #: src/installation_advanced.py:1101 ui/installation_advanced.ui:98
 msgid "Size:"
-msgstr ""
+msgstr "크기:"
 
 #: src/installation_advanced.py:1105 ui/installation_advanced.ui:300
 msgid "Type:"
-msgstr ""
+msgstr "형태"
 
 #: src/installation_advanced.py:1109 ui/installation_advanced.ui:317
 msgid "Primary"
-msgstr ""
+msgstr "프리마리"
 
 #: src/installation_advanced.py:1113 ui/installation_advanced.ui:337
 msgid "Logical"
@@ -282,11 +283,11 @@ msgstr ""
 
 #: src/installation_advanced.py:1121 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
-msgstr ""
+msgstr "이 공간의 시작지점"
 
 #: src/installation_advanced.py:1125 ui/installation_advanced.ui:222
 msgid "End of this space"
-msgstr ""
+msgstr "이 공간의 끝 지점"
 
 #: src/installation_advanced.py:1129 src/installation_advanced.py:1146
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
@@ -296,12 +297,12 @@ msgstr ""
 #: src/installation_advanced.py:1133 src/installation_advanced.py:1150
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
-msgstr ""
+msgstr "마운트지점:"
 
 #: src/installation_advanced.py:1137 src/installation_advanced.py:1154
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
-msgstr ""
+msgstr "라밸(선택적):"
 
 #: src/installation_advanced.py:1141
 msgid "Encryption Options..."
@@ -1124,11 +1125,11 @@ msgstr ""
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "64비트"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "32비트"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"

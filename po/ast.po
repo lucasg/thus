@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 21:57+0100\n"
-"PO-Revision-Date: 2013-12-10 21:01+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-12 23:13+0000\n"
+"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/manjaro-thus/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,7 @@ msgstr "Nun pues executar dos instancies d'esti instalador.\n\nSi tas seguru que
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Versión de Thus %s"
 
 #: thus.py:218
 #, python-format
@@ -60,25 +60,25 @@ msgstr "En colando del instalador..."
 #: src/installation_process.py:435
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Esmontando %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Nun puen esniciase volumes LVM esistentes (ver embaxo)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Nun puen zarrase los preseos LUKS (ver embaxo)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus configurará LUKS nel preséu %s"
 
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Configuraráse LVM nel preséu %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -91,19 +91,19 @@ msgstr "¿Cuál ye la triba d'arranque del sistema to?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (Percomún)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Primi 'Encaboxar' si nun quies instalar un xestor d'arranque."
 
 #: src/canonical/misc.py:923
 #, python-format
@@ -141,7 +141,7 @@ msgstr ""
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "Polo menos %dGB d'espaciu disponibles"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -309,7 +309,7 @@ msgstr "Etiqueta (opcional):"
 
 #: src/installation_advanced.py:1141
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Opciones de cifráu..."
 
 #: src/installation_advanced.py:1158 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -317,11 +317,11 @@ msgstr "Formatu:"
 
 #: src/installation_advanced.py:1163
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Triba de tabla de particiones:"
 
 #: src/installation_advanced.py:1168
 msgid "Create Partition Table"
-msgstr "Crear tabla de particiones"
+msgstr "Criar tabla de particiones"
 
 #: src/installation_advanced.py:1171 src/installation_alongside.py:149
 #: src/installation_automatic.py:107
@@ -342,7 +342,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1299
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "¡Nun pue criase partición d'arranque BIOS GPT!"
 
 #: src/installation_advanced.py:1428
 #, python-format
@@ -407,7 +407,7 @@ msgstr "Manjaro instalará la triba del xestor d'arranque %s en %s"
 
 #: src/installation_advanced.py:1687 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus nun instalará xestor d'arranque dalu"
 
 #: src/installation_advanced.py:1701 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -436,7 +436,7 @@ msgstr "Sistema ficheros"
 
 #: src/installation_alongside.py:195
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "¡Nun s'alcontró pyparted3!"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
@@ -448,12 +448,12 @@ msgstr "Nun pue acurtiase la partición (¿quiciabes tea cuasi enllena?)"
 
 #: src/installation_alongside.py:347
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "Hai milenta particiones primaries, nun pue criase una nueva"
 
 #: src/installation_alongside.py:378
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "Nun pue acurtiase'l sistema d'archivos %s(%s)"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
@@ -469,15 +469,15 @@ msgstr "¡CURIÁU!: Esto esniciará dafechu tolos datos nel discu to"
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Cifrar esta instalación medrará la seguridá."
 
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Entrugarásete pola llave cifráu nel prósimu pasu."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Usar LVM con esta instalación."
 
 #: src/installation_ask.py:142
 msgid ""
@@ -492,7 +492,7 @@ msgstr ""
 #: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Esto configuraráte'l direutoriu /home to nuna partición o volume xebraos."
 
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
@@ -507,23 +507,23 @@ msgstr "Alministra les particiones to ya u quies instalar Manjaro (avanzao)"
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Podrás criar/esniciar particiones, esbillar u quies instalar Manjaro ya tamién esbillar puntos de montax adicionales."
 
 #: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "La instalación de Manjaro cifraráse n'usando LUKS"
 
 #: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro instalaráse n'usando volumes LVM"
 
 #: src/installation_ask.py:202
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro instalaráse n'usando un volume /home separtáu."
 
 #: src/installation_ask.py:204
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro instalaráse n'usando una partición /home separtada."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -546,7 +546,7 @@ msgstr "Por favor esbilla'l discu u quies instalar Manjaro\nya primi nel botón 
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "Conseña de cifráu:"
 
 #: src/installation_automatic.py:101 src/user_info.py:112
 #: ui/installation_automatic.ui:161 ui/user_info.ui:78
@@ -555,11 +555,11 @@ msgstr "Afita la conseña to:"
 
 #: src/installation_automatic.py:105 ui/installation_automatic.ui:258
 msgid "show password"
-msgstr ""
+msgstr "amosar conseña"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "Introdúxose una conseña LUKS"
 
 #: src/installation_automatic.py:165
 #, python-format
@@ -589,7 +589,7 @@ msgstr "N'instalado n'usando'l métodu '%s'"
 #: src/installation_process.py:241
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "En creando particiones ya los sistemes de ficheros sos en %s"
 
 #: src/installation_process.py:263
 msgid "Error creating partitions and their filesystems"
@@ -617,54 +617,54 @@ msgstr "Nun pue montase %s en %s"
 #: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s esniciáu"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
-msgstr "Nun puen crease los direutorios precisos nel sistema destín"
+msgstr "Nun puen criase los direutorios precisos nel sistema destín"
 
 #: src/installation_process.py:359
 msgid "Install System ..."
-msgstr ""
+msgstr "N'instalando'l sistema..."
 
 #: src/installation_process.py:364
 msgid "System installed."
-msgstr ""
+msgstr "Sistema instaláu."
 
 #: src/installation_process.py:366
 msgid "Configuring system ..."
-msgstr ""
+msgstr "En configurando'l sistema..."
 
 #: src/installation_process.py:368
 msgid "System configured."
-msgstr ""
+msgstr "Sistema configuráu."
 
 #: src/installation_process.py:372
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "N'instalando'l xestor d'arranque..."
 
 #: src/installation_process.py:385 src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "Erru desconocíu"
 
 #: src/installation_process.py:400
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "Nun pue copiase'l rexistru de Thus a %s"
 
 #: src/installation_process.py:416 src/installation_process.py:430
 #: src/installation_process.py:440
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Nun pue esmontase %s"
 
 #: src/installation_process.py:442
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Instalación finada con ésitu."
 
 #: src/installation_process.py:460
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "¡El sistema ficheros bas nun esiste! Erru críticu (en colando)."
 
 #: src/installation_process.py:463
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
@@ -672,15 +672,15 @@ msgstr ""
 
 #: src/installation_process.py:479
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "En fayendo índiz de ficheros pa copiar..."
 
 #: src/installation_process.py:484
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "N'estrayendo imax root..."
 
 #: src/installation_process.py:494
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "N'estrayendo imax d'escritoriu"
 
 #: src/installation_process.py:509
 #, python-format
@@ -703,12 +703,12 @@ msgstr "Nun pue desmontase %s"
 #: src/installation_process.py:580
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Erru n'executando comandu: %s"
 
 #: src/installation_process.py:642
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Amestáu a fstab : UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:728
 #, python-format
@@ -739,7 +739,7 @@ msgstr "Erru n'instalando configuración rexonal GRUB(2)."
 #: src/installation_process.py:846
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "Habilitáu'l serviciu %s."
 
 #: src/installation_process.py:853
 #, python-format
@@ -766,11 +766,11 @@ msgstr "En configurando el sistema nuevu to"
 
 #: src/installation_process.py:1034
 msgid "fstab file generated."
-msgstr ""
+msgstr "ficheru fstab xeneráu."
 
 #: src/installation_process.py:1040
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Copiada configuración de rede."
 
 #: src/installation_process.py:1066
 msgid "Timezone set."
@@ -784,7 +784,7 @@ msgstr ""
 #: src/installation_process.py:1092
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Amestáu l'usuariu %s."
 
 #: src/installation_process.py:1104
 #, python-format
@@ -797,19 +797,19 @@ msgstr ""
 
 #: src/installation_process.py:1114
 msgid "Generating locales ..."
-msgstr ""
+msgstr "En xenerando llingues..."
 
 #: src/installation_process.py:1135
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "N'axustando reló de rede..."
 
 #: src/installation_process.py:1144
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "En configurando hardware..."
 
 #: src/installation_process.py:1217
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "En configurando tarxeta gráfica..."
 
 #: src/installation_process.py:1224
 msgid "Can't execute the MHWD script"
@@ -817,11 +817,11 @@ msgstr "Nun pue executse'l script MHWD"
 
 #: src/installation_process.py:1233
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "En configurando l'alministrador de pantalles..."
 
 #: src/installation_process.py:1339
 msgid "Configure System ..."
-msgstr ""
+msgstr "En configurando sistema..."
 
 #: src/installation_process.py:1364
 msgid "Removing live configuration (packages)"
@@ -837,19 +837,19 @@ msgstr "Finada configuración del xestor de paquetes."
 
 #: src/installation_process.py:1416
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "N'executando mkinitcpio..."
 
 #: src/installation_process.py:1419
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "Executar mkinitcpio - fecho"
 
 #: src/installation_process.py:1435
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "En cifrando direutoriu d'usuariu home..."
 
 #: src/installation_process.py:1437
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Usar direutoriu home cifráu"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -926,12 +926,12 @@ msgstr "Nun pue camudase la configuración rexonal '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Nun pue verificase si %s ye un SSD o non"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Perdón, pero'l sistema d'archivos %s nun pue acurtiase"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -1006,7 +1006,7 @@ msgstr "N'aparar filos de zona horaria..."
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr "Nun pue consiguise'l códigu de país emplegáu pa crear una llista d'espeyos Pacman"
+msgstr "Nun pue consiguise'l códigu de país emplegáu pa criar una llista d'espeyos Pacman"
 
 #: src/user_info.py:84 ui/user_info.ui:34
 msgid "Your name:"
@@ -1146,7 +1146,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Pa meyores resultaos, asegúrate qu
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
-msgstr "Crear partición"
+msgstr "Criar partición"
 
 #: ui/installation_advanced.ui:114
 msgid "Location:"
@@ -1241,7 +1241,7 @@ msgstr "<span weight=\"light\" size=\"small\">Esto configurará LVM en permitien
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Esto configurará'l direutoriu /home to nuna partición o volume xebraos.</span>"
 
 #: ui/installation_ask.ui:169
 msgid "Install alongside other OSes"
@@ -1263,7 +1263,7 @@ msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Podrás crear/esniciar particiones, esbillar u instalar Manjaro y tamién esbillar puntos de montax adicionales.</span>"
+msgstr "<span weight=\"light\" size=\"small\">Podrás criar/esniciar particiones, esbillar u instalar Manjaro y tamién esbillar puntos de montax adicionales.</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
