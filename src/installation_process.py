@@ -454,11 +454,13 @@ class InstallationProcess(multiprocessing.Process):
                 os.mkdir("/source_desktop")
             # find the squashfs..
             if(not os.path.exists(self.media)):
-                self.queue_event('debug', _("Base filesystem does not exist! Critical error (exiting)."))
-                sys.exit(1) # change to report
+                txt = _("Base filesystem does not exist! Critical error (exiting).")
+                logging.error(txt)
+                self.queue_fatal_event(txt)
             if(not os.path.exists(self.media_desktop)):
-                self.queue_event('debug', _("Desktop filesystem does not exist! Critical error (exiting)."))
-                sys.exit(1) # change to report
+                txt = _("Desktop filesystem does not exist! Critical error (exiting).")
+                logging.error(txt)
+                self.queue_fatal_event(txt)
 
             # Mount the installation media
             subprocess.check_call(["mount", self.media, "/source/", "-t", self.media_type, "-o", "loop"])
@@ -644,6 +646,24 @@ class InstallationProcess(multiprocessing.Process):
                 logging.debug(_("Added to fstab : UUID=%s %s %s %s 0 %s"), uuid, path, myfmt, opts, chk)
                 continue
 
+            # Fix for home + luks, no lvm
+            if "/home" in path and self.settings.get("use_luks") and not self.settings.get("use_lvm"):
+                # Modify the crypttab file
+                if self.settings.get("luks_key_pass") != "":
+                    home_keyfile = "none"
+                else:
+                    home_keyfile = "/etc/luks-keys/home"
+                subprocess.check_call(['chmod', '0777', '%s/etc/crypttab' % self.dest_dir])
+                with open('%s/etc/crypttab' % self.dest_dir, 'a') as crypttab_file:
+                    line = "cryptManjaroHome /dev/disk/by-uuid/%s %s luks\n" % (uuid, home_keyfile)
+                    crypttab_file.write(line)
+                    logging.debug(_("Added to crypttab : %s"), line)
+                subprocess.check_call(['chmod', '0600', '%s/etc/crypttab' % self.dest_dir])
+
+                all_lines.append("/dev/mapper/cryptManjaroHome %s %s %s 0 %s" % (path, myfmt, opts, chk))
+                logging.debug(_("Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"), path, myfmt, opts, chk)
+                continue
+
             # fstab uses vfat to mount fat16 and fat32 partitions
             if "fat" in myfmt:
                 myfmt = 'vfat'
@@ -660,7 +680,7 @@ class InstallationProcess(multiprocessing.Process):
                 full_path = os.path.join(self.dest_dir, path)
                 subprocess.check_call(["mkdir", "-p", full_path])
 
-            if self.ssd != None:
+            if self.ssd is not None:
                 for i in self.ssd:
                     if i in self.mount_devices[path] and self.ssd[i]:
                         opts = 'defaults,noatime,nodiratime'
@@ -673,9 +693,11 @@ class InstallationProcess(multiprocessing.Process):
                             root_ssd = 1
 
             all_lines.append("UUID=%s %s %s %s 0 %s" % (uuid, path, myfmt, opts, chk))
+            logging.debug(_("Added to fstab : UUID=%s %s %s %s 0 %s"), uuid, path, myfmt, opts, chk)
 
         if root_ssd:
             all_lines.append("tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0")
+            logging.debug(_("Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"))
 
         full_text = '\n'.join(all_lines)
         full_text += '\n'

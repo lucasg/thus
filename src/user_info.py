@@ -90,7 +90,7 @@ class UserInfo(Gtk.Box):
 
         label = self.ui.get_object('hostname')
         txt = _("Hostname")
-        label.set_markup(txt)
+        label.set_placeholder_text(txt)
 
         label = self.ui.get_object('hostname_label')
         txt = _("Your computer's name:")
