@@ -192,7 +192,9 @@ class InstallationAlongside(Gtk.Box):
         try:
             device_list = parted.getAllDevices()
         except:
-            installation_process.queue_fatal_event(_("pyparted3 not found!"))
+            txt = _("pyparted3 not found!")
+            logging.error(txt)
+            installation_process.queue_fatal_event(txt)
             device_list = []
 
         for dev in device_list:
@@ -218,7 +220,9 @@ class InstallationAlongside(Gtk.Box):
                                 self.treeview_store.append(None, row)
                         self.partitions[p.path] = p
                 except Exception as e:
-                    logging.warning(_("Unable to create list of partitions for alongside installation."))
+                    txt = _("Unable to create list of partitions for alongside installation.")
+                    logging.warning(txt)
+                    installation_process.queue_event('warning', txt)
 
         # assign our new model to our treeview
         self.treeview.set_model(self.treeview_store)
@@ -253,7 +257,9 @@ class InstallationAlongside(Gtk.Box):
             self.max_size = int(x[1]) / 1000
             self.min_size = int(x[2]) / 1000
         except subprocess.CalledProcessError as e:
-            installation_process.queue_fatal_event("CalledProcessError.output = %s" % e.output)
+            txt = "CalledProcessError.output = %s" % e.output
+            logging.error(txt)
+            installation_process.queue_fatal_event(txt)
 
         if self.min_size + _minimum_space_for_manjaro < self.max_size:
             self.new_size = self.ask_shrink_size(other_os_name)
@@ -344,7 +350,9 @@ class InstallationAlongside(Gtk.Box):
         logging.debug("primary partitions: %s" % primary_partitions)
 
         if len(primary_partitions) >= 4:
-            logging.error(_("There are too many primary partitions, can't create a new one"))
+            txt = _("There are too many primary partitions, can't create a new one")
+            logging.error(txt)
+            installation_process.queue_fatal_event(txt)
             return False
 
         self.extended_path = extended_path
@@ -375,7 +383,9 @@ class InstallationAlongside(Gtk.Box):
             # destroy original partition and create a new resized one
             pm.split_partition(device_path, partition_path, new_size)
         else:
-            installation_process.queue_fatal_event(_("Can't shrink %s(%s) filesystem") % (otherOS, fs_type))
+            txt = _("Can't shrink %s(%s) filesystem") % (otherOS, fs_type)
+            logging.error(txt)
+            installation_process.queue_fatal_event(txt)
             return
 
 

@@ -25,6 +25,7 @@ import gettext
 import locale
 import os
 import logging
+import installation_process
 
 # Useful vars for gettext (translations)
 APP_NAME="thus"

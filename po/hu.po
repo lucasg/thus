@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# chris020891 <chris020891@gmail.com>, 2013
 # Tibor Attila Anca <anca.tibor@gmail.com>, 2013
 # i_sty <szollosi.istv4n@gmail.com>, 2013
 # lacika501 <80kiri@gmail.com>, 2013
@@ -15,8 +16,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 21:57+0100\n"
-"PO-Revision-Date: 2013-12-10 21:01+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-15 16:24+0000\n"
+"Last-Translator: lajos <mrlajos@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +44,7 @@ msgstr "Nem lehet egyszerre két telepítőt futtatni.\n\n Ha biztos benne, hogy
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus telepítő verzió %s"
 
 #: thus.py:218
 #, python-format
@@ -63,25 +64,25 @@ msgstr "Kilépés a telepítőből..."
 #: src/installation_process.py:435
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Lecsatolás %s"
 
 #: src/auto_partition.py:100
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Nem lehet törölni meglevő LVM köteteket (lásd alább)"
 
 #: src/auto_partition.py:110
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Nem lehet lezárni LUKS eszközöket (lásd alább)"
 
 #: src/auto_partition.py:298
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Telepíteni fogja a LUKS-t ezen az eszközön %s"
 
 #: src/auto_partition.py:484
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Telepíteni fogja az LVM-t ezen az eszközön %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:217
@@ -94,24 +95,24 @@ msgstr "Milyen típusú a rendszerindítód?"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (Leggyakoribb)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Válaszd a \"Mégse\" ha nem akarsz telepíteni rendszerbetöltőt."
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "Nem lehet beállítani a helyi %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -139,12 +140,12 @@ msgstr "A jelszavak nem egyeznek"
 
 #: src/check.py:80
 msgid "System Check"
-msgstr ""
+msgstr "Rendszer Ellenőrzés"
 
 #: src/check.py:85
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "legalább %dGB szabad tárhellyel rendelkezik"
 
 #: src/check.py:89
 msgid "is plugged in to a power source"
@@ -312,7 +313,7 @@ msgstr "Címke (opcionális):"
 
 #: src/installation_advanced.py:1141
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Titkosítási beállítások..."
 
 #: src/installation_advanced.py:1158 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -320,7 +321,7 @@ msgstr "Formatálás:"
 
 #: src/installation_advanced.py:1163
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Partíciós táblat típusa:"
 
 #: src/installation_advanced.py:1168
 msgid "Create Partition Table"
@@ -341,11 +342,11 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB-nak szüksége van egy BIOS rendszerbetöltő partícióra (2 MiB, no filesystem, \"EF02\" típuskód gdisk-ben vagy \"bios_grub\" flag GNU Parted-ben) BIOS alapú rendszerekben a core.img fájl beépítésére mivel nincs elegendő post-MBR rés GPT lemezeken.\n\nThus létre fogja hozni ezt a speciális partíciót most."
 
 #: src/installation_advanced.py:1299
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "Nem lehet BIOS GPT rendszerbetöltő partíciót létrehozni!"
 
 #: src/installation_advanced.py:1428
 #, python-format
@@ -366,7 +367,7 @@ msgstr "%s csatlakoztatva ide '%s'.\nA folytatáshoz le kell csatolni.\nKattints
 #: src/installation_advanced.py:1452
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s csatoltnak tűnik (foglalt) de nincs csatolási pontja"
 
 #: src/installation_advanced.py:1511
 #, python-format
@@ -406,15 +407,15 @@ msgstr "Fájlrendszer %s létrehozása a %s címke: %s"
 #: src/installation_advanced.py:1684
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro telepíteni fogja a rendszer betöltőt a %s - %s"
+msgstr "Manjaro telepíteni fogja a rendszerbetöltőt a %s - %s"
 
 #: src/installation_advanced.py:1687 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus nem fog telepíteni semmilyen rendszerbetöltőt "
 
 #: src/installation_advanced.py:1701 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Teszt mód. Thus nem fog módosításokat eszközölni a rendszereden!"
 
 #: src/installation_alongside.py:114
 #, python-format
@@ -439,11 +440,11 @@ msgstr "Fájlrendszer"
 
 #: src/installation_alongside.py:195
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3 nem található!"
 
 #: src/installation_alongside.py:221
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Nem tudta létrehozni a partíciókat a telepítés során."
 
 #: src/installation_alongside.py:261
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -451,12 +452,12 @@ msgstr "Nem lehet zsugorítani a partíciót (lehetséges nincs elég szabad hel
 
 #: src/installation_alongside.py:347
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "Túl sok elsődleges partícó, nem lehet újat létrehozni"
 
 #: src/installation_alongside.py:378
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "Nem lehet %s(%s) fájlrendszert zsugorítani"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
@@ -472,30 +473,30 @@ msgstr "Figyelem: Ez törölni fogja az összes adatot a lemezen"
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Titkosítsd ezt a telepítést a fokozott biztonság érdekében."
 
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "A következő lépésben a titkosítási kulcsot kell megadni"
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Használjon LVM-et ezzel a telepítéssel."
 
 #: src/installation_ask.py:142
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Ez telepíti az LVM-et ami lehetővé teszi pillanatfelvételek készítését, partíció méretek megváltoztatását egyértelmű módon."
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:136
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Állítsd a Home könyvtárat egy eltérő partícióra/kötetre"
 
 #: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Ez beállítja a /home könyvtárat egy másik partícióra vagy kötetre."
 
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
@@ -510,23 +511,23 @@ msgstr "Partíciók kezelése és Manjaro telepítési helyének kiválasztása.
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Létrehozhat, törölhet partíciókat. Válassza ki hova települjön a Manjaro és válasszon csatolási pontokat."
 
 #: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "A Manjaro telepítés titkosítva lesz LUKS használatával"
 
 #: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro telepítve lesz LVM kötetek használatával"
 
 #: src/installation_ask.py:202
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro telepítve lesz egy különálló /home kötet használatával."
 
 #: src/installation_ask.py:204
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro telepítve lesz egy különálló /home partíció használatával."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -549,7 +550,7 @@ msgstr "Kérem válassza ki a meghajtót ahova telepíteni akarja a Manjaro-t\n�
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "Titkosítás jelszó:"
 
 #: src/installation_automatic.py:101 src/user_info.py:112
 #: ui/installation_automatic.ui:161 ui/user_info.ui:78
@@ -558,11 +559,11 @@ msgstr "Erősítsd meg a jelszavadat:"
 
 #: src/installation_automatic.py:105 ui/installation_automatic.ui:258
 msgid "show password"
-msgstr ""
+msgstr "mutassa a jelszót"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "LUKS jelszó beállítva"
 
 #: src/installation_automatic.py:165
 #, python-format
@@ -592,7 +593,7 @@ msgstr "Telepítés a következő módszerrel: '%s'"
 #: src/installation_process.py:241
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Partíciók és fájlrendszerek létrehozása ide: %s"
 
 #: src/installation_process.py:263
 msgid "Error creating partitions and their filesystems"
@@ -620,70 +621,70 @@ msgstr "Nem lehet csatlakoztatni %s ebben %s"
 #: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s törölve"
 
 #: src/installation_process.py:353
 msgid "Can't create necessary directories on destination system"
-msgstr "Nem hozhatsz létre szükséges könyvtárakat a cél rendszeren"
+msgstr "Nem hozhatsz létre szükséges könyvtárakat a célrendszeren"
 
 #: src/installation_process.py:359
 msgid "Install System ..."
-msgstr ""
+msgstr "Rendszer telepítése..."
 
 #: src/installation_process.py:364
 msgid "System installed."
-msgstr ""
+msgstr "Rendszer telepítve."
 
 #: src/installation_process.py:366
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Rendszer konfigurálása..."
 
 #: src/installation_process.py:368
 msgid "System configured."
-msgstr ""
+msgstr "Rendszer konfigurálva."
 
 #: src/installation_process.py:372
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Rendszerbetöltő telepítése..."
 
 #: src/installation_process.py:385 src/installation_process.py:386
 msgid "Unknown error"
-msgstr ""
+msgstr "Ismeretlen hiba"
 
 #: src/installation_process.py:400
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "Nem lehet a Thus log fájlt másolni ide %s"
 
 #: src/installation_process.py:416 src/installation_process.py:430
 #: src/installation_process.py:440
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Nem lehet lecsatolni %s"
 
 #: src/installation_process.py:442
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "A telepítés sikeresen befejeződött."
 
 #: src/installation_process.py:460
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Az alap fájlrendszer nem létezik! Kritikus hiba (kilépés)."
 
 #: src/installation_process.py:463
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Az asztali fájlrendszer nem létezik! Kritikus hiba (kilépés)."
 
 #: src/installation_process.py:479
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Másolandó fájlok indexelése..."
 
 #: src/installation_process.py:484
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "root fájlkép kibontása..."
 
 #: src/installation_process.py:494
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "asztal fájlkép kibontása..."
 
 #: src/installation_process.py:509
 #, python-format
@@ -706,12 +707,12 @@ msgstr "Nem lehet csatolni %s"
 #: src/installation_process.py:580
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Hiba történt a %s futtatásakor."
 
 #: src/installation_process.py:642
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Hozzáadva ehhez: fstab : UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:728
 #, python-format
@@ -742,7 +743,7 @@ msgstr "HIBA a GRUB(2) lokális változók telepítésekor."
 #: src/installation_process.py:846
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "Engedélyezett %s szolgáltatás."
 
 #: src/installation_process.py:853
 #, python-format
@@ -756,7 +757,7 @@ msgstr "Hiba a jelszó megváltoztatásánál a következő felhasználónál: %
 
 #: src/installation_process.py:871
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Kapcsolódási pontok és modulok beállításai a mkinitcpio.conf fájlban"
 
 #: src/installation_process.py:936
 #, python-format
@@ -769,50 +770,50 @@ msgstr "Rendszer testreszabása"
 
 #: src/installation_process.py:1034
 msgid "fstab file generated."
-msgstr ""
+msgstr "Az fstab fájl elkészült."
 
 #: src/installation_process.py:1040
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Hálózati konfiguráció lemásolva."
 
 #: src/installation_process.py:1066
 msgid "Timezone set."
-msgstr ""
+msgstr "Időzóna beállítva."
 
 #: src/installation_process.py:1086
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "Sudo konfiguráció %s felhasználónak elkészült."
 
 #: src/installation_process.py:1092
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "%s felhasználó hozzáadva."
 
 #: src/installation_process.py:1104
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Hálózati név %s beállítása"
 
 #: src/installation_process.py:1108
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Azonos jelszó beállítása root-nak."
 
 #: src/installation_process.py:1114
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Lokális változók generálása..."
 
 #: src/installation_process.py:1135
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Hardware óra beállítása..."
 
 #: src/installation_process.py:1144
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Hardware konfigurálása..."
 
 #: src/installation_process.py:1217
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Grafikus kártya beállítása..."
 
 #: src/installation_process.py:1224
 msgid "Can't execute the MHWD script"
@@ -820,11 +821,11 @@ msgstr "Nem lehet futtatni az MHWD \"Manjaro Hardware Detection\" scriptet"
 
 #: src/installation_process.py:1233
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Bejelentkező képernyő konfigurálása..."
 
 #: src/installation_process.py:1339
 msgid "Configure System ..."
-msgstr ""
+msgstr "Rendszer Konfigurálás..."
 
 #: src/installation_process.py:1364
 msgid "Removing live configuration (packages)"
@@ -840,19 +841,19 @@ msgstr "Csomagkezelő konfigurálása befejeződött."
 
 #: src/installation_process.py:1416
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "mkinitcpio futtatása ..."
 
 #: src/installation_process.py:1419
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "mkinitcpio futtatása - befejezve"
 
 #: src/installation_process.py:1435
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Felhasználói home könyvtár titkosítása ..."
 
 #: src/installation_process.py:1437
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "A felhasználói Home könyvtár titkosítva."
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -886,7 +887,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Ez egy pre-release béta szoftver, mely még erősen fejlesztés alatt áll. \nMég nem kezeli megfelelően a RAID és btrfs alköteteket \nvagy más fejlett beállításokat. Kérjük, használja óvatosan, mert elvesztheti adatait! \n\nHa bármilyen hibát észlel, kérjük jelezze a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> weboldalon."
 
 #: src/language.py:92
 msgid "Welcome to Manjaro!"
@@ -929,12 +930,12 @@ msgstr "Hely nem lett megváltoztatva: %s"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Nem ellenőrizhető, hogy %s szilárdtest-meghajtó vagy sem."
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Sajnáljuk, de %s fájlrendszer nem zsugorítható"
 
 #: src/rank_mirrors.py:52
 msgid "Can't find rank mirrors script"
@@ -976,7 +977,7 @@ msgstr "Kérlek várj..."
 
 #: src/slides.py:210
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Ismét szeretnéd?"
 
 #: src/timezone.py:111
 msgid "Where are you?"
@@ -1244,7 +1245,7 @@ msgstr "<span weight=\"light\" size=\"small\">Ez telepíti az LVM-et ami lehető
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Ez beállítja a /home könyvtárat egy másik partícióra vagy kötetre.</span>"
 
 #: ui/installation_ask.ui:169
 msgid "Install alongside other OSes"
@@ -1272,7 +1273,7 @@ msgstr "<span weight=\"light\" size=\"small\">Létrehozhat, törölhet partíci�
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"

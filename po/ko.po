@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 21:57+0100\n"
-"PO-Revision-Date: 2013-12-13 10:09+0000\n"
+"PO-Revision-Date: 2013-12-13 10:11+0000\n"
 "Last-Translator: lego37yoon <lego37yoon@outlook.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/manjaro-thus/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -292,7 +292,7 @@ msgstr "이 공간의 끝 지점"
 #: src/installation_advanced.py:1129 src/installation_advanced.py:1146
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
-msgstr ""
+msgstr "사용합니다:"
 
 #: src/installation_advanced.py:1133 src/installation_advanced.py:1150
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
@@ -310,7 +310,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1158 ui/installation_advanced.ui:698
 msgid "Format:"
-msgstr ""
+msgstr "포맷:"
 
 #: src/installation_advanced.py:1163
 msgid "Partition Table Type:"
@@ -323,12 +323,12 @@ msgstr ""
 #: src/installation_advanced.py:1171 src/installation_alongside.py:149
 #: src/installation_automatic.py:107
 msgid "Install now!"
-msgstr ""
+msgstr "지금 설치"
 
 #: src/installation_advanced.py:1259
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "새로운 파티션을 만들고 있습니다. 형태: type %s 디스크: disk%s"
 
 #: src/installation_advanced.py:1269
 msgid ""
@@ -365,23 +365,23 @@ msgstr ""
 #: src/installation_advanced.py:1511
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "파티션 %s는 곧 삭제됩니다"
 
 #: src/installation_advanced.py:1518
 msgid "Partition"
-msgstr ""
+msgstr "파티션"
 
 #: src/installation_advanced.py:1518
 msgid "New"
-msgstr ""
+msgstr "새로만들기"
 
 #: src/installation_advanced.py:1518
 msgid "Relabel"
-msgstr ""
+msgstr "다시 라벨쓰기"
 
 #: src/installation_advanced.py:1518
 msgid "Mount"
-msgstr ""
+msgstr "지점"
 
 #: src/installation_advanced.py:1539
 msgid "These disks will have partition actions:"
@@ -1159,7 +1159,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:504
 msgid "Partition table type:"
-msgstr ""
+msgstr "파티션 태이블 형태"
 
 #: ui/installation_advanced.ui:577
 msgid "Edit partition"

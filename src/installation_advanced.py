@@ -78,6 +78,10 @@ class InstallationAdvanced(Gtk.Box):
         # hold deleted partitions that exist now
         self.to_be_deleted = []
 
+        self.uefi = False
+        if os.path.exists("/sys/firmware/efi/systab"):
+            self.uefi = True
+
         # Call base class
         super().__init__()
 
@@ -111,9 +115,7 @@ class InstallationAdvanced(Gtk.Box):
         combo = self.ui.get_object('partition_types_combo')
         combo.remove_all()
         combo.append_text("msdos (aka MBR)")
-        # TODO: get GPT ready (see also: https://github.com/Antergos/Cnchi/issues/63
-        if self.settings.get("use_staging"):
-            combo.append_text("GUID Partition Table (GPT)")
+        combo.append_text("GUID Partition Table (GPT)")
 
         # Automatically select first entry
         self.select_first_combobox_item(combo)
@@ -127,6 +129,9 @@ class InstallationAdvanced(Gtk.Box):
             combo.remove_all()
             for mp in sorted(fs.COMMON_MOUNT_POINTS):
                 combo.append_text(mp)
+            if self.uefi:
+                # Add "/boot/efi" mountpoint in the mountpoint combobox when in uefi mode
+                combo.append_text('/boot/efi')
 
         # We will store our devices here
         self.disks = None
@@ -1263,7 +1268,7 @@ class InstallationAdvanced(Gtk.Box):
                 self.fill_grub_device_entry()
                 self.fill_partition_list()
 
-                if ptype == 'gpt' and not os.path.exists("/sys/firmware/efi/systab"):
+                if ptype == 'gpt' and not self.uefi:
                     # Show warning (see https://github.com/Antergos/Cnchi/issues/63)
                     show.warning(_('GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, "EF02" type code in gdisk '
                         'or "bios_grub" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of '
@@ -1289,8 +1294,10 @@ class InstallationAdvanced(Gtk.Box):
         disk = self.disks[disk_path]
         dev = disk.device
 
-        #partitions = pm.get_partitions(disk)
-        #p = partitions[partition_path]
+        partitions = pm.get_partitions(disk)
+        partition_list = pm.order_partitions(partitions)
+        for partition_path in partition_list:
+            p = partitions[partition_path]
 
         # Get how many primary partitions are already created on disk
         if disk.primaryPartitionCount > 0:
@@ -1300,10 +1307,11 @@ class InstallationAdvanced(Gtk.Box):
 
         #max_size_mb = int((p.geometry.length * dev.sectorSize) / 1000000) + 1
 
-        mylabel = "BIOS_GPT_BOOT"
+        mylabel = ""
 
         mymount = ""
-        myfmt = ""
+        myfmt = "bios-gpt-boot"
+        formatme = False
 
         # Size must be 2MiB
         size = 2
@@ -1320,6 +1328,7 @@ class InstallationAdvanced(Gtk.Box):
         (res, err) = pm.set_flag(pm.PED_PARTITION_BIOS_GRUB, part)
 
         if res:
+            logging.error(err)
             installation_process.queue_fatal_event(err)
 
         # Store stage partition info in self.stage_opts
@@ -1342,24 +1351,33 @@ class InstallationAdvanced(Gtk.Box):
 
     def check_mount_points(self):
         """ Check that all necessary mount points are specified.
-            At least root (/) partition must be defined """
-
+            At least root (/) partition must be defined
+            In UEFI systems the efi partition (/boot/efi) must be defined too"""
         check_ok = False
-
+        exist_root = False
+        exist_efi = False
         # Be sure to just call get_devices once
         if self.disks == None:
             self.disks = pm.get_devices()
-
         # No device should be mounted now except install media.
-
-        # Check root fs
+        # Check root and uefi fs
         for part_path in self.stage_opts:
             (is_new, lbl, mnt, fs, fmt) = self.stage_opts[part_path]
             if mnt == "/":
                 # Don't allow vfat as / filesystem, it will not work!
                 # Don't allow ntfs as / filesystem, this is stupid!
                 if "fat" not in fs and "ntfs" not in fs:
-                    check_ok = True
+                    #check_ok = True
+                    exist_root = True
+            if mnt == "/boot/efi":
+                # Only fat partitions
+                if "fat" in fs:
+                    exist_efi = True
+
+        if self.uefi:
+            check_ok = exist_root and exist_efi
+        else:
+            check_ok = exist_root
 
         self.forward_button.set_sensitive(check_ok)
 
@@ -1387,8 +1405,8 @@ class InstallationAdvanced(Gtk.Box):
                     if is_new:
                         if lbl != "":
                             relabel = 'Yes'
-                        # Avoid extended partitions getting fmt flag true on new creation
-                        if fs != _("extended"):
+                        # Avoid extended and bios-gpt-boot partitions getting fmt flag true on new creation
+                        if fs != _("extended") and fs != "bios-gpt-boot":
                             fmt = 'Yes'
                         createme = 'Yes'
                     else:
@@ -1466,8 +1484,8 @@ class InstallationAdvanced(Gtk.Box):
                         if is_new:
                             if lbl != "":
                                 relabel = 'Yes'
-                            # Avoid extended partitions getting fmt flag true on new creation
-                            if fs != _("extended"):
+                            # Avoid extended and bios-gpt-boot partitions getting fmt flag true on new creation
+                            if fs != _("extended") and fs != "bios-gpt-boot":
                                 fmt = 'Yes'
                             createme = 'Yes'
                         else:
@@ -1594,16 +1612,35 @@ class InstallationAdvanced(Gtk.Box):
             apartitions = list(partitions) + self.lv_partitions
             if True:
                 noboot = True
+                efiboot = False
+                # Check if a boot partition exists
                 for allopts in self.stage_opts:
                     if self.stage_opts[allopts][2] == '/boot':
                         noboot = False
+                    if self.stage_opts[allopts][2] == '/boot/efi':
+                        noboot = False
+                        efiboot = True
+
                 for partition_path in apartitions:
                     # Get label, mount point and filesystem of staged partitions
                     uid = self.gen_partition_uid(path=partition_path)
                     if uid in self.stage_opts:
                         (is_new, lbl, mnt, fisy, fmt) = self.stage_opts[uid]
+                        # FIX: Do not label or format extended or bios-gpt-boot partitions
+                        if fisy == _("extended") or fisy == "bios-gpt-boot":
+                            continue
                         logging.info(_("Creating %s filesystem in %s labeled %s") % (fisy, partition_path, lbl))
-                        if ((mnt == '/' and noboot) or mnt == '/boot') and ('/dev/mapper' not in partition_path):
+                        if (mnt == '/boot/efi'):
+                            if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
+                                (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
+                            if not self.testing:
+                                pm.finalize_changes(partitions[partition_path].disk)
+                        if (mnt == '/boot' and efiboot):
+                            if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_LEGACY_BOOT):
+                                (res, err) = pm.set_flag(pm.PED_PARTITION_LEGACY_BOOT, partitions[partition_path])
+                            if not self.testing:
+                                pm.finalize_changes(partitions[partition_path].disk)
+                        if ((mnt == '/' and noboot) or (mnt == '/boot' and not efiboot)) and ('/dev/mapper' not in partition_path):
                             if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
                                 (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
                             if not self.testing:
@@ -1612,7 +1649,7 @@ class InstallationAdvanced(Gtk.Box):
                             pvs = lvm.get_lvm_partitions()
                             vgname = partition_path.split("/")[-1]
                             vgname = vgname.split('-')[0]
-                            if (mnt == '/' and noboot) or mnt == '/boot':
+                            if (mnt == '/' and noboot) or (mnt == '/boot' and not efiboot):
                                 self.blvm = True
                                 for ee in pvs[vgname]:
                                     print(partitions)
@@ -1659,8 +1696,8 @@ class InstallationAdvanced(Gtk.Box):
                 uid = self.gen_partition_uid(p=p)
                 if uid in self.stage_opts:
                     (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
-                    # FIX: Do not mount extended partitions
-                    if fs_type == _("extended"):
+                    # FIX: Do not mount extended or bios-gpt-boot partitions
+                    if fs_type == _("extended") or fs_type == "bios-gpt-boot":
                         continue
                     mount_devices[mount_point] = partition_path
                     fs_devices[partition_path] = fs_type

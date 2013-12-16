@@ -34,6 +34,7 @@ import os
 import info
 
 import logging
+import installation_process
 
 #_url_prefix = "http://git.manjaro.org/core/thus/raw/development/"
 _url_prefix = "http://git.manjaro.org/core/thus/raw/master/"
@@ -106,7 +107,9 @@ class Updater():
                 print("Downloading %s (%d/%d)" % (name, i, num_files))
                 if self.download(name, md5) is False:
                     # download has failed
-                    logging.error("Download of %s has failed" % name)
+                    txt = "Download of %s has failed" % name
+                    logging.error(txt)
+                    installation_process.queue_fatal_event(txt)
                     return False
                 i = i + 1
             # replace old files with the new ones
@@ -144,7 +147,9 @@ class Updater():
         web_md5 = self.get_md5(txt)
 
         if web_md5 != md5:
-            logging.error("Checksum error in %s. Download aborted" % name)
+            txt = "Checksum error in %s. Download aborted" % name
+            logging.error(txt)
+            installation_process.queue_fatal_event(txt)
             return False
 
         new_name = os.path.join(_base_dir, name + "." + self.web_version.replace(".", "_"))

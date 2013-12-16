@@ -32,6 +32,7 @@ import logging
 import time
 import os
 import canonical.misc as misc
+import installation_process
 
 class AutoRankmirrorsThread(threading.Thread):
     """ Thread class that searches the closest mirrors available """
@@ -56,5 +57,7 @@ class AutoRankmirrorsThread(threading.Thread):
         try:
             self.rankmirrors_pid = subprocess.Popen(["/usr/share/thus/scripts/rankmirrors-script"]).pid
         except subprocess.CalledProcessError as err:
-            logging.error(_("Couldn't execute auto mirroring selection"))
+            txt = _("Couldn't execute auto mirroring selection")
+            logging.error(txt)
+            installation_process.queue_fatal_event(txt)
             logging.error(err)

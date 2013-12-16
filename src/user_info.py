@@ -88,6 +88,10 @@ class UserInfo(Gtk.Box):
         txt = _("Your name")
         label.set_placeholder_text(txt)
 
+        label = self.ui.get_object('hostname')
+        txt = _("Hostname")
+        label.set_markup(txt)
+
         label = self.ui.get_object('hostname_label')
         txt = _("Your computer's name:")
         label.set_markup(txt)
@@ -140,6 +144,9 @@ class UserInfo(Gtk.Box):
         txt = _("Who are you?")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
+
+        btn = self.ui.get_object('checkbutton_show_password')
+        btn.set_label(_("show password"))
 
     def hide_widgets(self):
         """ Hide unused and message widgets """
@@ -203,8 +210,15 @@ class UserInfo(Gtk.Box):
     def get_next_page(self):
         return _next_page
 
+    def on_checkbutton_show_password_toggled(self, widget):
+        """ Show/hide user password """
+        btn = self.ui.get_object('checkbutton_show_password')
+        show = btn.get_active()
+        self.entry['password'].set_visibility(show)
+        self.entry['verified_password'].set_visibility(show)
+
     def on_authentication_toggled(self, widget):
-        # user has changed autologin or home encrypting
+        """ User has changed autologin or home encrypting """
 
         if widget == self.login['auto']:
             if self.login['auto'].get_active():
