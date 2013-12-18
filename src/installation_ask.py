@@ -32,7 +32,7 @@ import bootinfo
 import logging
 import os
 
-_prev_page = "check"
+_prev_page = "keymap"
 
 class InstallationAsk(Gtk.Box):
 

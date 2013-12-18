@@ -4,6 +4,7 @@
 #  lvm.py
 #
 #  Copyright 2013 Antergos
+#  Copyright 2013 Manjaro
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -25,7 +26,7 @@
 import subprocess
 import logging
 import canonical.misc as misc
-import installation_process
+import show_message as show
 
 @misc.raise_privileges
 def get_lvm_partitions():
@@ -71,8 +72,10 @@ def remove_logical_volume(logical_volume):
     try:
         subprocess.check_call(["lvremove", "-f", logical_volume])
     except subprocess.CalledProcessError as err:
+        txt = _("Can't remove logical volume %s") % logical_volume
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
 @misc.raise_privileges
 def remove_volume_group(volume_group):
@@ -86,8 +89,10 @@ def remove_volume_group(volume_group):
     try:
         subprocess.check_call(["vgremove", "-f", volume_group])
     except subprocess.CalledProcessError as err:
+        txt = _("Can't remove volume group %s") % volume_group
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
 @misc.raise_privileges
 def remove_physical_volume(physical_volume):
@@ -95,5 +100,7 @@ def remove_physical_volume(physical_volume):
     try:
         subprocess.check_call(["pvremove", "-f", physical_volume])
     except subprocess.CalledProcessError as err:
+        txt = _("Can't remove physical volume %s") % physical_volume
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)

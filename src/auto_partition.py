@@ -28,7 +28,7 @@ import os
 import subprocess
 import logging
 #import time
-import installation_process
+import show_message as show
 
 """ AutoPartition class """
 
@@ -163,7 +163,7 @@ class AutoPartition(object):
             if fs_type not in mkfs.keys():
                 txt = _("Unkown filesystem type %s"), fs_type
                 logging.error(txt)
-                installation_process.queue_fatal_event(txt)
+                show.fatal_error(txt)
                 return
 
             command = mkfs[fs_type]
@@ -172,7 +172,7 @@ class AutoPartition(object):
                 subprocess.check_call(command.split())
             except subprocess.CalledProcessError as e:
                 logging.error(e.output)
-                installation_process.queue_fatal_event(e.output)
+                show.fatal_error(e.output)
                 return
 
             #time.sleep(4)

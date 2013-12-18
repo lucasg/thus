@@ -41,7 +41,7 @@ def fatal_error(message):
     multiprocessing.active_children()
 
     error(message)
-    sys.exit(1)
+    os._exit(0)
 
 def error(message):
     logging.error(message)

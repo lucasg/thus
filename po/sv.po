@@ -5,7 +5,10 @@
 # Translators:
 # Alekzanther <alexanderlndbrg@gmail.com>, 2013
 # Alekzanther <alexanderlndbrg@gmail.com>, 2013
+# Anders Larsson <drusset@gmail.com>, 2013
+# Anders Larsson <drusset@gmail.com>, 2013
 # faidoc <faidoc@gmail.com>, 2013
+# fredrikfritte <fredrikfritte@gmail.com>, 2013
 # mats_bjork007 <mats_bjork007@yahoo.se>, 2013
 #   <pojk3n@gmail.com>, 2011
 msgid ""
@@ -13,8 +16,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-16 21:24+0100\n"
-"PO-Revision-Date: 2013-12-16 20:27+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-18 09:59+0000\n"
+"Last-Translator: fredrikfritte <fredrikfritte@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/manjaro-thus/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +29,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Installationen måste köras med administratörsrättigheter och kan inte fortsätta utan det."
 
 #: thus.py:126
 #, python-format
@@ -36,7 +39,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Du kan inte köra två installationer samtidigt.\n\nOm du är säker på att installationen inte redan körs kan du manuellt ta bort filen %s och starta om installationen."
 
 #: thus.py:138
 #, python-format
@@ -61,7 +64,7 @@ msgstr "Avbryter installationen..."
 #: src/installation_process.py:433
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Avmonterar %s"
 
 #: src/auto_partition.py:103
 msgid "Can't delete existent LVM volumes (see below)"
@@ -107,15 +110,15 @@ msgstr ""
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Välj 'Avbryt' om du inte vill installera en starthanterare"
 
 #: src/canonical/misc.py:923
 #, python-format
@@ -153,13 +156,13 @@ msgstr ""
 #: src/check.py:83
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "har minst %dGB tillgängligt diskutrymme"
 
 #: src/check.py:88
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr ""
+msgstr "Detta är mycket beroende på vilken fönsterhanterare du väljer, så du kan behöva mer hårddiskutrymme."
 
 #: src/check.py:93
 msgid "is plugged in to a power source"
@@ -183,7 +186,7 @@ msgstr "Vi är ansluten till en kraftkälla."
 
 #: src/check.py:174
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Vi har tillräckligt med diskutrymme."
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
 #: src/installation_advanced.py:513
@@ -238,7 +241,7 @@ msgstr "utökad"
 
 #: src/installation_advanced.py:666 src/installation_advanced.py:908
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Kan inte använda samma monteringspunkt två gånger..."
 
 #: src/installation_advanced.py:668
 msgid "Root partition must be formatted..."
@@ -317,7 +320,7 @@ msgstr "Etikett (valfritt):"
 
 #: src/installation_advanced.py:1145
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Krypteringsalternativ..."
 
 #: src/installation_advanced.py:1162 ui/installation_advanced.ui:698
 msgid "Format:"
@@ -325,11 +328,11 @@ msgstr "Formattera:"
 
 #: src/installation_advanced.py:1167
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Typ av partitionstabell:"
 
 #: src/installation_advanced.py:1172
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Skapa partitionstabell"
 
 #: src/installation_advanced.py:1175 src/installation_alongside.py:149
 #: src/installation_automatic.py:107
@@ -350,7 +353,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1305
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "Kan inte skapa en BIOS GPT Boot partition!"
 
 #: src/installation_advanced.py:1445
 #, python-format
@@ -406,7 +409,7 @@ msgstr "Sparar ändringar gjorda på %s"
 #: src/installation_advanced.py:1632
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Skapar filsystem av typen %s i %s med etiketten %s"
 
 #: src/installation_advanced.py:1719
 #, python-format
@@ -415,11 +418,11 @@ msgstr "Manjaro kommer att installera bootloadern, av typen %s, på %s"
 
 #: src/installation_advanced.py:1722 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus kommer inte installera någon bootloader"
 
 #: src/installation_advanced.py:1736 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Testläge. Inga ändringar kommer sparas!"
 
 #: src/installation_alongside.py:114
 #, python-format
@@ -428,7 +431,7 @@ msgstr "Kan inte ladda %s css"
 
 #: src/installation_alongside.py:141
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Välj vilket operativsystem som du vill installera tillsammans med Manjaro"
 
 #: src/installation_alongside.py:145
 msgid "Manjaro alongside another OS"
@@ -444,7 +447,7 @@ msgstr "Filsystem"
 
 #: src/installation_alongside.py:195
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "Kan inte hitta pyparted3!"
 
 #: src/installation_alongside.py:223
 msgid "Unable to create list of partitions for alongside installation."
@@ -452,11 +455,11 @@ msgstr ""
 
 #: src/installation_alongside.py:267
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Kan inte krympa partitionen (den kanske saknar tillräckligt med fritt utrymme)"
 
 #: src/installation_alongside.py:353
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "Det finns för många primära partitioner, kan inte skapa en till"
 
 #: src/installation_alongside.py:386
 #, python-format
@@ -477,30 +480,30 @@ msgstr "Varning: Det här kommer att ta bort all data på din disk"
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Krypterar installationen för ökad säkerhet."
 
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Du kommer att bli tillfrågad om krypteringsnyckeln i nästa steg"
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Använd LVM med denna installation."
 
 #: src/installation_ask.py:142
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Detta ställer in LVM och möjliggör snapshots och ändring av paritionsstorlekar på enkelt sätt"
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Detta kommer skapa din /home katalog på en annan partition eller enhet."
 
 #: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Detta kommer skapa din /home katalog på en annan partition eller enhet."
 
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
@@ -509,13 +512,13 @@ msgstr "Installera Manjaro bredvid %s"
 
 #: src/installation_ask.py:168
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Hantera dina partitioner och välj var Manjaro ska installeras (avancerat)"
 
 #: src/installation_ask.py:171
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Du får möjlighet att skapa och ta bort partitioner, välja var Manjaro ska installeras, samt välja ytterligare mount-punkter."
 
 #: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -523,7 +526,7 @@ msgstr ""
 
 #: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro installeras med LVM-uppsättning"
 
 #: src/installation_ask.py:202
 msgid "Manjaro will be installed using a separate /home volume."
@@ -544,7 +547,7 @@ msgstr "Välj enhet:"
 #: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "VARNING! Den här installationsmetoden kommer att skriva över allt på din disk!"
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
@@ -564,7 +567,7 @@ msgstr "Bekräfta ditt lösenord:"
 #: src/installation_automatic.py:105 src/user_info.py:149
 #: ui/installation_automatic.ui:258 ui/user_info.ui:487
 msgid "show password"
-msgstr ""
+msgstr "visa lösenordet"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -573,17 +576,17 @@ msgstr ""
 #: src/installation_automatic.py:165
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Automatisk installation på %s"
 
 #: src/installation_automatic.py:199
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Manjaro kommer att använda %s som installationsmedia"
 
 #: src/installation_automatic.py:208
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro kommer att installera bootloadern, av typen %s, på %s"
 
 #: src/installation_process.py:90
 #, python-format
@@ -602,7 +605,7 @@ msgstr ""
 
 #: src/installation_process.py:263
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Fel i skapande av partitioner och filsystem"
 
 #: src/installation_process.py:301 src/installation_process.py:324
 #, python-format
@@ -634,23 +637,23 @@ msgstr "Kan inte skapa nödvändiga kataloger i systemet"
 
 #: src/installation_process.py:358
 msgid "Install System ..."
-msgstr ""
+msgstr "Installerar systemet ..."
 
 #: src/installation_process.py:363
 msgid "System installed."
-msgstr ""
+msgstr "Systemet installerat."
 
 #: src/installation_process.py:365
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Konfigurerar systemet ..."
 
 #: src/installation_process.py:367
 msgid "System configured."
-msgstr ""
+msgstr "Systemet konfigurerat."
 
 #: src/installation_process.py:371
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Installerar bootloader..."
 
 #: src/installation_process.py:398
 #, python-format
@@ -661,7 +664,7 @@ msgstr ""
 #: src/installation_process.py:438
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Kan inte avmontera  %s"
 
 #: src/installation_process.py:440
 msgid "Installation finished successfully."
@@ -703,7 +706,7 @@ msgstr ""
 #: src/installation_process.py:565
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Kunde inte avmontera %s"
 
 #: src/installation_process.py:584
 #, python-format
@@ -773,7 +776,7 @@ msgstr ""
 #: src/installation_process.py:957
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "GDM: Aktivera automatisk inloggning för %s."
 
 #: src/installation_process.py:1052 src/installation_process.py:1063
 msgid "Configuring your new system"
@@ -812,7 +815,7 @@ msgstr ""
 
 #: src/installation_process.py:1139
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Genererar språk..."
 
 #: src/installation_process.py:1160
 msgid "Adjusting hardware clock ..."
@@ -820,11 +823,11 @@ msgstr ""
 
 #: src/installation_process.py:1169
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Konfigurerar hårdvara..."
 
 #: src/installation_process.py:1242
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Installerar grafikkort..."
 
 #: src/installation_process.py:1249
 msgid "Can't execute the MHWD script"
@@ -832,11 +835,11 @@ msgstr "Kan inte exekvera MHWD-skriptet"
 
 #: src/installation_process.py:1262
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Konfigurerar grafikhanterare..."
 
 #: src/installation_process.py:1368
 msgid "Configure System ..."
-msgstr ""
+msgstr "Konfigurerar System..."
 
 #: src/installation_process.py:1393
 msgid "Removing live configuration (packages)"
@@ -889,7 +892,7 @@ msgstr "Välj ditt språk:"
 
 #: src/language.py:85
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Kom Ihåg: Installationshanteraren är i beta stadiet."
 
 #: src/language.py:86
 msgid ""
@@ -950,7 +953,7 @@ msgstr ""
 
 #: src/parted3/partition_module.py:217
 msgid "Partition is too large!"
-msgstr ""
+msgstr "Partitionen är för stor!"
 
 #: src/rank_mirrors.py:53
 msgid "Can't find rank mirrors script"
@@ -992,7 +995,7 @@ msgstr "Vänta..."
 
 #: src/slides.py:217
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Vill du försöka igen?"
 
 #: src/timezone.py:111
 msgid "Where are you?"
@@ -1008,7 +1011,7 @@ msgstr "Region:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Använd NTP för synkronisering av klockan:"
 
 #: src/timezone.py:135
 #, python-format
@@ -1021,7 +1024,7 @@ msgstr "Kan inte automatiskt känna av koordinaterna för tidszonen"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Stoppar trådar för tidszoner..."
 
 #: src/timezone.py:395
 msgid "Can't get the country code used to create a pacman mirrorlist"
@@ -1037,7 +1040,7 @@ msgstr "Ditt namn"
 
 #: src/user_info.py:92 ui/user_info.ui:397
 msgid "Hostname"
-msgstr ""
+msgstr "Värdnamn"
 
 #: src/user_info.py:96 ui/user_info.ui:474
 msgid "Your computer's name:"
@@ -1159,7 +1162,7 @@ msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Välj 'avbryt' om du inte vill installera en starthanterare"
 
 #: ui/check.ui:29
 msgid ""
@@ -1203,25 +1206,25 @@ msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "LUKS enhetens namn:"
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "Lösenord:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
-msgstr ""
+msgstr "Bekräfta ditt lösenord:"
 
 #: ui/installation_advanced.ui:1158
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "Använd LUKS kryptering:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Välj vilket operativsystem som du vill installera tillsammans med Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1233,7 +1236,7 @@ msgstr "Annat operativsystem"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
 #: ui/slides.ui:74
@@ -1248,7 +1251,7 @@ msgstr "<span weight=\"light\" size=\"small\">Varning: Detta kommer att ta bort 
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "Krypterar installationen av Manjaro i säkerhetssyfte"
 
 #: ui/installation_ask.ui:91
 msgid ""
@@ -1270,7 +1273,7 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Detta ställer in LVM och möjliggör snapshots och ändring av paritionsstorlekar på enkelt sätt</span>"
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
@@ -1298,7 +1301,7 @@ msgstr "<span weight=\"light\" size=\"small\">Du får möjlighet att skapa och t
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "VARNING! Den här installationsmetoden kommer att skriva över allt på din disk!\n<b>WARNING! This installation mode will overwrite everything on your drive!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
@@ -1335,4 +1338,4 @@ msgstr "<small><span color=\"darkred\">Du måste skriva in ett namn</span></smal
 
 #: ui/user_info.ui:447
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Namnet den använder för att prata med andra datorer.</span>"

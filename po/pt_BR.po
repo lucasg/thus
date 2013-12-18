@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-16 21:24+0100\n"
-"PO-Revision-Date: 2013-12-16 20:28+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-17 10:38+0000\n"
+"Last-Translator: wevertonmarx <wevertonmarx@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -730,16 +730,16 @@ msgstr "Adicionado ao fstab: UUID=%s %s %s %s 0 %s"
 #: src/installation_process.py:660
 #, python-format
 msgid "Added to crypttab : %s"
-msgstr ""
+msgstr "Adicionado ao crypttab : %s"
 
 #: src/installation_process.py:664
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-msgstr ""
+msgstr "Adicionado ao fstab: UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:700
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-msgstr ""
+msgstr "Adicionado ao fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation_process.py:761
 #, python-format

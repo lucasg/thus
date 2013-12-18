@@ -26,7 +26,7 @@ import subprocess
 import shlex
 import canonical.misc as misc
 import logging
-import installation_process
+import show_message as show
 
 @misc.raise_privileges
 def get_used_ntfs(part):
@@ -36,8 +36,10 @@ def get_used_ntfs(part):
         result = subprocess.check_output(shlex.split("ntfsinfo -m %s" % part))
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of NTFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         csize, vsize, fsize = (0, 0, 0)
@@ -61,8 +63,10 @@ def get_used_ext(part):
         result = subprocess.check_output(shlex.split("dumpe2fs -h %s" % part))
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of EXTFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         csize, vsize, fsize = (0, 0, 0)
@@ -86,8 +90,10 @@ def get_used_fat(part):
         result = subprocess.check_output(shlex.split("dosfsck -n -v %s" % part))
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of FATFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         bperc = 0
@@ -115,8 +121,10 @@ def get_used_jfs(part):
         result = subprocess.check_output(shlex.split("jfs_fsck -n %s" % part))
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of JFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         vsize, fsize = (0, 0)
@@ -138,8 +146,10 @@ def get_used_reiser(part):
         result = subprocess.check_output(shlex.split("debugreiserfs -d %s" % part))
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of REISERFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         vsize, fsize = (0, 0)
@@ -161,8 +171,10 @@ def get_used_btrfs(part):
         result = subprocess.check_output(shlex.split("btrfs filesystem show %s" % part))
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of BTRFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         vsize, usize = (1, 0)
@@ -202,8 +214,10 @@ def get_used_xfs(part):
         result = subprocess.check_output(command)
     except subprocess.CalledProcessError as err:
         result = None
+        txt = _("Can't detect used space of XFS partition %s") % part
+        logging.error(txt)
         logging.error(err)
-        installation_process.queue_fatal_event(err)
+        show.fatal_error(txt)
 
     if result:
         vsize, fsize = (1, 0)

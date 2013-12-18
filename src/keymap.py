@@ -31,7 +31,7 @@ import show_message as show
 import canonical.misc as misc
 import subprocess
 
-_next_page = "user_info"
+_next_page = "installation_ask"
 _prev_page = "timezone"
 
 class Keymap(Gtk.Box):

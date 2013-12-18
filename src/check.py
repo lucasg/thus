@@ -42,7 +42,7 @@ UPOWER = 'org.freedesktop.UPower'
 UPOWER_PATH = '/org/freedesktop/UPower'
 MIN_ROOT_SIZE = 6000000000
 
-_next_page = "installation_ask"
+_next_page = "timezone"
 _prev_page = "location"
 
 class Check(Gtk.Box):

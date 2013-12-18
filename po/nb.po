@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-16 21:24+0100\n"
-"PO-Revision-Date: 2013-12-16 20:28+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-17 23:34+0000\n"
+"Last-Translator: Ulseth85 <ulseth85@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/manjaro-thus/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,27 +64,27 @@ msgstr "Avmonterer %s"
 
 #: src/auto_partition.py:103
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Kan ikke slette eksisterende LVM dataområder (se nedenfor)"
 
 #: src/auto_partition.py:113
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Kan ikke lukke LUKS enheter (se nedenfor)"
 
 #: src/auto_partition.py:164
 #, python-format
 msgid "Unkown filesystem type %s"
-msgstr ""
+msgstr "Ukjent filsystem type %s"
 
 #: src/auto_partition.py:320
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus vil sette opp LUKS på enhet %s"
 
 #: src/auto_partition.py:373
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr ""
+msgstr "Installasjonsprogrammet kan kan ikke påvise størrelsen på enheten din, vennligst bruk avanserte installasjonsrutine for partisjonering og montering enheter."
 
 #: src/auto_partition.py:538
 #, python-format
@@ -158,7 +158,7 @@ msgstr "har minst %dGB tilgjengelig lagringsplass"
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr ""
+msgstr "Dette avhenger sterkt av hvilket skrivebordsmiljø du velger, slik at du kanskje trenger mer plass."
 
 #: src/check.py:93
 msgid "is plugged in to a power source"
@@ -345,11 +345,11 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB krever en BIOS Boot partisjon (2 MiB, ingen filsystem, \"EF02\" type kode i Gdisk eller \"bios_grub\" flagg i GNU Parted) i BIOS systemer for å legge inn sin core.img fil på grunn av manglende MBR embed gap i GPT disker.\n\nThus vil skape denne spesielle partisjon for deg nå."
 
 #: src/installation_advanced.py:1305
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "Kan ikke opprette BIOS GPT Boot partisjon!"
 
 #: src/installation_advanced.py:1445
 #, python-format
@@ -443,7 +443,7 @@ msgstr "Filsystemet"
 
 #: src/installation_alongside.py:195
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3 ikke funnet!"
 
 #: src/installation_alongside.py:223
 msgid "Unable to create list of partitions for alongside installation."
@@ -455,12 +455,12 @@ msgstr "Kan ikke krympe partisjonen (kanskje den er nesten full?)"
 
 #: src/installation_alongside.py:353
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "Det er for mange primære partisjoner, kan ikke opprette en ny"
 
 #: src/installation_alongside.py:386
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "Kan kan ikke krympe %s(%s) filsystem"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
@@ -480,17 +480,17 @@ msgstr "Krypter denne installasjonen for økt sikkerhet."
 
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Du vil bli bedt om krypteringsnøkkelen i neste trinn."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Bruk LVM med denne installasjonen."
 
 #: src/installation_ask.py:142
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Dette vil sette opp LVM slik at du kan lage øyeblikksbilder og endre partisjonsstørrelser på en enkel måte."
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
@@ -514,11 +514,11 @@ msgstr "Administrere partisjoner og hvor du skal installere Manjaro (avansert)"
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Du vil være i stand til å opprette/slette partisjoner, velge hvor du vil installere Manjaro og også velge flere monteringspunkter."
 
 #: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Manjaro installasjonen vil bli kryptert med LUKS"
 
 #: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
@@ -553,7 +553,7 @@ msgstr "Vennligst velg en harddisk hvor du installerer Manjaro⏎\nog velg knapp
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "Krypterings Passord:"
 
 #: src/installation_automatic.py:101 src/user_info.py:116
 #: ui/installation_automatic.ui:161 ui/user_info.ui:79
@@ -563,7 +563,7 @@ msgstr "Bekreft ditt passord:"
 #: src/installation_automatic.py:105 src/user_info.py:149
 #: ui/installation_automatic.ui:258 ui/user_info.ui:487
 msgid "show password"
-msgstr ""
+msgstr "vis passord"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -633,34 +633,34 @@ msgstr "De nødvendige mappene kunne ikke bli lagret i destinasjonssystemet"
 
 #: src/installation_process.py:358
 msgid "Install System ..."
-msgstr ""
+msgstr "Installer System ..."
 
 #: src/installation_process.py:363
 msgid "System installed."
-msgstr ""
+msgstr "System installert."
 
 #: src/installation_process.py:365
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Konfigurasjon av systemet ..."
 
 #: src/installation_process.py:367
 msgid "System configured."
-msgstr ""
+msgstr "Systemet er konfigurert."
 
 #: src/installation_process.py:371
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Installerer bootloader ..."
 
 #: src/installation_process.py:398
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "Kan ikke kopiere Thus logg til %s"
 
 #: src/installation_process.py:414 src/installation_process.py:428
 #: src/installation_process.py:438
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Kan ikke avmontere %s"
 
 #: src/installation_process.py:440
 msgid "Installation finished successfully."
@@ -668,23 +668,23 @@ msgstr "Installasjonen ble fullført."
 
 #: src/installation_process.py:457
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Base filsystem finnes ikke! Kritisk feil (spennende)."
 
 #: src/installation_process.py:461
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Desktop filsystem finnes ikke! Kritisk feil (spennende)."
 
 #: src/installation_process.py:478
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Indekserings filer som skal kopieres ..."
 
 #: src/installation_process.py:483
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Pakker ut root-bilde ..."
 
 #: src/installation_process.py:493
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "Pakker ut desktop-bilde ..."
 
 #: src/installation_process.py:508
 #, python-format
@@ -697,7 +697,7 @@ msgstr "Spesielle dirs allerede er montert."
 
 #: src/installation_process.py:555
 msgid "Special dirs are not mounted. Skipping."
-msgstr ""
+msgstr "Spesielle dirs er ikke montert. Hopper over."
 
 #: src/installation_process.py:565
 #, python-format
@@ -707,26 +707,26 @@ msgstr "Kan ikke avmontere %s"
 #: src/installation_process.py:584
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Feil kjører kommandoen: %s"
 
 #: src/installation_process.py:646 src/installation_process.py:696
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Lagt til fstab: UUID=%s %s %s %s 0 %s"
 
 #: src/installation_process.py:660
 #, python-format
 msgid "Added to crypttab : %s"
-msgstr ""
+msgstr "Lagt til i crypttab : %s"
 
 #: src/installation_process.py:664
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-msgstr ""
+msgstr "Lagt til i fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
 #: src/installation_process.py:700
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-msgstr ""
+msgstr "Lagt til i fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation_process.py:761
 #, python-format
@@ -753,7 +753,7 @@ msgstr "ERROR installere GRUB(2) locale."
 #: src/installation_process.py:867
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "Aktivert %s tjeneste."
 
 #: src/installation_process.py:874
 #, python-format
@@ -767,7 +767,7 @@ msgstr "Endring av passord for bruker %s feilet"
 
 #: src/installation_process.py:892
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Siller inn kroker og moduler i mkinitcpio.conf"
 
 #: src/installation_process.py:957
 #, python-format
@@ -780,50 +780,50 @@ msgstr "Konfigurerer ditt nye system"
 
 #: src/installation_process.py:1055
 msgid "fstab file generated."
-msgstr ""
+msgstr "fstab fil generert."
 
 #: src/installation_process.py:1061
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Nettverkskonfigurasjon kopiert."
 
 #: src/installation_process.py:1087
 msgid "Timezone set."
-msgstr ""
+msgstr "Tidssone satt."
 
 #: src/installation_process.py:1107
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "Sudo konfigurasjon for bruker %s gjort."
 
 #: src/installation_process.py:1117
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Bruker %s lagt til."
 
 #: src/installation_process.py:1129
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Vertsnavn %s er satt."
 
 #: src/installation_process.py:1133
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Angi det samme passordet til root."
 
 #: src/installation_process.py:1139
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Genererer steder ..."
 
 #: src/installation_process.py:1160
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Justerer hardware klokke ..."
 
 #: src/installation_process.py:1169
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Konfigurasjon av maskinvare ..."
 
 #: src/installation_process.py:1242
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Sett opp grafikkort ..."
 
 #: src/installation_process.py:1249
 msgid "Can't execute the MHWD script"
@@ -831,11 +831,11 @@ msgstr "Kan ikke utføre MHWD skriptet"
 
 #: src/installation_process.py:1262
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Konfigurer display manager ..."
 
 #: src/installation_process.py:1368
 msgid "Configure System ..."
-msgstr ""
+msgstr "Konfigurer System ..."
 
 #: src/installation_process.py:1393
 msgid "Removing live configuration (packages)"
@@ -851,19 +851,19 @@ msgstr "Konfigurering av pakkebehandler [er] fullført."
 
 #: src/installation_process.py:1445
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Kjører mkinitcpio ..."
 
 #: src/installation_process.py:1448
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "kjører mkinitcpio - ferdig"
 
 #: src/installation_process.py:1464
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Kryptering av bruker hjem dir ..."
 
 #: src/installation_process.py:1466
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Bruker hjem dir kryptert"
 
 #: src/keymap.py:64
 msgid "Select your keyboard layout"
@@ -897,7 +897,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus er pre-release beta programvare som er under aktiv utvikling.\nDen kan ikke ennå riktig håndtere RAID, btrfs subvolumes, eller andre\navanserte oppsett. Vennligst fortsett med varsomhet da tap av data er mulig!\n\nHvis du finner noen feil, kan du rapportere dem på <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:93
 msgid "Welcome to Manjaro!"
@@ -940,16 +940,16 @@ msgstr "Kan ikke endre lokale til '%s'"
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Kan ikke bekrefte om %s er en Solid State Drive eller ikke"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Beklager, men filsystemet %s kan ikke bli krympet"
 
 #: src/parted3/partition_module.py:217
 msgid "Partition is too large!"
-msgstr ""
+msgstr "Partition er for stor!"
 
 #: src/rank_mirrors.py:53
 msgid "Can't find rank mirrors script"
@@ -1036,7 +1036,7 @@ msgstr "Ditt navn"
 
 #: src/user_info.py:92 ui/user_info.ui:397
 msgid "Hostname"
-msgstr ""
+msgstr "Vertsnavn"
 
 #: src/user_info.py:96 ui/user_info.ui:474
 msgid "Your computer's name:"
@@ -1170,7 +1170,7 @@ msgstr "<span weight=\"bold\" size=\"large\">For best resultat, må du sørge fo
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space."
-msgstr ""
+msgstr "(*) Dette avhenger sterkt av hvilket skrivebordsmiljø du velger, slik at du kanskje trenger mer plass."
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
@@ -1269,7 +1269,7 @@ msgstr "<span weight=\"light\" size=\"small\">Dette vil sette opp LVM slik at du
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Dette vil sette opp din /hjemmekatalog i en annen partisjon eller volum.</span>"
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
@@ -1297,7 +1297,7 @@ msgstr "<span weight=\"light\" size=\"small\">Du vil være i stand til å oppret
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>ADVARSEL! Denne installasjonstypen vil overskrive alt på stasjonen!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"

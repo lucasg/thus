@@ -40,7 +40,7 @@ try:
 except:
     print("Can't import parted module! This installer won't work.")
 
-_next_page = "timezone"
+_next_page = "user_info"
 _prev_page = "installation_ask"
 
 class InstallationAutomatic(Gtk.Box):

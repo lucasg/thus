@@ -442,6 +442,16 @@ class InstallationProcess(multiprocessing.Process):
             self.error = False
             return True
 
+    def check_source_folder(self, mount_point):
+        """ Check if source folders are mounted """
+        device = None
+        with open('/proc/mounts') as fp:
+            for line in fp:
+                line = line.split()
+                if line[1] == mount_point:
+                    device = line[0]
+        return device
+
     def install_system(self):
         """ Copies all files to target """
         # mount the media location.
@@ -463,8 +473,18 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_fatal_event(txt)
 
             # Mount the installation media
-            subprocess.check_call(["mount", self.media, "/source/", "-t", self.media_type, "-o", "loop"])
-            subprocess.check_call(["mount", self.media_desktop, "/source_desktop/", "-t", self.media_type, "-o", "loop"])
+            mount_point = "/source"
+            device = self.check_source_folder(mount_point)
+            if device is None:
+                subprocess.check_call(["mount", self.media, mount_point, "-t", self.media_type, "-o", "loop"])
+            else:
+                logging.warning(_("%s is already mounted at %s as %s") % (self.media, mount_point, device))
+            mount_point = "/source_desktop"
+            device = self.check_source_folder(mount_point)
+            if device is None:
+                subprocess.check_call(["mount", self.media_desktop, mount_point, "-t", self.media_type, "-o", "loop"])
+            else:
+                logging.warning(_("%s is already mounted at %s as %s") % (self.media_desktop, mount_point, device))
 
             # walk root filesystem
             SOURCE = "/source/"

@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Karim Oulad Chalha <herr.linux88@gmail.com>, 2013
 # kraim <7kraim@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-16 21:24+0100\n"
-"PO-Revision-Date: 2013-12-16 20:27+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-17 15:45+0000\n"
+"Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/manjaro-thus/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "هذا المثبيت يجب تشغيله بصلاحيات إدارية و بدونها لا يمكن الإستمرار."
 
 #: thus.py:126
 #, python-format
@@ -32,40 +33,40 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "لا يمكن تشغيل مثيلا من هذا المثبيت.\n\nإذا كنت متأكد أنه لا يوجد مثيل قيد التشغيل\nيمكنك حذف الملف %s يدويا\nتم قم بتشغيل هذا المثبيت مجددا."
 
 #: thus.py:138
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "مثبيت Thus إصدار %s"
 
 #: thus.py:218
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "إستعمال ملف '%s' كقائمة حزم"
 
 #: thus.py:235
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "مثبيت منجارو"
 
 #: thus.py:290
 msgid "Quiting installer..."
-msgstr ""
+msgstr "يتم خروج من المثبيت..."
 
 #: src/auto_partition.py:77 src/auto_partition.py:83
 #: src/installation_process.py:409 src/installation_process.py:422
 #: src/installation_process.py:433
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "فصل ضم %s"
 
 #: src/auto_partition.py:103
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "لا يمكن حذف الأقراص LVM الموجودة (أنظر أسفله)"
 
 #: src/auto_partition.py:113
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "لا يمكن إغلاق الأجهزة LUKS (انظر أسفله)"
 
 #: src/auto_partition.py:164
 #, python-format
@@ -75,7 +76,7 @@ msgstr ""
 #: src/auto_partition.py:320
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "سيقوم Thus بإعداد LUKS على القرص %s"
 
 #: src/auto_partition.py:373
 msgid ""
@@ -86,70 +87,70 @@ msgstr ""
 #: src/auto_partition.py:538
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "سيقوم بإعداد LVM على القرص %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation_alongside.py:219
 msgid "unknown"
-msgstr ""
+msgstr "مجهول"
 
 #: src/bootloader.py:53 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "ماهو نوع إقلاع نظامك؟"
 
 #: src/bootloader.py:58
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "ﻻهخس (الأكثر شيوعا)"
 
 #: src/bootloader.py:62
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64-bit UEFI"
 
 #: src/bootloader.py:66
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32-bit UEFI"
 
 #: src/bootloader.py:70
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "حدد 'إلغاء' إذا كنت لا ترغب بتثبيت محمل الإقلاع"
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "لا يمكن تحديد المحلية %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr ""
+msgstr "كلمة السر قصيرة جدا"
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr ""
+msgstr "كلمة السر ضعيفة"
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr ""
+msgstr "كلمة سر متوسطة"
 
 #: src/canonical/validation.py:141
 msgid "good password"
-msgstr ""
+msgstr "كلمة سر جيدة"
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr ""
+msgstr "كلمة سر قوية"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr ""
+msgstr "كلمات السر غير متطابقة"
 
 #: src/check.py:78
 msgid "System Check"
-msgstr ""
+msgstr "فحص النظام"
 
 #: src/check.py:83
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "لديه على الأقل %dجب من مساحة التخزين المتوفرة"
 
 #: src/check.py:88
 msgid ""
@@ -159,178 +160,178 @@ msgstr ""
 
 #: src/check.py:93
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "موصل بمصدر طاقة"
 
 #: src/check.py:97
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "موصل بالشبكة"
 
 #: src/check.py:101
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "لأفضل النتائج, المرجوا التاكد من ان هذا الحاسوب:"
 
 #: src/check.py:172
 msgid "We have Internet connection."
-msgstr ""
+msgstr "لدينا إتصال بالشبكة."
 
 #: src/check.py:173
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "نحن موصولون بمصدر طاقة."
 
 #: src/check.py:174
 msgid "We have enough disk space."
-msgstr ""
+msgstr "لدينا مساحة تخزين كافية"
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
 #: src/installation_advanced.py:513
 msgid "free space"
-msgstr ""
+msgstr "مساحة خالية"
 
 #: src/installation_advanced.py:278 src/installation_alongside.py:171
 msgid "Device"
-msgstr ""
+msgstr "جهاز"
 
 #: src/installation_advanced.py:281
 msgid "Type"
-msgstr ""
+msgstr "نوع"
 
 #: src/installation_advanced.py:284
 msgid "Mount point"
-msgstr ""
+msgstr "نقطة الوصل"
 
 #: src/installation_advanced.py:287
 msgid "Label"
-msgstr ""
+msgstr "إسم"
 
 #: src/installation_advanced.py:293 src/installation_advanced.py:1535
 msgid "Format"
-msgstr ""
+msgstr "صيغة"
 
 #: src/installation_advanced.py:296
 msgid "Size"
-msgstr ""
+msgstr "حجم"
 
 #: src/installation_advanced.py:299
 msgid "Used"
-msgstr ""
+msgstr "مستعمل"
 
 #: src/installation_advanced.py:302
 msgid "Flags"
-msgstr ""
+msgstr "الشارات"
 
 #: src/installation_advanced.py:308
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:485
 msgid "none"
-msgstr ""
+msgstr "بدون"
 
 #: src/installation_advanced.py:535 src/installation_advanced.py:938
 #: src/installation_advanced.py:1409 src/installation_advanced.py:1488
 #: src/installation_advanced.py:1630 src/installation_advanced.py:1700
 msgid "extended"
-msgstr ""
+msgstr "ممتد"
 
 #: src/installation_advanced.py:666 src/installation_advanced.py:908
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "لا يمكن إستعمال نقطة الوصل مرتين..."
 
 #: src/installation_advanced.py:668
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "يجب تهيئ قسم الجذر"
 
 #: src/installation_advanced.py:929
 msgid "Creating primary partition"
-msgstr ""
+msgstr "إنشاء قسم أولي"
 
 #: src/installation_advanced.py:940
 msgid "Creating extended partition"
-msgstr ""
+msgstr "إنشاء قسم ممتد"
 
 #: src/installation_advanced.py:946
 msgid "Creating logical partition"
-msgstr ""
+msgstr "إنشاء قسم منطقي"
 
 #: src/installation_advanced.py:1078
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "نمط التثبيت المتقدم"
 
 #: src/installation_advanced.py:1082 ui/installation_advanced.ui:1000
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "إستعمل هذا الجهاز لتثبيت محمل الإقلاع:"
 
 #: src/installation_advanced.py:1092 ui/installation_advanced.ui:915
 msgid "New partition table"
-msgstr ""
+msgstr "جدول أقسام جديد"
 
 #: src/installation_advanced.py:1100
 msgid "Change..."
-msgstr ""
+msgstr "تعديل..."
 
 #: src/installation_advanced.py:1105 ui/installation_advanced.ui:98
 msgid "Size:"
-msgstr ""
+msgstr "حجم:"
 
 #: src/installation_advanced.py:1109 ui/installation_advanced.ui:300
 msgid "Type:"
-msgstr ""
+msgstr "نوع:"
 
 #: src/installation_advanced.py:1113 ui/installation_advanced.ui:317
 msgid "Primary"
-msgstr ""
+msgstr "اولي"
 
 #: src/installation_advanced.py:1117 ui/installation_advanced.ui:337
 msgid "Logical"
-msgstr ""
+msgstr "منطقي"
 
 #: src/installation_advanced.py:1121 ui/installation_advanced.ui:357
 msgid "Extended"
-msgstr ""
+msgstr "ممتد"
 
 #: src/installation_advanced.py:1125 ui/installation_advanced.ui:202
 msgid "Beginning of this space"
-msgstr ""
+msgstr "بداية هذه المساحة"
 
 #: src/installation_advanced.py:1129 ui/installation_advanced.ui:222
 msgid "End of this space"
-msgstr ""
+msgstr "نهاية هذه المساحة"
 
 #: src/installation_advanced.py:1133 src/installation_advanced.py:1150
 #: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
 msgid "Use as:"
-msgstr ""
+msgstr "إستعمل كـ:"
 
 #: src/installation_advanced.py:1137 src/installation_advanced.py:1154
 #: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
 msgid "Mount point:"
-msgstr ""
+msgstr "نقطة الوصل:"
 
 #: src/installation_advanced.py:1141 src/installation_advanced.py:1158
 #: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
 msgid "Label (optional):"
-msgstr ""
+msgstr "إسم (إختياري):"
 
 #: src/installation_advanced.py:1145
 msgid "Encryption Options..."
-msgstr ""
+msgstr "خيارات التشفير..."
 
 #: src/installation_advanced.py:1162 ui/installation_advanced.ui:698
 msgid "Format:"
-msgstr ""
+msgstr "صيغة:"
 
 #: src/installation_advanced.py:1167
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "نوع جدول الأقسام:"
 
 #: src/installation_advanced.py:1172
 msgid "Create Partition Table"
-msgstr ""
+msgstr "إنشاء جدول الأقسام"
 
 #: src/installation_advanced.py:1175 src/installation_alongside.py:149
 #: src/installation_automatic.py:107
 msgid "Install now!"
-msgstr ""
+msgstr "تثبيت الأن!"
 
 #: src/installation_advanced.py:1263
 #, python-format
@@ -868,7 +869,7 @@ msgstr ""
 
 #: src/keymap.py:72
 msgid "Layouts"
-msgstr ""
+msgstr "تخطيط"
 
 #: src/keymap.py:78
 msgid "Variants"
@@ -898,11 +899,11 @@ msgstr ""
 
 #: src/language.py:93
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "مرحبا بكم في منجارو!"
 
 #: src/language.py:110
 msgid "Languages"
-msgstr ""
+msgstr "اللغات"
 
 #: src/language.py:130
 #, python-format
@@ -1053,7 +1054,7 @@ msgstr ""
 
 #: src/user_info.py:112 ui/user_info.ui:172
 msgid "Password"
-msgstr ""
+msgstr "كلمة السر"
 
 #: src/user_info.py:120 ui/user_info.ui:218
 msgid "Confirm password"
@@ -1119,7 +1120,7 @@ msgstr ""
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "ألقي نظرة في https://wiki.archlinux.org/index.php/ECryptfs للحصول على معلومات مفصلة\n\n"
 
 #: src/user_info.py:185
 msgid "Are you sure you want to encrypt your home directory?\n"
@@ -1139,7 +1140,7 @@ msgstr ""
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "إقلاع"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1147,11 +1148,11 @@ msgstr ""
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -1171,15 +1172,15 @@ msgstr ""
 
 #: ui/installation_advanced.ui:74
 msgid "Create partition"
-msgstr ""
+msgstr "أنشء قسم"
 
 #: ui/installation_advanced.ui:114
 msgid "Location:"
-msgstr ""
+msgstr "موقع:"
 
 #: ui/installation_advanced.ui:277
 msgid "MB"
-msgstr ""
+msgstr "مب"
 
 #: ui/installation_advanced.ui:424 ui/installation_advanced.ui:740
 msgid "Encryption options..."
@@ -1195,7 +1196,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:931
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1100
 msgid "LUKS volume name:"
@@ -1203,7 +1204,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:1114
 msgid "Password:"
-msgstr ""
+msgstr "كلمة السر:"
 
 #: ui/installation_advanced.ui:1128
 msgid "Confirm password:"
@@ -1217,24 +1218,24 @@ msgstr ""
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">إختر أي نظام تشغيل تريد منجارو أن يثبت بعده</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "إختر حجم جديد"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "نظام تشغيل أخر"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "منجارو"
 
 #: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "علامة"
 
 #: ui/installation_ask.ui:58
 msgid ""

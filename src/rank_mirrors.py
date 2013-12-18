@@ -59,5 +59,5 @@ class AutoRankmirrorsThread(threading.Thread):
         except subprocess.CalledProcessError as err:
             txt = _("Couldn't execute auto mirroring selection")
             logging.error(txt)
-            installation_process.queue_fatal_event(txt)
+            show.error(txt)
             logging.error(err)
