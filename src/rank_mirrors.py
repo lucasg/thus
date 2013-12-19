@@ -32,7 +32,7 @@ import logging
 import time
 import os
 import canonical.misc as misc
-import installation_process
+import show_message as show
 
 
 class AutoRankmirrorsThread(threading.Thread):

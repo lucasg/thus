@@ -694,7 +694,11 @@ class InstallationProcess(multiprocessing.Process):
                 continue
 
             if path == '/':
-                chk = '1'
+                # We do not run fsck on btrfs partitions
+                if "btrfs" in myfmt:
+                    chk = '0'
+                else:
+                    chk = '1'
                 opts = "rw,relatime,data=ordered"
             else:
                 full_path = os.path.join(self.dest_dir, path)
