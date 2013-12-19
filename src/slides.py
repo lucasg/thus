@@ -42,12 +42,12 @@ import canonical.misc as misc
 _next_page = None
 _prev_page = None
 
+
 class Slides(Gtk.Box):
 
     def __init__(self, params):
         """ Initialize class and its vars """
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.exit_button = params['exit_button']
@@ -60,7 +60,7 @@ class Slides(Gtk.Box):
         super().__init__()
 
         builder = Gtk.Builder()
-
+        self.ui_dir = self.settings.get('ui')
         builder.add_from_file(os.path.join(self.ui_dir, "slides.ui"))
         builder.connect_signals(self)
 
@@ -76,7 +76,7 @@ class Slides(Gtk.Box):
         # Add a webkit view to show the slides
         self.webview = WebKit.WebView()
 
-        if self.settings == None:
+        if self.settings is None:
             html_file = '/usr/share/thus/data/slides.html'
         else:
             html_file = os.path.join(self.settings.get("data"), 'slides.html')
@@ -172,7 +172,7 @@ class Slides(Gtk.Box):
         if self.fatal_error:
             return False
 
-        while self.callback_queue.empty() == False:
+        while self.callback_queue.empty() is False:
             try:
                 event = self.callback_queue.get_nowait()
             except queue.Empty:
@@ -220,13 +220,13 @@ class Slides(Gtk.Box):
                     logging.debug("Restarting installation process...")
                     p = self.settings.get('installer_thread_call')
 
-                    self.process = installation_process.InstallationProcess( \
-                        self.settings, \
-                        self.callback_queue, \
-                        p['mount_devices'], \
-                        p['fs_devices'], \
-                        p['ssd'], \
-                        p['alternate_package_list'], \
+                    self.process = installation_process.InstallationProcess(
+                        self.settings,
+                        self.callback_queue,
+                        p['mount_devices'],
+                        p['fs_devices'],
+                        p['ssd'],
+                        p['alternate_package_list'],
                         p['blvm'])
 
                     self.process.start()
@@ -248,7 +248,7 @@ class Slides(Gtk.Box):
 
     def empty_queue(self):
         """ Empties messages queue """
-        while self.callback_queue.empty() == False:
+        while self.callback_queue.empty() is False:
             try:
                 event = self.callback_queue.get_nowait()
                 self.callback_queue.task_done()

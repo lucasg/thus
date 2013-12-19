@@ -23,30 +23,27 @@
 from gi.repository import Gtk, GLib
 
 # Import functions
-import config
 import os
 import canonical.keyboard_names as keyboard_names
 import logging
-import show_message as show
 import canonical.misc as misc
 import subprocess
 
 _next_page = "installation_ask"
 _prev_page = "timezone"
 
+
 class Keymap(Gtk.Box):
 
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
 
         super().__init__()
-
         self.ui = Gtk.Builder()
-
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "keymap.ui"))
 
         self.ui.connect_signals(self)
@@ -69,13 +66,13 @@ class Keymap(Gtk.Box):
 
     def create_toolviews(self):
         render = Gtk.CellRendererText()
-        col = Gtk.TreeViewColumn(_("Layouts"),render,text=0)
+        col = Gtk.TreeViewColumn(_("Layouts"), render, text=0)
         liststore = Gtk.ListStore(str)
         self.layout_treeview.append_column(col)
         self.layout_treeview.set_model(liststore)
 
         render = Gtk.CellRendererText()
-        col = Gtk.TreeViewColumn(_("Variants"),render,text=0)
+        col = Gtk.TreeViewColumn(_("Variants"), render, text=0)
         liststore = Gtk.ListStore(str)
         self.variant_treeview.append_column(col)
         self.variant_treeview.set_model(liststore)
@@ -94,7 +91,7 @@ class Keymap(Gtk.Box):
 
         found = self.select_value_in_treeview(self.layout_treeview, selected_country)
 
-        if found == False:
+        if found is False:
             self.select_value_in_treeview(self.layout_treeview, "USA")
 
         logging.info(_("keyboard_layout is %s") % selected_country)
@@ -113,7 +110,6 @@ class Keymap(Gtk.Box):
             country = "Russia"
 
         return country
-
 
     def fill_layout_treeview(self):
         lang = self.settings.get("language_code")
@@ -152,7 +148,7 @@ class Keymap(Gtk.Box):
 
         found = False
 
-        while treeiter != None:
+        while treeiter is not None:
             if model[treeiter][0] == value:
                 treeview.set_cursor(index)
                 path = model.get_path(treeiter)

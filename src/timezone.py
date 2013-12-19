@@ -56,7 +56,6 @@ class Timezone(Gtk.Box):
 
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
@@ -64,6 +63,7 @@ class Timezone(Gtk.Box):
         super().__init__()
 
         self.ui = Gtk.Builder()
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "timezone.ui"))
         self.ui.connect_signals(self)
 
@@ -146,7 +146,7 @@ class Timezone(Gtk.Box):
         tree_model = combobox.get_model()
         tree_iter = tree_model.get_iter_first()
 
-        while tree_iter != None:
+        while tree_iter is not None:
             value = tree_model.get_value(tree_iter, 0)
             if value == item:
                 combobox.set_active_iter(tree_iter)
@@ -167,7 +167,7 @@ class Timezone(Gtk.Box):
     def on_region_combobox_changed(self, widget):
         new_zone = self.combobox_zone.get_active_text()
         new_region = self.combobox_region.get_active_text()
-        if new_zone != None and new_region != None:
+        if new_zone is not None and new_region is not None:
             self.set_timezone("{0}/{1}".format(new_zone, new_region))
 
     def populate_zones(self):
@@ -224,7 +224,7 @@ class Timezone(Gtk.Box):
                 # set to Berlin by error
                 self.set_timezone("Europe/Berlin")
 
-        if self.autodetected_coords != None:
+        if self.autodetected_coords is not None:
             coords = self.autodetected_coords
             timezone = self.tzmap.get_timezone_at_coords(float(coords[0]), float(coords[1]))
             self.set_timezone(timezone)
@@ -281,13 +281,14 @@ class Timezone(Gtk.Box):
 
     def stop_threads(self):
         logging.debug(_("Stopping timezone threads..."))
-        if self.auto_timezone_thread != None:
+        if self.auto_timezone_thread is not None:
             self.auto_timezone_thread.stop()
-        if self.mirrorlist_thread != None:
+        if self.mirrorlist_thread is not None:
             self.mirrorlist_thread.stop()
 
     def on_switch_ntp_activate(self, ntp_switch):
         self.settings['use_ntp'] = ntp_switch.get_active()
+
 
 class AutoTimezoneThread(threading.Thread):
     def __init__(self, coords_queue):
@@ -339,8 +340,9 @@ class AutoTimezoneThread(threading.Thread):
             coords = coords.split()
             self.coords_queue.put(coords)
 
-# Creates a mirror list for pacman based on country code
+
 class GenerateMirrorListThread(threading.Thread):
+    """ Creates a mirror list for pacman based on country code """
     def __init__(self, coords_queue, scripts_dir):
         super(GenerateMirrorListThread, self).__init__()
         self.coords_queue = coords_queue

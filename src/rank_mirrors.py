@@ -34,6 +34,7 @@ import os
 import canonical.misc as misc
 import installation_process
 
+
 class AutoRankmirrorsThread(threading.Thread):
     """ Thread class that searches the closest mirrors available """
     def __init__(self):

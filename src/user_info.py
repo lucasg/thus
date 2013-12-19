@@ -24,18 +24,17 @@ from gi.repository import Gtk
 
 import os
 import canonical.validation as validation
-import config
 import show_message as show
 
 _next_page = "slides"
 _prev_page = None
+
 
 class UserInfo(Gtk.Box):
     """ Asks for user information """
     def __init__(self, params):
 
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
@@ -43,7 +42,7 @@ class UserInfo(Gtk.Box):
         super().__init__()
 
         self.ui = Gtk.Builder()
-
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "user_info.ui"))
 
         self.is_ok = dict()
@@ -266,7 +265,6 @@ class UserInfo(Gtk.Box):
 
                 self.error_label[element].show()
 
-
     def info_loop(self, widget):
         """ User has introduced new information. Check it here. """
 
@@ -287,11 +285,11 @@ class UserInfo(Gtk.Box):
 
         if widget == self.entry['password'] or \
                 widget == self.entry['verified_password']:
-            validation.check_password(self.entry['password'], \
-                    self.entry['verified_password'], \
-                    self.is_ok['password'], \
-                    self.error_label['password'], \
-                    self.password_strength)
+            validation.check_password(self.entry['password'],
+                                      self.entry['verified_password'],
+                                      self.is_ok['password'],
+                                      self.error_label['password'],
+                                      self.password_strength)
 
         # Check if all fields are filled and ok
         all_ok = True
@@ -299,7 +297,7 @@ class UserInfo(Gtk.Box):
         for ok_widget in ok_widgets:
             (icon_name, icon_size) = ok_widget.get_stock()
             visible = ok_widget.get_visible()
-            if visible == False or icon_name != "gtk-yes":
+            if visible is False or icon_name != "gtk-yes":
                 all_ok = False
 
         self.forward_button.set_sensitive(all_ok)

@@ -59,10 +59,10 @@ _prev_page = "installation_ask"
 # leave at least 5GB for Manjaro when shrinking
 _minimum_space_for_manjaro = 5000
 
+
 class InstallationAlongside(Gtk.Box):
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.callback_queue = params['callback_queue']
@@ -72,6 +72,7 @@ class InstallationAlongside(Gtk.Box):
 
         super().__init__()
         self.ui = Gtk.Builder()
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_alongside.ui"))
 
         self.ui.connect_signals(self)
@@ -113,20 +114,18 @@ class InstallationAlongside(Gtk.Box):
             except:
                 logging.exception(_("Can't load %s css") % path)
 
-
         #slider.add_events(Gdk.EventMask.SCROLL_MASK)
 
         slider.connect("change-value", self.slider_change_value)
-        '''
-        slider.connect("value_changed",
-                self.main.on_volume_changed)
-        slider.connect("button_press_event",
-                self.on_scale_button_press_event)
-        slider.connect("button_release_event",
-                self.on_scale_button_release_event)
-        slider.connect("scroll_event",
-                self.on_scale_scroll_event)
-        '''
+
+        #slider.connect("value_changed",
+                #self.main.on_volume_changed)
+        #slider.connect("button_press_event",
+                #self.on_scale_button_press_event)
+        #slider.connect("button_release_event",
+                #self.on_scale_button_release_event)
+        #slider.connect("scroll_event",
+                #self.on_scale_scroll_event)
 
     def slider_change_value(self, slider, scroll, value):
         if value <= self.available_slider_range[0] or \
@@ -179,7 +178,7 @@ class InstallationAlongside(Gtk.Box):
 
     @misc.raise_privileges
     def populate_treeview(self):
-        if self.treeview_store != None:
+        if self.treeview_store is not None:
             self.treeview_store.clear()
 
         self.treeview_store = Gtk.TreeStore(str, str, str)
@@ -214,9 +213,9 @@ class InstallationAlongside(Gtk.Box):
                                 fs_type = p.fileSystem.type
                             if "swap" not in fs_type:
                                 if p.path in oses:
-                                    row = [ p.path, oses[p.path], fs_type ]
+                                    row = [p.path, oses[p.path], fs_type]
                                 else:
-                                    row = [ p.path, _("unknown"), fs_type ]
+                                    row = [p.path, _("unknown"), fs_type]
                                 self.treeview_store.append(None, row)
                         self.partitions[p.path] = p
                 except Exception as e:
@@ -236,7 +235,7 @@ class InstallationAlongside(Gtk.Box):
 
         model, tree_iter = selection.get_selected()
 
-        if tree_iter == None:
+        if tree_iter is None:
             return
 
         self.row = model[tree_iter]
@@ -274,7 +273,6 @@ class InstallationAlongside(Gtk.Box):
         else:
             self.forward_button.set_sensitive(False)
 
-
     def update_ask_shrink_size_labels(self, new_value):
         label_other_os_size = self.ui.get_object("label_other_os_size")
         label_other_os_size.set_markup(str(int(new_value)) + " MB")
@@ -288,7 +286,7 @@ class InstallationAlongside(Gtk.Box):
         slider = self.ui.get_object("scale")
 
         # leave space for Manjaro
-        self.available_slider_range = [ self.min_size, self.max_size - _minimum_space_for_manjaro ]
+        self.available_slider_range = [self.min_size, self.max_size - _minimum_space_for_manjaro]
 
         slider.set_fill_level(self.min_size)
         slider.set_show_fill_level(True)
@@ -365,7 +363,7 @@ class InstallationAlongside(Gtk.Box):
         # Alongside method shrinks selected partition
         # and creates root and swap partition in the available space
 
-        if self.is_room_available() == False:
+        if self.is_room_available() is False:
             return
 
         partition_path = self.row[0]
@@ -389,8 +387,6 @@ class InstallationAlongside(Gtk.Box):
             logging.error(txt)
             show.error(txt)
             return
-
-
 
         '''
         # Prepare info for installer_process

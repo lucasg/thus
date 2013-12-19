@@ -61,9 +61,9 @@ from threading import Thread
 import re
 ON_POSIX = 'posix' in sys.builtin_module_names
 
-# Update the value of the progress bar so that we get
-# some movement
+
 class FileCopyThread(Thread):
+    """ Update the value of the progress bar so that we get some movement """
     def __init__(self, installer, current_file, total_files, source, dest, offset=0):
         self.our_current = current_file
         self.process = subprocess.Popen(
@@ -90,7 +90,7 @@ class FileCopyThread(Thread):
         self.installer.queue_event('info', _("Copying '/%s'") % text)
 
     def update_progress(self, num_files):
-        progress = (float(num_files)/float(self.total_files))
+        progress = (float(num_files) / float(self.total_files))
         self.installer.queue_event('percent', progress)
         #self.installer.queue_event('progress-info', PERCENTAGE_FORMAT % (num_files, self.total_files, (progress*100)))
 
@@ -125,19 +125,22 @@ class FileCopyThread(Thread):
 
 ## END: RSYNC-based file copy support
 
+
 class InstallError(Exception):
     """ Exception class called upon an installer error """
     def __init__(self, value):
         """ Initialize exception class """
         super().__init__(value)
         self.value = value
+
     def __str__(self):
         """ Returns exception message """
         return repr(self.value)
 
+
 class InstallationProcess(multiprocessing.Process):
     """ Installation process thread class """
-    def __init__(self, settings, callback_queue, mount_devices, \
+    def __init__(self, settings, callback_queue, mount_devices,
                  fs_devices, ssd=None, alternate_package_list="", blvm=False):
         """ Initialize installation class """
         multiprocessing.Process.__init__(self)
@@ -149,11 +152,11 @@ class InstallationProcess(multiprocessing.Process):
 
         # Save how we have been called
         # We need this in case we have to retry the installation
-        parameters = {'mount_devices' : mount_devices,
-         'fs_devices' : fs_devices,
-         'ssd' : ssd,
-         'alternate_package_list' : alternate_package_list,
-         'blvm': blvm }
+        parameters = {'mount_devices': mount_devices,
+                      'fs_devices': fs_devices,
+                      'ssd': ssd,
+                      'alternate_package_list': alternate_package_list,
+                      'blvm': blvm}
         self.settings.set('installer_thread_call', parameters)
 
         # This flag tells us if there is a lvm partition (from advanced install)
@@ -329,18 +332,15 @@ class InstallationProcess(multiprocessing.Process):
                         logging.warning(err)
                         self.queue_event('debug', _("Can't mount %s in %s") % (mount_part, mount_dir))
 
-
         # Nasty workaround:
         # If pacman was stoped and /var is in another partition than root
         # (so as to be able to resume install), database lock file will still be in place.
         # We must delete it or this new installation will fail
-
         db_lock = os.path.join(self.dest_dir, "var/lib/pacman/db.lck")
         if os.path.exists(db_lock):
             with misc.raised_privileges():
                 os.remove(db_lock)
             logging.debug(_("%s deleted"), db_lock)
-
 
         # Create some needed folders
         try:
@@ -400,7 +400,7 @@ class InstallationProcess(multiprocessing.Process):
                 pass
             # Unmount everything
             self.chroot_umount_special_dirs()
-            source_dirs = { "source", "source_desktop" }
+            source_dirs = {"source", "source_desktop"}
             for p in source_dirs:
                 p = os.path.join("/", p)
                 (fsname, fstype, writable) = misc.mount_info(p)
@@ -416,7 +416,7 @@ class InstallationProcess(multiprocessing.Process):
             for path in self.mount_devices:
                 mount_part = self.mount_devices[path]
                 mount_dir = self.dest_dir + path
-                if path != '/' and path != 'swap' and path !='':
+                if path != '/' and path != 'swap' and path != '':
                     try:
 
                         txt = _("Unmounting %s") % mount_dir
@@ -493,13 +493,13 @@ class InstallationProcess(multiprocessing.Process):
             # index the files
             self.queue_event('info', "Indexing files to be copied...")
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media], stdout=subprocess.PIPE)
-            p2 = subprocess.Popen(["wc","-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
+            p2 = subprocess.Popen(["wc", "-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output1 = p2.communicate()[0]
             self.queue_event('info', _("Indexing files to be copied ..."))
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media_desktop], stdout=subprocess.PIPE)
-            p2 = subprocess.Popen(["wc","-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
+            p2 = subprocess.Popen(["wc", "-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output2 = p2.communicate()[0]
-            our_total = int(float(output1)+float(output2))
+            our_total = int(float(output1) + float(output2))
             self.queue_event('info', _("Extracting root-image ..."))
             our_current = 0
             #t = FileCopyThread(self, our_total, self.media, DEST)
@@ -544,7 +544,7 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', _("Special dirs already mounted."))
             return
 
-        special_dirs = [ "sys", "proc", "dev/pts", "dev" ]
+        special_dirs = ["sys", "proc", "dev/pts", "dev"]
         for s_dir in special_dirs:
             mydir = os.path.join(self.dest_dir, s_dir)
             if not os.path.exists(mydir):
@@ -575,7 +575,7 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', _("Special dirs are not mounted. Skipping."))
             return
 
-        special_dirs = [ "proc", "sys", "dev/pts", "dev" ]
+        special_dirs = ["proc", "sys", "dev/pts", "dev"]
 
         for s_dir in special_dirs:
             mydir = os.path.join(self.dest_dir, s_dir)
@@ -588,7 +588,7 @@ class InstallationProcess(multiprocessing.Process):
 
     def chroot(self, cmd, stdin=None, stdout=None):
         """ Runs command inside the chroot """
-        run = [ 'chroot', self.dest_dir ]
+        run = ['chroot', self.dest_dir]
 
         for element in cmd:
             run.append(element)
@@ -889,7 +889,7 @@ class InstallationProcess(multiprocessing.Process):
     def change_user_password(self, user, new_password):
         """ Changes the user's password """
         try:
-            shadow_password = crypt.crypt(new_password,"$6$%s$" % user)
+            shadow_password = crypt.crypt(new_password, "$6$%s$" % user)
         except:
             self.queue_event('warning', _('Error creating password hash for user %s') % user)
             return False
@@ -930,7 +930,7 @@ class InstallationProcess(multiprocessing.Process):
         """ Runs mkinitcpio """
         # Add lvm and encrypt hooks if necessary
 
-        hooks = [ "base", "udev", "autodetect", "modconf", "block" ]
+        hooks = ["base", "udev", "autodetect", "modconf", "block"]
         modules = []
 
         # It is important that the encrypt hook comes before the filesystems hook
@@ -938,12 +938,12 @@ class InstallationProcess(multiprocessing.Process):
 
         if self.settings.get("use_luks"):
             hooks.append("encrypt")
-            modules.extend([ "dm_mod", "dm_crypt", "ext4", "aes-x86_64", "sha256", "sha512" ])
+            modules.extend(["dm_mod", "dm_crypt", "ext4", "aes-x86_64", "sha256", "sha512"])
 
         if self.blvm or self.settings.get("use_lvm"):
             hooks.append("lvm2")
 
-        hooks.extend([ "filesystems", "keyboard", "fsck" ])
+        hooks.extend(["filesystems", "keyboard", "fsck"])
 
         self.set_mkinitcpio_hooks_and_modules(hooks, modules)
 
@@ -984,9 +984,9 @@ class InstallationProcess(multiprocessing.Process):
                     text = mdm_conf.readlines()
                 with open(mdm_conf_path, "w") as mdm_conf:
                     for line in text:
-                         if '[daemon]' in line:
-                             line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
-                         mdm_conf.write(line)
+                        if '[daemon]' in line:
+                            line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
+                        mdm_conf.write(line)
             else:
                 with open(mdm_conf_path, "w") as mdm_conf:
                     mdm_conf.write('# Thus - Enable automatic login for user\n')
@@ -1001,9 +1001,9 @@ class InstallationProcess(multiprocessing.Process):
                     text = gdm_conf.readlines()
                 with open(gdm_conf_path, "w") as gdm_conf:
                     for line in text:
-                         if '[daemon]' in line:
-                             line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
-                         gdm_conf.write(line)
+                        if '[daemon]' in line:
+                            line = '[daemon]\nAutomaticLogin=%s\nAutomaticLoginEnable=True\n' % username
+                        gdm_conf.write(line)
             else:
                 with open(gdm_conf_path, "w") as gdm_conf:
                     gdm_conf.write('# Thus - Enable automatic login for user\n')
@@ -1084,11 +1084,11 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('pulse')
 
         # enable services
-        self.enable_services([ self.network_manager, 'remote-fs.target' ])
+        self.enable_services([self.network_manager, 'remote-fs.target'])
 
         cups_service = os.path.join(self.dest_dir, "usr/lib/systemd/system/cups.service")
         if os.path.exists(cups_service):
-            self.enable_services([ 'cups' ])
+            self.enable_services(['cups'])
 
         self.queue_event('debug', 'Enabled installed services.')
 
@@ -1144,7 +1144,7 @@ class InstallationProcess(multiprocessing.Process):
 
         hostname_path = os.path.join(self.dest_dir, "etc/hostname")
         with open(hostname_path, "w") as hostname_file:
-             hostname_file.write(hostname)
+            hostname_file.write(hostname)
 
         self.queue_event('debug', _('Hostname  %s set.') % hostname)
 
@@ -1189,8 +1189,8 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('info', _("Configuring hardware ..."))
         # Copy generated xorg.xonf to target
         if os.path.exists("/etc/X11/xorg.conf"):
-            shutil.copy2('/etc/X11/xorg.conf', \
-                    os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
+            shutil.copy2('/etc/X11/xorg.conf',
+                         os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
 
         # Configure ALSA
         self.chroot(['sh', '-c', 'amixer -c 0 sset Master 70% unmute'])
@@ -1290,8 +1290,8 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['getent', 'group', 'lightdm'])
             self.chroot(['groupadd', '-g', '620', 'lightdm'])
             self.chroot(['getent', 'passwd', 'lightdm'])
-            self.chroot(['useradd', '-c', '"LightDM Display Manager"', \
-                         '-u', '620', '-g', 'lightdm', '-d', '/var/run/lightdm', \
+            self.chroot(['useradd', '-c', '"LightDM Display Manager"',
+                         '-u', '620', '-g', 'lightdm', '-d', '/var/run/lightdm',
                          '-s', '/usr/bin/nologin', 'lightdm'])
             self.chroot(['passwd', '-l', 'lightdm'])
             self.chroot(['chown', '-R', 'lightdm:lightdm', '/run/lightdm'])
@@ -1306,8 +1306,8 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['getent', 'group', 'gdm'])
             self.chroot(['groupadd', '-g', '120', 'gdm'])
             self.chroot(['getent', 'passwd', 'gdm'])
-            self.chroot(['useradd', '-c', '"Gnome Display Manager"', \
-                         '-u', '120', '-g', 'gdm', '-d', '/var/lib/gdm', \
+            self.chroot(['useradd', '-c', '"Gnome Display Manager"',
+                         '-u', '120', '-g', 'gdm', '-d', '/var/lib/gdm',
                          '-s', '/usr/bin/nologin', 'gdm'])
             self.chroot(['passwd', '-l', 'gdm'])
             self.chroot(['chown', '-R', 'gdm:gdm', '/var/lib/gdm'])
@@ -1333,8 +1333,8 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['getent', 'group', 'mdm'])
             self.chroot(['groupadd', '-g', '128', 'mdm'])
             self.chroot(['getent', 'passwd', 'mdm'])
-            self.chroot(['useradd', '-c', '"Linux Mint Display Manager"', \
-                         '-u', '128', '-g', 'mdm', '-d', '/var/lib/mdm', \
+            self.chroot(['useradd', '-c', '"Linux Mint Display Manager"',
+                         '-u', '128', '-g', 'mdm', '-d', '/var/lib/mdm',
                          '-s', '/usr/bin/nologin', 'mdm'])
             self.chroot(['passwd', '-l', 'mdm'])
             self.chroot(['chown', 'root:mdm', '/var/lib/mdm'])
@@ -1378,7 +1378,7 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['getent', 'group', 'kdm'])
             self.chroot(['groupadd', '-g', '135', 'kdm'])
             self.chroot(['getent', 'passwd', 'kdm'])
-            self.chroot(['useradd', '-u', '135', '-g', 'kdm', '-d', \
+            self.chroot(['useradd', '-u', '135', '-g', 'kdm', '-d',
                          '/var/lib/kdm', '-s', '/bin/false', '-r', '-M', 'kdm'])
             self.chroot(['chown', '-R', '135:135', 'var/lib/kdm'])
             self.chroot(['xdg-icon-resource', 'forceupdate', '--theme', 'hicolor'])
@@ -1415,10 +1415,10 @@ class InstallationProcess(multiprocessing.Process):
 
         # Remove virtualbox driver on real hardware
         p1 = subprocess.Popen(["mhwd"], stdout=subprocess.PIPE)
-        p2 = subprocess.Popen(["grep","0300:80ee:beef"], stdin=p1.stdout, stdout=subprocess.PIPE)
+        p2 = subprocess.Popen(["grep", "0300:80ee:beef"], stdin=p1.stdout, stdout=subprocess.PIPE)
         num_res = p2.communicate()[0]
         if num_res == "0":
-             self.chroot(['sh', '-c', 'pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)'])
+            self.chroot(['sh', '-c', 'pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)'])
 
         # Set unique machine-id
         self.chroot(['dbus-uuidgen', '--ensure=/etc/machine-id'])
@@ -1430,13 +1430,13 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event("pulse")
 
         # Copy mirror list
-        shutil.copy2('/etc/pacman.d/mirrorlist', \
-                    os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
+        shutil.copy2('/etc/pacman.d/mirrorlist',
+                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
 
         # Copy random generated keys by pacman-init to target
         if os.path.exists("%s/etc/pacman.d/gnupg" % self.dest_dir):
-            os.system("rm -rf %s/etc/pacman.d/gnupg"  % self.dest_dir)
-        os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/"  % self.dest_dir)
+            os.system("rm -rf %s/etc/pacman.d/gnupg" % self.dest_dir)
+        os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/" % self.dest_dir)
         self.chroot(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 

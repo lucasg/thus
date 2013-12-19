@@ -57,13 +57,12 @@ import installation_alongside
 import installation_advanced
 import user_info
 import slides
-import subprocess
 import canonical.misc as misc
 import info
 import updater
 import show_message as show
 
-DESKTOPS = [ "none" ]
+DESKTOPS = ["none"]
 
 # Command line options
 _alternate_package_list = ""
@@ -87,17 +86,19 @@ MAIN_WINDOW_HEIGHT = 526
 # At least this GTK version is needed
 _gtk_version_needed = "3.9.6"
 
+
 # Some of these tmp files are created with sudo privileges
 # (this should be fixed) meanwhile, we need sudo privileges to remove them
 @misc.raise_privileges
 def remove_temp_files():
     """ Remove Thus temporary files """
-    temp_files = [".setup-running", ".km-running", "setup-pacman-running", \
-        "setup-mkinitcpio-running", ".tz-running", ".setup", "thus.log" ]
+    temp_files = [".setup-running", ".km-running", "setup-pacman-running",
+                  "setup-mkinitcpio-running", ".tz-running", ".setup", "thus.log"]
     for temp in temp_files:
         path = os.path.join("/tmp", temp)
         if os.path.exists(path):
             os.remove(path)
+
 
 class Main(Gtk.Window):
     """ Thus main window """
@@ -107,7 +108,7 @@ class Main(Gtk.Window):
         gettext.bindtextdomain(APP_NAME, LOCALE_DIR)
 
         locale_code, encoding = locale.getdefaultlocale()
-        lang = gettext.translation (APP_NAME, LOCALE_DIR, [locale_code], None, True)
+        lang = gettext.translation(APP_NAME, LOCALE_DIR, [locale_code], None, True)
         lang.install()
 
         # With this we can use _("string") to translate
@@ -141,19 +142,24 @@ class Main(Gtk.Window):
         logging.debug("[%d] %s started", current_process.pid, current_process.name)
 
         self.settings = config.Settings()
-        self.ui_dir = self.settings.get('ui')
 
-        if not os.path.exists(self.ui_dir):
-            thus_dir = os.path.join(os.path.dirname(__file__), './')
+        thus_dir = os.path.join(os.path.dirname(__file__), './')
+        if os.path.exists(thus_dir):
             self.settings.set('thus', thus_dir)
+        else:
+            thus_dir = self.settings.get('thus')
 
-            ui_dir = os.path.join(os.path.dirname(__file__), 'ui/')
+        ui_dir = os.path.join(os.path.dirname(__file__), 'ui/')
+        if os.path.exists(ui_dir):
             self.settings.set('ui', ui_dir)
+        else:
+            ui_dir = self.settings.get('ui')
 
-            data_dir = os.path.join(os.path.dirname(__file__), 'data/')
+        data_dir = os.path.join(os.path.dirname(__file__), 'data/')
+        if os.path.exists(data_dir):
             self.settings.set('data', data_dir)
-
-            self.ui_dir = self.settings.get('ui')
+        else:
+            data_dir = self.settings.get('data')
 
         # Set enabled desktops
         self.settings.set("desktops", DESKTOPS)
@@ -162,7 +168,7 @@ class Main(Gtk.Window):
         self.settings.set("force_grub_type", _force_grub_type)
 
         self.ui = Gtk.Builder()
-        self.ui.add_from_file(self.ui_dir + "thus.ui")
+        self.ui.add_from_file(ui_dir + "thus.ui")
 
         self.add(self.ui.get_object("main"))
 
@@ -172,8 +178,7 @@ class Main(Gtk.Window):
 
         self.logo = self.ui.get_object("logo")
 
-        data_dir = self.settings.get('data')
-        logo_dir = os.path.join(data_dir,  "manjaro-logo-mini.png")
+        logo_dir = os.path.join(data_dir, "manjaro-logo-mini.png")
 
         self.logo.set_from_file(logo_dir)
 
@@ -204,7 +209,6 @@ class Main(Gtk.Window):
 
         params = dict()
         params['title'] = self.title
-        params['ui_dir'] = self.ui_dir
         params['forward_button'] = self.forward_button
         params['backwards_button'] = self.backwards_button
         params['exit_button'] = self.exit_button
@@ -306,20 +310,20 @@ class Main(Gtk.Window):
         """ Show next screen """
         next_page = self.current_page.get_next_page()
 
-        if next_page != None:
+        if next_page is not None:
             stored = self.current_page.store_values()
 
-            if stored != False:
+            if stored is not False:
                 self.set_progressbar_step(self.progressbar_step)
                 self.main_box.remove(self.current_page)
 
                 self.current_page = self.pages[next_page]
 
-                if self.current_page != None:
+                if self.current_page is not None:
                     self.current_page.prepare('forwards')
                     self.main_box.add(self.current_page)
 
-                    if self.current_page.get_prev_page() != None:
+                    if self.current_page.get_prev_page() is not None:
                         # There is a previous page, show button
                         self.backwards_button.show()
                         self.backwards_button.set_sensitive(True)
@@ -330,7 +334,7 @@ class Main(Gtk.Window):
         """ Show previous screen """
         prev_page = self.current_page.get_prev_page()
 
-        if prev_page != None:
+        if prev_page is not None:
             self.set_progressbar_step(-self.progressbar_step)
 
             # If we go backwards, don't store user changes
@@ -339,7 +343,7 @@ class Main(Gtk.Window):
             self.main_box.remove(self.current_page)
             self.current_page = self.pages[prev_page]
 
-            if self.current_page != None:
+            if self.current_page is not None:
                 self.current_page.prepare('backwards')
                 self.main_box.add(self.current_page)
                 # Restore "Next" button's text
@@ -347,9 +351,10 @@ class Main(Gtk.Window):
                 self.forward_button.set_sensitive(True)
                 self.forward_button.set_use_stock(True)
 
-                if self.current_page.get_prev_page() == None:
+                if self.current_page.get_prev_page() is None:
                     # We're at the first page
                     self.backwards_button.hide()
+
 
 def setup_logging():
     """ Configure our logger """
@@ -382,6 +387,7 @@ def show_help():
     print("-t, --testing : Do not perform any changes (useful for developers)")
     print("-v, --verbose : Show logging messages to stdout")
 
+
 def check_gtk_version():
     """ Check GTK version """
     # Check desired GTK Version
@@ -398,13 +404,14 @@ def check_gtk_version():
     # This is here just to help testing Thus in our environment.
     if major_needed > major or (major_needed == major and minor_needed > minor) or \
       (major_needed == major and minor_needed == minor and micro_needed > micro):
-        print("Detected GTK %d.%d.%d but %s is needed. Can't run this installer." \
-            % (major, minor, micro, _gtk_version_needed))
+        print("Detected GTK %d.%d.%d but %s is needed. Can't run this installer." %
+              (major, minor, micro, _gtk_version_needed))
         return False
     else:
         print("Using GTK v%d.%d.%d" % (major, minor, micro))
 
     return True
+
 
 def init_thus():
     """ This function initialises Thus """
@@ -426,7 +433,7 @@ def init_thus():
 
     try:
         options, arguments = getopt.getopt(arguments_vector, "dstuvg:h",
-         ["debug", "staging", "testing", "update", "verbose", \
+         ["debug", "staging", "testing", "update", "verbose",
           "force-grub=", "help"])
     except getopt.GetoptError as e:
         show_help()

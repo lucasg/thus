@@ -27,8 +27,11 @@
 import os
 import subprocess
 import logging
-#import time
 import show_message as show
+import parted3.partition_module as pm
+import parted3.fs_module as fs
+import parted3.lvm as lvm
+import parted3.used_space as used_space
 
 """ AutoPartition class """
 
@@ -38,17 +41,11 @@ MAX_ROOT_SIZE = 30000
 # TODO: This higly depends on the selected DE! Must be taken into account.
 MIN_ROOT_SIZE = 6000
 
+
 def check_output(command):
     """ Calls subprocess.check_output, decodes its exit and removes trailing \n """
     return subprocess.check_output(command.split()).decode().strip("\n")
 
-def get_fs_uuid(device):
-    """ Gets device uuid """
-    return check_output("blkid -p -i -s UUID -o value %s" % device)
-
-def get_fs_label(device):
-    """ Gets device label """
-    return check_output("blkid -p -i -s LABEL -o value %s" % device)
 
 def printk(enable):
     """ Enables / disables printing kernel messages to console """
@@ -57,6 +54,7 @@ def printk(enable):
             fpk.write("4")
         else:
             fpk.write("0")
+
 
 def unmount_all(dest_dir):
     """ Unmounts all devices that are mounted inside dest_dir """
@@ -113,6 +111,7 @@ def unmount_all(dest_dir):
         logging.warning(_("Can't close LUKS devices (see below)"))
         logging.warning(err)
 
+
 class AutoPartition(object):
     """ Class used by the automatic installation method """
     def __init__(self, dest_dir, auto_device, use_luks, use_lvm, luks_key_pass, use_home, callback_queue):
@@ -148,16 +147,16 @@ class AutoPartition(object):
             except subprocess.CalledProcessError as err:
                 logging.warning(err.output)
         else:
-            mkfs = { "xfs" : "mkfs.xfs %s -L %s -f %s" % (fs_options, label_name, device),
-                     "jfs" : "yes | mkfs.jfs %s -L %s %s" % (fs_options, label_name, device),
-                     "reiserfs" : "yes | mkreiserfs %s -l %s %s" % (fs_options, label_name, device),
-                     "ext2" : "mkfs.ext2 -q -L %s %s %s" % (fs_options, label_name, device),
-                     "ext3" : "mke2fs -q %s -L %s -t ext3 %s" % (fs_options, label_name, device),
-                     "ext4" : "mke2fs -q %s -L %s -t ext4 %s" % (fs_options, label_name, device),
-                     "btrfs" : "mkfs.btrfs %s -L %s %s" % (fs_options, label_name, btrfs_devices),
-                     "nilfs2" : "mkfs.nilfs2 %s -L %s %s" % (fs_options, label_name, device),
-                     "ntfs-3g" : "mkfs.ntfs %s -L %s %s" % (fs_options, label_name, device),
-                     "vfat" : "mkfs.vfat %s -n %s %s" % (fs_options, label_name, device) }
+            mkfs = {"xfs": "mkfs.xfs %s -L %s -f %s" % (fs_options, label_name, device),
+                    "jfs": "yes | mkfs.jfs %s -L %s %s" % (fs_options, label_name, device),
+                    "reiserfs": "yes | mkreiserfs %s -l %s %s" % (fs_options, label_name, device),
+                    "ext2": "mkfs.ext2 -q -L %s %s %s" % (fs_options, label_name, device),
+                    "ext3": "mke2fs -q %s -L %s -t ext3 %s" % (fs_options, label_name, device),
+                    "ext4": "mke2fs -q %s -L %s -t ext4 %s" % (fs_options, label_name, device),
+                    "btrfs": "mkfs.btrfs %s -L %s %s" % (fs_options, label_name, btrfs_devices),
+                    "nilfs2": "mkfs.nilfs2 %s -L %s %s" % (fs_options, label_name, device),
+                    "ntfs-3g": "mkfs.ntfs %s -L %s %s" % (fs_options, label_name, device),
+                    "vfat": "mkfs.vfat %s -n %s %s" % (fs_options, label_name, device)}
 
             # Make sure the fs type is one we can handle
             if fs_type not in mkfs.keys():
@@ -171,11 +170,11 @@ class AutoPartition(object):
             try:
                 subprocess.check_call(command.split())
             except subprocess.CalledProcessError as e:
+                txt = _("Can't create file system %s"), fs_type
+                logging.error(txt)
                 logging.error(e.output)
-                show.fatal_error(e.output)
+                show.fatal_error(txt)
                 return
-
-            #time.sleep(4)
 
             # Flush file system buffers
             subprocess.check_call(["sync"])
@@ -198,8 +197,8 @@ class AutoPartition(object):
 
             subprocess.check_call(["chmod", mode, path])
 
-        fs_uuid = get_fs_uuid(device)
-        fs_label = get_fs_label(device)
+        fs_uuid = fs.get_info(device)['UUID']
+        fs_label = fs.get_info(device)['LABEL']
         logging.debug("Device details: %s UUID=%s LABEL=%s", device, fs_uuid, fs_label)
 
     def get_devices(self):
@@ -373,7 +372,7 @@ class AutoPartition(object):
             txt = _("Setup cannot detect size of your device, please use advanced "
                 "installation routine for partitioning and mounting devices.")
             logging.error(txt)
-            installation_process.queue_event('warning', txt)
+            show.warning(txt)
             return
 
         # Partition sizes are expressed in MB

@@ -38,13 +38,13 @@ class InstallationAsk(Gtk.Box):
 
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
 
         super().__init__()
         self.ui = Gtk.Builder()
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_ask.ui"))
 
         partitioner_dir = os.path.join(self.settings.get("data"), "partitioner/small/")
@@ -75,9 +75,9 @@ class InstallationAsk(Gtk.Box):
 
     def enable_automatic_options(self, status):
         """ Enables or disables automatic installation options """
-        names = [ "encrypt_checkbutton", "encrypt_label", \
-                    "lvm_checkbutton", "lvm_label", \
-                    "home_checkbutton", "home_label" ]
+        names = ["encrypt_checkbutton", "encrypt_label",
+                 "lvm_checkbutton", "lvm_label",
+                 "home_checkbutton", "home_label"]
         for name in names:
             obj = self.ui.get_object(name)
             obj.set_sensitive(status)

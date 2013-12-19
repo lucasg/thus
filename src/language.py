@@ -25,31 +25,29 @@ import gettext
 import locale
 import os
 import logging
-import installation_process
 
 # Useful vars for gettext (translations)
-APP_NAME="thus"
+APP_NAME = "thus"
 LOCALE_DIR = "/usr/share/locale"
 
 # Import functions
-import config
 import canonical.i18n as i18n
 
 _next_page = "location"
 _prev_page = None
 
+
 class Language(Gtk.Box):
 
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
 
         super().__init__()
-
         self.ui = Gtk.Builder()
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "language.ui"))
         self.ui.connect_signals(self)
 

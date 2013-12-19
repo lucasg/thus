@@ -26,10 +26,10 @@
 
 """ Configures Manjaro to encrypt user's home with encFS """
 
-import logging
 import os
 import shutil
 import subprocess
+
 
 def setup(username, dest_dir):
     """ Encrypt user's home folder """

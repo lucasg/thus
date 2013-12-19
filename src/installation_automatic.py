@@ -47,7 +47,6 @@ class InstallationAutomatic(Gtk.Box):
 
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.callback_queue = params['callback_queue']
@@ -57,6 +56,7 @@ class InstallationAutomatic(Gtk.Box):
 
         super().__init__()
         self.ui = Gtk.Builder()
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "installation_automatic.ui"))
 
         self.ui.connect_signals(self)
@@ -66,7 +66,7 @@ class InstallationAutomatic(Gtk.Box):
 
         self.entry = {}
         self.entry['luks_password'] = self.ui.get_object('entry_luks_password')
-        self.entry['luks_password_confirm']= self.ui.get_object('entry_luks_password_confirm')
+        self.entry['luks_password_confirm'] = self.ui.get_object('entry_luks_password_confirm')
 
         self.image_password_ok = self.ui.get_object('image_password_ok')
 
@@ -141,7 +141,7 @@ class InstallationAutomatic(Gtk.Box):
 
     def on_select_drive_changed(self, widget):
         line = self.device_store.get_active_text()
-        if line != None:
+        if line is not None:
             self.auto_device = self.devices[line]
         self.forward_button.set_sensitive(True)
 
@@ -219,12 +219,12 @@ class InstallationAutomatic(Gtk.Box):
         self.settings.set('auto_device', self.auto_device)
 
         if not self.testing:
-            self.process = installation_process.InstallationProcess( \
-                            self.settings, \
-                            self.callback_queue, \
-                            mount_devices, \
-                            fs_devices, \
-                            None, \
+            self.process = installation_process.InstallationProcess(
+                            self.settings,
+                            self.callback_queue,
+                            mount_devices,
+                            fs_devices,
+                            None,
                             self.alternate_package_list)
 
             self.process.start()

@@ -32,10 +32,10 @@ import xml.etree.ElementTree as etree
 _next_page = "check"
 _prev_page = "language"
 
+
 class Location(Gtk.Box):
     def __init__(self, params):
         self.title = params['title']
-        self.ui_dir = params['ui_dir']
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
@@ -43,7 +43,7 @@ class Location(Gtk.Box):
         super().__init__()
 
         self.ui = Gtk.Builder()
-
+        self.ui_dir = self.settings.get('ui')
         self.ui.add_from_file(os.path.join(self.ui_dir, "location.ui"))
 
         self.ui.connect_signals(self)
@@ -65,9 +65,9 @@ class Location(Gtk.Box):
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
 
-        txt = _("The selected location will be used to help select the system locale.\n" \
-            "Normally this should be the country where you live.\n" \
-            "This is a shortlist of locations based on the language you selected.")
+        txt = _("The selected location will be used to help select the system locale.\n"
+                "Normally this should be the country where you live.\n"
+                "This is a shortlist of locations based on the language you selected.")
         self.label_help.set_markup(txt)
 
         txt = _("Country, territory or area:")
@@ -94,12 +94,12 @@ class Location(Gtk.Box):
         return False
 
     def hide_all(self):
-        names = [ "location_box", "label_help", "label_choose_country", \
-                     "box1", "eventbox1", "eventbox2", "scrolledwindow1", \
-                     "treeview_countries" ]
+        names = ["location_box", "label_help", "label_choose_country",
+                 "box1", "eventbox1", "eventbox2", "scrolledwindow1",
+                 "treeview_countries"]
         for name in names:
             control = self.ui.get_object(name)
-            if control != None:
+            if control is not None:
                 control.hide()
 
     def prepare(self, direction):
@@ -176,7 +176,6 @@ class Location(Gtk.Box):
 
         for area in areas:
             liststore.append([area])
-
 
     def store_values(self):
         selected = self.treeview.get_selection()
