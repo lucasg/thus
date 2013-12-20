@@ -3,7 +3,11 @@
 #
 #  user_info.py
 #
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#
 #  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -50,13 +54,16 @@ class UserInfo(Gtk.Box):
         self.is_ok['hostname'] = self.ui.get_object('hostname_ok')
         self.is_ok['username'] = self.ui.get_object('username_ok')
         self.is_ok['password'] = self.ui.get_object('password_ok')
+        self.is_ok['root_password'] = self.ui.get_object('root_password_ok')
 
         self.error_label = dict()
         self.error_label['hostname'] = self.ui.get_object('hostname_error_label')
         self.error_label['username'] = self.ui.get_object('username_error_label')
         self.error_label['password'] = self.ui.get_object('password_error_label')
+        self.error_label['root_password'] = self.ui.get_object('root_password_error_label')
 
         self.password_strength = self.ui.get_object('password_strength')
+        self.root_password_strength = self.ui.get_object('root_password_strength')
 
         self.entry = dict()
         self.entry['fullname'] = self.ui.get_object('fullname')
@@ -64,6 +71,8 @@ class UserInfo(Gtk.Box):
         self.entry['username'] = self.ui.get_object('username')
         self.entry['password'] = self.ui.get_object('password')
         self.entry['verified_password'] = self.ui.get_object('verified_password')
+        self.entry['root_password'] = self.ui.get_object('root_password')
+        self.entry['verified_root_password'] = self.ui.get_object('verified_root_password')
 
         self.login = dict()
         self.login['auto'] = self.ui.get_object('login_auto')
@@ -119,6 +128,22 @@ class UserInfo(Gtk.Box):
         txt = _("Confirm password")
         label.set_placeholder_text(txt)
 
+        label = self.ui.get_object('root_password_label')
+        txt = _("Choose a root password:")
+        label.set_markup(txt)
+
+        label = self.ui.get_object('root_password')
+        txt = _("Password")
+        label.set_placeholder_text(txt)
+
+        label = self.ui.get_object('verified_root_password_label')
+        txt = _("Confirm root password:")
+        label.set_markup(txt)
+
+        label = self.ui.get_object('verified_root_password')
+        txt = _("Confirm password")
+        label.set_placeholder_text(txt)
+
         label = self.ui.get_object('hostname_extra_label')
         txt = _("Its name as it appears to other computers.")
         txt = '<span size="small">%s</span>' % txt
@@ -136,8 +161,12 @@ class UserInfo(Gtk.Box):
         txt = '<small><span color="darkred">%s</span></small>' % txt
         self.error_label['password'].set_markup(txt)
 
+        txt = _("You must enter a password")
+        txt = '<small><span color="darkred">%s</span></small>' % txt
+        self.error_label['root_password'].set_markup(txt)
+
         self.login['auto'].set_label(_("Log in automatically"))
-        self.login['pass'].set_label(_("Require my password to log in"))
+        self.login['pass'].set_label(_("A password is required to log in"))
         self.login['encrypt'].set_label(_("Encrypt my home folder"))
 
         txt = _("Who are you?")
@@ -146,6 +175,41 @@ class UserInfo(Gtk.Box):
 
         btn = self.ui.get_object('checkbutton_show_password')
         btn.set_label(_("show password"))
+
+        btn = self.ui.get_object('checkbutton_root_password')
+        btn.set_label(_("use a root password"))
+
+    def show_root_password(self):
+        """ Show root password """
+        box = self.ui.get_object('hbox4')
+        box.show()
+        box = self.ui.get_object('hbox5')
+        box.show()
+        label = self.ui.get_object('root_password_label')
+        label.show()
+        label = self.ui.get_object('verified_root_password_label')
+        label.show()
+        btn = self.ui.get_object('checkbutton_show_root_password')
+        btn.show()
+        self.ui.get_object('root_password').set_text(' ')
+        self.ui.get_object('root_password').set_text('')
+        self.ui.get_object('verified_root_password').set_text('')
+
+    def hide_root_password(self):
+        """ Hide root password """
+        box = self.ui.get_object('hbox4')
+        box.hide()
+        box = self.ui.get_object('hbox5')
+        box.hide()
+        label = self.ui.get_object('root_password_label')
+        label.hide()
+        label = self.ui.get_object('verified_root_password_label')
+        label.hide()
+        btn = self.ui.get_object('checkbutton_show_root_password')
+        btn.hide()
+        self.ui.get_object('root_password').set_text(' ')
+        self.ui.get_object('root_password').set_text('')
+        self.ui.get_object('verified_root_password').set_text('')
 
     def hide_widgets(self):
         """ Hide unused and message widgets """
@@ -158,13 +222,18 @@ class UserInfo(Gtk.Box):
             error_label.hide()
 
         self.password_strength.hide()
+        self.root_password_strength.hide()
+
+        self.hide_root_password()
 
         # Hide encryption if using LUKS encryption (user must use one or the other but not both)
         if self.settings.get('use_luks'):
             self.login['encrypt'].hide()
 
         # TODO: Fix home encryption and stop hidding its widget
-        self.login['encrypt'].hide()
+        # Disable staging features
+        if not self.settings.get("use_staging"):
+            self.login['encrypt'].hide()
 
     def store_values(self):
         """ Store all user values in self.settings """
@@ -172,6 +241,7 @@ class UserInfo(Gtk.Box):
         self.settings.set('hostname', self.entry['hostname'].get_text())
         self.settings.set('username', self.entry['username'].get_text())
         self.settings.set('password', self.entry['password'].get_text())
+        self.settings.set('root_password', self.entry['root_password'].get_text())
         self.settings.set('require_password', self.require_password)
 
         self.settings.set('encrypt_home', False)
@@ -194,6 +264,7 @@ class UserInfo(Gtk.Box):
         self.translate_ui()
         self.show_all()
         self.hide_widgets()
+        self.is_ok['root_password'].show()
 
         desktop = self.settings.get('desktop')
         if desktop != "nox" and self.login['auto']:
@@ -212,6 +283,17 @@ class UserInfo(Gtk.Box):
     def get_next_page(self):
         return _next_page
 
+    def on_checkbutton_root_password_toggled(self, widget):
+        """ Show/hide root password options """
+        btn = self.ui.get_object('checkbutton_root_password')
+        show = btn.get_active()
+        if show:
+            self.show_root_password()
+        else:
+            self.hide_root_password()
+            self.is_ok['root_password'].show()
+        self.info_loop
+
     def on_checkbutton_show_password_toggled(self, widget):
         """ Show/hide user password """
         btn = self.ui.get_object('checkbutton_show_password')
@@ -219,9 +301,15 @@ class UserInfo(Gtk.Box):
         self.entry['password'].set_visibility(show)
         self.entry['verified_password'].set_visibility(show)
 
+    def on_checkbutton_show_root_password_toggled(self, widget):
+        """ Show/hide root password """
+        btn = self.ui.get_object('checkbutton_show_root_password')
+        show = btn.get_active()
+        self.entry['root_password'].set_visibility(show)
+        self.entry['verified_root_password'].set_visibility(show)
+
     def on_authentication_toggled(self, widget):
         """ User has changed autologin or home encrypting """
-
         if widget == self.login['auto']:
             if self.login['auto'].get_active():
                 self.require_password = False
@@ -290,6 +378,19 @@ class UserInfo(Gtk.Box):
                                       self.is_ok['password'],
                                       self.error_label['password'],
                                       self.password_strength)
+
+        btn = self.ui.get_object('checkbutton_root_password')
+        show = btn.get_active()
+        if show:
+            if widget == self.entry['root_password'] or \
+                    widget == self.entry['verified_root_password']:
+                validation.check_password(self.entry['root_password'],
+                                          self.entry['verified_root_password'],
+                                          self.is_ok['root_password'],
+                                          self.error_label['root_password'],
+                                          self.root_password_strength)
+        else:
+            self.is_ok['root_password'].show()
 
         # Check if all fields are filled and ok
         all_ok = True

@@ -40,6 +40,7 @@ class Keymap(Gtk.Box):
         self.forward_button = params['forward_button']
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
+        self.filename = os.path.join(self.settings.get('data'), "kbdnames.gz")
 
         super().__init__()
         self.ui = Gtk.Builder()
@@ -50,10 +51,19 @@ class Keymap(Gtk.Box):
 
         self.layout_treeview = self.ui.get_object("keyboardlayout")
         self.variant_treeview = self.ui.get_object("keyboardvariant")
+        self.keyboard_test_entry = self.ui.get_object("keyboard_test_entry")
+
+        self.keyboard_image = self.ui.get_object("keyboard_image")
+        # Disable the keyboard_image if pyqt is not avaiable
+        if os.path.exists('/usr/lib/python3.3/site-packages/PyQt5') or os.path.exists('/usr/lib/python3.3/site-packages/PyQt4'):
+            # We use keymap with pyqt
+            self.pyqt_available = True
+        else:
+            # No pyqt can be found, so disable this feature
+            self.pyqt_available = False
+            self.keyboard_image.destroy()
 
         self.create_toolviews()
-
-        self.filename = os.path.join(self.settings.get('data'), "kbdnames.gz")
 
         super().add(self.ui.get_object("keymap"))
 
@@ -61,6 +71,9 @@ class Keymap(Gtk.Box):
         txt = _("Select your keyboard layout")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
+
+        txt = _("Type here to test your keyboard")
+        self.keyboard_test_entry.set_placeholder_text(txt)
 
         # TODO: Also change layouts and variants text column
 
@@ -80,7 +93,7 @@ class Keymap(Gtk.Box):
     def prepare(self, direction):
         self.translate_ui()
         self.fill_layout_treeview()
-        self.fill_variant_treeview()
+        # self.fill_variant_treeview()
         self.forward_button.set_sensitive(False)
         self.translate_ui()
 
@@ -198,6 +211,8 @@ class Keymap(Gtk.Box):
                 #sorted_variants.sort()
                 sorted_variants = misc.sort_list(sorted_variants, self.settings.get("locale"))
 
+                # Block signal
+                self.variant_treeview.handler_block_by_func(self.on_keyboardvariant_cursor_changed)
                 # Clear our model
                 liststore = self.variant_treeview.get_model()
                 liststore.clear()
@@ -205,6 +220,9 @@ class Keymap(Gtk.Box):
                 # Add keyboard variants (sorted)
                 for variant in sorted_variants:
                     liststore.append([variant])
+
+                # Unblock signal
+                self.variant_treeview.handler_unblock_by_func(self.on_keyboardvariant_cursor_changed)
 
                 #selection = self.variant_treeview.get_selection()
                 self.variant_treeview.set_cursor(0)
@@ -216,11 +234,16 @@ class Keymap(Gtk.Box):
         self.fill_variant_treeview()
         self.forward_button.set_sensitive(True)
 
+    def on_keyboardvariant_cursor_changed(self, widget):
+        self.store_values()
+        if self.pyqt_available:
+            self.set_keyboard_image()
+
     def store_values(self):
         # we've previously stored our layout, now store our variant
         selected = self.variant_treeview.get_selection()
 
-        keyboard_variant_human = ""
+        keyboard_variant_human = "USA"
 
         if selected:
             (ls, iter) = selected.get_selected()
@@ -235,7 +258,16 @@ class Keymap(Gtk.Box):
             lang = "C"
 
         kbd_names._load(lang)
+
+        try:
+            keyboard_layout_human = self.keyboard_layout_human
+        except AttributeError:
+            keyboard_layout_human = "USA"
+            self.keyboard_layout_human = keyboard_layout_human
+
         country_code = kbd_names._layout_by_human[self.keyboard_layout_human]
+
+        self.keyboard_layout = country_code
 
         self.keyboard_variant = kbd_names._variant_by_human[country_code][keyboard_variant_human]
 
@@ -261,3 +293,10 @@ class Keymap(Gtk.Box):
 
         with misc.raised_privileges():
             subprocess.check_call(['localectl', 'set-keymap', '--no-convert', self.keyboard_layout])
+
+    def set_keyboard_image(self):
+        keyboard_image_file = "/tmp/keyboard_layout.png"
+        keyboard_layout_generator = os.path.join(self.settings.get('thus'), "src/generate_keyboard_layout.py")
+        os.system('python "%s" "%s" "%s" "%s"' %
+                   (keyboard_layout_generator, self.keyboard_layout, self.keyboard_variant, keyboard_image_file))
+        self.keyboard_image.set_from_file(keyboard_image_file)

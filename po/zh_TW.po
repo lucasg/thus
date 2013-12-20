@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-16 21:24+0100\n"
-"PO-Revision-Date: 2013-12-16 20:28+0000\n"
+"POT-Creation-Date: 2013-12-20 19:36+0100\n"
+"PO-Revision-Date: 2013-12-20 18:40+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,13 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: thus.py:118
+#: thus.py:119
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
 msgstr "本安裝程式必須以管理者的身份執行，如果不是以管理者身份就不能繼續。"
 
-#: thus.py:126
+#: thus.py:127
 #, python-format
 msgid ""
 "You cannot run two instances of this installer.\n"
@@ -39,82 +39,87 @@ msgid ""
 "and run this installer again."
 msgstr "您不能同時執行兩個安裝程式。\n\n如果您確定您並沒有執行其他的安裝程式\n您可以手動刪除這個檔案： %s\n然後再次執行安裝程式。"
 
-#: thus.py:138
+#: thus.py:139
 #, python-format
 msgid "Thus installer version %s"
 msgstr "Thus 安裝程式版本 %s"
 
-#: thus.py:218
+#: thus.py:222
 #, python-format
 msgid "Using '%s' file as package list"
 msgstr "使用 '%s' 檔案做為套件列表"
 
-#: thus.py:235
+#: thus.py:239
 msgid "Manjaro Installer"
 msgstr "Manjaro 安裝程式"
 
-#: thus.py:290
+#: thus.py:294
 msgid "Quiting installer..."
 msgstr "離開安裝程式..."
 
-#: src/auto_partition.py:77 src/auto_partition.py:83
+#: src/auto_partition.py:75 src/auto_partition.py:81
 #: src/installation_process.py:409 src/installation_process.py:422
 #: src/installation_process.py:433
 #, python-format
 msgid "Unmounting %s"
 msgstr "正在卸載 %s"
 
-#: src/auto_partition.py:103
+#: src/auto_partition.py:101
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr "無法刪除已存在的 LVM 卷 （見下）"
 
-#: src/auto_partition.py:113
+#: src/auto_partition.py:111
 msgid "Can't close LUKS devices (see below)"
 msgstr "無法關閉 LUKS 裝置 （見下）"
 
-#: src/auto_partition.py:164
+#: src/auto_partition.py:163
 #, python-format
 msgid "Unkown filesystem type %s"
 msgstr "未知的檔案系統類型 %s"
 
-#: src/auto_partition.py:320
+#: src/auto_partition.py:173
+#, python-format
+msgid "Can't create file system %s"
+msgstr ""
+
+#: src/auto_partition.py:319
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "Thus 將會在裝置 %s 上設定 LUKS"
 
-#: src/auto_partition.py:373
+#: src/auto_partition.py:372
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr "安裝程式無法偵測您的裝置大小，請使用進階安裝模式以手動分割及掛載裝置。"
 
-#: src/auto_partition.py:538
+#: src/auto_partition.py:537
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "將會在裝置 %s 上設定 LVM"
 
-#: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
-#: src/installation_alongside.py:219
+#: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
+#: src/installation_alongside.py:218
 msgid "unknown"
 msgstr "未知的"
 
-#: src/bootloader.py:53 ui/bootloader.ui:69
+#: src/bootloader.py:54 ui/bootloader.ui:69
 msgid "What is your boot system type?"
 msgstr "您的開機系統類型是？"
 
-#: src/bootloader.py:58
+#: src/bootloader.py:59
 msgid "BIOS (Most Common)"
 msgstr "BIOS (較常見)"
 
-#: src/bootloader.py:62
+#: src/bootloader.py:63
 msgid "64-bit UEFI"
 msgstr "64位元 UEFI"
 
-#: src/bootloader.py:66
+#: src/bootloader.py:67
 msgid "32-bit UEFI"
 msgstr "32位元 UEFI"
 
-#: src/bootloader.py:70
+#: src/bootloader.py:71
 msgid "Select 'Cancel' if you don't want to install a boot loader."
 msgstr "如果您不想安裝開機載入器，請選擇 '取消' 。"
 
@@ -191,7 +196,7 @@ msgstr "有足夠的磁碟空間。"
 msgid "free space"
 msgstr "剩餘空間"
 
-#: src/installation_advanced.py:278 src/installation_alongside.py:171
+#: src/installation_advanced.py:278 src/installation_alongside.py:170
 msgid "Device"
 msgstr "裝置"
 
@@ -207,7 +212,7 @@ msgstr "掛載點"
 msgid "Label"
 msgstr "標籤"
 
-#: src/installation_advanced.py:293 src/installation_advanced.py:1535
+#: src/installation_advanced.py:293 src/installation_advanced.py:1554
 msgid "Format"
 msgstr "格式化"
 
@@ -231,13 +236,13 @@ msgstr "固態硬碟"
 msgid "none"
 msgstr "無"
 
-#: src/installation_advanced.py:535 src/installation_advanced.py:938
-#: src/installation_advanced.py:1409 src/installation_advanced.py:1488
-#: src/installation_advanced.py:1630 src/installation_advanced.py:1700
+#: src/installation_advanced.py:535 src/installation_advanced.py:948
+#: src/installation_advanced.py:1423 src/installation_advanced.py:1507
+#: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
 msgstr "延伸"
 
-#: src/installation_advanced.py:666 src/installation_advanced.py:908
+#: src/installation_advanced.py:666 src/installation_advanced.py:918
 msgid "Can't use same mount point twice..."
 msgstr "無法使用同一個掛載點兩次..."
 
@@ -245,115 +250,119 @@ msgstr "無法使用同一個掛載點兩次..."
 msgid "Root partition must be formatted..."
 msgstr "根目錄分割區必須格式化..."
 
-#: src/installation_advanced.py:929
+#: src/installation_advanced.py:939
 msgid "Creating primary partition"
 msgstr "創建主要分割區"
 
-#: src/installation_advanced.py:940
+#: src/installation_advanced.py:950
 msgid "Creating extended partition"
 msgstr "創建延伸分割區"
 
-#: src/installation_advanced.py:946
+#: src/installation_advanced.py:956
 msgid "Creating logical partition"
 msgstr "創建邏輯分割區"
 
-#: src/installation_advanced.py:1078
+#: src/installation_advanced.py:1088
 msgid "Advanced installation mode"
 msgstr "進階安裝模式"
 
-#: src/installation_advanced.py:1082 ui/installation_advanced.ui:1000
+#: src/installation_advanced.py:1092 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
 msgstr "使用這個裝置安裝開機載入器："
 
-#: src/installation_advanced.py:1092 ui/installation_advanced.ui:915
+#: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
 msgid "New partition table"
 msgstr "新的分割表"
 
-#: src/installation_advanced.py:1100
+#: src/installation_advanced.py:1110
 msgid "Change..."
 msgstr "變更......"
 
-#: src/installation_advanced.py:1105 ui/installation_advanced.ui:98
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr "大小："
 
-#: src/installation_advanced.py:1109 ui/installation_advanced.ui:300
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr "類型："
 
-#: src/installation_advanced.py:1113 ui/installation_advanced.ui:317
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr "主要"
 
-#: src/installation_advanced.py:1117 ui/installation_advanced.ui:337
+#: src/installation_advanced.py:1127 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr "邏輯"
 
-#: src/installation_advanced.py:1121 ui/installation_advanced.ui:357
+#: src/installation_advanced.py:1131 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr "延伸"
 
-#: src/installation_advanced.py:1125 ui/installation_advanced.ui:202
+#: src/installation_advanced.py:1135 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr "此空間的起始點"
 
-#: src/installation_advanced.py:1129 ui/installation_advanced.ui:222
+#: src/installation_advanced.py:1139 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr "此空間的結束點"
 
-#: src/installation_advanced.py:1133 src/installation_advanced.py:1150
-#: ui/installation_advanced.ui:129 ui/installation_advanced.ui:601
+#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
+#: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr "用作："
 
-#: src/installation_advanced.py:1137 src/installation_advanced.py:1154
-#: ui/installation_advanced.ui:162 ui/installation_advanced.ui:634
+#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
+#: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr "掛載點："
 
-#: src/installation_advanced.py:1141 src/installation_advanced.py:1158
-#: ui/installation_advanced.ui:388 ui/installation_advanced.ui:671
+#: src/installation_advanced.py:1151 src/installation_advanced.py:1168
+#: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr "標籤(選擇性)："
 
-#: src/installation_advanced.py:1145
+#: src/installation_advanced.py:1155
 msgid "Encryption Options..."
 msgstr "加密選項..."
 
-#: src/installation_advanced.py:1162 ui/installation_advanced.ui:698
+#: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr "格式化："
 
-#: src/installation_advanced.py:1167
+#: src/installation_advanced.py:1177
 msgid "Partition Table Type:"
 msgstr "分割表類型："
 
-#: src/installation_advanced.py:1172
+#: src/installation_advanced.py:1182
 msgid "Create Partition Table"
 msgstr "創建分割表"
 
-#: src/installation_advanced.py:1175 src/installation_alongside.py:149
+#: src/installation_advanced.py:1185 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
 msgid "Install now!"
 msgstr "立刻安裝！"
 
-#: src/installation_advanced.py:1263
+#: src/installation_advanced.py:1273
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "創建一個 %s 類型的分割表給磁碟 %s"
 
-#: src/installation_advanced.py:1273
+#: src/installation_advanced.py:1283
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr "GRUB 在 BIOS 系統中需要使用一個 BIOS 開機分割區（2 MiB，沒有檔案系統，在 gdisk 中為 \"EF02\" 類型碼，或是在 GNU Parted 中為 \"bios_grub\" 旗標） 來嵌入 core.img 檔案，因為在 MBR 系統中缺乏對 GPT 磁碟的支援。\n\nThus 將會馬上為您創建這個特殊的分割區。"
 
-#: src/installation_advanced.py:1305
+#: src/installation_advanced.py:1315
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr "無法創建 BIOS 的 GPT 開機分割區！"
 
-#: src/installation_advanced.py:1445
+#: src/installation_advanced.py:1343
+msgid "Couldn't create BIOS GPT Boot partition"
+msgstr ""
+
+#: src/installation_advanced.py:1461
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -361,7 +370,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s 已被掛載為 swap。\n如要繼續則必須卸載。\n按是卸載，或按否返回\n"
 
-#: src/installation_advanced.py:1448
+#: src/installation_advanced.py:1465
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -369,89 +378,94 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s 已被掛載為 '%s' 。\n如要繼續則必須卸載。\n按是卸載，或按否返回\n"
 
-#: src/installation_advanced.py:1469
+#: src/installation_advanced.py:1488
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr "%s 已經被掛載(忙碌中)但卻沒有掛載點"
 
-#: src/installation_advanced.py:1528
+#: src/installation_advanced.py:1547
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "分割區 %s 將會被刪除"
 
-#: src/installation_advanced.py:1535
+#: src/installation_advanced.py:1554
 msgid "Partition"
 msgstr "分割區"
 
-#: src/installation_advanced.py:1535
+#: src/installation_advanced.py:1554
 msgid "New"
 msgstr "新的"
 
-#: src/installation_advanced.py:1535
+#: src/installation_advanced.py:1554
 msgid "Relabel"
 msgstr "重定標籤"
 
-#: src/installation_advanced.py:1535
+#: src/installation_advanced.py:1554
 msgid "Mount"
 msgstr "掛載"
 
-#: src/installation_advanced.py:1556
+#: src/installation_advanced.py:1575
 msgid "These disks will have partition actions:"
 msgstr "這個磁碟將會有以下的分割區動作："
 
-#: src/installation_advanced.py:1609
+#: src/installation_advanced.py:1628
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "在 %s 中儲存變更"
 
-#: src/installation_advanced.py:1632
+#: src/installation_advanced.py:1651
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "正在創建 %s 檔案系統在 %s 已加上標籤的 %s"
 
-#: src/installation_advanced.py:1719
+#: src/installation_advanced.py:1692
+#, python-format
+msgid "Couldn't format partition '%s' with label '%s' as '%s'"
+msgstr ""
+
+#: src/installation_advanced.py:1741
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro 將會安裝 %s 類型的開機載入器到 %s 上"
 
-#: src/installation_advanced.py:1722 src/installation_automatic.py:211
+#: src/installation_advanced.py:1744 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
 msgstr "Thus 將不會安裝任何開機載入器"
 
-#: src/installation_advanced.py:1736 src/installation_automatic.py:232
+#: src/installation_advanced.py:1758 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "測試模式。Thus 將不會對您的系統作出任何改變！"
 
-#: src/installation_alongside.py:114
+#: src/installation_alongside.py:115
 #, python-format
 msgid "Can't load %s css"
 msgstr "無法載入 %s css"
 
-#: src/installation_alongside.py:141
+#: src/installation_alongside.py:140
 msgid "Choose which OS you want to install Manjaro next to"
 msgstr "選擇您要將 Manjaro 與哪一個作業系統共存"
 
-#: src/installation_alongside.py:145
+#: src/installation_alongside.py:144
 msgid "Manjaro alongside another OS"
 msgstr "Manjaro 與其他作業系統共存"
 
-#: src/installation_alongside.py:174
+#: src/installation_alongside.py:173
 msgid "Detected OS"
 msgstr "偵測作業系統"
 
-#: src/installation_alongside.py:177
+#: src/installation_alongside.py:176
 msgid "Filesystem"
 msgstr "檔案系統"
 
-#: src/installation_alongside.py:195
+#: src/installation_alongside.py:194
 msgid "pyparted3 not found!"
 msgstr "pyparted3 找不到！"
 
-#: src/installation_alongside.py:223
+#: src/installation_alongside.py:222
 msgid "Unable to create list of partitions for alongside installation."
 msgstr "無法創建並存安裝的分割區列表。"
 
-#: src/installation_alongside.py:267
+#: src/installation_alongside.py:266
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "無法縮小分割區（也許它快滿了？）"
 
@@ -557,13 +571,12 @@ msgstr "請選擇您要安裝 Manjaro 的裝置\n並按下面的按鈕以啟動�
 msgid "Encryption Password:"
 msgstr "加密的密碼："
 
-#: src/installation_automatic.py:101 src/user_info.py:116
-#: ui/installation_automatic.ui:161 ui/user_info.ui:79
+#: src/installation_automatic.py:101 src/user_info.py:124
+#: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
 msgstr "確認您的密碼："
 
-#: src/installation_automatic.py:105 src/user_info.py:149
-#: ui/installation_automatic.ui:258 ui/user_info.ui:487
+#: src/installation_automatic.py:105 src/user_info.py:177
 msgid "show password"
 msgstr "顯示密碼"
 
@@ -591,40 +604,40 @@ msgstr "Thus 將會安裝 %s 類型的開機載入器到 %s 上"
 msgid "Copying '/%s'"
 msgstr "正在複製 '/%s'"
 
-#: src/installation_process.py:165
+#: src/installation_process.py:168
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "正在使用 '%s' 方法安裝"
 
-#: src/installation_process.py:241
+#: src/installation_process.py:244
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "在 %s 增加分割區及其檔案系統"
 
-#: src/installation_process.py:263
+#: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
 msgstr "在創建分割區及其檔案系統時遇到錯誤"
 
-#: src/installation_process.py:301 src/installation_process.py:324
+#: src/installation_process.py:304 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "正在掛載 %s 分割區到 %s 目錄"
 
-#: src/installation_process.py:307
+#: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "正在掛載 %s 分割區到 %s/boot 目錄"
 
-#: src/installation_process.py:312
+#: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
 msgstr "無法掛載根目錄及開機分割區"
 
-#: src/installation_process.py:330
+#: src/installation_process.py:333
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "無法掛載 %s 在 %s"
 
-#: src/installation_process.py:342
+#: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
 msgstr "%s 已刪除"
@@ -668,231 +681,244 @@ msgstr "無法卸載 %s"
 msgid "Installation finished successfully."
 msgstr "安裝已成功完成。"
 
-#: src/installation_process.py:457
+#: src/installation_process.py:467
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "基礎檔案系統不存在！嚴重錯誤 （正在離開）。"
 
-#: src/installation_process.py:461
+#: src/installation_process.py:471
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "桌面檔案系統不存在！嚴重錯誤（正在離開）。"
 
-#: src/installation_process.py:478
+#: src/installation_process.py:481 src/installation_process.py:487
+#, python-format
+msgid "%s is already mounted at %s as %s"
+msgstr ""
+
+#: src/installation_process.py:498
 msgid "Indexing files to be copied ..."
 msgstr "正在複製索引檔案 ..."
 
-#: src/installation_process.py:483
+#: src/installation_process.py:503
 msgid "Extracting root-image ..."
 msgstr "正在解壓縮 root-image ..."
 
-#: src/installation_process.py:493
+#: src/installation_process.py:513
 msgid "Extracting desktop-image ..."
 msgstr "正在解壓縮 desktop-image ..."
 
-#: src/installation_process.py:508
+#: src/installation_process.py:528
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "正在恢復 %s 上的元資訊"
 
-#: src/installation_process.py:524
+#: src/installation_process.py:544
 msgid "Special dirs already mounted."
 msgstr "特殊目錄已經掛載。"
 
-#: src/installation_process.py:555
+#: src/installation_process.py:575
 msgid "Special dirs are not mounted. Skipping."
 msgstr "特殊目錄沒有掛載。正在略過。"
 
-#: src/installation_process.py:565
+#: src/installation_process.py:585
 #, python-format
 msgid "Unable to umount %s"
 msgstr "無法卸載 %s"
 
-#: src/installation_process.py:584
+#: src/installation_process.py:604
 #, python-format
 msgid "Error running command: %s"
 msgstr "執行命令時遇到錯誤： %s"
 
-#: src/installation_process.py:646 src/installation_process.py:696
+#: src/installation_process.py:666 src/installation_process.py:720
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "加入 fstab ： UUID=%s %s %s %s 0 %s"
 
-#: src/installation_process.py:660
+#: src/installation_process.py:680
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr ""
 
-#: src/installation_process.py:664
+#: src/installation_process.py:684
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr ""
 
-#: src/installation_process.py:700
+#: src/installation_process.py:724
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr ""
 
-#: src/installation_process.py:761
+#: src/installation_process.py:785
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "正在安裝 GRUB(2) BIOS 開機載入器到 %s"
 
-#: src/installation_process.py:773 src/installation_process.py:794
+#: src/installation_process.py:797 src/installation_process.py:818
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "安裝 GRUB(2)時發生錯誤。"
 
-#: src/installation_process.py:792
+#: src/installation_process.py:816
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS 已成功安裝。"
 
-#: src/installation_process.py:806
+#: src/installation_process.py:830
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
 msgstr "正在安裝 GRUB(2) UEFI 開機載入器到 %s"
 
-#: src/installation_process.py:858
+#: src/installation_process.py:882
 msgid "ERROR installing GRUB(2) locale."
 msgstr "安裝 GRUB(2) 的語系時遇到錯誤。"
 
-#: src/installation_process.py:867
+#: src/installation_process.py:891
 #, python-format
 msgid "Enabled %s service."
 msgstr "已開啟 %s 服務。"
 
-#: src/installation_process.py:874
+#: src/installation_process.py:898
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "創建使用者 %s 的密碼雜湊值時發生錯誤"
 
-#: src/installation_process.py:880
+#: src/installation_process.py:904
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "更改使用者 %s 的密碼時發生錯誤"
 
-#: src/installation_process.py:892
+#: src/installation_process.py:916
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "正在設定 mkinitcpio.conf 中的關聯性及模組"
 
-#: src/installation_process.py:957
+#: src/installation_process.py:981
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s ： 啟用使用者 %s 的自動登入。"
 
-#: src/installation_process.py:1052 src/installation_process.py:1063
+#: src/installation_process.py:1076 src/installation_process.py:1087
 msgid "Configuring your new system"
 msgstr "正在設定新系統"
 
-#: src/installation_process.py:1055
+#: src/installation_process.py:1079
 msgid "fstab file generated."
 msgstr "fstab 已產生。"
 
-#: src/installation_process.py:1061
+#: src/installation_process.py:1085
 msgid "Network configuration copied."
 msgstr "網路組態已複製。"
 
-#: src/installation_process.py:1087
+#: src/installation_process.py:1111
 msgid "Timezone set."
 msgstr "時區設置。"
 
-#: src/installation_process.py:1107
+#: src/installation_process.py:1132
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "使用者 %s 的 Sudo 設定已完成。"
 
-#: src/installation_process.py:1117
+#: src/installation_process.py:1142
 #, python-format
 msgid "User %s added."
 msgstr "使用者 %s 已加入。"
 
-#: src/installation_process.py:1129
+#: src/installation_process.py:1154
 #, python-format
 msgid "Hostname  %s set."
 msgstr "主機名稱  %s 設置。"
 
-#: src/installation_process.py:1133
+#: src/installation_process.py:1159
+msgid "Set root password."
+msgstr ""
+
+#: src/installation_process.py:1162
 msgid "Set the same password to root."
 msgstr "將 root 設定為相同的密碼。"
 
-#: src/installation_process.py:1139
+#: src/installation_process.py:1168
 msgid "Generating locales ..."
 msgstr "正在生成語系碼 ..."
 
-#: src/installation_process.py:1160
+#: src/installation_process.py:1189
 msgid "Adjusting hardware clock ..."
 msgstr "正在調整硬體時鐘 ..."
 
-#: src/installation_process.py:1169
+#: src/installation_process.py:1198
 msgid "Configuring hardware ..."
 msgstr "正在配置硬體 ..."
 
-#: src/installation_process.py:1242
+#: src/installation_process.py:1271
 msgid "Set up graphics card ..."
 msgstr "正在設定顯示卡 ..."
 
-#: src/installation_process.py:1249
+#: src/installation_process.py:1278
 msgid "Can't execute the MHWD script"
 msgstr "無法執行 MHWD 腳本"
 
-#: src/installation_process.py:1262
+#: src/installation_process.py:1291
 msgid "Configure display manager ..."
 msgstr "正在設定顯示管理員 ..."
 
-#: src/installation_process.py:1368
+#: src/installation_process.py:1397
 msgid "Configure System ..."
 msgstr "正在設定系統 ..."
 
-#: src/installation_process.py:1393
+#: src/installation_process.py:1422
 msgid "Removing live configuration (packages)"
 msgstr "正在移除 live 設定值(套件)"
 
-#: src/installation_process.py:1409
+#: src/installation_process.py:1438
 msgid "Configuring package manager"
 msgstr "正在設定套件管理員"
 
-#: src/installation_process.py:1421
+#: src/installation_process.py:1450
 msgid "Finished configuring package manager."
 msgstr "設定套件管理員完成。"
 
-#: src/installation_process.py:1445
+#: src/installation_process.py:1474
 msgid "Running mkinitcpio ..."
 msgstr "正在執行 mkinitcpio ..."
 
-#: src/installation_process.py:1448
+#: src/installation_process.py:1477
 msgid "Running mkinitcpio - done"
 msgstr "正在執行 mkinitcpio - 完成"
 
-#: src/installation_process.py:1464
+#: src/installation_process.py:1493
 msgid "Encrypting user home dir ..."
 msgstr "正在加密使用者的家目錄 ..."
 
-#: src/installation_process.py:1466
+#: src/installation_process.py:1495
 msgid "User home dir encrypted"
 msgstr "使用者的家目錄已加密。"
 
-#: src/keymap.py:64
+#: src/keymap.py:71
 msgid "Select your keyboard layout"
 msgstr "選擇您的鍵盤配置"
 
-#: src/keymap.py:72
+#: src/keymap.py:75
+msgid "Type here to test your keyboard"
+msgstr ""
+
+#: src/keymap.py:82
 msgid "Layouts"
 msgstr "鍵盤配置"
 
-#: src/keymap.py:78
+#: src/keymap.py:88
 msgid "Variants"
 msgstr "變體"
 
-#: src/keymap.py:100
+#: src/keymap.py:110
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "鍵盤佈局為 %s"
 
-#: src/language.py:80
+#: src/language.py:78
 msgid "Please choose your language:"
 msgstr "請選擇您的語言："
 
-#: src/language.py:85
+#: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
 msgstr "注意： Thus 安裝程式是一個測試版的軟體。"
 
-#: src/language.py:86
+#: src/language.py:84
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other  \n"
@@ -901,15 +927,15 @@ msgid ""
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 msgstr "Thus 是一個未正式發行的測試版軟體，仍在積極的開發中。\n它還不能處理 RAID 、btrfs 的子卷系統、以及其他\n進階設定。請以資料可能會消失的警覺心繼續進行！\n\n如果您發現任何 bug ，請在 <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> 回報"
 
-#: src/language.py:93
+#: src/language.py:91
 msgid "Welcome to Manjaro!"
 msgstr "歡迎使用 Manjaro！"
 
-#: src/language.py:110
+#: src/language.py:108
 msgid "Languages"
 msgstr "語言"
 
-#: src/language.py:130
+#: src/language.py:128
 #, python-format
 msgid "Can't find translation file for the %s language"
 msgstr "找不到 %s 語言的翻譯檔"
@@ -929,12 +955,12 @@ msgstr "您所選擇的地區將會用來幫助您選擇系統的語系碼。\n�
 msgid "Country, territory or area:"
 msgstr "國家、地區或區域"
 
-#: src/location.py:197
+#: src/location.py:196
 #, python-format
 msgid "locale changed to : %s"
 msgstr "變更語系到： %s"
 
-#: src/location.py:199
+#: src/location.py:198
 #, python-format
 msgid "Can't change to locale '%s'"
 msgstr "無法更改語系到 '%s'"
@@ -949,31 +975,95 @@ msgstr "無法確認 %s 是否為固態硬碟"
 msgid "Sorry but filesystem %s can't be shrinked"
 msgstr "抱歉，檔案系統 %s 無法縮小"
 
-#: src/parted3/partition_module.py:217
+#: src/parted3/lvm.py:75
+#, python-format
+msgid "Can't remove logical volume %s"
+msgstr ""
+
+#: src/parted3/lvm.py:92
+#, python-format
+msgid "Can't remove volume group %s"
+msgstr ""
+
+#: src/parted3/lvm.py:103
+#, python-format
+msgid "Can't remove physical volume %s"
+msgstr ""
+
+#: src/parted3/partition_module.py:104
+msgid "Exception: For more information take a look at /tmp/thus.log"
+msgstr ""
+
+#: src/parted3/partition_module.py:169
+#, python-format
+msgid "Can't delete partition %s"
+msgstr ""
+
+#: src/parted3/partition_module.py:219
 msgid "Partition is too large!"
 msgstr "分割區太大了！"
 
-#: src/rank_mirrors.py:53
+#: src/parted3/partition_module.py:278
+#, python-format
+msgid "Can't detect used space from %s"
+msgstr ""
+
+#: src/parted3/used_space.py:39
+#, python-format
+msgid "Can't detect used space of NTFS partition %s"
+msgstr ""
+
+#: src/parted3/used_space.py:66
+#, python-format
+msgid "Can't detect used space of EXTFS partition %s"
+msgstr ""
+
+#: src/parted3/used_space.py:93
+#, python-format
+msgid "Can't detect used space of FATFS partition %s"
+msgstr ""
+
+#: src/parted3/used_space.py:124
+#, python-format
+msgid "Can't detect used space of JFS partition %s"
+msgstr ""
+
+#: src/parted3/used_space.py:149
+#, python-format
+msgid "Can't detect used space of REISERFS partition %s"
+msgstr ""
+
+#: src/parted3/used_space.py:174
+#, python-format
+msgid "Can't detect used space of BTRFS partition %s"
+msgstr ""
+
+#: src/parted3/used_space.py:217
+#, python-format
+msgid "Can't detect used space of XFS partition %s"
+msgstr ""
+
+#: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
 msgstr "找不到 rank mirrors 腳本"
 
-#: src/rank_mirrors.py:60
+#: src/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
 msgstr "無法自動執行鏡像伺服器選擇程式"
 
-#: src/show_message.py:52
+#: src/show_message.py:53
 msgid "Manjaro Installer - Error"
 msgstr "Manjaro 安裝程式 - 錯誤"
 
-#: src/show_message.py:63
+#: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
 msgstr "Manjaro 安裝程式 - 警告"
 
-#: src/show_message.py:74
+#: src/show_message.py:77
 msgid "Manjaro Installer - Information"
 msgstr "Manjaro 安裝程式 - 資訊"
 
-#: src/show_message.py:84
+#: src/show_message.py:88
 msgid "Manjaro Installer - Question"
 msgstr "Manjaro 安裝程式 - 問題"
 
@@ -1024,121 +1114,135 @@ msgstr "無法自動偵測所在時區"
 msgid "Stopping timezone threads..."
 msgstr "正在停止時區線程..."
 
-#: src/timezone.py:395
+#: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
 msgstr "無法獲得國家代碼以創建 pacman 的鏡像列表"
 
-#: src/user_info.py:84 ui/user_info.ui:35
+#: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
 msgstr "您的名字:"
 
-#: src/user_info.py:88 ui/user_info.ui:275
+#: src/user_info.py:96 ui/user_info.ui:206
 msgid "Your name"
 msgstr "您的名字"
 
-#: src/user_info.py:92 ui/user_info.ui:397
+#: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
 msgstr "主機名稱"
 
-#: src/user_info.py:96 ui/user_info.ui:474
+#: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
 msgstr "您的電腦名稱"
 
-#: src/user_info.py:100 ui/user_info.ui:49
+#: src/user_info.py:108 ui/user_info.ui:50
 msgid "Pick a username:"
 msgstr "選擇一個使用者名稱"
 
-#: src/user_info.py:104 ui/user_info.ui:319
+#: src/user_info.py:112 ui/user_info.ui:250
 msgid "Username"
 msgstr "使用者名稱"
 
-#: src/user_info.py:108 ui/user_info.ui:64
+#: src/user_info.py:116 ui/user_info.ui:65
 msgid "Choose a password:"
 msgstr "選擇一個密碼："
 
-#: src/user_info.py:112 ui/user_info.ui:172
+#: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
+#: ui/user_info.ui:573
 msgid "Password"
 msgstr "密碼"
 
-#: src/user_info.py:120 ui/user_info.ui:218
+#: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
+#: ui/user_info.ui:633
 msgid "Confirm password"
 msgstr "確認密碼"
 
-#: src/user_info.py:124
+#: src/user_info.py:132 ui/user_info.ui:610
+msgid "Choose a root password:"
+msgstr ""
+
+#: src/user_info.py:140 ui/user_info.ui:682
+msgid "Confirm root password:"
+msgstr ""
+
+#: src/user_info.py:148
 msgid "Its name as it appears to other computers."
 msgstr "這個名字似乎已經被在其他電腦使用。"
 
-#: src/user_info.py:128
+#: src/user_info.py:152
 msgid "You must enter a name"
 msgstr "您必須輸入一個名字"
 
-#: src/user_info.py:132
+#: src/user_info.py:156
 msgid "You must enter a username"
 msgstr "您必須輸入一個使用者名稱"
 
-#: src/user_info.py:136
+#: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
 msgstr "您必須輸入一個密碼"
 
-#: src/user_info.py:140 ui/user_info.ui:97
+#: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
 msgstr "自動登入"
 
-#: src/user_info.py:141 ui/user_info.ui:114
-msgid "Require my password to log in"
-msgstr "需要我的密碼進行登入"
+#: src/user_info.py:169 ui/user_info.ui:490
+msgid "A password is required to log in"
+msgstr ""
 
-#: src/user_info.py:142 ui/user_info.ui:135
+#: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt my home folder"
 msgstr "加密我的家目錄"
 
-#: src/user_info.py:144
+#: src/user_info.py:172
 msgid "Who are you?"
 msgstr "您是誰?"
 
 #: src/user_info.py:180
+msgid "use a root password"
+msgstr ""
+
+#: src/user_info.py:249
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
 msgstr "Manjaro 將會使用 eCryptfs 加密您的家目錄。不幸的是，eCryptfs 無法很好地處理稀疏檔案。\n\n"
 
-#: src/user_info.py:181
+#: src/user_info.py:250
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
 msgstr "別擔心，在大多數情況下這個缺點都不會造成什麼問題。\n\n"
 
-#: src/user_info.py:182
+#: src/user_info.py:251
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
 msgstr "無論如何， eCryptfs 其中一個最常被誤用的方式就是用來加密 BitTorrent 下載的暫存位置，因為這經常會導致 eCryptfs 需要管理10GB甚至更多的稀疏檔案，甚至可能會導致磁碟空間經常性的不足。\n\n"
 
-#: src/user_info.py:183
+#: src/user_info.py:252
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
 msgstr "一個簡單的解決辦法是將那些稀疏檔案放到一個未加密的 .Public 目錄裡\n\n"
 
-#: src/user_info.py:184
+#: src/user_info.py:253
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
 msgstr "看 https://wiki.archlinux.org/index.php/ECryptfs 以獲得更多細節\n\n"
 
-#: src/user_info.py:185
+#: src/user_info.py:254
 msgid "Are you sure you want to encrypt your home directory?\n"
 msgstr "確定要加密您的家目錄嗎？\n"
 
-#: src/user_info.py:252
+#: src/user_info.py:342
 msgid "Invalid characters entered"
 msgstr "輸入了不允許使用的字元"
 
-#: src/user_info.py:256
+#: src/user_info.py:346
 msgid "Username can't contain dots"
 msgstr "使用者名稱不能包含標點"
 
-#: src/user_info.py:260
+#: src/user_info.py:350
 msgid "Too many characters"
 msgstr "過多字元"
 
@@ -1174,47 +1278,47 @@ msgid ""
 "might need more space."
 msgstr "(*) 這高度取決於您所選擇的桌面環境，所以您可能會需要更多的空間。"
 
-#: ui/installation_advanced.ui:74
-msgid "Create partition"
-msgstr "加入分割區"
-
-#: ui/installation_advanced.ui:114
-msgid "Location:"
-msgstr "區域："
-
-#: ui/installation_advanced.ui:277
-msgid "MB"
-msgstr "MB"
-
-#: ui/installation_advanced.ui:424 ui/installation_advanced.ui:740
-msgid "Encryption options..."
-msgstr "加密選項..."
-
-#: ui/installation_advanced.ui:504
+#: ui/installation_advanced.ui:84
 msgid "Partition table type:"
 msgstr "分割表類型："
 
-#: ui/installation_advanced.ui:577
+#: ui/installation_advanced.ui:155
 msgid "Edit partition"
 msgstr "編輯分割區"
 
-#: ui/installation_advanced.ui:931
+#: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
+msgid "Encryption options..."
+msgstr "加密選項..."
+
+#: ui/installation_advanced.ui:383
+msgid "Create partition"
+msgstr "加入分割區"
+
+#: ui/installation_advanced.ui:423
+msgid "Location:"
+msgstr "區域："
+
+#: ui/installation_advanced.ui:607
+msgid "MB"
+msgstr "MB"
+
+#: ui/installation_advanced.ui:958
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_advanced.ui:1100
+#: ui/installation_advanced.ui:1122
 msgid "LUKS volume name:"
 msgstr "LUKS 卷名："
 
-#: ui/installation_advanced.ui:1114
+#: ui/installation_advanced.ui:1136
 msgid "Password:"
 msgstr "密碼："
 
-#: ui/installation_advanced.ui:1128
+#: ui/installation_advanced.ui:1150
 msgid "Confirm password:"
 msgstr "確認密碼："
 
-#: ui/installation_advanced.ui:1158
+#: ui/installation_advanced.ui:1179
 msgid "Use LUKS encryption: "
 msgstr "使用 LUKS 加密："
 
@@ -1301,6 +1405,10 @@ msgid ""
 "drive!</b>"
 msgstr "<b>警告！這個安裝模式將會覆寫您磁碟上的所有資料！</b>"
 
+#: ui/installation_automatic.ui:258 ui/user_info.ui:422
+msgid "Show password"
+msgstr ""
+
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
 msgstr "<span weight=\"bold\">請選擇您的語言：</span>"
@@ -1318,22 +1426,30 @@ msgstr "<span weight='bold'>注意： Thus 安裝程式是一個測試版的軟�
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">歡迎使用 Manjaro</span>"
 
-#: ui/user_info.ui:188
+#: ui/user_info.ui:119 ui/user_info.ui:588
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
 msgstr "<small><span color=\"darkgreen\">堅固的密碼</span></small>"
 
-#: ui/user_info.ui:246
+#: ui/user_info.ui:177 ui/user_info.ui:660
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
 msgstr "<small><span color=\"darkred\">您必須輸入密碼</span></small>"
 
-#: ui/user_info.ui:347
+#: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
 msgstr "<small><span color=\"darkred\">您必須輸入使用者名稱</span></small>"
 
-#: ui/user_info.ui:425
+#: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
 msgstr "<small><span color=\"darkred\">您必須輸入名稱</span></small>"
 
-#: ui/user_info.ui:447
+#: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">這個名字似乎已經被在其他電腦使用。</span>"
+
+#: ui/user_info.ui:439
+msgid "Use a root password"
+msgstr ""
+
+#: ui/user_info.ui:544
+msgid "Show root password"
+msgstr ""

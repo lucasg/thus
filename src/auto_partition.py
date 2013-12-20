@@ -575,7 +575,7 @@ class AutoPartition(object):
             if self.home and not self.lvm:
                 subprocess.check_call(['chmod', '0400', key_files[1]])
                 subprocess.check_call(["mkdir", "-p", '%s/etc/luks-keys' % self.dest_dir])
-                subprocess.check_call(['mv', key_files[1], '%s/etc/luks-keys/home' % self.dest_dir])
+                subprocess.check_call(['mv', key_files[1], '%s/etc/luks-keys' % self.dest_dir])
 
 if __name__ == '__main__':
     logger = logging.getLogger()

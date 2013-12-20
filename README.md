@@ -17,3 +17,4 @@ Graphical Installer for Manjaro Linux
  * pyalpm
  * hwinfo
  * hdparm
+ * python-pyqt5

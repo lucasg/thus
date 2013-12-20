@@ -68,6 +68,7 @@ class Settings(object):
             'password': '',
             'rankmirrors_done': False,
             'require_password': True,
+            'root_password': '',
             'third_party_software': False,
             'timezone_human_zone': '',
             'timezone_country': '',
