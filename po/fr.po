@@ -28,8 +28,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 19:36+0100\n"
-"PO-Revision-Date: 2013-12-20 18:40+0000\n"
+"POT-Creation-Date: 2013-12-20 20:32+0100\n"
+"PO-Revision-Date: 2013-12-20 19:36+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/manjaro-thus/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -167,42 +167,42 @@ msgstr "mot de passe fort"
 msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
-#: src/check.py:78
+#: src/check.py:79
 msgid "System Check"
 msgstr "Vérification du système"
 
-#: src/check.py:83
+#: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
 msgstr "a au moins %dGo d'espace disque disponible"
 
-#: src/check.py:88
+#: src/check.py:89
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
 msgstr ""
 
-#: src/check.py:93
+#: src/check.py:94
 msgid "is plugged in to a power source"
 msgstr "est branché à une source d'alimentation"
 
-#: src/check.py:97
+#: src/check.py:98
 msgid "is connected to the Internet"
 msgstr "est connecté à internet"
 
-#: src/check.py:101
+#: src/check.py:102
 msgid "For best results, please ensure that this computer:"
 msgstr "Pour de meilleurs résultats, veuillez faire en sorte que cet ordinateur :"
 
-#: src/check.py:172
+#: src/check.py:173
 msgid "We have Internet connection."
 msgstr "Nous avons une connexion Internet."
 
-#: src/check.py:173
+#: src/check.py:174
 msgid "We're connected to a power source."
 msgstr "Nous sommes connectés à une source d'alimentation."
 
-#: src/check.py:174
+#: src/check.py:175
 msgid "We have enough disk space."
 msgstr "Vous avez assez d'espace disque."
 
@@ -592,8 +592,9 @@ msgid "Confirm your password:"
 msgstr "Confirmez votre mot de passe :"
 
 #: src/installation_automatic.py:105 src/user_info.py:177
-msgid "show password"
-msgstr "Afficher le mot de passe"
+#: ui/installation_automatic.ui:258 ui/user_info.ui:422
+msgid "Show password"
+msgstr ""
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -1167,15 +1168,15 @@ msgid "Password"
 msgstr "Mot de passe"
 
 #: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
-#: ui/user_info.ui:633
+#: ui/user_info.ui:634
 msgid "Confirm password"
 msgstr "Confirmez votre mot de passe"
 
-#: src/user_info.py:132 ui/user_info.ui:610
+#: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
 msgstr ""
 
-#: src/user_info.py:140 ui/user_info.ui:682
+#: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
 msgstr ""
 
@@ -1204,60 +1205,64 @@ msgid "A password is required to log in"
 msgstr ""
 
 #: src/user_info.py:170 ui/user_info.ui:518
-msgid "Encrypt my home folder"
-msgstr "Chiffrer le dossier 'home'"
+msgid "Encrypt home folder"
+msgstr ""
 
 #: src/user_info.py:172
 msgid "Who are you?"
 msgstr "Qui êtes-vous ?"
 
-#: src/user_info.py:180
-msgid "use a root password"
+#: src/user_info.py:180 ui/user_info.ui:544
+msgid "Show root password"
 msgstr ""
 
-#: src/user_info.py:249
+#: src/user_info.py:183 ui/user_info.ui:439
+msgid "Use a root password"
+msgstr ""
+
+#: src/user_info.py:252
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
 msgstr "Manjaro va utiliser eCryptfs pour chiffrer votre répertoire personnel. Malheureusement, eCryptfs gère mal les fichiers fragmentés.\n"
 
-#: src/user_info.py:250
+#: src/user_info.py:253
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
 msgstr "N'ayez crainte, dans la plupart des cas ce défaut ne pose aucun problème.\n"
 
-#: src/user_info.py:251
+#: src/user_info.py:254
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
 msgstr "D'un autre coté, une application populaire mais déconseillée d'eCryptfs consiste à chiffrer un emplacement de téléchargement BitTorrent, ce qui requiert qu'eCryptfs manipule des fichiers fragmentés de plus de 10 GB, et peut conduire à une fatigue du disque.\n"
 
-#: src/user_info.py:252
+#: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
 msgstr "Une parade simple consiste à placer les fichiers fragmentés dans un répertoire public non-chiffré.\n"
 
-#: src/user_info.py:253
+#: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
 msgstr "Voir https://wiki.archlinux.org/index.php/ECryptfs pour des informations détaillées.\n"
 
-#: src/user_info.py:254
+#: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
 msgstr "Êtes-vous sûr de vouloir chiffrer votre répertoire personnel ?\n"
 
-#: src/user_info.py:342
+#: src/user_info.py:345
 msgid "Invalid characters entered"
 msgstr "Caractères non valides entrés"
 
-#: src/user_info.py:346
+#: src/user_info.py:349
 msgid "Username can't contain dots"
 msgstr "Le nom d'utilisateur ne peut pas contenir de points"
 
-#: src/user_info.py:350
+#: src/user_info.py:353
 msgid "Too many characters"
 msgstr "Trop de caractères"
 
@@ -1420,10 +1425,6 @@ msgid ""
 "drive!</b>"
 msgstr "<b>ATTENTION ! Ce mode d'installation écrasera tout sur votre disque !</b>"
 
-#: ui/installation_automatic.ui:258 ui/user_info.ui:422
-msgid "Show password"
-msgstr ""
-
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
 msgstr "<span weight=\"bold\">Veuillez choisir votre langue :</span>"
@@ -1441,11 +1442,11 @@ msgstr "<span weight='bold'>Note : L'installateur Thus est un logiciel beta.</sp
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Bienvenue sur Manjaro</span>"
 
-#: ui/user_info.ui:119 ui/user_info.ui:588
+#: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
 msgstr "<small><span color=\"darkgreen\">Mot de passe fort</span></small>"
 
-#: ui/user_info.ui:177 ui/user_info.ui:660
+#: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
 msgstr "<small><span color=\"darkred\">Vous devez entrer un mot de passe</span></small>"
 
@@ -1460,11 +1461,3 @@ msgstr "<small><span color=\"darkred\">Vous devez entrer un nom</span></small>"
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Son nom tel qu'il apparaît aux autres ordinateurs.</span>"
-
-#: ui/user_info.ui:439
-msgid "Use a root password"
-msgstr ""
-
-#: ui/user_info.ui:544
-msgid "Show root password"
-msgstr ""

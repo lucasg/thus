@@ -24,7 +24,7 @@
       <object class="GtkGrid" id="userinfo_table">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">15</property>
         <property name="row_spacing">2</property>
         <property name="column_spacing">6</property>
         <child>
@@ -515,7 +515,7 @@
                 <property name="left_padding">20</property>
                 <child>
                   <object class="GtkCheckButton" id="login_encrypt">
-                    <property name="label" translatable="yes">Encrypt my home folder</property>
+                    <property name="label" translatable="yes">Encrypt home folder</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -571,6 +571,7 @@
                 <property name="activates_default">True</property>
                 <property name="width_chars">20</property>
                 <property name="placeholder_text" translatable="yes">Password</property>
+                <signal name="changed" handler="info_loop" swapped="no"/>
                 <accessibility>
                   <relation type="labelled-by" target="password_label"/>
                 </accessibility>
@@ -631,6 +632,7 @@
                 <property name="activates_default">True</property>
                 <property name="width_chars">20</property>
                 <property name="placeholder_text" translatable="yes">Confirm password</property>
+                <signal name="changed" handler="info_loop" swapped="no"/>
                 <accessibility>
                   <relation type="labelled-by" target="verified_password_label"/>
                 </accessibility>

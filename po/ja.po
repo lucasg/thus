@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 19:36+0100\n"
-"PO-Revision-Date: 2013-12-20 18:40+0000\n"
+"POT-Creation-Date: 2013-12-20 20:32+0100\n"
+"PO-Revision-Date: 2013-12-20 19:36+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -153,42 +153,42 @@ msgstr "強固なパスワード"
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
-#: src/check.py:78
+#: src/check.py:79
 msgid "System Check"
 msgstr "システムシェック"
 
-#: src/check.py:83
+#: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
 msgstr "%dGB 以上の空き領域がドライブにあること"
 
-#: src/check.py:88
+#: src/check.py:89
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
 msgstr ""
 
-#: src/check.py:93
+#: src/check.py:94
 msgid "is plugged in to a power source"
 msgstr "電源に接続されていること"
 
-#: src/check.py:97
+#: src/check.py:98
 msgid "is connected to the Internet"
 msgstr "インターネットに接続していること"
 
-#: src/check.py:101
+#: src/check.py:102
 msgid "For best results, please ensure that this computer:"
 msgstr "正常にインストールするためコンピューターを確認してください:"
 
-#: src/check.py:172
+#: src/check.py:173
 msgid "We have Internet connection."
 msgstr "インターネットに接続しています。"
 
-#: src/check.py:173
+#: src/check.py:174
 msgid "We're connected to a power source."
 msgstr "電源に接続されています。"
 
-#: src/check.py:174
+#: src/check.py:175
 msgid "We have enough disk space."
 msgstr "ディスクに十分な空き領域があります。"
 
@@ -578,8 +578,9 @@ msgid "Confirm your password:"
 msgstr "パスワードの入力(確認):"
 
 #: src/installation_automatic.py:105 src/user_info.py:177
-msgid "show password"
-msgstr "パスワードの表示"
+#: ui/installation_automatic.ui:258 ui/user_info.ui:422
+msgid "Show password"
+msgstr ""
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -1153,15 +1154,15 @@ msgid "Password"
 msgstr "パスワード"
 
 #: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
-#: ui/user_info.ui:633
+#: ui/user_info.ui:634
 msgid "Confirm password"
 msgstr "パスワードの確認"
 
-#: src/user_info.py:132 ui/user_info.ui:610
+#: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
 msgstr ""
 
-#: src/user_info.py:140 ui/user_info.ui:682
+#: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
 msgstr ""
 
@@ -1190,60 +1191,64 @@ msgid "A password is required to log in"
 msgstr ""
 
 #: src/user_info.py:170 ui/user_info.ui:518
-msgid "Encrypt my home folder"
-msgstr "ホームフォルダを暗号化する"
+msgid "Encrypt home folder"
+msgstr ""
 
 #: src/user_info.py:172
 msgid "Who are you?"
 msgstr "あなたの情報を入力してください"
 
-#: src/user_info.py:180
-msgid "use a root password"
+#: src/user_info.py:180 ui/user_info.ui:544
+msgid "Show root password"
 msgstr ""
 
-#: src/user_info.py:249
+#: src/user_info.py:183 ui/user_info.ui:439
+msgid "Use a root password"
+msgstr ""
+
+#: src/user_info.py:252
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
 msgstr "Manjaroはホームディレクトリの暗号化のためにeCryptfsを使用します。残念ながら、eCryptfsはsparseなファイルをうまく扱うことができません。\n\n"
 
-#: src/user_info.py:250
+#: src/user_info.py:253
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
 msgstr "心配しないでください。この欠陥の意図や目的は問題を持ち出すことではありません。\n"
 
-#: src/user_info.py:251
+#: src/user_info.py:254
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
 msgstr "いずれにせよ、BitTorrentによるダウンロードの際の暗号化に対するeCryptfs のお勧めできない点は、eCryptfs が10GB以上のsparseなファイルを取り扱うことを要求し、深刻なディスク容量の不足を引き起こすことです。\n"
 
-#: src/user_info.py:252
+#: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
 msgstr "単純な回避策はsparseなファイルを暗号化しないことです。共有のディレクトリ\n"
 
-#: src/user_info.py:253
+#: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
 msgstr "https://wiki.archlinux.org/index.php/ECryptfs for detailed information　を参照してください。\n"
 
-#: src/user_info.py:254
+#: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
 msgstr "ホームディレクトリを暗号化していいですか?\n"
 
-#: src/user_info.py:342
+#: src/user_info.py:345
 msgid "Invalid characters entered"
 msgstr "無効な文字が入力されました"
 
-#: src/user_info.py:346
+#: src/user_info.py:349
 msgid "Username can't contain dots"
 msgstr "ユーザー名にドットは使えません"
 
-#: src/user_info.py:350
+#: src/user_info.py:353
 msgid "Too many characters"
 msgstr "文字数が多過ぎます"
 
@@ -1406,10 +1411,6 @@ msgid ""
 "drive!</b>"
 msgstr "<b>警告! このインストールモードはハードディスクの全てのデータを上書きします</b>"
 
-#: ui/installation_automatic.ui:258 ui/user_info.ui:422
-msgid "Show password"
-msgstr ""
-
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
 msgstr "<span weight=\"bold\">言語を選択してください:</span>"
@@ -1427,11 +1428,11 @@ msgstr "<span weight='bold'>注意: Thusインストーラはベータ版です�
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\"> Manjaro へようこそ</span>"
 
-#: ui/user_info.ui:119 ui/user_info.ui:588
+#: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
 msgstr "<small><span color=\"darkgreen\">推測されにくいパスワード</span></small>"
 
-#: ui/user_info.ui:177 ui/user_info.ui:660
+#: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
 msgstr "<small><span color=\"darkred\">パスワードを入力する必要があります</span></small>"
 
@@ -1446,11 +1447,3 @@ msgstr "<small><span color=\"darkred\">名前を入力する必要がありま�
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">この名前は他のコンピュータで使用されています。</span>"
-
-#: ui/user_info.ui:439
-msgid "Use a root password"
-msgstr ""
-
-#: ui/user_info.ui:544
-msgid "Show root password"
-msgstr ""

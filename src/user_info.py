@@ -167,17 +167,20 @@ class UserInfo(Gtk.Box):
 
         self.login['auto'].set_label(_("Log in automatically"))
         self.login['pass'].set_label(_("A password is required to log in"))
-        self.login['encrypt'].set_label(_("Encrypt my home folder"))
+        self.login['encrypt'].set_label(_("Encrypt home folder"))
 
         txt = _("Who are you?")
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
 
         btn = self.ui.get_object('checkbutton_show_password')
-        btn.set_label(_("show password"))
+        btn.set_label(_("Show password"))
+
+        btn = self.ui.get_object('checkbutton_show_root_password')
+        btn.set_label(_("Show root password"))
 
         btn = self.ui.get_object('checkbutton_root_password')
-        btn.set_label(_("use a root password"))
+        btn.set_label(_("Use a root password"))
 
     def show_root_password(self):
         """ Show root password """

@@ -102,7 +102,7 @@ class InstallationAutomatic(Gtk.Box):
         label.set_markup(txt)
 
         btn = self.ui.get_object('checkbutton_show_password')
-        btn.set_label(_("show password"))
+        btn.set_label(_("Show password"))
 
         txt = _("Install now!")
         self.forward_button.set_label(txt)
