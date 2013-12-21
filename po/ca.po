@@ -11,6 +11,7 @@
 # karasu0 <karasu@antergos.com>, 2013
 # kirek <rbuldo@gmail.com>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
+# oriolfa <oriolfa@ono.com>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 # kirek <rbuldo@gmail.com>, 2013
 # tmallafre <tomas@mallafre.cat>, 2013
@@ -21,8 +22,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-21 08:54+0000\n"
+"Last-Translator: kirek <rbuldo@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -133,19 +134,19 @@ msgstr "Sel·leccioneu 'Cancel·la' si no voleu instal·lar un carregador d'arre
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr "No es pot establir el local %s"
+msgstr "No es pot establir el 'locale' %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr "La contrasenya és massa curta"
+msgstr "contrasenya massa curta"
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr "La contrasenya és massa dèbil"
+msgstr "contrasenya molt dèbil"
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr "contrasenya massa dèbil"
+msgstr "contrasenya dèbil"
 
 #: src/canonical/validation.py:141
 msgid "good password"
@@ -153,7 +154,7 @@ msgstr "contrasenya correcta"
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr "contrasenya forta"
+msgstr "contrasenya segura"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
@@ -166,13 +167,13 @@ msgstr "Comprovació del sistema"
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr "té com a mínim %dGB d'espai d'emmagatzematge disponible"
+msgstr "té com a mínim %d GB d'espai d'emmagatzematge disponible"
 
 #: src/check.py:89
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "Això depén fortament de quin entorn escriptori trieu, de manera que podríeu necessitar més espai."
+msgstr "Això depèn fortament de quin entorn escriptori trieu, de manera que podríeu necessitar més espai."
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
@@ -247,7 +248,7 @@ msgstr "cap"
 #: src/installation_advanced.py:1423 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
-msgstr "estès"
+msgstr "ampliada"
 
 #: src/installation_advanced.py:666 src/installation_advanced.py:918
 msgid "Can't use same mount point twice..."
@@ -487,7 +488,7 @@ msgstr "No es pot encongir el sistema de fitxers %s(%s)"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
-msgstr "tipus d'instal·lació"
+msgstr "Tipus d'instal·lació"
 
 #: src/installation_ask.py:120 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
@@ -517,7 +518,7 @@ msgstr "Això configurarà l'LVM i us permetrà fer instantànies i canviar les 
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
-msgstr "Configureu la Home en una altra partició/volum"
+msgstr "Configureu la carpeta d'usuari en una altra partició/volum"
 
 #: src/installation_ask.py:151
 msgid ""
@@ -581,12 +582,12 @@ msgstr "Contrasenya d'encriptació:"
 #: src/installation_automatic.py:101 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
-msgstr "Confirma la teva contrasenya:"
+msgstr "Confirmeu la vostra contrasenya:"
 
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "Mostra la contrasenya"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -786,12 +787,12 @@ msgstr "S'ha activat el servei %s."
 #: src/installation_process.py:898
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr "Error creant el 'hash' de la contrasenya per l'usuari %s"
+msgstr "Error creant el 'hash' de la contrasenya de l'usuari %s"
 
 #: src/installation_process.py:904
 #, python-format
 msgid "Error changing password for user %s"
-msgstr "No puc canviar la contrasenya per l'usuari %s"
+msgstr "No puc canviar la contrasenya de l'usuari %s"
 
 #: src/installation_process.py:916
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -835,7 +836,7 @@ msgstr "S'ha configurat %s com a nom de l'ordinador."
 
 #: src/installation_process.py:1159
 msgid "Set root password."
-msgstr ""
+msgstr "Estableix la contrasenya d'administrador"
 
 #: src/installation_process.py:1162
 msgid "Set the same password to root."
@@ -903,7 +904,7 @@ msgstr "Selecciona la teva distribució de teclat"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
-msgstr ""
+msgstr "Escriu aquí per provar el teu teclat"
 
 #: src/keymap.py:82
 msgid "Layouts"
@@ -916,7 +917,7 @@ msgstr "Variants"
 #: src/keymap.py:110
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr "Teclat %s"
+msgstr "La distribució del teclat és %s"
 
 #: src/language.py:78
 msgid "Please choose your language:"
@@ -957,7 +958,7 @@ msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr "La ubicació seleccionada s'utilitzarà per ajudar a seleccionar la configuració regional del sistema. ⏎\nNormalment aquest ha de ser el país on vostè viu. ⏎\nAquesta és una llista d'ubicacions segons la llengua que seleccioneu."
+msgstr "La ubicació seleccionada s'utilitzarà per ajudar a seleccionar la configuració regional del sistema.\nNormalment aquest ha de ser el país on vostè viu.\nAquesta és una llista d'ubicacions segons la llengua que seleccioneu."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
@@ -966,12 +967,12 @@ msgstr "País, territori o àrea:"
 #: src/location.py:196
 #, python-format
 msgid "locale changed to : %s"
-msgstr "Lloc canviat a: %s"
+msgstr "Ubicació canviada a: %s"
 
 #: src/location.py:198
 #, python-format
 msgid "Can't change to locale '%s'"
-msgstr "No es pot canviar a lloc '%s'"
+msgstr "No es pot canviar la ubicació a '%s'"
 
 #: src/parted3/fs_module.py:147
 #, python-format
@@ -1083,7 +1084,7 @@ msgstr "Instal·lació acabada!\nVoleu reiniciar ara?"
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
-msgstr "Manjaro Instal·lació..."
+msgstr "Instal·lant Manjaro..."
 
 #: src/slides.py:107
 msgid "Please wait..."
@@ -1112,11 +1113,11 @@ msgstr "Utilitza el Network Time Protocol per sincronitzar el rellotge:"
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr "La localització s'ha canviat a : %s"
+msgstr "La localització s'ha canviat a: %s"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr "No puc detectar la teva zona horària"
+msgstr "No puc detectar automàticament la teva zona horària"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
@@ -1124,11 +1125,11 @@ msgstr "Aturant els fils de les zones horàries..."
 
 #: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr "No es pot obtenir el codi de país utilitzat per crear un mirall llista Pacman"
+msgstr "No es puc obtenir el codi de país utilitzat per crear una llista de 'mirrors' per Pacman"
 
 #: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
-msgstr "El teu nom:"
+msgstr "El vostre nom:"
 
 #: src/user_info.py:96 ui/user_info.ui:206
 msgid "Your name"
@@ -1140,7 +1141,7 @@ msgstr "Nom de l'amfitrió"
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
-msgstr "El nom del teu ordinador:"
+msgstr "El nom del vostre ordinador:"
 
 #: src/user_info.py:108 ui/user_info.ui:50
 msgid "Pick a username:"
@@ -1166,11 +1167,11 @@ msgstr "Confirmeu la vostra contrasenya"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
-msgstr ""
+msgstr "Tria una contrasenya d'administrador"
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr ""
+msgstr "Confirma la contrasenya d'administrador"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
@@ -1178,15 +1179,15 @@ msgstr "El seu nom tal com es mostra als altres ordinadors."
 
 #: src/user_info.py:152
 msgid "You must enter a name"
-msgstr "Has d'entrar un nom"
+msgstr "Heu d'introduir un nom"
 
 #: src/user_info.py:156
 msgid "You must enter a username"
-msgstr "Has d'entrar un nom d'usuari"
+msgstr "Heu d'introduir un nom d'usuari"
 
 #: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
-msgstr "Has d'entrar una contrasenya"
+msgstr "Heu d'introduir una contrasenya"
 
 #: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
@@ -1194,11 +1195,11 @@ msgstr "Entra al sistema automàticament"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "Cal una clau d'accés per autenticar-se"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "Encriptar la carpeta home"
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1206,11 +1207,11 @@ msgstr "Qui ets?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "Mostra contrasenya d'administrador"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "Fes servir contrasenya d'administrador"
 
 #: src/user_info.py:252
 msgid ""
@@ -1288,7 +1289,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Per a uns resultats òptims, assegu
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space."
-msgstr "(*) Això depén fortament de quin entorn d'escriptori trieu, de manera que podríeu necessitar més espai."
+msgstr "(*) Això depèn fortament de quin entorn d'escriptori trieu, de manera que podríeu necessitar més espai."
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"

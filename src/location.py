@@ -190,12 +190,13 @@ class Location(Gtk.Box):
             for mylocale in self.locales:
                 if self.locales[mylocale] == country:
                     self.settings.set("locale", mylocale)
-                    try:
-                        import locale
-                        locale.setlocale(locale.LC_ALL, mylocale)
-                        logging.info(_("locale changed to : %s") % mylocale)
-                    except (ImportError, locale.Error):
-                        logging.warning(_("Can't change to locale '%s'") % mylocale)
+                    #We don't generate new locales so this will always fails
+                    #try:
+                    #    import locale
+                    #    locale.setlocale(locale.LC_ALL, mylocale)
+                    #    logging.info(_("locale changed to : %s") % mylocale)
+                    #except (ImportError, locale.Error):
+                    #    logging.warning(_("Can't change to locale '%s'") % mylocale)
 
         return True
 

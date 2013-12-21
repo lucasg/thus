@@ -92,22 +92,19 @@ class Keymap(Gtk.Box):
 
     def prepare(self, direction):
         self.translate_ui()
-        self.fill_layout_treeview()
-        # self.fill_variant_treeview()
-        self.forward_button.set_sensitive(False)
-        self.translate_ui()
 
-        # select treeview with selected country in previous screen.
-        selected_country = self.settings.get("timezone_human_country")
+        if direction == 'forwards':
+            self.fill_layout_treeview()
+            self.forward_button.set_sensitive(False)
 
-        selected_country = self.fix_countries(selected_country)
-
-        found = self.select_value_in_treeview(self.layout_treeview, selected_country)
-
-        if found is False:
-            self.select_value_in_treeview(self.layout_treeview, "USA")
-
-        logging.info(_("keyboard_layout is %s") % selected_country)
+            # select treeview with selected country in previous screen.
+            selected_country = self.settings.get("timezone_human_country")
+            selected_country = self.fix_countries(selected_country)
+            found = self.select_value_in_treeview(self.layout_treeview, selected_country)
+            # If country not found default value is USA
+            if found is False:
+                self.select_value_in_treeview(self.layout_treeview, "USA")
+            logging.info(_("keyboard_layout is %s") % selected_country)
 
         self.show_all()
 
@@ -142,9 +139,11 @@ class Keymap(Gtk.Box):
         for layout in kbd_names._layout_by_human:
             sorted_layouts.append(layout)
 
-        #sorted_layouts.sort()
-        sorted_layouts = misc.sort_list(sorted_layouts, self.settings.get("locale"))
+        sorted_layouts.sort()
+        #sorted_layouts = misc.sort_list(sorted_layouts, self.settings.get("locale"))
 
+        # Block signal
+        self.layout_treeview.handler_block_by_func(self.on_keyboardlayout_cursor_changed)
         # Clear our model
         liststore = self.layout_treeview.get_model()
         liststore.clear()
@@ -152,6 +151,8 @@ class Keymap(Gtk.Box):
         # Add layouts (sorted)
         for layout in sorted_layouts:
             liststore.append([layout])
+        # Unblock signal
+        self.layout_treeview.handler_unblock_by_func(self.on_keyboardlayout_cursor_changed)
 
     def select_value_in_treeview(self, treeview, value):
         model = treeview.get_model()
@@ -208,8 +209,8 @@ class Keymap(Gtk.Box):
                 for variant in variants[country_code]:
                     sorted_variants.append(variant)
 
-                #sorted_variants.sort()
-                sorted_variants = misc.sort_list(sorted_variants, self.settings.get("locale"))
+                sorted_variants.sort()
+                #sorted_variants = misc.sort_list(sorted_variants, self.settings.get("locale"))
 
                 # Block signal
                 self.variant_treeview.handler_block_by_func(self.on_keyboardvariant_cursor_changed)
@@ -290,7 +291,6 @@ class Keymap(Gtk.Box):
 
         # It makes no sense try loadkeys here (it's console)
         #subprocess.check_call(['loadkeys', self.keyboard_layout])
-
         with misc.raised_privileges():
             subprocess.check_call(['localectl', 'set-keymap', '--no-convert', self.keyboard_layout])
 
