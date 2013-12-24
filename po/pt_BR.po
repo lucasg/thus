@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-23 17:35+0000\n"
+"Last-Translator: arnt <qtgzmanager@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +91,7 @@ msgstr "Tipo de sistema de arquivos desconhecido %s"
 #: src/auto_partition.py:173
 #, python-format
 msgid "Can't create file system %s"
-msgstr ""
+msgstr "Não foi possível criar o sistema de arquivos %s"
 
 #: src/auto_partition.py:319
 #, python-format
@@ -371,7 +371,7 @@ msgstr "Não foi possível criar a partição BIOS GPT Boot!"
 
 #: src/installation_advanced.py:1343
 msgid "Couldn't create BIOS GPT Boot partition"
-msgstr ""
+msgstr "Não foi possível criar a partição BIOS GPT Boot!"
 
 #: src/installation_advanced.py:1461
 #, python-format
@@ -432,7 +432,7 @@ msgstr "Criando sistema de arquivo %s em %s com nome %s"
 #: src/installation_advanced.py:1692
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr ""
+msgstr "Não foi possível formatar a partição '%s' com o rótulo '%s' como '%s'"
 
 #: src/installation_advanced.py:1741
 #, python-format
@@ -590,7 +590,7 @@ msgstr "Confirme a sua senha:"
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "Mostrar senha"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -704,7 +704,7 @@ msgstr "O sistema de arquivos do Desktop não existe! Erro crítico (saindo)."
 #: src/installation_process.py:481 src/installation_process.py:487
 #, python-format
 msgid "%s is already mounted at %s as %s"
-msgstr ""
+msgstr "%s já está montado em %s como %s"
 
 #: src/installation_process.py:498
 msgid "Indexing files to be copied ..."
@@ -839,7 +839,7 @@ msgstr "Nome do PC %s defina. "
 
 #: src/installation_process.py:1159
 msgid "Set root password."
-msgstr ""
+msgstr "Entre com a senha do usuário."
 
 #: src/installation_process.py:1162
 msgid "Set the same password to root."
@@ -907,7 +907,7 @@ msgstr "Selecione o layout do seu teclado"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
-msgstr ""
+msgstr "Digite aqui para testar o seu teclado."
 
 #: src/keymap.py:82
 msgid "Layouts"
@@ -990,26 +990,26 @@ msgstr "Desculpe mas o sistema de arquivos %s não pode ser encolhido"
 #: src/parted3/lvm.py:75
 #, python-format
 msgid "Can't remove logical volume %s"
-msgstr ""
+msgstr "Não foi possível remover o volume lógico %s"
 
 #: src/parted3/lvm.py:92
 #, python-format
 msgid "Can't remove volume group %s"
-msgstr ""
+msgstr "Não foi possível remover o grupo %s"
 
 #: src/parted3/lvm.py:103
 #, python-format
 msgid "Can't remove physical volume %s"
-msgstr ""
+msgstr "Não foi possível remover o volume físico %s"
 
 #: src/parted3/partition_module.py:104
 msgid "Exception: For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Exceção: Para maiores informações acessar /tmp/thus.log"
 
 #: src/parted3/partition_module.py:169
 #, python-format
 msgid "Can't delete partition %s"
-msgstr ""
+msgstr "Não foi possível excluir a partição %s"
 
 #: src/parted3/partition_module.py:219
 msgid "Partition is too large!"
@@ -1018,42 +1018,42 @@ msgstr "Partição é muito grande!"
 #: src/parted3/partition_module.py:278
 #, python-format
 msgid "Can't detect used space from %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado em %s"
 
 #: src/parted3/used_space.py:39
 #, python-format
 msgid "Can't detect used space of NTFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição NTFS %s"
 
 #: src/parted3/used_space.py:66
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição EXTFS %s"
 
 #: src/parted3/used_space.py:93
 #, python-format
 msgid "Can't detect used space of FATFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição FATFS %s"
 
 #: src/parted3/used_space.py:124
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição JFS %s"
 
 #: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição REISERFS %s"
 
 #: src/parted3/used_space.py:174
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição BTRFS %s"
 
 #: src/parted3/used_space.py:217
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
-msgstr ""
+msgstr "Não foi possível detectar o espaço usado na partição XFS %s"
 
 #: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
@@ -1170,11 +1170,11 @@ msgstr "Confimar senha"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
-msgstr ""
+msgstr "Escolha uma senha para o usuário root:"
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr ""
+msgstr "Confirme a senha do usuário root:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
@@ -1198,11 +1198,11 @@ msgstr "Login automático"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "Uma senha é necessária para o log in"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "Criptografar a pasta de usuário"
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1210,11 +1210,11 @@ msgstr "Quem é você?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "Mostrar a senha do usuário root"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "Utilize a senha do usuário root"
 
 #: src/user_info.py:252
 msgid ""

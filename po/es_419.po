@@ -25,13 +25,14 @@
 # Stif <saibot22@gmail.com>, 2013
 # Stif <saibot22@gmail.com>, 2013
 # tarkin88 <franksg88@gmail.com>, 2013
+# tutan_kbron <the.darkspider@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-22 02:34+0000\n"
+"Last-Translator: tutan_kbron <the.darkspider@gmail.com>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/projects/p/manjaro-thus/language/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -595,7 +596,7 @@ msgstr "Confirme su contraseña"
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "Mostrar contraseña"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -844,7 +845,7 @@ msgstr "Nombre del anfitrión %s configurado."
 
 #: src/installation_process.py:1159
 msgid "Set root password."
-msgstr ""
+msgstr "Elija la contraseña de administrador"
 
 #: src/installation_process.py:1162
 msgid "Set the same password to root."
@@ -912,7 +913,7 @@ msgstr "Seleccione la distribución del teclado"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
-msgstr ""
+msgstr "Escriba aquí para probar su teclado"
 
 #: src/keymap.py:82
 msgid "Layouts"
@@ -1175,11 +1176,11 @@ msgstr "Confirmar contraseña"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
-msgstr ""
+msgstr "Escoja una contraseña de administrador"
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr ""
+msgstr "Confirme la contraseña de administrador:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
@@ -1203,11 +1204,11 @@ msgstr "Inicio de sesión automático"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "Se requiere contraseña para iniciar sesión"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "Encriptar carpeta personal"
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1215,11 +1216,11 @@ msgstr "¿Quién es usted?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "Mostrar contraseña de administrador"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "Usar contraseña de administrador"
 
 #: src/user_info.py:252
 msgid ""

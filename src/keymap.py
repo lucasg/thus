@@ -41,6 +41,7 @@ class Keymap(Gtk.Box):
         self.backwards_button = params['backwards_button']
         self.settings = params['settings']
         self.filename = os.path.join(self.settings.get('data'), "kbdnames.gz")
+        self.testing = params['testing']
 
         super().__init__()
         self.ui = Gtk.Builder()
@@ -276,7 +277,8 @@ class Keymap(Gtk.Box):
         self.settings.set("keyboard_variant", self.keyboard_variant)
 
         # Issue 75: Won't pick/load the keyboard layout after selecting one (sticks to qwerty)
-        self.setkb()
+        if not self.testing:
+            self.setkb()
 
         return True
 
