@@ -4,17 +4,31 @@ Graphical Installer for Manjaro Linux
 
 ## Dependencies
 
+ * coreutils
+ * cryptsetup
+ * gptfdisk
+ * grep
  * gtk 3
+ * libtimezonemap
+ * hdparm
+ * lvm 2
+ * mhwd
+ * parted (btrfs-progs, dosfstools, e2fsprogs, jfsutils, ntfs-3g, ntfsprogs, reiserfsprogs, xfsprogs)
+ * pam_encfs
+ * py3parted (pyparted on python3) -> https://github.com/antergos/manjaro-packages/tree/master/py3parted
+ * python-configobj
  * python 3
  * python-gobject 3
  * python-dbus
  * python-cairo
- * libtimezonemap
- * webkitgtk3
- * parted (dosfstools, mtools, ntfs-3g, ntfsprogs)
- * py3parted (pyparted on python3) -> https://github.com/antergos/manjaro-packages/tree/master/py3parted
- * pacman
- * pyalpm
- * hwinfo
- * hdparm
- * python-pyqt5
+ * python-pyqt 4/5 (optional)
+ * rsync
+ * sudo
+ * systemd
+ * ttf-indic-otf
+ * upower
+ * util-linux
+ * webkitgtk 3
+
+
+

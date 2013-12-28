@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-24 13:18+0000\n"
+"Last-Translator: Kokan <kokan_malenko@hotmail.com>\n"
 "Language-Team: Macedonian (http://www.transifex.com/projects/p/manjaro-thus/language/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -779,7 +779,7 @@ msgstr ""
 #: src/installation_process.py:904
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "Грешка при менување на лозинката на корисникот %s"
 
 #: src/installation_process.py:916
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -792,7 +792,7 @@ msgstr ""
 
 #: src/installation_process.py:1076 src/installation_process.py:1087
 msgid "Configuring your new system"
-msgstr ""
+msgstr "Конфигурирање на вашиот нов систем"
 
 #: src/installation_process.py:1079
 msgid "fstab file generated."
@@ -887,7 +887,7 @@ msgstr ""
 
 #: src/keymap.py:71
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Изберете го распоредот на вашата тастатура"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
@@ -895,7 +895,7 @@ msgstr ""
 
 #: src/keymap.py:82
 msgid "Layouts"
-msgstr ""
+msgstr "Распореди"
 
 #: src/keymap.py:88
 msgid "Variants"
@@ -904,7 +904,7 @@ msgstr "Варијанти"
 #: src/keymap.py:110
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "keyboard_layout е %s"
 
 #: src/language.py:78
 msgid "Please choose your language:"
@@ -1049,29 +1049,29 @@ msgstr ""
 
 #: src/show_message.py:53
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro инсталер - Грешка"
 
 #: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Manjaro инсталер - Предупредување"
 
 #: src/show_message.py:77
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro инсталер - Информација"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro инсталер - Прашање"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Инсталирањето заврши!\nДали сакате да го рестартирате вашиот систем?"
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Инсталирање на Manjaro..."
 
 #: src/slides.py:107
 msgid "Please wait..."
@@ -1248,7 +1248,7 @@ msgstr "Премногу симболи"
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Подигунување"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1349,7 +1349,7 @@ msgstr "ознака"
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Предупредување: Ова ќе ги избрише сите програми, документи, слики, музика и сите други видови на фајлови на вашиот диск</span>"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1359,11 +1359,11 @@ msgstr "Енкриптирај ја новата инсталација на Man
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Ќе бидете прашани за енкрипцискиот клуч во следниот чекор</span>"
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Користи LVM со новата инсталација на Manjaro"
 
 #: ui/installation_ask.ui:123
 msgid ""
@@ -1390,14 +1390,14 @@ msgstr ""
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Уреди ги своите партиции и избери каде да се инсталира Manjaro (напредно)"
 
 #: ui/installation_ask.ui:230
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Ќе можете да креирате/бришете партиции, изберете каде да се инсталира Manjaro и исто така да изберете додатни точки на монтирање.</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
@@ -1407,7 +1407,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Ве молам изберете го вашиот јазик:</span>"
 
 #: ui/language.ui:89
 msgid ""
@@ -1420,7 +1420,7 @@ msgstr ""
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Добредојдовте во Manjaro</span>"
 
 #: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
