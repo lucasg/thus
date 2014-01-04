@@ -5,15 +5,15 @@
 # Translators:
 # Bård Spein <baard.spein@gmail.com>, 2013
 # Jon Gjengset <jon@thesquareplanet.com>, 2011,2013
-# Ulseth85 <ulseth85@gmail.com>, 2013
+# Ulseth85 <ulseth85@gmail.com>, 2013-2014
 # Ulseth85 <ulseth85@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-01-02 16:47+0000\n"
+"Last-Translator: Ulseth85 <ulseth85@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/manjaro-thus/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,7 +78,7 @@ msgstr "Ukjent filsystem type %s"
 #: src/auto_partition.py:173
 #, python-format
 msgid "Can't create file system %s"
-msgstr ""
+msgstr "Kan ikke opprette filsystemet %s"
 
 #: src/auto_partition.py:319
 #, python-format
@@ -358,7 +358,7 @@ msgstr "Kan ikke opprette BIOS GPT Boot partisjon!"
 
 #: src/installation_advanced.py:1343
 msgid "Couldn't create BIOS GPT Boot partition"
-msgstr ""
+msgstr "Kunne ikke opprette BIOS GPT Boot partisjon"
 
 #: src/installation_advanced.py:1461
 #, python-format
@@ -419,7 +419,7 @@ msgstr "Opprette %s filsystem i %s merket %s"
 #: src/installation_advanced.py:1692
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr ""
+msgstr "Kunne ikke formatere partisjonen '%s' med etiketten '%s' er '%s'"
 
 #: src/installation_advanced.py:1741
 #, python-format
@@ -577,7 +577,7 @@ msgstr "Bekreft ditt passord:"
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "Vis passord"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -691,7 +691,7 @@ msgstr "Desktop filsystem finnes ikke! Kritisk feil (spennende)."
 #: src/installation_process.py:481 src/installation_process.py:487
 #, python-format
 msgid "%s is already mounted at %s as %s"
-msgstr ""
+msgstr "%s er allerede montert på %s som %s"
 
 #: src/installation_process.py:498
 msgid "Indexing files to be copied ..."
@@ -826,7 +826,7 @@ msgstr "Vertsnavn %s er satt."
 
 #: src/installation_process.py:1159
 msgid "Set root password."
-msgstr ""
+msgstr "Sett root-passord."
 
 #: src/installation_process.py:1162
 msgid "Set the same password to root."
@@ -894,7 +894,7 @@ msgstr "Velg ditt tastaturoppsett"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
-msgstr ""
+msgstr "Skriv inn her for å teste tastaturet"
 
 #: src/keymap.py:82
 msgid "Layouts"
@@ -977,26 +977,26 @@ msgstr "Beklager, men filsystemet %s kan ikke bli krympet"
 #: src/parted3/lvm.py:75
 #, python-format
 msgid "Can't remove logical volume %s"
-msgstr ""
+msgstr "Kan ikke fjerne logisk volum %s"
 
 #: src/parted3/lvm.py:92
 #, python-format
 msgid "Can't remove volume group %s"
-msgstr ""
+msgstr "Kan ikke fjerne volumgruppen %s"
 
 #: src/parted3/lvm.py:103
 #, python-format
 msgid "Can't remove physical volume %s"
-msgstr ""
+msgstr "Kan ikke fjerne fysisk volum %s"
 
 #: src/parted3/partition_module.py:104
 msgid "Exception: For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Unntak: For mer informasjon ta en titt på /tmp/thus.log"
 
 #: src/parted3/partition_module.py:169
 #, python-format
 msgid "Can't delete partition %s"
-msgstr ""
+msgstr "Kan ikke slette partisjonen %s"
 
 #: src/parted3/partition_module.py:219
 msgid "Partition is too large!"
@@ -1005,42 +1005,42 @@ msgstr "Partition er for stor!"
 #: src/parted3/partition_module.py:278
 #, python-format
 msgid "Can't detect used space from %s"
-msgstr ""
+msgstr "Gjenkjenner ikke brukt plass fra %s"
 
 #: src/parted3/used_space.py:39
 #, python-format
 msgid "Can't detect used space of NTFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass på NTFS partisjon %s"
 
 #: src/parted3/used_space.py:66
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass på EXTFS partisjon %s"
 
 #: src/parted3/used_space.py:93
 #, python-format
 msgid "Can't detect used space of FATFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass på FATFS partisjon %s"
 
 #: src/parted3/used_space.py:124
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass på JFS partisjon %s"
 
 #: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass av REISERFS partisjon %s"
 
 #: src/parted3/used_space.py:174
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass på BTRFS partisjon %s"
 
 #: src/parted3/used_space.py:217
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
-msgstr ""
+msgstr "Kan ikke oppdage brukt plass for XFS partisjon %s"
 
 #: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
@@ -1157,11 +1157,11 @@ msgstr "Bekreft passord"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
-msgstr ""
+msgstr "Velg et root passord:"
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr ""
+msgstr "Bekreft root passord:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
@@ -1185,11 +1185,11 @@ msgstr "Logg inn automatisk"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "Det kreves et passord for å logge inn"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "Krypter hjem-mappe"
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1197,11 +1197,11 @@ msgstr "Hvem er du?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "Vis root-passordet"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "Bruk et root-passord"
 
 #: src/user_info.py:252
 msgid ""

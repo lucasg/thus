@@ -506,8 +506,6 @@ class InstallationAdvanced(Gtk.Box):
                     if uid in self.stage_opts:
                         (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
                         fmt_enable = not is_new
-                        if mount_point == "/":
-                            fmt_enable = False
                     else:
                         fmt_enable = True
                         if _("free space") not in path:
@@ -664,8 +662,6 @@ class InstallationAdvanced(Gtk.Box):
 
             if mymount in self.diskdic['mounts'] and mymount != mount_point:
                 show.warning(_("Can't use same mount point twice..."))
-            elif mymount == "/" and not format_check.get_active():
-                show.warning(_('Root partition must be formatted...'))
             else:
                 if mount_point:
                     self.diskdic['mounts'].remove(mount_point)
@@ -1412,10 +1408,6 @@ class InstallationAdvanced(Gtk.Box):
                         fmt = 'Yes'
                     else:
                         fmt = 'No'
-                    # Advanced method formats root by default
-                    # https://github.com/Antergos/Cnchi/issues/8
-                    if mnt == "/":
-                        fmt = 'Yes'
                     if is_new:
                         if lbl != "":
                             relabel = 'Yes'
@@ -1490,15 +1482,23 @@ class InstallationAdvanced(Gtk.Box):
 
                         (is_new, lbl, mnt, fs, fmt) = self.stage_opts[self.gen_partition_uid(path=partition_path)]
 
+                        if mnt == "/" and not fmt:
+                             msg = _('The root partition is not marked to be formatted.\n'
+                                     'This might create problems. Should it be marked to be formatted now?')
+                             response = show.question(msg)
+                             if response != Gtk.ResponseType.YES:
+                                 # User doesn't want to format root partition.
+                                 fmt = False
+                             else:
+                                 # Mark root partition to be formatted and check it in list.
+                                 fmt = True                           
+                                 self.stage_opts[self.gen_partition_uid(path=partition_path)] = (is_new, lbl, mnt, fs, fmt)
+                                 self.fill_partition_list()
+
                         if fmt:
                             fmt = 'Yes'
                         else:
                             fmt = 'No'
-
-                        # Advanced method formats root by default
-                        # https://github.com/Antergos/Cnchi/issues/8
-                        if mnt == "/":
-                            fmt = 'Yes'
 
                         if is_new:
                             if lbl != "":

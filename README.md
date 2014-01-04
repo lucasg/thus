@@ -13,7 +13,7 @@ Graphical Installer for Manjaro Linux
  * hdparm
  * lvm 2
  * mhwd
- * parted (btrfs-progs, dosfstools, e2fsprogs, jfsutils, ntfs-3g, ntfsprogs, reiserfsprogs, xfsprogs)
+ * parted (e2fsprogs, dosfstools, jfsutils, ntfs-3g, ntfsprogs, reiserfsprogs, xfsprogs)
  * pam_encfs
  * py3parted (pyparted on python3) -> https://github.com/antergos/manjaro-packages/tree/master/py3parted
  * python-configobj

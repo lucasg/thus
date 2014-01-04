@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Tornes Llume <l.lumex03.tornes@gmail.com>, 2013
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2013-2014
 # manjarolinux <philm@manjaro.org>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 # Tornes Llume <l.lumex03.tornes@gmail.com>, 2013
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-21 21:01+0000\n"
+"PO-Revision-Date: 2014-01-02 01:23+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/manjaro-thus/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -89,7 +89,7 @@ msgstr "Thus configurará LUKS nel preséu %s"
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "L'instalador nun pue deteutar el grandor del preséu to, por favor usa la rutina d'instalación avanzada pal particionáu ya montax de preseos."
+msgstr "L'instalador nun pue deteutar el grandor del to preséu, por favor usa la rutina d'instalación avanzada pal particionáu ya montax de preseos."
 
 #: src/auto_partition.py:537
 #, python-format
@@ -103,7 +103,7 @@ msgstr "desconocíu"
 
 #: src/bootloader.py:54 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr "¿Cuál ye la triba d'arranque del sistema to?"
+msgstr "¿Cuál ye la triba d'arranque del to sistema?"
 
 #: src/bootloader.py:59
 msgid "BIOS (Most Common)"
@@ -175,7 +175,7 @@ msgstr "ta coneutáu a internet"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr "Pa nun tener cuasi torgues, tate seguru por favor qu'esti ordenador:"
+msgstr "Pa los meyores resultaos, tate seguru por favor qu'esti ordenador:"
 
 #: src/check.py:173
 msgid "We have Internet connection."
@@ -432,7 +432,7 @@ msgstr "Thus nun instalará xestor d'arranque dalu"
 
 #: src/installation_advanced.py:1758 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr "Mou Testing. ¡Thus nun aplicará camudancia dala al sistema to!"
+msgstr "Mou Testing. ¡Thus nun aplicará camudancia dala al to sistema!"
 
 #: src/installation_alongside.py:115
 #, python-format
@@ -486,7 +486,7 @@ msgstr "Esnicia'l discu dafechu ya instala Manjaro (automático)"
 
 #: src/installation_ask.py:123
 msgid "Warning: This will delete all data on your disk"
-msgstr "¡CURIÁU!: Esto esniciará dafechu tolos datos nel discu to"
+msgstr "¡CURIÁU!: Esto esniciará dafechu tolos datos nel to discu"
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
@@ -508,12 +508,12 @@ msgstr "Esto configurará LVM en permitiendo faer captures y camudar el grandor 
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
-msgstr "Afitar el direutoriu Home to nuna/nun partición/volume xebraos"
+msgstr "Afitar el to direutoriu Home nuna/nun partición/volume xebraos"
 
 #: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr "Esto configuraráte'l direutoriu /home to nuna partición o volume xebraos."
+msgstr "Esto configuraráte'l to direutoriu /home nuna/nun partición o volume xebraos."
 
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
@@ -522,7 +522,7 @@ msgstr "Instalar Manjaro en llendando con %s"
 
 #: src/installation_ask.py:168
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr "Alministra les particiones to ya u quies instalar Manjaro (avanzao)"
+msgstr "Alministra les tos particiones ya u quies instalar Manjaro (avanzao)"
 
 #: src/installation_ask.py:171
 msgid ""
@@ -557,7 +557,7 @@ msgstr "Esbillar discu:"
 #: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr "¡CURIÁU! ¡Esti mou d'instalación sobrescribiralo too nel discu to!"
+msgstr "¡CURIÁU! ¡Esti mou d'instalación sobrescribiralo too nel to discu!"
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
@@ -572,7 +572,7 @@ msgstr "Conseña de cifráu:"
 #: src/installation_automatic.py:101 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
-msgstr "Afita la conseña to:"
+msgstr "Afita la to conseña:"
 
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
@@ -615,7 +615,7 @@ msgstr "En creando particiones ya los sistemes de ficheros sos en %s"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr "Erru en creando particiones ya los sistemes de ficheros sos"
+msgstr "Erru en creando particiones ya los sos sistemes de ficheros"
 
 #: src/installation_process.py:304 src/installation_process.py:327
 #, python-format
@@ -795,7 +795,7 @@ msgstr "%s: Habilitar l'aniciu sesión automáticu pal usuariu %s."
 
 #: src/installation_process.py:1076 src/installation_process.py:1087
 msgid "Configuring your new system"
-msgstr "En configurando el sistema nuevu to"
+msgstr "En configurando'l to sistema nuevu"
 
 #: src/installation_process.py:1079
 msgid "fstab file generated."
@@ -890,11 +890,11 @@ msgstr "Usar direutoriu home cifráu"
 
 #: src/keymap.py:71
 msgid "Select your keyboard layout"
-msgstr "Esbilla'l mapeáu de tecláu to"
+msgstr "Esbilla'l to mapeáu de tecláu"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
-msgstr "Escribi daqué equí pa comprobar el tecláu to"
+msgstr "Escribi daqué equí pa comprobar el to tecláu"
 
 #: src/keymap.py:82
 msgid "Layouts"
@@ -911,7 +911,7 @@ msgstr "keyboard_layout ye %s"
 
 #: src/language.py:78
 msgid "Please choose your language:"
-msgstr "Por favor, esbilla la llingua to:"
+msgstr "Por favor, esbilla la to llingua:"
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -1070,7 +1070,7 @@ msgstr "Instalador Manjaro - Entruga"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr "¡Instalación finada!\n¿Quies reainiciar el sistema to agora?"
+msgstr "¡Instalación finada!\n¿Quies reainiciar el to sistema agora?"
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
@@ -1119,11 +1119,11 @@ msgstr "Nun pue consiguise'l códigu de país emplegáu pa criar una llista d'es
 
 #: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
-msgstr "El nome to:"
+msgstr "El to nome:"
 
 #: src/user_info.py:96 ui/user_info.ui:206
 msgid "Your name"
-msgstr "El nome to"
+msgstr "El to nome"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
@@ -1131,7 +1131,7 @@ msgstr "Viesu l'equipu"
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
-msgstr "El viesu l'ordenador to:"
+msgstr "El viesu'l to ordenador:"
 
 #: src/user_info.py:108 ui/user_info.ui:50
 msgid "Pick a username:"
@@ -1207,7 +1207,7 @@ msgstr "Usar una conseña pa root"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro usará eCryptfs pa cifrar el direutoriu Home to. Desafortunadamente, eCryptfs nun remana afayadizamente ficheros espardios.\n"
+msgstr "Manjaro usará eCryptfs pa cifrar el to direutoriu Home . Desafortunadamente, eCryptfs nun remana afayadizamente ficheros espardios.\n"
 
 #: src/user_info.py:253
 msgid ""
@@ -1235,7 +1235,7 @@ msgstr "Mira en https://wiki.archlinux.org/index.php/ECryptfs pa información de
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "¿De xuru quies cifrar el cartafueyu home to?\n"
+msgstr "¿De xuru quies cifrar el to direutoriu home?\n"
 
 #: src/user_info.py:345
 msgid "Invalid characters entered"
@@ -1352,7 +1352,7 @@ msgstr "etiqueta"
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr "<span weight=\"light\" size=\"small\">CURIÁU: Esto esniciará tolos programes, documentos, semeyes, música ya cualaquier ficheru del discu to</span>"
+msgstr "<span weight=\"light\" size=\"small\">CURIÁU: Esto esniciará tolos programes, documentos, semeyes, música ya cualaquier ficheru del to discu</span>"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1393,7 +1393,7 @@ msgstr "<span weight=\"light\" size=\"small\">Con esta opción instalaráse Manj
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr "Alministra les particiones to ya esbilla u quies instalar Manjaro (avanzao)"
+msgstr "Alministra les tos particiones ya esbilla u quies instalar Manjaro (avanzao)"
 
 #: ui/installation_ask.ui:230
 msgid ""
@@ -1406,11 +1406,11 @@ msgstr "<span weight=\"light\" size=\"small\">Podrás criar/esniciar particiones
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr "<b>¡CURIÁU! ¡Esti mou d'instalación sobrescribirá too nel discu to!</b>"
+msgstr "<b>¡CURIÁU! ¡Esti mou d'instalación sobrescribirá too nel to discu!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr "<span weight=\"bold\">Por favor esbilla la llingua to:</span>"
+msgstr "<span weight=\"bold\">Por favor esbilla la to llingua:</span>"
 
 #: ui/language.ui:89
 msgid ""

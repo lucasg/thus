@@ -11,13 +11,14 @@
 # fredrikfritte <fredrikfritte@gmail.com>, 2013
 # mats_bjork007 <mats_bjork007@yahoo.se>, 2013
 #   <pojk3n@gmail.com>, 2011
+# 1Miguel1 <the1miguel1guy@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-29 16:11+0000\n"
+"Last-Translator: 1Miguel1 <the1miguel1guy@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/manjaro-thus/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,7 +172,7 @@ msgstr "Detta är mycket beroende på vilken fönsterhanterare du väljer, så d
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr "är inkopplad till en kraftkälla"
+msgstr "är ansluten till en strömkälla"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
@@ -274,7 +275,7 @@ msgstr "Använd den här enheten för att installera starthanteraren:"
 
 #: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
 msgid "New partition table"
-msgstr "Ny partionstabell"
+msgstr "Ny partitionstabell"
 
 #: src/installation_advanced.py:1110
 msgid "Change..."
@@ -329,7 +330,7 @@ msgstr "Krypteringsalternativ..."
 
 #: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
 msgid "Format:"
-msgstr "Formattera:"
+msgstr "Formatera:"
 
 #: src/installation_advanced.py:1177
 msgid "Partition Table Type:"
@@ -633,7 +634,7 @@ msgstr "Monterar partition %s i %s startkatalog"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
-msgstr "Kund inte montera root och boot partitionerna"
+msgstr "Kunde inte montera root och boot partitionerna"
 
 #: src/installation_process.py:333
 #, python-format

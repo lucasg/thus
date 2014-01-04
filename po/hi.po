@@ -4,6 +4,7 @@
 # 
 # Translators:
 # aaditya <aaditya_gnulinux@zoho.com>, 2013
+# sdch <inactive+sdch@transifex.com>, 2013
 # SWAGh <saheelwagh@gmail.com>, 2013
 # aaditya <aaditya_gnulinux@zoho.com>, 2013
 msgid ""
@@ -11,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
+"PO-Revision-Date: 2014-01-03 08:49+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/manjaro-thus/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +25,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "इस इंस्टॉलर प्रशासनिक विशेषाधिकारों के साथ चलाने के लिए किया जाना चाहिए और उन्हें बिना जारी नहीं कर सकते."
 
 #: thus.py:127
 #, python-format
@@ -34,17 +35,17 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "आप इस इंस्टॉलर के दो उदाहरण नहीं चला सकते हैं. \nआप एक और संस्थापक को पहले से ही नहीं चल रहा है कि सुनिश्चित कर रहे हैं \nआप मैन्युअल %s फाइल को नष्ट कर सकते \nऔर फिर इस इंस्टॉलर चला."
 
 #: thus.py:139
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "इस प्रकार इंस्टॉलर संस्करण %s"
 
 #: thus.py:222
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr "%s फाइल को पॅकेज लिस्ट की तरह एस्टेमाल करना"
+msgstr "'%s' का इस्तेमाल  package list के लिए किया जा रहा हैं "
 
 #: thus.py:239
 msgid "Manjaro Installer"
@@ -59,41 +60,41 @@ msgstr "इंस्टॉलर बंद होने जा रहा है"
 #: src/installation_process.py:433
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "उतारी %s"
 
 #: src/auto_partition.py:101
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "(देखें नीचे) विद्यमान LVM आयतन को हटा नहीं सकते"
 
 #: src/auto_partition.py:111
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "(देखें नीचे) LUKS उपकरणों को बंद नहीं कर सकते"
 
 #: src/auto_partition.py:163
 #, python-format
 msgid "Unkown filesystem type %s"
-msgstr ""
+msgstr "अज्ञात फाइल सिस्टम प्रकार %s"
 
 #: src/auto_partition.py:173
 #, python-format
 msgid "Can't create file system %s"
-msgstr ""
+msgstr "फाइल सिस्टम नहीं बना सकता %s"
 
 #: src/auto_partition.py:319
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "युक्ति %s पर इस प्रकार होगा सेटअप LUKS"
 
 #: src/auto_partition.py:372
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr ""
+msgstr "सेटअप अपने डिवाइस के आकार का पता नहीं लगा सकते, विभाजन और बढ़ते उपकरणों के लिए उन्नत अधिष्ठापन दिनचर्या का इस्तेमाल करें."
 
 #: src/auto_partition.py:537
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "युक्ति %s पर होगा सेटअप LVM"
 
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation_alongside.py:218
@@ -106,67 +107,67 @@ msgstr "आपका बूट सिस्टम कोन्से प्र�
 
 #: src/bootloader.py:59
 msgid "BIOS (Most Common)"
-msgstr ""
+msgstr "BIOS (सबसे सामान्य)"
 
 #: src/bootloader.py:63
 msgid "64-bit UEFI"
-msgstr ""
+msgstr "64 बिट UEFI"
 
 #: src/bootloader.py:67
 msgid "32-bit UEFI"
-msgstr ""
+msgstr "32 बिट UEFI"
 
 #: src/bootloader.py:71
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "आप एक बूट लोडर संस्थापित नहीं करना चाहते, तो 'रद्द' चुनें."
 
 #: src/canonical/misc.py:923
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "%s स्थान निर्धारित नहीं किया जा सकता"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr ""
+msgstr "पासवर्ड बहुत छोटा है"
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr ""
+msgstr "कमजोर पासवर्ड"
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr ""
+msgstr "निष्पक्ष पासवर्ड"
 
 #: src/canonical/validation.py:141
 msgid "good password"
-msgstr ""
+msgstr "अच्छा पासवर्ड"
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr ""
+msgstr "मजबूत पासवर्ड"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr ""
+msgstr "पासवर्ड मेल नहीं खाते"
 
 #: src/check.py:79
 msgid "System Check"
-msgstr ""
+msgstr "तंत्र जॉच"
 
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "कम से कम %d GB उपलब्ध भंडारण स्थान है"
 
 #: src/check.py:89
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr ""
+msgstr "यह अत्यधिक जो डेस्कटॉप वातावरण आप चुन पर निर्भर करता है, तो आप अधिक स्थान की आवश्यकता हो सकती है."
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr "पवर सोर्स से जुड़ा हुआ है"
+msgstr "पॉवर  सोर्स से जुडा  हुआ है"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
@@ -174,28 +175,28 @@ msgstr "इंटरनेट से जुड़ा हुआ है"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr "अत्त्युत्तम परिणामों के लिए सुनिश्चित करें की यह कंप्यूटर:"
+msgstr "अत्त्युत्तम परिणामों के लिए इन्टरनेट से जोडें "
 
 #: src/check.py:173
 msgid "We have Internet connection."
-msgstr "इन्टरनेट से जूडा हुआ हैं "
+msgstr "इन्टरनेट जूडा हुआ हैं "
 
 #: src/check.py:174
 msgid "We're connected to a power source."
-msgstr "पवर सोर्स से जुड़ा हुआ है"
+msgstr "पॉवर सोर्स जूडा हुआ हैं "
 
 #: src/check.py:175
 msgid "We have enough disk space."
-msgstr ""
+msgstr "हम पर्याप्त डिस्क स्थान है."
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
 #: src/installation_advanced.py:513
 msgid "free space"
-msgstr "खाली जगह "
+msgstr "मुक्त जगह "
 
 #: src/installation_advanced.py:278 src/installation_alongside.py:170
 msgid "Device"
-msgstr ""
+msgstr "युक्ति"
 
 #: src/installation_advanced.py:281
 msgid "Type"
@@ -211,19 +212,19 @@ msgstr "नाम"
 
 #: src/installation_advanced.py:293 src/installation_advanced.py:1554
 msgid "Format"
-msgstr ""
+msgstr "फॉरमेट "
 
 #: src/installation_advanced.py:296
 msgid "Size"
-msgstr ""
+msgstr "आकार"
 
 #: src/installation_advanced.py:299
 msgid "Used"
-msgstr "इस्तेमाल हुई"
+msgstr "इस्तेंमाल में है "
 
 #: src/installation_advanced.py:302
 msgid "Flags"
-msgstr ""
+msgstr "झंडे"
 
 #: src/installation_advanced.py:308
 msgid "SSD"
@@ -231,41 +232,41 @@ msgstr "सॉलिड स्टेट ड्राइव "
 
 #: src/installation_advanced.py:485
 msgid "none"
-msgstr ""
+msgstr "कोई भी नहीं "
 
 #: src/installation_advanced.py:535 src/installation_advanced.py:948
 #: src/installation_advanced.py:1423 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
-msgstr ""
+msgstr "विस्तारित"
 
 #: src/installation_advanced.py:666 src/installation_advanced.py:918
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "दो बार माउंट बिंदु एक ही उपयोग नहीं कर सकते ..."
 
 #: src/installation_advanced.py:668
 msgid "Root partition must be formatted..."
-msgstr ""
+msgstr "रूट पार्टीशन फॉरमट किया जाना चाहिए ..."
 
 #: src/installation_advanced.py:939
 msgid "Creating primary partition"
-msgstr ""
+msgstr "प्राथमिक विभाजन का निर्माण"
 
 #: src/installation_advanced.py:950
 msgid "Creating extended partition"
-msgstr ""
+msgstr "विस्तारित विभाजन का निर्माण"
 
 #: src/installation_advanced.py:956
 msgid "Creating logical partition"
-msgstr ""
+msgstr "तार्किक विभाजन का निर्माण"
 
 #: src/installation_advanced.py:1088
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "उन्नत स्थापना मोड"
 
 #: src/installation_advanced.py:1092 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
-msgstr "इस डिवाइस को बूट लोडर के लिए एस्टेमाल करे"
+msgstr "बूट लोडर स्थापना के लिए इस उपकरण का उपयोग करें:"
 
 #: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
 msgid "New partition table"
@@ -277,62 +278,62 @@ msgstr "बदले"
 
 #: src/installation_advanced.py:1115 ui/installation_advanced.ui:407
 msgid "Size:"
-msgstr ""
+msgstr "आकार"
 
 #: src/installation_advanced.py:1119 ui/installation_advanced.ui:630
 msgid "Type:"
-msgstr ""
+msgstr "प्रकार:"
 
 #: src/installation_advanced.py:1123 ui/installation_advanced.ui:647
 msgid "Primary"
-msgstr ""
+msgstr "प्राथमिक"
 
 #: src/installation_advanced.py:1127 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr ""
+msgstr "तार्किक"
 
 #: src/installation_advanced.py:1131 ui/installation_advanced.ui:695
 msgid "Extended"
-msgstr ""
+msgstr "विस्तारित"
 
 #: src/installation_advanced.py:1135 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
-msgstr ""
+msgstr "इस स्थान की शुरुआत"
 
 #: src/installation_advanced.py:1139 ui/installation_advanced.ui:540
 msgid "End of this space"
-msgstr ""
+msgstr "इस स्थान का अंत"
 
 #: src/installation_advanced.py:1143 src/installation_advanced.py:1160
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
-msgstr ""
+msgstr ": के रूप में प्रयोग करें"
 
 #: src/installation_advanced.py:1147 src/installation_advanced.py:1164
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
-msgstr "माउंट पॉइंट:"
+msgstr "माउंट बिंदु:"
 
 #: src/installation_advanced.py:1151 src/installation_advanced.py:1168
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
-msgstr ""
+msgstr "लेबल (वैकल्पिक):"
 
 #: src/installation_advanced.py:1155
 msgid "Encryption Options..."
-msgstr ""
+msgstr "एन्क्रिप्शन विकल्प ..."
 
 #: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
 msgid "Format:"
-msgstr ""
+msgstr "स्वरूप:"
 
 #: src/installation_advanced.py:1177
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "विभाजन तालिका के प्रकार:"
 
 #: src/installation_advanced.py:1182
 msgid "Create Partition Table"
-msgstr ""
+msgstr "विभाजन तालिका बनाएँ"
 
 #: src/installation_advanced.py:1185 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
@@ -342,22 +343,22 @@ msgstr "इनस्टॉल करें!"
 #: src/installation_advanced.py:1273
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "प्रकार का एक नया विभाजन तालिका बनाना  %s डिस्क के लिए %s"
 
 #: src/installation_advanced.py:1283
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB कारण GPT में बाद एमबीआर एम्बेड अंतराल की कमी के कारण इसकी core.img फ़ाइल एम्बेड करने के लिए BIOS सिस्टम में एक BIOS बूट विभाजन (gdisk में 2 मेबा, कोई फाइल सिस्टम, \"EF02\" प्रकार कोड या ग्नू जुदा में \"bios_grub\" झंडा) की आवश्यकता डिस्क. \nइस प्रकार अब आप के लिए यह विशेष विभाजन पैदा करेगा."
 
 #: src/installation_advanced.py:1315
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "BIOS के GPT बूट विभाजन नहीं बना सकता है!"
 
 #: src/installation_advanced.py:1343
 msgid "Couldn't create BIOS GPT Boot partition"
-msgstr ""
+msgstr "BIOS के GPT बूट विभाजन नहीं बनाया जा सका"
 
 #: src/installation_advanced.py:1461
 #, python-format
@@ -365,7 +366,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s स्वैप के रूप में मुहिम शुरू की है. \nइसे जारी रखने का पैदाल हो गया है. \nपैदाल लिए हाँ क्लिक करें, या वापस नहीं \n"
 
 #: src/installation_advanced.py:1465
 #, python-format
@@ -373,21 +374,21 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s '%s' में मुहिम शुरू की है. \nइसे जारी रखने का पैदाल हो गया है. \nअनमाउंट करने के लिए हाँ क्लिक करें, या नहीं लौटने के लिए \n"
 
 #: src/installation_advanced.py:1488
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s शो (व्यस्त) घुड़सवार लेकिन यह कोई आरोह बिंदु के रूप में"
 
 #: src/installation_advanced.py:1547
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "%s विभाजन को हटा दिया जाएगा"
 
 #: src/installation_advanced.py:1554
 msgid "Partition"
-msgstr ""
+msgstr "विभाजन"
 
 #: src/installation_advanced.py:1554
 msgid "New"
@@ -395,93 +396,93 @@ msgstr "नया "
 
 #: src/installation_advanced.py:1554
 msgid "Relabel"
-msgstr ""
+msgstr "पुन: वर्गीकरण करना"
 
 #: src/installation_advanced.py:1554
 msgid "Mount"
-msgstr ""
+msgstr "माउंट"
 
 #: src/installation_advanced.py:1575
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "इन डिस्क विभाजन कार्रवाई करनी होगी:"
 
 #: src/installation_advanced.py:1628
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "%s में किया परिवर्तन सहेजने"
 
 #: src/installation_advanced.py:1651
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "%s लेबल %s में %s फाइल सिस्टम बनाना"
 
 #: src/installation_advanced.py:1692
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr ""
+msgstr "के रूप में '%s' के लेबल के साथ विभाजन %s प्रारूप नहीं '%s'"
 
 #: src/installation_advanced.py:1741
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "मनज।रॊ प्रकार %s में %s के बूटलोडर स्थापित करेगा"
 
 #: src/installation_advanced.py:1744 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "इस प्रकार किसी भी बूट लोडर स्थापित नहीं होगा"
 
 #: src/installation_advanced.py:1758 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "परीक्षण मोड. इस प्रकार आपके सिस्टम में कोई भी परिवर्तन लागू नहीं होगा!"
 
 #: src/installation_alongside.py:115
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "लोड नहीं कर सकते %s css"
 
 #: src/installation_alongside.py:140
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "आप अगले करने के लिए मनज।रॊ स्थापित करना चाहते हैं जो ओएस चुनें"
 
 #: src/installation_alongside.py:144
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "कोई अन्य OS के साथ Manjaro"
 
 #: src/installation_alongside.py:173
 msgid "Detected OS"
-msgstr ""
+msgstr "पता लगाया गया OS"
 
 #: src/installation_alongside.py:176
 msgid "Filesystem"
-msgstr ""
+msgstr "फाइल सिस्टम"
 
 #: src/installation_alongside.py:194
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted 3 नहीं मिला!"
 
 #: src/installation_alongside.py:222
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "स्थापना के साथ के लिए विभाजन की सूची बनाने में असमर्थ."
 
 #: src/installation_alongside.py:266
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "विभाजन हटना नहीं कर सकते (शायद यह लगभग पूर्ण है?)"
 
 #: src/installation_alongside.py:353
 msgid "There are too many primary partitions, can't create a new one"
-msgstr ""
+msgstr "भी कई प्राथमिक विभाजन हैं, एक नया बना नहीं सकते"
 
 #: src/installation_alongside.py:386
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "%s (%s) फाइल सिस्टम हटना नहीं कर सकते"
 
 #: src/installation_ask.py:106
 msgid "Installation type"
-msgstr ""
+msgstr "स्थापना प्रकार"
 
 #: src/installation_ask.py:120 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "डिस्क मिटा और मनज।रॊ स्थापित (स्वचालित)"
 
 #: src/installation_ask.py:123
 msgid "Warning: This will delete all data on your disk"
@@ -489,30 +490,30 @@ msgstr "सूचना : यह क्रिया आप के हार्�
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "वृद्धि की सुरक्षा के लिए इस स्थापना एन्क्रिप्ट."
 
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "आप अगले चरण में एन्क्रिप्शन कुंजी के लिए कहा जाएगा."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "इस स्थापना के साथ LVM का प्रयोग करें."
 
 #: src/installation_ask.py:142
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "यह आपको एक सरल तरीके से फोटो और परिवर्तन विभाजन आकार बनाने के लिए अनुमति LVM की स्थापना की जाएगी."
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "एक अलग विभाजन / मात्रा में अपने घर सेट"
 
 #: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "एक अलग विभाजन या मात्रा में इस वसीयत सेटअप आप / घर निर्देशिका."
 
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
@@ -521,33 +522,33 @@ msgstr "%s के साथ इनस्टॉल करें "
 
 #: src/installation_ask.py:168
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "मनज।रॊ स्थापित करने के लिए अपने विभाजन और जहां प्रबंधन (उन्नत)"
 
 #: src/installation_ask.py:171
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "तुम बनाने / विभाजनों को मिटाने, जहां Manjaro स्थापित करने के लिए चुनते हैं और भी अतिरिक्त माउंट अंक का चयन करने में सक्षम हो जाएगा."
 
 #: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Manjaro स्थापना LUKS का उपयोग कर एन्क्रिप्टेड किया जाएगा"
 
 #: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro LVM आयतन का उपयोग कर स्थापित किया जाएगा"
 
 #: src/installation_ask.py:202
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro एक अलग / घर मात्रा का उपयोग कर स्थापित किया जाएगा."
 
 #: src/installation_ask.py:204
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro एक अलग / घर विभाजन का उपयोग कर स्थापित किया जाएगा."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "स्वचालित स्थापना मोड"
 
 #: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
@@ -556,365 +557,365 @@ msgstr "ड्राइव चुने :"
 #: src/installation_automatic.py:87
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "चेतावनी! यह स्थापना मोड आपके ड्राइव पर सब कुछ ऊपर लिख देगा!"
 
 #: src/installation_automatic.py:92 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "आप मनज।रॊ कहाँ स्थापित करना चाहते ड्राइव का चयन करो \nऔर इस प्रक्रिया को शुरू करने के लिए नीचे दिए गए बटन पर क्लिक करें."
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "एन्क्रिप्शन पासवर्ड:"
 
 #: src/installation_automatic.py:101 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
-msgstr ""
+msgstr "अपना पासवर्ड की पुष्टि करें:"
 
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "पासवर्ड दिखाएं"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "एक LUKS पासवर्ड सेट किया गया है"
 
 #: src/installation_automatic.py:165
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "स्वत: %s पर स्थापित"
 
 #: src/installation_automatic.py:199
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "इस प्रकार स्थापना डिवाइस के रूप में %s का उपयोग करेगा"
 
 #: src/installation_automatic.py:208
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "इस प्रकार प्रकार %s में %s के बूटलोडर स्थापित करेगा"
 
 #: src/installation_process.py:90
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "प्रतिलिपिकरण  '/%s'"
 
 #: src/installation_process.py:168
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "'%s' विधि का उपयोग कर स्थापित कर रहा है"
 
 #: src/installation_process.py:244
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "%s में विभाजन और उनकी फाइल सिस्टम बनाना"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "विभाजन और उनकी फाइल सिस्टम बनाने में त्रुटि"
 
 #: src/installation_process.py:304 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "%s निर्देशिका में %s विभाजन बढ़ते"
 
 #: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "%s / बूट निर्देशिका में %s विभाजन बढ़ते"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
-msgstr ""
+msgstr "जड़ और बूट विभाजन माउंट नहीं किया जा सका"
 
 #: src/installation_process.py:333
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "माउंट नहीं कर सकता %s में %s"
 
 #: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s मिटाया"
 
 #: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "गंतव्य प्रणाली पर आवश्यक निर्देशिकाओं नहीं बना सकता है"
 
 #: src/installation_process.py:358
 msgid "Install System ..."
-msgstr ""
+msgstr "सिस्टम स्थापित करें ..."
 
 #: src/installation_process.py:363
 msgid "System installed."
-msgstr ""
+msgstr "प्रणाली स्थापित."
 
 #: src/installation_process.py:365
 msgid "Configuring system ..."
-msgstr ""
+msgstr "सिस्टम का विन्यास ..."
 
 #: src/installation_process.py:367
 msgid "System configured."
-msgstr ""
+msgstr "सिस्टम के विन्यस्त."
 
 #: src/installation_process.py:371
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "बूटलोडर स्थापित कर रहा है ..."
 
 #: src/installation_process.py:398
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "%s से लॉग इन कर इस प्रकार की नकल नहीं कर सकते"
 
 #: src/installation_process.py:414 src/installation_process.py:428
 #: src/installation_process.py:438
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "%s unmount नहीं कर सकते"
 
 #: src/installation_process.py:440
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "स्थापना सफलतापूर्वक समाप्त हो गया."
 
 #: src/installation_process.py:467
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "बेस फाइल सिस्टम मौजूद नहीं है! गंभीर त्रुटि (बाहर निकलने)."
 
 #: src/installation_process.py:471
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "डेस्कटॉप फाइल सिस्टम मौजूद नहीं है! गंभीर त्रुटि (बाहर निकलने)."
 
 #: src/installation_process.py:481 src/installation_process.py:487
 #, python-format
 msgid "%s is already mounted at %s as %s"
-msgstr ""
+msgstr "%s %s का %s पर मुहिम शुरू की है"
 
 #: src/installation_process.py:498
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "अनुक्रमण फ़ाइलें नकल होने की ..."
 
 #: src/installation_process.py:503
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "एक्स्ट्रेक्टिंग root-image ..."
 
 #: src/installation_process.py:513
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "एक्स्ट्रेक्टिंग desktop-image ..."
 
 #: src/installation_process.py:528
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "%s पर मेटा जानकारी को बहाल करना"
 
 #: src/installation_process.py:544
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "विशेष निर्देशिका पहले से ही रखा होगा."
 
 #: src/installation_process.py:575
 msgid "Special dirs are not mounted. Skipping."
-msgstr ""
+msgstr "विशेष dirs मुहिम शुरू नहीं कर रहे हैं. लंघन."
 
 #: src/installation_process.py:585
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "असमर्थ umount %s"
 
 #: src/installation_process.py:604
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "त्रुटि चल कमांड:%s"
 
 #: src/installation_process.py:666 src/installation_process.py:720
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Fstab को जोड़ा गया: UUID =%s %s %s %s 0 %s"
 
 #: src/installation_process.py:680
 #, python-format
 msgid "Added to crypttab : %s"
-msgstr ""
+msgstr "Crypttab को जोड़ा गया: %s"
 
 #: src/installation_process.py:684
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-msgstr ""
+msgstr "डल गया fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
 #: src/installation_process.py:724
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-msgstr ""
+msgstr "डल गया fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation_process.py:785
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr ""
+msgstr "%s में GRUB स्थापित कर रहा है (2) BIOS बूट लोडर"
 
 #: src/installation_process.py:797 src/installation_process.py:818
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr ""
+msgstr "स्थापित करने में त्रुटि GRUB (2) BIOS."
 
 #: src/installation_process.py:816
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "GRUB (2) BIOS को सफलतापूर्वक स्थापित कर दिया गया है."
 
 #: src/installation_process.py:830
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
-msgstr ""
+msgstr "%s में (2) UEFI %s बूट लोडर GRUB स्थापित कर रहा है"
 
 #: src/installation_process.py:882
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "GRUB (2) वातावरण स्थापित करने में त्रुटि."
 
 #: src/installation_process.py:891
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "Enabled %s सेवा."
 
 #: src/installation_process.py:898
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr ""
+msgstr "उपयोगकर्ता %s के लिए पासवर्ड हैश बनाने में त्रुटि"
 
 #: src/installation_process.py:904
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "उपयोगकर्ता %s के लिए पासवर्ड बदलने में त्रुटि"
 
 #: src/installation_process.py:916
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Mkinitcpio.conf में हुक और मॉड्यूल की स्थापना"
 
 #: src/installation_process.py:981
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: उपयोगकर्ता %s के लिए स्वचालित लॉगइन सक्षम."
 
 #: src/installation_process.py:1076 src/installation_process.py:1087
 msgid "Configuring your new system"
-msgstr ""
+msgstr "अपने नए सिस्टम को विन्यस्त"
 
 #: src/installation_process.py:1079
 msgid "fstab file generated."
-msgstr ""
+msgstr "उत्पन्न fstab फाइल."
 
 #: src/installation_process.py:1085
 msgid "Network configuration copied."
-msgstr ""
+msgstr "नेटवर्क विन्यास की नकल की."
 
 #: src/installation_process.py:1111
 msgid "Timezone set."
-msgstr ""
+msgstr "समय क्षेत्र सेट."
 
 #: src/installation_process.py:1132
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "उपयोगकर्ता के लिए sudo विन्यास %s किया."
 
 #: src/installation_process.py:1142
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "रयोक्ता %s गयी."
 
 #: src/installation_process.py:1154
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "होस्टनाम %s सेट."
 
 #: src/installation_process.py:1159
 msgid "Set root password."
-msgstr ""
+msgstr "रूट पासवर्ड सेट करें."
 
 #: src/installation_process.py:1162
 msgid "Set the same password to root."
-msgstr ""
+msgstr "जड़ एक ही पासवर्ड सेट करें."
 
 #: src/installation_process.py:1168
 msgid "Generating locales ..."
-msgstr ""
+msgstr "स्थानों सृजन ..."
 
 #: src/installation_process.py:1189
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "हार्डवेयर घड़ी को एडजस्ट ..."
 
 #: src/installation_process.py:1198
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "हार्डवेयर का विन्यास ..."
 
 #: src/installation_process.py:1271
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "ग्राफिक्स कार्ड स्थापित ..."
 
 #: src/installation_process.py:1278
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "MHWD स्क्रिप्ट निष्पादित नहीं कर सकता"
 
 #: src/installation_process.py:1291
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "डिस्प्ले प्रबंधक विन्यस्त करें ..."
 
 #: src/installation_process.py:1397
 msgid "Configure System ..."
-msgstr ""
+msgstr "सिस्टम विन्यस्त ..."
 
 #: src/installation_process.py:1422
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "लाइव विन्यास निकाल रहा है (संकुल)"
 
 #: src/installation_process.py:1438
 msgid "Configuring package manager"
-msgstr ""
+msgstr "का विन्यास पैकेज प्रबंधक"
 
 #: src/installation_process.py:1450
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "पैकेज प्रबंधक को विन्यस्त रु."
 
 #: src/installation_process.py:1474
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Mkinitcpio चल रहा है ..."
 
 #: src/installation_process.py:1477
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "रनिंग mkinitcpio - किया"
 
 #: src/installation_process.py:1493
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "उपयोगकर्ता घर dir Encrypting ..."
 
 #: src/installation_process.py:1495
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "एन्क्रिप्टेड प्रयोक्ता घर dir"
 
 #: src/keymap.py:71
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "अपने कीबोर्ड लेआउट का चयन करें"
 
 #: src/keymap.py:75
 msgid "Type here to test your keyboard"
-msgstr ""
+msgstr "अपने कीबोर्ड का परीक्षण करने के लिए यहाँ टाइप करें"
 
 #: src/keymap.py:82
 msgid "Layouts"
-msgstr ""
+msgstr "\t\nलेआउट"
 
 #: src/keymap.py:88
 msgid "Variants"
-msgstr ""
+msgstr "वेरिएंट"
 
 #: src/keymap.py:110
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "keyboard_layout %s है"
 
 #: src/language.py:78
 msgid "Please choose your language:"
-msgstr ""
+msgstr "अपनी भाषा का चयन करें"
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "सूचना: Thus इंस्टालर बीटा सॉफ्टवेयर है."
 
 #: src/language.py:84
 msgid ""
@@ -923,11 +924,11 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "इस प्रकार सक्रिय विकास के अंतर्गत है कि रिलीज से पहले बीटा सॉफ्टवेयर है. \nयह अभी तक ठीक से RAID, Btrfs subvolumes, या अन्य संभाल नहीं है \nउन्नत setups. डेटा हानि संभव है के रूप में सावधानी के साथ आगे बढ़ना कृपया! \nआप किसी भी कीड़े मिल जाए, <a href='http://bugs.manjaro.org'> http://bugs.manjaro.org </ a> पर उन्हें रिपोर्ट कृपया"
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "मनज।रॊ आपका स्वागत है!"
 
 #: src/language.py:108
 msgid "Languages"
@@ -936,18 +937,18 @@ msgstr "भाषाएँ"
 #: src/language.py:128
 #, python-format
 msgid "Can't find translation file for the %s language"
-msgstr ""
+msgstr "%s भाषा के लिए अनुवाद नहीं मिल रहा है"
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr ""
+msgstr "अपने स्थान का चयन करें"
 
 #: src/location.py:68
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr ""
+msgstr "चयनित स्थान प्रणाली के स्थान का चयन करने में मदद करने के लिए इस्तेमाल किया जाएगा. \nआम तौर पर यह अपने निवास के देश होना चाहिए. \nयह आपके द्वारा चयनित भाषा पर आधारित स्थानों में से एक shortlist है."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
@@ -956,106 +957,106 @@ msgstr "देश , राज्य या शहर "
 #: src/location.py:196
 #, python-format
 msgid "locale changed to : %s"
-msgstr ""
+msgstr "%s: स्थानीय को बदला"
 
 #: src/location.py:198
 #, python-format
 msgid "Can't change to locale '%s'"
-msgstr ""
+msgstr "'%s' लोकेल में बदल नहीं सकता"
 
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "%s एक ठोस राज्य ड्राइव है या नहीं अगर सत्यापित नहीं कर सकते"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "क्षमा करें, लेकिन फाइल सिस्टम %s shrinked नहीं किया जा सकता"
 
 #: src/parted3/lvm.py:75
 #, python-format
 msgid "Can't remove logical volume %s"
-msgstr ""
+msgstr "निकाला नहीं जा सकता %s लॉजिकल वॉल्यूम"
 
 #: src/parted3/lvm.py:92
 #, python-format
 msgid "Can't remove volume group %s"
-msgstr ""
+msgstr "%s वॉल्यूम ग्रूप को दूर नहीं कर सकते"
 
 #: src/parted3/lvm.py:103
 #, python-format
 msgid "Can't remove physical volume %s"
-msgstr ""
+msgstr "%s भौतिक आयतन को हटा नहीं सकते"
 
 #: src/parted3/partition_module.py:104
 msgid "Exception: For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "अपवाद: अधिक जानकारी के लिए / tmp / thus.log पर एक नज़र रखना"
 
 #: src/parted3/partition_module.py:169
 #, python-format
 msgid "Can't delete partition %s"
-msgstr ""
+msgstr "%s विभाजन मिटा नहीं सकते"
 
 #: src/parted3/partition_module.py:219
 msgid "Partition is too large!"
-msgstr ""
+msgstr "विभाजन बहुत बड़ा है!"
 
 #: src/parted3/partition_module.py:278
 #, python-format
 msgid "Can't detect used space from %s"
-msgstr ""
+msgstr "%s विभाजन मिटा नहीं सकते"
 
 #: src/parted3/used_space.py:39
 #, python-format
 msgid "Can't detect used space of NTFS partition %s"
-msgstr ""
+msgstr "NTFS विभाजन %s के उपयोग किए गए स्थान का पता नहीं लगा सकते हैं"
 
 #: src/parted3/used_space.py:66
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
-msgstr ""
+msgstr "EXTFS %s विभाजन का इस्तेमाल अंतरिक्ष पहचान नहीं कर सकता"
 
 #: src/parted3/used_space.py:93
 #, python-format
 msgid "Can't detect used space of FATFS partition %s"
-msgstr ""
+msgstr "FATFS %s विभाजन का इस्तेमाल अंतरिक्ष पहचान नहीं कर सकता"
 
 #: src/parted3/used_space.py:124
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
-msgstr ""
+msgstr "JFS %s विभाजन का इस्तेमाल अंतरिक्ष पहचान नहीं कर सकता"
 
 #: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
-msgstr ""
+msgstr "ReiserFS विभाजन %s के उपयोग किए गए स्थान का पता नहीं लगा सकते हैं"
 
 #: src/parted3/used_space.py:174
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
-msgstr ""
+msgstr "BTRFS विभाजन %s के उपयोग किए गए स्थान का पता नहीं लगा सकते हैं"
 
 #: src/parted3/used_space.py:217
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
-msgstr ""
+msgstr "XFS %s विभाजन का इस्तेमाल अंतरिक्ष पहचान नहीं कर सकता"
 
 #: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "नहीं खोज सके रैंक लिपि दर्पण"
 
 #: src/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
-msgstr ""
+msgstr "ऑटो मिरर चयन पर अमल नहीं किया जा सका"
 
 #: src/show_message.py:53
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "मनज।रॊ संस्थापक - त्रुटि"
 
 #: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "मनज।रॊ संस्थापक - चेतावनी"
 
 #: src/show_message.py:77
 msgid "Manjaro Installer - Information"
@@ -1073,7 +1074,7 @@ msgstr "मंजारो इनस्टॉल हो चूका है ⏎\
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "मनज।रॊ स्थापित कर रहा है ..."
 
 #: src/slides.py:107
 msgid "Please wait..."
@@ -1081,7 +1082,7 @@ msgstr "कृपया प्रतीक्षा करें ..."
 
 #: src/slides.py:217
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "आप पुन: प्रयास करना चाहते हैं?"
 
 #: src/timezone.py:111
 msgid "Where are you?"
@@ -1089,32 +1090,32 @@ msgstr "आप कहाँ के रहिवासी हैं ?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
-msgstr ""
+msgstr "जोन:"
 
 #: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
-msgstr ""
+msgstr "क्षेत्र:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "घड़ी तुल्यकालन के लिए नेटवर्क टाइम प्रोटोकॉल का उपयोग करें:"
 
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "%s स्थान को बदला"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr ""
+msgstr "ऑटो समय क्षेत्र निर्देशांक पहचान नहीं कर सकता"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "समय क्षेत्र धागे रोक रहा है ..."
 
 #: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "एक Pacman मिरर सूची बनाने के लिए इस्तेमाल देश कोड प्राप्त नहीं कर सकता"
 
 #: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
@@ -1126,127 +1127,127 @@ msgstr "आप का नाम"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
-msgstr ""
+msgstr "मेजबाननाम"
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
-msgstr ""
+msgstr "आपके कंप्यूटर का नाम:"
 
 #: src/user_info.py:108 ui/user_info.ui:50
 msgid "Pick a username:"
-msgstr ""
+msgstr "एक उपयोगकर्ता नाम उठाओ:"
 
 #: src/user_info.py:112 ui/user_info.ui:250
 msgid "Username"
-msgstr ""
+msgstr "प्रयोक्ता नाम"
 
 #: src/user_info.py:116 ui/user_info.ui:65
 msgid "Choose a password:"
-msgstr ""
+msgstr "एक पासवर्ड चुनें:"
 
 #: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
 #: ui/user_info.ui:573
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 #: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
 #: ui/user_info.ui:634
 msgid "Confirm password"
-msgstr ""
+msgstr "पासवर्ड की पुष्टि"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
-msgstr ""
+msgstr "एक रूट पासवर्ड चुनें:"
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr ""
+msgstr "रूट पासवर्ड की पुष्टि करें:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
-msgstr ""
+msgstr "इसका नाम यह अन्य कंप्यूटरों के लिए प्रकट होता है."
 
 #: src/user_info.py:152
 msgid "You must enter a name"
-msgstr ""
+msgstr "आप एक नाम दर्ज करना होगा"
 
 #: src/user_info.py:156
 msgid "You must enter a username"
-msgstr ""
+msgstr "आप एक उपयोगकर्ता नाम दर्ज करना होगा"
 
 #: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
-msgstr ""
+msgstr "आप एक पासवर्ड दर्ज करना होगा"
 
 #: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
-msgstr ""
+msgstr "स्वचालित रूप से लॉग इन करें"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "एक पासवर्ड से लॉग इन करना आवश्यक है"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "एन्क्रिप्ट घर फ़ोल्डर"
 
 #: src/user_info.py:172
 msgid "Who are you?"
-msgstr ""
+msgstr "तुम कौन हो?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "दिखाएँ जड़ पासवर्ड"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "एक रूट पासवर्ड का प्रयोग करें"
 
 #: src/user_info.py:252
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "मनज।रॊ आपके घर निर्देशिका को एनक्रिप्ट करने के eCryptfs का उपयोग करेगा. दुर्भाग्य से, eCryptfs अच्छी तरह से विरल फ़ाइलों को संभाल नहीं करता.\n"
 
 #: src/user_info.py:253
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "सबसे उद्देश्य और उद्देश्यों में इस कमी एक समस्या उत्पन्न नहीं करता है के लिए, चिंता मत करो.\n"
 
 #: src/user_info.py:254
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "वैसे भी, eCryptfs के एक लोकप्रिय और अनुचित आवेदन इस बार 10 जीबी या अधिक की विरल फ़ाइलों को संभालने के लिए eCryptfs की आवश्यकता है और तीव्र डिस्क भुखमरी पैदा हो सकती है के रूप में एक बिट डाउनलोड स्थान एन्क्रिप्ट करने के लिए है.\n"
 
 #: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "एक साधारण वैकल्पिक हल एक unencrypted. सार्वजनिक निर्देशिका में विखंडित फाइल करने के लिए जगह है\n"
 
 #: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "विस्तृत जानकारी के लिए https://wiki.archlinux.org/index.php/ECryptfs को देखो\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "क्या आप अपने घर निर्देशिका एन्क्रिप्ट करने के लिए चाहते हैं?\n"
 
 #: src/user_info.py:345
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "अमान्य वर्ण में प्रवेश किया"
 
 #: src/user_info.py:349
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "यूजर का नाम डॉट्स शामिल नहीं हो सकता"
 
 #: src/user_info.py:353
 msgid "Too many characters"
-msgstr ""
+msgstr "बहुत सारे अक्षर"
 
 #: ui/bootloader.ui:7
 msgid "Boot"
@@ -1254,7 +1255,7 @@ msgstr "बूट "
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (सामान्य)"
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -1266,31 +1267,31 @@ msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "आप एक बूट लोडर संस्थापित नहीं करना चाहते, तो 'रद्द' चुनें"
 
 #: ui/check.ui:29
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "ऐतिहासिक weight=\"bold\" size=\"large\"> सर्वोत्तम परिणामों के लिए, कृपया सुनिश्चित करें कि इस कंप्यूटर: </ p>"
 
 #: ui/check.ui:108
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space."
-msgstr ""
+msgstr "आप अधिक स्थान की आवश्यकता हो सकती है ताकि (*) यह अत्यंत, आप चुनते हैं जो डेस्कटॉप वातावरण पर निर्भर करता है."
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
-msgstr ""
+msgstr "विभाजन तालिका के प्रकार:"
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
-msgstr ""
+msgstr "संपादित विभाजन"
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
-msgstr ""
+msgstr "एन्क्रिप्शन विकल्प ..."
 
 #: ui/installation_advanced.ui:383
 msgid "Create partition"
@@ -1298,7 +1299,7 @@ msgstr "नये Partitoin  का निर्माण करें "
 
 #: ui/installation_advanced.ui:423
 msgid "Location:"
-msgstr ""
+msgstr "स्थान:"
 
 #: ui/installation_advanced.ui:607
 msgid "MB"
@@ -1306,37 +1307,37 @@ msgstr "मेगाबाय्ट्स "
 
 #: ui/installation_advanced.ui:958
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1122
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "LUKS मात्रा नाम:"
 
 #: ui/installation_advanced.ui:1136
 msgid "Password:"
-msgstr ""
+msgstr "पासवर्ड:"
 
 #: ui/installation_advanced.ui:1150
 msgid "Confirm password:"
-msgstr ""
+msgstr "पासवर्ड की पुष्टि करें:"
 
 #: ui/installation_advanced.ui:1179
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "LUKS एन्क्रिप्शन का प्रयोग करें:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">आप अगले करने के लिए मनज।रॊ स्थापित करना चाहते हैं जो ओएस चुनें</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "नया आकार चुनें"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "अन्य ओएस"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
@@ -1345,67 +1346,67 @@ msgstr "मंजारो "
 #: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "लेबल"
 
 #: ui/installation_ask.ui:58
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "ऐतिहासिक weight=\"light\" size=\"small\"> चेतावनी: यह आपकी डिस्क </ p> पर सभी कार्यक्रम, दस्तावेज, फोटो, संगीत और किसी भी अन्य फ़ाइलों को नष्ट करेगा"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "बेहतर सुरक्षा के लिए नए मनज।रॊ स्थापना encrypts"
 
 #: ui/installation_ask.ui:91
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "ऐतिहासिक weight=\"light\" size=\"small\"> आप अगले कदम </ p> में एन्क्रिप्शन कुंजी के लिए कहा जाएगा"
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "नई मनज।रॊ स्थापना के साथ एलवीएम का प्रयोग करें"
 
 #: ui/installation_ask.ui:123
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">यह आपको फोटो बनाने और एक सरल तरीके से विभाजन आकार बदलने के लिए अनुमति LVM की स्थापना की जाएगी</span>"
 
 #: ui/installation_ask.ui:155
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup you /home directory in"
 " a different partition or volume.</span>"
-msgstr ""
+msgstr "ऐतिहासिक weight=\"light\" size=\"small\"> यह होगा सेटअप एक अलग विभाजन या मात्रा में आप / घर निर्देशिका. </ p>"
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
-msgstr "दूसरे  OS के साथ "
+msgstr "अन्य OS के साथ स्थापित करें"
 
 #: ui/installation_ask.ui:192
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">इस विकल्प के साथ आप पहले से ही स्थापित किया है अन्य OSes में से एक के साथ Manjaro स्थापित किया जाएगा.</span>"
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "अपने विभाजन का प्रबंधन और Manjaro स्थापित करने के लिए जहां चयन (उन्नत)"
 
 #: ui/installation_ask.ui:230
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "ऐतिहासिक weight=\"light\" size=\"small\"> आप जहां Manjaro स्थापित करने के लिए चुनते हैं, विभाजनों को मिटाने / बनाने के लिए और भी अतिरिक्त माउंट अंक का चयन करने में सक्षम हो जाएगा. </ p>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b> चेतावनी! यह स्थापना मोड आपके ड्राइव पर सब कुछ ऊपर लिख देगा! </ B>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
@@ -1418,7 +1419,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>सूचना: इस प्रकार इंस्टालर बीटा सॉफ्टवेयर है.</span>\nइस प्रकार सक्रिय विकास के अंतर्गत है कि रिलीज से पहले बीटा सॉफ्टवेयर है. यह अभी तक ठीक से RAID, Btrfs subvolumes, या अन्य उन्नत setups संभाल नहीं है. डेटा हानि संभव है के रूप में सावधानी के साथ आगे बढ़ना कृपया!\nआप किसी भी बग मिल जाए, कृपया, यात्रा<a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
@@ -1426,20 +1427,20 @@ msgstr "<span weight=\"bold\" size=\"large\">मंजारो में आप
 
 #: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Strong password</span></small>"
 
 #: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">आप एक पासवर्ड दर्ज करना होगा</span></small>"
 
 #: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">आप एक उपयोगकर्ता नाम दर्ज करना होगा</span></small>"
 
 #: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">आप एक नाम दर्ज करना होगा</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">इसका नाम यह अन्य कंप्यूटरों के लिए प्रकट होता है.</span>"
