@@ -13,14 +13,15 @@
 # denis_m <monedenis@gmail.com>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 # rtnpro_test <rtnpro@gmail.com>, 2011
+# Savoritias <savoritiasshadow@gmail.com>, 2014
 # gasdim <gasdim@hotmail.gr>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2014-01-04 09:08+0100\n"
+"PO-Revision-Date: 2014-01-05 14:46+0000\n"
+"Last-Translator: Savoritias <savoritiasshadow@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/manjaro-thus/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,11 +72,11 @@ msgstr ""
 
 #: src/auto_partition.py:101
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Δεν μπορούν να διαγραφούν τα ήδη υπάρχουσα LVM σκληρούς δίσκους (κοίταξε κάτω)"
 
 #: src/auto_partition.py:111
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "Δεν μπορούν να κλείσουν οι συσκευές LUKS (κοίταξε κάτω)"
 
 #: src/auto_partition.py:163
 #, python-format
@@ -126,7 +127,7 @@ msgstr ""
 
 #: src/bootloader.py:71
 msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr ""
+msgstr "Επιλέξτε 'Άκυρο' αν δεν θέλετε να εγκατασταθεί ο φορτωτής εκίνησης"
 
 #: src/canonical/misc.py:923
 #, python-format
@@ -197,7 +198,7 @@ msgid "We have enough disk space."
 msgstr "Έχουμε αρκετό χώρο στο δίσκο."
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
-#: src/installation_advanced.py:513
+#: src/installation_advanced.py:511
 msgid "free space"
 msgstr "ελεύθερος χώρος"
 
@@ -241,133 +242,129 @@ msgstr "SSD"
 msgid "none"
 msgstr "καθόλου"
 
-#: src/installation_advanced.py:535 src/installation_advanced.py:948
-#: src/installation_advanced.py:1423 src/installation_advanced.py:1507
+#: src/installation_advanced.py:533 src/installation_advanced.py:944
+#: src/installation_advanced.py:1415 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
 msgstr "εκτεταμένο"
 
-#: src/installation_advanced.py:666 src/installation_advanced.py:918
+#: src/installation_advanced.py:664 src/installation_advanced.py:914
 msgid "Can't use same mount point twice..."
 msgstr "Αδύνατη η χρήση του ίδιου σημείου προσάρτησης δύο φορές..."
 
-#: src/installation_advanced.py:668
-msgid "Root partition must be formatted..."
-msgstr "Το διαμέρισμα του υπερχρήστη πρέπει να διαμορφωθεί...."
-
-#: src/installation_advanced.py:939
+#: src/installation_advanced.py:935
 msgid "Creating primary partition"
 msgstr "Δημηουργία πρωτεύοντος διαμερίσματος"
 
-#: src/installation_advanced.py:950
+#: src/installation_advanced.py:946
 msgid "Creating extended partition"
 msgstr "Δημιουργία εκτεταμένου διαμερίσματος"
 
-#: src/installation_advanced.py:956
+#: src/installation_advanced.py:952
 msgid "Creating logical partition"
 msgstr "Δημηουργία λογικού διαμερίσματος"
 
-#: src/installation_advanced.py:1088
+#: src/installation_advanced.py:1084
 msgid "Advanced installation mode"
 msgstr "Μέθοδος εγκατάστασης για προχωρημένους"
 
-#: src/installation_advanced.py:1092 ui/installation_advanced.ui:1024
+#: src/installation_advanced.py:1088 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
 msgstr "Χρησιμοποίησε αυτή την συσκευή για την εγκατάσταση του φορτωτή εκίνησης:"
 
-#: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
+#: src/installation_advanced.py:1098 ui/installation_advanced.ui:943
 msgid "New partition table"
 msgstr "Νέος πίνακας διαμερίσματος"
 
-#: src/installation_advanced.py:1110
+#: src/installation_advanced.py:1106
 msgid "Change..."
 msgstr "Αλλαγή..."
 
-#: src/installation_advanced.py:1115 ui/installation_advanced.ui:407
+#: src/installation_advanced.py:1111 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr "Μέγεθος:"
 
-#: src/installation_advanced.py:1119 ui/installation_advanced.ui:630
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr "Τύπος:"
 
-#: src/installation_advanced.py:1123 ui/installation_advanced.ui:647
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr "Προτεύων"
 
-#: src/installation_advanced.py:1127 ui/installation_advanced.ui:671
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr "Λογικό"
 
-#: src/installation_advanced.py:1131 ui/installation_advanced.ui:695
+#: src/installation_advanced.py:1127 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr "Εκτεταμένο"
 
-#: src/installation_advanced.py:1135 ui/installation_advanced.ui:516
+#: src/installation_advanced.py:1131 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr "Ξεκινώντας απο αυτό το κενό"
 
-#: src/installation_advanced.py:1139 ui/installation_advanced.ui:540
+#: src/installation_advanced.py:1135 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr "Τέλος αυτού του κενού"
 
-#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
+#: src/installation_advanced.py:1139 src/installation_advanced.py:1156
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr "Χρήση σαν:"
 
-#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
+#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr "Σημείο προσάρτησης:"
 
-#: src/installation_advanced.py:1151 src/installation_advanced.py:1168
+#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr "Ετικέτα (προαιρετικό):"
 
-#: src/installation_advanced.py:1155
+#: src/installation_advanced.py:1151
 msgid "Encryption Options..."
 msgstr "Επιλογές κρυπτογράφησης"
 
-#: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
+#: src/installation_advanced.py:1168 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr "Διαμόρφωση:"
 
-#: src/installation_advanced.py:1177
+#: src/installation_advanced.py:1173
 msgid "Partition Table Type:"
 msgstr "Τύπος πίνακα διαμερισμάτων: "
 
-#: src/installation_advanced.py:1182
+#: src/installation_advanced.py:1178
 msgid "Create Partition Table"
 msgstr "Δημιουργία πίνακα διαμερισμάτων"
 
-#: src/installation_advanced.py:1185 src/installation_alongside.py:148
+#: src/installation_advanced.py:1181 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
 msgid "Install now!"
 msgstr "Εγκατάσταση τώρα!"
 
-#: src/installation_advanced.py:1273
+#: src/installation_advanced.py:1269
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Δημιουργία νέου πίνακα διαμερισμάτων του τύπου %s για τον δίσκο %s"
 
-#: src/installation_advanced.py:1283
+#: src/installation_advanced.py:1279
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr ""
 
-#: src/installation_advanced.py:1315
+#: src/installation_advanced.py:1311
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr ""
 
-#: src/installation_advanced.py:1343
+#: src/installation_advanced.py:1339
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr ""
 
-#: src/installation_advanced.py:1461
+#: src/installation_advanced.py:1453
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -375,7 +372,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s είναι προσαρτημένο σαν εικονική  μνήμη swap.\nΓια να συνεχίσετε πρέπει να αποπροσαρτηθεί.\nΠατήστε Ναι για να αποπροσαρτήσετε, η Οχι για να επιστρέψετε\n"
 
-#: src/installation_advanced.py:1465
+#: src/installation_advanced.py:1457
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -383,10 +380,16 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s είναι προσαρτημένο στο '%s'.\nΓια να συνεχίσετε πρέπει να αποπροσαρτηθεί.\nΠατήστε Ναι για να αποπροσαρτηθεί, η Οχι για να συνεχισετε\n"
 
-#: src/installation_advanced.py:1488
+#: src/installation_advanced.py:1480
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr "%s δείχνει σαν μονταρισμένο (απασχολημένο) αλλά δεν έχει σημείο προσάρτησης"
+
+#: src/installation_advanced.py:1486
+msgid ""
+"The root partition is not marked to be formatted.\n"
+"This might create problems. Should it be marked to be formatted now?"
+msgstr ""
 
 #: src/installation_advanced.py:1547
 #, python-format
@@ -435,7 +438,7 @@ msgstr "Το Manjaro θα εγκαταστήσει τον φορτωτή εκί�
 
 #: src/installation_advanced.py:1744 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Ο Thus δεν θα εκγαταστήσει κανέναν φορτωτή εκκίνησης"
 
 #: src/installation_advanced.py:1758 src/installation_automatic.py:232
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -468,7 +471,7 @@ msgstr ""
 
 #: src/installation_alongside.py:222
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Δεν ήταν δυνατό να δημιουργηθεί μια λίστα από διαμερίσματα για παράλληλη εγκατάσταση."
 
 #: src/installation_alongside.py:266
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -497,11 +500,11 @@ msgstr "Προσοχή: Αυτό θα διαγράψει όλα τα δεδομ�
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Κρυπτογραφήστε τη νέα σας εγκατάσταση Manjaro για καλύτερη ασφάλεια"
 
 #: src/installation_ask.py:133
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Θα ερωτηθείται για το κρυπτογραφημένο κλειδί στον επόμενο βήμα."
 
 #: src/installation_ask.py:138
 msgid "Use LVM with this installation."
@@ -511,16 +514,16 @@ msgstr ""
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Αυτο θα ρυθμίσει το LVM επιτρέποντάς σας να κάνετε στιγμιότυπα και να αλλάξετε το μέγεθος των διαμερισμάτων με έναν πιο ξεκάθαρο τρόπο."
 
 #: src/installation_ask.py:147 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Τοποθετήστε το διαμέρισμα Home σε ένα διαφορετικό σκληρό δίσκο"
 
 #: src/installation_ask.py:151
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Αυτό θα τοποθετήσει το /home διαμέρισμα σε ένα διαφορετικό σκληρό δίσκο"
 
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
@@ -535,23 +538,23 @@ msgstr "Διαχείρηστείτε τα διαμερίσματα και επι
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Θα μπορείται να δεμιουργήσετε/διαγράψετε διαμερίσματα, να επιλέξετε που θα εγκαταστήσετε το Manjaro και επίσης να επιλέξετε πρόσθετα σημεία προσάρτησης."
 
 #: src/installation_ask.py:197
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Η εγκατάσταση του Manjaro θα κρυπτογραφηθεί χρησιμοποιώντας LUKS"
 
 #: src/installation_ask.py:200
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Το Manjaro θα εγκατασταθεί χρησιμοποιώντας LVM διαμερίσματα"
 
 #: src/installation_ask.py:202
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Το Manjaro θα εγκατασταθεί χρησιμοποιώντας ένα διαφορετικό σκληρό δισκο για το  /home"
 
 #: src/installation_ask.py:204
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Το Manjaro θα εγκατασταθεί χρησιμοποιώντας ένα διαφορετικό διαμέρισμα για το  /home."
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
@@ -588,7 +591,7 @@ msgstr ""
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "Ένας κωδικός LUKS έχει οριστεί"
 
 #: src/installation_automatic.py:165
 #, python-format
@@ -618,7 +621,7 @@ msgstr "Εγκατάσταση χρησιμοποιώντας την μέθοδ�
 #: src/installation_process.py:244
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Δημιουργεία διαμερισμάτων και των συστημάτων αρχείων τους σε %s"
 
 #: src/installation_process.py:266
 msgid "Error creating partitions and their filesystems"
@@ -646,7 +649,7 @@ msgstr "Αδύνατη η προσάρτηση %s στο %s"
 #: src/installation_process.py:343
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr " %s διαγράφθηκε"
 
 #: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
@@ -670,7 +673,7 @@ msgstr ""
 
 #: src/installation_process.py:371
 msgid "Installing bootloader ..."
-msgstr ""
+msgstr "Ο φορτωτής εκκίνησης εγκαταστείται...."
 
 #: src/installation_process.py:398
 #, python-format
@@ -685,11 +688,11 @@ msgstr ""
 
 #: src/installation_process.py:440
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Η εγκατάσταση τελείωσε επιτυχής."
 
 #: src/installation_process.py:467
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Το βασικό σύστημα αρχείων δεν υπάρχει! Σοβαρό πρόβλημα (έξοδος)."
 
 #: src/installation_process.py:471
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
@@ -702,11 +705,11 @@ msgstr ""
 
 #: src/installation_process.py:498
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Καταμετούνται τα αρχεία για να αντιγραφούν."
 
 #: src/installation_process.py:503
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Αποσυμπίεση της εικόνας διαχειρηστή...."
 
 #: src/installation_process.py:513
 msgid "Extracting desktop-image ..."
@@ -733,7 +736,7 @@ msgstr "Αδύνατο να αποπροσαρτηθεί %s"
 #: src/installation_process.py:604
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Προβλημα εκτελόντας την εντολή: %s"
 
 #: src/installation_process.py:666 src/installation_process.py:720
 #, python-format
@@ -810,11 +813,11 @@ msgstr ""
 
 #: src/installation_process.py:1085
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Οι ρυθμίσεις για το διαδίκυο αντιγράφτηκαν."
 
 #: src/installation_process.py:1111
 msgid "Timezone set."
-msgstr ""
+msgstr "Η ζώνη ώρας ορίστηκε."
 
 #: src/installation_process.py:1132
 #, python-format
@@ -824,7 +827,7 @@ msgstr ""
 #: src/installation_process.py:1142
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Ο χρήστης %s προστέθηκε."
 
 #: src/installation_process.py:1154
 #, python-format
@@ -837,23 +840,23 @@ msgstr ""
 
 #: src/installation_process.py:1162
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Όρισε τον ίδιο κωδικό και για το διαχειριστή."
 
 #: src/installation_process.py:1168
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Παραγωγή περιοχών..."
 
 #: src/installation_process.py:1189
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Ρυθμίζοντας το ρολόι του τεχνικού εξοπλισμού..."
 
 #: src/installation_process.py:1198
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Ρυθμίζοντας το υλικό του υπολογιστή."
 
 #: src/installation_process.py:1271
 msgid "Set up graphics card ..."
-msgstr ""
+msgstr "Ρύθμιση κάρτας γραφικών..."
 
 #: src/installation_process.py:1278
 msgid "Can't execute the MHWD script"
@@ -861,11 +864,11 @@ msgstr "Αδύνατη εκτέλεση του σεναρίου εντολών M
 
 #: src/installation_process.py:1291
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Εναρμονισμός του διαχειρηστή εμφάνισης..."
 
 #: src/installation_process.py:1397
 msgid "Configure System ..."
-msgstr ""
+msgstr "Εναρμονισμός συστήματος..."
 
 #: src/installation_process.py:1422
 msgid "Removing live configuration (packages)"
@@ -881,37 +884,37 @@ msgstr "Τέλος εναρμονισμού διαχειρηστή πακέτο�
 
 #: src/installation_process.py:1474
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Εκτέλεση mkinitcpio..."
 
 #: src/installation_process.py:1477
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "Εκτέλεση mkinitcpio - ολοκληρώθηκε"
 
 #: src/installation_process.py:1493
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Κρυπτογράφισει του διαμερίσματος χρήστη home"
 
 #: src/installation_process.py:1495
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Το home διαμέρισμα του χρήστη είνα κρυπτογραφημένο."
 
-#: src/keymap.py:71
+#: src/keymap.py:72
 msgid "Select your keyboard layout"
 msgstr "Επιλέξτε τhn διάταξη πληκτρολογίου"
 
-#: src/keymap.py:75
+#: src/keymap.py:76
 msgid "Type here to test your keyboard"
 msgstr ""
 
-#: src/keymap.py:82
+#: src/keymap.py:83
 msgid "Layouts"
 msgstr "Διατάξεις"
 
-#: src/keymap.py:88
+#: src/keymap.py:89
 msgid "Variants"
 msgstr "Παραλλαγές"
 
-#: src/keymap.py:110
+#: src/keymap.py:108
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "Η διάταξη του πληκτρολογίου είναι %s"
@@ -931,7 +934,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Αυτό είναι δοκιμαστικό πριν την έκδοση λογισμικό και κάτω απο ενεργή ανάπτυξη.\nΑκόμη δεν χειρείζετε σωστά το RAID, brtfs, υπο-τόμους, η άλλες προχωρημένες διευθετήσεις. Παρακαλώ προχωρήστε με προσοχή επειδή  η απώλεια δεδομένων είναι πιθανή!\n\nΑν βρείτε κάποιο σφάλμα, παρακαλώ , επισκεφθείτε <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
@@ -961,25 +964,15 @@ msgstr "Η επιλεγμένη τοποθεσία θα χρησιμοποιηθ
 msgid "Country, territory or area:"
 msgstr "Χώρα, περιοχή ή τμήμα:"
 
-#: src/location.py:196
-#, python-format
-msgid "locale changed to : %s"
-msgstr "Η περιοχή ορίστηκε σε : %s"
-
-#: src/location.py:198
-#, python-format
-msgid "Can't change to locale '%s'"
-msgstr "Αδύνατη η αλλαγή της περιοχής σε '%s\""
-
 #: src/parted3/fs_module.py:147
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Δεν μπορεί να επαληθευτή αν ο %s είναι ένας Solid State Drive ή όχι"
 
 #: src/parted3/fs_module.py:172
 #, python-format
 msgid "Sorry but filesystem %s can't be shrinked"
-msgstr ""
+msgstr "Συγνώμη αλλά το σύστημα αρχείων %s δεν μπορεί να μικρύνει."
 
 #: src/parted3/lvm.py:75
 #, python-format
@@ -1044,7 +1037,7 @@ msgstr ""
 msgid "Can't detect used space of BTRFS partition %s"
 msgstr ""
 
-#: src/parted3/used_space.py:217
+#: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-04 09:08+0100\n"
+"POT-Creation-Date: 2013-12-20 20:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,7 +186,7 @@ msgid "We have enough disk space."
 msgstr ""
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
-#: src/installation_advanced.py:511
+#: src/installation_advanced.py:513
 msgid "free space"
 msgstr ""
 
@@ -230,114 +230,118 @@ msgstr ""
 msgid "none"
 msgstr ""
 
-#: src/installation_advanced.py:533 src/installation_advanced.py:944
-#: src/installation_advanced.py:1415 src/installation_advanced.py:1507
+#: src/installation_advanced.py:535 src/installation_advanced.py:948
+#: src/installation_advanced.py:1423 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
 msgstr ""
 
-#: src/installation_advanced.py:664 src/installation_advanced.py:914
+#: src/installation_advanced.py:666 src/installation_advanced.py:918
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:935
+#: src/installation_advanced.py:668
+msgid "Root partition must be formatted..."
+msgstr ""
+
+#: src/installation_advanced.py:939
 msgid "Creating primary partition"
 msgstr ""
 
-#: src/installation_advanced.py:946
+#: src/installation_advanced.py:950
 msgid "Creating extended partition"
 msgstr ""
 
-#: src/installation_advanced.py:952
+#: src/installation_advanced.py:956
 msgid "Creating logical partition"
 msgstr ""
 
-#: src/installation_advanced.py:1084
+#: src/installation_advanced.py:1088
 msgid "Advanced installation mode"
 msgstr ""
 
-#: src/installation_advanced.py:1088 ui/installation_advanced.ui:1024
+#: src/installation_advanced.py:1092 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
 msgstr ""
 
-#: src/installation_advanced.py:1098 ui/installation_advanced.ui:943
+#: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
 msgid "New partition table"
 msgstr ""
 
-#: src/installation_advanced.py:1106
+#: src/installation_advanced.py:1110
 msgid "Change..."
 msgstr ""
 
-#: src/installation_advanced.py:1111 ui/installation_advanced.ui:407
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr ""
 
-#: src/installation_advanced.py:1115 ui/installation_advanced.ui:630
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr ""
 
-#: src/installation_advanced.py:1119 ui/installation_advanced.ui:647
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr ""
 
-#: src/installation_advanced.py:1123 ui/installation_advanced.ui:671
+#: src/installation_advanced.py:1127 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr ""
 
-#: src/installation_advanced.py:1127 ui/installation_advanced.ui:695
+#: src/installation_advanced.py:1131 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr ""
 
-#: src/installation_advanced.py:1131 ui/installation_advanced.ui:516
+#: src/installation_advanced.py:1135 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr ""
 
-#: src/installation_advanced.py:1135 ui/installation_advanced.ui:540
+#: src/installation_advanced.py:1139 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr ""
 
-#: src/installation_advanced.py:1139 src/installation_advanced.py:1156
+#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr ""
 
-#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
+#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr ""
 
-#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
+#: src/installation_advanced.py:1151 src/installation_advanced.py:1168
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr ""
 
-#: src/installation_advanced.py:1151
+#: src/installation_advanced.py:1155
 msgid "Encryption Options..."
 msgstr ""
 
-#: src/installation_advanced.py:1168 ui/installation_advanced.ui:276
+#: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr ""
 
-#: src/installation_advanced.py:1173
+#: src/installation_advanced.py:1177
 msgid "Partition Table Type:"
 msgstr ""
 
-#: src/installation_advanced.py:1178
+#: src/installation_advanced.py:1182
 msgid "Create Partition Table"
 msgstr ""
 
-#: src/installation_advanced.py:1181 src/installation_alongside.py:148
+#: src/installation_advanced.py:1185 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
 msgid "Install now!"
 msgstr ""
 
-#: src/installation_advanced.py:1269
+#: src/installation_advanced.py:1273
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr ""
 
-#: src/installation_advanced.py:1279
+#: src/installation_advanced.py:1283
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type "
 "code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed "
@@ -346,15 +350,15 @@ msgid ""
 "Thus will create this special partition for you now."
 msgstr ""
 
-#: src/installation_advanced.py:1311
+#: src/installation_advanced.py:1315
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr ""
 
-#: src/installation_advanced.py:1339
+#: src/installation_advanced.py:1343
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr ""
 
-#: src/installation_advanced.py:1453
+#: src/installation_advanced.py:1461
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -362,7 +366,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1457
+#: src/installation_advanced.py:1465
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -370,15 +374,9 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: src/installation_advanced.py:1480
+#: src/installation_advanced.py:1488
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
-
-#: src/installation_advanced.py:1486
-msgid ""
-"The root partition is not marked to be formatted.\n"
-"This might create problems. Should it be marked to be formatted now?"
 msgstr ""
 
 #: src/installation_advanced.py:1547
@@ -887,23 +885,23 @@ msgstr ""
 msgid "User home dir encrypted"
 msgstr ""
 
-#: src/keymap.py:72
+#: src/keymap.py:71
 msgid "Select your keyboard layout"
 msgstr ""
 
-#: src/keymap.py:76
+#: src/keymap.py:75
 msgid "Type here to test your keyboard"
 msgstr ""
 
-#: src/keymap.py:83
+#: src/keymap.py:82
 msgid "Layouts"
 msgstr ""
 
-#: src/keymap.py:89
+#: src/keymap.py:88
 msgid "Variants"
 msgstr ""
 
-#: src/keymap.py:108
+#: src/keymap.py:110
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr ""
@@ -952,6 +950,16 @@ msgstr ""
 
 #: src/location.py:73
 msgid "Country, territory or area:"
+msgstr ""
+
+#: src/location.py:196
+#, python-format
+msgid "locale changed to : %s"
+msgstr ""
+
+#: src/location.py:198
+#, python-format
+msgid "Can't change to locale '%s'"
 msgstr ""
 
 #: src/parted3/fs_module.py:147
@@ -1027,7 +1035,7 @@ msgstr ""
 msgid "Can't detect used space of BTRFS partition %s"
 msgstr ""
 
-#: src/parted3/used_space.py:212
+#: src/parted3/used_space.py:217
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
 msgstr ""

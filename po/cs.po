@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
+"POT-Creation-Date: 2014-01-04 09:08+0100\n"
+"PO-Revision-Date: 2014-01-04 08:13+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/manjaro-thus/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -197,7 +197,7 @@ msgid "We have enough disk space."
 msgstr "Na disku je dostatek místa"
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
-#: src/installation_advanced.py:513
+#: src/installation_advanced.py:511
 msgid "free space"
 msgstr "volné místo"
 
@@ -241,133 +241,129 @@ msgstr "SSD"
 msgid "none"
 msgstr "žádný"
 
-#: src/installation_advanced.py:535 src/installation_advanced.py:948
-#: src/installation_advanced.py:1423 src/installation_advanced.py:1507
+#: src/installation_advanced.py:533 src/installation_advanced.py:944
+#: src/installation_advanced.py:1415 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
 msgstr "prodloužený"
 
-#: src/installation_advanced.py:666 src/installation_advanced.py:918
+#: src/installation_advanced.py:664 src/installation_advanced.py:914
 msgid "Can't use same mount point twice..."
 msgstr "Nelze použít stejný přípojný bod dvakrát ..."
 
-#: src/installation_advanced.py:668
-msgid "Root partition must be formatted..."
-msgstr "Oddíl pro kořenový adresář musí být formátován ..."
-
-#: src/installation_advanced.py:939
+#: src/installation_advanced.py:935
 msgid "Creating primary partition"
 msgstr "Vytvářím primární oddíl"
 
-#: src/installation_advanced.py:950
+#: src/installation_advanced.py:946
 msgid "Creating extended partition"
 msgstr "Vytvářím rozšířený oddíl"
 
-#: src/installation_advanced.py:956
+#: src/installation_advanced.py:952
 msgid "Creating logical partition"
 msgstr "Vytvářím logický oddíl"
 
-#: src/installation_advanced.py:1088
+#: src/installation_advanced.py:1084
 msgid "Advanced installation mode"
 msgstr "Pokročilý režim instalace"
 
-#: src/installation_advanced.py:1092 ui/installation_advanced.ui:1024
+#: src/installation_advanced.py:1088 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
 msgstr "Použít toto zařízení pro instalaci zavaděče:"
 
-#: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
+#: src/installation_advanced.py:1098 ui/installation_advanced.ui:943
 msgid "New partition table"
 msgstr "Nová tabulka oddílů"
 
-#: src/installation_advanced.py:1110
+#: src/installation_advanced.py:1106
 msgid "Change..."
 msgstr "Změna..."
 
-#: src/installation_advanced.py:1115 ui/installation_advanced.ui:407
+#: src/installation_advanced.py:1111 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr "Velikost:"
 
-#: src/installation_advanced.py:1119 ui/installation_advanced.ui:630
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/installation_advanced.py:1123 ui/installation_advanced.ui:647
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr "Primární"
 
-#: src/installation_advanced.py:1127 ui/installation_advanced.ui:671
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr "Logický"
 
-#: src/installation_advanced.py:1131 ui/installation_advanced.ui:695
+#: src/installation_advanced.py:1127 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr "Rozšířený"
 
-#: src/installation_advanced.py:1135 ui/installation_advanced.ui:516
+#: src/installation_advanced.py:1131 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr "Začátek prostoru"
 
-#: src/installation_advanced.py:1139 ui/installation_advanced.ui:540
+#: src/installation_advanced.py:1135 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr "Konec prostoru"
 
-#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
+#: src/installation_advanced.py:1139 src/installation_advanced.py:1156
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr "Použít jako:"
 
-#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
+#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr "Přípojný bod:"
 
-#: src/installation_advanced.py:1151 src/installation_advanced.py:1168
+#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr "Štítek (nepovinné):"
 
-#: src/installation_advanced.py:1155
+#: src/installation_advanced.py:1151
 msgid "Encryption Options..."
 msgstr ""
 
-#: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
+#: src/installation_advanced.py:1168 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr "Formát:"
 
-#: src/installation_advanced.py:1177
+#: src/installation_advanced.py:1173
 msgid "Partition Table Type:"
 msgstr ""
 
-#: src/installation_advanced.py:1182
+#: src/installation_advanced.py:1178
 msgid "Create Partition Table"
 msgstr "Vytvoření tabulky oddílů"
 
-#: src/installation_advanced.py:1185 src/installation_alongside.py:148
+#: src/installation_advanced.py:1181 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
 msgid "Install now!"
 msgstr "Instalovat nyní!"
 
-#: src/installation_advanced.py:1273
+#: src/installation_advanced.py:1269
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Vytvářím novou tabulky oddílů formátu % s na disk % s"
 
-#: src/installation_advanced.py:1283
+#: src/installation_advanced.py:1279
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr ""
 
-#: src/installation_advanced.py:1315
+#: src/installation_advanced.py:1311
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr ""
 
-#: src/installation_advanced.py:1343
+#: src/installation_advanced.py:1339
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr ""
 
-#: src/installation_advanced.py:1461
+#: src/installation_advanced.py:1453
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -375,7 +371,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "% s je připojen jako odkládací prostor swap.⏎\nChcete-li pokračovat, musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
-#: src/installation_advanced.py:1465
+#: src/installation_advanced.py:1457
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -383,9 +379,15 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s je připojen k '%s'.⏎\nPro pokračování musí být odpojen.⏎\nKlepněte na tlačítko Ano, chcete-li jej odpojit nebo Ne, čímž se vrátíte.⏎\n"
 
-#: src/installation_advanced.py:1488
+#: src/installation_advanced.py:1480
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
+msgstr ""
+
+#: src/installation_advanced.py:1486
+msgid ""
+"The root partition is not marked to be formatted.\n"
+"This might create problems. Should it be marked to be formatted now?"
 msgstr ""
 
 #: src/installation_advanced.py:1547
@@ -895,23 +897,23 @@ msgstr ""
 msgid "User home dir encrypted"
 msgstr ""
 
-#: src/keymap.py:71
+#: src/keymap.py:72
 msgid "Select your keyboard layout"
 msgstr "Vyberte rozložení klávesnice"
 
-#: src/keymap.py:75
+#: src/keymap.py:76
 msgid "Type here to test your keyboard"
 msgstr ""
 
-#: src/keymap.py:82
+#: src/keymap.py:83
 msgid "Layouts"
 msgstr "Rozložení"
 
-#: src/keymap.py:88
+#: src/keymap.py:89
 msgid "Variants"
 msgstr "Varianty"
 
-#: src/keymap.py:110
+#: src/keymap.py:108
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "rozložení klávesnice je %s"
@@ -960,16 +962,6 @@ msgstr "Vybrané umístění bude použit jako národní prostředí systému.�
 #: src/location.py:73
 msgid "Country, territory or area:"
 msgstr "Země, území nebo oblast:"
-
-#: src/location.py:196
-#, python-format
-msgid "locale changed to : %s"
-msgstr "Národní prostředí bude změněno na: %s"
-
-#: src/location.py:198
-#, python-format
-msgid "Can't change to locale '%s'"
-msgstr "Nelze změnit národní prostředí na '%s'"
 
 #: src/parted3/fs_module.py:147
 #, python-format
@@ -1044,7 +1036,7 @@ msgstr ""
 msgid "Can't detect used space of BTRFS partition %s"
 msgstr ""
 
-#: src/parted3/used_space.py:217
+#: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
 msgstr ""

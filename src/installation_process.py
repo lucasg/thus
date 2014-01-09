@@ -1173,9 +1173,6 @@ class InstallationProcess(multiprocessing.Process):
         locale_conf_path = os.path.join(self.dest_dir, "etc/locale.conf")
         with open(locale_conf_path, "w") as locale_conf:
             locale_conf.write('LANG=%s\n' % locale)
-            locale_conf.write('LC_MESSAGES=%s\n' % locale)
-            #locale_conf.write('LC_COLLATE=C\n')
-            locale_conf.write('LC_COLLATE=%s\n' % locale)
 
         environment_path = os.path.join(self.dest_dir, "etc/environment")
         with open(environment_path, "w") as environment:

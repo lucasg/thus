@@ -21,11 +21,17 @@ Graphical Installer for Manjaro Linux
  * python-gobject 3
  * python-dbus
  * python-cairo
- * python-pyqt 4/5 (optional)
  * rsync
  * sudo
  * systemd
+ * keyboardctl
+ * ttf-aboriginal-sans
  * ttf-indic-otf
+ * ttf-khmer
+ * ttf-lohit-fonts
+ * ttf-myanmar3
+ * ttf-thaana-fonts
+ * ttf-tlwg
  * upower
  * util-linux
  * webkitgtk 3

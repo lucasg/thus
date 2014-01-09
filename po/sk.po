@@ -6,13 +6,14 @@
 # archetyp <archetyp@linuxmail.org>, 2013
 # Dušan Lago <dusan.lago@gmail.com>, 2011,2013
 # Jose Riha <jose1711@gmail.com>, 2011
+# richie4422 <riko442@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 20:32+0100\n"
-"PO-Revision-Date: 2013-12-20 19:36+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2014-01-04 09:08+0100\n"
+"PO-Revision-Date: 2014-01-07 01:44+0000\n"
+"Last-Translator: richie4422 <riko442@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/manjaro-thus/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,15 +45,15 @@ msgstr ""
 #: thus.py:222
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "Používam '%s' súbor ako zoznam balíčkov"
 
 #: thus.py:239
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Inštalátor Manjaro"
 
 #: thus.py:294
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Opúšťam inštalátor..."
 
 #: src/auto_partition.py:75 src/auto_partition.py:81
 #: src/installation_process.py:409 src/installation_process.py:422
@@ -98,11 +99,11 @@ msgstr ""
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation_alongside.py:218
 msgid "unknown"
-msgstr ""
+msgstr "neznáme"
 
 #: src/bootloader.py:54 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Aký typ bootovania má váš systém?"
 
 #: src/bootloader.py:59
 msgid "BIOS (Most Common)"
@@ -166,60 +167,60 @@ msgstr ""
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "je zapojený do zdroja napájania"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "je pripojený na internet"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "Pre čo najlepší výsledok sa uistite , že tento počítač:"
 
 #: src/check.py:173
 msgid "We have Internet connection."
-msgstr ""
+msgstr "Pripojené k internetu."
 
 #: src/check.py:174
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "Pripojené k zdroju napájania,"
 
 #: src/check.py:175
 msgid "We have enough disk space."
 msgstr ""
 
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
-#: src/installation_advanced.py:513
+#: src/installation_advanced.py:511
 msgid "free space"
-msgstr ""
+msgstr "voľné miesto"
 
 #: src/installation_advanced.py:278 src/installation_alongside.py:170
 msgid "Device"
-msgstr ""
+msgstr "Zariadenie"
 
 #: src/installation_advanced.py:281
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: src/installation_advanced.py:284
 msgid "Mount point"
-msgstr ""
+msgstr "Bod pripojenia"
 
 #: src/installation_advanced.py:287
 msgid "Label"
-msgstr ""
+msgstr "Menovka"
 
 #: src/installation_advanced.py:293 src/installation_advanced.py:1554
 msgid "Format"
-msgstr ""
+msgstr "Formát"
 
 #: src/installation_advanced.py:296
 msgid "Size"
-msgstr ""
+msgstr "Veľkosť"
 
 #: src/installation_advanced.py:299
 msgid "Used"
-msgstr ""
+msgstr "Použitých"
 
 #: src/installation_advanced.py:302
 msgid "Flags"
@@ -227,188 +228,190 @@ msgstr ""
 
 #: src/installation_advanced.py:308
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:485
 msgid "none"
-msgstr ""
+msgstr "žiadny"
 
-#: src/installation_advanced.py:535 src/installation_advanced.py:948
-#: src/installation_advanced.py:1423 src/installation_advanced.py:1507
+#: src/installation_advanced.py:533 src/installation_advanced.py:944
+#: src/installation_advanced.py:1415 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
-msgstr ""
+msgstr "rozšírený"
 
-#: src/installation_advanced.py:666 src/installation_advanced.py:918
+#: src/installation_advanced.py:664 src/installation_advanced.py:914
 msgid "Can't use same mount point twice..."
 msgstr ""
 
-#: src/installation_advanced.py:668
-msgid "Root partition must be formatted..."
-msgstr ""
-
-#: src/installation_advanced.py:939
+#: src/installation_advanced.py:935
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Vytváram hlavný oddiel"
 
-#: src/installation_advanced.py:950
+#: src/installation_advanced.py:946
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Vytváram rozšírený oddiel"
 
-#: src/installation_advanced.py:956
+#: src/installation_advanced.py:952
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Vytváram logický oddiel"
 
-#: src/installation_advanced.py:1088
+#: src/installation_advanced.py:1084
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Pokročilý režim inštalácie"
 
-#: src/installation_advanced.py:1092 ui/installation_advanced.ui:1024
+#: src/installation_advanced.py:1088 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Použiť toto zariadenie na inštaláciu zavádzača:"
 
-#: src/installation_advanced.py:1102 ui/installation_advanced.ui:943
+#: src/installation_advanced.py:1098 ui/installation_advanced.ui:943
 msgid "New partition table"
-msgstr ""
+msgstr "Nová tabuľka oddielov"
 
-#: src/installation_advanced.py:1110
+#: src/installation_advanced.py:1106
 msgid "Change..."
-msgstr ""
+msgstr "Zmeniť..."
 
-#: src/installation_advanced.py:1115 ui/installation_advanced.ui:407
+#: src/installation_advanced.py:1111 ui/installation_advanced.ui:407
 msgid "Size:"
-msgstr ""
+msgstr "Veľkosť:"
 
-#: src/installation_advanced.py:1119 ui/installation_advanced.ui:630
+#: src/installation_advanced.py:1115 ui/installation_advanced.ui:630
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
-#: src/installation_advanced.py:1123 ui/installation_advanced.ui:647
+#: src/installation_advanced.py:1119 ui/installation_advanced.ui:647
 msgid "Primary"
-msgstr ""
+msgstr "Hlavný"
 
-#: src/installation_advanced.py:1127 ui/installation_advanced.ui:671
+#: src/installation_advanced.py:1123 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr ""
+msgstr "Logický"
 
-#: src/installation_advanced.py:1131 ui/installation_advanced.ui:695
+#: src/installation_advanced.py:1127 ui/installation_advanced.ui:695
 msgid "Extended"
-msgstr ""
+msgstr "Rozšírený"
 
-#: src/installation_advanced.py:1135 ui/installation_advanced.ui:516
+#: src/installation_advanced.py:1131 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Začiatok tejto oblasti"
 
-#: src/installation_advanced.py:1139 ui/installation_advanced.ui:540
+#: src/installation_advanced.py:1135 ui/installation_advanced.ui:540
 msgid "End of this space"
-msgstr ""
+msgstr "Koniec tejto oblasti"
 
-#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
+#: src/installation_advanced.py:1139 src/installation_advanced.py:1156
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
-msgstr ""
+msgstr "Použiť ako:"
 
-#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
+#: src/installation_advanced.py:1143 src/installation_advanced.py:1160
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
-msgstr ""
+msgstr "Bod pripojenia:"
 
-#: src/installation_advanced.py:1151 src/installation_advanced.py:1168
+#: src/installation_advanced.py:1147 src/installation_advanced.py:1164
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
-msgstr ""
+msgstr "Menovka (nepovinné):"
 
-#: src/installation_advanced.py:1155
+#: src/installation_advanced.py:1151
 msgid "Encryption Options..."
 msgstr ""
 
-#: src/installation_advanced.py:1172 ui/installation_advanced.ui:276
+#: src/installation_advanced.py:1168 ui/installation_advanced.ui:276
 msgid "Format:"
-msgstr ""
+msgstr "Formát:"
 
-#: src/installation_advanced.py:1177
+#: src/installation_advanced.py:1173
 msgid "Partition Table Type:"
 msgstr ""
 
-#: src/installation_advanced.py:1182
+#: src/installation_advanced.py:1178
 msgid "Create Partition Table"
 msgstr ""
 
-#: src/installation_advanced.py:1185 src/installation_alongside.py:148
+#: src/installation_advanced.py:1181 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
 msgid "Install now!"
-msgstr ""
+msgstr "Inštalovať teraz!"
 
-#: src/installation_advanced.py:1273
+#: src/installation_advanced.py:1269
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Vytváram novú tabuľku oddielov typu %s na disk %s"
 
-#: src/installation_advanced.py:1283
+#: src/installation_advanced.py:1279
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr ""
 
-#: src/installation_advanced.py:1315
+#: src/installation_advanced.py:1311
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr ""
 
-#: src/installation_advanced.py:1343
+#: src/installation_advanced.py:1339
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr ""
 
-#: src/installation_advanced.py:1461
+#: src/installation_advanced.py:1453
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s je pripojený ako odkladací priestor swap.\nAk chcete pokračovať, musí byť odpojený.\nKliknite na \"Ano\", ak ho chcete odpojiť alebo na \"Nie\" pre návrat späť\n"
 
-#: src/installation_advanced.py:1465
+#: src/installation_advanced.py:1457
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s je pripojený k '%s'.\nPre pokračovanie musí byť odpojený.\nKliknite na \"Ano\" pre odpojenie alebo na \"Nie\" pre návrat späť.\n"
 
-#: src/installation_advanced.py:1488
+#: src/installation_advanced.py:1480
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr ""
 
+#: src/installation_advanced.py:1486
+msgid ""
+"The root partition is not marked to be formatted.\n"
+"This might create problems. Should it be marked to be formatted now?"
+msgstr "Oddiel root nie je označený na formátovanie.\nKvôli tomu môžu vzniknúť problémy. Chcete oddiel označiť na formátovanie teraz?"
+
 #: src/installation_advanced.py:1547
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Oddiel %s bude odstránený"
 
 #: src/installation_advanced.py:1554
 msgid "Partition"
-msgstr ""
+msgstr "Oddiel"
 
 #: src/installation_advanced.py:1554
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 #: src/installation_advanced.py:1554
 msgid "Relabel"
-msgstr ""
+msgstr "Preštítkovať"
 
 #: src/installation_advanced.py:1554
 msgid "Mount"
-msgstr ""
+msgstr "Pripojiť"
 
 #: src/installation_advanced.py:1575
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Na týchto diskoch budú prevedené následovne zmeny:"
 
 #: src/installation_advanced.py:1628
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Ukladám zmeny prevedené v %s"
 
 #: src/installation_advanced.py:1651
 #, python-format
@@ -423,7 +426,7 @@ msgstr ""
 #: src/installation_advanced.py:1741
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro nainštaluje zavádzač typu %s do %s"
 
 #: src/installation_advanced.py:1744 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
@@ -436,7 +439,7 @@ msgstr ""
 #: src/installation_alongside.py:115
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Nie je možné načítať css %s"
 
 #: src/installation_alongside.py:140
 msgid "Choose which OS you want to install Manjaro next to"
@@ -444,15 +447,15 @@ msgstr ""
 
 #: src/installation_alongside.py:144
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Nainštalovať Manjaro vedľa iného operačného systému"
 
 #: src/installation_alongside.py:173
 msgid "Detected OS"
-msgstr ""
+msgstr "Nájdený iný operačný systém"
 
 #: src/installation_alongside.py:176
 msgid "Filesystem"
-msgstr ""
+msgstr "Súborový systém"
 
 #: src/installation_alongside.py:194
 msgid "pyparted3 not found!"
@@ -477,15 +480,15 @@ msgstr ""
 
 #: src/installation_ask.py:106
 msgid "Installation type"
-msgstr ""
+msgstr "Spôsob inštalácie"
 
 #: src/installation_ask.py:120 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Vymazať disk a nainštalovať Manjaro (automaticky)"
 
 #: src/installation_ask.py:123
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Pozor: Toto odstráni všetky dáta na disku"
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
@@ -517,7 +520,7 @@ msgstr ""
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Nainštalovať Manjaro vedľa %s"
 
 #: src/installation_ask.py:168
 msgid "Manage your partitions and where to install Manjaro (advanced)"
@@ -547,11 +550,11 @@ msgstr ""
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "Automatický spôsob inštalácie"
 
 #: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "Zvoľte jednotku:"
 
 #: src/installation_automatic.py:87
 msgid ""
@@ -562,7 +565,7 @@ msgstr ""
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Prosím, zvoľte jednotku pre inštaláciu Manjaro \na kliknite na tlačidlo dole pre začatie procesu."
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
@@ -576,7 +579,7 @@ msgstr ""
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "Zobraziť heslo"
 
 #: src/installation_automatic.py:163
 msgid "A LUKS password has been set"
@@ -600,12 +603,12 @@ msgstr ""
 #: src/installation_process.py:90
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Kopírujem '/%s'"
 
 #: src/installation_process.py:168
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "Inštalujem metódou '%s' "
 
 #: src/installation_process.py:244
 #, python-format
@@ -619,7 +622,7 @@ msgstr ""
 #: src/installation_process.py:304 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "Pripájam oddiel %s k adresáru %s"
 
 #: src/installation_process.py:310
 #, python-format
@@ -887,23 +890,23 @@ msgstr ""
 msgid "User home dir encrypted"
 msgstr ""
 
-#: src/keymap.py:71
+#: src/keymap.py:72
 msgid "Select your keyboard layout"
 msgstr ""
 
-#: src/keymap.py:75
+#: src/keymap.py:76
 msgid "Type here to test your keyboard"
 msgstr ""
 
-#: src/keymap.py:82
+#: src/keymap.py:83
 msgid "Layouts"
 msgstr ""
 
-#: src/keymap.py:88
+#: src/keymap.py:89
 msgid "Variants"
 msgstr ""
 
-#: src/keymap.py:110
+#: src/keymap.py:108
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr ""
@@ -951,16 +954,6 @@ msgstr ""
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
-
-#: src/location.py:196
-#, python-format
-msgid "locale changed to : %s"
-msgstr ""
-
-#: src/location.py:198
-#, python-format
-msgid "Can't change to locale '%s'"
 msgstr ""
 
 #: src/parted3/fs_module.py:147
@@ -1036,7 +1029,7 @@ msgstr ""
 msgid "Can't detect used space of BTRFS partition %s"
 msgstr ""
 
-#: src/parted3/used_space.py:217
+#: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
 msgstr ""
@@ -1160,7 +1153,7 @@ msgstr ""
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr ""
+msgstr "Potvrdenie hesla root:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
@@ -1184,11 +1177,11 @@ msgstr ""
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "K prihláseniu je potrebné heslo"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "Zašifrovať domovskú zložku."
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1196,11 +1189,11 @@ msgstr ""
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "Zobraziť heslo root"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "Použiť heslo root"
 
 #: src/user_info.py:252
 msgid ""
@@ -1258,11 +1251,11 @@ msgstr ""
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -1282,7 +1275,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
-msgstr ""
+msgstr "Tabuľka typu oddielov:"
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
@@ -1290,7 +1283,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
-msgstr ""
+msgstr "Možnosti šifrovania..."
 
 #: ui/installation_advanced.ui:383
 msgid "Create partition"

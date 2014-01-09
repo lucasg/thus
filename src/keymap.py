@@ -28,6 +28,7 @@ import canonical.keyboard_names as keyboard_names
 import logging
 import canonical.misc as misc
 import subprocess
+import keyboard_widget
 
 _next_page = "installation_ask"
 _prev_page = "timezone"
@@ -54,15 +55,9 @@ class Keymap(Gtk.Box):
         self.variant_treeview = self.ui.get_object("keyboardvariant")
         self.keyboard_test_entry = self.ui.get_object("keyboard_test_entry")
 
-        self.keyboard_image = self.ui.get_object("keyboard_image")
-        # Disable the keyboard_image if pyqt is not avaiable
-        if os.path.exists('/usr/lib/python3.3/site-packages/PyQt5') or os.path.exists('/usr/lib/python3.3/site-packages/PyQt4'):
-            # We use keymap with pyqt
-            self.pyqt_available = True
-        else:
-            # No pyqt can be found, so disable this feature
-            self.pyqt_available = False
-            self.keyboard_image.destroy()
+        self.keyboard_box = self.ui.get_object("keyboard_box")
+        self.keyboard_widget = keyboard_widget.KeyboardWidget()
+        self.keyboard_box.add(self.keyboard_widget)
 
         self.create_toolviews()
 
@@ -238,8 +233,7 @@ class Keymap(Gtk.Box):
 
     def on_keyboardvariant_cursor_changed(self, widget):
         self.store_values()
-        if self.pyqt_available:
-            self.set_keyboard_image()
+        self.set_keyboard_widget()
 
     def store_values(self):
         # we've previously stored our layout, now store our variant
@@ -296,9 +290,7 @@ class Keymap(Gtk.Box):
         with misc.raised_privileges():
             subprocess.check_call(['localectl', 'set-keymap', '--no-convert', self.keyboard_layout])
 
-    def set_keyboard_image(self):
-        keyboard_image_file = "/tmp/keyboard_layout.png"
-        keyboard_layout_generator = os.path.join(self.settings.get('thus'), "src/generate_keyboard_layout.py")
-        os.system('python "%s" "%s" "%s" "%s"' %
-                   (keyboard_layout_generator, self.keyboard_layout, self.keyboard_variant, keyboard_image_file))
-        self.keyboard_image.set_from_file(keyboard_image_file)
+    def set_keyboard_widget(self):
+        ''' Pass current keyboard layout to the keyboard widget. '''
+        self.keyboard_widget.set_layout(self.keyboard_layout)
+        self.keyboard_widget.set_variant(self.keyboard_variant)
