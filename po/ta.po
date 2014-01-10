@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-04 09:08+0100\n"
-"PO-Revision-Date: 2014-01-04 08:13+0000\n"
+"POT-Creation-Date: 2014-01-10 21:17+0100\n"
+"PO-Revision-Date: 2014-01-10 20:21+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Tamil (http://www.transifex.com/projects/p/manjaro-thus/language/ta/)\n"
 "MIME-Version: 1.0\n"
@@ -46,11 +46,11 @@ msgstr ""
 
 #: thus.py:239
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro நிறுவி"
 
 #: thus.py:294
 msgid "Quiting installer..."
-msgstr ""
+msgstr "நிறுவி மூடுகிறது..."
 
 #: src/auto_partition.py:75 src/auto_partition.py:81
 #: src/installation_process.py:409 src/installation_process.py:422
@@ -96,11 +96,11 @@ msgstr ""
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation_alongside.py:218
 msgid "unknown"
-msgstr ""
+msgstr "தெரியாத"
 
 #: src/bootloader.py:54 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "உங்கள் பூட் சிஸ்டம் வகை என்ன?"
 
 #: src/bootloader.py:59
 msgid "BIOS (Most Common)"
@@ -164,7 +164,7 @@ msgstr ""
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "மின் வழங்கியில் சொருகப்பட்டுள்ளது"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
@@ -172,15 +172,15 @@ msgstr ""
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "சிறந்த முடிவுகளுக்காக:"
 
 #: src/check.py:173
 msgid "We have Internet connection."
-msgstr ""
+msgstr "இணைய இணைப்பு உள்ளது."
 
 #: src/check.py:174
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "மின் இனைப்பு உள்ள்து."
 
 #: src/check.py:175
 msgid "We have enough disk space."
@@ -189,23 +189,23 @@ msgstr ""
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
 #: src/installation_advanced.py:511
 msgid "free space"
-msgstr ""
+msgstr "காலி இடம் "
 
 #: src/installation_advanced.py:278 src/installation_alongside.py:170
 msgid "Device"
-msgstr ""
+msgstr "சாதனம்"
 
 #: src/installation_advanced.py:281
 msgid "Type"
-msgstr ""
+msgstr "வகை"
 
 #: src/installation_advanced.py:284
 msgid "Mount point"
-msgstr ""
+msgstr "மவுண்ட் பாயிண்ட்"
 
 #: src/installation_advanced.py:287
 msgid "Label"
-msgstr ""
+msgstr "லேபில்"
 
 #: src/installation_advanced.py:293 src/installation_advanced.py:1554
 msgid "Format"
@@ -213,7 +213,7 @@ msgstr ""
 
 #: src/installation_advanced.py:296
 msgid "Size"
-msgstr ""
+msgstr "அளவு"
 
 #: src/installation_advanced.py:299
 msgid "Used"
@@ -221,21 +221,21 @@ msgstr ""
 
 #: src/installation_advanced.py:302
 msgid "Flags"
-msgstr ""
+msgstr "ப்லாக்ஸ்"
 
 #: src/installation_advanced.py:308
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:485
 msgid "none"
-msgstr ""
+msgstr "none"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:944
 #: src/installation_advanced.py:1415 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
-msgstr ""
+msgstr "நீட்டிக்கப்பட்ட"
 
 #: src/installation_advanced.py:664 src/installation_advanced.py:914
 msgid "Can't use same mount point twice..."
@@ -243,47 +243,47 @@ msgstr ""
 
 #: src/installation_advanced.py:935
 msgid "Creating primary partition"
-msgstr ""
+msgstr "பிரைமரி  பகிர்வு உருவாக்கப்பட்டு வருகிறது"
 
 #: src/installation_advanced.py:946
 msgid "Creating extended partition"
-msgstr ""
+msgstr "எகஸ்டெண்டெட் பகிர்வு உருவாக்கப்பட்டு வருகிறது"
 
 #: src/installation_advanced.py:952
 msgid "Creating logical partition"
-msgstr ""
+msgstr " லோஜிக்கல் பகிர்வு உருவாக்கப்பட்டு வருகிறது"
 
 #: src/installation_advanced.py:1084
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "கூடுதல் நிறுவல் முறை"
 
 #: src/installation_advanced.py:1088 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "துவக்க ஏற்றி நிறுவல் சாதனம்:"
 
 #: src/installation_advanced.py:1098 ui/installation_advanced.ui:943
 msgid "New partition table"
-msgstr ""
+msgstr "புதிய பகிர்வு அட்டவணை"
 
 #: src/installation_advanced.py:1106
 msgid "Change..."
-msgstr ""
+msgstr "மாட்றம்.."
 
 #: src/installation_advanced.py:1111 ui/installation_advanced.ui:407
 msgid "Size:"
-msgstr ""
+msgstr "அளவு:"
 
 #: src/installation_advanced.py:1115 ui/installation_advanced.ui:630
 msgid "Type:"
-msgstr ""
+msgstr "வகை:"
 
 #: src/installation_advanced.py:1119 ui/installation_advanced.ui:647
 msgid "Primary"
-msgstr ""
+msgstr "பிரய்மரி "
 
 #: src/installation_advanced.py:1123 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr ""
+msgstr "லாஜிகல்"
 
 #: src/installation_advanced.py:1127 ui/installation_advanced.ui:695
 msgid "Extended"
@@ -835,75 +835,75 @@ msgstr ""
 msgid "Generating locales ..."
 msgstr ""
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1186
 msgid "Adjusting hardware clock ..."
 msgstr ""
 
-#: src/installation_process.py:1198
+#: src/installation_process.py:1195
 msgid "Configuring hardware ..."
 msgstr ""
 
-#: src/installation_process.py:1271
+#: src/installation_process.py:1268
 msgid "Set up graphics card ..."
 msgstr ""
 
-#: src/installation_process.py:1278
+#: src/installation_process.py:1275
 msgid "Can't execute the MHWD script"
 msgstr ""
 
-#: src/installation_process.py:1291
+#: src/installation_process.py:1288
 msgid "Configure display manager ..."
 msgstr ""
 
-#: src/installation_process.py:1397
+#: src/installation_process.py:1394
 msgid "Configure System ..."
 msgstr ""
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1419
 msgid "Removing live configuration (packages)"
 msgstr ""
 
-#: src/installation_process.py:1438
+#: src/installation_process.py:1435
 msgid "Configuring package manager"
 msgstr ""
 
-#: src/installation_process.py:1450
+#: src/installation_process.py:1447
 msgid "Finished configuring package manager."
 msgstr ""
 
-#: src/installation_process.py:1474
+#: src/installation_process.py:1471
 msgid "Running mkinitcpio ..."
 msgstr ""
 
-#: src/installation_process.py:1477
+#: src/installation_process.py:1474
 msgid "Running mkinitcpio - done"
 msgstr ""
 
-#: src/installation_process.py:1493
+#: src/installation_process.py:1490
 msgid "Encrypting user home dir ..."
 msgstr ""
 
-#: src/installation_process.py:1495
+#: src/installation_process.py:1492
 msgid "User home dir encrypted"
 msgstr ""
 
-#: src/keymap.py:72
+#: src/keymap.py:67
 msgid "Select your keyboard layout"
 msgstr ""
 
-#: src/keymap.py:76
+#: src/keymap.py:71
 msgid "Type here to test your keyboard"
 msgstr ""
 
-#: src/keymap.py:83
+#: src/keymap.py:78
 msgid "Layouts"
 msgstr "அமைப்பத்திட்டம்"
 
-#: src/keymap.py:89
+#: src/keymap.py:84
 msgid "Variants"
 msgstr ""
 
-#: src/keymap.py:108
+#: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr ""
@@ -1248,11 +1248,11 @@ msgstr ""
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"

@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-04 09:08+0100\n"
-"PO-Revision-Date: 2014-01-04 08:13+0000\n"
+"POT-Creation-Date: 2014-01-10 21:17+0100\n"
+"PO-Revision-Date: 2014-01-10 20:21+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -843,75 +843,75 @@ msgstr "Stel hetzelfde wachtwoord als root."
 msgid "Generating locales ..."
 msgstr "Genereer locales ..."
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1186
 msgid "Adjusting hardware clock ..."
 msgstr "Bijstellen hardware klok .."
 
-#: src/installation_process.py:1198
+#: src/installation_process.py:1195
 msgid "Configuring hardware ..."
 msgstr "Configureren van hardware ..."
 
-#: src/installation_process.py:1271
+#: src/installation_process.py:1268
 msgid "Set up graphics card ..."
 msgstr "Instellen van grafische kaart .."
 
-#: src/installation_process.py:1278
+#: src/installation_process.py:1275
 msgid "Can't execute the MHWD script"
 msgstr "Kan het MHWD script niet uitvoeren"
 
-#: src/installation_process.py:1291
+#: src/installation_process.py:1288
 msgid "Configure display manager ..."
 msgstr "Configureer display Manager .."
 
-#: src/installation_process.py:1397
+#: src/installation_process.py:1394
 msgid "Configure System ..."
 msgstr "Configureer Systeem .."
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1419
 msgid "Removing live configuration (packages)"
 msgstr "Verwijderen live configuratie (pakketten)"
 
-#: src/installation_process.py:1438
+#: src/installation_process.py:1435
 msgid "Configuring package manager"
 msgstr "Configureren pakket beheerder"
 
-#: src/installation_process.py:1450
+#: src/installation_process.py:1447
 msgid "Finished configuring package manager."
 msgstr "Klaar met pakket beheerder te configureren."
 
-#: src/installation_process.py:1474
+#: src/installation_process.py:1471
 msgid "Running mkinitcpio ..."
 msgstr "Laad Mkinitcpio ..."
 
-#: src/installation_process.py:1477
+#: src/installation_process.py:1474
 msgid "Running mkinitcpio - done"
 msgstr "Laden mkinitcpio - gedaan"
 
-#: src/installation_process.py:1493
+#: src/installation_process.py:1490
 msgid "Encrypting user home dir ..."
 msgstr "Versleutel gebruiker home dir .."
 
-#: src/installation_process.py:1495
+#: src/installation_process.py:1492
 msgid "User home dir encrypted"
 msgstr "Gebruiker home map versleuteld"
 
-#: src/keymap.py:72
+#: src/keymap.py:67
 msgid "Select your keyboard layout"
 msgstr "Selecteer toetsenbord schema"
 
-#: src/keymap.py:76
+#: src/keymap.py:71
 msgid "Type here to test your keyboard"
 msgstr "Type hier en test je toetsenbord"
 
-#: src/keymap.py:83
+#: src/keymap.py:78
 msgid "Layouts"
 msgstr "Schema's"
 
-#: src/keymap.py:89
+#: src/keymap.py:84
 msgid "Variants"
 msgstr "Varianten"
 
-#: src/keymap.py:108
+#: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "Toetsenbord_Schema is %s"

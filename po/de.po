@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-04 09:08+0100\n"
-"PO-Revision-Date: 2014-01-04 08:15+0000\n"
+"POT-Creation-Date: 2014-01-10 21:17+0100\n"
+"PO-Revision-Date: 2014-01-10 20:22+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -841,75 +841,75 @@ msgstr "Gleiche Passwort für Root gesetzt."
 msgid "Generating locales ..."
 msgstr "Erzeuge Lokale ..."
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1186
 msgid "Adjusting hardware clock ..."
 msgstr "Stelle Hardware-Uhr ein ..."
 
-#: src/installation_process.py:1198
+#: src/installation_process.py:1195
 msgid "Configuring hardware ..."
 msgstr "Konfiguriere Hardware ..."
 
-#: src/installation_process.py:1271
+#: src/installation_process.py:1268
 msgid "Set up graphics card ..."
 msgstr "Konfiguriere Grafikkarte ..."
 
-#: src/installation_process.py:1278
+#: src/installation_process.py:1275
 msgid "Can't execute the MHWD script"
 msgstr "Kann das MHWD-Skript nicht ausführen."
 
-#: src/installation_process.py:1291
+#: src/installation_process.py:1288
 msgid "Configure display manager ..."
 msgstr "Konfiguriere Display-Manager ..."
 
-#: src/installation_process.py:1397
+#: src/installation_process.py:1394
 msgid "Configure System ..."
 msgstr "Konfiguriere System ..."
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1419
 msgid "Removing live configuration (packages)"
 msgstr "Entferne die Pakete der Live-Konfigurationen."
 
-#: src/installation_process.py:1438
+#: src/installation_process.py:1435
 msgid "Configuring package manager"
 msgstr "Konfiguriere Paketverwaltung"
 
-#: src/installation_process.py:1450
+#: src/installation_process.py:1447
 msgid "Finished configuring package manager."
 msgstr "Die Konfiguration der Paketverwaltung ist beendet."
 
-#: src/installation_process.py:1474
+#: src/installation_process.py:1471
 msgid "Running mkinitcpio ..."
 msgstr "Führe mkinitcpio aus ..."
 
-#: src/installation_process.py:1477
+#: src/installation_process.py:1474
 msgid "Running mkinitcpio - done"
 msgstr "Ausführung von mkinitcpio durchgeführt."
 
-#: src/installation_process.py:1493
+#: src/installation_process.py:1490
 msgid "Encrypting user home dir ..."
 msgstr "Verschlüssele Home-Verzeichnis ..."
 
-#: src/installation_process.py:1495
+#: src/installation_process.py:1492
 msgid "User home dir encrypted"
 msgstr "Benutzer verwendet verschlüsseltes Home-Verzeichnis."
 
-#: src/keymap.py:72
+#: src/keymap.py:67
 msgid "Select your keyboard layout"
 msgstr "Wählen Sie Ihre Tastaturbelegung aus"
 
-#: src/keymap.py:76
+#: src/keymap.py:71
 msgid "Type here to test your keyboard"
 msgstr "Schreiben Sie hier um Ihre Tastatur zu testen"
 
-#: src/keymap.py:83
+#: src/keymap.py:78
 msgid "Layouts"
 msgstr "Belegungen"
 
-#: src/keymap.py:89
+#: src/keymap.py:84
 msgid "Variants"
 msgstr "Varianten"
 
-#: src/keymap.py:108
+#: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "keyboard_layout ist %s"

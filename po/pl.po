@@ -11,16 +11,16 @@
 # manjarolinux <philm@manjaro.org>, 2013
 # Mateusz Mikołajczyk <mikolajczyk.mateusz@gmail.com>, 2013
 # Mateusz Mikołajczyk <mikolajczyk.mateusz@gmail.com>, 2013
-# manjarolinux <philm@manjaro.org>, 2013
+# manjarolinux <philm@manjaro.org>, 2013-2014
 # Pieter19 <pieter1911@gmail.com>, 2013
 # Piotr Strębski <strebski@o2.pl>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-04 09:08+0100\n"
-"PO-Revision-Date: 2014-01-07 16:18+0000\n"
-"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"POT-Creation-Date: 2014-01-10 21:17+0100\n"
+"PO-Revision-Date: 2014-01-10 20:27+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/manjaro-thus/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -388,7 +388,7 @@ msgstr "%s wydaje się być zamontowanym (jest zajęty), ale nie ma żadnego pun
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
-msgstr "Partycja root nie została zaznaczona do sformatowania.\nMoże to stworzyć problemy. Czy zaznaczyć ją teraz do sformatowania?"
+msgstr "Partycja root nie jest zaznaczona do sformatowania.\nMoże to stworzyć problemy. Czy zaznaczyć ja teraz do sformatowania?"
 
 #: src/installation_advanced.py:1547
 #, python-format
@@ -845,75 +845,75 @@ msgstr "Ustaw to samo hasło dla roota."
 msgid "Generating locales ..."
 msgstr "Generowanie pakietów językowych..."
 
-#: src/installation_process.py:1189
+#: src/installation_process.py:1186
 msgid "Adjusting hardware clock ..."
 msgstr "Dostosowywanie zegara sprzętowego..."
 
-#: src/installation_process.py:1198
+#: src/installation_process.py:1195
 msgid "Configuring hardware ..."
 msgstr "Konfigurowanie urządzeń..."
 
-#: src/installation_process.py:1271
+#: src/installation_process.py:1268
 msgid "Set up graphics card ..."
 msgstr "Konfigurowanie karty graficznej..."
 
-#: src/installation_process.py:1278
+#: src/installation_process.py:1275
 msgid "Can't execute the MHWD script"
 msgstr "Nie można uruchomić skryptu MHWD"
 
-#: src/installation_process.py:1291
+#: src/installation_process.py:1288
 msgid "Configure display manager ..."
 msgstr "Konfigurowanie menedżera wyświetlania..."
 
-#: src/installation_process.py:1397
+#: src/installation_process.py:1394
 msgid "Configure System ..."
 msgstr "Konfigurowanie systemu..."
 
-#: src/installation_process.py:1422
+#: src/installation_process.py:1419
 msgid "Removing live configuration (packages)"
 msgstr "Usuwanie konfiguracji live (pakietów)"
 
-#: src/installation_process.py:1438
+#: src/installation_process.py:1435
 msgid "Configuring package manager"
 msgstr "Konfigurowanie menedżera pakietów"
 
-#: src/installation_process.py:1450
+#: src/installation_process.py:1447
 msgid "Finished configuring package manager."
 msgstr "Ukończono konfigurowanie menedżera pakietów."
 
-#: src/installation_process.py:1474
+#: src/installation_process.py:1471
 msgid "Running mkinitcpio ..."
 msgstr "Uruchamianie mkinitcpio..."
 
-#: src/installation_process.py:1477
+#: src/installation_process.py:1474
 msgid "Running mkinitcpio - done"
 msgstr "Uruchamianie mkinitcpio - ukończono"
 
-#: src/installation_process.py:1493
+#: src/installation_process.py:1490
 msgid "Encrypting user home dir ..."
 msgstr "Szyfrowanie katalogu domowego użytkownika..."
 
-#: src/installation_process.py:1495
+#: src/installation_process.py:1492
 msgid "User home dir encrypted"
 msgstr "Katalog domowy użytkownika został zaszyfrowany"
 
-#: src/keymap.py:72
+#: src/keymap.py:67
 msgid "Select your keyboard layout"
 msgstr "Wybierz swój układ klawiatury"
 
-#: src/keymap.py:76
+#: src/keymap.py:71
 msgid "Type here to test your keyboard"
 msgstr "Wpisz tutaj znaki, by przetestować swoją klawiaturę"
 
-#: src/keymap.py:83
+#: src/keymap.py:78
 msgid "Layouts"
 msgstr "Układy"
 
-#: src/keymap.py:89
+#: src/keymap.py:84
 msgid "Variants"
 msgstr "Odmiany"
 
-#: src/keymap.py:108
+#: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
 msgstr "keyboard_layout to %s"
