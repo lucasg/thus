@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Blask Wang <blaskyy@gmail.com>, 2013
+# Archibald Lu <chienius@outlook.com>, 2014
 # leonfeng <chaofeng111@gmail.com>, 2011,2013
 # mytbk <mytbk920423@gmail.com>, 2013
 # 甘 露 <rhythm.gan@gmail.com>, 2011
@@ -11,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-10 21:17+0100\n"
-"PO-Revision-Date: 2014-01-10 20:21+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2014-01-11 10:45+0100\n"
+"PO-Revision-Date: 2014-01-15 14:03+0000\n"
+"Last-Translator: Archibald Lu <chienius@outlook.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,15 +46,15 @@ msgstr ""
 #: thus.py:222
 #, python-format
 msgid "Using '%s' file as package list"
-msgstr ""
+msgstr "使用 '%s' 文件作为软件包列表"
 
 #: thus.py:239
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro 安装程序"
 
 #: thus.py:294
 msgid "Quiting installer..."
-msgstr ""
+msgstr "正在退出安装程序..."
 
 #: src/auto_partition.py:75 src/auto_partition.py:81
 #: src/installation_process.py:409 src/installation_process.py:422
@@ -99,11 +100,11 @@ msgstr ""
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation_alongside.py:218
 msgid "unknown"
-msgstr ""
+msgstr "未知"
 
 #: src/bootloader.py:54 ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "您的引导系统类型？"
 
 #: src/bootloader.py:59
 msgid "BIOS (Most Common)"
@@ -128,27 +129,27 @@ msgstr ""
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr ""
+msgstr "密码过短"
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr ""
+msgstr "密码强度弱"
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr ""
+msgstr "密码强度适中"
 
 #: src/canonical/validation.py:141
 msgid "good password"
-msgstr ""
+msgstr "密码强度良好"
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr ""
+msgstr "密码强度强"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr ""
+msgstr "密码不匹配"
 
 #: src/check.py:79
 msgid "System Check"
@@ -167,23 +168,23 @@ msgstr ""
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "已插入电源"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "已连接到互联网"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "为达到最优结果，请确保本计算机："
 
 #: src/check.py:173
 msgid "We have Internet connection."
-msgstr ""
+msgstr "已连接互联网。"
 
 #: src/check.py:174
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "已连接电源。"
 
 #: src/check.py:175
 msgid "We have enough disk space."
@@ -192,53 +193,53 @@ msgstr ""
 #: src/installation_advanced.py:210 src/installation_advanced.py:499
 #: src/installation_advanced.py:511
 msgid "free space"
-msgstr ""
+msgstr "空闲空间"
 
 #: src/installation_advanced.py:278 src/installation_alongside.py:170
 msgid "Device"
-msgstr ""
+msgstr "设备"
 
 #: src/installation_advanced.py:281
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: src/installation_advanced.py:284
 msgid "Mount point"
-msgstr ""
+msgstr "挂载点"
 
 #: src/installation_advanced.py:287
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: src/installation_advanced.py:293 src/installation_advanced.py:1554
 msgid "Format"
-msgstr ""
+msgstr "格式"
 
 #: src/installation_advanced.py:296
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: src/installation_advanced.py:299
 msgid "Used"
-msgstr ""
+msgstr "已使用"
 
 #: src/installation_advanced.py:302
 msgid "Flags"
-msgstr ""
+msgstr "标识"
 
 #: src/installation_advanced.py:308
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation_advanced.py:485
 msgid "none"
-msgstr ""
+msgstr "无"
 
 #: src/installation_advanced.py:533 src/installation_advanced.py:944
 #: src/installation_advanced.py:1415 src/installation_advanced.py:1507
 #: src/installation_advanced.py:1649 src/installation_advanced.py:1722
 msgid "extended"
-msgstr ""
+msgstr "扩展"
 
 #: src/installation_advanced.py:664 src/installation_advanced.py:914
 msgid "Can't use same mount point twice..."
@@ -246,74 +247,74 @@ msgstr ""
 
 #: src/installation_advanced.py:935
 msgid "Creating primary partition"
-msgstr ""
+msgstr "正在建立主分区"
 
 #: src/installation_advanced.py:946
 msgid "Creating extended partition"
-msgstr ""
+msgstr "正在建立扩展分区"
 
 #: src/installation_advanced.py:952
 msgid "Creating logical partition"
-msgstr ""
+msgstr "正在建立逻辑分区"
 
 #: src/installation_advanced.py:1084
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "高级安装模式"
 
 #: src/installation_advanced.py:1088 ui/installation_advanced.ui:1024
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "在此设备上安装引导系统:"
 
 #: src/installation_advanced.py:1098 ui/installation_advanced.ui:943
 msgid "New partition table"
-msgstr ""
+msgstr "新建分区表"
 
 #: src/installation_advanced.py:1106
 msgid "Change..."
-msgstr ""
+msgstr "更改..."
 
 #: src/installation_advanced.py:1111 ui/installation_advanced.ui:407
 msgid "Size:"
-msgstr ""
+msgstr "大小:"
 
 #: src/installation_advanced.py:1115 ui/installation_advanced.ui:630
 msgid "Type:"
-msgstr ""
+msgstr "格式:"
 
 #: src/installation_advanced.py:1119 ui/installation_advanced.ui:647
 msgid "Primary"
-msgstr ""
+msgstr "主分区"
 
 #: src/installation_advanced.py:1123 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr ""
+msgstr "逻辑分区"
 
 #: src/installation_advanced.py:1127 ui/installation_advanced.ui:695
 msgid "Extended"
-msgstr ""
+msgstr "扩展分区"
 
 #: src/installation_advanced.py:1131 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
-msgstr ""
+msgstr "空间启始"
 
 #: src/installation_advanced.py:1135 ui/installation_advanced.ui:540
 msgid "End of this space"
-msgstr ""
+msgstr "空间终末"
 
 #: src/installation_advanced.py:1139 src/installation_advanced.py:1156
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
-msgstr ""
+msgstr "用作:"
 
 #: src/installation_advanced.py:1143 src/installation_advanced.py:1160
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
-msgstr ""
+msgstr "挂载点:"
 
 #: src/installation_advanced.py:1147 src/installation_advanced.py:1164
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
-msgstr ""
+msgstr "标签 (可选):"
 
 #: src/installation_advanced.py:1151
 msgid "Encryption Options..."
@@ -321,7 +322,7 @@ msgstr ""
 
 #: src/installation_advanced.py:1168 ui/installation_advanced.ui:276
 msgid "Format:"
-msgstr ""
+msgstr "格式:"
 
 #: src/installation_advanced.py:1173
 msgid "Partition Table Type:"
@@ -334,12 +335,12 @@ msgstr ""
 #: src/installation_advanced.py:1181 src/installation_alongside.py:148
 #: src/installation_automatic.py:107
 msgid "Install now!"
-msgstr ""
+msgstr "现在安装！"
 
 #: src/installation_advanced.py:1269
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "正在建立 %s 类型在硬盘 %s 上的新分区表"
 
 #: src/installation_advanced.py:1279
 msgid ""
@@ -362,7 +363,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s 已被挂载为交换分区。\n您必须先卸载它才能继续。\n点击 是 卸载分区，点击 否 返回。\n"
 
 #: src/installation_advanced.py:1457
 #, python-format
@@ -370,7 +371,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s 已被挂载在 '%s'。\n您必须先卸载它才能继续。\n点击 是 卸载分区，点击 否 返回。\n"
 
 #: src/installation_advanced.py:1480
 #, python-format
@@ -386,32 +387,32 @@ msgstr ""
 #: src/installation_advanced.py:1547
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "分区 %s 将会非删除"
 
 #: src/installation_advanced.py:1554
 msgid "Partition"
-msgstr ""
+msgstr "分区"
 
 #: src/installation_advanced.py:1554
 msgid "New"
-msgstr ""
+msgstr "新建"
 
 #: src/installation_advanced.py:1554
 msgid "Relabel"
-msgstr ""
+msgstr "更改标签"
 
 #: src/installation_advanced.py:1554
 msgid "Mount"
-msgstr ""
+msgstr "挂载"
 
 #: src/installation_advanced.py:1575
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "以下磁盘会被应用分区操作："
 
 #: src/installation_advanced.py:1628
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "正在保存 %s 上的更改"
 
 #: src/installation_advanced.py:1651
 #, python-format
@@ -426,7 +427,7 @@ msgstr ""
 #: src/installation_advanced.py:1741
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Majaro 将会安装 %s 类型的引导系统于 %s 上"
 
 #: src/installation_advanced.py:1744 src/installation_automatic.py:211
 msgid "Thus will not install any boot loader"
@@ -439,7 +440,7 @@ msgstr ""
 #: src/installation_alongside.py:115
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "无法加载 %s css"
 
 #: src/installation_alongside.py:140
 msgid "Choose which OS you want to install Manjaro next to"
@@ -447,15 +448,15 @@ msgstr ""
 
 #: src/installation_alongside.py:144
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro 与其他操作系统共存"
 
 #: src/installation_alongside.py:173
 msgid "Detected OS"
-msgstr ""
+msgstr "已检测到的操作系统"
 
 #: src/installation_alongside.py:176
 msgid "Filesystem"
-msgstr ""
+msgstr "文件系统"
 
 #: src/installation_alongside.py:194
 msgid "pyparted3 not found!"
@@ -480,15 +481,15 @@ msgstr ""
 
 #: src/installation_ask.py:106
 msgid "Installation type"
-msgstr ""
+msgstr "安装类型"
 
 #: src/installation_ask.py:120 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "清楚磁盘并安装Manjaro (自动)"
 
 #: src/installation_ask.py:123
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "警告: 这将会删除您磁盘上的所有数据"
 
 #: src/installation_ask.py:129
 msgid "Encrypt this installation for increased security."
@@ -520,7 +521,7 @@ msgstr ""
 #: src/installation_ask.py:159 src/installation_ask.py:161
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "安装 Manjaro 与 %s 共存"
 
 #: src/installation_ask.py:168
 msgid "Manage your partitions and where to install Manjaro (advanced)"
@@ -550,11 +551,11 @@ msgstr ""
 
 #: src/installation_automatic.py:79
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "自动安装模式"
 
 #: src/installation_automatic.py:83 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "选择硬盘："
 
 #: src/installation_automatic.py:87
 msgid ""
@@ -565,7 +566,7 @@ msgstr ""
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "请选择您希望安装 Manjaro 的硬盘\n并点击下面的按钮以开始进程。"
 
 #: src/installation_automatic.py:97 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
@@ -574,7 +575,7 @@ msgstr ""
 #: src/installation_automatic.py:101 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
-msgstr ""
+msgstr "确认您的密码:"
 
 #: src/installation_automatic.py:105 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
@@ -603,12 +604,12 @@ msgstr ""
 #: src/installation_process.py:90
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "正在复制 '/%s'"
 
 #: src/installation_process.py:168
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "正在以 '%s' 方式安装"
 
 #: src/installation_process.py:244
 #, python-format
@@ -622,21 +623,21 @@ msgstr ""
 #: src/installation_process.py:304 src/installation_process.py:327
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "正在将 %s 挂载至 %s 目录"
 
 #: src/installation_process.py:310
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "正在将 %s 分区挂载至 %s/boot 目录"
 
 #: src/installation_process.py:315
 msgid "Couldn't mount root and boot partitions"
-msgstr ""
+msgstr "不能挂载 root 和 boot 分区"
 
 #: src/installation_process.py:333
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "无法挂载 %s 到 %s"
 
 #: src/installation_process.py:343
 #, python-format
@@ -645,7 +646,7 @@ msgstr ""
 
 #: src/installation_process.py:352
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "无法在目标系统创建必要的目录"
 
 #: src/installation_process.py:358
 msgid "Install System ..."
@@ -710,7 +711,7 @@ msgstr ""
 #: src/installation_process.py:528
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "正在回复 %s 上的元信息"
 
 #: src/installation_process.py:544
 msgid "Special dirs already mounted."
@@ -752,20 +753,20 @@ msgstr ""
 #: src/installation_process.py:785
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr ""
+msgstr "正在安装 GRUB(2) BIOS 引导系统至 %s"
 
 #: src/installation_process.py:797 src/installation_process.py:818
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr ""
+msgstr "安装 GRUB(2) BIOS 出现错误"
 
 #: src/installation_process.py:816
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) BIOS 已被顺利安装"
 
 #: src/installation_process.py:830
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader in %s"
-msgstr ""
+msgstr "正在安装 GRUB(2) UEFI %s 引导系统至 %s"
 
 #: src/installation_process.py:882
 msgid "ERROR installing GRUB(2) locale."
@@ -779,12 +780,12 @@ msgstr ""
 #: src/installation_process.py:898
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr ""
+msgstr "为用户 %s 创建密码哈希值时出错"
 
 #: src/installation_process.py:904
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "为用户 %s 更改密码时出错"
 
 #: src/installation_process.py:916
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -797,7 +798,7 @@ msgstr ""
 
 #: src/installation_process.py:1076 src/installation_process.py:1087
 msgid "Configuring your new system"
-msgstr ""
+msgstr "正在配置您的新系统"
 
 #: src/installation_process.py:1079
 msgid "fstab file generated."
@@ -852,7 +853,7 @@ msgstr ""
 
 #: src/installation_process.py:1275
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "无法执行 MHWD 脚本"
 
 #: src/installation_process.py:1288
 msgid "Configure display manager ..."
@@ -864,15 +865,15 @@ msgstr ""
 
 #: src/installation_process.py:1419
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "正在移除动态配置 (软件包)"
 
 #: src/installation_process.py:1435
 msgid "Configuring package manager"
-msgstr ""
+msgstr "正在配置软件包管理器"
 
 #: src/installation_process.py:1447
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "已完成配置软件包管理器"
 
 #: src/installation_process.py:1471
 msgid "Running mkinitcpio ..."
@@ -892,7 +893,7 @@ msgstr ""
 
 #: src/keymap.py:67
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "选择您的键盘布局"
 
 #: src/keymap.py:71
 msgid "Type here to test your keyboard"
@@ -900,20 +901,20 @@ msgstr ""
 
 #: src/keymap.py:78
 msgid "Layouts"
-msgstr ""
+msgstr "布局"
 
 #: src/keymap.py:84
 msgid "Variants"
-msgstr ""
+msgstr "变种"
 
 #: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "keyboard_layout 是 %s"
 
 #: src/language.py:78
 msgid "Please choose your language:"
-msgstr ""
+msgstr "请选择您的语言:"
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -930,31 +931,31 @@ msgstr ""
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "欢迎使用 Manjaro！"
 
 #: src/language.py:108
 msgid "Languages"
-msgstr ""
+msgstr "语言"
 
 #: src/language.py:128
 #, python-format
 msgid "Can't find translation file for the %s language"
-msgstr ""
+msgstr "无法找到 %s 语言的翻译文件"
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr ""
+msgstr "选择您的位置"
 
 #: src/location.py:68
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr ""
+msgstr "选定的位置将会被用于帮助选定系统地区设置。\n一般而言您应选择您居住的国家。\n这里显示的是根据您所选语言列出的地区精简列表。"
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "国家，领地或地区:"
 
 #: src/parted3/fs_module.py:147
 #, python-format
@@ -1040,37 +1041,37 @@ msgstr ""
 
 #: src/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
-msgstr ""
+msgstr "无法执行自动挂载选择操作"
 
 #: src/show_message.py:53
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro 安装程序 - 错误"
 
 #: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Manjaro 安装程序 - 警告"
 
 #: src/show_message.py:77
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro 安装程序 - 提示信息"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro 安装程序 - 问题"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "安装完成！\n您是否希望现在重新启动您的系统？"
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "正在安装 Manjaro..."
 
 #: src/slides.py:107
 msgid "Please wait..."
-msgstr ""
+msgstr "请稍候..."
 
 #: src/slides.py:217
 msgid "Do you want to retry?"
@@ -1078,15 +1079,15 @@ msgstr ""
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "您在哪？"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
-msgstr ""
+msgstr "时区:"
 
 #: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
-msgstr ""
+msgstr "地区:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
@@ -1095,11 +1096,11 @@ msgstr ""
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "位置已改为 : %s"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr ""
+msgstr "无法自动检测时区坐标"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
@@ -1107,15 +1108,15 @@ msgstr ""
 
 #: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "无法获得用于创建pacman镜像列表的国家代码"
 
 #: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
-msgstr ""
+msgstr "您的姓名:"
 
 #: src/user_info.py:96 ui/user_info.ui:206
 msgid "Your name"
-msgstr ""
+msgstr "您的姓名:"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
@@ -1123,29 +1124,29 @@ msgstr ""
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
-msgstr ""
+msgstr "您的计算机名称:"
 
 #: src/user_info.py:108 ui/user_info.ui:50
 msgid "Pick a username:"
-msgstr ""
+msgstr "起一个用户名:"
 
 #: src/user_info.py:112 ui/user_info.ui:250
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: src/user_info.py:116 ui/user_info.ui:65
 msgid "Choose a password:"
-msgstr ""
+msgstr "输入密码:"
 
 #: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
 #: ui/user_info.ui:573
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 #: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
 #: ui/user_info.ui:634
 msgid "Confirm password"
-msgstr ""
+msgstr "确认密码"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
@@ -1161,19 +1162,19 @@ msgstr ""
 
 #: src/user_info.py:152
 msgid "You must enter a name"
-msgstr ""
+msgstr "您必须输入一个计算机名"
 
 #: src/user_info.py:156
 msgid "You must enter a username"
-msgstr ""
+msgstr "您必须输入一个用户名"
 
 #: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
-msgstr ""
+msgstr "您必须输入一个密码"
 
 #: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
-msgstr ""
+msgstr "自动登陆"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
@@ -1185,7 +1186,7 @@ msgstr ""
 
 #: src/user_info.py:172
 msgid "Who are you?"
-msgstr ""
+msgstr "您是谁？"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
@@ -1199,7 +1200,7 @@ msgstr ""
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro 将会使用 eCryptfs 以加密您的 home 目录。不幸的是，eCryptfs 不能很好地处理疏散的文件。\n"
 
 #: src/user_info.py:253
 msgid ""
@@ -1211,39 +1212,39 @@ msgstr ""
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "然而，BitTorrent 便是一种流行的并且不建议用 eCryptfs 来加密的软件，因为使用它一般会要求 eCryptfs 处理 10GB 以至更多的疏散文件，并可能导致严重磁盘可用空间减少。\n"
 
 #: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "一种简单的解决方式就是将疏散的文件放置在一个未经加密的、公开的目录中。\n"
 
 #: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "浏览 https://wiki.archlinux.org/index.php/ECryptfs 以获得更多信息\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "您确定您想要加密您的 home 目录？\n"
 
 #: src/user_info.py:345
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "非法字符键入"
 
 #: src/user_info.py:349
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "用户名不可包含点"
 
 #: src/user_info.py:353
 msgid "Too many characters"
-msgstr ""
+msgstr "字符过多"
 
 #: ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "引导"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1251,11 +1252,11 @@ msgstr ""
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -1265,7 +1266,7 @@ msgstr ""
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">为达到最优结果，请确保本计算机：</span>"
 
 #: ui/check.ui:108
 msgid ""
@@ -1275,31 +1276,31 @@ msgstr ""
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
-msgstr ""
+msgstr "分区表类型:"
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
-msgstr ""
+msgstr "编辑分区"
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
-msgstr ""
+msgstr "加密选项"
 
 #: ui/installation_advanced.ui:383
 msgid "Create partition"
-msgstr ""
+msgstr "建立分区"
 
 #: ui/installation_advanced.ui:423
 msgid "Location:"
-msgstr ""
+msgstr "位置:"
 
 #: ui/installation_advanced.ui:607
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:958
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1122
 msgid "LUKS volume name:"
@@ -1325,11 +1326,11 @@ msgstr ""
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "选择新的大小"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "其他操作系统"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
@@ -1338,13 +1339,13 @@ msgstr ""
 #: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "标签"
 
 #: ui/installation_ask.ui:58
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">警告: 此操作将会删除所有程序、文档、照片、音乐和其他任何在您磁盘上的文件</span>"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1354,11 +1355,11 @@ msgstr ""
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">您将会在下一步被问及加密密码</span>"
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "使用 LVM 进行新的 Manjaro 安装"
 
 #: ui/installation_ask.ui:123
 msgid ""
@@ -1374,7 +1375,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "安装 Manjaro 与其他操作系统共存"
 
 #: ui/installation_ask.ui:192
 msgid ""
@@ -1385,7 +1386,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "管理您的分区并选择安装 Manjaro 的位置 (高级)"
 
 #: ui/installation_ask.ui:230
 msgid ""

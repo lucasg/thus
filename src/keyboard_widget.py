@@ -40,7 +40,7 @@ def unicode_to_string(raw):
 
 class KeyboardWidget(Gtk.DrawingArea):
     __gtype_name__ = 'KeyboardWidget'
-    
+
     kb_104 = {
         "extended_return": False,
         "keys": [
@@ -73,22 +73,22 @@ class KeyboardWidget(Gtk.DrawingArea):
 
     def __init__(self, parent=None):
         Gtk.DrawingArea.__init__(self)
-        
+
         self.set_size_request(460, 130)
-        
+
         self.codes = []
 
         self.layout = "us"
         self.variant = ""
         self.font = "Helvetica"
-        
+
         self.space = 6
-        
+
         self.kb = None
-        
+
     def set_layout(self, layout):
         self.layout = layout
-    
+
     def set_font(self):
         ''' Font depends on the keyboard layout '''
         # broken: ad (Andorra), lk (Sri Lanka), brai (Braille)
@@ -157,12 +157,12 @@ class KeyboardWidget(Gtk.DrawingArea):
         for i in lst:
              if self.layout == i:
                  self.font = "Oriya"
-        
+
         lst = [ "geo", "urd-phonetic3", "urd-phonetic", "urd-winkeys" ]
         for i in lst:
              if self.variant == i:
                  self.font = "Oriya"
-        
+
         if self.variant == "ori":
             self.font = "Lohit Oriya"
 
@@ -177,7 +177,7 @@ class KeyboardWidget(Gtk.DrawingArea):
         # Font: Tlwg
         if self.layout == "th":
             self.font = "Tlwg Mono"
-            
+
     def set_variant(self, variant):
         self.variant = variant
         self.load_codes()
@@ -202,7 +202,7 @@ class KeyboardWidget(Gtk.DrawingArea):
         corner_radius = height / 10.0
         radius = corner_radius / aspect
         degrees = math.pi / 180.0
-        
+
         cr.new_sub_path()
         cr.arc(x + width - radius, y + radius, radius, -90 * degrees, 0 * degrees)
         cr.arc(x + width - radius, y + height - radius, radius, 0 * degrees, 90 * degrees)
@@ -217,21 +217,21 @@ class KeyboardWidget(Gtk.DrawingArea):
         cr.stroke()
 
     def do_draw(self, cr):
-        ''' The 'cr' variable is the current Cairo context '''        
+        ''' The 'cr' variable is the current Cairo context '''
         alloc = self.get_allocation()
         width = alloc.width
         height = alloc.height
-        
+
         usable_width = width - 6
         key_w = (usable_width - 14 * self.space) / 15
-                    
+
         # Set background color to transparent
         cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
         cr.paint()
-        
+
         cr.set_source_rgb(0.84, 0.84, 0.84)
         cr.set_line_width(2)
-        
+
         cr.rectangle(0, 0, 640, 640)
         cr.stroke()
 
@@ -270,7 +270,7 @@ class KeyboardWidget(Gtk.DrawingArea):
 
                     px = rect[0] + 5
                     py = rect[1] + (rect[3] / 3)
-                    
+
                     # Draw upper character
                     cr.set_source_rgb(0.82, 0.82, 0.82)
                     cr.select_font_face(self.font, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
@@ -317,7 +317,7 @@ class KeyboardWidget(Gtk.DrawingArea):
 
             x = .5
             y = y + space + kw
-        
+
         if ext_return:
             #rx = rx * 2
             x1 = remaining_x[1]
@@ -332,19 +332,19 @@ class KeyboardWidget(Gtk.DrawingArea):
             degrees = math.pi / 180.0
 
             cr.new_sub_path()
-            
+
             cr.move_to(x1, y1 + rx)
             cr.arc(x1 + rx, y1 + rx, rx, 180 * degrees, -90 * degrees)
             cr.line_to(x1 + w1 - rx, y1)
             cr.arc(x1 + w1 - rx, y1 + rx, rx, -90 * degrees, 0)
             cr.line_to(x1 + w1, y2 + kw - rx)
-            cr.arc(x1 + w1 - rx, y2 + kw - rx, rx, 0 * degrees, 90 * degrees)           
+            cr.arc(x1 + w1 - rx, y2 + kw - rx, rx, 0 * degrees, 90 * degrees)
             cr.line_to(x2 + rx, y2 + kw)
             cr.arc(x2 + rx, y2 + kw - rx, rx, 90 * degrees, 180 * degrees)
             cr.line_to(x2, y1 + kw)
             cr.line_to(x1 + rx, y1 + kw)
             cr.arc(x1 + rx, y1 + kw - rx, rx, 90 * degrees, 180 * degrees)
-            
+
             cr.close_path()
 
             cr.set_source_rgb(0.5, 0.5, 0.5)
@@ -418,7 +418,7 @@ if __name__ == "__main__":
     box = Gtk.Box('Vertical', 1)
 
     kb1 = KeyboardWidget()
-    
+
     #kb1.set_layout("ru")
     #kb1.set_layout("jp")
     #kb1.set_layout("mm")
@@ -428,7 +428,7 @@ if __name__ == "__main__":
     kb1.set_variant("cat")
 
     window.add(kb1)
-                       
+
     window.connect_after('destroy', destroy)
     window.show_all()
     Gtk.main()

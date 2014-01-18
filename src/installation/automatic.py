@@ -24,15 +24,12 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-import xml.etree.ElementTree as etree
 
 from gi.repository import Gtk
-import subprocess
 import os
-import sys
 import canonical.misc as misc
 import logging
-import installation_process
+from installation import process as installation_process
 
 # To be able to test this installer in other systems that do not have pyparted3 installed
 try:
@@ -157,6 +154,11 @@ class InstallationAutomatic(Gtk.Box):
         #self.forward_button.set_sensitive(False)
 
     def store_values(self):
+        """ The user clicks 'Install now!' """
+        response = self.show_warning()
+        if response == Gtk.ResponseType.NO:
+            return False
+
         luks_password = self.entry['luks_password'].get_text()
         self.settings.set('luks_key_pass', luks_password)
         if luks_password != "":
@@ -198,10 +200,11 @@ class InstallationAutomatic(Gtk.Box):
         #self.install_progress.set_sensitive(True)
         logging.info(_("Thus will use %s as installation device") % self.auto_device)
 
-        # Ask (if guessing doesn't work) bootloader type
-        import bootloader
-        bl = bootloader.BootLoader(self.settings)
-        bl.ask()
+        self.settings.set('install_bootloader', True)
+        if os.path.exists("/sys/firmware/efi"):
+            self.settings.set('bootloader_type', "UEFI_x86_64")
+        else:
+            self.settings.set('bootloader_type', "GRUB2")
 
         if self.settings.get('install_bootloader'):
             self.settings.set('bootloader_device', self.auto_device)
@@ -230,3 +233,14 @@ class InstallationAutomatic(Gtk.Box):
             self.process.start()
         else:
             logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))
+
+    def show_warning(self):
+        txt = _("Do you really want to proceed and delete all your content on your hard drive?\n\n%s" % self.device_store.get_active_text())
+        message = Gtk.MessageDialog(None,
+                          Gtk.DialogFlags.MODAL,
+                          Gtk.MessageType.QUESTION,
+                          Gtk.ButtonsType.YES_NO,
+                          txt)
+        response = message.run()
+        message.destroy()
+        return response

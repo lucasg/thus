@@ -126,7 +126,7 @@ class Updater():
 
     def download(self, name, md5):
         url = _url_prefix + name
-        #response = ""
+        response = ""
         try:
             request = urlopen(url)
             txt = request.read()

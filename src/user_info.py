@@ -234,8 +234,8 @@ class UserInfo(Gtk.Box):
             self.login['encrypt'].hide()
 
         # TODO: Fix home encryption and stop hidding its widget
-        # Disable staging features
-        if not self.settings.get("use_staging"):
+        # Disable hidden features
+        if not self.settings.get("z_hidden"):
             self.login['encrypt'].hide()
 
     def store_values(self):

@@ -87,13 +87,6 @@ class InstallationAsk(Gtk.Box):
         self.translate_ui()
         self.show_all()
 
-        # Disable staging features
-        if not self.settings.get("use_staging"):
-            radio = self.ui.get_object("alongside_radiobutton")
-            radio.hide()
-            label = self.ui.get_object("alongside_description")
-            label.hide()
-
         # Always hide alongside option. It is not ready yet
         # if "windows" not in self.other_os.lower():
         radio = self.ui.get_object("alongside_radiobutton")

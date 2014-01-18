@@ -73,13 +73,21 @@ def unmount_all(dest_dir):
 
     for directory in dirs:
         logging.warning(_("Unmounting %s"), directory)
-        subprocess.call(["umount", "-l", directory])
+        try:
+            subprocess.call(["umount", directory])
+        except Exception:
+            logging.warning(_("Unmounting %s failed. Trying lazy arg."), directory)
+            subprocess.call(["umount", "-l", directory])
 
     # Now is the time to unmount the device that is mounted in dest_dir (if any)
 
     if dest_dir in mount_result:
         logging.warning(_("Unmounting %s"), dest_dir)
-        subprocess.call(["umount", "-l", dest_dir])
+        try:
+            subprocess.call(["umount", directory])
+        except Exception:
+            logging.warning(_("Unmounting %s failed. Trying lazy arg."), directory)
+            subprocess.call(["umount", "-l", directory])
 
     # Remove all previous Manjaro LVM volumes
     # (it may have been left created due to a previous failed installation)
@@ -131,7 +139,7 @@ class AutoPartition(object):
 
         self.uefi = False
 
-        if os.path.exists("/sys/firmware/efi/systab"):
+        if os.path.exists("/sys/firmware/efi"):
             # TODO: Check if UEFI works
             self.uefi = True
 
@@ -162,18 +170,19 @@ class AutoPartition(object):
             if fs_type not in mkfs.keys():
                 txt = _("Unkown filesystem type %s"), fs_type
                 logging.error(txt)
-                show.fatal_error(txt)
+                show.error(txt)
                 return
 
             command = mkfs[fs_type]
 
             try:
                 subprocess.check_call(command.split())
-            except subprocess.CalledProcessError as e:
-                txt = _("Can't create file system %s"), fs_type
+            except subprocess.CalledProcessError as err:
+                txt = _("Can't create file system %s") % fs_type
                 logging.error(txt)
-                logging.error(e.output)
-                show.fatal_error(txt)
+                logging.error(err.cmd)
+                logging.error(err.output)
+                show.error(txt)
                 return
 
             # Flush file system buffers
@@ -186,8 +195,7 @@ class AutoPartition(object):
             # Mount our new filesystem
             subprocess.check_call(["mount", "-t", fs_type, device, path])
 
-            # Change permission of base directories to correct permission
-            # to avoid btrfs issues
+            # Change permission of base directories to avoid btrfs issues
             mode = "755"
 
             if mount_point == "/tmp":
@@ -350,7 +358,7 @@ class AutoPartition(object):
         if self.uefi:
             gpt_bios_grub_part_size = 2
             uefisys_part_size = 512
-            empty_space_size = 1
+            empty_space_size = 2
         else:
             gpt_bios_grub_part_size = 0
             uefisys_part_size = 0
@@ -434,13 +442,6 @@ class AutoPartition(object):
             # Inform the kernel of the partition change. Needed if the hard disk had a MBR partition table.
             subprocess.check_call(["partprobe", device])
             # Create actual partitions
-            #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=1:1M:+%dM' % gpt_bios_grub_part_size,
-            #    '--typecode=1:EF02', '--change-name=1:BIOS_GRUB', device])
-            #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=2:0:+%dM' % uefisys_part_size,
-            #    '--typecode=2:EF00', '--change-name=2:UEFI_SYSTEM', device])
-            #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=3:0:+%dM' % boot_part_size,
-            #    '--typecode=3:8300', '--attributes=3:set:2', '--change-name=3:MANJARO_BOOT', device])
-
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=1:1M:+%dM --typecode=1:EF02 --change-name=1:BIOS_GRUB %s'
                 % (gpt_bios_grub_part_size, device)], shell=True)
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=2:0:+%dM --typecode=2:EF00 --change-name=2:UEFI_SYSTEM %s'
@@ -449,23 +450,15 @@ class AutoPartition(object):
                 % (boot_part_size, device)], shell=True)
 
             if self.lvm:
-                #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % lvm_pv_part_size,
-                #    '--typecode=4:8200', '--change-name=4:MANJARO_LVM', device])
                 subprocess.check_call(['sgdisk --set-alignment="2048" --new=4:0:+%dM --typecode=4:8E00 --change-name=4:MANJARO_LVM %s'
                     % (lvm_pv_part_size, device)], shell=True)
             else:
-                #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=4:0:+%dM' % swap_part_size,
-                #    '--typecode=4:8200', '--change-name=4:MANJARO_SWAP', device])
-                #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=5:0:+%dM' % root_part_size,
-                #    ' --typecode=5:8300', '--change-name=5:MANJARO_ROOT', device])
                 subprocess.check_call(['sgdisk --set-alignment="2048" --new=4:0:+%dM --typecode=4:8200 --change-name=4:MANJARO_SWAP %s'
                     % (swap_part_size, device)], shell=True)
                 subprocess.check_call(['sgdisk --set-alignment="2048" --new=5:0:+%dM --typecode=5:8300 --change-name=5:MANJARO_ROOT %s'
                     % (root_part_size, device)], shell=True)
 
                 if self.home:
-                    #subprocess.check_call(['sgdisk', '--set-alignment="2048"', '--new=6:0:+%dM' % home_part_size,
-                    #    ' --typecode=6:8300', '--change-name=5:MANJARO_HOME', device])
                     subprocess.check_call(['sgdisk --set-alignment="2048" --new=6:0:+%dM --typecode=6:8300 --change-name=5:MANJARO_HOME %s'
                         % (home_part_size, device)], shell=True)
 
@@ -497,14 +490,12 @@ class AutoPartition(object):
                 end = start + swap_part_size
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", "linux-swap",
                     str(start), str(end)])
-                #subprocess.check_call(["parted", "-a", "optimal", "-s", device, "set", "2", "swap", "on"])
 
                 # Create root partition
                 start = end
                 end = start + root_part_size
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary",
                     str(start), str(end)])
-                #subprocess.check_call(["parted", "-a", "optimal", "-s", device, "set", "3", "root", "on"])
 
                 if self.home:
                     # Create home partition

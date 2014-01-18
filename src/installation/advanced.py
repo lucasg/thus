@@ -25,6 +25,7 @@
 #  MA 02110-1301, USA.
 
 """ Installation advanced module. Custom partition screen """
+import os.path
 
 from gi.repository import Gtk, Gdk
 import subprocess
@@ -41,7 +42,7 @@ import parted3.fs_module as fs
 import parted3.lvm as lvm
 import parted3.used_space as used_space
 
-import installation_process
+from installation import process as installation_process
 import show_message as show
 
 _next_page = "user_info"
@@ -129,6 +130,7 @@ class InstallationAdvanced(Gtk.Box):
             combo.remove_all()
             for mp in sorted(fs.COMMON_MOUNT_POINTS):
                 combo.append_text(mp)
+
             if self.uefi:
                 # Add "/boot/efi" mountpoint in the mountpoint combobox when in uefi mode
                 combo.append_text('/boot/efi')
@@ -779,6 +781,7 @@ class InstallationAdvanced(Gtk.Box):
 
     def get_swap_partition(self, partition_path):
         """ Get active swap partition """
+
         partition = ''
         with open('/proc/swaps') as fp:
             for line in fp:
@@ -1316,7 +1319,6 @@ class InstallationAdvanced(Gtk.Box):
         #max_size_mb = int((p.geometry.length * dev.sectorSize) / 1000000) + 1
 
         mylabel = ""
-
         mymount = ""
         myfmt = "bios-gpt-boot"
         formatme = False
@@ -1361,15 +1363,20 @@ class InstallationAdvanced(Gtk.Box):
 
     def check_mount_points(self):
         """ Check that all necessary mount points are specified.
-            At least root (/) partition must be defined
-            In UEFI systems the efi partition (/boot/efi) must be defined too"""
+            At least root (/) partition must be defined and
+            in UEFI systems the efi partition (/boot/efi) must be defined too """
+
         check_ok = False
+
         exist_root = False
         exist_efi = False
+
         # Be sure to just call get_devices once
         if self.disks is None:
             self.disks = pm.get_devices()
+
         # No device should be mounted now except install media.
+
         # Check root and uefi fs
         for part_path in self.stage_opts:
             (is_new, lbl, mnt, fs, fmt) = self.stage_opts[part_path]
@@ -1460,7 +1467,7 @@ class InstallationAdvanced(Gtk.Box):
                                 if "install" in mount_point:
                                     # If we're recovering from a failed/stopped install, there'll be
                                     # some mounted directories. Unmount them without asking.
-                                    subp = subprocess.Popen(['umount', partition_path], stdout=subprocess.PIPE)
+                                    subp = subprocess.Popen(['umount', '-l', partition_path], stdout=subprocess.PIPE)
                                     logging.debug("%s unmounted", mount_point)
                                 elif mounted:
                                     response = show.question(msg)
@@ -1491,7 +1498,7 @@ class InstallationAdvanced(Gtk.Box):
                                  fmt = False
                              else:
                                  # Mark root partition to be formatted and check it in list.
-                                 fmt = True                           
+                                 fmt = True
                                  self.stage_opts[self.gen_partition_uid(path=partition_path)] = (is_new, lbl, mnt, fs, fmt)
                                  self.fill_partition_list()
 
@@ -1731,10 +1738,11 @@ class InstallationAdvanced(Gtk.Box):
         if checkbox.get_active() is False:
             self.settings.set('install_bootloader', False)
         else:
-            # Ask bootloader type
-            import bootloader
-            bl = bootloader.BootLoader(self.settings)
-            bl.ask()
+            self.settings.set('install_bootloader', True)
+            if os.path.exists("/sys/firmware/efi/systab"):
+                self.settings.set('bootloader_type', "UEFI_x86_64")
+            else:
+                self.settings.set('bootloader_type', "GRUB2")
 
         if self.settings.get('install_bootloader'):
             self.settings.set('bootloader_device', self.grub_device)

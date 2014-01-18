@@ -30,11 +30,27 @@
 
 """ Main Thus (Manjaro Installer) module """
 
+# TODO: Remove all force_grub code
+
+
+# Useful vars for gettext (translations)
+APP_NAME = "thus"
+LOCALE_DIR = "/usr/share/locale"
+
+# This allows to translate all py texts (not the glade ones)
+import gettext
+gettext.textdomain(APP_NAME)
+gettext.bindtextdomain(APP_NAME, LOCALE_DIR)
+
+import locale
+locale_code, encoding = locale.getdefaultlocale()
+lang = gettext.translation(APP_NAME, LOCALE_DIR, [locale_code], None, True)
+lang.install()
+
 from gi.repository import Gtk, Gdk, GObject, GLib
 import os
 import sys
 import getopt
-import gettext
 import locale
 import multiprocessing
 import logging
@@ -51,10 +67,6 @@ import location
 import check
 import keymap
 import timezone
-import installation_ask
-import installation_automatic
-import installation_alongside
-import installation_advanced
 import user_info
 import slides
 import canonical.misc as misc
@@ -62,22 +74,13 @@ import info
 import updater
 import show_message as show
 
-DESKTOPS = ["none"]
+from installation import ask as installation_ask
+from installation import automatic as installation_automatic
+from installation import alongside as installation_alongside
+from installation import advanced as installation_advanced
 
 # Command line options
-_alternate_package_list = ""
-_force_grub_type = False
-_log_level = logging.INFO
-_update = False
-_use_staging = False
-_verbose = False
-
-# Do not perform any changes (this is just for testing purposes)
-_testing = False
-
-# Useful vars for gettext (translations)
-APP_NAME = "thus"
-LOCALE_DIR = "/usr/share/locale"
+cmd_line = None
 
 # Constants (must be uppercase)
 MAIN_WINDOW_WIDTH = 800
@@ -103,16 +106,16 @@ def remove_temp_files():
 class Main(Gtk.Window):
     """ Thus main window """
     def __init__(self):
-        # This allows to translate all py texts (not the glade ones)
-        gettext.textdomain(APP_NAME)
-        gettext.bindtextdomain(APP_NAME, LOCALE_DIR)
-
-        locale_code, encoding = locale.getdefaultlocale()
-        lang = gettext.translation(APP_NAME, LOCALE_DIR, [locale_code], None, True)
-        lang.install()
-
-        # With this we can use _("string") to translate
-        gettext.install(APP_NAME, localedir=LOCALE_DIR, codeset=None, names=[locale_code])
+        ## This allows to translate all py texts (not the glade ones)
+        #gettext.textdomain(APP_NAME)
+        #gettext.bindtextdomain(APP_NAME, LOCALE_DIR)
+        #
+        #locale_code, encoding = locale.getdefaultlocale()
+        #lang = gettext.translation(APP_NAME, LOCALE_DIR, [locale_code], None, True)
+        #lang.install()
+        #
+        ## With this we can use _("string") to translate
+        #gettext.install(APP_NAME, localedir=LOCALE_DIR, codeset=None, names=[locale_code])
 
         # Check if we have administrative privileges
         if os.getuid() != 0:
@@ -161,12 +164,6 @@ class Main(Gtk.Window):
         else:
             data_dir = self.settings.get('data')
 
-        # Set enabled desktops
-        self.settings.set("desktops", DESKTOPS)
-
-        # Set if a grub type must be installed (user choice)
-        self.settings.set("force_grub_type", _force_grub_type)
-
         self.ui = Gtk.Builder()
         self.ui.add_from_file(ui_dir + "thus.ui")
 
@@ -199,9 +196,6 @@ class Main(Gtk.Window):
         # to the main thread (installer_*.py)
         self.callback_queue = multiprocessing.JoinableQueue()
 
-        # save in config if we have enabled staging features
-        self.settings.set("use_staging", _use_staging)
-
         # Load all pages
         # (each one is a screen, a step in the install process)
 
@@ -215,11 +209,8 @@ class Main(Gtk.Window):
         params['callback_queue'] = self.callback_queue
         params['settings'] = self.settings
         params['main_progressbar'] = self.ui.get_object('progressbar1')
-        params['alternate_package_list'] = _alternate_package_list
-        params['testing'] = _testing
-
-        if len(_alternate_package_list) > 0:
-            logging.info(_("Using '%s' file as package list") % _alternate_package_list)
+        params['alternate_package_list'] = ""
+        params['testing'] = cmd_line.testing
 
         self.pages["language"] = language.Language(params)
         self.pages["location"] = location.Location(params)
@@ -252,6 +243,7 @@ class Main(Gtk.Window):
         self.main_box.add(self.current_page)
 
         # Header style testing
+
         style_provider = Gtk.CssProvider()
 
         style_css = os.path.join(data_dir, "css", "gtk-style.css")
@@ -359,34 +351,29 @@ class Main(Gtk.Window):
 def setup_logging():
     """ Configure our logger """
     logger = logging.getLogger()
-    logger.setLevel(_log_level)
+
+    if cmd_line.debug:
+        log_level = logging.DEBUG
+    else:
+        log_level = logging.INFO
+
+    logger.setLevel(log_level)
+
     # Log format
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(filename)s:%(funcName)s() - %(levelname)s: %(message)s')
+
     # Create file handler
     file_handler = logging.FileHandler('/tmp/thus.log', mode='w')
-    file_handler.setLevel(_log_level)
+    file_handler.setLevel(log_level)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 
-    if _verbose:
+    if cmd_line.verbose:
         # Show log messages to stdout
         stream_handler = logging.StreamHandler()
-        stream_handler.setLevel(_log_level)
+        stream_handler.setLevel(log_level)
         stream_handler.setFormatter(formatter)
         logger.addHandler(stream_handler)
-
-
-def show_help():
-    """ Show Thus command line options """
-    print("Thus Manjaro Installer")
-    print("Advanced options:")
-    print("-d, --debug : Show debug messages")
-    print("-g type, --force-grub-type type : force grub type to install, type can be bios, efi, ask or none")
-    print("-h, --help : Show this help message")
-    print("-s, --staging : Enable staging options")
-    print("-t, --testing : Do not perform any changes (useful for developers)")
-    print("-v, --verbose : Show logging messages to stdout")
-
 
 def check_gtk_version():
     """ Check GTK version """
@@ -412,70 +399,54 @@ def check_gtk_version():
 
     return True
 
+def parse_options():
+    """ argparse http://docs.python.org/3/howto/argparse.html """
+
+    import argparse
+    parser = argparse.ArgumentParser(description="Thus v%s - Manjaro Installer" % info.THUS_VERSION)
+    parser.add_argument("-d", "--debug", help=_("Sets Thus log level to 'debug'"), action="store_true")
+    parser.add_argument("-u", "--update", help=_("Update Thus to the latest version (-uu will force the update)"), action="count")
+    parser.add_argument("-t", "--testing", help=_("Do not perform any changes (useful for developers)"), action="store_true")
+    parser.add_argument("-v", "--verbose", help=_("Show logging messages to stdout"), action="store_true")
+    parser.add_argument("-z", "--z_hidden", help=_("Show options in development (DO NOT USE THIS!)"), action="store_true")
+
+    return parser.parse_args()
 
 def init_thus():
     """ This function initialises Thus """
 
     # Command line options
-    global _force_grub_type
-    global _force_update
-    global _log_level
-    global _update
-    global _use_staging
-    global _verbose
-    global _testing
+    global cmd_line
 
     if not check_gtk_version():
         sys.exit(1)
 
-    # Check program arguments
-    arguments_vector = sys.argv[1:]
+    # Command line options
+    global cmd_line
+    cmd_line = parse_options()
 
-    try:
-        options, arguments = getopt.getopt(arguments_vector, "dstuvg:h",
-         ["debug", "staging", "testing", "update", "verbose",
-          "force-grub=", "help"])
-    except getopt.GetoptError as e:
-        show_help()
-        print(str(e))
-        sys.exit(2)
+    #setup_logging()
 
-    for option, argument in options:
-        if option in ('-d', '--debug'):
-            _log_level = logging.DEBUG
-        elif option in ('-g', '--force-grub-type'):
-            if argument in ('bios', 'efi', 'ask', 'none'):
-                _force_grub_type = argument
-        elif option in ('-h', '--help'):
-            show_help()
-            sys.exit(0)
-        elif option in ('-s', '--staging'):
-            _use_staging = True
-        elif option in ('-t', '--testing'):
-            _testing = True
-        elif option in ('-u', '--update'):
-            _update = True
-        elif option in ('-v', '--verbose'):
-            _verbose = True
-        else:
-            assert False, "Unhandled option"
-
-    if _update:
-        setup_logging()
-        # Check if program needs to be updated
-        upd = updater.Updater(_force_update)
+    if cmd_line.update is not None:
+        force = False
+        if cmd_line.update == 2:
+            force = True
+        upd = updater.Updater(force)
         if upd.update():
             # Remove /tmp/.setup-running to be able to run another
             # instance of Thus
             remove_temp_files()
-            if not _force_update:
-                print("Program updated! Restarting...")
-                # Run another instance of Thus (which will be the new version)
-                os.execl(sys.executable, *([sys.executable] + sys.argv))
+            if force:
+                # Remove -uu option
+                new_argv = []
+                for argv in sys.argv:
+                    if argv != "-uu":
+                        new_argv.append(argv)
             else:
-                print("Program updated! Please restart Thus.")
-
-            # Exit and let the new instance do all the hard work
+                new_argv = sys.argv
+            print("Program updated! Restarting...")
+            # Run another instance of Thus (which will be the new version)
+            os.execl(sys.executable, *([sys.executable] + new_argv))
             sys.exit(0)
 
     # Drop root privileges

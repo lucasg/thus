@@ -27,7 +27,6 @@
 """ Installation thread module. Where the real installation happens """
 
 import crypt
-import info
 import logging
 import multiprocessing
 import os
@@ -36,18 +35,13 @@ import shutil
 import subprocess
 import sys
 import time
-import urllib.request
-import urllib.error
-import xml.etree.ElementTree as etree
 
 import encfs
-import auto_partition
+from installation import auto_partition
 import parted3.fs_module as fs
 import canonical.misc as misc
 
 from configobj import ConfigObj
-import stat
-import math
 
 conf_file = '/etc/thus.conf'
 configuration = ConfigObj(conf_file)
@@ -262,8 +256,13 @@ class InstallationProcess(multiprocessing.Process):
                 self.mount_devices = auto.get_mount_devices()
                 self.fs_devices = auto.get_fs_devices()
             except subprocess.CalledProcessError as err:
-                logging.error(err.output)
-                self.queue_event('error', _("Error creating partitions and their filesystems"))
+                txt = _("Error creating partitions and their filesystems")
+                logging.error(txt)
+                cmd = _("Command %s has failed.") % err.cmd
+                logging.error(cmd)
+                out = _("Output : %s") % err.output
+                logging.error(out)
+                self.queue_fatal_event(txt)
                 return
 
         if self.method == 'alongside':
@@ -329,8 +328,12 @@ class InstallationProcess(multiprocessing.Process):
                         subprocess.check_call(['mount', mount_part, mount_dir])
                     except subprocess.CalledProcessError as err:
                         # We will continue as root and boot are already mounted
-                        logging.warning(err)
-                        self.queue_event('debug', _("Can't mount %s in %s") % (mount_part, mount_dir))
+                        txt = _("Can't mount %s in %s") % (mount_part, mount_dir)
+                        self.queue_event('warning', txt)
+                        cmd = _("Command %s has failed.") % err.cmd
+                        logging.warning(cmd)
+                        out = _("Output : %s") % err.output
+                        logging.warning(out)
 
         # Nasty workaround:
         # If pacman was stoped and /var is in another partition than root
@@ -348,8 +351,13 @@ class InstallationProcess(multiprocessing.Process):
             subprocess.check_call(['mkdir', '-p', '%s/etc/pacman.d/gnupg/' % self.dest_dir])
             subprocess.check_call(['mkdir', '-p', '%s/var/log/' % self.dest_dir])
         except subprocess.CalledProcessError as err:
-            logging.error(err)
-            self.queue_fatal_event(_("Can't create necessary directories on destination system"))
+            txt = _("Can't create necessary directories on destination system")
+            logging.error(txt)
+            cmd = _("Command %s has failed") % err.cmd
+            logging.error(cmd)
+            out = _("Output : %s") % err.output
+            logging.error(out)
+            self.queue_fatal_event(txt)
             return False
 
         all_ok = True
@@ -370,21 +378,35 @@ class InstallationProcess(multiprocessing.Process):
             if self.settings.get('install_bootloader'):
                 self.queue_event('debug', _('Installing bootloader ...'))
                 self.install_bootloader()
+                # Warn user if Grub install hasn't completed successfully
+                # TODO: instruct how to fix.
+                if not self.bootloader_ok:
+                    msg = _("We apologize, but it seems Thus can't install the bootloader into your system.\n"
+                        "Please, before rebooting, do it by yourself.\n"
+                        "You can find more info in the GRUB archlinux's wiki page:\n"
+                        "\thttps://wiki.archlinux.org/index.php/GRUB.\n")
+                    self.queue_event('info', msg)
 
         except subprocess.CalledProcessError as err:
             logging.error(err)
-            self.queue_fatal_event("CalledProcessError.output = %s" % e.output)
+            self.queue_fatal_event("CalledProcessError.output = %s" % err.output)
             all_ok = False
         except InstallError as err:
             logging.error(err)
             self.queue_fatal_event(err.value)
             all_ok = False
-        except err:
-            logging.error(err)
-            self.queue_fatal_event(err)
-            self.running = False
-            self.error = True
-            all_ok = False
+        except Exception as err:
+            try:
+                logging.debug('Exception: %s. Trying to continue.' % err)
+                all_ok = True
+                pass
+            except Exception as err:
+                txt = ('Unknown Error: %s. Unable to continue.' % err)
+                logging.debug(txt)
+                self.queue_fatal_event(txt)
+                self.running = False
+                self.error = True
+                all_ok = False
 
         if all_ok is False:
             return False
@@ -408,10 +430,14 @@ class InstallationProcess(multiprocessing.Process):
                     try:
                         txt = _("Unmounting %s") % p
                         self.queue_event('debug', txt)
-                        subprocess.check_call(['umount', '-l', p])
+                        subprocess.check_call(['umount', p])
                     except subprocess.CalledProcessError as err:
-                        logging.warning(err)
-                        self.queue_event('debug', _("Can't unmount %s") % p)
+                        logging.error(err)
+                        try:
+                            subprocess.check_call(["umount", "-l", p])
+                        except subprocess.CalledProcessError as err:
+                            self.queue_event('warning', _("Can't unmount %s") % p)
+                            logging.warning(err)
             self.queue_event('debug', "Mounted devices: %s" % self.mount_devices)
             for path in self.mount_devices:
                 mount_part = self.mount_devices[path]
@@ -421,21 +447,29 @@ class InstallationProcess(multiprocessing.Process):
 
                         txt = _("Unmounting %s") % mount_dir
                         self.queue_event('debug', txt)
-                        subprocess.check_call(['umount', '-l', mount_dir])
+                        subprocess.check_call(['umount', mount_dir])
                     except subprocess.CalledProcessError as err:
-                        # We will continue as root and boot are already mounted
-                        logging.warning(err)
-                        self.queue_event('debug', _("Can't unmount %s") % mount_dir)
+                        logging.error(err)
+                        try:
+                            subprocess.check_call(["umount", "-l", mount_dir])
+                        except subprocess.CalledProcessError as err:
+                            # We will continue as root and boot are already mounted
+                            logging.warning(err)
+                            self.queue_event('debug', _("Can't unmount %s") % mount_dir)
             # now we can unmount /install
             (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
             if fsname:
                 try:
                     txt = _("Unmounting %s") % self.dest_dir
                     self.queue_event('debug', txt)
-                    subprocess.check_call(['umount', '-l', self.dest_dir])
+                    subprocess.check_call(['umount', self.dest_dir])
                 except subprocess.CalledProcessError as err:
-                    logging.warning(err)
-                    self.queue_event('debug', _("Can't unmount %s") % p)
+                    logging.error(err)
+                    try:
+                        subprocess.check_call(["umount", "-l", self.dest_dir])
+                    except subprocess.CalledProcessError as err:
+                        logging.warning(err)
+                        self.queue_event('debug', _("Can't unmount %s") % p)
             # Installation finished successfully
             self.queue_event("finished", _("Installation finished successfully."))
             self.running = False
@@ -445,7 +479,7 @@ class InstallationProcess(multiprocessing.Process):
     def check_source_folder(self, mount_point):
         """ Check if source folders are mounted """
         device = None
-        with open('/proc/mounts') as fp:
+        with open('/proc/mounts', 'r') as fp:
             for line in fp:
                 line = line.split()
                 if line[1] == mount_point:
@@ -544,14 +578,13 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', _("Special dirs already mounted."))
             return
 
-        special_dirs = ["sys", "proc", "dev/pts", "dev"]
+        special_dirs = ["sys", "proc", "dev", "dev/pts", "sys/firmware/efi"]
         for s_dir in special_dirs:
             mydir = os.path.join(self.dest_dir, s_dir)
             if not os.path.exists(mydir):
                 os.makedirs(mydir)
 
         mydir = os.path.join(self.dest_dir, "sys")
-
         subprocess.check_call(["mount", "-t", "sysfs", "/sys", mydir])
         subprocess.check_call(["chmod", "555", mydir])
 
@@ -566,6 +599,11 @@ class InstallationProcess(multiprocessing.Process):
         subprocess.check_call(["mount", "-t", "devpts", "/dev/pts", mydir])
         subprocess.check_call(["chmod", "555", mydir])
 
+        efi = "/sys/firmware/efi"
+        if os.path.exists(efi):
+            mydir = os.path.join(self.dest_dir, efi[1:])
+            subprocess.check_call(["mount", "-o", "bind", efi, mydir])
+
         self.special_dirs_mounted = True
 
     def chroot_umount_special_dirs(self):
@@ -574,15 +612,29 @@ class InstallationProcess(multiprocessing.Process):
         if not self.special_dirs_mounted:
             self.queue_event('debug', _("Special dirs are not mounted. Skipping."))
             return
-
-        special_dirs = ["proc", "sys", "dev/pts", "dev"]
+        efi = "/sys/firmware/efi"
+        if os.path.exists(efi):
+            special_dirs = ["dev/pts", "sys/firmware/efi", "sys", "proc", "dev"]
+        else:
+            special_dirs = ["dev/pts", "sys", "proc", "dev"]
 
         for s_dir in special_dirs:
             mydir = os.path.join(self.dest_dir, s_dir)
             try:
-                subprocess.check_call(["umount", "-l", mydir])
-            except:
+                subprocess.check_call(["umount", mydir])
+            except subprocess.CalledProcessError as err:
+                logging.error(err)
+                try:
+                    subprocess.check_call(["umount", "-l", mydir])
+                except subprocess.CalledProcessError as err:
+                    self.queue_event('warning', _("Unable to umount %s") % mydir)
+                    cmd = _("Command %s has failed.") % err.cmd
+                    logging.warning(cmd)
+                    out = _("Output : %s") % err.output
+                    logging.warning(out)
+            except Exception as err:
                 self.queue_event('warning', _("Unable to umount %s") % mydir)
+                logging.error(err)
 
         self.special_dirs_mounted = False
 
@@ -631,20 +683,21 @@ class InstallationProcess(multiprocessing.Process):
                 if os.path.exists(target_network):
                     continue
 
-                shutil.copy(source_network, target_network)
+                try:
+                    shutil.copy(source_network, target_network)
+                except FileNotFoundError:
+                    logging.warning(_("Can't copy network configuration files"))
+                except FileExistsError:
+                    pass
 
     def auto_fstab(self):
         """ Create /etc/fstab file """
 
-        all_lines = []
-        all_lines.append("# /etc/fstab: static file system information.")
-        all_lines.append("#")
-        all_lines.append("# Use 'blkid' to print the universally unique identifier for a")
-        all_lines.append("# device; this may be used with UUID= as a more robust way to name devices")
-        all_lines.append("# that works even if disks are added and removed. See fstab(5).")
-        all_lines.append("#")
-        all_lines.append("# <file system> <mount point>   <type>  <options>       <dump>  <pass>")
-        all_lines.append("#")
+        all_lines = ["# /etc/fstab: static file system information.", "#",
+                     "# Use 'blkid' to print the universally unique identifier for a",
+                     "# device; this may be used with UUID= as a more robust way to name devices",
+                     "# that works even if disks are added and removed. See fstab(5).", "#",
+                     "# <file system> <mount point>   <type>  <options>       <dump>  <pass>", "#"]
 
         root_ssd = 0
 
@@ -697,8 +750,10 @@ class InstallationProcess(multiprocessing.Process):
                 # We do not run fsck on btrfs partitions
                 if "btrfs" in myfmt:
                     chk = '0'
+                    self.settings.set('btrfs', True)
                 else:
                     chk = '1'
+                    self.settings.set('btrfs', False)
                 opts = "rw,relatime,data=ordered"
             else:
                 full_path = os.path.join(self.dest_dir, path)
@@ -731,11 +786,13 @@ class InstallationProcess(multiprocessing.Process):
 
     def install_bootloader(self):
         """ Installs bootloader """
-        bootloader = self.settings.get('bootloader_type')
 
+        self.modify_grub_default()
+
+        bootloader = self.settings.get('bootloader_type')
         if bootloader == "GRUB2":
             self.install_bootloader_grub2_bios()
-        elif bootloader == "UEFI_x86_64" or bootloader == "UEFI_i386":
+        else:
             self.install_bootloader_grub2_efi(bootloader)
 
     def modify_grub_default(self):
@@ -744,6 +801,10 @@ class InstallationProcess(multiprocessing.Process):
 
         default_dir = os.path.join(self.dest_dir, "etc/default")
         default_grub = os.path.join(default_dir, "grub")
+        swap_partition = self.mount_devices["swap"]
+        swap_uuid = fs.get_info(swap_partition)['UUID']
+        kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=' + swap_uuid + ' quiet"'
+
         if not os.path.exists(default_dir):
             os.mkdir(default_dir)
 
@@ -755,19 +816,35 @@ class InstallationProcess(multiprocessing.Process):
 
             # Let GRUB automatically add the kernel parameters for root encryption
             if self.settings.get("luks_key_pass") == "":
-                #default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro cryptkey=%s:ext2:/.keyfile-root"' % (root_device, boot_device)
                 default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=/dev/disk/by-uuid/%s:cryptManjaro cryptkey=/dev/disk/by-uuid/%s:ext2:/.keyfile-root"' % (root_uuid, boot_uuid)
             else:
-                #default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=%s:cryptManjaro"' % root_device
                 default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=/dev/disk/by-uuid/%s:cryptManjaro"' % root_uuid
 
             with open(default_grub, 'r') as grub_file:
                 lines = [x.strip() for x in grub_file.readlines()]
 
             for i in range(len(lines)):
-                if (lines[i].startswith("#GRUB_CMDLINE_LINUX") or lines[i].startswith("GRUB_CMDLINE_LINUX")) and not \
-                    (lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT") or lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT")):
-                    lines[i] = default_line
+                if lines[i].startswith("#GRUB_CMDLINE_LINUX") or lines[i].startswith("GRUB_CMDLINE_LINUX"):
+                    if not lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT"):
+                        if not lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT"):
+                            lines[i] = default_line
+                elif lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT") or \
+                        lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT"):
+                    lines[i] = kernel_cmd
+                elif lines[i].startswith("#GRUB_DISTRIBUTOR") or lines[i].startswith("GRUB_DISTRIBUTOR"):
+                    lines[i] = "GRUB_DISTRIBUTOR=Manjaro"
+
+            with open(default_grub, 'w') as grub_file:
+                grub_file.write("\n".join(lines) + "\n")
+        else:
+            with open(default_grub, 'r') as grub_file:
+                lines = [x.strip() for x in grub_file.readlines()]
+
+            for i in range(len(lines)):
+                if lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT"):
+                    lines[i] = kernel_cmd
+                elif lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT"):
+                    lines[i] = kernel_cmd
                 elif lines[i].startswith("#GRUB_DISTRIBUTOR") or lines[i].startswith("GRUB_DISTRIBUTOR"):
                     lines[i] = "GRUB_DISTRIBUTOR=Manjaro"
 
@@ -779,12 +856,12 @@ class InstallationProcess(multiprocessing.Process):
         #    grub_file.write("\n# See bug https://bugs.archlinux.org/task/37904\n")
         #    grub_file.write("GRUB_DISABLE_SUBMENU=y\n\n")
 
+        logging.debug('/etc/default/grub configuration completed successfully.')
+
     def install_bootloader_grub2_bios(self):
         """ Install bootloader in a BIOS system """
         grub_device = self.settings.get('bootloader_device')
         self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_device)
-
-        self.modify_grub_default()
 
         grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
 
@@ -802,7 +879,7 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot_mount_special_dirs()
 
         self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
-                  '--target=i386-pc', '--boot-directory=/boot',  '--recheck', grub_device])
+                     '--target=i386-pc', '--boot-directory=/boot', '--recheck', grub_device])
 
         self.install_bootloader_grub2_locales()
 
@@ -814,58 +891,98 @@ class InstallationProcess(multiprocessing.Process):
         core_path = os.path.join(self.dest_dir, "boot/grub/i386-pc/core.img")
         if os.path.exists(core_path):
             self.queue_event('info', _("GRUB(2) BIOS has been successfully installed."))
+            self.bootloader_ok = True
         else:
             self.queue_event('warning', _("ERROR installing GRUB(2) BIOS."))
 
     def install_bootloader_grub2_efi(self, arch):
         """ Install bootloader in a UEFI system """
+        # TODO: Clean this up a bit. It is working in vbox but needs testing on other hardware.
+        # TODO: If tests show it still not working 100%, try to manually add entry to loader (efibootmgr).
         uefi_arch = "x86_64"
         spec_uefi_arch = "x64"
+        spec_uefi_arch_caps = "X64"
 
         if arch == "UEFI_i386":
             uefi_arch = "i386"
             spec_uefi_arch = "ia32"
+            spec_uefi_arch_caps = "IA32"
 
-        grub_device = self.settings.get('bootloader_device')
-        self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader in %s") % (uefi_arch, grub_device))
+        grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
 
-        self.modify_grub_default()
+        if not os.path.exists(grub_d_dir):
+            os.makedirs(grub_d_dir)
 
-        self.chroot_mount_special_dirs()
+        try:
+            shutil.copy2("/etc/grub.d/10_linux", grub_d_dir)
+        except FileNotFoundError:
+            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
+            return
+        except FileExistsError:
+            pass
 
         # grub2-efi installation isn't done in a chroot because when efibootmgr
         # runs it doesn't detect a uefi environment and fails to add a new uefi
         # boot entry.
-        subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install/boot/efi --bootloader-id=manjaro_grub '
-            '--boot-directory=/install/boot --recheck' % uefi_arch], shell=True)
+        self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader") % uefi_arch)
+        try:
+            subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install/boot/efi '
+                                   '--bootloader-id=manjaro_grub --boot-directory=/install/boot '
+                                   '--recheck --debug' % uefi_arch], shell=True, timeout=45)
+        except subprocess.CalledProcessError as err:
+            logging.error('Command grub-install failed. Error output: %s' % err.output)
+        except subprocess.TimeoutExpired as err:
+            logging.error('Command grub-install timed out.')
+        except Exception as err:
+            logging.error('Command grub-install failed. Unknown Error: %s' % err)
 
+        self.queue_event('info', _("Installing Grub2 locales."))
         self.install_bootloader_grub2_locales()
+
+        # Copy grub into dirs known to be used as default by some OEMs if they are empty.
+        defaults = [(os.path.join(self.dest_dir, "boot/efi/EFI/BOOT/"), 'BOOT' + spec_uefi_arch_caps + '.efi'),
+                    (os.path.join(self.dest_dir, "boot/efi/EFI/Microsoft/Boot/"), 'bootmgfw.efi')]
+        grub_dir_src = os.path.join(self.dest_dir, "boot/efi/EFI/manjaro_grub/")
+        grub_efi_old = ('grub' + spec_uefi_arch + '.efi')
+        for default in defaults:
+            path, grub_efi_new = default
+            if not os.path.exists(path):
+                self.queue_event('info', _("No OEM loader found in %s. Copying Grub(2) into dir.") % path)
+                os.makedirs(path)
+                try:
+                    shutil.copy(grub_dir_src + grub_efi_old, path + grub_efi_new)
+                except FileNotFoundError:
+                    logging.warning(_("Copying Grub(2) into OEM dir failed. File Not Found."))
+                except FileExistsError:
+                    logging.warning(_("Copying Grub(2) into OEM dir failed. File Exists."))
+                except Exception as err:
+                    logging.warning(_("Copying Grub(2) into OEM dir failed. Unknown Error."))
+                    logging.warning(err)
+
+        # TODO: Create themed shellx64_v2.efi
+        '''# Copy uefi shell if none exists in /boot/EFI
+        shell_src = "/usr/share/thus/grub2-theme/shellx64_v2.efi"
+        shell_dst = os.path.join(self.dest_dir, "boot/EFI/shellx64_v2.efi")
+        try:
+            shutil.move(shell_src, shell_dst)
+        except FileNotFoundError:
+            logging.warning(_("UEFI Shell drop-in not found at %s"), shell_src)
+        except FileExistsError:
+            logging.warning(_("UEFI Shell already exists at %s"), shell_dst)
+        except Exception as err:
+            logging.warning(_("UEFI Shell drop-in could not be copied."))
+            logging.warning(err)'''
+
+        # Run grub-mkconfig last
+        self.queue_event('info', _("Generating grub.cfg"))
+        self.chroot_mount_special_dirs()
+
         locale = self.settings.get("locale")
         self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale])
 
         self.chroot_umount_special_dirs()
 
-        # TODO: Create a boot entry for Manjaro in the UEFI boot manager (is this necessary?)
-
-        #grub_cfg = "%s/boot/grub/grub.cfg" % self.dest_dir
-        #grub_standalone = "%s/boot/efi/EFI/manjaro_grub/grub%s_standalone.cfg" % (self.dest_dir, spec_uefi_arch)
-        #try:
-        #    shutil.copy2(grub_cfg, grub_standalone)
-        #except FileNotFoundError:
-        #    self.queue_event('warning', _("ERROR installing GRUB(2) configuration file."))
-        #    return
-        #except FileExistsError:
-        #    # ignore if already exists
-        #    pass
-        #
-        #self.chroot_mount_special_dirs()
-        #self.chroot(['grub-mkstandalone', \
-        #          '--directory=/usr/lib/grub/%s-efi' % uefi_arch, \
-        #          '--format=%s-efi' % uefi_arch, \
-        #          '--compression="xz"', \
-        #          '--output="/boot/efi/EFI/manjaro_grub/grub%s_standalone.efi' % spec_uefi_arch, \
-        #          'boot/grub/grub.cfg'])
-        #self.chroot_umount_special_dirs()
+        self.bootloader_ok = True
 
     def install_bootloader_grub2_locales(self):
         """ Install Grub2 locales """
@@ -917,7 +1034,7 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('debug', 'HOOKS="%s"' % ' '.join(hooks))
         self.queue_event('debug', 'MODULES="%s"' % ' '.join(modules))
 
-        with open("/etc/mkinitcpio.conf") as mkinitcpio_file:
+        with open("/etc/mkinitcpio.conf", "r") as mkinitcpio_file:
             mklins = [x.strip() for x in mkinitcpio_file.readlines()]
 
         for i in range(len(mklins)):
@@ -942,12 +1059,14 @@ class InstallationProcess(multiprocessing.Process):
 
         if self.settings.get("use_luks"):
             hooks.append("encrypt")
-            modules.extend(["dm_mod", "dm_crypt", "ext4", "aes-x86_64", "sha256", "sha512"])
+            modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_x86_64", "sha256", "sha512"])
 
         if self.blvm or self.settings.get("use_lvm"):
             hooks.append("lvm2")
-
-        hooks.extend(["filesystems", "keyboard", "fsck"])
+        if self.settings.get('btrfs'):
+            hooks.extend(["filesystems", "keyboard"])
+        else:
+            hooks.extend(["filesystems", "keyboard", "fsck"])
 
         self.set_mkinitcpio_hooks_and_modules(hooks, modules)
 
