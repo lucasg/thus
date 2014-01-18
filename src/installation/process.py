@@ -384,7 +384,7 @@ class InstallationProcess(multiprocessing.Process):
                     msg = _("We apologize, but it seems Thus can't install the bootloader into your system.\n"
                         "Please, before rebooting, do it by yourself.\n"
                         "You can find more info in the GRUB archlinux's wiki page:\n"
-                        "\thttps://wiki.archlinux.org/index.php/GRUB.\n")
+                        "\thttps://wiki.archlinux.org/index.php/GRUB\n")
                     self.queue_event('info', msg)
 
         except subprocess.CalledProcessError as err:
