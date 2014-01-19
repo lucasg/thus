@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 12:05+0100\n"
-"PO-Revision-Date: 2014-01-19 11:09+0000\n"
+"POT-Creation-Date: 2014-01-19 13:08+0100\n"
+"PO-Revision-Date: 2014-01-19 12:15+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/manjaro-thus/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -546,8 +546,8 @@ msgstr "Set your Home in a different partition/volume"
 
 #: src/installation/ask.py:144
 msgid ""
-"This will setup you /home directory in a different partition or volume."
-msgstr "This will setup you /home directory in a different partition or volume."
+"This will setup your /home directory in a different partition or volume."
+msgstr "This will setup your /home directory in a different partition or volume."
 
 #: src/installation/ask.py:152 src/installation/ask.py:154
 #, python-format
@@ -906,8 +906,8 @@ msgid "Network configuration copied."
 msgstr "Network configuration copied."
 
 #: src/installation/process.py:1235
-msgid "Timezone set."
-msgstr "Timezone set."
+msgid "Time zone set."
+msgstr "Time zone set."
 
 #: src/installation/process.py:1256
 #, python-format
@@ -1470,9 +1470,9 @@ msgstr "<span weight=\"light\" size=\"small\">This will set up LVM allowing you 
 
 #: ui/installation_ask.ui:155
 msgid ""
-"<span weight=\"light\" size=\"small\">This will setup you /home directory in"
-" a different partition or volume.</span>"
-msgstr "<span weight=\"light\" size=\"small\">This will setup you /home directory in a different partition or volume.</span>"
+"<span weight=\"light\" size=\"small\">This will setup your /home directory "
+"in a different partition or volume.</span>"
+msgstr "<span weight=\"light\" size=\"small\">This will setup your /home directory in a different partition or volume.</span>"
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"

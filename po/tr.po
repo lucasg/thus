@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 12:05+0100\n"
-"PO-Revision-Date: 2014-01-19 11:29+0000\n"
-"Last-Translator: tulliana <mdemiray@msn.com>\n"
+"POT-Creation-Date: 2014-01-19 13:08+0100\n"
+"PO-Revision-Date: 2014-01-19 12:14+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -547,7 +547,7 @@ msgstr "Ev Dizini için farklı bir disk bölümü ayarlayın"
 
 #: src/installation/ask.py:144
 msgid ""
-"This will setup you /home directory in a different partition or volume."
+"This will setup your /home directory in a different partition or volume."
 msgstr "Farklı bir bölüme /home yani Ev Dizini oluşturmak sizin tercihinize bağlıdır."
 
 #: src/installation/ask.py:152 src/installation/ask.py:154
@@ -907,8 +907,8 @@ msgid "Network configuration copied."
 msgstr "Ağ yapılandırması kopyalandı."
 
 #: src/installation/process.py:1235
-msgid "Timezone set."
-msgstr "Saat Zaman Ayarı."
+msgid "Time zone set."
+msgstr "Saat Zaman Ayarı"
 
 #: src/installation/process.py:1256
 #, python-format
@@ -1471,8 +1471,8 @@ msgstr "<span weight=\"light\" size=\"small\">Disk görüntüsü ve bölümlemel
 
 #: ui/installation_ask.ui:155
 msgid ""
-"<span weight=\"light\" size=\"small\">This will setup you /home directory in"
-" a different partition or volume.</span>"
+"<span weight=\"light\" size=\"small\">This will setup your /home directory "
+"in a different partition or volume.</span>"
 msgstr "<span weight=\"light\" size=\"small\">Farklı bir kısıma yada diske /home yani Ev Dizini oluşturmak sizin tercihinize bağlıdır</span>"
 
 #: ui/installation_ask.ui:166

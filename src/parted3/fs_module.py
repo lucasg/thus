@@ -32,6 +32,7 @@ NAMES = [ 'ext2', 'ext3', 'ext4', 'fat16', 'fat32', 'ntfs', 'jfs', \
            'reiserfs', 'xfs', 'btrfs', 'swap']
 
 COMMON_MOUNT_POINTS = [ '/', '/boot', '/home', '/usr', '/var' ]
+COMMON_MOUNT_POINTS_EFI = [ '/', '/boot/efi', '/boot', '/home', '/usr', '/var' ]
 
 @misc.raise_privileges
 def get_info(part):

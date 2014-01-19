@@ -126,14 +126,15 @@ class InstallationAdvanced(Gtk.Box):
         mount_combos.append(self.ui.get_object('partition_mount_combo'))
         mount_combos.append(self.ui.get_object('partition_mount_combo2'))
 
+        if self.efi:
+            mount_points = fs.COMMON_MOUNT_POINTS_EFI
+        else:
+            mount_points = fs.COMMON_MOUNT_POINTS
+
         for combo in mount_combos:
             combo.remove_all()
-            for mp in sorted(fs.COMMON_MOUNT_POINTS):
+            for mp in mount_points:
                 combo.append_text(mp)
-
-            if self.efi:
-                # Add "/boot/efi" mountpoint in the mountpoint combobox when in uefi mode
-                combo.append_text('/boot/efi')
 
         # We will store our devices here
         self.disks = None
@@ -1676,11 +1677,10 @@ class InstallationAdvanced(Gtk.Box):
 
                         # EFI and /boot/efi is the EFI partition mount point -> Flag /boot/efi as boot
                         if (mnt == '/boot/efi'):
+                            self.efi_path = mnt;
                             if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
                                 logging.info(("Setting boot flag in %s partition") % (partition_path))
                                 (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
-                                self.grub_partition = partition_path;
-                                self.efi_path = mnt;
                             if not self.testing:
                                 pm.finalize_changes(partitions[partition_path].disk)
 
