@@ -176,14 +176,14 @@ class AutoPartition(object):
             try:
                 subprocess.check_call(command.split())
             except subprocess.CalledProcessError as err:
-                txt = _("Can't create file system %s") % fs_type
+                txt = _("Can't create filesystem %s") % fs_type
                 logging.error(txt)
                 logging.error(err.cmd)
                 logging.error(err.output)
                 show.error(txt)
                 return
 
-            # Flush file system buffers
+            # Flush filesystem buffers
             subprocess.check_call(["sync"])
 
             # Create our mount directory

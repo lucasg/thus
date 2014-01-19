@@ -170,7 +170,7 @@ def resize(part, fs_type, new_size_in_mb):
     elif 'ext' in fs_type:
         res = resize_ext(part, new_size_in_mb)
     else:
-        logging.error(_("Sorry but filesystem %s can't be shrinked"), fs_type)
+        logging.error(_("Sorry but filesystem %s can't be resized"), fs_type)
 
     return res
 

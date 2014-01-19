@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 15:08+0100\n"
+"POT-Creation-Date: 2014-01-19 21:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/installation/auto_partition.py:179
 #, python-format
-msgid "Can't create file system %s"
+msgid "Can't create filesystem %s"
 msgstr ""
 
 #: src/installation/auto_partition.py:325
@@ -1059,7 +1059,7 @@ msgstr ""
 
 #: src/parted3/fs_module.py:173
 #, python-format
-msgid "Sorry but filesystem %s can't be shrinked"
+msgid "Sorry but filesystem %s can't be resized"
 msgstr ""
 
 #: src/parted3/lvm.py:75
