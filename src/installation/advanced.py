@@ -78,10 +78,9 @@ class InstallationAdvanced(Gtk.Box):
         # hold deleted partitions that exist now
         self.to_be_deleted = []
 
-        self.uefi = False
-        if os.path.exists("/sys/firmware/efi/systab"):
-            self.uefi = True
-
+        self.efi = self.settings.get('efi')
+        self.efi_path = ""
+        self.grub_partition = ""
         # Call base class
         super().__init__()
 
@@ -131,7 +130,7 @@ class InstallationAdvanced(Gtk.Box):
             for mp in sorted(fs.COMMON_MOUNT_POINTS):
                 combo.append_text(mp)
 
-            if self.uefi:
+            if self.efi:
                 # Add "/boot/efi" mountpoint in the mountpoint combobox when in uefi mode
                 combo.append_text('/boot/efi')
 
@@ -257,9 +256,13 @@ class InstallationAdvanced(Gtk.Box):
         # Automatically select first entry
         self.select_first_combobox_item(self.grub_device_entry)
 
-    def on_grub_device_check_toggled(self, checkbox):
+    def on_grub_install_check_toggled(self, checkbox):
         combo = self.ui.get_object("grub_device_entry")
         combo.set_sensitive(checkbox.get_active())
+        device_radio = self.ui.get_object("grub_device_radio")
+        device_radio.set_sensitive(checkbox.get_active())
+        partition_radio = self.ui.get_object("grub_partition_radio")
+        partition_radio.set_sensitive(checkbox.get_active())
 
     def select_first_combobox_item(self, combobox):
         """ Automatically select first entry """
@@ -1093,6 +1096,10 @@ class InstallationAdvanced(Gtk.Box):
         label = self.ui.get_object('grub_device_label')
         label.set_markup(txt)
 
+        txt = _("Use partition where /boot is mounted (not recommended)")
+        label = self.ui.get_object('grub_install_label')
+        label.set_markup(txt)
+
         #txt = _("TODO: Here goes a warning message")
         #txt = "<span weight='bold'>%s</span>" % txt
         #label = self.ui.get_object('part_advanced_warning_message')
@@ -1237,7 +1244,8 @@ class InstallationAdvanced(Gtk.Box):
     def on_partition_list_new_label_activate(self, button):
         """ Create a new partition table """
         # TODO: We should check first if there's any mounted partition (including swap)
-
+        # Swapoff all swap partitions as they may be auto-mounted, and may cause problems later
+        subp = subprocess.Popen(['sh', '-c', 'swapoff -a'], stdout=subprocess.PIPE)
         selection = self.partition_list.get_selection()
 
         if not selection:
@@ -1277,7 +1285,7 @@ class InstallationAdvanced(Gtk.Box):
                 self.fill_grub_device_entry()
                 self.fill_partition_list()
 
-                if ptype == 'gpt' and not self.uefi:
+                if ptype == 'gpt' and not self.efi:
                     # Show warning (see https://github.com/Antergos/Cnchi/issues/63)
                     show.warning(_('GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, "EF02" type code in gdisk '
                         'or "bios_grub" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of '
@@ -1362,14 +1370,16 @@ class InstallationAdvanced(Gtk.Box):
         pass
 
     def check_mount_points(self):
-        """ Check that all necessary mount points are specified.
-            At least root (/) partition must be defined and
-            in UEFI systems the efi partition (/boot/efi) must be defined too """
+        """
+        Check that all necessary mount points are specified.
+        At least root (/) partition must be defined and in UEFI systems
+        a fat partition mounted in /boot or /boot/efi must be defined too
+        """
 
         check_ok = False
 
         exist_root = False
-        exist_efi = False
+        exist_fat_boot = False
 
         # Be sure to just call get_devices once
         if self.disks is None:
@@ -1377,7 +1387,7 @@ class InstallationAdvanced(Gtk.Box):
 
         # No device should be mounted now except install media.
 
-        # Check root and uefi fs
+        # Check root and boot fs
         for part_path in self.stage_opts:
             (is_new, lbl, mnt, fs, fmt) = self.stage_opts[part_path]
             if mnt == "/":
@@ -1386,13 +1396,13 @@ class InstallationAdvanced(Gtk.Box):
                 if "fat" not in fs and "ntfs" not in fs:
                     #check_ok = True
                     exist_root = True
-            if mnt == "/boot/efi":
+            if mnt == "/boot/efi" or mnt == "/boot":
                 # Only fat partitions
                 if "fat" in fs:
-                    exist_efi = True
+                    exist_fat_boot = True
 
-        if self.uefi:
-            check_ok = exist_root and exist_efi
+        if self.efi:
+            check_ok = exist_root and exist_fat_boot
         else:
             check_ok = exist_root
 
@@ -1637,14 +1647,14 @@ class InstallationAdvanced(Gtk.Box):
                 partitions.update(pm.get_partitions(disk))
             apartitions = list(partitions) + self.lv_partitions
             if True:
-                noboot = True
+                boot = False
                 efiboot = False
                 # Check if a boot partition exists
                 for allopts in self.stage_opts:
                     if self.stage_opts[allopts][2] == '/boot':
-                        noboot = False
+                        boot = True
                     if self.stage_opts[allopts][2] == '/boot/efi':
-                        noboot = False
+                        boot = True
                         efiboot = True
 
                 for partition_path in apartitions:
@@ -1655,35 +1665,58 @@ class InstallationAdvanced(Gtk.Box):
                         # FIX: Do not label or format extended or bios-gpt-boot partitions
                         if fisy == _("extended") or fisy == "bios-gpt-boot":
                             continue
+
                         logging.info(_("Creating %s filesystem in %s labeled %s") % (fisy, partition_path, lbl))
+
+                        # EFI and /boot/efi is the EFI partition mount point -> Flag /boot/efi as boot
                         if (mnt == '/boot/efi'):
                             if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
+                                logging.info(("Setting boot flag in %s partition") % (partition_path))
                                 (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
+                                self.grub_partition = partition_path;
+                                self.efi_path = mnt;
                             if not self.testing:
                                 pm.finalize_changes(partitions[partition_path].disk)
+
+                        # EFI and /boot is NOT the EFI partition mount point -> Flag /boot as legacy_boot
                         if (mnt == '/boot' and efiboot):
                             if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_LEGACY_BOOT):
+                                logging.info(("Setting boot_legacy flag in %s partition") % (partition_path))
                                 (res, err) = pm.set_flag(pm.PED_PARTITION_LEGACY_BOOT, partitions[partition_path])
                             if not self.testing:
                                 pm.finalize_changes(partitions[partition_path].disk)
-                        if ((mnt == '/' and noboot) or (mnt == '/boot' and not efiboot)) and ('/dev/mapper' not in partition_path):
+
+                        # No LVM and
+                        # BIOS and / is the boot partition (no /boot or /boot/efi partition) -> Flag / as boot
+                        # BIOS or EFI, and /boot is the boot or/and the efi partition (no /boot/efi) -> Flag /boot as boot
+                        if ((mnt == '/' and not boot) or (mnt == '/boot' and not efiboot)) and ('/dev/mapper' not in partition_path):
+                            self.grub_partition = partition_path;
+                            self.efi_path = mnt;
                             if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
+                                logging.info(("Setting boot flag in %s partition") % (partition_path))
                                 (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
                             if not self.testing:
                                 pm.finalize_changes(partitions[partition_path].disk)
+
+                        # LVM
                         if "/dev/mapper" in partition_path:
                             pvs = lvm.get_lvm_partitions()
                             vgname = partition_path.split("/")[-1]
                             vgname = vgname.split('-')[0]
-                            if (mnt == '/' and noboot) or (mnt == '/boot' and not efiboot):
-                                self.blvm = True
+                            # If there is no separate /boot or /boot/efi partition, set boot flag to the lvm partition
+                            # TODO Needs testing with EFI (with only /boot, only /boot/efi or both)
+                            if (mnt == '/' and not boot) or (mnt == '/boot' and not efiboot):
+                                self.blvm = True  # Tells process.py there is a lvm partition
                                 for ee in pvs[vgname]:
                                     print(partitions)
+                                    self.boot_partition = "";
                                     if not pm.get_flag(partitions[ee], pm.PED_PARTITION_BOOT):
-                                        x = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[ee])
+                                        logging.info(_("Setting boot flag in %s partition") % (partitions[ee]))
+                                        (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[ee])
                                 if not self.testing:
                                     pm.finalize_changes(partitions[ee].disk)
 
+                        # the swap flag is for mac partitions
                         #if "swap" in fisy:
                         #    (res, err) = pm.set_flag(pm.PED_PARTITION_SWAP, partitions[partition_path])
                         #    pm.finalize_changes(partitions[partition_path].disk)
@@ -1734,22 +1767,29 @@ class InstallationAdvanced(Gtk.Box):
                 #    mount_point, fs, writable = self.get_mount_point(p.path)
                 #    mount_devices[mount_point] = partition_path
 
-        checkbox = self.ui.get_object("grub_device_check")
-        if checkbox.get_active() is False:
-            self.settings.set('install_bootloader', False)
-        else:
+        # Install bootloader?
+        install_checkbox = self.ui.get_object("grub_install_check")
+        if install_checkbox.get_active() is True:
             self.settings.set('install_bootloader', True)
-            if os.path.exists("/sys/firmware/efi/systab"):
+            if self.efi:
                 self.settings.set('bootloader_type', "UEFI_x86_64")
+                self.settings.set('bootloader_location', self.efi_path)
             else:
                 self.settings.set('bootloader_type', "GRUB2")
-
-        if self.settings.get('install_bootloader'):
-            self.settings.set('bootloader_device', self.grub_device)
+                # Check if the user wants to install the bootloader to a disk or a partition
+                device_radio = self.ui.get_object("grub_device_radio")
+                if device_radio.get_active() is True:
+                    self.settings.set('bootloader_location', self.grub_device)
+                else:
+                    self.settings.set('bootloader_location', self.grub_partition)
             logging.info(_("Manjaro will install the bootloader of type %s in %s"),
-                self.settings.get('bootloader_type'), self.settings.get('bootloader_device'))
+                            self.settings.get('bootloader_type'),
+                            self.settings.get('bootloader_location'))
         else:
+            self.settings.set('install_bootloader', False)
             logging.warning(_("Thus will not install any boot loader"))
+
+
 
         if not self.testing:
             self.process = installation_process.InstallationProcess(

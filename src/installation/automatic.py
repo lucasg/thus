@@ -201,15 +201,17 @@ class InstallationAutomatic(Gtk.Box):
         logging.info(_("Thus will use %s as installation device") % self.auto_device)
 
         self.settings.set('install_bootloader', True)
-        if os.path.exists("/sys/firmware/efi"):
-            self.settings.set('bootloader_type', "UEFI_x86_64")
-        else:
-            self.settings.set('bootloader_type', "GRUB2")
-
         if self.settings.get('install_bootloader'):
-            self.settings.set('bootloader_device', self.auto_device)
-            logging.info(_("Thus will install the bootloader of type %s in %s") % \
-                (self.settings.get('bootloader_type'), self.settings.get('bootloader_device')))
+            if self.settings.get('efi'):
+                self.settings.set('bootloader_type', "UEFI_x86_64")
+                self.settings.set('bootloader_location', '/boot/efi')
+            else:
+                self.settings.set('bootloader_type', "GRUB2")
+                self.settings.set('bootloader_location', self.auto_device)
+
+            logging.info(_("Thus will install the bootloader of type %s in %s") %
+                          (self.settings.get('bootloader_type'),
+                           self.settings.get('bootloader_location')))
         else:
             logging.warning(_("Thus will not install any boot loader"))
 

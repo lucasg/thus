@@ -599,10 +599,9 @@ class InstallationProcess(multiprocessing.Process):
         subprocess.check_call(["mount", "-t", "devpts", "/dev/pts", mydir])
         subprocess.check_call(["chmod", "555", mydir])
 
-        efi = "/sys/firmware/efi"
-        if os.path.exists(efi):
-            mydir = os.path.join(self.dest_dir, efi[1:])
-            subprocess.check_call(["mount", "-o", "bind", efi, mydir])
+        if self.settings.get('efi'):
+            mydir = os.path.join(self.dest_dir, "sys/firmware/efi")
+            subprocess.check_call(["mount", "-o", "bind", "/sys/firmware/efi", mydir])
 
         self.special_dirs_mounted = True
 
@@ -612,8 +611,8 @@ class InstallationProcess(multiprocessing.Process):
         if not self.special_dirs_mounted:
             self.queue_event('debug', _("Special dirs are not mounted. Skipping."))
             return
-        efi = "/sys/firmware/efi"
-        if os.path.exists(efi):
+
+        if self.settings.get('efi'):
             special_dirs = ["dev/pts", "sys/firmware/efi", "sys", "proc", "dev"]
         else:
             special_dirs = ["dev/pts", "sys", "proc", "dev"]
@@ -753,7 +752,6 @@ class InstallationProcess(multiprocessing.Process):
                     self.settings.set('btrfs', True)
                 else:
                     chk = '1'
-                    self.settings.set('btrfs', False)
                 opts = "rw,relatime,data=ordered"
             else:
                 full_path = os.path.join(self.dest_dir, path)
@@ -801,9 +799,12 @@ class InstallationProcess(multiprocessing.Process):
 
         default_dir = os.path.join(self.dest_dir, "etc/default")
         default_grub = os.path.join(default_dir, "grub")
-        swap_partition = self.mount_devices["swap"]
-        swap_uuid = fs.get_info(swap_partition)['UUID']
-        kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=' + swap_uuid + ' quiet"'
+        if "swap" in self.mount_devices:
+            swap_partition = self.mount_devices["swap"]
+            swap_uuid = fs.get_info(swap_partition)['UUID']
+            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=' + swap_uuid + ' quiet"'
+        else:
+            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet"'
 
         if not os.path.exists(default_dir):
             os.mkdir(default_dir)
@@ -860,8 +861,9 @@ class InstallationProcess(multiprocessing.Process):
 
     def install_bootloader_grub2_bios(self):
         """ Install bootloader in a BIOS system """
-        grub_device = self.settings.get('bootloader_device')
-        self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_device)
+        grub_location = self.settings.get('bootloader_location')
+
+        self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_location)
 
         grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
 
@@ -879,7 +881,7 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot_mount_special_dirs()
 
         self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
-                     '--target=i386-pc', '--boot-directory=/boot', '--recheck', grub_device])
+                     '--target=i386-pc', '--boot-directory=/boot', '--recheck', grub_location])
 
         self.install_bootloader_grub2_locales()
 
@@ -925,10 +927,11 @@ class InstallationProcess(multiprocessing.Process):
         # runs it doesn't detect a uefi environment and fails to add a new uefi
         # boot entry.
         self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader") % uefi_arch)
+        efi_path = self.settings.get('bootloader_location')
         try:
-            subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install/boot/efi '
+            subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install%s '
                                    '--bootloader-id=manjaro_grub --boot-directory=/install/boot '
-                                   '--recheck --debug' % uefi_arch], shell=True, timeout=45)
+                                   '--recheck --debug' % (uefi_arch, efi_path)], shell=True, timeout=45)
         except subprocess.CalledProcessError as err:
             logging.error('Command grub-install failed. Error output: %s' % err.output)
         except subprocess.TimeoutExpired as err:
@@ -940,9 +943,11 @@ class InstallationProcess(multiprocessing.Process):
         self.install_bootloader_grub2_locales()
 
         # Copy grub into dirs known to be used as default by some OEMs if they are empty.
-        defaults = [(os.path.join(self.dest_dir, "boot/efi/EFI/BOOT/"), 'BOOT' + spec_uefi_arch_caps + '.efi'),
-                    (os.path.join(self.dest_dir, "boot/efi/EFI/Microsoft/Boot/"), 'bootmgfw.efi')]
-        grub_dir_src = os.path.join(self.dest_dir, "boot/efi/EFI/manjaro_grub/")
+        defaults = [(os.path.join(self.dest_dir, "%s/EFI/BOOT/" % (efi_path[1:])),
+                     'BOOT' + spec_uefi_arch_caps + '.efi'),
+                    (os.path.join(self.dest_dir, "%s/EFI/Microsoft/Boot/" % (efi_path[1:])),
+                     'bootmgfw.efi')]
+        grub_dir_src = os.path.join(self.dest_dir, "%s/EFI/manjaro_grub/" % (efi_path[1:]))
         grub_efi_old = ('grub' + spec_uefi_arch + '.efi')
         for default in defaults:
             path, grub_efi_new = default

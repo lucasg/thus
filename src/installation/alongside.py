@@ -411,9 +411,9 @@ class InstallationAlongside(Gtk.Box):
         bl.ask()
 
         if self.settings.get('install_bootloader'):
-            self.settings.set('bootloader_device', mount_devices["/"])
+            self.settings.set('bootloader_location', mount_devices["/"])
             logging.info(_("Manjaro will install the bootloader of type %s in %s") % \
-                (self.settings.get('bootloader_type'), self.settings.get('bootloader_device'))
+                (self.settings.get('bootloader_type'), self.settings.get('bootloader_location'))
         else:
             logging.warning("Thus will not install any boot loader")
 

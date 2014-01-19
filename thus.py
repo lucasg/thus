@@ -29,6 +29,7 @@
 #   Alex Skinner (skinner) <skinner.antergos.com>
 
 """ Main Thus (Manjaro Installer) module """
+import os.path
 
 # TODO: Remove all force_grub code
 
@@ -163,6 +164,9 @@ class Main(Gtk.Window):
             self.settings.set('data', data_dir)
         else:
             data_dir = self.settings.get('data')
+
+        if os.path.exists("/sys/firmware/efi"):
+            self.settings.set('efi', True)
 
         self.ui = Gtk.Builder()
         self.ui.add_from_file(ui_dir + "thus.ui")

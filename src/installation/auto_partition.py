@@ -137,11 +137,9 @@ class AutoPartition(object):
         # Will use these queue to show progress info to the user
         self.callback_queue = callback_queue
 
-        self.uefi = False
-
+        self.efi = False
         if os.path.exists("/sys/firmware/efi"):
-            # TODO: Check if UEFI works
-            self.uefi = True
+            self.efi = True
 
     def mkfs(self, device, fs_type, mount_point, label_name, fs_options="", btrfs_devices=""):
         """ We have two main cases: "swap" and everything else. """
@@ -222,7 +220,7 @@ class AutoPartition(object):
 
         # self.auto_device is of type /dev/sdX or /dev/hdX
 
-        if self.uefi:
+        if self.efi:
             efi = self.auto_device + "2"
             boot = self.auto_device + "3"
             swap = self.auto_device + "4"
@@ -272,7 +270,7 @@ class AutoPartition(object):
         mount_devices["/"] = root_device
         mount_devices["/home"] = home_device
 
-        if self.uefi:
+        if self.efi:
             mount_devices["/boot/efi"] = efi_device
 
         if self.luks:
@@ -297,7 +295,7 @@ class AutoPartition(object):
         fs_devices[boot_device] = "ext2"
         fs_devices[swap_device] = "swap"
 
-        if self.uefi:
+        if self.efi:
             fs_devices[efi_device] = "vfat"
 
         if self.luks:
@@ -355,27 +353,30 @@ class AutoPartition(object):
     def run(self):
         key_files = ["/tmp/.keyfile-root", "/tmp/.keyfile-home"]
 
-        if self.uefi:
+        # Partition sizes are expressed in MB
+        if self.efi:
             gpt_bios_grub_part_size = 2
-            uefisys_part_size = 512
+            efisys_part_size = 100
             empty_space_size = 2
         else:
             gpt_bios_grub_part_size = 0
-            uefisys_part_size = 0
+            efisys_part_size = 0
             empty_space_size = 0
+
+        boot_part_size = 200
 
         # Get just the disk size in 1000*1000 MB
         device = self.auto_device
         device_name = check_output("basename %s" % device)
         base_path = "/sys/block/%s" % device_name
-        disc_size = 0
+        disk_size = 0
         if os.path.exists("%s/size" % base_path):
             with open("%s/queue/logical_block_size" % base_path, 'r') as f:
                 logical_block_size = int(f.read())
             with open("%s/size" % base_path, 'r') as f:
                 size = int(f.read())
 
-            disc_size = ((logical_block_size * size) / 1024) / 1024
+            disk_size = ((logical_block_size * size) / 1024) / 1024
         else:
             txt = _("Setup cannot detect size of your device, please use advanced "
                 "installation routine for partitioning and mounting devices.")
@@ -383,18 +384,26 @@ class AutoPartition(object):
             show.warning(txt)
             return
 
-        # Partition sizes are expressed in MB
-
-        boot_part_size = 256
-
         mem_total = check_output("grep MemTotal /proc/meminfo")
         mem_total = int(mem_total.split()[1])
+        mem = mem_total / 1024
 
-        swap_part_size = 1536
-        if mem_total <= 1572864:
-            swap_part_size = mem_total / 1024
+        # Suggested sizes from Anaconda installer
+        if mem < 2048:
+            swap_part_size = 2 * mem
+        elif 2048 <= mem < 8192:
+            swap_part_size = mem
+        elif 8192 <= mem < 65536:
+            swap_part_size = mem / 2
+        else:
+            swap_part_size = 4096
 
-        root_part_size = disc_size - (empty_space_size + gpt_bios_grub_part_size + uefisys_part_size + boot_part_size + swap_part_size)
+        # Max swap size is 10% of all available disk size
+        max_swap = disk_size * 0.1
+        if swap_part_size > max_swap:
+            swap_part_size = max_swap
+
+        root_part_size = disk_size - (empty_space_size + gpt_bios_grub_part_size + efisys_part_size + boot_part_size + swap_part_size)
 
         home_part_size = 0
         if self.home:
@@ -409,9 +418,9 @@ class AutoPartition(object):
 
         lvm_pv_part_size = swap_part_size + root_part_size + home_part_size
 
-        logging.debug("disc_size %dMB", disc_size)
+        logging.debug("disk_size %dMB", disk_size)
         logging.debug("gpt_bios_grub_part_size %dMB", gpt_bios_grub_part_size)
-        logging.debug("uefisys_part_size %dMB", uefisys_part_size)
+        logging.debug("efisys_part_size %dMB", efisys_part_size)
         logging.debug("boot_part_size %dMB", boot_part_size)
 
         if self.lvm:
@@ -429,7 +438,7 @@ class AutoPartition(object):
         printk(False)
 
         # We assume a /dev/hdX format (or /dev/sdX)
-        if self.uefi:
+        if self.efi:
             # GPT (GUID) is supported only by 'parted' or 'sgdisk'
             # clean partition table to avoid issues!
             subprocess.check_call(["sgdisk", "--zap", device])
@@ -445,7 +454,7 @@ class AutoPartition(object):
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=1:1M:+%dM --typecode=1:EF02 --change-name=1:BIOS_GRUB %s'
                 % (gpt_bios_grub_part_size, device)], shell=True)
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=2:0:+%dM --typecode=2:EF00 --change-name=2:UEFI_SYSTEM %s'
-                % (uefisys_part_size, device)], shell=True)
+                % (efisys_part_size, device)], shell=True)
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=3:0:+%dM --typecode=3:8300 --attributes=3:set:2 --change-name=3:MANJARO_BOOT %s'
                 % (boot_part_size, device)], shell=True)
 
@@ -510,11 +519,11 @@ class AutoPartition(object):
 
         (efi_device, boot_device, swap_device, root_device, luks_devices, lvm_device, home_device) = self.get_devices()
 
-        if not self.home and self.uefi:
+        if not self.home and self.efi:
             logging.debug("EFI %s, Boot %s, Swap %s, Root %s", efi_device, boot_device, swap_device, root_device)
-        elif not self.home and not self.uefi:
+        elif not self.home and not self.efi:
             logging.debug("Boot %s, Swap %s, Root %s", boot_device, swap_device, root_device)
-        elif self.home and self.uefi:
+        elif self.home and self.efi:
             logging.debug("EFI %s, Boot %s, Swap %s, Root %s, Home %s", efi_device, boot_device, swap_device, root_device, home_device)
         else:
             logging.debug("Boot %s, Swap %s, Root %s, Home %s", boot_device, swap_device, root_device, home_device)
@@ -546,7 +555,7 @@ class AutoPartition(object):
         self.mkfs(boot_device, "ext2", "/boot", "ManjaroBoot")
 
         # Format the EFI partition
-        if self.uefi:
+        if self.efi:
             self.mkfs(efi_device, "vfat", "/boot/efi", "UEFI_SYSTEM")
 
         if self.home:
