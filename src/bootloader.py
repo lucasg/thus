@@ -68,7 +68,7 @@ class BootLoader(object):
         label.set_markup(txt)
 
         label = self.ui.get_object("help_label")
-        txt = _("Select 'Cancel' if you don't want to install a boot loader.")
+        txt = _("Select 'Cancel' if you don't want to install a bootloader.")
         label.set_markup(txt)
 
     def get_type(self):

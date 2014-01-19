@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 10:33+0100\n"
+"POT-Creation-Date: 2014-01-19 10:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgid "32-bit UEFI"
 msgstr ""
 
 #: src/bootloader.py:71
-msgid "Select 'Cancel' if you don't want to install a boot loader."
+msgid "Select 'Cancel' if you don't want to install a bootloader."
 msgstr ""
 
 #: src/canonical/misc.py:929
@@ -277,7 +277,7 @@ msgid "Advanced installation mode"
 msgstr ""
 
 #: src/installation/advanced.py:1094 ui/installation_advanced.ui:1046
-msgid "Use this device for boot loader installation:"
+msgid "Use this device for bootloader installation:"
 msgstr ""
 
 #: src/installation/advanced.py:1099 ui/installation_advanced.ui:1080
@@ -456,7 +456,7 @@ msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr ""
 
 #: src/installation/advanced.py:1790 src/installation/automatic.py:216
-msgid "Thus will not install any boot loader"
+msgid "Thus will not install any bootloader"
 msgstr ""
 
 #: src/installation/advanced.py:1806 src/installation/automatic.py:237
@@ -816,7 +816,7 @@ msgstr ""
 
 #: src/installation/process.py:866
 #, python-format
-msgid "Installing GRUB(2) BIOS boot loader in %s"
+msgid "Installing GRUB(2) BIOS bootloader in %s"
 msgstr ""
 
 #: src/installation/process.py:876 src/installation/process.py:898
@@ -833,7 +833,7 @@ msgstr ""
 
 #: src/installation/process.py:929
 #, python-format
-msgid "Installing GRUB(2) UEFI %s boot loader"
+msgid "Installing GRUB(2) UEFI %s bootloader"
 msgstr ""
 
 #: src/installation/process.py:942
@@ -1359,7 +1359,7 @@ msgid "i386 UEFI"
 msgstr ""
 
 #: ui/bootloader.ui:169
-msgid "Choose 'Cancel' if you don't want to install a boot loader"
+msgid "Choose 'Cancel' if you don't want to install a bootloader"
 msgstr ""
 
 #: ui/check.ui:29
@@ -1403,7 +1403,7 @@ msgid "LVM..."
 msgstr ""
 
 #: ui/installation_advanced.ui:1024
-msgid "Install boot loader"
+msgid "Install bootloader"
 msgstr ""
 
 #: ui/installation_advanced.ui:1166

@@ -374,7 +374,7 @@ class InstallationProcess(multiprocessing.Process):
             self.configure_system()
             self.queue_event('debug', _('System configured.'))
 
-            # Install boot loader (always after running mkinitcpio)
+            # Install bootloader (always after running mkinitcpio)
             if self.settings.get('install_bootloader'):
                 self.queue_event('debug', _('Installing bootloader ...'))
                 self.install_bootloader()
@@ -863,7 +863,7 @@ class InstallationProcess(multiprocessing.Process):
         """ Install bootloader in a BIOS system """
         grub_location = self.settings.get('bootloader_location')
 
-        self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_location)
+        self.queue_event('info', _("Installing GRUB(2) BIOS bootloader in %s") % grub_location)
 
         grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
 
@@ -926,7 +926,7 @@ class InstallationProcess(multiprocessing.Process):
         # grub2-efi installation isn't done in a chroot because when efibootmgr
         # runs it doesn't detect a uefi environment and fails to add a new uefi
         # boot entry.
-        self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader") % uefi_arch)
+        self.queue_event('info', _("Installing GRUB(2) UEFI %s bootloader") % uefi_arch)
         efi_path = self.settings.get('bootloader_location')
         try:
             subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install%s '
