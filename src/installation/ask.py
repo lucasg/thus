@@ -141,7 +141,7 @@ class InstallationAsk(Gtk.Box):
         button.set_label(txt)
 
         label = self.ui.get_object("home_label")
-        txt = _("This will setup you /home directory in a different partition or volume.")
+        txt = _("This will setup your /home directory in a different partition or volume.")
         txt = '<span weight="light" size="small">%s</span>' % txt
         label.set_markup(txt)
 

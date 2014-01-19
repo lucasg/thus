@@ -1232,7 +1232,7 @@ class InstallationProcess(multiprocessing.Process):
         zoneinfo_path = os.path.join("/usr/share/zoneinfo", self.settings.get("timezone_zone"))
         self.chroot(['ln', '-s', zoneinfo_path, "/etc/localtime"])
 
-        self.queue_event('debug', _('Timezone set.'))
+        self.queue_event('debug', _('Time zone set.'))
 
         # Wait FOREVER until the user sets his params
         while self.settings.get('user_info_done') is False:
