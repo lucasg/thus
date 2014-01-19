@@ -81,6 +81,7 @@ class InstallationAdvanced(Gtk.Box):
         self.efi = self.settings.get('efi')
         self.efi_path = ""
         self.grub_partition = ""
+
         # Call base class
         super().__init__()
 
@@ -263,6 +264,10 @@ class InstallationAdvanced(Gtk.Box):
         device_radio.set_sensitive(checkbox.get_active())
         partition_radio = self.ui.get_object("grub_partition_radio")
         partition_radio.set_sensitive(checkbox.get_active())
+
+    def on_grub_partition_radio_toggled(self, radio):
+        combo = self.ui.get_object("grub_device_entry")
+        combo.set_sensitive(not radio.get_active())
 
     def select_first_combobox_item(self, combobox):
         """ Automatically select first entry """
@@ -1096,8 +1101,9 @@ class InstallationAdvanced(Gtk.Box):
         label = self.ui.get_object('grub_device_label')
         label.set_markup(txt)
 
-        txt = _("Use partition where /boot is mounted (not recommended)")
-        label = self.ui.get_object('grub_install_label')
+        txt = _("Use the partition where /boot is mounted (not recommended)")
+        txt = "<span size='small'>%s</span>" % txt
+        label = self.ui.get_object('grub_partition_label')
         label.set_markup(txt)
 
         #txt = _("TODO: Here goes a warning message")

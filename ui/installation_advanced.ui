@@ -1073,11 +1073,12 @@
                 <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
                 <property name="group">grub_device_radio</property>
+                <signal name="toggled" handler="on_grub_partition_radio_toggled" swapped="no"/>
                 <child>
-                  <object class="GtkLabel" id="label1">
+                  <object class="GtkLabel" id="grub_partition_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Use partition where /boot is mounted (not recommended)</property>
+                    <property name="label" translatable="yes">Use the partition where /boot is mounted (not recommended)</property>
                   </object>
                 </child>
               </object>
