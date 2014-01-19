@@ -1091,7 +1091,7 @@ class InstallationAdvanced(Gtk.Box):
         txt = "<span weight='bold' size='large'>%s</span>" % txt
         self.title.set_markup(txt)
 
-        txt = _("Use this device for bootloader installation:")
+        txt = _("Use this device for boot loader installation:")
         txt = "<span weight='bold' size='small'>%s</span>" % txt
         label = self.ui.get_object('grub_device_label')
         label.set_markup(txt)
@@ -1787,7 +1787,7 @@ class InstallationAdvanced(Gtk.Box):
                             self.settings.get('bootloader_location'))
         else:
             self.settings.set('install_bootloader', False)
-            logging.warning(_("Thus will not install any bootloader"))
+            logging.warning(_("Thus will not install any boot loader"))
 
 
 

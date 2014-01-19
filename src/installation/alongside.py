@@ -415,7 +415,7 @@ class InstallationAlongside(Gtk.Box):
             logging.info(_("Manjaro will install the bootloader of type %s in %s") % \
                 (self.settings.get('bootloader_type'), self.settings.get('bootloader_location'))
         else:
-            logging.warning("Thus will not install any bootloader")
+            logging.warning("Thus will not install any boot loader")
 
         if not self.testing:
             self.process = installation_process.InstallationProcess( \
