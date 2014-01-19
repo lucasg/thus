@@ -54,6 +54,7 @@ def create_update_info():
 
     myfiles.extend(get_files("src"))
     myfiles.extend(get_files("src/parted3"))
+    myfiles.extend(get_files("src/installation"))
     myfiles.extend(get_files("src/canonical"))
 
     myfiles.extend(get_files("data"))
