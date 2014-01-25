@@ -478,22 +478,16 @@ class InstallationAdvanced(Gtk.Box):
                     if '/dev/mapper' in path:
                         continue
 
-                    # Get file system
+                    # Get filesystem
                     if p.fileSystem and p.fileSystem.type:
                         fs_type = p.fileSystem.type
+                    elif 'free' in partition_path:
+                        fs_type = _("none")
+                    # try blkid
                     elif fs.get_type(path):
                         fs_type = fs.get_type(path)
                     else:
-                        # kludge, btrfs not being detected...
-                        if 'free' not in partition_path:
-                            uid = self.gen_partition_uid(p=p)
-                            if uid not in self.stage_opts:
-                                if used_space.is_btrfs(p.path):
-                                    fs_type = 'btrfs'
-                            else:
-                                fs_type = '?'
-                        else:
-                            fs_type = _("none")
+                        fs_type = '?'
 
                     # Nothing should be mounted at this point
 
@@ -540,7 +534,7 @@ class InstallationAdvanced(Gtk.Box):
                         self.diskdic['mounts'].append(mount_point)
 
                     if p.type == pm.PARTITION_EXTENDED:
-                        # Show 'extended' in file system type column
+                        # Show 'extended' in filesystem type column
                         fs_type = _("extended")
 
                     # Do not show swap version, only the 'swap' word
@@ -1403,7 +1397,8 @@ class InstallationAdvanced(Gtk.Box):
                 if "fat" not in fs and "ntfs" not in fs:
                     #check_ok = True
                     exist_root = True
-            if mnt == "/boot/efi" or mnt == "/boot":
+            #if mnt == "/boot/efi" or mnt == "/boot":
+            if mnt == "/boot/efi":
                 # Only fat partitions
                 if "fat" in fs:
                     exist_fat_boot = True
@@ -1715,7 +1710,7 @@ class InstallationAdvanced(Gtk.Box):
                                 self.blvm = True  # Tells process.py there is a lvm partition
                                 for ee in pvs[vgname]:
                                     print(partitions)
-                                    self.boot_partition = "";
+                                    self.grub_partition = ""
                                     if not pm.get_flag(partitions[ee], pm.PED_PARTITION_BOOT):
                                         logging.info(_("Setting boot flag in %s partition") % (partitions[ee]))
                                         (res, err) = pm.set_flag(pm.PED_PARTITION_BOOT, partitions[ee])

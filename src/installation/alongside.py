@@ -207,7 +207,7 @@ class InstallationAlongside(Gtk.Box):
 
                     for p in partition_list:
                         if p.type != pm.PARTITION_EXTENDED:
-                            ## Get file system
+                            ## Get filesystem
                             fs_type = ""
                             if p.fileSystem and p.fileSystem.type:
                                 fs_type = p.fileSystem.type
@@ -377,7 +377,7 @@ class InstallationAlongside(Gtk.Box):
 
         new_size = self.new_size
 
-        # first, shrink file system
+        # first, shrink filesystem
         res = fs.resize(partition_path, fs_type, new_size)
         if res:
             # destroy original partition and create a new resized one

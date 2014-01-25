@@ -110,10 +110,13 @@ class FileCopyThread(Thread):
                 num_files_copied = num_files_total_local - num_files_remaining + self.offset
                 if num_files_copied % 100 == 0:
                     self.update_progress(num_files_copied)
-            else:
+            # Disabled until we find a proper solution for BadDrawable (invalid Pixmap or Window parameter) errors
+            # Details: serial YYYYY error_code 9 request_code 62 minor_code 0
+            # This might even speed up the copy process ...
+            """else:
                 # we've got a filename!
                 if num_files_copied % 100 == 0:
-                    self.update_label(line.decode().strip())
+                    self.update_label(line.decode().strip())"""
 
         self.offset = num_files_copied
 
@@ -476,6 +479,15 @@ class InstallationProcess(multiprocessing.Process):
             self.error = False
             return True
 
+    def get_cpu(self):
+        # Check if system is an intel system. Not sure if we want to move this to hardware module when its done.
+        process1 = subprocess.Popen(["hwinfo", "--cpu"], stdout=subprocess.PIPE)
+        process2 = subprocess.Popen(["grep", "Model:[[:space:]]"],
+                                    stdin=process1.stdout, stdout=subprocess.PIPE)
+        process1.stdout.close()
+        out, err = process2.communicate()
+        return out.decode().lower()
+
     def check_source_folder(self, mount_point):
         """ Check if source folders are mounted """
         device = None
@@ -650,7 +662,10 @@ class InstallationProcess(multiprocessing.Process):
                                     stdout=subprocess.PIPE,
                                     stderr=subprocess.STDOUT)
             out = proc.communicate()[0]
-            logging.debug(out.decode().strip())
+            txt = out.decode().strip()
+            if len(txt) > 0:
+                logging.debug(txt)
+
         except OSError as err:
             logging.exception(_("Error running command: %s"), err.strerror)
             raise
@@ -740,6 +755,9 @@ class InstallationProcess(multiprocessing.Process):
             if "fat" in myfmt:
                 myfmt = 'vfat'
 
+            if "btrfs" in myfmt:
+                self.settings.set('btrfs', True)
+
             # Avoid adding a partition to fstab when
             # it has no mount point (swap has been checked before)
             if path == "":
@@ -749,10 +767,10 @@ class InstallationProcess(multiprocessing.Process):
                 # We do not run fsck on btrfs partitions
                 if "btrfs" in myfmt:
                     chk = '0'
-                    self.settings.set('btrfs', True)
+                    opts = 'rw,relatime,space_cache,autodefrag,inode_cache'
                 else:
                     chk = '1'
-                opts = "rw,relatime,data=ordered"
+                    opts = "rw,relatime,data=ordered"
             else:
                 full_path = os.path.join(self.dest_dir, path)
                 subprocess.check_call(["mkdir", "-p", full_path])
@@ -760,12 +778,14 @@ class InstallationProcess(multiprocessing.Process):
             if self.ssd is not None:
                 for i in self.ssd:
                     if i in self.mount_devices[path] and self.ssd[i]:
-                        opts = 'defaults,noatime,nodiratime'
+                        opts = 'defaults,noatime'
                         # As of linux kernel version 3.7, the following
                         # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
                         # If using a TRIM supported SSD, discard is a valid mount option for swap
-                        if myfmt == 'ext4' or myfmt == 'btrfs' or myfmt == 'jfs' or myfmt == 'xfs' or myfmt == 'swap':
+                        if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs' or myfmt == 'swap':
                             opts += ',discard'
+                        elif myfmt == 'btrfs':
+                            opts = 'rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
                         if path == '/':
                             root_ssd = 1
 
@@ -802,7 +822,7 @@ class InstallationProcess(multiprocessing.Process):
         if "swap" in self.mount_devices:
             swap_partition = self.mount_devices["swap"]
             swap_uuid = fs.get_info(swap_partition)['UUID']
-            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=' + swap_uuid + ' quiet"'
+            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=%s quiet"' % swap_uuid
         else:
             kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet"'
 
@@ -899,8 +919,6 @@ class InstallationProcess(multiprocessing.Process):
 
     def install_bootloader_grub2_efi(self, arch):
         """ Install boot loader in a UEFI system """
-        # TODO: Clean this up a bit. It is working in vbox but needs testing on other hardware.
-        # TODO: If tests show it still not working 100%, try to manually add entry to loader (efibootmgr).
         uefi_arch = "x86_64"
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
@@ -930,7 +948,7 @@ class InstallationProcess(multiprocessing.Process):
         efi_path = self.settings.get('bootloader_location')
         try:
             subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install%s '
-                                   '--bootloader-id=manjaro_grub --boot-directory=/install/boot '
+                                   '--bootloader-id=manjaro --boot-directory=/install/boot '
                                    '--recheck --debug' % (uefi_arch, efi_path)], shell=True, timeout=45)
         except subprocess.CalledProcessError as err:
             logging.error('Command grub-install failed. Error output: %s' % err.output)
@@ -941,13 +959,13 @@ class InstallationProcess(multiprocessing.Process):
 
         self.queue_event('info', _("Installing Grub2 locales."))
         self.install_bootloader_grub2_locales()
-
+        """
         # Copy grub into dirs known to be used as default by some OEMs if they are empty.
         defaults = [(os.path.join(self.dest_dir, "%s/EFI/BOOT/" % (efi_path[1:])),
                      'BOOT' + spec_uefi_arch_caps + '.efi'),
                     (os.path.join(self.dest_dir, "%s/EFI/Microsoft/Boot/" % (efi_path[1:])),
                      'bootmgfw.efi')]
-        grub_dir_src = os.path.join(self.dest_dir, "%s/EFI/manjaro_grub/" % (efi_path[1:]))
+        grub_dir_src = os.path.join(self.dest_dir, "%s/EFI/manjaro/" % (efi_path[1:]))
         grub_efi_old = ('grub' + spec_uefi_arch + '.efi')
         for default in defaults:
             path, grub_efi_new = default
@@ -963,7 +981,7 @@ class InstallationProcess(multiprocessing.Process):
                 except Exception as err:
                     logging.warning(_("Copying Grub(2) into OEM dir failed. Unknown Error."))
                     logging.warning(err)
-
+        """
         # TODO: Create themed shellx64_v2.efi
         '''# Copy uefi shell if none exists in /boot/EFI
         shell_src = "/usr/share/thus/grub2-theme/shellx64_v2.efi"
@@ -1056,6 +1074,8 @@ class InstallationProcess(multiprocessing.Process):
         """ Runs mkinitcpio """
         # Add lvm and encrypt hooks if necessary
 
+        cpu = self.get_cpu()
+
         hooks = ["base", "udev", "autodetect", "modconf", "block"]
         modules = []
 
@@ -1068,21 +1088,31 @@ class InstallationProcess(multiprocessing.Process):
 
         if self.blvm or self.settings.get("use_lvm"):
             hooks.append("lvm2")
-        if self.settings.get('btrfs'):
-            hooks.extend(["filesystems", "keyboard"])
+
+        if "swap" in self.mount_devices:
+            hooks.extend(["resume", "filesystems", "keyboard"])
         else:
-            hooks.extend(["filesystems", "keyboard", "fsck"])
+            hooks.extend(["filesystems", "keyboard"])
+
+        if self.settings.get('btrfs') and cpu is not 'genuineintel':
+            modules.append('crc32c')
+        elif self.settings.get('btrfs') and cpu is 'genuineintel':
+            modules.append('crc32c-intel')
+        else:
+            hooks.append("fsck")
 
         self.set_mkinitcpio_hooks_and_modules(hooks, modules)
 
-        # run mkinitcpio on the target system
+        # Fix for bsdcpio error
+        locale = self.settings.get('locale')
+
+        # Run mkinitcpio on the target system
         self.chroot_mount_special_dirs()
-        self.chroot(["/usr/bin/mkinitcpio", "-p", self.kernel])
+        self.chroot(['sh', '-c', 'LANG=%s /usr/bin/mkinitcpio -p %s' % (locale, self.kernel)])
         self.chroot_umount_special_dirs()
 
     def uncomment_locale_gen(self, locale):
         """ Uncomment selected locale in /etc/locale.gen """
-        #self.chroot(['sed', '-i', '-r', '"s/#(.*%s)/\1/g"' % locale, "/etc/locale.gen"])
 
         text = []
         with open("%s/etc/locale.gen" % self.dest_dir, "r") as gen:

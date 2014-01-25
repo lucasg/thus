@@ -20,7 +20,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-""" Functions to work with file systems """
+""" Functions to work with filesystems """
 
 import subprocess
 import shlex
@@ -28,11 +28,11 @@ import canonical.misc as misc
 import logging
 
 # constants
-NAMES = [ 'ext2', 'ext3', 'ext4', 'fat16', 'fat32', 'ntfs', 'jfs', \
+NAMES = ['ext2', 'ext3', 'ext4', 'fat16', 'fat32', 'ntfs', 'jfs',
            'reiserfs', 'xfs', 'btrfs', 'swap']
 
-COMMON_MOUNT_POINTS = [ '/', '/boot', '/home', '/usr', '/var' ]
-COMMON_MOUNT_POINTS_EFI = [ '/', '/boot/efi', '/boot', '/home', '/usr', '/var' ]
+COMMON_MOUNT_POINTS = ['/', '/boot', '/home', '/usr', '/var']
+COMMON_MOUNT_POINTS_EFI = ['/', '/boot/efi', '/boot', '/home', '/usr', '/var']
 
 @misc.raise_privileges
 def get_info(part):

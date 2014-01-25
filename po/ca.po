@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 13:08+0100\n"
-"PO-Revision-Date: 2014-01-19 13:50+0000\n"
+"POT-Creation-Date: 2014-01-19 21:17+0100\n"
+"PO-Revision-Date: 2014-01-20 07:10+0000\n"
 "Last-Translator: asmolero <alsamolero@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "El tipus de sistema de fitxers %s és desconegut"
 
 #: src/installation/auto_partition.py:179
 #, python-format
-msgid "Can't create file system %s"
+msgid "Can't create filesystem %s"
 msgstr "No es pot crear el sistema de fitxers %s"
 
 #: src/installation/auto_partition.py:325
@@ -219,178 +219,178 @@ msgstr "Esteu usant el corrent elèctric."
 msgid "We have enough disk space."
 msgstr "Hi ha prou d'espai al disc."
 
-#: src/installation/advanced.py:212 src/installation/advanced.py:509
-#: src/installation/advanced.py:521
+#: src/installation/advanced.py:213 src/installation/advanced.py:510
+#: src/installation/advanced.py:522
 msgid "free space"
 msgstr "espai lliure"
 
-#: src/installation/advanced.py:288 src/installation/alongside.py:170
+#: src/installation/advanced.py:289 src/installation/alongside.py:170
 msgid "Device"
 msgstr "Dispositiu"
 
-#: src/installation/advanced.py:291
+#: src/installation/advanced.py:292
 msgid "Type"
 msgstr "Tipus"
 
-#: src/installation/advanced.py:294
+#: src/installation/advanced.py:295
 msgid "Mount point"
 msgstr "Punt de muntatge"
 
-#: src/installation/advanced.py:297
+#: src/installation/advanced.py:298
 msgid "Label"
 msgstr "Etiqueta"
 
-#: src/installation/advanced.py:303 src/installation/advanced.py:1577
+#: src/installation/advanced.py:304 src/installation/advanced.py:1578
 msgid "Format"
 msgstr "Format"
 
-#: src/installation/advanced.py:306
+#: src/installation/advanced.py:307
 msgid "Size"
 msgstr "Mida"
 
-#: src/installation/advanced.py:309
+#: src/installation/advanced.py:310
 msgid "Used"
 msgstr "Usat"
 
-#: src/installation/advanced.py:312
+#: src/installation/advanced.py:313
 msgid "Flags"
 msgstr "Banderes"
 
-#: src/installation/advanced.py:318
+#: src/installation/advanced.py:319
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation/advanced.py:495
+#: src/installation/advanced.py:496
 msgid "none"
 msgstr "cap"
 
-#: src/installation/advanced.py:543 src/installation/advanced.py:955
-#: src/installation/advanced.py:1438 src/installation/advanced.py:1530
-#: src/installation/advanced.py:1672 src/installation/advanced.py:1768
+#: src/installation/advanced.py:544 src/installation/advanced.py:956
+#: src/installation/advanced.py:1439 src/installation/advanced.py:1531
+#: src/installation/advanced.py:1673 src/installation/advanced.py:1768
 msgid "extended"
 msgstr "ampliada"
 
-#: src/installation/advanced.py:674 src/installation/advanced.py:925
+#: src/installation/advanced.py:675 src/installation/advanced.py:926
 msgid "Can't use same mount point twice..."
 msgstr "No es pot fer servir el mateix punt de muntatge dos cops..."
 
-#: src/installation/advanced.py:946
+#: src/installation/advanced.py:947
 msgid "Creating primary partition"
 msgstr "S'està creant la partició primària"
 
-#: src/installation/advanced.py:957
+#: src/installation/advanced.py:958
 msgid "Creating extended partition"
 msgstr "S'està creant la partició ampliada"
 
-#: src/installation/advanced.py:963
+#: src/installation/advanced.py:964
 msgid "Creating logical partition"
 msgstr "S'està creant la partició lògica"
 
-#: src/installation/advanced.py:1095
+#: src/installation/advanced.py:1096
 msgid "Advanced installation mode"
 msgstr "Mode d'instal·lació avançat"
 
-#: src/installation/advanced.py:1099 ui/installation_advanced.ui:1046
+#: src/installation/advanced.py:1100 ui/installation_advanced.ui:1046
 msgid "Use this device for boot loader installation:"
 msgstr "Utilitza aquest dispositiu per a instal·lar el carregador d'arrencada:"
 
-#: src/installation/advanced.py:1104 ui/installation_advanced.ui:1081
+#: src/installation/advanced.py:1105 ui/installation_advanced.ui:1081
 msgid "Use the partition where /boot is mounted (not recommended)"
 msgstr "Utilitza la partició on hi ha muntat /boot (no recomanat)"
 
-#: src/installation/advanced.py:1114 ui/installation_advanced.ui:943
+#: src/installation/advanced.py:1115 ui/installation_advanced.ui:943
 msgid "New partition table"
 msgstr "Nova taula de particions"
 
-#: src/installation/advanced.py:1122
+#: src/installation/advanced.py:1123
 msgid "Change..."
 msgstr "Canvia..."
 
-#: src/installation/advanced.py:1127 ui/installation_advanced.ui:407
+#: src/installation/advanced.py:1128 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr "Mida:"
 
-#: src/installation/advanced.py:1131 ui/installation_advanced.ui:630
+#: src/installation/advanced.py:1132 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr "Tipus:"
 
-#: src/installation/advanced.py:1135 ui/installation_advanced.ui:647
+#: src/installation/advanced.py:1136 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr "Primària"
 
-#: src/installation/advanced.py:1139 ui/installation_advanced.ui:671
+#: src/installation/advanced.py:1140 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr "Lògica"
 
-#: src/installation/advanced.py:1143 ui/installation_advanced.ui:695
+#: src/installation/advanced.py:1144 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr "Ampliada"
 
-#: src/installation/advanced.py:1147 ui/installation_advanced.ui:516
+#: src/installation/advanced.py:1148 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr "Al principi d'aquest espai"
 
-#: src/installation/advanced.py:1151 ui/installation_advanced.ui:540
+#: src/installation/advanced.py:1152 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr "A la fi d'aquest espai"
 
-#: src/installation/advanced.py:1155 src/installation/advanced.py:1172
+#: src/installation/advanced.py:1156 src/installation/advanced.py:1173
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr "Usa com:"
 
-#: src/installation/advanced.py:1159 src/installation/advanced.py:1176
+#: src/installation/advanced.py:1160 src/installation/advanced.py:1177
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr "Punt de muntatge:"
 
-#: src/installation/advanced.py:1163 src/installation/advanced.py:1180
+#: src/installation/advanced.py:1164 src/installation/advanced.py:1181
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr "Etiqueta (opcional):"
 
-#: src/installation/advanced.py:1167
+#: src/installation/advanced.py:1168
 msgid "Encryption Options..."
 msgstr "Opcions d'encriptació..."
 
-#: src/installation/advanced.py:1184 ui/installation_advanced.ui:276
+#: src/installation/advanced.py:1185 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr "Format:"
 
-#: src/installation/advanced.py:1189
+#: src/installation/advanced.py:1190
 msgid "Partition Table Type:"
 msgstr "Tipus de taula de particions:"
 
-#: src/installation/advanced.py:1194
+#: src/installation/advanced.py:1195
 msgid "Create Partition Table"
 msgstr "Crea la taula de particions"
 
-#: src/installation/advanced.py:1197 src/installation/alongside.py:148
+#: src/installation/advanced.py:1198 src/installation/alongside.py:148
 #: src/installation/automatic.py:104
 msgid "Install now!"
 msgstr "Instal·lar ara!"
 
-#: src/installation/advanced.py:1286
+#: src/installation/advanced.py:1287
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Creant una nova taula de partició de tipus %s pel disc %s"
 
-#: src/installation/advanced.py:1296
+#: src/installation/advanced.py:1297
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr "El GRUB requereix una partició d'arrencada BIOS (2 MiB sense sistema de fitxers, codi de tipus \"EF02\" al gdisk o senyalador \"bios_grub\" al GNU Parted) en sistemes BIOS per incrustar el fitxer core.img ja que als discos GPT no hi ha espai d'incrustació post-MBR.\n\nEl Thus crearà ara aquesta partició especial. "
 
-#: src/installation/advanced.py:1328
+#: src/installation/advanced.py:1329
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr "No es pot crear la partició d'arrencada BIOS GPT."
 
-#: src/installation/advanced.py:1355
+#: src/installation/advanced.py:1356
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr "No es pot crear una partició d'arrencada BIOS GPT"
 
-#: src/installation/advanced.py:1476
+#: src/installation/advanced.py:1477
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -398,7 +398,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s s'ha muntat com a swap\nPer a continuar s'ha de desmuntar.\nCliqueu Sí per a desmuntar, o No per a tirar enrere\n"
 
-#: src/installation/advanced.py:1480
+#: src/installation/advanced.py:1481
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -406,48 +406,48 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s està muntat a '%s'.\nPer continuar s'ha de desmuntar.\nClica a Sí per desmuntar-lo, o No per tornar\n"
 
-#: src/installation/advanced.py:1503
+#: src/installation/advanced.py:1504
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr "%s es mostra com a muntat (ocupat) però no té punt de muntatge"
 
-#: src/installation/advanced.py:1509
+#: src/installation/advanced.py:1510
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
 msgstr "La partició arrel no està marcada per a formatar.\nAixò podria crear problemes. La voleu marcar per a formatar ara?"
 
-#: src/installation/advanced.py:1570
+#: src/installation/advanced.py:1571
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "S'esborrarà la partició %s"
 
-#: src/installation/advanced.py:1577
+#: src/installation/advanced.py:1578
 msgid "Partition"
 msgstr "Partició"
 
-#: src/installation/advanced.py:1577
+#: src/installation/advanced.py:1578
 msgid "New"
 msgstr "Nou"
 
-#: src/installation/advanced.py:1577
+#: src/installation/advanced.py:1578
 msgid "Relabel"
 msgstr "Torna a etiquetar"
 
-#: src/installation/advanced.py:1577
+#: src/installation/advanced.py:1578
 msgid "Mount"
 msgstr "Munta"
 
-#: src/installation/advanced.py:1598
+#: src/installation/advanced.py:1599
 msgid "These disks will have partition actions:"
 msgstr "Es faran els següents canvis:"
 
-#: src/installation/advanced.py:1651
+#: src/installation/advanced.py:1652
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Guardant els canvis fets a %s"
 
-#: src/installation/advanced.py:1675
+#: src/installation/advanced.py:1676
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "S'està creant el sistema de fitxers %s a %s amb l'etiqueta %s"
@@ -1061,14 +1061,14 @@ msgstr "La ubicació seleccionada s'utilitzarà per ajudar a seleccionar la conf
 msgid "Country, territory or area:"
 msgstr "País, territori o àrea:"
 
-#: src/parted3/fs_module.py:147
+#: src/parted3/fs_module.py:148
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
 msgstr "No es pot verificar si %s és un disc SSD o no"
 
-#: src/parted3/fs_module.py:172
+#: src/parted3/fs_module.py:173
 #, python-format
-msgid "Sorry but filesystem %s can't be shrinked"
+msgid "Sorry but filesystem %s can't be resized"
 msgstr "El sistema de fitxers %s no es pot encongir"
 
 #: src/parted3/lvm.py:75

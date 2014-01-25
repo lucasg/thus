@@ -337,7 +337,7 @@ def order_partitions(partdic):
 @misc.raise_privileges
 def split_partition(device_path, partition_path, new_size_in_mb):
     """ Shrinks partition and splits it in two.
-        ALERT: The file system must be resized before trying this! """
+        ALERT: The filesystem must be resized before trying this! """
 
     disk_dic = get_devices()
     disk = disk_dic[device_path]
