@@ -38,9 +38,9 @@ def get_lvm_partitions():
             pvn = line.split()[-1]
         if "VG Name" in line:
             vgn = line.split()[-1]
-            try:
+            if vgn in vgmap:
                 vgmap[vgn].append(pvn)
-            except IndexError:
+            else:
                 vgmap[vgn] = [pvn]
     return vgmap
 

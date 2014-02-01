@@ -24,6 +24,7 @@ from gi.repository import Gtk
 
 import sys
 import os
+import queue
 import logging
 import canonical.misc as misc
 import multiprocessing

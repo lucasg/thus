@@ -43,6 +43,7 @@ class Settings(object):
             # In BIOS stores the disk (/dev/sdX) or the partition (/dev/sdXY)
             # In EFI stores the path to the efi partition (/boot or /boot/efi)
             'bootloader_location': '',
+            'bootloader_ok' : False,
             'bootloader_type': 'GRUB2',
             'btrfs': False,
             'cache': '',

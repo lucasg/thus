@@ -118,14 +118,16 @@ class InstallationAlongside(Gtk.Box):
 
         slider.connect("change-value", self.slider_change_value)
 
-        #slider.connect("value_changed",
-                #self.main.on_volume_changed)
-        #slider.connect("button_press_event",
-                #self.on_scale_button_press_event)
-        #slider.connect("button_release_event",
-                #self.on_scale_button_release_event)
-        #slider.connect("scroll_event",
-                #self.on_scale_scroll_event)
+        '''
+        slider.connect("value_changed",
+                self.main.on_volume_changed)
+        slider.connect("button_press_event",
+                self.on_scale_button_press_event)
+        slider.connect("button_release_event",
+                self.on_scale_button_release_event)
+        slider.connect("scroll_event",
+                self.on_scale_scroll_event)
+        '''
 
     def slider_change_value(self, slider, scroll, value):
         if value <= self.available_slider_range[0] or \

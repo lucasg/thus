@@ -24,7 +24,6 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-
 from gi.repository import Gtk
 import os
 import canonical.misc as misc
@@ -196,6 +195,17 @@ class InstallationAutomatic(Gtk.Box):
 
         self.forward_button.set_sensitive(install_ok)
 
+    def show_warning(self):
+        txt = _("Do you really want to proceed and delete all your content on your hard drive?\n\n%s") % self.device_store.get_active_text()
+        message = Gtk.MessageDialog(None,
+                          Gtk.DialogFlags.MODAL,
+                          Gtk.MessageType.QUESTION,
+                          Gtk.ButtonsType.YES_NO,
+                          txt)
+        response = message.run()
+        message.destroy()
+        return response
+
     def start_installation(self):
         #self.install_progress.set_sensitive(True)
         logging.info(_("Thus will use %s as installation device") % self.auto_device)
@@ -235,14 +245,3 @@ class InstallationAutomatic(Gtk.Box):
             self.process.start()
         else:
             logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))
-
-    def show_warning(self):
-        txt = _("Do you really want to proceed and delete all your content on your hard drive?\n\n%s" % self.device_store.get_active_text())
-        message = Gtk.MessageDialog(None,
-                          Gtk.DialogFlags.MODAL,
-                          Gtk.MessageType.QUESTION,
-                          Gtk.ButtonsType.YES_NO,
-                          txt)
-        response = message.run()
-        message.destroy()
-        return response

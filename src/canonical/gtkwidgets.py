@@ -375,6 +375,12 @@ class StateBox(StylizedFrame):
     def get_state(self):
         return self.status
 
+    def show(self):
+        super().show()
+    
+    def hide(self):
+        super().hide()
+
 GObject.type_register(StateBox)
 
 # GtkBuilder should have .get_object_ids() method

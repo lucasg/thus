@@ -188,6 +188,7 @@ class InstallationProcess(multiprocessing.Process):
         self.kernel = ""
         self.vmlinuz = ""
         self.dest_dir = ""
+        self.bootloader_ok = self.settings.get('bootloader_ok')
 
     def queue_fatal_event(self, txt):
         """ Queues the fatal event and exits process """
@@ -313,8 +314,13 @@ class InstallationProcess(multiprocessing.Process):
                     self.queue_event('debug', txt)
                     subprocess.check_call(['mount', boot_partition, "%s/boot" % self.dest_dir])
             except subprocess.CalledProcessError as err:
-                logging.error(err)
-                self.queue_fatal_event(_("Couldn't mount root and boot partitions"))
+                txt = _("Couldn't mount root and boot partitions")
+                logging.error(txt)
+                cmd = _("Command %s has failed") % err.cmd
+                logging.error(cmd)
+                out = _("Output : %s") % err.output 
+                logging.error(out)
+                self.queue_fatal_event(txt)
                 return False
 
         # In advanced mode, mount all partitions (root and boot are already mounted)
@@ -381,14 +387,6 @@ class InstallationProcess(multiprocessing.Process):
             if self.settings.get('install_bootloader'):
                 self.queue_event('debug', _('Installing boot loader ...'))
                 self.install_bootloader()
-                # Warn user if Grub install hasn't completed successfully
-                # TODO: instruct how to fix.
-                if not self.bootloader_ok:
-                    msg = _("We apologize, but it seems Thus can't install the boot loader into your system.\n"
-                        "Please, before rebooting, do it by yourself.\n"
-                        "You can find more info in the GRUB archlinux's wiki page:\n"
-                        "\thttps://wiki.archlinux.org/index.php/GRUB\n")
-                    self.queue_event('info', msg)
 
         except subprocess.CalledProcessError as err:
             logging.error(err)
@@ -665,7 +663,6 @@ class InstallationProcess(multiprocessing.Process):
             txt = out.decode().strip()
             if len(txt) > 0:
                 logging.debug(txt)
-
         except OSError as err:
             logging.exception(_("Error running command: %s"), err.strerror)
             raise
@@ -754,7 +751,6 @@ class InstallationProcess(multiprocessing.Process):
             # fstab uses vfat to mount fat16 and fat32 partitions
             if "fat" in myfmt:
                 myfmt = 'vfat'
-
             if "btrfs" in myfmt:
                 self.settings.set('btrfs', True)
 
@@ -762,7 +758,6 @@ class InstallationProcess(multiprocessing.Process):
             # it has no mount point (swap has been checked before)
             if path == "":
                 continue
-
             if path == '/':
                 # We do not run fsck on btrfs partitions
                 if "btrfs" in myfmt:
@@ -900,8 +895,12 @@ class InstallationProcess(multiprocessing.Process):
 
         self.chroot_mount_special_dirs()
 
-        self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
-                     '--target=i386-pc', '--boot-directory=/boot', '--recheck', grub_location])
+        if len(grub_location) > 8:  # ex: /dev/sdXY > 8
+            self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
+                         '--target=i386-pc', '--boot-directory=/boot', '--recheck', '--force', grub_location])
+        else:
+            self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
+                         '--target=i386-pc', '--boot-directory=/boot', '--recheck', grub_location])
 
         self.install_bootloader_grub2_locales()
 
@@ -913,7 +912,7 @@ class InstallationProcess(multiprocessing.Process):
         core_path = os.path.join(self.dest_dir, "boot/grub/i386-pc/core.img")
         if os.path.exists(core_path):
             self.queue_event('info', _("GRUB(2) BIOS has been successfully installed."))
-            self.bootloader_ok = True
+            self.settings.set('bootloader_ok', True)
         else:
             self.queue_event('warning', _("ERROR installing GRUB(2) BIOS."))
 
@@ -959,7 +958,7 @@ class InstallationProcess(multiprocessing.Process):
 
         self.queue_event('info', _("Installing Grub2 locales."))
         self.install_bootloader_grub2_locales()
-        """
+
         # Copy grub into dirs known to be used as default by some OEMs if they are empty.
         defaults = [(os.path.join(self.dest_dir, "%s/EFI/BOOT/" % (efi_path[1:])),
                      'BOOT' + spec_uefi_arch_caps + '.efi'),
@@ -981,7 +980,7 @@ class InstallationProcess(multiprocessing.Process):
                 except Exception as err:
                     logging.warning(_("Copying Grub(2) into OEM dir failed. Unknown Error."))
                     logging.warning(err)
-        """
+
         # TODO: Create themed shellx64_v2.efi
         '''# Copy uefi shell if none exists in /boot/EFI
         shell_src = "/usr/share/thus/grub2-theme/shellx64_v2.efi"
@@ -1005,7 +1004,7 @@ class InstallationProcess(multiprocessing.Process):
 
         self.chroot_umount_special_dirs()
 
-        self.bootloader_ok = True
+        self.settings.set('bootloader_ok', True)
 
     def install_bootloader_grub2_locales(self):
         """ Install Grub2 locales """

@@ -190,9 +190,25 @@ class Slides(Gtk.Box):
             elif event[0] == 'finished':
                 logging.info(event[1])
                 self.should_pulse = False
+
+                # Warn user about GRUB and ask if we should open wiki page.
+                if not self.settings.get('bootloader_ok'):
+                    import webbrowser
+                    self.boot_warn = _("IMPORTANT: There may have been a problem with the Grub(2) bootloader\n"
+                                       "installation which could prevent your system from booting properly. Before\n"
+                                       "rebooting, you may want to verify whether or not GRUB(2) is installed and\n"
+                                       "configured. The Arch Linux Wiki contains troubleshooting information:\n"
+                                       "\thttps://wiki.archlinux.org/index.php/GRUB\n"
+                                       "\nWould you like to view the wiki page now?")
+                    response = show.question(self.boot_warn)
+                    if response == Gtk.ResponseType.YES:
+                        webbrowser.open('https://wiki.archlinux.org/index.php/GRUB')
+
                 self.set_message(self.install_ok)
                 response = show.question(self.install_ok)
+
                 if response == Gtk.ResponseType.YES:
+                    logging.shutdown()
                     self.reboot()
                 else:
                     tmp_files = [".setup-running", ".km-running", "setup-pacman-running", "setup-mkinitcpio-running", ".tz-running", ".setup", "thus.log"]
@@ -204,6 +220,7 @@ class Slides(Gtk.Box):
                             with misc.raised_privileges():
                                 os.remove(p)
                     self.callback_queue.task_done()
+                    logging.shutdown()
                     os._exit(0)
 
                 return False

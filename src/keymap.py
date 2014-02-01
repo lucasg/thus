@@ -130,8 +130,6 @@ class Keymap(Gtk.Box):
 
         sorted_layouts = []
 
-        # misc.utf8(self.city_entry.get_text())
-
         for layout in kbd_names._layout_by_human:
             sorted_layouts.append(layout)
 
@@ -140,6 +138,7 @@ class Keymap(Gtk.Box):
 
         # Block signal
         self.layout_treeview.handler_block_by_func(self.on_keyboardlayout_cursor_changed)
+
         # Clear our model
         liststore = self.layout_treeview.get_model()
         liststore.clear()
@@ -147,6 +146,7 @@ class Keymap(Gtk.Box):
         # Add layouts (sorted)
         for layout in sorted_layouts:
             liststore.append([layout])
+        
         # Unblock signal
         self.layout_treeview.handler_unblock_by_func(self.on_keyboardlayout_cursor_changed)
 
@@ -210,6 +210,7 @@ class Keymap(Gtk.Box):
 
                 # Block signal
                 self.variant_treeview.handler_block_by_func(self.on_keyboardvariant_cursor_changed)
+
                 # Clear our model
                 liststore = self.variant_treeview.get_model()
                 liststore.clear()
@@ -285,8 +286,6 @@ class Keymap(Gtk.Box):
     def setkb(self):
         subprocess.check_call(['setxkbmap', '-layout', self.keyboard_layout, "-variant", self.keyboard_variant])
 
-        # It makes no sense try loadkeys here (it's console)
-        #subprocess.check_call(['loadkeys', self.keyboard_layout])
         with misc.raised_privileges():
             subprocess.check_call(['localectl', 'set-keymap', '--no-convert', self.keyboard_layout])
 

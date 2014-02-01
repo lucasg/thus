@@ -39,8 +39,8 @@ import parted3.used_space as used_space
 MAX_ROOT_SIZE = 30000
 
 # TODO: This higly depends on the selected DE! Must be taken into account.
-MIN_ROOT_SIZE = 6000
-
+# KDE needs 4.5 GB for its files. Need to leave extra space also.
+MIN_ROOT_SIZE = 6500
 
 def check_output(command):
     """ Calls subprocess.check_output, decodes its exit and removes trailing \n """
@@ -54,7 +54,6 @@ def printk(enable):
             fpk.write("4")
         else:
             fpk.write("0")
-
 
 def unmount_all(dest_dir):
     """ Unmounts all devices that are mounted inside dest_dir """
@@ -80,14 +79,13 @@ def unmount_all(dest_dir):
             subprocess.call(["umount", "-l", directory])
 
     # Now is the time to unmount the device that is mounted in dest_dir (if any)
-
     if dest_dir in mount_result:
         logging.warning(_("Unmounting %s"), dest_dir)
         try:
-            subprocess.call(["umount", directory])
+            subprocess.call(["umount", dest_dir])
         except Exception:
-            logging.warning(_("Unmounting %s failed. Trying lazy arg."), directory)
-            subprocess.call(["umount", "-l", directory])
+            logging.warning(_("Unmounting %s failed. Trying lazy arg."), dest_dir)
+            subprocess.call(["umount", "-l", dest_dir])
 
     # Remove all previous Manjaro LVM volumes
     # (it may have been left created due to a previous failed installation)
@@ -118,7 +116,6 @@ def unmount_all(dest_dir):
     except subprocess.CalledProcessError as err:
         logging.warning(_("Can't close LUKS devices (see below)"))
         logging.warning(err)
-
 
 class AutoPartition(object):
     """ Class used by the automatic installation method """
@@ -576,22 +573,3 @@ class AutoPartition(object):
                 subprocess.check_call(['chmod', '0400', key_files[1]])
                 subprocess.check_call(["mkdir", "-p", '%s/etc/luks-keys' % self.dest_dir])
                 subprocess.check_call(['mv', key_files[1], '%s/etc/luks-keys' % self.dest_dir])
-
-if __name__ == '__main__':
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.DEBUG)
-    sh.setFormatter(formatter)
-    logger.addHandler(sh)
-
-    ap = AutoPartition("/install",
-        "/dev/sdb",
-        use_luks=False,
-        use_lvm=True,
-        luks_key_pass="",
-        use_home=True,
-        callback_queue=None)
-
-#    ap.run()
