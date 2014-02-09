@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 21:17+0100\n"
-"PO-Revision-Date: 2014-01-19 20:22+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"POT-Creation-Date: 2014-02-01 23:55+0100\n"
+"PO-Revision-Date: 2014-02-05 21:46+0000\n"
+"Last-Translator: rago1975\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,94 +55,74 @@ msgstr "インストーラを終了しています..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr ""
+msgstr "Thus logレベルを 'debug' に設定します"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr ""
+msgstr "Thusを最新のバージョンに更新(-uu オプションで強制的に更新)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr ""
+msgstr "いかなる変更も行わない(開発者向け)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr ""
+msgstr "標準出力されたloggingメッセージの表示"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
-msgstr ""
+msgstr "開発中のオプションの表示(使用しないでください!)"
 
-#: src/installation/auto_partition.py:75 src/installation/auto_partition.py:85
-#: src/installation/process.py:431 src/installation/process.py:448
-#: src/installation/process.py:463
+#: src/installation/auto_partition.py:74 src/installation/auto_partition.py:83
+#: src/installation/process.py:432 src/installation/process.py:449
+#: src/installation/process.py:464
 #, python-format
 msgid "Unmounting %s"
 msgstr "%sをアンマウント"
 
-#: src/installation/auto_partition.py:79 src/installation/auto_partition.py:89
+#: src/installation/auto_partition.py:78 src/installation/auto_partition.py:87
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
-msgstr ""
+msgstr "%s のアンマウントに失敗しました。あとで試してください。"
 
-#: src/installation/auto_partition.py:109
+#: src/installation/auto_partition.py:107
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr "既存のLVMボリュームを削除することができません(以下を見てください)"
 
-#: src/installation/auto_partition.py:119
+#: src/installation/auto_partition.py:117
 msgid "Can't close LUKS devices (see below)"
 msgstr "LUKSデバイスを閉じることができません(以下を見てください)"
 
-#: src/installation/auto_partition.py:169
+#: src/installation/auto_partition.py:166
 #, python-format
 msgid "Unkown filesystem type %s"
 msgstr "未知のファイルシステムタイプ %s"
 
-#: src/installation/auto_partition.py:179
+#: src/installation/auto_partition.py:176
 #, python-format
 msgid "Can't create filesystem %s"
-msgstr ""
+msgstr "ファイルシステム %s を作成できません"
 
-#: src/installation/auto_partition.py:325
+#: src/installation/auto_partition.py:322
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "Thusはデバイス %sにLUKSをセットアップします"
 
-#: src/installation/auto_partition.py:381
+#: src/installation/auto_partition.py:378
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr "Setupはデバイスのサイズを認識することができません。デバイスのマウント及びパーティショニングのためadvanced installation routineを使用してください。"
 
-#: src/installation/auto_partition.py:537
+#: src/installation/auto_partition.py:534
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "デバイス %sにLVMをセットアップします"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
-#: src/installation/alongside.py:218
+#: src/installation/alongside.py:220
 msgid "unknown"
 msgstr "不明"
-
-#: src/bootloader.py:54 ui/bootloader.ui:69
-msgid "What is your boot system type?"
-msgstr "ブートシステムタイプは何ですか？"
-
-#: src/bootloader.py:59
-msgid "BIOS (Most Common)"
-msgstr "BIOS(共通)"
-
-#: src/bootloader.py:63
-msgid "64-bit UEFI"
-msgstr "64-ビット UEFI"
-
-#: src/bootloader.py:67
-msgid "32-bit UEFI"
-msgstr "32ビット UEFI"
-
-#: src/bootloader.py:71
-msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr "ブートローダーをインストールしない場合は'Cancel'を選択してください"
 
 #: src/canonical/misc.py:929
 #, python-format
@@ -212,178 +192,198 @@ msgstr "電源に接続されています。"
 msgid "We have enough disk space."
 msgstr "ディスクに十分な空き領域があります。"
 
-#: src/installation/advanced.py:213 src/installation/advanced.py:510
-#: src/installation/advanced.py:522
+#: src/installation/advanced.py:218 src/installation/advanced.py:512
+#: src/installation/advanced.py:526
 msgid "free space"
 msgstr "空き領域"
 
-#: src/installation/advanced.py:289 src/installation/alongside.py:170
+#: src/installation/advanced.py:266
+msgid "It's not recommended to install grub in a partition"
+msgstr "パーティションにgrubをインストールするのを推奨しません"
+
+#: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
 msgstr "デバイス"
 
-#: src/installation/advanced.py:292
+#: src/installation/advanced.py:297
 msgid "Type"
 msgstr "種類"
 
-#: src/installation/advanced.py:295
+#: src/installation/advanced.py:300
 msgid "Mount point"
 msgstr "マウントポイント"
 
-#: src/installation/advanced.py:298
+#: src/installation/advanced.py:303
 msgid "Label"
 msgstr "ラベル"
 
-#: src/installation/advanced.py:304 src/installation/advanced.py:1578
+#: src/installation/advanced.py:309 src/installation/advanced.py:1641
 msgid "Format"
 msgstr "フォーマット"
 
-#: src/installation/advanced.py:307
+#: src/installation/advanced.py:312
 msgid "Size"
 msgstr "サイズ"
 
-#: src/installation/advanced.py:310
+#: src/installation/advanced.py:315
 msgid "Used"
 msgstr "使用済み"
 
-#: src/installation/advanced.py:313
+#: src/installation/advanced.py:318
 msgid "Flags"
 msgstr "フラグ"
 
-#: src/installation/advanced.py:319
+#: src/installation/advanced.py:324
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation/advanced.py:496
+#: src/installation/advanced.py:493
 msgid "none"
 msgstr "なし"
 
-#: src/installation/advanced.py:544 src/installation/advanced.py:956
-#: src/installation/advanced.py:1439 src/installation/advanced.py:1531
-#: src/installation/advanced.py:1673 src/installation/advanced.py:1768
+#: src/installation/advanced.py:548 src/installation/advanced.py:962
+#: src/installation/advanced.py:1501 src/installation/advanced.py:1594
+#: src/installation/advanced.py:1738 src/installation/advanced.py:1832
 msgid "extended"
 msgstr "拡張"
 
-#: src/installation/advanced.py:675 src/installation/advanced.py:926
+#: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
 msgstr "同じマウントを再度使用することはできません..."
 
-#: src/installation/advanced.py:947
+#: src/installation/advanced.py:953
 msgid "Creating primary partition"
 msgstr "基本パーティションの作成中"
 
-#: src/installation/advanced.py:958
+#: src/installation/advanced.py:964
 msgid "Creating extended partition"
 msgstr "拡張パーティションの作成中"
 
-#: src/installation/advanced.py:964
+#: src/installation/advanced.py:970
 msgid "Creating logical partition"
 msgstr "論理パーティションの作成中"
 
-#: src/installation/advanced.py:1096
+#: src/installation/advanced.py:1104
 msgid "Advanced installation mode"
 msgstr "高度なインストール"
 
-#: src/installation/advanced.py:1100 ui/installation_advanced.ui:1046
+#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1160
 msgid "Use this device for boot loader installation:"
 msgstr "ブートローダーのインストールにこのデバイスを使用"
 
-#: src/installation/advanced.py:1105 ui/installation_advanced.ui:1081
-msgid "Use the partition where /boot is mounted (not recommended)"
-msgstr ""
+#: src/installation/advanced.py:1113
+msgid "Mount checklist:"
+msgstr "マウントチェックリスト:"
 
-#: src/installation/advanced.py:1115 ui/installation_advanced.ui:943
+#: src/installation/advanced.py:1119
+msgid "Root"
+msgstr "ルート"
+
+#: src/installation/advanced.py:1123 ui/bootloader.ui:7
+msgid "Boot"
+msgstr "ブート"
+
+#: src/installation/advanced.py:1127
+msgid "EFI"
+msgstr "EFI"
+
+#: src/installation/advanced.py:1131
+msgid "Swap"
+msgstr "スワップ"
+
+#: src/installation/advanced.py:1139
 msgid "New partition table"
 msgstr "新しいパーティションテーブル"
 
-#: src/installation/advanced.py:1123
+#: src/installation/advanced.py:1147
 msgid "Change..."
 msgstr "変更..."
 
-#: src/installation/advanced.py:1128 ui/installation_advanced.ui:407
+#: src/installation/advanced.py:1152 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr "サイズ:"
 
-#: src/installation/advanced.py:1132 ui/installation_advanced.ui:630
+#: src/installation/advanced.py:1156 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr "タイプ:"
 
-#: src/installation/advanced.py:1136 ui/installation_advanced.ui:647
+#: src/installation/advanced.py:1160 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr "基本パーティション"
 
-#: src/installation/advanced.py:1140 ui/installation_advanced.ui:671
+#: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr "論理パーティション"
 
-#: src/installation/advanced.py:1144 ui/installation_advanced.ui:695
+#: src/installation/advanced.py:1168 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr "拡張パーティション"
 
-#: src/installation/advanced.py:1148 ui/installation_advanced.ui:516
+#: src/installation/advanced.py:1172 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr "この領域の始点"
 
-#: src/installation/advanced.py:1152 ui/installation_advanced.ui:540
+#: src/installation/advanced.py:1176 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr "この領域の終点"
 
-#: src/installation/advanced.py:1156 src/installation/advanced.py:1173
+#: src/installation/advanced.py:1180 src/installation/advanced.py:1197
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr "使用:"
 
-#: src/installation/advanced.py:1160 src/installation/advanced.py:1177
+#: src/installation/advanced.py:1184 src/installation/advanced.py:1201
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr "マウントポイント:"
 
-#: src/installation/advanced.py:1164 src/installation/advanced.py:1181
+#: src/installation/advanced.py:1188 src/installation/advanced.py:1205
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr "ラベル (オプション):"
 
-#: src/installation/advanced.py:1168
+#: src/installation/advanced.py:1192
 msgid "Encryption Options..."
 msgstr "暗号化のオプション..."
 
-#: src/installation/advanced.py:1185 ui/installation_advanced.ui:276
+#: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr "フォーマット:"
 
-#: src/installation/advanced.py:1190
+#: src/installation/advanced.py:1214
 msgid "Partition Table Type:"
 msgstr "パーティションテーブルの種類:"
 
-#: src/installation/advanced.py:1195
+#: src/installation/advanced.py:1219
 msgid "Create Partition Table"
 msgstr "パーティションテーブルの作成"
 
-#: src/installation/advanced.py:1198 src/installation/alongside.py:148
-#: src/installation/automatic.py:104
+#: src/installation/advanced.py:1222 src/installation/alongside.py:150
+#: src/installation/automatic.py:103
 msgid "Install now!"
 msgstr "インストール"
 
-#: src/installation/advanced.py:1287
+#: src/installation/advanced.py:1308
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "ディスク %s に対して %s タイプの新しいパーティションテーブルを作成"
 
-#: src/installation/advanced.py:1297
+#: src/installation/advanced.py:1318
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr "GRUBは、GPTディスクにおけるpost-MBR gap が不足するため、BIOSシステムにcore.img を埋め込む際に、BIOSブートパーティション(2メガバイト、ファイルシステムなし、 gdiskの\"EF02\" type code あるいは GNU Partedの\"bios_grub\" フラグ)を必要とします。"
 
-#: src/installation/advanced.py:1329
+#: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr "BIOS GPTブートパーティションが作成できません!"
 
-#: src/installation/advanced.py:1356
+#: src/installation/advanced.py:1377
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr "BIOS GPTブートパーティションが作成できません"
 
-#: src/installation/advanced.py:1477
+#: src/installation/advanced.py:1540
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -391,7 +391,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s はスワップとしてマウントされました。\n継続するためには、アンマウントしなければなりません。\nYesをクリックしてアンマウントするか、Noをクリックして前に戻ってください。\n"
 
-#: src/installation/advanced.py:1481
+#: src/installation/advanced.py:1544
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -399,72 +399,72 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s は '%s'にマウントされています。\n継続するためには、アンマウントしなければなりません。\nYesをクリックしてアンマウントするか、Noをクリックして前に戻ってください。\n"
 
-#: src/installation/advanced.py:1504
+#: src/installation/advanced.py:1567
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr "%s はマウントされたもの(busy)として表示されていますがマウントポイントがありません"
 
-#: src/installation/advanced.py:1510
+#: src/installation/advanced.py:1573
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
 msgstr "ルートパーティションがフォーマットのマークがつけられていません。\nこのことは問題を生じる可能性があります。今フォーマットのマークをつけますか?"
 
-#: src/installation/advanced.py:1571
+#: src/installation/advanced.py:1634
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "パーティション %s は削除されます"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "Partition"
 msgstr "パーティション"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "New"
 msgstr "新規"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "Relabel"
 msgstr "ラベルの書き換え"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "Mount"
 msgstr "マウント"
 
-#: src/installation/advanced.py:1599
+#: src/installation/advanced.py:1662
 msgid "These disks will have partition actions:"
 msgstr "これらのディスクはパーティションが変更されます。"
 
-#: src/installation/advanced.py:1652
+#: src/installation/advanced.py:1717
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s の変更を保存"
 
-#: src/installation/advanced.py:1676
+#: src/installation/advanced.py:1741
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "%sにラベルされたファイルシステム %sに%sを作成します "
 
-#: src/installation/advanced.py:1720
+#: src/installation/advanced.py:1783
 #, python-format
 msgid "Setting boot flag in %s partition"
-msgstr ""
+msgstr "%s パーティションのブートフラグの設定"
 
-#: src/installation/advanced.py:1738
+#: src/installation/advanced.py:1802
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr "ラベル'%s' のパーティション '%s' が '%s'としてフォーマットできませんでした。"
 
-#: src/installation/advanced.py:1791
+#: src/installation/advanced.py:1843 src/installation/automatic.py:226
+msgid "Thus will not install any boot loader"
+msgstr "Thusはブートローダーをインストールしません"
+
+#: src/installation/advanced.py:1853
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaroは%s に %sのタイプのブートローダーをインストールします"
 
-#: src/installation/advanced.py:1796 src/installation/automatic.py:216
-msgid "Thus will not install any boot loader"
-msgstr "Thusはブートローダーをインストールしません"
-
-#: src/installation/advanced.py:1812 src/installation/automatic.py:237
+#: src/installation/advanced.py:1869 src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "テストモードです。Thusはシステムのいかなる変更も加えません!"
 
@@ -473,39 +473,39 @@ msgstr "テストモードです。Thusはシステムのいかなる変更も�
 msgid "Can't load %s css"
 msgstr "%s cssがロードできません"
 
-#: src/installation/alongside.py:140
+#: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
 msgstr "どのOSに隣接してManjaroをインストールするのか選択してください"
 
-#: src/installation/alongside.py:144
+#: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
 msgstr "Manjaro を他の OS と共存させる"
 
-#: src/installation/alongside.py:173
+#: src/installation/alongside.py:175
 msgid "Detected OS"
 msgstr "検出されたOS"
 
-#: src/installation/alongside.py:176
+#: src/installation/alongside.py:178
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
-#: src/installation/alongside.py:194
+#: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
 msgstr "pyparted3 が見つかりません!"
 
-#: src/installation/alongside.py:222
+#: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
 msgstr "共存してインストールするパーティションのリストが作成できません。"
 
-#: src/installation/alongside.py:266
+#: src/installation/alongside.py:268
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "パーティションを縮小させることができません(おそらく空きがありません)"
 
-#: src/installation/alongside.py:353
+#: src/installation/alongside.py:355
 msgid "There are too many primary partitions, can't create a new one"
 msgstr "プライマリーパティションが多すぎるので、新しいパーティションを作成することができません。"
 
-#: src/installation/alongside.py:386
+#: src/installation/alongside.py:388
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
 msgstr " %s(%s) ファイルシステムを縮小させることができません"
@@ -547,7 +547,7 @@ msgstr "異なるパーティション/ボリュームにHomeを設定してく�
 #: src/installation/ask.py:144
 msgid ""
 "This will setup your /home directory in a different partition or volume."
-msgstr ""
+msgstr "異なるパーティションあるいはボリュームに /home ディレクトリを設定します。"
 
 #: src/installation/ask.py:152 src/installation/ask.py:154
 #, python-format
@@ -580,411 +580,404 @@ msgstr "Manjaroは分離された /home ボリュームにインストールさ�
 msgid "Manjaro will be installed using a separate /home partition."
 msgstr "Manjaroは分離された /home パーティションを使用してインストールされます。"
 
-#: src/installation/automatic.py:76
+#: src/installation/automatic.py:75
 msgid "Automatic installation mode"
 msgstr "自動インストール"
 
-#: src/installation/automatic.py:80 ui/installation_automatic.ui:96
+#: src/installation/automatic.py:79 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "ドライブの選択:"
 
-#: src/installation/automatic.py:84
+#: src/installation/automatic.py:83
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "警告！このインストールモードではドライブの全てを上書きします！"
 
-#: src/installation/automatic.py:89 ui/installation_automatic.ui:59
+#: src/installation/automatic.py:88 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Manjaroをインストールしたいドライブを選択し、\n下のstart the processをクリックしてください。"
 
-#: src/installation/automatic.py:94 ui/installation_automatic.ui:176
+#: src/installation/automatic.py:93 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
 msgstr "暗号化パスワード:"
 
-#: src/installation/automatic.py:98 src/user_info.py:124
+#: src/installation/automatic.py:97 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
 msgstr "パスワードの入力(確認):"
 
-#: src/installation/automatic.py:102 src/user_info.py:177
+#: src/installation/automatic.py:101 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
 msgstr "パスワードの表示"
 
-#: src/installation/automatic.py:165
+#: src/installation/automatic.py:164
 msgid "A LUKS password has been set"
 msgstr "LUKSパスワードが設定されました"
 
-#: src/installation/automatic.py:167
+#: src/installation/automatic.py:166
 #, python-format
 msgid "Automatic install on %s"
 msgstr "%s 上に自動インストール"
 
-#: src/installation/automatic.py:201
-#, python-format
-msgid "Thus will use %s as installation device"
-msgstr "Thusは %s をインストールデバイスとして使用します。"
-
-#: src/installation/automatic.py:212
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thusは  %s に タイプ %s のブートローダーをインストールします"
-
-#: src/installation/automatic.py:240
+#: src/installation/automatic.py:199
 #, python-format
 msgid ""
 "Do you really want to proceed and delete all your content on your hard drive?\n"
 "\n"
 "%s"
-msgstr ""
+msgstr "本当にハードドライブから全てのコンテンツを削除し、次に進みますか?\n\n%s"
+
+#: src/installation/automatic.py:211
+#, python-format
+msgid "Thus will use %s as installation device"
+msgstr "Thusは %s をインストールデバイスとして使用します。"
+
+#: src/installation/automatic.py:222
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr "Thusは  %s に タイプ %s のブートローダーをインストールします"
 
 #: src/installation/process.py:84
 #, python-format
 msgid "Copying '/%s'"
 msgstr "'/%s' をコピー"
 
-#: src/installation/process.py:162
+#: src/installation/process.py:165
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "'%s' メソッドを使用してインストール"
 
-#: src/installation/process.py:238
+#: src/installation/process.py:242
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "%s でパーティション及びファイルシステムの作成"
 
-#: src/installation/process.py:259
+#: src/installation/process.py:263
 msgid "Error creating partitions and their filesystems"
 msgstr "パーティションの作成及びそのファイルシステムのエラー"
 
-#: src/installation/process.py:261 src/installation/process.py:333
-#: src/installation/process.py:630
+#: src/installation/process.py:265 src/installation/process.py:342
+#: src/installation/process.py:640
 #, python-format
 msgid "Command %s has failed."
-msgstr ""
+msgstr "コマンド %s が失敗しました。"
 
-#: src/installation/process.py:263 src/installation/process.py:335
-#: src/installation/process.py:358 src/installation/process.py:632
+#: src/installation/process.py:267 src/installation/process.py:321
+#: src/installation/process.py:344 src/installation/process.py:367
+#: src/installation/process.py:642
 #, python-format
 msgid "Output : %s"
-msgstr ""
+msgstr "出力 : %s"
 
-#: src/installation/process.py:303 src/installation/process.py:326
+#: src/installation/process.py:307 src/installation/process.py:335
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "パーティション %s を %s ディレクトリにマウント"
 
-#: src/installation/process.py:309
+#: src/installation/process.py:313
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "パーティション %s を %s/ブートディレクトリにマウント"
 
-#: src/installation/process.py:314
+#: src/installation/process.py:317
 msgid "Couldn't mount root and boot partitions"
 msgstr "ルート及びブート用パーティションをマウントできません"
 
-#: src/installation/process.py:331
+#: src/installation/process.py:319 src/installation/process.py:365
+#, python-format
+msgid "Command %s has failed"
+msgstr "コマンド %s が失敗しました"
+
+#: src/installation/process.py:340
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "%s を %s にマウントできません"
 
-#: src/installation/process.py:346
+#: src/installation/process.py:355
 #, python-format
 msgid "%s deleted"
 msgstr "%s は削除されました"
 
-#: src/installation/process.py:354
+#: src/installation/process.py:363
 msgid "Can't create necessary directories on destination system"
 msgstr "システムに必要なディレクトリを作成することができません。"
 
-#: src/installation/process.py:356
-#, python-format
-msgid "Command %s has failed"
-msgstr ""
-
-#: src/installation/process.py:366
+#: src/installation/process.py:375
 msgid "Install System ..."
 msgstr "システムのインストール..."
 
-#: src/installation/process.py:371
+#: src/installation/process.py:380
 msgid "System installed."
 msgstr "システムがインストールされました。"
 
-#: src/installation/process.py:373
+#: src/installation/process.py:382
 msgid "Configuring system ..."
 msgstr "システムの設定中"
 
-#: src/installation/process.py:375
+#: src/installation/process.py:384
 msgid "System configured."
 msgstr "システムが設定されました。"
 
-#: src/installation/process.py:379
+#: src/installation/process.py:388
 msgid "Installing boot loader ..."
-msgstr ""
+msgstr "ブートローダーのインストール中..."
 
-#: src/installation/process.py:384
-msgid ""
-"We apologize, but it seems Thus can't install the boot loader into your system.\n"
-"Please, before rebooting, do it by yourself.\n"
-"You can find more info in the GRUB archlinux's wiki page:\n"
-"\thttps://wiki.archlinux.org/index.php/GRUB\n"
-msgstr ""
-
-#: src/installation/process.py:420
+#: src/installation/process.py:421
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "Thusのログを %s にコピーすることができません"
 
-#: src/installation/process.py:439 src/installation/process.py:458
-#: src/installation/process.py:472
+#: src/installation/process.py:440 src/installation/process.py:459
+#: src/installation/process.py:473
 #, python-format
 msgid "Can't unmount %s"
 msgstr "%sをアンマウントできません"
 
-#: src/installation/process.py:474
+#: src/installation/process.py:475
 msgid "Installation finished successfully."
 msgstr "インストールは無事に終了しました。"
 
-#: src/installation/process.py:501
+#: src/installation/process.py:511
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Baseのファイルシステムが存在しません!　重大なエラー(終了)。"
 
-#: src/installation/process.py:505
+#: src/installation/process.py:515
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "デスクトップのファイルシステムが存在しません! 重大なエラー(終了)"
 
-#: src/installation/process.py:515 src/installation/process.py:521
+#: src/installation/process.py:525 src/installation/process.py:531
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s は既に %sとして %sにマウントされています"
 
-#: src/installation/process.py:532
+#: src/installation/process.py:542
 msgid "Indexing files to be copied ..."
 msgstr "インデックスファイルがコピーされます..."
 
-#: src/installation/process.py:537
+#: src/installation/process.py:547
 msgid "Extracting root-image ..."
 msgstr "ルートイメージの抽出中..."
 
-#: src/installation/process.py:547
+#: src/installation/process.py:557
 msgid "Extracting desktop-image ..."
 msgstr "デスクトップイメージの抽出中..."
 
-#: src/installation/process.py:562
+#: src/installation/process.py:572
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "%s 上のメタインフォメーションを復元しています"
 
-#: src/installation/process.py:578
+#: src/installation/process.py:588
 msgid "Special dirs already mounted."
 msgstr "Special dirs は既にマウントされています。"
 
-#: src/installation/process.py:612
+#: src/installation/process.py:622
 msgid "Special dirs are not mounted. Skipping."
 msgstr "Special dirsがマウントされていません。スキップします。"
 
-#: src/installation/process.py:629 src/installation/process.py:635
+#: src/installation/process.py:639 src/installation/process.py:645
 #, python-format
 msgid "Unable to umount %s"
 msgstr "%s をアンマウントできないようにします"
 
-#: src/installation/process.py:655
+#: src/installation/process.py:667
 #, python-format
 msgid "Error running command: %s"
 msgstr "エラー コマンド実行中: %s"
 
-#: src/installation/process.py:688
+#: src/installation/process.py:700
 msgid "Can't copy network configuration files"
-msgstr ""
+msgstr "ネットワーク設定ファイルがコピーできません"
 
-#: src/installation/process.py:718 src/installation/process.py:773
+#: src/installation/process.py:730 src/installation/process.py:788
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "fstab : UUID=%s %s %s %s 0 %s へ追加されました"
 
-#: src/installation/process.py:732
+#: src/installation/process.py:744
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "crypttabに追加されました : %s"
 
-#: src/installation/process.py:736
+#: src/installation/process.py:748
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "fstabに追加されました: /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:777
+#: src/installation/process.py:792
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "fstabに追加されました: tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:866
+#: src/installation/process.py:881
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "GRUB(2) BIOS ブートローダーを %s にインストールしています"
 
-#: src/installation/process.py:876 src/installation/process.py:898
+#: src/installation/process.py:891 src/installation/process.py:917
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) のインストール中にエラーが発生しました。"
 
-#: src/installation/process.py:895
+#: src/installation/process.py:914
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) のインストールは完了しました。"
 
-#: src/installation/process.py:921
+#: src/installation/process.py:938
 msgid "ERROR installing GRUB(2) UEFI."
-msgstr ""
+msgstr "GRUB(2) UEFI のインストール中にエラーが発生しました。"
 
-#: src/installation/process.py:929
+#: src/installation/process.py:946
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
-msgstr ""
+msgstr "GRUB(2) UEFI %s ブートローダーを インストールしています"
 
-#: src/installation/process.py:942
+#: src/installation/process.py:959
 msgid "Installing Grub2 locales."
-msgstr ""
+msgstr "Grub2ロケールをインストールしています。"
 
-#: src/installation/process.py:955
+#: src/installation/process.py:972
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
-msgstr ""
+msgstr " %s にOEMローダーが見つかりません。 ディレクトリにGrub(2)をコピーします。 "
 
-#: src/installation/process.py:960
+#: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
-msgstr ""
+msgstr "OEMディレクトリに Grub(2)をコピーすることに失敗しました。ファイルが見つかりません。"
 
-#: src/installation/process.py:962
+#: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
-msgstr ""
+msgstr "OEMディレクトリに Grub(2)をコピーすることに失敗しました。ファイルが存在します。"
 
-#: src/installation/process.py:964
+#: src/installation/process.py:981
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
-msgstr ""
+msgstr "OEMディレクトリに Grub(2)をコピーすることに失敗しました。未知のエラーです。"
 
-#: src/installation/process.py:982
+#: src/installation/process.py:999
 msgid "Generating grub.cfg"
-msgstr ""
+msgstr "grub.cfgの生成"
 
-#: src/installation/process.py:1004
+#: src/installation/process.py:1021
 msgid "ERROR installing GRUB(2) locale."
 msgstr "GRUB(2) インストールにおけるロケールエラー"
 
-#: src/installation/process.py:1013
+#: src/installation/process.py:1030
 #, python-format
 msgid "Enabled %s service."
 msgstr " %s serviceが使用可能になりました。"
 
-#: src/installation/process.py:1020
+#: src/installation/process.py:1037
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "ユーザー %s のパスワードハッシュの作成エラー"
 
-#: src/installation/process.py:1026
+#: src/installation/process.py:1043
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "ユーザー %s のパスワードの変更エラー"
 
-#: src/installation/process.py:1038
+#: src/installation/process.py:1055
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "mkinitcpio.confでhookとmoduleの設定"
 
-#: src/installation/process.py:1105
+#: src/installation/process.py:1134
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: ユーザー %s の自動ログインを可能にします"
 
-#: src/installation/process.py:1200 src/installation/process.py:1211
+#: src/installation/process.py:1229 src/installation/process.py:1240
 msgid "Configuring your new system"
 msgstr "新しいシステムを設定しています"
 
-#: src/installation/process.py:1203
+#: src/installation/process.py:1232
 msgid "fstab file generated."
 msgstr "fstab ファイルが作成されました。"
 
-#: src/installation/process.py:1209
+#: src/installation/process.py:1238
 msgid "Network configuration copied."
 msgstr "ネットワーク設定がコピーされました。"
 
-#: src/installation/process.py:1235
+#: src/installation/process.py:1264
 msgid "Time zone set."
-msgstr ""
+msgstr "タイムゾーンが設定されました。"
 
-#: src/installation/process.py:1256
+#: src/installation/process.py:1285
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "ユーザー %sに対するsudoの設定が完了しました。"
 
-#: src/installation/process.py:1266
+#: src/installation/process.py:1295
 #, python-format
 msgid "User %s added."
 msgstr "ユーザー %s が追加されました。"
 
-#: src/installation/process.py:1278
+#: src/installation/process.py:1307
 #, python-format
 msgid "Hostname  %s set."
 msgstr "ホスト名 %s が設定されました。"
 
-#: src/installation/process.py:1283
+#: src/installation/process.py:1312
 msgid "Set root password."
 msgstr "rootパスワードの設定"
 
-#: src/installation/process.py:1286
+#: src/installation/process.py:1315
 msgid "Set the same password to root."
 msgstr "rootと同じパスワードを設定してください。"
 
-#: src/installation/process.py:1292
+#: src/installation/process.py:1321
 msgid "Generating locales ..."
 msgstr "ロケールの生成中..."
 
-#: src/installation/process.py:1310
+#: src/installation/process.py:1339
 msgid "Adjusting hardware clock ..."
 msgstr "ハードウェアの時計を調整しています..."
 
-#: src/installation/process.py:1319
+#: src/installation/process.py:1348
 msgid "Configuring hardware ..."
 msgstr "ハードウェアの設定中.."
 
-#: src/installation/process.py:1392
+#: src/installation/process.py:1421
 msgid "Set up graphics card ..."
 msgstr "グラフィックカードのセットアップ.."
 
-#: src/installation/process.py:1399
+#: src/installation/process.py:1428
 msgid "Can't execute the MHWD script"
 msgstr "MHWDスクリプトが実行できません"
 
-#: src/installation/process.py:1412
+#: src/installation/process.py:1441
 msgid "Configure display manager ..."
 msgstr "ディスプレイマネージャーの設定中.."
 
-#: src/installation/process.py:1518
+#: src/installation/process.py:1547
 msgid "Configure System ..."
 msgstr "システムの設定中"
 
-#: src/installation/process.py:1543
+#: src/installation/process.py:1572
 msgid "Removing live configuration (packages)"
 msgstr "ライブ設定(パッケージ)を削除"
 
-#: src/installation/process.py:1559
+#: src/installation/process.py:1588
 msgid "Configuring package manager"
 msgstr "パッケージマネージャーの設定"
 
-#: src/installation/process.py:1571
+#: src/installation/process.py:1600
 msgid "Finished configuring package manager."
 msgstr "パッケージマネージャーの設定が完了しました。"
 
-#: src/installation/process.py:1595
+#: src/installation/process.py:1624
 msgid "Running mkinitcpio ..."
 msgstr "mkinitcpioを実行..."
 
-#: src/installation/process.py:1598
+#: src/installation/process.py:1627
 msgid "Running mkinitcpio - done"
 msgstr "mkinitcpioを実行 - 完了"
 
-#: src/installation/process.py:1614
+#: src/installation/process.py:1643
 msgid "Encrypting user home dir ..."
 msgstr "ユーザーホームディレクトリを暗号化 ..."
 
-#: src/installation/process.py:1616
+#: src/installation/process.py:1645
 msgid "User home dir encrypted"
 msgstr "ユーザーのホームディレクトリが暗号化されました。"
 
@@ -1062,7 +1055,7 @@ msgstr "%s がSolid State Drive であるかどうか確認できません"
 #: src/parted3/fs_module.py:173
 #, python-format
 msgid "Sorry but filesystem %s can't be resized"
-msgstr ""
+msgstr "申し訳ありませんが、ファイルシステム%s のサイズを変更することができません"
 
 #: src/parted3/lvm.py:75
 #, python-format
@@ -1079,20 +1072,28 @@ msgstr "ボリュームグループ %s を削除できません"
 msgid "Can't remove physical volume %s"
 msgstr "物理ボリューム %sを削除できません。"
 
-#: src/parted3/partition_module.py:104
-msgid "Exception: For more information take a look at /tmp/thus.log"
-msgstr "例外: より詳細な情報は /tmp/thus.log を見てください。"
+#: src/parted3/partition_module.py:107
+#, python-format
+msgid "Unrecognised disk label in device %s."
+msgstr "デバイス %s 内での認識できないディスクラベル"
 
-#: src/parted3/partition_module.py:168
+#: src/parted3/partition_module.py:111
+#, python-format
+msgid ""
+"Exception: %s.\n"
+"For more information take a look at /tmp/thus.log"
+msgstr "例外: %s\nより詳細な情報は /tmp/thus.log を見てください。"
+
+#: src/parted3/partition_module.py:178
 #, python-format
 msgid "Can't delete partition %s"
 msgstr "パーティション %s を削除できません"
 
-#: src/parted3/partition_module.py:219
+#: src/parted3/partition_module.py:229
 msgid "Partition is too large!"
 msgstr "パーティションが大きすぎます!"
 
-#: src/parted3/partition_module.py:279
+#: src/parted3/partition_module.py:289
 #, python-format
 msgid "Can't detect used space from %s"
 msgstr "%s から使用済みスペースを検出できません"
@@ -1102,32 +1103,32 @@ msgstr "%s から使用済みスペースを検出できません"
 msgid "Can't detect used space of NTFS partition %s"
 msgstr "NTFSパーティション %s から使用済みスペースを検出できません"
 
-#: src/parted3/used_space.py:67
+#: src/parted3/used_space.py:65
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
 msgstr "EXTFSパーティション %s から使用済みスペースを検出できません"
 
-#: src/parted3/used_space.py:95
+#: src/parted3/used_space.py:94
 #, python-format
-msgid "Can't detect used space of FATFS partition %s"
-msgstr "FATFSパーティション %s から使用済みスペースを検出できません"
+msgid "Can't detect used space of FAT partition %s"
+msgstr "FATパーティション %sから使用済みスペースを検出できません"
 
-#: src/parted3/used_space.py:127
+#: src/parted3/used_space.py:125
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
 msgstr "JFSパーティション %s から使用済みスペースを検出できません"
 
-#: src/parted3/used_space.py:153
+#: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
 msgstr "REISERFSパーティション %s から使用済みスペースを検出できません"
 
-#: src/parted3/used_space.py:182
+#: src/parted3/used_space.py:175
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
 msgstr "BTRFSパーティション %s から使用済みスペースを検出できません"
 
-#: src/parted3/used_space.py:221
+#: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
 msgstr "XFSパーティション %s から使用済みスペースを検出できません"
@@ -1140,19 +1141,19 @@ msgstr "rank mirrorsのスクリプトが見つかりません。"
 msgid "Couldn't execute auto mirroring selection"
 msgstr "ミラーの自動選択を実行できません"
 
-#: src/show_message.py:53
+#: src/show_message.py:54
 msgid "Manjaro Installer - Error"
 msgstr "Manjaro インストーラー - エラー"
 
-#: src/show_message.py:65
+#: src/show_message.py:66
 msgid "Manjaro Installer - Warning"
 msgstr "Manjaro インストーラー - 警告"
 
-#: src/show_message.py:77
+#: src/show_message.py:78
 msgid "Manjaro Installer - Information"
 msgstr "Manjaro インストーラー - 情報"
 
-#: src/show_message.py:88
+#: src/show_message.py:89
 msgid "Manjaro Installer - Question"
 msgstr "Manjaro インストーラー - 質問"
 
@@ -1170,7 +1171,18 @@ msgstr "Manjaro をインストール中..."
 msgid "Please wait..."
 msgstr "お待ち下さい..."
 
-#: src/slides.py:217
+#: src/slides.py:197
+msgid ""
+"IMPORTANT: There may have been a problem with the Grub(2) bootloader\n"
+"installation which could prevent your system from booting properly. Before\n"
+"rebooting, you may want to verify whether or not GRUB(2) is installed and\n"
+"configured. The Arch Linux Wiki contains troubleshooting information:\n"
+"\thttps://wiki.archlinux.org/index.php/GRUB\n"
+"\n"
+"Would you like to view the wiki page now?"
+msgstr "重要: Grub(2) ブートローダーのインストールによってシステムが適切にブートすることを\n妨害する問題が発生する可能性があります。\n再起動の前にGrub(2) がインストールされ設定が行われたか、確認することができます。\n Arch Linux Wikiにトラブルシューティングについての情報が記載されています。\n⇥https://wiki.archlinux.org/index.php/GRUB\n\nいま、そのwikiページを見ますか?"
+
+#: src/slides.py:234
 msgid "Do you want to retry?"
 msgstr "再度トライしますか?"
 
@@ -1339,9 +1351,9 @@ msgstr "ユーザー名にドットは使えません"
 msgid "Too many characters"
 msgstr "文字数が多過ぎます"
 
-#: ui/bootloader.ui:7
-msgid "Boot"
-msgstr "ブート"
+#: ui/bootloader.ui:69
+msgid "What is your boot system type?"
+msgstr "ブートシステムタイプは何ですか？"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1395,27 +1407,31 @@ msgstr "地域:"
 msgid "MB"
 msgstr "メガバイト"
 
-#: ui/installation_advanced.ui:958
+#: ui/installation_advanced.ui:895
+msgid "New Partition Table"
+msgstr "新しいパーティションテーブル"
+
+#: ui/installation_advanced.ui:951
+msgid "Mount Checklist:"
+msgstr "マウントチェックリスト:"
+
+#: ui/installation_advanced.ui:1106
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_advanced.ui:1024
-msgid "Install boot loader"
-msgstr ""
-
-#: ui/installation_advanced.ui:1167
+#: ui/installation_advanced.ui:1259
 msgid "LUKS volume name:"
 msgstr "LUKS ボリューム名:"
 
-#: ui/installation_advanced.ui:1181
+#: ui/installation_advanced.ui:1273
 msgid "Password:"
 msgstr "パスワード:"
 
-#: ui/installation_advanced.ui:1195
+#: ui/installation_advanced.ui:1287
 msgid "Confirm password:"
 msgstr "パスワードの確認:"
 
-#: ui/installation_advanced.ui:1224
+#: ui/installation_advanced.ui:1316
 msgid "Use LUKS encryption: "
 msgstr "LUKS暗号化の使用:"
 
@@ -1472,7 +1488,7 @@ msgstr "<span weight=\"light\" size=\"small\">スナップショットを作成�
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup your /home directory "
 "in a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">異なるパーティションあるいはボリュームに /home ディレクトリを設定します。</span>"
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"

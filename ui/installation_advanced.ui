@@ -897,8 +897,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <property name="image">image1</property>
-                        <property name="always_show_image">True</property>
                         <signal name="clicked" handler="on_partition_list_new_label_activate" swapped="no"/>
                       </object>
                       <packing>
@@ -914,7 +912,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
                         <property name="use_stock">True</property>
                         <property name="always_show_image">True</property>
                         <signal name="clicked" handler="on_partition_list_undo_activate" swapped="no"/>

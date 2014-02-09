@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 21:17+0100\n"
-"PO-Revision-Date: 2014-01-20 07:10+0000\n"
+"POT-Creation-Date: 2014-02-01 23:55+0100\n"
+"PO-Revision-Date: 2014-02-02 08:00+0000\n"
 "Last-Translator: asmolero <alsamolero@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -80,76 +80,56 @@ msgstr "Mostra els missatges de registre per stdout"
 msgid "Show options in development (DO NOT USE THIS!)"
 msgstr "Mostra opcions en desenvolupament (NO USEU AIXÒ!)"
 
-#: src/installation/auto_partition.py:75 src/installation/auto_partition.py:85
-#: src/installation/process.py:431 src/installation/process.py:448
-#: src/installation/process.py:463
+#: src/installation/auto_partition.py:74 src/installation/auto_partition.py:83
+#: src/installation/process.py:432 src/installation/process.py:449
+#: src/installation/process.py:464
 #, python-format
 msgid "Unmounting %s"
 msgstr "Desmuntant %s"
 
-#: src/installation/auto_partition.py:79 src/installation/auto_partition.py:89
+#: src/installation/auto_partition.py:78 src/installation/auto_partition.py:87
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr "No s'ha pogut desmuntar %s. S'està provant amb lazy arg."
 
-#: src/installation/auto_partition.py:109
+#: src/installation/auto_partition.py:107
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr "No es poden esborrar els volums LVM (mireu més avall)"
 
-#: src/installation/auto_partition.py:119
+#: src/installation/auto_partition.py:117
 msgid "Can't close LUKS devices (see below)"
 msgstr "No es poden tancar els dispositius LUKS (mireu més avall)"
 
-#: src/installation/auto_partition.py:169
+#: src/installation/auto_partition.py:166
 #, python-format
 msgid "Unkown filesystem type %s"
 msgstr "El tipus de sistema de fitxers %s és desconegut"
 
-#: src/installation/auto_partition.py:179
+#: src/installation/auto_partition.py:176
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr "No es pot crear el sistema de fitxers %s"
 
-#: src/installation/auto_partition.py:325
+#: src/installation/auto_partition.py:322
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "El Thus configurarà LUKS al dispositiu %s"
 
-#: src/installation/auto_partition.py:381
+#: src/installation/auto_partition.py:378
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr "L'instal·lador no pot detectar la mida del dispositiu. Utilitzeu la rutina avançada d'instal·lació per particionar i muntar dispositius."
 
-#: src/installation/auto_partition.py:537
+#: src/installation/auto_partition.py:534
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "Es configurarà LVM al dispositiu %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
-#: src/installation/alongside.py:218
+#: src/installation/alongside.py:220
 msgid "unknown"
 msgstr "desconegut"
-
-#: src/bootloader.py:54 ui/bootloader.ui:69
-msgid "What is your boot system type?"
-msgstr "Quin és el tipus de sistema d'arrencada?"
-
-#: src/bootloader.py:59
-msgid "BIOS (Most Common)"
-msgstr "BIOS (el més habitual)"
-
-#: src/bootloader.py:63
-msgid "64-bit UEFI"
-msgstr "UEFI 64-bit"
-
-#: src/bootloader.py:67
-msgid "32-bit UEFI"
-msgstr "UEFI 32-bit"
-
-#: src/bootloader.py:71
-msgid "Select 'Cancel' if you don't want to install a boot loader."
-msgstr "Sel·leccioneu 'Cancel·la' si no voleu instal·lar un carregador d'arrencada."
 
 #: src/canonical/misc.py:929
 #, python-format
@@ -219,178 +199,198 @@ msgstr "Esteu usant el corrent elèctric."
 msgid "We have enough disk space."
 msgstr "Hi ha prou d'espai al disc."
 
-#: src/installation/advanced.py:213 src/installation/advanced.py:510
-#: src/installation/advanced.py:522
+#: src/installation/advanced.py:218 src/installation/advanced.py:512
+#: src/installation/advanced.py:526
 msgid "free space"
 msgstr "espai lliure"
 
-#: src/installation/advanced.py:289 src/installation/alongside.py:170
+#: src/installation/advanced.py:266
+msgid "It's not recommended to install grub in a partition"
+msgstr "Instal·lar el grub en una partició no està recomanat"
+
+#: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
 msgstr "Dispositiu"
 
-#: src/installation/advanced.py:292
+#: src/installation/advanced.py:297
 msgid "Type"
 msgstr "Tipus"
 
-#: src/installation/advanced.py:295
+#: src/installation/advanced.py:300
 msgid "Mount point"
 msgstr "Punt de muntatge"
 
-#: src/installation/advanced.py:298
+#: src/installation/advanced.py:303
 msgid "Label"
 msgstr "Etiqueta"
 
-#: src/installation/advanced.py:304 src/installation/advanced.py:1578
+#: src/installation/advanced.py:309 src/installation/advanced.py:1641
 msgid "Format"
 msgstr "Format"
 
-#: src/installation/advanced.py:307
+#: src/installation/advanced.py:312
 msgid "Size"
 msgstr "Mida"
 
-#: src/installation/advanced.py:310
+#: src/installation/advanced.py:315
 msgid "Used"
 msgstr "Usat"
 
-#: src/installation/advanced.py:313
+#: src/installation/advanced.py:318
 msgid "Flags"
 msgstr "Banderes"
 
-#: src/installation/advanced.py:319
+#: src/installation/advanced.py:324
 msgid "SSD"
 msgstr "SSD"
 
-#: src/installation/advanced.py:496
+#: src/installation/advanced.py:493
 msgid "none"
 msgstr "cap"
 
-#: src/installation/advanced.py:544 src/installation/advanced.py:956
-#: src/installation/advanced.py:1439 src/installation/advanced.py:1531
-#: src/installation/advanced.py:1673 src/installation/advanced.py:1768
+#: src/installation/advanced.py:548 src/installation/advanced.py:962
+#: src/installation/advanced.py:1501 src/installation/advanced.py:1594
+#: src/installation/advanced.py:1738 src/installation/advanced.py:1832
 msgid "extended"
 msgstr "ampliada"
 
-#: src/installation/advanced.py:675 src/installation/advanced.py:926
+#: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
 msgstr "No es pot fer servir el mateix punt de muntatge dos cops..."
 
-#: src/installation/advanced.py:947
+#: src/installation/advanced.py:953
 msgid "Creating primary partition"
 msgstr "S'està creant la partició primària"
 
-#: src/installation/advanced.py:958
+#: src/installation/advanced.py:964
 msgid "Creating extended partition"
 msgstr "S'està creant la partició ampliada"
 
-#: src/installation/advanced.py:964
+#: src/installation/advanced.py:970
 msgid "Creating logical partition"
 msgstr "S'està creant la partició lògica"
 
-#: src/installation/advanced.py:1096
+#: src/installation/advanced.py:1104
 msgid "Advanced installation mode"
 msgstr "Mode d'instal·lació avançat"
 
-#: src/installation/advanced.py:1100 ui/installation_advanced.ui:1046
+#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1160
 msgid "Use this device for boot loader installation:"
 msgstr "Utilitza aquest dispositiu per a instal·lar el carregador d'arrencada:"
 
-#: src/installation/advanced.py:1105 ui/installation_advanced.ui:1081
-msgid "Use the partition where /boot is mounted (not recommended)"
-msgstr "Utilitza la partició on hi ha muntat /boot (no recomanat)"
+#: src/installation/advanced.py:1113
+msgid "Mount checklist:"
+msgstr "Llista de muntatges:"
 
-#: src/installation/advanced.py:1115 ui/installation_advanced.ui:943
+#: src/installation/advanced.py:1119
+msgid "Root"
+msgstr "Arrel"
+
+#: src/installation/advanced.py:1123 ui/bootloader.ui:7
+msgid "Boot"
+msgstr "Arrencada"
+
+#: src/installation/advanced.py:1127
+msgid "EFI"
+msgstr "EFI"
+
+#: src/installation/advanced.py:1131
+msgid "Swap"
+msgstr "Intercanvi"
+
+#: src/installation/advanced.py:1139
 msgid "New partition table"
 msgstr "Nova taula de particions"
 
-#: src/installation/advanced.py:1123
+#: src/installation/advanced.py:1147
 msgid "Change..."
 msgstr "Canvia..."
 
-#: src/installation/advanced.py:1128 ui/installation_advanced.ui:407
+#: src/installation/advanced.py:1152 ui/installation_advanced.ui:407
 msgid "Size:"
 msgstr "Mida:"
 
-#: src/installation/advanced.py:1132 ui/installation_advanced.ui:630
+#: src/installation/advanced.py:1156 ui/installation_advanced.ui:630
 msgid "Type:"
 msgstr "Tipus:"
 
-#: src/installation/advanced.py:1136 ui/installation_advanced.ui:647
+#: src/installation/advanced.py:1160 ui/installation_advanced.ui:647
 msgid "Primary"
 msgstr "Primària"
 
-#: src/installation/advanced.py:1140 ui/installation_advanced.ui:671
+#: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
 msgid "Logical"
 msgstr "Lògica"
 
-#: src/installation/advanced.py:1144 ui/installation_advanced.ui:695
+#: src/installation/advanced.py:1168 ui/installation_advanced.ui:695
 msgid "Extended"
 msgstr "Ampliada"
 
-#: src/installation/advanced.py:1148 ui/installation_advanced.ui:516
+#: src/installation/advanced.py:1172 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
 msgstr "Al principi d'aquest espai"
 
-#: src/installation/advanced.py:1152 ui/installation_advanced.ui:540
+#: src/installation/advanced.py:1176 ui/installation_advanced.ui:540
 msgid "End of this space"
 msgstr "A la fi d'aquest espai"
 
-#: src/installation/advanced.py:1156 src/installation/advanced.py:1173
+#: src/installation/advanced.py:1180 src/installation/advanced.py:1197
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
 msgstr "Usa com:"
 
-#: src/installation/advanced.py:1160 src/installation/advanced.py:1177
+#: src/installation/advanced.py:1184 src/installation/advanced.py:1201
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
 msgstr "Punt de muntatge:"
 
-#: src/installation/advanced.py:1164 src/installation/advanced.py:1181
+#: src/installation/advanced.py:1188 src/installation/advanced.py:1205
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
 msgstr "Etiqueta (opcional):"
 
-#: src/installation/advanced.py:1168
+#: src/installation/advanced.py:1192
 msgid "Encryption Options..."
 msgstr "Opcions d'encriptació..."
 
-#: src/installation/advanced.py:1185 ui/installation_advanced.ui:276
+#: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
 msgstr "Format:"
 
-#: src/installation/advanced.py:1190
+#: src/installation/advanced.py:1214
 msgid "Partition Table Type:"
 msgstr "Tipus de taula de particions:"
 
-#: src/installation/advanced.py:1195
+#: src/installation/advanced.py:1219
 msgid "Create Partition Table"
 msgstr "Crea la taula de particions"
 
-#: src/installation/advanced.py:1198 src/installation/alongside.py:148
-#: src/installation/automatic.py:104
+#: src/installation/advanced.py:1222 src/installation/alongside.py:150
+#: src/installation/automatic.py:103
 msgid "Install now!"
 msgstr "Instal·lar ara!"
 
-#: src/installation/advanced.py:1287
+#: src/installation/advanced.py:1308
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
 msgstr "Creant una nova taula de partició de tipus %s pel disc %s"
 
-#: src/installation/advanced.py:1297
+#: src/installation/advanced.py:1318
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
 msgstr "El GRUB requereix una partició d'arrencada BIOS (2 MiB sense sistema de fitxers, codi de tipus \"EF02\" al gdisk o senyalador \"bios_grub\" al GNU Parted) en sistemes BIOS per incrustar el fitxer core.img ja que als discos GPT no hi ha espai d'incrustació post-MBR.\n\nEl Thus crearà ara aquesta partició especial. "
 
-#: src/installation/advanced.py:1329
+#: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr "No es pot crear la partició d'arrencada BIOS GPT."
 
-#: src/installation/advanced.py:1356
+#: src/installation/advanced.py:1377
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr "No es pot crear una partició d'arrencada BIOS GPT"
 
-#: src/installation/advanced.py:1477
+#: src/installation/advanced.py:1540
 #, python-format
 msgid ""
 "%s is mounted as swap.\n"
@@ -398,7 +398,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s s'ha muntat com a swap\nPer a continuar s'ha de desmuntar.\nCliqueu Sí per a desmuntar, o No per a tirar enrere\n"
 
-#: src/installation/advanced.py:1481
+#: src/installation/advanced.py:1544
 #, python-format
 msgid ""
 "%s is mounted in '%s'.\n"
@@ -406,72 +406,72 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr "%s està muntat a '%s'.\nPer continuar s'ha de desmuntar.\nClica a Sí per desmuntar-lo, o No per tornar\n"
 
-#: src/installation/advanced.py:1504
+#: src/installation/advanced.py:1567
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
 msgstr "%s es mostra com a muntat (ocupat) però no té punt de muntatge"
 
-#: src/installation/advanced.py:1510
+#: src/installation/advanced.py:1573
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
 msgstr "La partició arrel no està marcada per a formatar.\nAixò podria crear problemes. La voleu marcar per a formatar ara?"
 
-#: src/installation/advanced.py:1571
+#: src/installation/advanced.py:1634
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "S'esborrarà la partició %s"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "Partition"
 msgstr "Partició"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "New"
 msgstr "Nou"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "Relabel"
 msgstr "Torna a etiquetar"
 
-#: src/installation/advanced.py:1578
+#: src/installation/advanced.py:1641
 msgid "Mount"
 msgstr "Munta"
 
-#: src/installation/advanced.py:1599
+#: src/installation/advanced.py:1662
 msgid "These disks will have partition actions:"
 msgstr "Es faran els següents canvis:"
 
-#: src/installation/advanced.py:1652
+#: src/installation/advanced.py:1717
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Guardant els canvis fets a %s"
 
-#: src/installation/advanced.py:1676
+#: src/installation/advanced.py:1741
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "S'està creant el sistema de fitxers %s a %s amb l'etiqueta %s"
 
-#: src/installation/advanced.py:1720
+#: src/installation/advanced.py:1783
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr "S'està establint l'indicador d'arrencada a la partició %s"
 
-#: src/installation/advanced.py:1738
+#: src/installation/advanced.py:1802
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr "No es pot formatar la partició '%s' amb l'etiqueta '%s' com a '%s'"
 
-#: src/installation/advanced.py:1791
+#: src/installation/advanced.py:1843 src/installation/automatic.py:226
+msgid "Thus will not install any boot loader"
+msgstr "El Thus no instal·larà cap carregador d'arrencada"
+
+#: src/installation/advanced.py:1853
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "El Manjaro instal·larà el carregador d'arrencada del tipus %s a %s"
 
-#: src/installation/advanced.py:1796 src/installation/automatic.py:216
-msgid "Thus will not install any boot loader"
-msgstr "El Thus no instal·larà cap carregador d'arrencada"
-
-#: src/installation/advanced.py:1812 src/installation/automatic.py:237
+#: src/installation/advanced.py:1869 src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Mode test. El Thus no aplicarà cap canvi al vostre sistema!"
 
@@ -480,39 +480,39 @@ msgstr "Mode test. El Thus no aplicarà cap canvi al vostre sistema!"
 msgid "Can't load %s css"
 msgstr "No es pot carregar %s css"
 
-#: src/installation/alongside.py:140
+#: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
 msgstr "Trieu a continuació de quin SO voleu instal·lar el Manjaro"
 
-#: src/installation/alongside.py:144
+#: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
 msgstr "El Manjaro al costat d'un altre SO"
 
-#: src/installation/alongside.py:173
+#: src/installation/alongside.py:175
 msgid "Detected OS"
 msgstr "SO detectat"
 
-#: src/installation/alongside.py:176
+#: src/installation/alongside.py:178
 msgid "Filesystem"
 msgstr "Sistema de fitxers"
 
-#: src/installation/alongside.py:194
+#: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
 msgstr "No s'ha trobat el pyparted3."
 
-#: src/installation/alongside.py:222
+#: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
 msgstr "No es pot crear la llista de particions per a instal·lació conjunta."
 
-#: src/installation/alongside.py:266
+#: src/installation/alongside.py:268
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "No es pot encongir la partició (potser és gairebé plena?)"
 
-#: src/installation/alongside.py:353
+#: src/installation/alongside.py:355
 msgid "There are too many primary partitions, can't create a new one"
 msgstr "Hi ha massa particions primàries i no se'n pot crear una de nova"
 
-#: src/installation/alongside.py:386
+#: src/installation/alongside.py:388
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
 msgstr "No es pot encongir el sistema de fitxers %s(%s)"
@@ -587,59 +587,49 @@ msgstr "El Manjaro s'instal·larà utilitzant un volum /home separat."
 msgid "Manjaro will be installed using a separate /home partition."
 msgstr "El Manjaro s'instal·larà utilitzant una partició /home separada."
 
-#: src/installation/automatic.py:76
+#: src/installation/automatic.py:75
 msgid "Automatic installation mode"
 msgstr "Mode d'instal.lació automàtica"
 
-#: src/installation/automatic.py:80 ui/installation_automatic.ui:96
+#: src/installation/automatic.py:79 ui/installation_automatic.ui:96
 msgid "Select drive:"
 msgstr "Selecciona la unitat:"
 
-#: src/installation/automatic.py:84
+#: src/installation/automatic.py:83
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
 msgstr "ADVERTIMENT! Aquest mode d'instal·lació sobreescriurà totes les dades del vostre disc!"
 
-#: src/installation/automatic.py:89 ui/installation_automatic.ui:59
+#: src/installation/automatic.py:88 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
 msgstr "Si us plau, trieu el disc on voleu instal·lar el Manjaro\ni cliqueu el botó inferior per a iniciar el procés."
 
-#: src/installation/automatic.py:94 ui/installation_automatic.ui:176
+#: src/installation/automatic.py:93 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
 msgstr "Contrasenya d'encriptació:"
 
-#: src/installation/automatic.py:98 src/user_info.py:124
+#: src/installation/automatic.py:97 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
 msgstr "Confirmeu la vostra contrasenya:"
 
-#: src/installation/automatic.py:102 src/user_info.py:177
+#: src/installation/automatic.py:101 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
 msgstr "Mostra la contrasenya"
 
-#: src/installation/automatic.py:165
+#: src/installation/automatic.py:164
 msgid "A LUKS password has been set"
 msgstr "S'ha configurat una contrasenya LUKS"
 
-#: src/installation/automatic.py:167
+#: src/installation/automatic.py:166
 #, python-format
 msgid "Automatic install on %s"
 msgstr "Instal·lació automàtica a %s"
 
-#: src/installation/automatic.py:201
-#, python-format
-msgid "Thus will use %s as installation device"
-msgstr "Thus utilitzarà %s com a dispositiu d'instal·lació"
-
-#: src/installation/automatic.py:212
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus instal·larà el carregador d'arrencada del tipus %s a %s"
-
-#: src/installation/automatic.py:240
+#: src/installation/automatic.py:199
 #, python-format
 msgid ""
 "Do you really want to proceed and delete all your content on your hard drive?\n"
@@ -647,351 +637,354 @@ msgid ""
 "%s"
 msgstr "Realment voleu continuar i esborrar tots els continguts del disc dur?\n\n%s"
 
+#: src/installation/automatic.py:211
+#, python-format
+msgid "Thus will use %s as installation device"
+msgstr "Thus utilitzarà %s com a dispositiu d'instal·lació"
+
+#: src/installation/automatic.py:222
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr "Thus instal·larà el carregador d'arrencada del tipus %s a %s"
+
 #: src/installation/process.py:84
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Copiant '/%s'"
 
-#: src/installation/process.py:162
+#: src/installation/process.py:165
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Instal·lant usant el mètode '%s'"
 
-#: src/installation/process.py:238
+#: src/installation/process.py:242
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "Creant particions i els seus sistemes de fitxers a %s"
 
-#: src/installation/process.py:259
+#: src/installation/process.py:263
 msgid "Error creating partitions and their filesystems"
 msgstr "S'ha produït un error en crear les particions i els sistemes de fitxers"
 
-#: src/installation/process.py:261 src/installation/process.py:333
-#: src/installation/process.py:630
+#: src/installation/process.py:265 src/installation/process.py:342
+#: src/installation/process.py:640
 #, python-format
 msgid "Command %s has failed."
 msgstr "L'ordre %s ha fallat."
 
-#: src/installation/process.py:263 src/installation/process.py:335
-#: src/installation/process.py:358 src/installation/process.py:632
+#: src/installation/process.py:267 src/installation/process.py:321
+#: src/installation/process.py:344 src/installation/process.py:367
+#: src/installation/process.py:642
 #, python-format
 msgid "Output : %s"
 msgstr "Sortida: %s"
 
-#: src/installation/process.py:303 src/installation/process.py:326
+#: src/installation/process.py:307 src/installation/process.py:335
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Muntant la partició %s al directori %s"
 
-#: src/installation/process.py:309
+#: src/installation/process.py:313
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Muntant la partició %s al directori %s/boot"
 
-#: src/installation/process.py:314
+#: src/installation/process.py:317
 msgid "Couldn't mount root and boot partitions"
 msgstr "No puc muntar les particions de 'root' i 'boot'"
 
-#: src/installation/process.py:331
-#, python-format
-msgid "Can't mount %s in %s"
-msgstr "No es pot muntar %s a %s"
-
-#: src/installation/process.py:346
-#, python-format
-msgid "%s deleted"
-msgstr "%s esborrat"
-
-#: src/installation/process.py:354
-msgid "Can't create necessary directories on destination system"
-msgstr "No puc crear els directoris necessaris al sistema de destí"
-
-#: src/installation/process.py:356
+#: src/installation/process.py:319 src/installation/process.py:365
 #, python-format
 msgid "Command %s has failed"
 msgstr "L'ordre %s ha fallat"
 
-#: src/installation/process.py:366
+#: src/installation/process.py:340
+#, python-format
+msgid "Can't mount %s in %s"
+msgstr "No es pot muntar %s a %s"
+
+#: src/installation/process.py:355
+#, python-format
+msgid "%s deleted"
+msgstr "%s esborrat"
+
+#: src/installation/process.py:363
+msgid "Can't create necessary directories on destination system"
+msgstr "No puc crear els directoris necessaris al sistema de destí"
+
+#: src/installation/process.py:375
 msgid "Install System ..."
 msgstr "S'està instal·lant el sistema..."
 
-#: src/installation/process.py:371
+#: src/installation/process.py:380
 msgid "System installed."
 msgstr "S'ha instal·lat el sistema."
 
-#: src/installation/process.py:373
+#: src/installation/process.py:382
 msgid "Configuring system ..."
 msgstr "S'està configurant el sistema..."
 
-#: src/installation/process.py:375
+#: src/installation/process.py:384
 msgid "System configured."
 msgstr "S'ha configurat el sistema."
 
-#: src/installation/process.py:379
+#: src/installation/process.py:388
 msgid "Installing boot loader ..."
 msgstr "S'està instal·lant el carregador d'arrencada..."
 
-#: src/installation/process.py:384
-msgid ""
-"We apologize, but it seems Thus can't install the boot loader into your system.\n"
-"Please, before rebooting, do it by yourself.\n"
-"You can find more info in the GRUB archlinux's wiki page:\n"
-"\thttps://wiki.archlinux.org/index.php/GRUB\n"
-msgstr "Sembla que el Thus no pot instal·lar el carregador d'arrencada al vostre sistema.\nInstal·leu-lo manualment abans de reiniciar.\nPodeu trobar més informació de com fer-ho a la pàgina wiki d'archlinux sobre GRUB:\nhttps://wiki.archlinux.org/index.php/GRUB\n"
-
-#: src/installation/process.py:420
+#: src/installation/process.py:421
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "No es pot copiar el registre del Thus a %s"
 
-#: src/installation/process.py:439 src/installation/process.py:458
-#: src/installation/process.py:472
+#: src/installation/process.py:440 src/installation/process.py:459
+#: src/installation/process.py:473
 #, python-format
 msgid "Can't unmount %s"
 msgstr "No es pot desmuntar %s"
 
-#: src/installation/process.py:474
+#: src/installation/process.py:475
 msgid "Installation finished successfully."
 msgstr "La instal·lació ha acabat correctament."
 
-#: src/installation/process.py:501
+#: src/installation/process.py:511
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "El sistema de fitxers base no existeix. És un error crític i s'està sortint."
 
-#: src/installation/process.py:505
+#: src/installation/process.py:515
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "El sistema de fitxers d'escriptori no existeix. És un error crític i s'està sortint."
 
-#: src/installation/process.py:515 src/installation/process.py:521
+#: src/installation/process.py:525 src/installation/process.py:531
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s ja està muntada a  %s com a %s"
 
-#: src/installation/process.py:532
+#: src/installation/process.py:542
 msgid "Indexing files to be copied ..."
 msgstr "S'estan indexant els fitxers per copiar..."
 
-#: src/installation/process.py:537
+#: src/installation/process.py:547
 msgid "Extracting root-image ..."
 msgstr "S'està extraient la imatge arrel..."
 
-#: src/installation/process.py:547
+#: src/installation/process.py:557
 msgid "Extracting desktop-image ..."
 msgstr "S'està extraient la imatge de l'escriptori..."
 
-#: src/installation/process.py:562
+#: src/installation/process.py:572
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Restauració de meta-informació sobre %s"
 
-#: src/installation/process.py:578
+#: src/installation/process.py:588
 msgid "Special dirs already mounted."
 msgstr "Directoris especials ja estan muntats."
 
-#: src/installation/process.py:612
+#: src/installation/process.py:622
 msgid "Special dirs are not mounted. Skipping."
 msgstr "Els directoris especials no estan muntats. S'està ometent."
 
-#: src/installation/process.py:629 src/installation/process.py:635
+#: src/installation/process.py:639 src/installation/process.py:645
 #, python-format
 msgid "Unable to umount %s"
 msgstr "No es pot muntar %s"
 
-#: src/installation/process.py:655
+#: src/installation/process.py:667
 #, python-format
 msgid "Error running command: %s"
 msgstr "Error executant la comanda %s"
 
-#: src/installation/process.py:688
+#: src/installation/process.py:700
 msgid "Can't copy network configuration files"
 msgstr "No es poden copiar els fitxers de configuració de la xarxa"
 
-#: src/installation/process.py:718 src/installation/process.py:773
+#: src/installation/process.py:730 src/installation/process.py:788
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Afegit a fstab: UUID=%s %s %s %s 0 %s"
 
-#: src/installation/process.py:732
+#: src/installation/process.py:744
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "S'ha afegit al crypttab: %s"
 
-#: src/installation/process.py:736
+#: src/installation/process.py:748
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "S'ha afegit al fstab: /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:777
+#: src/installation/process.py:792
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "S'ha afegit al fstab: tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:866
+#: src/installation/process.py:881
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Instal·lant el carregador d'arrencada GRUB(2) BIOS a %s"
 
-#: src/installation/process.py:876 src/installation/process.py:898
+#: src/installation/process.py:891 src/installation/process.py:917
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ERROR instal·lant el GRUB(2) BIOS."
 
-#: src/installation/process.py:895
+#: src/installation/process.py:914
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "S'ha instal·lat correctament el GRUB(2) BIOS."
 
-#: src/installation/process.py:921
+#: src/installation/process.py:938
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "S'ha produït un error en la instal·lació del GRUB(2) UEFI."
 
-#: src/installation/process.py:929
+#: src/installation/process.py:946
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr "S'està instal·lant el carregador d'arrencada GRUB(2) UEFI %s"
 
-#: src/installation/process.py:942
+#: src/installation/process.py:959
 msgid "Installing Grub2 locales."
 msgstr "S'estan instal·lant les configuracions locals del Grub2."
 
-#: src/installation/process.py:955
+#: src/installation/process.py:972
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
-msgstr "No s'ha trobat cap carregador OEM en %s. S'està copiant el Grub(2) al directori."
+msgstr "No s'ha trobat un carregador OEM a %s. S'està copiant el Grub(2) al directori."
 
-#: src/installation/process.py:960
+#: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr "La còpia del Grub(2) al directori OEM ha fallat. No s'ha trobat el fitxer."
 
-#: src/installation/process.py:962
+#: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr "La còpia del Grub(2) al directori OEM ha fallat. El fitxer ja existeix."
 
-#: src/installation/process.py:964
+#: src/installation/process.py:981
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr "La còpia del Grub(2) al directori OEM ha fallat. S'ha produït un error desconegut."
 
-#: src/installation/process.py:982
+#: src/installation/process.py:999
 msgid "Generating grub.cfg"
 msgstr "S'està generant el fitxer grub.cfg"
 
-#: src/installation/process.py:1004
+#: src/installation/process.py:1021
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ERROR instal·lant la configuració local de GRUB(2)."
 
-#: src/installation/process.py:1013
+#: src/installation/process.py:1030
 #, python-format
 msgid "Enabled %s service."
 msgstr "S'ha activat el servei %s."
 
-#: src/installation/process.py:1020
+#: src/installation/process.py:1037
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Error creant el 'hash' de la contrasenya de l'usuari %s"
 
-#: src/installation/process.py:1026
+#: src/installation/process.py:1043
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "No puc canviar la contrasenya de l'usuari %s"
 
-#: src/installation/process.py:1038
+#: src/installation/process.py:1055
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Configurant hooks i mòduls a mkinitcpio.conf"
 
-#: src/installation/process.py:1105
+#: src/installation/process.py:1134
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Activa l'inici automàtic de sessió per a l'usuari %s."
 
-#: src/installation/process.py:1200 src/installation/process.py:1211
+#: src/installation/process.py:1229 src/installation/process.py:1240
 msgid "Configuring your new system"
 msgstr "Configurant el sistema"
 
-#: src/installation/process.py:1203
+#: src/installation/process.py:1232
 msgid "fstab file generated."
 msgstr "fitxer fstab generat."
 
-#: src/installation/process.py:1209
+#: src/installation/process.py:1238
 msgid "Network configuration copied."
 msgstr "Configuració de la xarxa copiada."
 
-#: src/installation/process.py:1235
+#: src/installation/process.py:1264
 msgid "Time zone set."
 msgstr "S'ha establert la zona horària."
 
-#: src/installation/process.py:1256
+#: src/installation/process.py:1285
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Configuració sudo per a l'usuari %s finalitzada."
 
-#: src/installation/process.py:1266
+#: src/installation/process.py:1295
 #, python-format
 msgid "User %s added."
 msgstr "Usuari %s afegit."
 
-#: src/installation/process.py:1278
+#: src/installation/process.py:1307
 #, python-format
 msgid "Hostname  %s set."
 msgstr "S'ha configurat %s com a nom de l'ordinador."
 
-#: src/installation/process.py:1283
+#: src/installation/process.py:1312
 msgid "Set root password."
 msgstr "Estableix la contrasenya d'administrador."
 
-#: src/installation/process.py:1286
+#: src/installation/process.py:1315
 msgid "Set the same password to root."
 msgstr "Estableix la mateixa contrasenya per a l'administrador."
 
-#: src/installation/process.py:1292
+#: src/installation/process.py:1321
 msgid "Generating locales ..."
 msgstr "S'estan generant les configuracions locals..."
 
-#: src/installation/process.py:1310
+#: src/installation/process.py:1339
 msgid "Adjusting hardware clock ..."
 msgstr "S'està ajustant el rellotge de maquinari..."
 
-#: src/installation/process.py:1319
+#: src/installation/process.py:1348
 msgid "Configuring hardware ..."
 msgstr "S'està configurant el maquinari..."
 
-#: src/installation/process.py:1392
+#: src/installation/process.py:1421
 msgid "Set up graphics card ..."
 msgstr "S'està configurant la targeta gràfica..."
 
-#: src/installation/process.py:1399
+#: src/installation/process.py:1428
 msgid "Can't execute the MHWD script"
 msgstr "No es pot executar l'script MHWD"
 
-#: src/installation/process.py:1412
+#: src/installation/process.py:1441
 msgid "Configure display manager ..."
 msgstr "S'està configurant el gestor de visualització..."
 
-#: src/installation/process.py:1518
+#: src/installation/process.py:1547
 msgid "Configure System ..."
 msgstr "S'està configurant el sistema..."
 
-#: src/installation/process.py:1543
+#: src/installation/process.py:1572
 msgid "Removing live configuration (packages)"
 msgstr "Eliminant la configuració viva (paquets)"
 
-#: src/installation/process.py:1559
+#: src/installation/process.py:1588
 msgid "Configuring package manager"
 msgstr "Configurant el gestor de paquets"
 
-#: src/installation/process.py:1571
+#: src/installation/process.py:1600
 msgid "Finished configuring package manager."
 msgstr "Ha acabat la configuració del gestor de paquets."
 
-#: src/installation/process.py:1595
+#: src/installation/process.py:1624
 msgid "Running mkinitcpio ..."
 msgstr "S'està executant mkinitcpio..."
 
-#: src/installation/process.py:1598
+#: src/installation/process.py:1627
 msgid "Running mkinitcpio - done"
 msgstr "S'està executant mkinitcpio - fet"
 
-#: src/installation/process.py:1614
+#: src/installation/process.py:1643
 msgid "Encrypting user home dir ..."
 msgstr "S'està encriptant el directori de l'usuari..."
 
-#: src/installation/process.py:1616
+#: src/installation/process.py:1645
 msgid "User home dir encrypted"
 msgstr "Directori de l'usuari encriptat"
 
@@ -1086,20 +1079,28 @@ msgstr "No es pot eliminar el grup de volums %s"
 msgid "Can't remove physical volume %s"
 msgstr "No es pot eliminar el volum físic %s"
 
-#: src/parted3/partition_module.py:104
-msgid "Exception: For more information take a look at /tmp/thus.log"
-msgstr "Excepció: per a més informació, reviseu /tmp/thus.log"
+#: src/parted3/partition_module.py:107
+#, python-format
+msgid "Unrecognised disk label in device %s."
+msgstr "L'etiqueta de disc del dispositiu %s és desconeguda."
 
-#: src/parted3/partition_module.py:168
+#: src/parted3/partition_module.py:111
+#, python-format
+msgid ""
+"Exception: %s.\n"
+"For more information take a look at /tmp/thus.log"
+msgstr "S'ha produït una excepció: %s.\nPer a més informació, feu una ullada a /tmp/thus.log"
+
+#: src/parted3/partition_module.py:178
 #, python-format
 msgid "Can't delete partition %s"
 msgstr "No es pot esborrar la partició %s"
 
-#: src/parted3/partition_module.py:219
+#: src/parted3/partition_module.py:229
 msgid "Partition is too large!"
 msgstr "La partició és massa gran."
 
-#: src/parted3/partition_module.py:279
+#: src/parted3/partition_module.py:289
 #, python-format
 msgid "Can't detect used space from %s"
 msgstr "No es pot detectar l'espai utilitzat a %s"
@@ -1109,32 +1110,32 @@ msgstr "No es pot detectar l'espai utilitzat a %s"
 msgid "Can't detect used space of NTFS partition %s"
 msgstr "No es pot detectar l'espai utilitzat a la partició NTFS %s"
 
-#: src/parted3/used_space.py:67
+#: src/parted3/used_space.py:65
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
 msgstr "No es pot detectar l'espai utilitzat a la partició EXTFS %s"
 
-#: src/parted3/used_space.py:95
+#: src/parted3/used_space.py:94
 #, python-format
-msgid "Can't detect used space of FATFS partition %s"
-msgstr "No es pot detectar l'espai utilitzat a la partició FATFS %s"
+msgid "Can't detect used space of FAT partition %s"
+msgstr "No es pot detectar l'espai utilitzat a la partició FAT %s"
 
-#: src/parted3/used_space.py:127
+#: src/parted3/used_space.py:125
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
 msgstr "No es pot detectar l'espai utilitzat a la partició JFS %s"
 
-#: src/parted3/used_space.py:153
+#: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
 msgstr "No es pot detectar l'espai utilitzat a la partició REISERFS %s"
 
-#: src/parted3/used_space.py:182
+#: src/parted3/used_space.py:175
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
 msgstr "No es pot detectar l'espai utilitzat a la partició BTRFS %s"
 
-#: src/parted3/used_space.py:221
+#: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
 msgstr "No es pot detectar l'espai utilitzat a la partició XFS %s"
@@ -1147,19 +1148,19 @@ msgstr "No es troba l'script de la classificació de miralls"
 msgid "Couldn't execute auto mirroring selection"
 msgstr "No puc seleccionar un 'mirror' de manera automàtica"
 
-#: src/show_message.py:53
+#: src/show_message.py:54
 msgid "Manjaro Installer - Error"
 msgstr "Instal·lador Manjaro - Error"
 
-#: src/show_message.py:65
+#: src/show_message.py:66
 msgid "Manjaro Installer - Warning"
 msgstr "Instal·lador Manjaro - Avís"
 
-#: src/show_message.py:77
+#: src/show_message.py:78
 msgid "Manjaro Installer - Information"
 msgstr "Instal·lador Manjaro - Informació"
 
-#: src/show_message.py:88
+#: src/show_message.py:89
 msgid "Manjaro Installer - Question"
 msgstr "Instal·lador Manjaro - Pregunta"
 
@@ -1177,7 +1178,18 @@ msgstr "Instal·lant Manjaro..."
 msgid "Please wait..."
 msgstr "Si us plau, espera..."
 
-#: src/slides.py:217
+#: src/slides.py:197
+msgid ""
+"IMPORTANT: There may have been a problem with the Grub(2) bootloader\n"
+"installation which could prevent your system from booting properly. Before\n"
+"rebooting, you may want to verify whether or not GRUB(2) is installed and\n"
+"configured. The Arch Linux Wiki contains troubleshooting information:\n"
+"\thttps://wiki.archlinux.org/index.php/GRUB\n"
+"\n"
+"Would you like to view the wiki page now?"
+msgstr "IMPORTANT: Podria haver-hi hagut un problema amb la instal·lació del\ncarregador d'arrencada Grub(2), el qual podria impedir que el sistema\narrenqui correctament. Abans de reiniciar, caldria que verifiquéssiu si el \nGrub(2) està instal·lat i configurat. El wiki d'ArchLinux conté informació\nper a la resolució de problemes:\nhttps://wiki.archlinux.org/index.php/GRUB\n\nVoleu visitar la pàgina ara?"
+
+#: src/slides.py:234
 msgid "Do you want to retry?"
 msgstr "Ho voleu tornar a provar?"
 
@@ -1346,9 +1358,9 @@ msgstr "El nom d'usuari no pot incloure punts"
 msgid "Too many characters"
 msgstr "Massa caràcters"
 
-#: ui/bootloader.ui:7
-msgid "Boot"
-msgstr "Arrencada"
+#: ui/bootloader.ui:69
+msgid "What is your boot system type?"
+msgstr "Quin és el tipus de sistema d'arrencada?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1402,27 +1414,31 @@ msgstr "Ubicació:"
 msgid "MB"
 msgstr "MB"
 
-#: ui/installation_advanced.ui:958
+#: ui/installation_advanced.ui:895
+msgid "New Partition Table"
+msgstr "Nova taula de particions"
+
+#: ui/installation_advanced.ui:951
+msgid "Mount Checklist:"
+msgstr "Llista de muntatges:"
+
+#: ui/installation_advanced.ui:1106
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_advanced.ui:1024
-msgid "Install boot loader"
-msgstr "Instal·la el carregador d'arrencada"
-
-#: ui/installation_advanced.ui:1167
+#: ui/installation_advanced.ui:1259
 msgid "LUKS volume name:"
 msgstr "Nom del volum LUKS:"
 
-#: ui/installation_advanced.ui:1181
+#: ui/installation_advanced.ui:1273
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: ui/installation_advanced.ui:1195
+#: ui/installation_advanced.ui:1287
 msgid "Confirm password:"
 msgstr "Confirmeu la contrasenya:"
 
-#: ui/installation_advanced.ui:1224
+#: ui/installation_advanced.ui:1316
 msgid "Use LUKS encryption: "
 msgstr "Utilitza encriptació LUKS:"
 

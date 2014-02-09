@@ -326,6 +326,9 @@ class InstallationProcess(multiprocessing.Process):
         # In advanced mode, mount all partitions (root and boot are already mounted)
         if self.method == 'advanced':
             for path in self.mount_devices:
+                # Ignore devices without a mount path (or they will be mounted at "self.dest_dir")
+                if path == "":
+                    continue
                 mount_part = self.mount_devices[path]
                 if mount_part != root_partition and mount_part != boot_partition and mount_part != swap_partition:
                     try:
@@ -877,7 +880,6 @@ class InstallationProcess(multiprocessing.Process):
     def install_bootloader_grub2_bios(self):
         """ Install boot loader in a BIOS system """
         grub_location = self.settings.get('bootloader_location')
-
         self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_location)
 
         grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
@@ -895,12 +897,15 @@ class InstallationProcess(multiprocessing.Process):
 
         self.chroot_mount_special_dirs()
 
+        grub_install = ['grub-install', '--directory=/usr/lib/grub/i386-pc', '--target=i386-pc',
+                        '--boot-directory=/boot', '--recheck']
+
         if len(grub_location) > 8:  # ex: /dev/sdXY > 8
-            self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
-                         '--target=i386-pc', '--boot-directory=/boot', '--recheck', '--force', grub_location])
-        else:
-            self.chroot(['grub-install', '--directory=/usr/lib/grub/i386-pc',
-                         '--target=i386-pc', '--boot-directory=/boot', '--recheck', grub_location])
+            grub_install.append("--force")
+
+        grub_install.append(grub_location)
+
+        self.chroot(grub_install)
 
         self.install_bootloader_grub2_locales()
 
