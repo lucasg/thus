@@ -1088,15 +1088,18 @@ class InstallationProcess(multiprocessing.Process):
 
         if self.settings.get("use_luks"):
             hooks.append("encrypt")
-            modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_x86_64", "sha256", "sha512"])
+            if self.arch == 'x86_64':
+                modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_x86_64", "sha256", "sha512"])
+            else:
+                modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_i586", "sha256", "sha512"])
 
         if self.blvm or self.settings.get("use_lvm"):
             hooks.append("lvm2")
 
         if "swap" in self.mount_devices:
-            hooks.extend(["resume", "filesystems", "keyboard"])
+            hooks.extend(["resume", "filesystems", "keyboard", "keymap"])
         else:
-            hooks.extend(["filesystems", "keyboard"])
+            hooks.extend(["filesystems", "keyboard", "keymap"])
 
         if self.settings.get('btrfs') and cpu is not 'genuineintel':
             modules.append('crc32c')

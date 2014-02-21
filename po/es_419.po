@@ -7,6 +7,7 @@
 # CostGranda <costeeleation@openmailbox.org>, 2013
 # CostGranda <costeeleation@openmailbox.org>, 2013
 # Diegongui <diegobacigalup@gmail.com>, 2013
+# Diegongui <diegobacigalup@gmail.com>, 2013
 # tarkin88 <franksg88@gmail.com>, 2013
 # j3nnn1 <jcmm986@gmail.com>, 2012
 # Juan Antonio Cánovas Pérez <traumness@gmail.com>, 2011
@@ -15,25 +16,29 @@
 # LeoG <leonardogln@hotmail.com>, 2013
 # LeoG <leonardogln@hotmail.com>, 2013
 # leonelhermetica <leonelmalon@gmail.com>, 2013
+# Nastrand <luisvalladares94@gmail.com>, 2014
 # manjarolinux <philm@manjaro.org>, 2013
+# Nastrand <luisvalladares94@gmail.com>, 2014
 # neiko <neikokz+tsfx@gmail.com>, 2011
 # Pablo Lezaeta <prflr88@gmail.com>, 2013
 # Pablo Lezaeta <prflr88@gmail.com>, 2013
 # manjarolinux <philm@manjaro.org>, 2013-2014
 # Rodrigo Cares <rcares@gmail.com>, 2012
 # rodrigog83, 2013
+# rodrigog83, 2013
 # Stif <saibot22@gmail.com>, 2013
 # Stif <saibot22@gmail.com>, 2013
 # tarkin88 <franksg88@gmail.com>, 2013
 # tutan_kbron <the.darkspider@gmail.com>, 2013
+# tutan_kbron <the.darkspider@gmail.com>, 2013-2014
 # tutan_kbron <the.darkspider@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-02 03:40+0000\n"
-"Last-Translator: tutan_kbron <the.darkspider@gmail.com>\n"
+"PO-Revision-Date: 2014-02-18 21:26+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/projects/p/manjaro-thus/language/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,7 +182,7 @@ msgstr "Comprobación de Sistema"
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr "tiene como mímino %dGB disponibles de espacio de almacenamiento"
+msgstr "tiene como mínimo %dGB disponibles de espacio de almacenamiento"
 
 #: src/check.py:89
 msgid ""
@@ -406,7 +411,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s está montada como swap.\npara continuar debe ser desmontada.\ncliquee en Sí para desmontar, o en No para regresar\n"
+msgstr "%s está montada como swap.\npara continuar debe ser desmontada.\npresione Sí para desmontar, o No para regresar\n"
 
 #: src/installation/advanced.py:1544
 #, python-format
@@ -414,7 +419,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s está montado en '%s'.\nPara continuar tiene que ser desmontado.\nCliquee en Sí para desmontar, o en No para regresar\n"
+msgstr "%s está montado en '%s'.\nPara continuar tiene que ser desmontado.\nPresione Sí para desmontar, o No para regresar\n"
 
 #: src/installation/advanced.py:1567
 #, python-format
@@ -492,7 +497,7 @@ msgstr "No se puede cargar %s css"
 
 #: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr "Seleccione junto a cual sistema operativo desea instalar junto a Manjaro"
+msgstr "Seleccione cual sistema operativo desea instalar junto a Manjaro"
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
@@ -500,7 +505,7 @@ msgstr "Manjaro junto con otro sistema operativo"
 
 #: src/installation/alongside.py:175
 msgid "Detected OS"
-msgstr "Detectado sistema operativo"
+msgstr "Sistema operativo detectado"
 
 #: src/installation/alongside.py:178
 msgid "Filesystem"
@@ -768,7 +773,7 @@ msgstr "Sistema de archivos del escritorio no existe! Error crítico (saliendo).
 #: src/installation/process.py:525 src/installation/process.py:531
 #, python-format
 msgid "%s is already mounted at %s as %s"
-msgstr "% ya está montada en %s como %s"
+msgstr "%s ya está montada en %s como %s"
 
 #: src/installation/process.py:542
 msgid "Indexing files to be copied ..."
@@ -789,7 +794,7 @@ msgstr "Restaurando metainformación en %s"
 
 #: src/installation/process.py:588
 msgid "Special dirs already mounted."
-msgstr "Dirs especiales ya están montadas"
+msgstr "Los directorios especiales ya están montados"
 
 #: src/installation/process.py:622
 msgid "Special dirs are not mounted. Skipping."
@@ -798,7 +803,7 @@ msgstr "Directorios especiales no estan montados. Salteando."
 #: src/installation/process.py:639 src/installation/process.py:645
 #, python-format
 msgid "Unable to umount %s"
-msgstr "Imposible de desmontar %s"
+msgstr "Imposible desmontar %s"
 
 #: src/installation/process.py:667
 #, python-format
@@ -812,7 +817,7 @@ msgstr "No se puede copiar los archivos de configuración de red"
 #: src/installation/process.py:730 src/installation/process.py:788
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr "Agregado al fstab : UUID= &s %s %s 0 %s"
+msgstr "Agregado al fstab : UUID= %s %s %s %s 0 %s"
 
 #: src/installation/process.py:744
 #, python-format
@@ -901,7 +906,7 @@ msgstr "Configurando los \"hooks\" (ganchos) y los módulos en mkinitcpio.conf"
 #: src/installation/process.py:1134
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr "%s: Activar auto-inicio para el usuario %s."
+msgstr "%s: Activar inicio de sesiòn automatico para el usuario %s."
 
 #: src/installation/process.py:1229 src/installation/process.py:1240
 msgid "Configuring your new system"
@@ -972,7 +977,7 @@ msgstr "Configurar Sistema..."
 
 #: src/installation/process.py:1572
 msgid "Removing live configuration (packages)"
-msgstr "Removiendo configuraciónes vivas (paquetes)"
+msgstr "Removiendo configuraciónes actuales (paquetes)"
 
 #: src/installation/process.py:1588
 msgid "Configuring package manager"
@@ -1234,7 +1239,7 @@ msgstr "Deteniendo procesos de zona horaria..."
 
 #: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr "No se puede obtener el código del país usado para crear la lista de espejos de pacman"
+msgstr "No se puede obtener el código del país usado para crear la lista de mirrors de pacman"
 
 #: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
@@ -1284,7 +1289,7 @@ msgstr "Confirme la contraseña de administrador:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
-msgstr "Este nombre aparecerá en otras computadoras."
+msgstr "El nombre con el que lo verán otras computadoras."
 
 #: src/user_info.py:152
 msgid "You must enter a name"
@@ -1370,7 +1375,7 @@ msgstr "Muchos caracteres"
 
 #: ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr "¿Cuál es su tipo de sistema de arranque?"
+msgstr "¿Cuál es su tipo de cargador de arranque (bootloader)?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1570,4 +1575,4 @@ msgstr "<small><span color=\"darkred\">Debe ingresar un nombre</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr "<span size=\"small\">El nombre es usado cuando se comunica con otros equipos.</span>"
+msgstr "<span size=\"small\">El nombre que sera usado cuando se comunique con otros equipos.</span>"

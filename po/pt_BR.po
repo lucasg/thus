@@ -12,6 +12,7 @@
 # faidoc <faidoc@gmail.com>, 2013
 # holmeslinux <holmes_holmes@live.com>, 2013-2014
 # holmeslinux <holmes_holmes@live.com>, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # marcos.oliveira <marcosaurel_ce@hotmail.com>, 2013
 # marcos.oliveira <marcosaurel_ce@hotmail.com>, 2013
 # brk0_0, 2013
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-01 23:08+0000\n"
+"PO-Revision-Date: 2014-02-18 21:32+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -209,7 +210,7 @@ msgstr "espaço livre"
 
 #: src/installation/advanced.py:266
 msgid "It's not recommended to install grub in a partition"
-msgstr ""
+msgstr "Não é recomendado instalar o grub em uma partição"
 
 #: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
@@ -283,11 +284,11 @@ msgstr "Use este dispositivo para instalação do gerenciador de inicialização
 
 #: src/installation/advanced.py:1113
 msgid "Mount checklist:"
-msgstr ""
+msgstr "Monte checklist:"
 
 #: src/installation/advanced.py:1119
 msgid "Root"
-msgstr ""
+msgstr "Root"
 
 #: src/installation/advanced.py:1123 ui/bootloader.ui:7
 msgid "Boot"
@@ -295,11 +296,11 @@ msgstr "Inicializando"
 
 #: src/installation/advanced.py:1127
 msgid "EFI"
-msgstr ""
+msgstr "EFI"
 
 #: src/installation/advanced.py:1131
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/installation/advanced.py:1139
 msgid "New partition table"
@@ -815,7 +816,7 @@ msgstr "Adicionado ao crypttab : %s"
 #: src/installation/process.py:748
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-msgstr "Adicionado ao fstab: UUID=%s %s %s %s 0 %s"
+msgstr "Adicionado ao fstab: /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
 #: src/installation/process.py:792
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
@@ -850,19 +851,19 @@ msgstr "Instalando localidades GRUB2."
 #: src/installation/process.py:972
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
-msgstr ""
+msgstr "Nenhum carregador OEM encontrado em %s. Copiando Grub(2) no dir."
 
 #: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
-msgstr ""
+msgstr "Copiando Grub(2) no dir OEM falhou. Arquivo não encontrado."
 
 #: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
-msgstr ""
+msgstr "Copiando Grub(2) no dir OEM falhou. Arquivo existe."
 
 #: src/installation/process.py:981
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
-msgstr ""
+msgstr "Copiando Grub(2) no dir OEM falhou. Erro desconhecido."
 
 #: src/installation/process.py:999
 msgid "Generating grub.cfg"
@@ -1085,14 +1086,14 @@ msgstr "Não foi possível remover o volume físico %s"
 #: src/parted3/partition_module.py:107
 #, python-format
 msgid "Unrecognised disk label in device %s."
-msgstr ""
+msgstr "Disco não reconhecido no dispositivo %s."
 
 #: src/parted3/partition_module.py:111
 #, python-format
 msgid ""
 "Exception: %s.\n"
 "For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Exceção: %s.\nPara mais informações, dê uma olhada em /tmp/thus.log"
 
 #: src/parted3/partition_module.py:178
 #, python-format
@@ -1121,7 +1122,7 @@ msgstr "Não foi possível detectar o espaço usado na partição EXTFS %s"
 #: src/parted3/used_space.py:94
 #, python-format
 msgid "Can't detect used space of FAT partition %s"
-msgstr ""
+msgstr "Não é possível detectar o espaço usado de partição FAT %s"
 
 #: src/parted3/used_space.py:125
 #, python-format
@@ -1190,7 +1191,7 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "IMPORTANTE: Pode ter havido um problema com o Grub(2) bootloader \ninstalação que possa impedir o seu sistema de inicializar corretamente. Antes da\nreinicialização, você pode querer verificar se o GRUB(2) está instalado e \nconfigurado. O wiki do Arch Linux contém informações sobre a solução:\nhttps://wiki.archlinux.org/index.php/GRUB\n\nGostaria de ver a página do wiki agora?"
 
 #: src/slides.py:234
 msgid "Do you want to retry?"
@@ -1419,11 +1420,11 @@ msgstr "MB"
 
 #: ui/installation_advanced.ui:895
 msgid "New Partition Table"
-msgstr ""
+msgstr "Nova tabela de partições"
 
 #: ui/installation_advanced.ui:951
 msgid "Mount Checklist:"
-msgstr ""
+msgstr "Monte Checklist:"
 
 #: ui/installation_advanced.ui:1106
 msgid "LVM..."

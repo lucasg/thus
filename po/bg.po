@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-06 16:34+0000\n"
+"PO-Revision-Date: 2014-02-13 08:51+0000\n"
 "Last-Translator: RacerBG <georgiev_1994@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/manjaro-thus/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Спиране на инсталатора..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr ""
+msgstr "Задаване на данните от Thus на ниво „debug\""
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
@@ -67,7 +67,7 @@ msgstr "Не извършвай никакви промени (полезно з
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr ""
+msgstr "Показване на входните съобщения в stdout"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
@@ -373,7 +373,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr ""
+msgstr "GRUB изисква BIOS зареждащ дял (2 МБ, без файлова система, \"EF02\" код в gdisk или \"bios_grub\" флаг в GNU Parted) в BIOS системи за да вгради файла core.img, поради липсата на пост-MBR вградена празнина в GPT дискове.\n\nThus ще създаде този специален дял сега."
 
 #: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
@@ -728,7 +728,7 @@ msgstr "Инсталиране на boot loader ..."
 #: src/installation/process.py:421
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "Данните от Thus не могат да се копират в %s"
 
 #: src/installation/process.py:440 src/installation/process.py:459
 #: src/installation/process.py:473
@@ -840,7 +840,7 @@ msgstr "Инсталиране на Grub2 локали."
 #: src/installation/process.py:972
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
-msgstr ""
+msgstr "Не е намерено ОЕМ зареждащо устройство в %s. Копиране на Grub(2) в директорията."
 
 #: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
@@ -879,7 +879,7 @@ msgstr "Грешка при промяна на паролата на потре
 
 #: src/installation/process.py:1055
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Настройване на куки и модули в mkinitcpio.conf"
 
 #: src/installation/process.py:1134
 #, python-format

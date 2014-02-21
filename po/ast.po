@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-07 09:57+0000\n"
+"PO-Revision-Date: 2014-02-10 23:19+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/manjaro-thus/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -270,7 +270,7 @@ msgstr "Usar esti preséu pa la instalación del xestor d'arranque:"
 
 #: src/installation/advanced.py:1113
 msgid "Mount checklist:"
-msgstr ""
+msgstr "Llista de montaxes:"
 
 #: src/installation/advanced.py:1119
 msgid "Root"
@@ -897,7 +897,7 @@ msgstr "Copiada configuración de rede."
 
 #: src/installation/process.py:1264
 msgid "Time zone set."
-msgstr ""
+msgstr "Afitóse la zona horaria"
 
 #: src/installation/process.py:1285
 #, python-format
@@ -1014,7 +1014,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus ye software beta de pre llanzamientu que ta baxo desendolcu activu.\nNun remana afayadizamente RAID, sovolumes btrfs, u otres configuraciones avanzaes. ¡Por favor sigui con procuru porque ye dable una perda de datos!\n\nSi alcuentres cualaquier bug, por favor repórtalos a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "Thus ye software beta de pre llanzamientu que ta baxo desendolcu activu.\nNun remana afayadizamente RAID, sovolumes btrfs, u otres configuraciones avanzaes.\n¡Por favor sigui con procuru porque ye dable una perda de datos!\n\nSi alcuentres cualaquier bug, por favor repórtalos a <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
@@ -1410,7 +1410,7 @@ msgstr "Tabla particiones nueva"
 
 #: ui/installation_advanced.ui:951
 msgid "Mount Checklist:"
-msgstr ""
+msgstr "Llista de montaxes:"
 
 #: ui/installation_advanced.ui:1106
 msgid "LVM..."
@@ -1526,7 +1526,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>Anuncia: L'instalador Thus ye software beta.</span>\n\nThus ye un software pre llanzamientu que ta baxo desendolcu activu. Tá nun remana RAID, sovolumes btrfs, u otres configuraciones avanzaes. ¡Por favor, sigui con procuru porque ye dable una perda datos!\n\nSi alcuentres cualaquier bug, por favor, visita <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "<span weight='bold'>Anuncia: L'instalador Thus ye software beta.</span>\n\nThus ye un software pre llanzamientu que ta baxo desendolcu activu. Tá nun remana RAID, sovolumes btrfs, u otres configuraciones avanzaes. \n¡Por favor, sigui con procuru porque ye dable una perda datos!\n\nSi alcuentres cualaquier bug, por favor, visita <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"

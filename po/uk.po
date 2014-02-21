@@ -8,6 +8,7 @@
 # probil <m_lyashuk@ukr.net>, 2013
 # Rax Garfield <admin@dvizho.ks.ua>, 2012
 # rom85 <rom85@i.ua>, 2013
+# rom85 <rom85@i.ua>, 2013
 # sevenfourk <sevenfourk@gmail.com>, 2012
 # Valentine Zgonnik <noisyislands@gmail.com>, 2013
 # zubr139 <zubr139@ukr.net>, 2013-2014
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-01 23:08+0000\n"
+"PO-Revision-Date: 2014-02-18 21:35+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/manjaro-thus/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -1003,7 +1004,7 @@ msgstr "Варіанти"
 #: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr "розкладка_клавіатури keyboard_layout"
+msgstr "розкладка_клавіатури keyboard_layout %s"
 
 #: src/language.py:78
 msgid "Please choose your language:"
