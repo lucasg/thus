@@ -146,7 +146,7 @@ class Keymap(Gtk.Box):
         # Add layouts (sorted)
         for layout in sorted_layouts:
             liststore.append([layout])
-        
+
         # Unblock signal
         self.layout_treeview.handler_unblock_by_func(self.on_keyboardlayout_cursor_changed)
 

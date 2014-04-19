@@ -1629,6 +1629,8 @@ class InstallationAdvanced(Gtk.Box):
         bold = "<b>%s</b>"
         y = 0
 
+        self.to_be_deleted.sort()
+
         # First, show partitions that will be deleted
         for ea in self.to_be_deleted:
             lbl = Gtk.Label(_("Partition %s will be deleted") % ea, margin=margin)
@@ -1675,6 +1677,8 @@ class InstallationAdvanced(Gtk.Box):
             # Something wrong has happened or nothing to change
             return False
 
+        changelist.sort()
+
         response = self.show_changes(changelist)
         if response == Gtk.ResponseType.CANCEL:
             return False
@@ -1705,7 +1709,10 @@ class InstallationAdvanced(Gtk.Box):
     def create_staged_partitions(self):
         """ Create staged partitions """
         # Sometimes a swap partition can still be active at this point
-        subp = subprocess.Popen(['sh', '-c', 'swapoff -a'], stdout=subprocess.PIPE)
+        swaps = subprocess.check_output(["swapon", "--show=NAME", "--noheadings"]).decode().split("\n")
+        for name in filter(None, swaps):
+            if "/dev/zram" not in name:
+                subp = subprocess.Popen(['sh', '-c', 'swapoff %s' % name], stdout=subprocess.PIPE)
 
         partitions = {}
         if self.disks is not None:

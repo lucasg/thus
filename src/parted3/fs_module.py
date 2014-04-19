@@ -200,6 +200,16 @@ def resize_fat(part, new_size_in_mb):
 @misc.raise_privileges
 def resize_ext(part, new_size_in_mb):
     """ Resize an ext partition """
+
+    # first we need to e2fsck -f /dev/sdx#
+
+    try:
+        print("about to call e2fsck on" + part)
+        subprocess.check_output(["e2fsck", "-fy", part])
+    except subprocess.CalledProcessError as err:
+        logging.error(err)
+        return False
+
     logging.debug("resize2fs %s %sM", part, str(new_size_in_mb))
 
     try:

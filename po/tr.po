@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-10 20:31+0000\n"
+"POT-Creation-Date: 2014-04-04 22:10+0200\n"
+"PO-Revision-Date: 2014-04-15 12:29+0000\n"
 "Last-Translator: tulliana <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -74,48 +74,48 @@ msgstr "stdout ile kayıt tutma iletilerini göster"
 msgid "Show options in development (DO NOT USE THIS!)"
 msgstr "Geliştirme seçeneklerini göster (BUNU KULLANMAYIN!)"
 
-#: src/installation/auto_partition.py:74 src/installation/auto_partition.py:83
-#: src/installation/process.py:432 src/installation/process.py:449
-#: src/installation/process.py:464
+#: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
+#: src/installation/process.py:428 src/installation/process.py:445
+#: src/installation/process.py:460
 #, python-format
 msgid "Unmounting %s"
 msgstr "Ayrılıyor %s"
 
-#: src/installation/auto_partition.py:78 src/installation/auto_partition.py:87
+#: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr "%s ayırma başarısız. arg yavaş ta olsa deniyor."
 
-#: src/installation/auto_partition.py:107
+#: src/installation/auto_partition.py:110
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr "LVM bölümü silemezsiniz (aşağıya bakınız)"
 
-#: src/installation/auto_partition.py:117
+#: src/installation/auto_partition.py:120
 msgid "Can't close LUKS devices (see below)"
 msgstr "LUKS aygıtları kapatamazsınız (aşağıya bakınız)"
 
-#: src/installation/auto_partition.py:166
+#: src/installation/auto_partition.py:175
 #, python-format
-msgid "Unkown filesystem type %s"
-msgstr "%s Bilinmeyen dosya sistemi tipi"
+msgid "Unknown filesystem type %s"
+msgstr "Bilinmeyen dosya sistemi tipi %s"
 
-#: src/installation/auto_partition.py:176
+#: src/installation/auto_partition.py:185
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr "%s Dosya sistemi oluşturulamıyor"
 
-#: src/installation/auto_partition.py:322
+#: src/installation/auto_partition.py:345
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "Thus, %s aygıtına LUKS ile kuracak"
 
-#: src/installation/auto_partition.py:378
+#: src/installation/auto_partition.py:404
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr "Kurulum disk boyutunu algılayamadı, bölümleme ve bağlama işleri için gelişmiş kurulum seçeneğini kullanın."
 
-#: src/installation/auto_partition.py:534
+#: src/installation/auto_partition.py:566
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "%s aygıtına LVM kuracağız"
@@ -244,7 +244,7 @@ msgstr "-"
 
 #: src/installation/advanced.py:548 src/installation/advanced.py:962
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1738 src/installation/advanced.py:1832
+#: src/installation/advanced.py:1741 src/installation/advanced.py:1835
 msgid "extended"
 msgstr "uzatılmış"
 
@@ -268,7 +268,7 @@ msgstr "Mantıksal bölüm oluşturuluyor"
 msgid "Advanced installation mode"
 msgstr "Gelişmiş kurulum kipi"
 
-#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1160
+#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
 msgstr "Önyükleyici kurulumu için bu aygıtı kullan:"
 
@@ -278,7 +278,7 @@ msgstr "Kontrol listesini bağla:"
 
 #: src/installation/advanced.py:1119
 msgid "Root"
-msgstr "Root"
+msgstr "Root-Kök"
 
 #: src/installation/advanced.py:1123 ui/bootloader.ui:7
 msgid "Boot"
@@ -436,36 +436,38 @@ msgstr "Bağla"
 msgid "These disks will have partition actions:"
 msgstr "Bu disklerde yapılacak bölümlendirme işlemleri:"
 
-#: src/installation/advanced.py:1717
+#: src/installation/advanced.py:1720
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "%s yapılan değişiklikler kaydediliyor"
 
-#: src/installation/advanced.py:1741
+#: src/installation/advanced.py:1744
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "%s Dosya sistemi içine %s etiketlendi %s oluşturuldu"
 
-#: src/installation/advanced.py:1783
+#: src/installation/advanced.py:1786
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr "%s bölüm içine boot bayrağı ayarlanıyor"
 
-#: src/installation/advanced.py:1802
+#: src/installation/advanced.py:1805
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr "Bölümler biçimlendirilemez '%s' etiketle '%s' olarak '%s'"
 
-#: src/installation/advanced.py:1843 src/installation/automatic.py:226
+#: src/installation/advanced.py:1846 src/installation/alongside.py:499
+#: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
 msgstr "Thus herhangi bir önyükleyici kurmayacak"
 
-#: src/installation/advanced.py:1853
+#: src/installation/advanced.py:1856
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro %s türü %s önyükleyiciyi kuracak"
 
-#: src/installation/advanced.py:1869 src/installation/automatic.py:247
+#: src/installation/advanced.py:1872 src/installation/alongside.py:512
+#: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Test modu. Thus sisteminizde herhangi bir değişiklik yapmayacaktır!"
 
@@ -502,14 +504,32 @@ msgstr "Kurulum için bölüm listesi oluşturulamadı."
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Disk bölümü küçültülemiyor (belki çoğu dolu olabilir)"
 
-#: src/installation/alongside.py:355
+#: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
 msgstr "Çok fazla birincil bölüm var, yeni birini daha oluşturamazsınız"
 
-#: src/installation/alongside.py:388
+#: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
 msgstr "Dosya sistemi %s(%s) küçültülemedi"
+
+#: src/installation/alongside.py:399
+#, python-format
+msgid "Can't shrink %s(%s) partition"
+msgstr "%s(%s) bölümü küçültülemez"
+
+#: src/installation/alongside.py:418 src/installation/alongside.py:470
+msgid "Cannot create new partition."
+msgstr "Yeni bölüm oluşturulamadı."
+
+#: src/installation/alongside.py:458
+msgid "Cannot create new swap partition."
+msgstr "Yeni bir swap bölümü oluşturulamadı."
+
+#: src/installation/alongside.py:495 src/installation/automatic.py:222
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr "Thus önyükleyici olarak %s üzerine %s kuracak"
 
 #: src/installation/ask.py:99
 msgid "Installation type"
@@ -521,7 +541,7 @@ msgstr "Diski sil ve Manjaro yükle (otomatik)"
 
 #: src/installation/ask.py:116
 msgid "Warning: This will delete all data on your disk"
-msgstr "Uyarı: Bu işlem, diğer işletim sisteminin kullandığı ​​disk üzerindeki tüm programları, resimleri, belgeleri, müzikleri, diğer verileri siler"
+msgstr "Uyarı: Bu işlem, ​​disk üzerindeki tüm programları, resimleri, belgeleri, müzikleri, diğer verileri siler"
 
 #: src/installation/ask.py:122
 msgid "Encrypt this installation for increased security."
@@ -636,11 +656,6 @@ msgstr "Gerçekten devam etmek ve harddiskteki tüm içeriği silmek istiyor mus
 msgid "Thus will use %s as installation device"
 msgstr "Thus kurulum için %s sürücüsünü kullanacak"
 
-#: src/installation/automatic.py:222
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus önyükleyici olarak %s üzerine %s kuracak"
-
 #: src/installation/process.py:84
 #, python-format
 msgid "Copying '/%s'"
@@ -660,325 +675,325 @@ msgstr "Bölümler ve dosya sistemlerii oluşturuluyor %s"
 msgid "Error creating partitions and their filesystems"
 msgstr "Bölümleme ve dosya sistemi oluşturma hatası"
 
-#: src/installation/process.py:265 src/installation/process.py:342
-#: src/installation/process.py:640
+#: src/installation/process.py:265 src/installation/process.py:338
+#: src/installation/process.py:636
 #, python-format
 msgid "Command %s has failed."
 msgstr "%s komutu başarısız oldu."
 
-#: src/installation/process.py:267 src/installation/process.py:321
-#: src/installation/process.py:344 src/installation/process.py:367
-#: src/installation/process.py:642
+#: src/installation/process.py:267 src/installation/process.py:314
+#: src/installation/process.py:340 src/installation/process.py:363
+#: src/installation/process.py:638
 #, python-format
 msgid "Output : %s"
 msgstr "Çıktı: %s"
 
-#: src/installation/process.py:307 src/installation/process.py:335
+#: src/installation/process.py:300 src/installation/process.py:331
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Bölüme bağlanıyor %s dizinine %s dizini"
 
-#: src/installation/process.py:313
+#: src/installation/process.py:306
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Bölüme bağlanıyor %s dizinine %s/boot dizini"
 
-#: src/installation/process.py:317
+#: src/installation/process.py:310
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kök-Root ve önyükleme bölümleri bağlanamadı"
 
-#: src/installation/process.py:319 src/installation/process.py:365
+#: src/installation/process.py:312 src/installation/process.py:361
 #, python-format
 msgid "Command %s has failed"
 msgstr "%s komutu başarısız oldu"
 
-#: src/installation/process.py:340
+#: src/installation/process.py:336
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Bağlanamadı %s in %s"
 
-#: src/installation/process.py:355
+#: src/installation/process.py:351
 #, python-format
 msgid "%s deleted"
 msgstr "%s silindi"
 
-#: src/installation/process.py:363
+#: src/installation/process.py:359
 msgid "Can't create necessary directories on destination system"
 msgstr "Hedef sistemde gerekli dizinleri oluşturulamıyor"
 
-#: src/installation/process.py:375
+#: src/installation/process.py:371
 msgid "Install System ..."
 msgstr "Sistem Kuruluyor ..."
 
-#: src/installation/process.py:380
+#: src/installation/process.py:376
 msgid "System installed."
 msgstr "Sistem Kuruldu."
 
-#: src/installation/process.py:382
+#: src/installation/process.py:378
 msgid "Configuring system ..."
 msgstr "Sistem yapılandırılıyor ..."
 
-#: src/installation/process.py:384
+#: src/installation/process.py:380
 msgid "System configured."
 msgstr "Sistem yapılandırıldı."
 
-#: src/installation/process.py:388
+#: src/installation/process.py:384
 msgid "Installing boot loader ..."
 msgstr "Önyükleyici kuruluyor ..."
 
-#: src/installation/process.py:421
+#: src/installation/process.py:417
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "Thus logları %s üzerine kaydedemedi"
 
-#: src/installation/process.py:440 src/installation/process.py:459
-#: src/installation/process.py:473
+#: src/installation/process.py:436 src/installation/process.py:455
+#: src/installation/process.py:469
 #, python-format
 msgid "Can't unmount %s"
 msgstr "%s Ayıramazsınız"
 
-#: src/installation/process.py:475
+#: src/installation/process.py:471
 msgid "Installation finished successfully."
 msgstr "Kurulum başarıyla tamamlandı."
 
-#: src/installation/process.py:511
+#: src/installation/process.py:507
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Taban dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 
-#: src/installation/process.py:515
+#: src/installation/process.py:511
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Masaüstü dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 
-#: src/installation/process.py:525 src/installation/process.py:531
+#: src/installation/process.py:521 src/installation/process.py:527
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s zaten bağlanmış %s olarak %s"
 
-#: src/installation/process.py:542
+#: src/installation/process.py:538
 msgid "Indexing files to be copied ..."
 msgstr "Dosyalar kopyalanmak üzere listeleniyor ..."
 
-#: src/installation/process.py:547
+#: src/installation/process.py:543
 msgid "Extracting root-image ..."
 msgstr "root-imajı aktarılıyor ..."
 
-#: src/installation/process.py:557
+#: src/installation/process.py:553
 msgid "Extracting desktop-image ..."
 msgstr "Masaüstü-imajı Aktarılıyor ..."
 
-#: src/installation/process.py:572
+#: src/installation/process.py:568
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Meta-bilgi geri yükleme %s"
 
-#: src/installation/process.py:588
+#: src/installation/process.py:584
 msgid "Special dirs already mounted."
 msgstr "Özel disk zaten bağlı."
 
-#: src/installation/process.py:622
+#: src/installation/process.py:618
 msgid "Special dirs are not mounted. Skipping."
 msgstr "Özel dizin bağlanmadı. Atlanıyor."
 
-#: src/installation/process.py:639 src/installation/process.py:645
+#: src/installation/process.py:635 src/installation/process.py:641
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Ayırma işlemi yapılamadı %s"
 
-#: src/installation/process.py:667
+#: src/installation/process.py:663
 #, python-format
 msgid "Error running command: %s"
 msgstr "Komut hatalı çalışıyor: %s"
 
-#: src/installation/process.py:700
+#: src/installation/process.py:696
 msgid "Can't copy network configuration files"
 msgstr "Ağ dosyalarının kopyalanması başarısız oldu"
 
-#: src/installation/process.py:730 src/installation/process.py:788
+#: src/installation/process.py:726 src/installation/process.py:784
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "fstab içine eklendi : UUID=%s %s %s %s 0 %s"
 
-#: src/installation/process.py:744
+#: src/installation/process.py:740
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "Crypttab'a eklendi: %s"
 
-#: src/installation/process.py:748
+#: src/installation/process.py:744
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "fstab'a eklendi : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:792
+#: src/installation/process.py:788
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "fstab'a eklendi : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:881
+#: src/installation/process.py:876
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "%s üzerine GRUB(2) yükleniyor ve BIOS önyükleyici oluşturuluyor"
 
-#: src/installation/process.py:891 src/installation/process.py:917
+#: src/installation/process.py:886 src/installation/process.py:915
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS yükleme hatası."
 
-#: src/installation/process.py:914
+#: src/installation/process.py:912
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS başarıyla yüklenmiştir."
 
-#: src/installation/process.py:938
+#: src/installation/process.py:936
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "GRUB(2) UEFI Yükleme HATASI."
 
-#: src/installation/process.py:946
+#: src/installation/process.py:944
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr "%s önyükleyici GRUB(2) UEFI ile kuruluyor"
 
-#: src/installation/process.py:959
+#: src/installation/process.py:957
 msgid "Installing Grub2 locales."
 msgstr "Grub2 yükleniyor."
 
-#: src/installation/process.py:972
+#: src/installation/process.py:970
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr "%s üzerinde OEM yükleyici bulunamadı. Grub(2) dir içine kopyalanıyor."
 
-#: src/installation/process.py:977
+#: src/installation/process.py:975
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr "Grub(2) OEM dir içine kopyalanamadı. Dosya Bulunamadı."
 
-#: src/installation/process.py:979
+#: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr "Grub(2) OEM dir içine kopyalanamadı. Dosya Mevcut."
 
-#: src/installation/process.py:981
+#: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr "Grub(2) OEM dir içine kopyalanamadı. Bilinmeyen Hata."
 
-#: src/installation/process.py:999
+#: src/installation/process.py:997
 msgid "Generating grub.cfg"
 msgstr "grub.cfg oluşturuluyor"
 
-#: src/installation/process.py:1021
+#: src/installation/process.py:1019
 msgid "ERROR installing GRUB(2) locale."
 msgstr "Yükleme hatası GRUB(2) yerel."
 
-#: src/installation/process.py:1030
+#: src/installation/process.py:1028
 #, python-format
 msgid "Enabled %s service."
 msgstr "%s Servisi etkin."
 
-#: src/installation/process.py:1037
+#: src/installation/process.py:1035
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Kullanıcı karma şifre değiştirme hatası %s"
 
-#: src/installation/process.py:1043
+#: src/installation/process.py:1041
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Kullanıcı şifre değiştirme hatası %s"
 
-#: src/installation/process.py:1055
+#: src/installation/process.py:1053
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "mkinitcpio.conf içine kanca ve modül ayarlanmaları"
 
-#: src/installation/process.py:1134
+#: src/installation/process.py:1135
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Kullanıcı için otomatik giriş etkin %s."
 
-#: src/installation/process.py:1229 src/installation/process.py:1240
+#: src/installation/process.py:1230 src/installation/process.py:1241
 msgid "Configuring your new system"
 msgstr "Kurulan sistem yapılandırılıyor..."
 
-#: src/installation/process.py:1232
+#: src/installation/process.py:1233
 msgid "fstab file generated."
 msgstr "fstab dosyası oluşturuldu."
 
-#: src/installation/process.py:1238
+#: src/installation/process.py:1239
 msgid "Network configuration copied."
 msgstr "Ağ yapılandırması kopyalandı."
 
-#: src/installation/process.py:1264
+#: src/installation/process.py:1265
 msgid "Time zone set."
 msgstr "Saat Zaman Ayarı"
 
-#: src/installation/process.py:1285
+#: src/installation/process.py:1286
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Kullanıcı için sudo yapılandırması %s yapılır."
 
-#: src/installation/process.py:1295
+#: src/installation/process.py:1296
 #, python-format
 msgid "User %s added."
 msgstr "Kullanıcı %s eklendi."
 
-#: src/installation/process.py:1307
+#: src/installation/process.py:1308
 #, python-format
 msgid "Hostname  %s set."
 msgstr "Hostname %s ayarlaması."
 
-#: src/installation/process.py:1312
+#: src/installation/process.py:1313
 msgid "Set root password."
 msgstr "Root şifresini ayarlayın."
 
-#: src/installation/process.py:1315
+#: src/installation/process.py:1316
 msgid "Set the same password to root."
 msgstr "Aynı şifreyi kök için ayarlayın."
 
-#: src/installation/process.py:1321
+#: src/installation/process.py:1322
 msgid "Generating locales ..."
 msgstr "Yereliniz yapılandırılıyor ..."
 
-#: src/installation/process.py:1339
+#: src/installation/process.py:1340
 msgid "Adjusting hardware clock ..."
 msgstr "Donanım saati ayarlanıyor ..."
 
-#: src/installation/process.py:1348
+#: src/installation/process.py:1349
 msgid "Configuring hardware ..."
 msgstr "Donanım yapılandırılıyor ..."
 
-#: src/installation/process.py:1421
+#: src/installation/process.py:1422
 msgid "Set up graphics card ..."
 msgstr "Ekran kartı kuruluyor ve yapılandırılıyor ..."
 
-#: src/installation/process.py:1428
+#: src/installation/process.py:1429
 msgid "Can't execute the MHWD script"
 msgstr "MHWD komut dosyasını yürütemedi"
 
-#: src/installation/process.py:1441
+#: src/installation/process.py:1442
 msgid "Configure display manager ..."
 msgstr "Ekran yöneticisi yapılandırılıyor ..."
 
-#: src/installation/process.py:1547
+#: src/installation/process.py:1548
 msgid "Configure System ..."
 msgstr "Sistem Yapılandırılıyor ..."
 
-#: src/installation/process.py:1572
+#: src/installation/process.py:1573
 msgid "Removing live configuration (packages)"
 msgstr "Geçici konfigürasyonlar kaldırılıyor (paketler)"
 
-#: src/installation/process.py:1588
+#: src/installation/process.py:1589
 msgid "Configuring package manager"
 msgstr "Paket yöneticisi yapılandırılıyor"
 
-#: src/installation/process.py:1600
+#: src/installation/process.py:1601
 msgid "Finished configuring package manager."
 msgstr "Paket yönetici yapılandırması tamamlandı."
 
-#: src/installation/process.py:1624
+#: src/installation/process.py:1625
 msgid "Running mkinitcpio ..."
 msgstr "mkinitcpio çalıştırılıyor ..."
 
-#: src/installation/process.py:1627
+#: src/installation/process.py:1628
 msgid "Running mkinitcpio - done"
 msgstr "mkinitcpio çalışma sonucu- başarılı"
 
-#: src/installation/process.py:1643
+#: src/installation/process.py:1644
 msgid "Encrypting user home dir ..."
 msgstr "Kullanıcı Ev Dizini şifreleniyor ..."
 
-#: src/installation/process.py:1645
+#: src/installation/process.py:1646
 msgid "User home dir encrypted"
 msgstr "Kullanıcı Ev Dizini şifrelendi"
 
@@ -1073,28 +1088,33 @@ msgstr "Disk grubunu silinemezsiniz %s"
 msgid "Can't remove physical volume %s"
 msgstr "Fiziksel diski silemezsiniz %s"
 
-#: src/parted3/partition_module.py:107
+#: src/parted3/partition_module.py:106
+#, python-format
+msgid "Adding %s to disk_dic"
+msgstr "%s ekleniyor disk_dic"
+
+#: src/parted3/partition_module.py:108
 #, python-format
 msgid "Unrecognised disk label in device %s."
 msgstr "%s aygıtı içinde tanınmayan disk bölümü."
 
-#: src/parted3/partition_module.py:111
+#: src/parted3/partition_module.py:112
 #, python-format
 msgid ""
 "Exception: %s.\n"
 "For more information take a look at /tmp/thus.log"
 msgstr "Ayrıcalık: %s.\nDaha fazla bilgi için /tmp/thus.log dosyasına göz atın"
 
-#: src/parted3/partition_module.py:178
+#: src/parted3/partition_module.py:179
 #, python-format
 msgid "Can't delete partition %s"
 msgstr "Disk bölümünü silemezsiniz %s"
 
-#: src/parted3/partition_module.py:229
+#: src/parted3/partition_module.py:230
 msgid "Partition is too large!"
 msgstr "Disk bölümü çok büyük!"
 
-#: src/parted3/partition_module.py:289
+#: src/parted3/partition_module.py:290
 #, python-format
 msgid "Can't detect used space from %s"
 msgstr "%s Kullanılan alanı algılayamaz"
@@ -1412,27 +1432,27 @@ msgstr "MB"
 msgid "New Partition Table"
 msgstr "Yeni Disk Tablosu"
 
-#: ui/installation_advanced.ui:951
+#: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"
 msgstr "Kontrol listesini bağla:"
 
-#: ui/installation_advanced.ui:1106
+#: ui/installation_advanced.ui:1103
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_advanced.ui:1259
+#: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
 msgstr "LUKS birim adı:"
 
-#: ui/installation_advanced.ui:1273
+#: ui/installation_advanced.ui:1270
 msgid "Password:"
 msgstr "Şifre:"
 
-#: ui/installation_advanced.ui:1287
+#: ui/installation_advanced.ui:1284
 msgid "Confirm password:"
 msgstr "Şifreyi doğrula:"
 
-#: ui/installation_advanced.ui:1316
+#: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
 msgstr "LUKS şifreleme kullan: "
 

@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-08 12:40+0000\n"
-"Last-Translator: Ulseth85 <ulseth85@gmail.com>\n"
+"POT-Creation-Date: 2014-04-04 22:10+0200\n"
+"PO-Revision-Date: 2014-04-13 11:41+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/manjaro-thus/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,48 +72,48 @@ msgstr "Vis logger til stdout"
 msgid "Show options in development (DO NOT USE THIS!)"
 msgstr "Vis alternativer i utvikling (IKKE BRUK DENNE!)"
 
-#: src/installation/auto_partition.py:74 src/installation/auto_partition.py:83
-#: src/installation/process.py:432 src/installation/process.py:449
-#: src/installation/process.py:464
+#: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
+#: src/installation/process.py:428 src/installation/process.py:445
+#: src/installation/process.py:460
 #, python-format
 msgid "Unmounting %s"
 msgstr "Avmonterer %s"
 
-#: src/installation/auto_partition.py:78 src/installation/auto_partition.py:87
+#: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr "Demontering av %s mislyktes. Prøver lazy arg."
 
-#: src/installation/auto_partition.py:107
+#: src/installation/auto_partition.py:110
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr "Kan ikke slette eksisterende LVM dataområder (se nedenfor)"
 
-#: src/installation/auto_partition.py:117
+#: src/installation/auto_partition.py:120
 msgid "Can't close LUKS devices (see below)"
 msgstr "Kan ikke lukke LUKS enheter (se nedenfor)"
 
-#: src/installation/auto_partition.py:166
+#: src/installation/auto_partition.py:175
 #, python-format
-msgid "Unkown filesystem type %s"
-msgstr "Ukjent filsystem type %s"
+msgid "Unknown filesystem type %s"
+msgstr ""
 
-#: src/installation/auto_partition.py:176
+#: src/installation/auto_partition.py:185
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr "Kan ikke opprette filsystemet %s"
 
-#: src/installation/auto_partition.py:322
+#: src/installation/auto_partition.py:345
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "Thus vil sette opp LUKS på enhet %s"
 
-#: src/installation/auto_partition.py:378
+#: src/installation/auto_partition.py:404
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr "Installasjonsprogrammet kan kan ikke påvise størrelsen på enheten din, vennligst bruk avanserte installasjonsrutine for partisjonering og montering enheter."
 
-#: src/installation/auto_partition.py:534
+#: src/installation/auto_partition.py:566
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "Vil sette opp LVM på enheten %s"
@@ -242,7 +242,7 @@ msgstr "ingen"
 
 #: src/installation/advanced.py:548 src/installation/advanced.py:962
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1738 src/installation/advanced.py:1832
+#: src/installation/advanced.py:1741 src/installation/advanced.py:1835
 msgid "extended"
 msgstr "utvidet"
 
@@ -266,7 +266,7 @@ msgstr "Oppretter logisk partisjon"
 msgid "Advanced installation mode"
 msgstr "Avansert installasjon modus"
 
-#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1160
+#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
 msgstr "Bruk denne enheten for boot Laster installasjon:"
 
@@ -434,36 +434,38 @@ msgstr "Monter"
 msgid "These disks will have partition actions:"
 msgstr "Disse diskene vil ha partisjon handlinger:"
 
-#: src/installation/advanced.py:1717
+#: src/installation/advanced.py:1720
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Lagre endringer som er gjort i %s"
 
-#: src/installation/advanced.py:1741
+#: src/installation/advanced.py:1744
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Opprette %s filsystem i %s merket %s"
 
-#: src/installation/advanced.py:1783
+#: src/installation/advanced.py:1786
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr "Sette boot flagget i %s partisjon"
 
-#: src/installation/advanced.py:1802
+#: src/installation/advanced.py:1805
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr "Kunne ikke formatere partisjonen '%s' med etiketten '%s' er '%s'"
 
-#: src/installation/advanced.py:1843 src/installation/automatic.py:226
+#: src/installation/advanced.py:1846 src/installation/alongside.py:499
+#: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
 msgstr "Thus vil ikke installere noen oppstartslaster"
 
-#: src/installation/advanced.py:1853
+#: src/installation/advanced.py:1856
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro vil installere bootloader av typen %s på %s"
 
-#: src/installation/advanced.py:1869 src/installation/automatic.py:247
+#: src/installation/advanced.py:1872 src/installation/alongside.py:512
+#: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Testing modus. Thus vil ikke bruke eventuelle endringer i systemet!"
 
@@ -500,14 +502,32 @@ msgstr "Kan ikke lage liste over partisjoner for sammen med installasjonen."
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Kan ikke krympe partisjonen (kanskje den er nesten full?)"
 
-#: src/installation/alongside.py:355
+#: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
 msgstr "Det er for mange primære partisjoner, kan ikke opprette en ny"
 
-#: src/installation/alongside.py:388
+#: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
 msgstr "Kan kan ikke krympe %s(%s) filsystem"
+
+#: src/installation/alongside.py:399
+#, python-format
+msgid "Can't shrink %s(%s) partition"
+msgstr ""
+
+#: src/installation/alongside.py:418 src/installation/alongside.py:470
+msgid "Cannot create new partition."
+msgstr ""
+
+#: src/installation/alongside.py:458
+msgid "Cannot create new swap partition."
+msgstr ""
+
+#: src/installation/alongside.py:495 src/installation/automatic.py:222
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr "Thus vil installere bootloader av typen %s på %s"
 
 #: src/installation/ask.py:99
 msgid "Installation type"
@@ -634,11 +654,6 @@ msgstr "Ønsker du virkelig å fortsette og slette alt innholdet på harddisken?
 msgid "Thus will use %s as installation device"
 msgstr "Thus vil bruke %s som installasjons enhet"
 
-#: src/installation/automatic.py:222
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus vil installere bootloader av typen %s på %s"
-
 #: src/installation/process.py:84
 #, python-format
 msgid "Copying '/%s'"
@@ -658,325 +673,325 @@ msgstr "Opprette partisjoner og deres filsystemer i %s"
 msgid "Error creating partitions and their filesystems"
 msgstr "Feil ved oppretting av partisjoner og filsystemer"
 
-#: src/installation/process.py:265 src/installation/process.py:342
-#: src/installation/process.py:640
+#: src/installation/process.py:265 src/installation/process.py:338
+#: src/installation/process.py:636
 #, python-format
 msgid "Command %s has failed."
 msgstr "Kommandoen %s mislyktes."
 
-#: src/installation/process.py:267 src/installation/process.py:321
-#: src/installation/process.py:344 src/installation/process.py:367
-#: src/installation/process.py:642
+#: src/installation/process.py:267 src/installation/process.py:314
+#: src/installation/process.py:340 src/installation/process.py:363
+#: src/installation/process.py:638
 #, python-format
 msgid "Output : %s"
 msgstr "Utgang : %s"
 
-#: src/installation/process.py:307 src/installation/process.py:335
+#: src/installation/process.py:300 src/installation/process.py:331
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Monterer partisjon %s inn i %s mappen"
 
-#: src/installation/process.py:313
+#: src/installation/process.py:306
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Monterer partisjonen %s inn i %s/boot mappen"
 
-#: src/installation/process.py:317
+#: src/installation/process.py:310
 msgid "Couldn't mount root and boot partitions"
 msgstr "Montering av root og boot partisjonene feilet"
 
-#: src/installation/process.py:319 src/installation/process.py:365
+#: src/installation/process.py:312 src/installation/process.py:361
 #, python-format
 msgid "Command %s has failed"
 msgstr "Kommandoen %s feilet"
 
-#: src/installation/process.py:340
+#: src/installation/process.py:336
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Montering av %s inn i %s feilet"
 
-#: src/installation/process.py:355
+#: src/installation/process.py:351
 #, python-format
 msgid "%s deleted"
 msgstr "%s slettet"
 
-#: src/installation/process.py:363
+#: src/installation/process.py:359
 msgid "Can't create necessary directories on destination system"
 msgstr "De nødvendige mappene kunne ikke bli lagret i destinasjonssystemet"
 
-#: src/installation/process.py:375
+#: src/installation/process.py:371
 msgid "Install System ..."
 msgstr "Installer System ..."
 
-#: src/installation/process.py:380
+#: src/installation/process.py:376
 msgid "System installed."
 msgstr "System installert."
 
-#: src/installation/process.py:382
+#: src/installation/process.py:378
 msgid "Configuring system ..."
 msgstr "Konfigurasjon av systemet ..."
 
-#: src/installation/process.py:384
+#: src/installation/process.py:380
 msgid "System configured."
 msgstr "Systemet er konfigurert."
 
-#: src/installation/process.py:388
+#: src/installation/process.py:384
 msgid "Installing boot loader ..."
 msgstr "Installerer oppstartslaster..."
 
-#: src/installation/process.py:421
+#: src/installation/process.py:417
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "Kan ikke kopiere Thus logg til %s"
 
-#: src/installation/process.py:440 src/installation/process.py:459
-#: src/installation/process.py:473
+#: src/installation/process.py:436 src/installation/process.py:455
+#: src/installation/process.py:469
 #, python-format
 msgid "Can't unmount %s"
 msgstr "Kan ikke avmontere %s"
 
-#: src/installation/process.py:475
+#: src/installation/process.py:471
 msgid "Installation finished successfully."
 msgstr "Installasjonen ble fullført."
 
-#: src/installation/process.py:511
+#: src/installation/process.py:507
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Base filsystem finnes ikke! Kritisk feil (spennende)."
 
-#: src/installation/process.py:515
+#: src/installation/process.py:511
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Desktop filsystem finnes ikke! Kritisk feil (spennende)."
 
-#: src/installation/process.py:525 src/installation/process.py:531
+#: src/installation/process.py:521 src/installation/process.py:527
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s er allerede montert på %s som %s"
 
-#: src/installation/process.py:542
+#: src/installation/process.py:538
 msgid "Indexing files to be copied ..."
 msgstr "Indekserings filer som skal kopieres ..."
 
-#: src/installation/process.py:547
+#: src/installation/process.py:543
 msgid "Extracting root-image ..."
 msgstr "Pakker ut root-bilde ..."
 
-#: src/installation/process.py:557
+#: src/installation/process.py:553
 msgid "Extracting desktop-image ..."
 msgstr "Pakker ut desktop-bilde ..."
 
-#: src/installation/process.py:572
+#: src/installation/process.py:568
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Gjenoppretter meta-informasjon på %s"
 
-#: src/installation/process.py:588
+#: src/installation/process.py:584
 msgid "Special dirs already mounted."
 msgstr "Spesielle dirs allerede er montert."
 
-#: src/installation/process.py:622
+#: src/installation/process.py:618
 msgid "Special dirs are not mounted. Skipping."
 msgstr "Spesielle dirs er ikke montert. Hopper over."
 
-#: src/installation/process.py:639 src/installation/process.py:645
+#: src/installation/process.py:635 src/installation/process.py:641
 #, python-format
 msgid "Unable to umount %s"
 msgstr "Kan ikke avmontere %s"
 
-#: src/installation/process.py:667
+#: src/installation/process.py:663
 #, python-format
 msgid "Error running command: %s"
 msgstr "Feil kjører kommandoen: %s"
 
-#: src/installation/process.py:700
+#: src/installation/process.py:696
 msgid "Can't copy network configuration files"
 msgstr "Kan ikke kopiere nettverkskonfigurasjonsfiler"
 
-#: src/installation/process.py:730 src/installation/process.py:788
+#: src/installation/process.py:726 src/installation/process.py:784
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Lagt til fstab: UUID=%s %s %s %s 0 %s"
 
-#: src/installation/process.py:744
+#: src/installation/process.py:740
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "Lagt til i crypttab : %s"
 
-#: src/installation/process.py:748
+#: src/installation/process.py:744
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "Lagt til i fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:792
+#: src/installation/process.py:788
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "Lagt til i fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:881
+#: src/installation/process.py:876
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installerer GRUB(2) BIOS bootloader i %s"
 
-#: src/installation/process.py:891 src/installation/process.py:917
+#: src/installation/process.py:886 src/installation/process.py:915
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "FEIL i installasjon av GRUB(2) BIOS."
 
-#: src/installation/process.py:914
+#: src/installation/process.py:912
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS har blitt installert."
 
-#: src/installation/process.py:938
+#: src/installation/process.py:936
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "FEIL under installasjon av GRUB(2) UEFI."
 
-#: src/installation/process.py:946
+#: src/installation/process.py:944
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr "Installerer GRUB(2) UEFI %s oppstarts laster"
 
-#: src/installation/process.py:959
+#: src/installation/process.py:957
 msgid "Installing Grub2 locales."
 msgstr "Installerer Grub2 nasjonaler."
 
-#: src/installation/process.py:972
+#: src/installation/process.py:970
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr "Ingen OEM laster funnet i %s. Kopiering av Grub(2) til dir."
 
-#: src/installation/process.py:977
+#: src/installation/process.py:975
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr "Kopiering av Grub(2) til OEM dir mislyktes. Fil ikke Funnet."
 
-#: src/installation/process.py:979
+#: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr "Kopiering av Grub(2) til OEM dir mislyktes. Filen eksisterer."
 
-#: src/installation/process.py:981
+#: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr "Kopiering av Grub(2) til OEM dir mislyktes. Ukjent feil."
 
-#: src/installation/process.py:999
+#: src/installation/process.py:997
 msgid "Generating grub.cfg"
 msgstr "Genererer grub.cfg"
 
-#: src/installation/process.py:1021
+#: src/installation/process.py:1019
 msgid "ERROR installing GRUB(2) locale."
 msgstr "ERROR installere GRUB(2) locale."
 
-#: src/installation/process.py:1030
+#: src/installation/process.py:1028
 #, python-format
 msgid "Enabled %s service."
 msgstr "Aktivert %s tjeneste."
 
-#: src/installation/process.py:1037
+#: src/installation/process.py:1035
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Passord hash for bruker %s feilet"
 
-#: src/installation/process.py:1043
+#: src/installation/process.py:1041
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Endring av passord for bruker %s feilet"
 
-#: src/installation/process.py:1055
+#: src/installation/process.py:1053
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Siller inn kroker og moduler i mkinitcpio.conf"
 
-#: src/installation/process.py:1134
+#: src/installation/process.py:1135
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Aktiver automatisk pålogging for brukeren %s ."
 
-#: src/installation/process.py:1229 src/installation/process.py:1240
+#: src/installation/process.py:1230 src/installation/process.py:1241
 msgid "Configuring your new system"
 msgstr "Konfigurerer ditt nye system"
 
-#: src/installation/process.py:1232
+#: src/installation/process.py:1233
 msgid "fstab file generated."
 msgstr "fstab fil generert."
 
-#: src/installation/process.py:1238
+#: src/installation/process.py:1239
 msgid "Network configuration copied."
 msgstr "Nettverkskonfigurasjon kopiert."
 
-#: src/installation/process.py:1264
+#: src/installation/process.py:1265
 msgid "Time zone set."
 msgstr "Tidssone satt."
 
-#: src/installation/process.py:1285
+#: src/installation/process.py:1286
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Sudo konfigurasjon for bruker %s gjort."
 
-#: src/installation/process.py:1295
+#: src/installation/process.py:1296
 #, python-format
 msgid "User %s added."
 msgstr "Bruker %s lagt til."
 
-#: src/installation/process.py:1307
+#: src/installation/process.py:1308
 #, python-format
 msgid "Hostname  %s set."
 msgstr "Vertsnavn %s er satt."
 
-#: src/installation/process.py:1312
+#: src/installation/process.py:1313
 msgid "Set root password."
 msgstr "Sett root-passord."
 
-#: src/installation/process.py:1315
+#: src/installation/process.py:1316
 msgid "Set the same password to root."
 msgstr "Angi det samme passordet til root."
 
-#: src/installation/process.py:1321
+#: src/installation/process.py:1322
 msgid "Generating locales ..."
 msgstr "Genererer steder ..."
 
-#: src/installation/process.py:1339
+#: src/installation/process.py:1340
 msgid "Adjusting hardware clock ..."
 msgstr "Justerer hardware klokke ..."
 
-#: src/installation/process.py:1348
+#: src/installation/process.py:1349
 msgid "Configuring hardware ..."
 msgstr "Konfigurasjon av maskinvare ..."
 
-#: src/installation/process.py:1421
+#: src/installation/process.py:1422
 msgid "Set up graphics card ..."
 msgstr "Sett opp grafikkort ..."
 
-#: src/installation/process.py:1428
+#: src/installation/process.py:1429
 msgid "Can't execute the MHWD script"
 msgstr "Kan ikke utføre MHWD skriptet"
 
-#: src/installation/process.py:1441
+#: src/installation/process.py:1442
 msgid "Configure display manager ..."
 msgstr "Konfigurer display manager ..."
 
-#: src/installation/process.py:1547
+#: src/installation/process.py:1548
 msgid "Configure System ..."
 msgstr "Konfigurer System ..."
 
-#: src/installation/process.py:1572
+#: src/installation/process.py:1573
 msgid "Removing live configuration (packages)"
 msgstr "Fjerner konfigurasjonspakker"
 
-#: src/installation/process.py:1588
+#: src/installation/process.py:1589
 msgid "Configuring package manager"
 msgstr "Konfigurerer pakkebehandler"
 
-#: src/installation/process.py:1600
+#: src/installation/process.py:1601
 msgid "Finished configuring package manager."
 msgstr "Konfigurering av pakkebehandler [er] fullført."
 
-#: src/installation/process.py:1624
+#: src/installation/process.py:1625
 msgid "Running mkinitcpio ..."
 msgstr "Kjører mkinitcpio ..."
 
-#: src/installation/process.py:1627
+#: src/installation/process.py:1628
 msgid "Running mkinitcpio - done"
 msgstr "kjører mkinitcpio - ferdig"
 
-#: src/installation/process.py:1643
+#: src/installation/process.py:1644
 msgid "Encrypting user home dir ..."
 msgstr "Kryptering av bruker hjem dir ..."
 
-#: src/installation/process.py:1645
+#: src/installation/process.py:1646
 msgid "User home dir encrypted"
 msgstr "Bruker hjem dir kryptert"
 
@@ -1071,28 +1086,33 @@ msgstr "Kan ikke fjerne volumgruppen %s"
 msgid "Can't remove physical volume %s"
 msgstr "Kan ikke fjerne fysisk volum %s"
 
-#: src/parted3/partition_module.py:107
+#: src/parted3/partition_module.py:106
+#, python-format
+msgid "Adding %s to disk_dic"
+msgstr ""
+
+#: src/parted3/partition_module.py:108
 #, python-format
 msgid "Unrecognised disk label in device %s."
 msgstr "Ugjenkjennelig disketikett på enheten %s."
 
-#: src/parted3/partition_module.py:111
+#: src/parted3/partition_module.py:112
 #, python-format
 msgid ""
 "Exception: %s.\n"
 "For more information take a look at /tmp/thus.log"
 msgstr "Unntak: %s.\nFor mer informasjon ta en titt på /tmp/thus.log"
 
-#: src/parted3/partition_module.py:178
+#: src/parted3/partition_module.py:179
 #, python-format
 msgid "Can't delete partition %s"
 msgstr "Kan ikke slette partisjonen %s"
 
-#: src/parted3/partition_module.py:229
+#: src/parted3/partition_module.py:230
 msgid "Partition is too large!"
 msgstr "Partition er for stor!"
 
-#: src/parted3/partition_module.py:289
+#: src/parted3/partition_module.py:290
 #, python-format
 msgid "Can't detect used space from %s"
 msgstr "Gjenkjenner ikke brukt plass fra %s"
@@ -1410,27 +1430,27 @@ msgstr "MB"
 msgid "New Partition Table"
 msgstr "Ny Partisjon Tabell"
 
-#: ui/installation_advanced.ui:951
+#: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"
 msgstr "Montering Sjekkliste:"
 
-#: ui/installation_advanced.ui:1106
+#: ui/installation_advanced.ui:1103
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_advanced.ui:1259
+#: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
 msgstr "LUKS volum navn:"
 
-#: ui/installation_advanced.ui:1273
+#: ui/installation_advanced.ui:1270
 msgid "Password:"
 msgstr "Passord:"
 
-#: ui/installation_advanced.ui:1287
+#: ui/installation_advanced.ui:1284
 msgid "Confirm password:"
 msgstr "Bekreft passord:"
 
-#: ui/installation_advanced.ui:1316
+#: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
 msgstr "Bruk LUKS kryptering:"
 

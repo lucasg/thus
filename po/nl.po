@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Culinax <ruben.de.roo@gmail.com>, 2013
+# gayle <gayle.adamyan@gmail.com>, 2014
 # Jimmy Timmermans <jarco5000@gmail.com>, 2013
 # Jimmy Timmermans <jarco5000@gmail.com>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
@@ -16,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-17 17:18+0000\n"
-"Last-Translator: Ringo Be <ringodekroon@gmail.com>\n"
+"POT-Creation-Date: 2014-04-04 22:10+0200\n"
+"PO-Revision-Date: 2014-04-13 11:41+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Je kan geen twee sessies laden van deze installer\n\nWeet je zeker dat andere installer niet al draait\nje kan handmatig het bestand verwijderen%s\nen start de installer opnieuw"
+msgstr "Je kan geen twee sessies laden van deze installer\n\nWeet je zeker dat andere installer niet al draait\nje kan handmatig het bestand %s verwijderen\nen de installer opnieuw starten."
 
 #: thus.py:143
 #, python-format
@@ -75,48 +76,48 @@ msgstr "Laat logging berichten zien naar stdout"
 msgid "Show options in development (DO NOT USE THIS!)"
 msgstr "Laat opties in ontwikkeling zien (GEBRUIK DIT NIET!)"
 
-#: src/installation/auto_partition.py:74 src/installation/auto_partition.py:83
-#: src/installation/process.py:432 src/installation/process.py:449
-#: src/installation/process.py:464
+#: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
+#: src/installation/process.py:428 src/installation/process.py:445
+#: src/installation/process.py:460
 #, python-format
 msgid "Unmounting %s"
 msgstr "Ontkoppel %s"
 
-#: src/installation/auto_partition.py:78 src/installation/auto_partition.py:87
+#: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr "Ontkoppeling %s gefaald. Probeerd Lazy arg."
 
-#: src/installation/auto_partition.py:107
+#: src/installation/auto_partition.py:110
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr "Kan bestaande LVM volumes niet verwijderen(zie onder)"
+msgstr "Kan bestaande LVM volumes niet verwijderen (zie onder)"
 
-#: src/installation/auto_partition.py:117
+#: src/installation/auto_partition.py:120
 msgid "Can't close LUKS devices (see below)"
 msgstr "Kan het LUKS apparaat niet sluiten (zie onder)"
 
-#: src/installation/auto_partition.py:166
+#: src/installation/auto_partition.py:175
 #, python-format
-msgid "Unkown filesystem type %s"
-msgstr "Onbekend bestandsysteem type %s"
+msgid "Unknown filesystem type %s"
+msgstr ""
 
-#: src/installation/auto_partition.py:176
+#: src/installation/auto_partition.py:185
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr "Kan geen bestand systeem %s aanmaken"
 
-#: src/installation/auto_partition.py:322
+#: src/installation/auto_partition.py:345
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "Thus zal LUKS instellen op apparaat %s"
 
-#: src/installation/auto_partition.py:378
+#: src/installation/auto_partition.py:404
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "Setup kan de grote van je apparaat niet waarnemen; Gebruik alsjeblieft de geavanceerd installatie voor partitionere en aankoppelen apparaten."
+msgstr "Setup kan de grote van je apparaat niet waarnemen; Gebruik alsjeblieft de geavanceerde installatie voor partitioneren en aankoppelen apparaten."
 
-#: src/installation/auto_partition.py:534
+#: src/installation/auto_partition.py:566
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "Zal LVM instellen op apparaat %s"
@@ -153,11 +154,11 @@ msgstr "Sterk wachtwoord"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr "Wachtwoord komt niet overeen"
+msgstr "Wachtwoorden komt niet overeen"
 
 #: src/check.py:79
 msgid "System Check"
-msgstr "Systeem controlleren"
+msgstr "Systeem controleren"
 
 #: src/check.py:84
 #, python-format
@@ -245,7 +246,7 @@ msgstr "Geen"
 
 #: src/installation/advanced.py:548 src/installation/advanced.py:962
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1738 src/installation/advanced.py:1832
+#: src/installation/advanced.py:1741 src/installation/advanced.py:1835
 msgid "extended"
 msgstr "extended"
 
@@ -263,13 +264,13 @@ msgstr "Creëer extended partitie"
 
 #: src/installation/advanced.py:970
 msgid "Creating logical partition"
-msgstr "Creëer logical partitie"
+msgstr "Creëer logische partitie"
 
 #: src/installation/advanced.py:1104
 msgid "Advanced installation mode"
 msgstr "Geavanceerde installatie modus"
 
-#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1160
+#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
 msgstr "Gebruik dit apparaat voor bootlader installatie:"
 
@@ -315,7 +316,7 @@ msgstr "Primair"
 
 #: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr "Logical"
+msgstr "Logisch"
 
 #: src/installation/advanced.py:1168 ui/installation_advanced.ui:695
 msgid "Extended"
@@ -363,12 +364,12 @@ msgstr "Maak een partitie tabel"
 #: src/installation/advanced.py:1222 src/installation/alongside.py:150
 #: src/installation/automatic.py:103
 msgid "Install now!"
-msgstr "Installeerd nu!"
+msgstr "Installeer nu!"
 
 #: src/installation/advanced.py:1308
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr "Creëerd een nieuwe partitie tabel van type %s voor disk %s"
+msgstr "Creëer een nieuwe partitie tabel van type %s voor disk %s"
 
 #: src/installation/advanced.py:1318
 msgid ""
@@ -391,7 +392,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s is aangekoppeld als swap.⏎\nOm verder te gaan moet het niet gekoppeld zijn⏎\nKlik Ja om te los koppelen of nee om terug te gaan.⏎\n"
+msgstr "%s is aangekoppeld als swap.\nOm verder te gaan moet het niet gekoppeld zijn\nKlik Ja om te los koppelen of nee om terug te gaan.\n"
 
 #: src/installation/advanced.py:1544
 #, python-format
@@ -399,7 +400,7 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s is aangekoppeld als '%s'⏎\nOm verder te gaan moet het niet gekoppeld zijn⏎\nKlik Ja om te los koppelen of nee om terug te gaan.⏎\n"
+msgstr "%s is aangekoppeld als '%s'\nOm verder te gaan moet het niet gekoppeld zijn\nKlik Ja om te los koppelen of nee om terug te gaan.\n"
 
 #: src/installation/advanced.py:1567
 #, python-format
@@ -437,38 +438,40 @@ msgstr "Koppel"
 msgid "These disks will have partition actions:"
 msgstr "Deze schijven zullen partitie acties hebben:"
 
-#: src/installation/advanced.py:1717
+#: src/installation/advanced.py:1720
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "Wijzigingen opslaan gebeurt in %s"
 
-#: src/installation/advanced.py:1741
+#: src/installation/advanced.py:1744
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "Maak %s bestandsysteem in %s labeled %s"
 
-#: src/installation/advanced.py:1783
+#: src/installation/advanced.py:1786
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr "instellen boot aanduiding in %s partitie"
 
-#: src/installation/advanced.py:1802
+#: src/installation/advanced.py:1805
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr "Kon geen partitie '%s' formateren met label '%s' als '%s'"
 
-#: src/installation/advanced.py:1843 src/installation/automatic.py:226
+#: src/installation/advanced.py:1846 src/installation/alongside.py:499
+#: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
 msgstr "Thus zal geen bootlader installeren"
 
-#: src/installation/advanced.py:1853
+#: src/installation/advanced.py:1856
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro installeerd de bootlader van type %s in %s"
+msgstr "Manjaro installeert de bootlader van type %s in %s"
 
-#: src/installation/advanced.py:1869 src/installation/automatic.py:247
+#: src/installation/advanced.py:1872 src/installation/alongside.py:512
+#: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr "Testing modus.Thus wil geen veranderingen door voeren in uw systeem!"
+msgstr "Testing modus. Thus zal geen veranderingen doorvoeren op je systeem!"
 
 #: src/installation/alongside.py:115
 #, python-format
@@ -503,14 +506,32 @@ msgstr "Het is onmogelijk om een partitielijst te maken buiten de  installatie"
 msgid "Can't shrink the partition (maybe it's nearly full?)"
 msgstr "Kan de partitie niet verkleinen (misschien is ze bijna vol?)"
 
-#: src/installation/alongside.py:355
+#: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
 msgstr "Er zijn teveel primaire partities, je kunt geen nieuwe aanmaken"
 
-#: src/installation/alongside.py:388
+#: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
 msgstr "Kan het filesystem %s(%s) niet verkleinen"
+
+#: src/installation/alongside.py:399
+#, python-format
+msgid "Can't shrink %s(%s) partition"
+msgstr ""
+
+#: src/installation/alongside.py:418 src/installation/alongside.py:470
+msgid "Cannot create new partition."
+msgstr ""
+
+#: src/installation/alongside.py:458
+msgid "Cannot create new swap partition."
+msgstr ""
+
+#: src/installation/alongside.py:495 src/installation/automatic.py:222
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr "Thus zal de bootlader installeren van type %s in %s"
 
 #: src/installation/ask.py:99
 msgid "Installation type"
@@ -558,7 +579,7 @@ msgstr "Installeer Manjaro naast %s"
 
 #: src/installation/ask.py:161
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr "Beheer je partities en waar Manjaro te installeren (geadvanceerd)"
+msgstr "Beheer je partities en waar Manjaro te installeren (geavanceerd)"
 
 #: src/installation/ask.py:164
 msgid ""
@@ -572,11 +593,11 @@ msgstr "Manjaro installatie zal worden versleuteld met LUKS"
 
 #: src/installation/ask.py:193
 msgid "Manjaro will be installed using LVM volumes"
-msgstr "Manjaro zal worden geïnstalleerd gebruik met LVM volumes"
+msgstr "Manjaro zal worden geïnstalleerd dmv LVM volumes"
 
 #: src/installation/ask.py:195
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr "Manjaro zal geïnstalleerd worden op een apart /home volume."
+msgstr "Manjaro zal geïnstalleerd worden op een aparte /home volume."
 
 #: src/installation/ask.py:197
 msgid "Manjaro will be installed using a separate /home partition."
@@ -599,7 +620,7 @@ msgstr "Waarschuwing! Deze installatie modus zal alles overschrijven op je schij
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr "Kies alstublieft op welke schijf je Manjaro wilt installeren⏎\nen klik op de knop hier onder om het proces te starten."
+msgstr "Kies alstublieft op welke schijf je Manjaro wilt installeren\nen klik op de knop hier onder om het proces te starten."
 
 #: src/installation/automatic.py:93 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
@@ -637,11 +658,6 @@ msgstr "Wil je echt verder gaan en verwijder al je bestanden op u hardeschijf?\n
 msgid "Thus will use %s as installation device"
 msgstr "Thus zal %s gebruiken als installatie apparaat"
 
-#: src/installation/automatic.py:222
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus zal de bootlader installeren van type %s in %s"
-
 #: src/installation/process.py:84
 #, python-format
 msgid "Copying '/%s'"
@@ -661,327 +677,327 @@ msgstr "Maak partities en bijbehorende bestandssystemen in %s"
 msgid "Error creating partitions and their filesystems"
 msgstr "Fout bij het maken van partities en de bestandsystemen"
 
-#: src/installation/process.py:265 src/installation/process.py:342
-#: src/installation/process.py:640
+#: src/installation/process.py:265 src/installation/process.py:338
+#: src/installation/process.py:636
 #, python-format
 msgid "Command %s has failed."
 msgstr "Commando %s gefaald"
 
-#: src/installation/process.py:267 src/installation/process.py:321
-#: src/installation/process.py:344 src/installation/process.py:367
-#: src/installation/process.py:642
+#: src/installation/process.py:267 src/installation/process.py:314
+#: src/installation/process.py:340 src/installation/process.py:363
+#: src/installation/process.py:638
 #, python-format
 msgid "Output : %s"
 msgstr "Output: %s"
 
-#: src/installation/process.py:307 src/installation/process.py:335
+#: src/installation/process.py:300 src/installation/process.py:331
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Koppelen partitie %s naar %s map"
 
-#: src/installation/process.py:313
+#: src/installation/process.py:306
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Koppelen partitie %s naar %s/boot map"
 
-#: src/installation/process.py:317
+#: src/installation/process.py:310
 msgid "Couldn't mount root and boot partitions"
 msgstr "Kon niet root en boot partitie aankoppelen."
 
-#: src/installation/process.py:319 src/installation/process.py:365
+#: src/installation/process.py:312 src/installation/process.py:361
 #, python-format
 msgid "Command %s has failed"
 msgstr "Commando %s heeft gefaald"
 
-#: src/installation/process.py:340
+#: src/installation/process.py:336
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Kan niet %s op %s koppelen"
 
-#: src/installation/process.py:355
+#: src/installation/process.py:351
 #, python-format
 msgid "%s deleted"
 msgstr "%s Verwijderd"
 
-#: src/installation/process.py:363
+#: src/installation/process.py:359
 msgid "Can't create necessary directories on destination system"
 msgstr "Kan niet de benodigde mappen creëeren op het bestemming systeem"
 
-#: src/installation/process.py:375
+#: src/installation/process.py:371
 msgid "Install System ..."
 msgstr "Installeer Systeem..."
 
-#: src/installation/process.py:380
+#: src/installation/process.py:376
 msgid "System installed."
-msgstr "Systeem geinstalleerd."
+msgstr "Systeem geïnstalleerd."
 
-#: src/installation/process.py:382
+#: src/installation/process.py:378
 msgid "Configuring system ..."
 msgstr "Systeem configureren..."
 
-#: src/installation/process.py:384
+#: src/installation/process.py:380
 msgid "System configured."
 msgstr "Systeem geconfigureerd."
 
-#: src/installation/process.py:388
+#: src/installation/process.py:384
 msgid "Installing boot loader ..."
 msgstr "Installeer Boot lader ..."
 
-#: src/installation/process.py:421
+#: src/installation/process.py:417
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "Kan thus log niet kopieren naar %s"
 
-#: src/installation/process.py:440 src/installation/process.py:459
-#: src/installation/process.py:473
+#: src/installation/process.py:436 src/installation/process.py:455
+#: src/installation/process.py:469
 #, python-format
 msgid "Can't unmount %s"
 msgstr "Kan niet ontkoppelen %s"
 
-#: src/installation/process.py:475
+#: src/installation/process.py:471
 msgid "Installation finished successfully."
 msgstr "Installatie is met succes beeindigd."
 
-#: src/installation/process.py:511
+#: src/installation/process.py:507
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Basis bestandsysteem bestaat niet! Kritieke fout (verlaten)"
 
-#: src/installation/process.py:515
+#: src/installation/process.py:511
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Bureaublad bestandsysteem bestaat niet! Kritieke fout (verlaten)."
 
-#: src/installation/process.py:525 src/installation/process.py:531
+#: src/installation/process.py:521 src/installation/process.py:527
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s is al aangekoppend aan %s als %s"
 
-#: src/installation/process.py:542
+#: src/installation/process.py:538
 msgid "Indexing files to be copied ..."
 msgstr "Indexeren van de te kopieren bestanden ..."
 
-#: src/installation/process.py:547
+#: src/installation/process.py:543
 msgid "Extracting root-image ..."
 msgstr "Uitpakken root-image ..."
 
-#: src/installation/process.py:557
+#: src/installation/process.py:553
 msgid "Extracting desktop-image ..."
 msgstr "Uitpakken bureaublad-image"
 
-#: src/installation/process.py:572
+#: src/installation/process.py:568
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Herstellen van meta-informatie op %s"
 
-#: src/installation/process.py:588
+#: src/installation/process.py:584
 msgid "Special dirs already mounted."
 msgstr "Speciale Mappen zijn aangekoppeld."
 
-#: src/installation/process.py:622
+#: src/installation/process.py:618
 msgid "Special dirs are not mounted. Skipping."
 msgstr "Speciale dirs zijn niet aangekoppeld. Overslaan."
 
-#: src/installation/process.py:639 src/installation/process.py:645
+#: src/installation/process.py:635 src/installation/process.py:641
 #, python-format
 msgid "Unable to umount %s"
-msgstr "Onmogelijk te umount %s"
+msgstr "Umount %s onmogelijk"
 
-#: src/installation/process.py:667
+#: src/installation/process.py:663
 #, python-format
 msgid "Error running command: %s"
-msgstr "Fout lopende commando: %s"
+msgstr "Fout uitvoeren commando: %s"
 
-#: src/installation/process.py:700
+#: src/installation/process.py:696
 msgid "Can't copy network configuration files"
 msgstr "Kan niet copieeren van netwerk configuratie bestanden"
 
-#: src/installation/process.py:730 src/installation/process.py:788
+#: src/installation/process.py:726 src/installation/process.py:784
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Toegevoegd in fstab : UUID=%s %s %s %s 0 %s"
 
-#: src/installation/process.py:744
+#: src/installation/process.py:740
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "Toegevoegd naar crypttab : %s"
 
-#: src/installation/process.py:748
+#: src/installation/process.py:744
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "Toegevoegd naar fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:792
+#: src/installation/process.py:788
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "Toegevoegd naar fstab : tmp tmpfs default,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:881
+#: src/installation/process.py:876
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Installeer GRUB(2) BIOS bootlader in %s"
 
-#: src/installation/process.py:891 src/installation/process.py:917
+#: src/installation/process.py:886 src/installation/process.py:915
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "FOUT bij installeren GRUB(2) BIOS."
 
-#: src/installation/process.py:914
+#: src/installation/process.py:912
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS is succesvol geinstalleerd."
 
-#: src/installation/process.py:938
+#: src/installation/process.py:936
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "FOUT bij installeren GRUN(2) UEFI."
 
-#: src/installation/process.py:946
+#: src/installation/process.py:944
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr "Installeer GRUB(2) UEFI %s bootlader "
 
-#: src/installation/process.py:959
+#: src/installation/process.py:957
 msgid "Installing Grub2 locales."
 msgstr "Installeren Grub2 locales."
 
-#: src/installation/process.py:972
+#: src/installation/process.py:970
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr "Geen OEM lader gevonden in %s.Kopieren grub (2) in een directory"
 
-#: src/installation/process.py:977
+#: src/installation/process.py:975
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr "Kopieren Grub(2) naar OEM dir gefaald.Bestand niet gevonden."
 
-#: src/installation/process.py:979
+#: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr "Copieren Grub(2) naar OEM map. Bestand bestaat al."
 
-#: src/installation/process.py:981
+#: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr "Copieren Grub(2) naar OEM map gefaald. Onbekend Error."
 
-#: src/installation/process.py:999
+#: src/installation/process.py:997
 msgid "Generating grub.cfg"
 msgstr "Genereer grub.cfg"
 
-#: src/installation/process.py:1021
+#: src/installation/process.py:1019
 msgid "ERROR installing GRUB(2) locale."
 msgstr "FOUT installeren GRUB(2) locale."
 
-#: src/installation/process.py:1030
+#: src/installation/process.py:1028
 #, python-format
 msgid "Enabled %s service."
 msgstr "Activeer %s service."
 
-#: src/installation/process.py:1037
+#: src/installation/process.py:1035
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Fout bij creëeren wachtwoord hash voor gebruiker %s"
 
-#: src/installation/process.py:1043
+#: src/installation/process.py:1041
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Fout veranderen wachtwoord voor gebruiker %s"
 
-#: src/installation/process.py:1055
+#: src/installation/process.py:1053
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Instellen hooks en modules in mkinitcpio.conf"
 
-#: src/installation/process.py:1134
+#: src/installation/process.py:1135
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s Inschakelen automatische login voor gebruikers %s."
 
-#: src/installation/process.py:1229 src/installation/process.py:1240
+#: src/installation/process.py:1230 src/installation/process.py:1241
 msgid "Configuring your new system"
-msgstr "Instellen van je nieuw systeem"
+msgstr "Instellen van je nieuwe systeem"
 
-#: src/installation/process.py:1232
+#: src/installation/process.py:1233
 msgid "fstab file generated."
 msgstr "fstab bestand gegenereerd."
 
-#: src/installation/process.py:1238
+#: src/installation/process.py:1239
 msgid "Network configuration copied."
 msgstr "Network configuratie gekopieerd."
 
-#: src/installation/process.py:1264
+#: src/installation/process.py:1265
 msgid "Time zone set."
 msgstr "Tijdzone instelling"
 
-#: src/installation/process.py:1285
+#: src/installation/process.py:1286
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Sudo configuratie voor gebruikers %s klaar."
 
-#: src/installation/process.py:1295
+#: src/installation/process.py:1296
 #, python-format
 msgid "User %s added."
 msgstr "Gebruiker %s toegevoegd."
 
-#: src/installation/process.py:1307
+#: src/installation/process.py:1308
 #, python-format
 msgid "Hostname  %s set."
-msgstr "Hostnaam %s set."
+msgstr "Hostnaam %s ingesteld."
 
-#: src/installation/process.py:1312
+#: src/installation/process.py:1313
 msgid "Set root password."
 msgstr "Stel root wachtwoord in."
 
-#: src/installation/process.py:1315
+#: src/installation/process.py:1316
 msgid "Set the same password to root."
-msgstr "Stel hetzelfde wachtwoord als root."
+msgstr "Stel hetzelfde wachtwoord in bij root."
 
-#: src/installation/process.py:1321
+#: src/installation/process.py:1322
 msgid "Generating locales ..."
 msgstr "Genereer locales ..."
 
-#: src/installation/process.py:1339
+#: src/installation/process.py:1340
 msgid "Adjusting hardware clock ..."
 msgstr "Bijstellen hardware klok .."
 
-#: src/installation/process.py:1348
+#: src/installation/process.py:1349
 msgid "Configuring hardware ..."
 msgstr "Configureren van hardware ..."
 
-#: src/installation/process.py:1421
+#: src/installation/process.py:1422
 msgid "Set up graphics card ..."
 msgstr "Instellen van grafische kaart .."
 
-#: src/installation/process.py:1428
+#: src/installation/process.py:1429
 msgid "Can't execute the MHWD script"
 msgstr "Kan het MHWD script niet uitvoeren"
 
-#: src/installation/process.py:1441
+#: src/installation/process.py:1442
 msgid "Configure display manager ..."
 msgstr "Configureer display Manager .."
 
-#: src/installation/process.py:1547
+#: src/installation/process.py:1548
 msgid "Configure System ..."
 msgstr "Configureer Systeem .."
 
-#: src/installation/process.py:1572
+#: src/installation/process.py:1573
 msgid "Removing live configuration (packages)"
 msgstr "Verwijderen live configuratie (pakketten)"
 
-#: src/installation/process.py:1588
+#: src/installation/process.py:1589
 msgid "Configuring package manager"
 msgstr "Configureren pakket beheerder"
 
-#: src/installation/process.py:1600
+#: src/installation/process.py:1601
 msgid "Finished configuring package manager."
 msgstr "Klaar met pakket beheerder te configureren."
 
-#: src/installation/process.py:1624
+#: src/installation/process.py:1625
 msgid "Running mkinitcpio ..."
 msgstr "Laad Mkinitcpio ..."
 
-#: src/installation/process.py:1627
+#: src/installation/process.py:1628
 msgid "Running mkinitcpio - done"
 msgstr "Laden mkinitcpio - gedaan"
 
-#: src/installation/process.py:1643
+#: src/installation/process.py:1644
 msgid "Encrypting user home dir ..."
 msgstr "Versleutel gebruiker home dir .."
 
-#: src/installation/process.py:1645
+#: src/installation/process.py:1646
 msgid "User home dir encrypted"
-msgstr "Gebruiker home map versleuteld"
+msgstr "Gebruikers home map versleuteld"
 
 #: src/keymap.py:67
 msgid "Select your keyboard layout"
@@ -1010,7 +1026,7 @@ msgstr "Kies uw taal alstublieft."
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
-msgstr "Notitie: Thus installateur is beta software"
+msgstr "Notitie: De Thus installer is beta software"
 
 #: src/language.py:84
 msgid ""
@@ -1019,7 +1035,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus is pre-uitgave software dat onder actieve  ontwikkeling staat.\nHet ondersteund Raid nog niet keurig, btrfs subvolumes en andere \ngeadvanceerde setups. Alstublieft wees voorzichtig en pas op voor \ndata verlies.\n\nAls u bugs vind, geef het door op <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "Thus is pre-uitgave software dat onder actieve  ontwikkeling staat.\nHet ondersteund Raid nog niet keurig, btrfs subvolumes en andere \ngeavanceerde setups. Alstublieft wees voorzichtig en pas op voor \ndata verlies.\n\nAls u bugs vind, geef het door op <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
@@ -1043,7 +1059,7 @@ msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr "De geselecteerde locatie zal helpen om systeem locale te selecteren.⏎\nNormaal zou dit het land zijn waar je leeft⏎\nDit is een korte lijst van locaties gebaseerd op geselecteerde taal."
+msgstr "De geselecteerde locatie zal helpen om systeem locale te selecteren.\nNormaal zou dit het land zijn waar je leeft\nDit is een korte lijst van locaties gebaseerd op geselecteerde taal."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
@@ -1074,28 +1090,33 @@ msgstr "Kan niet volume group %s verwijderen"
 msgid "Can't remove physical volume %s"
 msgstr "Kan niet fysiek volume %s verwijderen"
 
-#: src/parted3/partition_module.py:107
+#: src/parted3/partition_module.py:106
+#, python-format
+msgid "Adding %s to disk_dic"
+msgstr ""
+
+#: src/parted3/partition_module.py:108
 #, python-format
 msgid "Unrecognised disk label in device %s."
 msgstr "Niet herkenbare disk label apparaat %s."
 
-#: src/parted3/partition_module.py:111
+#: src/parted3/partition_module.py:112
 #, python-format
 msgid ""
 "Exception: %s.\n"
 "For more information take a look at /tmp/thus.log"
 msgstr "Exceptie %s.\nVoor meer info, neem een kijk in /tmp/thus.log"
 
-#: src/parted3/partition_module.py:178
+#: src/parted3/partition_module.py:179
 #, python-format
 msgid "Can't delete partition %s"
 msgstr "Kan niet partitie %s verwijderen"
 
-#: src/parted3/partition_module.py:229
+#: src/parted3/partition_module.py:230
 msgid "Partition is too large!"
 msgstr "Partitie is te groot!"
 
-#: src/parted3/partition_module.py:289
+#: src/parted3/partition_module.py:290
 #, python-format
 msgid "Can't detect used space from %s"
 msgstr "Kan niet gebruikte ruime van %s waarnemen"
@@ -1141,7 +1162,7 @@ msgstr "Kan rankmirror script niet vinden"
 
 #: src/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
-msgstr "Kon  automatische mirroring niet selecteren"
+msgstr "Kon automatische mirroring niet selecteren"
 
 #: src/show_message.py:54
 msgid "Manjaro Installer - Error"
@@ -1163,7 +1184,7 @@ msgstr "Manjaro installatie - Vraag"
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr "Installatie klaar!⏎\nWil je het systeem nu herstarten?"
+msgstr "Installatie klaar!\nWil je het systeem nu herstarten?"
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
@@ -1269,7 +1290,7 @@ msgstr "Bevestig root wachtwoord:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
-msgstr "De gebruikte naam wanneer word gecommuniceerd met andere computers."
+msgstr "Deze naam verschijnt op andere computers."
 
 #: src/user_info.py:152
 msgid "You must enter a name"
@@ -1277,7 +1298,7 @@ msgstr "Je moet een naam invoeren"
 
 #: src/user_info.py:156
 msgid "You must enter a username"
-msgstr "Je moet een gebruikers naam invoeren"
+msgstr "Je moet een gebruikersnaam invoeren"
 
 #: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
@@ -1311,35 +1332,35 @@ msgstr "Gebruik een root wachtwoord"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro gebruikt eCryptfs om je home map te versleutelen. Jammer genoeg, eCryptfs verkleint de bestanden niet goed⏎\n⏎\n"
+msgstr "Manjaro gebruikt eCryptfs om je home map te versleutelen. Jammer genoeg, eCryptfs verkleint de bestanden niet goed\n\n"
 
 #: src/user_info.py:253
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "Maak je geen zorgen, voor de meeste doeleinden kan dit tekort niet een probleem vormen. ⏎\n"
+msgstr "Maak je geen zorgen, voor de meeste doeleinden kan dit tekort niet een probleem vormen. \n"
 
 #: src/user_info.py:254
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "Hoe dan ook, een populair en onverstandige toepassing van eCryptfs is een BitTorrent download locatie te versleutelen omdat dit vaak eCryptfs vereist om sparse bestanden van 10 GB of meer te behandelen en kan leiden tot intense schijf vermindering. ⏎\n⏎\n"
+msgstr "Hoe dan ook, een populair en onverstandige toepassing van eCryptfs is een BitTorrent download locatie te versleutelen omdat dit vaak eCryptfs vereist om sparse bestanden van 10 GB of meer te behandelen en kan leiden tot intense schijf vermindering. \n\n"
 
 #: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Een eenvoudige oplossing is om u sparse bestanden te plaatsen in een ongecodeerde .Publieke map ⏎ \n⏎\n"
+msgstr "Een eenvoudige oplossing is om u sparse bestanden te plaatsen in een ongecodeerde .Publieke map\n\n\n"
 
 #: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr "Kijk op https://wiki.archlinux.org/index.php/ECryptfs voor gedetailleerde informatie⏎\n"
+msgstr "Kijk op https://wiki.archlinux.org/index.php/ECryptfs voor gedetailleerde informatie\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr "Ben je zeker dat je de home map wil versleutelen?⏎\n"
+msgstr "Ben je zeker dat je de home map wil versleutelen?\n"
 
 #: src/user_info.py:345
 msgid "Invalid characters entered"
@@ -1413,27 +1434,27 @@ msgstr "MB"
 msgid "New Partition Table"
 msgstr "Nieuw Partitie Tabel"
 
-#: ui/installation_advanced.ui:951
+#: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"
 msgstr "koppelpunt checklijst"
 
-#: ui/installation_advanced.ui:1106
+#: ui/installation_advanced.ui:1103
 msgid "LVM..."
 msgstr "LVM..."
 
-#: ui/installation_advanced.ui:1259
+#: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
 msgstr "LUKS volume naam:"
 
-#: ui/installation_advanced.ui:1273
+#: ui/installation_advanced.ui:1270
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: ui/installation_advanced.ui:1287
+#: ui/installation_advanced.ui:1284
 msgid "Confirm password:"
 msgstr "Bevestig wachtwoord:"
 
-#: ui/installation_advanced.ui:1316
+#: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
 msgstr "Gebruik LUKS encryptie:"
 
@@ -1441,7 +1462,7 @@ msgstr "Gebruik LUKS encryptie:"
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr "<span size=\"large\">Kies welk OS je wilt installeren naast Manjaro</span>"
+msgstr "<span size=\"large\">Kies naast welk OS je Manjaro wilt installeren</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1468,7 +1489,7 @@ msgstr "<span weight=\"light\" size=\"small\">Waarschuwing: Dit wist alle progra
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr "Versleutel de nieuw Manjaro installatie voor veiligheid"
+msgstr "Versleutel de nieuwe Manjaro installatie voor veiligheid"
 
 #: ui/installation_ask.ui:91
 msgid ""
@@ -1484,7 +1505,7 @@ msgstr "Gebruik LVM met de nieuw Manjaro installatie"
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr "<span weight=\"light\" size=\"small\">Dit zal LVM setup toestaan ​​om snapshots en veranderende partitiegroottes te maken op een gemakkelijke manier</span>"
+msgstr "<span weight=\"light\" size=\"small\">Dit zal LVM setup toestaan ​​om op een gemakkelijke manier snapshots te maken en partitiegroottes aan te passen</span>"
 
 #: ui/installation_ask.ui:155
 msgid ""
@@ -1501,11 +1522,11 @@ msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Met dit optie zal Manjaro naast andere OSen worden geinstalleerd.</span>"
+msgstr "<span weight=\"light\" size=\"small\">Met deze optie zal Manjaro naast andere OSen worden geinstalleerd.</span>"
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr "Beheer je partities en kies waar Manjaro word geinstalleerd (geadvanceerd)"
+msgstr "Beheer je partities en kies waar Manjaro word geinstalleerd (geavanceerd)"
 
 #: ui/installation_ask.ui:230
 msgid ""
@@ -1531,7 +1552,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>Notice: The Thus Installer is beta software.</span>⏎\n⏎\nThus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! ⏎\n⏎\nIf you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "<span weight='bold'>Let op: De Thus Installer is beta software.</span>\n\nThus is pre-release beta software dat actief wordt ontwikkeld. Het werkt nog niet goed samen met RAID, btrfs subvolumes, of andere geavanceerde setups. Wees voorzichtig, het verliezen van data is mogelijk!\n\nAls je een bug vindt, ga dan naar <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
@@ -1547,7 +1568,7 @@ msgstr "<small><span color=\"darkred\">Je moet een wachtwoord invoeren</span></s
 
 #: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr "<small><span color=\"darkred\">Je moet een wachtwoord invoeren</span></small>"
+msgstr "<small><span color=\"darkred\">Je moet een gebruikersnaam invoeren</span></small>"
 
 #: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
@@ -1555,4 +1576,4 @@ msgstr "<small><span color=\"darkred\">Je moet een naam invoeren</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr "<span size=\"small\">Deze naam word gebruikt wanneer communiceerd wordt met andere computers.</span>"
+msgstr "<span size=\"small\">Deze naam verschijnt op andere computers.</span>"

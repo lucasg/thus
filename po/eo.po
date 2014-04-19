@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# fenris <fenris.kcf@gmail.com>, 2014
 # Michael Moroni <michael.moroni@mailoo.org>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-01 23:55+0100\n"
-"PO-Revision-Date: 2014-02-01 23:08+0000\n"
+"POT-Creation-Date: 2014-04-04 22:10+0200\n"
+"PO-Revision-Date: 2014-04-13 11:41+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Esperanto (http://www.transifex.com/projects/p/manjaro-thus/language/eo/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Tiu instalilo devas esti rulata kun administrantaj rajtoj kaj ne povas daŭrigi sen."
 
 #: thus.py:131
 #, python-format
@@ -32,20 +33,20 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Ne eblas lanĉi tiun instalilon multfoje.\n\nSe vi certas, ke nenia alia instalilo estas lanĉita\nvi povas permane forigi la dosieron %s\nkaj lanĉi tiun instalilon denove."
 
 #: thus.py:143
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus-instalilo version %s"
 
 #: thus.py:234
 msgid "Manjaro Installer"
-msgstr ""
+msgstr "Manjaro-instalilo"
 
 #: thus.py:290
 msgid "Quiting installer..."
-msgstr ""
+msgstr "Ĉesiganta la instalilon..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
@@ -67,85 +68,85 @@ msgstr ""
 msgid "Show options in development (DO NOT USE THIS!)"
 msgstr ""
 
-#: src/installation/auto_partition.py:74 src/installation/auto_partition.py:83
-#: src/installation/process.py:432 src/installation/process.py:449
-#: src/installation/process.py:464
+#: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
+#: src/installation/process.py:428 src/installation/process.py:445
+#: src/installation/process.py:460
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Malliganta na %s"
 
-#: src/installation/auto_partition.py:78 src/installation/auto_partition.py:87
+#: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr ""
 
-#: src/installation/auto_partition.py:107
+#: src/installation/auto_partition.py:110
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr ""
 
-#: src/installation/auto_partition.py:117
+#: src/installation/auto_partition.py:120
 msgid "Can't close LUKS devices (see below)"
 msgstr ""
 
-#: src/installation/auto_partition.py:166
+#: src/installation/auto_partition.py:175
 #, python-format
-msgid "Unkown filesystem type %s"
+msgid "Unknown filesystem type %s"
 msgstr ""
 
-#: src/installation/auto_partition.py:176
+#: src/installation/auto_partition.py:185
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr ""
 
-#: src/installation/auto_partition.py:322
+#: src/installation/auto_partition.py:345
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr ""
 
-#: src/installation/auto_partition.py:378
+#: src/installation/auto_partition.py:404
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr ""
 
-#: src/installation/auto_partition.py:534
+#: src/installation/auto_partition.py:566
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Starigos na LVM je la aparato %s"
 
 #: src/bootinfo.py:53 src/bootinfo.py:65 src/bootinfo.py:71 src/bootinfo.py:85
 #: src/installation/alongside.py:220
 msgid "unknown"
-msgstr ""
+msgstr "nekonata"
 
 #: src/canonical/misc.py:929
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "Ne eblis uzi la lokaĵon %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr ""
+msgstr "la pasvorto estas tro mallonga"
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr ""
+msgstr "malforta pasvorto"
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr ""
+msgstr "sufiĉe bona pasvorto"
 
 #: src/canonical/validation.py:141
 msgid "good password"
-msgstr ""
+msgstr "bona pasvorto"
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr ""
+msgstr "forta pasvorto"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr ""
+msgstr "La pasvortoj ne egalas"
 
 #: src/check.py:79
 msgid "System Check"
@@ -164,32 +165,32 @@ msgstr ""
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr ""
+msgstr "estas konektata al kurent-fonto"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
-msgstr ""
+msgstr "estas konektata al la interreto"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr ""
+msgstr "Por plej bonaj rezultoj, bonvolu certigi, ke via komputilo:"
 
 #: src/check.py:173
 msgid "We have Internet connection."
-msgstr ""
+msgstr "Ni havas interret-aliron."
 
 #: src/check.py:174
 msgid "We're connected to a power source."
-msgstr ""
+msgstr "Ni estas konektata al kurent-fonto."
 
 #: src/check.py:175
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Ni havas sufiĉe da disk-spaco."
 
 #: src/installation/advanced.py:218 src/installation/advanced.py:512
 #: src/installation/advanced.py:526
 msgid "free space"
-msgstr ""
+msgstr "neuzata spaco"
 
 #: src/installation/advanced.py:266
 msgid "It's not recommended to install grub in a partition"
@@ -197,71 +198,71 @@ msgstr ""
 
 #: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
-msgstr ""
+msgstr "Aparato"
 
 #: src/installation/advanced.py:297
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: src/installation/advanced.py:300
 msgid "Mount point"
-msgstr ""
+msgstr "Ligejo"
 
 #: src/installation/advanced.py:303
 msgid "Label"
-msgstr ""
+msgstr "Etikedo"
 
 #: src/installation/advanced.py:309 src/installation/advanced.py:1641
 msgid "Format"
-msgstr ""
+msgstr "Formo"
 
 #: src/installation/advanced.py:312
 msgid "Size"
-msgstr ""
+msgstr "Grando"
 
 #: src/installation/advanced.py:315
 msgid "Used"
-msgstr ""
+msgstr "Uzata"
 
 #: src/installation/advanced.py:318
 msgid "Flags"
-msgstr ""
+msgstr "Ŝaltiloj"
 
 #: src/installation/advanced.py:324
 msgid "SSD"
-msgstr ""
+msgstr "SSD"
 
 #: src/installation/advanced.py:493
 msgid "none"
-msgstr ""
+msgstr "neniom"
 
 #: src/installation/advanced.py:548 src/installation/advanced.py:962
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1738 src/installation/advanced.py:1832
+#: src/installation/advanced.py:1741 src/installation/advanced.py:1835
 msgid "extended"
-msgstr ""
+msgstr "etendita"
 
 #: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Ne eblas uzi la saman ligejon multfoje…"
 
 #: src/installation/advanced.py:953
 msgid "Creating primary partition"
-msgstr ""
+msgstr "Kreanta ĉefan subdiskon"
 
 #: src/installation/advanced.py:964
 msgid "Creating extended partition"
-msgstr ""
+msgstr "Kreanta kroman subdiskon"
 
 #: src/installation/advanced.py:970
 msgid "Creating logical partition"
-msgstr ""
+msgstr "Krentan kvazaŭan subdiskon"
 
 #: src/installation/advanced.py:1104
 msgid "Advanced installation mode"
-msgstr ""
+msgstr "Speciala instalad-modo"
 
-#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1160
+#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
 msgstr ""
 
@@ -275,7 +276,7 @@ msgstr ""
 
 #: src/installation/advanced.py:1123 ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Praŝargi"
 
 #: src/installation/advanced.py:1127
 msgid "EFI"
@@ -287,54 +288,54 @@ msgstr ""
 
 #: src/installation/advanced.py:1139
 msgid "New partition table"
-msgstr ""
+msgstr "Nova subdisk-skemo"
 
 #: src/installation/advanced.py:1147
 msgid "Change..."
-msgstr ""
+msgstr "Ŝanĝi..."
 
 #: src/installation/advanced.py:1152 ui/installation_advanced.ui:407
 msgid "Size:"
-msgstr ""
+msgstr "Grando:"
 
 #: src/installation/advanced.py:1156 ui/installation_advanced.ui:630
 msgid "Type:"
-msgstr ""
+msgstr "Tipo:"
 
 #: src/installation/advanced.py:1160 ui/installation_advanced.ui:647
 msgid "Primary"
-msgstr ""
+msgstr "Primara"
 
 #: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr ""
+msgstr "Kvazaŭa"
 
 #: src/installation/advanced.py:1168 ui/installation_advanced.ui:695
 msgid "Extended"
-msgstr ""
+msgstr "Kroma"
 
 #: src/installation/advanced.py:1172 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Komenco de tio spaco"
 
 #: src/installation/advanced.py:1176 ui/installation_advanced.ui:540
 msgid "End of this space"
-msgstr ""
+msgstr "Fino de tiu spaco"
 
 #: src/installation/advanced.py:1180 src/installation/advanced.py:1197
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
-msgstr ""
+msgstr "Uzi kiel:"
 
 #: src/installation/advanced.py:1184 src/installation/advanced.py:1201
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
 msgid "Mount point:"
-msgstr ""
+msgstr "Ligejo:"
 
 #: src/installation/advanced.py:1188 src/installation/advanced.py:1205
 #: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
 msgid "Label (optional):"
-msgstr ""
+msgstr "Etikedo (fakultativa):"
 
 #: src/installation/advanced.py:1192
 msgid "Encryption Options..."
@@ -342,7 +343,7 @@ msgstr ""
 
 #: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
-msgstr ""
+msgstr "Formo:"
 
 #: src/installation/advanced.py:1214
 msgid "Partition Table Type:"
@@ -350,17 +351,17 @@ msgstr ""
 
 #: src/installation/advanced.py:1219
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Krei subdisk-skemon"
 
 #: src/installation/advanced.py:1222 src/installation/alongside.py:150
 #: src/installation/automatic.py:103
 msgid "Install now!"
-msgstr ""
+msgstr "Instali nun!"
 
 #: src/installation/advanced.py:1308
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr ""
+msgstr "Kreanta novan subsdisk-skemon kun tipo %s por la dsiko %s"
 
 #: src/installation/advanced.py:1318
 msgid ""
@@ -383,7 +384,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s estas ligita kiel permutejo.\nPor daŭrigi ĝi devas esti malligita.\nAlklaku \"Jes\" por malligi aŭ \"Ne\" por reiri.\n"
 
 #: src/installation/advanced.py:1544
 #, python-format
@@ -391,12 +392,12 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s estas ligita ĉe %s.\nPor daŭrigi ĝi devas esti malligita.\nAlklaku \"Jes\" por malligi aŭ \"Ne\" por reiri\n"
 
 #: src/installation/advanced.py:1567
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s ŝajnas esti ligita (okupita), sed ĝi ne havas ligejon"
 
 #: src/installation/advanced.py:1573
 msgid ""
@@ -407,81 +408,83 @@ msgstr ""
 #: src/installation/advanced.py:1634
 #, python-format
 msgid "Partition %s will be deleted"
-msgstr ""
+msgstr "Subdisko %s estos forigata"
 
 #: src/installation/advanced.py:1641
 msgid "Partition"
-msgstr ""
+msgstr "Subdisko"
 
 #: src/installation/advanced.py:1641
 msgid "New"
-msgstr ""
+msgstr "Nova"
 
 #: src/installation/advanced.py:1641
 msgid "Relabel"
-msgstr ""
+msgstr "Reetikedigi"
 
 #: src/installation/advanced.py:1641
 msgid "Mount"
-msgstr ""
+msgstr "Ligi"
 
 #: src/installation/advanced.py:1662
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Subdiskaj agoj estos aplikata je la jenaj diskoj:"
 
-#: src/installation/advanced.py:1717
+#: src/installation/advanced.py:1720
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Konservado de la ŝanĝoj finiĝis post %s"
 
-#: src/installation/advanced.py:1741
+#: src/installation/advanced.py:1744
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Kreanta dosier-sistemon %s en %s kun la etikedo %s"
 
-#: src/installation/advanced.py:1783
+#: src/installation/advanced.py:1786
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr ""
 
-#: src/installation/advanced.py:1802
+#: src/installation/advanced.py:1805
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr ""
 
-#: src/installation/advanced.py:1843 src/installation/automatic.py:226
+#: src/installation/advanced.py:1846 src/installation/alongside.py:499
+#: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
 msgstr ""
 
-#: src/installation/advanced.py:1853
+#: src/installation/advanced.py:1856
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro instalos la praŝargilon kun la tipo %s al %s"
 
-#: src/installation/advanced.py:1869 src/installation/automatic.py:247
+#: src/installation/advanced.py:1872 src/installation/alongside.py:512
+#: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Test-modo. Thus ne ŝanĝos ion ajn en via sistemo."
 
 #: src/installation/alongside.py:115
 #, python-format
 msgid "Can't load %s css"
-msgstr ""
+msgstr "Ne eblis ŝargi %s-css"
 
 #: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Elektu apud kio operaciumo vi volas instali na Manjaro"
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro apud alia operaciumo"
 
 #: src/installation/alongside.py:175
 msgid "Detected OS"
-msgstr ""
+msgstr "Trovitaj operaciumoj"
 
 #: src/installation/alongside.py:178
 msgid "Filesystem"
-msgstr ""
+msgstr "Dosier-sistemo"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
@@ -493,28 +496,46 @@ msgstr ""
 
 #: src/installation/alongside.py:268
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Ne eblis malgrandigi la subdiskon (eble ĝi estas preskaŭ plena?)"
 
-#: src/installation/alongside.py:355
+#: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
 msgstr ""
 
-#: src/installation/alongside.py:388
+#: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
 msgstr ""
 
+#: src/installation/alongside.py:399
+#, python-format
+msgid "Can't shrink %s(%s) partition"
+msgstr ""
+
+#: src/installation/alongside.py:418 src/installation/alongside.py:470
+msgid "Cannot create new partition."
+msgstr ""
+
+#: src/installation/alongside.py:458
+msgid "Cannot create new swap partition."
+msgstr ""
+
+#: src/installation/alongside.py:495 src/installation/automatic.py:222
+#, python-format
+msgid "Thus will install the bootloader of type %s in %s"
+msgstr "Thus instalos la praŝargilon kun la tipo %s en %s"
+
 #: src/installation/ask.py:99
 msgid "Installation type"
-msgstr ""
+msgstr "Instal-tipo"
 
 #: src/installation/ask.py:113 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr ""
+msgstr "Malplenigi diskon kaj instali Manjaro (aŭtomate)"
 
 #: src/installation/ask.py:116
 msgid "Warning: This will delete all data on your disk"
-msgstr ""
+msgstr "Averto: Tiu akcio forigos ĉiujn datumojn je via disko"
 
 #: src/installation/ask.py:122
 msgid "Encrypt this installation for increased security."
@@ -546,11 +567,11 @@ msgstr ""
 #: src/installation/ask.py:152 src/installation/ask.py:154
 #, python-format
 msgid "Install Manjaro alongside %s"
-msgstr ""
+msgstr "Instali na Manjaro apud %s"
 
 #: src/installation/ask.py:161
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Administri viajn subdiskojn kaj elektu kie instali na Manjaro (altnivela)"
 
 #: src/installation/ask.py:164
 msgid ""
@@ -576,22 +597,22 @@ msgstr ""
 
 #: src/installation/automatic.py:75
 msgid "Automatic installation mode"
-msgstr ""
+msgstr "Aŭtomata instal-reĝimo"
 
 #: src/installation/automatic.py:79 ui/installation_automatic.ui:96
 msgid "Select drive:"
-msgstr ""
+msgstr "Elekti diskon:"
 
 #: src/installation/automatic.py:83
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "AVERTO! Tiu instal-maniero anstataŭigos ĉion se via disko!"
 
 #: src/installation/automatic.py:88 ui/installation_automatic.ui:59
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr ""
+msgstr "Bonvolu elekti la diskon, je kiu vi volas instali na Manjaro\nkaj klaki la suban butonon por komencigi la procedon!"
 
 #: src/installation/automatic.py:93 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
@@ -600,7 +621,7 @@ msgstr ""
 #: src/installation/automatic.py:97 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
 msgid "Confirm your password:"
-msgstr ""
+msgstr "Konfirmu vian pasvorton:"
 
 #: src/installation/automatic.py:101 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
@@ -614,7 +635,7 @@ msgstr ""
 #: src/installation/automatic.py:166
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Aŭtomata instalado je %s"
 
 #: src/installation/automatic.py:199
 #, python-format
@@ -627,22 +648,17 @@ msgstr ""
 #: src/installation/automatic.py:211
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
-
-#: src/installation/automatic.py:222
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Thus uzas na %s kiel instal-aparaton"
 
 #: src/installation/process.py:84
 #, python-format
 msgid "Copying '/%s'"
-msgstr ""
+msgstr "Kopianta na '/%s'"
 
 #: src/installation/process.py:165
 #, python-format
 msgid "Installing using the '%s' method"
-msgstr ""
+msgstr "Instalanta per la '%s'-metodo"
 
 #: src/installation/process.py:242
 #, python-format
@@ -651,333 +667,333 @@ msgstr ""
 
 #: src/installation/process.py:263
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Eraro dum kreado de la subdiskoj kaj iliaj dosier-sistemoj"
 
-#: src/installation/process.py:265 src/installation/process.py:342
-#: src/installation/process.py:640
+#: src/installation/process.py:265 src/installation/process.py:338
+#: src/installation/process.py:636
 #, python-format
 msgid "Command %s has failed."
 msgstr ""
 
-#: src/installation/process.py:267 src/installation/process.py:321
-#: src/installation/process.py:344 src/installation/process.py:367
-#: src/installation/process.py:642
+#: src/installation/process.py:267 src/installation/process.py:314
+#: src/installation/process.py:340 src/installation/process.py:363
+#: src/installation/process.py:638
 #, python-format
 msgid "Output : %s"
 msgstr ""
 
-#: src/installation/process.py:307 src/installation/process.py:335
+#: src/installation/process.py:300 src/installation/process.py:331
 #, python-format
 msgid "Mounting partition %s into %s directory"
-msgstr ""
+msgstr "Liganta subdiskon %s al la dosierujon %s"
 
-#: src/installation/process.py:313
+#: src/installation/process.py:306
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
-msgstr ""
+msgstr "Liganta subdiskon %s al la praŝarg-dosierujon"
 
-#: src/installation/process.py:317
+#: src/installation/process.py:310
 msgid "Couldn't mount root and boot partitions"
-msgstr ""
+msgstr "Ne eblis ligi la radikan kaj la hejman subdiskon"
 
-#: src/installation/process.py:319 src/installation/process.py:365
+#: src/installation/process.py:312 src/installation/process.py:361
 #, python-format
 msgid "Command %s has failed"
 msgstr ""
 
-#: src/installation/process.py:340
+#: src/installation/process.py:336
 #, python-format
 msgid "Can't mount %s in %s"
-msgstr ""
+msgstr "Ne eblas ligi %s al %s"
 
-#: src/installation/process.py:355
+#: src/installation/process.py:351
 #, python-format
 msgid "%s deleted"
 msgstr ""
 
-#: src/installation/process.py:363
+#: src/installation/process.py:359
 msgid "Can't create necessary directories on destination system"
-msgstr ""
+msgstr "Ne eblas krei la bezonatajn dosierujojn en la cel-sistemo"
 
-#: src/installation/process.py:375
+#: src/installation/process.py:371
 msgid "Install System ..."
 msgstr ""
 
-#: src/installation/process.py:380
+#: src/installation/process.py:376
 msgid "System installed."
 msgstr ""
 
-#: src/installation/process.py:382
+#: src/installation/process.py:378
 msgid "Configuring system ..."
 msgstr ""
 
-#: src/installation/process.py:384
+#: src/installation/process.py:380
 msgid "System configured."
 msgstr ""
 
-#: src/installation/process.py:388
+#: src/installation/process.py:384
 msgid "Installing boot loader ..."
 msgstr ""
 
-#: src/installation/process.py:421
+#: src/installation/process.py:417
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr ""
 
-#: src/installation/process.py:440 src/installation/process.py:459
-#: src/installation/process.py:473
+#: src/installation/process.py:436 src/installation/process.py:455
+#: src/installation/process.py:469
 #, python-format
 msgid "Can't unmount %s"
 msgstr ""
 
-#: src/installation/process.py:475
+#: src/installation/process.py:471
 msgid "Installation finished successfully."
 msgstr ""
 
-#: src/installation/process.py:511
+#: src/installation/process.py:507
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr ""
 
-#: src/installation/process.py:515
+#: src/installation/process.py:511
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr ""
 
-#: src/installation/process.py:525 src/installation/process.py:531
+#: src/installation/process.py:521 src/installation/process.py:527
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr ""
 
-#: src/installation/process.py:542
+#: src/installation/process.py:538
 msgid "Indexing files to be copied ..."
 msgstr ""
 
-#: src/installation/process.py:547
+#: src/installation/process.py:543
 msgid "Extracting root-image ..."
 msgstr ""
 
-#: src/installation/process.py:557
+#: src/installation/process.py:553
 msgid "Extracting desktop-image ..."
 msgstr ""
 
-#: src/installation/process.py:572
+#: src/installation/process.py:568
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Restaŭranta meta-datumojn de %s"
 
-#: src/installation/process.py:588
+#: src/installation/process.py:584
 msgid "Special dirs already mounted."
-msgstr ""
+msgstr "Specialaj dosierujoj jam ligita."
 
-#: src/installation/process.py:622
+#: src/installation/process.py:618
 msgid "Special dirs are not mounted. Skipping."
 msgstr ""
 
-#: src/installation/process.py:639 src/installation/process.py:645
+#: src/installation/process.py:635 src/installation/process.py:641
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "Ne eblis malligi na %s"
 
-#: src/installation/process.py:667
+#: src/installation/process.py:663
 #, python-format
 msgid "Error running command: %s"
 msgstr ""
 
-#: src/installation/process.py:700
+#: src/installation/process.py:696
 msgid "Can't copy network configuration files"
 msgstr ""
 
-#: src/installation/process.py:730 src/installation/process.py:788
+#: src/installation/process.py:726 src/installation/process.py:784
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr ""
 
-#: src/installation/process.py:744
+#: src/installation/process.py:740
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr ""
 
-#: src/installation/process.py:748
+#: src/installation/process.py:744
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr ""
 
-#: src/installation/process.py:792
+#: src/installation/process.py:788
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr ""
 
-#: src/installation/process.py:881
+#: src/installation/process.py:876
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr ""
 
-#: src/installation/process.py:891 src/installation/process.py:917
+#: src/installation/process.py:886 src/installation/process.py:915
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr ""
+msgstr "ERARO dum instalado de GRUB(2) BIOS."
 
-#: src/installation/process.py:914
+#: src/installation/process.py:912
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) BIOS estis instalita sukcese."
 
-#: src/installation/process.py:938
+#: src/installation/process.py:936
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr ""
 
-#: src/installation/process.py:946
+#: src/installation/process.py:944
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr ""
 
-#: src/installation/process.py:959
+#: src/installation/process.py:957
 msgid "Installing Grub2 locales."
 msgstr ""
 
-#: src/installation/process.py:972
+#: src/installation/process.py:970
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr ""
 
-#: src/installation/process.py:977
+#: src/installation/process.py:975
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr ""
 
-#: src/installation/process.py:979
+#: src/installation/process.py:977
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr ""
 
-#: src/installation/process.py:981
+#: src/installation/process.py:979
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr ""
 
-#: src/installation/process.py:999
+#: src/installation/process.py:997
 msgid "Generating grub.cfg"
 msgstr ""
 
-#: src/installation/process.py:1021
+#: src/installation/process.py:1019
 msgid "ERROR installing GRUB(2) locale."
-msgstr ""
+msgstr "ERARO dum instalado de GRUB(2)-lokaĵo."
 
-#: src/installation/process.py:1030
+#: src/installation/process.py:1028
 #, python-format
 msgid "Enabled %s service."
 msgstr ""
 
-#: src/installation/process.py:1037
+#: src/installation/process.py:1035
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr ""
+msgstr "Eraro dum kreado de pasvort-haketo por la uzanto %s"
 
-#: src/installation/process.py:1043
+#: src/installation/process.py:1041
 #, python-format
 msgid "Error changing password for user %s"
-msgstr ""
+msgstr "Eraro dum ŝanĝado de la pasvorto por uzanto %s"
 
-#: src/installation/process.py:1055
+#: src/installation/process.py:1053
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr ""
 
-#: src/installation/process.py:1134
+#: src/installation/process.py:1135
 #, python-format
 msgid "%s: Enable automatic login for user %s."
-msgstr ""
+msgstr "%s: Ŝalti aŭtomatan ensalutadon por uzanto %s."
 
-#: src/installation/process.py:1229 src/installation/process.py:1240
+#: src/installation/process.py:1230 src/installation/process.py:1241
 msgid "Configuring your new system"
-msgstr ""
+msgstr "Agordanta vian novan operaciumon"
 
-#: src/installation/process.py:1232
+#: src/installation/process.py:1233
 msgid "fstab file generated."
 msgstr ""
 
-#: src/installation/process.py:1238
+#: src/installation/process.py:1239
 msgid "Network configuration copied."
 msgstr ""
 
-#: src/installation/process.py:1264
+#: src/installation/process.py:1265
 msgid "Time zone set."
 msgstr ""
 
-#: src/installation/process.py:1285
+#: src/installation/process.py:1286
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr ""
 
-#: src/installation/process.py:1295
+#: src/installation/process.py:1296
 #, python-format
 msgid "User %s added."
 msgstr ""
 
-#: src/installation/process.py:1307
+#: src/installation/process.py:1308
 #, python-format
 msgid "Hostname  %s set."
 msgstr ""
 
-#: src/installation/process.py:1312
+#: src/installation/process.py:1313
 msgid "Set root password."
 msgstr ""
 
-#: src/installation/process.py:1315
+#: src/installation/process.py:1316
 msgid "Set the same password to root."
 msgstr ""
 
-#: src/installation/process.py:1321
+#: src/installation/process.py:1322
 msgid "Generating locales ..."
 msgstr ""
 
-#: src/installation/process.py:1339
+#: src/installation/process.py:1340
 msgid "Adjusting hardware clock ..."
 msgstr ""
 
-#: src/installation/process.py:1348
+#: src/installation/process.py:1349
 msgid "Configuring hardware ..."
 msgstr ""
 
-#: src/installation/process.py:1421
+#: src/installation/process.py:1422
 msgid "Set up graphics card ..."
 msgstr ""
 
-#: src/installation/process.py:1428
+#: src/installation/process.py:1429
 msgid "Can't execute the MHWD script"
-msgstr ""
+msgstr "Ne eblis ruli la MHWD-skripton"
 
-#: src/installation/process.py:1441
+#: src/installation/process.py:1442
 msgid "Configure display manager ..."
 msgstr ""
 
-#: src/installation/process.py:1547
+#: src/installation/process.py:1548
 msgid "Configure System ..."
 msgstr ""
 
-#: src/installation/process.py:1572
+#: src/installation/process.py:1573
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Foriganta la viv-system-agordon (pakaĵoj)"
 
-#: src/installation/process.py:1588
+#: src/installation/process.py:1589
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Agordanta la pakaĵ-mastrumilon"
 
-#: src/installation/process.py:1600
+#: src/installation/process.py:1601
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Agordo de pakaĵ-mastrumilo finis."
 
-#: src/installation/process.py:1624
+#: src/installation/process.py:1625
 msgid "Running mkinitcpio ..."
 msgstr ""
 
-#: src/installation/process.py:1627
+#: src/installation/process.py:1628
 msgid "Running mkinitcpio - done"
 msgstr ""
 
-#: src/installation/process.py:1643
+#: src/installation/process.py:1644
 msgid "Encrypting user home dir ..."
 msgstr ""
 
-#: src/installation/process.py:1645
+#: src/installation/process.py:1646
 msgid "User home dir encrypted"
 msgstr ""
 
 #: src/keymap.py:67
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Elekti vian klavar-aranĝon"
 
 #: src/keymap.py:71
 msgid "Type here to test your keyboard"
@@ -985,24 +1001,24 @@ msgstr ""
 
 #: src/keymap.py:78
 msgid "Layouts"
-msgstr ""
+msgstr "Aranĝoj"
 
 #: src/keymap.py:84
 msgid "Variants"
-msgstr ""
+msgstr "Variantoj"
 
 #: src/keymap.py:103
 #, python-format
 msgid "keyboard_layout is %s"
-msgstr ""
+msgstr "keyboard_layout estas %s"
 
 #: src/language.py:78
 msgid "Please choose your language:"
-msgstr ""
+msgstr "Bonvolu elekti vian lingvon:"
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Avizo: La Thus-instalilo estas beta-eldona programaro."
 
 #: src/language.py:84
 msgid ""
@@ -1015,31 +1031,31 @@ msgstr ""
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
-msgstr ""
+msgstr "Bonvenon ĉe Manjaro!"
 
 #: src/language.py:108
 msgid "Languages"
-msgstr ""
+msgstr "Lingvoj"
 
 #: src/language.py:128
 #, python-format
 msgid "Can't find translation file for the %s language"
-msgstr ""
+msgstr "Ne eblis trovi la traduk-dosieron por la %s-lingvo"
 
 #: src/location.py:64
 msgid "Select your location"
-msgstr ""
+msgstr "Elektu vian lokon"
 
 #: src/location.py:68
 msgid ""
 "The selected location will be used to help select the system locale.\n"
 "Normally this should be the country where you live.\n"
 "This is a shortlist of locations based on the language you selected."
-msgstr ""
+msgstr "La elektita loko estos uzata por facliligi la elekti de la operacium-lokaĵaro.\nKutime tiu estas la lando, en kiu vi loĝas.\nJen listo da lokoj indikita je la lingvo, kiun vi elektis."
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr ""
+msgstr "Lando, teritorio aŭ regiono:"
 
 #: src/parted3/fs_module.py:148
 #, python-format
@@ -1066,28 +1082,33 @@ msgstr ""
 msgid "Can't remove physical volume %s"
 msgstr ""
 
-#: src/parted3/partition_module.py:107
+#: src/parted3/partition_module.py:106
+#, python-format
+msgid "Adding %s to disk_dic"
+msgstr ""
+
+#: src/parted3/partition_module.py:108
 #, python-format
 msgid "Unrecognised disk label in device %s."
 msgstr ""
 
-#: src/parted3/partition_module.py:111
+#: src/parted3/partition_module.py:112
 #, python-format
 msgid ""
 "Exception: %s.\n"
 "For more information take a look at /tmp/thus.log"
 msgstr ""
 
-#: src/parted3/partition_module.py:178
+#: src/parted3/partition_module.py:179
 #, python-format
 msgid "Can't delete partition %s"
 msgstr ""
 
-#: src/parted3/partition_module.py:229
+#: src/parted3/partition_module.py:230
 msgid "Partition is too large!"
 msgstr ""
 
-#: src/parted3/partition_module.py:289
+#: src/parted3/partition_module.py:290
 #, python-format
 msgid "Can't detect used space from %s"
 msgstr ""
@@ -1129,41 +1150,41 @@ msgstr ""
 
 #: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
-msgstr ""
+msgstr "Ne eblis trovi vic-spegul-skripton"
 
 #: src/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
-msgstr ""
+msgstr "Ne eblis apliki aŭtomatan spegul-elekton"
 
 #: src/show_message.py:54
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Manjaro-instalilo - Eraro"
 
 #: src/show_message.py:66
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Manjaro-instalilo - Averto"
 
 #: src/show_message.py:78
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Manjaro-instalilo - informo"
 
 #: src/show_message.py:89
 msgid "Manjaro Installer - Question"
-msgstr ""
+msgstr "Manjaro-instalilo - Demando"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
 "Installation finished!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Instalado finiĝis!\nĈu vi volas restartigi vian komputilon nun?"
 
 #: src/slides.py:102
 msgid "Installing Manjaro..."
-msgstr ""
+msgstr "Instalanta na Manjaro…"
 
 #: src/slides.py:107
 msgid "Please wait..."
-msgstr ""
+msgstr "Bonvolu atendi…"
 
 #: src/slides.py:197
 msgid ""
@@ -1178,48 +1199,48 @@ msgstr ""
 
 #: src/slides.py:234
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Ĉu vi volas reprovi?"
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "Kie vi estas?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
-msgstr ""
+msgstr "Zono:"
 
 #: src/timezone.py:120 ui/timezone.ui:78
 msgid "Region:"
-msgstr ""
+msgstr "Regiono:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Uzi la retan temp-protokolon (NTP) por horloĝ-sinkronigo:"
 
 #: src/timezone.py:135
 #, python-format
 msgid "location changed to : %s"
-msgstr ""
+msgstr "loko ŝanĝita al : %s"
 
 #: src/timezone.py:223
 msgid "Can't autodetect timezone coordinates"
-msgstr ""
+msgstr "Ne eblis aŭtomate trovi la temp-zon-koordinatoj"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Haltigi temp-zon-fadenojn…"
 
 #: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr ""
+msgstr "Ne povis trovi la land-kodon, kiu uzatas por krei pacman-spegul-liston"
 
 #: src/user_info.py:92 ui/user_info.ui:35
 msgid "Your name:"
-msgstr ""
+msgstr "Via nomo:"
 
 #: src/user_info.py:96 ui/user_info.ui:206
 msgid "Your name"
-msgstr ""
+msgstr "Via nomo"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
@@ -1227,29 +1248,29 @@ msgstr ""
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
-msgstr ""
+msgstr "La nomo de via komputilo:"
 
 #: src/user_info.py:108 ui/user_info.ui:50
 msgid "Pick a username:"
-msgstr ""
+msgstr "Elektu uzant-nomon:"
 
 #: src/user_info.py:112 ui/user_info.ui:250
 msgid "Username"
-msgstr ""
+msgstr "Uzant-nomo"
 
 #: src/user_info.py:116 ui/user_info.ui:65
 msgid "Choose a password:"
-msgstr ""
+msgstr "Elektu pasvorton:"
 
 #: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
 #: ui/user_info.ui:573
 msgid "Password"
-msgstr ""
+msgstr "Pasvorto"
 
 #: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
 #: ui/user_info.ui:634
 msgid "Confirm password"
-msgstr ""
+msgstr "Konfirmi pasvorton"
 
 #: src/user_info.py:132 ui/user_info.ui:611
 msgid "Choose a root password:"
@@ -1261,23 +1282,23 @@ msgstr ""
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
-msgstr ""
+msgstr "Ĝia nomo kiel ĝi montratos al aliajn komputiloj."
 
 #: src/user_info.py:152
 msgid "You must enter a name"
-msgstr ""
+msgstr "Vi devas entajpi nomon"
 
 #: src/user_info.py:156
 msgid "You must enter a username"
-msgstr ""
+msgstr "Vi devas entajpi uzant-nomon"
 
 #: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
-msgstr ""
+msgstr "Vi devas entajpi pasvorton"
 
 #: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
-msgstr ""
+msgstr "Ensalutigi aŭtomate"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
@@ -1289,7 +1310,7 @@ msgstr ""
 
 #: src/user_info.py:172
 msgid "Who are you?"
-msgstr ""
+msgstr "Kiu vi estas?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
@@ -1303,13 +1324,13 @@ msgstr ""
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro uzas na eCryptfs por ĉifri vian hejman desierujon. Bedaŭrinde eCryptfs ne tre bonas por maldensaj dosieroj.\n\n"
 
 #: src/user_info.py:253
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr ""
+msgstr "Ne zorgu! Nur en malmultaj kazoj tiu manko kaŭzigas problemojn.\n\n"
 
 #: src/user_info.py:254
 msgid ""
@@ -1327,39 +1348,39 @@ msgstr ""
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Vidu na https://wiki.archlinux.org/index.php/ECryptfs por pli detalaj informoj\n\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
-msgstr ""
+msgstr "Ĉu vi certas ke vi volas ĉifrigi vian hejman dosierujon?\n"
 
 #: src/user_info.py:345
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "Nevalidaj simboloj entajpita"
 
 #: src/user_info.py:349
 msgid "Username can't contain dots"
-msgstr ""
+msgstr "La uzant-nomo ne povas enhavi punktojn"
 
 #: src/user_info.py:353
 msgid "Too many characters"
-msgstr ""
+msgstr "Tro da simboloj"
 
 #: ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Kion praŝarg-tipon vi uzas?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (ĝenarale)"
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
@@ -1369,7 +1390,7 @@ msgstr ""
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Por plej bonaj rezultoj, bonvolu certigi, ke via komputilo:</span>"
 
 #: ui/check.ui:108
 msgid ""
@@ -1379,104 +1400,104 @@ msgstr ""
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
-msgstr ""
+msgstr "Tipo de subdisk-skemo"
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
-msgstr ""
+msgstr "Ŝanĝi subdiskon"
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
-msgstr ""
+msgstr "Ĉifrad-opcioj..."
 
 #: ui/installation_advanced.ui:383
 msgid "Create partition"
-msgstr ""
+msgstr "Krei subdiskon"
 
 #: ui/installation_advanced.ui:423
 msgid "Location:"
-msgstr ""
+msgstr "Loko:"
 
 #: ui/installation_advanced.ui:607
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:895
 msgid "New Partition Table"
 msgstr ""
 
-#: ui/installation_advanced.ui:951
+#: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"
 msgstr ""
 
-#: ui/installation_advanced.ui:1106
+#: ui/installation_advanced.ui:1103
 msgid "LVM..."
-msgstr ""
+msgstr "LVM…"
 
-#: ui/installation_advanced.ui:1259
+#: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "Nomo de LUKS-disko:"
 
-#: ui/installation_advanced.ui:1273
+#: ui/installation_advanced.ui:1270
 msgid "Password:"
-msgstr ""
+msgstr "Pasvorto:"
 
-#: ui/installation_advanced.ui:1287
+#: ui/installation_advanced.ui:1284
 msgid "Confirm password:"
-msgstr ""
+msgstr "Konfirmi pasvorton"
 
-#: ui/installation_advanced.ui:1316
+#: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "Uzi LUKS-ĉifradon:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Elektu apud kio operaciumo vi volas instali na Manjaro</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr ""
+msgstr "Elektu la novan grandon"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
-msgstr ""
+msgstr "Alia operaciumo"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "etikedo"
 
 #: ui/installation_ask.ui:58
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Averto: Tiu akcio forigos ĉiujn programojn, dokumentojn, bildojn, la tutan muzikon kaj ĉiujn aliajn dosierojn je via disko</span>"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "Ĉifrigi la novan Manjaro-instalon por pli bona secureco"
 
 #: ui/installation_ask.ui:91
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Vi povas entajpi la ĉifrad-ŝlosilon en la venonta paŝo</span>"
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Uzi na LVM kun la nova Manjaro-instalado"
 
 #: ui/installation_ask.ui:123
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Tiu starigos na LVM, kiu ebligas al vi facile krei restaŭro-kopion kaj ŝanĝi subdisk-grandojn</span>"
 
 #: ui/installation_ask.ui:155
 msgid ""
@@ -1486,25 +1507,25 @@ msgstr ""
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
-msgstr ""
+msgstr "Instali apud aliaj operaciumoj"
 
 #: ui/installation_ask.ui:192
 msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Kun tiu opcio Manjaro estos instalata apud alia operaciumo, kiun vi jam instalis.</span>"
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Administri viajn subdiskojn kaj elektu kie instali na Manjaro (altnivela)"
 
 #: ui/installation_ask.ui:230
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Vi povos krei/forigi subdiskojn, elekti kie instali na Manjaro kaj ankaŭ elekti pliajn ligejojn.</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""
@@ -1514,7 +1535,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Bonvolu elekti vian lingvon:</span>"
 
 #: ui/language.ui:89
 msgid ""
@@ -1523,28 +1544,28 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Avizo: La Thus-instalilo estas beta-eldona programaro.</span>\n\nThus estas antaŭe eldonata programaro, kiu estas disvolvata tre aktive. RAID, btrfs subdiskoj kaj aliaj altnivelaj agordoj ankoraŭ ne funkcias tre bone per ĝi. Bonvolu daŭrigi singarde, ĉar eblas, ke datumoj iĝos perdita.\n\nSe vi trovas iun ajn cimon, bonvolu sendi ĝin al la ret-paĝo <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Bonvenon ĉe Manjaro</span>"
 
 #: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Forta pasvorto</span></small>"
 
 #: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Vi devas entajpi pasvorton</span></small>"
 
 #: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Vi devas entajpi uzant-nomon</span></small>"
 
 #: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Vi devas entajpi nomon</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small>Ĝia nomo kiel ĝi montratos al aliajn komputiloj.</span>"

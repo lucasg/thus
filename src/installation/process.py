@@ -269,14 +269,7 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_fatal_event(txt)
                 return
 
-        if self.method == 'alongside':
-            # Alongside method shrinks selected partition
-            # and creates root and swap partition in the available space
-            boot_partition, root_partition = fs.shrink(self.mount_devices["alongside"])
-            # Alongside method formats root by default (as it is always a new partition)
-            (error, msg) = fs.create_fs(self.mount_devices["/"], "ext4")
-
-        if self.method == 'advanced':
+        if self.method == 'advanced' or self.method == 'alongside':
             root_partition = self.mount_devices["/"]
 
             # NOTE: Advanced method formats root by default in installation_advanced
@@ -318,7 +311,7 @@ class InstallationProcess(multiprocessing.Process):
                 logging.error(txt)
                 cmd = _("Command %s has failed") % err.cmd
                 logging.error(cmd)
-                out = _("Output : %s") % err.output 
+                out = _("Output : %s") % err.output
                 logging.error(out)
                 self.queue_fatal_event(txt)
                 return False
@@ -341,6 +334,18 @@ class InstallationProcess(multiprocessing.Process):
                     except subprocess.CalledProcessError as err:
                         # We will continue as root and boot are already mounted
                         txt = _("Can't mount %s in %s") % (mount_part, mount_dir)
+                        self.queue_event('warning', txt)
+                        cmd = _("Command %s has failed.") % err.cmd
+                        logging.warning(cmd)
+                        out = _("Output : %s") % err.output
+                        logging.warning(out)
+                elif mount_part == swap_partition:
+                    try:
+                        txt = _("Mounting swap %s") % mount_part
+                        self.queue_event('debug', txt)
+                        subprocess.check_call(['swapon', swap_partition])
+                    except subprocess.CalledProcessError as err:
+                        txt = _("Can't mount %s") % mount_part
                         self.queue_event('warning', txt)
                         cmd = _("Command %s has failed.") % err.cmd
                         logging.warning(cmd)
@@ -766,9 +771,12 @@ class InstallationProcess(multiprocessing.Process):
                 if "btrfs" in myfmt:
                     chk = '0'
                     opts = 'rw,relatime,space_cache,autodefrag,inode_cache'
-                else:
+                elif "ext4" in myfmt:
                     chk = '1'
                     opts = "rw,relatime,data=ordered"
+                else:
+                    chk = '1'
+                    opts = "rw,relatime"
             else:
                 full_path = os.path.join(self.dest_dir, path)
                 subprocess.check_call(["mkdir", "-p", full_path])

@@ -76,27 +76,6 @@ class StylizedFrame(Gtk.Alignment):
         else:
             Gtk.Alignment.do_set_property(self, prop, value)
 
-    def paint_background(self, c):
-        c.set_source_rgb(*gtk_to_cairo_color('#fbfbfb'))
-        alloc = self.get_allocation()
-        draw_round_rect(c, self.radius,
-                        self.width / 2, self.width / 2,
-                        alloc.width - self.width,
-                        alloc.height - self.width)
-        c.fill_preserve()
-
-    def do_draw(self, c):
-        # Background
-        self.paint_background(c)
-        # Edge
-        c.set_source_rgb(*gtk_to_cairo_color('#c7c7c6'))
-        c.set_line_width(self.width)
-        c.stroke()
-        if self.get_child():
-            top, bottom, left, right = self.get_padding()
-            c.translate(left, top)
-            self.get_child().draw(c)
-
 GObject.type_register(StylizedFrame)
 
 
@@ -351,9 +330,8 @@ class StateBox(StylizedFrame):
         hbox = Gtk.Box()
         hbox.set_spacing(10)
         self.image = Gtk.Image()
-        self.image.set_from_stock(Gtk.STOCK_YES, Gtk.IconSize.LARGE_TOOLBAR)
+        self.image.set_from_icon_name("yes", Gtk.IconSize.LARGE_TOOLBAR)
         self.label = Gtk.Label(label=text)
-
         self.label.set_alignment(0, 0.5)
         hbox.pack_start(self.image, False, True, 0)
         hbox.pack_start(self.label, True, True, 0)
@@ -366,18 +344,16 @@ class StateBox(StylizedFrame):
     def set_state(self, state):
         self.status = state
         if state:
-            self.image.set_from_stock(Gtk.STOCK_YES,
-                                      Gtk.IconSize.LARGE_TOOLBAR)
+            self.image.set_from_icon_name(Gtk.STOCK_YES, Gtk.IconSize.LARGE_TOOLBAR)
         else:
-            self.image.set_from_stock(Gtk.STOCK_NO,
-                                      Gtk.IconSize.LARGE_TOOLBAR)
+            self.image.set_from_icon_name(Gtk.STOCK_NO, Gtk.IconSize.LARGE_TOOLBAR)
 
     def get_state(self):
         return self.status
 
     def show(self):
         super().show()
-    
+
     def hide(self):
         super().hide()
 

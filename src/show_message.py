@@ -31,7 +31,6 @@ import multiprocessing
 
 _show_event_queue_messages = True
 
-
 @misc.raise_privileges
 def fatal_error(message):
     # Remove /tmp/.setup-running
@@ -44,49 +43,49 @@ def fatal_error(message):
     error(message)
     os._exit(0)
 
-
 def error(message):
     logging.error(message)
-    msg_dialog = Gtk.MessageDialog(None,
-        Gtk.DialogFlags.MODAL,
-        Gtk.MessageType.ERROR,
-        Gtk.ButtonsType.CLOSE,
-        _("Manjaro Installer - Error"))
+    msg_dialog = Gtk.MessageDialog(transient_for=None,
+                                   modal=True,
+                                   destroy_with_parent=True,
+                                   message_type=Gtk.MessageType.ERROR,
+                                   buttons=Gtk.ButtonsType.CLOSE,
+                                   text=_("Manjaro Installer - Error"))
     msg_dialog.format_secondary_text(message)
     msg_dialog.run()
     msg_dialog.destroy()
-
 
 def warning(message):
     logging.warning(message)
-    msg_dialog = Gtk.MessageDialog(None,
-        Gtk.DialogFlags.MODAL,
-        Gtk.MessageType.WARNING,
-        Gtk.ButtonsType.CLOSE,
-        _("Manjaro Installer - Warning"))
+    msg_dialog = Gtk.MessageDialog(transient_for=None,
+                                   modal=True,
+                                   destroy_with_parent=True,
+                                   message_type=Gtk.MessageType.WARNING,
+                                   buttons=Gtk.ButtonsType.CLOSE,
+                                   text=_("Manjaro Installer - Warning"))
     msg_dialog.format_secondary_text(message)
     msg_dialog.run()
     msg_dialog.destroy()
 
-
 def message(message):
     logging.info(message)
-    msg_dialog = Gtk.MessageDialog(None,
-        Gtk.DialogFlags.MODAL,
-        Gtk.MessageType.INFO,
-        Gtk.ButtonsType.CLOSE,
-        _("Manjaro Installer - Information"))
+    msg_dialog = Gtk.MessageDialog(transient_for=None,
+                                   modal=True,
+                                   destroy_with_parent=True,
+                                   message_type=Gtk.MessageType.INFO,
+                                   buttons=Gtk.ButtonsType.CLOSE,
+                                   text=_("Manjaro Installer - Information"))
     msg_dialog.format_secondary_text(message)
     msg_dialog.run()
 
-
 def question(message):
     logging.info(message)
-    msg_dialog = Gtk.MessageDialog(None,
-        Gtk.DialogFlags.MODAL,
-        Gtk.MessageType.QUESTION,
-        Gtk.ButtonsType.YES_NO,
-        _("Manjaro Installer - Question"))
+    msg_dialog = Gtk.MessageDialog(transient_for=None,
+                                   modal=True,
+                                   destroy_with_parent=True,
+                                   message_type=Gtk.MessageType.QUESTION,
+                                   buttons=Gtk.ButtonsType.YES_NO,
+                                   text=_("Manjaro Installer - Confirmation"))
     msg_dialog.format_secondary_text(message)
     response = msg_dialog.run()
     msg_dialog.destroy()
