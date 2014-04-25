@@ -55,16 +55,21 @@ from threading import Thread
 import re
 ON_POSIX = 'posix' in sys.builtin_module_names
 
-
 class FileCopyThread(Thread):
     """ Update the value of the progress bar so that we get some movement """
     def __init__(self, installer, current_file, total_files, source, dest, offset=0):
+        # Environment used for executing rsync properly
+        # Setting locale to C (fix issue with tr_TR locale)
+        self.at_env=os.environ
+        self.at_env["LC_ALL"]="C"
+
         self.our_current = current_file
         self.process = subprocess.Popen(
             (CMD % {
                 'source': source,
                 'dest': dest,
             }).split(),
+            env=self.at_env,
             bufsize=1,
             stdout=subprocess.PIPE,
             close_fds=ON_POSIX

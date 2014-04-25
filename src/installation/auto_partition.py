@@ -172,7 +172,7 @@ class AutoPartition(object):
 
             # Make sure the fs type is one we can handle
             if fs_type not in mkfs.keys():
-                txt = _("Unknown filesystem type %s"), fs_type
+                txt = _("Unknown filesystem type %s") % fs_type
                 logging.error(txt)
                 show.error(txt)
                 return
@@ -259,19 +259,14 @@ class AutoPartition(object):
                 swap = self.auto_device + "3"
 
         if self.luks:
-            if self.lvm:
-                # LUKS and LVM
-                luks = [swap]
-                lvm = "/dev/mapper/cryptManjaro"
-            else:
-                # LUKS and no LVM
-                luks = [root]
-                root = "/dev/mapper/cryptManjaro"
-                if self.home:
-                    # In this case we'll have two LUKS devices, one for root
-                    # and the other one for /home
-                    luks.append(home)
-                    home = "/dev/mapper/cryptManjaroHome"
+            # Set luks and root
+            luks = [root]
+            root = "/dev/mapper/cryptManjaro"
+            if self.home and not self.lvm:
+                # We'll have two LUKS devices, when we
+                # use a separate /home volume but no LVM.
+                luks.append(home)
+                home = "/dev/mapper/cryptManjaroHome"
         elif self.lvm:
             # No LUKS but using LVM
             lvm = root
@@ -376,23 +371,79 @@ class AutoPartition(object):
                 stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
             (stdout_data, stderr_data) = proc.communicate(input=luks_key_pass_bytes)
 
+    def get_part_sizes(self, disk_size, start_part_sizes=0):
+        part_sizes = {}
+        
+        part_sizes['disk'] = disk_size
+        
+        
+        part_sizes['boot'] = 0
+        if self.separate_boot:
+            part_sizes['boot'] = 256
+
+        mem_total = check_output("grep MemTotal /proc/meminfo")
+        mem_total = int(mem_total.split()[1])
+        mem = mem_total / 1024
+
+        # Suggested sizes from Anaconda installer
+        if mem < 2048:
+            part_sizes['swap'] = 2 * mem
+        elif 2048 <= mem < 8192:
+            part_sizes['swap'] = mem
+        elif 8192 <= mem < 65536:
+            part_sizes['swap'] = mem / 2
+        else:
+            part_sizes['swap'] = 4096
+
+        # Max swap size is 10% of all available disk size
+        max_swap = disk_size * 0.1
+        if part_sizes['swap'] > max_swap:
+            part_sizes['swap'] = max_swap
+
+        part_sizes['root'] = disk_size - (start_part_sizes + part_sizes['boot'] + part_sizes['swap'])
+        
+        if self.home:
+            # Decide how much we leave to root and how much we leave to /home
+            new_root_part_size = part_sizes['root'] / 5
+            if new_root_part_size > MAX_ROOT_SIZE:
+                new_root_part_size = MAX_ROOT_SIZE
+            elif new_root_part_size < MIN_ROOT_SIZE:
+                new_root_part_size = MIN_ROOT_SIZE
+            part_sizes['home'] = part_sizes['root'] - new_root_part_size
+            part_sizes['root'] = new_root_part_size
+        else:
+            part_sizes['home'] = 0
+
+        part_sizes['lvm_pv'] = part_sizes['swap'] + part_sizes['root'] + part_sizes['home']
+        
+        return part_sizes
+
+    def show_part_sizes(self, part_sizes):
+        logging.debug(_("Total disk size: %dMiB"), part_sizes['disk'])
+        logging.debug(_("Boot partition size: %dMiB"), part_sizes['boot'])
+
+        if self.lvm:
+            logging.debug(_("LVM physical volume size: %dMiB"), part_sizes['lvm_pv'])
+
+        logging.debug(_("Swap partition size: %dMiB"), part_sizes['swap'])
+        logging.debug(_("Root partition size: %dMiB"), part_sizes['root'])
+
+        if self.home:
+            logging.debug(_("Home partition size: %dMiB"), part_sizes['home'])
+
     def run(self):
         key_files = ["/tmp/.keyfile-root", "/tmp/.keyfile-home"]
 
         # Partition sizes are expressed in MiB
         if self.efi:
             gpt_bios_grub_part_size = 2
-            efisys_part_size = 100
+            uefisys_part_size = 100
             empty_space_size = 2
         else:
             gpt_bios_grub_part_size = 0
-            efisys_part_size = 0
+            uefisys_part_size = 0
             # we start with a 1MiB offset before the first partition
             empty_space_size = 1
-
-        boot_part_size = 0
-        if self.separate_boot:
-            boot_part_size = 200
 
         # Get just the disk size in MiB
         device = self.auto_device
@@ -413,53 +464,9 @@ class AutoPartition(object):
             show.warning(txt)
             return
 
-        mem_total = check_output("grep MemTotal /proc/meminfo")
-        mem_total = int(mem_total.split()[1])
-        mem = mem_total / 1024
-
-        # Suggested sizes from Anaconda installer
-        if mem < 2048:
-            swap_part_size = 2 * mem
-        elif 2048 <= mem < 8192:
-            swap_part_size = mem
-        elif 8192 <= mem < 65536:
-            swap_part_size = mem / 2
-        else:
-            swap_part_size = 4096
-
-        # Max swap size is 10% of all available disk size
-        max_swap = disk_size * 0.1
-        if swap_part_size > max_swap:
-            swap_part_size = max_swap
-
-        root_part_size = disk_size - (empty_space_size + gpt_bios_grub_part_size + efisys_part_size + boot_part_size + swap_part_size)
-
-        home_part_size = 0
-        if self.home:
-            # Decide how much we leave to root and how much we leave to /home
-            new_root_part_size = root_part_size / 5
-            if new_root_part_size > MAX_ROOT_SIZE:
-                new_root_part_size = MAX_ROOT_SIZE
-            elif new_root_part_size < MIN_ROOT_SIZE:
-                new_root_part_size = MIN_ROOT_SIZE
-            home_part_size = root_part_size - new_root_part_size
-            root_part_size = new_root_part_size
-
-        lvm_pv_part_size = swap_part_size + root_part_size + home_part_size
-
-        logging.debug("disk_size %dMiB", disk_size)
-        logging.debug("gpt_bios_grub_part_size %dMiB", gpt_bios_grub_part_size)
-        logging.debug("efisys_part_size %dMiB", efisys_part_size)
-        logging.debug("boot_part_size %dMiB", boot_part_size)
-
-        if self.lvm:
-            logging.debug("lvm_pv_part_size %dMiB", lvm_pv_part_size)
-
-        logging.debug("swap_part_size %dMiB", swap_part_size)
-        logging.debug("root_part_size %dMiB", root_part_size)
-
-        if self.home:
-            logging.debug("home_part_size %dMiB", home_part_size)
+        start_part_sizes = empty_space_size + gpt_bios_grub_part_size + uefisys_part_size
+        part_sizes = self.get_part_sizes(disk_size, start_part_sizes)
+        self.show_part_sizes(part_sizes)
 
         # Disable swap and all mounted partitions, umount / last!
         unmount_all(self.dest_dir)
@@ -487,26 +494,26 @@ class AutoPartition(object):
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=1:1M:+%dM --typecode=1:EF02 --change-name=1:BIOS_GRUB %s'
                 % (gpt_bios_grub_part_size, device)], shell=True)
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=2:0:+%dM --typecode=2:EF00 --change-name=2:UEFI_SYSTEM %s'
-                % (efisys_part_size, device)], shell=True)
+                % (uefisys_part_size, device)], shell=True)
             subprocess.check_call(['sgdisk --set-alignment="2048" --new=3:0:+%dM --typecode=3:8300 --attributes=3:set:2 --change-name=3:MANJARO_BOOT %s'
-                % (boot_part_size, device)], shell=True)
+                % (part_sizes['boot'], device)], shell=True)
 
             if self.lvm:
                 subprocess.check_call(['sgdisk --set-alignment="2048" --new=4:0:+%dM --typecode=4:8E00 --change-name=4:MANJARO_LVM %s'
-                    % (lvm_pv_part_size, device)], shell=True)
+                    % (part_sizes['lvm_pv'], device)], shell=True)
             else:
                 subprocess.check_call(['sgdisk --set-alignment="2048" --new=4:0:+%dM --typecode=4:8300 --change-name=4:MANJARO_ROOT %s'
-                    % (root_part_size, device)], shell=True)
+                    % (part_sizes['root'], device)], shell=True)
 
                 if self.home:
                     subprocess.check_call(['sgdisk --set-alignment="2048" --new=5:0:+%dM --typecode=5:8300 --change-name=5:MANJARO_HOME %s'
-                        % (home_part_size, device)], shell=True)
+                        % (part_sizes['home'], device)], shell=True)
 
                     subprocess.check_call(['sgdisk --set-alignment="2048" --new=6:0:+%dM --typecode=6:8200 --change-name=6:MANJARO_SWAP %s'
-                    % (swap_part_size, device)], shell=True)
-
-                subprocess.check_call(['sgdisk --set-alignment="2048" --new=5:0:+%dM --typecode=5:8200 --change-name=5:MANJARO_SWAP %s'
-                    % (swap_part_size, device)], shell=True)
+                    % (part_sizes['swap'], device)], shell=True)
+                else:
+                    subprocess.check_call(['sgdisk --set-alignment="2048" --new=5:0:+%dM --typecode=5:8200 --change-name=5:MANJARO_SWAP %s'
+                    % (part_sizes['swap'], device)], shell=True)
 
             logging.debug(check_output("sgdisk --print %s" % device))
         else:
@@ -521,27 +528,27 @@ class AutoPartition(object):
 
             if self.separate_boot:
                 # Create boot partition (all sizes are in MiB)
-                subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", "1", "%dMiB" % boot_part_size])
+                subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", "1", "%dMiB" % part_sizes['boot']])
                 # Set boot partition as bootable
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "set", "1", "boot", "on"])
 
             if self.lvm:
-                start = boot_part_size
-                if boot_part_size is 0:
+                start = part_sizes['boot']
+                if part_sizes['boot'] is 0:
                     start = 1
 
-                end = start + lvm_pv_part_size
+                end = start + part_sizes['lvm_pv']
                 # Create partition for lvm (will store root, swap and home (if desired) logical volumes)
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary", "%dMiB" % start, "100%"])
                 # Set lvm flag
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "set", "2", "lvm", "on"])
             else:
-                start = boot_part_size
-                if boot_part_size is 0:
+                start = part_sizes['boot']
+                if part_sizes['boot'] is 0:
                     start = 1
 
                 # Create root partition
-                end = start + root_part_size
+                end = start + part_sizes['root']
                 subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary",
                     "%dMiB" % start, "%dMiB" % end])
 
@@ -553,7 +560,7 @@ class AutoPartition(object):
                 if self.home:
                     # Create home partition
                     start = end
-                    end = start + home_part_size
+                    end = start + part_sizes['home']
                     subprocess.check_call(["parted", "-a", "optimal", "-s", device, "mkpart", "primary",
                         "%dMiB" % start, "%dMiB" % end])
 
@@ -589,13 +596,29 @@ class AutoPartition(object):
             subprocess.check_call(["pvcreate", "-f", "-y", lvm_device])
             subprocess.check_call(["vgcreate", "-f", "-y", "ManjaroVG", lvm_device])
 
-            subprocess.check_call(["lvcreate", "--name", "ManjaroRoot", "--size", str(int(root_part_size)), "ManjaroVG"])
+            # Fix issue 180 (https://github.com/Antergos/Cnchi/issues/180)
+            try:
+                # Check space we have now for creating logical volumes
+                vg_info = check_output("vgdisplay -c ManjaroVG")
+                # Get column number 12: Size of volume group in kilobytes
+                vg_size = int(vg_info.split(":")[11]) / 1024
+                if part_sizes['lvm_pv'] > vg_size:
+                    logging.debug("Real ManjaroVG volume group size: %d MiB", vg_size)
+                    logging.debug("Reajusting logical volume sizes")
+                    diff_size = part_sizes['lvm_pv'] - vg_size
+                    start_part_sizes = empty_space_size + gpt_bios_grub_part_size + uefisys_part_size
+                    part_sizes = self.get_part_sizes(disk_size - diff_size, start_part_sizes)
+                    self.show_part_sizes(part_sizes)
+            except Exception as err:
+                logging.exception(err)
+            
+            subprocess.check_call(["lvcreate", "--name", "ManjaroRoot", "--size", str(int(part_sizes['root'])), "ManjaroVG"])
 
             if not self.home:
                 # Use the remaining space for our swap volume
                 subprocess.check_call(["lvcreate", "--name", "ManjaroSwap", "--extents", "100%FREE", "ManjaroVG"])
             else:
-                subprocess.check_call(["lvcreate", "--name", "ManjaroHome", "--size", str(int(home_part_size)), "ManjaroVG"])
+                subprocess.check_call(["lvcreate", "--name", "ManjaroHome", "--size", str(int(part_sizes['home'])), "ManjaroVG"])
                 # Use the remaining space for our swap volume
                 subprocess.check_call(["lvcreate", "--name", "ManjaroSwap", "--extents", "100%FREE", "ManjaroVG"])
 
