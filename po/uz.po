@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-04 22:10+0200\n"
-"PO-Revision-Date: 2014-04-13 11:41+0000\n"
+"POT-Creation-Date: 2014-05-05 23:04+0200\n"
+"PO-Revision-Date: 2014-05-05 21:05+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/manjaro-thus/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -69,8 +69,8 @@ msgid "Show options in development (DO NOT USE THIS!)"
 msgstr ""
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
-#: src/installation/process.py:428 src/installation/process.py:445
-#: src/installation/process.py:460
+#: src/installation/process.py:445 src/installation/process.py:462
+#: src/installation/process.py:477
 #, python-format
 msgid "Unmounting %s"
 msgstr ""
@@ -80,36 +80,66 @@ msgstr ""
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr ""
 
-#: src/installation/auto_partition.py:110
+#: src/installation/auto_partition.py:112
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr ""
 
-#: src/installation/auto_partition.py:120
+#: src/installation/auto_partition.py:122
 msgid "Can't close LUKS devices (see below)"
 msgstr ""
 
-#: src/installation/auto_partition.py:175
+#: src/installation/auto_partition.py:177
 #, python-format
 msgid "Unknown filesystem type %s"
 msgstr ""
 
-#: src/installation/auto_partition.py:185
+#: src/installation/auto_partition.py:187
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr ""
 
-#: src/installation/auto_partition.py:345
+#: src/installation/auto_partition.py:346
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr ""
 
-#: src/installation/auto_partition.py:404
+#: src/installation/auto_partition.py:422
+#, python-format
+msgid "Total disk size: %dMiB"
+msgstr ""
+
+#: src/installation/auto_partition.py:423
+#, python-format
+msgid "Boot partition size: %dMiB"
+msgstr ""
+
+#: src/installation/auto_partition.py:426
+#, python-format
+msgid "LVM physical volume size: %dMiB"
+msgstr ""
+
+#: src/installation/auto_partition.py:428
+#, python-format
+msgid "Swap partition size: %dMiB"
+msgstr ""
+
+#: src/installation/auto_partition.py:429
+#, python-format
+msgid "Root partition size: %dMiB"
+msgstr ""
+
+#: src/installation/auto_partition.py:432
+#, python-format
+msgid "Home partition size: %dMiB"
+msgstr ""
+
+#: src/installation/auto_partition.py:461
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr ""
 
-#: src/installation/auto_partition.py:566
+#: src/installation/auto_partition.py:594
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr ""
@@ -212,7 +242,7 @@ msgstr "Ulash nuqtasi"
 msgid "Label"
 msgstr "Belgi"
 
-#: src/installation/advanced.py:309 src/installation/advanced.py:1641
+#: src/installation/advanced.py:309 src/installation/advanced.py:1643
 msgid "Format"
 msgstr "Formatlash"
 
@@ -238,7 +268,7 @@ msgstr "mavjud emas"
 
 #: src/installation/advanced.py:548 src/installation/advanced.py:962
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1741 src/installation/advanced.py:1835
+#: src/installation/advanced.py:1745 src/installation/advanced.py:1839
 msgid "extended"
 msgstr "kengaytirilgan"
 
@@ -405,62 +435,62 @@ msgid ""
 "This might create problems. Should it be marked to be formatted now?"
 msgstr ""
 
-#: src/installation/advanced.py:1634
+#: src/installation/advanced.py:1636
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "%s bo'limi o'chiriladi"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "Partition"
 msgstr "Bo'lim"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "New"
 msgstr "Yangi"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "Relabel"
 msgstr ""
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "Mount"
 msgstr "Ulash"
 
-#: src/installation/advanced.py:1662
+#: src/installation/advanced.py:1664
 msgid "These disks will have partition actions:"
 msgstr ""
 
-#: src/installation/advanced.py:1720
+#: src/installation/advanced.py:1724
 #, python-format
 msgid "Saving changes done in %s"
 msgstr ""
 
-#: src/installation/advanced.py:1744
+#: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr ""
 
-#: src/installation/advanced.py:1786
+#: src/installation/advanced.py:1790
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr ""
 
-#: src/installation/advanced.py:1805
+#: src/installation/advanced.py:1809
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr ""
 
-#: src/installation/advanced.py:1846 src/installation/alongside.py:499
+#: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
 msgstr ""
 
-#: src/installation/advanced.py:1856
+#: src/installation/advanced.py:1860
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr ""
 
-#: src/installation/advanced.py:1872 src/installation/alongside.py:512
+#: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr ""
@@ -650,344 +680,354 @@ msgstr ""
 msgid "Thus will use %s as installation device"
 msgstr ""
 
-#: src/installation/process.py:84
+#: src/installation/process.py:89
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Nusxa olinmoqda '/%s'"
 
-#: src/installation/process.py:165
+#: src/installation/process.py:170
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr ""
 
-#: src/installation/process.py:242
+#: src/installation/process.py:247
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr ""
 
-#: src/installation/process.py:263
+#: src/installation/process.py:268
 msgid "Error creating partitions and their filesystems"
 msgstr ""
 
-#: src/installation/process.py:265 src/installation/process.py:338
-#: src/installation/process.py:636
+#: src/installation/process.py:270 src/installation/process.py:343
+#: src/installation/process.py:355 src/installation/process.py:653
 #, python-format
 msgid "Command %s has failed."
 msgstr ""
 
-#: src/installation/process.py:267 src/installation/process.py:314
-#: src/installation/process.py:340 src/installation/process.py:363
-#: src/installation/process.py:638
+#: src/installation/process.py:272 src/installation/process.py:319
+#: src/installation/process.py:345 src/installation/process.py:357
+#: src/installation/process.py:380 src/installation/process.py:655
 #, python-format
 msgid "Output : %s"
 msgstr ""
 
-#: src/installation/process.py:300 src/installation/process.py:331
+#: src/installation/process.py:305 src/installation/process.py:336
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr ""
 
-#: src/installation/process.py:306
+#: src/installation/process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr ""
 
-#: src/installation/process.py:310
+#: src/installation/process.py:315
 msgid "Couldn't mount root and boot partitions"
 msgstr "Tub va yuklash bo'limini ulab bo'lmadi"
 
-#: src/installation/process.py:312 src/installation/process.py:361
+#: src/installation/process.py:317 src/installation/process.py:378
 #, python-format
 msgid "Command %s has failed"
 msgstr ""
 
-#: src/installation/process.py:336
+#: src/installation/process.py:341
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "%s'ni %s'ga ulab bo'lmadi"
 
-#: src/installation/process.py:351
+#: src/installation/process.py:349
+#, python-format
+msgid "Mounting swap %s"
+msgstr ""
+
+#: src/installation/process.py:353
+#, python-format
+msgid "Can't mount %s"
+msgstr ""
+
+#: src/installation/process.py:368
 #, python-format
 msgid "%s deleted"
 msgstr ""
 
-#: src/installation/process.py:359
+#: src/installation/process.py:376
 msgid "Can't create necessary directories on destination system"
 msgstr ""
 
-#: src/installation/process.py:371
+#: src/installation/process.py:388
 msgid "Install System ..."
 msgstr ""
 
-#: src/installation/process.py:376
+#: src/installation/process.py:393
 msgid "System installed."
 msgstr ""
 
-#: src/installation/process.py:378
+#: src/installation/process.py:395
 msgid "Configuring system ..."
 msgstr ""
 
-#: src/installation/process.py:380
+#: src/installation/process.py:397
 msgid "System configured."
 msgstr ""
 
-#: src/installation/process.py:384
+#: src/installation/process.py:401
 msgid "Installing boot loader ..."
 msgstr ""
 
-#: src/installation/process.py:417
+#: src/installation/process.py:434
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr ""
 
-#: src/installation/process.py:436 src/installation/process.py:455
-#: src/installation/process.py:469
+#: src/installation/process.py:453 src/installation/process.py:472
+#: src/installation/process.py:486
 #, python-format
 msgid "Can't unmount %s"
 msgstr ""
 
-#: src/installation/process.py:471
+#: src/installation/process.py:488
 msgid "Installation finished successfully."
 msgstr ""
 
-#: src/installation/process.py:507
+#: src/installation/process.py:524
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr ""
 
-#: src/installation/process.py:511
+#: src/installation/process.py:528
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr ""
 
-#: src/installation/process.py:521 src/installation/process.py:527
+#: src/installation/process.py:538 src/installation/process.py:544
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr ""
 
-#: src/installation/process.py:538
+#: src/installation/process.py:555
 msgid "Indexing files to be copied ..."
 msgstr ""
 
-#: src/installation/process.py:543
+#: src/installation/process.py:560
 msgid "Extracting root-image ..."
 msgstr ""
 
-#: src/installation/process.py:553
+#: src/installation/process.py:570
 msgid "Extracting desktop-image ..."
 msgstr ""
 
-#: src/installation/process.py:568
+#: src/installation/process.py:585
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "%s'da meta-ma'lumot tiklanmoqda"
 
-#: src/installation/process.py:584
+#: src/installation/process.py:601
 msgid "Special dirs already mounted."
 msgstr ""
 
-#: src/installation/process.py:618
+#: src/installation/process.py:635
 msgid "Special dirs are not mounted. Skipping."
 msgstr ""
 
-#: src/installation/process.py:635 src/installation/process.py:641
+#: src/installation/process.py:652 src/installation/process.py:658
 #, python-format
 msgid "Unable to umount %s"
 msgstr "%s ajratib bo'lmadi"
 
-#: src/installation/process.py:663
+#: src/installation/process.py:680
 #, python-format
 msgid "Error running command: %s"
 msgstr ""
 
-#: src/installation/process.py:696
+#: src/installation/process.py:713
 msgid "Can't copy network configuration files"
 msgstr ""
 
-#: src/installation/process.py:726 src/installation/process.py:784
+#: src/installation/process.py:743 src/installation/process.py:804
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr ""
 
-#: src/installation/process.py:740
+#: src/installation/process.py:757
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr ""
 
-#: src/installation/process.py:744
+#: src/installation/process.py:761
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr ""
 
-#: src/installation/process.py:788
+#: src/installation/process.py:808
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr ""
 
-#: src/installation/process.py:876
+#: src/installation/process.py:899
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr ""
 
-#: src/installation/process.py:886 src/installation/process.py:915
+#: src/installation/process.py:909 src/installation/process.py:938
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "GRUB(2) BIOS o'rnatish XATOSI."
 
-#: src/installation/process.py:912
+#: src/installation/process.py:935
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS muvaffaqiyatli o'rnatildi."
 
-#: src/installation/process.py:936
+#: src/installation/process.py:959
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr ""
 
-#: src/installation/process.py:944
+#: src/installation/process.py:967
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr ""
 
-#: src/installation/process.py:957
+#: src/installation/process.py:980
 msgid "Installing Grub2 locales."
 msgstr ""
 
-#: src/installation/process.py:970
+#: src/installation/process.py:993
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr ""
 
-#: src/installation/process.py:975
+#: src/installation/process.py:998
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr ""
 
-#: src/installation/process.py:977
+#: src/installation/process.py:1000
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr ""
 
-#: src/installation/process.py:979
+#: src/installation/process.py:1002
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr ""
 
-#: src/installation/process.py:997
+#: src/installation/process.py:1020
 msgid "Generating grub.cfg"
 msgstr ""
 
-#: src/installation/process.py:1019
+#: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) locale."
 msgstr ""
 
-#: src/installation/process.py:1028
+#: src/installation/process.py:1051
 #, python-format
 msgid "Enabled %s service."
 msgstr ""
 
-#: src/installation/process.py:1035
+#: src/installation/process.py:1058
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Foydalanuvchi %s uchun parol xeshini yaratish xatosi"
 
-#: src/installation/process.py:1041
+#: src/installation/process.py:1064
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Foydalanuvchi %s uchun parol almashtirish xatosi"
 
-#: src/installation/process.py:1053
+#: src/installation/process.py:1076
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr ""
 
-#: src/installation/process.py:1135
+#: src/installation/process.py:1167
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Foydalanuvchi %s uchun tizimga avtomatik kirishni yoqish."
 
-#: src/installation/process.py:1230 src/installation/process.py:1241
+#: src/installation/process.py:1262 src/installation/process.py:1273
 msgid "Configuring your new system"
 msgstr "Yangi tizim sozlanmoqda"
 
-#: src/installation/process.py:1233
+#: src/installation/process.py:1265
 msgid "fstab file generated."
 msgstr ""
 
-#: src/installation/process.py:1239
+#: src/installation/process.py:1271
 msgid "Network configuration copied."
 msgstr ""
 
-#: src/installation/process.py:1265
+#: src/installation/process.py:1297
 msgid "Time zone set."
 msgstr ""
 
-#: src/installation/process.py:1286
+#: src/installation/process.py:1318
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr ""
 
-#: src/installation/process.py:1296
+#: src/installation/process.py:1328
 #, python-format
 msgid "User %s added."
 msgstr ""
 
-#: src/installation/process.py:1308
+#: src/installation/process.py:1340
 #, python-format
 msgid "Hostname  %s set."
 msgstr ""
 
-#: src/installation/process.py:1313
+#: src/installation/process.py:1345
 msgid "Set root password."
 msgstr ""
 
-#: src/installation/process.py:1316
+#: src/installation/process.py:1348
 msgid "Set the same password to root."
 msgstr ""
 
-#: src/installation/process.py:1322
+#: src/installation/process.py:1354
 msgid "Generating locales ..."
 msgstr ""
 
-#: src/installation/process.py:1340
+#: src/installation/process.py:1372
 msgid "Adjusting hardware clock ..."
 msgstr ""
 
-#: src/installation/process.py:1349
+#: src/installation/process.py:1381
 msgid "Configuring hardware ..."
 msgstr ""
 
-#: src/installation/process.py:1422
+#: src/installation/process.py:1454
 msgid "Set up graphics card ..."
 msgstr ""
 
-#: src/installation/process.py:1429
+#: src/installation/process.py:1461
 msgid "Can't execute the MHWD script"
 msgstr "MHWD ssenariyini bajarib bo'lmadi"
 
-#: src/installation/process.py:1442
+#: src/installation/process.py:1474
 msgid "Configure display manager ..."
 msgstr ""
 
-#: src/installation/process.py:1548
+#: src/installation/process.py:1580
 msgid "Configure System ..."
 msgstr ""
 
-#: src/installation/process.py:1573
+#: src/installation/process.py:1605
 msgid "Removing live configuration (packages)"
 msgstr "Jonli sozlashni (paketlarni) olib tashlanmoqda"
 
-#: src/installation/process.py:1589
+#: src/installation/process.py:1621
 msgid "Configuring package manager"
 msgstr "Paket boshqaruvchisi sozlanmoqda"
 
-#: src/installation/process.py:1601
+#: src/installation/process.py:1633
 msgid "Finished configuring package manager."
 msgstr ""
 
-#: src/installation/process.py:1625
+#: src/installation/process.py:1657
 msgid "Running mkinitcpio ..."
 msgstr ""
 
-#: src/installation/process.py:1628
+#: src/installation/process.py:1660
 msgid "Running mkinitcpio - done"
 msgstr ""
 
-#: src/installation/process.py:1644
+#: src/installation/process.py:1676
 msgid "Encrypting user home dir ..."
 msgstr ""
 
-#: src/installation/process.py:1646
+#: src/installation/process.py:1678
 msgid "User home dir encrypted"
 msgstr ""
 
@@ -1156,21 +1196,21 @@ msgstr ""
 msgid "Couldn't execute auto mirroring selection"
 msgstr ""
 
-#: src/show_message.py:54
+#: src/show_message.py:53
 msgid "Manjaro Installer - Error"
 msgstr "Manjaro o'rnatuvchisi - Xato"
 
-#: src/show_message.py:66
+#: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
 msgstr "Manjaro o'rnatuvchisi - Ogohlantirish"
 
-#: src/show_message.py:78
+#: src/show_message.py:77
 msgid "Manjaro Installer - Information"
 msgstr "Manjaro o'rnatuvchisi - Ma'lumot"
 
-#: src/show_message.py:89
-msgid "Manjaro Installer - Question"
-msgstr "Manjaro o'rnatuvchisi - Savol"
+#: src/show_message.py:88
+msgid "Manjaro Installer - Confirmation"
+msgstr ""
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""

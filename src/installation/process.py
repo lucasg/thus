@@ -830,12 +830,15 @@ class InstallationProcess(multiprocessing.Process):
 
         default_dir = os.path.join(self.dest_dir, "etc/default")
         default_grub = os.path.join(default_dir, "grub")
+        plymouth_bin = os.path.join(self.dest_dir, "usr/bin/plymouth")
+        if os.path.exists(plymouth_bin):
+            use_splash = 'splash'
         if "swap" in self.mount_devices:
             swap_partition = self.mount_devices["swap"]
             swap_uuid = fs.get_info(swap_partition)['UUID']
-            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=%s quiet splash"' % swap_uuid
+            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=%s quiet %s"' % (swap_uuid, use_splash)
         else:
-            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"'
+            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet %s"' % use_splash
 
         if not os.path.exists(default_dir):
             os.mkdir(default_dir)
@@ -1096,11 +1099,20 @@ class InstallationProcess(multiprocessing.Process):
         hooks = ["base", "udev", "autodetect", "modconf", "block", "keyboard", "keymap"]
         modules = []
 
+        # It is important that the plymouth hook comes before any encrypt hook
+
+        plymouth_bin = os.path.join(self.dest_dir, "usr/bin/plymouth")
+        if os.path.exists(plymouth_bin):
+            hooks.append("plymouth")
+
         # It is important that the encrypt hook comes before the filesystems hook
         # (in case you are using LVM on LUKS, the order should be: encrypt lvm2 filesystems)
 
         if self.settings.get("use_luks"):
-            hooks.append("encrypt")
+            if os.path.exists(plymouth_bin):
+                hooks.append("plymouth-encrypt")
+            else:
+                hooks.append("encrypt")
             if self.arch == 'x86_64':
                 modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_x86_64", "sha256", "sha512"])
             else:
@@ -1238,6 +1250,17 @@ class InstallationProcess(multiprocessing.Process):
                     if 'default_user' in line:
                         line = 'default_user %s\n' % username
                     slim_conf.write(line)
+        elif self.desktop_manager == 'sddm':
+            # Systems with Sddm as Desktop Manager
+            sddm_conf_path = os.path.join(self.dest_dir, "etc/sddm.conf")
+            text = []
+            with open(sddm_conf_path, "r") as sddm_conf:
+                text = sddm_conf.readlines()
+            with open(sddm_conf_path, "w") as sddm_conf:
+                for line in text:
+                    if 'AutoUser=' in line:
+                        line = 'AutoUser=%s\n' % username
+                    sddm_conf.write(line)
 
     def configure_system(self):
         """ Final install steps
@@ -1463,6 +1486,10 @@ class InstallationProcess(multiprocessing.Process):
         # Setup slim
         if os.path.exists("/usr/bin/slim"):
             self.desktop_manager = 'slim'
+
+        # Setup sddm
+        if os.path.exists("/usr/bin/sddm"):
+            self.desktop_manager = 'sddm'
 
         # setup lightdm
         if os.path.exists("%s/usr/bin/lightdm" % self.dest_dir):

@@ -90,22 +90,31 @@ def unmount_all(dest_dir):
             logging.warning(_("Unmounting %s failed. Trying lazy arg."), dest_dir)
             subprocess.call(["umount", "-l", dest_dir])
 
-    # Remove all previous Manjaro LVM volumes
+    # Remove all previous LVM volumes
     # (it may have been left created due to a previous failed installation)
     try:
-        if os.path.exists("/dev/mapper/ManjaroRoot"):
-            subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroRoot"])
-        if os.path.exists("/dev/mapper/ManjaroSwap"):
-            subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroSwap"])
-        if os.path.exists("/dev/mapper/ManjaroHome"):
-            subprocess.check_call(["lvremove", "-f", "/dev/mapper/ManjaroHome"])
-        if os.path.exists("/dev/ManjaroVG"):
-            subprocess.check_call(["vgremove", "-f", "ManjaroVG"])
+        lvolumes = check_output("lvs -o lv_name,vg_name --noheading").split("\n")
+        if len(lvolumes[0]) > 0:
+            for lvolume in lvolumes:
+                if len(lvolume) > 0:
+                    (lvolume, vgroup) = lvolume.split()
+                    lvdev = "/dev/" + vgroup + "/" + lvolume
+                    subprocess.check_call(["wipefs", "-af", lvdev])
+                    subprocess.check_call(["lvremove", "-f", lvdev])
+
+        vgnames = check_output("vgs -o vg_name --noheading").split("\n")
+        if len(vgnames[0]) > 0:
+            for vgname in vgnames:
+                vgname = vgname.strip()
+                if len(vgname) > 0:
+                    subprocess.check_call(["vgremove", "-f", vgname])
+
         pvolumes = check_output("pvs -o pv_name --noheading").split("\n")
         if len(pvolumes[0]) > 0:
             for pvolume in pvolumes:
                 pvolume = pvolume.strip(" ")
                 subprocess.check_call(["pvremove", "-f", pvolume])
+
     except subprocess.CalledProcessError as err:
         logging.warning(_("Can't delete existent LVM volumes (see below)"))
         logging.warning(err)
@@ -267,11 +276,9 @@ class AutoPartition(object):
                 # use a separate /home volume but no LVM.
                 luks.append(home)
                 home = "/dev/mapper/cryptManjaroHome"
-        elif self.lvm:
-            # No LUKS but using LVM
-            lvm = root
 
         if self.lvm:
+            lvm = root
             swap = "/dev/ManjaroVG/ManjaroSwap"
             root = "/dev/ManjaroVG/ManjaroRoot"
             if self.home:

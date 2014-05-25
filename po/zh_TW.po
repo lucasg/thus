@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-04 22:10+0200\n"
-"PO-Revision-Date: 2014-04-13 13:22+0000\n"
+"POT-Creation-Date: 2014-05-05 23:04+0200\n"
+"PO-Revision-Date: 2014-05-05 23:18+0000\n"
 "Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -74,8 +74,8 @@ msgid "Show options in development (DO NOT USE THIS!)"
 msgstr "顯示仍在開發中的選項（請不要使用這個！）"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
-#: src/installation/process.py:428 src/installation/process.py:445
-#: src/installation/process.py:460
+#: src/installation/process.py:445 src/installation/process.py:462
+#: src/installation/process.py:477
 #, python-format
 msgid "Unmounting %s"
 msgstr "正在卸載 %s"
@@ -85,36 +85,66 @@ msgstr "正在卸載 %s"
 msgid "Unmounting %s failed. Trying lazy arg."
 msgstr "卸載 %s 失敗。正在嘗試 lazy arg。"
 
-#: src/installation/auto_partition.py:110
+#: src/installation/auto_partition.py:112
 msgid "Can't delete existent LVM volumes (see below)"
 msgstr "無法刪除已存在的 LVM 卷 （見下）"
 
-#: src/installation/auto_partition.py:120
+#: src/installation/auto_partition.py:122
 msgid "Can't close LUKS devices (see below)"
 msgstr "無法關閉 LUKS 裝置 （見下）"
 
-#: src/installation/auto_partition.py:175
+#: src/installation/auto_partition.py:177
 #, python-format
 msgid "Unknown filesystem type %s"
 msgstr "未知的檔案系統類型 %s"
 
-#: src/installation/auto_partition.py:185
+#: src/installation/auto_partition.py:187
 #, python-format
 msgid "Can't create filesystem %s"
 msgstr "無法創建檔案系統 %s"
 
-#: src/installation/auto_partition.py:345
+#: src/installation/auto_partition.py:346
 #, python-format
 msgid "Thus will setup LUKS on device %s"
 msgstr "Thus 將會在裝置 %s 上設定 LUKS"
 
-#: src/installation/auto_partition.py:404
+#: src/installation/auto_partition.py:422
+#, python-format
+msgid "Total disk size: %dMiB"
+msgstr "總磁碟大小： %dMiB"
+
+#: src/installation/auto_partition.py:423
+#, python-format
+msgid "Boot partition size: %dMiB"
+msgstr "開機分割區大小： %dMiB"
+
+#: src/installation/auto_partition.py:426
+#, python-format
+msgid "LVM physical volume size: %dMiB"
+msgstr "LVM 物理卷大小： %dMiB"
+
+#: src/installation/auto_partition.py:428
+#, python-format
+msgid "Swap partition size: %dMiB"
+msgstr "交換分割區大小： %dMiB"
+
+#: src/installation/auto_partition.py:429
+#, python-format
+msgid "Root partition size: %dMiB"
+msgstr "根目錄分割區大小： %dMiB"
+
+#: src/installation/auto_partition.py:432
+#, python-format
+msgid "Home partition size: %dMiB"
+msgstr "家目錄分割區大小： %dMiB"
+
+#: src/installation/auto_partition.py:461
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
 msgstr "安裝程式無法偵測您的裝置大小，請使用進階安裝模式以手動分割及掛載裝置。"
 
-#: src/installation/auto_partition.py:566
+#: src/installation/auto_partition.py:594
 #, python-format
 msgid "Will setup LVM on device %s"
 msgstr "將會在裝置 %s 上設定 LVM"
@@ -217,7 +247,7 @@ msgstr "掛載點"
 msgid "Label"
 msgstr "標籤"
 
-#: src/installation/advanced.py:309 src/installation/advanced.py:1641
+#: src/installation/advanced.py:309 src/installation/advanced.py:1643
 msgid "Format"
 msgstr "格式化"
 
@@ -243,7 +273,7 @@ msgstr "無"
 
 #: src/installation/advanced.py:548 src/installation/advanced.py:962
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1741 src/installation/advanced.py:1835
+#: src/installation/advanced.py:1745 src/installation/advanced.py:1839
 msgid "extended"
 msgstr "延伸"
 
@@ -410,62 +440,62 @@ msgid ""
 "This might create problems. Should it be marked to be formatted now?"
 msgstr "根目錄分割區未被標記為需要格式化。\n這樣可能會導致一些問題。您要重新將該分割區標示為需要格式化嗎？"
 
-#: src/installation/advanced.py:1634
+#: src/installation/advanced.py:1636
 #, python-format
 msgid "Partition %s will be deleted"
 msgstr "分割區 %s 將會被刪除"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "Partition"
 msgstr "分割區"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "New"
 msgstr "新的"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "Relabel"
 msgstr "重定標籤"
 
-#: src/installation/advanced.py:1641
+#: src/installation/advanced.py:1643
 msgid "Mount"
 msgstr "掛載"
 
-#: src/installation/advanced.py:1662
+#: src/installation/advanced.py:1664
 msgid "These disks will have partition actions:"
 msgstr "這個磁碟將會有以下的分割區動作："
 
-#: src/installation/advanced.py:1720
+#: src/installation/advanced.py:1724
 #, python-format
 msgid "Saving changes done in %s"
 msgstr "在 %s 中儲存變更"
 
-#: src/installation/advanced.py:1744
+#: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
 msgstr "正在創建 %s 檔案系統在 %s 已加上標籤的 %s"
 
-#: src/installation/advanced.py:1786
+#: src/installation/advanced.py:1790
 #, python-format
 msgid "Setting boot flag in %s partition"
 msgstr "正在為 %s 分割區設定開機旗標"
 
-#: src/installation/advanced.py:1805
+#: src/installation/advanced.py:1809
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
 msgstr "無法格式化 '%s' 分割區使用標籤 '%s' 作為 '%s'"
 
-#: src/installation/advanced.py:1846 src/installation/alongside.py:499
+#: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
 msgstr "Thus 將不會安裝任何開機載入器"
 
-#: src/installation/advanced.py:1856
+#: src/installation/advanced.py:1860
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
 msgstr "Manjaro 將會安裝 %s 類型的開機載入器到 %s 上"
 
-#: src/installation/advanced.py:1872 src/installation/alongside.py:512
+#: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "測試模式。Thus 將不會對您的系統作出任何改變！"
@@ -655,344 +685,354 @@ msgstr "您真的想要繼續進行並刪除您硬碟上的所有內容嗎？\n\
 msgid "Thus will use %s as installation device"
 msgstr "Thus 將會使用 %s 作為安裝的裝置"
 
-#: src/installation/process.py:84
+#: src/installation/process.py:89
 #, python-format
 msgid "Copying '/%s'"
 msgstr "正在複製 '/%s'"
 
-#: src/installation/process.py:165
+#: src/installation/process.py:170
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "正在使用 '%s' 方法安裝"
 
-#: src/installation/process.py:242
+#: src/installation/process.py:247
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "在 %s 增加分割區及其檔案系統"
 
-#: src/installation/process.py:263
+#: src/installation/process.py:268
 msgid "Error creating partitions and their filesystems"
 msgstr "在創建分割區及其檔案系統時遇到錯誤"
 
-#: src/installation/process.py:265 src/installation/process.py:338
-#: src/installation/process.py:636
+#: src/installation/process.py:270 src/installation/process.py:343
+#: src/installation/process.py:355 src/installation/process.py:653
 #, python-format
 msgid "Command %s has failed."
 msgstr "指令 %s 執行失敗。"
 
-#: src/installation/process.py:267 src/installation/process.py:314
-#: src/installation/process.py:340 src/installation/process.py:363
-#: src/installation/process.py:638
+#: src/installation/process.py:272 src/installation/process.py:319
+#: src/installation/process.py:345 src/installation/process.py:357
+#: src/installation/process.py:380 src/installation/process.py:655
 #, python-format
 msgid "Output : %s"
 msgstr "輸出： %s"
 
-#: src/installation/process.py:300 src/installation/process.py:331
+#: src/installation/process.py:305 src/installation/process.py:336
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "正在掛載 %s 分割區到 %s 目錄"
 
-#: src/installation/process.py:306
+#: src/installation/process.py:311
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "正在掛載 %s 分割區到 %s/boot 目錄"
 
-#: src/installation/process.py:310
+#: src/installation/process.py:315
 msgid "Couldn't mount root and boot partitions"
 msgstr "無法掛載根目錄及開機分割區"
 
-#: src/installation/process.py:312 src/installation/process.py:361
+#: src/installation/process.py:317 src/installation/process.py:378
 #, python-format
 msgid "Command %s has failed"
 msgstr "指令 %s 執行失敗"
 
-#: src/installation/process.py:336
+#: src/installation/process.py:341
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "無法掛載 %s 在 %s"
 
-#: src/installation/process.py:351
+#: src/installation/process.py:349
+#, python-format
+msgid "Mounting swap %s"
+msgstr "正在掛載 swap %s"
+
+#: src/installation/process.py:353
+#, python-format
+msgid "Can't mount %s"
+msgstr "無法掛載 %s"
+
+#: src/installation/process.py:368
 #, python-format
 msgid "%s deleted"
 msgstr "%s 已刪除"
 
-#: src/installation/process.py:359
+#: src/installation/process.py:376
 msgid "Can't create necessary directories on destination system"
 msgstr "無法在目標系統上創建必要的目錄"
 
-#: src/installation/process.py:371
+#: src/installation/process.py:388
 msgid "Install System ..."
 msgstr "安裝系統 ..."
 
-#: src/installation/process.py:376
+#: src/installation/process.py:393
 msgid "System installed."
 msgstr "系統已安裝。"
 
-#: src/installation/process.py:378
+#: src/installation/process.py:395
 msgid "Configuring system ..."
 msgstr "正在設定系統 ..."
 
-#: src/installation/process.py:380
+#: src/installation/process.py:397
 msgid "System configured."
 msgstr "系統設定完成。"
 
-#: src/installation/process.py:384
+#: src/installation/process.py:401
 msgid "Installing boot loader ..."
 msgstr "正在安裝開機載入器 ..."
 
-#: src/installation/process.py:417
+#: src/installation/process.py:434
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "無法複製 Thus 的記錄檔到 %s"
 
-#: src/installation/process.py:436 src/installation/process.py:455
-#: src/installation/process.py:469
+#: src/installation/process.py:453 src/installation/process.py:472
+#: src/installation/process.py:486
 #, python-format
 msgid "Can't unmount %s"
 msgstr "無法卸載 %s"
 
-#: src/installation/process.py:471
+#: src/installation/process.py:488
 msgid "Installation finished successfully."
 msgstr "安裝已成功完成。"
 
-#: src/installation/process.py:507
+#: src/installation/process.py:524
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "基礎檔案系統不存在！嚴重錯誤 （正在離開）。"
 
-#: src/installation/process.py:511
+#: src/installation/process.py:528
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "桌面檔案系統不存在！嚴重錯誤（正在離開）。"
 
-#: src/installation/process.py:521 src/installation/process.py:527
+#: src/installation/process.py:538 src/installation/process.py:544
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s 已經掛載到 %s 作為 %s"
 
-#: src/installation/process.py:538
+#: src/installation/process.py:555
 msgid "Indexing files to be copied ..."
 msgstr "正在複製索引檔案 ..."
 
-#: src/installation/process.py:543
+#: src/installation/process.py:560
 msgid "Extracting root-image ..."
 msgstr "正在解壓縮 root-image ..."
 
-#: src/installation/process.py:553
+#: src/installation/process.py:570
 msgid "Extracting desktop-image ..."
 msgstr "正在解壓縮 desktop-image ..."
 
-#: src/installation/process.py:568
+#: src/installation/process.py:585
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "正在恢復 %s 上的元資訊"
 
-#: src/installation/process.py:584
+#: src/installation/process.py:601
 msgid "Special dirs already mounted."
 msgstr "特殊目錄已經掛載。"
 
-#: src/installation/process.py:618
+#: src/installation/process.py:635
 msgid "Special dirs are not mounted. Skipping."
 msgstr "特殊目錄沒有掛載。正在略過。"
 
-#: src/installation/process.py:635 src/installation/process.py:641
+#: src/installation/process.py:652 src/installation/process.py:658
 #, python-format
 msgid "Unable to umount %s"
 msgstr "無法卸載 %s"
 
-#: src/installation/process.py:663
+#: src/installation/process.py:680
 #, python-format
 msgid "Error running command: %s"
 msgstr "執行命令時遇到錯誤： %s"
 
-#: src/installation/process.py:696
+#: src/installation/process.py:713
 msgid "Can't copy network configuration files"
 msgstr "無法複製網路設定檔"
 
-#: src/installation/process.py:726 src/installation/process.py:784
+#: src/installation/process.py:743 src/installation/process.py:804
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "已加入 fstab ： UUID=%s %s %s %s 0 %s"
 
-#: src/installation/process.py:740
+#: src/installation/process.py:757
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "已加入 crypttab : %s"
 
-#: src/installation/process.py:744
+#: src/installation/process.py:761
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "已加入 fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:788
+#: src/installation/process.py:808
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "已加入 fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:876
+#: src/installation/process.py:899
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "正在安裝 GRUB(2) BIOS 開機載入器到 %s"
 
-#: src/installation/process.py:886 src/installation/process.py:915
+#: src/installation/process.py:909 src/installation/process.py:938
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "安裝 GRUB(2)時發生錯誤。"
 
-#: src/installation/process.py:912
+#: src/installation/process.py:935
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS 已成功安裝。"
 
-#: src/installation/process.py:936
+#: src/installation/process.py:959
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "安裝 URFI 模式的 GRUB(2)時遇到錯誤。"
 
-#: src/installation/process.py:944
+#: src/installation/process.py:967
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr "正在安裝 GRUB(2) UEFI %s 開機載入器"
 
-#: src/installation/process.py:957
+#: src/installation/process.py:980
 msgid "Installing Grub2 locales."
 msgstr "正在安裝 GRUB2 語系。"
 
-#: src/installation/process.py:970
+#: src/installation/process.py:993
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr "在 %s 中沒有發現 OEM 載入器。正在複製 GRUB(2) 到資料夾中。"
 
-#: src/installation/process.py:975
+#: src/installation/process.py:998
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr "複製 GRUB(2) 到 OEM 資料夾時失敗。檔案找不到。"
 
-#: src/installation/process.py:977
+#: src/installation/process.py:1000
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr "複製 GRUB(2) 到 OEM 資料夾時失敗。檔案存在。"
 
-#: src/installation/process.py:979
+#: src/installation/process.py:1002
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr "複製 GRUB(2) 到 OEM 資料夾時失敗。未知錯誤。"
 
-#: src/installation/process.py:997
+#: src/installation/process.py:1020
 msgid "Generating grub.cfg"
 msgstr "正在生成 grub.cfg"
 
-#: src/installation/process.py:1019
+#: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) locale."
 msgstr "安裝 GRUB(2) 的語系時遇到錯誤。"
 
-#: src/installation/process.py:1028
+#: src/installation/process.py:1051
 #, python-format
 msgid "Enabled %s service."
 msgstr "已開啟 %s 服務。"
 
-#: src/installation/process.py:1035
+#: src/installation/process.py:1058
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "創建使用者 %s 的密碼雜湊值時發生錯誤"
 
-#: src/installation/process.py:1041
+#: src/installation/process.py:1064
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "更改使用者 %s 的密碼時發生錯誤"
 
-#: src/installation/process.py:1053
+#: src/installation/process.py:1076
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "正在設定 mkinitcpio.conf 中的關聯性及模組"
 
-#: src/installation/process.py:1135
+#: src/installation/process.py:1167
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s ： 啟用使用者 %s 的自動登入。"
 
-#: src/installation/process.py:1230 src/installation/process.py:1241
+#: src/installation/process.py:1262 src/installation/process.py:1273
 msgid "Configuring your new system"
 msgstr "正在設定新系統"
 
-#: src/installation/process.py:1233
+#: src/installation/process.py:1265
 msgid "fstab file generated."
 msgstr "fstab 已產生。"
 
-#: src/installation/process.py:1239
+#: src/installation/process.py:1271
 msgid "Network configuration copied."
 msgstr "網路組態已複製。"
 
-#: src/installation/process.py:1265
+#: src/installation/process.py:1297
 msgid "Time zone set."
 msgstr "時區設置。"
 
-#: src/installation/process.py:1286
+#: src/installation/process.py:1318
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "使用者 %s 的 Sudo 設定已完成。"
 
-#: src/installation/process.py:1296
+#: src/installation/process.py:1328
 #, python-format
 msgid "User %s added."
 msgstr "使用者 %s 已加入。"
 
-#: src/installation/process.py:1308
+#: src/installation/process.py:1340
 #, python-format
 msgid "Hostname  %s set."
 msgstr "主機名稱  %s 設置。"
 
-#: src/installation/process.py:1313
+#: src/installation/process.py:1345
 msgid "Set root password."
 msgstr "設定 root 密碼"
 
-#: src/installation/process.py:1316
+#: src/installation/process.py:1348
 msgid "Set the same password to root."
 msgstr "將 root 設定為相同的密碼。"
 
-#: src/installation/process.py:1322
+#: src/installation/process.py:1354
 msgid "Generating locales ..."
 msgstr "正在生成語系碼 ..."
 
-#: src/installation/process.py:1340
+#: src/installation/process.py:1372
 msgid "Adjusting hardware clock ..."
 msgstr "正在調整硬體時鐘 ..."
 
-#: src/installation/process.py:1349
+#: src/installation/process.py:1381
 msgid "Configuring hardware ..."
 msgstr "正在配置硬體 ..."
 
-#: src/installation/process.py:1422
+#: src/installation/process.py:1454
 msgid "Set up graphics card ..."
 msgstr "正在設定顯示卡 ..."
 
-#: src/installation/process.py:1429
+#: src/installation/process.py:1461
 msgid "Can't execute the MHWD script"
 msgstr "無法執行 MHWD 腳本"
 
-#: src/installation/process.py:1442
+#: src/installation/process.py:1474
 msgid "Configure display manager ..."
 msgstr "正在設定顯示管理員 ..."
 
-#: src/installation/process.py:1548
+#: src/installation/process.py:1580
 msgid "Configure System ..."
 msgstr "正在設定系統 ..."
 
-#: src/installation/process.py:1573
+#: src/installation/process.py:1605
 msgid "Removing live configuration (packages)"
 msgstr "正在移除 live 設定值(套件)"
 
-#: src/installation/process.py:1589
+#: src/installation/process.py:1621
 msgid "Configuring package manager"
 msgstr "正在設定套件管理員"
 
-#: src/installation/process.py:1601
+#: src/installation/process.py:1633
 msgid "Finished configuring package manager."
 msgstr "設定套件管理員完成。"
 
-#: src/installation/process.py:1625
+#: src/installation/process.py:1657
 msgid "Running mkinitcpio ..."
 msgstr "正在執行 mkinitcpio ..."
 
-#: src/installation/process.py:1628
+#: src/installation/process.py:1660
 msgid "Running mkinitcpio - done"
 msgstr "正在執行 mkinitcpio - 完成"
 
-#: src/installation/process.py:1644
+#: src/installation/process.py:1676
 msgid "Encrypting user home dir ..."
 msgstr "正在加密使用者的家目錄 ..."
 
-#: src/installation/process.py:1646
+#: src/installation/process.py:1678
 msgid "User home dir encrypted"
 msgstr "使用者的家目錄已加密。"
 
@@ -1161,21 +1201,21 @@ msgstr "找不到 rank mirrors 腳本"
 msgid "Couldn't execute auto mirroring selection"
 msgstr "無法自動執行鏡像伺服器選擇程式"
 
-#: src/show_message.py:54
+#: src/show_message.py:53
 msgid "Manjaro Installer - Error"
 msgstr "Manjaro 安裝程式 - 錯誤"
 
-#: src/show_message.py:66
+#: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
 msgstr "Manjaro 安裝程式 - 警告"
 
-#: src/show_message.py:78
+#: src/show_message.py:77
 msgid "Manjaro Installer - Information"
 msgstr "Manjaro 安裝程式 - 資訊"
 
-#: src/show_message.py:89
-msgid "Manjaro Installer - Question"
-msgstr "Manjaro 安裝程式 - 問題"
+#: src/show_message.py:88
+msgid "Manjaro Installer - Confirmation"
+msgstr "Manjaro 安裝程式 - 確認"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
