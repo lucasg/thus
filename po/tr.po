@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# tarakbumba . <tarakbumba@gmail.com>, 2012
-# tulliana <mdemiray@msn.com>, 2013-2014
-# manjarolinux <philm@manjaro.org>, 2013
-# manjarolinux <philm@manjaro.org>, 2013-2014
+# Atilla Öntaş <tarakbumba@gmail.com>, 2012
+# Demiray Muhterem <mdemiray@msn.com>, 2013-2014
+# philm <philm@manjaro.org>, 2013
+# philm <philm@manjaro.org>, 2013-2014
 # reis33 <bahadiroglu33@gmail.com>, 2013
 # Samed Beyribey <ras0ir@eventualis.org>, 2011,2013
-# tarakbumba . <tarakbumba@gmail.com>, 2012
-# tulliana <mdemiray@msn.com>, 2013
+# Atilla Öntaş <tarakbumba@gmail.com>, 2012
+# Demiray Muhterem <mdemiray@msn.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-06-08 19:09+0000\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -847,7 +847,7 @@ msgstr "Komut hatalı çalışıyor: %s"
 #: src/installation/process.py:683
 #, python-format
 msgid "Timeout running command: %s"
-msgstr ""
+msgstr "Komut zaman aşımına uğradı: %s"
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
@@ -874,7 +874,7 @@ msgstr "fstab'a eklendi : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr ""
+msgstr "'etc/grub.d'-folder hazırlanırken hata oluştu."
 
 #: src/installation/process.py:923
 #, python-format
@@ -885,7 +885,7 @@ msgstr "%s üzerine GRUB(2) yükleniyor ve BIOS önyükleyici oluşturuluyor"
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr ""
+msgstr "grub-mkconfig askıya alınmış gibi görünüyor. grub-mount ve os-prober ile devam edebilirsiniz"
 
 #: src/installation/process.py:951
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -927,7 +927,7 @@ msgstr "grub.cfg oluşturuluyor"
 
 #: src/installation/process.py:1039
 msgid "GRUB(2) UEFI has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) UEFI başarılı bir şekilde yüklenmiştir."
 
 #: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) UEFI."
@@ -939,7 +939,7 @@ msgstr "Yükleme hatası GRUB(2) yerel."
 
 #: src/installation/process.py:1091
 msgid "Can't freeze/unfreeze xfs system"
-msgstr ""
+msgstr "xfs sistem dondurulamadı veya çözülemedi"
 
 #: src/installation/process.py:1097
 #, python-format
@@ -1018,7 +1018,7 @@ msgstr "Donanım yapılandırılıyor ..."
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Sürücüler yükleniyor ..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"

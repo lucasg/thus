@@ -36,8 +36,8 @@ import info
 import logging
 import show_message as show
 
-#_url_prefix = "http://git.manjaro.org/core/thus/raw/development/"
-_url_prefix = "http://git.manjaro.org/core/thus/raw/master/"
+#_url_prefix = "https://raw.github.com/manjaro/thus/development/"
+_url_prefix = "https://raw.github.com/manjaro/thus/master/"
 
 _src_dir = os.path.dirname(__file__) or '.'
 _base_dir = os.path.join(_src_dir, "..")

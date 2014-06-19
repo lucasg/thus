@@ -7,23 +7,24 @@
 # Bartek Piotrowski <barthalion@gmail.com>, 2011
 # december, 2013
 # december <december0123@gmail.com>, 2013
-# galkowskit <galkowski.t@gmail.com>, 2013
+# Tomasz Gałkowski <galkowski.t@gmail.com>, 2013
 # kichawa <boxbolky@gmail.com>, 2013
-# k3rnelj <k3rnelj@gmail.com>, 2014
+# Kornel Jankowski <k3rnelj@gmail.com>, 2014
 # december <december0123@gmail.com>, 2013
-# manjarolinux <philm@manjaro.org>, 2013
-# Mateusz Mikołajczyk <mikolajczyk.mateusz@gmail.com>, 2013
-# Mateusz Mikołajczyk <mikolajczyk.mateusz@gmail.com>, 2013
-# manjarolinux <philm@manjaro.org>, 2013-2014
-# Pieter19 <pieter1911@gmail.com>, 2013
+# philm <philm@manjaro.org>, 2013
+# mikolajczyk.mateusz <mikolajczyk.mateusz@gmail.com>, 2013
+# Michał Olber <michal.olber@osworld.pl>, 2014
+# mikolajczyk.mateusz <mikolajczyk.mateusz@gmail.com>, 2013
+# philm <philm@manjaro.org>, 2013-2014
+# Piotr <pieter1911@gmail.com>, 2013
 # Piotr Strębski <strebski@o2.pl>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-02 12:26+0000\n"
-"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"PO-Revision-Date: 2014-06-15 14:21+0000\n"
+"Last-Translator: Michał Olber <michal.olber@osworld.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/manjaro-thus/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,19 +67,19 @@ msgstr "Ustawia poziom dziennika Thus na 'debug'"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr "Zaktualizuj Thus do najnowszej wersji (-uu wymusi aktualizację)"
+msgstr "Aktualizacja Thus do najnowszej wersji (-uu wymusza aktualizację)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr "Nie dokonuj żadnych zmian (użyteczne dla programistów)"
+msgstr "Nie dokonuje żadnych zmian (użyteczne dla programistów)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr "Pokaż wiadomości dziennika na standardowym wyjściu"
+msgstr "Pokazuje wiadomości dziennika na standardowym wyjściu"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
-msgstr "Pokaż opcje w stadium opracowywania (NIE UŻYWAJ TEGO!)"
+msgstr "Pokaż opcje w stadium opracowywania (NIE ZALECANE UŻYCIE!)"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
 #: src/installation/process.py:445 src/installation/process.py:462
@@ -458,7 +459,7 @@ msgstr "Partycja"
 
 #: src/installation/advanced.py:1643
 msgid "New"
-msgstr "Nowy"
+msgstr "Nowa"
 
 #: src/installation/advanced.py:1643
 msgid "Relabel"
@@ -470,7 +471,7 @@ msgstr "Zamontuj"
 
 #: src/installation/advanced.py:1664
 msgid "These disks will have partition actions:"
-msgstr "Na następujących dyskach zostaną podjęte akcje partycjonowania:"
+msgstr "Na następujących dyskach zostaną podjęte czynności dzielenia partycji:"
 
 #: src/installation/advanced.py:1724
 #, python-format
@@ -500,7 +501,7 @@ msgstr "Thus nie zainstaluje żadnego programu rozruchowego"
 #: src/installation/advanced.py:1860
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro zainstaluje program rozruchowy rodzaju %s w %s"
+msgstr "Manjaro zainstaluje program rozruchowy %s w %s"
 
 #: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
@@ -668,7 +669,7 @@ msgstr "Potwierdź swoje hasło:"
 #: src/installation/automatic.py:101 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr "Pokaż hasło"
+msgstr "Pokazuje hasło"
 
 #: src/installation/automatic.py:164
 msgid "A LUKS password has been set"
@@ -715,7 +716,7 @@ msgstr "Błąd tworzenia partycji i ich systemów plików"
 #: src/installation/process.py:355 src/installation/process.py:653
 #, python-format
 msgid "Command %s has failed."
-msgstr "Polecenie %s ukończone niepowodzeniem."
+msgstr "Polecenie %s zakończone niepowodzeniem."
 
 #: src/installation/process.py:272 src/installation/process.py:319
 #: src/installation/process.py:345 src/installation/process.py:357
@@ -741,7 +742,7 @@ msgstr "Nie można zamontować partycji głównej i rozruchu"
 #: src/installation/process.py:317 src/installation/process.py:378
 #, python-format
 msgid "Command %s has failed"
-msgstr "Polecenie %s ukończone niepowodzeniem"
+msgstr "Polecenie %s zakończone niepowodzeniem"
 
 #: src/installation/process.py:341
 #, python-format
@@ -1361,27 +1362,27 @@ msgstr "Nazwa widoczna dla innych komputerów."
 
 #: src/user_info.py:152
 msgid "You must enter a name"
-msgstr "Musisz podać nazwę"
+msgstr "Proszę podać nazwę"
 
 #: src/user_info.py:156
 msgid "You must enter a username"
-msgstr "Musisz podać nazwę użytkownika"
+msgstr "Proszę podać nazwę użytkownika"
 
 #: src/user_info.py:160 src/user_info.py:164
 msgid "You must enter a password"
-msgstr "Musisz wprowadzić hasło"
+msgstr "Proszę wprowadzić hasło"
 
 #: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
-msgstr "Loguj automatycznie"
+msgstr "Automatyczne logowanie"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr "Hasło jest wymagane do logowania"
+msgstr "Wymagane hasło do logowania"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr "Szyfruj katalog domowy"
+msgstr "Szyfrowanie katalogu domowego"
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1389,41 +1390,41 @@ msgstr "Kim jesteś?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr "Pokaż hasło administratora"
+msgstr "Pokazuje hasło administratora"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr "Użyj hasło administratora"
+msgstr "Użycie hasła administratora"
 
 #: src/user_info.py:252
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro użyje eCryptfs do zaszyfrowania Twojego katalogu domowego. Niestety, eCryptfs ma kłopoty z dobrą obsługa plików rzadkich.\n\n"
+msgstr "Manjaro użyje eCryptfs do zaszyfrowania Twojego katalogu domowego. Niestety, eCryptfs ma kłopoty z dobrą obsługą rzadkich plików.\n\n"
 
 #: src/user_info.py:253
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "Nie martw się, w większości przypadków i działań brak ten nie stanowi problemu.\n\n"
+msgstr "W większości przypadków i zastosowań, nie stanowi problemu.\n\n"
 
 #: src/user_info.py:254
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "W każdym razie, dość popularnym i niewskazanym zastosowaniem eCryptfs jest szyfrowanie położenia pobierania BitTorrent. Wymagana często od eCryptfs obsługi plików rzadkich o wielkości 10 GB lub więcej może prowadzić do zbyt intensywnego użycia dysku twardego.\n\n"
+msgstr "W każdym razie, dość popularnym i niewskazanym zastosowaniem eCryptfs jest szyfrowanie położenia pobierania BitTorrent. Wymagana często od eCryptfs obsługa rzadkich plików o wielkości 10 GB lub więcej, może prowadzić do zbyt intensywnego wykorzystania dysku twardego.\n\n"
 
 #: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Prostym obejściem tego problemu jest umieszczenie plików rzadkich w niezaszyfrowanym katalogu .Publiczny\n\n"
+msgstr "Prostym obejściem tego problemu jest umieszczenie rzadkich plików w niezaszyfrowanym katalogu .Publiczny\n\n"
 
 #: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr "Zobacz na https://wiki.archlinux.org/index.php/ECryptfs aby znaleźć bardziej szczegółowych informacji.\n\n"
+msgstr "Proszę zajrzeć na adres https://wiki.archlinux.org/index.php/ECryptfs, aby znaleźć więcej informacji.\n\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
@@ -1479,7 +1480,7 @@ msgstr "Rodzaj tabeli partycji:"
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
-msgstr "Edytuj partycję"
+msgstr "Edycja partycji"
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
@@ -1533,7 +1534,7 @@ msgstr "<span size=\"large\">Wybierz obok którego systemu operacyjnego chcesz z
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
-msgstr "Wybierz nowy rozmiar"
+msgstr "Wybór nowego rozmiaru"
 
 #: ui/installation_alongside.ui:157
 msgid "Other OS"
@@ -1552,7 +1553,7 @@ msgstr "etykieta"
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr "<span weight=\"light\" size=\"small\">Uwaga: Zostaną usunięte wszystkie programy, dokumenty, zdjęcia, muzyka i wszystkie inne pliki znajdujące się na Twoim dysku.</span>"
+msgstr "<span weight=\"light\" size=\"small\">Uwaga: Zostaną usunięte wszystkie programy, dokumenty, zdjęcia, muzyka i wszystkie inne pliki znajdujące się na dysku.</span>"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1562,11 +1563,11 @@ msgstr "Szyfrowanie nowej instalacji Manjaro dla większego bezpieczeństwa"
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr "<span weight=\"light\" size=\"small\">W następnym kroku zostaniesz poproszony o klucz szyfrowania</span>"
+msgstr "<span weight=\"light\" size=\"small\">W następnym kroku należy podać klucz szyfrowania</span>"
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr "Użyj LVM wraz z nową instalacją Manjaro"
+msgstr "Użycie LVM wraz z nową instalacją Manjaro"
 
 #: ui/installation_ask.ui:123
 msgid ""
@@ -1582,7 +1583,7 @@ msgstr "<span weight=\"light\" size=\"small\">To ustawi Twój katalog /home na i
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
-msgstr "Zainstaluj obok innych systemów operacyjnych"
+msgstr "Instalacja obok innych systemów operacyjnych"
 
 #: ui/installation_ask.ui:192
 msgid ""
@@ -1593,14 +1594,14 @@ msgstr "<span weight=\"light\" size=\"small\">Z tą opcją będziesz instalować
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr "Zarządzaj partycjami i wybierz, gdzie zainstalować Manjaro (zaawansowany)"
+msgstr "Zarządzanie partycjami i wybór miejsca instalacji Manjaro (zaawansowany)"
 
 #: ui/installation_ask.ui:230
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be able to create/delete "
 "partitions, choose where to install Manjaro and also choose additional mount"
 " points.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Będziesz mógł tworzyć/usuwać partycje, wybrać gdzie zainstalować Manjaro, a także wybrać dodatkowe punkty montowania.</span>"
+msgstr "<span weight=\"light\" size=\"small\">Będziemożna tworzyć/usuwać partycje, wybrać gdzie zainstalować Manjaro, a także wskazać dodatkowe punkty montowania.</span>"
 
 #: ui/installation_automatic.ui:38
 msgid ""

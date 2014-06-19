@@ -938,7 +938,7 @@ class InstallationProcess(multiprocessing.Process):
 
         locale = self.settings.get("locale")
         try:
-            self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale], 45)
+            self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale], 300)
         except subprocess.TimeoutExpired:
             logging.error(_("grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can continue."))
             os.system("killall grub-mount")
@@ -973,7 +973,7 @@ class InstallationProcess(multiprocessing.Process):
         try:
             subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install%s '
                                    '--bootloader-id=manjaro --boot-directory=/install/boot '
-                                   '--recheck --debug' % (uefi_arch, efi_path)], shell=True, timeout=45)
+                                   '--recheck --debug' % (uefi_arch, efi_path)], shell=True, timeout=300)
         except subprocess.CalledProcessError as err:
             logging.error('Command grub-install failed. Error output: %s' % err.output)
         except subprocess.TimeoutExpired as err:
@@ -1026,7 +1026,7 @@ class InstallationProcess(multiprocessing.Process):
 
         locale = self.settings.get("locale")
         try:
-            self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale], 45)
+            self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale], 300)
         except subprocess.TimeoutExpired:
             logging.error(_("grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can continue."))
             os.system("killall grub-mount")

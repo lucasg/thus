@@ -4,20 +4,21 @@
 # 
 # Translators:
 # apuasi <kaannokset.hellberg@gmail.com>, 2011
-# IDe <fuster94@gmail.com>, 2013
+# asd <fuster94@gmail.com>, 2013
 # Dan McGee <dpmcgee@gmail.com>, 2011
-# IDe <fuster94@gmail.com>, 2013
+# asd <fuster94@gmail.com>, 2013
 # Jesse Jaara <jesse.jaara@gmail.com>, 2014
-# Larso <larso@gmx.com>, 2011,2013
+# Lasse Liehu <larso@gmx.com>, 2011,2013
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011-2012, 2013
-# SamiPerkele, 2013
+# Ville Antero Tuuras <tuuras.ville@gmail.com>, 2014
+# Sami Korkalainen, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-06-16 14:11+0000\n"
+"Last-Translator: Ville Antero Tuuras <tuuras.ville@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/manjaro-thus/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Tämä asentaja on suoritettava järjestelmävalvojaoikeuksilla eikä voida jatkaa ilman niitä"
 
 #: thus.py:131
 #, python-format
@@ -44,11 +45,11 @@ msgstr ""
 #: thus.py:143
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus asentaja versio %s"
 
 #: thus.py:234
 msgid "Manjaro Installer"
-msgstr "Manjaro-asennin"
+msgstr "Manjaro asentaja"
 
 #: thus.py:290
 msgid "Quiting installer..."
@@ -79,7 +80,7 @@ msgstr ""
 #: src/installation/process.py:477
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "Irroitetaan %s"
 
 #: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
@@ -88,11 +89,11 @@ msgstr ""
 
 #: src/installation/auto_partition.py:119
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Olemassa olevia LVM sidoksia ei voida poistaa (näe alhaalta)"
 
 #: src/installation/auto_partition.py:129
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "LUKS laitteita ei voida sulkea (näe alhaalta)"
 
 #: src/installation/auto_partition.py:184
 #, python-format
@@ -107,7 +108,7 @@ msgstr ""
 #: src/installation/auto_partition.py:353
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus asettaa LUKS laitteeseen %s"
 
 #: src/installation/auto_partition.py:429
 #, python-format
@@ -143,12 +144,12 @@ msgstr ""
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr ""
+msgstr "Asennus ei kykene havaitsemaan laitteesi kokoa, käytä edistynyttä asennus menetelmää laitteesi osiointia ja liittämistä varten."
 
 #: src/installation/auto_partition.py:601
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "Asetetaan LVM laitteeseen %s"
 
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation/alongside.py:220
@@ -158,7 +159,7 @@ msgstr "tuntematon"
 #: src/canonical/misc.py:929
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "Ei voida asettaa paikallista %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -186,18 +187,18 @@ msgstr "Salasanat eivät täsmää"
 
 #: src/check.py:79
 msgid "System Check"
-msgstr ""
+msgstr "Järjestelmäntarkistus"
 
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "on vähintään %dGB tallennustilaa jäljellä"
 
 #: src/check.py:89
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr ""
+msgstr "Tämä paljolti riippuu minkä työpöytä ympäristön valitset, saatat tarvita lisää tallennustilaa."
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
@@ -205,7 +206,7 @@ msgstr "on kytkettynä virtalähteeseen"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
-msgstr "on yhteydessä Internettiin"
+msgstr "on yhdistetty Internettiin"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
@@ -221,7 +222,7 @@ msgstr "Kone on kytkettynä virtalähteeseen."
 
 #: src/check.py:175
 msgid "We have enough disk space."
-msgstr ""
+msgstr "kovalevytilaa on tarpeeksi"
 
 #: src/installation/advanced.py:218 src/installation/advanced.py:512
 #: src/installation/advanced.py:526
@@ -280,7 +281,7 @@ msgstr "laajennettu"
 
 #: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Ei voida käyttää samaa liitospistettä kahdesti..."
 
 #: src/installation/advanced.py:953
 msgid "Creating primary partition"
@@ -375,7 +376,7 @@ msgstr "Nimi (ei pakkollinen):"
 
 #: src/installation/advanced.py:1192
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Salaus vaihtoehdot..."
 
 #: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
@@ -383,11 +384,11 @@ msgstr "Formatoi:"
 
 #: src/installation/advanced.py:1214
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Osiopöydän tyyppi:"
 
 #: src/installation/advanced.py:1219
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Luo osiopöytä"
 
 #: src/installation/advanced.py:1222 src/installation/alongside.py:150
 #: src/installation/automatic.py:103
@@ -408,11 +409,11 @@ msgstr ""
 
 #: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "Ei voida luoda BIOS GPT käynnistysosiota!"
 
 #: src/installation/advanced.py:1377
 msgid "Couldn't create BIOS GPT Boot partition"
-msgstr ""
+msgstr "Ei voitu luoda BIOS GPT käynnistysosiota"
 
 #: src/installation/advanced.py:1540
 #, python-format
@@ -433,7 +434,7 @@ msgstr "%s on liitetty kohtaan '%s'.\nJatkaaksesi, se täytyy irrottaa\nPaina Ky
 #: src/installation/advanced.py:1567
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s näkyy liitettynä (kiireinen) mutta sillä ei ole liitospistettä"
 
 #: src/installation/advanced.py:1573
 msgid ""
@@ -474,7 +475,7 @@ msgstr "Levyn %s muutokset on tallennettu"
 #: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "Luodaan %s tiedostojärjestelmä kohteessa %s nimettynä %s"
 
 #: src/installation/advanced.py:1790
 #, python-format
@@ -484,7 +485,7 @@ msgstr ""
 #: src/installation/advanced.py:1809
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr ""
+msgstr "Ei voitu alustaa osiota '%s' with label '%s' as '%s'"
 
 #: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
@@ -499,7 +500,7 @@ msgstr "Manjaro asentaa tyypin %s käynnistyslataimen kohtaan %s."
 #: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "Testaus tila. Thus ei vahvista mitään muutoksia järjestelmääsi!"
 
 #: src/installation/alongside.py:115
 #, python-format
@@ -508,7 +509,7 @@ msgstr "Css-tiedostoa %s ei voida ladata"
 
 #: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Valitse käyttöjärjestelmä jonka rinnalle haluat asentaa Manjaron"
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
@@ -524,15 +525,15 @@ msgstr "Tiedostojärjestelmä"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3 ei löydy!"
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
-msgstr ""
+msgstr "Ei kykene luomaan osiolistaa rinnakkais asennusta varten."
 
 #: src/installation/alongside.py:268
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr ""
+msgstr "Osiota ei voida kutistaa (ehkä se on lähes täynnä?)"
 
 #: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
@@ -541,7 +542,7 @@ msgstr "Levyllä on liikaa pääosioita, uutta ei voida luoda."
 #: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr ""
+msgstr "%s(%s) järjestelmätiedostoa ei voida pienentää"
 
 #: src/installation/alongside.py:399
 #, python-format
@@ -575,25 +576,25 @@ msgstr "Varoitus: Tämä poistaa kaiken tiedon levyltäsi"
 
 #: src/installation/ask.py:122
 msgid "Encrypt this installation for increased security."
-msgstr ""
+msgstr "Salaa tämä asennus lisätäksesi turvallisuutta."
 
 #: src/installation/ask.py:126
 msgid "You will be asked for the encryption key in the next step."
-msgstr ""
+msgstr "Sinulta kysytään salausavainta seuraavassa vaiheessa."
 
 #: src/installation/ask.py:131
 msgid "Use LVM with this installation."
-msgstr ""
+msgstr "Ota LVM käyttöön tällä asennuksella."
 
 #: src/installation/ask.py:135
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr ""
+msgstr "Tämä asettaa LVM toiminnot joka mahdollistaa pikakuvien tekemisen ja vapaamuotoiseen osion koon muuttamisen"
 
 #: src/installation/ask.py:140 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"
-msgstr ""
+msgstr "Aseta koti eri osioon/nidokseen"
 
 #: src/installation/ask.py:144
 msgid ""
@@ -607,29 +608,29 @@ msgstr "Asenna Manjaro käyttöjärjestelmän %s rinnalle"
 
 #: src/installation/ask.py:161
 msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Hallitse osioitasi ja mihin Manjaro asennetaan (edistynyt)"
 
 #: src/installation/ask.py:164
 msgid ""
 "You will be able to create/delete partitions, choose where to install "
 "Manjaro and also choose additional mount points."
-msgstr ""
+msgstr "Pystyt luomaan/poistamaan osioita, valitsemaan minne Manjaro asennetaan ja myös valitsemaan lisä liitospisteitä."
 
 #: src/installation/ask.py:190
 msgid "Manjaro installation will be encrypted using LUKS"
-msgstr ""
+msgstr "Manjaro asennus salataan käyttäen LUKS:ssää"
 
 #: src/installation/ask.py:193
 msgid "Manjaro will be installed using LVM volumes"
-msgstr ""
+msgstr "Manjaro asennetaan käyttäen LVM nidoksia"
 
 #: src/installation/ask.py:195
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr ""
+msgstr "Manjaro asennetaan käyttäen erillistä /koti nidosta"
 
 #: src/installation/ask.py:197
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr ""
+msgstr "Manjaro asennetaan käyttäen erillistä /koti osiota."
 
 #: src/installation/automatic.py:75
 msgid "Automatic installation mode"
@@ -642,7 +643,7 @@ msgstr "Valitse levy:"
 #: src/installation/automatic.py:83
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr ""
+msgstr "VAROITUS! Tämä asennustila korvaa kaiken kovalevyltäsi!"
 
 #: src/installation/automatic.py:88 ui/installation_automatic.ui:59
 msgid ""
@@ -652,7 +653,7 @@ msgstr "Valitse levy, jolle haluat asentaa Manjaron ja klikkaa\nalla olevaa pain
 
 #: src/installation/automatic.py:93 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr ""
+msgstr "Salauksen salasana:"
 
 #: src/installation/automatic.py:97 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
@@ -666,12 +667,12 @@ msgstr ""
 
 #: src/installation/automatic.py:164
 msgid "A LUKS password has been set"
-msgstr ""
+msgstr "LUKS salasana asetettu"
 
 #: src/installation/automatic.py:166
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "Automaattinen asennus kohteeseen %s"
 
 #: src/installation/automatic.py:199
 #, python-format
@@ -699,11 +700,11 @@ msgstr "Asennetaan käyttäen tapaa '%s'"
 #: src/installation/process.py:247
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
-msgstr ""
+msgstr "Luodaan osioita ja niiden tiedostojärjestelmiä kohteessa %s"
 
 #: src/installation/process.py:268
 msgid "Error creating partitions and their filesystems"
-msgstr ""
+msgstr "Virhe luodessa osioita ja niiden tiedostojärjestelmiä"
 
 #: src/installation/process.py:270 src/installation/process.py:343
 #: src/installation/process.py:355 src/installation/process.py:653
@@ -755,7 +756,7 @@ msgstr ""
 #: src/installation/process.py:368
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s poistettu"
 
 #: src/installation/process.py:376
 msgid "Can't create necessary directories on destination system"
@@ -763,19 +764,19 @@ msgstr "Ei voida luoda tarvittavia hakemistoja kohdejärjestelmään."
 
 #: src/installation/process.py:388
 msgid "Install System ..."
-msgstr ""
+msgstr "Asenna järjestelmä ..."
 
 #: src/installation/process.py:393
 msgid "System installed."
-msgstr ""
+msgstr "Järjestelmä asennettu."
 
 #: src/installation/process.py:395
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Säädetään järjestelmää ..."
 
 #: src/installation/process.py:397
 msgid "System configured."
-msgstr ""
+msgstr "Järjestelmä säädetty."
 
 #: src/installation/process.py:401
 msgid "Installing boot loader ..."
@@ -784,47 +785,47 @@ msgstr ""
 #: src/installation/process.py:434
 #, python-format
 msgid "Can't copy Thus log to %s"
-msgstr ""
+msgstr "Ei voida kopioida thus lokia kohteeseen %s"
 
 #: src/installation/process.py:453 src/installation/process.py:472
 #: src/installation/process.py:486
 #, python-format
 msgid "Can't unmount %s"
-msgstr ""
+msgstr "Ei voida irroittaa %s"
 
 #: src/installation/process.py:488
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "Asennus suoritettu onnistuneesti."
 
 #: src/installation/process.py:524
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Pääkohde tiedostojärjestelmä ei ole olemassa! Kriittinen virhe (poistutaan)."
 
 #: src/installation/process.py:528
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr ""
+msgstr "Työpöytä tiedostojärjestelmä ei ole olemassa! Kriittinen virhe (poistutaan)."
 
 #: src/installation/process.py:538 src/installation/process.py:544
 #, python-format
 msgid "%s is already mounted at %s as %s"
-msgstr ""
+msgstr "%s on valmiiksi liitetty kohteessa %s nimellä %s"
 
 #: src/installation/process.py:555
 msgid "Indexing files to be copied ..."
-msgstr ""
+msgstr "Indeksoidaan kopioitavia tiedostoja..."
 
 #: src/installation/process.py:560
 msgid "Extracting root-image ..."
-msgstr ""
+msgstr "Puretaan root-kuvaketta..."
 
 #: src/installation/process.py:570
 msgid "Extracting desktop-image ..."
-msgstr ""
+msgstr "Puretaan työpöytä-kuvaketta..."
 
 #: src/installation/process.py:585
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Palautetaan meta tietoja kohteeseen %s"
 
 #: src/installation/process.py:601
 msgid "Special dirs already mounted."
@@ -832,17 +833,17 @@ msgstr "Erikoiskansiot on jo liitetty."
 
 #: src/installation/process.py:635
 msgid "Special dirs are not mounted. Skipping."
-msgstr ""
+msgstr "Erityishakemistot eivät ole littettyinä. Ohitetaan."
 
 #: src/installation/process.py:652 src/installation/process.py:658
 #, python-format
 msgid "Unable to umount %s"
-msgstr ""
+msgstr "%s ei voida irroittaa"
 
 #: src/installation/process.py:680
 #, python-format
 msgid "Error running command: %s"
-msgstr ""
+msgstr "Virhe suorittaessa komentoa: %s"
 
 #: src/installation/process.py:683
 #, python-format
@@ -856,21 +857,21 @@ msgstr ""
 #: src/installation/process.py:746 src/installation/process.py:807
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr ""
+msgstr "Lisätty kohteeseen fstab : UUID=%s %s %s %s 0 %s"
 
 #: src/installation/process.py:760
 #, python-format
 msgid "Added to crypttab : %s"
-msgstr ""
+msgstr "Lisätty kohteeseen crypttab : %s"
 
 #: src/installation/process.py:764
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-msgstr ""
+msgstr "Lisätty kohteeseen fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
 #: src/installation/process.py:811
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-msgstr ""
+msgstr "Lisätty kohteeseen fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
@@ -944,7 +945,7 @@ msgstr ""
 #: src/installation/process.py:1097
 #, python-format
 msgid "Enabled %s service."
-msgstr ""
+msgstr "%s pelvelu käytössä."
 
 #: src/installation/process.py:1104
 #, python-format
@@ -958,7 +959,7 @@ msgstr "Virhe vaihdettaessa käyttäjän %s salasanaa"
 
 #: src/installation/process.py:1122
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr ""
+msgstr "Asetetaan koukkuja ja moduuleja kohteessa mkinitcpio.conf"
 
 #: src/installation/process.py:1213
 #, python-format
@@ -971,11 +972,11 @@ msgstr "Määritellään uuden järjestelmäsi asetuksia."
 
 #: src/installation/process.py:1322
 msgid "fstab file generated."
-msgstr ""
+msgstr "fstab tiedosto tehty."
 
 #: src/installation/process.py:1328
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Verkkoasetukset kopioitu."
 
 #: src/installation/process.py:1354
 msgid "Time zone set."
@@ -984,41 +985,41 @@ msgstr ""
 #: src/installation/process.py:1375
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr ""
+msgstr "sudo kokoonpano käyttäjälle %s valmis."
 
 #: src/installation/process.py:1385
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Käyttäjä %s lisätty."
 
 #: src/installation/process.py:1397
 #, python-format
 msgid "Hostname  %s set."
-msgstr ""
+msgstr "Isäntänimi %s asetettu."
 
 #: src/installation/process.py:1402
 msgid "Set root password."
-msgstr ""
+msgstr "Aseta root salasana"
 
 #: src/installation/process.py:1405
 msgid "Set the same password to root."
-msgstr ""
+msgstr "Aseta sama salasana root käyttäjälle."
 
 #: src/installation/process.py:1411
 msgid "Generating locales ..."
-msgstr ""
+msgstr "Luodaan paikallisia ..."
 
 #: src/installation/process.py:1429
 msgid "Adjusting hardware clock ..."
-msgstr ""
+msgstr "Säädetään laitteiston kelloa ..."
 
 #: src/installation/process.py:1438
 msgid "Configuring hardware ..."
-msgstr ""
+msgstr "Säädetään laitteistoa"
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Asennetaan ajureita ..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"
@@ -1026,11 +1027,11 @@ msgstr "MHWD-skriptiä ei voida suorittaa "
 
 #: src/installation/process.py:1531
 msgid "Configure display manager ..."
-msgstr ""
+msgstr "Säädetään näytön hallinnointia..."
 
 #: src/installation/process.py:1641
 msgid "Configure System ..."
-msgstr ""
+msgstr "Säädetään järjestelmää ..."
 
 #: src/installation/process.py:1666
 msgid "Removing live configuration (packages)"
@@ -1046,19 +1047,19 @@ msgstr "Paketinhallinnan asetukset on nyt määrritelty."
 
 #: src/installation/process.py:1718
 msgid "Running mkinitcpio ..."
-msgstr ""
+msgstr "Suoritetaan mkinitcpio ..."
 
 #: src/installation/process.py:1721
 msgid "Running mkinitcpio - done"
-msgstr ""
+msgstr "Suoritetaan mkinitcpio - valmis"
 
 #: src/installation/process.py:1737
 msgid "Encrypting user home dir ..."
-msgstr ""
+msgstr "Salataan käyttäjän kotihakemistoa ..."
 
 #: src/installation/process.py:1739
 msgid "User home dir encrypted"
-msgstr ""
+msgstr "Käyttäjä kotihakemisto salattu"
 
 #: src/keymap.py:67
 msgid "Select your keyboard layout"
@@ -1087,7 +1088,7 @@ msgstr "Valitse kielesi:"
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
-msgstr ""
+msgstr "Huomaa: Thus asentaja on beta ohjelmisto."
 
 #: src/language.py:84
 msgid ""
@@ -1096,7 +1097,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "Thus on varhais-julkaistu beta ohjelmisto jota kehitetään jatkuvasti aktiivisesti. Se ei vielä käsittele RAID, btrfs alavolyymeja, tai muita edistyneitä asetelmia. Jatka varovasti, sillä tietojen menetys on mahdollista! Jos löydät virheitä käy osoitteessa <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: src/language.py:91
 msgid "Welcome to Manjaro!"
@@ -1129,7 +1130,7 @@ msgstr "Maa tai alue:"
 #: src/parted3/fs_module.py:148
 #, python-format
 msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr ""
+msgstr "Ei pystytä vahvistamaan onko %s Solid State Drive kovalevy vai ei."
 
 #: src/parted3/fs_module.py:173
 #, python-format
@@ -1139,17 +1140,17 @@ msgstr ""
 #: src/parted3/lvm.py:75
 #, python-format
 msgid "Can't remove logical volume %s"
-msgstr ""
+msgstr "Ei pystytä irroittamaan loogista nidosta %s"
 
 #: src/parted3/lvm.py:93
 #, python-format
 msgid "Can't remove volume group %s"
-msgstr ""
+msgstr "Ei voida irroittaa nidos ryhmää %s"
 
 #: src/parted3/lvm.py:105
 #, python-format
 msgid "Can't remove physical volume %s"
-msgstr ""
+msgstr "Ei voida irroittaa fyysistä nidosta %s"
 
 #: src/parted3/partition_module.py:106
 #, python-format
@@ -1171,26 +1172,26 @@ msgstr ""
 #: src/parted3/partition_module.py:179
 #, python-format
 msgid "Can't delete partition %s"
-msgstr ""
+msgstr "Ei voida poistaa osiota %s"
 
 #: src/parted3/partition_module.py:230
 msgid "Partition is too large!"
-msgstr ""
+msgstr "Osio on liian suuri!"
 
 #: src/parted3/partition_module.py:290
 #, python-format
 msgid "Can't detect used space from %s"
-msgstr ""
+msgstr "Ei voida havaita käytettyä tilaa kohteesta %s"
 
 #: src/parted3/used_space.py:39
 #, python-format
 msgid "Can't detect used space of NTFS partition %s"
-msgstr ""
+msgstr "Ei voida havaita NTFS %s osion käytettyä tilaa"
 
 #: src/parted3/used_space.py:65
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
-msgstr ""
+msgstr "Ei voida havaita EXTFS %s osion käytettyä tilaa"
 
 #: src/parted3/used_space.py:94
 #, python-format
@@ -1200,22 +1201,22 @@ msgstr ""
 #: src/parted3/used_space.py:125
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
-msgstr ""
+msgstr "Ei voida havaita JFS %s osion käytettyä tilaa"
 
 #: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
-msgstr ""
+msgstr "Ei voida havaita REISERFS %s osion käytettyä tilaa"
 
 #: src/parted3/used_space.py:175
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
-msgstr ""
+msgstr "Ei voida havaita käytettyä tilaa BTRFS osiolla %s"
 
 #: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
-msgstr ""
+msgstr "Ei voida havaita käytettyä tilaa XFS osiossa %s"
 
 #: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
@@ -1268,7 +1269,7 @@ msgstr ""
 
 #: src/slides.py:234
 msgid "Do you want to retry?"
-msgstr ""
+msgstr "Haluatko yrittää uudelleen?"
 
 #: src/timezone.py:111
 msgid "Where are you?"
@@ -1284,7 +1285,7 @@ msgstr "Alue:"
 
 #: src/timezone.py:124 ui/timezone.ui:104
 msgid "Use Network Time Protocol for clock synchronization:"
-msgstr ""
+msgstr "Käytä verkkoympäristön aika protokolaa kellon synkronointiin."
 
 #: src/timezone.py:135
 #, python-format
@@ -1297,7 +1298,7 @@ msgstr "Nykyistä aikavyöhykettä ei voida määrittää automaattisesti"
 
 #: src/timezone.py:283
 msgid "Stopping timezone threads..."
-msgstr ""
+msgstr "Pysäytetään aikavyöhykkeen viestiketjut..."
 
 #: src/timezone.py:397
 msgid "Can't get the country code used to create a pacman mirrorlist"
@@ -1313,7 +1314,7 @@ msgstr "Nimesi"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
-msgstr ""
+msgstr "Isäntänimi"
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
@@ -1351,7 +1352,7 @@ msgstr ""
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
-msgstr ""
+msgstr "Sen nimi jona se näkyy muille tietokoneille"
 
 #: src/user_info.py:152
 msgid "You must enter a name"
@@ -1393,7 +1394,7 @@ msgstr ""
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr ""
+msgstr "Manjaro käyttää eCryptfs salausta kotihakemistosi salaamiseen, valitettavasti eCryptfs salaus ei käsittele hajallaan kasvavia tiedostoja hyvin.\n"
 
 #: src/user_info.py:253
 msgid ""
@@ -1405,19 +1406,19 @@ msgstr "Älä kuitenkaan huoli, suurimmalle osalle käyttäjistä tästä heikko
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr ""
+msgstr "Joka tapauksessa yksi suosittu ja epäkehoitettu eCryptfs ohjelman on salattava BitTorrent lataus kohde kuten tämä usein vaatii eCryptfs käsittelemään hajallaan kasvavia tiedostoja joiden koko on 10 GB tai suurempi ja voi johtaa voimakkaaseen levy nälkään.\n"
 
 #: src/user_info.py:255
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "Yksinkertainen kiertotapa on sijoittaa hajanaiset tiedostot salaamattomaan julkiseen hakemistoon.\n"
 
 #: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "Katso yksityiskohtaisia tietoja osoitteesta https://wiki.archlinux.org/index.php/ECryptfs\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
@@ -1441,7 +1442,7 @@ msgstr "Mikä on käynnistysjärjestelmäsi tyyppi?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (yleinen)"
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -1465,7 +1466,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Parhaan tuloksen saavuttamiseksi va
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space."
-msgstr ""
+msgstr "(*) Tämä korkeasti riippuu minkä työpöytä ympäristön valitset, saatat tarvita lisää tallennustilaa."
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
@@ -1505,25 +1506,25 @@ msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "LUKS volyymi nimi"
 
 #: ui/installation_advanced.ui:1270
 msgid "Password:"
-msgstr ""
+msgstr "Salasana:"
 
 #: ui/installation_advanced.ui:1284
 msgid "Confirm password:"
-msgstr ""
+msgstr "Vahvista salasana:"
 
 #: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "Käytä LUKS salausta:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">Choose which OS you want to install Manjaro next to</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1550,7 +1551,7 @@ msgstr "<span weight=\"light\" size=\"small\">Varoitus: Tämä poistaa kaikki as
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
-msgstr ""
+msgstr "Salaa uuden Manjaro asennuksen parempaa turvallisuutta varten"
 
 #: ui/installation_ask.ui:91
 msgid ""
@@ -1566,7 +1567,7 @@ msgstr "Asenna Manjaro LVM osiolle"
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Tämä asettaa LVM toiminnot joka mahdollistaa pikakuvien tekemisen ja vapaamuotoisen osion koon muuttamisen</span>"
 
 #: ui/installation_ask.ui:155
 msgid ""
@@ -1583,7 +1584,7 @@ msgid ""
 "<span weight=\"light\" size=\"small\">With this option you will be "
 "installing Manjaro alongside one of the other OSes you already have "
 "installed.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">Tämä vaihtoehto asentaa Manjaron valmiiksi asentamasi käyttöjärjeslmän rinnalle.</span>"
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
@@ -1600,7 +1601,7 @@ msgstr "<span weight=\"light\" size=\"small\">Voit itse luoda ja poistaa osioita
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>VAROITUS! Tämä asennusmuoto korvaa kaiken kovalevyltäsi!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
@@ -1613,7 +1614,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr ""
+msgstr "<span weight='bold'>Huomio: Thus asentaja on beta ohjelmisto.</span>\n\nThus on varhais-julkaistu beta ohjelmisto jota kehitetään jatkuvasti aktiivisesti. Se ei vielä käsittele RAID, btrfs alavolyymeja, tai muita edistyneitä asetelmia. Jatka varovasti, sillä tietojen menetys on mahdollista! \n\nJos löydä virheitä käy osoitteessa <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
@@ -1621,20 +1622,20 @@ msgstr "<span weight=\"bold\" size=\"large\">Tervetuloa Manjaroon</span>"
 
 #: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Vahva salasana</span></small>"
 
 #: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Sinun pitää syöttää salasana</span></small>"
 
 #: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Sinun pitää syöttää käyttäjätunnus</span></small>"
 
 #: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Sinun pitää syöttää nimi</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Sen nimi jona se näkyy muille tietokoneille.</span>"
