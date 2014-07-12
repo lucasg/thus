@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-04 15:14+0000\n"
+"PO-Revision-Date: 2014-06-24 12:36+0000\n"
 "Last-Translator: DirectorX <kassavlt@gmail.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/manjaro-thus/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -271,7 +271,7 @@ msgstr ""
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
 #: src/installation/advanced.py:1745 src/installation/advanced.py:1839
 msgid "extended"
-msgstr ""
+msgstr "מורחב"
 
 #: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
@@ -519,7 +519,7 @@ msgstr "מערכת קבצים"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3 לא נמצא!"
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
@@ -704,14 +704,14 @@ msgstr "שגיאה ביצירת מחיצות ומערכות הקבצים שלה�
 #: src/installation/process.py:355 src/installation/process.py:653
 #, python-format
 msgid "Command %s has failed."
-msgstr ""
+msgstr "הפקודה %s נכשלה."
 
 #: src/installation/process.py:272 src/installation/process.py:319
 #: src/installation/process.py:345 src/installation/process.py:357
 #: src/installation/process.py:380 src/installation/process.py:655
 #, python-format
 msgid "Output : %s"
-msgstr ""
+msgstr "פלט : %s"
 
 #: src/installation/process.py:305 src/installation/process.py:336
 #, python-format
@@ -730,7 +730,7 @@ msgstr "לא היתה אפשרות לעגן מחיצת root ומחיצת boot"
 #: src/installation/process.py:317 src/installation/process.py:378
 #, python-format
 msgid "Command %s has failed"
-msgstr ""
+msgstr "הפקודה %s נכשלה"
 
 #: src/installation/process.py:341
 #, python-format
@@ -758,7 +758,7 @@ msgstr "אין אפשרות ליצור מדורים על מערכת יעד"
 
 #: src/installation/process.py:388
 msgid "Install System ..."
-msgstr ""
+msgstr "מתקין מערכת..."
 
 #: src/installation/process.py:393
 msgid "System installed."
@@ -774,7 +774,7 @@ msgstr "מערכת הוגדרה."
 
 #: src/installation/process.py:401
 msgid "Installing boot loader ..."
-msgstr ""
+msgstr "כעת מתקין boot loader ..."
 
 #: src/installation/process.py:434
 #, python-format
@@ -1013,7 +1013,7 @@ msgstr "כעת מגדיר חומרה ..."
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "כעת מתקין דרייברים"
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"

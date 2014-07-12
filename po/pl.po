@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-21 16:26+0000\n"
-"Last-Translator: Michał Olber <michal.olber@osworld.pl>\n"
+"PO-Revision-Date: 2014-07-02 05:44+0000\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/manjaro-thus/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -79,7 +79,7 @@ msgstr "Pokazuje wiadomości dziennika na standardowym wyjściu"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
-msgstr "Pokaż opcje w stadium opracowywania (NIE ZALECANE UŻYCIE!)"
+msgstr "Pokaż opcje w stadium opracowywania (NIEZALECANE UŻYCIE!)"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
 #: src/installation/process.py:445 src/installation/process.py:462
@@ -886,7 +886,7 @@ msgstr "Wystąpił BŁĄD przy przygotowywaniu katalogu 'etc/grub.d'."
 #: src/installation/process.py:923
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr "Instalowanie programu rozruchu GRUB(2) BIOS na %s"
+msgstr "Instalowanie programu rozruchowego GRUB(2) BIOS na %s"
 
 #: src/installation/process.py:943 src/installation/process.py:1031
 msgid ""
@@ -1378,7 +1378,7 @@ msgstr "Automatyczne logowanie"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr "Wymagane hasło do logowania"
+msgstr "Wymagane hasło do zalogowania"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
@@ -1460,7 +1460,7 @@ msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr "Wybierz 'Anuluj', jeżeli nie chcesz instalować programu rozruchowego"
+msgstr "Wybierz 'Anuluj', jeżeli nie chcesz instalować programu rozruchowego."
 
 #: ui/check.ui:29
 msgid ""

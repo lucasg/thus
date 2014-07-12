@@ -3,35 +3,36 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# 47anonimo74 <47anonimo74@gmail.com>, 2014
 # Angel Velasquez <angvp@archlinux.org>, 2011
-# CostGranda <costeeleation@openmailbox.org>, 2013-2014
-# CostGranda <costeeleation@openmailbox.org>, 2013
+# Cost Granda <costeeleation@openmailbox.org>, 2013-2014
+# Cost Granda <costeeleation@openmailbox.org>, 2013
 # danpergal84 <danpergal84@gmail.com>, 2013
 # danpergal84 <danpergal84@gmail.com>, 2013-2014
-# Fernando_Jorge <fjcabanilla@gmail.com>, 2013
-# Fernando_Jorge <fjcabanilla@gmail.com>, 2013
-# j3nnn1 <jcmm986@gmail.com>, 2012
+# Fernando Jorge Cabanilla Charneco <fjcabanilla@gmail.com>, 2013
+# Fernando Jorge Cabanilla Charneco <fjcabanilla@gmail.com>, 2013
+# Jenn <jcmm986@gmail.com>, 2012
 # Juan Antonio Cánovas Pérez <traumness@gmail.com>, 2011
 # juantascon <juantascon@gmail.com>, 2011
-# The_Loko <juliolokooo@gmail.com>, 2014
-# kirek <rbuldo@gmail.com>, 2013
-# leonelhermetica <leonelmalon@gmail.com>, 2013
+# Julio Gonzalez Mejías <juliolokooo@gmail.com>, 2014
+# Ramon Buldó <rbuldo@gmail.com>, 2013
+# Leonel <leonelmalon@gmail.com>, 2013
 # neiko <neikokz+tsfx@gmail.com>, 2011
-# Pablo Lezaeta <prflr88@gmail.com>, 2013
-# manjarolinux <philm@manjaro.org>, 2013-2014
-# kirek <rbuldo@gmail.com>, 2013
+# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013
+# philm <philm@manjaro.org>, 2013-2014
+# Ramon Buldó <rbuldo@gmail.com>, 2013
 # Rodrigo Cares <rcares@gmail.com>, 2012
 # sfermat <sebas.larrieu@gmail.com>, 2014
-# tutan_kbron <the.darkspider@gmail.com>, 2013
-# tutan_kbron <the.darkspider@gmail.com>, 2013-2014
-# tutan_kbron <the.darkspider@gmail.com>, 2014
+# Uriel Velázquez <the.darkspider@gmail.com>, 2013
+# Uriel Velázquez <the.darkspider@gmail.com>, 2013-2014
+# Uriel Velázquez <the.darkspider@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-07-09 19:36+0000\n"
+"Last-Translator: 47anonimo74 <47anonimo74@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/manjaro-thus/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -861,7 +862,7 @@ msgstr "Error ejecutando el comando: %s"
 #: src/installation/process.py:683
 #, python-format
 msgid "Timeout running command: %s"
-msgstr ""
+msgstr "Se acabo el tiempo ejecutando: %s"
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
@@ -888,7 +889,7 @@ msgstr "Añadido a fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr ""
+msgstr "ERROR al preparar 'etc/grub.d'-folder."
 
 #: src/installation/process.py:923
 #, python-format
@@ -899,7 +900,7 @@ msgstr "Instalando gestor de arranque GRUB(2) BIOS en %s"
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr ""
+msgstr "grub-mkconfig parece que esta bloqueada. Cerrando grub-mount y os-prober para poder continuar.."
 
 #: src/installation/process.py:951
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -941,7 +942,7 @@ msgstr "Generando grub.cfg"
 
 #: src/installation/process.py:1039
 msgid "GRUB(2) UEFI has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) UEFI se ha instalado correctamente."
 
 #: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) UEFI."
@@ -953,7 +954,7 @@ msgstr "ERROR al instalar configuración local de GRUB(2)."
 
 #: src/installation/process.py:1091
 msgid "Can't freeze/unfreeze xfs system"
-msgstr ""
+msgstr "No se puede congelar/descongelar xfs system"
 
 #: src/installation/process.py:1097
 #, python-format
@@ -1032,7 +1033,7 @@ msgstr "Configurando hardware..."
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Instalando controladores ..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"

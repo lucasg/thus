@@ -5,22 +5,23 @@
 # Translators:
 # chris020891 <chris020891@gmail.com>, 2013
 # chris020891 <chris020891@gmail.com>, 2013
-# Tibor Attila Anca <anca.tibor@gmail.com>, 2013
-# i_sty <szollosi.istv4n@gmail.com>, 2013
+# Dr. Tibor Attila Anca <anca.tibor@gmail.com>, 2013
+# István Szőllősi <szollosi.istv4n@gmail.com>, 2013
 # lacika501 <80kiri@gmail.com>, 2013
-# lajos <mrlajos@gmail.com>, 2013
-# lajos <mrlajos@gmail.com>, 2013-2014
+# Lajos Pasztor <mrlajos@gmail.com>, 2013
+# Lajos Pasztor <mrlajos@gmail.com>, 2013-2014
 # natanvarga <natanvarga@gmx.com>, 2014
-# ngaba <ngaba@bibl.u-szeged.hu>, 2011,2013
-# manjarolinux <philm@manjaro.org>, 2013-2014
-# Tibor Attila Anca <anca.tibor@gmail.com>, 2013
+# Gábor Nagy <ngaba@bibl.u-szeged.hu>, 2011,2013
+# philm <philm@manjaro.org>, 2013-2014
+# Dr. Tibor Attila Anca <anca.tibor@gmail.com>, 2013
+# Zeni <zen3ger@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-06-24 08:00+0000\n"
+"Last-Translator: Zeni <zen3ger@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -850,7 +851,7 @@ msgstr "Hiba történt a %s futtatásakor."
 #: src/installation/process.py:683
 #, python-format
 msgid "Timeout running command: %s"
-msgstr ""
+msgstr "Időtúllépés történt a  %s parancs futtatásakor."
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
@@ -877,7 +878,7 @@ msgstr "fstab-hoz adva: tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr ""
+msgstr "HIBA a(z) 'etc/grub.d'-mappa előkészítése közben."
 
 #: src/installation/process.py:923
 #, python-format
@@ -888,7 +889,7 @@ msgstr "GRUB(2) rendszerbetöltő telepítése a %s"
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr ""
+msgstr "Úgy tűnik, hogy  a grub-mkconfig elakadt. A grub-mount és az os-prober leállítása a folytatáshoz."
 
 #: src/installation/process.py:951
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -930,7 +931,7 @@ msgstr "grub.cfg generálása"
 
 #: src/installation/process.py:1039
 msgid "GRUB(2) UEFI has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) UEFI sikeresen telepítve."
 
 #: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) UEFI."
@@ -942,7 +943,7 @@ msgstr "HIBA a GRUB(2) lokális változók telepítésekor."
 
 #: src/installation/process.py:1091
 msgid "Can't freeze/unfreeze xfs system"
-msgstr ""
+msgstr "Nem lehet az xfs rendszert hibernálni/felébreszteni."
 
 #: src/installation/process.py:1097
 #, python-format
@@ -1021,7 +1022,7 @@ msgstr "Hardware konfigurálása..."
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Illesztőprogramok telepítése..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"
