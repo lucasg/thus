@@ -1649,6 +1649,10 @@ class InstallationProcess(multiprocessing.Process):
             os.system("echo \"TERM=mate-terminal\" >> %s/etc/environment" % self.dest_dir)
             os.system("echo \"TERM=mate-terminal\" >> %s/etc/profile" % self.dest_dir)
 
+        # Fix QT-theme in XFCE
+        if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
+            os.system("echo \"QT_STYLE_OVERRIDE=gtk\" >> %s/etc/environment" % self.dest_dir)
+
         # Fix_gnome_apps
         self.chroot(['glib-compile-schemas', '/usr/share/glib-2.0/schemas'])
         self.chroot(['gtk-update-icon-cache', '-q', '-t', '-f', '/usr/share/icons/hicolor'])
