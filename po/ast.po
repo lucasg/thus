@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2013-2014
-# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2014
+# Ḷḷumex03 <tornes@opmbx.org>, 2013-2014
+# Ḷḷumex03 <tornes@opmbx.org>, 2014
+# Ḷḷumex03 <tornes@opmbx.org>, 2014
 # philm <philm@manjaro.org>, 2013
 # philm <philm@manjaro.org>, 2013-2014
-# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2013
+# Ḷḷumex03 <tornes@opmbx.org>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-14 22:59+0000\n"
-"Last-Translator: Ḷḷumex03 <l.lumex03.tornes@gmail.com>\n"
+"PO-Revision-Date: 2014-07-24 16:05+0000\n"
+"Last-Translator: Ḷḷumex03 <tornes@opmbx.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/manjaro-thus/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +37,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Nun pues executar dos instancies d'esti instalador.\n\nSi tas seguru que yá nun ta executándose otru instalador \npues desaniciar el ficheru %s a mano\ny executar esti instalador otra vegada."
+msgstr "Nun pues executar dos instancies d'esti instalador.\n\nSi tas seguru que yá nun ta executándose otru instalador \npues desaniciar el ficheru %s a mano\ny executar esti instalador de nueves."
 
 #: thus.py:143
 #, python-format
@@ -53,11 +54,11 @@ msgstr "Colando del instalador..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr "Afitar nivel de rexistru Thus a 'debug'"
+msgstr "Afita'l nivel de rexistru Thus a 'debug'"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr "Anovar Thus a la cabera versión (-uu forciará l'anovamientu)"
+msgstr "Anovar Thus a la versión cabera (-uu forciará l'anovamientu)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
@@ -94,12 +95,12 @@ msgstr "Nun puen zarrase los preseos LUKS (ver embaxo)"
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr "Triba de sistema de ficheros desconocida %s"
+msgstr "Triba de sistema ficheros desconocida %s"
 
 #: src/installation/auto_partition.py:194
 #, python-format
 msgid "Can't create filesystem %s"
-msgstr "Nun pue crease'l sistema de ficheros %s"
+msgstr "Nun pue crease'l sistema ficheros %s"
 
 #: src/installation/auto_partition.py:353
 #, python-format
@@ -401,7 +402,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr "GRUB requier una partición d'arranque de la BIOS (2 ​​MiB, dengún sistema d'archivos, códigu \"EF02\" en gdisk o la bandera \"bios_grub\" en GNU Parted) nos sistemes de BIOS pa inxertar el so ficheru core.img pola mor d'una falta d'espariu post-MBR nos discos GPT.\n\nThus creará esta partición especial por ti agora."
+msgstr "GRUB requier una partición d'arranque de la BIOS (2 ​​MiB, ensin sistema ficheros, códigu \"EF02\" en gdisk o la bandera \"bios_grub\" en GNU Parted) nos sistemes de BIOS pa inxertar el so ficheru core.img pola mor d'una falta d'espariu post-MBR nos discos GPT.\n\nThus creará esta partición especial por ti agora."
 
 #: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
@@ -471,7 +472,7 @@ msgstr "Atroxando camudancies feches en %s"
 #: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr "Creando sistema de ficheros %s en %s etiquetáu como %s"
+msgstr "Creando sistema ficheros %s en %s etiquetáu como %s"
 
 #: src/installation/advanced.py:1790
 #, python-format
@@ -538,7 +539,7 @@ msgstr "Hai milenta particiones primaries, nun pue crease una nueva"
 #: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr "Nun pue acurtiase'l sistema de ficheros %s(%s)"
+msgstr "Nun pue acurtiase'l sistema ficheros %s(%s)"
 
 #: src/installation/alongside.py:399
 #, python-format
@@ -700,7 +701,7 @@ msgstr "Creando particiones y los sos sistemes de ficheros en %s"
 
 #: src/installation/process.py:268
 msgid "Error creating partitions and their filesystems"
-msgstr "Erru creando particiones y los sos sistemes de ficheros"
+msgstr "Fallu creando particiones y los sos sistemes de ficheros"
 
 #: src/installation/process.py:270 src/installation/process.py:343
 #: src/installation/process.py:355 src/installation/process.py:653
@@ -795,11 +796,11 @@ msgstr "Instalación finada con ésitu."
 
 #: src/installation/process.py:524
 msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr "¡El sistema de ficheros bas nun esiste! Erru críticu (colando)."
+msgstr "¡El sistema de ficheros bas nun esiste! Fallu críticu (colando)."
 
 #: src/installation/process.py:528
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr "¡El sistema de ficheros d'escritoriu nun esiste! Erru críticu (colando)."
+msgstr "¡El sistema ficheros d'escritoriu nun esiste! Fallu críticu (colando)."
 
 #: src/installation/process.py:538 src/installation/process.py:544
 #, python-format
@@ -839,7 +840,7 @@ msgstr "Nun pue desmontase %s"
 #: src/installation/process.py:680
 #, python-format
 msgid "Error running command: %s"
-msgstr "Erru executando'l comandu: %s"
+msgstr "Fallu executando'l comandu: %s"
 
 #: src/installation/process.py:683
 #, python-format
@@ -871,7 +872,7 @@ msgstr "Amestáu a fstab: tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr "FALLU al tresnar la carpeta 'etc/grub.d'."
+msgstr "FALLU tresnando la carpeta 'etc/grub.d'."
 
 #: src/installation/process.py:923
 #, python-format
@@ -890,7 +891,7 @@ msgstr "GRUB(2) BIOS fo instaláu con ésitu."
 
 #: src/installation/process.py:954
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr "Erru instalando GRUB(2) BIOS."
+msgstr "Fallu instalando GRUB(2) BIOS."
 
 #: src/installation/process.py:971
 #, python-format
@@ -916,7 +917,7 @@ msgstr "Falló la copia de GRUB(2) al direutoriu OEM. El ficheru esiste."
 
 #: src/installation/process.py:1006
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
-msgstr "Falló la copia de GRUB(2) al direutoriu OEM. Erru desconocíu."
+msgstr "Falló la copia de GRUB(2) al direutoriu OEM. Fallu desconocíu."
 
 #: src/installation/process.py:1024
 msgid "Generating grub.cfg"
@@ -928,11 +929,11 @@ msgstr "Instalóse con ésitu GRUB(2) UEFI."
 
 #: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) UEFI."
-msgstr "ERRU instalando GRUB(2) UEFI."
+msgstr "FALLU instalando GRUB(2) UEFI."
 
 #: src/installation/process.py:1057
 msgid "ERROR installing GRUB(2) locale."
-msgstr "Erru instalando la configuración rexonal GRUB(2)."
+msgstr "Fallu instalando la configuración rexonal GRUB(2)."
 
 #: src/installation/process.py:1091
 msgid "Can't freeze/unfreeze xfs system"
@@ -946,12 +947,12 @@ msgstr "Habilitáu'l serviciu %s."
 #: src/installation/process.py:1104
 #, python-format
 msgid "Error creating password hash for user %s"
-msgstr "Erru creando l'hash de contraseña pal usuariu %s"
+msgstr "Fallu creando l'hash de contraseña pal usuariu %s"
 
 #: src/installation/process.py:1110
 #, python-format
 msgid "Error changing password for user %s"
-msgstr "Erru camudando la contraseña pal usuariu %s"
+msgstr "Fallu camudando la contraseña pal usuariu %s"
 
 #: src/installation/process.py:1122
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1131,7 +1132,7 @@ msgstr "Nun pue verificase si %s ye un SSD o non"
 #: src/parted3/fs_module.py:173
 #, python-format
 msgid "Sorry but filesystem %s can't be resized"
-msgstr "Perdón, pero nun pue remanase'l sistema de ficheros %s"
+msgstr "Perdón, pero nun pue remanase'l sistema ficheros %s"
 
 #: src/parted3/lvm.py:75
 #, python-format
@@ -1224,7 +1225,7 @@ msgstr "La esbilla d'espeyos automática nun pudo executase"
 
 #: src/show_message.py:53
 msgid "Manjaro Installer - Error"
-msgstr "Instalador Manjaro - Erru"
+msgstr "Instalador Manjaro - Fallu"
 
 #: src/show_message.py:65
 msgid "Manjaro Installer - Warning"

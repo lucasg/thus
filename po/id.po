@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Ade Malsasa Akbar <teknoloid@gmail.com>, 2013
+# Alfie Ilhamsyah <raizercrow@gmail.com>, 2014
 # andjeng, 2013
 # Gregori, 2013
 # Arif Budiman <arifpedia@gmail.com>, 2014
@@ -16,8 +17,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-10 07:42+0000\n"
-"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
+"PO-Revision-Date: 2014-09-16 07:40+0000\n"
+"Last-Translator: Alfie Ilhamsyah <raizercrow@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/manjaro-thus/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr "Penginstal ini harus dijalankan dengan hak akses administratif dan tidak dapat dilanjutkan tanpanya."
+msgstr "Penginstal harus dijalankan dengan hak akses administratif atau instalasi tidak dapat dilanjutkan."
 
 #: thus.py:131
 #, python-format
@@ -39,7 +40,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Anda tidak dapat menjalankan dua penginstal ini sekaligus.\n\nJika Anda yakin bahwa penginstal lain tidak sedang dijalankan\nAnda dapat menghapus berkas %s\ndan jalankan penginstal ini kembali."
+msgstr "Anda tidak dapat menjalankan dua penginstal sekaligus.\n\nJika Anda yakin tidak ada penginstal lain yang sedang berjalan\nAnda dapat menghapus berkas %s\ndan kembali menjalankan penginstal."
 
 #: thus.py:143
 #, python-format
@@ -52,7 +53,7 @@ msgstr "Penginstal Manjaro"
 
 #: thus.py:290
 msgid "Quiting installer..."
-msgstr "Keluar dari penginstal.."
+msgstr "Menghentikan penginstal..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
@@ -64,11 +65,11 @@ msgstr "Perbarui Thus ke versi terkini (-uu akan memaksa pembaruan)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr "Jangan melakukan perubahan apapun (berguna bagi pengembang)"
+msgstr "Jangan lakukan perubahan apapun (berguna bagi pengembang)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr "Tampilkan pesan logging untuk stdout"
+msgstr "Tampilkan pesan logging ke stdout"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
@@ -84,35 +85,35 @@ msgstr "Melepas Kait %s"
 #: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
-msgstr "Melepas Kait %s gagal. Mencoba arg malas."
+msgstr "Gagal melepaskan kait %s. Sedang mencoba menggunakan argumen lazy."
 
 #: src/installation/auto_partition.py:119
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr "Tidak dapat menghapus volume LVM yang ada (lihat dibawah)"
+msgstr "Tidak dapat menghapus LVM yang ada (lihat bawah)"
 
 #: src/installation/auto_partition.py:129
 msgid "Can't close LUKS devices (see below)"
-msgstr "Tidak dapat menutup divais LUKS (lihat dibawah)"
+msgstr "Tidak dapat menutup perangkat LUKS (lihat bawah)"
 
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr "Tipe berkas sistem %s tak dikenal"
+msgstr "Tipe sistem berkas %s tak dikenal"
 
 #: src/installation/auto_partition.py:194
 #, python-format
 msgid "Can't create filesystem %s"
-msgstr "Tidak dapat membuat berkas sistem %s"
+msgstr "Tidak dapat membuat sistem berkas %s"
 
 #: src/installation/auto_partition.py:353
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr "Thus akan menyetel LUKS pada divais %s"
+msgstr "Thus akan menyetel LUKS pada perangkat %s"
 
 #: src/installation/auto_partition.py:429
 #, python-format
 msgid "Total disk size: %dMiB"
-msgstr "Ukuran total diska: %dMiB"
+msgstr "Total ukuran cakram: %dMiB"
 
 #: src/installation/auto_partition.py:430
 #, python-format
@@ -143,12 +144,12 @@ msgstr "Ukuran partisi home: %dMiB"
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "Pengaturan tidak dapat menemukan ukuran divais Anda, silakan gunakan instalasi lanjutan untuk mempartisi dan mengaitkan divais."
+msgstr "Pengaturan tidak dapat mendeteksi ukuran perangkat Anda, silakan gunakan pilihan instalasi lanjutan untuk melakukan partisi dan mengaitkan perangkat."
 
 #: src/installation/auto_partition.py:601
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr "Akan mengatur LVM pada divais %s"
+msgstr "LVM akan disetel pada perangkat %s"
 
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation/alongside.py:220
@@ -158,31 +159,31 @@ msgstr "tidak diketahui"
 #: src/canonical/misc.py:929
 #, python-format
 msgid "Can't set locale %s"
-msgstr "Tidak dapat mengatur lokal %s"
+msgstr "Tidak dapat menyetel pengaturan lokal %s"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr "sandi terlalu singkat"
+msgstr "kata sandi terlalu pendek"
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr "sandi lemah"
+msgstr "kata sandi lemah"
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr "sandi sedang"
+msgstr "kata sandi sedang"
 
 #: src/canonical/validation.py:141
 msgid "good password"
-msgstr "sandi baik"
+msgstr "kata sandi baik"
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr "sandi kuat"
+msgstr "kata sandi kuat"
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr "Sandi tidak sama"
+msgstr "Kata sandi tidak sama"
 
 #: src/check.py:79
 msgid "System Check"
@@ -191,37 +192,37 @@ msgstr "Pemeriksaan Sistem"
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr "memiliki setidaknya %dGB ruang penyimpanan yang tersedia"
+msgstr "memiliki setidaknya %dGB ruang penyimpanan tersedia"
 
 #: src/check.py:89
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "Ini sangat tergantung pada lingkungan desktop yang Anda pilih, Anda mungkin membutuhkan lebih banyak ruang."
+msgstr "Hal ini sangat tergantung pada lingkungan desktop yang dipilih, Anda mungkin membutuhkan lebih banyak ruang."
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
-msgstr "telah dicolokkan ke sumber tenaga"
+msgstr "terpasang pada sumber tenaga"
 
 #: src/check.py:98
 msgid "is connected to the Internet"
-msgstr "telah terkoneksi dengan Internet"
+msgstr "terkoneksi ke Internet"
 
 #: src/check.py:102
 msgid "For best results, please ensure that this computer:"
-msgstr "Untuk hasil yang bagus, tolong pastikan bahwa komputer ini:"
+msgstr "Untuk hasil maksimal, pastikan bahwa komputer ini:"
 
 #: src/check.py:173
 msgid "We have Internet connection."
-msgstr "Kami mempunyai koneksi Internet"
+msgstr "Koneksi Internet tersedia."
 
 #: src/check.py:174
 msgid "We're connected to a power source."
-msgstr "Kami terkoneksi dengan sumber daya"
+msgstr "Sumber daya tersambung."
 
 #: src/check.py:175
 msgid "We have enough disk space."
-msgstr "Kami memiliki ruang diska yang cukup."
+msgstr "Ruang cakram mencukupi."
 
 #: src/installation/advanced.py:218 src/installation/advanced.py:512
 #: src/installation/advanced.py:526
@@ -230,7 +231,7 @@ msgstr "ruang kosong"
 
 #: src/installation/advanced.py:266
 msgid "It's not recommended to install grub in a partition"
-msgstr "Tidak disarankan untuk menginstal grup di sebuah partisi."
+msgstr "Tidak disarankan untuk memasang grub di partisi."
 
 #: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
@@ -262,7 +263,7 @@ msgstr "Terpakai"
 
 #: src/installation/advanced.py:318
 msgid "Flags"
-msgstr "Flags"
+msgstr "Flag"
 
 #: src/installation/advanced.py:324
 msgid "SSD"
@@ -280,7 +281,7 @@ msgstr "extended"
 
 #: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
-msgstr "Tidak dapat menggunakan titik kait yang sama untuk kedua kali..."
+msgstr "Tidak dapat menggunakan titik kait yang sama dua kali..."
 
 #: src/installation/advanced.py:953
 msgid "Creating primary partition"
@@ -300,11 +301,11 @@ msgstr "Mode instalasi lanjutan"
 
 #: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
-msgstr "Gunakan divais ini sebagai instalasi boot loader:"
+msgstr "Gunakan perangkat ini sebagai tempat pemasangan boot loader:"
 
 #: src/installation/advanced.py:1113
 msgid "Mount checklist:"
-msgstr "Senarai Centang Kait:"
+msgstr "Senarai centang kait:"
 
 #: src/installation/advanced.py:1119
 msgid "Root"
@@ -340,7 +341,7 @@ msgstr "Tipe:"
 
 #: src/installation/advanced.py:1160 ui/installation_advanced.ui:647
 msgid "Primary"
-msgstr "Primary"
+msgstr "Primer"
 
 #: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
 msgid "Logical"
@@ -375,7 +376,7 @@ msgstr "Label (opsional):"
 
 #: src/installation/advanced.py:1192
 msgid "Encryption Options..."
-msgstr "Opsi Enkripsi..."
+msgstr "Pilihan Enkripsi..."
 
 #: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
@@ -397,18 +398,18 @@ msgstr "Instal sekarang!"
 #: src/installation/advanced.py:1308
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr "Membuat sebuah tabel partisi baru bertipe %s untuk diska %s"
+msgstr "Membuat tabel partisi baru bertipe %s untuk cakram %s"
 
 #: src/installation/advanced.py:1318
 msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr "GRUB memerlukan sebuah Partisi Boot BIOS (2 MiB, tanpa berkas sistem, tipe kode \"EF02\" di gdisk atau bendera \"bios_grub\" di GNU Parted) di dalam sistem BIOS untuk menyimpan berkas core.img karena kurangnya celah penyimpaan post-MBR di dalam diska GPT.\n\nThus akan membuat partisi khusus ini sekarang."
+msgstr "GRUB memerlukan Partisi Boot BIOS (2 MiB, tanpa sistem berkas, memiliki kode tipe \"EF02\" di gdisk atau flag \"bios_grub\" di GNU Parted) di dalam BIOS untuk menyimpan berkas core.img dikarenakan kurangnya celah penyimpanan post-MBR pada cakram GPT.\n\nSekarang thus akan membuat partisi tersebut."
 
 #: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr "Tidak dapat membuat partisi Boot BIOS GPT!"
+msgstr "Tidak bisa membuat partisi Boot BIOS GPT!"
 
 #: src/installation/advanced.py:1377
 msgid "Couldn't create BIOS GPT Boot partition"
@@ -420,7 +421,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s dikaitkan sebagai swap.\nUntuk melanjutkannya, itu harus dilepas kait dulu.\nKlik Ya untuk melepaskan kait, atau Tidak untuk mengembalikan\n"
+msgstr "%s sedang dikaitkan sebagai swap.\nUntuk melanjutkan, kait tersebut harus dilepas.\nKlik Ya untuk melepaskan kait, klik Tidak untuk kembali\n"
 
 #: src/installation/advanced.py:1544
 #, python-format
@@ -428,18 +429,18 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr "%s dikaitkan di '%s'.\nUntuk melanjutkan hal itu harus dilepas kait dulu.\nKlik Ya untuk melepaskan kait, atau Tidak untuk mengembalikan\n"
+msgstr "%s sedang dikaitkan di '%s'.\nUntuk melanjutkan, kait tersebut harus dilepas.\nKlik Ya untuk melepaskan kait, klik Tidak untuk kembali\n"
 
 #: src/installation/advanced.py:1567
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr "%s terlihat sudah dikaitkan (sibuk) tetapi tidak ada titik kait."
+msgstr "%s terlihat sedang dikaitkan (sibuk) tetapi tidak memiliki titik kait."
 
 #: src/installation/advanced.py:1573
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
-msgstr "Partisi root tidak ditandai untuk diformat.\nIni bisa menyebabkan masalah. Haruskan ini ditandai untuk diformat sekarang?"
+msgstr "Partisi root belum ditandai untuk diformat.\nHal ini dapat menimbulkan masalah. Tandai untuk diformat sekarang?"
 
 #: src/installation/advanced.py:1636
 #, python-format
@@ -456,7 +457,7 @@ msgstr "Baru"
 
 #: src/installation/advanced.py:1643
 msgid "Relabel"
-msgstr "Labeli"
+msgstr "Labeli ulang"
 
 #: src/installation/advanced.py:1643
 msgid "Mount"
@@ -464,27 +465,27 @@ msgstr "Kaitkan"
 
 #: src/installation/advanced.py:1664
 msgid "These disks will have partition actions:"
-msgstr "Diska ini akan memiliki tindakan partisi:"
+msgstr "Cakram-cakram akan dipartisi sebagai berikut:"
 
 #: src/installation/advanced.py:1724
 #, python-format
 msgid "Saving changes done in %s"
-msgstr "Penyimpanan selesai dalam %s "
+msgstr "Penyimpanan perubahan telah selesai dalam %s"
 
 #: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr "Membuat berkas sistem %s di %s dengan label %s"
+msgstr "Membuat sistem berkas %s di %s dengan label %s"
 
 #: src/installation/advanced.py:1790
 #, python-format
 msgid "Setting boot flag in %s partition"
-msgstr "Mengatur bendera boot di partisi %s"
+msgstr "Mengatur flag boot di partisi %s"
 
 #: src/installation/advanced.py:1809
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr "Tidak dapat memformat partisi '%s\" dengan label '%s' sebagai '%s'"
+msgstr "Tidak dapat memformat partisi '%s' dengan label '%s' sebagai '%s'"
 
 #: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
@@ -494,12 +495,12 @@ msgstr "Thus tidak akan menginstal boot loader"
 #: src/installation/advanced.py:1860
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro akan menginstal bootloader tipe %s di %s"
+msgstr "Manjaro akan memasang bootloader tipe %s di %s"
 
 #: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr "Mode Percobaan. Thus tidak akan menerapkan perubahan apapun pada sistem!"
+msgstr "Mode pengujian. Thus tidak akan menerapkan perubahan apapun pada sistem!"
 
 #: src/installation/alongside.py:115
 #, python-format
@@ -508,19 +509,19 @@ msgstr "Tidak dapat memuat css %s"
 
 #: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr "Pilihlah OS mana yang Anda inginkan untuk menginstal Manjaro selanjutnya"
+msgstr "Pilih Sistem Operasi yang ingin diinstal berdampingan dengan Manjaro"
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
-msgstr "Manjaro berdampingan dengan OS lainnya"
+msgstr "Manjaro berdampingan dengan Sistem Operasi lainnya"
 
 #: src/installation/alongside.py:175
 msgid "Detected OS"
-msgstr "OS yang terdeteksi"
+msgstr "Sistem Operasi terdeteksi"
 
 #: src/installation/alongside.py:178
 msgid "Filesystem"
-msgstr "Berkas sistem"
+msgstr "Sistem berkas"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
@@ -528,20 +529,20 @@ msgstr "pyparted3 tidak ditemukan!"
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
-msgstr "Tidak dapat membuat senarai partisi untuk instalasi berdampingan."
+msgstr "Tidak dapat membuat daftar partisi untuk instalasi berdampingan."
 
 #: src/installation/alongside.py:268
 msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr "Tidak dapat mengecilkan partisi (mungin partisi hampir penuh?)"
+msgstr "Tidak dapat mengecilkan partisi (mungkin hampir penuh?)"
 
 #: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
-msgstr "Ada terlalu banyak partisi primer, sehingga tidak dapat membuat partisi baru"
+msgstr "Partisi primer terlalu banyak, partisi baru tidak dapat dibuat"
 
 #: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr "Tidak dapat engecilkan berkas sistem %s(%s)"
+msgstr "Tidak dapat mengecilkan sistem berkas %s(%s)"
 
 #: src/installation/alongside.py:399
 #, python-format
@@ -559,7 +560,7 @@ msgstr "Tidak dapat membuat partisi swap baru."
 #: src/installation/alongside.py:495 src/installation/automatic.py:222
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus akan menginstal jenis boot loader %s di %s"
+msgstr "Thus akan menginstal boot loader berjenis %s di %s"
 
 #: src/installation/ask.py:99
 msgid "Installation type"
@@ -567,29 +568,29 @@ msgstr "Tipe instalasi"
 
 #: src/installation/ask.py:113 ui/installation_ask.ui:34
 msgid "Erase disk and install Manjaro (automatic)"
-msgstr "Hapus diska dan instal Manjaro (otomatis)"
+msgstr "Hapus keseluruhan cakram dan instal Manjaro (otomatis)"
 
 #: src/installation/ask.py:116
 msgid "Warning: This will delete all data on your disk"
-msgstr "Perhatian: Ini akan menghapus semua data di diska anda"
+msgstr "Peringatan: Semua data di dalam cakram akan dihapus"
 
 #: src/installation/ask.py:122
 msgid "Encrypt this installation for increased security."
-msgstr "Enkripsi instalasi ini untuk mengingkatkan keamanan."
+msgstr "Lakukan enkripsi pada instalasi untuk meningkatkan keamanan data."
 
 #: src/installation/ask.py:126
 msgid "You will be asked for the encryption key in the next step."
-msgstr "Anda akan ditanya kunci enkripsi di langkah selanjutnya."
+msgstr "Kunci enkripsi akan dimintai pada langkah selanjutnya."
 
 #: src/installation/ask.py:131
 msgid "Use LVM with this installation."
-msgstr "Gunakan LVM dengan instalasi ini."
+msgstr "Gunakan LVM di instalasi ini."
 
 #: src/installation/ask.py:135
 msgid ""
 "This will set up LVM allowing you to make snapshots and change partition "
 "sizes in a straightforward way."
-msgstr "Ini akan mengatur LVM agar memungkinkan Anda membuat snapshot dan mengubah ukuran partisi dengan mudah."
+msgstr "Pilihan ini akan menyetel LVM agar memungkinkan Anda membuat snapshot dan mengubah ukuran partisi dengan mudah."
 
 #: src/installation/ask.py:140 ui/installation_ask.ui:134
 msgid "Set your Home in a different partition/volume"

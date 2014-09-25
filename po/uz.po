@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Umidjon Almasov <u.almasov@gmail.com>, 2013
-# Umidjon Almasov <u.almasov@gmail.com>, 2013
+# Umid Almasov <u.almasov@gmail.com>, 2013
+# Umid Almasov <u.almasov@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-08-18 11:54+0000\n"
+"Last-Translator: Umid Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/manjaro-thus/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "Ushbu o'rnatuvchi ma'mur imtiyozi bilan ishga tushirilishi shart, aks holda davom ettirib bo'lmaydi."
 
 #: thus.py:131
 #, python-format
@@ -33,12 +33,12 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "Ushbu o'rnatuvchining ikki nusxasini ishga tushirib bo'lmaydi.\n\nAgar boshqa o'rnatuvchi ishga tushirilmaganligiga ishonchingiz komil bo'lsa\nsiz %s faylini qo'l bilan o'chirishingiz mumkin\nva ushbu o'rnatuvchini qayta ishga tushirishingiz mumkin."
 
 #: thus.py:143
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus o'rnatuvchisining versiyasi %s"
 
 #: thus.py:234
 msgid "Manjaro Installer"
@@ -50,99 +50,99 @@ msgstr "O'rnatuvchidan chiqish..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr ""
+msgstr "Thus jurnalining 'debug' darajasini o'rnatadi"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr ""
+msgstr "Thus so'nggi versiyagacha yangilash (-uu majburiy yangilash)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr ""
+msgstr "O'zgarishlarni bajarmaslik (mutaxassislar uchun foydali)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr ""
+msgstr "Jurnal yuritish xabarlarini stout'da ko'rsatish"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
-msgstr ""
+msgstr "Tuzishda opsiyalarni ko'rsatish (FOYDALANMANG!)"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
 #: src/installation/process.py:445 src/installation/process.py:462
 #: src/installation/process.py:477
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "%s ajratilmoqda"
 
 #: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
-msgstr ""
+msgstr "%s ajratilishi muvaffaqiyatsiz tugadi. Lazy argumenti urinilmoqda."
 
 #: src/installation/auto_partition.py:119
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "Mavjud bo'lgan LVM tomlarini o'chirib bo'lmadi (ostiga qarang)"
 
 #: src/installation/auto_partition.py:129
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "LUKS qurilmalarini yopib bo'lmadi (ostiga qarang)"
 
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr ""
+msgstr "Noma'lum fayl tizimining turi %s"
 
 #: src/installation/auto_partition.py:194
 #, python-format
 msgid "Can't create filesystem %s"
-msgstr ""
+msgstr "%s fayl tizimini yaratib bo'lmadi"
 
 #: src/installation/auto_partition.py:353
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus %s qurilmasida LUKS sozlaydi"
 
 #: src/installation/auto_partition.py:429
 #, python-format
 msgid "Total disk size: %dMiB"
-msgstr ""
+msgstr "Jami disk hajmi: %dMiB"
 
 #: src/installation/auto_partition.py:430
 #, python-format
 msgid "Boot partition size: %dMiB"
-msgstr ""
+msgstr "Yuklash bo'limi hajmi: %dMiB"
 
 #: src/installation/auto_partition.py:433
 #, python-format
 msgid "LVM physical volume size: %dMiB"
-msgstr ""
+msgstr "LVM fizikaviy tom hajmi: %dMiB"
 
 #: src/installation/auto_partition.py:435
 #, python-format
 msgid "Swap partition size: %dMiB"
-msgstr ""
+msgstr "Swap bo'limi hajmi: %dMiB"
 
 #: src/installation/auto_partition.py:436
 #, python-format
 msgid "Root partition size: %dMiB"
-msgstr ""
+msgstr "Tub bo'limi hajmi: %dMiB"
 
 #: src/installation/auto_partition.py:439
 #, python-format
 msgid "Home partition size: %dMiB"
-msgstr ""
+msgstr "Uy bo'limi hajmi: %dMiB"
 
 #: src/installation/auto_partition.py:468
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr ""
+msgstr "Qurilmaning hajmini aniqlab bo'lmadi, iltimos, qurilmalarni bo'lish va ulash uchun kengaytirilgan o'rnatish dasturidan foydalaning."
 
 #: src/installation/auto_partition.py:601
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "%s qurilmasida LVM sozlaydi"
 
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation/alongside.py:220
@@ -152,7 +152,7 @@ msgstr "noma'lum"
 #: src/canonical/misc.py:929
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "%s mahalliy xususiyatini o'rnatib bo'lmadi"
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
@@ -180,12 +180,12 @@ msgstr "Parollar mos kelmayapti"
 
 #: src/check.py:79
 msgid "System Check"
-msgstr ""
+msgstr "Tizimni tekshirish"
 
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "kamida %dGB mavjud bo'lgan saqlash joyiga ega"
 
 #: src/check.py:89
 msgid ""
@@ -215,7 +215,7 @@ msgstr "Quvvat manbaiga ulangan"
 
 #: src/check.py:175
 msgid "We have enough disk space."
-msgstr ""
+msgstr "Diskdagi joy yetarli."
 
 #: src/installation/advanced.py:218 src/installation/advanced.py:512
 #: src/installation/advanced.py:526
@@ -224,7 +224,7 @@ msgstr "bo'sh joy"
 
 #: src/installation/advanced.py:266
 msgid "It's not recommended to install grub in a partition"
-msgstr ""
+msgstr "GRUB bo'limga o'rnatish tavsiya etilmaydi"
 
 #: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
@@ -274,7 +274,7 @@ msgstr "kengaytirilgan"
 
 #: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "Bitta ulash nuqtasidan ikki marta foydalanib bo'lmaydi..."
 
 #: src/installation/advanced.py:953
 msgid "Creating primary partition"
@@ -294,31 +294,31 @@ msgstr "Qo'shimcha o'rnatish usuli"
 
 #: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "Yuklovchi o'rnatish uchun ushbu qurilmadan foydalanish:"
 
 #: src/installation/advanced.py:1113
 msgid "Mount checklist:"
-msgstr ""
+msgstr "Ulash dialog oynasi:"
 
 #: src/installation/advanced.py:1119
 msgid "Root"
-msgstr ""
+msgstr "Tub"
 
 #: src/installation/advanced.py:1123 ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "Yuklash"
 
 #: src/installation/advanced.py:1127
 msgid "EFI"
-msgstr ""
+msgstr "EFI"
 
 #: src/installation/advanced.py:1131
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/installation/advanced.py:1139
 msgid "New partition table"
-msgstr "Yangi bo'lim jadvali"
+msgstr "Yangi bo'limlar jadvali"
 
 #: src/installation/advanced.py:1147
 msgid "Change..."
@@ -346,11 +346,11 @@ msgstr "Kengaytirilgan"
 
 #: src/installation/advanced.py:1172 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
-msgstr ""
+msgstr "Ushbu joyning boshlanishi"
 
 #: src/installation/advanced.py:1176 ui/installation_advanced.ui:540
 msgid "End of this space"
-msgstr ""
+msgstr "Ushbu joyning oxiri"
 
 #: src/installation/advanced.py:1180 src/installation/advanced.py:1197
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
@@ -369,7 +369,7 @@ msgstr "Belgi (ixtiyoriy):"
 
 #: src/installation/advanced.py:1192
 msgid "Encryption Options..."
-msgstr ""
+msgstr "Shifrlash opsiyalari..."
 
 #: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
@@ -377,11 +377,11 @@ msgstr "Formatlash:"
 
 #: src/installation/advanced.py:1214
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "Bo'limlar jadvali turi:"
 
 #: src/installation/advanced.py:1219
 msgid "Create Partition Table"
-msgstr ""
+msgstr "Bo'limlar jadvalini yaratish"
 
 #: src/installation/advanced.py:1222 src/installation/alongside.py:150
 #: src/installation/automatic.py:103
@@ -391,7 +391,7 @@ msgstr "O'rnatish!"
 #: src/installation/advanced.py:1308
 #, python-format
 msgid "Creating a new partition table of type %s for disk %s"
-msgstr "%s turdagi %s diski uchun yangi bo'limlar jadvalini yaratish"
+msgstr "%s turdagi %s diski uchun yangi bo'limlar jadvali yaratilmoqda"
 
 #: src/installation/advanced.py:1318
 msgid ""
@@ -506,7 +506,7 @@ msgstr ""
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
-msgstr ""
+msgstr "Manjaro OT bilan birgalikda"
 
 #: src/installation/alongside.py:175
 msgid "Detected OS"
@@ -518,7 +518,7 @@ msgstr "Fayl tizimi"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3 topilmadi!"
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
@@ -656,7 +656,7 @@ msgstr "Parolni tasdiqlash:"
 #: src/installation/automatic.py:101 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr ""
+msgstr "Parolni ko'rsatish"
 
 #: src/installation/automatic.py:164
 msgid "A LUKS password has been set"
@@ -665,7 +665,7 @@ msgstr ""
 #: src/installation/automatic.py:166
 #, python-format
 msgid "Automatic install on %s"
-msgstr ""
+msgstr "%s'ga avtomatik o'rnatish"
 
 #: src/installation/automatic.py:199
 #, python-format
@@ -703,14 +703,14 @@ msgstr ""
 #: src/installation/process.py:355 src/installation/process.py:653
 #, python-format
 msgid "Command %s has failed."
-msgstr ""
+msgstr "%s buyrug'i muvaffaqiyatsiz tugadi."
 
 #: src/installation/process.py:272 src/installation/process.py:319
 #: src/installation/process.py:345 src/installation/process.py:357
 #: src/installation/process.py:380 src/installation/process.py:655
 #, python-format
 msgid "Output : %s"
-msgstr ""
+msgstr "Natija : %s"
 
 #: src/installation/process.py:305 src/installation/process.py:336
 #, python-format
@@ -724,12 +724,12 @@ msgstr ""
 
 #: src/installation/process.py:315
 msgid "Couldn't mount root and boot partitions"
-msgstr "Tub va yuklash bo'limini ulab bo'lmadi"
+msgstr "Tub va yuklash bo'limlarini ulab bo'lmadi"
 
 #: src/installation/process.py:317 src/installation/process.py:378
 #, python-format
 msgid "Command %s has failed"
-msgstr ""
+msgstr "%s buyrug'i muvaffaqiyatsiz tugadi"
 
 #: src/installation/process.py:341
 #, python-format
@@ -739,17 +739,17 @@ msgstr "%s'ni %s'ga ulab bo'lmadi"
 #: src/installation/process.py:349
 #, python-format
 msgid "Mounting swap %s"
-msgstr ""
+msgstr "Swap %s ulanmoqda"
 
 #: src/installation/process.py:353
 #, python-format
 msgid "Can't mount %s"
-msgstr ""
+msgstr "%s ulab bo'lmadi"
 
 #: src/installation/process.py:368
 #, python-format
 msgid "%s deleted"
-msgstr ""
+msgstr "%s o'chirilgan"
 
 #: src/installation/process.py:376
 msgid "Can't create necessary directories on destination system"
@@ -757,23 +757,23 @@ msgstr ""
 
 #: src/installation/process.py:388
 msgid "Install System ..."
-msgstr ""
+msgstr "Tizimni o'rnatish..."
 
 #: src/installation/process.py:393
 msgid "System installed."
-msgstr ""
+msgstr "Tizim o'rnatilgan."
 
 #: src/installation/process.py:395
 msgid "Configuring system ..."
-msgstr ""
+msgstr "Tizim sozlanmoqda..."
 
 #: src/installation/process.py:397
 msgid "System configured."
-msgstr ""
+msgstr "Tizim sozlangan."
 
 #: src/installation/process.py:401
 msgid "Installing boot loader ..."
-msgstr ""
+msgstr "Yuklovchi o'rnatilmoqda..."
 
 #: src/installation/process.py:434
 #, python-format
@@ -788,7 +788,7 @@ msgstr ""
 
 #: src/installation/process.py:488
 msgid "Installation finished successfully."
-msgstr ""
+msgstr "O'rnatish muvaffaqiyatli tugadi."
 
 #: src/installation/process.py:524
 msgid "Base filesystem does not exist! Critical error (exiting)."
@@ -965,15 +965,15 @@ msgstr "Yangi tizim sozlanmoqda"
 
 #: src/installation/process.py:1322
 msgid "fstab file generated."
-msgstr ""
+msgstr "fstab fayli yaratilgan."
 
 #: src/installation/process.py:1328
 msgid "Network configuration copied."
-msgstr ""
+msgstr "Tarmoq sozlashi nusxa olingan."
 
 #: src/installation/process.py:1354
 msgid "Time zone set."
-msgstr ""
+msgstr "Vaqt mintaqasi o'rnatilgan."
 
 #: src/installation/process.py:1375
 #, python-format
@@ -983,7 +983,7 @@ msgstr ""
 #: src/installation/process.py:1385
 #, python-format
 msgid "User %s added."
-msgstr ""
+msgstr "Foydalanuvchi %s qo'shilgan."
 
 #: src/installation/process.py:1397
 #, python-format
@@ -1012,7 +1012,7 @@ msgstr ""
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Drayverlar o'rnatilmoqda..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"
@@ -1024,7 +1024,7 @@ msgstr ""
 
 #: src/installation/process.py:1641
 msgid "Configure System ..."
-msgstr ""
+msgstr "Tizim sozlash..."
 
 #: src/installation/process.py:1666
 msgid "Removing live configuration (packages)"
@@ -1169,7 +1169,7 @@ msgstr ""
 
 #: src/parted3/partition_module.py:230
 msgid "Partition is too large!"
-msgstr ""
+msgstr "Bo'lim juda katta!"
 
 #: src/parted3/partition_module.py:290
 #, python-format
@@ -1307,7 +1307,7 @@ msgstr "Ismingiz"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
-msgstr ""
+msgstr "Xost nomi"
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
@@ -1328,7 +1328,7 @@ msgstr "Parol kiritish:"
 #: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
 #: ui/user_info.ui:573
 msgid "Password"
-msgstr "Maxfiy so'z"
+msgstr "Parol"
 
 #: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
 #: ui/user_info.ui:634
@@ -1373,7 +1373,7 @@ msgstr ""
 
 #: src/user_info.py:172
 msgid "Who are you?"
-msgstr ""
+msgstr "Siz kimsiz?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
@@ -1471,7 +1471,7 @@ msgstr "Bo'limni tahrirlash"
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
-msgstr "Shifrlash parametrlari..."
+msgstr "Shifrlash opsiyalari..."
 
 #: ui/installation_advanced.ui:383
 msgid "Create partition"
@@ -1487,7 +1487,7 @@ msgstr "MB"
 
 #: ui/installation_advanced.ui:895
 msgid "New Partition Table"
-msgstr ""
+msgstr "Yangi bo'limlar jadvali"
 
 #: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"
@@ -1499,15 +1499,15 @@ msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "LUKS tomining nomi:"
 
 #: ui/installation_advanced.ui:1270
 msgid "Password:"
-msgstr ""
+msgstr "Parol:"
 
 #: ui/installation_advanced.ui:1284
 msgid "Confirm password:"
-msgstr ""
+msgstr "Parolni tasdiqlash:"
 
 #: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
@@ -1619,15 +1619,15 @@ msgstr "<small><span color=\"darkgreen\">Mustahkam parol</span></small>"
 
 #: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr "<small><span color=\"darkred\">Parol kiritishingiz shart</span></small>"
+msgstr "<small><span color=\"darkred\">Parol kiritish lozim</span></small>"
 
 #: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr "<small><span color=\"darkred\">Foydalanuvchi nomini kiritishingiz shart</span></small>"
+msgstr "<small><span color=\"darkred\">Foydalanuvchi nomini kiritish lozim</span></small>"
 
 #: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr "<small><span color=\"darkred\">Ismingizni kiritishingiz shart</span></small>"
+msgstr "<small><span color=\"darkred\">Ismingizni kiritish lozim</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"

@@ -5,18 +5,18 @@
 # Translators:
 # b0f00nmanjaro <boris.fonda@gmail.com>, 2014
 # b0f00nmanjaro <boris.fonda@gmail.com>, 2014
-# holden1987 <inactive+holden1987@transifex.com>, 2013
-# holden1987 <inactive+holden1987@transifex.com>, 2013
+# Nenad Latinović <inactive+holden1987@transifex.com>, 2013
+# Nenad Latinović <inactive+holden1987@transifex.com>, 2013
 # ansich <mojmejlzaforume@gmail.com>, 2014
-# holden1987 <inactive+holden1987@transifex.com>, 2013
+# Nenad Latinović <inactive+holden1987@transifex.com>, 2013
 # smlu <smluprenos@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-08-11 18:08+0000\n"
+"Last-Translator: ansich <mojmejlzaforume@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/manjaro-thus/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,7 +96,7 @@ msgstr "Ni možno zapreti naprav LUKS (glej spodaj)"
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr ""
+msgstr "Neznan datotečni sistem vrste %s"
 
 #: src/installation/auto_partition.py:194
 #, python-format
@@ -111,32 +111,32 @@ msgstr "Thus bo nastavil LUKS na napravi %s"
 #: src/installation/auto_partition.py:429
 #, python-format
 msgid "Total disk size: %dMiB"
-msgstr ""
+msgstr "Celotna velikost diska: %dMiB"
 
 #: src/installation/auto_partition.py:430
 #, python-format
 msgid "Boot partition size: %dMiB"
-msgstr ""
+msgstr "Velikost zaganjalnega (boot) razdelka: %dMiB"
 
 #: src/installation/auto_partition.py:433
 #, python-format
 msgid "LVM physical volume size: %dMiB"
-msgstr ""
+msgstr "Velikost fizičnega nosilca LVM: %dMiB"
 
 #: src/installation/auto_partition.py:435
 #, python-format
 msgid "Swap partition size: %dMiB"
-msgstr ""
+msgstr "Velikost izmenjalnega (swap) razdelka: %dMiB"
 
 #: src/installation/auto_partition.py:436
 #, python-format
 msgid "Root partition size: %dMiB"
-msgstr ""
+msgstr "Velikost korenskega (root) razdelka: %dMiB"
 
 #: src/installation/auto_partition.py:439
 #, python-format
 msgid "Home partition size: %dMiB"
-msgstr ""
+msgstr "Velikost domačega (home) razdelka: %dMiB"
 
 #: src/installation/auto_partition.py:468
 msgid ""
@@ -545,15 +545,15 @@ msgstr "Datotečnega sistema %s(%s) ni mogoče skrčiti"
 #: src/installation/alongside.py:399
 #, python-format
 msgid "Can't shrink %s(%s) partition"
-msgstr ""
+msgstr "Ni mogoče skrčiti razdelka %s(%s)"
 
 #: src/installation/alongside.py:418 src/installation/alongside.py:470
 msgid "Cannot create new partition."
-msgstr ""
+msgstr "Ni mogoče ustvariti novega razdelka."
 
 #: src/installation/alongside.py:458
 msgid "Cannot create new swap partition."
-msgstr ""
+msgstr "Ni mogoče ustvariti izmenjalnega (swap) razdelka."
 
 #: src/installation/alongside.py:495 src/installation/automatic.py:222
 #, python-format
@@ -744,12 +744,12 @@ msgstr "Ne morem priklopiti %s in %s"
 #: src/installation/process.py:349
 #, python-format
 msgid "Mounting swap %s"
-msgstr ""
+msgstr "Priklapljanje swap %s"
 
 #: src/installation/process.py:353
 #, python-format
 msgid "Can't mount %s"
-msgstr ""
+msgstr "Ni mogoče priklopiti %s"
 
 #: src/installation/process.py:368
 #, python-format
@@ -846,7 +846,7 @@ msgstr "Napaka v zagonu ukaza: %s"
 #: src/installation/process.py:683
 #, python-format
 msgid "Timeout running command: %s"
-msgstr ""
+msgstr "Časovna omejitev pretekla ob izvajanju ukaza: %s"
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
@@ -873,7 +873,7 @@ msgstr "Dodano v fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr ""
+msgstr "NAPAKA pri pripravi mape 'etc/grub.d'"
 
 #: src/installation/process.py:923
 #, python-format

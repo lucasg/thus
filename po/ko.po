@@ -4,13 +4,14 @@
 # 
 # Translators:
 # lego37yoon <lego37yoon@outlook.com>, 2013-2014
+# Sungjin Kang <potopro@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-09-24 16:26+0000\n"
+"Last-Translator: Sungjin Kang <potopro@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/manjaro-thus/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +38,7 @@ msgstr ""
 #: thus.py:143
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "Thus 인스톨러 버전 %s"
 
 #: thus.py:234
 msgid "Manjaro Installer"
@@ -49,7 +50,7 @@ msgstr "설치기를 종료하는 중 입니다."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr ""
+msgstr "Thus 로그 레벨 'debug'로 설정"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
@@ -61,7 +62,7 @@ msgstr ""
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr ""
+msgstr "로깅 메시지는 stdout으로 보기"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
@@ -72,7 +73,7 @@ msgstr ""
 #: src/installation/process.py:477
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "%s 마운트 해제"
 
 #: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format

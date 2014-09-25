@@ -4,6 +4,7 @@
 # 
 # Translators:
 # 47anonimo74 <47anonimo74@gmail.com>, 2014
+# fyahweed <alexis6307@gmail.com>, 2014
 # Angel Velasquez <angvp@archlinux.org>, 2011
 # Cost Granda <costeeleation@openmailbox.org>, 2013-2014
 # Cost Granda <costeeleation@openmailbox.org>, 2013
@@ -12,6 +13,7 @@
 # Fernando Jorge Cabanilla Charneco <fjcabanilla@gmail.com>, 2013
 # Fernando Jorge Cabanilla Charneco <fjcabanilla@gmail.com>, 2013
 # Jenn <jcmm986@gmail.com>, 2012
+# Jota_Erre <jota_erre@linuxmail.org>, 2014
 # Juan Antonio Cánovas Pérez <traumness@gmail.com>, 2011
 # juantascon <juantascon@gmail.com>, 2011
 # Julio Gonzalez Mejías <juliolokooo@gmail.com>, 2014
@@ -31,8 +33,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-07-09 19:36+0000\n"
-"Last-Translator: 47anonimo74 <47anonimo74@gmail.com>\n"
+"PO-Revision-Date: 2014-08-13 15:47+0000\n"
+"Last-Translator: Jota_Erre <jota_erre@linuxmail.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/manjaro-thus/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,7 +73,7 @@ msgstr "Saliendo del instalador..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr "Setear log de thus en nivel debug"
+msgstr "Definir niveles de log de thus en debug"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
@@ -163,7 +165,7 @@ msgstr "La instalación no puede detectar el tamaño de su dispositivo, por favo
 #: src/installation/auto_partition.py:601
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr "Configurara LVM en el dispositivo %s"
+msgstr "Configurará LVM en el dispositivo %s"
 
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation/alongside.py:220
@@ -315,7 +317,7 @@ msgstr "Modo avanzado de instalación"
 
 #: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
-msgstr "Usar este dispositivo para la instalación del cargador de arranque:"
+msgstr "Usar este dispositivo para la instalación del gestor de arranque:"
 
 #: src/installation/advanced.py:1113
 msgid "Mount checklist:"
@@ -504,12 +506,12 @@ msgstr "No se pudo dar formato a la partición '%s' con la etiqueta '%s' como '%
 #: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
-msgstr "Thus no instalara ningún cargador de arranque"
+msgstr "Thus no instalará ningún gestor de arranque"
 
 #: src/installation/advanced.py:1860
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro instalará el cargador de arranque de tipo %s en %s"
+msgstr "Manjaro instalará el gestor de arranque de tipo %s en %s"
 
 #: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
@@ -523,7 +525,7 @@ msgstr "No se puede cargar %s css"
 
 #: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr "Seleccione cual sistema operativo desea instalar junto a Manjaro"
+msgstr "Seleccione junto a qué sistema operativo desea instalar Manjaro"
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
@@ -539,7 +541,7 @@ msgstr "Sistema de archivos"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
-msgstr "¡No se encontro pyparted3!"
+msgstr "¡No se encontró pyparted3!"
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
@@ -551,21 +553,21 @@ msgstr "No se puede reducir la partición (¿tal vez está casi llena?)"
 
 #: src/installation/alongside.py:356
 msgid "There are too many primary partitions, can't create a new one"
-msgstr "Hay demasiadas particiones, no se puede crear ninguna más"
+msgstr "Hay demasiadas particiones primarias, no se puede crear ninguna más"
 
 #: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr "No se puede reducir el sistema de ficheros %s(%s)"
+msgstr "No se puede reducir el sistema de archivos %s(%s)"
 
 #: src/installation/alongside.py:399
 #, python-format
 msgid "Can't shrink %s(%s) partition"
-msgstr "No se puede reducir %s(%s) partición"
+msgstr "No se puede reducir la partición %s(%s)"
 
 #: src/installation/alongside.py:418 src/installation/alongside.py:470
 msgid "Cannot create new partition."
-msgstr "No se puede crear una nueva partición"
+msgstr "No se puede crear una nueva partición."
 
 #: src/installation/alongside.py:458
 msgid "Cannot create new swap partition."
@@ -574,7 +576,7 @@ msgstr "No se puede crear una nueva partición swap"
 #: src/installation/alongside.py:495 src/installation/automatic.py:222
 #, python-format
 msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus instalará el cargador de arranque de tipo %s en %s"
+msgstr "Thus instalará el gestor de arranque de tipo %s en %s"
 
 #: src/installation/ask.py:99
 msgid "Installation type"
@@ -586,11 +588,11 @@ msgstr "Borrar disco e instalar Manjaro (automático)"
 
 #: src/installation/ask.py:116
 msgid "Warning: This will delete all data on your disk"
-msgstr "Advertencia: Esto eliminará todos los datos en su disco"
+msgstr "Advertencia: esto borrará todos los datos de su disco"
 
 #: src/installation/ask.py:122
 msgid "Encrypt this installation for increased security."
-msgstr "Cifra esta instalación para mayor seguridad"
+msgstr "Cifrar esta instalación para mayor seguridad."
 
 #: src/installation/ask.py:126
 msgid "You will be asked for the encryption key in the next step."
@@ -699,7 +701,7 @@ msgstr "¿En verdad quieres proceder y borrar todo el contenido de la unidad de 
 #: src/installation/automatic.py:211
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr "Thu usará %s como dispositivo de instalación"
+msgstr "Thus usará %s como dispositivo de instalación"
 
 #: src/installation/process.py:89
 #, python-format
@@ -718,7 +720,7 @@ msgstr "Creando particiones y su sistema de archivos en %s"
 
 #: src/installation/process.py:268
 msgid "Error creating partitions and their filesystems"
-msgstr "Error al crear las particiones y su sistema de archivos"
+msgstr "Error al crear las particiones y sus sistemas de archivos"
 
 #: src/installation/process.py:270 src/installation/process.py:343
 #: src/installation/process.py:355 src/installation/process.py:653
@@ -794,7 +796,7 @@ msgstr "Sistema configurado."
 
 #: src/installation/process.py:401
 msgid "Installing boot loader ..."
-msgstr "instalando el gestor de arranque ..."
+msgstr "Instalando el gestor de arranque ..."
 
 #: src/installation/process.py:434
 #, python-format
@@ -852,7 +854,7 @@ msgstr "Los directorios especiales no están montados. Omitiendo."
 #: src/installation/process.py:652 src/installation/process.py:658
 #, python-format
 msgid "Unable to umount %s"
-msgstr "No puedo montar %s"
+msgstr "No se puede montar %s"
 
 #: src/installation/process.py:680
 #, python-format
@@ -862,11 +864,11 @@ msgstr "Error ejecutando el comando: %s"
 #: src/installation/process.py:683
 #, python-format
 msgid "Timeout running command: %s"
-msgstr "Se acabo el tiempo ejecutando: %s"
+msgstr "Se acabó el tiempo ejecutando: %s"
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
-msgstr "No se pudo copiar los archivos de configuración de red"
+msgstr "No se pueden copiar los archivos de configuración de red"
 
 #: src/installation/process.py:746 src/installation/process.py:807
 #, python-format
@@ -894,13 +896,13 @@ msgstr "ERROR al preparar 'etc/grub.d'-folder."
 #: src/installation/process.py:923
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr "Instalando gestor de arranque GRUB(2) BIOS en %s"
+msgstr "Instalando el gestor de arranque GRUB(2) BIOS en %s"
 
 #: src/installation/process.py:943 src/installation/process.py:1031
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr "grub-mkconfig parece que esta bloqueada. Cerrando grub-mount y os-prober para poder continuar.."
+msgstr "Parece que grub-mkconfig está bloqueado. Cerrando grub-mount y os-prober para poder continuar."
 
 #: src/installation/process.py:951
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -973,7 +975,7 @@ msgstr "Error cambiando contraseña para el usuario %s"
 
 #: src/installation/process.py:1122
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr "Configurando hooks i módulos en mkinitcpio.conf"
+msgstr "Configurando hooks y módulos en mkinitcpio.conf"
 
 #: src/installation/process.py:1213
 #, python-format
@@ -986,7 +988,7 @@ msgstr "Configurando su nuevo sistema"
 
 #: src/installation/process.py:1322
 msgid "fstab file generated."
-msgstr "fichero fstab generado."
+msgstr "Fichero fstab generado."
 
 #: src/installation/process.py:1328
 msgid "Network configuration copied."
@@ -1017,7 +1019,7 @@ msgstr "Escriba la contraseña de administrador."
 
 #: src/installation/process.py:1405
 msgid "Set the same password to root."
-msgstr "Establece la misma contraseña en el root"
+msgstr "Establecer la misma contraseña para el administrador."
 
 #: src/installation/process.py:1411
 msgid "Generating locales ..."
@@ -1139,7 +1141,7 @@ msgstr "La ubicación seleccionada será usada para ayudar a seleccionar la conf
 
 #: src/location.py:73
 msgid "Country, territory or area:"
-msgstr "País, territorio o area:"
+msgstr "País, territorio o área:"
 
 #: src/parted3/fs_module.py:148
 #, python-format
@@ -1268,7 +1270,7 @@ msgstr "Instalando Manjaro..."
 
 #: src/slides.py:107
 msgid "Please wait..."
-msgstr "Por favor espere..."
+msgstr "Por favor, espere..."
 
 #: src/slides.py:197
 msgid ""
@@ -1279,7 +1281,7 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr "IMPORTANTE: Puede haber ocurrido un problema con la instalación del bootloader de Grub(2), puede producir que su pc no arranque de forma correcta.  Antes de reiniciar es conveniente revisar si el Grub(2) esta instalado y configurado correctamente. La wiki de archivos contiene informacion para la resolucion de problemas\nhttps://wiki.archlinux.org/index.php/GRUB\n\nDesea visitar la pagina? "
+msgstr "IMPORTANTE: Puede haber ocurrido un problema con la instalación del gestor de arranque Grub(2) que podría provocar que su equipo no arrancase de forma correcta.  Antes de reiniciar es conveniente revisar si Grub(2) está instalado y configurado correctamente. La wiki de Arch Linux contiene información para la resolución de problemas:\nhttps://wiki.archlinux.org/index.php/GRUB\n\n¿Desea visitar la página ahora? "
 
 #: src/slides.py:234
 msgid "Do you want to retry?"
@@ -1344,7 +1346,7 @@ msgstr "Nombre de usuario"
 
 #: src/user_info.py:116 ui/user_info.ui:65
 msgid "Choose a password:"
-msgstr "Ingrese una contraseña:"
+msgstr "Elija una contraseña:"
 
 #: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
 #: ui/user_info.ui:573
@@ -1382,7 +1384,7 @@ msgstr "Debe introducir una contraseña"
 
 #: src/user_info.py:168 ui/user_info.ui:473
 msgid "Log in automatically"
-msgstr "Inicio de sesión automático"
+msgstr "Iniciar sesión automáticamente"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
@@ -1414,7 +1416,7 @@ msgstr "Manjaro usará eCryptfs para cifrar su carpeta personal, Desafortunadame
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "No se preocupe para la mayoría de los intentos y propósitos esta deficiencia no representa un problema.\n\n"
+msgstr "No se preocupe; en la mayoría de casos, esta deficiencia no representa un problema.\n\n"
 
 #: src/user_info.py:254
 msgid ""
@@ -1448,7 +1450,7 @@ msgstr "El nombre de usuario no puede contener puntos"
 
 #: src/user_info.py:353
 msgid "Too many characters"
-msgstr "Muchos caracteres"
+msgstr "Demasiados caracteres"
 
 #: ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -1456,7 +1458,7 @@ msgstr "¿Cuál es su tipo de sistema de arranque?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr "BIOS (Común)"
+msgstr "BIOS (común)"
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -1468,13 +1470,13 @@ msgstr "UEFI i386"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr "Seleccione 'Cancelar' si no desea instalar el cargador de arranque"
+msgstr "Seleccione «Cancelar» si no desea instalar un gestor de arranque"
 
 #: ui/check.ui:29
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr "<span weight=\"bold\" size=\"large\">Para mejores resultados, asegurese de que este equipo:</span>"
+msgstr "<span weight=\"bold\" size=\"large\">Para obteenr mejores resultados, asegúrese de que este equipo:</span>"
 
 #: ui/check.ui:108
 msgid ""
@@ -1508,7 +1510,7 @@ msgstr "MB"
 
 #: ui/installation_advanced.ui:895
 msgid "New Partition Table"
-msgstr "Nueva tabla de particion"
+msgstr "Nueva tabla de particiones"
 
 #: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"

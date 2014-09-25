@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-28 19:16+0000\n"
+"PO-Revision-Date: 2014-08-17 17:32+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgstr "Herhangi bir değişiklik yapmayın (geliştiriciler için)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr "stdout ile kayıt tutma iletilerini göster"
+msgstr "stdout'a tutulan kayıtları göster"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
@@ -143,7 +143,7 @@ msgstr "Home-Ev bölüm boyutu: %dMiB"
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "Kurulum disk boyutunu algılayamadı, bölümleme ve bağlama işleri için gelişmiş kurulum seçeneğini kullanın."
+msgstr "Kurulum disk boyutunuzu algılayamadı, bölümleme ve bağlama işleri için gelişmiş kurulum seçeneğini kullanın."
 
 #: src/installation/auto_partition.py:601
 #, python-format
@@ -404,7 +404,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this special partition for you now."
-msgstr "GPT disklerde MBR, core.img dosyası ve BIOS sistemleri yüklemek  için gerekli alan bulunamadı. (2 MB, ham bölüme, Gdisk ile \"EF02\" kodu kullan veya \"bios_grub\" bayrağı için GNU Parted kullan). \\n\n\\n\nThus sizin için bu özel bölümü oluşturacaktır."
+msgstr "GPT disklerde MBR, core.img dosyası ve BIOS sistemleri yüklemek  için gerekli alan bulunamadı. (2 MB, ham bölüme, Gdisk ile \"EF02\" kodu kullan veya \"bios_grub\" bayrağı için GNU Parted kullan).\n\nThus sizin için bu özel bölümü oluşturacaktır."
 
 #: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
@@ -528,7 +528,7 @@ msgstr "pyparted3 bulunamadı!"
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."
-msgstr "Kurulum için bölüm listesi oluşturulamadı."
+msgstr "Kurulum yanına bölüm listesi oluşturulamadı."
 
 #: src/installation/alongside.py:268
 msgid "Can't shrink the partition (maybe it's nearly full?)"
@@ -902,7 +902,7 @@ msgstr "%s önyükleyici GRUB(2) UEFI ile kuruluyor"
 
 #: src/installation/process.py:984
 msgid "Installing Grub2 locales."
-msgstr "Grub2 yükleniyor."
+msgstr "Grub2 yerel ayarlarla yükleniyor."
 
 #: src/installation/process.py:997
 #, python-format
@@ -984,7 +984,7 @@ msgstr "Saat Zaman Ayarı"
 #: src/installation/process.py:1375
 #, python-format
 msgid "Sudo configuration for user %s done."
-msgstr "Kullanıcı için sudo yapılandırması %s yapılır."
+msgstr "Kullanıcı için sudo yapılandırması %s tamamlandı."
 
 #: src/installation/process.py:1385
 #, python-format
@@ -1134,7 +1134,7 @@ msgstr "%s Sürücünün durumu sağlam değil veya kontrol edilemiyor"
 #: src/parted3/fs_module.py:173
 #, python-format
 msgid "Sorry but filesystem %s can't be resized"
-msgstr "Üzgünüm fakat dosya sistemi %s tekrar boyutlanamaz"
+msgstr "Üzgünüm fakat %s dosya sistemi tekrar boyutlanamaz"
 
 #: src/parted3/lvm.py:75
 #, python-format
@@ -1154,7 +1154,7 @@ msgstr "Fiziksel diski silemezsiniz %s"
 #: src/parted3/partition_module.py:106
 #, python-format
 msgid "Adding %s to disk_dic"
-msgstr "%s ekleniyor disk_dic"
+msgstr "%s şuna ekleniyor disk_dic"
 
 #: src/parted3/partition_module.py:108
 #, python-format
@@ -1185,37 +1185,37 @@ msgstr "%s Kullanılan alanı algılayamaz"
 #: src/parted3/used_space.py:39
 #, python-format
 msgid "Can't detect used space of NTFS partition %s"
-msgstr "NTFS bölümü %s kullanılan diski tespit edemez"
+msgstr "%s NTFS bölümünde kullanılan diski tespit edemez"
 
 #: src/parted3/used_space.py:65
 #, python-format
 msgid "Can't detect used space of EXTFS partition %s"
-msgstr "EXTFS bölümü %s kullanılan diski tespit edemez"
+msgstr "%s EXTFS bölümünde kullanılan diski tespit edemez"
 
 #: src/parted3/used_space.py:94
 #, python-format
 msgid "Can't detect used space of FAT partition %s"
-msgstr "%s kullanılan FAT dosya bölümünü algılayamadı"
+msgstr "%s FAT bölümünde kullanılan diski tespit edemez"
 
 #: src/parted3/used_space.py:125
 #, python-format
 msgid "Can't detect used space of JFS partition %s"
-msgstr "JFS bölümü %s kullanılan diski tespit edemez"
+msgstr "%s JFS bölümünde kullanılan diski tespit edemez"
 
 #: src/parted3/used_space.py:149
 #, python-format
 msgid "Can't detect used space of REISERFS partition %s"
-msgstr "REISERFS bölümü %s kullanılan diski tespit edemez"
+msgstr "%s REISERFS bölümünde kullanılan diski tespit edemez"
 
 #: src/parted3/used_space.py:175
 #, python-format
 msgid "Can't detect used space of BTRFS partition %s"
-msgstr "BTRFS bölümü %s kullanılan diski tespit edemez"
+msgstr "%s BTRFS bölümünde kullanılan diski tespit edemez"
 
 #: src/parted3/used_space.py:212
 #, python-format
 msgid "Can't detect used space of XFS partition %s"
-msgstr "XFS bölümü %s kullanılan diski tespit edemez"
+msgstr "%s XFS bölümünde kullanılan diski tespit edemez"
 
 #: src/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
@@ -1453,7 +1453,7 @@ msgstr "i386 UEFI"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr "Önyükleyici kurulmasını istemiyorsanız 'vazgeç' seçimi yapınız."
+msgstr "Önyükleyici kurulmasını istemiyorsanız 'vazgeç' seçeneğini kullanın"
 
 #: ui/check.ui:29
 msgid ""
@@ -1613,7 +1613,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>Duyuru: Thus, sistem yükleyicisi beta bir yazılımdır.</span>\n\nThus; önizleme beta yazılımı aktif olarak geliştirimektedir. RAID, btrfs subvolumes ve diğer gelişmiş kurulumlarla ilgili hatalarla karşılaşma olasılığınız vardır. Veri kaybına uğramamak için lütfen dikkatli olunuz!\n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "<span weight='bold'>Duyuru: Thus, sistem yükleyicisi beta bir yazılımdır.</span>\n\nThus; önizleme beta yazılımı aktif olarak geliştirilmektedir. RAID, btrfs subvolumes ve diğer gelişmiş kurulumlarla ilgili hatalarla karşılaşma olasılığınız vardır. Veri kaybına uğramamak için lütfen dikkatli olunuz!\n\nHerhangi bir hata ile karşılaşırsanız lütfen geri bildirimde bulunun <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"

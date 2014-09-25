@@ -5,12 +5,13 @@
 # Translators:
 # Ivan Petrouchtchak <iip@telus.net>, 2005
 # Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>, 2006
-# probil <m_lyashuk@ukr.net>, 2013
+# Maks Lyashuk <m_lyashuk@ukr.net>, 2013
 # Rax Garfield <admin@dvizho.ks.ua>, 2012
-# rom85 <rom85@i.ua>, 2013
-# rom85 <rom85@i.ua>, 2013
+# Roman <rom85@i.ua>, 2013
+# Roman <rom85@i.ua>, 2013
 # sevenfourk <sevenfourk@gmail.com>, 2012
-# Valentine Zgonnik <noisyislands@gmail.com>, 2013
+# Valentine <noisyislands@gmail.com>, 2013
+# freecaster <yeti-polix2013@yandex.com>, 2014
 # zubr139, 2013-2014
 # zubr139, 2013
 # Данило Коростіль <ted.korostiled@gmail.com>, 2011
@@ -19,8 +20,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-07-20 21:17+0000\n"
+"Last-Translator: freecaster <yeti-polix2013@yandex.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/manjaro-thus/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -364,7 +365,7 @@ msgstr "Кінець цього простору"
 #: src/installation/advanced.py:1180 src/installation/advanced.py:1197
 #: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
 msgid "Use as:"
-msgstr ""
+msgstr "Використовувати як:"
 
 #: src/installation/advanced.py:1184 src/installation/advanced.py:1201
 #: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
@@ -467,12 +468,12 @@ msgstr "Монтувати"
 
 #: src/installation/advanced.py:1664
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "Ці диски будуть мати акції розділів:"
 
 #: src/installation/advanced.py:1724
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "Збереження змін, зроблених у %s"
 
 #: src/installation/advanced.py:1748
 #, python-format
@@ -497,7 +498,7 @@ msgstr ""
 #: src/installation/advanced.py:1860
 #, python-format
 msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr ""
+msgstr "Manjaro буде встановити завантажувач типу %s  в %s "
 
 #: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
@@ -687,7 +688,7 @@ msgstr ""
 #: src/installation/automatic.py:211
 #, python-format
 msgid "Thus will use %s as installation device"
-msgstr ""
+msgstr "Таким чином буде використовувати %s як пристрій для установки"
 
 #: src/installation/process.py:89
 #, python-format
@@ -827,7 +828,7 @@ msgstr ""
 #: src/installation/process.py:585
 #, python-format
 msgid "Restoring meta-information on %s"
-msgstr ""
+msgstr "Відновлення мета-інформації про %s"
 
 #: src/installation/process.py:601
 msgid "Special dirs already mounted."
@@ -1037,15 +1038,15 @@ msgstr ""
 
 #: src/installation/process.py:1666
 msgid "Removing live configuration (packages)"
-msgstr ""
+msgstr "Видалення живого середовища (пакети)"
 
 #: src/installation/process.py:1682
 msgid "Configuring package manager"
-msgstr ""
+msgstr "Налаштування менеджерa пакетів"
 
 #: src/installation/process.py:1694
 msgid "Finished configuring package manager."
-msgstr ""
+msgstr "Налаштування менеджера пакетів закінчено,"
 
 #: src/installation/process.py:1718
 msgid "Running mkinitcpio ..."
@@ -1065,7 +1066,7 @@ msgstr ""
 
 #: src/keymap.py:67
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Виберіть розкладку клавіатури"
 
 #: src/keymap.py:71
 msgid "Type here to test your keyboard"
@@ -1230,15 +1231,15 @@ msgstr "Невдалось виконати автовибір дзеркала"
 
 #: src/show_message.py:53
 msgid "Manjaro Installer - Error"
-msgstr ""
+msgstr "Інсталлятор Маnjaro - Помилка"
 
 #: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
-msgstr ""
+msgstr "Інсталлятор Маnjaro-Попередження"
 
 #: src/show_message.py:77
 msgid "Manjaro Installer - Information"
-msgstr ""
+msgstr "Інсталлятор Маnjaro-Інформація"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Confirmation"
@@ -1275,7 +1276,7 @@ msgstr ""
 
 #: src/timezone.py:111
 msgid "Where are you?"
-msgstr ""
+msgstr "Де Ви знаходитесь?"
 
 #: src/timezone.py:116 ui/timezone.ui:35
 msgid "Zone:"
@@ -1382,7 +1383,7 @@ msgstr ""
 
 #: src/user_info.py:172
 msgid "Who are you?"
-msgstr ""
+msgstr "Як Вас звати?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
@@ -1440,7 +1441,7 @@ msgstr "Забагато символів"
 
 #: ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "Який в Вас тип завантаження системи?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1472,7 +1473,7 @@ msgstr ""
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
-msgstr ""
+msgstr "Тип таблиці розділів:"
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
@@ -1480,7 +1481,7 @@ msgstr "Редагувати розділ"
 
 #: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
 msgid "Encryption options..."
-msgstr ""
+msgstr "Опції шифрування..."
 
 #: ui/installation_advanced.ui:383
 msgid "Create partition"
@@ -1563,7 +1564,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "Використовaти LVM з нової установки Manjaro"
 
 #: ui/installation_ask.ui:123
 msgid ""
@@ -1590,7 +1591,7 @@ msgstr ""
 
 #: ui/installation_ask.ui:204
 msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr ""
+msgstr "Управління ваших розділів і вирішити, куди встановлювати Manjaro (експерт-модус)"
 
 #: ui/installation_ask.ui:230
 msgid ""
@@ -1607,7 +1608,7 @@ msgstr ""
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Будь ласка виберіть Вашу мову:</span>"
 
 #: ui/language.ui:89
 msgid ""
@@ -1620,23 +1621,23 @@ msgstr ""
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">Ласкаво просимо до Manjaro</span>"
 
 #: ui/user_info.ui:119 ui/user_info.ui:589
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkgreen\">Надійний пароль</span></small>"
 
 #: ui/user_info.ui:177 ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Ви повинні ввести пароль</span></small>"
 
 #: ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Ви повинні ввести ім'я користувача</span></small>"
 
 #: ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
-msgstr ""
+msgstr "<small><span color=\"darkred\">Ви повинні ввести ім'я</span></small>"
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
