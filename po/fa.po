@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ali Abdollahzade <roshd2.ali@gmail.com>, 2014
 # Ali Mousavi <ali.mousavi@gmail.com>, 2011
 # Alireza Savand <agahia.com@gmail.com>, 2011
 # Alireza Savand <alireza.savand@gmail.com>, 2012
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-11-07 14:24+0000\n"
+"Last-Translator: Ali Abdollahzade <roshd2.ali@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/manjaro-thus/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +28,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "نصب کننده می بایست با مجوز مدیریتی اجرا شود و نمی تواند بدون این مجوز ادامه دهد."
 
 #: thus.py:131
 #, python-format
@@ -37,52 +38,52 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "شما نمی توانید دو نسخه از نصب کننده را اجرا کنید.\n\nاگر اطمینان دارید که نصب کننده دیگری در حال اجرا نیست\nمی توانید به صورت دستی فایل %s\nرا پاک کنید و نصب کننده را دوباره اجرا کنید."
 
 #: thus.py:143
 #, python-format
 msgid "Thus installer version %s"
-msgstr ""
+msgstr "نصب کننده Thus نسخه %s"
 
 #: thus.py:234
 msgid "Manjaro Installer"
-msgstr "نصاب مانجارو"
+msgstr "نصب‌کننده‌ی Manjaro"
 
 #: thus.py:290
 msgid "Quiting installer..."
-msgstr "خروج از نصب‌کننده..."
+msgstr "در حال خروج از نصب کننده..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
-msgstr ""
+msgstr "تنظیم درجه گزارش گیری Thus به \"خطاگیری\""
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr ""
+msgstr "Thus را به آخرین نسخه بروز کن (-uu بروزرسانی را مجبور خواهد کرد)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr ""
+msgstr "هیچ تغییری انجام نده (مفید برای توسعه دهندگان)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
-msgstr ""
+msgstr "نمایش پیام های گزارش به stdout"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
-msgstr ""
+msgstr "نمایش گزینه های در حال توسعه (استفاده نکنید!)"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
 #: src/installation/process.py:445 src/installation/process.py:462
 #: src/installation/process.py:477
 #, python-format
 msgid "Unmounting %s"
-msgstr ""
+msgstr "در حال جدا کردن %s"
 
 #: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
-msgstr ""
+msgstr "جدا کردن %s ناموفق بود. در حال امتحان lazy arg."
 
 #: src/installation/auto_partition.py:119
 msgid "Can't delete existent LVM volumes (see below)"
@@ -95,7 +96,7 @@ msgstr ""
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr ""
+msgstr "فایل سیستم ناشناخته %s"
 
 #: src/installation/auto_partition.py:194
 #, python-format

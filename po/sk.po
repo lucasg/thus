@@ -8,13 +8,14 @@
 # Dušan Lago <dusan.lago@gmail.com>, 2011,2013
 # Jose Riha <jose1711@gmail.com>, 2011
 # Richard Vajdel <riko442@gmail.com>, 2014
+# mrstanlez <stanislav.petrek@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-01 08:07+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2014-11-04 15:42+0000\n"
+"Last-Translator: mrstanlez <stanislav.petrek@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/manjaro-thus/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,7 +95,7 @@ msgstr "Nie je možné uzatvoriť LUKS zariadenia (pozrite nižšie)"
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr ""
+msgstr "Neznámy súborový systém %s"
 
 #: src/installation/auto_partition.py:194
 #, python-format
@@ -109,32 +110,32 @@ msgstr "Nastaví LUKS na zariadení %s"
 #: src/installation/auto_partition.py:429
 #, python-format
 msgid "Total disk size: %dMiB"
-msgstr ""
+msgstr "Celková veľkosť disku: %dMiB"
 
 #: src/installation/auto_partition.py:430
 #, python-format
 msgid "Boot partition size: %dMiB"
-msgstr ""
+msgstr "Veľkosť boot partície: %dMiB"
 
 #: src/installation/auto_partition.py:433
 #, python-format
 msgid "LVM physical volume size: %dMiB"
-msgstr ""
+msgstr "LVM fyzická veľkosť oddielu: %dMiB"
 
 #: src/installation/auto_partition.py:435
 #, python-format
 msgid "Swap partition size: %dMiB"
-msgstr ""
+msgstr "Veľkosť swapovacej partície: %dMiB"
 
 #: src/installation/auto_partition.py:436
 #, python-format
 msgid "Root partition size: %dMiB"
-msgstr ""
+msgstr "Veľkosť root partície: %dMiB"
 
 #: src/installation/auto_partition.py:439
 #, python-format
 msgid "Home partition size: %dMiB"
-msgstr ""
+msgstr "Veľkosť home partície: %dMiB"
 
 #: src/installation/auto_partition.py:468
 msgid ""
@@ -543,15 +544,15 @@ msgstr "Nie je možné zmenšiť súborový systém %s(%s)"
 #: src/installation/alongside.py:399
 #, python-format
 msgid "Can't shrink %s(%s) partition"
-msgstr ""
+msgstr "Nedá sa zmenšiť %s(%s) partícia"
 
 #: src/installation/alongside.py:418 src/installation/alongside.py:470
 msgid "Cannot create new partition."
-msgstr ""
+msgstr "Nedá sa vytvoriť nová partícia."
 
 #: src/installation/alongside.py:458
 msgid "Cannot create new swap partition."
-msgstr ""
+msgstr "Nedá sa vytvoriť nová swap partícia."
 
 #: src/installation/alongside.py:495 src/installation/automatic.py:222
 #, python-format
@@ -742,12 +743,12 @@ msgstr "Nebolo možné pripojiť %s v %s"
 #: src/installation/process.py:349
 #, python-format
 msgid "Mounting swap %s"
-msgstr ""
+msgstr "Pripájanie swap %s"
 
 #: src/installation/process.py:353
 #, python-format
 msgid "Can't mount %s"
-msgstr ""
+msgstr "Nedá sa odpojiť %s"
 
 #: src/installation/process.py:368
 #, python-format
@@ -844,7 +845,7 @@ msgstr "Chyba pri spúštaní príkazu: %s"
 #: src/installation/process.py:683
 #, python-format
 msgid "Timeout running command: %s"
-msgstr ""
+msgstr "Vypršal čas spusteného príkazu: %s"
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
@@ -871,7 +872,7 @@ msgstr "Pridané do fstab: tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
 #: src/installation/process.py:915
 msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr ""
+msgstr "CHYBA pri vytváraní 'etc/grub.d'-položky."
 
 #: src/installation/process.py:923
 #, python-format
@@ -882,7 +883,7 @@ msgstr "Inštalujem GRUB(2) BIOS zavádzač do %s"
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr ""
+msgstr "grub-mkconfig ostal bez odozvy. Zabiť proces grub-mount a os-prober aby sme mohli pokračovať."
 
 #: src/installation/process.py:951
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -924,7 +925,7 @@ msgstr "Generujem grub.cfg"
 
 #: src/installation/process.py:1039
 msgid "GRUB(2) UEFI has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) UEFI bol úspešne nainštalovaný."
 
 #: src/installation/process.py:1042
 msgid "ERROR installing GRUB(2) UEFI."
@@ -936,7 +937,7 @@ msgstr "CHYBA pri inštalácii GRUB(2) lokalizácie"
 
 #: src/installation/process.py:1091
 msgid "Can't freeze/unfreeze xfs system"
-msgstr ""
+msgstr "Nedá sa zamraziť/odmraziť xfs systém"
 
 #: src/installation/process.py:1097
 #, python-format
@@ -1015,7 +1016,7 @@ msgstr "Konfigurujem hardvér..."
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Inštalácia ovládačov ..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"
@@ -1151,7 +1152,7 @@ msgstr "Nie je možné odstrániť fyzický zväzok %s"
 #: src/parted3/partition_module.py:106
 #, python-format
 msgid "Adding %s to disk_dic"
-msgstr ""
+msgstr "Pridávanie %s na disk_dic"
 
 #: src/parted3/partition_module.py:108
 #, python-format
@@ -1236,7 +1237,7 @@ msgstr "Manjaro inštalátor- Oznámenie"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Confirmation"
-msgstr ""
+msgstr "Manjaro Inštalácia - Oznámenie"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""

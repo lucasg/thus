@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-09-24 16:26+0000\n"
-"Last-Translator: Sungjin Kang <potopro@gmail.com>\n"
+"PO-Revision-Date: 2014-10-03 12:38+0000\n"
+"Last-Translator: lego37yoon <lego37yoon@outlook.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/manjaro-thus/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr ""
+msgstr "이 설치기는 관리자 권한 없이는 작동하지 않습니다."
 
 #: thus.py:131
 #, python-format
@@ -33,7 +33,7 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr ""
+msgstr "설치기를 두개 이상 동시에 띄울 수 없습니다.\n\n만약 다른 설치기가 실행중이지 않는다면,\n파일 %s를 수동적으로 지우고\n다시 설치기를 실행하십시오."
 
 #: thus.py:143
 #, python-format
@@ -54,11 +54,11 @@ msgstr "Thus 로그 레벨 'debug'로 설정"
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr ""
+msgstr "Thus를 최신버전으로 업데이트 하기(-uu will force the update)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr ""
+msgstr "어떠한 변경사항도 바꾸지 않기(개발자에게 유용)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
@@ -66,7 +66,7 @@ msgstr "로깅 메시지는 stdout으로 보기"
 
 #: thus.py:415
 msgid "Show options in development (DO NOT USE THIS!)"
-msgstr ""
+msgstr "개발 옵션 표시(사용하지 마십시오!)"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
 #: src/installation/process.py:445 src/installation/process.py:462
@@ -78,71 +78,71 @@ msgstr "%s 마운트 해제"
 #: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
 #, python-format
 msgid "Unmounting %s failed. Trying lazy arg."
-msgstr ""
+msgstr "%s를 언마운트 하는데 실패하였습니다. lazy arg를 사용해 보십시오."
 
 #: src/installation/auto_partition.py:119
 msgid "Can't delete existent LVM volumes (see below)"
-msgstr ""
+msgstr "기존의 LVM 볼륨을 지울 수 없습니다.(아래를 보세요)"
 
 #: src/installation/auto_partition.py:129
 msgid "Can't close LUKS devices (see below)"
-msgstr ""
+msgstr "LUKS 기기를 닫을 수 없습니다.(아래를 보세요)"
 
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr ""
+msgstr "알 수 없는 파일시스템 타입 %s"
 
 #: src/installation/auto_partition.py:194
 #, python-format
 msgid "Can't create filesystem %s"
-msgstr ""
+msgstr "%s라는 파일시스템을 만들 수 없습니다."
 
 #: src/installation/auto_partition.py:353
 #, python-format
 msgid "Thus will setup LUKS on device %s"
-msgstr ""
+msgstr "Thus는 LUKS를 기기 %s에 설정할 것입니다."
 
 #: src/installation/auto_partition.py:429
 #, python-format
 msgid "Total disk size: %dMiB"
-msgstr ""
+msgstr " 총 디스크 용량: %dMiB"
 
 #: src/installation/auto_partition.py:430
 #, python-format
 msgid "Boot partition size: %dMiB"
-msgstr ""
+msgstr "부트 파티션 크기: %dMiB"
 
 #: src/installation/auto_partition.py:433
 #, python-format
 msgid "LVM physical volume size: %dMiB"
-msgstr ""
+msgstr "LVM 논리 볼륨 크기: %dMiB"
 
 #: src/installation/auto_partition.py:435
 #, python-format
 msgid "Swap partition size: %dMiB"
-msgstr ""
+msgstr "스왑 파티션 크기: %dMiB"
 
 #: src/installation/auto_partition.py:436
 #, python-format
 msgid "Root partition size: %dMiB"
-msgstr ""
+msgstr "루트파티션 크기: %dMiB"
 
 #: src/installation/auto_partition.py:439
 #, python-format
 msgid "Home partition size: %dMiB"
-msgstr ""
+msgstr "홈 파티션 크기: %dMiB"
 
 #: src/installation/auto_partition.py:468
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr ""
+msgstr "설치 프로그램이 기기의 파티션 크기를 지정할 수 없습니다. 고급 설치 루틴을 통해 파티셔닝과 마운팅을 진행하십시오."
 
 #: src/installation/auto_partition.py:601
 #, python-format
 msgid "Will setup LVM on device %s"
-msgstr ""
+msgstr "%s 기기에 LVM 볼륨을 설정할 것입니다."
 
 #: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
 #: src/installation/alongside.py:220
@@ -152,40 +152,40 @@ msgstr "알수 없음"
 #: src/canonical/misc.py:929
 #, python-format
 msgid "Can't set locale %s"
-msgstr ""
+msgstr "로케일 %s로 변경할 수 없습니다."
 
 #: src/canonical/validation.py:132
 msgid "password is too short"
-msgstr ""
+msgstr "비밀번호가 너무 짧습니다."
 
 #: src/canonical/validation.py:135
 msgid "weak password"
-msgstr ""
+msgstr "약한 비밀번호입니다."
 
 #: src/canonical/validation.py:138
 msgid "fair password"
-msgstr ""
+msgstr "나은 비밀번호입니다."
 
 #: src/canonical/validation.py:141
 msgid "good password"
-msgstr ""
+msgstr "좋은 비밀번호입니다."
 
 #: src/canonical/validation.py:144
 msgid "strong password"
-msgstr ""
+msgstr "강한 비밀번호입니다."
 
 #: src/canonical/validation.py:159
 msgid "Passwords do not match"
-msgstr ""
+msgstr "비밀번호가 일치하지 않습니다."
 
 #: src/check.py:79
 msgid "System Check"
-msgstr ""
+msgstr "시스템 확인"
 
 #: src/check.py:84
 #, python-format
 msgid "has at least %dGB available storage space"
-msgstr ""
+msgstr "%dGB의 용량이 남게 됩니다."
 
 #: src/check.py:89
 msgid ""
@@ -215,7 +215,7 @@ msgstr "우리는 플러그에 연결되어있습니다."
 
 #: src/check.py:175
 msgid "We have enough disk space."
-msgstr ""
+msgstr "충분한 공간이 있습니다."
 
 #: src/installation/advanced.py:218 src/installation/advanced.py:512
 #: src/installation/advanced.py:526
@@ -224,7 +224,7 @@ msgstr "여유공간"
 
 #: src/installation/advanced.py:266
 msgid "It's not recommended to install grub in a partition"
-msgstr ""
+msgstr "파티션에 GRUB를 설치하지 않는 것을 추천합니다."
 
 #: src/installation/advanced.py:294 src/installation/alongside.py:172
 msgid "Device"
@@ -270,11 +270,11 @@ msgstr "없음"
 #: src/installation/advanced.py:1501 src/installation/advanced.py:1594
 #: src/installation/advanced.py:1745 src/installation/advanced.py:1839
 msgid "extended"
-msgstr ""
+msgstr "확장"
 
 #: src/installation/advanced.py:679 src/installation/advanced.py:932
 msgid "Can't use same mount point twice..."
-msgstr ""
+msgstr "같은 마운트 위치를 두번 사용할 수 없습니다."
 
 #: src/installation/advanced.py:953
 msgid "Creating primary partition"
@@ -282,7 +282,7 @@ msgstr "프리마리 파티션을 만들고 있습니다."
 
 #: src/installation/advanced.py:964
 msgid "Creating extended partition"
-msgstr ""
+msgstr "확장 파티션 만들기"
 
 #: src/installation/advanced.py:970
 msgid "Creating logical partition"
@@ -294,27 +294,27 @@ msgstr "전문적인 설치모드"
 
 #: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
 msgid "Use this device for boot loader installation:"
-msgstr ""
+msgstr "부트로더 설치를 위한 기기 선택:"
 
 #: src/installation/advanced.py:1113
 msgid "Mount checklist:"
-msgstr ""
+msgstr "마운트 체크리스트:"
 
 #: src/installation/advanced.py:1119
 msgid "Root"
-msgstr ""
+msgstr "루트"
 
 #: src/installation/advanced.py:1123 ui/bootloader.ui:7
 msgid "Boot"
-msgstr ""
+msgstr "부트"
 
 #: src/installation/advanced.py:1127
 msgid "EFI"
-msgstr ""
+msgstr "EFI"
 
 #: src/installation/advanced.py:1131
 msgid "Swap"
-msgstr ""
+msgstr "스왑"
 
 #: src/installation/advanced.py:1139
 msgid "New partition table"
@@ -338,11 +338,11 @@ msgstr "프리마리"
 
 #: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
 msgid "Logical"
-msgstr ""
+msgstr "논리"
 
 #: src/installation/advanced.py:1168 ui/installation_advanced.ui:695
 msgid "Extended"
-msgstr ""
+msgstr "확장"
 
 #: src/installation/advanced.py:1172 ui/installation_advanced.ui:516
 msgid "Beginning of this space"
@@ -369,7 +369,7 @@ msgstr "라밸(선택적):"
 
 #: src/installation/advanced.py:1192
 msgid "Encryption Options..."
-msgstr ""
+msgstr "암호화 옵션"
 
 #: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
 msgid "Format:"
@@ -377,11 +377,11 @@ msgstr "포맷:"
 
 #: src/installation/advanced.py:1214
 msgid "Partition Table Type:"
-msgstr ""
+msgstr "파티션 테이블 타입:"
 
 #: src/installation/advanced.py:1219
 msgid "Create Partition Table"
-msgstr ""
+msgstr "파티션 테이블 만들기"
 
 #: src/installation/advanced.py:1222 src/installation/alongside.py:150
 #: src/installation/automatic.py:103
@@ -402,11 +402,11 @@ msgstr ""
 
 #: src/installation/advanced.py:1350
 msgid "Can't create BIOS GPT Boot partition!"
-msgstr ""
+msgstr "BIOS GPT 부팅 파티션을 만들 수 없습니다."
 
 #: src/installation/advanced.py:1377
 msgid "Couldn't create BIOS GPT Boot partition"
-msgstr ""
+msgstr "BIOS GPT 부팅 파티션을 만들 수 없었습니다."
 
 #: src/installation/advanced.py:1540
 #, python-format
@@ -414,7 +414,7 @@ msgid ""
 "%s is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s 가 스왑으로 마운트 됩니다.\n계속하려면 언마운트 하십시오.\nYes를 눌러 언마운트 하거나, No를 눌러 돌아가세요.\n"
 
 #: src/installation/advanced.py:1544
 #, python-format
@@ -422,18 +422,18 @@ msgid ""
 "%s is mounted in '%s'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "%s가 %s'로 마운트 됩니다.\n계속하려면 언마운트해야만 합니다.\nYes를 눌러 언마운트 하거나 No를 눌러 되돌아 가세요.\n"
 
 #: src/installation/advanced.py:1567
 #, python-format
 msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "%s 가 마운트 된 것으로 보이지만(바쁜상태) 마운트 지점이 존재하지 않습니다."
 
 #: src/installation/advanced.py:1573
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
-msgstr ""
+msgstr "루트 파티션이 포맷하기로 표시되어 있지 않습니다.\n이것이 문제를 야기할 수 있습니다. 지금 포맷하는 것으로 표기할까요?"
 
 #: src/installation/advanced.py:1636
 #, python-format
@@ -458,32 +458,32 @@ msgstr "지점"
 
 #: src/installation/advanced.py:1664
 msgid "These disks will have partition actions:"
-msgstr ""
+msgstr "이 디스크들은 다음과 같은 파티셔닝을 할 것입니다."
 
 #: src/installation/advanced.py:1724
 #, python-format
 msgid "Saving changes done in %s"
-msgstr ""
+msgstr "%s초만에 변경사항을 저장했습니다."
 
 #: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr ""
+msgstr "%s파일시스템을 %s 라벨을 붙여 %s에 생성중입니다."
 
 #: src/installation/advanced.py:1790
 #, python-format
 msgid "Setting boot flag in %s partition"
-msgstr ""
+msgstr "%s 파티션에 부트 플래그를 설정합니다."
 
 #: src/installation/advanced.py:1809
 #, python-format
 msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr ""
+msgstr "'%s' as '%s' 라벨이 붙은 '%s'파티션을 포맷할 수 없습니다."
 
 #: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
-msgstr ""
+msgstr "Thus는 어떠한 부트로더도 설치하지 않을 것입니다."
 
 #: src/installation/advanced.py:1860
 #, python-format
@@ -493,7 +493,7 @@ msgstr "%s의 %s 종류인 부트로더를 만자로가 설치할 것입니다."
 #: src/installation/advanced.py:1876 src/installation/alongside.py:512
 #: src/installation/automatic.py:247
 msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr ""
+msgstr "테스트 모드입니다. Thus는 어떠한 변경사항도 저장하지 않을 것 입니다!`"
 
 #: src/installation/alongside.py:115
 #, python-format
@@ -502,7 +502,7 @@ msgstr "%s CSS파일을 로드할 수 없습니다."
 
 #: src/installation/alongside.py:142
 msgid "Choose which OS you want to install Manjaro next to"
-msgstr ""
+msgstr "Manjaro를 설치하고 싶은 OS를 선택하세요."
 
 #: src/installation/alongside.py:146
 msgid "Manjaro alongside another OS"
@@ -518,7 +518,7 @@ msgstr "파일시스템"
 
 #: src/installation/alongside.py:196
 msgid "pyparted3 not found!"
-msgstr ""
+msgstr "pyparted3을 찾을 수 없습니다."
 
 #: src/installation/alongside.py:224
 msgid "Unable to create list of partitions for alongside installation."

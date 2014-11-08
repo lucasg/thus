@@ -30,6 +30,7 @@ import crypt
 import logging
 import multiprocessing
 import os
+import collections
 import queue
 import shutil
 import subprocess
@@ -46,6 +47,22 @@ from configobj import ConfigObj
 conf_file = '/etc/thus.conf'
 configuration = ConfigObj(conf_file)
 MHWD_SCRIPT = 'mhwd.sh'
+
+DesktopEnvironment = collections.namedtuple('DesktopEnvironment', ['executable', 'desktop_file'])
+
+desktop_environments = [
+    DesktopEnvironment('/usr/bin/startkde', 'plasma'), # KDE Plasma 5
+    DesktopEnvironment('/usr/bin/startkde', 'kde-plasma'), # KDE Plasma 4
+    DesktopEnvironment('/usr/bin/gnome-session', 'gnome'),
+    DesktopEnvironment('/usr/bin/startxfce4', 'xfce'),
+    DesktopEnvironment('/usr/bin/cinnamon-session', 'cinnamon-session'),
+    DesktopEnvironment('/usr/bin/mate-session', 'mate'),
+    DesktopEnvironment('/usr/bin/enlightenment_start', 'enlightenment'),
+    DesktopEnvironment('/usr/bin/openbox-session', 'openbox'),
+    DesktopEnvironment('/usr/bin/lxsession', 'LXDE'),
+    DesktopEnvironment('/usr/bin/startlxde', 'LXDE'),
+    DesktopEnvironment('/usr/bin/lxqt-session', 'lxqt')
+]
 
 ## BEGIN: RSYNC-based file copy support
 #CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
@@ -1207,6 +1224,13 @@ class InstallationProcess(multiprocessing.Process):
         """ Helper function to run a command """
         return subprocess.check_output(command.split()).decode().strip("\n")
 
+    def find_desktop_environment(self):
+        for desktop_environment in desktop_environments:
+            if os.path.exists('%s%s' % (self.dest_dir, desktop_environment.executable)) \
+               and os.path.exists('%s/usr/share/xsessions/%s.desktop' % (self.dest_dir, desktop_environment.desktop_file)):
+                return desktop_environment
+        return None
+
     def set_autologin(self):
         """ Enables automatic login for the installed desktop manager """
         username = self.settings.get('username')
@@ -1548,8 +1572,9 @@ class InstallationProcess(multiprocessing.Process):
                          '-s', '/usr/bin/nologin', 'lightdm'])
             self.chroot(['passwd', '-l', 'lightdm'])
             self.chroot(['chown', '-R', 'lightdm:lightdm', '/run/lightdm'])
-            if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                os.system("sed -i -e 's/^.*user-session=.*/user-session=xfce/' %s/etc/lightdm/lightdm.conf" % self.dest_dir)
+            default_desktop_environment = self.find_desktop_environment()
+            if default_desktop_environment != None:
+                os.system("sed -i -e 's/^.*user-session=.*/user-session=%s/' %s/etc/lightdm/lightdm.conf" % (default_desktop_environment.desktop_file, self.dest_dir))
                 os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver %s/usr/bin/gdmflexiserver" % self.dest_dir)
             os.system("chmod +r %s/etc/lightdm/lightdm.conf" % self.dest_dir)
             self.desktop_manager = 'lightdm'
@@ -1564,20 +1589,9 @@ class InstallationProcess(multiprocessing.Process):
                          '-s', '/usr/bin/nologin', 'gdm'])
             self.chroot(['passwd', '-l', 'gdm'])
             self.chroot(['chown', '-R', 'gdm:gdm', '/var/lib/gdm'])
-            if os.path.exists("%s/var/lib/AccountsService/users" % self.dest_dir):
-                os.system("echo \"[User]\" > %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                    os.system("echo \"XSession=xfce\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                if os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
-                    os.system("echo \"XSession=cinnamon-session\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-                    os.system("echo \"XSession=mate\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                if os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
-                    os.system("echo \"XSession=enlightenment\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                if os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
-                    os.system("echo \"XSession=openbox\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
-                if os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
-                    os.system("echo \"XSession=LXDE\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
+            default_desktop_environment = self.find_desktop_environment()
+            if default_desktop_environment != None:
+                os.system("echo \"XSession=%s\" >> %s/var/lib/AccountsService/users/gdm" % (default_desktop_environment.desktop_file, self.dest_dir))
                 os.system("echo \"Icon=\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
             self.desktop_manager = 'gdm'
 
@@ -1592,35 +1606,17 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['passwd', '-l', 'mdm'])
             self.chroot(['chown', 'root:mdm', '/var/lib/mdm'])
             self.chroot(['chmod', '1770', '/var/lib/mdm'])
-            if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                os.system("sed -i 's|default.desktop|xfce.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
-                os.system("sed -i 's|default.desktop|cinnamon.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
-                os.system("sed -i 's|default.desktop|openbox.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-                os.system("sed -i 's|default.desktop|mate.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
-                os.system("sed -i 's|default.desktop|LXDE.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
-                os.system("sed -i 's|default.desktop|enlightenment.desktop|g' %s/etc/mdm/custom.conf" % self.dest_dir)
+            default_desktop_environment = self.find_desktop_environment()
+            if default_desktop_environment != None:
+                os.system("sed -i 's|default.desktop|%s.desktop|g' %s/etc/mdm/custom.conf" % (default_desktop_environment.desktop_file, self.dest_dir))
             self.desktop_manager = 'mdm'
 
         # Setup lxdm
         if os.path.exists("%s/usr/bin/lxdm" % self.dest_dir):
             self.chroot(['groupadd', '--system', 'lxdm'])
-            if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/startxfce4|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/cinnamon-session" % self.dest_dir):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/cinnamon-session|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/mate-session|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/enlightenment_start" % self.dest_dir):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/enlightenment_start|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/openbox-session" % self.dest_dir):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/openbox-session|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
-            if os.path.exists("%s/usr/bin/lxsession" % self.dest_dir):
-                os.system("sed -i -e 's|^.*session=.*|session=/usr/bin/lxsession|' %s/etc/lxdm/lxdm.conf" % self.dest_dir)
+            default_desktop_environment = self.find_desktop_environment()
+            if default_desktop_environment != None:
+                os.system("sed -i -e 's|^.*session=.*|session=%s|' %s/etc/lxdm/lxdm.conf" % (default_desktop_environment.executable, self.dest_dir))
             os.system("chgrp -R lxdm %s/var/lib/lxdm" % self.dest_dir)
             os.system("chgrp lxdm %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             os.system("chmod +r %s/etc/lxdm/lxdm.conf" % self.dest_dir)
@@ -1648,10 +1644,6 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
             os.system("echo \"TERM=mate-terminal\" >> %s/etc/environment" % self.dest_dir)
             os.system("echo \"TERM=mate-terminal\" >> %s/etc/profile" % self.dest_dir)
-
-        # Fix QT-theme in XFCE
-        if os.path.exists("%s/usr/bin/startxfce4" % self.dest_dir):
-            os.system("echo \"QT_STYLE_OVERRIDE=gtk\" >> %s/etc/environment" % self.dest_dir)
 
         # Adjust Steam-Native when libudev.so.0 is available
         if os.path.exists("%s/usr/lib/libudev.so.0" % self.dest_dir) or os.path.exists("%s/usr/lib32/libudev.so.0" % self.dest_dir):

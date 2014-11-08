@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-09-21 20:45+0000\n"
-"Last-Translator: Nathan Slutzker <n_slutzker@hotmail.com>\n"
+"PO-Revision-Date: 2014-10-20 12:22+0000\n"
+"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/manjaro-thus/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,11 +56,11 @@ msgstr ""
 
 #: thus.py:412
 msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr "עדכן Thus לגרסא אחרונה (-uu יכפה את העדכון)"
+msgstr "עדכן את Thus לגרסא אחרונה (uu- יכפה את העדכון)"
 
 #: thus.py:413
 msgid "Do not perform any changes (useful for developers)"
-msgstr "אין לבצע שינויים (שימושי למפתחים)"
+msgstr "אל תבצע שינויים (שימושי למפתחים)"
 
 #: thus.py:414
 msgid "Show logging messages to stdout"
@@ -93,12 +93,12 @@ msgstr "אין אפשרות לסגור התקני LUKS (ראו מטה)"
 #: src/installation/auto_partition.py:184
 #, python-format
 msgid "Unknown filesystem type %s"
-msgstr "%s סוג מערכת קבצים לא ידועה"
+msgstr "%s טיפוס מערכת קבצים לא מוכר"
 
 #: src/installation/auto_partition.py:194
 #, python-format
 msgid "Can't create filesystem %s"
-msgstr ""
+msgstr "לא מתליח ליצור מערכת קבצים %s"
 
 #: src/installation/auto_partition.py:353
 #, python-format
@@ -108,7 +108,7 @@ msgstr ""
 #: src/installation/auto_partition.py:429
 #, python-format
 msgid "Total disk size: %dMiB"
-msgstr "סה\"כ גודל דיסק: %dMiB"
+msgstr "נפח דיסק כולל: %dMiB"
 
 #: src/installation/auto_partition.py:430
 #, python-format
@@ -304,7 +304,7 @@ msgstr ""
 
 #: src/installation/advanced.py:1119
 msgid "Root"
-msgstr "ראשי"
+msgstr "שורש"
 
 #: src/installation/advanced.py:1123 ui/bootloader.ui:7
 msgid "Boot"
@@ -485,7 +485,7 @@ msgstr "לא ניתן היה להגדיר מחיצה '%s' עם תווית '%s'  
 #: src/installation/advanced.py:1850 src/installation/alongside.py:499
 #: src/installation/automatic.py:226
 msgid "Thus will not install any boot loader"
-msgstr "כך לא יותקן מנהל אתחול"
+msgstr "Thus לא יתקין שום מנהל אתחול"
 
 #: src/installation/advanced.py:1860
 #, python-format
@@ -537,7 +537,7 @@ msgstr "יותר מידי מחיצות עיקריות, לא מסוגל ליצו�
 #: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr "אין אפשרות לכווץ מערכת קבצים %s(%s)"
+msgstr "לא מצליח לכווץ מערכת קבצים %s(%s)"
 
 #: src/installation/alongside.py:399
 #, python-format
@@ -567,7 +567,7 @@ msgstr "מחק כונן והתקן Manjaro (אוטומטי)"
 
 #: src/installation/ask.py:116
 msgid "Warning: This will delete all data on your disk"
-msgstr "אזהרה: זו תמחק לכם את כל הנתונים בכונן שלך"
+msgstr "ﬡזﬣﬧﬣ: זו תמחק לכם את כל הנתונים בכונן שלך"
 
 #: src/installation/ask.py:122
 msgid "Encrypt this installation for increased security."
@@ -638,7 +638,7 @@ msgstr "בחרו כונן:"
 #: src/installation/automatic.py:83
 msgid ""
 "WARNING! This installation mode will overwrite everything on your drive!"
-msgstr "אזהרה! התקנה זו תכתוב מחדש על כל הכונן שלך!"
+msgstr "ﬡזﬣﬧﬣ! התקנה זו תכתוב מחדש על כל דבר בכונן שלך!"
 
 #: src/installation/automatic.py:88 ui/installation_automatic.ui:59
 msgid ""
@@ -648,7 +648,7 @@ msgstr "אנא בחרו את הכון בו ברצונכם להתקין את Manj
 
 #: src/installation/automatic.py:93 ui/installation_automatic.ui:176
 msgid "Encryption Password:"
-msgstr "ססמת הצפנה:"
+msgstr "סיסמת הצפנה:"
 
 #: src/installation/automatic.py:97 src/user_info.py:124
 #: ui/installation_automatic.ui:161 ui/user_info.ui:80
@@ -658,7 +658,7 @@ msgstr "ודא את הסיסמה שלך:"
 #: src/installation/automatic.py:101 src/user_info.py:177
 #: ui/installation_automatic.ui:258 ui/user_info.ui:422
 msgid "Show password"
-msgstr "הצג את הסיסמה"
+msgstr "הצג סיסמה"
 
 #: src/installation/automatic.py:164
 msgid "A LUKS password has been set"
@@ -746,7 +746,7 @@ msgstr ""
 #: src/installation/process.py:353
 #, python-format
 msgid "Can't mount %s"
-msgstr ""
+msgstr "לא מצליח לעגן את %s"
 
 #: src/installation/process.py:368
 #, python-format
@@ -803,7 +803,7 @@ msgstr ""
 #: src/installation/process.py:538 src/installation/process.py:544
 #, python-format
 msgid "%s is already mounted at %s as %s"
-msgstr ""
+msgstr "%s כבר מעוגנת בתוך at %s בתור %s"
 
 #: src/installation/process.py:555
 msgid "Indexing files to be copied ..."
@@ -847,7 +847,7 @@ msgstr ""
 
 #: src/installation/process.py:716
 msgid "Can't copy network configuration files"
-msgstr "לא מצליח להעתיק קבצי הגדרת רשת"
+msgstr "לא מצליח להעתיק קבצי תצורת רשת"
 
 #: src/installation/process.py:746 src/installation/process.py:807
 #, python-format
@@ -994,7 +994,7 @@ msgstr "שם מארח  %s נקבע."
 
 #: src/installation/process.py:1402
 msgid "Set root password."
-msgstr "הגדר סיסמת מנהל."
+msgstr "הגדר סיסמת שורש."
 
 #: src/installation/process.py:1405
 msgid "Set the same password to root."
@@ -1006,7 +1006,7 @@ msgstr "כעת מפיק מקומיות ..."
 
 #: src/installation/process.py:1429
 msgid "Adjusting hardware clock ..."
-msgstr "מתאם שעון חומרה..."
+msgstr "כעת מתאם שעון חומרה..."
 
 #: src/installation/process.py:1438
 msgid "Configuring hardware ..."
@@ -1014,7 +1014,7 @@ msgstr "כעת מגדיר חומרה ..."
 
 #: src/installation/process.py:1511
 msgid "Installing drivers ..."
-msgstr "כעת מתקין דרייברים"
+msgstr "כעת מתקין דרייברים ..."
 
 #: src/installation/process.py:1518
 msgid "Can't execute the MHWD script"
@@ -1235,7 +1235,7 @@ msgstr "מתקין Manjaro - מידע"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Confirmation"
-msgstr ""
+msgstr "מתקין Manjaro - אימות"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
@@ -1309,7 +1309,7 @@ msgstr "השם שלך"
 
 #: src/user_info.py:100 ui/user_info.ui:328
 msgid "Hostname"
-msgstr ""
+msgstr "שם מארח"
 
 #: src/user_info.py:104 ui/user_info.ui:405
 msgid "Your computer's name:"
@@ -1343,7 +1343,7 @@ msgstr "בחר סיסמת שורש:"
 
 #: src/user_info.py:140 ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr "אמת את סיסמת השורש:"
+msgstr "אמת סיסמת שורש:"
 
 #: src/user_info.py:148
 msgid "Its name as it appears to other computers."
@@ -1367,11 +1367,11 @@ msgstr "היכנס אוטומטית"
 
 #: src/user_info.py:169 ui/user_info.ui:490
 msgid "A password is required to log in"
-msgstr ""
+msgstr "נדרשת סיסמה כדי להיכנס"
 
 #: src/user_info.py:170 ui/user_info.ui:518
 msgid "Encrypt home folder"
-msgstr ""
+msgstr "הצפן תיקיית בית"
 
 #: src/user_info.py:172
 msgid "Who are you?"
@@ -1379,11 +1379,11 @@ msgstr "מי אתם?"
 
 #: src/user_info.py:180 ui/user_info.ui:544
 msgid "Show root password"
-msgstr ""
+msgstr "הצג סיסמת שורש"
 
 #: src/user_info.py:183 ui/user_info.ui:439
 msgid "Use a root password"
-msgstr ""
+msgstr "השתמש בסיסמת שורש"
 
 #: src/user_info.py:252
 msgid ""
@@ -1433,7 +1433,7 @@ msgstr "יותר מדי תווים"
 
 #: ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr "מהי סוג המערכת שלך?"
+msgstr "מהו טיפוס המערכת (boot system) שלך?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
@@ -1542,7 +1542,7 @@ msgstr "סיווג"
 msgid ""
 "<span weight=\"light\" size=\"small\">Warning: This will delete all "
 "programs, documents, photos, music and any other files on your disk</span>"
-msgstr "<span weight=\"light\" size=\"small\">אזהרה: זו תמחק את כל התוכניות, המסמכים, התצלומים, המוזיקה וכן כל קובץ אחר על הכונן שלכם</span>"
+msgstr "<span weight=\"light\" size=\"small\">ﬡזﬣﬧﬣ: זו תמחק את כל התוכניות, המסמכים, התצלומים, המוזיקה וכן כל קובץ אחר על הכונן שלכם</span>"
 
 #: ui/installation_ask.ui:70
 msgid "Encrypts the new Manjaro installation for better security"
@@ -1596,7 +1596,7 @@ msgstr ""
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything on your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>ﬡזﬣﬧﬣ! מצב התקנה זה יכתוב מחדש על כל דבר בכונן שלך!</b>"
 
 #: ui/language.ui:26
 msgid "<span weight=\"bold\">Please choose your language:</span>"
