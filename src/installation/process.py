@@ -58,10 +58,11 @@ desktop_environments = [
     DesktopEnvironment('/usr/bin/cinnamon-session', 'cinnamon-session'),
     DesktopEnvironment('/usr/bin/mate-session', 'mate'),
     DesktopEnvironment('/usr/bin/enlightenment_start', 'enlightenment'),
-    DesktopEnvironment('/usr/bin/openbox-session', 'openbox'),
     DesktopEnvironment('/usr/bin/lxsession', 'LXDE'),
     DesktopEnvironment('/usr/bin/startlxde', 'LXDE'),
-    DesktopEnvironment('/usr/bin/lxqt-session', 'lxqt')
+    DesktopEnvironment('/usr/bin/lxqt-session', 'lxqt'),
+    DesktopEnvironment('/usr/bin/pekwm', 'pekwm'),
+    DesktopEnvironment('/usr/bin/openbox-session', 'openbox')
 ]
 
 ## BEGIN: RSYNC-based file copy support
@@ -1113,6 +1114,12 @@ class InstallationProcess(multiprocessing.Process):
             self.chroot(['systemctl', 'enable', name + ".service"])
             self.queue_event('debug', _('Enabled %s service.') % name)
 
+    def enable_targets(self, targets):
+        """ Enables all targets that are in the list 'targets' """
+        for name in targets:
+            self.chroot(['systemctl', 'enable', name + ".target"])
+            self.queue_event('debug', _('Enabled %s target.') % name)
+
     def change_user_password(self, user, new_password):
         """ Changes the user's password """
         try:
@@ -1323,14 +1330,26 @@ class InstallationProcess(multiprocessing.Process):
         elif self.desktop_manager == 'sddm':
             # Systems with Sddm as Desktop Manager
             sddm_conf_path = os.path.join(self.dest_dir, "etc/sddm.conf")
+            if os.path.isfile(sddm_conf_path):
+                self.queue_event('info', "SDDM config file exists")
+            else:
+                self.chroot(["sh", "-c", "sddm --example-config > /etc/sddm.conf"])           
             text = []
             with open(sddm_conf_path, "r") as sddm_conf:
                 text = sddm_conf.readlines()
             with open(sddm_conf_path, "w") as sddm_conf:
                 for line in text:
-                    if 'AutoUser=' in line:
-                        line = 'AutoUser=%s\n' % username
+                    # User= line, possibly commented out
+                    if re.match('\\s*(?:#\\s*)?User=', line):
+                        line = 'User={}\n'.format(username)
+                    # Session= line, commented out or with empty value
+                    if re.match('\\s*#\\s*Session=|\\s*Session=$', line):
+                        default_desktop_environment = self.find_desktop_environment()
+                        if default_desktop_environment != None:
+                            line = 'Session={}.desktop\n'.format(default_desktop_environment.desktop_file)
                     sddm_conf.write(line)
+
+
 
     def configure_system(self):
         """ Final install steps
@@ -1355,12 +1374,15 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('pulse')
 
         # enable services
-        self.enable_services([self.network_manager, 'remote-fs.target'])
+        self.enable_services([self.network_manager])
 
-        cups_service = os.path.join(self.dest_dir, "usr/lib/systemd/system/cups.service")
+        cups_service = os.path.join(self.dest_dir, "usr/lib/systemd/system/org.cups.cupsd.service")
         if os.path.exists(cups_service):
-            self.enable_services(['cups'])
+            self.enable_services(['org.cups.cupsd'])
 
+        # enable targets
+        self.enable_targets(['remote-fs.target'])
+        
         self.queue_event('debug', 'Enabled installed services.')
 
         # Wait FOREVER until the user sets the timezone

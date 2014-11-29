@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Bersil - Bernardo M. Savone <bmsavone@gmail.com>, 2013-2014
+# Bernardo Miguel Savone <bmsavone@gmail.com>, 2013-2014
 # Davide_IT <davide.mauri88@tiscali.it>, 2013
-# faidoc <faidoc@gmail.com>, 2013
+# Alexandre Filgueira <faidoc@gmail.com>, 2013
 # Paolo Dongilli <paolo.dongilli@gmail.com>, 2013
 # Paolo Dongilli <paolo.dongilli@gmail.com>, 2013
-# manjarolinux <philm@manjaro.org>, 2013-2014
-# skinth <skinth91@gmail.com>, 2013
+# philm <philm@manjaro.org>, 2013-2014
+# Saverio <saverio.brancaccio@gmail.com>, 2014
+# Skinth <skinth91@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-06-02 15:31+0000\n"
-"Last-Translator: Bersil - Bernardo M. Savone <bmsavone@gmail.com>\n"
+"PO-Revision-Date: 2014-11-11 07:31+0000\n"
+"Last-Translator: Saverio <saverio.brancaccio@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +29,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges and cannot "
 "continue without them."
-msgstr "Questo installer deve essere eseguito con privilegi di amministratore e non può continuare senza."
+msgstr "Il programma di installazione deve essere eseguito con i privilegi di amministratore."
 
 #: thus.py:131
 #, python-format
@@ -38,20 +39,20 @@ msgid ""
 "If you are sure that another installer is not already running\n"
 "you can manually delete the file %s\n"
 "and run this installer again."
-msgstr "Non è possibile eseguire due istanze di questo installer.\n\nSe si è sicuri che un altro installer non è già in esecuzione\nè possibile eliminare manualmente il file %s\ned eseguire nuovamente questo installer."
+msgstr "Non è possibile eseguire due istanze del programma di installazione.\n\nSe si è sicuri che un altro programma non è già in esecuzione\nè possibile eliminare manualmente il file %s\ned eseguire nuovamente il programma di installazione."
 
 #: thus.py:143
 #, python-format
 msgid "Thus installer version %s"
-msgstr "Thus installer versione %s"
+msgstr "Programma di installazione Thus versione %s"
 
 #: thus.py:234
 msgid "Manjaro Installer"
-msgstr "Manjaro Installer"
+msgstr "Programma di installazione di Manjaro"
 
 #: thus.py:290
 msgid "Quiting installer..."
-msgstr "Uscendo dell'installer..."
+msgstr "Si sta uscendo dal programma di installazione..."
 
 #: thus.py:411
 msgid "Sets Thus log level to 'debug'"
@@ -1086,7 +1087,7 @@ msgstr "Si prega di scegliere la lingua:"
 
 #: src/language.py:83
 msgid "Notice: The Thus Installer is beta software."
-msgstr "Avviso: L'Installer Thus è un software beta."
+msgstr "Avviso: Il programma di installazione Thus è un software beta."
 
 #: src/language.py:84
 msgid ""
@@ -1226,19 +1227,19 @@ msgstr "Non è possibile eseguire la selezione automatica dei mirror"
 
 #: src/show_message.py:53
 msgid "Manjaro Installer - Error"
-msgstr "Manjaro Installer - Errore"
+msgstr "Programma di installazione di Manjaro - Errore"
 
 #: src/show_message.py:65
 msgid "Manjaro Installer - Warning"
-msgstr "Manjaro Installer - Attenzione"
+msgstr "Programma di installazione di Manjaro - Attenzione"
 
 #: src/show_message.py:77
 msgid "Manjaro Installer - Information"
-msgstr "Manjaro Installer - Informazione"
+msgstr "Programma di installazione di Manjaro - Informazione"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Confirmation"
-msgstr "Manjaro Installer - Conferma"
+msgstr "Programma di installazione di Manjaro - Conferma"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
@@ -1612,7 +1613,7 @@ msgid ""
 "Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>Avviso: L'nstaller Thus è un software beta.</span>\n\nThus è un software pre-release beta che è in fase di sviluppo attivo. E ancora non gestisce correttamente RAID, btrfs subvolumes, o altre impostazioni avanzate. Si prega di procedere con cautela,  è possibile la perdita di dati! \n\nSe trovate qualche bug, si prega di  visitare <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
+msgstr "<span weight='bold'>Avviso: Il programma di installazione Thus è un software beta.</span>\n\nThus è un software pre-release beta in fase di attivo sviluppo. Non gestisce ancora correttamente RAID, sotto volumi btrfs o altre configurazioni avanzate. Si prega di procedere con cautela perchè è possibile la perdita di dati! \n\nSe sono rilevati dei bug, si prega di  visitare <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ui/thus.ui:37
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
