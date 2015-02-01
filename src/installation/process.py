@@ -1585,15 +1585,6 @@ class InstallationProcess(multiprocessing.Process):
 
         # setup lightdm
         if os.path.exists("%s/usr/bin/lightdm" % self.dest_dir):
-            self.chroot(['mkdir', '-p', '/run/lightdm'])
-            self.chroot(['getent', 'group', 'lightdm'])
-            self.chroot(['groupadd', '-g', '620', 'lightdm'])
-            self.chroot(['getent', 'passwd', 'lightdm'])
-            self.chroot(['useradd', '-c', '"LightDM Display Manager"',
-                         '-u', '620', '-g', 'lightdm', '-d', '/var/run/lightdm',
-                         '-s', '/usr/bin/nologin', 'lightdm'])
-            self.chroot(['passwd', '-l', 'lightdm'])
-            self.chroot(['chown', '-R', 'lightdm:lightdm', '/run/lightdm'])
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
                 os.system("sed -i -e 's/^.*user-session=.*/user-session=%s/' %s/etc/lightdm/lightdm.conf" % (default_desktop_environment.desktop_file, self.dest_dir))
@@ -1603,14 +1594,6 @@ class InstallationProcess(multiprocessing.Process):
 
         # Setup gdm
         if os.path.exists("%s/usr/bin/gdm" % self.dest_dir):
-            self.chroot(['getent', 'group', 'gdm'])
-            self.chroot(['groupadd', '-g', '120', 'gdm'])
-            self.chroot(['getent', 'passwd', 'gdm'])
-            self.chroot(['useradd', '-c', '"Gnome Display Manager"',
-                         '-u', '120', '-g', 'gdm', '-d', '/var/lib/gdm',
-                         '-s', '/usr/bin/nologin', 'gdm'])
-            self.chroot(['passwd', '-l', 'gdm'])
-            self.chroot(['chown', '-R', 'gdm:gdm', '/var/lib/gdm'])
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
                 os.system("echo \"XSession=%s\" >> %s/var/lib/AccountsService/users/gdm" % (default_desktop_environment.desktop_file, self.dest_dir))
@@ -1619,15 +1602,6 @@ class InstallationProcess(multiprocessing.Process):
 
         # Setup mdm
         if os.path.exists("%s/usr/bin/mdm" % self.dest_dir):
-            self.chroot(['getent', 'group', 'mdm'])
-            self.chroot(['groupadd', '-g', '128', 'mdm'])
-            self.chroot(['getent', 'passwd', 'mdm'])
-            self.chroot(['useradd', '-c', '"Linux Mint Display Manager"',
-                         '-u', '128', '-g', 'mdm', '-d', '/var/lib/mdm',
-                         '-s', '/usr/bin/nologin', 'mdm'])
-            self.chroot(['passwd', '-l', 'mdm'])
-            self.chroot(['chown', 'root:mdm', '/var/lib/mdm'])
-            self.chroot(['chmod', '1770', '/var/lib/mdm'])
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
                 os.system("sed -i 's|default.desktop|%s.desktop|g' %s/etc/mdm/custom.conf" % (default_desktop_environment.desktop_file, self.dest_dir))
@@ -1635,25 +1609,13 @@ class InstallationProcess(multiprocessing.Process):
 
         # Setup lxdm
         if os.path.exists("%s/usr/bin/lxdm" % self.dest_dir):
-            self.chroot(['groupadd', '--system', 'lxdm'])
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
                 os.system("sed -i -e 's|^.*session=.*|session=%s|' %s/etc/lxdm/lxdm.conf" % (default_desktop_environment.executable, self.dest_dir))
-            os.system("chgrp -R lxdm %s/var/lib/lxdm" % self.dest_dir)
-            os.system("chgrp lxdm %s/etc/lxdm/lxdm.conf" % self.dest_dir)
-            os.system("chmod +r %s/etc/lxdm/lxdm.conf" % self.dest_dir)
             self.desktop_manager = 'lxdm'
 
         # Setup kdm
         if os.path.exists("%s/usr/bin/kdm" % self.dest_dir):
-            self.chroot(['getent', 'group', 'kdm'])
-            self.chroot(['groupadd', '-g', '135', 'kdm'])
-            self.chroot(['getent', 'passwd', 'kdm'])
-            self.chroot(['useradd', '-u', '135', '-g', 'kdm', '-d',
-                         '/var/lib/kdm', '-s', '/bin/false', '-r', '-M', 'kdm'])
-            self.chroot(['chown', '-R', '135:135', 'var/lib/kdm'])
-            self.chroot(['xdg-icon-resource', 'forceupdate', '--theme', 'hicolor'])
-            self.chroot(['update-desktop-database', '-q'])
             self.desktop_manager = 'kdm'
 
         self.queue_event('info', _("Configure System ..."))
@@ -1670,18 +1632,6 @@ class InstallationProcess(multiprocessing.Process):
         # Adjust Steam-Native when libudev.so.0 is available
         if os.path.exists("%s/usr/lib/libudev.so.0" % self.dest_dir) or os.path.exists("%s/usr/lib32/libudev.so.0" % self.dest_dir):
             os.system("echo -e \"STEAM_RUNTIME=0\nSTEAM_FRAME_FORCE_CLOSE=1\" >> %s/etc/environment" % self.dest_dir)
-
-        # Fix_gnome_apps
-        self.chroot(['glib-compile-schemas', '/usr/share/glib-2.0/schemas'])
-        self.chroot(['gtk-update-icon-cache', '-q', '-t', '-f', '/usr/share/icons/hicolor'])
-        self.chroot(['dconf', 'update'])
-
-        if os.path.exists("%s/usr/bin/gnome-keyring-daemon" % self.dest_dir):
-            self.chroot(['setcap', 'cap_ipc_lock=ep', '/usr/bin/gnome-keyring-daemon'])
-
-        # Fix_ping_installation
-        self.chroot(['setcap', 'cap_net_raw=ep', '/usr/bin/ping'])
-        self.chroot(['setcap', 'cap_net_raw=ep', '/usr/bin/ping6'])
 
         # Remove thus
         if os.path.exists("%s/usr/bin/thus" % self.dest_dir):
@@ -1715,20 +1665,21 @@ class InstallationProcess(multiprocessing.Process):
         self.chroot(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
-        consolefh = open("%s/etc/keyboard.conf" % self.dest_dir, "r")
-        newconsolefh = open("%s/etc/keyboard.new" % self.dest_dir, "w")
-        for line in consolefh:
-            line = line.rstrip("\r\n")
-            if(line.startswith("XKBLAYOUT=")):
-                newconsolefh.write("XKBLAYOUT=\"%s\"\n" % keyboard_layout)
-            elif(line.startswith("XKBVARIANT=") and keyboard_variant != ''):
-                newconsolefh.write("XKBVARIANT=\"%s\"\n" % keyboard_variant)
-            else:
-                newconsolefh.write("%s\n" % line)
-        consolefh.close()
-        newconsolefh.close()
-        self.chroot(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
-        self.chroot(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
+        if os.path.exists("%s/etc/keyboard.conf" % self.dest_dir):
+            consolefh = open("%s/etc/keyboard.conf" % self.dest_dir, "r")
+            newconsolefh = open("%s/etc/keyboard.new" % self.dest_dir, "w")
+            for line in consolefh:
+                 line = line.rstrip("\r\n")
+                 if(line.startswith("XKBLAYOUT=")):
+                     newconsolefh.write("XKBLAYOUT=\"%s\"\n" % keyboard_layout)
+                 elif(line.startswith("XKBVARIANT=") and keyboard_variant != ''):
+                     newconsolefh.write("XKBVARIANT=\"%s\"\n" % keyboard_variant)
+                 else:
+                     newconsolefh.write("%s\n" % line)
+            consolefh.close()
+            newconsolefh.close()
+            self.chroot(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
+            self.chroot(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
 
         # Exit chroot system
         self.chroot_umount_special_dirs()
@@ -1741,12 +1692,6 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event("pulse")
         self.run_mkinitcpio()
         self.queue_event('info', _("Running mkinitcpio - done"))
-
-        '''# Call post-install script to execute gsettings commands
-        script_path_postinstall = os.path.join(self.settings.get("thus"), \
-            "scripts", _postinstall_script)
-        subprocess.check_call(["/usr/bin/bash", script_path_postinstall, \
-            username, self.dest_dir, self.desktop, keyboard_layout, keyboard_variant])'''
 
         # Set autologin if selected
         # Warning: In openbox "desktop", the post-install script writes /etc/slim.conf

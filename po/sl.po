@@ -1,6 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Translation of Thus.
+# Copyright (C) 2007-2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Pamac package.
+# Philip Müller <philm@manjaro.org>, 2013-2015.
 # 
 # Translators:
 # b0f00nmanjaro <boris.fonda@gmail.com>, 2014
@@ -14,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-01 10:07+0200\n"
-"PO-Revision-Date: 2014-08-11 18:08+0000\n"
-"Last-Translator: ansich <mojmejlzaforume@gmail.com>\n"
+"POT-Creation-Date: 2015-01-04 10:30+0100\n"
+"PO-Revision-Date: 2015-01-04 09:31+0000\n"
+"Last-Translator: philm <philm@manjaro.org>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/manjaro-thus/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,8 +75,8 @@ msgid "Show options in development (DO NOT USE THIS!)"
 msgstr "Pokaži možnosti v razvoju (NE IZBIRAJTE TEGA!)"
 
 #: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
-#: src/installation/process.py:445 src/installation/process.py:462
-#: src/installation/process.py:477
+#: src/installation/process.py:463 src/installation/process.py:480
+#: src/installation/process.py:495
 #, python-format
 msgid "Unmounting %s"
 msgstr "Odklapljanje %s"
@@ -685,377 +686,382 @@ msgstr "Ali ste prepričani, da hočete nadaljevati in izbrisati vse podatke na 
 msgid "Thus will use %s as installation device"
 msgstr "Thus bo uporabil %s kot namestitveno napravo"
 
-#: src/installation/process.py:89
+#: src/installation/process.py:107
 #, python-format
 msgid "Copying '/%s'"
 msgstr "Kompiram '/%s'"
 
-#: src/installation/process.py:170
+#: src/installation/process.py:188
 #, python-format
 msgid "Installing using the '%s' method"
 msgstr "Nameščam z uporabo '%s' metode"
 
-#: src/installation/process.py:247
+#: src/installation/process.py:265
 #, python-format
 msgid "Creating partitions and their filesystems in %s"
 msgstr "Ustvarjanje razdelkov in njihovih datotečnih sistemov v %s"
 
-#: src/installation/process.py:268
+#: src/installation/process.py:286
 msgid "Error creating partitions and their filesystems"
 msgstr "Napaka pri ustvarjanju razdelkov in njihovih datotečnih sistemov"
 
-#: src/installation/process.py:270 src/installation/process.py:343
-#: src/installation/process.py:355 src/installation/process.py:653
+#: src/installation/process.py:288 src/installation/process.py:361
+#: src/installation/process.py:373 src/installation/process.py:671
 #, python-format
 msgid "Command %s has failed."
 msgstr "Ukaz %s je bil neuspešen."
 
-#: src/installation/process.py:272 src/installation/process.py:319
-#: src/installation/process.py:345 src/installation/process.py:357
-#: src/installation/process.py:380 src/installation/process.py:655
+#: src/installation/process.py:290 src/installation/process.py:337
+#: src/installation/process.py:363 src/installation/process.py:375
+#: src/installation/process.py:398 src/installation/process.py:673
 #, python-format
 msgid "Output : %s"
 msgstr "Izpis: %s"
 
-#: src/installation/process.py:305 src/installation/process.py:336
+#: src/installation/process.py:323 src/installation/process.py:354
 #, python-format
 msgid "Mounting partition %s into %s directory"
 msgstr "Priklapljam razdelek %s na %s mapo"
 
-#: src/installation/process.py:311
+#: src/installation/process.py:329
 #, python-format
 msgid "Mounting partition %s into %s/boot directory"
 msgstr "Priklapljam razdelek %s na %s/boot mapo"
 
-#: src/installation/process.py:315
+#: src/installation/process.py:333
 msgid "Couldn't mount root and boot partitions"
 msgstr "Nisem mogel priklopiti root in boot razdelkov"
 
-#: src/installation/process.py:317 src/installation/process.py:378
+#: src/installation/process.py:335 src/installation/process.py:396
 #, python-format
 msgid "Command %s has failed"
 msgstr "Ukaz %s je bil neuspešen"
 
-#: src/installation/process.py:341
+#: src/installation/process.py:359
 #, python-format
 msgid "Can't mount %s in %s"
 msgstr "Ne morem priklopiti %s in %s"
 
-#: src/installation/process.py:349
+#: src/installation/process.py:367
 #, python-format
 msgid "Mounting swap %s"
 msgstr "Priklapljanje swap %s"
 
-#: src/installation/process.py:353
+#: src/installation/process.py:371
 #, python-format
 msgid "Can't mount %s"
 msgstr "Ni mogoče priklopiti %s"
 
-#: src/installation/process.py:368
+#: src/installation/process.py:386
 #, python-format
 msgid "%s deleted"
 msgstr "%s izbrisano"
 
-#: src/installation/process.py:376
+#: src/installation/process.py:394
 msgid "Can't create necessary directories on destination system"
 msgstr "Ne morem ustvariti potrebnih map na sistemu"
 
-#: src/installation/process.py:388
+#: src/installation/process.py:406
 msgid "Install System ..."
 msgstr "Namestitev sistema ..."
 
-#: src/installation/process.py:393
+#: src/installation/process.py:411
 msgid "System installed."
 msgstr "Sistem nameščen."
 
-#: src/installation/process.py:395
+#: src/installation/process.py:413
 msgid "Configuring system ..."
 msgstr "Nastavljanje sistema ..."
 
-#: src/installation/process.py:397
+#: src/installation/process.py:415
 msgid "System configured."
 msgstr "Sistem nastavljen."
 
-#: src/installation/process.py:401
+#: src/installation/process.py:419
 msgid "Installing boot loader ..."
 msgstr "Nameščanje zagonskega nalagalnika ..."
 
-#: src/installation/process.py:434
+#: src/installation/process.py:452
 #, python-format
 msgid "Can't copy Thus log to %s"
 msgstr "Dnevnika Thus ni možno kopirati v %s"
 
-#: src/installation/process.py:453 src/installation/process.py:472
-#: src/installation/process.py:486
+#: src/installation/process.py:471 src/installation/process.py:490
+#: src/installation/process.py:504
 #, python-format
 msgid "Can't unmount %s"
 msgstr "%s ni bilo mogoče odklopiti"
 
-#: src/installation/process.py:488
+#: src/installation/process.py:506
 msgid "Installation finished successfully."
 msgstr "Namestitev uspešno zaključena."
 
-#: src/installation/process.py:524
+#: src/installation/process.py:542
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Osnovni datotečni sistem ne obstaja! Kritična napaka (prekinitev)."
 
-#: src/installation/process.py:528
+#: src/installation/process.py:546
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Namzni datotečni sistem ne obstaja! Kritična napaka (prekinitev)."
 
-#: src/installation/process.py:538 src/installation/process.py:544
+#: src/installation/process.py:556 src/installation/process.py:562
 #, python-format
 msgid "%s is already mounted at %s as %s"
 msgstr "%s je že priklopljen na %s kot %s"
 
-#: src/installation/process.py:555
+#: src/installation/process.py:573
 msgid "Indexing files to be copied ..."
 msgstr "Indeksiranje datotek, namenjenih za kopiranje ..."
 
-#: src/installation/process.py:560
+#: src/installation/process.py:578
 msgid "Extracting root-image ..."
 msgstr "Razširjanje korenske slike ..."
 
-#: src/installation/process.py:570
+#: src/installation/process.py:588
 msgid "Extracting desktop-image ..."
 msgstr "Razpirjanje namizne slike ..."
 
-#: src/installation/process.py:585
+#: src/installation/process.py:603
 #, python-format
 msgid "Restoring meta-information on %s"
 msgstr "Obnavljam meta-podatke na %s"
 
-#: src/installation/process.py:601
+#: src/installation/process.py:619
 msgid "Special dirs already mounted."
 msgstr "Posebne mape že priklopljene."
 
-#: src/installation/process.py:635
+#: src/installation/process.py:653
 msgid "Special dirs are not mounted. Skipping."
 msgstr "Posebne mape niso priklopljene. Izpuščamo."
 
-#: src/installation/process.py:652 src/installation/process.py:658
+#: src/installation/process.py:670 src/installation/process.py:676
 #, python-format
 msgid "Unable to umount %s"
 msgstr "%s ni bilo mogoče odlopiti"
 
-#: src/installation/process.py:680
+#: src/installation/process.py:698
 #, python-format
 msgid "Error running command: %s"
 msgstr "Napaka v zagonu ukaza: %s"
 
-#: src/installation/process.py:683
+#: src/installation/process.py:701
 #, python-format
 msgid "Timeout running command: %s"
 msgstr "Časovna omejitev pretekla ob izvajanju ukaza: %s"
 
-#: src/installation/process.py:716
+#: src/installation/process.py:734
 msgid "Can't copy network configuration files"
 msgstr "Mrežnih nastavitvenih datotek ni bilo možno kopirati"
 
-#: src/installation/process.py:746 src/installation/process.py:807
+#: src/installation/process.py:764 src/installation/process.py:825
 #, python-format
 msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
 msgstr "Dodano v fstab : UUID=%s %s %s %s 0 %s"
 
-#: src/installation/process.py:760
+#: src/installation/process.py:778
 #, python-format
 msgid "Added to crypttab : %s"
 msgstr "Dodano v crypttab: %s"
 
-#: src/installation/process.py:764
+#: src/installation/process.py:782
 #, python-format
 msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 msgstr "Dodano v fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
 
-#: src/installation/process.py:811
+#: src/installation/process.py:829
 msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 msgstr "Dodano v fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
 
-#: src/installation/process.py:915
+#: src/installation/process.py:933
 msgid "ERROR on preparing 'etc/grub.d'-folder."
 msgstr "NAPAKA pri pripravi mape 'etc/grub.d'"
 
-#: src/installation/process.py:923
+#: src/installation/process.py:941
 #, python-format
 msgid "Installing GRUB(2) BIOS boot loader in %s"
 msgstr "Nameščanje GRUB(2) BIOS zagonski nalagalnik na %s"
 
-#: src/installation/process.py:943 src/installation/process.py:1031
+#: src/installation/process.py:961 src/installation/process.py:1049
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr ""
+msgstr "Kot kaže, je program grub-mkcofnig zastal. Procesa grub-mount in os-prober bosta uničena, da bo možno nadaljevati."
 
-#: src/installation/process.py:951
+#: src/installation/process.py:969
 msgid "GRUB(2) BIOS has been successfully installed."
 msgstr "GRUB(2) BIOS je bil uspešno nameščen."
 
-#: src/installation/process.py:954
+#: src/installation/process.py:972
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ERROR pri nameščanju GRUB(2) BIOS."
 
-#: src/installation/process.py:971
+#: src/installation/process.py:989
 #, python-format
 msgid "Installing GRUB(2) UEFI %s boot loader"
 msgstr "Nameščanje GRUB2 (UEFI) %s zagonskega nalagalnika"
 
-#: src/installation/process.py:984
+#: src/installation/process.py:1002
 msgid "Installing Grub2 locales."
 msgstr "Nameščanje lokalizacije za Grub2."
 
-#: src/installation/process.py:997
+#: src/installation/process.py:1015
 #, python-format
 msgid "No OEM loader found in %s. Copying Grub(2) into dir."
 msgstr "V %s ni bil najden OEM nalagalnik. Kopiramo Grub(2) v mapo."
 
-#: src/installation/process.py:1002
+#: src/installation/process.py:1020
 msgid "Copying Grub(2) into OEM dir failed. File Not Found."
 msgstr "Kopiranje Grub(2) v OEM mapo je spodletelo. Datoteka ni bila najdena."
 
-#: src/installation/process.py:1004
+#: src/installation/process.py:1022
 msgid "Copying Grub(2) into OEM dir failed. File Exists."
 msgstr "Kopiranje Grub(2) v OEM mapo je spodletelo. Datoteka obstaja."
 
-#: src/installation/process.py:1006
+#: src/installation/process.py:1024
 msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
 msgstr "Kopiranje Grub(2) v OEM mapo je spodletelo. Neznana napaka."
 
-#: src/installation/process.py:1024
+#: src/installation/process.py:1042
 msgid "Generating grub.cfg"
 msgstr "Ustvarjanje grub.cfg"
 
-#: src/installation/process.py:1039
+#: src/installation/process.py:1057
 msgid "GRUB(2) UEFI has been successfully installed."
-msgstr ""
+msgstr "GRUB(2) UEFI je bil uspešno nameščen."
 
-#: src/installation/process.py:1042
+#: src/installation/process.py:1060
 msgid "ERROR installing GRUB(2) UEFI."
 msgstr "NAPAKA v nameščanju GRUB(2) UEFI."
 
-#: src/installation/process.py:1057
+#: src/installation/process.py:1075
 msgid "ERROR installing GRUB(2) locale."
 msgstr "NAPAKA v namestitvi lokalizacije GRUB(2)"
 
-#: src/installation/process.py:1091
+#: src/installation/process.py:1109
 msgid "Can't freeze/unfreeze xfs system"
-msgstr ""
+msgstr "Ni mogoče zamrzniti/odmrzniti sistema xfs"
 
-#: src/installation/process.py:1097
+#: src/installation/process.py:1115
 #, python-format
 msgid "Enabled %s service."
 msgstr "Storitev %s omogočena."
 
-#: src/installation/process.py:1104
+#: src/installation/process.py:1121
+#, python-format
+msgid "Enabled %s target."
+msgstr ""
+
+#: src/installation/process.py:1128
 #, python-format
 msgid "Error creating password hash for user %s"
 msgstr "Napaka pri ustvarjanju razpršila za geslo uporabnika %s"
 
-#: src/installation/process.py:1110
+#: src/installation/process.py:1134
 #, python-format
 msgid "Error changing password for user %s"
 msgstr "Napaka pri spreminjanju gesla za uporabnika %s"
 
-#: src/installation/process.py:1122
+#: src/installation/process.py:1146
 msgid "Setting hooks and modules in mkinitcpio.conf"
 msgstr "Natavljam hooks in module v mkinitcpio.conf"
 
-#: src/installation/process.py:1213
+#: src/installation/process.py:1244
 #, python-format
 msgid "%s: Enable automatic login for user %s."
 msgstr "%s: Omogoči avtomatično prijavo za uporabnika %s "
 
-#: src/installation/process.py:1319 src/installation/process.py:1330
+#: src/installation/process.py:1362 src/installation/process.py:1373
 msgid "Configuring your new system"
 msgstr "Nastavljam tvoj novi sistem."
 
-#: src/installation/process.py:1322
+#: src/installation/process.py:1365
 msgid "fstab file generated."
 msgstr "Ustvarjena datoteka fstab."
 
-#: src/installation/process.py:1328
+#: src/installation/process.py:1371
 msgid "Network configuration copied."
 msgstr "Namestitve omrežja so bile kopirane."
 
-#: src/installation/process.py:1354
+#: src/installation/process.py:1400
 msgid "Time zone set."
 msgstr "Časovni pas nastavljen."
 
-#: src/installation/process.py:1375
+#: src/installation/process.py:1421
 #, python-format
 msgid "Sudo configuration for user %s done."
 msgstr "Sudo nastavitev za uporabnika %s opravljena."
 
-#: src/installation/process.py:1385
+#: src/installation/process.py:1431
 #, python-format
 msgid "User %s added."
 msgstr "Dodan uporabnik %s."
 
-#: src/installation/process.py:1397
+#: src/installation/process.py:1443
 #, python-format
 msgid "Hostname  %s set."
 msgstr "%s nastavljeno kot ime gostitelja."
 
-#: src/installation/process.py:1402
+#: src/installation/process.py:1448
 msgid "Set root password."
 msgstr "Nastavite skrbniško geslo."
 
-#: src/installation/process.py:1405
+#: src/installation/process.py:1451
 msgid "Set the same password to root."
 msgstr "Uporabi isto geslo za korenskega uporabnika."
 
-#: src/installation/process.py:1411
+#: src/installation/process.py:1457
 msgid "Generating locales ..."
 msgstr "Lokaliziranje ..."
 
-#: src/installation/process.py:1429
+#: src/installation/process.py:1475
 msgid "Adjusting hardware clock ..."
 msgstr "Nastavljanje strojne ure ..."
 
-#: src/installation/process.py:1438
+#: src/installation/process.py:1484
 msgid "Configuring hardware ..."
 msgstr "Nastavljanje strojne opreme ..."
 
-#: src/installation/process.py:1511
+#: src/installation/process.py:1557
 msgid "Installing drivers ..."
-msgstr ""
+msgstr "Nameščanje gonilnikov ..."
 
-#: src/installation/process.py:1518
+#: src/installation/process.py:1564
 msgid "Can't execute the MHWD script"
 msgstr "Ne morem izvršiti MHWD skripte"
 
-#: src/installation/process.py:1531
+#: src/installation/process.py:1577
 msgid "Configure display manager ..."
 msgstr "Nastavljanje upravljalnika zaslona ..."
 
-#: src/installation/process.py:1641
+#: src/installation/process.py:1659
 msgid "Configure System ..."
 msgstr "Nastavljanje sistema ..."
 
-#: src/installation/process.py:1666
+#: src/installation/process.py:1688
 msgid "Removing live configuration (packages)"
 msgstr "Odstranjujem live nastavitve (paketi)"
 
-#: src/installation/process.py:1682
+#: src/installation/process.py:1704
 msgid "Configuring package manager"
 msgstr "Nastavljam upravljalnika paketov"
 
-#: src/installation/process.py:1694
+#: src/installation/process.py:1716
 msgid "Finished configuring package manager."
 msgstr "Končal z nastavljanjem upravljalnika paketov"
 
-#: src/installation/process.py:1718
+#: src/installation/process.py:1740
 msgid "Running mkinitcpio ..."
 msgstr "Poganjanje mkinitcpio ..."
 
-#: src/installation/process.py:1721
+#: src/installation/process.py:1743
 msgid "Running mkinitcpio - done"
 msgstr "Poganjanje mkinitcpio - zaključeno"
 
-#: src/installation/process.py:1737
+#: src/installation/process.py:1759
 msgid "Encrypting user home dir ..."
 msgstr "Šifriranje osebne mape uporabnika ..."
 
-#: src/installation/process.py:1739
+#: src/installation/process.py:1761
 msgid "User home dir encrypted"
 msgstr "Uporabnikova osebna mapa je šifrirana"
 
@@ -1153,7 +1159,7 @@ msgstr "Ni možno odstraniti fizičnega nosilca %s"
 #: src/parted3/partition_module.py:106
 #, python-format
 msgid "Adding %s to disk_dic"
-msgstr ""
+msgstr "Dodajanje %s v disk_dic"
 
 #: src/parted3/partition_module.py:108
 #, python-format
@@ -1238,7 +1244,7 @@ msgstr "Namestilnik Manjara - Informacija"
 
 #: src/show_message.py:88
 msgid "Manjaro Installer - Confirmation"
-msgstr ""
+msgstr "Namestilnik Manjaro - Potrditev"
 
 #: src/slides.py:94 src/slides.py:109
 msgid ""
