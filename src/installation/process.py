@@ -1683,14 +1683,14 @@ class InstallationProcess(multiprocessing.Process):
         else:
             keyboardconf = open("%s/etc/X11/xorg.conf.d/00-keyboard.conf" % self.dest_dir, "w")
             keyboardconf.write("\n");
-            keyboardconf.write("Section \"InputClass\"")
-            keyboardconf.write(" Identifier \"system-keyboard\"") 
-            keyboardconf.write(" MatchIsKeyboard \"on\"")
-            keyboardconf.write(" Option \"XkbLayout\" \"%s\"" % keyboard_layout)
-            keyboardconf.write(" Option \"XkbModel\" \"%s\"" % "pc105")
-            keyboardconf.write(" Option \"XkbVariant\" \"%s\"" % keyboard_variant)
-            keyboardconf.write(" Option \"XkbOptions\" \"%s\"" % "terminate:ctrl_alt_bksp")        
-            keyboardconf.write("EndSection")
+            keyboardconf.write("Section \"InputClass\"\n")
+            keyboardconf.write(" Identifier \"system-keyboard\"\n") 
+            keyboardconf.write(" MatchIsKeyboard \"on\"\n")
+            keyboardconf.write(" Option \"XkbLayout\" \"%s\"\n" % keyboard_layout)
+            keyboardconf.write(" Option \"XkbModel\" \"%s\"\n" % "pc105")
+            keyboardconf.write(" Option \"XkbVariant\" \"%s\"\n" % keyboard_variant)
+            keyboardconf.write(" Option \"XkbOptions\" \"%s\"\n" % "terminate:ctrl_alt_bksp")        
+            keyboardconf.write("EndSection\n")
             keyboardconf.close()
             
         # Exit chroot system
