@@ -24,7 +24,6 @@ Graphical Installer for Manjaro Linux
  * rsync
  * sudo
  * systemd
- * keyboardctl
  * ttf-aboriginal-sans
  * ttf-indic-otf
  * ttf-khmer
@@ -36,5 +35,5 @@ Graphical Installer for Manjaro Linux
  * util-linux
  * webkitgtk 3
 
-
+ * keyboardctl (optional, deprectrated)
 

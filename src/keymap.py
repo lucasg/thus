@@ -285,9 +285,9 @@ class Keymap(Gtk.Box):
 
     def setkb(self):
         subprocess.check_call(['setxkbmap', '-layout', self.keyboard_layout, "-variant", self.keyboard_variant])
-
-        with misc.raised_privileges():
-            subprocess.check_call(['kbctl', '--set-layout', self.keyboard_layout])
+        if os.path.exists("/usr/bin/keyboardctl"):
+            with misc.raised_privileges():
+                subprocess.check_call(['kbctl', '--set-layout', self.keyboard_layout])
 
     def set_keyboard_widget(self):
         ''' Pass current keyboard layout to the keyboard widget. '''

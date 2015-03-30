@@ -1680,7 +1680,19 @@ class InstallationProcess(multiprocessing.Process):
             newconsolefh.close()
             self.chroot(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
             self.chroot(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
-
+        else:
+            keyboardconf = open("%s/etc/X11/xorg.conf.d/00-keyboard.conf" % self.dest_dir, "w")
+            keyboardconf.write("\n");
+            keyboardconf.write("Section \"InputClass\"")
+            keyboardconf.write(" Identifier \"system-keyboard\"") 
+            keyboardconf.write(" MatchIsKeyboard \"on\"")
+            keyboardconf.write(" Option \"XkbLayout\" \"%s\"" % keyboard_layout)
+            keyboardconf.write(" Option \"XkbModel\" \"%s\"" % "pc105")
+            keyboardconf.write(" Option \"XkbVariant\" \"%s\"" % keyboard_variant)
+            keyboardconf.write(" Option \"XkbOptions\" \"%s\"" % "terminate:ctrl_alt_bksp")        
+            keyboardconf.write("EndSection")
+            keyboardconf.close()
+            
         # Exit chroot system
         self.chroot_umount_special_dirs()
 
