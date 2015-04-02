@@ -4,14 +4,14 @@
 # Philip Müller <philm@manjaro.org>, 2013-2015.
 # 
 # Translators:
-# Andy <android.acc.042014@gmail.com>, 2015
+# Andy, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-04 10:30+0100\n"
-"PO-Revision-Date: 2015-01-30 15:31+0000\n"
-"Last-Translator: Andy <android.acc.042014@gmail.com>\n"
+"PO-Revision-Date: 2015-02-06 16:43+0000\n"
+"Last-Translator: Andy\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/manjaro-thus/language/th_TH/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr "มีพื้นที่ว่างหน่วยบันทึก
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "ตัวเลือกนี้มีความเกี่ยวข้องกับสภาพแวดล้อมเดสก์ท็อปที่คุณเลือกเป็นอย่างมาก ดังนั้นคุณอาจจะต้องการพื้นที่ที่มากว่านี้"
+msgstr "ตัวเลือกนี้มีความเกี่ยวข้องกับสภาพแวดล้อมเดสก์ท็อปที่คุณเลือกเป็นอย่างมาก ดังนั้นคุณอาจจะต้องการพื้นที่ที่มากกว่านี้"
 
 #: src/check.py:94
 msgid "is plugged in to a power source"
@@ -468,7 +468,7 @@ msgstr "กำลังบันทึกการเปลี่ยนแปล
 #: src/installation/advanced.py:1748
 #, python-format
 msgid "Creating %s filesystem in %s labeled %s"
-msgstr "กำลังสร้างไฟล์ระบบ %s ใน %s ที่ถูกตั้งฉลากไว้เป็น %s"
+msgstr "กำลังสร้างระบบไฟล์ %s ใน %s ที่ถูกตั้งฉลากไว้เป็น %s"
 
 #: src/installation/advanced.py:1790
 #, python-format
@@ -535,7 +535,7 @@ msgstr "มีพาร์ทิชันหลักมากเกินไป
 #: src/installation/alongside.py:390
 #, python-format
 msgid "Can't shrink %s(%s) filesystem"
-msgstr "ไม่สามารถย่นย่อระบบไฟล์ %s(%s) ได้"
+msgstr "ไม่สามารถย่อขนาดระบบไฟล์ %s(%s) ได้"
 
 #: src/installation/alongside.py:399
 #, python-format
@@ -1410,13 +1410,13 @@ msgstr "อย่างไรก็ตาม การใช้งานที�
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr ""
+msgstr "วิธีการแก้ไขคือการนำไฟล์เบาบางไปไว้ในโฟลเดอร์สาธารณะที่ไม่ได้เข้ารหัสลับ\n\n"
 
 #: src/user_info.py:256
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr ""
+msgstr "ไปที่ https://wiki.archlinux.org/index.php/ECryptfs เพื่อรายละเอียดเพิ่มเติม\n\n"
 
 #: src/user_info.py:257
 msgid "Are you sure you want to encrypt your home directory?\n"
@@ -1424,7 +1424,7 @@ msgstr "คุณต้องการเข้ารหัส โฟลเด�
 
 #: src/user_info.py:345
 msgid "Invalid characters entered"
-msgstr ""
+msgstr "ตัวอักษรที่ไม่ถูกต้องถูกป้อนเข้ามา"
 
 #: src/user_info.py:349
 msgid "Username can't contain dots"
@@ -1436,39 +1436,39 @@ msgstr "มีตัวอักษรมากเกินไป"
 
 #: ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr ""
+msgstr "ประเภทระบบเริ่มทำงานของคุณคืออะไร?"
 
 #: ui/bootloader.ui:98
 msgid "BIOS (common)"
-msgstr ""
+msgstr "BIOS (โดยทั่วไป)"
 
 #: ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr ""
+msgstr "x86_64 UEFI หรือก็คือ UEFI แบบ 64-bit"
 
 #: ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr ""
+msgstr "i386 UEFI หรือก็คือ UEFI แบบ 32-bit"
 
 #: ui/bootloader.ui:169
 msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "เลือก ยกเลิก 'Cancel' ถ้าคุณไม่ต้องการติดตั้ง boot loader "
 
 #: ui/check.ui:29
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"large\">เพื่อผลลัพธที่ดีที่สุด กรุณายืนยันว่าคอมพิวเตอร์เครื่องนี้มี: </span>"
 
 #: ui/check.ui:108
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space."
-msgstr ""
+msgstr "(*) ตัวเลือกนี้มีความเกี่ยวข้องกับสภาพแวดล้อมเดสก์ท็อปที่คุณเลือกเป็นอย่างมาก ดังนั้นคุณอาจจะต้องการพื้นที่ที่มากกว่านี้"
 
 #: ui/installation_advanced.ui:84
 msgid "Partition table type:"
-msgstr ""
+msgstr "ประเภทตารางพาร์ทิชัน: "
 
 #: ui/installation_advanced.ui:155
 msgid "Edit partition"
@@ -1484,11 +1484,11 @@ msgstr "สร้างพาร์ติชั่น"
 
 #: ui/installation_advanced.ui:423
 msgid "Location:"
-msgstr ""
+msgstr "ตำแหน่ง:"
 
 #: ui/installation_advanced.ui:607
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ui/installation_advanced.ui:895
 msgid "New Partition Table"
@@ -1496,15 +1496,15 @@ msgstr "ตารางพาริติชั่นใหม่ "
 
 #: ui/installation_advanced.ui:948
 msgid "Mount Checklist:"
-msgstr ""
+msgstr "รายการเชื่อมต่อ: "
 
 #: ui/installation_advanced.ui:1103
 msgid "LVM..."
-msgstr ""
+msgstr "LVM..."
 
 #: ui/installation_advanced.ui:1256
 msgid "LUKS volume name:"
-msgstr ""
+msgstr "ชื่อ LUKS volume:"
 
 #: ui/installation_advanced.ui:1270
 msgid "Password:"
@@ -1516,13 +1516,13 @@ msgstr "ยืนยัน รหัสผ่าน:"
 
 #: ui/installation_advanced.ui:1313
 msgid "Use LUKS encryption: "
-msgstr ""
+msgstr "ใช้การเข้ารหัสลับ LUKS:"
 
 #: ui/installation_alongside.ui:16
 msgid ""
 "<span size=\"large\">Choose which OS you want to install Manjaro next "
 "to</span>"
-msgstr ""
+msgstr "<span size=\"large\">เลือก OS ที่คุณต้องการจะติดตั้ง Manjaro ไว้ในตำแหน่งถัดไป</span>"
 
 #: ui/installation_alongside.ui:90
 msgid "Choose the new size"
@@ -1534,12 +1534,12 @@ msgstr "ระบบปฏิบัติการอื่นๆ"
 
 #: ui/installation_alongside.ui:169
 msgid "Manjaro"
-msgstr ""
+msgstr "Manjaro"
 
 #: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
 #: ui/slides.ui:74
 msgid "label"
-msgstr ""
+msgstr "ฉลาก"
 
 #: ui/installation_ask.ui:58
 msgid ""
@@ -1555,23 +1555,23 @@ msgstr "เข้ารหัสำหรับการติดตั้ง Ma
 msgid ""
 "<span weight=\"light\" size=\"small\">You will be asked for the encryption "
 "key in the next step</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">คุณจะถูกถามถึงกุญแจเข้ารหัสลับในขั้นตอนถัดไป</span>"
 
 #: ui/installation_ask.ui:102
 msgid "Use LVM with the new Manjaro installation"
-msgstr ""
+msgstr "ใช้ LVM กับการติดตั้ง Manjaro"
 
 #: ui/installation_ask.ui:123
 msgid ""
 "<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
 "make snapshots and change partition sizes in a straightforward way</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">นี่จะทำการตั้งค่า LVM เพื่อให้คุณสามารถทำ snaphots และเปลี่ยนแปลงขนาดพาร์ทิชันในแบบตรงไปตรงมา</span>"
 
 #: ui/installation_ask.ui:155
 msgid ""
 "<span weight=\"light\" size=\"small\">This will setup your /home directory "
 "in a different partition or volume.</span>"
-msgstr ""
+msgstr "<span weight=\"light\" size=\"small\">นี่จะทำการตั้งค่าโฟลเดอร์ /home ของคุณในพาร์ทิชันหรือ volume อื่น</span>"
 
 #: ui/installation_ask.ui:166
 msgid "Install alongside other OSes"
@@ -1636,4 +1636,4 @@ msgstr "<small><span color=\"darkred\">คุณต้องกรอกชื�
 
 #: ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
-msgstr ""
+msgstr "<span size=\"small\">ชื่อที่ตั้งคือชื่อที่เครื่องอื่นเห็น</span>"
