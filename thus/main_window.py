@@ -122,6 +122,8 @@ class MainWindow(Gtk.ApplicationWindow):
         path = os.path.join(data_dir, "images", "manjaro", "manjaro-logo-mini.png")
         self.logo.set_from_file(path)
 
+        self.title = self.ui.get_object("title")
+
         # To honor our css
         self.header.set_name("header")
         self.logo.set_name("logo")
@@ -158,7 +160,7 @@ class MainWindow(Gtk.ApplicationWindow):
         if cmd_line.aria2:
             logging.info(_("Using Aria2 to download packages - EXPERIMENTAL"))
 
-        self.set_titlebar(self.header)
+        # self.set_titlebar(self.header)
 
         # Prepare params dict to pass common parameters to all screens
         self.params = dict()
@@ -184,13 +186,8 @@ class MainWindow(Gtk.ApplicationWindow):
         self.connect('key-release-event', self.check_escape)
 
         self.ui.connect_signals(self)
-        self.header_ui.connect_signals(self)
 
-        title = "Thus {0}".format(info.THUS_VERSION)
-        self.set_title(title)
-        self.header.set_title(title)
-        self.header.set_subtitle(_("Manjaro Installer"))
-        self.header.set_show_close_button(True)
+        self.set_title(_("Manjaro Installer - Thus {0}".format(info.THUS_VERSION))
 
         self.set_geometry()
 
