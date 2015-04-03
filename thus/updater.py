@@ -36,10 +36,9 @@ import misc.misc as misc
 import download.download_urllib as download
 import info
 
-_update_info_url = "https://raw.github.com/manjaro/thus/master/update.info"
-_master_zip_url = "https://github.com/manjaro/thus/archive/master.zip"
-_devel_update_info_url = "https://raw.github.com/manjaro/thus/devel/update.info"
-_devel_zip_url = "https://github.com/manjaro/thus/archive/devel.zip"
+_branch="devel"
+_update_info_url = "https://raw.github.com/manjaro/thus/{0}/update.info".format(_branch)
+_zip_url = "https://github.com/manjaro/thus/archive/{0}.zip".format(_branch)
 _update_info = "/usr/share/thus/update.info"
 
 _src_dir = os.path.dirname(__file__) or '.'
@@ -183,7 +182,7 @@ class Updater():
             for member in zip_file.infolist():
                 zip_file.extract(member, dst_dir)
                 full_path = os.path.join(dst_dir, member.filename)
-                dst_full_path = os.path.join("/usr/share/thus", full_path.split("/tmp/Thus-master/")[1])
+                dst_full_path = os.path.join("/usr/share/thus", full_path.split("/tmp/thus-{0}/".format(_branch))[1])
                 if os.path.isfile(dst_full_path) and dst_full_path in self.md5s:
                     if self.md5s[dst_full_path] == get_md5_from_file(full_path):
                         try:
