@@ -3,28 +3,26 @@
 #
 #  timezone.py
 #
-#  This file was forked from Cnchi (graphical installer from Antergos)
-#  Check it at https://github.com/antergos
+#  Copyright © 2013-2015 Antergos
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  This file is part of Cnchi.
 #
-#  This program is free software; you can redistribute it and/or modify
+#  Cnchi is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  This program is distributed in the hope that it will be useful,
+#  Cnchi is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
+#  along with Cnchi; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-from gi.repository import Gtk, Gdk, TimezoneMap
+from gi.repository import Gtk, Gdk
 
 import os
 import threading
@@ -33,39 +31,22 @@ import queue
 import urllib.request
 import urllib.error
 import time
-import queue
-import datetime
-import show_message as show
-import config
 import logging
-import canonical.tz as tz
-import dbus
-import subprocess
-from urllib.request import urlopen
-import canonical.misc as misc
+import hashlib
 
-_geoname_url = 'http://geoname-lookup.ubuntu.com/?query=%s&release=%s'
-
-_next_page = "keymap"
-_prev_page = "check"
+import misc.tz as tz
+import misc.misc as misc
+import misc.timezonemap as timezonemap
+from mirrorlist import GenerateMirrorListThread
+from gtkbasebox import GtkBaseBox
 
 NM = 'org.freedesktop.NetworkManager'
 NM_STATE_CONNECTED_GLOBAL = 70
 
-class Timezone(Gtk.Box):
 
-    def __init__(self, params):
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.settings = params['settings']
-
-        super().__init__()
-
-        self.ui = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        self.ui.add_from_file(os.path.join(self.ui_dir, "timezone.ui"))
-        self.ui.connect_signals(self)
+class Timezone(GtkBaseBox):
+    def __init__(self, params, prev_page="location", next_page="keymap"):
+        super().__init__(self, params, "timezone", prev_page, next_page)
 
         self.map_window = self.ui.get_object('timezone_map_window')
 
@@ -78,40 +59,33 @@ class Timezone(Gtk.Box):
         self.tzdb = tz.Database()
         self.timezone = None
 
-        # this is for populate_cities
+        # This is for populate_cities
         self.old_zone = None
 
-        # setup window
-        self.tzmap = TimezoneMap.TimezoneMap()
+        # Autotimezone thread will store detected coords in this queue
+        self.auto_timezone_coords = multiprocessing.Queue()
+
+        # Thread to try to determine timezone.
+        self.autodetected_coords = None
+        self.auto_timezone_thread = None
+        self.start_auto_timezone_thread()
+
+        # Thread to generate a pacman mirrorlist based on country code
+        # Why do this? There're foreign mirrors faster than the Spanish ones... - Karasu
+        self.mirrorlist_thread = None
+        # self.start_mirrorlist_thread()
+
+        # Setup window
+        self.tzmap = timezonemap.TimezoneMap()
         self.tzmap.connect('location-changed', self.on_location_changed)
 
         # Strip .UTF-8 from locale, icu doesn't parse it
         self.locale = os.environ['LANG'].rsplit('.', 1)[0]
-
         self.map_window.add(self.tzmap)
         self.tzmap.show()
 
-        # autotimezone thread will store detected coords in this queue
-        self.auto_timezone_coords = multiprocessing.Queue()
-
-        # thread to try to determine timezone.
-        self.auto_timezone_thread = None
-        self.start_auto_timezone_thread()
-
-        # thread to generate a pacman mirrorlist based on country code
-        # Why do this? There're foreign mirrors faster than the Spanish ones... - Karasu
-        self.mirrorlist_thread = None
-        #self.start_mirrorlist_thread()
-
-        super().add(self.ui.get_object('location'))
-
-        self.autodetected_coords = None
-
     def translate_ui(self):
-        txt = _("Where are you?")
-        txt = "<span weight='bold' size='large'>%s</span>" % txt
-        self.title.set_markup(txt)
-
+        """ Translates all ui elements """
         label = self.ui.get_object('label_zone')
         txt = _("Zone:")
         label.set_markup(txt)
@@ -121,18 +95,19 @@ class Timezone(Gtk.Box):
         label.set_markup(txt)
 
         label = self.ui.get_object('label_ntp')
-        txt = _("Use Network Time Protocol for clock synchronization:")
+        txt = _("Use Network Time Protocol (NTP) for clock synchronization")
         label.set_markup(txt)
 
-    def on_location_changed(self, unused_widget, city):
-        #("timezone.location_changed started!")
-        self.timezone = city.get_property('zone')
-        loc = self.tzdb.get_loc(self.timezone)
-        if not loc:
+        self.header.set_subtitle(_("Select Your Timezone"))
+
+    def on_location_changed(self, tzmap, tz_location):
+        # loc = self.tzdb.get_loc(self.timezone)
+        if not tz_location:
             self.timezone = None
             self.forward_button.set_sensitive(False)
         else:
-            logging.info(_("location changed to : %s") % self.timezone)
+            self.timezone = tz_location.get_property('zone')
+            logging.info(_("location changed to : %s"), self.timezone)
             self.update_comboboxes(self.timezone)
             self.forward_button.set_sensitive(True)
 
@@ -142,7 +117,8 @@ class Timezone(Gtk.Box):
         self.populate_cities(zone)
         self.select_combobox_item(self.combobox_region, region)
 
-    def select_combobox_item(self, combobox, item):
+    @staticmethod
+    def select_combobox_item(combobox, item):
         tree_model = combobox.get_model()
         tree_iter = tree_model.get_iter_first()
 
@@ -156,8 +132,9 @@ class Timezone(Gtk.Box):
 
     def set_timezone(self, timezone):
         self.timezone = timezone
-        self.tzmap.set_timezone(timezone)
-        self.forward_button.set_sensitive(True)
+        res = self.tzmap.set_timezone(timezone)
+        # res will be False if the timezone is unrecognised
+        self.forward_button.set_sensitive(res)
 
     def on_zone_combobox_changed(self, widget):
         new_zone = self.combobox_zone.get_active_text()
@@ -168,19 +145,22 @@ class Timezone(Gtk.Box):
         new_zone = self.combobox_zone.get_active_text()
         new_region = self.combobox_region.get_active_text()
         if new_zone is not None and new_region is not None:
-            self.set_timezone("{0}/{1}".format(new_zone, new_region))
+            new_timezone = "{0}/{1}".format(new_zone, new_region)
+            # Only set timezone if it has changed :p
+            if self.timezone != new_timezone:
+                self.set_timezone(new_timezone)
 
     def populate_zones(self):
         zones = []
         for loc in self.tzdb.locations:
             zone = loc.zone.split('/', 1)[0]
-            if not zone in zones:
+            if zone not in zones:
                 zones.append(zone)
         zones.sort()
         tree_model = self.combobox_zone.get_model()
         tree_model.clear()
-        for z in zones:
-            tree_model.append([z, z])
+        for zone in zones:
+            tree_model.append([zone, zone])
 
     def populate_cities(self, selected_zone):
         if self.old_zone != selected_zone:
@@ -192,55 +172,51 @@ class Timezone(Gtk.Box):
             regions.sort()
             tree_model = self.combobox_region.get_model()
             tree_model.clear()
-            for r in regions:
-                tree_model.append([r, r])
+            for region in regions:
+                tree_model.append([region, region])
             self.old_zone = selected_zone
-
-    def refresh(self):
-        while Gtk.events_pending():
-            Gtk.main_iteration()
-
-    def set_cursor(self, cursor_type):
-        cursor = Gdk.Cursor(cursor_type)
-        window = super().get_root_window()
-
-        if window:
-            window.set_cursor(cursor)
-            self.refresh()
 
     def prepare(self, direction):
         self.translate_ui()
         self.populate_zones()
         self.timezone = None
         self.forward_button.set_sensitive(False)
-        tr = 0
+
         if self.autodetected_coords is None:
             try:
                 self.autodetected_coords = self.auto_timezone_coords.get(False, timeout=20)
-                # Put the coords again in the queue (in case GenerateMirrorList still needs them)
-                #self.autodetected_coords.put_nowait(self.autodetected_coords)
             except queue.Empty:
-                logging.warning(_("Can't autodetect timezone coordinates"))
-                # set to Berlin by error
-                self.set_timezone("Europe/Berlin")
+                msg = _("Can't autodetect timezone coordinates")
+                if __name__ == '__main__':
+                    # When testing this screen, give 5 more seconds and try again just in case.
+                    misc.set_cursor(Gdk.CursorType.WATCH)
+                    import time
+                    time.sleep(5)
+                    try:
+                        self.autodetected_coords = self.auto_timezone_coords.get(False, timeout=20)
+                    except queue.Empty:
+                        logging.warning(msg)
+                    finally:
+                        misc.set_cursor(Gdk.CursorType.ARROW)
+                else:
+                    logging.warning(msg)
 
-        if self.autodetected_coords is not None:
+        if self.autodetected_coords:
             coords = self.autodetected_coords
-            timezone = self.tzmap.get_timezone_at_coords(float(coords[0]), float(coords[1]))
+            latitude = float(coords[0])
+            longitude = float(coords[1])
+            timezone = self.tzmap.get_timezone_at_coords(latitude, longitude)
             self.set_timezone(timezone)
             self.forward_button.set_sensitive(True)
-
-        # restore forward button text (from install now! to next)
-        self.forward_button.set_label("gtk-go-forward")
 
         self.show_all()
 
     def start_auto_timezone_thread(self):
-        self.auto_timezone_thread = AutoTimezoneThread(self.auto_timezone_coords)
+        self.auto_timezone_thread = AutoTimezoneThread(self.auto_timezone_coords, self.settings)
         self.auto_timezone_thread.start()
 
     def start_mirrorlist_thread(self):
-        scripts_dir = os.path.join(self.settings.get("thus"), "scripts")
+        scripts_dir = os.path.join(self.settings.get('cnchi'), "scripts")
         self.mirrorlist_thread = GenerateMirrorListThread(self.auto_timezone_coords, scripts_dir)
         self.mirrorlist_thread.start()
 
@@ -268,19 +244,12 @@ class Timezone(Gtk.Box):
             else:
                 self.settings.set("timezone_longitude", "")
 
-        # this way installer_process will know all info has been entered
+        # This way process.py will know that all info has been entered
         self.settings.set("timezone_done", True)
-
         return True
 
-    def get_prev_page(self):
-        return _prev_page
-
-    def get_next_page(self):
-        return _next_page
-
     def stop_threads(self):
-        logging.debug(_("Stopping timezone threads..."))
+        logging.debug(_("Stoping timezone threads..."))
         if self.auto_timezone_thread is not None:
             self.auto_timezone_thread.stop()
         if self.mirrorlist_thread is not None:
@@ -291,132 +260,72 @@ class Timezone(Gtk.Box):
 
 
 class AutoTimezoneThread(threading.Thread):
-    def __init__(self, coords_queue):
+    def __init__(self, coords_queue, settings):
         super(AutoTimezoneThread, self).__init__()
         self.coords_queue = coords_queue
+        self.settings = settings
         self.stop_event = threading.Event()
 
     def stop(self):
         self.stop_event.set()
 
-    def get_prop(self, obj, iface, prop):
-        try:
-            return obj.Get(iface, prop, dbus_interface=dbus.PROPERTIES_IFACE)
-        except dbus.DBusException as e:
-            if e.get_dbus_name() == 'org.freedesktop.DBus.Error.UnknownMethod':
-                return None
-            else:
-                raise
-
-    def has_connection(self):
-        # Workaround since we have no geo-service yet.
-        return False
-        '''try:
-            bus = dbus.SystemBus()
-            manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
-            state = self.get_prop(manager, NM, 'state')
-        except dbus.exceptions.DBusException:
-            logging.warning(_("In timezone, can't get network status"))
-            return False
-        return state == NM_STATE_CONNECTED_GLOBAL'''
-
     def run(self):
-        # wait until there is an Internet connection available
-        while not self.has_connection():
-            time.sleep(2)  # Delay and try again
-            if self.stop_event.is_set():
+        # Calculate logo hash
+        logo = "data/images/antergos/antergos-logo-mini2.png"
+        logo_path = os.path.join(self.settings.get("cnchi"), logo)
+        with open(logo_path, "rb") as logo_file:
+            logo_bytes = logo_file.read()
+        logo_hasher = hashlib.sha1()
+        logo_hasher.update(logo_bytes)
+        logo_digest = logo_hasher.digest()
+
+        # Wait until there is an Internet connection available
+        while not misc.has_connection():
+            if self.stop_event.is_set() or self.settings.get('stop_all_threads'):
                 return
+            time.sleep(5)  # Delay and try again
+            logging.warning(_("Can't get network status."))
 
-        # ok, now get our timezone
+        # Do not start looking for our timezone until we've reached the language screen
+        # (welcome.py sets timezone_start to true when next is clicked)
+        while not self.settings.get('timezone_start'):
+            if self.stop_event.is_set() or self.settings.get('stop_all_threads'):
+                return
+            time.sleep(2)
 
+        # OK, now get our timezone
+
+        logging.debug(_("We have connection. Let's get our timezone"))
         try:
-            url = "http://geo.manjaro.org"
-            conn = urllib.request.urlopen(url)
-            coords = conn.read().decode('utf-8').strip()
-        except:
-            coords = 'error'
+            url = urllib.request.Request(
+                url="http://geo.antergos.com",
+                data=logo_digest,
+                headers={"User-Agent": "Antergos Installer", "Connection": "close"})
+            with urllib.request.urlopen(url) as conn:
+                coords = conn.read().decode('utf-8').strip()
 
-        if coords != 'error':
+            if coords == "0 0":
+                # Sometimes server returns 0 0, we treat it as an error
+                coords = None
+        except Exception as general_error:
+            logging.error(general_error)
+            coords = None
+
+        if coords:
             coords = coords.split()
+            msg = _("Timezone (latitude {0}, longitude {1}) detected.")
+            msg = msg.format(coords[0], coords[1])
+            logging.debug(msg)
             self.coords_queue.put(coords)
 
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
 
-class GenerateMirrorListThread(threading.Thread):
-    """ Creates a mirror list for pacman based on country code """
-    def __init__(self, coords_queue, scripts_dir):
-        super(GenerateMirrorListThread, self).__init__()
-        self.coords_queue = coords_queue
-        self.scripts_dir = scripts_dir
-        self.stop_event = threading.Event()
-        self.tzdb = tz.Database()
+if __name__ == '__main__':
+    from test_screen import _, run
 
-    def stop(self):
-        self.stop_event.set()
-
-    def get_prop(self, obj, iface, prop):
-        try:
-            return obj.Get(iface, prop, dbus_interface=dbus.PROPERTIES_IFACE)
-        except dbus.DBusException as e:
-            if e.get_dbus_name() == 'org.freedesktop.DBus.Error.UnknownMethod':
-                return None
-            else:
-                raise
-
-    def has_connection(self):
-        # Workaround since we have no geo-service yet.
-        return False
-        '''try:
-            bus = dbus.SystemBus()
-            manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
-            state = self.get_prop(manager, NM, 'state')
-        except dbus.exceptions.DBusException:
-            logging.warning(_("In timezone, can't get network status"))
-            return False
-        return state == NM_STATE_CONNECTED_GLOBAL'''
-
-    @misc.raise_privileges
-    def run(self):
-        # wait until there is an Internet connection available
-        while not self.has_connection():
-            time.sleep(2)  # Delay and try again
-            if self.stop_event.is_set():
-                return
-
-        timezone = ""
-
-        try:
-            coords = self.coords_queue.get(True)
-            self.coords_queue.put_nowait(coords)
-            tzmap = TimezoneMap.TimezoneMap()
-            timezone = tzmap.get_timezone_at_coords(float(coords[0]), float(coords[1]))
-            loc = self.tzdb.get_loc(timezone)
-            country_code = ''
-            if loc:
-                country_code = loc.country
-        except (queue.Empty, IndexError) as e:
-            logging.warning(_("Can't get the country code used to create a pacman mirrorlist"))
-
-        '''try:
-            url = 'https://www.archlinux.org/mirrorlist/?country=%s&protocol=http&ip_version=4&use_mirror_status=on' % country_code
-            country_mirrorlist = urlopen(url).read()
-            if '<!DOCTYPE' in str(country_mirrorlist, encoding='utf8'):
-                # The country doesn't have mirrors so we keep using the mirrorlist generated by score
-                country_mirrorlist = ''
-            else:
-                with open('/tmp/country_mirrorlist','wb') as f:
-                    f.write(country_mirrorlist)
-        except URLError as e:
-            logging.error(e.reason)
-            self.queue_event('error', "Can't retrieve country mirrorlist.")
-
-        try:
-            if country_mirrorlist is '':
-                pass
-            else:
-                script = os.path.join(self.scripts_dir, "generate-mirrorlist.sh")
-                subprocess.check_call(['/usr/bin/bash', script])
-                logging.info(_("Downloaded a specific mirrorlist for pacman based on %s country code") % timezone)
-        except subprocess.CalledProcessError as e:
-            logging.warning(_("Couldn't generate mirrorlist for pacman based on country code"))'''
-
-
+    run('Timezone')
