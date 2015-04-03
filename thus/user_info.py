@@ -73,8 +73,6 @@ class UserInfo(GtkBaseBox):
         self.require_password = True
         self.encrypt_home = False
 
-        super().add(self.ui.get_object("user_info"))
-
     def translate_ui(self):
         """ Translate all widgets """
         label = self.ui.get_object('fullname_label')
@@ -246,6 +244,8 @@ class UserInfo(GtkBaseBox):
 
         # this way installer_process will know all info has been entered
         self.settings.set('user_info_done', True)
+
+        return True
 
     def prepare(self, direction):
         """ Prepare screen """
