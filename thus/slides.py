@@ -74,8 +74,6 @@ class Slides(GtkBaseBox):
         if len(self.info_label.get_label()) <= 0:
             self.set_message(_("Please wait..."))
 
-        self.header.set_subtitle(_("Installing Manjaro..."))
-
     def prepare(self, direction):
         # We don't load webkit until we reach this screen
         if self.web_view is None:
@@ -102,9 +100,7 @@ class Slides(GtkBaseBox):
         # Hide backwards and forwards buttons
         self.backwards_button.hide()
         self.forward_button.hide()
-
-        # Hide close button (we've reached the point of no return)
-        self.header.set_show_close_button(False)
+        self.exit_button.hide()
 
         GLib.timeout_add(400, self.manage_events_from_cb_queue)
 
