@@ -266,7 +266,7 @@ class InstallationProcess(multiprocessing.Process):
             logging.error(trace)
             self.queue_fatal_event(process_error.output)
         except (
-                InstallError, pyalpm.error, KeyboardInterrupt, TypeError, AttributeError, OSError,
+                InstallError, KeyboardInterrupt, TypeError, AttributeError, OSError,
                 IOError) as install_error:
             exc_type, exc_value, exc_traceback = sys.exc_info()
             trace = repr(traceback.format_exception(exc_type, exc_value, exc_traceback))
@@ -479,8 +479,6 @@ class InstallationProcess(multiprocessing.Process):
                 logging.warning(_("Can't copy Thus log to %s") % dst)
             except FileExistsError:
                 pass
-            # Unmount everything
-            chroot_run_umount_special_dirs()
             source_dirs = {"source", "source_desktop"}
             for p in source_dirs:
                 p = os.path.join("/", p)
@@ -663,61 +661,6 @@ class InstallationProcess(multiprocessing.Process):
             subprocess.check_call(["mount", "-o", "bind", "/sys/firmware/efi", mydir])
 
         self.special_dirs_mounted = True
-
-    def chroot_umount_special_dirs(self):
-        """ Umount special directories for our chroot """
-        # Do not umount if they're not mounted
-        if not self.special_dirs_mounted:
-            self.queue_event('debug', _("Special dirs are not mounted. Skipping."))
-            return
-
-        if self.settings.get('efi'):
-            special_dirs = ["dev/pts", "sys/firmware/efi", "sys", "proc", "dev"]
-        else:
-            special_dirs = ["dev/pts", "sys", "proc", "dev"]
-
-        for s_dir in special_dirs:
-            mydir = os.path.join(DEST_DIR, s_dir)
-            try:
-                subprocess.check_call(["umount", mydir])
-            except subprocess.CalledProcessError as err:
-                logging.error(err)
-                try:
-                    subprocess.check_call(["umount", "-l", mydir])
-                except subprocess.CalledProcessError as err:
-                    self.queue_event('warning', _("Unable to umount %s") % mydir)
-                    cmd = _("Command %s has failed.") % err.cmd
-                    logging.warning(cmd)
-                    out = _("Output : %s") % err.output
-                    logging.warning(out)
-            except Exception as err:
-                self.queue_event('warning', _("Unable to umount %s") % mydir)
-                logging.error(err)
-
-        self.special_dirs_mounted = False
-
-    def chroot(self, cmd, timeout=None, stdin=None):
-        """ Runs command inside the chroot """
-        run = ['chroot', DEST_DIR]
-
-        for element in cmd:
-            run.append(element)
-
-        try:
-            proc = subprocess.Popen(run,
-                                    stdin=stdin,
-                                    stdout=subprocess.PIPE,
-                                    stderr=subprocess.STDOUT)
-            out = proc.communicate(timeout=timeout)[0]
-            txt = out.decode()
-            if len(txt) > 0:
-                logging.debug(txt)
-        except OSError as err:
-            logging.exception(_("Error running command: %s"), err.strerror)
-            raise
-        except subprocess.TimeoutExpired as err:
-            logging.exception(_("Timeout running command: %s"), run)
-            raise
 
     def is_running(self):
         """ Checks if thread is running """

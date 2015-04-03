@@ -30,24 +30,11 @@ import os
 import misc.validation as validation
 import show_message as show
 
-_next_page = "slides"
-_prev_page = None
-
-
-class UserInfo(Gtk.Box):
+class UserInfo(GtkBaseBox):
     """ Asks for user information """
-    def __init__(self, params):
 
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.settings = params['settings']
-
-        super().__init__()
-
-        self.ui = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        self.ui.add_from_file(os.path.join(self.ui_dir, "user_info.ui"))
+    def __init__(self, params, prev_page=None, next_page="slides"):
+        super().__init__(self, params, "user_info", prev_page, next_page)
 
         self.is_ok = dict()
         self.is_ok['fullname'] = self.ui.get_object('fullname_ok')
@@ -279,12 +266,6 @@ class UserInfo(Gtk.Box):
 
         # restore forward button text (from install now! to next)
         self.forward_button.set_label("gtk-go-forward")
-
-    def get_prev_page(self):
-        return _prev_page
-
-    def get_next_page(self):
-        return _next_page
 
     def on_checkbutton_root_password_toggled(self, widget):
         """ Show/hide root password options """
