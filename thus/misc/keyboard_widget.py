@@ -398,7 +398,7 @@ class KeyboardWidget(Gtk.DrawingArea):
         if self.variant:
             variant_param = "-variant {0}".format(self.variant)
 
-        cmd = "/usr/share/cnchi/scripts/ckbcomp -model pc106 -layout {0} {1} -compact".format(self.layout,
+        cmd = "/usr/share/thus/scripts/ckbcomp -model pc106 -layout {0} {1} -compact".format(self.layout,
                                                                                               variant_param)
 
         pipe = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=None)
