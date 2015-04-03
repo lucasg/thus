@@ -26,8 +26,18 @@
 
 from gi.repository import Gtk
 import os
-import misc.misc as misc
+import sys
 import logging
+
+if __name__ == '__main__':
+    # Insert the parent directory at the front of the path.
+    # This is used only when we want to test this screen
+    base_dir = os.path.dirname(__file__) or '.'
+    parent_dir = os.path.join(base_dir, '..')
+    sys.path.insert(0, parent_dir)
+
+import misc.misc as misc
+import parted3.fs_module as fs
 from installation import process as installation_process
 
 # To be able to test this installer in other systems that do not have pyparted3 installed
@@ -36,26 +46,14 @@ try:
 except:
     print("Can't import parted module! This installer won't work.")
 
-_next_page = "user_info"
-_prev_page = "installation_ask"
+from gtkbasebox import GtkBaseBox
 
-class InstallationAutomatic(Gtk.Box):
 
-    def __init__(self, params):
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.callback_queue = params['callback_queue']
-        self.settings = params['settings']
-        self.alternate_package_list = params['alternate_package_list']
-        self.testing = params['testing']
+class InstallationAutomatic(GtkBaseBox):
+    def __init__(self, params, prev_page="installation_ask", next_page="user_info"):
+        super().__init__(self, params, "automatic", prev_page, next_page)
 
-        super().__init__()
-        self.ui = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        self.ui.add_from_file(os.path.join(self.ui_dir, "installation_automatic.ui"))
-
-        self.ui.connect_signals(self)
+        self.auto_device = None
 
         self.device_store = self.ui.get_object('part_auto_select_drive')
         self.device_label = self.ui.get_object('part_auto_select_drive_label')
@@ -64,8 +62,6 @@ class InstallationAutomatic(Gtk.Box):
                       'luks_password_confirm': self.ui.get_object('entry_luks_password_confirm')}
 
         self.image_password_ok = self.ui.get_object('image_password_ok')
-
-        super().add(self.ui.get_object("installation_automatic"))
 
         self.devices = {}
         self.process = None
@@ -195,16 +191,6 @@ class InstallationAutomatic(Gtk.Box):
         self.start_installation()
         return True
 
-    def get_prev_page(self):
-        return _prev_page
-
-    def get_next_page(self):
-        return _next_page
-
-    def refresh(self):
-        while Gtk.events_pending():
-            Gtk.main_iteration()
-
     def on_luks_password_changed(self, widget):
         luks_password = self.entry['luks_password'].get_text()
         luks_password_confirm = self.entry['luks_password_confirm'].get_text()
@@ -316,3 +302,14 @@ class InstallationAutomatic(Gtk.Box):
             self.process.start()
         else:
             logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))
+
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
+
+if __name__ == '__main__':
+    from test_screen import _, run
+    run('InstallationAutomatic')

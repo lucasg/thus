@@ -1,95 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.0 on Mon Dec  9 16:13:18 2013 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
-  <object class="GtkImage" id="advanced_image">
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkBox" id="ask">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="xpad">1</property>
-    <property name="ypad">5</property>
-    <property name="stock">gtk-missing-image</property>
-  </object>
-  <object class="GtkImage" id="alongside_image">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="xpad">1</property>
-    <property name="ypad">5</property>
-    <property name="stock">gtk-missing-image</property>
-  </object>
-  <object class="GtkImage" id="automatic_image">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="xpad">1</property>
-    <property name="ypad">5</property>
-    <property name="stock">gtk-missing-image</property>
-  </object>
-  <object class="GtkBox" id="installation_ask">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="margin_left">40</property>
-    <property name="margin_top">14</property>
+    <property name="halign">left</property>
+    <property name="margin-top">0</property>
+      <property name="margin-left">70</property>
+      <property name="margin-right">68</property>
+    <property name="hexpand">True</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkRadioButton" id="automatic_radiobutton">
-        <property name="label" translatable="yes">Erase disk and install Manjaro (automatic)</property>
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
-        <property name="image">automatic_image</property>
-        <property name="xalign">0</property>
-        <property name="always_show_image">True</property>
-        <property name="active">True</property>
-        <property name="draw_indicator">True</property>
-        <signal name="toggled" handler="on_automatic_radiobutton_toggled" swapped="no"/>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="automatic_description">
+      <object class="GtkLabel" id="introduction">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">75</property>
-        <property name="xalign">0</property>
-        <property name="yalign">0</property>
-        <property name="label" translatable="yes">&lt;span weight="light" size="small"&gt;Warning: This will delete all programs, documents, photos, music and any other files on your disk&lt;/span&gt;</property>
+        <property name="margin-top">15</property>
+          <property name="margin-bottom">8</property>
+        <property name="halign">center</property>
+        <property name="valign">start</property>
+        <property name="label" translatable="yes"></property>
         <property name="use_markup">True</property>
         <property name="justify">fill</property>
       </object>
       <packing>
         <property name="expand">False</property>
         <property name="fill">False</property>
-        <property name="position">1</property>
+        <property name="position">0</property>
       </packing>
     </child>
     <child>
-      <object class="GtkCheckButton" id="encrypt_checkbutton">
-        <property name="label" translatable="yes">Encrypts the new Manjaro installation for better security</property>
+        <object class="GtkBox" id="automatic_box">
+        <property name="hexpand">True</property>
+        <property name="orientation">horizontal</property>
+            <property name="margin-top">15</property>
+        <child>
+          <object class="GtkImage" id="automatic_image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_start">0</property>
+            <property name="margin_end">10</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="automatic_radiobutton">
+            <property name="label" translatable="yes"></property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="halign">start</property>
+            <property name="always_show_image">True</property>
+            <property name="active">True</property>
+            <property name="draw_indicator">True</property>-->
+            <signal name="toggled" handler="on_automatic_radiobutton_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="automatic_description">
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
-        <property name="margin_left">48</property>
-        <property name="margin_top">4</property>
-        <property name="xalign">0</property>
-        <property name="draw_indicator">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_start">70</property>
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="label" translatable="yes"></property>
+        <property name="use_markup">True</property>
+        <property name="justify">fill</property>
       </object>
       <packing>
         <property name="expand">False</property>
-        <property name="fill">True</property>
+        <property name="fill">False</property>
         <property name="position">2</property>
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="encrypt_label">
+      <object class="GtkCheckButton" id="encrypt_checkbutton">
+        <property name="label" translatable="yes"></property>
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">75</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">&lt;span weight="light" size="small"&gt;You will be asked for the encryption key in the next step&lt;/span&gt;</property>
-        <property name="use_markup">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">False</property>
+        <property name="margin_start">80</property>
+          <property name="margin-top">10</property>
+        <property name="halign">start</property>
+        <property name="draw_indicator">True</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -98,15 +106,14 @@
       </packing>
     </child>
     <child>
-      <object class="GtkCheckButton" id="lvm_checkbutton">
-        <property name="label" translatable="yes">Use LVM with the new Manjaro installation</property>
+      <object class="GtkLabel" id="encrypt_label">
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
-        <property name="margin_left">48</property>
-        <property name="margin_top">4</property>
-        <property name="xalign">0</property>
-        <property name="draw_indicator">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_start">104</property>
+        <property name="halign">start</property>
+        <property name="label" translatable="yes"></property>
+        <property name="use_markup">True</property>
+          <property name="margin-top">4</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -115,13 +122,15 @@
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="lvm_label">
+      <object class="GtkCheckButton" id="lvm_checkbutton">
+        <property name="label" translatable="yes"></property>
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">75</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">&lt;span weight="light" size="small"&gt;This will set up LVM allowing you to make snapshots and change partition sizes in a straightforward way&lt;/span&gt;</property>
-        <property name="use_markup">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">False</property>
+        <property name="margin_start">80</property>
+          <property name="margin-top">10</property>
+        <property name="halign">start</property>
+        <property name="draw_indicator">True</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -130,15 +139,14 @@
       </packing>
     </child>
     <child>
-      <object class="GtkCheckButton" id="home_checkbutton">
-        <property name="label" translatable="yes">Set your Home in a different partition/volume</property>
+      <object class="GtkLabel" id="lvm_label">
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
-        <property name="margin_left">48</property>
-        <property name="margin_top">4</property>
-        <property name="xalign">0</property>
-        <property name="draw_indicator">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_start">104</property>
+          <property name="margin-top">4</property>
+          <property name="halign">start</property>
+        <property name="label" translatable="yes"></property>
+        <property name="use_markup">True</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -147,13 +155,15 @@
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="home_label">
+      <object class="GtkCheckButton" id="home_checkbutton">
+        <property name="label" translatable="yes"></property>
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">75</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">&lt;span weight="light" size="small"&gt;This will setup your /home directory in a different partition or volume.&lt;/span&gt;</property>
-        <property name="use_markup">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">False</property>
+        <property name="margin_start">80</property>
+          <property name="margin-top">10</property>
+        <property name="halign">start</property>
+        <property name="draw_indicator">True</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -162,19 +172,14 @@
       </packing>
     </child>
     <child>
-      <object class="GtkRadioButton" id="alongside_radiobutton">
-        <property name="label" translatable="yes">Install alongside other OSes</property>
+      <object class="GtkLabel" id="home_label">
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
-        <property name="margin_top">15</property>
-        <property name="image">alongside_image</property>
-        <property name="xalign">0</property>
-        <property name="always_show_image">True</property>
-        <property name="active">True</property>
-        <property name="draw_indicator">True</property>
-        <property name="group">automatic_radiobutton</property>
-        <signal name="toggled" handler="on_alongside_radiobutton_toggled" swapped="no"/>
+        <property name="can_focus">False</property>
+        <property name="margin_start">104</property>
+          <property name="margin-top">4</property>
+          <property name="halign">start</property>
+        <property name="label" translatable="yes"></property>
+        <property name="use_markup">True</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -183,58 +188,126 @@
       </packing>
     </child>
     <child>
+        <object class="GtkBox" id="alongside_box">
+        <property name="hexpand">True</property>
+        <property name="orientation">horizontal</property>
+            <property name="margin-top">5</property>
+        <child>
+          <object class="GtkImage" id="alongside_image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_start">0</property>
+            <property name="margin_end">10</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="alongside_radiobutton">
+            
+            <property name="label" translatable="yes"></property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="halign">start</property>
+            <property name="always_show_image">True</property>
+            <property name="active">True</property>
+            <property name="draw_indicator">True</property>
+            <property name="group">automatic_radiobutton</property>
+            <signal name="toggled" handler="on_alongside_radiobutton_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">9</property>
+          </packing>
+    </child>
+    <child>
       <object class="GtkLabel" id="alongside_description">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">75</property>
-        <property name="xalign">0</property>
-        <property name="yalign">0</property>
-        <property name="label" translatable="yes">&lt;span weight="light" size="small"&gt;With this option you will be installing Manjaro alongside one of the other OSes you already have installed.&lt;/span&gt;</property>
+        <property name="margin_start">70</property>
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="label" translatable="yes"></property>
         <property name="use_markup">True</property>
         <property name="justify">fill</property>
       </object>
       <packing>
         <property name="expand">False</property>
         <property name="fill">False</property>
-        <property name="position">9</property>
+        <property name="position">10</property>
       </packing>
     </child>
     <child>
-      <object class="GtkRadioButton" id="advanced_radiobutton">
-        <property name="label" translatable="yes">Manage your partitions and choose where to install Manjaro (advanced)</property>
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
-        <property name="margin_top">15</property>
-        <property name="image">advanced_image</property>
-        <property name="xalign">0</property>
-        <property name="always_show_image">True</property>
-        <property name="active">True</property>
-        <property name="draw_indicator">True</property>
-        <property name="group">automatic_radiobutton</property>
-        <signal name="toggled" handler="on_advanced_radiobutton_toggled" swapped="no"/>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">10</property>
-      </packing>
+        <object class="GtkBox" id="advanced_box">
+        <property name="hexpand">True</property>
+        <property name="orientation">horizontal</property>
+            <property name="margin-top">10</property>
+        <child>
+          <object class="GtkImage" id="advanced_image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_end">10</property>
+            <property name="margin_start">0</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="advanced_radiobutton">
+            <property name="label" translatable="yes"></property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="halign">start</property>
+            <property name="always_show_image">True</property>
+            <property name="active">True</property>
+            <property name="draw_indicator">True</property>
+            <property name="group">automatic_radiobutton</property>
+            <signal name="toggled" handler="on_advanced_radiobutton_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">11</property>
+          </packing>
     </child>
     <child>
       <object class="GtkLabel" id="advanced_description">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">75</property>
-        <property name="xalign">0</property>
-        <property name="yalign">0</property>
-        <property name="label" translatable="yes">&lt;span weight="light" size="small"&gt;You will be able to create/delete partitions, choose where to install Manjaro and also choose additional mount points.&lt;/span&gt;</property>
+        <property name="margin-left">70</property>
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="label" translatable="yes"></property>
         <property name="use_markup">True</property>
         <property name="justify">fill</property>
       </object>
       <packing>
         <property name="expand">False</property>
         <property name="fill">False</property>
-        <property name="position">11</property>
+        <property name="position">12</property>
       </packing>
     </child>
   </object>

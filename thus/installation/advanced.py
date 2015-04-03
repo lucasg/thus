@@ -44,6 +44,8 @@ import parted3.used_space as used_space
 from installation import process as installation_process
 import show_message as show
 
+from gtkbasebox import GtkBaseBox
+
 COL_PATH = 0
 COL_FS = 1
 COL_MOUNT_POINT = 2
@@ -61,21 +63,16 @@ COL_SSD_VISIBLE = 13
 COL_SSD_SENSITIVE = 14
 COL_ENCRYPTED = 15
 
-_next_page = "user_info"
-_prev_page = "installation_ask"
-
-class InstallationAdvanced(Gtk.Box):
+class InstallationAdvanced(GtkBaseBox):
     """ Installation advanced class. Custom partitioning. """
-    def __init__(self, params):
-        """ Store class parameters """
+
+    def __init__(self, params, prev_page="installation_ask", next_page="user_info"):
+        # Call base class
+        super().__init__(self, params, "advanced", prev_page, next_page)
+
+        # Init class vars
+
         self.blvm = False
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.callback_queue = params['callback_queue']
-        self.settings = params['settings']
-        self.alternate_package_list = params['alternate_package_list']
-        self.testing = params['testing']
 
         self.lv_partitions = []
         self.disks_changed = []
@@ -122,17 +119,7 @@ class InstallationAdvanced(Gtk.Box):
         # Store here ALL partitions from ALL devices
         self.all_partitions = []
 
-        # Call base class
-        super().__init__()
-
         # Init GUI elements
-        self.ui = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        ui_file = os.path.join(self.ui_dir, "advanced.ui")
-        self.ui.add_from_file(ui_file)
-
-        # Connect UI signals
-        self.ui.connect_signals(self)
 
         # Load create and edit partition dialogs
         self.create_partition_dialog = self.ui.get_object('create_partition_dialog')
@@ -2207,3 +2194,15 @@ class InstallationAdvanced(Gtk.Box):
             self.process.start()
         else:
             logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))
+
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
+
+if __name__ == '__main__':
+    from test_screen import _, run
+
+    run('InstallationAdvanced')

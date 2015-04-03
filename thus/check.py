@@ -3,35 +3,35 @@
 #
 #  check.py
 #
-#  This file was forked from Cnchi (graphical installer from Antergos)
-#  Check it at https://github.com/antergos
+#  Copyright © 2013-2015 Manjaro
 #
-#  Copyright © 2013-2015 Antergos (http://antergos.com/)
-#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
+#  This file is part of Cnchi.
 #
-#  This program is free software; you can redistribute it and/or modify
+#  Cnchi is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  This program is distributed in the hope that it will be useful,
+#  Cnchi is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
+#  along with Cnchi; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-""" Check screen (detects if Manjaros prerequisites are meet) """
+""" Check screen (detects if Manjaro prerequisites are meet) """
 
 from gi.repository import GLib
 import subprocess
 import os
 import logging
-import misc.gtkwidgets as gtkwidgets
+
 import misc.misc as misc
+
+from gtkbasebox import GtkBaseBox
 
 from rank_mirrors import AutoRankmirrorsThread
 
@@ -42,26 +42,13 @@ UPOWER = 'org.freedesktop.UPower'
 UPOWER_PATH = '/org/freedesktop/UPower'
 MIN_ROOT_SIZE = 6000000000
 
-_next_page = "timezone"
-_prev_page = "location"
 
-class Check(Gtk.Box):
+class Check(GtkBaseBox):
     """ Check class """
-    def __init__(self, params):
+
+    def __init__(self, params, prev_page="language", next_page="location"):
         """ Init class ui """
-        self.title = params['title']
-        self.settings = params['settings']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.testing = params['testing']
-
-        super().__init__()
-
-        self.ui = Gtk.Builder()
-
-        self.ui_dir = self.settings.get('ui')
-        self.ui.add_from_file(os.path.join(self.ui_dir, "check.ui"))
-        self.ui.connect_signals(self)
+        super().__init__(self, params, "check", prev_page, next_page)
 
         self.remove_timer = False
 
@@ -73,18 +60,20 @@ class Check(Gtk.Box):
         self.timeout_id = None
         self.prepare_best_results = None
 
-        super().add(self.ui.get_object("check"))
+        # Boolean variable to check if reflector has been run once or not
+        self.reflector_launched = False
+
+        self.label_space = self.ui.get_object("label_space")
 
     def translate_ui(self):
+        """ Translates all ui elements """
         txt = _("System Check")
-        txt = '<span weight="bold" size="large">{0}</span>'.format(txt)
-        self.title.set_markup(txt)
+        self.header.set_subtitle(txt)
 
         self.prepare_enough_space = self.ui.get_object("prepare_enough_space")
         txt = _("has at least {0}GB available storage space. (*)").format(MIN_ROOT_SIZE / 1000000000)
         self.prepare_enough_space.props.label = txt
 
-        self.label_space = self.ui.get_object("label_space")
         txt = _("This highly depends on which desktop environment you choose, so you might need more space.")
         txt = "(*) <i>{0}</i>".format(txt)
         self.label_space.set_markup(txt)
@@ -113,8 +102,7 @@ class Check(Gtk.Box):
         space = self.has_enough_space()
         self.prepare_enough_space.set_state(space)
 
-        #if has_internet and space:
-        if space:
+        if has_internet and space:
             return True
 
         return False
@@ -183,18 +171,13 @@ class Check(Gtk.Box):
         # Enable forward button
         self.forward_button.set_sensitive(True)
 
-        if not self.testing:
-            ## Launch rankmirrors script to determine the 5 fastest mirrors
+        if not self.testing and not self.reflector_launched:
+            # Launch reflector script to determine the 10 fastest mirrors
             self.thread = AutoRankmirrorsThread()
             self.thread.start()
+            self.reflector_launched = True
 
         return True
-
-    def get_prev_page(self):
-        return _prev_page
-
-    def get_next_page(self):
-        return _next_page
 
     def prepare(self, direction):
         """ Load screen """
@@ -205,3 +188,15 @@ class Check(Gtk.Box):
 
         # Set timer
         self.timeout_id = GLib.timeout_add(5000, self.on_timer)
+
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
+
+if __name__ == '__main__':
+    from test_screen import _, run
+
+    run('Check')
