@@ -1169,7 +1169,7 @@ class InstallationProcess(multiprocessing.Process):
         self.auto_timesetting()
 
         # Enter chroot system
-        chroot.mount_special_dirs()
+        chroot.mount_special_dirs(DEST_DIR)
 
         # Install configs for root
         chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
