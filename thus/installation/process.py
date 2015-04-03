@@ -1108,7 +1108,7 @@ class InstallationProcess(multiprocessing.Process):
             self.enable_services(['org.cups.cupsd'])
 
         # enable targets
-        self.enable_targets(['remote-fs.target'])
+        # self.enable_targets(['remote-fs.target'])
         
         self.queue_event('debug', 'Enabled installed services.')
 

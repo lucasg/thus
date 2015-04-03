@@ -261,7 +261,6 @@ class MainWindow(Gtk.ApplicationWindow):
         self.pages["installation_advanced"] = installation_advanced.InstallationAdvanced(self.params)
         self.pages["user_info"] = user_info.UserInfo(self.params)
         self.pages["slides"] = slides.Slides(self.params)
-        misc.set_cursor(Gdk.CursorType.ARROW)
 
         diff = 2
 
