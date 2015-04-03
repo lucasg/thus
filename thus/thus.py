@@ -3,7 +3,7 @@
 #
 #  thus.py
 #
-#  This file was forked from Cnchi (graphical installer from Antergos)
+#  This file was forked from THUS (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
 #  Copyright 2013 Antergos (http://antergos.com/)
@@ -24,7 +24,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-""" Main Thus (Antergos Installer) module """
+""" Main Thus (Manjaro Installer) module """
 
 # Useful vars for gettext (translations)
 APP_NAME = "thus"
@@ -176,12 +176,12 @@ def parse_options():
 
     import argparse
 
-    desc = _("Thus v{0} - Antergos Installer").format(info.CNCHI_VERSION)
+    desc = _("Thus v{0} - Manjaro Installer").format(info.THUS_VERSION)
     parser = argparse.ArgumentParser(description=desc)
 
     parser.add_argument(
         "-a", "--aria2",
-        help=_("Use aria2 to download Antergos packages (EXPERIMENTAL)"),
+        help=_("Use aria2 to download Manjaro packages (EXPERIMENTAL)"),
         action="store_true")
     parser.add_argument(
         "-c", "--cache",
