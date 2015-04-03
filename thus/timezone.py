@@ -37,7 +37,7 @@ import hashlib
 import misc.tz as tz
 import misc.misc as misc
 import misc.timezonemap as timezonemap
-from mirrorlist import GenerateMirrorListThread
+# from mirrorlist import GenerateMirrorListThread
 from gtkbasebox import GtkBaseBox
 
 NM = 'org.freedesktop.NetworkManager'
@@ -72,7 +72,7 @@ class Timezone(GtkBaseBox):
 
         # Thread to generate a pacman mirrorlist based on country code
         # Why do this? There're foreign mirrors faster than the Spanish ones... - Karasu
-        self.mirrorlist_thread = None
+        # self.mirrorlist_thread = None
         # self.start_mirrorlist_thread()
 
         # Setup window
@@ -215,10 +215,12 @@ class Timezone(GtkBaseBox):
         self.auto_timezone_thread = AutoTimezoneThread(self.auto_timezone_coords, self.settings)
         self.auto_timezone_thread.start()
 
+    '''
     def start_mirrorlist_thread(self):
         scripts_dir = os.path.join(self.settings.get('cnchi'), "scripts")
         self.mirrorlist_thread = GenerateMirrorListThread(self.auto_timezone_coords, scripts_dir)
         self.mirrorlist_thread.start()
+    '''
 
     def store_values(self):
         loc = self.tzdb.get_loc(self.timezone)
@@ -252,8 +254,10 @@ class Timezone(GtkBaseBox):
         logging.debug(_("Stoping timezone threads..."))
         if self.auto_timezone_thread is not None:
             self.auto_timezone_thread.stop()
+        '''
         if self.mirrorlist_thread is not None:
             self.mirrorlist_thread.stop()
+        '''
 
     def on_switch_ntp_activate(self, ntp_switch):
         self.settings['use_ntp'] = ntp_switch.get_active()
