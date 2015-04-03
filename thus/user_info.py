@@ -27,7 +27,7 @@
 from gi.repository import Gtk
 
 import os
-import canonical.validation as validation
+import misc.validation as validation
 import show_message as show
 
 _next_page = "slides"

@@ -31,7 +31,7 @@ import subprocess
 import logging
 import time
 import os
-import canonical.misc as misc
+import misc.misc as misc
 import show_message as show
 
 
