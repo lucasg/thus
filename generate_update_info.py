@@ -1,0 +1,1 @@
+utils/generate_update_info.py

@@ -28,7 +28,7 @@
 
 import os
 import hashlib
-import src.info as info
+import info
 
 def get_md5(file_name):
     """ Gets md5 hash from a file """
@@ -41,34 +41,28 @@ def get_md5(file_name):
 def get_files(path):
     """ Returns all files from a directory """
     all_files = []
-    for filename in os.listdir(path):
-        if os.path.isfile(os.path.join(path, filename)) and filename[0] != ".": # and filename[-3:] == ".py":
-            all_files.append(os.path.join(path, filename))
+    if os.path.exists(path):
+        for dpath, d, files in os.walk(path):
+            for f in files:
+                file_path = os.path.join(dpath, f)
+                print(file_path)
+                all_files.append(file_path)
+    else:
+        all_files = False
+
     return all_files
 
 def create_update_info():
     """ Creates update.info file """
-    myfiles = []
 
-    myfiles.extend(get_files("."))
-
-    myfiles.extend(get_files("src"))
-    myfiles.extend(get_files("src/parted3"))
-    myfiles.extend(get_files("src/installation"))
-    myfiles.extend(get_files("src/canonical"))
-
-    myfiles.extend(get_files("data"))
-
-    myfiles.extend(get_files("po"))
-
-    myfiles.extend(get_files("ui"))
-
-    myfiles.extend(get_files("scripts"))
+    myfiles = get_files("/usr/share/thus") or get_files(".")
 
     txt = '{"version":"%s","files":[\n' % info.THUS_VERSION
 
     for filename in myfiles:
         md5 = get_md5(filename)
+        if "usr/share/thus" not in filename:
+            filename = filename.replace('./', '/usr/share/thus/')
         txt += '{"name":"%s","md5":"%s"},\n' % (filename, md5)
 
     # remove last comma and close
