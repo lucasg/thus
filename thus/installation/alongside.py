@@ -1,435 +1,360 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  installation_alongside.py
+#  alongside.py
 #
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013 Manjaro (http://manjaro.org)
 #
-#  This program is free software; you can redistribute it and/or modify
+#  This file is part of Thus.
+#
+#  Thus is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  This program is distributed in the hope that it will be useful,
+#  Thus is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
+#  along with Thus; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-import xml.etree.ElementTree as etree
+""" Alongside installation module """
 
-from gi.repository import Gtk, Gdk
+# ******************* NO GPT SUPPORT, YET ***************************************
 
 import sys
 import os
-import canonical.misc as misc
 import logging
+import subprocess
+import tempfile
+
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
+
+import misc.misc as misc
+import misc.gtkwidgets as gtkwidgets
 import show_message as show
 import bootinfo
-import subprocess
 
-# To be able to test this installer in other systems
-# that do not have pyparted3 installed
-try:
-    import parted
-except:
-    print("Can't import parted module! This installer won't work.")
+from gtkbasebox import GtkBaseBox
 
-# Insert the src/parted directory at the front of the path.
-base_dir = os.path.dirname(__file__) or '.'
-parted_dir = os.path.join(base_dir, 'parted3')
-sys.path.insert(0, parted_dir)
-
-import parted3.partition_module as pm
-import parted3.fs_module as fs
-
-from installation import process as installation_process
-
-_next_page = "user_info"
-_prev_page = "installation_ask"
-
-# leave at least 6.5GB for Manjaro when shrinking, same as MIN_ROOT_SIZE in auto_partition
+# Leave at least 6.5GB for Manjaro when shrinking
 MIN_ROOT_SIZE = 6500
 
 
-class InstallationAlongside(Gtk.Box):
-    def __init__(self, params):
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.callback_queue = params['callback_queue']
-        self.settings = params['settings']
-        self.alternate_package_list = params['alternate_package_list']
-        self.testing = params['testing']
+def get_partition_size_info(partition_path, human=False):
+    """ Gets partition used and available space using df command """
 
-        super().__init__()
-        self.ui = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        self.ui.add_from_file(os.path.join(self.ui_dir, "installation_alongside.ui"))
+    min_size = "0"
+    part_size = "0"
 
-        self.ui.connect_signals(self)
+    already_mounted = False
+
+    with open("/proc/mounts") as mounts:
+        if partition_path in mounts.read():
+            already_mounted = True
+
+    tmp_dir = ""
+
+    try:
+        if not already_mounted:
+            tmp_dir = tempfile.mkdtemp()
+            subprocess.call(["mount", partition_path, tmp_dir])
+        if human:
+            cmd = ['df', '-h', partition_path]
+        else:
+            cmd = ['df', partition_path]
+        df_out = subprocess.check_output(cmd).decode()
+        if not already_mounted:
+            subprocess.call(['umount', '-l', tmp_dir])
+    except subprocess.CalledProcessError as process_error:
+        logging.error(process_error)
+        return
+
+    if os.path.exists(tmp_dir):
+        os.rmdir(tmp_dir)
+
+    if len(df_out) > 0:
+        df_out = df_out.split('\n')
+        df_out = df_out[1].split()
+        if human:
+            part_size = df_out[1]
+            min_size = df_out[2]
+        else:
+            part_size = float(df_out[1])
+            min_size = float(df_out[2])
+
+    return min_size, part_size
+
+
+class InstallationAlongside(GtkBaseBox):
+    """ Performs an automatic installation next to a previous installed OS """
+    def __init__(self, params, prev_page="installation_ask", next_page="user_info"):
+        super().__init__(self, params, "alongside", prev_page, next_page)
 
         self.label = self.ui.get_object('label_info')
 
-        self.treeview = self.ui.get_object("treeview1")
-        self.treeview_store = None
-        self.prepare_treeview()
-        self.populate_treeview()
+        self.choose_partition_label = self.ui.get_object('choose_partition_label')
+        self.choose_partition_combo = self.ui.get_object('choose_partition_combo')
 
-        # Init dialog slider
-        self.init_slider()
+        self.oses = bootinfo.get_os_dict()
+        # print(self.oses)
+        self.resize_widget = None
 
-        super().add(self.ui.get_object("installation_alongside"))
+    @staticmethod
+    def get_new_device(device_to_shrink):
+        """ Get new device where Thus will install Manjaro
+            returns an empty string if no device is available """
+        number = int(device_to_shrink[len("/dev/sdX"):])
+        disk = device_to_shrink[:len("/dev/sdX")]
 
-    def init_slider(self):
-        dialog = self.ui.get_object("shrink-dialog")
-        slider = self.ui.get_object("scale")
+        new_number = number + 1
+        new_device = disk + str(new_number)
 
-        slider.set_name("myslider")
-        path = os.path.join(self.settings.get("data"), "css", "scale.css")
+        while misc.partition_exists(new_device):
+            new_number += 1
+            new_device = '{0}{1}'.format(disk, new_number)
 
-        self.available_slider_range = [0, 0]
+        if new_number > 4:
+            # No primary partitions left
+            new_device = None
 
-        if os.path.exists(path):
-            with open(path, "rb") as css:
-                css_data = css.read()
+        return new_device
 
-            provider = Gtk.CssProvider()
+    def set_resize_widget(self, device_to_shrink):
+        new_device = self.get_new_device(device_to_shrink)
 
-            try:
-                provider.load_from_data(css_data)
+        if new_device is None:
+            # No device is available
+            logging.warning(_("There are no primary partitions available"))
+            return
 
-                Gtk.StyleContext.add_provider_for_screen(
-                    Gdk.Screen.get_default(), provider,
-                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-                )
-            except:
-                logging.exception(_("Can't load %s css") % path)
+        txt = _("Will shrink device {0} and create new device {1}")
+        txt = txt.format(device_to_shrink, new_device)
+        logging.debug(txt)
 
-        #slider.add_events(Gdk.EventMask.SCROLL_MASK)
+        (min_size, part_size) = get_partition_size_info(device_to_shrink)
+        max_size = part_size - (MIN_ROOT_SIZE * 1000.0)
+        if max_size < 0:
+            # Full Manjaro does not fit but maybe base fits... ask user.
+            txt = _("Thus recommends at least 6.5GB free to install Manjaro.") + "\n\n"
+            txt += _("New partition {0} resulting of shrinking {1} will not have enough free space for a full installation.").format(new_device, device_to_shrink) + "\n\n"
+            txt += _("You can still install Manjaro, but be carefull on which DE you choose as it might not fit in.") + "\n\n"
+            txt += _("Install at your own risk!")
+            show.warning(self.get_toplevel(), txt)
+            max_size = part_size
 
-        slider.connect("change-value", self.slider_change_value)
+        # print(min_size, max_size, part_size)
 
-        '''
-        slider.connect("value_changed",
-                self.main.on_volume_changed)
-        slider.connect("button_press_event",
-                self.on_scale_button_press_event)
-        slider.connect("button_release_event",
-                self.on_scale_button_release_event)
-        slider.connect("scroll_event",
-                self.on_scale_scroll_event)
-        '''
-
-    def slider_change_value(self, slider, scroll, value):
-        if value <= self.available_slider_range[0] or \
-           value >= self.available_slider_range[1]:
-            return True
+        if self.resize_widget:
+            self.resize_widget.set_property('part_size', int(part_size))
+            self.resize_widget.set_property('min_size', int(min_size))
+            self.resize_widget.set_property('max_size', int(max_size))
         else:
-            slider.set_fill_level(value)
-            self.update_ask_shrink_size_labels(value)
-            return False
+            self.resize_widget = gtkwidgets.ResizeWidget(part_size, min_size, max_size)
+            main_box = self.ui.get_object('alongside')
+            main_box.pack_start(self.resize_widget, True, False, 5)
+
+        self.resize_widget.set_part_title('existing', self.oses[device_to_shrink], device_to_shrink)
+        icon_file = self.get_distributor_icon_file(self.oses[device_to_shrink])
+        self.resize_widget.set_part_icon('existing', icon_file=icon_file)
+
+        self.resize_widget.set_part_title('new', 'New Manjaro', new_device)
+        icon_file = self.get_distributor_icon_file('Manjaro')
+        self.resize_widget.set_part_icon('new', icon_file=icon_file)
+
+        self.resize_widget.set_pref_size(max_size)
+        self.resize_widget.show_all()
+
+    def get_distributor_icon_file(self, os_name):
+        """ Gets an icon for the installed distribution """
+        os_name = os_name.lower()
+
+        # No numix icon for Manjaro, use our own.
+        if "Manjaro" in os_name:
+            icons_path = os.path.join(self.settings.get('data'), "icons/48x48")
+            icon_file = os.path.join(icons_path, "distributor-logo-Manjaro.png")
+            return icon_file
+
+        icon_names = [
+            "lfs", "magiea", "manjaro", "mint", "archlinux", "chakra",
+            "debian", "deepin", "fedora", "gentoo", "opensuse", "siduction",
+            "kubuntu", "lubuntu", "ubuntu", "windows"]
+        prefix = "distributor-logo-"
+        sufix = ".svg"
+
+        icons_path = os.path.join(self.settings.get('data'), "icons/scalable")
+        default = os.path.join(icons_path, "distributor-logo.svg")
+
+        for name in icon_names:
+            if name in os_name:
+                return os.path.join(icons_path, prefix + name + sufix)
+
+        return default
 
     def translate_ui(self):
-        txt = _("Choose which OS you want to install Manjaro next to")
-        txt = '<span size="large">%s</span>' % txt
+        """ Translates all ui elements """
+        txt = _("Choose the new size of your installation")
+        txt = '<span size="large">{0}</span>'.format(txt)
         self.label.set_markup(txt)
 
-        txt = _("Manjaro alongside another OS")
-        txt = "<span weight='bold' size='large'>%s</span>" % txt
-        self.title.set_markup(txt)
+        txt = _("Choose the partition that you want to shrink:")
+        self.choose_partition_label.set_markup(txt)
 
-        txt = _("Install now!")
-        self.forward_button.set_label(txt)
+        self.header.set_subtitle(_("Manjaro Alongside Installation"))
+
+    def on_choose_partition_combo_changed(self, combobox):
+        txt = combobox.get_active_text()
+        device = txt.split("(")[1][:-1]
+        # print(device)
+        self.set_resize_widget(device)
+
+    @staticmethod
+    def select_first_combobox_item(combobox):
+        """ Automatically select first entry """
+        tree_model = combobox.get_model()
+        tree_iter = tree_model.get_iter_first()
+        combobox.set_active_iter(tree_iter)
 
     def prepare(self, direction):
         self.translate_ui()
         self.show_all()
-        self.forward_button.set_sensitive(False)
+        self.fill_choose_partition_combo()
+
+    def fill_choose_partition_combo(self):
+        self.choose_partition_combo.remove_all()
+
+        devices = []
+
+        for device in sorted(self.oses.keys()):
+            # if "Swap" not in self.oses[device]:
+            if "windows" in self.oses[device].lower():
+                devices.append(device)
+
+        if len(devices) > 1:
+            new_device_found = False
+            for device in sorted(devices):
+                if self.get_new_device(device):
+                    new_device_found = True
+                    line = "{0} ({1})".format(self.oses[device], device)
+                    self.choose_partition_combo.append_text(line)
+            self.select_first_combobox_item(self.choose_partition_combo)
+            self.show_all()
+            if not new_device_found:
+                txt = _("Can't find any spare partition number.\nAlongside installation can't continue.")
+                self.choose_partition_label.hide()
+                self.choose_partition_combo.hide()
+                self.label.set_markup(txt)
+                show.error(self.get_toplevel(), txt)
+        elif len(devices) == 1:
+            self.set_resize_widget(devices[0])
+            self.show_all()
+            self.choose_partition_label.hide()
+            self.choose_partition_combo.hide()
+        else:
+            logging.warning(_("Can't find any installed OS!"))
 
     def store_values(self):
         self.start_installation()
         return True
 
-    def get_prev_page(self):
-        return _prev_page
-
-    def get_next_page(self):
-        return _next_page
-
-    def prepare_treeview(self):
-        ## Create columns for our treeview
-        render_text = Gtk.CellRendererText()
-
-        col = Gtk.TreeViewColumn(_("Device"), render_text, text=0)
-        self.treeview.append_column(col)
-
-        col = Gtk.TreeViewColumn(_("Detected OS"), render_text, text=1)
-        self.treeview.append_column(col)
-
-        col = Gtk.TreeViewColumn(_("Filesystem"), render_text, text=2)
-        self.treeview.append_column(col)
-
-    @misc.raise_privileges
-    def populate_treeview(self):
-        if self.treeview_store is not None:
-            self.treeview_store.clear()
-
-        self.treeview_store = Gtk.TreeStore(str, str, str)
-
-        oses = {}
-        oses = bootinfo.get_os_dict()
-
-        self.partitions = {}
-
-        try:
-            device_list = parted.getAllDevices()
-        except:
-            txt = _("pyparted3 not found!")
-            logging.error(txt)
-            show.fatal_error(txt)
-            device_list = []
-
-        for dev in device_list:
-            ## avoid cdrom and any raid, lvm volumes or encryptfs
-            if not dev.path.startswith("/dev/sr") and \
-               not dev.path.startswith("/dev/mapper"):
-                try:
-                    disk = parted.Disk(dev)
-                    # create list of partitions for this device (p.e. /dev/sda)
-                    partition_list = disk.partitions
-
-                    for p in partition_list:
-                        if p.type != pm.PARTITION_EXTENDED:
-                            ## Get filesystem
-                            fs_type = ""
-                            if p.fileSystem and p.fileSystem.type:
-                                fs_type = p.fileSystem.type
-                            if "swap" not in fs_type:
-                                if p.path in oses:
-                                    row = [p.path, oses[p.path], fs_type]
-                                else:
-                                    row = [p.path, _("unknown"), fs_type]
-                                self.treeview_store.append(None, row)
-                        self.partitions[p.path] = p
-                except Exception as e:
-                    txt = _("Unable to create list of partitions for alongside installation.")
-                    logging.warning(txt)
-                    #show.warning(txt)
-
-        # assign our new model to our treeview
-        self.treeview.set_model(self.treeview_store)
-        self.treeview.expand_all()
-
-    def on_treeview_cursor_changed(self, widget):
-        selection = self.treeview.get_selection()
-
-        if not selection:
-            return
-
-        model, tree_iter = selection.get_selected()
-
-        if tree_iter is None:
-            return
-
-        self.row = model[tree_iter]
-
-        partition_path = self.row[0]
-        other_os_name = self.row[1]
-
-        self.min_size = 0
-        self.max_size = 0
-        self.new_size = 0
-
-        try:
-            subprocess.call(["mount", partition_path, "/mnt"], stderr=subprocess.DEVNULL)
-            x = subprocess.check_output(['df', partition_path]).decode()
-            subprocess.call(["umount", "-l", "/mnt"], stderr=subprocess.DEVNULL)
-            x = x.split('\n')
-            x = x[1].split()
-            self.max_size = int(x[1]) / 1000
-            self.min_size = int(x[2]) / 1000
-        except subprocess.CalledProcessError as e:
-            txt = "CalledProcessError.output = %s" % e.output
-            logging.error(txt)
-            show.fatal_error(txt)
-
-        if self.min_size + MIN_ROOT_SIZE < self.max_size:
-            self.new_size = self.ask_shrink_size(other_os_name)
-        else:
-            txt = _("Can't shrink the partition (maybe it's nearly full?)")
-            logging.error(txt)
-            show.error(txt)
-            return
-
-        if self.new_size > 0 and self.is_room_available():
-            self.forward_button.set_sensitive(True)
-        else:
-            self.forward_button.set_sensitive(False)
-
-    def update_ask_shrink_size_labels(self, new_value):
-        label_other_os_size = self.ui.get_object("label_other_os_size")
-        label_other_os_size.set_markup(str(int(new_value)) + " MB")
-
-        label_manjaro_size = self.ui.get_object("label_manjaro_size")
-        label_manjaro_size.set_markup(str(int(self.max_size - new_value)) + " MB")
-
-    def ask_shrink_size(self, other_os_name):
-        dialog = self.ui.get_object("shrink-dialog")
-
-        slider = self.ui.get_object("scale")
-
-        # leave space for Manjaro
-        self.available_slider_range = [self.min_size, self.max_size - MIN_ROOT_SIZE]
-
-        slider.set_fill_level(self.min_size)
-        slider.set_show_fill_level(True)
-        slider.set_restrict_to_fill_level(False)
-        slider.set_range(0, self.max_size)
-        slider.set_value(self.min_size)
-        slider.set_draw_value(False)
-
-        label_other_os = self.ui.get_object("label_other_os")
-        txt = "<span weight='bold' size='large'>%s</span>" % other_os_name
-        label_other_os.set_markup(txt)
-
-        label_manjaro = self.ui.get_object("label_manjaro")
-        txt = "<span weight='bold' size='large'>Manjaro</span>"
-        label_manjaro.set_markup(txt)
-
-        self.update_ask_shrink_size_labels(self.min_size)
-
-        response = dialog.run()
-
-        value = 0
-
-        if response == Gtk.ResponseType.OK:
-            value = int(slider.get_value()) + 1
-
-        dialog.hide()
-
-        return value
-
-    def is_room_available(self):
-        partition_path = self.row[0]
-        otherOS = self.row[1]
-        fs_type = self.row[2]
-
-        # what if path is sda10 (two digits) ? this is wrong
-        device_path = self.row[0][:-1]
-
-        new_size = self.new_size
-
-        logging.debug("partition_path: %s" % partition_path)
-        logging.debug("device_path: %s" % device_path)
-        logging.debug("new_size: %s" % new_size)
-
-        # Find out how many primary partitions device has, and also
-        # if there's already an extended partition
-
-        extended_path = ""
-        primary_partitions = []
-
-        for path in self.partitions:
-            if device_path in path:
-                p = self.partitions[path]
-                if p.type == pm.PARTITION_EXTENDED:
-                    extended_path = path
-                elif p.type == pm.PARTITION_PRIMARY:
-                    primary_partitions.append(path)
-
-        primary_partitions.sort()
-
-        logging.debug("extended partition: %s" % extended_path)
-        logging.debug("primary partitions: %s" % primary_partitions)
-
-        # we only allow installing if only 2 partitions are already occupied, otherwise there's no room for root + swap
-        if len(primary_partitions) >= 4:
-            txt = _("There are too many primary partitions, can't create a new one")
-            logging.error(txt)
-            show.error(txt)
-            return False
-
-        self.extended_path = extended_path
-
-        return True
+    # ######################################################################################################
 
     def start_installation(self):
-        # Alongside method shrinks selected partition
-        # and creates root and swap partition in the available space
+        """ Alongside method shrinks selected partition
+        and creates root and swap partition in the available space """
 
-        if self.is_room_available() is False:
-            return
+        (existing_os, existing_device) = self.resize_widget.get_part_title_and_subtitle('existing')
+        (new_os, new_device) = self.resize_widget.get_part_title_and_subtitle('new')
 
-        partition_path = self.row[0]
-        otherOS = self.row[1]
-        fs_type = self.row[2]
+        print("existing", existing_os, existing_device)
+        print("new", new_os, new_device)
 
-        # what if path is sda10 (two digits) ? this is wrong
-        device_path = self.row[0][:-1]
+        '''
+        partition_path = row[COL_DEVICE]
+        otherOS = row[COL_DETECTED_OS]
+        fs_type = row[COL_FILESYSTEM]
 
-        #re.search(r'\d+$', self.row[0])
+        device_path = row[COL_DEVICE][:len("/dev/sdX")]
 
         new_size = self.new_size
 
-        # first, shrink filesystem
+        # First, shrink filesystem
         res = fs.resize(partition_path, fs_type, new_size)
         if res:
-            print("Filesystem on " + partition_path + " shrunk.\nWill recreate partition now on device " + device_path + " partition " + partition_path)
-            # destroy original partition and create a new resized one
+            txt = _("Filesystem on {0} shrunk.").format(partition_path)
+            txt = txt + "\n"
+            txt = txt + _("Will recreate partition now on device {0} partition {1}").format(device_path, partition_path)
+            logging.debug(txt)
+            # Destroy original partition and create a new resized one
             res = pm.split_partition(device_path, partition_path, new_size)
         else:
-            txt = _("Can't shrink %s(%s) filesystem") % (otherOS, fs_type)
+            txt = _("Can't shrink {0}({1}) filesystem").format(otherOS, fs_type)
             logging.error(txt)
-            show.error(txt)
+            show.error(self.get_toplevel(), txt)
             return
 
         # res is either False or a parted.Geometry for the new free space
-        if res is not None:
-            print("Partition " + partition_path + " shrink complete.")
-        else:
-            txt = _("Can't shrink %s(%s) partition") % (otherOS, fs_type)
+        if res is None:
+            txt = _("Can't shrink {0}({1}) partition").format(otherOS, fs_type)
             logging.error(txt)
-            show.error(txt)
-            print("*** FILESYSTEM IN UNSAFE STATE ***\nFilesystem shrink succeeded but partition shrink failed.")
+            show.error(self.get_toplevel(), txt)
+            txt = _("*** FILESYSTEM IN UNSAFE STATE ***")
+            txt = txt + "\n"
+            txt = txt + _("Filesystem shrink succeeded but partition shrink failed.")
+            logging.error(txt)
             return
 
-        disc_dic = pm.get_devices()
-        disk = disc_dic[device_path][0]
+        txt = _("Partition {0} shrink complete").format(partition_path)
+        logging.debug(txt)
+
+        devices = pm.get_devices()
+        disk = devices[device_path][0]
         mount_devices = {}
         fs_devices = {}
 
-        # logic: if geometry gives us at least 7.5GB (MIN_ROOT_SIZE + 1GB) we'll create ROOT and SWAP, otherwise no SWAP
+        mem_total = subprocess.check_output(["grep", "MemTotal", "/proc/meminfo"]).decode()
+        mem_total = int(mem_total.split()[1])
+        mem = mem_total / 1024
+
+        # If geometry gives us at least 7.5GB (MIN_ROOT_SIZE + 1GB) we'll create ROOT and SWAP
         no_swap = False
         if res.getLength('MB') < MIN_ROOT_SIZE + 1:
-            no_swap = True
+            if mem < 2048:
+                # Less than 2GB RAM and no swap? No way.
+                txt = _("Cannot create new swap partition. Not enough free space")
+                logging.error(txt)
+                show.error(self.get_toplevel(), txt)
+                return
+            else:
+                no_swap = True
 
         if no_swap:
             npart = pm.create_partition(device_path, 0, res)
             if npart is None:
                 txt = _("Cannot create new partition.")
                 logging.error(txt)
-                show.error(txt)
+                show.error(self.get_toplevel(), txt)
                 return
             pm.finalize_changes(disk)
             mount_devices["/"] = npart.path
             fs_devices[npart.path] = "ext4"
             fs.create_fs(npart.path, 'ext4', label='ROOT')
         else:
-            # we know for a fact we have at least MIN_ROOT_SIZE+1GB of space, and at least MIN_ROOT_SIZE
-            # of those must go to ROOT.
-            # how about 10% of whatever is the geometry, capped at mem/2?
-            mem_total = subprocess.check_output(["grep", "MemTotal", "/proc/meminfo"]).decode()
-            mem_total = int(mem_total.split()[1])
-            mem = mem_total / 1024
+            # We know for a fact we have at least MIN_ROOT_SIZE + 1GB of space,
+            # and at least MIN_ROOT_SIZE of those must go to ROOT.
 
             # Suggested sizes from Anaconda installer
             if mem < 2048:
@@ -457,7 +382,7 @@ class InstallationAlongside(Gtk.Box):
             if swappart is None:
                 txt = _("Cannot create new swap partition.")
                 logging.error(txt)
-                show.error(txt)
+                show.error(self.get_toplevel(), txt)
                 return
 
             # Create new partition for /
@@ -469,7 +394,7 @@ class InstallationAlongside(Gtk.Box):
             if npart is None:
                 txt = _("Cannot create new partition.")
                 logging.error(txt)
-                show.error(txt)
+                show.error(self.get_toplevel(), txt)
                 return
 
             pm.finalize_changes(disk)
@@ -483,30 +408,31 @@ class InstallationAlongside(Gtk.Box):
             fs_devices[npart.path] = "ext4"
             fs.create_fs(npart.path, 'ext4', 'ROOT')
 
-        self.settings.set('install_bootloader', True)
-        if self.settings.get('install_bootloader'):
-            if self.settings.get('efi'):
-                self.settings.set('bootloader_type', "UEFI_x86_64")
-                self.settings.set('bootloader_location', '/boot/efi')
-            else:
-                self.settings.set('bootloader_type', "GRUB2")
-                self.settings.set('bootloader_location', device_path)
+        # TODO: User should be able to choose if installing a bootloader or not (and which one)
+        self.settings.set('bootloader_install', True)
 
-            logging.info(_("Thus will install the bootloader of type %s in %s") %
-                          (self.settings.get('bootloader_type'),
-                           self.settings.get('bootloader_location')))
+        if self.settings.get('bootloader_install'):
+            self.settings.set('bootloader', "grub2")
+            self.settings.set('bootloader_device', device_path)
+            msg = _("Manjaro will install the bootloader {0} in device {1}")
+            msg = msg.format(self.bootloader, self.bootloader_device)
+            logging.info(msg)
         else:
-            logging.warning(_("Thus will not install any boot loader"))
+            logging.info(_("Thus will not install any bootloader"))
 
         if not self.testing:
-            self.process = installation_process.InstallationProcess( \
-                            self.settings, \
-                            self.callback_queue, \
-                            mount_devices, \
-                            fs_devices, \
-                            None, \
-                            self.alternate_package_list)
+            self.process = installation_process.InstallationProcess(
+                self.settings,
+                self.callback_queue,
+                mount_devices,
+                fs_devices,
+                self.alternate_package_list)
 
             self.process.start()
         else:
-            logging.warning(_("Testing mode. Thus won't apply any changes to your system!"))
+            logging.warning(_("Testing mode. Thus will not change anything!"))
+        '''
+
+if __name__ == '__main__':
+    from test_screen import _, run
+    run('InstallationAlongside')
