@@ -38,7 +38,7 @@ import info
 
 _update_info_url = "https://raw.github.com/manjaro/thus/master/update.info"
 _master_zip_url = "https://github.com/manjaro/thus/archive/master.zip"
-_devel_update_info_url = "https://raw.github.com/manjaro/thus/master/update.info"
+_devel_update_info_url = "https://raw.github.com/manjaro/thus/devel/update.info"
 _devel_zip_url = "https://github.com/manjaro/thus/archive/devel.zip"
 _update_info = "/usr/share/thus/update.info"
 
@@ -99,7 +99,7 @@ class Updater():
             return False
 
         # Version is always: x.y.z
-        local_ver = info.CNCHI_VERSION.split(".")
+        local_ver = info.THUS_VERSION.split(".")
         remote_ver = self.remote_version.split(".")
 
         local = [int(local_ver[0]), int(local_ver[1]), int(local_ver[2])]
