@@ -1052,6 +1052,7 @@ class InstallationProcess(multiprocessing.Process):
             Setup systemd services
             ... and more """
 
+        self.queue_event('pulse', 'start')
         self.queue_event('action', _("Configuring your new system"))
 
         self.auto_fstab()
@@ -1064,7 +1065,6 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('debug', _('Network configuration copied.'))
 
         self.queue_event("action", _("Configuring your new system"))
-        self.queue_event('pulse')
 
         # enable services
         self.enable_services([self.network_manager])
@@ -1191,7 +1191,6 @@ class InstallationProcess(multiprocessing.Process):
         # Install xf86-video driver
         if os.path.exists("/opt/livecd/pacman-gfx.conf"):
             self.queue_event('info', _("Installing drivers ..."))
-            self.queue_event('pulse')
             mhwd_script_path = os.path.join(self.settings.get("thus"), "scripts", MHWD_SCRIPT)
             try:
                 subprocess.check_call(["/usr/bin/bash", mhwd_script_path])
@@ -1285,7 +1284,6 @@ class InstallationProcess(multiprocessing.Process):
 
         # Setup pacman
         self.queue_event("action", _("Configuring package manager"))
-        self.queue_event("pulse")
 
         # Copy mirror list
         shutil.copy2('/etc/pacman.d/mirrorlist',
@@ -1331,7 +1329,6 @@ class InstallationProcess(multiprocessing.Process):
         # This way we don't have to fix deprecated hooks.
         # NOTE: With LUKS or LVM maybe we'll have to fix deprecated hooks.
         self.queue_event('info', _("Running mkinitcpio ..."))
-        self.queue_event("pulse")
         mkinitcpio.run(DEST_DIR, self.settings, self.mount_devices, self.blvm)
         self.queue_event('info', _("Running mkinitcpio - done"))
 
@@ -1340,7 +1337,6 @@ class InstallationProcess(multiprocessing.Process):
         # so we always have to call set_autologin AFTER the post-install script call.
         if self.settings.get('require_password') is False:
             self.set_autologin()
-
 
         # Encrypt user's home directory if requested
         # FIXME: This is not working atm
@@ -1362,3 +1358,4 @@ class InstallationProcess(multiprocessing.Process):
 
         # This unmounts (unbinds) /dev and others to /DEST_DIR/dev and others
         chroot.umount_special_dirs(DEST_DIR)
+        self.queue_event('pulse', 'stop')
