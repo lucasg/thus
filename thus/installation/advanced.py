@@ -113,6 +113,8 @@ class InstallationAdvanced(Gtk.Box):
         # We will store if our device is SSD or not
         self.ssd = {}
 
+        self.show_changes_grid = None
+
         # Initialize some attributes
         self.process = None
         self.diskdic = {}

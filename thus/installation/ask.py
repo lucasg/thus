@@ -33,6 +33,7 @@ from gi.repository import Gtk
 import bootinfo
 import logging
 import os
+import misc.misc as misc
 
 _prev_page = "keymap"
 
