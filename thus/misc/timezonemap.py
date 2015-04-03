@@ -48,8 +48,8 @@ LOCATION_CHANGED = 0
 
 G_PI_4 = 0.78539816339744830961566084581987572104929234984378
 
-TIMEZONEMAP_IMAGES_PATH = "/usr/share/cnchi/data/images/timezonemap"
-OLSEN_MAP_TIMEZONES_PATH = "/usr/share/cnchi/data/locale/timezones.xml"
+TIMEZONEMAP_IMAGES_PATH = "/usr/share/thus/data/images/timezonemap"
+OLSEN_MAP_TIMEZONES_PATH = "/usr/share/thus/data/locale/timezones.xml"
 
 BUBBLE_TEXT_FONT = "Sans 9"
 
