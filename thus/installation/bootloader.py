@@ -41,6 +41,11 @@ from installation import chroot
 import random
 import string
 
+from configobj import ConfigObj
+
+conf_file = '/etc/thus.conf'
+configuration = ConfigObj(conf_file)
+
 # When testing, no _() is available
 try:
     _("")
@@ -61,6 +66,9 @@ class Bootloader(object):
         self.swap_uuid = fs.get_info(self.swap_partition)['UUID']
         self.boot_device = self.mount_devices["/boot"]
         self.boot_uuid = fs.get_info(self.boot_device)['UUID']
+        self.kernel = configuration['install']['KERNEL']
+        self.vmlinuz = "vmlinuz-{0}".format(self.kernel)
+        self.initramfs = "initramfs-{0}".format(self.kernel)
 
     def install(self):
         """ Installs the bootloader """
@@ -93,8 +101,8 @@ class Bootloader(object):
             return
         ruuid_str = 'root=UUID=' + self.root_uuid
         boot_command = self.settings.get('GRUB_CMDLINE_LINUX')
-        boot_command = 'linux /vmlinuz-linux ' + ruuid_str + ' ' + boot_command + '\n'
-        pattern = re.compile("menuentry 'Manjaro Linux'[\s\S]*initramfs-linux.img\n}")
+        boot_command = 'linux /' + self.vmlinuz + ' ' + ruuid_str + ' ' + boot_command + '\n'
+        pattern = re.compile("menuentry 'Manjaro Linux'[\s\S]*{0}.img\n}".format(self.vmlinuz))
 
         with open(cfg) as grub_file:
             parse = grub_file.read()
@@ -103,7 +111,7 @@ class Bootloader(object):
             entry = pattern.search(parse)
             if entry:
                 logging.debug("Wrong uuid in grub.cfg, let's fix it!")
-                new_entry = re.sub("linux\t/vmlinuz.*quiet\n", boot_command, entry.group())
+                new_entry = re.sub("linux\t/{0}.*quiet\n".format(self.vmlinuz), boot_command, entry.group())
                 parse = parse.replace(entry.group(), new_entry)
 
                 with open(cfg) as grub_file:
@@ -233,7 +241,7 @@ class Bootloader(object):
 
         self.install_grub2_locales()
 
-        self.copy_grub2_theme_files()
+        # self.copy_grub2_theme_files()
 
         # Add -l option to os-prober's umount call so that it does not hang
         self.apply_osprober_patch()
@@ -297,7 +305,7 @@ class Bootloader(object):
 
         self.install_grub2_locales()
 
-        self.copy_grub2_theme_files()
+        # self.copy_grub2_theme_files()
 
         # Copy grub into dirs known to be used as default by some OEMs if they do not exist yet.
         grub_defaults = [os.path.join(self.dest_dir, "boot/EFI/BOOT", "BOOT{0}.efi".format(spec_uefi_arch_caps)),
@@ -321,7 +329,7 @@ class Bootloader(object):
                 except Exception as general_error:
                     logging.warning(msg_failed, general_error)
 
-        # Copy uefi shell if none exists in /boot/EFI
+        '''# Copy uefi shell if none exists in /boot/EFI
         shell_src = "/usr/share/thus/grub2-theme/shellx64_v2.efi"
         shell_dst = os.path.join(self.dest_dir, "boot/EFI/")
         try:
@@ -332,7 +340,7 @@ class Bootloader(object):
             pass
         except Exception as general_error:
             logging.warning(_("UEFI Shell drop-in could not be copied."))
-            logging.warning(general_error)
+            logging.warning(general_error)'''
 
         # Run grub-mkconfig last
         logging.info(_("Generating grub.cfg"))
@@ -431,23 +439,13 @@ class Bootloader(object):
         if not self.settings.get('use_luks'):
             conf = []
             conf.append("title\tManjaro\n")
-            conf.append("linux\t/vmlinuz-linux\n")
-            conf.append("initrd\t/initramfs-linux.img\n")
+            conf.append("linux\t/{0}\n".format(self.vmlinuz))
+            conf.append("initrd\t/{0}.img\n".format(self.initramfs))
             conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
             conf.append("title\tManjaro (fallback)\n")
-            conf.append("linux\t/vmlinuz-linux\n")
-            conf.append("initrd\t/initramfs-linux-fallback.img\n")
+            conf.append("linux\t/{0}\n".format(self.vmlinuz))
+            conf.append("initrd\t/{0}-fallback.img\n".format(self.initramfs))
             conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
-
-            if self.settings.get('feature_lts'):
-                conf.append("title\tManjaro LTS\n")
-                conf.append("linux\t/vmlinuz-linux-lts\n")
-                conf.append("initrd\t/initramfs-linux-lts.img\n")
-                conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
-                conf.append("title\tManjaro LTS (fallback)\n\n")
-                conf.append("linux\t/vmlinuz-linux-lts\n")
-                conf.append("initrd\t/initramfs-linux-lts-fallback.img\n")
-                conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
         else:
             luks_root_volume = self.settings.get('luks_root_volume')
 
@@ -468,19 +466,11 @@ class Bootloader(object):
 
             conf = []
             conf.append("title\tManjaro\n")
-            conf.append("linux\t/boot/vmlinuz-linux\n")
-            conf.append("options\tinitrd=/boot/initramfs-linux.img {0}\n\n".format(root_uuid_line))
+            conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
+            conf.append("options\tinitrd=/boot/{0}.img {1}\n\n".format(self.initramfs,root_uuid_line))
             conf.append("title\tManjaro (fallback)\n")
-            conf.append("linux\t/boot/vmlinuz-linux\n")
-            conf.append("options\tinitrd=/boot/initramfs-linux-fallback.img {0}\n\n".format(root_uuid_line))
-
-            if self.settings.get('feature_lts'):
-                conf.append("title\tManjaro LTS\n")
-                conf.append("linux\t/boot/vmlinuz-linux-lts\n")
-                conf.append("options\tinitrd=/boot/initramfs-linux-lts.img {0}\n\n".format(root_uuid_line))
-                conf.append("title\tManjaro LTS (fallback)\n")
-                conf.append("linux\t/boot/vmlinuz-linux-lts\n")
-                conf.append("options\tinitrd=/boot/initramfs-linux-lts-fallback.img {0}\n\n".format(root_uuid_line))
+            conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
+            conf.append("options\tinitrd=/boot/{0}-fallback.img {1}\n\n".format(self.initramfs,root_uuid_line))
 
         # Write boot entries
         entries_dir = os.path.join(self.dest_dir, "boot/loader/entries")

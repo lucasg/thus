@@ -2169,13 +2169,13 @@ class InstallationAdvanced(GtkBaseBox):
         checkbox = self.ui.get_object("bootloader_device_check")
         if checkbox.get_active() is False:
             self.settings.set('bootloader_install', False)
-            logging.warning(_("Cnchi will not install any bootloader"))
+            logging.warning(_("Thus will not install any bootloader"))
         else:
             self.settings.set('bootloader_install', True)
             self.settings.set('bootloader_device', self.bootloader_device)
 
             self.settings.set('bootloader', self.bootloader)
-            msg = _("Antergos will install the bootloader {0} in device {1}")
+            msg = _("Manjaro will install the bootloader {0} in device {1}")
             msg = msg.format(self.bootloader, self.bootloader_device)
             logging.info(msg)
 

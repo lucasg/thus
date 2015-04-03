@@ -225,7 +225,7 @@ class InstallationProcess(multiprocessing.Process):
         self.initramfs = ""
         self.kernel = ""
         self.vmlinuz = ""
-        self.dest_dir = ""
+        DEST_DIR = ""
         self.bootloader_ok = self.settings.get('bootloader_ok')
 
     def queue_fatal_event(self, txt):
@@ -435,7 +435,7 @@ class InstallationProcess(multiprocessing.Process):
             # very slow ...
             self.install_system()
 
-            subprocess.check_call(['mkdir', '-p', '%s/var/log/' % self.dest_dir])
+            subprocess.check_call(['mkdir', '-p', '%s/var/log/' % DEST_DIR])
             self.queue_event('debug', _('System installed.'))
 
             self.queue_event('debug', _('Configuring system ...'))
@@ -474,7 +474,7 @@ class InstallationProcess(multiprocessing.Process):
         else:
             # Last but not least, copy Thus log to new installation
             datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
-            dst = os.path.join(self.dest_dir, "var/log/thus-%s.log" % datetime)
+            dst = os.path.join(DEST_DIR, "var/log/thus-%s.log" % datetime)
             try:
                 shutil.copy("/tmp/thus.log", dst)
             except FileNotFoundError:
@@ -502,7 +502,7 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', "Mounted devices: %s" % self.mount_devices)
             for path in self.mount_devices:
                 mount_part = self.mount_devices[path]
-                mount_dir = self.dest_dir + path
+                mount_dir = DEST_DIR + path
                 if path != '/' and path != 'swap' and path != '':
                     try:
 
@@ -518,16 +518,16 @@ class InstallationProcess(multiprocessing.Process):
                             logging.warning(err)
                             self.queue_event('debug', _("Can't unmount %s") % mount_dir)
             # now we can unmount /install
-            (fsname, fstype, writable) = misc.mount_info(self.dest_dir)
+            (fsname, fstype, writable) = misc.mount_info(DEST_DIR)
             if fsname:
                 try:
-                    txt = _("Unmounting %s") % self.dest_dir
+                    txt = _("Unmounting %s") % DEST_DIR
                     self.queue_event('debug', txt)
-                    subprocess.check_call(['umount', self.dest_dir])
+                    subprocess.check_call(['umount', DEST_DIR])
                 except subprocess.CalledProcessError as err:
                     logging.error(err)
                     try:
-                        subprocess.check_call(["umount", "-l", self.dest_dir])
+                        subprocess.check_call(["umount", "-l", DEST_DIR])
                     except subprocess.CalledProcessError as err:
                         logging.warning(err)
                         self.queue_event('debug', _("Can't unmount %s") % p)
@@ -551,8 +551,8 @@ class InstallationProcess(multiprocessing.Process):
         """ Copies all files to target """
         # mount the media location.
         try:
-            if(not os.path.exists(self.dest_dir)):
-                os.mkdir(self.dest_dir)
+            if(not os.path.exists(DEST_DIR)):
+                os.mkdir(DEST_DIR)
             if(not os.path.exists("/source")):
                 os.mkdir("/source")
             if(not os.path.exists("/source_desktop")):
@@ -583,7 +583,7 @@ class InstallationProcess(multiprocessing.Process):
 
             # walk root filesystem
             SOURCE = "/source/"
-            DEST = self.dest_dir
+            DEST = DEST_DIR
             directory_times = []
             # index the files
             self.queue_event('info', "Indexing files to be copied...")
@@ -603,7 +603,7 @@ class InstallationProcess(multiprocessing.Process):
             t.join()
             # walk desktop filesystem
             SOURCE = "/source_desktop/"
-            DEST = self.dest_dir
+            DEST = DEST_DIR
             directory_times = []
             self.queue_event('info', _("Extracting desktop-image ..."))
             our_current = int(output1)
@@ -641,27 +641,27 @@ class InstallationProcess(multiprocessing.Process):
 
         special_dirs = ["sys", "proc", "dev", "dev/pts", "sys/firmware/efi"]
         for s_dir in special_dirs:
-            mydir = os.path.join(self.dest_dir, s_dir)
+            mydir = os.path.join(DEST_DIR, s_dir)
             if not os.path.exists(mydir):
                 os.makedirs(mydir)
 
-        mydir = os.path.join(self.dest_dir, "sys")
+        mydir = os.path.join(DEST_DIR, "sys")
         subprocess.check_call(["mount", "-t", "sysfs", "/sys", mydir])
         subprocess.check_call(["chmod", "555", mydir])
 
-        mydir = os.path.join(self.dest_dir, "proc")
+        mydir = os.path.join(DEST_DIR, "proc")
         subprocess.check_call(["mount", "-t", "proc", "/proc", mydir])
         subprocess.check_call(["chmod", "555", mydir])
 
-        mydir = os.path.join(self.dest_dir, "dev")
+        mydir = os.path.join(DEST_DIR, "dev")
         subprocess.check_call(["mount", "-o", "bind", "/dev", mydir])
 
-        mydir = os.path.join(self.dest_dir, "dev/pts")
+        mydir = os.path.join(DEST_DIR, "dev/pts")
         subprocess.check_call(["mount", "-t", "devpts", "/dev/pts", mydir])
         subprocess.check_call(["chmod", "555", mydir])
 
         if self.settings.get('efi'):
-            mydir = os.path.join(self.dest_dir, "sys/firmware/efi")
+            mydir = os.path.join(DEST_DIR, "sys/firmware/efi")
             subprocess.check_call(["mount", "-o", "bind", "/sys/firmware/efi", mydir])
 
         self.special_dirs_mounted = True
@@ -679,7 +679,7 @@ class InstallationProcess(multiprocessing.Process):
             special_dirs = ["dev/pts", "sys", "proc", "dev"]
 
         for s_dir in special_dirs:
-            mydir = os.path.join(self.dest_dir, s_dir)
+            mydir = os.path.join(DEST_DIR, s_dir)
             try:
                 subprocess.check_call(["umount", mydir])
             except subprocess.CalledProcessError as err:
@@ -700,7 +700,7 @@ class InstallationProcess(multiprocessing.Process):
 
     def chroot(self, cmd, timeout=None, stdin=None):
         """ Runs command inside the chroot """
-        run = ['chroot', self.dest_dir]
+        run = ['chroot', DEST_DIR]
 
         for element in cmd:
             run.append(element)
@@ -964,8 +964,8 @@ class InstallationProcess(multiprocessing.Process):
 
     def find_desktop_environment(self):
         for desktop_environment in desktop_environments:
-            if os.path.exists('%s%s' % (self.dest_dir, desktop_environment.executable)) \
-               and os.path.exists('%s/usr/share/xsessions/%s.desktop' % (self.dest_dir, desktop_environment.desktop_file)):
+            if os.path.exists('%s%s' % (DEST_DIR, desktop_environment.executable)) \
+               and os.path.exists('%s/usr/share/xsessions/%s.desktop' % (DEST_DIR, desktop_environment.desktop_file)):
                 return desktop_environment
         return None
 
@@ -1031,7 +1031,7 @@ class InstallationProcess(multiprocessing.Process):
 
         if self.desktop_manager == 'mdm':
             # Systems with MDM as Desktop Manager
-            mdm_conf_path = os.path.join(self.dest_dir, "etc/mdm/custom.conf")
+            mdm_conf_path = os.path.join(DEST_DIR, "etc/mdm/custom.conf")
             if os.path.exists(mdm_conf_path):
                 with open(mdm_conf_path, "r") as mdm_conf:
                     text = mdm_conf.readlines()
@@ -1048,7 +1048,7 @@ class InstallationProcess(multiprocessing.Process):
                     mdm_conf.write('AutomaticLoginEnable=True\n')
         elif self.desktop_manager == 'gdm':
             # Systems with GDM as Desktop Manager
-            gdm_conf_path = os.path.join(self.dest_dir, "etc/gdm/custom.conf")
+            gdm_conf_path = os.path.join(DEST_DIR, "etc/gdm/custom.conf")
             if os.path.exists(gdm_conf_path):
                 with open(gdm_conf_path, "r") as gdm_conf:
                     text = gdm_conf.readlines()
@@ -1065,7 +1065,7 @@ class InstallationProcess(multiprocessing.Process):
                     gdm_conf.write('AutomaticLoginEnable=True\n')
         elif self.desktop_manager == 'kdm':
             # Systems with KDM as Desktop Manager
-            kdm_conf_path = os.path.join(self.dest_dir, "usr/share/config/kdm/kdmrc")
+            kdm_conf_path = os.path.join(DEST_DIR, "usr/share/config/kdm/kdmrc")
             text = []
             with open(kdm_conf_path, "r") as kdm_conf:
                 text = kdm_conf.readlines()
@@ -1078,7 +1078,7 @@ class InstallationProcess(multiprocessing.Process):
                     kdm_conf.write(line)
         elif self.desktop_manager == 'lxdm':
             # Systems with LXDM as Desktop Manager
-            lxdm_conf_path = os.path.join(self.dest_dir, "etc/lxdm/lxdm.conf")
+            lxdm_conf_path = os.path.join(DEST_DIR, "etc/lxdm/lxdm.conf")
             text = []
             with open(lxdm_conf_path, "r") as lxdm_conf:
                 text = lxdm_conf.readlines()
@@ -1091,7 +1091,7 @@ class InstallationProcess(multiprocessing.Process):
             # Systems with LightDM as Desktop Manager
             # Ideally, we should use configparser for the ini conf file,
             # but we just do a simple text replacement for now, as it worksforme(tm)
-            lightdm_conf_path = os.path.join(self.dest_dir, "etc/lightdm/lightdm.conf")
+            lightdm_conf_path = os.path.join(DEST_DIR, "etc/lightdm/lightdm.conf")
             text = []
             with open(lightdm_conf_path, "r") as lightdm_conf:
                 text = lightdm_conf.readlines()
@@ -1102,7 +1102,7 @@ class InstallationProcess(multiprocessing.Process):
                     lightdm_conf.write(line)
         elif self.desktop_manager == 'slim':
             # Systems with Slim as Desktop Manager
-            slim_conf_path = os.path.join(self.dest_dir, "etc/slim.conf")
+            slim_conf_path = os.path.join(DEST_DIR, "etc/slim.conf")
             text = []
             with open(slim_conf_path, "r") as slim_conf:
                 text = slim_conf.readlines()
@@ -1115,7 +1115,7 @@ class InstallationProcess(multiprocessing.Process):
                     slim_conf.write(line)
         elif self.desktop_manager == 'sddm':
             # Systems with Sddm as Desktop Manager
-            sddm_conf_path = os.path.join(self.dest_dir, "etc/sddm.conf")
+            sddm_conf_path = os.path.join(DEST_DIR, "etc/sddm.conf")
             if os.path.isfile(sddm_conf_path):
                 self.queue_event('info', "SDDM config file exists")
             else:
@@ -1162,7 +1162,7 @@ class InstallationProcess(multiprocessing.Process):
         # enable services
         self.enable_services([self.network_manager])
 
-        cups_service = os.path.join(self.dest_dir, "usr/lib/systemd/system/org.cups.cupsd.service")
+        cups_service = os.path.join(DEST_DIR, "usr/lib/systemd/system/org.cups.cupsd.service")
         if os.path.exists(cups_service):
             self.enable_services(['org.cups.cupsd'])
 
@@ -1197,7 +1197,7 @@ class InstallationProcess(multiprocessing.Process):
         root_password = self.settings.get('root_password')
         hostname = self.settings.get('hostname')
 
-        sudoers_path = os.path.join(self.dest_dir, "etc/sudoers.d/10-installer")
+        sudoers_path = os.path.join(DEST_DIR, "etc/sudoers.d/10-installer")
 
         with open(sudoers_path, "w") as sudoers:
             sudoers.write('%s ALL=(ALL) ALL\n' % username)
@@ -1222,7 +1222,7 @@ class InstallationProcess(multiprocessing.Process):
 
         chroot_run(['chown', '-R', '%s:users' % username, "/home/%s" % username])
 
-        hostname_path = os.path.join(self.dest_dir, "etc/hostname")
+        hostname_path = os.path.join(DEST_DIR, "etc/hostname")
         with open(hostname_path, "w") as hostname_file:
             hostname_file.write(hostname)
 
@@ -1245,16 +1245,16 @@ class InstallationProcess(multiprocessing.Process):
         self.uncomment_locale_gen(locale)
 
         chroot_run(['locale-gen'])
-        locale_conf_path = os.path.join(self.dest_dir, "etc/locale.conf")
+        locale_conf_path = os.path.join(DEST_DIR, "etc/locale.conf")
         with open(locale_conf_path, "w") as locale_conf:
             locale_conf.write('LANG=%s\n' % locale)
 
-        environment_path = os.path.join(self.dest_dir, "etc/environment")
+        environment_path = os.path.join(DEST_DIR, "etc/environment")
         with open(environment_path, "w") as environment:
             environment.write('LANG=%s\n' % locale)
 
         # Set /etc/vconsole.conf
-        vconsole_conf_path = os.path.join(self.dest_dir, "etc/vconsole.conf")
+        vconsole_conf_path = os.path.join(DEST_DIR, "etc/vconsole.conf")
         with open(vconsole_conf_path, "w") as vconsole_conf:
             vconsole_conf.write('KEYMAP=%s\n' % keyboard_layout)
 
@@ -1271,7 +1271,7 @@ class InstallationProcess(multiprocessing.Process):
         # Copy generated xorg.xonf to target
         if os.path.exists("/etc/X11/xorg.conf"):
             shutil.copy2('/etc/X11/xorg.conf',
-                         os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
+                         os.path.join(DEST_DIR, 'etc/X11/xorg.conf'))
 
         # Configure ALSA
         self.alsa_mixer_setup()
@@ -1310,57 +1310,57 @@ class InstallationProcess(multiprocessing.Process):
             self.desktop_manager = 'sddm'
 
         # setup lightdm
-        if os.path.exists("%s/usr/bin/lightdm" % self.dest_dir):
+        if os.path.exists("%s/usr/bin/lightdm" % DEST_DIR):
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
-                os.system("sed -i -e 's/^.*user-session=.*/user-session=%s/' %s/etc/lightdm/lightdm.conf" % (default_desktop_environment.desktop_file, self.dest_dir))
-                os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver %s/usr/bin/gdmflexiserver" % self.dest_dir)
-            os.system("chmod +r %s/etc/lightdm/lightdm.conf" % self.dest_dir)
+                os.system("sed -i -e 's/^.*user-session=.*/user-session=%s/' %s/etc/lightdm/lightdm.conf" % (default_desktop_environment.desktop_file, DEST_DIR))
+                os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver %s/usr/bin/gdmflexiserver" % DEST_DIR)
+            os.system("chmod +r %s/etc/lightdm/lightdm.conf" % DEST_DIR)
             self.desktop_manager = 'lightdm'
 
         # Setup gdm
-        if os.path.exists("%s/usr/bin/gdm" % self.dest_dir):
+        if os.path.exists("%s/usr/bin/gdm" % DEST_DIR):
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
-                os.system("echo \"XSession=%s\" >> %s/var/lib/AccountsService/users/gdm" % (default_desktop_environment.desktop_file, self.dest_dir))
-                os.system("echo \"Icon=\" >> %s/var/lib/AccountsService/users/gdm" % self.dest_dir)
+                os.system("echo \"XSession=%s\" >> %s/var/lib/AccountsService/users/gdm" % (default_desktop_environment.desktop_file, DEST_DIR))
+                os.system("echo \"Icon=\" >> %s/var/lib/AccountsService/users/gdm" % DEST_DIR)
             self.desktop_manager = 'gdm'
 
         # Setup mdm
-        if os.path.exists("%s/usr/bin/mdm" % self.dest_dir):
+        if os.path.exists("%s/usr/bin/mdm" % DEST_DIR):
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
-                os.system("sed -i 's|default.desktop|%s.desktop|g' %s/etc/mdm/custom.conf" % (default_desktop_environment.desktop_file, self.dest_dir))
+                os.system("sed -i 's|default.desktop|%s.desktop|g' %s/etc/mdm/custom.conf" % (default_desktop_environment.desktop_file, DEST_DIR))
             self.desktop_manager = 'mdm'
 
         # Setup lxdm
-        if os.path.exists("%s/usr/bin/lxdm" % self.dest_dir):
+        if os.path.exists("%s/usr/bin/lxdm" % DEST_DIR):
             default_desktop_environment = self.find_desktop_environment()
             if default_desktop_environment != None:
-                os.system("sed -i -e 's|^.*session=.*|session=%s|' %s/etc/lxdm/lxdm.conf" % (default_desktop_environment.executable, self.dest_dir))
+                os.system("sed -i -e 's|^.*session=.*|session=%s|' %s/etc/lxdm/lxdm.conf" % (default_desktop_environment.executable, DEST_DIR))
             self.desktop_manager = 'lxdm'
 
         # Setup kdm
-        if os.path.exists("%s/usr/bin/kdm" % self.dest_dir):
+        if os.path.exists("%s/usr/bin/kdm" % DEST_DIR):
             self.desktop_manager = 'kdm'
 
         self.queue_event('info', _("Configure System ..."))
 
         # Add BROWSER var
-        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/environment" % self.dest_dir)
-        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/skel/.bashrc" % self.dest_dir)
-        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/profile" % self.dest_dir)
+        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/environment" % DEST_DIR)
+        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/skel/.bashrc" % DEST_DIR)
+        os.system("echo \"BROWSER=/usr/bin/xdg-open\" >> %s/etc/profile" % DEST_DIR)
         # Add TERM var
-        if os.path.exists("%s/usr/bin/mate-session" % self.dest_dir):
-            os.system("echo \"TERM=mate-terminal\" >> %s/etc/environment" % self.dest_dir)
-            os.system("echo \"TERM=mate-terminal\" >> %s/etc/profile" % self.dest_dir)
+        if os.path.exists("%s/usr/bin/mate-session" % DEST_DIR):
+            os.system("echo \"TERM=mate-terminal\" >> %s/etc/environment" % DEST_DIR)
+            os.system("echo \"TERM=mate-terminal\" >> %s/etc/profile" % DEST_DIR)
 
         # Adjust Steam-Native when libudev.so.0 is available
-        if os.path.exists("%s/usr/lib/libudev.so.0" % self.dest_dir) or os.path.exists("%s/usr/lib32/libudev.so.0" % self.dest_dir):
-            os.system("echo -e \"STEAM_RUNTIME=0\nSTEAM_FRAME_FORCE_CLOSE=1\" >> %s/etc/environment" % self.dest_dir)
+        if os.path.exists("%s/usr/lib/libudev.so.0" % DEST_DIR) or os.path.exists("%s/usr/lib32/libudev.so.0" % DEST_DIR):
+            os.system("echo -e \"STEAM_RUNTIME=0\nSTEAM_FRAME_FORCE_CLOSE=1\" >> %s/etc/environment" % DEST_DIR)
 
         # Remove thus
-        if os.path.exists("%s/usr/bin/thus" % self.dest_dir):
+        if os.path.exists("%s/usr/bin/thus" % DEST_DIR):
             self.queue_event('info', _("Removing live configuration (packages)"))
             chroot_run(['pacman', '-R', '--noconfirm', 'thus'])
 
@@ -1382,18 +1382,18 @@ class InstallationProcess(multiprocessing.Process):
 
         # Copy mirror list
         shutil.copy2('/etc/pacman.d/mirrorlist',
-                     os.path.join(self.dest_dir, 'etc/pacman.d/mirrorlist'))
+                     os.path.join(DEST_DIR, 'etc/pacman.d/mirrorlist'))
 
         # Copy random generated keys by pacman-init to target
-        if os.path.exists("%s/etc/pacman.d/gnupg" % self.dest_dir):
-            os.system("rm -rf %s/etc/pacman.d/gnupg" % self.dest_dir)
-        os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/" % self.dest_dir)
+        if os.path.exists("%s/etc/pacman.d/gnupg" % DEST_DIR):
+            os.system("rm -rf %s/etc/pacman.d/gnupg" % DEST_DIR)
+        os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/" % DEST_DIR)
         chroot_run(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
-        if os.path.exists("%s/etc/keyboard.conf" % self.dest_dir):
-            consolefh = open("%s/etc/keyboard.conf" % self.dest_dir, "r")
-            newconsolefh = open("%s/etc/keyboard.new" % self.dest_dir, "w")
+        if os.path.exists("%s/etc/keyboard.conf" % DEST_DIR):
+            consolefh = open("%s/etc/keyboard.conf" % DEST_DIR, "r")
+            newconsolefh = open("%s/etc/keyboard.new" % DEST_DIR, "w")
             for line in consolefh:
                  line = line.rstrip("\r\n")
                  if(line.startswith("XKBLAYOUT=")):
@@ -1407,7 +1407,7 @@ class InstallationProcess(multiprocessing.Process):
             chroot_run(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
             chroot_run(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
         else:
-            keyboardconf = open("%s/etc/X11/xorg.conf.d/00-keyboard.conf" % self.dest_dir, "w")
+            keyboardconf = open("%s/etc/X11/xorg.conf.d/00-keyboard.conf" % DEST_DIR, "w")
             keyboardconf.write("\n");
             keyboardconf.write("Section \"InputClass\"\n")
             keyboardconf.write(" Identifier \"system-keyboard\"\n") 
@@ -1434,9 +1434,24 @@ class InstallationProcess(multiprocessing.Process):
         if self.settings.get('require_password') is False:
             self.set_autologin()
 
-        # Encrypt user's home directory if requested (NOT FINISHED YET)
-        if self.settings.get('encrypt_home'):
-            self.queue_event('debug', _("Encrypting user home dir ..."))
-            encfs.setup(username, self.dest_dir)
-            self.queue_event('debug', _("User home dir encrypted"))
 
+        # Encrypt user's home directory if requested
+        # FIXME: This is not working atm
+        if self.settings.get('encrypt_home'):
+            logging.debug(_("Encrypting user home dir..."))
+            encfs.setup(username, DEST_DIR)
+            logging.debug(_("User home dir encrypted"))
+
+        # Install boot loader (always after running mkinitcpio)
+        if self.settings.get('bootloader_install'):
+            try:
+                logging.debug(_("Installing bootloader..."))
+                from installation import bootloader
+
+                boot_loader = bootloader.Bootloader(DEST_DIR, self.settings, self.mount_devices)
+                boot_loader.install()
+            except Exception as general_error:
+                logging.error(_("Couldn't install boot loader: %s"), general_error)
+
+        # This unmounts (unbinds) /dev and others to /DEST_DIR/dev and others
+        chroot.umount_special_dirs(DEST_DIR)
