@@ -6,8 +6,8 @@
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -67,9 +67,12 @@ class Settings(object):
             'keyboard_variant': '',
             'language_name': '',
             'language_code': '',
+            'laptop': 'False',
             'locale': '',
             'log_file': '/tmp/thus.log',
-            'luks_key_pass': "",
+            'luks_root_device': "",
+            'luks_root_password': "",
+            'luks_root_volume': "",
             'partition_mode': 'easy',
             'password': '',
             'rankmirrors_done': False,
@@ -84,36 +87,38 @@ class Settings(object):
             'timezone_latitude': 0,
             'timezone_longitude': 0,
             'timezone_done': False,
+            'timezone_start': False,
             'tmp': '/tmp',
             'thus': '/usr/share/thus/',
             'ui': '/usr/share/thus/ui/',
             'use_home': False,
             'use_luks': False,
+            'use_luks_in_root': False,
             'use_lvm': False,
             'use_ntp': True,
             'user_info_done': False,
             'username': '',
-            'z_hidden' : False})
+            'z_hidden': False})
 
     def _get_settings(self):
         """ Get a copy of our settings """
-        global_settings = self.settings.get()
-        copy = global_settings.copy()
-        self.settings.put(global_settings)
+        settings = self.settings.get()
+        copy = settings.copy()
+        self.settings.put(settings)
         return copy
 
     def _update_settings(self, new_settings):
         """ Updates global settings """
-        global_settings = self.settings.get()
+        settings = self.settings.get()
         try:
-            global_settings.update(new_settings)
+            settings.update(new_settings)
         finally:
-            self.settings.put(global_settings)
+            self.settings.put(settings)
 
     def get(self, key):
         """ Get one setting value """
         settings = self._get_settings()
-        return settings[key]
+        return settings.get(key, None)
 
     def set(self, key, value):
         """ Set one setting's value """

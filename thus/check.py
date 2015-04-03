@@ -6,8 +6,8 @@
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -26,12 +26,12 @@
 
 """ Check screen (detects if Manjaros prerequisites are meet) """
 
-from gi.repository import Gtk, GObject
+from gi.repository import GLib
 import subprocess
 import os
 import logging
-import canonical.gtkwidgets as gtkwidgets
-import canonical.misc as misc
+import misc.gtkwidgets as gtkwidgets
+import misc.misc as misc
 
 from rank_mirrors import AutoRankmirrorsThread
 
@@ -77,17 +77,16 @@ class Check(Gtk.Box):
 
     def translate_ui(self):
         txt = _("System Check")
-        txt = '<span weight="bold" size="large">%s</span>' % txt
+        txt = '<span weight="bold" size="large">{0}</span>'.format(txt)
         self.title.set_markup(txt)
 
         self.prepare_enough_space = self.ui.get_object("prepare_enough_space")
-        txt = _("has at least %dGB available storage space") % int(MIN_ROOT_SIZE / 1000000000)
-        txt += " (*)"
+        txt = _("has at least {0}GB available storage space. (*)").format(MIN_ROOT_SIZE / 1000000000)
         self.prepare_enough_space.props.label = txt
 
         self.label_space = self.ui.get_object("label_space")
         txt = _("This highly depends on which desktop environment you choose, so you might need more space.")
-        txt = "(*) <i>%s</i>" % txt
+        txt = "(*) <i>{0}</i>".format(txt)
         self.label_space.set_markup(txt)
 
         self.prepare_power_source = self.ui.get_object("prepare_power_source")
@@ -100,10 +99,11 @@ class Check(Gtk.Box):
 
         self.prepare_best_results = self.ui.get_object("prepare_best_results")
         txt = _("For best results, please ensure that this computer:")
-        txt = '<span weight="bold" size="large">%s</span>' % txt
+        txt = '<span weight="bold" size="large">{0}</span>'.format(txt)
         self.prepare_best_results.set_markup(txt)
 
     def check_all(self):
+        """ Check that all requirements are meet """
         has_internet = misc.has_connection()
         self.prepare_network_connection.set_state(has_internet)
 
@@ -120,7 +120,9 @@ class Check(Gtk.Box):
         return False
 
     def on_battery(self):
+        """ Checks if we are on battery power """
         import dbus
+
         if self.has_battery():
             bus = dbus.SystemBus()
             upower = bus.get_object(UPOWER, UPOWER_PATH)
@@ -138,10 +140,13 @@ class Check(Gtk.Box):
             if os.path.exists(type_path):
                 with open(type_path) as power_file:
                     if power_file.read().startswith('Battery'):
+                        self.settings.set('laptop', 'True')
                         return True
         return False
 
-    def has_enough_space(self):
+    @staticmethod
+    def has_enough_space():
+        """ Check that we have a disk or partition with enough space """
         lsblk = subprocess.Popen(["lsblk", "-lnb"], stdout=subprocess.PIPE)
         output = lsblk.communicate()[0].decode("utf-8").split("\n")
 
@@ -154,20 +159,21 @@ class Check(Gtk.Box):
                     size = int(col[3])
                     if size > max_size:
                         max_size = size
-        # we need 5GB
-        # 5000000000
+
         if max_size >= MIN_ROOT_SIZE:
             return True
 
         return False
 
-    def on_timer(self, time):
+    def on_timer(self):
+        """ If all requirements are meet, enable forward button """
         if not self.remove_timer:
             self.forward_button.set_sensitive(self.check_all())
         return not self.remove_timer
 
     def store_values(self):
-        # remove timer
+        """ Continue """
+        # Remove timer
         self.remove_timer = True
 
         logging.info(_("We have Internet connection."))
@@ -191,10 +197,11 @@ class Check(Gtk.Box):
         return _next_page
 
     def prepare(self, direction):
+        """ Load screen """
         self.translate_ui()
         self.show_all()
 
         self.forward_button.set_sensitive(self.check_all())
 
-        # set timer
-        self.timeout_id = GObject.timeout_add(1000, self.on_timer, None)
+        # Set timer
+        self.timeout_id = GLib.timeout_add(5000, self.on_timer)
