@@ -1287,8 +1287,6 @@ class InstallationAdvanced(GtkBaseBox):
         """ As the installer language can change anytime the user changes it, we have
             to 'retranslate' all our widgets calling this function """
 
-        self.header.set_subtitle(_("Advanced Installation Mode"))
-
         txt = _("Use the device below for boot loader installation:")
         txt = "<span weight='bold' size='small'>{0}</span>".format(txt)
         label = self.ui.get_object('bootloader_device_info_label')

@@ -213,8 +213,6 @@ class InstallationAlongside(GtkBaseBox):
         txt = _("Choose the partition that you want to shrink:")
         self.choose_partition_label.set_markup(txt)
 
-        self.header.set_subtitle(_("Manjaro Alongside Installation"))
-
     def on_choose_partition_combo_changed(self, combobox):
         txt = combobox.get_active_text()
         device = txt.split("(")[1][:-1]
