@@ -331,6 +331,7 @@ class MainWindow(Gtk.ApplicationWindow):
             logging.info(_("Quiting installer..."))
             self.settings.set('stop_all_threads', True)
             logging.shutdown()
+            os._exit(0)
         except KeyboardInterrupt:
             pass
 
@@ -345,12 +346,6 @@ class MainWindow(Gtk.ApplicationWindow):
             self.progressbar.show()
         else:
             self.progressbar.hide()
-
-    def on_exit_button_clicked(self, widget, data=None):
-        """ Quit Thus """
-        remove_temp_files()
-        logging.info(_("Quiting installer..."))
-        os._exit(0)
 
     def on_forward_button_clicked(self, widget, data=None):
         """ Show next screen """
