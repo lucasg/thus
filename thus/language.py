@@ -3,7 +3,11 @@
 #
 #  language.py
 #
-#  Copyright © 2013-2015 Antergos
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
+#
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This file is part of Thus.
 #
@@ -73,16 +77,13 @@ class Language(GtkBaseBox):
         """ Translates all ui elements """
         txt_bold = _("Notice: The Thus Installer is beta software.")
         # FIXME: Can't use an a html tag in the label. Causes an accessible GTK Assertion
-        txt = _("Thus is pre-release beta software that is under active development.\n"
-                "It does not yet properly handle RAID, btrfs subvolumes, or other advanced\n"
-                "setups. Please proceed with caution as data loss is possible!\n\n"
-                "If you find any bugs, please report them at http://bugs.antergos.com")
+        txt = _("Thus is pre-release beta software that is under active development. \n" \
+                "It does not yet properly handle RAID, btrfs subvolumes, or other  \n" \
+                "advanced setups. Please proceed with caution as data loss is possible! \n\n" \
+                "If you find any bugs, please report them at http://bugs.manjaro.org")
         txt_markup = "<span weight='bold'>{0}</span>\n\n{1}".format(txt_bold, txt)
         label = self.ui.get_object("welcome_label")
         label.set_markup(txt_markup)
-
-        txt = _("Choose your language")
-        self.header.set_subtitle(txt)
 
     def langcode_to_lang(self, display_map):
         # Special cases in which we need the complete current_locale string

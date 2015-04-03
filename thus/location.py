@@ -82,8 +82,6 @@ class Location(GtkBaseBox):
         txt = _("Show all locations")
         check.set_label(txt)
 
-        self.header.set_subtitle(_("Select your location"))
-
     def select_first_listbox_item(self):
         listbox_row = self.listbox.get_children()[0]
         self.listbox.select_row(listbox_row)
