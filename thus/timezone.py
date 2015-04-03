@@ -3,22 +3,26 @@
 #
 #  timezone.py
 #
-#  Copyright © 2013-2015 Antergos
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
 #
-#  This file is part of Cnchi.
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
-#  Cnchi is free software; you can redistribute it and/or modify
+#  This file is part of Thus.
+#
+#  Thus is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  Cnchi is distributed in the hope that it will be useful,
+#  Thus is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Cnchi; if not, write to the Free Software
+#  along with Thus; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -215,7 +219,7 @@ class Timezone(GtkBaseBox):
 
     '''
     def start_mirrorlist_thread(self):
-        scripts_dir = os.path.join(self.settings.get('cnchi'), "scripts")
+        scripts_dir = os.path.join(self.settings.get('thus'), "scripts")
         self.mirrorlist_thread = GenerateMirrorListThread(self.auto_timezone_coords, scripts_dir)
         self.mirrorlist_thread.start()
     '''
@@ -273,8 +277,8 @@ class AutoTimezoneThread(threading.Thread):
 
     def run(self):
         # Calculate logo hash
-        logo = "data/images/antergos/antergos-logo-mini2.png"
-        logo_path = os.path.join(self.settings.get("cnchi"), logo)
+        logo = "data/images/manjaro/manjaro-logo-mini.png"
+        logo_path = os.path.join(self.settings.get("manjaro"), logo)
         with open(logo_path, "rb") as logo_file:
             logo_bytes = logo_file.read()
         logo_hasher = hashlib.sha1()
