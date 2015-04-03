@@ -3,22 +3,26 @@
 #
 #  show_message.py
 #
-#  Copyright © 2013-2015 Antergos
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
 #
-#  This file is part of Cnchi.
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
-#  Cnchi is free software; you can redistribute it and/or modify
+#  This file is part of Thus.
+#
+#  Thus is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  Cnchi is distributed in the hope that it will be useful,
+#  Thus is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Cnchi; if not, write to the Free Software
+#  along with Thus; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -52,7 +56,7 @@ def error(parent, my_message):
                                    destroy_with_parent=True,
                                    message_type=Gtk.MessageType.ERROR,
                                    buttons=Gtk.ButtonsType.CLOSE,
-                                   text=_("Antergos Installer - Error"))
+                                   text=_("Manjaro Installer - Error"))
     msg_dialog.format_secondary_text(my_message)
     msg_dialog.run()
     msg_dialog.destroy()
@@ -66,7 +70,7 @@ def warning(parent, my_message):
                                    destroy_with_parent=True,
                                    message_type=Gtk.MessageType.WARNING,
                                    buttons=Gtk.ButtonsType.CLOSE,
-                                   text=_("Antergos Installer - Warning"))
+                                   text=_("Manjaro Installer - Warning"))
     msg_dialog.format_secondary_text(my_message)
     msg_dialog.run()
     msg_dialog.destroy()
@@ -80,7 +84,7 @@ def message(parent, my_message):
                                    destroy_with_parent=True,
                                    message_type=Gtk.MessageType.INFO,
                                    buttons=Gtk.ButtonsType.CLOSE,
-                                   text=_("Antergos Installer - Information"))
+                                   text=_("Manjaro Installer - Information"))
     msg_dialog.format_secondary_text(my_message)
     msg_dialog.run()
     msg_dialog.destroy()
@@ -94,7 +98,7 @@ def question(parent, my_message):
                                    destroy_with_parent=True,
                                    message_type=Gtk.MessageType.QUESTION,
                                    buttons=Gtk.ButtonsType.YES_NO,
-                                   text=_("Antergos Installer - Confirmation"))
+                                   text=_("Manjaro Installer - Confirmation"))
     msg_dialog.format_secondary_text(my_message)
     response = msg_dialog.run()
     msg_dialog.destroy()
