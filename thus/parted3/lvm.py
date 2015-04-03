@@ -3,21 +3,22 @@
 #
 #  lvm.py
 #
-#  Copyright 2013 Antergos
-#  Copyright 2013 Manjaro
+#  Copyright © 2013-2015 Antergos
 #
-#  This program is free software; you can redistribute it and/or modify
+#  This file is part of Cnchi.
+#
+#  Cnchi is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  This program is distributed in the hope that it will be useful,
+#  Cnchi is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
+#  along with Cnchi; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -25,8 +26,10 @@
 
 import subprocess
 import logging
-import canonical.misc as misc
+
+import misc.misc as misc
 import show_message as show
+
 
 @misc.raise_privileges
 def get_lvm_partitions():
@@ -44,6 +47,7 @@ def get_lvm_partitions():
                 vgmap[vgn] = [pvn]
     return vgmap
 
+
 @misc.raise_privileges
 def get_volume_groups():
     """ Get all volume groups """
@@ -54,11 +58,12 @@ def get_volume_groups():
             volume_groups.append(line.split()[-1])
     return volume_groups
 
+
 @misc.raise_privileges
 def get_logical_volumes(volume_group):
     """ Get all logical volumes from a volume group """
     logical_volumes = []
-    result = subprocess.getoutput("lvdisplay %s" % volume_group)
+    result = subprocess.getoutput("lvdisplay {0}".format(volume_group))
     for line in result.split("\n"):
         if "LV Name" in line:
             logical_volumes.append(line.split()[-1])
@@ -66,17 +71,19 @@ def get_logical_volumes(volume_group):
 
 # When removing, we use -f flag to avoid warnings and confirmation messages
 
+
 @misc.raise_privileges
 def remove_logical_volume(logical_volume):
     """ Removes a logical volume """
     try:
         subprocess.check_call(["lvremove", "-f", logical_volume])
     except subprocess.CalledProcessError as err:
-        txt = _("Can't remove logical volume %s") % logical_volume
+        txt = _("Can't remove logical volume {0}").format(logical_volume)
         logging.error(txt)
         logging.error(err)
-        debugtxt = ("%s\n%s" % (txt, err))
-        show.error(debugtxt)
+        debugtxt = "{0}\n{1}".format(txt, err)
+        show.error(None, debugtxt)
+
 
 @misc.raise_privileges
 def remove_volume_group(volume_group):
@@ -90,11 +97,12 @@ def remove_volume_group(volume_group):
     try:
         subprocess.check_call(["vgremove", "-f", volume_group])
     except subprocess.CalledProcessError as err:
-        txt = _("Can't remove volume group %s") % volume_group
+        txt = _("Can't remove volume group {0}").format(volume_group)
         logging.error(txt)
         logging.error(err)
-        debugtxt = ("%s\n%s" % (txt, err))
-        show.error(debugtxt)
+        debugtxt = "{0}\n{1}".format(txt, err)
+        show.error(None, debugtxt)
+
 
 @misc.raise_privileges
 def remove_physical_volume(physical_volume):
@@ -102,8 +110,8 @@ def remove_physical_volume(physical_volume):
     try:
         subprocess.check_call(["pvremove", "-f", physical_volume])
     except subprocess.CalledProcessError as err:
-        txt = _("Can't remove physical volume %s") % physical_volume
+        txt = _("Can't remove physical volume {0}").format(physical_volume)
         logging.error(txt)
         logging.error(err)
-        debugtxt = ("%s\n%s" % (txt, err))
-        show.error(debugtxt)
+        debugtxt = "{0}\n{1}".format(txt, err)
+        show.error(None, debugtxt)
