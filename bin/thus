@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $(which sudo) ]; then
-	sudo -E /usr/bin/env python /usr/share/thus/thus.py ${@}
+	sudo -E /usr/bin/env python /usr/share/thus/thus/thus.py ${@}
 else
     # do UID checking here so someone can at least get usage instructions
     if [ "$EUID" != "0" ]; then
