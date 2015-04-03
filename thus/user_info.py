@@ -30,6 +30,8 @@ import os
 import misc.validation as validation
 import show_message as show
 
+from gtkbasebox import GtkBaseBox
+
 class UserInfo(GtkBaseBox):
     """ Asks for user information """
 
