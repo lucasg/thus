@@ -158,10 +158,6 @@ class UserInfo(GtkBaseBox):
         self.login['pass'].set_label(_("A password is required to log in"))
         self.login['encrypt'].set_label(_("Encrypt home folder"))
 
-        txt = _("Who are you?")
-        txt = "<span weight='bold' size='large'>%s</span>" % txt
-        self.title.set_markup(txt)
-
         btn = self.ui.get_object('checkbutton_show_password')
         btn.set_label(_("Show password"))
 
