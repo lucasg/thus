@@ -278,7 +278,7 @@ class AutoTimezoneThread(threading.Thread):
     def run(self):
         # Calculate logo hash
         logo = "data/images/manjaro/manjaro-logo-mini.png"
-        logo_path = os.path.join(self.settings.get("manjaro"), logo)
+        logo_path = os.path.join(self.settings.get("thus"), logo)
         with open(logo_path, "rb") as logo_file:
             logo_bytes = logo_file.read()
         logo_hasher = hashlib.sha1()
