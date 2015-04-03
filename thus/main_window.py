@@ -116,9 +116,9 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.add(self.ui.get_object("main"))
 
-        self.header = self.header_ui.get_object("header")
+        self.header = self.ui.get_object("header")
 
-        self.logo = self.header_ui.get_object("logo")
+        self.logo = self.ui.get_object("logo")
         path = os.path.join(data_dir, "images", "manjaro", "manjaro-logo-mini.png")
         self.logo.set_from_file(path)
 
