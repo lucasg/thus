@@ -628,40 +628,6 @@ class InstallationProcess(multiprocessing.Process):
             exc_type, exc_value, exc_traceback = sys.exc_info()
             traceback.print_tb(exc_traceback, limit=1, file=sys.stdout)
 
-    def chroot_mount_special_dirs(self):
-        """ Mount special directories for our chroot """
-        # Don't try to remount them
-        if self.special_dirs_mounted:
-            self.queue_event('debug', _("Special dirs already mounted."))
-            return
-
-        special_dirs = ["sys", "proc", "dev", "dev/pts", "sys/firmware/efi"]
-        for s_dir in special_dirs:
-            mydir = os.path.join(DEST_DIR, s_dir)
-            if not os.path.exists(mydir):
-                os.makedirs(mydir)
-
-        mydir = os.path.join(DEST_DIR, "sys")
-        subprocess.check_call(["mount", "-t", "sysfs", "/sys", mydir])
-        subprocess.check_call(["chmod", "555", mydir])
-
-        mydir = os.path.join(DEST_DIR, "proc")
-        subprocess.check_call(["mount", "-t", "proc", "/proc", mydir])
-        subprocess.check_call(["chmod", "555", mydir])
-
-        mydir = os.path.join(DEST_DIR, "dev")
-        subprocess.check_call(["mount", "-o", "bind", "/dev", mydir])
-
-        mydir = os.path.join(DEST_DIR, "dev/pts")
-        subprocess.check_call(["mount", "-t", "devpts", "/dev/pts", mydir])
-        subprocess.check_call(["chmod", "555", mydir])
-
-        if self.settings.get('efi'):
-            mydir = os.path.join(DEST_DIR, "sys/firmware/efi")
-            subprocess.check_call(["mount", "-o", "bind", "/sys/firmware/efi", mydir])
-
-        self.special_dirs_mounted = True
-
     def is_running(self):
         """ Checks if thread is running """
         return self.running
@@ -1203,7 +1169,7 @@ class InstallationProcess(multiprocessing.Process):
         self.auto_timesetting()
 
         # Enter chroot system
-        chroot_run_mount_special_dirs()
+        chroot.mount_special_dirs()
 
         # Install configs for root
         chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
