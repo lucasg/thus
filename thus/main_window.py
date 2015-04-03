@@ -189,7 +189,11 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.set_title(_("Manjaro Installer - Thus {0}".format(info.THUS_VERSION))
 
-        self.set_geometry()
+        # self.set_geometry()
+
+        self.set_position(Gtk.WindowPosition.CENTER)
+        self.set_resizable(False)
+        self.set_size_request(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT)
 
         # Set window icon
         icon_path = os.path.join(data_dir, "images", "manjaro", "manjaro-icon.png")
