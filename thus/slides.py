@@ -26,238 +26,202 @@
 
 """ Shows slides while installing. Also manages installing messages and progress bars """
 
-from gi.repository import Gtk, WebKit, Gdk, GLib
-import config
+from gi.repository import Gtk, GLib
 import os
-
-import queue
-from multiprocessing import Queue, Lock
-
-import show_message as show
+import sys
 import logging
 import subprocess
-import canonical.misc as misc
+
+import queue
+
+import show_message as show
+import misc.misc as misc
+
+from gtkbasebox import GtkBaseBox
+
+SLIDES_PATH = "/usr/share/thus/data/images/slides"
+SLIDES_URI = 'file:///usr/share/thus/data/slides.html'
+
+from gi.repository import WebKit2
 
 # When we reach this page we can't go neither backwards nor forwards
-_next_page = None
-_prev_page = None
 
 
-class Slides(Gtk.Box):
-
-    def __init__(self, params):
+class Slides(GtkBaseBox):
+    def __init__(self, params, prev_page=None, next_page=None):
         """ Initialize class and its vars """
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.exit_button = params['exit_button']
-        self.callback_queue = params['callback_queue']
-        self.settings = params['settings']
-        self.main_progressbar = params['main_progressbar']
-        self.should_pulse = False
-        self.dest_dir = "/install"
+        super().__init__(self, params, "slides", prev_page, next_page)
 
-        super().__init__()
-
-        builder = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        builder.add_from_file(os.path.join(self.ui_dir, "slides.ui"))
-        builder.connect_signals(self)
-
-        self.progress_bar = builder.get_object("progressbar")
+        self.progress_bar = self.ui.get_object("progress_bar")
         self.progress_bar.set_show_text(True)
+        self.progress_bar.set_name('i_progressbar')
 
-        self.global_progress_bar = builder.get_object("global_progressbar")
-        self.global_progress_bar.set_show_text(True)
+        self.downloads_progress_bar = self.ui.get_object("downloads_progress_bar")
+        self.downloads_progress_bar.set_show_text(True)
+        self.downloads_progress_bar.set_name('a_progressbar')
 
-        self.info_label = builder.get_object("info_label")
-        self.scrolled_window = builder.get_object("scrolledwindow")
-
-        # Add a webkit view to show the slides
-        self.webview = WebKit.WebView()
-
-        if self.settings is None:
-            html_file = '/usr/share/thus/data/slides.html'
-        else:
-            html_file = os.path.join(self.settings.get("data"), 'slides.html')
-
-        try:
-            with open(html_file) as html_stream:
-                html = html_stream.read(None)
-                data = os.path.join(os.getcwd(), "data")
-                self.webview.load_html_string(html, "file://" + data)
-        except IOError:
-            pass
-
-        self.scrolled_window.add(self.webview)
-
-        self.install_ok = _("Installation finished!\n" \
-                            "Do you want to restart your system now?")
-
-        super().add(builder.get_object("slides"))
+        self.info_label = self.ui.get_object("info_label")
 
         self.fatal_error = False
+        self.should_pulse = False
+
+        self.web_view = None
+
+        self.scrolled_window = self.ui.get_object("scrolledwindow")
 
     def translate_ui(self):
-        txt = _("Installing Manjaro...")
-        txt = "<span weight='bold' size='large'>%s</span>" % txt
-        self.title.set_markup(txt)
-
+        """ Translates all ui elements """
         if len(self.info_label.get_label()) <= 0:
             self.set_message(_("Please wait..."))
 
-        self.install_ok = _("Installation finished!\n" \
-                            "Do you want to restart your system now?")
-
-    def show_global_progress_bar_if_hidden(self):
-        if self.global_progress_bar_is_hidden:
-            self.global_progress_bar.show_all()
-            self.global_progress_bar_is_hidden = False
+        self.header.set_subtitle(_("Installing Manjaro..."))
 
     def prepare(self, direction):
+        # We don't load webkit until we reach this screen
+        if self.web_view is None:
+            # Add a webkit view and load our html file to show the slides
+            try:
+                self.web_view = WebKit2.WebView()
+                self.web_view.load_uri(SLIDES_URI)
+            except IOError as io_error:
+                logging.warning(io_error)
+
+            self.scrolled_window.add(self.web_view)
+            self.scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+            self.scrolled_window.set_size_request(800, 334)
+
         self.translate_ui()
         self.show_all()
 
-        # Last screen reached, hide main progress bar.
+        # Last screen reached, hide main progress bar (the one at the top).
         self.main_progressbar.hide()
 
-        # Hide global progress bar
-        self.global_progress_bar.hide()
-        self.global_progress_bar_is_hidden = True
+        # Also hide total downloads progress bar
+        self.downloads_progress_bar.hide()
 
+        # Hide backwards and forwards buttons
         self.backwards_button.hide()
         self.forward_button.hide()
-        self.exit_button.hide()
 
-    def store_values(self):
+        # Hide close button (we've reached the point of no return)
+        self.header.set_show_close_button(False)
+
+        GLib.timeout_add(400, self.manage_events_from_cb_queue)
+
+    @staticmethod
+    def store_values():
         """ Nothing to be done here """
         return False
 
-    def get_prev_page(self):
-        """ No previous page available """
-        return _prev_page
-
-    def get_next_page(self):
-        """ This is the last page """
-        return _next_page
-
     def set_message(self, txt):
         """ Show information message """
-        txt = "<span color='darkred'>%s</span>" % txt
         self.info_label.set_markup(txt)
 
     def stop_pulse(self):
         """ Stop pulsing progressbar """
         self.should_pulse = False
+        self.progress_bar.hide()
+        self.info_label.show_all()
 
-    def do_progress_pulse(self):
-        """ Pulsing progressbar """
+    def start_pulse(self):
+        """ Start pulsing progressbar """
+
         def pbar_pulse():
-            if(not self.should_pulse):
-                return False
-            self.progress_bar.pulse()
+            """ Pulse progressbar """
+            if self.should_pulse:
+                self.progress_bar.pulse()
             return self.should_pulse
-        if(not self.should_pulse):
+
+        if not self.should_pulse:
+            # Hide any text that might be in info area
+            self.info_label.set_markup("")
+            self.info_label.hide()
+            # Show progress bar (just in case)
+            self.progress_bar.show_all()
+            self.progress_bar.set_show_text(True)
             self.should_pulse = True
             GLib.timeout_add(100, pbar_pulse)
-        else:
-            # asssume we're "pulsing" already
-            self.should_pulse = True
-            pbar_pulse()
 
     def manage_events_from_cb_queue(self):
-        """ This function is called from cnchi.py with a timeout function
-            We should do as less as possible here, we want to maintain our
+        """ We should do as less as possible here, we want to maintain our
             queue message as empty as possible """
+
         if self.fatal_error:
             return False
 
-        while self.callback_queue.empty() is False:
+        if self.callback_queue is None:
+            return True
+
+        while not self.callback_queue.empty():
             try:
                 event = self.callback_queue.get_nowait()
             except queue.Empty:
                 return True
 
             if event[0] == 'percent':
-                self.progress_bar.set_fraction(event[1])
-            elif event[0] == 'global_percent':
-                self.show_global_progress_bar_if_hidden()
-                self.global_progress_bar.set_fraction(event[1])
+                self.progress_bar.set_fraction(float(event[1]))
+            elif event[0] == 'downloads_percent':
+                self.downloads_progress_bar.set_fraction(float(event[1]))
+            elif event[0] == 'text':
+                if event[1] == 'hide':
+                    self.progress_bar.set_show_text(False)
+                    self.progress_bar.set_text("")
+                else:
+                    self.progress_bar.set_show_text(True)
+                    self.progress_bar.set_text(event[1])
             elif event[0] == 'pulse':
-                self.do_progress_pulse()
-            elif event[0] == 'stop_pulse':
-                self.stop_pulse()
+                if event[1] == 'stop':
+                    self.stop_pulse()
+                elif event[1] == 'start':
+                    self.start_pulse()
+            elif event[0] == 'progress_bar':
+                if event[1] == 'hide':
+                    self.progress_bar.hide()
+            elif event[0] == 'downloads_progress_bar':
+                if event[1] == 'hide':
+                    self.downloads_progress_bar.hide()
+                if event[1] == 'show':
+                    self.downloads_progress_bar.show()
             elif event[0] == 'finished':
                 logging.info(event[1])
-                self.should_pulse = False
-
-                # Warn user about GRUB and ask if we should open wiki page.
-                if not self.settings.get('bootloader_ok'):
-                    import webbrowser
-                    self.boot_warn = _("IMPORTANT: There may have been a problem with the Grub(2) bootloader\n"
-                                       "installation which could prevent your system from booting properly. Before\n"
-                                       "rebooting, you may want to verify whether or not GRUB(2) is installed and\n"
-                                       "configured. The Arch Linux Wiki contains troubleshooting information:\n"
-                                       "\thttps://wiki.archlinux.org/index.php/GRUB\n"
-                                       "\nWould you like to view the wiki page now?")
-                    response = show.question(self.boot_warn)
+                if not self.settings.get('bootloader_installation_successful'):
+                    # Warn user about GRUB and ask if we should open wiki page.
+                    boot_warn = _("IMPORTANT: There may have been a problem with the bootloader\n"
+                                  "installation which could prevent your system from booting properly. Before\n"
+                                  "rebooting, you may want to verify whether or not the bootloader is installed and\n"
+                                  "configured. The Arch Linux Wiki contains troubleshooting information:\n"
+                                  "\thttps://wiki.archlinux.org/index.php/GRUB\n"
+                                  "\nWould you like to view the wiki page now?")
+                    response = show.question(self.get_toplevel(), boot_warn)
                     if response == Gtk.ResponseType.YES:
+                        import webbrowser
+
+                        misc.drop_privileges()
                         webbrowser.open('https://wiki.archlinux.org/index.php/GRUB')
 
-                self.set_message(self.install_ok)
-                response = show.question(self.install_ok)
-
+                install_ok = _("Installation Complete!\nDo you want to restart your system now?")
+                response = show.question(self.get_toplevel(), install_ok)
+                misc.remove_temp_files()
+                self.settings.set('stop_all_threads', True)
+                logging.shutdown()
                 if response == Gtk.ResponseType.YES:
-                    logging.shutdown()
                     self.reboot()
                 else:
-                    tmp_files = [".setup-running", ".km-running", "setup-pacman-running", "setup-mkinitcpio-running", ".tz-running", ".setup", "thus.log"]
-                    for t in tmp_files:
-                        p = os.path.join("/tmp", t)
-                        if os.path.exists(p):
-                            # TODO: some of these tmp files are created with sudo privileges
-                            # (this should be fixed) meanwhile, we need sudo privileges to remove them
-                            with misc.raised_privileges():
-                                os.remove(p)
-                    self.callback_queue.task_done()
-                    logging.shutdown()
-                    os._exit(0)
-
+                    sys.exit(0)
                 return False
             elif event[0] == 'error':
                 self.callback_queue.task_done()
                 # A fatal error has been issued. We empty the queue
                 self.empty_queue()
-                self.fatal_error = True
-                show.fatal_error(event[1])
-                # Ask if user wants to retry
-                res = show.question(_("Do you want to retry?"))
-                if res == GTK_RESPONSE_YES:
-                    # Restart installation process
-                    logging.debug("Restarting installation process...")
-                    p = self.settings.get('installer_thread_call')
 
-                    self.process = installation_process.InstallationProcess(
-                        self.settings,
-                        self.callback_queue,
-                        p['mount_devices'],
-                        p['fs_devices'],
-                        p['ssd'],
-                        p['alternate_package_list'],
-                        p['blvm'])
-
-                    self.process.start()
-                    return True
-                else:
-                    self.fatal_error = True
-                    return False
-            elif event[0] == 'debug':
-                logging.debug(event[1])
-            elif event[0] == 'warning':
-                logging.warning(event[1])
-            else:
+                # Show the error
+                show.fatal_error(self.get_toplevel(), event[1])
+            elif event[0] == 'info':
                 logging.info(event[1])
-                self.set_message(event[1])
+                if self.should_pulse:
+                    self.progress_bar.set_text(event[1])
+                else:
+                    self.set_message(event[1])
 
             self.callback_queue.task_done()
 
@@ -265,9 +229,9 @@ class Slides(Gtk.Box):
 
     def empty_queue(self):
         """ Empties messages queue """
-        while self.callback_queue.empty() is False:
+        while not self.callback_queue.empty():
             try:
-                event = self.callback_queue.get_nowait()
+                self.callback_queue.get_nowait()
                 self.callback_queue.task_done()
             except queue.Empty:
                 return
@@ -277,3 +241,15 @@ class Slides(Gtk.Box):
         """ Reboots the system, used when installation is finished """
         os.system("sync")
         subprocess.call(["/usr/bin/systemctl", "reboot", "--force", "--no-wall"])
+
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
+
+if __name__ == '__main__':
+    from test_screen import _, run
+
+    run('Slides')

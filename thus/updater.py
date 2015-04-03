@@ -24,152 +24,171 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-import urllib.request
-import urllib.error
-from urllib.request import urlopen
+""" Module to update Thus """
 
 import json
 import hashlib
 import os
+import logging
+import shutil
+
+import misc.misc as misc
+import download.download_urllib as download
 import info
 
-import logging
-import show_message as show
-
-#_url_prefix = "https://raw.github.com/manjaro/thus/development/"
-_url_prefix = "https://raw.github.com/manjaro/thus/master/"
+_update_info_url = "https://raw.github.com/manjaro/thus/master/update.info"
+_master_zip_url = "https://github.com/manjaro/thus/archive/master.zip"
+_update_info = "/usr/share/thus/update.info"
 
 _src_dir = os.path.dirname(__file__) or '.'
 _base_dir = os.path.join(_src_dir, "..")
 
 
+def get_md5_from_file(filename):
+    with open(filename, 'rb') as myfile:
+        buf = myfile.read()
+        md5 = get_md5_from_text(buf)
+    return md5
+
+
+def get_md5_from_text(text):
+    """ Gets md5 hash from str """
+    md5 = hashlib.md5()
+    md5.update(text)
+    return md5.hexdigest()
+
+
 class Updater():
     def __init__(self, force_update):
-        self.web_version = ""
-        self.web_files = []
+        self.remote_version = ""
 
-        response = ""
-        try:
-            update_info_url = _url_prefix + "update.info"
-            request = urlopen(update_info_url)
+        self.md5s = {}
+
+        self.force = force_update
+
+        if not os.path.exists(_update_info):
+            logging.warning(_("Could not find 'update.info' file. Thus will not be able to update itself."))
+            return
+
+        # Get local info (local update.info)
+        with open(_update_info, "r") as local_update_info:
+            response = local_update_info.read()
+            if len(response) > 0:
+                update_info = json.loads(response)
+                self.local_files = update_info['files']
+
+        # Download update.info (contains info of all Thus's files)
+        request = download.url_open(_update_info_url)
+
+        if request is not None:
             response = request.read().decode('utf-8')
+            if len(response) > 0:
+                update_info = json.loads(response)
+                self.remote_version = update_info['version']
+                for remote_file in update_info['files']:
+                    self.md5s[remote_file['name']] = remote_file['md5']
+                logging.info(_("Thus Internet version: %s"), self.remote_version)
+                self.force = force_update
 
-        except urllib.HTTPError as e:
-            logging.exception('Unable to get latest version info - HTTPError = %s' % e.reason)
-        except urllib.URLError as e:
-            logging.exception('Unable to get latest version info - URLError = %s' % e.reason)
-        except httplib.HTTPException as e:
-            logging.exception('Unable to get latest version info - HTTPException')
-        except Exception as e:
-            import traceback
-            logging.exception('Unable to get latest version info - Exception = %s' % traceback.format_exc())
+    def is_remote_version_newer(self):
+        """ Returns true if the Internet version of Thus is newer than the local one """
 
-        if len(response) > 0:
-            updateInfo = json.loads(response)
+        if len(self.remote_version) < 1:
+            return False
 
-            self.web_version = updateInfo['version']
-            self.web_files = updateInfo['files']
+        # Version is always: x.y.z
+        local_ver = info.CNCHI_VERSION.split(".")
+        remote_ver = self.remote_version.split(".")
 
-            logging.info("Thus Internet version: %s" % self.web_version)
+        local = [int(local_ver[0]), int(local_ver[1]), int(local_ver[2])]
+        remote = [int(remote_ver[0]), int(remote_ver[1]), int(remote_ver[2])]
 
-            self.force = force_update
-
-    def is_web_version_newer(self):
-        if self.force:
+        if remote[0] > local[0]:
             return True
 
-        #version is always: x.y.z
-        cur_ver = info.THUS_VERSION.split(".")
-        web_ver = self.web_version.split(".")
-
-        cur = [int(cur_ver[0]), int(cur_ver[1]), int(cur_ver[2])]
-        web = [int(web_ver[0]), int(web_ver[1]), int(web_ver[2])]
-
-        if web[0] > cur[0]:
+        if remote[0] == local[0] and remote[1] > local[1]:
             return True
 
-        if web[0] == cur[0] and web[1] > cur[1]:
-            return True
-
-        if web[0] == cur[0] and web[1] == cur[1] and web[2] > cur[2]:
+        if remote[0] == local[0] and remote[1] == local[1] and remote[2] > local[2]:
             return True
 
         return False
 
-    # This will update all files only if necessary
+    def should_update_local_file(self, remote_name, remote_md5):
+        """ Checks if remote file is different from the local one (just compares md5)"""
+        for local_file in self.local_files:
+            if local_file['name'] == remote_name and local_file['md5'] != remote_md5 and '__' not in local_file['name']:
+                return True
+        return False
+
     def update(self):
-        if self.is_web_version_newer():
-            logging.info("New version found. Updating installer...")
-            num_files = len(self.web_files)
-            i = 1
-            for f in self.web_files:
-                name = f['name']
-                md5 = f['md5']
-                print("Downloading %s (%d/%d)" % (name, i, num_files))
-                if self.download(name, md5) is False:
-                    # download has failed
-                    txt = "Download of %s has failed" % name
-                    logging.error(txt)
-                    show.error(txt)
+        """ Check if a new version is available and
+            update all files only if necessary (or forced) """
+        update_thus = False
+
+        if self.is_remote_version_newer():
+            logging.info(_("New version found. Updating installer..."))
+            update_thus = True
+        elif self.force:
+            logging.info(_("No new version found. Updating anyways..."))
+            update_thus = True
+
+        if update_thus:
+            logging.debug(_("Downloading new version of Thus..."))
+            zip_path = "/tmp/thus-{0}.zip".format(self.remote_version)
+            res = self.download_master_zip(zip_path)
+            if not res:
+                logging.error(_("Can't download new Thus version."))
+                return False
+
+            # master.zip file is downloaded, we must unzip it
+            logging.debug(_("Uncompressing new version..."))
+            try:
+                self.unzip_and_copy(zip_path)
+            except Exception as err:
+                logging.error(err)
+                return False
+
+        return update_thus
+
+    @staticmethod
+    def download_master_zip(zip_path):
+        """ Download new Thus version from github """
+        request = download.url_open(_master_zip_url)
+
+        if request is None:
+            return False
+
+        if not os.path.exists(zip_path):
+            with open(zip_path, 'wb') as zip_file:
+                (data, error) = download.url_open_read(request)
+
+                while len(data) > 0 and not error:
+                    zip_file.write(data)
+                    (data, error) = download.url_open_read(request)
+
+                if error:
                     return False
-                i = i + 1
-            # replace old files with the new ones
-            self.replace_old_with_new_versions()
-            return True
-        else:
-            return False
-
-    def get_md5(self, text):
-        md5 = hashlib.md5()
-        md5.update(text)
-        return md5.hexdigest()
-
-    def download(self, name, md5):
-        url = _url_prefix + name
-        response = ""
-        try:
-            request = urlopen(url)
-            txt = request.read()
-            #.decode('utf-8')
-        except urllib.error.HTTPError as e:
-            logging.exception('Unable to get %s - HTTPError = %s' % (name, e.reason))
-            return False
-        except urllib.error.URLError as e:
-            logging.exception('Unable to get %s - URLError = %s' % (name, e.reason))
-            return False
-        except httplib.error.HTTPException as e:
-            logging.exception('Unable to get %s - HTTPException' % name)
-            return False
-        except Exception as e:
-            import traceback
-            logging.exception('Unable to get %s - Exception = %s' % (name, traceback.format_exc()))
-            return False
-
-        web_md5 = self.get_md5(txt)
-
-        if web_md5 != md5:
-            txt = "Checksum error in %s. Download aborted" % name
-            logging.error(txt)
-            show.error(txt)
-            return False
-
-        new_name = os.path.join(_base_dir, name + "." + self.web_version.replace(".", "_"))
-
-        with open(new_name, "wb") as f:
-            f.write(txt)
-
         return True
 
-    def replace_old_with_new_versions(self):
-        logging.info("Replacing version %s with version %s..." % (info.THUS_VERSION, self.web_version))
-        for f in self.web_files:
-            name = f['name']
-            old_name = os.path.join(_base_dir, name + "." + info.THUS_VERSION.replace(".", "_"))
-            new_name = os.path.join(_base_dir, name + "." + self.web_version.replace(".", "_"))
-            cur_name = os.path.join(_base_dir, name)
+    def unzip_and_copy(self, zip_path):
+        """ Unzip (decompress) a zip file using zipfile standard module """
+        import zipfile
 
-            if os.path.exists(name):
-                os.rename(name, old_name)
+        dst_dir = "/tmp"
 
-            if os.path.exists(new_name):
-                os.rename(new_name, cur_name)
+        with zipfile.ZipFile(zip_path) as zip_file:
+            for member in zip_file.infolist():
+                zip_file.extract(member, dst_dir)
+                full_path = os.path.join(dst_dir, member.filename)
+                dst_full_path = os.path.join("/usr/share/thus", full_path.split("/tmp/Thus-master/")[1])
+                if os.path.isfile(dst_full_path) and dst_full_path in self.md5s:
+                    if self.md5s[dst_full_path] == get_md5_from_file(full_path):
+                        try:
+                            with misc.raised_privileges():
+                                shutil.copyfile(full_path, dst_full_path)
+                        except FileNotFoundError as file_error:
+                            logging.error(_("Can't copy %s to %s"), full_path, dst_full_path)
+                            logging.error(file_error)
+                    else:
+                        logging.warning(_("Wrong md5. Bad download or wrong file, won't update this one"))
