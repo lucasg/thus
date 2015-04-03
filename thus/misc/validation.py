@@ -1,12 +1,12 @@
 # -*- coding: utf-8; Mode: Python; indent-tabs-mode: nil; tab-width: 4 -*-
 
-# «validation» - miscellaneous validation of user-entered data
+#  Miscellaneous validation of user-entered data
 #
-# Copyright (C) 2005 Junta de Andalucía
-# Copyright (C) 2005, 2006, 2007, 2008 Canonical Ltd.
+#  Copyright (C) 2005 Junta de Andalucía
+#  Copyright (C) 2005, 2006, 2007, 2008 Canonical Ltd.
 #
-# Validation library.
-# Created by Antonio Olmo <aolmo#emergya._info> on 26 jul 2005.
+#  Validation library.
+#  Created by Antonio Olmo <aolmo#emergya._info> on 26 jul 2005.
 
 
 def check_grub_device(device):
@@ -31,11 +31,13 @@ NAME_BADCHAR = 2
 NAME_BADHYPHEN = 3
 NAME_BADDOTS = 4
 
+
 def check(element, value):
     if element == 'username':
         return check_username(value)
     if element == 'hostname':
         return check_hostname(value)
+
 
 def check_username(name):
     """ Check the correctness of a proposed user name.
@@ -61,6 +63,7 @@ def check_username(name):
         result.add(NAME_BADDOTS)
 
     return sorted(result)
+
 
 def check_hostname(name):
     """ Check the correctness of a proposed host name.
@@ -89,6 +92,7 @@ def check_hostname(name):
 
 # Based on setPasswordStrength() in Mozilla Seamonkey, which is tri-licensed
 # under MPL 1.1, GPL 2.0, and LGPL 2.1.
+
 
 def password_strength(password):
     upper = lower = digit = symbol = 0
@@ -129,21 +133,21 @@ def human_password_strength(password):
         hint = ''
         color = ''
     elif length < 6:
-        hint = _('password is too short')
+        hint = _('Password is too short')
         color = 'darkred'
     elif strength < 0.5:
-        hint = _('weak password')
+        hint = _('Weak password')
         color = 'darkred'
     elif strength < 0.75:
-        hint = _('fair password')
+        hint = _('Fair password')
         color = 'darkorange'
     elif strength < 0.9:
-        hint = _('good password')
+        hint = _('Good password')
         color = 'darkgreen'
     else:
-        hint = _('strong password')
+        hint = _('Strong password')
         color = 'darkgreen'
-    return (hint, color)
+    return hint, color
 
 
 def check_password(password, verified_password, password_ok,
@@ -157,7 +161,7 @@ def check_password(password, verified_password, password_ok,
         password_ok.hide()
         if passw and (len(vpassw) / float(len(passw)) > 0.8):
             txt = _("Passwords do not match")
-            txt = '<small><span foreground="darkred"><b>%s</b></span></small>' % txt
+            txt = '<small><span foreground="darkred"><b>{0}</b></span></small>'.format(txt)
             password_error_label.set_markup(txt)
             password_error_label.show()
     else:
@@ -170,7 +174,7 @@ def check_password(password, verified_password, password_ok,
         complete = False
     else:
         (txt, color) = human_password_strength(passw)
-        txt = '<small><span foreground="%s"><b>%s</b></span></small>' % (color, txt)
+        txt = '<small><span foreground="{0}"><b>{1}</b></span></small>'.format(color, txt)
         password_strength.set_markup(txt)
         password_strength.show()
         if passw == vpassw:

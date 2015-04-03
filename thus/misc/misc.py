@@ -1,22 +1,22 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 #
-# Copyright (c) 2012 Canonical Ltd.
-# Copyright (c) 2013 Antergos
+#  Copyright (c) 2012 Canonical Ltd.
+#  Copyright (c) 2013-2015 Antergos
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from collections import namedtuple
 import contextlib
@@ -28,17 +28,29 @@ import shutil
 import subprocess
 import syslog
 import socket
-import canonical.osextras as osextras
+import locale
 import logging
+import dbus
+import urllib
+from socket import timeout
 
-def copytree(src, dst, symlinks=False, ignore=None):
-    for item in os.listdir(src):
-        s = os.path.join(src, item)
-        d = os.path.join(dst, item)
+import misc.osextras as osextras
+
+NM = 'org.freedesktop.NetworkManager'
+NM_STATE_CONNECTED_GLOBAL = 70
+
+_dropped_privileges = 0
+
+
+def copytree(src_dir, dst_dir, symlinks=False, ignore=None):
+    for item in os.listdir(src_dir):
+        s = os.path.join(src_dir, item)
+        d = os.path.join(dst_dir, item)
         if os.path.isdir(s):
             shutil.copytree(s, d, symlinks, ignore)
         else:
             shutil.copy2(s, d)
+
 
 def utf8(s, errors="strict"):
     """Decode a string as UTF-8 if it isn't already Unicode."""
@@ -54,11 +66,10 @@ def is_swap(device):
             for line in fp:
                 if line.startswith(device + ' '):
                     return True
-    except Exception:
-        pass
+    except OSError as os_error:
+        logging.warning(os_error)
     return False
 
-_dropped_privileges = 0
 
 def set_groups_for_uid(uid):
     if uid == os.geteuid() or uid == os.getuid():
@@ -68,6 +79,7 @@ def set_groups_for_uid(uid):
         os.setgroups([g.gr_gid for g in grp.getgrall() if user in g.gr_mem])
     except OSError:
         import traceback
+
         for line in traceback.format_exc().split('\n'):
             syslog.syslog(syslog.LOG_ERR, line)
 
@@ -193,7 +205,7 @@ def grub_options():
             if dev and mod:
                 if size.isdigit():
                     size = format_size(int(size))
-                    l.append([dev, '%s (%s)' % (mod, size)])
+                    l.append([dev, '{0} ({1})'.format(mod, size)])
                 else:
                     l.append([dev, mod])
             for part in p.partitions():
@@ -208,8 +220,9 @@ def grub_options():
                 elif part[5] in oslist.keys():
                     ostype = oslist[part[5]]
                 l.append([part[5], ostype])
-    except:
+    except Exception:
         import traceback
+
         for line in traceback.format_exc().split('\n'):
             syslog.syslog(syslog.LOG_ERR, line)
     return l
@@ -235,6 +248,7 @@ def boot_device():
                         root = disk.replace('=', '/')
     except Exception:
         import traceback
+
         for line in traceback.format_exc().split('\n'):
             syslog.syslog(syslog.LOG_ERR, line)
     if boot:
@@ -249,8 +263,7 @@ def is_removable(device):
     devpath = None
     is_partition = False
     removable_bus = False
-    subp = subprocess.Popen(['udevadm', 'info', '-q', 'property',
-                             '-n', device],
+    subp = subprocess.Popen(['udevadm', 'info', '-q', 'property', '-n', device],
                             stdout=subprocess.PIPE, universal_newlines=True)
     for line in subp.communicate()[0].splitlines():
         line = line.strip()
@@ -264,24 +277,22 @@ def is_removable(device):
     if devpath is not None:
         if is_partition:
             devpath = os.path.dirname(devpath)
-        is_removable = removable_bus
+        is_device_removable = removable_bus
         try:
-            with open('/sys%s/removable' % devpath) as removable:
+            removable_path = '/sys{0}/removable'.format(devpath)
+            with open(removable_path) as removable:
                 if removable.readline().strip() != '0':
-                    is_removable = True
+                    is_device_removable = True
         except IOError:
             pass
-        if is_removable:
+        if is_device_removable:
             try:
-                subp = subprocess.Popen(['udevadm', 'info', '-q', 'name',
-                                         '-p', devpath],
+                subp = subprocess.Popen(['udevadm', 'info', '-q', 'name', '-p', devpath],
                                         stdout=subprocess.PIPE,
                                         universal_newlines=True)
-                return ('/dev/%s' %
-                        subp.communicate()[0].splitlines()[0].strip())
+                return os.path.join('/dev', subp.communicate()[0].splitlines()[0].strip())
             except Exception:
                 pass
-
     return None
 
 
@@ -318,11 +329,10 @@ def udevadm_info(args):
 def partition_to_disk(partition):
     """Convert a partition device to its disk device, if any."""
     udevadm_part = udevadm_info(['-n', partition])
-    if ('DEVPATH' not in udevadm_part or
-            udevadm_part.get('DEVTYPE') != 'partition'):
+    if 'DEVPATH' not in udevadm_part or udevadm_part.get('DEVTYPE') != 'partition':
         return partition
 
-    disk_syspath = '/sys%s' % udevadm_part['DEVPATH'].rsplit('/', 1)[0]
+    disk_syspath = os.path.join('/sys', udevadm_part['DEVPATH'].rsplit('/', 1)[0])
     udevadm_disk = udevadm_info(['-p', disk_syspath])
     return udevadm_disk.get('DEVNAME', partition)
 
@@ -420,7 +430,7 @@ def find_in_os_prober(device, with_version=False):
         elif is_swap(device):
             ret = 'swap'
         else:
-            syslog.syslog('Device %s not found in os-prober output' % device)
+            syslog.syslog('Device {0} not found in os-prober output'.format(device))
             ret = ''
         ret = utf8(ret, errors='replace')
         ver = utf8(osvers.get(device, ''), errors='replace')
@@ -430,8 +440,9 @@ def find_in_os_prober(device, with_version=False):
             return ret
     except (KeyboardInterrupt, SystemExit):
         pass
-    except:
+    except Exception:
         import traceback
+
         syslog.syslog(syslog.LOG_ERR, "Error in find_in_os_prober:")
         for line in traceback.format_exc().split('\n'):
             syslog.syslog(syslog.LOG_ERR, line)
@@ -501,20 +512,21 @@ def get_release():
                     line = line.split()
                     if line[2] == 'LTS':
                         line[1] += ' LTS'
-                    get_release.release_info = ReleaseInfo(
-                        name=line[0], version=line[1])
-        except:
+                    get_release.release_info = ReleaseInfo(name=line[0], version=line[1])
+        except Exception:
             syslog.syslog(syslog.LOG_ERR, 'Unable to determine the release.')
 
         if not get_release.release_info:
             get_release.release_info = ReleaseInfo(name='Ubuntu', version='')
     return get_release.release_info
 
+
 get_release.release_info = None
 
 
 def get_release_name():
     import warnings
+
     warnings.warn('get_release_name() is deprecated, '
                   'use get_release().name instead.',
                   category=DeprecationWarning)
@@ -529,7 +541,7 @@ def get_release_name():
                         get_release_name.release_name = ' '.join(line[:3])
                     else:
                         get_release_name.release_name = ' '.join(line[:2])
-        except:
+        except Exception:
             syslog.syslog(
                 syslog.LOG_ERR,
                 "Unable to determine the distribution name from "
@@ -537,6 +549,7 @@ def get_release_name():
         if not get_release_name.release_name:
             get_release_name.release_name = 'Ubuntu'
     return get_release_name.release_name
+
 
 get_release_name.release_name = ''
 
@@ -549,11 +562,12 @@ def get_install_medium():
                 get_install_medium.medium = 'USB'
             else:
                 get_install_medium.medium = 'CD'
-        except:
+        except Exception:
             syslog.syslog(
                 syslog.LOG_ERR, "Unable to determine install medium.")
             get_install_medium.medium = 'CD'
     return get_install_medium.medium
+
 
 get_install_medium.medium = ''
 
@@ -568,8 +582,7 @@ def execute(*args):
         status = subprocess.call(log_args)
     except IOError as e:
         syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
-        syslog.syslog(syslog.LOG_ERR,
-                      "OS error(%s): %s" % (e.errno, e.strerror))
+        syslog.syslog(syslog.LOG_ERR, "OS error({0}): {1}".format(e.errno, e.strerror))
         return False
     else:
         if status != 0:
@@ -673,9 +686,6 @@ def set_indicator_keymaps(lang):
     from gi.repository import Gtk
     from ubiquity import gsettings
 
-    # pacify pyflakes
-    Gtk
-
     gsettings_key = ['org.gnome.libgnomekbd.keyboard', 'layouts']
     lang = lang.split('_')[0]
     variants = []
@@ -709,14 +719,13 @@ def set_indicator_keymaps(lang):
     }
 
     def item_str(s):
-        '''Convert a zero-terminated byte array to a proper str'''
+        """ Convert a zero-terminated byte array to a proper str """
         i = s.find(b'\x00')
         return s[:i].decode()
 
     def process_variant(*args):
         if hasattr(args[2], 'name'):
-            variants.append(
-                '%s\t%s' % (item_str(args[1].name), item_str(args[2].name)))
+            variants.append('{0}\t{1}'.format((item_str(args[1].name), item_str(args[2].name))))
         else:
             variants.append(item_str(args[1].name))
 
@@ -766,7 +775,7 @@ def set_indicator_keymaps(lang):
                     new_variants.append(entry)
                     variants.remove(entry)
         else:
-            new_variants += list(variants)
+            new_variants = new_variants + list(variants)
 
         # gsettings doesn't understand utf8
         new_variants = [str(variant) for variant in new_variants]
@@ -818,41 +827,49 @@ def set_indicator_keymaps(lang):
     engine.lock_group(0)
 
 
-NM = 'org.freedesktop.NetworkManager'
-NM_STATE_CONNECTED_GLOBAL = 70
-
 def get_prop(obj, iface, prop):
-    import dbus
     try:
         return obj.Get(iface, prop, dbus_interface=dbus.PROPERTIES_IFACE)
-    except (dbus.DBusException, dbus.exceptions.DBusException) as e:
-        if e.get_dbus_name() == 'org.freedesktop.DBus.Error.UnknownMethod':
+    except (dbus.DBusException, dbus.exceptions.DBusException) as err:
+        if err.get_dbus_name() == 'org.freedesktop.DBus.Error.UnknownMethod':
             return None
         else:
             raise
 
+
 def is_wireless_enabled():
-    import dbus
     bus = dbus.SystemBus()
     manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
     return get_prop(manager, NM, 'WirelessEnabled')
 
-def has_connection():
-    import dbus
-    bus = dbus.SystemBus()
+
+def get_nm_state():
     try:
+        bus = dbus.SystemBus()
         manager = bus.get_object(NM, '/org/freedesktop/NetworkManager')
         state = get_prop(manager, NM, 'state')
-    except (dbus.DBusException, dbus.exceptions.DBusException) as err:
-        # We can't talk to NM, so no idea.  Wild guess: we're connected
-        # using ssh with X forwarding, and are therefore connected.  This
-        # allows us to proceed with a minimum of complaint.
+    except (dbus.DBusException, dbus.exceptions.DBusException) as dbus_err:
+        logging.warning(dbus_err)
+        state = False
+    finally:
+        return state
+
+
+def has_connection():
+    # In a Virtualbox VM this returns true even when the host OS has no connection
+    # if get_nm_state() == NM_STATE_CONNECTED_GLOBAL:
+    #    return True
+
+    try:
+        url = 'http://74.125.228.100'
+        urllib.request.urlopen(url, timeout=5)
         return True
-    return state == NM_STATE_CONNECTED_GLOBAL
+    except (OSError, timeout, urllib.error.URLError) as err:
+        logging.warning(err)
+        return False
+
 
 def add_connection_watch(func):
-    import dbus
-
     def connection_cb(state):
         func(state == NM_STATE_CONNECTED_GLOBAL)
 
@@ -861,10 +878,12 @@ def add_connection_watch(func):
     try:
         func(has_connection())
     except (dbus.DBusException, dbus.exceptions.DBusException) as err:
+        logging.warning(err)
         # We can't talk to NM, so no idea.  Wild guess: we're connected
         # using ssh with X forwarding, and are therefore connected.  This
         # allows us to proceed with a minimum of complaint.
         func(True)
+
 
 def install_size():
     if min_install_size:
@@ -887,19 +906,21 @@ def install_size():
 
     # Set minimum size to 8GB if current minimum size is larger
     # than 8GB and we still have an extra 20% of free space
-    if min_disk_size > max_size and size * 1.2 < max_size:
+    if min_disk_size > max_size > 1.2 * size:
         min_disk_size = max_size
 
     return min_disk_size
 
+
 min_install_size = None
+
 
 def get_network():
     intip = False
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
-        s.connect(("manjaro.org",1234))
-    except:
+        s.connect(("antergos.com", 1234))
+    except Exception:
         return ""
     myip = s.getsockname()[0]
     s.close()
@@ -910,7 +931,7 @@ def get_network():
     elif spip[0] == '10':
         intip = True
     elif spip[0] == '172':
-        if int(spip[1]) > 15 and int(spip[1]) < 32:
+        if 15 < int(spip[1]) < 32:
             intip = True
     if intip:
         ipran = '.'.join(spip[:-1]) + ".0/24"
@@ -918,16 +939,145 @@ def get_network():
         ipran = '.'.join(spip)
     return ipran
 
+
 def sort_list(mylist, mylocale=""):
-    import locale
-    import functools
+    try:
+        import functools
+    except ImportError as err:
+        logging.warning(err)
+        return mylist
 
     if mylocale != "":
-        try:
-            locale.setlocale(locale.LC_ALL, mylocale)
-        except:
-            logging.warning(_("Can't set locale %s") % mylocale)
+        set_locale(mylocale)
 
-    sorted_list = sorted(mylist,  key=functools.cmp_to_key(locale.strcoll))
+    sorted_list = sorted(mylist, key=functools.cmp_to_key(locale.strcoll))
 
     return sorted_list
+
+
+def set_locale(mylocale):
+    try:
+        locale.setlocale(locale.LC_ALL, mylocale)
+        logging.info(_("locale changed to : %s"), mylocale)
+    except locale.Error as err:
+        logging.warning(_("Can't change to locale '%s' : %s"), mylocale, err)
+        if mylocale.endswith(".UTF-8"):
+            # Try without the .UTF-8 trailing
+            mylocale = mylocale[:-len(".UTF-8")]
+            try:
+                locale.setlocale(locale.LC_ALL, mylocale)
+                logging.info(_("locale changed to : %s"), mylocale)
+            except locale.Error as err:
+                logging.warning(_("Can't change to locale '%s'"), mylocale)
+                logging.warning(err)
+        else:
+            logging.warning(_("Can't change to locale '%s'"), mylocale)
+
+
+def gtk_refresh():
+    """ Tell Gtk loop to run pending events """
+    from gi.repository import Gtk
+
+    while Gtk.events_pending():
+        Gtk.main_iteration()
+
+
+def remove_temp_files():
+    """ Remove Cnchi temporary files """
+    temp_files = [
+        ".setup-running",
+        ".km-running",
+        "setup-pacman-running",
+        "setup-mkinitcpio-running",
+        ".tz-running",
+        ".setup",
+        "Cnchi.log"]
+    for temp in temp_files:
+        path = os.path.join("/tmp", temp)
+        if os.path.exists(path):
+            # FIXME: Some of these tmp files are created with sudo privileges
+            with raised_privileges():
+                os.remove(path)
+
+
+def set_cursor(cursor_type):
+    """ Set mouse cursor """
+    from gi.repository import Gdk
+
+    screen = Gdk.Screen.get_default()
+    window = Gdk.Screen.get_root_window(screen)
+    if window:
+        cursor = Gdk.Cursor(cursor_type)
+        window.set_cursor(cursor)
+        gtk_refresh()
+
+
+def partition_exists(partition):
+    """ Check if a partition already exists """
+    if "/dev/" in partition:
+        partition = partition[len("/dev/"):]
+
+    exists = False
+    with open("/proc/partitions") as partitions:
+        if partition in partitions.read():
+            exists = True
+    return exists
+
+
+def is_partition_extended(partition):
+    """ Check if a partition is of extended type """
+
+    if "/dev/mapper" in partition:
+        return False
+
+    if "/dev/" in partition:
+        partition = partition[len("/dev/"):]
+
+    num = partition[len("sdX"):]
+    if len(num) == 0:
+        return False
+
+    try:
+        num = int(num)
+    except ValueError as err:
+        logging.warning(err)
+        return False
+
+    if num > 4:
+        # logical partition
+        return False
+
+    with open("/proc/partitions") as partitions:
+        lines = partitions.readlines()
+    for line in lines:
+        if "major" not in line:
+            info = line.split()
+            if len(info) > 0 and info[2] == '1' and info[3] == partition:
+                return True
+    return False
+
+
+def get_partitions():
+    partitions_list = []
+    with open("/proc/partitions") as partitions:
+        lines = partitions.readlines()
+    for line in lines:
+        if "major" not in line:
+            info = line.split()
+            if len(info) > 0:
+                if len(info[3]) > len("sdX") and "loop" not in info[3]:
+                    partitions_list.append("/dev/" + info[3])
+    return partitions_list
+
+
+class InstallError(Exception):
+    """ Exception class called upon an installer error """
+
+    def __init__(self, message):
+        """ Initialize exception class """
+        super().__init__(message)
+        self.message = message
+
+    def __str__(self):
+        """ Returns exception message """
+        return repr(self.message)

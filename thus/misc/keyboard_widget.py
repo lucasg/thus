@@ -3,9 +3,9 @@
 #
 #  keyboard_widget.py
 #
-#  Copyright 2012 Linux Mint (QT version)
-#  Copyright 2013 Manjaro (QT version)
-#  Copyright 2014 Antergos, Manjaro (Gtk version)
+#  Copyright © 2012 Linux Mint (QT version)
+#  Copyright © 2013 Manjaro (QT version)
+#  Copyright © 2013-2015 Antergos (GTK version)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -22,21 +22,22 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-''' Keyboard widget that shows keyboard layout and variant types to the user '''
+""" Keyboard widget that shows keyboard layout and variant types to the user """
 
-from gi.repository import Gtk, Gdk, GObject
+from gi.repository import Gtk, GObject
 import cairo
 import subprocess
-import sys
 import math
 
+
 def unicode_to_string(raw):
-    ''' U+ , or +U+ ... to string '''
+    """ U+ , or +U+ ... to string """
     if raw[0:2] == "U+":
         return chr(int(raw[2:], 16))
     elif raw[0:2] == "+U":
         return chr(int(raw[3:], 16))
     return ""
+
 
 class KeyboardWidget(Gtk.DrawingArea):
     __gtype_name__ = 'KeyboardWidget'
@@ -44,34 +45,34 @@ class KeyboardWidget(Gtk.DrawingArea):
     kb_104 = {
         "extended_return": False,
         "keys": [
-        (0x29, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd),
-        (0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b, 0x2b),
-        (0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28),
-        (0x2c, 0x2d, 0x2e, 0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35),
-        ()]
+            (0x29, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd),
+            (0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b, 0x2b),
+            (0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28),
+            (0x2c, 0x2d, 0x2e, 0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35),
+            ()]
     }
 
     kb_105 = {
         "extended_return": True,
         "keys": [
-        (0x29, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd),
-        (0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b),
-        (0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x2b),
-        (0x54, 0x2c, 0x2d, 0x2e, 0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35),
-        ()]
+            (0x29, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd),
+            (0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b),
+            (0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x2b),
+            (0x54, 0x2c, 0x2d, 0x2e, 0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35),
+            ()]
     }
 
     kb_106 = {
         "extended_return": True,
         "keys": [
-        (0x29, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe),
-        (0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b),
-        (0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29),
-        (0x2c, 0x2d, 0x2e, 0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36),
-        ()]
+            (0x29, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe),
+            (0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b),
+            (0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29),
+            (0x2c, 0x2d, 0x2e, 0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36),
+            ()]
     }
 
-    def __init__(self, parent=None):
+    def __init__(self):
         Gtk.DrawingArea.__init__(self)
 
         self.set_size_request(460, 130)
@@ -90,7 +91,7 @@ class KeyboardWidget(Gtk.DrawingArea):
         self.layout = layout
 
     def set_font(self):
-        ''' Font depends on the keyboard layout '''
+        """ Font depends on the keyboard layout """
         # broken: ad (Andorra), lk (Sri Lanka), brai (Braille)
         # ?!?: us:chr
 
@@ -123,7 +124,7 @@ class KeyboardWidget(Gtk.DrawingArea):
             self.font = "Lohit Bengali"
 
         # Font: Padmaa
-        if self.variant == "guj": # not all keys
+        if self.variant == "guj":  # not all keys
             self.font = "Padmaa"
 
         # Font: Punjabi
@@ -143,25 +144,25 @@ class KeyboardWidget(Gtk.DrawingArea):
             self.font = "Lohit Tamil"
 
         # Font: TSCu Times
-        lst = [ "tam_TAB", "tam_TSCII", "tam_unicode" ]
+        lst = ["tam_TAB", "tam_TSCII", "tam_unicode"]
         for i in lst:
-             if self.variant == i:
-                 self.font = "TSCu_Times"
+            if self.variant == i:
+                self.font = "TSCu_Times"
 
         # Font: Telugu
         if self.variant == "tel":
             self.font = "Lohit Telugu"
 
         # Font: Oriya
-        lst = [ "af", "ara", "am", "cn", "ge", "gr", "gn", "ir", "iq", "ie", "il", "la", "ma", "pk", "lk", "sy" ]
+        lst = ["af", "ara", "am", "cn", "ge", "gr", "gn", "ir", "iq", "ie", "il", "la", "ma", "pk", "lk", "sy"]
         for i in lst:
-             if self.layout == i:
-                 self.font = "Oriya"
+            if self.layout == i:
+                self.font = "Oriya"
 
-        lst = [ "geo", "urd-phonetic3", "urd-phonetic", "urd-winkeys" ]
+        lst = ["geo", "urd-phonetic3", "urd-phonetic", "urd-winkeys"]
         for i in lst:
-             if self.variant == i:
-                 self.font = "Oriya"
+            if self.variant == i:
+                self.font = "Oriya"
 
         if self.variant == "ori":
             self.font = "Lohit Oriya"
@@ -198,7 +199,8 @@ class KeyboardWidget(Gtk.DrawingArea):
         elif self.kb != self.kb_105:
             self.kb = self.kb_105
 
-    def rounded_rectangle(self, cr, x, y, width, height, aspect=1.0):
+    @staticmethod
+    def rounded_rectangle(cr, x, y, width, height, aspect=1.0):
         corner_radius = height / 10.0
         radius = corner_radius / aspect
         degrees = math.pi / 180.0
@@ -217,10 +219,13 @@ class KeyboardWidget(Gtk.DrawingArea):
         cr.stroke()
 
     def do_draw(self, cr):
-        ''' The 'cr' variable is the current Cairo context '''
-        alloc = self.get_allocation()
-        width = alloc.width
-        height = alloc.height
+        """ The 'cr' variable is the current Cairo context """
+        # alloc = self.get_allocation()
+        # real_width = alloc.width
+        # real_height = alloc.height
+
+        width = 460
+        # height = 130
 
         usable_width = width - 6
         key_w = (usable_width - 14 * self.space) / 15
@@ -242,6 +247,9 @@ class KeyboardWidget(Gtk.DrawingArea):
         space = self.space
         w = usable_width
         kw = key_w
+
+        # Use this to show real widget size (useful when debugging this widget)
+        # cr.rectangle(0, 0, real_width, real_height)
 
         def draw_row(row, sx, sy, last_end=False):
             x = sx
@@ -280,8 +288,8 @@ class KeyboardWidget(Gtk.DrawingArea):
 
                 rw = rw - space - kw
                 x = x + space + kw
-                i = i + 1
-            return (x, rw)
+                i += 1
+            return x, rw
 
         x = 6
         y = 6
@@ -297,7 +305,7 @@ class KeyboardWidget(Gtk.DrawingArea):
 
         for i in range(0, rows):
             if first_key_w > 0:
-                first_key_w = first_key_w * 1.375
+                first_key_w *= 1.375
 
                 if self.kb == self.kb_105 and i == 3:
                     first_key_w = kw * 1.275
@@ -319,7 +327,7 @@ class KeyboardWidget(Gtk.DrawingArea):
             y = y + space + kw
 
         if ext_return:
-            #rx = rx * 2
+            # rx = rx * 2
             x1 = remaining_x[1]
             y1 = 6 + kw * 1 + space * 1
             w1 = remaining_widths[1]
@@ -361,25 +369,25 @@ class KeyboardWidget(Gtk.DrawingArea):
     def regular_text(self, index):
         try:
             return self.codes[index - 1][0]
-        except IndexError as err:
+        except IndexError:
             return " "
 
     def shift_text(self, index):
         try:
             return self.codes[index - 1][1]
-        except IndexError as err:
+        except IndexError:
             return " "
 
     def ctrl_text(self, index):
         try:
             return self.codes[index - 1][2]
-        except IndexError as err:
+        except IndexError:
             return " "
 
     def alt_text(self, index):
         try:
             return self.codes[index - 1][3]
-        except IndexError as err:
+        except IndexError:
             return " "
 
     def load_codes(self):
@@ -388,9 +396,10 @@ class KeyboardWidget(Gtk.DrawingArea):
 
         variant_param = ""
         if self.variant:
-            variant_param = "-variant %s" % self.variant
+            variant_param = "-variant {0}".format(self.variant)
 
-        cmd = "ckbcomp -model pc106 -layout %s %s -compact" % (self.layout, variant_param)
+        cmd = "/usr/share/cnchi/scripts/ckbcomp -model pc106 -layout {0} {1} -compact".format(self.layout,
+                                                                                              variant_param)
 
         pipe = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=None)
         cfile = pipe.communicate()[0].decode("utf-8").split('\n')
@@ -417,30 +426,5 @@ class KeyboardWidget(Gtk.DrawingArea):
 
             self.codes.append((plain, shift, ctrl, alt))
 
+
 GObject.type_register(KeyboardWidget)
-
-## testing
-
-def destroy(window):
-    Gtk.main_quit()
-
-if __name__ == "__main__":
-    window = Gtk.Window()
-    window.set_title ("Keyboard widget")
-    box = Gtk.Box('Vertical', 1)
-
-    kb1 = KeyboardWidget()
-
-    #kb1.set_layout("ru")
-    #kb1.set_layout("jp")
-    #kb1.set_layout("mm")
-    #kb1.set_variant("")
-
-    kb1.set_layout("es")
-    kb1.set_variant("cat")
-
-    window.add(kb1)
-
-    window.connect_after('destroy', destroy)
-    window.show_all()
-    Gtk.main()

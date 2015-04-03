@@ -36,17 +36,25 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.request
+import urllib.error
+ 
+import traceback
 
+import parted3.fs_module as fs
+import misc.misc as misc
+import info
 import encfs
 from installation import auto_partition
-import parted3.fs_module as fs
-import canonical.misc as misc
+from installation import chroot
+from installation import mkinitcpio
 
 from configobj import ConfigObj
 
 conf_file = '/etc/thus.conf'
 configuration = ConfigObj(conf_file)
 MHWD_SCRIPT = 'mhwd.sh'
+DEST_DIR = "/install"
 
 DesktopEnvironment = collections.namedtuple('DesktopEnvironment', ['executable', 'desktop_file'])
 
@@ -64,6 +72,19 @@ desktop_environments = [
     DesktopEnvironment('/usr/bin/pekwm', 'pekwm'),
     DesktopEnvironment('/usr/bin/openbox-session', 'openbox')
 ]
+
+
+def chroot_run(cmd):
+    chroot.run(cmd, DEST_DIR)
+
+
+def write_file(filecontents, filename):
+    """ writes a string of data to disk """
+    if not os.path.exists(os.path.dirname(filename)):
+        os.makedirs(os.path.dirname(filename))
+
+    with open(filename, "w") as fh:
+        fh.write(filecontents)
 
 ## BEGIN: RSYNC-based file copy support
 #CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
@@ -161,7 +182,7 @@ class InstallError(Exception):
 class InstallationProcess(multiprocessing.Process):
     """ Installation process thread class """
     def __init__(self, settings, callback_queue, mount_devices,
-                 fs_devices, ssd=None, alternate_package_list="", blvm=False):
+                 fs_devices, alternate_package_list="", ssd=None, blvm=False):
         """ Initialize installation class """
         multiprocessing.Process.__init__(self)
 
@@ -169,25 +190,19 @@ class InstallationProcess(multiprocessing.Process):
 
         self.callback_queue = callback_queue
         self.settings = settings
-
-        # Save how we have been called
-        # We need this in case we have to retry the installation
-        parameters = {'mount_devices': mount_devices,
-                      'fs_devices': fs_devices,
-                      'ssd': ssd,
-                      'alternate_package_list': alternate_package_list,
-                      'blvm': blvm}
-        self.settings.set('installer_thread_call', parameters)
+        self.method = self.settings.get('partition_mode')
+        msg = _("Installing using the '{0}' method").format(self.method)
+        self.queue_event('info', msg)
 
         # This flag tells us if there is a lvm partition (from advanced install)
         # If it's true we'll have to add the 'lvm2' hook to mkinitcpio
         self.blvm = blvm
 
-        self.method = self.settings.get('partition_mode')
+        if ssd is not None:
+            self.ssd = ssd
+        else:
+            self.ssd = {}
 
-        self.queue_event('info', _("Installing using the '%s' method") % self.method)
-
-        self.ssd = ssd
         self.mount_devices = mount_devices
 
         # Set defaults
@@ -223,25 +238,66 @@ class InstallationProcess(multiprocessing.Process):
         os._exit(0)
 
     def queue_event(self, event_type, event_text=""):
+        if self.callback_queue is not None:
+            try:
+                self.callback_queue.put_nowait((event_type, event_text))
+            except queue.Full:
+                pass
+        else:
+            print("{0}: {1}".format(event_type, event_text))
+
+    def wait_for_empty_queue(self, timeout):
+        if self.callback_queue is not None:
+            tries = 0
+            if timeout < 1:
+                timeout = 1
+            while tries < timeout and not self.callback_queue.empty():
+                time.sleep(1)
+                tries += 1
+
+    def run(self):
+        """ Calls run_installation and takes care of exceptions """
+
         try:
-            self.callback_queue.put_nowait((event_type, event_text))
-        except queue.Full:
-            pass
+            self.run_installation()
+        except subprocess.CalledProcessError as process_error:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            trace = repr(traceback.format_exception(exc_type, exc_value, exc_traceback))
+            logging.error(_("Error running command %s"), process_error.cmd)
+            logging.error(_("Output: %s"), process_error.output)
+            logging.error(trace)
+            self.queue_fatal_event(process_error.output)
+        except (
+                InstallError, pyalpm.error, KeyboardInterrupt, TypeError, AttributeError, OSError,
+                IOError) as install_error:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            trace = repr(traceback.format_exception(exc_type, exc_value, exc_traceback))
+            logging.error(install_error)
+            logging.error(trace)
+            self.queue_fatal_event(install_error)
 
     @misc.raise_privileges
-    def run(self):
+    def run_installation(self):
         """ Run installation """
+
+        '''
+        From this point, on a warning situation, Cnchi should try to continue, so we need to catch the exception here.
+        If we don't catch the exception here, it will be catched in run() and managed as a fatal error.
+        On the other hand, if we want to clarify the exception message we can catch it here
+        and then raise an InstallError exception.
+        '''
+
         # Common vars
         self.packages = []
 
-        self.dest_dir = "/install"
-        if not os.path.exists(self.dest_dir):
-            os.makedirs(self.dest_dir)
+        if not os.path.exists(DEST_DIR):
+            with misc.raised_privileges():
+                os.makedirs(DEST_DIR)
         else:
             # If we're recovering from a failed/stoped install, there'll be
             # some mounted directories. Try to unmount them first.
             # We use unmount_all from auto_partition to do this.
-            auto_partition.unmount_all(self.dest_dir)
+            auto_partition.unmount_all(DEST_DIR)
 
         # get settings
         self.distribution_name = configuration['distribution']['DISTRIBUTION_NAME']
@@ -262,44 +318,38 @@ class InstallationProcess(multiprocessing.Process):
         if self.method == 'automatic':
             self.auto_device = self.settings.get('auto_device')
 
-            self.queue_event('debug', _("Creating partitions and their filesystems in %s") % self.auto_device)
+            logging.debug(_("Creating partitions and their filesystems in %s"), self.auto_device)
 
             # If no key password is given a key file is generated and stored in /boot
             # (see auto_partition.py)
 
-            try:
-                auto = auto_partition.AutoPartition(self.dest_dir,
-                                                    self.auto_device,
-                                                    self.settings.get("use_luks"),
-                                                    self.settings.get("use_lvm"),
-                                                    self.settings.get("luks_key_pass"),
-                                                    self.settings.get("use_home"),
-                                                    self.callback_queue)
-                auto.run()
+            auto = auto_partition.AutoPartition(dest_dir=DEST_DIR,
+                                                auto_device=self.auto_device,
+                                                use_luks=self.settings.get("use_luks"),
+                                                luks_password=self.settings.get("luks_root_password"),
+                                                use_lvm=self.settings.get("use_lvm"),
+                                                use_home=self.settings.get("use_home"),
+                                                callback_queue=self.callback_queue)
+            auto.run()
 
-                # Get mount_devices and fs_devices
-                # (mount_devices will be used when configuring GRUB in modify_grub_default)
-                # (fs_devices  will be used when configuring the fstab file)
-                self.mount_devices = auto.get_mount_devices()
-                self.fs_devices = auto.get_fs_devices()
-            except subprocess.CalledProcessError as err:
-                txt = _("Error creating partitions and their filesystems")
-                logging.error(txt)
-                cmd = _("Command %s has failed.") % err.cmd
-                logging.error(cmd)
-                out = _("Output : %s") % err.output
-                logging.error(out)
-                self.queue_fatal_event(txt)
-                return
+            # Get mount_devices and fs_devices
+            # (mount_devices will be used when configuring GRUB in modify_grub_default)
+            # (fs_devices  will be used when configuring the fstab file)
+            self.mount_devices = auto.get_mount_devices()
+            self.fs_devices = auto.get_fs_devices()
 
-        if self.method == 'advanced' or self.method == 'alongside':
+        # Create the directory where we will mount our new root partition
+        if not os.path.exists(DEST_DIR):
+            os.mkdir(DEST_DIR)
+
+        if self.method == 'alongside' or self.method == 'advanced':
             root_partition = self.mount_devices["/"]
 
             # NOTE: Advanced method formats root by default in installation_advanced
 
-            #if root_partition in self.fs_devices:
-            #    root_fs = self.fs_devices[root_partition]
-            #else:
+            # if root_partition in self.fs_devices:
+            #     root_fs = self.fs_devices[root_partition]
+            # else:
             #    root_fs = "ext4"
 
             if "/boot" in self.mount_devices:
@@ -312,93 +362,71 @@ class InstallationProcess(multiprocessing.Process):
             else:
                 swap_partition = ""
 
-        # Create the directory where we will mount our new root partition
-        if not os.path.exists(self.dest_dir):
-            os.mkdir(self.dest_dir)
+            # Mount root and boot partitions (only if it's needed)
+            # Not doing this in automatic mode as AutoPartition class mounts the root and boot devices itself.
+            txt = _("Mounting partition {0} into {1} directory").format(root_partition, DEST_DIR)
+            logging.debug(txt)
+            subprocess.check_call(['mount', root_partition, DEST_DIR])
+            # We also mount the boot partition if it's needed
+            boot_path = os.path.join(DEST_DIR, "boot")
+            if not os.path.exists(boot_path):
+                os.makedirs(boot_path)
+            if "/boot" in self.mount_devices:
+                txt = _("Mounting partition {0} into {1}/boot directory")
+                txt = txt.format(boot_partition, boot_path)
+                logging.debug(txt)
+                subprocess.check_call(['mount', boot_partition, boot_path])
 
-        # Mount root and boot partitions (only if it's needed)
-        # Not doing this in automatic mode as AutoPartition class mounts the root and boot devices itself.
-        if self.method == 'alongside' or self.method == 'advanced':
-            try:
-                txt = _("Mounting partition %s into %s directory") % (root_partition, self.dest_dir)
-                self.queue_event('debug', txt)
-                subprocess.check_call(['mount', root_partition, self.dest_dir])
-                # We also mount the boot partition if it's needed
-                subprocess.check_call(['mkdir', '-p', '%s/boot' % self.dest_dir])
-                if "/boot" in self.mount_devices:
-                    txt = _("Mounting partition %s into %s/boot directory") % (boot_partition, self.dest_dir)
-                    self.queue_event('debug', txt)
-                    subprocess.check_call(['mount', boot_partition, "%s/boot" % self.dest_dir])
-            except subprocess.CalledProcessError as err:
-                txt = _("Couldn't mount root and boot partitions")
-                logging.error(txt)
-                cmd = _("Command %s has failed") % err.cmd
-                logging.error(cmd)
-                out = _("Output : %s") % err.output
-                logging.error(out)
-                self.queue_fatal_event(txt)
-                return False
-
-        # In advanced mode, mount all partitions (root and boot are already mounted)
-        if self.method == 'advanced':
-            for path in self.mount_devices:
-                # Ignore devices without a mount path (or they will be mounted at "self.dest_dir")
-                if path == "":
-                    continue
-                mount_part = self.mount_devices[path]
-                if mount_part != root_partition and mount_part != boot_partition and mount_part != swap_partition:
-                    try:
-                        mount_dir = self.dest_dir + path
-                        if not os.path.exists(mount_dir):
-                            os.makedirs(mount_dir)
-                        txt = _("Mounting partition %s into %s directory") % (mount_part, mount_dir)
-                        self.queue_event('debug', txt)
-                        subprocess.check_call(['mount', mount_part, mount_dir])
-                    except subprocess.CalledProcessError as err:
-                        # We will continue as root and boot are already mounted
-                        txt = _("Can't mount %s in %s") % (mount_part, mount_dir)
-                        self.queue_event('warning', txt)
-                        cmd = _("Command %s has failed.") % err.cmd
-                        logging.warning(cmd)
-                        out = _("Output : %s") % err.output
-                        logging.warning(out)
-                elif mount_part == swap_partition:
-                    try:
-                        txt = _("Mounting swap %s") % mount_part
-                        self.queue_event('debug', txt)
-                        subprocess.check_call(['swapon', swap_partition])
-                    except subprocess.CalledProcessError as err:
-                        txt = _("Can't mount %s") % mount_part
-                        self.queue_event('warning', txt)
-                        cmd = _("Command %s has failed.") % err.cmd
-                        logging.warning(cmd)
-                        out = _("Output : %s") % err.output
-                        logging.warning(out)
+            # In advanced mode, mount all partitions (root and boot are already mounted)
+            if self.method == 'advanced':
+                for path in self.mount_devices:
+                    # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
+                    if path == "":
+                        continue
+                    mount_part = self.mount_devices[path]
+                    if mount_part != root_partition and mount_part != boot_partition and mount_part != swap_partition:
+                        mount_dir = os.path.join(DEST_DIR, path)
+                        try:
+                            if not os.path.exists(mount_dir):
+                                os.makedirs(mount_dir)
+                            txt = _("Mounting partition {0} into {1} directory")
+                            txt = txt.format(mount_part, mount_dir)
+                            logging.debug(txt)
+                            subprocess.check_call(['mount', mount_part, mount_dir])
+                        except subprocess.CalledProcessError as process_error:
+                            # We will continue as root and boot are already mounted
+                            logging.warning(_("Can't mount %s in %s"), mount_part, mount_dir)
+                            logging.warning(_("Command %s has failed."), process_error.cmd)
+                            logging.warning(_("Output : %s"), process_error.output)
+                    elif mount_part == swap_partition:
+                        try:
+                            logging.debug(_("Activating swap in %s"), mount_part)
+                            subprocess.check_call(['swapon', swap_partition])
+                        except subprocess.CalledProcessError as process_error:
+                            # We can continue even if no swap is on
+                            logging.warning(_("Can't activate swap in %s"), mount_part)
+                            logging.warning(_("Command %s has failed."), process_error.cmd)
+                            logging.warning(_("Output : %s"), process_error.output)
 
         # Nasty workaround:
         # If pacman was stoped and /var is in another partition than root
         # (so as to be able to resume install), database lock file will still be in place.
         # We must delete it or this new installation will fail
-        db_lock = os.path.join(self.dest_dir, "var/lib/pacman/db.lck")
+        db_lock = os.path.join(DEST_DIR, "var/lib/pacman/db.lck")
         if os.path.exists(db_lock):
             with misc.raised_privileges():
                 os.remove(db_lock)
             logging.debug(_("%s deleted"), db_lock)
 
         # Create some needed folders
-        try:
-            subprocess.check_call(['mkdir', '-p', '%s/var/lib/pacman' % self.dest_dir])
-            subprocess.check_call(['mkdir', '-p', '%s/etc/pacman.d/gnupg/' % self.dest_dir])
-            subprocess.check_call(['mkdir', '-p', '%s/var/log/' % self.dest_dir])
-        except subprocess.CalledProcessError as err:
-            txt = _("Can't create necessary directories on destination system")
-            logging.error(txt)
-            cmd = _("Command %s has failed") % err.cmd
-            logging.error(cmd)
-            out = _("Output : %s") % err.output
-            logging.error(out)
-            self.queue_fatal_event(txt)
-            return False
+        folders = [
+            os.path.join(DEST_DIR, 'var/lib/pacman'),
+            os.path.join(DEST_DIR, 'etc/pacman.d/gnupg'),
+            os.path.join(DEST_DIR, 'var/log')]
+
+        for folder in folders:
+            if not os.path.exists(folder):
+                os.makedirs(folder)
 
         all_ok = True
 
@@ -441,6 +469,7 @@ class InstallationProcess(multiprocessing.Process):
                 all_ok = False
 
         if all_ok is False:
+            self.error = True
             return False
         else:
             # Last but not least, copy Thus log to new installation
@@ -453,7 +482,7 @@ class InstallationProcess(multiprocessing.Process):
             except FileExistsError:
                 pass
             # Unmount everything
-            self.chroot_umount_special_dirs()
+            chroot_run_umount_special_dirs()
             source_dirs = {"source", "source_desktop"}
             for p in source_dirs:
                 p = os.path.join("/", p)
@@ -507,15 +536,6 @@ class InstallationProcess(multiprocessing.Process):
             self.running = False
             self.error = False
             return True
-
-    def get_cpu(self):
-        # Check if system is an intel system. Not sure if we want to move this to hardware module when its done.
-        process1 = subprocess.Popen(["hwinfo", "--cpu"], stdout=subprocess.PIPE)
-        process2 = subprocess.Popen(["grep", "Model:[[:space:]]"],
-                                    stdin=process1.stdout, stdout=subprocess.PIPE)
-        process1.stdout.close()
-        out, err = process2.communicate()
-        return out.decode().lower()
 
     def check_source_folder(self, mount_point):
         """ Check if source folders are mounted """
@@ -709,10 +729,11 @@ class InstallationProcess(multiprocessing.Process):
         """ Checks if an error has been issued """
         return not self.error
 
-    def copy_network_config(self):
+    @staticmethod
+    def copy_network_config():
         """ Copies Network Manager configuration """
         source_nm = "/etc/NetworkManager/system-connections/"
-        target_nm = "%s/etc/NetworkManager/system-connections/" % self.dest_dir
+        target_nm = os.path.join(DEST_DIR, "etc/NetworkManager/system-connections")
 
         # Sanity checks.  We don't want to do anything if a network
         # configuration already exists on the target
@@ -738,496 +759,206 @@ class InstallationProcess(multiprocessing.Process):
     def auto_fstab(self):
         """ Create /etc/fstab file """
 
-        all_lines = ["# /etc/fstab: static file system information.", "#",
+        all_lines = ["# /etc/fstab: static file system information.",
+                     "#",
                      "# Use 'blkid' to print the universally unique identifier for a",
                      "# device; this may be used with UUID= as a more robust way to name devices",
-                     "# that works even if disks are added and removed. See fstab(5).", "#",
-                     "# <file system> <mount point>   <type>  <options>       <dump>  <pass>", "#"]
+                     "# that works even if disks are added and removed. See fstab(5).",
+                     "#",
+                     "# <file system> <mount point>   <type>  <options>       <dump>  <pass>",
+                     "#"]
 
-        root_ssd = 0
+        use_luks = self.settings.get("use_luks")
+        use_lvm = self.settings.get("use_lvm")
 
-        for path in self.mount_devices:
-            opts = 'defaults'
-            chk = '0'
-            parti = self.mount_devices[path]
-            part_info = fs.get_info(parti)
+        for mount_point in self.mount_devices:
+            partition_path = self.mount_devices[mount_point]
+            part_info = fs.get_info(partition_path)
             uuid = part_info['UUID']
-            if parti in self.fs_devices:
-                myfmt = self.fs_devices[parti]
+
+            if partition_path in self.fs_devices:
+                myfmt = self.fs_devices[partition_path]
             else:
-                # It hasn't any filesystem defined
+                # It hasn't any filesystem defined, skip it.
                 continue
 
             # Take care of swap partitions
             if "swap" in myfmt:
-                all_lines.append("UUID=%s %s %s %s 0 %s" % (uuid, path, myfmt, opts, chk))
-                logging.debug(_("Added to fstab : UUID=%s %s %s %s 0 %s"), uuid, path, myfmt, opts, chk)
+                # If using a TRIM supported SSD, discard is a valid mount option for swap
+                if partition_path in self.ssd:
+                    opts = "defaults,discard"
+                else:
+                    opts = "defaults"
+                txt = "UUID={0} swap swap {1} 0 0".format(uuid, opts)
+                all_lines.append(txt)
+                logging.debug(_("Added to fstab : %s"), txt)
                 continue
 
-            # Fix for home + luks, no lvm
-            if "/home" in path and self.settings.get("use_luks") and not self.settings.get("use_lvm"):
+            crypttab_path = os.path.join(DEST_DIR, 'etc/crypttab')
+
+            # Fix for home + luks, no lvm (from Automatic Install)
+            if "/home" in mount_point and self.method == "automatic" and use_luks and not use_lvm:
                 # Modify the crypttab file
-                if self.settings.get("luks_key_pass") != "":
+                luks_root_password = self.settings.get("luks_root_password")
+                if luks_root_password and len(luks_root_password) > 0:
+                    # Use password and not a keyfile
                     home_keyfile = "none"
                 else:
-                    home_keyfile = "/etc/luks-keys/.keyfile-home"
-                subprocess.check_call(['chmod', '0777', '%s/etc/crypttab' % self.dest_dir])
-                with open('%s/etc/crypttab' % self.dest_dir, 'a') as crypttab_file:
-                    line = "cryptManjaroHome /dev/disk/by-uuid/%s %s luks\n" % (uuid, home_keyfile)
+                    # Use a keyfile
+                    home_keyfile = "/etc/luks-keys/home"
+
+                os.chmod(crypttab_path, 0o666)
+                with open(crypttab_path, 'a') as crypttab_file:
+                    line = "cryptAntergosHome /dev/disk/by-uuid/{0} {1} luks\n".format(uuid, home_keyfile)
                     crypttab_file.write(line)
                     logging.debug(_("Added to crypttab : %s"), line)
-                subprocess.check_call(['chmod', '0600', '%s/etc/crypttab' % self.dest_dir])
+                os.chmod(crypttab_path, 0o600)
 
-                all_lines.append("/dev/mapper/cryptManjaroHome %s %s %s 0 %s" % (path, myfmt, opts, chk))
-                logging.debug(_("Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"), path, myfmt, opts, chk)
+                # Add line to fstab
+                txt = "/dev/mapper/cryptAntergosHome {0} {1} defaults 0 0".format(mount_point, myfmt)
+                all_lines.append(txt)
+                logging.debug(_("Added to fstab : %s"), txt)
+                continue
+
+            # Add all LUKS partitions from Advanced Install (except root).
+            if self.method == "advanced" and mount_point is not "/" and use_luks and "/dev/mapper" in partition_path:
+                os.chmod(crypttab_path, 0o666)
+                vol_name = partition_path[len("/dev/mapper/"):]
+                with open(crypttab_path, 'a') as crypttab_file:
+                    line = "{0} /dev/disk/by-uuid/{1} none luks\n".format(vol_name, uuid)
+                    crypttab_file.write(line)
+                    logging.debug(_("Added to crypttab : %s"), line)
+                os.chmod(crypttab_path, 0o600)
+
+                txt = "{0} {1} {2} defaults 0 0".format(partition_path, mount_point, myfmt)
+                all_lines.append(txt)
+                logging.debug(_("Added to fstab : %s"), txt)
                 continue
 
             # fstab uses vfat to mount fat16 and fat32 partitions
             if "fat" in myfmt:
                 myfmt = 'vfat'
+
             if "btrfs" in myfmt:
                 self.settings.set('btrfs', True)
 
-            # Avoid adding a partition to fstab when
-            # it has no mount point (swap has been checked before)
-            if path == "":
+            # Avoid adding a partition to fstab when it has no mount point (swap has been checked above)
+            if mount_point == "":
                 continue
-            if path == '/':
-                # We do not run fsck on btrfs partitions
+
+            # Create mount point on destination system if it yet doesn't exist
+            full_path = os.path.join(DEST_DIR, mount_point)
+            if not os.path.exists(full_path):
+                os.makedirs(full_path)
+
+            # Is ssd ?
+            is_ssd = False
+            for ssd_device in self.ssd:
+                if ssd_device in partition_path:
+                    is_ssd = True
+
+            # Add mount options parameters
+            if not is_ssd:
                 if "btrfs" in myfmt:
-                    chk = '0'
-                    opts = 'rw,relatime,space_cache,autodefrag,inode_cache'
-                elif "ext4" in myfmt:
-                    chk = '1'
-                    opts = "rw,relatime,data=ordered"
+                    opts = 'defaults,rw,relatime,space_cache,autodefrag,inode_cache'
+                elif "f2fs" in myfmt:
+                    opts = 'defaults,rw,noatime'
+                elif "ext3" in myfmt or "ext4" in myfmt:
+                    opts = 'defaults,rw,relatime,data=ordered'
                 else:
-                    chk = '1'
-                    opts = "rw,relatime"
+                    opts = "defaults,rw,relatime"
             else:
-                full_path = os.path.join(self.dest_dir, path)
-                subprocess.check_call(["mkdir", "-p", full_path])
+                # As of linux kernel version 3.7, the following
+                # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
+                if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs':
+                    opts = 'defaults,rw,noatime,discard'
+                elif myfmt == 'btrfs':
+                    opts = 'defaults,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
+                else:
+                    opts = 'defaults,rw,noatime'
 
-            if self.ssd is not None:
-                for i in self.ssd:
-                    if i in self.mount_devices[path] and self.ssd[i]:
-                        opts = 'defaults,noatime'
-                        # As of linux kernel version 3.7, the following
-                        # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
-                        # If using a TRIM supported SSD, discard is a valid mount option for swap
-                        if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs' or myfmt == 'swap':
-                            opts += ',discard'
-                        elif myfmt == 'btrfs':
-                            opts = 'rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
-                        if path == '/':
-                            root_ssd = 1
+            no_check = ["btrfs", "f2fs"]
 
-            all_lines.append("UUID=%s %s %s %s 0 %s" % (uuid, path, myfmt, opts, chk))
-            logging.debug(_("Added to fstab : UUID=%s %s %s %s 0 %s"), uuid, path, myfmt, opts, chk)
+            if mount_point == "/" and myfmt not in no_check:
+                chk = '1'
+            else:
+                chk = '0'
 
-        if root_ssd:
-            all_lines.append("tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0")
-            logging.debug(_("Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"))
+            if mount_point == "/":
+                self.settings.set('ruuid', uuid)
 
-        full_text = '\n'.join(all_lines)
-        full_text += '\n'
+            txt = "UUID={0} {1} {2} {3} 0 {4}".format(uuid, mount_point, myfmt, opts, chk)
+            all_lines.append(txt)
+            logging.debug(_("Added to fstab : %s"), txt)
 
-        with open('%s/etc/fstab' % self.dest_dir, 'w') as fstab_file:
+        # Create tmpfs line in fstab
+        tmpfs = "tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
+        all_lines.append(tmpfs)
+        logging.debug(_("Added to fstab : %s"), tmpfs)
+
+        full_text = '\n'.join(all_lines) + '\n'
+
+        fstab_path = os.path.join(DEST_DIR, 'etc/fstab')
+        with open(fstab_path, 'w') as fstab_file:
             fstab_file.write(full_text)
 
-    def install_bootloader(self):
-        """ Installs boot loader """
+        logging.debug(_("fstab written."))
 
-        self.modify_grub_default()
-        self.prepare_grub_d()
-
-        # Freeze and unfreeze xfs filesystems to enable grub(2) installation on xfs filesystems
-        self.freeze_xfs()
-
-        bootloader = self.settings.get('bootloader_type')
-        if bootloader == "GRUB2":
-            self.install_bootloader_grub2_bios()
-        else:
-            self.install_bootloader_grub2_efi(bootloader)
-
-    def modify_grub_default(self):
-        """ If using LUKS, we need to modify GRUB_CMDLINE_LINUX to load our root encrypted partition
-            This scheme can be used in the automatic installation option only (at this time) """
-
-        default_dir = os.path.join(self.dest_dir, "etc/default")
-        default_grub = os.path.join(default_dir, "grub")
-        plymouth_bin = os.path.join(self.dest_dir, "usr/bin/plymouth")
-        use_splash = ''
-        if os.path.exists(plymouth_bin):
-            use_splash = 'splash'
-            
-        if "swap" in self.mount_devices:
-            swap_partition = self.mount_devices["swap"]
-            swap_uuid = fs.get_info(swap_partition)['UUID']
-            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=%s quiet %s"' % (swap_uuid, use_splash)
-        else:
-            kernel_cmd = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet %s"' % use_splash
-
-        if not os.path.exists(default_dir):
-            os.mkdir(default_dir)
-
-        if self.method == 'automatic' and self.settings.get('use_luks'):
-            root_device = self.mount_devices["/"]
-            boot_device = self.mount_devices["/boot"]
-            root_uuid = fs.get_info(root_device)['UUID']
-            boot_uuid = fs.get_info(boot_device)['UUID']
-
-            # Let GRUB automatically add the kernel parameters for root encryption
-            if self.settings.get("luks_key_pass") == "":
-                default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=/dev/disk/by-uuid/%s:cryptManjaro cryptkey=/dev/disk/by-uuid/%s:ext2:/.keyfile-root"' % (root_uuid, boot_uuid)
-            else:
-                default_line = 'GRUB_CMDLINE_LINUX="cryptdevice=/dev/disk/by-uuid/%s:cryptManjaro"' % root_uuid
-
-            with open(default_grub, 'r') as grub_file:
-                lines = [x.strip() for x in grub_file.readlines()]
-
-            for i in range(len(lines)):
-                if lines[i].startswith("#GRUB_CMDLINE_LINUX") or lines[i].startswith("GRUB_CMDLINE_LINUX"):
-                    if not lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT"):
-                        if not lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT"):
-                            lines[i] = default_line
-                elif lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT") or \
-                        lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT"):
-                    lines[i] = kernel_cmd
-                elif lines[i].startswith("#GRUB_DISTRIBUTOR") or lines[i].startswith("GRUB_DISTRIBUTOR"):
-                    lines[i] = "GRUB_DISTRIBUTOR=Manjaro"
-
-            with open(default_grub, 'w') as grub_file:
-                grub_file.write("\n".join(lines) + "\n")
-        else:
-            with open(default_grub, 'r') as grub_file:
-                lines = [x.strip() for x in grub_file.readlines()]
-
-            for i in range(len(lines)):
-                if lines[i].startswith("#GRUB_CMDLINE_LINUX_DEFAULT"):
-                    lines[i] = kernel_cmd
-                elif lines[i].startswith("GRUB_CMDLINE_LINUX_DEFAULT"):
-                    lines[i] = kernel_cmd
-                elif lines[i].startswith("#GRUB_DISTRIBUTOR") or lines[i].startswith("GRUB_DISTRIBUTOR"):
-                    lines[i] = "GRUB_DISTRIBUTOR=Manjaro"
-
-            with open(default_grub, 'w') as grub_file:
-                grub_file.write("\n".join(lines) + "\n")
-
-        # Add GRUB_DISABLE_SUBMENU=y to avoid bug https://bugs.archlinux.org/task/37904
-        #with open(default_grub, 'a') as grub_file:
-        #    grub_file.write("\n# See bug https://bugs.archlinux.org/task/37904\n")
-        #    grub_file.write("GRUB_DISABLE_SUBMENU=y\n\n")
-
-        logging.debug('/etc/default/grub configuration completed successfully.')
-
-    def prepare_grub_d(self):
-        # Prepare etc/grub.d folder
-        grub_d_dir = os.path.join(self.dest_dir, "etc/grub.d")
-
-        if not os.path.exists(grub_d_dir):
-            os.makedirs(grub_d_dir)
-
-        try:
-            shutil.copy2("/etc/grub.d/10_linux", grub_d_dir)
-        except FileNotFoundError:
-            self.queue_event('warning', _("ERROR on preparing 'etc/grub.d'-folder."))
-            return
-        except FileExistsError:
-            pass
-
-    def install_bootloader_grub2_bios(self):
-        """ Install boot loader in a BIOS system """
-        grub_location = self.settings.get('bootloader_location')
-        self.queue_event('info', _("Installing GRUB(2) BIOS boot loader in %s") % grub_location)
-
-        self.chroot_mount_special_dirs()
-
-        grub_install = ['grub-install', '--directory=/usr/lib/grub/i386-pc', '--target=i386-pc',
-                        '--boot-directory=/boot', '--recheck']
-
-        if len(grub_location) > 8:  # ex: /dev/sdXY > 8
-            grub_install.append("--force")
-
-        grub_install.append(grub_location)
-
-        self.chroot(grub_install)
-
-        self.install_bootloader_grub2_locales()
-
-        locale = self.settings.get("locale")
-        try:
-            self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale], 300)
-        except subprocess.TimeoutExpired:
-            logging.error(_("grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can continue."))
-            os.system("killall grub-mount")
-            os.system("killall os-prober")
-
-        self.chroot_umount_special_dirs()
-
-        cfg = os.path.join(self.dest_dir, "boot/grub/grub.cfg")
-        if "Manjaro" in open(cfg).read():
-            self.queue_event('info', _("GRUB(2) BIOS has been successfully installed."))
-            self.settings.set('bootloader_ok', True)
-        else:
-            self.queue_event('warning', _("ERROR installing GRUB(2) BIOS."))
-            self.settings.set('bootloader_ok', False)
-
-    def install_bootloader_grub2_efi(self, arch):
-        """ Install boot loader in a UEFI system """
-        uefi_arch = "x86_64"
-        spec_uefi_arch = "x64"
-        spec_uefi_arch_caps = "X64"
-
-        if arch == "UEFI_i386":
-            uefi_arch = "i386"
-            spec_uefi_arch = "ia32"
-            spec_uefi_arch_caps = "IA32"
-
-        # grub2-efi installation isn't done in a chroot because when efibootmgr
-        # runs it doesn't detect a uefi environment and fails to add a new uefi
-        # boot entry.
-        self.queue_event('info', _("Installing GRUB(2) UEFI %s boot loader") % uefi_arch)
-        efi_path = self.settings.get('bootloader_location')
-        try:
-            subprocess.check_call(['grub-install --target=%s-efi --efi-directory=/install%s '
-                                   '--bootloader-id=manjaro --boot-directory=/install/boot '
-                                   '--recheck --debug' % (uefi_arch, efi_path)], shell=True, timeout=300)
-        except subprocess.CalledProcessError as err:
-            logging.error('Command grub-install failed. Error output: %s' % err.output)
-        except subprocess.TimeoutExpired as err:
-            logging.error('Command grub-install timed out.')
-        except Exception as err:
-            logging.error('Command grub-install failed. Unknown Error: %s' % err)
-
-        self.queue_event('info', _("Installing Grub2 locales."))
-        self.install_bootloader_grub2_locales()
-
-        # Copy grub into dirs known to be used as default by some OEMs if they are empty.
-        defaults = [(os.path.join(self.dest_dir, "%s/EFI/BOOT/" % (efi_path[1:])),
-                     'BOOT' + spec_uefi_arch_caps + '.efi'),
-                    (os.path.join(self.dest_dir, "%s/EFI/Microsoft/Boot/" % (efi_path[1:])),
-                     'bootmgfw.efi')]
-        grub_dir_src = os.path.join(self.dest_dir, "%s/EFI/manjaro/" % (efi_path[1:]))
-        grub_efi_old = ('grub' + spec_uefi_arch + '.efi')
-        for default in defaults:
-            path, grub_efi_new = default
-            if not os.path.exists(path):
-                self.queue_event('info', _("No OEM loader found in %s. Copying Grub(2) into dir.") % path)
-                os.makedirs(path)
-                try:
-                    shutil.copy(grub_dir_src + grub_efi_old, path + grub_efi_new)
-                except FileNotFoundError:
-                    logging.warning(_("Copying Grub(2) into OEM dir failed. File Not Found."))
-                except FileExistsError:
-                    logging.warning(_("Copying Grub(2) into OEM dir failed. File Exists."))
-                except Exception as err:
-                    logging.warning(_("Copying Grub(2) into OEM dir failed. Unknown Error."))
-                    logging.warning(err)
-
-        # TODO: Create themed shellx64_v2.efi
-        '''# Copy uefi shell if none exists in /boot/EFI
-        shell_src = "/usr/share/thus/grub2-theme/shellx64_v2.efi"
-        shell_dst = os.path.join(self.dest_dir, "boot/EFI/shellx64_v2.efi")
-        try:
-            shutil.move(shell_src, shell_dst)
-        except FileNotFoundError:
-            logging.warning(_("UEFI Shell drop-in not found at %s"), shell_src)
-        except FileExistsError:
-            logging.warning(_("UEFI Shell already exists at %s"), shell_dst)
-        except Exception as err:
-            logging.warning(_("UEFI Shell drop-in could not be copied."))
-            logging.warning(err)'''
-
-        # Run grub-mkconfig last
-        self.queue_event('info', _("Generating grub.cfg"))
-        self.chroot_mount_special_dirs()
-
-        locale = self.settings.get("locale")
-        try:
-            self.chroot(['sh', '-c', 'LANG=%s grub-mkconfig -o /boot/grub/grub.cfg' % locale], 300)
-        except subprocess.TimeoutExpired:
-            logging.error(_("grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can continue."))
-            os.system("killall grub-mount")
-            os.system("killall os-prober")
-
-        self.chroot_umount_special_dirs()
-
-        cfg = os.path.join(self.dest_dir, "boot/grub/grub.cfg")
-        if "Manjaro" in open(cfg).read():
-            self.queue_event('info', _("GRUB(2) UEFI has been successfully installed."))
-            self.settings.set('bootloader_ok', True)
-        else:
-            self.queue_event('warning', _("ERROR installing GRUB(2) UEFI."))
-            self.settings.set('bootloader_ok', False)
-
-    def install_bootloader_grub2_locales(self):
-        """ Install Grub2 locales """
-        dest_locale_dir = os.path.join(self.dest_dir, "boot/grub/locale")
-
-        if not os.path.exists(dest_locale_dir):
-            os.makedirs(dest_locale_dir)
-
-        grub_mo = os.path.join(self.dest_dir, "usr/share/locale/en@quot/LC_MESSAGES/grub.mo")
-
-        try:
-            shutil.copy2(grub_mo, os.path.join(dest_locale_dir, "en.mo"))
-        except FileNotFoundError:
-            self.queue_event('warning', _("ERROR installing GRUB(2) locale."))
-        except FileExistsError:
-            # Ignore if already exists
-            pass
-
-    def freeze_xfs(self):
-        """ Freeze and unfreeze xfs, as hack for grub(2) installing """
-        if not os.path.exists("/usr/bin/xfs_freeze"):
-            return
-
-        xfs_boot = False
-        xfs_root = False
-
-        try:
-            subprocess.check_call(["sync"])
-            with open("/proc/mounts", "r") as mounts_file:
-                mounts = mounts_file.readlines()
-            # We leave a blank space in the end as we want to search exactly for this mount points
-            boot_mount_point = self.dest_dir + "/boot "
-            root_mount_point = self.dest_dir + " "
-            for line in mounts:
-                if " xfs " in line:
-                    if boot_mount_point in line:
-                        xfs_boot = True
-                    elif root_mount_point in line:
-                        xfs_root = True
-            if xfs_boot:
-                boot_mount_point = boot_mount_point.rstrip()
-                subprocess.check_call(["/usr/bin/xfs_freeze", "-f", boot_mount_point])
-                subprocess.check_call(["/usr/bin/xfs_freeze", "-u", boot_mount_point])
-            if xfs_root:
-                subprocess.check_call(["/usr/bin/xfs_freeze", "-f", self.dest_dir])
-                subprocess.check_call(["/usr/bin/xfs_freeze", "-u", self.dest_dir])
-        except subprocess.CalledProcessError as err:
-            logging.warning(_("Can't freeze/unfreeze xfs system"))
-
-    def enable_services(self, services):
+    @staticmethod
+    def enable_services(services):
         """ Enables all services that are in the list 'services' """
         for name in services:
-            self.chroot(['systemctl', 'enable', name + ".service"])
-            self.queue_event('debug', _('Enabled %s service.') % name)
+            path = os.path.join(DEST_DIR, "usr/lib/systemd/system/{0}.service".format(name))
+            if os.path.exists(path):
+                chroot_run(['systemctl', '-f', 'enable', name])
+                logging.debug(_("Enabled %s service."), name)
+            else:
+                logging.warning(_("Can't find service %s"), name)
 
-    def enable_targets(self, targets):
-        """ Enables all targets that are in the list 'targets' """
-        for name in targets:
-            self.chroot(['systemctl', 'enable', name + ".target"])
-            self.queue_event('debug', _('Enabled %s target.') % name)
-
-    def change_user_password(self, user, new_password):
+    @staticmethod
+    def change_user_password(user, new_password):
         """ Changes the user's password """
         try:
-            shadow_password = crypt.crypt(new_password, "$6$%s$" % user)
+            shadow_password = crypt.crypt(new_password, "$6${0}$".format(user))
         except:
-            self.queue_event('warning', _('Error creating password hash for user %s') % user)
+            logging.warning(_("Error creating password hash for user %s"), user)
             return False
 
         try:
-            self.chroot(['usermod', '-p', shadow_password, user])
+            chroot_run(['usermod', '-p', shadow_password, user])
         except:
-            self.queue_event('warning', _('Error changing password for user %s') % user)
+            logging.warning(_("Error changing password for user %s"), user)
             return False
 
         return True
 
-    def auto_timesetting(self):
+    @staticmethod
+    def auto_timesetting():
         """ Set hardware clock """
         subprocess.check_call(["hwclock", "--systohc", "--utc"])
-        shutil.copy2("/etc/adjtime", "%s/etc/" % self.dest_dir)
+        shutil.copy2("/etc/adjtime", os.path.join(DEST_DIR, "etc/"))
 
-    def set_mkinitcpio_hooks_and_modules(self, hooks, modules):
-        """ Set up mkinitcpio.conf """
-        self.queue_event('debug', _('Setting hooks and modules in mkinitcpio.conf'))
-        self.queue_event('debug', 'HOOKS="%s"' % ' '.join(hooks))
-        self.queue_event('debug', 'MODULES="%s"' % ' '.join(modules))
-
-        with open("/etc/mkinitcpio.conf", "r") as mkinitcpio_file:
-            mklins = [x.strip() for x in mkinitcpio_file.readlines()]
-
-        for i in range(len(mklins)):
-            if mklins[i].startswith("HOOKS"):
-                mklins[i] = 'HOOKS="%s"' % ' '.join(hooks)
-            elif mklins[i].startswith("MODULES"):
-                mklins[i] = 'MODULES="%s"' % ' '.join(modules)
-
-        path = os.path.join(self.dest_dir, "etc/mkinitcpio.conf")
-        with open(path, "w") as mkinitcpio_file:
-            mkinitcpio_file.write("\n".join(mklins) + "\n")
-
-    def run_mkinitcpio(self):
-        """ Runs mkinitcpio """
-        # Add lvm and encrypt hooks if necessary
-
-        cpu = self.get_cpu()
-
-        hooks = ["base", "udev", "autodetect", "modconf", "block", "keyboard", "keymap"]
-        modules = []
-
-        # It is important that the plymouth hook comes before any encrypt hook
-
-        plymouth_bin = os.path.join(self.dest_dir, "usr/bin/plymouth")
-        if os.path.exists(plymouth_bin):
-            hooks.append("plymouth")
-
-        # It is important that the encrypt hook comes before the filesystems hook
-        # (in case you are using LVM on LUKS, the order should be: encrypt lvm2 filesystems)
-
-        if self.settings.get("use_luks"):
-            if os.path.exists(plymouth_bin):
-                hooks.append("plymouth-encrypt")
-            else:
-                hooks.append("encrypt")
-            if self.arch == 'x86_64':
-                modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_x86_64", "sha256", "sha512"])
-            else:
-                modules.extend(["dm_mod", "dm_crypt", "ext4", "aes_i586", "sha256", "sha512"])
-
-        if self.blvm or self.settings.get("use_lvm"):
-            hooks.append("lvm2")
-
-        if "swap" in self.mount_devices:
-            hooks.extend(["resume", "filesystems"])
-        else:
-            hooks.extend(["filesystems"])
-
-        if self.settings.get('btrfs') and cpu is not 'genuineintel':
-            modules.append('crc32c')
-        elif self.settings.get('btrfs') and cpu is 'genuineintel':
-            modules.append('crc32c-intel')
-        else:
-            hooks.append("fsck")
-
-        self.set_mkinitcpio_hooks_and_modules(hooks, modules)
-
-        # Fix for bsdcpio error
-        locale = self.settings.get('locale')
-
-        # Run mkinitcpio on the target system
-        self.chroot_mount_special_dirs()
-        self.chroot(['sh', '-c', 'LANG=%s /usr/bin/mkinitcpio -p %s' % (locale, self.kernel)])
-        self.chroot_umount_special_dirs()
-
-    def uncomment_locale_gen(self, locale):
+    @staticmethod
+    def uncomment_locale_gen(locale):
         """ Uncomment selected locale in /etc/locale.gen """
 
-        text = []
-        with open("%s/etc/locale.gen" % self.dest_dir, "r") as gen:
-            text = gen.readlines()
+        path = os.path.join(DEST_DIR, "etc/locale.gen")
 
-        with open("%s/etc/locale.gen" % self.dest_dir, "w") as gen:
-            for line in text:
-                if locale in line and line[0] == "#":
-                    # uncomment line
-                    line = line[1:]
-                gen.write(line)
+        if os.path.exists(path):
+            with open(path) as gen:
+                text = gen.readlines()
 
-    def check_output(self, command):
+            with open(path, "w") as gen:
+                for line in text:
+                    if locale in line and line[0] == "#":
+                        # remove trailing '#'
+                        line = line[1:]
+                    gen.write(line)
+        else:
+            logging.warning(_("Can't find locale.gen file"))
+
+    @staticmethod
+    def check_output(command):
         """ Helper function to run a command """
         return subprocess.check_output(command.split()).decode().strip("\n")
 
@@ -1237,6 +968,61 @@ class InstallationProcess(multiprocessing.Process):
                and os.path.exists('%s/usr/share/xsessions/%s.desktop' % (self.dest_dir, desktop_environment.desktop_file)):
                 return desktop_environment
         return None
+
+    @staticmethod
+    def alsa_mixer_setup():
+        """ Sets ALSA mixer settings """
+
+        cmds = [
+            "Master 70% unmute",
+            "Front 70% unmute"
+            "Side 70% unmute"
+            "Surround 70% unmute",
+            "Center 70% unmute",
+            "LFE 70% unmute",
+            "Headphone 70% unmute",
+            "Speaker 70% unmute",
+            "PCM 70% unmute",
+            "Line 70% unmute",
+            "External 70% unmute",
+            "FM 50% unmute",
+            "Master Mono 70% unmute",
+            "Master Digital 70% unmute",
+            "Analog Mix 70% unmute",
+            "Aux 70% unmute",
+            "Aux2 70% unmute",
+            "PCM Center 70% unmute",
+            "PCM Front 70% unmute",
+            "PCM LFE 70% unmute",
+            "PCM Side 70% unmute",
+            "PCM Surround 70% unmute",
+            "Playback 70% unmute",
+            "PCM,1 70% unmute",
+            "DAC 70% unmute",
+            "DAC,0 70% unmute",
+            "DAC,1 70% unmute",
+            "Synth 70% unmute",
+            "CD 70% unmute",
+            "Wave 70% unmute",
+            "Music 70% unmute",
+            "AC97 70% unmute",
+            "Analog Front 70% unmute",
+            "VIA DXS,0 70% unmute",
+            "VIA DXS,1 70% unmute",
+            "VIA DXS,2 70% unmute",
+            "VIA DXS,3 70% unmute",
+            "Mic 70% mute",
+            "IEC958 70% mute",
+            "Master Playback Switch on",
+            "Master Surround on",
+            "SB Live Analog/Digital Output Jack off",
+            "Audigy Analog/Digital Output Jack off"]
+
+        for cmd in cmds:
+            chroot_run(['sh', '-c', 'amixer -c 0 sset {0}'.format(cmd)])
+
+        # Save settings
+        chroot_run(['alsactl', '-f', '/etc/asound.state', 'store'])
 
     def set_autologin(self):
         """ Enables automatic login for the installed desktop manager """
@@ -1333,7 +1119,7 @@ class InstallationProcess(multiprocessing.Process):
             if os.path.isfile(sddm_conf_path):
                 self.queue_event('info', "SDDM config file exists")
             else:
-                self.chroot(["sh", "-c", "sddm --example-config > /etc/sddm.conf"])           
+                chroot_run(["sh", "-c", "sddm --example-config > /etc/sddm.conf"])           
             text = []
             with open(sddm_conf_path, "r") as sddm_conf:
                 text = sddm_conf.readlines()
@@ -1395,7 +1181,7 @@ class InstallationProcess(multiprocessing.Process):
 
         # Set timezone
         zoneinfo_path = os.path.join("/usr/share/zoneinfo", self.settings.get("timezone_zone"))
-        self.chroot(['ln', '-s', zoneinfo_path, "/etc/localtime"])
+        chroot_run(['ln', '-s', zoneinfo_path, "/etc/localtime"])
 
         self.queue_event('debug', _('Time zone set.'))
 
@@ -1423,18 +1209,18 @@ class InstallationProcess(multiprocessing.Process):
         default_groups = 'lp,video,network,storage,wheel,audio'
 
         if self.settings.get('require_password') is False:
-            self.chroot(['groupadd', 'autologin'])
+            chroot_run(['groupadd', 'autologin'])
             default_groups += ',autologin'
 
-        self.chroot(['useradd', '-m', '-s', '/bin/bash', '-g', 'users', '-G', default_groups, username])
+        chroot_run(['useradd', '-m', '-s', '/bin/bash', '-g', 'users', '-G', default_groups, username])
 
         self.queue_event('debug', _('User %s added.') % username)
 
         self.change_user_password(username, password)
 
-        self.chroot(['chfn', '-f', fullname, username])
+        chroot_run(['chfn', '-f', fullname, username])
 
-        self.chroot(['chown', '-R', '%s:users' % username, "/home/%s" % username])
+        chroot_run(['chown', '-R', '%s:users' % username, "/home/%s" % username])
 
         hostname_path = os.path.join(self.dest_dir, "etc/hostname")
         with open(hostname_path, "w") as hostname_file:
@@ -1458,7 +1244,7 @@ class InstallationProcess(multiprocessing.Process):
 
         self.uncomment_locale_gen(locale)
 
-        self.chroot(['locale-gen'])
+        chroot_run(['locale-gen'])
         locale_conf_path = os.path.join(self.dest_dir, "etc/locale.conf")
         with open(locale_conf_path, "w") as locale_conf:
             locale_conf.write('LANG=%s\n' % locale)
@@ -1476,10 +1262,10 @@ class InstallationProcess(multiprocessing.Process):
         self.auto_timesetting()
 
         # Enter chroot system
-        self.chroot_mount_special_dirs()
+        chroot_run_mount_special_dirs()
 
         # Install configs for root
-        self.chroot(['cp', '-av', '/etc/skel/.', '/root/'])
+        chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
 
         self.queue_event('info', _("Configuring hardware ..."))
         # Copy generated xorg.xonf to target
@@ -1488,69 +1274,12 @@ class InstallationProcess(multiprocessing.Process):
                          os.path.join(self.dest_dir, 'etc/X11/xorg.conf'))
 
         # Configure ALSA
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Front 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Side 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Surround 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Center 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset LFE 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Headphone 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Speaker 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Line 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset External 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset FM 50% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Mono 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Digital 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Mix 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Aux2 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Center 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Front 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM LFE 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Side 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM Surround 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Playback 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset PCM,1 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,0 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset DAC,1 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Synth 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset CD 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Wave 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Music 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset AC97 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Analog Front 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,0 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,1 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,2 70% unmute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset VIA DXS,3 70% unmute'])
-
-        # set input levels
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Mic 70% mute'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset IEC958 70% mute'])
-
-        # special stuff
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off'])
-
-        # special stuff
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Playback Switch on'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Master Surround on'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset SB Live Analog/Digital Output Jack off'])
-        self.chroot(['sh', '-c', 'amixer -c 0 sset Audigy Analog/Digital Output Jack off'])
+        self.alsa_mixer_setup()
+        logging.debug(_("Updated Alsa mixer settings"))
 
         # Set pulse
-        if os.path.exists("/usr/bin/pulseaudio-ctl"):
-            self.chroot(['pulseaudio-ctl', 'normal'])
-
-        # Save settings
-        self.chroot(['alsactl', '-f', '/etc/asound.state', 'store'])
-
-        # Exit chroot system
-        self.chroot_umount_special_dirs()
+        if os.path.exists(os.path.join(DEST_DIR, "usr/bin/pulseaudio-ctl")):
+            chroot_run(['pulseaudio-ctl', 'normal'])
 
         # Install xf86-video driver
         if os.path.exists("/opt/livecd/pacman-gfx.conf"):
@@ -1570,9 +1299,6 @@ class InstallationProcess(multiprocessing.Process):
                 logging.error(txt)
                 self.queue_fatal_event(txt)
                 return False
-
-        # Re-enter chroot system
-        self.chroot_mount_special_dirs()
 
         self.queue_event('info', _("Configure display manager ..."))
         # Setup slim
@@ -1636,18 +1362,18 @@ class InstallationProcess(multiprocessing.Process):
         # Remove thus
         if os.path.exists("%s/usr/bin/thus" % self.dest_dir):
             self.queue_event('info', _("Removing live configuration (packages)"))
-            self.chroot(['pacman', '-R', '--noconfirm', 'thus'])
+            chroot_run(['pacman', '-R', '--noconfirm', 'thus'])
 
         # Remove virtualbox driver on real hardware
         p1 = subprocess.Popen(["mhwd"], stdout=subprocess.PIPE)
         p2 = subprocess.Popen(["grep", "0300:80ee:beef"], stdin=p1.stdout, stdout=subprocess.PIPE)
         num_res = p2.communicate()[0]
         if num_res == "0":
-            self.chroot(['sh', '-c', 'pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)'])
+            chroot_run(['sh', '-c', 'pacman -Rsc --noconfirm $(pacman -Qq | grep virtualbox-guest-modules)'])
 
         # Set unique machine-id
-        self.chroot(['dbus-uuidgen', '--ensure=/etc/machine-id'])
-        self.chroot(['dbus-uuidgen', '--ensure=/var/lib/dbus/machine-id'])
+        chroot_run(['dbus-uuidgen', '--ensure=/etc/machine-id'])
+        chroot_run(['dbus-uuidgen', '--ensure=/var/lib/dbus/machine-id'])
 
 
         # Setup pacman
@@ -1662,7 +1388,7 @@ class InstallationProcess(multiprocessing.Process):
         if os.path.exists("%s/etc/pacman.d/gnupg" % self.dest_dir):
             os.system("rm -rf %s/etc/pacman.d/gnupg" % self.dest_dir)
         os.system("cp -a /etc/pacman.d/gnupg %s/etc/pacman.d/" % self.dest_dir)
-        self.chroot(['pacman-key', '--populate', 'archlinux', 'manjaro'])
+        chroot_run(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
         if os.path.exists("%s/etc/keyboard.conf" % self.dest_dir):
@@ -1678,8 +1404,8 @@ class InstallationProcess(multiprocessing.Process):
                      newconsolefh.write("%s\n" % line)
             consolefh.close()
             newconsolefh.close()
-            self.chroot(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
-            self.chroot(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
+            chroot_run(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
+            chroot_run(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
         else:
             keyboardconf = open("%s/etc/X11/xorg.conf.d/00-keyboard.conf" % self.dest_dir, "w")
             keyboardconf.write("\n");
@@ -1692,9 +1418,6 @@ class InstallationProcess(multiprocessing.Process):
             keyboardconf.write(" Option \"XkbOptions\" \"%s\"\n" % "terminate:ctrl_alt_bksp")        
             keyboardconf.write("EndSection\n")
             keyboardconf.close()
-            
-        # Exit chroot system
-        self.chroot_umount_special_dirs()
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
@@ -1702,7 +1425,7 @@ class InstallationProcess(multiprocessing.Process):
         # NOTE: With LUKS or LVM maybe we'll have to fix deprecated hooks.
         self.queue_event('info', _("Running mkinitcpio ..."))
         self.queue_event("pulse")
-        self.run_mkinitcpio()
+        mkinitcpio.run(DEST_DIR, self.settings, self.mount_devices, self.blvm)
         self.queue_event('info', _("Running mkinitcpio - done"))
 
         # Set autologin if selected

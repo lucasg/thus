@@ -1,21 +1,25 @@
-# -*- coding: utf-8; Mode: Python; indent-tabs-mode: nil; tab-width: 4 -*-
-
-# Copyright (C) 2006, 2007 Canonical Ltd.
-# Written by Colin Watson <cjwatson@ubuntu.com>.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
+#  tz.py
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+#  Copyright (C) 2006, 2007 Canonical Ltd.
+#  Written by Colin Watson <cjwatson@ubuntu.com>.
+#  New modifications Copyright © 2013-2015 Antergos
 #
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from __future__ import print_function
 
@@ -25,13 +29,18 @@ import time
 import xml.dom.minidom
 import hashlib
 import sys
+import logging
+
+from gi.repository import GObject
 
 TZ_DATA_FILE = '/usr/share/zoneinfo/zone.tab'
 ISO_3166_FILE = '/usr/share/xml/iso-codes/iso_3166.xml'
 
+
 def _seconds_since_epoch(dt):
     # TODO cjwatson 2006-02-23: %s escape is not portable
     return int(dt.replace(tzinfo=None).strftime('%s'))
+
 
 class SystemTzInfo(datetime.tzinfo):
     def __init__(self, tz=None):
@@ -71,6 +80,19 @@ class SystemTzInfo(datetime.tzinfo):
             return datetime.timedelta(minutes=int(dstminutes))
         finally:
             self._restore_tz(tzbackup)
+
+    def get_daylight(self):
+        tzbackup = self._select_tz()
+        daylight = time.daylight
+        self._restore_tz(tzbackup)
+        return daylight
+
+    def is_dst(self, dt):
+        tzbackup = self._select_tz()
+        localtime = time.localtime(_seconds_since_epoch(dt))
+        isdst = localtime.tm_isdst
+        self._restore_tz(tzbackup)
+        return isdst
 
     def rawutcoffset(self, unused_dt):
         tzbackup = self._select_tz()
@@ -151,12 +173,33 @@ def _parse_position(position, wholedigits):
 
 
 class Location(object):
+    __gtype_name__ = "Location"
+    __gproperties__ = {
+        'zone': (GObject.TYPE_STRING, 'zone', None, 'zone', GObject.PARAM_READWRITE),
+        'latitude': (GObject.TYPE_FLOAT, 'latitude', 'latitude', 0, GObject.G_MAXFLOAT, 1, GObject.PARAM_READWRITE),
+        'longitude': (GObject.TYPE_FLOAT, 'longitude', 'longitude', 0, GObject.G_MAXFLOAT, 1, GObject.PARAM_READWRITE),
+        'human_country': (GObject.TYPE_STRING, 'human_country', None, 'human_country', GObject.PARAM_READWRITE)}
+
+    def get_info(self):
+        return self.info
+
+    def is_dst(self):
+        return self.isdst
+
+    def get_utc_offset(self):
+        return self.utc_offset
+
+    def get_raw_utc_offset(self):
+        return self.raw_utc_offset
+
     def __init__(self, zonetab_line, iso3166):
         bits = zonetab_line.rstrip().split('\t', 3)
         latlong = bits[1]
         latlongsplit = latlong.find('-', 1)
+
         if latlongsplit == -1:
             latlongsplit = latlong.find('+', 1)
+
         if latlongsplit != -1:
             latitude = latlong[:latlongsplit]
             longitude = latlong[latlongsplit:]
@@ -175,6 +218,7 @@ class Location(object):
             self.comment = bits[3]
         else:
             self.comment = None
+
         self.latitude = _parse_position(latitude, 2)
         self.longitude = _parse_position(longitude, 3)
 
@@ -194,10 +238,18 @@ class Location(object):
             # time is set to the epoch will at least let us avoid crashing,
             # although the UTC offset and zone letters may be wrong.
             today = datetime.datetime.fromtimestamp(0)
+
         self.info = SystemTzInfo(self.zone)
         self.utc_offset = self.info.utcoffset(today)
         self.raw_utc_offset = self.info.rawutcoffset(today)
         self.zone_letters = self.info.tzname_letters(today)
+        self.isdst = self.info.is_dst(today)
+
+    def get_property(self, prop):
+        return getattr(self, prop)
+
+    def set_property(self, prop, value):
+        setattr(self, prop, value)
 
 
 class _Database(object):
@@ -216,18 +268,19 @@ class _Database(object):
         for loc in self.locations:
             self.tz_to_loc[loc.zone] = loc
             if loc.country in self.cc_to_locs:
-                self.cc_to_locs[loc.country] += [loc]
+                # self.cc_to_locs[loc.country] += [loc]
+                self.cc_to_locs[loc.country].append(loc)
             else:
                 self.cc_to_locs[loc.country] = [loc]
 
     def get_loc(self, tz):
-        # Sometimes we'll encounter timezones that aren't really
-        # city-zones, like "US/Eastern" or "Mexico/General".  So first,
-        # we check if the timezone is known.  If it isn't, we search for
-        # one with the same md5sum and make a reference to it
         try:
             return self.tz_to_loc[tz]
         except:
+            # Sometimes we'll encounter timezones that aren't really
+            # city-zones, like "US/Eastern" or "Mexico/General".  So first,
+            # we check if the timezone is known.  If it isn't, we search for
+            # one with the same md5sum and make a reference to it
             try:
                 zone_path = os.path.join('/usr/share/zoneinfo', tz)
                 with open(zone_path, 'rb') as tz_file:
@@ -241,9 +294,12 @@ class _Database(object):
                 pass
 
             # If not found, oh well, just warn and move on.
-            print('Could not understand timezone', tz, file=sys.stderr)
+            logging.error('Could not understand timezone %s', tz)
             self.tz_to_loc[tz] = None  # save it for the future
             return None
+
+    def get_locations(self):
+        return self.locations
 
 
 _database = None

@@ -3,77 +3,69 @@
 #
 #  keymap.py
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Antergos
 #
-#  This program is free software; you can redistribute it and/or modify
+#  This file is part of Cnchi.
+#
+#  Cnchi is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  This program is distributed in the hope that it will be useful,
+#  Cnchi is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
+#  along with Cnchi; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
 from gi.repository import Gtk, GLib
 
-# Import functions
 import os
-import canonical.keyboard_names as keyboard_names
 import logging
-import canonical.misc as misc
 import subprocess
-import keyboard_widget
 
-_next_page = "installation_ask"
-_prev_page = "timezone"
+import misc.misc as misc
+import misc.keyboard_names as keyboard_names
+import misc.keyboard_widget as keyboard_widget
+
+from gtkbasebox import GtkBaseBox
 
 
-class Keymap(Gtk.Box):
+class Keymap(GtkBaseBox):
+    def __init__(self, params, prev_page="timezone", next_page="desktop"):
+        super().__init__(self, params, "keymap", prev_page, next_page)
 
-    def __init__(self, params):
-        self.title = params['title']
-        self.forward_button = params['forward_button']
-        self.backwards_button = params['backwards_button']
-        self.settings = params['settings']
+        self.prepare_called = False
+
         self.filename = os.path.join(self.settings.get('data'), "kbdnames.gz")
-        self.testing = params['testing']
-
-        super().__init__()
-        self.ui = Gtk.Builder()
-        self.ui_dir = self.settings.get('ui')
-        self.ui.add_from_file(os.path.join(self.ui_dir, "keymap.ui"))
-
-        self.ui.connect_signals(self)
 
         self.layout_treeview = self.ui.get_object("keyboardlayout")
         self.variant_treeview = self.ui.get_object("keyboardvariant")
+
         self.keyboard_test_entry = self.ui.get_object("keyboard_test_entry")
+        self.keyboard_widget = self.ui.get_object("keyboard_widget")
 
-        self.keyboard_box = self.ui.get_object("keyboard_box")
-        self.keyboard_widget = keyboard_widget.KeyboardWidget()
-        self.keyboard_box.add(self.keyboard_widget)
+        self.keyboard_layout = None
+        self.keyboard_layout_human = None
+        self.keyboard_variant = None
 
-        self.create_toolviews()
-
-        super().add(self.ui.get_object("keymap"))
+        self.create_treeviews()
 
     def translate_ui(self):
-        txt = _("Select your keyboard layout")
-        txt = "<span weight='bold' size='large'>%s</span>" % txt
-        self.title.set_markup(txt)
+        """ Translates all ui elements """
+        self.header.set_subtitle(_("Select Your Keyboard Layout"))
 
-        txt = _("Type here to test your keyboard")
-        self.keyboard_test_entry.set_placeholder_text(txt)
+        lbl = self.ui.get_object("label_layouts")
+        lbl.set_markup(_("Keyboard Layouts"))
 
-        # TODO: Also change layouts and variants text column
+        lbl = self.ui.get_object("label_variants")
+        lbl.set_markup(_("Keyboard Variants"))
 
-    def create_toolviews(self):
+    def create_treeviews(self):
         render = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn(_("Layouts"), render, text=0)
         liststore = Gtk.ListStore(str)
@@ -93,22 +85,32 @@ class Keymap(Gtk.Box):
             self.fill_layout_treeview()
             self.forward_button.set_sensitive(False)
 
-            # select treeview with selected country in previous screen.
+            # Select treeview with selected country in previous screen.
             selected_country = self.settings.get("timezone_human_country")
             selected_country = self.fix_countries(selected_country)
             found = self.select_value_in_treeview(self.layout_treeview, selected_country)
-            # If country not found default value is USA
-            if found is False:
-                self.select_value_in_treeview(self.layout_treeview, "USA")
-            logging.info(_("keyboard_layout is %s") % selected_country)
+
+            if not found:
+                # Country was not found, let's choose USA as default
+                selected_country = "USA"
+                self.select_value_in_treeview(self.layout_treeview, selected_country)
+            else:
+                # Country was found, here we should put specific variant cases
+                if selected_country == "Spain" and self.settings.get("language_name") == "Catalan":
+                    self.select_value_in_treeview(self.variant_treeview, "Spain - Catalan variant with middle-dot L")
+                if selected_country == "Canada" and self.settings.get("language_name") == "English":
+                    self.select_value_in_treeview(self.variant_treeview, "Canada - English")
+
+            logging.info(_("keyboard_layout is %s"), selected_country)
+
+        self.prepare_called = True
 
         self.show_all()
 
-    def fix_countries(self, country):
-        # Don't know how to fix this.
-        # There are some countries that do not
-        # match. Convert them here manually
-        # More countries should be added here
+    @staticmethod
+    def fix_countries(country):
+        # FIXME: There are some countries that do not match with 'kbdnames' so we convert them here manually.
+        # I'm not sure if there're more countries that should be added here.
 
         if country == "United States":
             country = "USA"
@@ -126,15 +128,14 @@ class Keymap(Gtk.Box):
             lang = "C"
 
         kbd_names = keyboard_names.KeyboardNames(self.filename)
-        kbd_names._load(lang)
+        kbd_names.load(lang)
 
         sorted_layouts = []
 
-        for layout in kbd_names._layout_by_human:
+        for layout in kbd_names.layout_by_human:
             sorted_layouts.append(layout)
 
-        sorted_layouts.sort()
-        #sorted_layouts = misc.sort_list(sorted_layouts, self.settings.get("locale"))
+        sorted_layouts = misc.sort_list(sorted_layouts, self.settings.get("locale"))
 
         # Block signal
         self.layout_treeview.handler_block_by_func(self.on_keyboardlayout_cursor_changed)
@@ -152,26 +153,27 @@ class Keymap(Gtk.Box):
 
     def select_value_in_treeview(self, treeview, value):
         model = treeview.get_model()
-        treeiter = model.get_iter(0)
+        tree_iter = model.get_iter(0)
 
         index = 0
 
         found = False
 
-        while treeiter is not None:
-            if model[treeiter][0] == value:
+        while tree_iter is not None:
+            if model[tree_iter][0] == value:
                 treeview.set_cursor(index)
-                path = model.get_path(treeiter)
+                path = model.get_path(tree_iter)
                 GLib.idle_add(self.scroll_to_cell, treeview, path)
-                treeiter = None
+                tree_iter = None
                 found = True
             else:
-                index = index + 1
-                treeiter = model.iter_next(treeiter)
+                index += 1
+                tree_iter = model.iter_next(tree_iter)
 
         return found
 
-    def scroll_to_cell(self, treeview, path):
+    @staticmethod
+    def scroll_to_cell(treeview, path):
         treeview.scroll_to_cell(path)
         return False
 
@@ -179,12 +181,11 @@ class Keymap(Gtk.Box):
         selected = self.layout_treeview.get_selection()
 
         if selected:
-            (ls, iter) = selected.get_selected()
-            if iter:
+            (ls, iterator) = selected.get_selected()
+            if iterator:
+                keyboard_layout = ls.get_value(iterator, 0)
 
-                keyboard_layout = ls.get_value(iter, 0)
-
-                # store layout selected
+                # Store layout selected
                 self.keyboard_layout_human = keyboard_layout
 
                 lang = self.settings.get("language_code")
@@ -193,20 +194,19 @@ class Keymap(Gtk.Box):
                     lang = "C"
 
                 kbd_names = keyboard_names.KeyboardNames(self.filename)
-                kbd_names._load(lang)
+                kbd_names.load(lang)
 
-                country_code = kbd_names._layout_by_human[self.keyboard_layout_human]
+                country_code = kbd_names.layout_by_human[self.keyboard_layout_human]
                 self.keyboard_layout = country_code
 
-                variants = kbd_names._variant_by_human
+                variants = kbd_names.variant_by_human
 
                 sorted_variants = []
 
                 for variant in variants[country_code]:
                     sorted_variants.append(variant)
 
-                sorted_variants.sort()
-                #sorted_variants = misc.sort_list(sorted_variants, self.settings.get("locale"))
+                sorted_variants = misc.sort_list(sorted_variants, self.settings.get("locale"))
 
                 # Block signal
                 self.variant_treeview.handler_block_by_func(self.on_keyboardvariant_cursor_changed)
@@ -222,7 +222,6 @@ class Keymap(Gtk.Box):
                 # Unblock signal
                 self.variant_treeview.handler_unblock_by_func(self.on_keyboardvariant_cursor_changed)
 
-                #selection = self.variant_treeview.get_selection()
                 self.variant_treeview.set_cursor(0)
         else:
             liststore = self.variant_treeview.get_model()
@@ -237,15 +236,18 @@ class Keymap(Gtk.Box):
         self.set_keyboard_widget()
 
     def store_values(self):
-        # we've previously stored our layout, now store our variant
+        if self.keyboard_layout_human is None:
+            # We have not previously stored our layout
+            return
+
         selected = self.variant_treeview.get_selection()
 
         keyboard_variant_human = "USA"
 
         if selected:
-            (ls, iter) = selected.get_selected()
-            if iter:
-                keyboard_variant_human = ls.get_value(iter, 0)
+            (ls, iterator) = selected.get_selected()
+            if iterator:
+                keyboard_variant_human = ls.get_value(iterator, 0)
 
         lang = self.settings.get("language_code")
 
@@ -254,42 +256,41 @@ class Keymap(Gtk.Box):
         if not kbd_names.has_language(lang):
             lang = "C"
 
-        kbd_names._load(lang)
+        kbd_names.load(lang)
 
-        try:
-            keyboard_layout_human = self.keyboard_layout_human
-        except AttributeError:
-            keyboard_layout_human = "USA"
-            self.keyboard_layout_human = keyboard_layout_human
-
-        country_code = kbd_names._layout_by_human[self.keyboard_layout_human]
-
+        country_code = kbd_names.layout_by_human[self.keyboard_layout_human]
         self.keyboard_layout = country_code
-
-        self.keyboard_variant = kbd_names._variant_by_human[country_code][keyboard_variant_human]
+        self.keyboard_variant = kbd_names.variant_by_human[country_code][keyboard_variant_human]
 
         self.settings.set("keyboard_layout", self.keyboard_layout)
         self.settings.set("keyboard_variant", self.keyboard_variant)
 
-        # Issue 75: Won't pick/load the keyboard layout after selecting one (sticks to qwerty)
-        if not self.testing:
+        # This fixes issue 75: Won't pick/load the keyboard layout after selecting one (sticks to qwerty)
+        if not self.testing and self.prepare_called:
             self.setkb()
 
         return True
 
-    def get_prev_page(self):
-        return _prev_page
-
-    def get_next_page(self):
-        return _next_page
-
     def setkb(self):
         subprocess.check_call(['setxkbmap', '-layout', self.keyboard_layout, "-variant", self.keyboard_variant])
-        if os.path.exists("/usr/bin/keyboardctl"):
-            with misc.raised_privileges():
-                subprocess.check_call(['kbctl', '--set-layout', self.keyboard_layout])
+
+        with misc.raised_privileges():
+            subprocess.check_call(['localectl', 'set-keymap', '--no-convert', self.keyboard_layout])
 
     def set_keyboard_widget(self):
-        ''' Pass current keyboard layout to the keyboard widget. '''
+        """ Pass current keyboard layout to the keyboard widget. """
         self.keyboard_widget.set_layout(self.keyboard_layout)
         self.keyboard_widget.set_variant(self.keyboard_variant)
+        self.keyboard_widget.show_all()
+
+# When testing, no _() is available
+try:
+    _("")
+except NameError as err:
+    def _(message):
+        return message
+
+if __name__ == '__main__':
+    from test_screen import _, run
+
+    run('Keymap')
