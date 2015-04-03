@@ -79,7 +79,7 @@ class Updater():
                 self.local_files = update_info['files']
 
         # Download update.info (contains info of all Thus's files)
-        request = download.url_open(_devel_update_info_url)
+        request = download.url_open(_update_info_url)
 
         if request is not None:
             response = request.read().decode('utf-8')
@@ -155,7 +155,7 @@ class Updater():
     @staticmethod
     def download_master_zip(zip_path):
         """ Download new Thus version from github """
-        request = download.url_open(_devel_zip_url)
+        request = download.url_open(_zip_url)
 
         if request is None:
             return False
