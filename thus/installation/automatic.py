@@ -72,6 +72,10 @@ class InstallationAutomatic(GtkBaseBox):
         self.bootloader_device = {}
 
     def translate_ui(self):
+        txt = _("Automatic installation mode")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
+
         txt = _("Select drive:")
         self.device_label.set_markup(txt)
 

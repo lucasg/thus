@@ -312,14 +312,19 @@ class AutoTimezoneThread(threading.Thread):
         logging.debug(_("We have connection. Let's get our timezone"))
         try:
             url = urllib.request.Request(
-                url="http://ip-api.com/csv/?fields=lat,lon",
+                url="http://ip-api.com/csv/?fields=16832",
                 data=logo_digest,
                 headers={"User-Agent": "Manjaro Installer", "Connection": "close"})
             with urllib.request.urlopen(url) as conn:
-                coords = conn.read().decode('utf-8').replace(',',' ').strip()
+                coords = conn.read().decode('utf-8').strip()
+                coords_list = coords.split(",")
+                status = coords_list[0]
+                latitude = coords_list[1]
+                longitude = coords_list[2]
+                timezone = coords_list[3]
+                coords = "{0} {1}".format(latitude,longitude)
 
-            if coords == "0 0":
-                # Sometimes server returns 0 0, we treat it as an error
+            if status == "fail":
                 coords = None
         except Exception as general_error:
             logging.error(general_error)
