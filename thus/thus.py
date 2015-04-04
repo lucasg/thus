@@ -179,14 +179,14 @@ def parse_options():
     desc = _("Thus v{0} - Manjaro Installer").format(info.THUS_VERSION)
     parser = argparse.ArgumentParser(description=desc)
 
-    parser.add_argument(
+    '''parser.add_argument(
         "-a", "--aria2",
         help=_("Use aria2 to download Manjaro packages (EXPERIMENTAL)"),
         action="store_true")
     parser.add_argument(
         "-c", "--cache",
         help=_("Use pre-downloaded xz packages when possible"),
-        nargs='?')
+        nargs='?')'''
     parser.add_argument(
         "-d", "--debug",
         help=_("Sets Thus log level to 'debug'"),
@@ -195,14 +195,14 @@ def parse_options():
         "-f", "--force",
         help=_("Runs thus even if it detects that another instance is running"),
         action="store_true")
-    parser.add_argument(
+    '''parser.add_argument(
         "-i", "--disable-tryit",
         help=_("Disables first screen's 'try it' option"),
         action="store_true")
     parser.add_argument(
         "-p", "--packagelist",
         help=_("Install the packages referenced by a local xml instead of the default ones"),
-        nargs='?')
+        nargs='?')'''
     parser.add_argument(
         "-t", "--testing",
         help=_("Do not perform any changes (useful for developers)"),
