@@ -324,11 +324,11 @@ class Bootloader(object):
                 try:
                     shutil.copy(grub_path, grub_default)
                 except FileNotFoundError:
-                    logging.warning(msg_failed, _("File not found."))
+                    logging.warning(msg_failed.format(_("File not found.")))
                 except FileExistsError:
-                    logging.warning(msg_failed, _("File already exists."))
+                    logging.warning(msg_failed.format(_("File already exists.")))
                 except Exception as general_error:
-                    logging.warning(msg_failed, general_error)
+                    logging.warning(msg_failed.format(general_error))
 
         '''# Copy uefi shell if none exists in /boot/EFI
         shell_src = "/usr/share/thus/grub2-theme/shellx64_v2.efi"
