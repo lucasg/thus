@@ -3,22 +3,24 @@
 #
 #  check.py
 #
-#  Copyright © 2013-2015 Manjaro
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
 #
-#  This file is part of Cnchi.
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
-#  Cnchi is free software; you can redistribute it and/or modify
+#  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  Cnchi is distributed in the hope that it will be useful,
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Cnchi; if not, write to the Free Software
+#  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -46,7 +48,7 @@ MIN_ROOT_SIZE = 6000000000
 class Check(GtkBaseBox):
     """ Check class """
 
-    def __init__(self, params, prev_page="language", next_page="location"):
+    def __init__(self, params, prev_page="keymap", next_page="installation_ask"):
         """ Init class ui """
         super().__init__(self, params, "check", prev_page, next_page)
 
@@ -161,6 +163,7 @@ class Check(GtkBaseBox):
         """ Continue """
         # Remove timer
         self.remove_timer = True
+        has_internet = misc.has_connection()
 
         if has_internet:
             logging.info(_("We have Internet connection."))

@@ -36,7 +36,7 @@ from gtkbasebox import GtkBaseBox
 
 
 class Keymap(GtkBaseBox):
-    def __init__(self, params, prev_page="timezone", next_page="installation_ask"):
+    def __init__(self, params, prev_page="timezone", next_page="check"):
         super().__init__(self, params, "keymap", prev_page, next_page)
 
         self.prepare_called = False

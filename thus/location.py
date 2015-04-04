@@ -39,7 +39,7 @@ from gtkbasebox import GtkBaseBox
 
 
 class Location(GtkBaseBox):
-    def __init__(self, params, prev_page="check", next_page="timezone"):
+    def __init__(self, params, prev_page="language", next_page="timezone"):
         super().__init__(self, params, "location", prev_page, next_page)
 
         self.listbox = self.ui.get_object("listbox")
