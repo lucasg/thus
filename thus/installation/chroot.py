@@ -121,11 +121,11 @@ def umount_special_dirs(dest_dir):
             try:
                 subprocess.check_call(["umount", "-l", mydir])
             except subprocess.CalledProcessError as process_error:
-                logging.warning(_("Unable to umount %s"), mydir)
-                cmd = _("Command %s has failed.")
-                logging.warning(cmd, process_error.cmd)
-                out = _("Output : %s")
-                logging.warning(out, process_error.output)
+                logging.warning(_("Unable to umount {0}".format(mydir)))
+                cmd = _("Command {0} has failed.".format(process_error.cmd))
+                logging.warning(cmd)
+                out = _("Output : {0}".format(process_error.output))
+                logging.warning(out)
 
     _special_dirs_mounted = False
 
@@ -151,8 +151,8 @@ def run(cmd, dest_dir, timeout=None, stdin=None):
         if proc:
             proc.kill()
             proc.communicate()
-        logging.error(_("Timeout running the command %s"), timeout_error.cmd)
+        logging.error(_("Timeout running the command {0}".format(timeout_error.cmd)))
         logging.error(_("Thus will try to continue anyways"))
     except OSError as os_error:
-        logging.error(_("Error running command: %s"), os_error.strerror)
+        logging.error(_("Error running command: {0}".format(os_error.strerror)))
         logging.error(_("Thus will try to continue anyways"))

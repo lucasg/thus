@@ -144,7 +144,7 @@ class Bootloader(object):
             # Let GRUB automatically add the kernel parameters for root encryption
             luks_root_volume = self.settings.get('luks_root_volume')
 
-            logging.debug("Luks Root Volume: %s", luks_root_volume)
+            logging.debug("Luks Root Volume: {0}".format(luks_root_volume))
 
             root_device = self.root_device
 
@@ -154,7 +154,7 @@ class Bootloader(object):
 
             root_uuid = fs.get_info(root_device)['UUID']
 
-            logging.debug("Root device: %s", root_device)
+            logging.debug("Root device: {0}".format(root_device))
 
             cmd_linux = "cryptdevice=/dev/disk/by-uuid/{0}:{1}".format(root_uuid, luks_root_volume)
 
@@ -193,7 +193,7 @@ class Bootloader(object):
                 with open(default_grub, 'a') as grub_file:
                     grub_file.write('{0}="{1}"\n'.format(option, cmd))
 
-            logging.debug('Set %s="%s" in /etc/default/grub', option, cmd)
+            logging.debug('Set {0}="{1}" in /etc/default/grub'.format(option, cmd))
         except Exception as general_error:
             logging.error("Can't modify /etc/default/grub")
             logging.error(general_error)
@@ -213,11 +213,11 @@ class Bootloader(object):
                 shutil.copy2(script_path, grub_d_dir)
                 os.chmod(os.path.join(grub_d_dir, script), 0o755)
             except FileNotFoundError:
-                logging.debug(_("Could not copy %s to grub.d"), script)
+                logging.debug(_("Could not copy {0} to grub.d".format(script)))
             except FileExistsError:
                 pass
         else:
-            logging.warning("Can't find script %s", script_path)
+            logging.warning("Can't find script {0}".format(script_path))
 
     def install_grub2_bios(self):
         """ Install Grub2 bootloader in a BIOS system """
@@ -297,11 +297,11 @@ class Bootloader(object):
             subprocess.call(load_module, timeout=15)
             subprocess.check_call(grub_install, shell=True, timeout=120)
         except subprocess.CalledProcessError as process_error:
-            logging.error('Command grub-install failed. Error output: %s', process_error.output)
+            logging.error('Command grub-install failed. Error output: {0}'.format(process_error.output))
         except subprocess.TimeoutExpired:
             logging.error('Command grub-install timed out.')
         except Exception as general_error:
-            logging.error('Command grub-install failed. Unknown Error: %s', general_error)
+            logging.error('Command grub-install failed. Unknown Error: {0}'.format(general_error))
 
         self.install_grub2_locales()
 
@@ -316,10 +316,11 @@ class Bootloader(object):
         for grub_default in grub_defaults:
             path = grub_default.split()[0]
             if not os.path.exists(path):
-                msg = _("No OEM loader found in %s. Copying Grub(2) into dir.")
-                logging.info(msg, path)
+                msg = _("No OEM loader found in {0}. Copying Grub(2) into dir.")
+                msg = msg.format(path)
+                logging.info(msg)
                 os.makedirs(path)
-                msg_failed = _("Copying Grub(2) into OEM dir failed: %s")
+                msg_failed = _("Copying Grub(2) into OEM dir failed: {0}")
                 try:
                     shutil.copy(grub_path, grub_default)
                 except FileNotFoundError:
@@ -335,7 +336,7 @@ class Bootloader(object):
         try:
             shutil.copy2(shell_src, shell_dst)
         except FileNotFoundError:
-            logging.warning(_("UEFI Shell drop-in not found at %s"), shell_src)
+            logging.warning(_("UEFI Shell drop-in not found at {0}".format(shell_src)))
         except FileExistsError:
             pass
         except Exception as general_error:

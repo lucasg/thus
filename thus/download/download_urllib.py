@@ -121,7 +121,7 @@ class Download(object):
             try:
                 total_length = int(element['size'])
             except TypeError:
-                logging.warning(_("Metalink for package %s has no size info"), element['identity'])
+                logging.warning(_("Metalink for package {0} has no size info".format(element['identity'])))
                 total_length = 0
 
             # If the user doesn't give us a cache dir to copy xz files from, self.cache_dir will be None
@@ -134,7 +134,7 @@ class Download(object):
 
             if os.path.exists(dst_path):
                 # File already exists (previous install?) do not download
-                logging.warning(_("File %s already exists, Thus will not overwrite it"), element['filename'])
+                logging.warning(_("File {0} already exists, Thus will not overwrite it".format(element['filename'])))
                 downloaded += 1
             elif self.cache_dir and os.path.exists(dst_cache_path):
                 # We're lucky, the package is already downloaded in the cache the user has given us

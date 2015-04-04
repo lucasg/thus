@@ -3,11 +3,11 @@
 #
 #  installation_automatic.py
 #
-#  This file was forked from Cnchi (graphical installer from Antergos)
+#  This file was forked from Thus (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -264,8 +264,9 @@ class InstallationAutomatic(GtkBaseBox):
         return response
 
     def start_installation(self):
-        txt = _("Thus will install Manjaro on device %s")
-        logging.info(txt, self.auto_device)
+        txt = _("Thus will install Manjaro on device {0}")
+        txt = txt.format(self.auto_device)
+        logging.info(txt)
 
         checkbox = self.ui.get_object("bootloader_device_check")
         if checkbox.get_active() is False:

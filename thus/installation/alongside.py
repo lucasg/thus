@@ -3,26 +3,24 @@
 #
 #  alongside.py
 #
-#  This file was forked from Cnchi (graphical installer from Antergos)
+#  This file was forked from Thus (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
 #  Copyright © 2013-2015 Antergos (http://antergos.com/)
-#  Copyright © 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
-#  This file is part of Thus.
-#
-#  Thus is free software; you can redistribute it and/or modify
+#  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  Thus is distributed in the hope that it will be useful,
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Thus; if not, write to the Free Software
+#  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -380,7 +378,7 @@ class InstallationAlongside(GtkBaseBox):
             new_length = int(swap_part_size * units / sec_size)
             new_end_sector = res.start + new_length
             my_geometry = pm.geom_builder(disk, res.start, new_end_sector, swap_part_size)
-            logging.debug("create_partition %s", my_geometry)
+            logging.debug("create_partition {0}".format(my_geometry))
             swappart = pm.create_partition(disk, 0, my_geometry)
             if swappart is None:
                 txt = _("Cannot create new swap partition.")
@@ -392,7 +390,7 @@ class InstallationAlongside(GtkBaseBox):
             new_size_in_mb = res.getLength('MB') - swap_part_size
             start_sector = new_end_sector + 1
             my_geometry = pm.geom_builder(disk, start_sector, res.end, new_size_in_mb)
-            logging.debug("create_partition %s", my_geometry)
+            logging.debug("create_partition {0}".format(my_geometry))
             npart = pm.create_partition(disk, 0, my_geometry)
             if npart is None:
                 txt = _("Cannot create new partition.")

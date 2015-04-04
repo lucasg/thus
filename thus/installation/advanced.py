@@ -856,7 +856,7 @@ class InstallationAdvanced(GtkBaseBox):
         disk_path = self.get_disk_path_from_selection(model, tree_iter)
         self.disks_changed.append(disk_path)
 
-        logging.info(_("You will delete the partition %s from disk %s"), partition_path, disk_path)
+        logging.info(_("You will delete the partition {0} from disk {1}".format(partition_path, disk_path)))
 
         # Be sure to just call get_devices once
         if self.disks is None:
@@ -874,7 +874,7 @@ class InstallationAdvanced(GtkBaseBox):
         # Before delete the partition, check if it's already mounted
         if pm.check_mounted(part):
             # We unmount the partition. Should we ask first?
-            logging.info(_("Unmounting %s..."), part.path)
+            logging.info(_("Unmounting {0}...".format(part.path)))
             try:
                 subprocess.Popen(['umount', part.path], stdout=subprocess.PIPE)
             except subprocess.CalledProcessError as process_error:
@@ -1525,7 +1525,7 @@ class InstallationAdvanced(GtkBaseBox):
                 if "GPT" in line:
                     ptype = 'gpt'
 
-                logging.info(_("Creating a new %s partition table for disk %s"), ptype, disk_path)
+                logging.info(_("Creating a new {0} partition table for disk {1}".format(ptype, disk_path)))
 
                 new_disk = pm.make_new_disk(disk_path, ptype)
                 self.disks[disk_path] = (new_disk, pm.OK)
@@ -1795,7 +1795,7 @@ class InstallationAdvanced(GtkBaseBox):
                                     try:
                                         cmd = ['umount', '-l', partition_path]
                                         subprocess.Popen(cmd, stdout=subprocess.PIPE)
-                                        logging.debug(_("%s unmounted"), mount_point)
+                                        logging.debug(_("{0} unmounted".format(mount_point)))
                                     except subprocess.CalledProcessError as process_error:
                                         logging.error(process_error)
                                 elif mounted:
@@ -1809,19 +1809,20 @@ class InstallationAdvanced(GtkBaseBox):
                                             try:
                                                 cmd = ['sh', '-c', 'swapoff {0}'.format(partition_path)]
                                                 subprocess.Popen(cmd, stdout=subprocess.PIPE)
-                                                logging.debug(_("Swap partition %s unmounted"), partition_path)
+                                                logging.debug(_("Swap partition {0} unmounted".format(partition_path)))
                                             except subprocess.CalledProcessError as process_error:
                                                 logging.error(process_error)
                                         else:
                                             try:
                                                 cmd = ['umount', partition_path]
                                                 subprocess.Popen(cmd, stdout=subprocess.PIPE)
-                                                logging.debug(_("%s unmounted"), mount_point)
+                                                logging.debug(_("{0} unmounted".format(mount_point)))
                                             except subprocess.CalledProcessError as process_error:
                                                 logging.error(process_error)
                                 else:
-                                    msg = _("%s shows as mounted (busy) but it has no mount point")
-                                    logging.warning(msg, partition_path)
+                                    msg = _("{0} shows as mounted (busy) but it has no mount point")
+                                    msg = msg.format(partition_path)
+                                    logging.warning(msg)
 
                         (is_new, lbl, mnt, fsystem, fmt) = self.stage_opts[uid]
 
@@ -1870,8 +1871,9 @@ class InstallationAdvanced(GtkBaseBox):
 
                     if createme == 'Yes' or relabel == 'Yes' or fmt == 'Yes' or mnt or encrypt == 'Yes':
                         changelist.append((partition_path, createme, relabel, fmt, mnt, encrypt))
-                        msg = _("Added %s to changelist: createme[%s] relabel[%s] fmt[%s] mnt[%s] encrypt[%s]")
-                        logging.debug(msg, partition_path, createme, relabel, fmt, mnt, encrypt)
+                        msg = _("Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] encrypt[{5}]")
+                        msg = msg.format(partition_path, createme, relabel, fmt, mnt, encrypt)
+                        logging.debug(msg)
 
             return changelist
 
@@ -2023,7 +2025,7 @@ class InstallationAdvanced(GtkBaseBox):
                 # Only commit changes to disks we've changed!
                 if disk_path in self.disks_changed:
                     pm.finalize_changes(disk)
-                    logging.info(_("Finished saving changes in %s"), disk_path)
+                    logging.info(_("Finished saving changes in {0}".format(disk_path)))
                 # Now that partitions are created, set fs and label
                 partitions.update(pm.get_partitions(disk))
 
