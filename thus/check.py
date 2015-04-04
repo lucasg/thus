@@ -162,7 +162,7 @@ class Check(GtkBaseBox):
         # Remove timer
         self.remove_timer = True
 
-	if has_internet:
+        if has_internet:
             logging.info(_("We have Internet connection."))
         logging.info(_("We're connected to a power source."))
         logging.info(_("We have enough disk space."))
