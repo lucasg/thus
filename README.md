@@ -4,6 +4,7 @@ Graphical Installer for Manjaro Linux
 
 ## Dependencies
 
+ * ckbcomp
  * coreutils
  * cryptsetup
  * gptfdisk
