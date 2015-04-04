@@ -7,7 +7,7 @@
 #  Check it at https://github.com/antergos
 #
 #  Copyright © 2013-2015 Antergos (http://antergos.com/)
-#  Copyright © 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This file is part of Thus.
 #
