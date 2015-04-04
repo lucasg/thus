@@ -60,9 +60,6 @@ class Check(GtkBaseBox):
         self.timeout_id = None
         self.prepare_best_results = None
 
-        # Boolean variable to check if reflector has been run once or not
-        self.reflector_launched = False
-
         self.label_space = self.ui.get_object("label_space")
 
     def translate_ui(self):
@@ -103,7 +100,7 @@ class Check(GtkBaseBox):
         space = self.has_enough_space()
         self.prepare_enough_space.set_state(space)
 
-        if has_internet and space:
+        if space:
             return True
 
         return False
@@ -165,18 +162,18 @@ class Check(GtkBaseBox):
         # Remove timer
         self.remove_timer = True
 
-        logging.info(_("We have Internet connection."))
+	if has_internet:
+            logging.info(_("We have Internet connection."))
         logging.info(_("We're connected to a power source."))
         logging.info(_("We have enough disk space."))
 
         # Enable forward button
         self.forward_button.set_sensitive(True)
 
-        if not self.testing and not self.reflector_launched:
+        if not self.testing and has_internet:
             # Launch reflector script to determine the 10 fastest mirrors
             self.thread = AutoRankmirrorsThread()
             self.thread.start()
-            self.reflector_launched = True
 
         return True
 
