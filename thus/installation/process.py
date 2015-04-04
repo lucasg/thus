@@ -1064,8 +1064,6 @@ class InstallationProcess(multiprocessing.Process):
 
         self.queue_event('debug', _('Network configuration copied.'))
 
-        self.queue_event("action", _("Configuring your new system"))
-
         # enable services
         self.enable_services([self.network_manager])
 
@@ -1195,11 +1193,6 @@ class InstallationProcess(multiprocessing.Process):
             try:
                 subprocess.check_call(["/usr/bin/bash", mhwd_script_path])
                 self.queue_event('debug', "Finished installing drivers.")
-            except subprocess.FileNotFoundError as e:
-                txt = _("Can't execute the MHWD script")
-                logging.error(txt)
-                self.queue_fatal_event(txt)
-                return False
             except subprocess.CalledProcessError as e:
                 txt = "CalledProcessError.output = %s" % e.output
                 logging.error(txt)
