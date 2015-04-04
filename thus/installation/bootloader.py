@@ -287,7 +287,7 @@ class Bootloader(object):
         grub_install = [
             'grub-install',
             '--target={0}-efi'.format(uefi_arch),
-            '--efi-directory=/install/boot',
+            '--efi-directory=/install/boot/efi',
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/install/boot',
             '--recheck']
