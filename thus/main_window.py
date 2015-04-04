@@ -245,7 +245,7 @@ class MainWindow(Gtk.ApplicationWindow):
         misc.gtk_refresh()
 
     def load_pages(self):
-        misc.set_cursor(Gdk.CursorType.WATCH)
+        # misc.set_cursor(Gdk.CursorType.WATCH)
         self.pages["location"] = location.Location(self.params)
         self.pages["check"] = check.Check(self.params)
         self.pages["keymap"] = keymap.Keymap(self.params)
@@ -261,6 +261,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.pages["installation_advanced"] = installation_advanced.InstallationAdvanced(self.params)
         self.pages["user_info"] = user_info.UserInfo(self.params)
         self.pages["slides"] = slides.Slides(self.params)
+        # misc.set_cursor(Gdk.CursorType.ARROW)
 
         diff = 2
 
