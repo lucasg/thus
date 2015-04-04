@@ -781,7 +781,7 @@ class AutoPartition(object):
                 setup_luks(devices['luks2'], "cryptManjaroHome", self.luks_password, key_files[1])
 
         if self.lvm:
-            logging.debug(_("Thus will setup LVM on device {0}".format(devices['lvm']))
+            logging.debug(_("Thus will setup LVM on device {0}".format(devices['lvm'])))
 
             try:
                 subprocess.check_call(["pvcreate", "-f", "-y", devices['lvm']])

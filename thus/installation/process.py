@@ -618,7 +618,7 @@ class InstallationProcess(multiprocessing.Process):
             for dirtime in directory_times:
                 (directory, atime, mtime) = dirtime
                 try:
-                    self.queue_event('info', _("Restoring meta-information on {0}".format(directory))
+                    self.queue_event('info', _("Restoring meta-information on {0}".format(directory)))
                     os.utime(directory, (atime, mtime))
                 except OSError:
                     pass
