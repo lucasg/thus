@@ -1961,7 +1961,7 @@ class InstallationAdvanced(GtkBaseBox):
             self.enable_all_widgets()
             return False
 
-        self.set_cursor(Gdk.CursorType.WATCH)
+        # self.set_cursor(Gdk.CursorType.WATCH)
         # self.stop_advanced_progressbar = False
         # self.advanced_progressbar_timeout_id = GLib.timeout_add(1000, self.on_advanced_progressbar_timeout)
 
@@ -1971,7 +1971,7 @@ class InstallationAdvanced(GtkBaseBox):
         # Start the installation process
         self.start_installation()
 
-        self.set_cursor(Gdk.CursorType.LEFT_PTR)
+        # self.set_cursor(Gdk.CursorType.LEFT_PTR)
         # self.stop_advanced_progressbar = True
         self.enable_all_widgets()
 
