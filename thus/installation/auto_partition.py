@@ -815,19 +815,19 @@ class AutoPartition(object):
 
             try:
                 size = str(int(part_sizes['root']))
-                cmd = ["lvcreate", "--name", "ManjaroRoot", "--size", size, "ManjaroVG"]
+                cmd = ["lvcreate", "--name", "ManjaroRoot", "--yes", "--size", size, "ManjaroVG"]
                 subprocess.check_call(cmd)
 
                 if not self.home:
                     # Use the remainig space for our swap volume
-                    cmd = ["y", "|", "lvcreate", "--name", "ManjaroSwap", "--extents", "100%FREE", "ManjaroVG"]
+                    cmd = ["lvcreate", "--name", "ManjaroSwap", "--yes", "--extents", "100%FREE", "ManjaroVG"]
                     subprocess.check_call(cmd)
                 else:
                     size = str(int(part_sizes['swap']))
-                    cmd = ["y", "|", "lvcreate", "--name", "ManjaroSwap", "--size", size, "ManjaroVG"]
+                    cmd = ["lvcreate", "--name", "ManjaroSwap", "--yes", "--size", size, "ManjaroVG"]
                     subprocess.check_call(cmd)
                     # Use the remaining space for our home volume
-                    cmd = ["y", "|", "lvcreate", "--name", "ManjaroHome", "--extents", "100%FREE", "ManjaroVG"]
+                    cmd = ["lvcreate", "--name", "ManjaroHome", "--yes", "--extents", "100%FREE", "ManjaroVG"]
                     subprocess.check_call(cmd)
             except subprocess.CalledProcessError as err:
                 txt = _("Error creating LVM logical volume")
