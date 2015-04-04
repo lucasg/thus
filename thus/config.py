@@ -62,7 +62,6 @@ class Settings(object):
             'force_grub_type': False,
             'fullname': '',
             'hostname': 'manjaro',
-            'install_bootloader': True,
             'installer_thread_call': {},
             'keyboard_layout': '',
             'keyboard_variant': '',
