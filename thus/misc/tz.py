@@ -294,7 +294,7 @@ class _Database(object):
                 pass
 
             # If not found, oh well, just warn and move on.
-            logging.error('Could not understand timezone %s', tz)
+            logging.error('Could not understand timezone {0}'.format(tz))
             self.tz_to_loc[tz] = None  # save it for the future
             return None
 

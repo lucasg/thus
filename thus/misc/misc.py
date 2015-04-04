@@ -958,20 +958,20 @@ def sort_list(mylist, mylocale=""):
 def set_locale(mylocale):
     try:
         locale.setlocale(locale.LC_ALL, mylocale)
-        logging.info(_("locale changed to : %s"), mylocale)
+        logging.info(_("locale changed to : {0}".format(mylocale)))
     except locale.Error as err:
-        logging.warning(_("Can't change to locale '%s' : %s"), mylocale, err)
+        logging.warning(_("Can't change to locale '{0}' : {1}".format(mylocale, err)))
         if mylocale.endswith(".UTF-8"):
             # Try without the .UTF-8 trailing
             mylocale = mylocale[:-len(".UTF-8")]
             try:
                 locale.setlocale(locale.LC_ALL, mylocale)
-                logging.info(_("locale changed to : %s"), mylocale)
+                logging.info(_("locale changed to : {0}".format(mylocale)))
             except locale.Error as err:
-                logging.warning(_("Can't change to locale '%s'"), mylocale)
+                logging.warning(_("Can't change to locale '{0}'".format(mylocale)))
                 logging.warning(err)
         else:
-            logging.warning(_("Can't change to locale '%s'"), mylocale)
+            logging.warning(_("Can't change to locale '{0}'".format(mylocale)))
 
 
 def gtk_refresh():
