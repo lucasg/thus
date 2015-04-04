@@ -312,9 +312,9 @@ class AutoTimezoneThread(threading.Thread):
         logging.debug(_("We have connection. Let's get our timezone"))
         try:
             url = urllib.request.Request(
-                url="http://geo.antergos.com",
+                url="http://ip-api.com/csv",
                 data=logo_digest,
-                headers={"User-Agent": "Antergos Installer", "Connection": "close"})
+                headers={"User-Agent": "Manjaro Installer", "Connection": "close"})
             with urllib.request.urlopen(url) as conn:
                 coords = conn.read().decode('utf-8').strip()
 
