@@ -1296,6 +1296,7 @@ class InstallationProcess(multiprocessing.Process):
         chroot_run(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
+        # For keyboardctl
         if os.path.exists("{0}/etc/keyboard.conf".format(DEST_DIR)):
             consolefh = open("{0}/etc/keyboard.conf".format(DEST_DIR), "r")
             newconsolefh = open("{0}/etc/keyboard.new".format(DEST_DIR), "w")
@@ -1311,18 +1312,19 @@ class InstallationProcess(multiprocessing.Process):
             newconsolefh.close()
             chroot_run(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
             chroot_run(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
-        else:
-            keyboardconf = open("{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR), "w")
-            keyboardconf.write("\n");
-            keyboardconf.write("Section \"InputClass\"\n")
-            keyboardconf.write(" Identifier \"system-keyboard\"\n") 
-            keyboardconf.write(" MatchIsKeyboard \"on\"\n")
-            keyboardconf.write(" Option \"XkbLayout\" \"{0}\"\n".format(keyboard_layout))
-            keyboardconf.write(" Option \"XkbModel\" \"{0}\"\n".format("pc105"))
-            keyboardconf.write(" Option \"XkbVariant\" \"{0}\"\n".format(keyboard_variant))
-            keyboardconf.write(" Option \"XkbOptions\" \"{0}\"\n".format("terminate:ctrl_alt_bksp"))        
-            keyboardconf.write("EndSection\n")
-            keyboardconf.close()
+
+        # Write xorg keyboard configuration
+        keyboardconf = open("{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR), "w")
+        keyboardconf.write("\n");
+        keyboardconf.write("Section \"InputClass\"\n")
+        keyboardconf.write(" Identifier \"system-keyboard\"\n") 
+        keyboardconf.write(" MatchIsKeyboard \"on\"\n")
+        keyboardconf.write(" Option \"XkbLayout\" \"{0}\"\n".format(keyboard_layout))
+        keyboardconf.write(" Option \"XkbModel\" \"{0}\"\n".format("pc105"))
+        keyboardconf.write(" Option \"XkbVariant\" \"{0}\"\n".format(keyboard_variant))
+        keyboardconf.write(" Option \"XkbOptions\" \"{0}\"\n".format("terminate:ctrl_alt_bksp"))        
+        keyboardconf.write("EndSection\n")
+        keyboardconf.close()
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
