@@ -101,9 +101,9 @@ class MainWindow(Gtk.ApplicationWindow):
 
             self.ui_dir = self.settings.get('ui')
 
-        if cmd_line.cache:
+        '''if cmd_line.cache:
             logging.debug("Thus will use '%s' as a source directory for cached xz packages", cmd_line.cache)
-            self.settings.set('cache', cmd_line.cache)
+            self.settings.set('cache', cmd_line.cache)'''
 
         data_dir = self.settings.get('data')
 
@@ -155,10 +155,10 @@ class MainWindow(Gtk.ApplicationWindow):
         # to the main thread (installation/process.py)
         self.callback_queue = multiprocessing.JoinableQueue()
 
-        # Save in config if we have to use aria2 to download pacman packages
+        '''# Save in config if we have to use aria2 to download pacman packages
         self.settings.set("use_aria2", cmd_line.aria2)
         if cmd_line.aria2:
-            logging.info(_("Using Aria2 to download packages - EXPERIMENTAL"))
+            logging.info(_("Using Aria2 to download packages - EXPERIMENTAL"))'''
 
         # self.set_titlebar(self.header)
 
@@ -174,7 +174,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.params['settings'] = self.settings
         self.params['main_progressbar'] = self.progressbar
 
-        self.params['disable_tryit'] = cmd_line.disable_tryit
+        # self.params['disable_tryit'] = cmd_line.disable_tryit
         self.params['testing'] = cmd_line.testing
 
         # Just load the first two screens (the other ones will be loaded later)
