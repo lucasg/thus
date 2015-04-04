@@ -57,6 +57,9 @@ class Keymap(GtkBaseBox):
 
     def translate_ui(self):
         """ Translates all ui elements """
+        txt = _("Select your keyboard layout")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
 
         lbl = self.ui.get_object("label_layouts")
         lbl.set_markup(_("Keyboard Layouts"))

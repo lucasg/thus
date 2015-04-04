@@ -206,6 +206,11 @@ class InstallationAlongside(GtkBaseBox):
 
     def translate_ui(self):
         """ Translates all ui elements """
+
+        txt = _("Manjaro alongside another OS")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
+
         txt = _("Choose the new size of your installation")
         txt = '<span size="large">{0}</span>'.format(txt)
         self.label.set_markup(txt)

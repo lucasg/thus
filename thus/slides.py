@@ -71,6 +71,11 @@ class Slides(GtkBaseBox):
 
     def translate_ui(self):
         """ Translates all ui elements """
+
+        txt = _("Installing Manjaro...")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
+
         if len(self.info_label.get_label()) <= 0:
             self.set_message(_("Please wait..."))
 

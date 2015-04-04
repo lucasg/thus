@@ -75,6 +75,11 @@ class UserInfo(GtkBaseBox):
 
     def translate_ui(self):
         """ Translate all widgets """
+
+        txt = _("Who are you?")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
+
         label = self.ui.get_object('fullname_label')
         txt = _("Your name:")
         label.set_markup(txt)

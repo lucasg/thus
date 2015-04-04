@@ -68,7 +68,8 @@ class Check(GtkBaseBox):
     def translate_ui(self):
         """ Translates all ui elements """
         txt = _("System Check")
-        self.header.set_subtitle(txt)
+        txt = '<span weight="bold" size="large">{0}</span>'.format(txt)
+        self.title.set_markup(txt)
 
         self.prepare_enough_space = self.ui.get_object("prepare_enough_space")
         txt = _("has at least {0}GB available storage space. (*)").format(MIN_ROOT_SIZE / 1000000000)

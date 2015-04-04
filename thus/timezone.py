@@ -90,6 +90,11 @@ class Timezone(GtkBaseBox):
 
     def translate_ui(self):
         """ Translates all ui elements """
+
+        txt = _("Where are you?")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
+
         label = self.ui.get_object('label_zone')
         txt = _("Zone:")
         label.set_markup(txt)
