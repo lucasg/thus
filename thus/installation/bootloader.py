@@ -222,7 +222,7 @@ class Bootloader(object):
     def install_grub2_bios(self):
         """ Install Grub2 bootloader in a BIOS system """
         grub_location = self.settings.get('bootloader_device')
-        txt = _("Installing GRUB(2) BIOS boot loader in {0}").format(grub_location)
+        txt = _("Installing GRUB(2) BIOS boot loader in {0}".format(grub_location))
         logging.info(txt)
 
         # /dev and others need to be mounted (binded).
@@ -281,7 +281,7 @@ class Bootloader(object):
         bootloader_id = 'manjaro_grub' if not os.path.exists('/install/boot/EFI/manjaro_grub') else \
             'manjaro_grub_{0}'.format(self.random_generator())
 
-        txt = _("Installing GRUB(2) UEFI {0} boot loader").format(uefi_arch)
+        txt = _("Installing GRUB(2) UEFI {0} boot loader".format(uefi_arch))
         logging.info(txt)
 
         grub_install = [
@@ -468,10 +468,10 @@ class Bootloader(object):
             conf = []
             conf.append("title\tManjaro\n")
             conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
-            conf.append("options\tinitrd=/boot/{0}.img {1}\n\n".format(self.initramfs,root_uuid_line))
+            conf.append("options\tinitrd=/boot/{0}.img {1}\n\n".format(self.initramfs, root_uuid_line))
             conf.append("title\tManjaro (fallback)\n")
             conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
-            conf.append("options\tinitrd=/boot/{0}-fallback.img {1}\n\n".format(self.initramfs,root_uuid_line))
+            conf.append("options\tinitrd=/boot/{0}-fallback.img {1}\n\n".format(self.initramfs, root_uuid_line))
 
         # Write boot entries
         entries_dir = os.path.join(self.dest_dir, "boot/loader/entries")
