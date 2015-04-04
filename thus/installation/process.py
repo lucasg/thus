@@ -372,7 +372,7 @@ class InstallationProcess(multiprocessing.Process):
             if not os.path.exists(boot_path):
                 os.makedirs(boot_path)
             if "/boot" in self.mount_devices:
-                txt = _("Mounting partition {0} into {1}/boot directory")
+                txt = _("Mounting partition {0} into {1} directory")
                 txt = txt.format(boot_partition, boot_path)
                 logging.debug(txt)
                 subprocess.check_call(['mount', boot_partition, boot_path])
