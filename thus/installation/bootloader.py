@@ -84,7 +84,7 @@ class Bootloader(object):
 
     def install_grub(self):
         self.modify_grub_default()
-        self.prepare_grub_d()
+        # self.prepare_grub_d()
 
         if os.path.exists('/sys/firmware/efi'):
             self.install_grub2_efi()
