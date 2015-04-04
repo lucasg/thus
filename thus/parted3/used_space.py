@@ -39,8 +39,8 @@ def get_used_ntfs(part):
         result = subprocess.check_output(["ntfsinfo", "-mf", part])
     except subprocess.CalledProcessError as err:
         result = None
-        txt = _("Can't detect used space of NTFS partition %s")
-        logging.error(txt, part)
+        txt = _("Can't detect used space of NTFS partition {0}".format(part))
+        logging.error(txt)
         logging.error(err)
 
     if result:
@@ -68,8 +68,8 @@ def get_used_ext(part):
         result = subprocess.check_output(["dumpe2fs", "-h", part])
     except subprocess.CalledProcessError as err:
         result = None
-        txt = _("Can't detect used space of EXTFS partition %s")
-        logging.error(txt, part)
+        txt = _("Can't detect used space of EXTFS partition {0}".format(part))
+        logging.error(txt)
         logging.error(err)
 
     if result:
@@ -100,8 +100,8 @@ def get_used_fat(part):
             result = err.output
         else:
             result = None
-            txt = _("Can't detect used space of FAT partition %s")
-            logging.error(txt, part)
+            txt = _("Can't detect used space of FAT partition {0}".format(part))
+            logging.error(txt)
             logging.error(err)
 
     if result:
@@ -131,8 +131,8 @@ def get_used_jfs(part):
         result = subprocess.check_output(["jfs_fsck", "-n", part])
     except subprocess.CalledProcessError as err:
         result = None
-        txt = _("Can't detect used space of JFS partition %s")
-        logging.error(txt, part)
+        txt = _("Can't detect used space of JFS partition {0}".format(part))
+        logging.error(txt)
         logging.error(err)
 
     if result:
@@ -156,8 +156,8 @@ def get_used_reiser(part):
         result = subprocess.check_output(["debugreiserfs", "-d", part])
     except subprocess.CalledProcessError as err:
         result = None
-        txt = _("Can't detect used space of REISERFS partition %s")
-        logging.error(txt, part)
+        txt = _("Can't detect used space of REISERFS partition {0}".format(part))
+        logging.error(txt)
         logging.error(err)
 
     if result:
@@ -184,8 +184,8 @@ def get_used_btrfs(part):
         result = subprocess.check_output(["btrfs", "filesystem", "show", part])
     except Exception as err:
         result = None
-        txt = _("Can't detect used space of BTRFS partition %s")
-        logging.error(txt, part)
+        txt = _("Can't detect used space of BTRFS partition {0}".format(part))
+        logging.error(txt)
         logging.error(err)
 
     if result:
@@ -221,8 +221,8 @@ def get_used_xfs(part):
         result = subprocess.check_output(command)
     except subprocess.CalledProcessError as err:
         result = None
-        txt = _("Can't detect used space of XFS partition %s")
-        logging.error(txt, part)
+        txt = _("Can't detect used space of XFS partition {0}".format(part))
+        logging.error(txt)
         logging.error(err)
 
     if result:

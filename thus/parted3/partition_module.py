@@ -104,7 +104,7 @@ def get_devices():
                 disk_obj = parted.Disk(dev)
                 result = OK
             except parted.DiskLabelException:
-                # logging.warning(_('Unrecognised disk label in device %s.'), dev.path)
+                # logging.warning(_('Unrecognised disk label in device {0}.'.format(dev.path)))
                 result = UNRECOGNISED_DISK_LABEL
             except Exception as general_error:
                 logging.error(general_error)
@@ -397,7 +397,7 @@ def split_partition(device_path, partition_path, new_size_in_mb):
     new_length = int(new_size_in_mb * units / sec_size)
     new_end_sector = start_sector + new_length
     my_geometry = geom_builder(disk, start_sector, new_end_sector, new_size_in_mb)
-    logging.debug("create_partition %s", my_geometry)
+    logging.debug("create_partition {0}".format(my_geometry))
     create_partition(disk, 0, my_geometry)
 
     # Create new partition (for Antergos)
@@ -405,7 +405,7 @@ def split_partition(device_path, partition_path, new_size_in_mb):
     start_sector = new_end_sector + 1
     end_sector = old_end_sector
     my_geometry = geom_builder(disk, start_sector, end_sector, new_size_in_mb)
-    logging.debug("create_partition %s", my_geometry)
+    logging.debug("create_partition {0}".format(my_geometry))
     create_partition(disk, 0, my_geometry)
 
     finalize_changes(disk)

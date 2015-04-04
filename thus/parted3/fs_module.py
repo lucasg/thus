@@ -171,7 +171,7 @@ def is_ssd(disk_path):
             ssd = True
     except subprocess.CalledProcessError as err:
         logging.warning(err)
-        logging.warning(_("Can't verify if %s is a Solid State Drive or not"), disk_path)
+        logging.warning(_("Can't verify if {0} is a Solid State Drive or not".format(disk_path)))
     return ssd
 '''
 
@@ -187,7 +187,7 @@ def is_ssd(disk_path):
             ssd = True
     except subprocess.CalledProcessError as err:
         logging.warning(err)
-        logging.warning(_("Can't verify if %s is a Solid State Drive or not"), disk_path)
+        logging.warning(_("Can't verify if {0} is a Solid State Drive or not".format(disk_path)))
     return ssd
 
 
@@ -212,7 +212,7 @@ def resize(part, fs_type, new_size_in_mb):
     elif 'ext' in fs_type:
         res = resize_ext(part, new_size_in_mb)
     else:
-        logging.error(_("Sorry but filesystem %s can't be shrinked"), fs_type)
+        logging.error(_("Sorry but filesystem {0} can't be shrinked".format(fs_type)))
 
     return res
 
