@@ -504,7 +504,7 @@ class InstallationProcess(multiprocessing.Process):
                 if path != '/' and path != 'swap' and path != '':
                     try:
 
-                        txt = _("Unmounting {0}") % mount_dir
+                        txt = _("Unmounting {0}".format(mount_dir))
                         self.queue_event('debug', txt)
                         subprocess.check_call(['umount', mount_dir])
                     except subprocess.CalledProcessError as err:
