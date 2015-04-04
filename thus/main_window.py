@@ -71,7 +71,7 @@ class MainWindow(Gtk.ApplicationWindow):
         # Check if we're already running
         tmp_running = "/tmp/.setup-running"
         if os.path.exists(tmp_running):
-            logging.error(_("File '%s' already exists."), tmp_running)
+            logging.error(_("File '{0}' already exists.".format(tmp_running)))
             msg = _("You cannot run two instances of this installer.\n\n"
                     "If you are sure that the installer is not already running\n"
                     "you can run this installer using the --force option\n"
@@ -84,7 +84,7 @@ class MainWindow(Gtk.ApplicationWindow):
         os.system("mkdir -p /root/.cache/dconf")
         os.system("chmod -R 777 /root/.cache")
 
-        logging.info(_("Thus installer version %s"), info.THUS_VERSION)
+        logging.info(_("Thus installer version {0}".format(info.THUS_VERSION)))
 
         self.settings = config.Settings()
         self.ui_dir = self.settings.get('ui')
@@ -102,7 +102,7 @@ class MainWindow(Gtk.ApplicationWindow):
             self.ui_dir = self.settings.get('ui')
 
         '''if cmd_line.cache:
-            logging.debug("Thus will use '%s' as a source directory for cached xz packages", cmd_line.cache)
+            logging.debug("Thus will use '{0}' as a source directory for cached xz packages".format(cmd_line.cache))
             self.settings.set('cache', cmd_line.cache)'''
 
         data_dir = self.settings.get('data')

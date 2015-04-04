@@ -204,20 +204,20 @@ class Location(GtkBaseBox):
         self.settings.set("locale", mylocale)
         try:
             locale.setlocale(locale.LC_ALL, mylocale)
-            logging.info(_("locale changed to : %s"), mylocale)
+            logging.info(_("locale changed to : {0}".format(mylocale)))
         except locale.Error:
-            logging.warning(_("Can't change to locale '%s'"), mylocale)
+            logging.warning(_("Can't change to locale '{0}'".format(mylocale)))
             if mylocale.endswith(".UTF-8"):
                 # Try without the .UTF-8 trailing
                 mylocale = mylocale[:-len(".UTF-8")]
                 try:
                     locale.setlocale(locale.LC_ALL, mylocale)
-                    logging.info(_("locale changed to : %s"), mylocale)
+                    logging.info(_("locale changed to : {0}".format(mylocale)))
                     self.settings.set("locale", mylocale)
                 except locale.Error:
-                    logging.warning(_("Can't change to locale '%s'"), mylocale)
+                    logging.warning(_("Can't change to locale '{0}'".format(mylocale)))
             else:
-                logging.warning(_("Can't change to locale '%s'"), mylocale)
+                logging.warning(_("Can't change to locale '{0}'".format(mylocale)))
 
     def store_values(self):
         country = self.selected_country

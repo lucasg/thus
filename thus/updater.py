@@ -88,7 +88,7 @@ class Updater():
                 self.remote_version = update_info['version']
                 for remote_file in update_info['files']:
                     self.md5s[remote_file['name']] = remote_file['md5']
-                logging.info(_("Thus Internet version: %s"), self.remote_version)
+                logging.info(_("Thus Internet version: {0}".format(self.remote_version)))
                 self.force = force_update
 
     def is_remote_version_newer(self):
@@ -189,7 +189,7 @@ class Updater():
                             with misc.raised_privileges():
                                 shutil.copyfile(full_path, dst_full_path)
                         except FileNotFoundError as file_error:
-                            logging.error(_("Can't copy %s to %s"), full_path, dst_full_path)
+                            logging.error(_("Can't copy {0} to {1}".format(full_path, dst_full_path)))
                             logging.error(file_error)
                     else:
                         logging.warning(_("Wrong md5. Bad download or wrong file, won't update this one"))
