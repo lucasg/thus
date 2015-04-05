@@ -1,10 +1,13 @@
 # Translation of Thus.
 # Copyright (C) 2007-2012 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Pamac package.
+# This file is distributed under the same license as the Thus package.
 # Philip Müller <philm@manjaro.org>, 2013-2015.
+# 
 # 
 # Translators:
 # anue <anue.mokita@gmail.com>, 2014
+# Bernhard <bernhard@oberon.at>, 2015
+# Charles Aymard <charles.aymard80@gmail.com>, 2015
 # Veraendert <kleine@kanzlei-endingen.de>, 2013-2014
 # Maphardam <t.sabsch@arcor.de>, 2014
 # philm <philm@manjaro.org>, 2013
@@ -17,10 +20,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-04 10:30+0100\n"
-"PO-Revision-Date: 2015-01-04 09:46+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"Report-Msgid-Bugs-To: philm@manjaro.org\n"
+"POT-Creation-Date: 2015-04-04 18:39+0200\n"
+"PO-Revision-Date: 2015-04-05 02:52+0000\n"
+"Last-Translator: Charles Aymard <charles.aymard80@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,1621 +31,2022 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: thus.py:123
-msgid ""
-"This installer must be run with administrative privileges and cannot "
-"continue without them."
-msgstr "Dieser Installer muss mit Rootrechten ausgeführt werden und kann ohne diese Rechte nicht weiter fortgesetzt werden."
-
-#: thus.py:131
-#, python-format
-msgid ""
-"You cannot run two instances of this installer.\n"
-"\n"
-"If you are sure that another installer is not already running\n"
-"you can manually delete the file %s\n"
-"and run this installer again."
-msgstr "Es ist nicht möglich, zwei Instanzen des Installers zu starten.\n\nWenn Sie sich sicher sind, dass der Installer nicht bereits ausgeführt wird,\nso können Sie manuell die Datei %s löschen\nund den Installer erneut starten."
-
-#: thus.py:143
-#, python-format
-msgid "Thus installer version %s"
-msgstr "Thus Installer Version %s"
-
-#: thus.py:234
-msgid "Manjaro Installer"
-msgstr "Manjaro Installer"
-
-#: thus.py:290
-msgid "Quiting installer..."
-msgstr "Beende Installationsprogramm..."
-
-#: thus.py:411
-msgid "Sets Thus log level to 'debug'"
-msgstr "Stellt Thus' Log-Level auf 'debug'"
-
-#: thus.py:412
-msgid "Update Thus to the latest version (-uu will force the update)"
-msgstr "Update Thus zur aktuellen Version (-uu forciert ein Update)"
-
-#: thus.py:413
-msgid "Do not perform any changes (useful for developers)"
-msgstr "Verändere nichts am System (hilfreich für Entwickler)"
-
-#: thus.py:414
-msgid "Show logging messages to stdout"
-msgstr "Zeige Log-Nachrichten im stdout"
-
-#: thus.py:415
-msgid "Show options in development (DO NOT USE THIS!)"
-msgstr "Zeige Optionen, die sich noch in der Entwicklung befinden (BITTE NICHT VERWENDEN!)"
-
-#: src/installation/auto_partition.py:77 src/installation/auto_partition.py:86
-#: src/installation/process.py:463 src/installation/process.py:480
-#: src/installation/process.py:495
-#, python-format
-msgid "Unmounting %s"
-msgstr "Entferne %s"
-
-#: src/installation/auto_partition.py:81 src/installation/auto_partition.py:90
-#, python-format
-msgid "Unmounting %s failed. Trying lazy arg."
-msgstr "Aushängen von %s fehlgeschlagen. Versuche mit Lazy-Argument."
-
-#: src/installation/auto_partition.py:119
-msgid "Can't delete existent LVM volumes (see below)"
-msgstr "Kann existierende LVM Volumen nicht löschen (siehe unten)"
-
-#: src/installation/auto_partition.py:129
-msgid "Can't close LUKS devices (see below)"
-msgstr "Kann keine LUKS Laufwerke schließen (siehe unten)"
-
-#: src/installation/auto_partition.py:184
-#, python-format
-msgid "Unknown filesystem type %s"
-msgstr "Unbekannter Typ des Dateisystems %s"
-
-#: src/installation/auto_partition.py:194
-#, python-format
-msgid "Can't create filesystem %s"
-msgstr "Konnte Dateisystem %s nicht erstellen"
-
-#: src/installation/auto_partition.py:353
-#, python-format
-msgid "Thus will setup LUKS on device %s"
-msgstr "Thus wird LUKS auf dem Laufwerk %s aufsetzen"
-
-#: src/installation/auto_partition.py:429
-#, python-format
-msgid "Total disk size: %dMiB"
-msgstr "Festplatten-Gesamtgröße: %dMiB"
-
-#: src/installation/auto_partition.py:430
-#, python-format
-msgid "Boot partition size: %dMiB"
-msgstr "Boot Partitions-Größe: %dMiB"
-
-#: src/installation/auto_partition.py:433
-#, python-format
-msgid "LVM physical volume size: %dMiB"
-msgstr "LVM physikalische Volumen-Größe: %dMiB"
-
-#: src/installation/auto_partition.py:435
-#, python-format
-msgid "Swap partition size: %dMiB"
-msgstr "Swap Partitions-Größe: %dMiB"
-
-#: src/installation/auto_partition.py:436
-#, python-format
-msgid "Root partition size: %dMiB"
-msgstr "Root Partitions-Größe: %dMiB"
-
-#: src/installation/auto_partition.py:439
-#, python-format
-msgid "Home partition size: %dMiB"
-msgstr "Home Partitions-Größe: %dMiB"
-
-#: src/installation/auto_partition.py:468
-msgid ""
-"Setup cannot detect size of your device, please use advanced installation "
-"routine for partitioning and mounting devices."
-msgstr "Der Installer konnte die Größe Ihrer Laufwerke nicht erkennen. Bitte nutzen Sie die fortgeschrittene Installations-Routine, um Ihre Laufwerke partitionieren sowie einbinden können."
-
-#: src/installation/auto_partition.py:601
-#, python-format
-msgid "Will setup LVM on device %s"
-msgstr "LVM wird auf dem Laufwerk %s eingerichtet"
-
-#: src/bootinfo.py:54 src/bootinfo.py:66 src/bootinfo.py:72 src/bootinfo.py:86
-#: src/installation/alongside.py:220
+#: ../thus/bootinfo.py:70 ../thus/bootinfo.py:83 ../thus/bootinfo.py:89
+#: ../thus/bootinfo.py:138 ../thus/bootinfo.py:143 ../thus/bootinfo.py:152
+#: ../thus/bootinfo.py:165 ../thus/bootinfo.py:190 ../thus/bootinfo.py:212
+#: ../thus/bootinfo.py:215 ../thus/bootinfo.py:218 ../thus/bootinfo.py:248
 msgid "unknown"
 msgstr "unbekannt"
 
-#: src/canonical/misc.py:929
-#, python-format
-msgid "Can't set locale %s"
-msgstr "Konnte Locale %s nicht setzen"
+#: ../thus/bootinfo.py:104
+#, python-brace-format
+msgid "Error calling hexdump command: {0}"
+msgstr "Fehler beim Aufrufen von hexdump Befehl: {0}"
 
-#: src/canonical/validation.py:132
-msgid "password is too short"
-msgstr "Das Passwort ist zu kurz"
+#: ../thus/bootinfo.py:137
+#, python-brace-format
+msgid "Unknown partition id {0}"
+msgstr "unbekannte Partition ID"
 
-#: src/canonical/validation.py:135
-msgid "weak password"
-msgstr "Schwaches Passwort"
-
-#: src/canonical/validation.py:138
-msgid "fair password"
-msgstr "Angemessenes Passwort"
-
-#: src/canonical/validation.py:141
-msgid "good password"
-msgstr "Gutes Passwort"
-
-#: src/canonical/validation.py:144
-msgid "strong password"
-msgstr "Starkes Passwort"
-
-#: src/canonical/validation.py:159
-msgid "Passwords do not match"
-msgstr "Passwörter sind nicht gleich"
-
-#: src/check.py:79
+#: ../thus/check.py:69
 msgid "System Check"
 msgstr "Systemüberprüfung"
 
-#: src/check.py:84
-#, python-format
-msgid "has at least %dGB available storage space"
-msgstr "zumindest %dGB freien Speicherplatz zur Verfügung hat"
+#: ../thus/check.py:74
+#, python-brace-format
+msgid "has at least {0}GB available storage space. (*)"
+msgstr "hat mindestens {0}GB freien Speicherplatz. (*)"
 
-#: src/check.py:89
+#: ../thus/check.py:77
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
 msgstr "Dies hängt von Ihrer ausgewählten Desktop-Umgebung ab. Somit benötigen Sie ggf. mehr Platz."
 
-#: src/check.py:94
+#: ../thus/check.py:82
 msgid "is plugged in to a power source"
 msgstr "an eine Stromquelle angeschlossen ist"
 
-#: src/check.py:98
+#: ../thus/check.py:86
 msgid "is connected to the Internet"
 msgstr "mit dem Internet verbunden ist"
 
-#: src/check.py:102
+#: ../thus/check.py:90
 msgid "For best results, please ensure that this computer:"
 msgstr "Für die besten Ergebnisse vergewissern Sie sich bitte, dass dieser Rechner:"
 
-#: src/check.py:173
+#: ../thus/check.py:169
 msgid "We have Internet connection."
 msgstr "Es besteht eine Verbindung zum Internet."
 
-#: src/check.py:174
+#: ../thus/check.py:170
 msgid "We're connected to a power source."
 msgstr "Es besteht eine Verbindung zu einer Stromquelle."
 
-#: src/check.py:175
+#: ../thus/check.py:171
 msgid "We have enough disk space."
 msgstr "Es ist ausreichend Speicherplatz verfügbar."
 
-#: src/installation/advanced.py:218 src/installation/advanced.py:512
-#: src/installation/advanced.py:526
-msgid "free space"
-msgstr "freier Speicher"
-
-#: src/installation/advanced.py:266
-msgid "It's not recommended to install grub in a partition"
-msgstr "Es wird nicht empfohlen, Grub auf einer Partition zu installieren"
-
-#: src/installation/advanced.py:294 src/installation/alongside.py:172
-msgid "Device"
-msgstr "Gerät"
-
-#: src/installation/advanced.py:297
-msgid "Type"
-msgstr "Typ"
-
-#: src/installation/advanced.py:300
-msgid "Mount point"
-msgstr "Einhängepunkt"
-
-#: src/installation/advanced.py:303
-msgid "Label"
-msgstr "Beschriftung"
-
-#: src/installation/advanced.py:309 src/installation/advanced.py:1643
-msgid "Format"
-msgstr "Format"
-
-#: src/installation/advanced.py:312
-msgid "Size"
-msgstr "Größe"
-
-#: src/installation/advanced.py:315
-msgid "Used"
-msgstr "Benutzt"
-
-#: src/installation/advanced.py:318
-msgid "Flags"
-msgstr "Warnhinweise"
-
-#: src/installation/advanced.py:324
-msgid "SSD"
-msgstr "SSD"
-
-#: src/installation/advanced.py:493
-msgid "none"
-msgstr "keine Angabe"
-
-#: src/installation/advanced.py:548 src/installation/advanced.py:962
-#: src/installation/advanced.py:1501 src/installation/advanced.py:1594
-#: src/installation/advanced.py:1745 src/installation/advanced.py:1839
-msgid "extended"
-msgstr "erweitert"
-
-#: src/installation/advanced.py:679 src/installation/advanced.py:932
-msgid "Can't use same mount point twice..."
-msgstr "Es kann nicht derselbe Einhängepunkt zweimal benutzt werden..."
-
-#: src/installation/advanced.py:953
-msgid "Creating primary partition"
-msgstr "Primäre Partition wird erstellt"
-
-#: src/installation/advanced.py:964
-msgid "Creating extended partition"
-msgstr "Erweiterte Partition wird erstellt"
-
-#: src/installation/advanced.py:970
-msgid "Creating logical partition"
-msgstr "Logische Partition wird erstellt"
-
-#: src/installation/advanced.py:1104
-msgid "Advanced installation mode"
-msgstr "Erweiterte Installation"
-
-#: src/installation/advanced.py:1108 ui/installation_advanced.ui:1157
-msgid "Use this device for boot loader installation:"
-msgstr "Benutze dieses Gerät für Boot-Loader Installation:"
-
-#: src/installation/advanced.py:1113
-msgid "Mount checklist:"
-msgstr "Einhängepunkt-Checkliste:"
-
-#: src/installation/advanced.py:1119
-msgid "Root"
-msgstr "Root"
-
-#: src/installation/advanced.py:1123 ui/bootloader.ui:7
-msgid "Boot"
-msgstr "Startvorgang"
-
-#: src/installation/advanced.py:1127
-msgid "EFI"
-msgstr "EFI"
-
-#: src/installation/advanced.py:1131
-msgid "Swap"
-msgstr "Swap"
-
-#: src/installation/advanced.py:1139
-msgid "New partition table"
-msgstr "Neue Partitionstabelle"
-
-#: src/installation/advanced.py:1147
-msgid "Change..."
-msgstr "Ändern..."
-
-#: src/installation/advanced.py:1152 ui/installation_advanced.ui:407
-msgid "Size:"
-msgstr "Größe:"
-
-#: src/installation/advanced.py:1156 ui/installation_advanced.ui:630
-msgid "Type:"
-msgstr "Typ:"
-
-#: src/installation/advanced.py:1160 ui/installation_advanced.ui:647
-msgid "Primary"
-msgstr "Primäre"
-
-#: src/installation/advanced.py:1164 ui/installation_advanced.ui:671
-msgid "Logical"
-msgstr "Logische"
-
-#: src/installation/advanced.py:1168 ui/installation_advanced.ui:695
-msgid "Extended"
-msgstr "Erweiterte"
-
-#: src/installation/advanced.py:1172 ui/installation_advanced.ui:516
-msgid "Beginning of this space"
-msgstr "Beginn dieses Speichers"
-
-#: src/installation/advanced.py:1176 ui/installation_advanced.ui:540
-msgid "End of this space"
-msgstr "Ende dieses Speichers"
-
-#: src/installation/advanced.py:1180 src/installation/advanced.py:1197
-#: ui/installation_advanced.ui:179 ui/installation_advanced.ui:438
-msgid "Use as:"
-msgstr "Benutzen als:"
-
-#: src/installation/advanced.py:1184 src/installation/advanced.py:1201
-#: ui/installation_advanced.ui:212 ui/installation_advanced.ui:476
-msgid "Mount point:"
-msgstr "Einhängepunkt:"
-
-#: src/installation/advanced.py:1188 src/installation/advanced.py:1205
-#: ui/installation_advanced.ui:249 ui/installation_advanced.ui:730
-msgid "Label (optional):"
-msgstr "Beschriftung (optional):"
-
-#: src/installation/advanced.py:1192
-msgid "Encryption Options..."
-msgstr "Verschlüsselungsoptionen..."
-
-#: src/installation/advanced.py:1209 ui/installation_advanced.ui:276
-msgid "Format:"
-msgstr "Format:"
-
-#: src/installation/advanced.py:1214
-msgid "Partition Table Type:"
-msgstr "Partitionstabellentyp:"
-
-#: src/installation/advanced.py:1219
-msgid "Create Partition Table"
-msgstr "Erstelle Partitionstabelle"
-
-#: src/installation/advanced.py:1222 src/installation/alongside.py:150
-#: src/installation/automatic.py:103
-msgid "Install now!"
-msgstr "Jetzt Installieren!"
-
-#: src/installation/advanced.py:1308
-#, python-format
-msgid "Creating a new partition table of type %s for disk %s"
-msgstr "Eine neue Partition vom Typ %s für die Festplatte %s wird erstellt"
-
-#: src/installation/advanced.py:1318
-msgid ""
-"GRUB requires a BIOS Boot Partition (2 MiB, no filesystem, \"EF02\" type code in gdisk or \"bios_grub\" flag in GNU Parted) in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
-"\n"
-"Thus will create this special partition for you now."
-msgstr "GRUB benötigt eine BIOS Boot Partition (2 MiB, kein Dateisystem, \"EF02\" Typ in gdisk oder \"bios_grub\" Flag in GNU Parted) für BIOS-basierende Systeme, um seine core.img-Datei wegen Mangel der post-MBR Lücke bei GPT-Laufwerken einbinden zu können.\n\nThus wird diese spezielle Partition für Sie nun erstellen."
-
-#: src/installation/advanced.py:1350
-msgid "Can't create BIOS GPT Boot partition!"
-msgstr "Konnte BIOS GPT Boot-Partition nicht erstellen!"
-
-#: src/installation/advanced.py:1377
-msgid "Couldn't create BIOS GPT Boot partition"
-msgstr "Konnte BIOS GPT Boot Partition nicht erstellen"
-
-#: src/installation/advanced.py:1540
-#, python-format
-msgid ""
-"%s is mounted as swap.\n"
-"To continue it has to be unmounted.\n"
-"Click Yes to unmount, or No to return\n"
-msgstr "%s ist als swap eingehängt.\nUm fortzufahren muss es ausgehängt werden.\nDrücken Sie \"Ja\", um auszuhängen, \"Nein\" um zurückzukehren.\n"
-
-#: src/installation/advanced.py:1544
-#, python-format
-msgid ""
-"%s is mounted in '%s'.\n"
-"To continue it has to be unmounted.\n"
-"Click Yes to unmount, or No to return\n"
-msgstr "%s ist eingehangen in '%s'.\nUm fortzufahren muss das Medium erst ausgworfen werden.\nKlicken Sie auf \"Ja\", um das Medium auszuwerfen, oder auf \"Nein\", um zurückzukehren\n"
-
-#: src/installation/advanced.py:1567
-#, python-format
-msgid "%s shows as mounted (busy) but it has no mount point"
-msgstr "%s wird als eingebunden (busy) angezeigt, hat aber keinen Einhängepunkt"
-
-#: src/installation/advanced.py:1573
-msgid ""
-"The root partition is not marked to be formatted.\n"
-"This might create problems. Should it be marked to be formatted now?"
-msgstr "Die Root-Partition ist nicht zur Formatierung markiert.\nDies könnte Probleme bereiten. Soll diese Partition zum Formatieren markiert werden?"
-
-#: src/installation/advanced.py:1636
-#, python-format
-msgid "Partition %s will be deleted"
-msgstr "Partition %s wird gelöscht"
-
-#: src/installation/advanced.py:1643
-msgid "Partition"
-msgstr "Partition"
-
-#: src/installation/advanced.py:1643
-msgid "New"
-msgstr "Neu"
-
-#: src/installation/advanced.py:1643
-msgid "Relabel"
-msgstr "Umbenennen"
-
-#: src/installation/advanced.py:1643
-msgid "Mount"
-msgstr "Einhängen"
-
-#: src/installation/advanced.py:1664
-msgid "These disks will have partition actions:"
-msgstr "An dieser Festplatte werden folgende Änderungen vorgenommen:"
-
-#: src/installation/advanced.py:1724
-#, python-format
-msgid "Saving changes done in %s"
-msgstr "Speichere Änderungen, die in %s gemacht wurden"
-
-#: src/installation/advanced.py:1748
-#, python-format
-msgid "Creating %s filesystem in %s labeled %s"
-msgstr "Erstelle %s Dateisystem in %s beschriftet als %s"
-
-#: src/installation/advanced.py:1790
-#, python-format
-msgid "Setting boot flag in %s partition"
-msgstr "Setze Boot-Flag in %s Partition"
-
-#: src/installation/advanced.py:1809
-#, python-format
-msgid "Couldn't format partition '%s' with label '%s' as '%s'"
-msgstr "Konnte Partition '%s' mit Label '%s' als '%s' nicht formatieren"
-
-#: src/installation/advanced.py:1850 src/installation/alongside.py:499
-#: src/installation/automatic.py:226
-msgid "Thus will not install any boot loader"
-msgstr "Thus wird keinen Boot-Loader installieren"
-
-#: src/installation/advanced.py:1860
-#, python-format
-msgid "Manjaro will install the bootloader of type %s in %s"
-msgstr "Manjaro wird jetzt den Bootloader des Typs %s hier: %s installieren."
-
-#: src/installation/advanced.py:1876 src/installation/alongside.py:512
-#: src/installation/automatic.py:247
-msgid "Testing mode. Thus won't apply any changes to your system!"
-msgstr "Testmodus. Thus wird keine Veränderung an Ihrem System vornehmen!"
-
-#: src/installation/alongside.py:115
-#, python-format
-msgid "Can't load %s css"
-msgstr "Kann %s css nicht laden"
-
-#: src/installation/alongside.py:142
-msgid "Choose which OS you want to install Manjaro next to"
-msgstr "Wählen Sie das Betriebsystem, um Manjaro daneben zu installieren"
-
-#: src/installation/alongside.py:146
-msgid "Manjaro alongside another OS"
-msgstr "Manjaro neben anderen Betriebssystemen installieren"
-
-#: src/installation/alongside.py:175
-msgid "Detected OS"
-msgstr "OS entdeckt"
-
-#: src/installation/alongside.py:178
-msgid "Filesystem"
-msgstr "Dateisystem"
-
-#: src/installation/alongside.py:196
-msgid "pyparted3 not found!"
-msgstr "pyparted3 nicht gefunden!"
-
-#: src/installation/alongside.py:224
-msgid "Unable to create list of partitions for alongside installation."
-msgstr "Konnte keine Partitionsliste für die Nebeninstallation erstellen."
-
-#: src/installation/alongside.py:268
-msgid "Can't shrink the partition (maybe it's nearly full?)"
-msgstr "Kann die Partition nicht verkleinern (Vielleicht ist sie fast voll?)"
-
-#: src/installation/alongside.py:356
-msgid "There are too many primary partitions, can't create a new one"
-msgstr "Es gibt zu viele primäre Partitionen. Eine neue konnte nicht erstellt werden."
-
-#: src/installation/alongside.py:390
-#, python-format
-msgid "Can't shrink %s(%s) filesystem"
-msgstr "Konnte %s(%s) Dateisystem nicht verkleinern"
-
-#: src/installation/alongside.py:399
-#, python-format
-msgid "Can't shrink %s(%s) partition"
-msgstr "Konnte %s(%s) Partition nicht verkleinern"
-
-#: src/installation/alongside.py:418 src/installation/alongside.py:470
-msgid "Cannot create new partition."
-msgstr "Kann neue Partition nicht erstellen"
-
-#: src/installation/alongside.py:458
-msgid "Cannot create new swap partition."
-msgstr "Kann die neue Swap-Partition nicht erstellen"
-
-#: src/installation/alongside.py:495 src/installation/automatic.py:222
-#, python-format
-msgid "Thus will install the bootloader of type %s in %s"
-msgstr "Thus wird den Bootloader vom Typ %s in %s installieren"
-
-#: src/installation/ask.py:99
-msgid "Installation type"
-msgstr "Installationsart"
-
-#: src/installation/ask.py:113 ui/installation_ask.ui:34
-msgid "Erase disk and install Manjaro (automatic)"
-msgstr "Lösche die Festplatte komplett und installiere Manjaro (automatisch)"
-
-#: src/installation/ask.py:116
-msgid "Warning: This will delete all data on your disk"
-msgstr "Warnung: Dies wird alle Daten auf Ihrer Festplatte löschen"
-
-#: src/installation/ask.py:122
-msgid "Encrypt this installation for increased security."
-msgstr "Verschlüssele diese Installation für mehr Sicherheit."
-
-#: src/installation/ask.py:126
-msgid "You will be asked for the encryption key in the next step."
-msgstr "Sie werden nach dem Veschlüsselungsschlüssel im nächsten Schritt gefragt."
-
-#: src/installation/ask.py:131
-msgid "Use LVM with this installation."
-msgstr "Nutze LVM mit dieser Installation."
-
-#: src/installation/ask.py:135
-msgid ""
-"This will set up LVM allowing you to make snapshots and change partition "
-"sizes in a straightforward way."
-msgstr "Hierdurch wird LVM eingestellt, was es Ihnen ermöglicht, sehr einfach Snapshots zu machen oder die Größe von Partitionen zu ändern."
-
-#: src/installation/ask.py:140 ui/installation_ask.ui:134
-msgid "Set your Home in a different partition/volume"
-msgstr "Erstelle eine separate Partition/Volume für Ihr Home-Verzeichnis"
-
-#: src/installation/ask.py:144
-msgid ""
-"This will setup your /home directory in a different partition or volume."
-msgstr "Ihr /home Verzeichnis wird in einer separaten Partition oder Volumen erstellt."
-
-#: src/installation/ask.py:152 src/installation/ask.py:154
-#, python-format
-msgid "Install Manjaro alongside %s"
-msgstr "Installiere Manjaro neben %s"
-
-#: src/installation/ask.py:161
-msgid "Manage your partitions and where to install Manjaro (advanced)"
-msgstr "Organisieren Sie Ihre Partitionen und Installationsart (fortgeschritten)"
-
-#: src/installation/ask.py:164
-msgid ""
-"You will be able to create/delete partitions, choose where to install "
-"Manjaro and also choose additional mount points."
-msgstr "Hiermit sind Sie in der Lage, Partitionen zu erstellen und diese zu ändern, Auszuwählen, \nwo Manjaro installiert werden soll und zusätzliche Einhängepunkte auszuwählen."
-
-#: src/installation/ask.py:190
-msgid "Manjaro installation will be encrypted using LUKS"
-msgstr "Die Manjaro Installation wird mit LUKS verschlüsselt sein"
-
-#: src/installation/ask.py:193
-msgid "Manjaro will be installed using LVM volumes"
-msgstr "Manjaro wird LVM Volumen bei der Installation nutzen"
-
-#: src/installation/ask.py:195
-msgid "Manjaro will be installed using a separate /home volume."
-msgstr "Manjaro wird mit einem separaten /home Volumen installiert."
-
-#: src/installation/ask.py:197
-msgid "Manjaro will be installed using a separate /home partition."
-msgstr "Manjaro wird mit einer separaten /home Partition installiert."
-
-#: src/installation/automatic.py:75
-msgid "Automatic installation mode"
-msgstr "Automatische Installation"
-
-#: src/installation/automatic.py:79 ui/installation_automatic.ui:96
-msgid "Select drive:"
-msgstr "Wählen Sie eine Festplatte:"
-
-#: src/installation/automatic.py:83
-msgid ""
-"WARNING! This installation mode will overwrite everything on your drive!"
-msgstr "WARNUNG! Dieser Installationsmodus wird Alles auf Ihrer Festplatte überschreiben!"
-
-#: src/installation/automatic.py:88 ui/installation_automatic.ui:59
-msgid ""
-"Please choose the drive where you want to install Manjaro\n"
-"and click the button below to start the process."
-msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Manjaro installieren wollen.\nDrücken Sie den Knopf unten, um den Installationsprozess zu beginnen."
-
-#: src/installation/automatic.py:93 ui/installation_automatic.ui:176
-msgid "Encryption Password:"
-msgstr "Verschlüsselungspasswort:"
-
-#: src/installation/automatic.py:97 src/user_info.py:124
-#: ui/installation_automatic.ui:161 ui/user_info.ui:80
-msgid "Confirm your password:"
-msgstr "Bestätigen Sie das Passwort:"
-
-#: src/installation/automatic.py:101 src/user_info.py:177
-#: ui/installation_automatic.ui:258 ui/user_info.ui:422
-msgid "Show password"
-msgstr "Zeige Passwort"
-
-#: src/installation/automatic.py:164
-msgid "A LUKS password has been set"
-msgstr "Ein LUKS-Passwort wurde gesetzt"
-
-#: src/installation/automatic.py:166
-#, python-format
-msgid "Automatic install on %s"
-msgstr "Automatische Installation auf %s"
-
-#: src/installation/automatic.py:199
-#, python-format
-msgid ""
-"Do you really want to proceed and delete all your content on your hard drive?\n"
-"\n"
-"%s"
-msgstr "Möchten Sie wirklich fortfahren und den gesamten Inhalt auf Ihrer Festplatte löschen?\n\n%s"
-
-#: src/installation/automatic.py:211
-#, python-format
-msgid "Thus will use %s as installation device"
-msgstr "Thus wird %s als Installations-Laufwerk nutzen. "
-
-#: src/installation/process.py:107
-#, python-format
-msgid "Copying '/%s'"
-msgstr "Kopiere '/%s'"
-
-#: src/installation/process.py:188
-#, python-format
-msgid "Installing using the '%s' method"
-msgstr "Es wird nun nach der Methode '%s' das System installiert."
-
-#: src/installation/process.py:265
-#, python-format
-msgid "Creating partitions and their filesystems in %s"
-msgstr "Erstelle Partitionen und deren Dateisysteme in %s"
-
-#: src/installation/process.py:286
-msgid "Error creating partitions and their filesystems"
-msgstr "Fehler beim Erstellen der Partitionen und ihrer Dateisysteme"
-
-#: src/installation/process.py:288 src/installation/process.py:361
-#: src/installation/process.py:373 src/installation/process.py:671
-#, python-format
-msgid "Command %s has failed."
-msgstr "Befehl %s ist fehlgeschlagen."
-
-#: src/installation/process.py:290 src/installation/process.py:337
-#: src/installation/process.py:363 src/installation/process.py:375
-#: src/installation/process.py:398 src/installation/process.py:673
-#, python-format
-msgid "Output : %s"
-msgstr "Ausgabe: %s"
-
-#: src/installation/process.py:323 src/installation/process.py:354
-#, python-format
-msgid "Mounting partition %s into %s directory"
-msgstr "Mounte Partition %s in Verzeichnis %s"
-
-#: src/installation/process.py:329
-#, python-format
-msgid "Mounting partition %s into %s/boot directory"
-msgstr "Mounte Partition %s in Verzeichnis %s/boot"
-
-#: src/installation/process.py:333
-msgid "Couldn't mount root and boot partitions"
-msgstr "Das Einhängen der root- und boot-Partitionen schlug fehl"
-
-#: src/installation/process.py:335 src/installation/process.py:396
-#, python-format
-msgid "Command %s has failed"
-msgstr "Befehl %s ist fehlgeschlagen"
-
-#: src/installation/process.py:359
-#, python-format
-msgid "Can't mount %s in %s"
-msgstr "Es kann nicht %s in %s eingehangen werden"
-
-#: src/installation/process.py:367
-#, python-format
-msgid "Mounting swap %s"
-msgstr "Hänge swap %s ein"
-
-#: src/installation/process.py:371
-#, python-format
-msgid "Can't mount %s"
-msgstr "Konnte %s nicht einhängen"
-
-#: src/installation/process.py:386
-#, python-format
-msgid "%s deleted"
-msgstr "%s gelöscht"
-
-#: src/installation/process.py:394
-msgid "Can't create necessary directories on destination system"
-msgstr "Die benötigten Verzeichnisse können auf dem Zielsystem nicht angelegt werden"
-
-#: src/installation/process.py:406
-msgid "Install System ..."
-msgstr "Installiere System ..."
-
-#: src/installation/process.py:411
-msgid "System installed."
-msgstr "System installiert."
-
-#: src/installation/process.py:413
-msgid "Configuring system ..."
-msgstr "Konfiguriere System ..."
-
-#: src/installation/process.py:415
-msgid "System configured."
-msgstr "System konfiguriert."
-
-#: src/installation/process.py:419
-msgid "Installing boot loader ..."
-msgstr "Installiere Boot-Loader ..."
-
-#: src/installation/process.py:452
-#, python-format
-msgid "Can't copy Thus log to %s"
-msgstr "Konnte Thus-Log nicht nach %s kopieren"
-
-#: src/installation/process.py:471 src/installation/process.py:490
-#: src/installation/process.py:504
-#, python-format
-msgid "Can't unmount %s"
-msgstr "Konnte %s nicht aushängen"
-
-#: src/installation/process.py:506
-msgid "Installation finished successfully."
-msgstr "Installation war erfolgreich."
-
-#: src/installation/process.py:542
-msgid "Base filesystem does not exist! Critical error (exiting)."
-msgstr "Basis-Dateisystem existiert nicht! Kritischer Fehler (Abbruch)."
-
-#: src/installation/process.py:546
-msgid "Desktop filesystem does not exist! Critical error (exiting)."
-msgstr "Desktop-Dateisystem existiert nicht! Kritischer Fehler (Abbruch)."
-
-#: src/installation/process.py:556 src/installation/process.py:562
-#, python-format
-msgid "%s is already mounted at %s as %s"
-msgstr "%s ist schon an %s als %s eingebunden"
-
-#: src/installation/process.py:573
-msgid "Indexing files to be copied ..."
-msgstr "Überprüfe zu kopierende Dateien ..."
-
-#: src/installation/process.py:578
-msgid "Extracting root-image ..."
-msgstr "Extrahiere root-image ..."
-
-#: src/installation/process.py:588
-msgid "Extracting desktop-image ..."
-msgstr "Extrahiere desktop-image ..."
-
-#: src/installation/process.py:603
-#, python-format
-msgid "Restoring meta-information on %s"
-msgstr "Stelle die Meta-Informationen auf %s wieder her."
-
-#: src/installation/process.py:619
-msgid "Special dirs already mounted."
-msgstr "Spezialordner sind schon eingebunden."
-
-#: src/installation/process.py:653
-msgid "Special dirs are not mounted. Skipping."
-msgstr "Spezial-Verzeichnisse sind nicht eingebunden. Überspringe."
-
-#: src/installation/process.py:670 src/installation/process.py:676
-#, python-format
-msgid "Unable to umount %s"
-msgstr "Konnte %s nicht einbinden"
-
-#: src/installation/process.py:698
-#, python-format
-msgid "Error running command: %s"
-msgstr "Fehler beim Ausführen von: %s"
-
-#: src/installation/process.py:701
-#, python-format
-msgid "Timeout running command: %s"
-msgstr "Timeout beim Ausführen von: %s"
-
-#: src/installation/process.py:734
-msgid "Can't copy network configuration files"
-msgstr "Konnte die Netzwerk-Konfigurationsdateien nicht kopieren"
-
-#: src/installation/process.py:764 src/installation/process.py:825
-#, python-format
-msgid "Added to fstab : UUID=%s %s %s %s 0 %s"
-msgstr "Fstab hinzugefügt : UUID=%s %s %s %s 0 %s"
-
-#: src/installation/process.py:778
-#, python-format
-msgid "Added to crypttab : %s"
-msgstr "Hinzugefügt zu crypttab : %s"
-
-#: src/installation/process.py:782
-#, python-format
-msgid "Added to fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-msgstr "Hinzugefügt zu fstab : /dev/mapper/cryptManjaroHome %s %s %s 0 %s"
-
-#: src/installation/process.py:829
-msgid "Added to fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-msgstr "Hinzugefügt zu fstab : tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-
-#: src/installation/process.py:933
-msgid "ERROR on preparing 'etc/grub.d'-folder."
-msgstr "FEHLER bei der Vorbereitung des 'etc/grub.d'-Ordners."
-
-#: src/installation/process.py:941
-#, python-format
-msgid "Installing GRUB(2) BIOS boot loader in %s"
-msgstr "Installiere GRUB(2) BIOS Boot-Loader in %s"
-
-#: src/installation/process.py:961 src/installation/process.py:1049
-msgid ""
-"grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
-" continue."
-msgstr "grub-mkconfig scheint zu hängen. grub-mount und os-prober werden nun beendet um fortzufahren."
-
-#: src/installation/process.py:969
-msgid "GRUB(2) BIOS has been successfully installed."
-msgstr "GRUB(2) BIOS wurde erfolgreich installiert."
-
-#: src/installation/process.py:972
-msgid "ERROR installing GRUB(2) BIOS."
-msgstr "Ein FEHLER trat bei der Installation von GRUB(2) BIOS auf."
-
-#: src/installation/process.py:989
-#, python-format
-msgid "Installing GRUB(2) UEFI %s boot loader"
-msgstr "Installiere GRUB(2) UEFI Boot-Loader in %s"
-
-#: src/installation/process.py:1002
-msgid "Installing Grub2 locales."
-msgstr "Installiere GRUB2-Lokale"
-
-#: src/installation/process.py:1015
-#, python-format
-msgid "No OEM loader found in %s. Copying Grub(2) into dir."
-msgstr "Kein OEM-Bootloader im Verzeichnis %s gefunden. Kopiere Grub(2) in das Verzeichnis."
-
-#: src/installation/process.py:1020
-msgid "Copying Grub(2) into OEM dir failed. File Not Found."
-msgstr "Kopieren von Grub(2) in das OEM-Verzeichnis fehlgeschlagen. Datei wurde nicht gefunden."
-
-#: src/installation/process.py:1022
-msgid "Copying Grub(2) into OEM dir failed. File Exists."
-msgstr "Kopieren von Grub(2) in das OEM-Verzeichnis fehlgeschlagen. Datei existiert bereits."
-
-#: src/installation/process.py:1024
-msgid "Copying Grub(2) into OEM dir failed. Unknown Error."
-msgstr "Kopieren von Grub(2) in das OEM-Verzeichnis fehlgeschlagen. Unbekannter Fehler."
-
-#: src/installation/process.py:1042
-msgid "Generating grub.cfg"
-msgstr "Erstelle grub.cfg"
-
-#: src/installation/process.py:1057
-msgid "GRUB(2) UEFI has been successfully installed."
-msgstr "GRUB(2) UEFI wurde erfolgreich installiert."
-
-#: src/installation/process.py:1060
-msgid "ERROR installing GRUB(2) UEFI."
-msgstr "Ein FEHLER trat bei der Installation von GRUB(2) UEFI auf."
-
-#: src/installation/process.py:1075
-msgid "ERROR installing GRUB(2) locale."
-msgstr "FEHLER beim Installieren der GRUB(2) Lokalisationen."
-
-#: src/installation/process.py:1109
-msgid "Can't freeze/unfreeze xfs system"
-msgstr "Kann xfs System nicht sperren/freigeben"
-
-#: src/installation/process.py:1115
-#, python-format
-msgid "Enabled %s service."
-msgstr "Service %s aktiviert."
-
-#: src/installation/process.py:1121
-#, python-format
-msgid "Enabled %s target."
-msgstr "Ziel %s aktiviert."
-
-#: src/installation/process.py:1128
-#, python-format
-msgid "Error creating password hash for user %s"
-msgstr "Ein Fehler trat bei der Erstellung des Passwortes für den Nutzer %s auf"
-
-#: src/installation/process.py:1134
-#, python-format
-msgid "Error changing password for user %s"
-msgstr "Es trat ein Fehler bei der Änderung des Passwortes von Nutzer %s auf"
-
-#: src/installation/process.py:1146
-msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr "Erstelle Hooks und Module in mkinitcpio.conf"
-
-#: src/installation/process.py:1244
-#, python-format
-msgid "%s: Enable automatic login for user %s."
-msgstr "%s: Aktiviere automatischen Login für Benutzer %s."
-
-#: src/installation/process.py:1362 src/installation/process.py:1373
-msgid "Configuring your new system"
-msgstr "Ihr neues System wird eingerichtet"
-
-#: src/installation/process.py:1365
-msgid "fstab file generated."
-msgstr "Fstab-Datei erstellt."
-
-#: src/installation/process.py:1371
-msgid "Network configuration copied."
-msgstr "Netzwerkkonfiguration kopiert."
-
-#: src/installation/process.py:1400
-msgid "Time zone set."
-msgstr "Zeitzone gesetzt."
-
-#: src/installation/process.py:1421
-#, python-format
-msgid "Sudo configuration for user %s done."
-msgstr "Sudo-Konfiguration für Benutzer %s erzeugt."
-
-#: src/installation/process.py:1431
-#, python-format
-msgid "User %s added."
-msgstr "Benutzer %s hinzugefügt."
-
-#: src/installation/process.py:1443
-#, python-format
-msgid "Hostname  %s set."
-msgstr "Hostname %s gesetzt."
-
-#: src/installation/process.py:1448
-msgid "Set root password."
-msgstr "Setze Root-Passwort."
-
-#: src/installation/process.py:1451
-msgid "Set the same password to root."
-msgstr "Gleiches Passwort für Root gesetzt."
-
-#: src/installation/process.py:1457
-msgid "Generating locales ..."
-msgstr "Erzeuge Lokale ..."
-
-#: src/installation/process.py:1475
-msgid "Adjusting hardware clock ..."
-msgstr "Stelle Hardware-Uhr ein ..."
-
-#: src/installation/process.py:1484
-msgid "Configuring hardware ..."
-msgstr "Konfiguriere Hardware ..."
-
-#: src/installation/process.py:1557
-msgid "Installing drivers ..."
-msgstr "Installiere Treiber ..."
-
-#: src/installation/process.py:1564
-msgid "Can't execute the MHWD script"
-msgstr "Kann das MHWD-Skript nicht ausführen."
-
-#: src/installation/process.py:1577
-msgid "Configure display manager ..."
-msgstr "Konfiguriere Display-Manager ..."
-
-#: src/installation/process.py:1659
-msgid "Configure System ..."
-msgstr "Konfiguriere System ..."
-
-#: src/installation/process.py:1688
-msgid "Removing live configuration (packages)"
-msgstr "Entferne die Pakete der Live-Konfigurationen."
-
-#: src/installation/process.py:1704
-msgid "Configuring package manager"
-msgstr "Konfiguriere Paketverwaltung"
-
-#: src/installation/process.py:1716
-msgid "Finished configuring package manager."
-msgstr "Die Konfiguration der Paketverwaltung ist beendet."
-
-#: src/installation/process.py:1740
-msgid "Running mkinitcpio ..."
-msgstr "Führe mkinitcpio aus ..."
-
-#: src/installation/process.py:1743
-msgid "Running mkinitcpio - done"
-msgstr "Ausführung von mkinitcpio durchgeführt."
-
-#: src/installation/process.py:1759
-msgid "Encrypting user home dir ..."
-msgstr "Verschlüssele Home-Verzeichnis ..."
-
-#: src/installation/process.py:1761
-msgid "User home dir encrypted"
-msgstr "Benutzer verwendet verschlüsseltes Home-Verzeichnis."
-
-#: src/keymap.py:67
+#: ../thus/encfs.py:105
+msgid "Can't create and modify encfs configuration files."
+msgstr "Kann encfs Konfigurationsdateien nicht erstellen und modifizieren."
+
+#: ../thus/encfs.py:107
+msgid "Home directory won't be encrypted."
+msgstr "Home Verzeichnis wird nicht verschlüsselt."
+
+#: ../thus/encfs.py:132
+msgid "Can't run encfs. Bad password?"
+msgstr "Kann encfs nicht ausführen. Falsches Passwort?"
+
+#: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
 msgstr "Wählen Sie Ihre Tastaturbelegung aus"
 
-#: src/keymap.py:71
-msgid "Type here to test your keyboard"
-msgstr "Schreiben Sie hier, um Ihre Tastatur zu testen"
+#: ../thus/keymap.py:65 ../ui/keymap.ui:75
+msgid "Keyboard Layouts"
+msgstr "Tastaturbelegungen"
 
-#: src/keymap.py:78
+#: ../thus/keymap.py:68 ../ui/keymap.ui:86
+msgid "Keyboard Variants"
+msgstr "Tastaturvarianten"
+
+#: ../thus/keymap.py:72
 msgid "Layouts"
 msgstr "Belegungen"
 
-#: src/keymap.py:84
+#: ../thus/keymap.py:78
 msgid "Variants"
 msgstr "Varianten"
 
-#: src/keymap.py:103
-#, python-format
-msgid "keyboard_layout is %s"
-msgstr "keyboard_layout ist %s"
+#: ../thus/keymap.py:106
+#, python-brace-format
+msgid "keyboard_layout is {0}"
+msgstr "Tastaturlayout ist {0}"
 
-#: src/language.py:78
-msgid "Please choose your language:"
-msgstr "Bitte wählen Sie eine Sprache aus:"
-
-#: src/language.py:83
+#: ../thus/language.py:78
 msgid "Notice: The Thus Installer is beta software."
 msgstr "Hinweis: Der Thus Installer ist Beta-Software."
 
-#: src/language.py:84
+#: ../thus/language.py:80
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other  \n"
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
-"If you find any bugs, please report them at <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "Thus ist Vorversions-Beta-Software, welche noch entwickelt wird. Es\nwerden noch keine RAID, BTRFS-Subvolumen sowie andere aufwendige \nInstallationen vollständig unterstützt. Datenverlust ist warscheinlich!\n\nFalls Sie Fehler finden, diese auf <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> melden."
+"If you find any bugs, please report them at http://bugs.manjaro.org"
+msgstr "Thus ist eine beta-Version und wird aktiv weiterentwickelt. RAID, multiple btrfs-Wurzelverzeichnisse (subvolumes) und andere fortgeschrittene Konfigurationen werden nicht vollständig unterstützt.\n\nWenn sie Bugs finden, bitte melden sie diese unter <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>."
 
-#: src/language.py:91
-msgid "Welcome to Manjaro!"
-msgstr "Willkommen zu Manjaro!"
+#: ../thus/language.py:124
+#, python-brace-format
+msgid "Can't find translation file for the {0} language"
+msgstr "Kann die Übersetzungs-Datei für die {0} Sprache nicht finden"
 
-#: src/language.py:108
-msgid "Languages"
-msgstr "Sprachen"
-
-#: src/language.py:128
-#, python-format
-msgid "Can't find translation file for the %s language"
-msgstr "Die Übersetzungsdatei für die Sprache %s konnte nicht gefunden werden"
-
-#: src/location.py:64
+#: ../thus/location.py:71
 msgid "Select your location"
 msgstr "Wählen Sie ihren Standort"
 
-#: src/location.py:68
+#: ../thus/location.py:75
 msgid ""
-"The selected location will be used to help select the system locale.\n"
-"Normally this should be the country where you live.\n"
-"This is a shortlist of locations based on the language you selected."
-msgstr "Der gewählte Standort wird benutzt, um eine Sprache auszuwählen.\nNormalerweise ist diese zugehörig zu dem Land in dem Sie leben.\nDies ist eine verkürzte Liste von Orten, basierend auf der Sprache, die Sie ausgewählt haben."
+"The location you select will be used to help determine the system locale. It"
+" should normally be the country in which you reside. Here is a shortlist of "
+"locations based on the language you selected."
+msgstr "Der gewählte Ort wird zur Bestimmung der System-Lokale herangezogen. Normalerweise sollte es das Land sein in dem Sie wohnen. Hier ist eine Vorauswahl von Orten basierend auf Ihrer Sprachauswahl."
 
-#: src/location.py:73
+#: ../thus/location.py:82
 msgid "Country, territory or area:"
 msgstr "Land, Territorium oder Bereich:"
 
-#: src/parted3/fs_module.py:148
-#, python-format
-msgid "Can't verify if %s is a Solid State Drive or not"
-msgstr "Konnte nicht feststellen, ob %s eine Solid State Festplatte ist"
+#: ../thus/location.py:87
+msgid "Show all locations"
+msgstr "Alle Orte anzeigen"
 
-#: src/parted3/fs_module.py:173
-#, python-format
-msgid "Sorry but filesystem %s can't be resized"
-msgstr "Die Größe des Dateisystems %s konnte nicht verändert werden"
+#: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
+#: ../thus/misc/misc.py:969
+#, python-brace-format
+msgid "locale changed to : {0}"
+msgstr "Lokale geändert zu: {0}"
 
-#: src/parted3/lvm.py:75
-#, python-format
-msgid "Can't remove logical volume %s"
-msgstr "Konnte logisches Volumen %s nicht entfernen"
+#: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
+#: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
+#, python-brace-format
+msgid "Can't change to locale '{0}'"
+msgstr "Änderung zu Lokale '{0}' nicht möglich"
 
-#: src/parted3/lvm.py:93
-#, python-format
-msgid "Can't remove volume group %s"
-msgstr "Konnte Volumengruppe %s nicht entfernen"
-
-#: src/parted3/lvm.py:105
-#, python-format
-msgid "Can't remove physical volume %s"
-msgstr "Konnte physikalisches Volumen %s nicht entfernen"
-
-#: src/parted3/partition_module.py:106
-#, python-format
-msgid "Adding %s to disk_dic"
-msgstr "Füge %s zu disk_dic hinzu"
-
-#: src/parted3/partition_module.py:108
-#, python-format
-msgid "Unrecognised disk label in device %s."
-msgstr "Unbekanntes Festplatten-Label in Laufwerk %s."
-
-#: src/parted3/partition_module.py:112
-#, python-format
+#: ../thus/main_window.py:66
 msgid ""
-"Exception: %s.\n"
-"For more information take a look at /tmp/thus.log"
-msgstr "Ausnahme: %s.\nFür weitere Details sehen Sie sich /tmp/thus.log an"
+"This installer must be run with administrative privileges, and cannot "
+"continue without them."
+msgstr "Dieser Installer kann nicht ohne Administratorrechte ausgeführt werden."
 
-#: src/parted3/partition_module.py:179
-#, python-format
-msgid "Can't delete partition %s"
-msgstr "Konnte Partition %s nicht löschen"
+#: ../thus/main_window.py:74
+#, python-brace-format
+msgid "File '{0}' already exists."
+msgstr "Datei '{0}' ist bereits vorhanden."
 
-#: src/parted3/partition_module.py:230
-msgid "Partition is too large!"
-msgstr "Partition ist zu groß!"
+#: ../thus/main_window.py:75
+#, python-brace-format
+msgid ""
+"You cannot run two instances of this installer.\n"
+"\n"
+"If you are sure that the installer is not already running\n"
+"you can run this installer using the --force option\n"
+"or you can manually delete the offending file.\n"
+"\n"
+"Offending file: '{0}'"
+msgstr "Sie können nicht zwei Instanzen dieses Installers ausführen\n\nWenn Sie sicher sind dass der Installer nicht bereits ausgeführt wird\nkönnen Sie die Option --force benutzen um den Installer zu starten\noder löschen Sie manuell die störende Datei.\n\nStörende Datei: '{0}'"
 
-#: src/parted3/partition_module.py:290
-#, python-format
-msgid "Can't detect used space from %s"
-msgstr "Konnte benutzten Speicher von %s nicht erkennen"
+#: ../thus/main_window.py:87
+#, python-brace-format
+msgid "Thus installer version {0}"
+msgstr "Thus Installer Version {0}"
 
-#: src/parted3/used_space.py:39
-#, python-format
-msgid "Can't detect used space of NTFS partition %s"
-msgstr "Konnte benutzten Speicher von NTFS Partition %s nicht erkennen"
+#: ../thus/main_window.py:190
+#, python-brace-format
+msgid "Manjaro Installer - Thus {0}"
+msgstr "Manjaro Installer - Thus {0}"
 
-#: src/parted3/used_space.py:65
-#, python-format
-msgid "Can't detect used space of EXTFS partition %s"
-msgstr "Konnte benutzten Speicher von EXTFS Partition %s nicht erkennen"
+#: ../thus/main_window.py:322
+msgid "Do you really want to quit the installer?"
+msgstr "Möchten Sie den Installer wirklich beenden?"
 
-#: src/parted3/used_space.py:94
-#, python-format
-msgid "Can't detect used space of FAT partition %s"
-msgstr "Konnte benutzten Speicher von FAT Partition %s nicht erkennen"
+#: ../thus/main_window.py:331
+msgid "Quiting installer..."
+msgstr "Beende Installationsprogramm..."
 
-#: src/parted3/used_space.py:125
-#, python-format
-msgid "Can't detect used space of JFS partition %s"
-msgstr "Konnte benutzten Speicher von JFS Partition %s nicht erkennen"
-
-#: src/parted3/used_space.py:149
-#, python-format
-msgid "Can't detect used space of REISERFS partition %s"
-msgstr "Konnte benutzten Speicher von REISERFS Partition %s nicht erkennen"
-
-#: src/parted3/used_space.py:175
-#, python-format
-msgid "Can't detect used space of BTRFS partition %s"
-msgstr "Konnte benutzten Speicher von BTRFS Partition %s nicht erkennen"
-
-#: src/parted3/used_space.py:212
-#, python-format
-msgid "Can't detect used space of XFS partition %s"
-msgstr "Konnte benutzten Speicher von XFS Partition %s nicht erkennen"
-
-#: src/rank_mirrors.py:54
+#: ../thus/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
 msgstr "Konnte das rankmirrors Script nicht finden"
 
-#: src/rank_mirrors.py:61
+#: ../thus/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
 msgstr "Es konnte keine automatisierte Mirrorauswahl ausgeführt werden"
 
-#: src/show_message.py:53
+#: ../thus/show_message.py:59
 msgid "Manjaro Installer - Error"
 msgstr "Manjaro Installer - Fehler"
 
-#: src/show_message.py:65
+#: ../thus/show_message.py:73
 msgid "Manjaro Installer - Warning"
 msgstr "Manjaro Installer - Warnung"
 
-#: src/show_message.py:77
+#: ../thus/show_message.py:87
 msgid "Manjaro Installer - Information"
 msgstr "Manjaro Installer - Information"
 
-#: src/show_message.py:88
+#: ../thus/show_message.py:101
 msgid "Manjaro Installer - Confirmation"
 msgstr "Manjaro Installer - Bestätigung"
 
-#: src/slides.py:94 src/slides.py:109
-msgid ""
-"Installation finished!\n"
-"Do you want to restart your system now?"
-msgstr "Installation beendet!\nWollen Sie nun Ihr System neustarten?"
-
-#: src/slides.py:102
+#: ../thus/slides.py:75
 msgid "Installing Manjaro..."
 msgstr "Manjaro wird installiert..."
 
-#: src/slides.py:107
+#: ../thus/slides.py:80
 msgid "Please wait..."
 msgstr "Bitte warten..."
 
-#: src/slides.py:197
+#: ../thus/slides.py:190
 msgid ""
-"IMPORTANT: There may have been a problem with the Grub(2) bootloader\n"
+"IMPORTANT: There may have been a problem with the bootloader\n"
 "installation which could prevent your system from booting properly. Before\n"
-"rebooting, you may want to verify whether or not GRUB(2) is installed and\n"
+"rebooting, you may want to verify whether or not the bootloader is installed and\n"
 "configured. The Arch Linux Wiki contains troubleshooting information:\n"
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr "WICHTIG: Es könnte ein Problem bei der Installation des GRUB(2)-Bootloaders \naufgetreten sein. Daher könnte Ihr System nicht ordnungsgemäß starten. Bevor\nSie Neustarten, überprüfen Sie bitte, ob GRUB(2) installiert und konfiguriert\nwurde. Das Arch Linux Wiki enthält Informationen, um das Problem zu lösen:\n\thttps://wiki.archlinux.org/index.php/GRUB\n\nMöchten Sie sich nun die Wiki-Seite ansehen?"
+msgstr "WICHTIG: Möglicherweise gab es ein Problem mit der Bootloader-\nInstallation. Das könnte zur Folge haben dass Ihr System nicht ordnungs-\ngemäß bootet. Vor dem Reboot sollten Sie überprüfen ob der Bootloader\ninstalliert und konfiguriert ist. Die Arch Linux Wiki beinhaltet Informationen\nzur Fehlerbehebung: ⇥https://wiki.archlinux.org/index.php/GRUB\n\nMöchten Sie diese Wiki Seite jetzt anzeigen lassen?"
 
-#: src/slides.py:234
-msgid "Do you want to retry?"
-msgstr "Möchten Sie die Installation wiederholen?"
+#: ../thus/slides.py:203
+msgid ""
+"Installation Complete!\n"
+"Do you want to restart your system now?"
+msgstr "Installation vollständig!\nMöchten Sie Ihr System jetzt neu starten?"
 
-#: src/timezone.py:111
+#: ../thus/thus.py:64
+#, python-brace-format
+msgid "Can't create Thus main window: {0}"
+msgstr "Kann Thus Hauptfenster nicht erzeugen: {0}"
+
+#: ../thus/thus.py:164
+#, python-brace-format
+msgid "Using pyalpm v{0} as interface to libalpm v{1}"
+msgstr "Verwende pyalpm v{0} als Interface für libalpm v{1}"
+
+#: ../thus/thus.py:179
+#, python-brace-format
+msgid "Thus v{0} - Manjaro Installer"
+msgstr "Thus v{0} - Manjaro Installer"
+
+#: ../thus/thus.py:192
+msgid "Sets Thus log level to 'debug'"
+msgstr "Stellt Thus' Log-Level auf 'debug'"
+
+#: ../thus/thus.py:196
+msgid "Runs thus even if it detects that another instance is running"
+msgstr "Führt Thus aus auch wenn festgestellt wird dass eine andere Instanz geöffnet ist"
+
+#: ../thus/thus.py:208
+msgid "Do not perform any changes (useful for developers)"
+msgstr "Verändere nichts am System (hilfreich für Entwickler)"
+
+#: ../thus/thus.py:212
+msgid "Upgrade/downgrade Thus to the web version"
+msgstr "Thus zur Web-Version upgraden/downgraden"
+
+#: ../thus/thus.py:216
+msgid "Do not search for new Thus versions online"
+msgstr "Nicht online nach neuen Versionen von Thus suchen"
+
+#: ../thus/thus.py:220
+msgid "Show logging messages to stdout"
+msgstr "Zeige Log-Nachrichten im stdout"
+
+#: ../thus/thus.py:224
+msgid "Show options in development (for developers only, do not use this!)"
+msgstr "Optionen unter aktiver Entwicklung anzeigen (nur zu Entwicklungszwecken, setzen Sie diese nicht in Produktion ein!)"
+
+#: ../thus/thus.py:263
+msgid "Program updated! Restarting..."
+msgstr "Programm aktualisiert! Neustarten..."
+
+#: ../thus/thus.py:303
+msgid "Thus files not found. Please, install Thus using pacman"
+msgstr "Thus-Dateien nicht gefunden. Bitte installieren Sie Thus mithilfe von Pacman"
+
+#: ../thus/thus.py:307
+#, python-brace-format
+msgid "Please install '{0}' before running this installer"
+msgstr "Bitte installieren Sie '{0}' bevor Sie diesen Installer ausführen"
+
+#: ../thus/timezone.py:94
 msgid "Where are you?"
 msgstr "Wo halten Sie sich gerade auf?"
 
-#: src/timezone.py:116 ui/timezone.ui:35
+#: ../thus/timezone.py:99 ../ui/timezone.ui:36
 msgid "Zone:"
 msgstr "Zone:"
 
-#: src/timezone.py:120 ui/timezone.ui:78
+#: ../thus/timezone.py:103 ../ui/timezone.ui:79
 msgid "Region:"
 msgstr "Region:"
 
-#: src/timezone.py:124 ui/timezone.ui:104
-msgid "Use Network Time Protocol for clock synchronization:"
-msgstr "Nutze das Network Time Protocol zur Uhren-Synchronisation:"
+#: ../thus/timezone.py:107
+msgid "Use Network Time Protocol (NTP) for clock synchronization"
+msgstr "Network Time Protocol (NTP) zum Synchronisieren der Uhr benutzen"
 
-#: src/timezone.py:135
-#, python-format
-msgid "location changed to : %s"
-msgstr "Standort wurde geändert zu: %s"
+#: ../thus/timezone.py:117
+#, python-brace-format
+msgid "location changed to : {0}"
+msgstr "Ort geändert zu: {0}"
 
-#: src/timezone.py:223
+#: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
 msgstr "Zeitzonenkoordinaten wurden nicht automatisch erkannt"
 
-#: src/timezone.py:283
-msgid "Stopping timezone threads..."
-msgstr "Zeitzonenthread gestoppt..."
+#: ../thus/timezone.py:264
+msgid "Stoping timezone threads..."
+msgstr "Zeitzonen-thread wird gestoppt..."
 
-#: src/timezone.py:397
-msgid "Can't get the country code used to create a pacman mirrorlist"
-msgstr "Länderkürzel konnte nicht übergeben werden, um eine pacman Mirrorliste zu erstellen"
+#: ../thus/timezone.py:301
+msgid "Can't get network status."
+msgstr "Kann Netzwerkstatus nicht abrufen."
 
-#: src/user_info.py:92 ui/user_info.ui:35
-msgid "Your name:"
-msgstr "Ihr Name:"
+#: ../thus/timezone.py:312
+msgid "We have connection. Let's get our timezone"
+msgstr "Wir sind verbunden. Lass uns unsere Zeitzone bestimmen"
 
-#: src/user_info.py:96 ui/user_info.ui:206
-msgid "Your name"
-msgstr "Ihr Name"
+#: ../thus/timezone.py:335
+#, python-brace-format
+msgid "Timezone (latitude {0}, longitude {1}) detected."
+msgstr "Zeitzone (Länge {0}, Breite {1}) erkannt."
 
-#: src/user_info.py:100 ui/user_info.ui:328
-msgid "Hostname"
-msgstr "Hostname"
+#: ../thus/updater.py:71
+msgid ""
+"Could not find 'update.info' file. Thus will not be able to update itself."
+msgstr "Kann Datei 'update.info' nicht finden. Thus kann nicht aktualisiert werden."
 
-#: src/user_info.py:104 ui/user_info.ui:405
-msgid "Your computer's name:"
-msgstr "Name Ihres Computers:"
+#: ../thus/updater.py:91
+#, python-brace-format
+msgid "Thus Internet version: {0}"
+msgstr "Thus Internet Version: {0}"
 
-#: src/user_info.py:108 ui/user_info.ui:50
-msgid "Pick a username:"
-msgstr "Wählen Sie einen Benutzernamen:"
+#: ../thus/updater.py:131
+msgid "New version found. Updating installer..."
+msgstr "Neue Version gefunden. Aktualisiere Installer..."
 
-#: src/user_info.py:112 ui/user_info.ui:250
-msgid "Username"
-msgstr "Benutzername"
+#: ../thus/updater.py:134
+msgid "No new version found. Updating anyways..."
+msgstr "Keine neue Version gefunden. Aktualisiere trotzdem..."
 
-#: src/user_info.py:116 ui/user_info.ui:65
-msgid "Choose a password:"
-msgstr "Wählen Sie ein Passwort:"
+#: ../thus/updater.py:138
+msgid "Downloading new version of Thus..."
+msgstr "Lade neue Version von Thus herunter..."
 
-#: src/user_info.py:120 src/user_info.py:136 ui/user_info.ui:103
-#: ui/user_info.ui:573
-msgid "Password"
-msgstr "Passwort"
+#: ../thus/updater.py:142
+msgid "Can't download new Thus version."
+msgstr "Neue Version von Thus kann nicht heruntergeladen werden."
 
-#: src/user_info.py:128 src/user_info.py:144 ui/user_info.ui:149
-#: ui/user_info.ui:634
-msgid "Confirm password"
-msgstr "Passwort bestätigen"
+#: ../thus/updater.py:146
+msgid "Uncompressing new version..."
+msgstr "Neue Version entpacken..."
 
-#: src/user_info.py:132 ui/user_info.ui:611
-msgid "Choose a root password:"
-msgstr "Wählen Sie ein Passwort für Root:"
+#: ../thus/updater.py:192
+#, python-brace-format
+msgid "Can't copy {0} to {1}"
+msgstr "Kopieren von {0} nach {1} nicht möglich"
 
-#: src/user_info.py:140 ui/user_info.ui:684
-msgid "Confirm root password:"
-msgstr "Bestätige Root Passwort:"
+#: ../thus/updater.py:195
+msgid "Wrong md5. Bad download or wrong file, won't update this one"
+msgstr "Falsche md5. Fehlerhafter Download oder falsche Datei, wird nicht aktualisiert."
 
-#: src/user_info.py:148
-msgid "Its name as it appears to other computers."
-msgstr "Der Name, welcher von anderen PCs gesehen wird."
-
-#: src/user_info.py:152
-msgid "You must enter a name"
-msgstr "Sie müssen einen Namen eingeben"
-
-#: src/user_info.py:156
-msgid "You must enter a username"
-msgstr "Sie müssen einen Benutzernamen eingeben"
-
-#: src/user_info.py:160 src/user_info.py:164
-msgid "You must enter a password"
-msgstr "Sie müssen ein Passwort eingeben"
-
-#: src/user_info.py:168 ui/user_info.ui:473
-msgid "Log in automatically"
-msgstr "Automatisches Anmelden"
-
-#: src/user_info.py:169 ui/user_info.ui:490
-msgid "A password is required to log in"
-msgstr "Anmelden mit Passwortabfrage"
-
-#: src/user_info.py:170 ui/user_info.ui:518
-msgid "Encrypt home folder"
-msgstr "Verschlüsselung des Home-Verzeichnisses"
-
-#: src/user_info.py:172
+#: ../thus/user_info.py:79
 msgid "Who are you?"
 msgstr "Wer sind Sie?"
 
-#: src/user_info.py:180 ui/user_info.ui:544
+#: ../thus/user_info.py:84 ../ui/user_info.ui:35
+msgid "Your name:"
+msgstr "Ihr Name:"
+
+#: ../thus/user_info.py:88 ../ui/user_info.ui:206
+msgid "Your name"
+msgstr "Ihr Name"
+
+#: ../thus/user_info.py:92 ../ui/user_info.ui:328
+msgid "Hostname"
+msgstr "Hostname"
+
+#: ../thus/user_info.py:96 ../ui/user_info.ui:405
+msgid "Your computer's name:"
+msgstr "Name Ihres Computers:"
+
+#: ../thus/user_info.py:100 ../ui/user_info.ui:50
+msgid "Pick a username:"
+msgstr "Wählen Sie einen Benutzernamen:"
+
+#: ../thus/user_info.py:104 ../ui/user_info.ui:250
+msgid "Username"
+msgstr "Benutzername"
+
+#: ../thus/user_info.py:108 ../ui/user_info.ui:65
+msgid "Choose a password:"
+msgstr "Wählen Sie ein Passwort:"
+
+#: ../thus/user_info.py:112 ../thus/user_info.py:128 ../ui/user_info.ui:103
+#: ../ui/user_info.ui:573
+msgid "Password"
+msgstr "Passwort"
+
+#: ../thus/user_info.py:116 ../thus/installation/automatic.py:97
+#: ../ui/automatic.ui:307 ../ui/user_info.ui:80
+msgid "Confirm your password:"
+msgstr "Bestätigen Sie das Passwort:"
+
+#: ../thus/user_info.py:120 ../thus/user_info.py:136 ../ui/user_info.ui:149
+#: ../ui/user_info.ui:634
+msgid "Confirm password"
+msgstr "Passwort bestätigen"
+
+#: ../thus/user_info.py:124 ../ui/user_info.ui:611
+msgid "Choose a root password:"
+msgstr "Wählen Sie ein Passwort für Root:"
+
+#: ../thus/user_info.py:132 ../ui/user_info.ui:684
+msgid "Confirm root password:"
+msgstr "Bestätige Root Passwort:"
+
+#: ../thus/user_info.py:140
+msgid "Its name as it appears to other computers."
+msgstr "Der Name, welcher von anderen PCs gesehen wird."
+
+#: ../thus/user_info.py:144
+msgid "You must enter a name"
+msgstr "Sie müssen einen Namen eingeben"
+
+#: ../thus/user_info.py:148
+msgid "You must enter a username"
+msgstr "Sie müssen einen Benutzernamen eingeben"
+
+#: ../thus/user_info.py:152 ../thus/user_info.py:156
+msgid "You must enter a password"
+msgstr "Sie müssen ein Passwort eingeben"
+
+#: ../thus/user_info.py:160 ../ui/user_info.ui:473
+msgid "Log in automatically"
+msgstr "Automatisches Anmelden"
+
+#: ../thus/user_info.py:161 ../ui/user_info.ui:490
+msgid "A password is required to log in"
+msgstr "Anmelden mit Passwortabfrage"
+
+#: ../thus/user_info.py:162 ../ui/user_info.ui:518
+msgid "Encrypt home folder"
+msgstr "Verschlüsselung des Home-Verzeichnisses"
+
+#: ../thus/user_info.py:165 ../thus/installation/automatic.py:105
+#: ../ui/user_info.ui:422
+msgid "Show password"
+msgstr "Zeige Passwort"
+
+#: ../thus/user_info.py:168 ../ui/user_info.ui:544
 msgid "Show root password"
 msgstr "Zeige Root Passwort"
 
-#: src/user_info.py:183 ui/user_info.ui:439
+#: ../thus/user_info.py:171 ../ui/user_info.ui:439
 msgid "Use a root password"
 msgstr "Nutze ein Passwort für Root"
 
-#: src/user_info.py:252
+#: ../thus/user_info.py:240
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
 msgstr "Manjaro wird eCryptfs verwenden, um Ihr Heimverzeichnis zu verschlüsseln. Leider funktioniert eCryptfs nicht gut mit mitwachsenden Dateien.\n"
 
-#: src/user_info.py:253
+#: ../thus/user_info.py:241
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
 msgstr "Keine Sorge, für die meisten Anwendungen stellen diese Einschränkungen kein Problem dar.\n"
 
-#: src/user_info.py:254
+#: ../thus/user_info.py:242
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
 msgstr "Wie auch immer, eine beliebte aber nicht empfehlenswerte Einsatzmöglichkeit von eCryptfs besteht darin, einen Speicherort für BitTorrent zu verschlüssen. Dies führt dazu, dass eCryptfs oftmals mitwachsene Dateien von 10 GB oder mehr verarbeiten muss. Dies kann zu erheblich verlangsamten Festplatten führen.\n"
 
-#: src/user_info.py:255
+#: ../thus/user_info.py:243
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
 msgstr "Um dies zu vermeiden, sollten mitwachsende Dateien in einem unverschlüsselten .Public Verzeichnis gespeichert werden.\n"
 
-#: src/user_info.py:256
+#: ../thus/user_info.py:244
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
 msgstr "Hier finden Sie weitere Informationen: https://wiki.archlinux.org/index.php/ECryptfs\n\n"
 
-#: src/user_info.py:257
+#: ../thus/user_info.py:245
 msgid "Are you sure you want to encrypt your home directory?\n"
 msgstr "Sind Sie sicher, dass Sie Ihr Heimatverzeichnis verschlüsseln wollen ?\n"
 
-#: src/user_info.py:345
+#: ../thus/user_info.py:329
 msgid "Invalid characters entered"
 msgstr "Ungültige Zeichen wurden eingegeben"
 
-#: src/user_info.py:349
+#: ../thus/user_info.py:333
 msgid "Username can't contain dots"
 msgstr "Benutzername kann keine Punkte beinhalten"
 
-#: src/user_info.py:353
+#: ../thus/user_info.py:337
 msgid "Too many characters"
 msgstr "Zu viele Zeichen"
 
-#: ui/bootloader.ui:69
+#: ../thus/download/download_urllib.py:42
+msgid "Wrong url, will try another one if available."
+msgstr "Falsche url, versuche andere Adresse wenn verfügbar."
+
+#: ../thus/download/download_urllib.py:52
+#: ../thus/download/download_urllib.py:56
+#: ../thus/download/download_urllib.py:60
+#: ../thus/download/download_urllib.py:64
+#, python-brace-format
+msgid "Can't open {0} - Reason: {1}"
+msgstr "Kann {0} nicht öffnen - Grund: {1}"
+
+#: ../thus/download/download_urllib.py:80
+#, python-brace-format
+msgid "HTTP Error : {0}"
+msgstr "HTTP Fehler: {0}"
+
+#: ../thus/download/download_urllib.py:83
+#, python-brace-format
+msgid "URL Error : {0}"
+msgstr "URL Fehler: {0}"
+
+#: ../thus/download/download_urllib.py:117
+#, python-brace-format
+msgid "Downloading {0} {1} ({2}/{3})..."
+msgstr "Herunterladen von {0} {1} ({2}/{3})..."
+
+#: ../thus/download/download_urllib.py:124
+#, python-brace-format
+msgid "Metalink for package {0} has no size info"
+msgstr "Metalink für Packet {0} hat keine Größeninformation"
+
+#: ../thus/download/download_urllib.py:137
+#, python-brace-format
+msgid "File {0} already exists, Thus will not overwrite it"
+msgstr "Datei {0} bereits vorhanden, wird von Thus nicht überschrieben"
+
+#: ../thus/download/download_urllib.py:187
+#, python-brace-format
+msgid "Can't download {0}, even after trying all available mirrors"
+msgstr "Kann {0} von keinem der verfügbaren Mirror herunterladen"
+
+#: ../thus/installation/advanced.py:260 ../thus/installation/advanced.py:573
+#: ../thus/installation/advanced.py:587
+msgid "free space"
+msgstr "freier Speicher"
+
+#: ../thus/installation/advanced.py:361
+msgid "Device"
+msgstr "Gerät"
+
+#: ../thus/installation/advanced.py:364
+msgid "Type"
+msgstr "Typ"
+
+#: ../thus/installation/advanced.py:367
+msgid "Mount point"
+msgstr "Einhängepunkt"
+
+#: ../thus/installation/advanced.py:370
+msgid "Label"
+msgstr "Beschriftung"
+
+#: ../thus/installation/advanced.py:377 ../thus/installation/advanced.py:1907
+msgid "Format"
+msgstr "Format"
+
+#: ../thus/installation/advanced.py:384
+msgid "Size"
+msgstr "Größe"
+
+#: ../thus/installation/advanced.py:387
+msgid "Used"
+msgstr "Benutzt"
+
+#: ../thus/installation/advanced.py:390
+msgid "Flags"
+msgstr "Warnhinweise"
+
+#: ../thus/installation/advanced.py:397
+msgid "SSD"
+msgstr "SSD"
+
+#: ../thus/installation/advanced.py:555
+msgid "none"
+msgstr "keine Angabe"
+
+#: ../thus/installation/advanced.py:697
+msgid "Can't edit a partition with LVM filesystem type"
+msgstr "Partition mit LVM Dateisystem kann nicht geändert werden"
+
+#: ../thus/installation/advanced.py:759
+msgid "Can't use same mount point twice."
+msgstr "Es kann nicht derselbe Einhängepunkt zweimal benutzt werden."
+
+#: ../thus/installation/advanced.py:761
+msgid "Root partition must be formatted."
+msgstr "Rootpartition muss formatiert werden"
+
+#: ../thus/installation/advanced.py:859
+#, python-brace-format
+msgid "You will delete the partition {0} from disk {1}"
+msgstr "Sind sind dabei Partition {0} von Festplatte {1} zu löschen"
+
+#: ../thus/installation/advanced.py:877
+#, python-brace-format
+msgid "Unmounting {0}..."
+msgstr "{0} aushängen..."
+
+#: ../thus/installation/advanced.py:1002
+#, python-brace-format
+msgid "Sorry, you already have {0} primary partitions created."
+msgstr "Sorry, Sie haben bereits {0} primäre Partitionen erzeugt."
+
+#: ../thus/installation/advanced.py:1006
+#, python-brace-format
+msgid "Sorry, you already have {0} primary and 1 extended partitions created."
+msgstr "Sorry, Sie haben bereits {0} primäre und 1 erweiterte Partition erzeugt."
+
+#: ../thus/installation/advanced.py:1061
+msgid "Can't use same mount point twice..."
+msgstr "Es kann nicht derselbe Einhängepunkt zweimal benutzt werden..."
+
+#: ../thus/installation/advanced.py:1086
+msgid "Creating a primary partition"
+msgstr "Erzeuge primäre Partition"
+
+#: ../thus/installation/advanced.py:1097
+msgid "Creating an extended partition"
+msgstr "Erzeuge erweiterte Partition"
+
+#: ../thus/installation/advanced.py:1103
+msgid "Creating a logical partition"
+msgstr "Erzeuge logische Partition"
+
+#: ../thus/installation/advanced.py:1165
+msgid "LUKS passwords do not match!"
+msgstr "LUKS Passwörter stimmen nicht überein!"
+
+#: ../thus/installation/advanced.py:1290
+msgid "Advanced installation mode"
+msgstr "Erweiterte Installation"
+
+#: ../thus/installation/advanced.py:1294 ../thus/installation/automatic.py:110
+msgid "Use the device below for boot loader installation:"
+msgstr "Benutzen Sie dieses Laufwerk für die Bootloader-Installation:"
+
+#: ../thus/installation/advanced.py:1299 ../thus/installation/automatic.py:115
+#: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
+msgid "Bootloader:"
+msgstr "Bootloader"
+
+#: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:119
+#: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
+msgid "Device:"
+msgstr "Laufwerk:"
+
+#: ../thus/installation/advanced.py:1307
+msgid "Mount Checklist:"
+msgstr "Einhängepunkt-Checkliste:"
+
+#: ../thus/installation/advanced.py:1313
+msgid "Root"
+msgstr "Root"
+
+#: ../thus/installation/advanced.py:1317 ../ui/bootloader.ui:7
+msgid "Boot"
+msgstr "Startvorgang"
+
+#: ../thus/installation/advanced.py:1321
+msgid "EFI"
+msgstr "EFI"
+
+#: ../thus/installation/advanced.py:1325
+msgid "Swap"
+msgstr "Swap"
+
+#: ../thus/installation/advanced.py:1335
+msgid "Undo"
+msgstr "Rückgängig machen"
+
+#: ../thus/installation/advanced.py:1338 ../thus/installation/advanced.py:1907
+msgid "New"
+msgstr "Neu"
+
+#: ../thus/installation/advanced.py:1341
+msgid "Delete"
+msgstr "Löschen"
+
+#: ../thus/installation/advanced.py:1344
+msgid "Edit..."
+msgstr "Bearbeiten..."
+
+#: ../thus/installation/advanced.py:1347
+msgid "New partition table"
+msgstr "Neue Partitionstabelle"
+
+#: ../thus/installation/advanced.py:1358
+msgid "_Cancel"
+msgstr "_Abbrechen"
+
+#: ../thus/installation/advanced.py:1369
+msgid "_Apply"
+msgstr "_Anwenden"
+
+#: ../thus/installation/advanced.py:1372 ../ui/advanced.ui:406
+msgid "Size:"
+msgstr "Größe:"
+
+#: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:605
+msgid "Type:"
+msgstr "Typ:"
+
+#: ../thus/installation/advanced.py:1380 ../ui/advanced.ui:622
+msgid "Primary"
+msgstr "Primäre"
+
+#: ../thus/installation/advanced.py:1384 ../ui/advanced.ui:641
+msgid "Logical"
+msgstr "Logische"
+
+#: ../thus/installation/advanced.py:1388 ../ui/advanced.ui:659
+msgid "Extended"
+msgstr "Erweiterte"
+
+#: ../thus/installation/advanced.py:1392 ../ui/advanced.ui:510
+msgid "Beginning of this space"
+msgstr "Beginn dieses Speichers"
+
+#: ../thus/installation/advanced.py:1396 ../ui/advanced.ui:529
+msgid "End of this space"
+msgstr "Ende dieses Speichers"
+
+#: ../thus/installation/advanced.py:1400 ../thus/installation/advanced.py:1417
+msgid "Use As:"
+msgstr "Benutzen als:"
+
+#: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
+msgid "Mount Point:"
+msgstr "Einhängepunkt:"
+
+#: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
+#: ../ui/advanced.ui:252 ../ui/advanced.ui:688
+msgid "Label (optional):"
+msgstr "Beschriftung (optional):"
+
+#: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1433
+msgid "Encryption Options..."
+msgstr "Verschlüsselungsoptionen..."
+
+#: ../thus/installation/advanced.py:1429 ../ui/advanced.ui:279
+msgid "Format:"
+msgstr "Format:"
+
+#: ../thus/installation/advanced.py:1438
+msgid "Partition Table Type:"
+msgstr "Partitionstabellentyp:"
+
+#: ../thus/installation/advanced.py:1443
+msgid "Create Partition Table"
+msgstr "Erstelle Partitionstabelle"
+
+#: ../thus/installation/advanced.py:1446
+msgid "Use LUKS encryption:"
+msgstr "LUKS-Verschlüsselung verwenden:"
+
+#: ../thus/installation/advanced.py:1450 ../ui/advanced.ui:1173
+msgid "LUKS volume name:"
+msgstr "LUKS Volumen-Name:"
+
+#: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1185
+msgid "Password:"
+msgstr "Passwort:"
+
+#: ../thus/installation/advanced.py:1458 ../ui/advanced.ui:1197
+msgid "Confirm password:"
+msgstr "Bestätige Passwort:"
+
+#: ../thus/installation/advanced.py:1528
+#, python-brace-format
+msgid "Creating a new {0} partition table for disk {1}"
+msgstr "Eine neue {0} Partitionstabelle für Festplatte {1} wird erstellt"
+
+#: ../thus/installation/advanced.py:1538
+msgid ""
+"GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
+"\n"
+"Cnchi will create this BIOS Boot Partition for you."
+msgstr "GRUB benötigt eine BIOS Boot Partition auf BIOS-basierenden Systemen um seine core.img-Datei einbinden zu können, da in mit GPT formatierten Laufwerken eine post_MBR Lücke fehlt.\n\nThus wird diese spezielle Partition für Sie nun erstellen."
+
+#: ../thus/installation/advanced.py:1566
+msgid "Can't create BIOS GPT Boot partition!"
+msgstr "Konnte BIOS GPT Boot-Partition nicht erstellen!"
+
+#: ../thus/installation/advanced.py:1595
+msgid "Couldn't create BIOS GPT Boot partition"
+msgstr "Konnte BIOS GPT Boot Partition nicht erstellen"
+
+#: ../thus/installation/advanced.py:1783
+#, python-brace-format
+msgid ""
+"{0} is mounted as swap.\n"
+"To continue it has to be unmounted.\n"
+"Click Yes to unmount, or No to return\n"
+msgstr "{0} ist als Swap eingehängt.\nUm fortzufahren muss es ausgehängt werden.\nKlicken Sie Ja zum Aushängen oder Nein um zurückzukehren\n"
+
+#: ../thus/installation/advanced.py:1787
+#, python-brace-format
+msgid ""
+"{0} is mounted in '{1}'.\n"
+"To continue it has to be unmounted.\n"
+"Click Yes to unmount, or No to return\n"
+msgstr "{0} ist in '{1}' eingehängt.\nUm fortzufahren muss es ausgehängt werden.\nKlicken Sie Ja zum Aushängen oder Nein um zurückzukehren\n"
+
+#: ../thus/installation/advanced.py:1798 ../thus/installation/advanced.py:1819
+#, python-brace-format
+msgid "{0} unmounted"
+msgstr "{0} ausgehängt"
+
+#: ../thus/installation/advanced.py:1812
+#, python-brace-format
+msgid "Swap partition {0} unmounted"
+msgstr "Swap Partition {0} ausgehängt"
+
+#: ../thus/installation/advanced.py:1823
+#, python-brace-format
+msgid "{0} shows as mounted (busy) but it has no mount point"
+msgstr "{0} wird als eingebunden (busy) angezeigt, hat aber keinen Einhängepunkt"
+
+#: ../thus/installation/advanced.py:1830
+msgid ""
+"The root partition is not marked to be formatted.\n"
+"This might create problems. Should it be marked to be formatted now?"
+msgstr "Die Root-Partition ist nicht zur Formatierung markiert.\nDies könnte Probleme bereiten. Soll diese Partition zum Formatieren markiert werden?"
+
+#: ../thus/installation/advanced.py:1874
+#, python-brace-format
+msgid ""
+"Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
+"encrypt[{5}]"
+msgstr "Füge {0} zu Prüfliste hinzu: erstelle[{1}] relabel[{2}] fmt[{3}] mnt[{4}] verschlüsseln[{5}]"
+
+#: ../thus/installation/advanced.py:1899
+#, python-brace-format
+msgid "Partition {0} will be deleted"
+msgstr "Partition {0} wird gelöscht"
+
+#: ../thus/installation/advanced.py:1907
+msgid "Partition"
+msgstr "Partition"
+
+#: ../thus/installation/advanced.py:1907
+msgid "Relabel"
+msgstr "Umbenennen"
+
+#: ../thus/installation/advanced.py:1907
+msgid "Mount"
+msgstr "Einhängen"
+
+#: ../thus/installation/advanced.py:1907
+msgid "Encrypt"
+msgstr "Verschlüsseln"
+
+#: ../thus/installation/advanced.py:1928
+msgid "These disks will have partition actions:"
+msgstr "An dieser Festplatte werden folgende Änderungen vorgenommen:"
+
+#: ../thus/installation/advanced.py:2028
+#, python-brace-format
+msgid "Finished saving changes in {0}"
+msgstr "Speichern von Änderungen in {0} abgeschlosseln"
+
+#: ../thus/installation/advanced.py:2049
+#, python-brace-format
+msgid "Creating new {0} filesystem in {1} labeled {2}"
+msgstr "Neues Dateisystem {0} in {1} mit Label {2} wird erstellt"
+
+#: ../thus/installation/advanced.py:2052
+#, python-brace-format
+msgid "Creating new {0} filesystem in {1}"
+msgstr "Neues Dateisystem {0} in {1} wird erstellt"
+
+#: ../thus/installation/advanced.py:2081
+#, python-brace-format
+msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
+msgstr "{0} wird verschlüsselt, bekommt Laufwerksnamen {1} zugewiesen und wird formatiert..."
+
+#: ../thus/installation/advanced.py:2096
+#, python-brace-format
+msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
+msgstr "Konnte LUKS Laufwerk '{0}' nicht mit Label '{1}' als '{2}' formatieren"
+
+#: ../thus/installation/advanced.py:2120
+#, python-brace-format
+msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
+msgstr "Konnte Partition {0} nicht mit Label {1} als {2} formatieren"
+
+#: ../thus/installation/advanced.py:2178 ../thus/installation/automatic.py:274
+msgid "Thus will not install any bootloader"
+msgstr "Thus wird keinen Bootloader installieren"
+
+#: ../thus/installation/advanced.py:2184
+#, python-brace-format
+msgid "Manjaro will install the bootloader {0} in device {1}"
+msgstr "Manjaro wird Bootloader {0} in Laufwerk {1} installieren"
+
+#: ../thus/installation/advanced.py:2199 ../thus/installation/automatic.py:304
+msgid "Testing mode. Thus won't apply any changes to your system!"
+msgstr "Testmodus. Thus wird keine Veränderung an Ihrem System vornehmen!"
+
+#: ../thus/installation/alongside.py:139
+msgid "There are no primary partitions available"
+msgstr "Es sind keine primären Partitionen vorhanden"
+
+#: ../thus/installation/alongside.py:142
+#, python-brace-format
+msgid "Will shrink device {0} and create new device {1}"
+msgstr "Laufwerk {0} wird verkleinert und neues Laufwerk {1} wird erzeugt"
+
+#: ../thus/installation/alongside.py:150
+msgid "Thus recommends at least 6.5GB free to install Manjaro."
+msgstr "Um Manjaro zu installieren wird empfohlen dass mindestens 6,5 GB freier Speicherplatz zur Verfügung stehen. "
+
+#: ../thus/installation/alongside.py:151
+#, python-brace-format
+msgid ""
+"New partition {0} resulting of shrinking {1} will not have enough free space"
+" for a full installation."
+msgstr "Nach der Verkleinerung von {1} ist auf der neuen Partition {0} nicht genügend Speicherplatz für eine vollständige Installation vorhanden. "
+
+#: ../thus/installation/alongside.py:152
+msgid ""
+"You can still install Manjaro, but be carefull on which DE you choose as it "
+"might not fit in."
+msgstr "Sie können Manjaro installieren, aber für manche Desktop-Umgebungen könnte der Speicherplatz nicht ausreichen."
+
+#: ../thus/installation/alongside.py:153
+msgid "Install at your own risk!"
+msgstr "Installation auf eigene Gefahr!"
+
+#: ../thus/installation/alongside.py:208
+msgid "Manjaro alongside another OS"
+msgstr "Manjaro neben anderen Betriebssystemen installieren"
+
+#: ../thus/installation/alongside.py:212
+msgid "Choose the new size of your installation"
+msgstr "Wählen Sie die Größe Ihrer neuen Installation."
+
+#: ../thus/installation/alongside.py:216
+msgid "Choose the partition that you want to shrink:"
+msgstr "Wählen Sie die zu verkleinernde Partition aus:"
+
+#: ../thus/installation/alongside.py:257
+msgid ""
+"Can't find any spare partition number.\n"
+"Alongside installation can't continue."
+msgstr "Keine freie Partitionsnummer gefunden. \nInstallation neben anderem Betriebssystem kann nicht fortgesetzt werden."
+
+#: ../thus/installation/alongside.py:268
+msgid "Can't find any installed OS!"
+msgstr "Kein installiertes Betriebssystem gefunden."
+
+#: ../thus/installation/ask.py:128
+msgid "The 'alongside' installation mode does not work in UEFI systems"
+msgstr "Installation neben anderem Betriebssystem funktioniert auf UEFI Systemen nicht. "
+
+#: ../thus/installation/ask.py:142
+msgid "Windows(tm) OS detected."
+msgstr "Windows(tm) Betriebssystem gefunden."
+
+#: ../thus/installation/ask.py:145
+msgid "Windows(tm) OS not detected."
+msgstr "Windows(tm) Betriebssystem nicht gefunden."
+
+#: ../thus/installation/ask.py:148
+msgid "Can't detect any OS in device sda."
+msgstr "Kann kein OS auf Laufwerk sda erkennen"
+
+#: ../thus/installation/ask.py:152
+msgid "Unsuported disk layout for the 'alongside' installation mode"
+msgstr "Nicht unterstütztes Partitionsschema für Installation neben anderem Betriebssystem."
+
+#: ../thus/installation/ask.py:197
+msgid " and "
+msgstr "und"
+
+#: ../thus/installation/ask.py:212
+msgid "Installation type"
+msgstr "Installationsart"
+
+#: ../thus/installation/ask.py:227
+#, python-brace-format
+msgid "Replace {0} with Manjaro"
+msgstr "{0} mit Manjaro ersetzen"
+
+#: ../thus/installation/ask.py:229
+msgid "Erase disk and install Manjaro"
+msgstr "Festplatte löschen und Manjaro installieren"
+
+#: ../thus/installation/ask.py:234
+msgid "Warning: This will erase ALL data on your disk."
+msgstr "Warnung: Dies löscht ALLE Daten auf Ihrer Festplatte."
+
+#: ../thus/installation/ask.py:241
+msgid "Encrypt this installation for increased security."
+msgstr "Verschlüssele diese Installation für mehr Sicherheit."
+
+#: ../thus/installation/ask.py:246
+msgid "You will be asked to create an encryption password in the next step."
+msgstr "Sie werden im nächsten Schritt aufgefordert ein Passwort für die Verschlüsselung zu erstellen."
+
+#: ../thus/installation/ask.py:252
+msgid "Use LVM with this installation."
+msgstr "Nutze LVM mit dieser Installation."
+
+#: ../thus/installation/ask.py:257
+msgid ""
+"This will setup LVM and allow you to easily manage partitions and create "
+"snapshots."
+msgstr "Dies wird LVM einrichten, das die einfache Verwaltung von Partitionen und das Erzeugen von Snapshots erlaubt."
+
+#: ../thus/installation/ask.py:263
+msgid "Set your Home in a different partition/volume"
+msgstr "Erstelle eine separate Partition/Volume für Ihr Home-Verzeichnis"
+
+#: ../thus/installation/ask.py:268
+msgid ""
+"This will setup you /home directory in a different partition or volume."
+msgstr "Dies wird Ihr /home Verzeichnis in einer anderen Partition oder einem anderen Volumen einrichten."
+
+#: ../thus/installation/ask.py:288
+msgid "How would you like to proceed?"
+msgstr "Wie möchten Sie fortfahren?"
+
+#: ../thus/installation/ask.py:297
+msgid "Choose exactly where Manjaro should be installed."
+msgstr "Wählen Sie aus wo genau Manjaro installiert werden soll."
+
+#: ../thus/installation/ask.py:301
+msgid "Edit partition table and choose mount points."
+msgstr "Partitionstabelle bearbeiten und Einhängepunkte wählen."
+
+#: ../thus/installation/ask.py:333
+msgid "Manjaro installation will be encrypted using LUKS"
+msgstr "Die Manjaro Installation wird mit LUKS verschlüsselt sein"
+
+#: ../thus/installation/ask.py:336
+msgid "Manjaro will be installed using LVM volumes"
+msgstr "Manjaro wird LVM Volumen bei der Installation nutzen"
+
+#: ../thus/installation/ask.py:338
+msgid "Manjaro will be installed using a separate /home volume."
+msgstr "Manjaro wird mit einem separaten /home Volumen installiert."
+
+#: ../thus/installation/ask.py:340
+msgid "Manjaro will be installed using a separate /home partition."
+msgstr "Manjaro wird mit einer separaten /home Partition installiert."
+
+#: ../thus/installation/automatic.py:75
+msgid "Automatic installation mode"
+msgstr "Automatische Installation"
+
+#: ../thus/installation/automatic.py:79 ../ui/automatic.ui:84
+msgid "Select drive:"
+msgstr "Wählen Sie eine Festplatte:"
+
+#: ../thus/installation/automatic.py:83
+msgid ""
+"WARNING! This installation mode will overwrite everything on your drive!"
+msgstr "WARNUNG! Dieser Installationsmodus wird Alles auf Ihrer Festplatte überschreiben!"
+
+#: ../thus/installation/automatic.py:88
+msgid ""
+"Please choose the drive where you want to install Manjaro\n"
+"and click the button below to start the process."
+msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Manjaro installieren wollen.\nDrücken Sie den Knopf unten, um den Installationsprozess zu beginnen."
+
+#: ../thus/installation/automatic.py:93 ../ui/automatic.ui:227
+msgid "Encryption Password:"
+msgstr "Verschlüsselungspasswort:"
+
+#: ../thus/installation/automatic.py:101
+msgid "LUKS Password. Do not use special characters or accents!"
+msgstr "LUKS Passwort. Benutzen Sie keine Sonderzeichen oder Akzente!"
+
+#: ../thus/installation/automatic.py:107
+msgid "Install now!"
+msgstr "Jetzt Installieren!"
+
+#: ../thus/installation/automatic.py:188
+msgid "A root LUKS password has been set"
+msgstr "Ein root LUKS Passwort wurde erstellt"
+
+#: ../thus/installation/automatic.py:190
+#, python-brace-format
+msgid "Automatic install on {0}"
+msgstr "Automatische Installation auf {0}"
+
+#: ../thus/installation/automatic.py:253
+msgid ""
+"Do you really want to proceed and delete all your content on your hard "
+"drive?"
+msgstr "Möchten Sie wirklich fortfahren und den gesamten Inhalt Ihrer Festplatte löschen?"
+
+#: ../thus/installation/automatic.py:267
+#, python-brace-format
+msgid "Thus will install Manjaro on device {0}"
+msgstr "Thus wird Manjaro auf Laufwerk {0} installieren"
+
+#: ../thus/installation/automatic.py:280
+#, python-brace-format
+msgid "Thus will install the bootloader '{0}' in device '{1}'"
+msgstr "Thus wird Bootloader '{0}' in Laufwerk '{1}' installieren"
+
+#: ../thus/installation/auto_partition.py:86
+#: ../thus/installation/process.py:490 ../thus/installation/process.py:507
+#: ../thus/installation/process.py:522
+#, python-brace-format
+msgid "Unmounting {0}"
+msgstr "Aushängen von {0}"
+
+#: ../thus/installation/auto_partition.py:90
+#, python-brace-format
+msgid "Unmounting {0} failed. Trying lazy arg."
+msgstr "Aushängen von {0} fehlgeschlagen. Versuche mit Lazy-Argument."
+
+#: ../thus/installation/auto_partition.py:94
+#, python-brace-format
+msgid "Unmounting {0} failed."
+msgstr "Aushängen von {0} fehlgeschlagen"
+
+#: ../thus/installation/auto_partition.py:106
+#: ../thus/installation/auto_partition.py:112
+#: ../thus/installation/auto_partition.py:158
+#: ../thus/installation/auto_partition.py:169
+#: ../thus/installation/auto_partition.py:205
+#: ../thus/installation/auto_partition.py:228
+#: ../thus/installation/auto_partition.py:238
+#: ../thus/installation/auto_partition.py:250
+#: ../thus/installation/auto_partition.py:279
+#: ../thus/installation/auto_partition.py:307
+#: ../thus/installation/auto_partition.py:320
+#: ../thus/installation/auto_partition.py:367
+#: ../thus/installation/auto_partition.py:394
+#: ../thus/installation/auto_partition.py:402
+#: ../thus/installation/auto_partition.py:423
+#: ../thus/installation/auto_partition.py:673
+#: ../thus/installation/auto_partition.py:791
+#: ../thus/installation/auto_partition.py:800
+#: ../thus/installation/auto_partition.py:835
+#: ../thus/installation/auto_partition.py:892
+#, python-brace-format
+msgid "Command {0} failed"
+msgstr "Befehl {0} fehlgeschlagen"
+
+#: ../thus/installation/auto_partition.py:107
+#: ../thus/installation/auto_partition.py:113
+#: ../thus/installation/auto_partition.py:159
+#: ../thus/installation/auto_partition.py:170
+#: ../thus/installation/auto_partition.py:206
+#: ../thus/installation/auto_partition.py:229
+#: ../thus/installation/auto_partition.py:239
+#: ../thus/installation/auto_partition.py:251
+#: ../thus/installation/auto_partition.py:280
+#: ../thus/installation/auto_partition.py:308
+#: ../thus/installation/auto_partition.py:321
+#: ../thus/installation/auto_partition.py:368
+#: ../thus/installation/auto_partition.py:395
+#: ../thus/installation/auto_partition.py:403
+#: ../thus/installation/auto_partition.py:424
+#: ../thus/installation/auto_partition.py:674
+#: ../thus/installation/auto_partition.py:792
+#: ../thus/installation/auto_partition.py:801
+#: ../thus/installation/auto_partition.py:836
+#: ../thus/installation/auto_partition.py:893
+#: ../thus/installation/process.py:267
+#, python-brace-format
+msgid "Output: {0}"
+msgstr "Ausgabe: {0}"
+
+#: ../thus/installation/auto_partition.py:157
+msgid "Can't delete existent LVM volumes"
+msgstr "Bestehendes LVM Volume kann nicht gelöscht werden"
+
+#: ../thus/installation/auto_partition.py:168
+msgid "Can't close already opened LUKS devices"
+msgstr "Bereits geöffnete LUKS Laufwerke können nicht geschlossen werden"
+
+#: ../thus/installation/auto_partition.py:177
+#, python-brace-format
+msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
+msgstr "Kann LUKS in Laufwerk {0} nicht einrichten. Passwort oder Schlüsseldatei erforderlich"
+
+#: ../thus/installation/auto_partition.py:185
+#, python-brace-format
+msgid "Thus will setup LUKS on device {0}"
+msgstr "Thus wird LUkS auf Laufwerk {0} einrichten"
+
+#: ../thus/installation/auto_partition.py:203
+#: ../thus/installation/auto_partition.py:226
+#, python-brace-format
+msgid "Can't format and open the LUKS device {0}"
+msgstr "LUKS Laufwerk {0} kann nicht formatiert und geöffnet werden "
+
+#: ../thus/installation/auto_partition.py:237
+#, python-brace-format
+msgid "Can't wipe filesystem of device {0}"
+msgstr "Kann Dateisystem von Laufwerk {0} nicht entfernen"
+
+#: ../thus/installation/auto_partition.py:249
+msgid "Can't run dd command"
+msgstr "Befehl dd kann nicht ausgeführt werden"
+
+#: ../thus/installation/auto_partition.py:277
+#: ../thus/installation/auto_partition.py:305
+#, python-brace-format
+msgid "Error creating a new partition on device {0}"
+msgstr "Fehler beim Erstellen einer neuen Partition auf Laufwerk {0}"
+
+#: ../thus/installation/auto_partition.py:318
+#, python-brace-format
+msgid "Error creating a new partition table on device {0}"
+msgstr "Fehler beim Erzeugen der neuen Partitionstabelle auf Laufwerk {0}"
+
+#: ../thus/installation/auto_partition.py:357
+#, python-brace-format
+msgid "Will format device {0} as {1}"
+msgstr "Formatiere Laufwerk {0} als {1}"
+
+#: ../thus/installation/auto_partition.py:366
+#: ../thus/installation/process.py:407
+#, python-brace-format
+msgid "Can't activate swap in {0}"
+msgstr "Swap in {0} kann nicht aktiviert werden"
+
+#: ../thus/installation/auto_partition.py:384
+#, python-brace-format
+msgid "Unknown filesystem type {0}"
+msgstr "Unbekanntes Dateisystem Typ {0}"
+
+#: ../thus/installation/auto_partition.py:392
+#, python-brace-format
+msgid "Can't create filesystem {0}"
+msgstr "Dateisystem {0} kann nicht erstellt werden"
+
+#: ../thus/installation/auto_partition.py:421
+#, python-brace-format
+msgid "Error trying to  mount {0} in {1}"
+msgstr "Fehler beim Versuch, {0} in {1} einzuhängen"
+
+#: ../thus/installation/auto_partition.py:437
+#, python-brace-format
+msgid "Device details: {0} UUID={1} LABEL={2}"
+msgstr "Laufwerk-Details: {0} UUID={1} LABEL={2}"
+
+#: ../thus/installation/auto_partition.py:520
+#, python-brace-format
+msgid "{0} will be mounted as {1}"
+msgstr "Mounte {0} als {1}"
+
+#: ../thus/installation/auto_partition.py:552
+#, python-brace-format
+msgid "Device {0} will have a {1} filesystem"
+msgstr "Laufwerk {0} wird ein {1} Dateisystem haben"
+
+#: ../thus/installation/auto_partition.py:600
+#, python-format
+msgid "Total disk size: %dMiB"
+msgstr "Festplatten-Gesamtgröße: %dMiB"
+
+#: ../thus/installation/auto_partition.py:602
+#, python-format
+msgid "EFI System Partition (ESP) size: %dMiB"
+msgstr "EFI System Partition (ESP) Größe: %dMiB"
+
+#: ../thus/installation/auto_partition.py:603
+#, python-format
+msgid "Boot partition size: %dMiB"
+msgstr "Boot Partitions-Größe: %dMiB"
+
+#: ../thus/installation/auto_partition.py:606
+#, python-format
+msgid "LVM physical volume size: %dMiB"
+msgstr "LVM physikalische Volumen-Größe: %dMiB"
+
+#: ../thus/installation/auto_partition.py:608
+#, python-format
+msgid "Swap partition size: %dMiB"
+msgstr "Swap Partitions-Größe: %dMiB"
+
+#: ../thus/installation/auto_partition.py:609
+#, python-format
+msgid "Root partition size: %dMiB"
+msgstr "Root Partitions-Größe: %dMiB"
+
+#: ../thus/installation/auto_partition.py:612
+#, python-format
+msgid "Home partition size: %dMiB"
+msgstr "Home Partitions-Größe: %dMiB"
+
+#: ../thus/installation/auto_partition.py:632
+msgid ""
+"Setup cannot detect size of your device, please use advanced installation "
+"routine for partitioning and mounting devices."
+msgstr "Der Installer konnte die Größe Ihrer Laufwerke nicht erkennen. Bitte nutzen Sie die fortgeschrittene Installations-Routine, um Ihre Laufwerke partitionieren sowie einbinden können."
+
+#: ../thus/installation/auto_partition.py:671
+msgid "Error informing the kernel of the partition change."
+msgstr "Versuch den Kernel über Änderung von Partitionen zu informieren schlug fehl."
+
+#: ../thus/installation/auto_partition.py:784
+#, python-brace-format
+msgid "Thus will setup LVM on device {0}"
+msgstr "Thus wird LVM auf Laufwerk {0} einrichten"
+
+#: ../thus/installation/auto_partition.py:789
+msgid "Error creating LVM physical volume"
+msgstr "Fehler beim Erstellen einer LVM Partition (physical volume)"
+
+#: ../thus/installation/auto_partition.py:798
+msgid "Error creating LVM volume group"
+msgstr "Fehler beim Erstellen eines LVM Pool (volume group)"
+
+#: ../thus/installation/auto_partition.py:833
+msgid "Error creating LVM logical volume"
+msgstr "Fehler beim Erstellen einer virtuellen LVM Partition (logical volume)"
+
+#: ../thus/installation/auto_partition.py:890
+msgid "Can't copy LUKS keyfile to the installation device"
+msgstr "Kann LUKS Schlüsseldatei nicht auf Installations-Laufwerk kopieren"
+
+#: ../thus/installation/bootloader.py:100
+msgid ""
+"'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
+" it's ok"
+msgstr "'ruuid' Variable ist nicht gesetzt. UUID in grub.cfg kann nicht überprüft werden. "
+
+#: ../thus/installation/bootloader.py:170
+msgid "/etc/default/grub configuration completed successfully."
+msgstr "Konfiguration von /etc/default/grub erfolgreich abgeschlossen."
+
+#: ../thus/installation/bootloader.py:216
+#, python-brace-format
+msgid "Could not copy {0} to grub.d"
+msgstr "Kopieren von {0} nach grub.d nicht möglich"
+
+#: ../thus/installation/bootloader.py:225
+#, python-brace-format
+msgid "Installing GRUB(2) BIOS boot loader in {0}"
+msgstr "Installiere GRUB(2) Bootloader auf {0}"
+
+#: ../thus/installation/bootloader.py:255
+msgid ""
+"grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
+"continue."
+msgstr "grub-mkconfig reagiert nicht. groub-mount und os-prober werden beendet um fortzufahren."
+
+#: ../thus/installation/bootloader.py:263
+msgid "GRUB(2) BIOS has been successfully installed."
+msgstr "GRUB(2) BIOS wurde erfolgreich installiert."
+
+#: ../thus/installation/bootloader.py:267
+msgid "ERROR installing GRUB(2) BIOS."
+msgstr "Ein FEHLER trat bei der Installation von GRUB(2) BIOS auf."
+
+#: ../thus/installation/bootloader.py:284
+#, python-brace-format
+msgid "Installing GRUB(2) UEFI {0} boot loader"
+msgstr "Installiere GRUB(2) UEFI Bootloader auf {0}"
+
+#: ../thus/installation/bootloader.py:319
+#, python-brace-format
+msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
+msgstr "Kein OEM Bootloader im Verzeichnis {0} gefunden. Kopiere Grub(2) in das Verzeichnis."
+
+#: ../thus/installation/bootloader.py:323
+#, python-brace-format
+msgid "Copying Grub(2) into OEM dir failed: {0}"
+msgstr "Kopieren des GRUB(2) Bootloader in das OEM Verzeichnis {0} fehlgeschlagen"
+
+#: ../thus/installation/bootloader.py:327
+msgid "File not found."
+msgstr "Datei nicht gefunden."
+
+#: ../thus/installation/bootloader.py:329
+msgid "File already exists."
+msgstr "Datei ist bereits vorhanden."
+
+#: ../thus/installation/bootloader.py:347
+msgid "Generating grub.cfg"
+msgstr "Erstelle grub.cfg"
+
+#: ../thus/installation/bootloader.py:361
+msgid ""
+"grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
+" continue."
+msgstr "grub-mkconfig scheint zu hängen. grub-mount und os-prober werden nun beendet um fortzufahren."
+
+#: ../thus/installation/bootloader.py:379
+msgid "GRUB(2) UEFI install completed successfully"
+msgstr "GRUB(2) UEFI wurde erfolgreich installiert."
+
+#: ../thus/installation/bootloader.py:383
+msgid "GRUB(2) UEFI install may not have completed successfully."
+msgstr "GRUB(2) UEFI wurde unter Umständen nicht erfolgreich installiert."
+
+#: ../thus/installation/bootloader.py:395
+msgid "50mounted-tests file patched successfully"
+msgstr "50mounted-tests Datei erfolgreich gepatched."
+
+#: ../thus/installation/bootloader.py:397
+msgid "Failed to patch 50mounted-tests, file not found."
+msgstr "50mounted-tests Datei konnte nicht gepatched werden, Datei nicht gefunden."
+
+#: ../thus/installation/bootloader.py:401
+msgid "Copying GRUB(2) Theme Files"
+msgstr "Kopiere GRUB(2) Theme Dateien"
+
+#: ../thus/installation/bootloader.py:407
+msgid "Grub2 theme files not found"
+msgstr "GRUB(2) Theme Dateien nicht gefunden"
+
+#: ../thus/installation/bootloader.py:409
+msgid "Grub2 theme files already exist."
+msgstr "GRUB(2) Theme Dateien bestehen bereits."
+
+#: ../thus/installation/bootloader.py:413
+msgid "Installing Grub2 locales."
+msgstr "Installiere GRUB2-Lokale"
+
+#: ../thus/installation/bootloader.py:424
+msgid "Can't install GRUB(2) locale."
+msgstr "Fehler beim Installieren der GRUB(2) Lokalisationen."
+
+#: ../thus/installation/bootloader.py:490
+msgid "Gummiboot install completed successfully"
+msgstr "Gummiboot erfolgreich installiert"
+
+#: ../thus/installation/bootloader.py:494
+msgid "Gummiboot install has NOT completed successfully!"
+msgstr "Gummiboot konnte NICHT erfolgreich installiert werden!"
+
+#: ../thus/installation/bootloader.py:526
+msgid "Can't freeze/unfreeze xfs system"
+msgstr "Kann xfs System nicht sperren/freigeben"
+
+#: ../thus/installation/chroot.py:50
+msgid "Special dirs are already mounted. Skipping."
+msgstr "Überspringe einhängen von bereits eingebundenen Spezial-Verzeichnissen."
+
+#: ../thus/installation/chroot.py:105
+msgid "Special dirs are not mounted. Skipping."
+msgstr "Spezial-Verzeichnisse sind nicht eingebunden. Überspringe."
+
+#: ../thus/installation/chroot.py:124
+#, python-brace-format
+msgid "Unable to umount {0}"
+msgstr "Aushängen von {0} fehlgeschlagen"
+
+#: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
+#: ../thus/installation/process.py:408
+#, python-brace-format
+msgid "Command {0} has failed."
+msgstr "Befehl {0} fehlgeschlagen"
+
+#: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
+#: ../thus/installation/process.py:409
+#, python-brace-format
+msgid "Output : {0}"
+msgstr "Ausgabe: {0}"
+
+#: ../thus/installation/chroot.py:154
+#, python-brace-format
+msgid "Timeout running the command {0}"
+msgstr "Timeout beim Ausführen des Befehl {0}"
+
+#: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
+msgid "Thus will try to continue anyways"
+msgstr "Installer versucht trotzdem fortzufahren"
+
+#: ../thus/installation/chroot.py:157
+#, python-brace-format
+msgid "Error running command: {0}"
+msgstr "Fehler beim Ausführen von {0}"
+
+#: ../thus/installation/mkinitcpio.py:104
+msgid "Setting hooks and modules in mkinitcpio.conf"
+msgstr "Erstelle Hooks und Module in mkinitcpio.conf"
+
+#: ../thus/installation/process.py:130
+#, python-brace-format
+msgid "Copying '/{0}'"
+msgstr "Kopiere '/{0}'"
+
+#: ../thus/installation/process.py:194
+#, python-brace-format
+msgid "Installing using the '{0}' method"
+msgstr "System wird nach der Methode '{0}' installiert."
+
+#: ../thus/installation/process.py:266
+#, python-brace-format
+msgid "Error running command {0}"
+msgstr "Fehler beim Ausführen von {0}"
+
+#: ../thus/installation/process.py:321
+#, python-brace-format
+msgid "Creating partitions and their filesystems in {0}"
+msgstr "Erstelle Partitionen und deren Dateisysteme auf {0}"
+
+#: ../thus/installation/process.py:367 ../thus/installation/process.py:375
+#: ../thus/installation/process.py:392
+#, python-brace-format
+msgid "Mounting partition {0} into {1} directory"
+msgstr "Partition {0} wird in Verzeichnis {1} eingehangen."
+
+#: ../thus/installation/process.py:398
+#, python-brace-format
+msgid "Can't mount {0} in {1}"
+msgstr "Kann {0} nicht in Verzeichnis {1} einhängen."
+
+#: ../thus/installation/process.py:403
+#, python-brace-format
+msgid "Activating swap in {0}"
+msgstr "Aktiviere swap in {0}"
+
+#: ../thus/installation/process.py:419
+#, python-brace-format
+msgid "{0} deleted"
+msgstr "{0} gelöscht"
+
+#: ../thus/installation/process.py:434
+msgid "Install System ..."
+msgstr "Installiere System ..."
+
+#: ../thus/installation/process.py:439
+msgid "System installed."
+msgstr "System installiert."
+
+#: ../thus/installation/process.py:441
+msgid "Configuring system ..."
+msgstr "Konfiguriere System ..."
+
+#: ../thus/installation/process.py:443
+msgid "System configured."
+msgstr "System konfiguriert."
+
+#: ../thus/installation/process.py:447
+msgid "Installing boot loader ..."
+msgstr "Installiere Boot-Loader ..."
+
+#: ../thus/installation/process.py:481
+#, python-brace-format
+msgid "Can't copy Thus log to {0}"
+msgstr "Konnte Thus-Log nicht nach {0} kopieren"
+
+#: ../thus/installation/process.py:498 ../thus/installation/process.py:517
+#: ../thus/installation/process.py:531
+#, python-brace-format
+msgid "Can't unmount {0}"
+msgstr "Kann {0} nicht aushängen"
+
+#: ../thus/installation/process.py:533
+msgid "Installation finished successfully."
+msgstr "Installation war erfolgreich."
+
+#: ../thus/installation/process.py:560
+msgid "Base filesystem does not exist! Critical error (exiting)."
+msgstr "Basis-Dateisystem existiert nicht! Kritischer Fehler (Abbruch)."
+
+#: ../thus/installation/process.py:564
+msgid "Desktop filesystem does not exist! Critical error (exiting)."
+msgstr "Desktop-Dateisystem existiert nicht! Kritischer Fehler (Abbruch)."
+
+#: ../thus/installation/process.py:574 ../thus/installation/process.py:580
+#, python-brace-format
+msgid "{0} is already mounted at {1} as {2}"
+msgstr "{0} ist bereits in {1} als {2} eingehangen"
+
+#: ../thus/installation/process.py:591
+msgid "Indexing files to be copied ..."
+msgstr "Überprüfe zu kopierende Dateien ..."
+
+#: ../thus/installation/process.py:596
+msgid "Extracting root-image ..."
+msgstr "Extrahiere root-image ..."
+
+#: ../thus/installation/process.py:606
+msgid "Extracting desktop-image ..."
+msgstr "Extrahiere desktop-image ..."
+
+#: ../thus/installation/process.py:621
+#, python-brace-format
+msgid "Restoring meta-information on {0}"
+msgstr "Stelle die Meta-Informationen auf {0} wieder her."
+
+#: ../thus/installation/process.py:664
+msgid "Can't copy network configuration files"
+msgstr "Konnte die Netzwerk-Konfigurationsdateien nicht kopieren"
+
+#: ../thus/installation/process.py:703 ../thus/installation/process.py:729
+#: ../thus/installation/process.py:744 ../thus/installation/process.py:801
+#: ../thus/installation/process.py:806
+#, python-brace-format
+msgid "Added to fstab : {0}"
+msgstr "Zu fstab hinzugefügt: {0}"
+
+#: ../thus/installation/process.py:723 ../thus/installation/process.py:739
+#, python-brace-format
+msgid "Added to crypttab : {0}"
+msgstr "Zu crypttab hinzugefügt: {0}"
+
+#: ../thus/installation/process.py:814
+msgid "fstab written."
+msgstr "fstab gespeichert."
+
+#: ../thus/installation/process.py:823
+#, python-brace-format
+msgid "Enabled {0} service."
+msgstr "Dienst {0} aktiviert."
+
+#: ../thus/installation/process.py:825
+#, python-brace-format
+msgid "Can't find service {0}"
+msgstr "Dienst {0} nicht gefunden"
+
+#: ../thus/installation/process.py:833
+#, python-brace-format
+msgid "Error creating password hash for user {0}"
+msgstr "Fehler beim Erstellen des Passwort-Hashes für Nutzer {0}"
+
+#: ../thus/installation/process.py:839
+#, python-brace-format
+msgid "Error changing password for user {0}"
+msgstr "Fehler beim Ändern des Passwort für Nutzer {0}"
+
+#: ../thus/installation/process.py:867
+msgid "Can't find locale.gen file"
+msgstr "locale.gen nicht gefunden"
+
+#: ../thus/installation/process.py:939
+#, python-brace-format
+msgid "{0}: Enable automatic login for user {1}."
+msgstr "{0}: Aktiviere automatisches Anmelden für Benutzer {1}."
+
+#: ../thus/installation/process.py:1058
+msgid "Configuring your new system"
+msgstr "Ihr neues System wird eingerichtet"
+
+#: ../thus/installation/process.py:1061
+msgid "fstab file generated."
+msgstr "Fstab-Datei erstellt."
+
+#: ../thus/installation/process.py:1067
+msgid "Network configuration copied."
+msgstr "Netzwerkkonfiguration kopiert."
+
+#: ../thus/installation/process.py:1093
+msgid "Time zone set."
+msgstr "Zeitzone gesetzt."
+
+#: ../thus/installation/process.py:1114
+#, python-brace-format
+msgid "Sudo configuration for user {0} done."
+msgstr "Sudo-Konfiguration für Benutzer {0} erzeugt."
+
+#: ../thus/installation/process.py:1124
+#, python-brace-format
+msgid "User {0} added."
+msgstr "Benutzer {0} hinzugefügt."
+
+#: ../thus/installation/process.py:1136
+#, python-brace-format
+msgid "Hostname  {0} set."
+msgstr "Hostname {0} gesetzt."
+
+#: ../thus/installation/process.py:1141
+msgid "Set root password."
+msgstr "Setze Root-Passwort."
+
+#: ../thus/installation/process.py:1144
+msgid "Set the same password to root."
+msgstr "Gleiches Passwort für Root gesetzt."
+
+#: ../thus/installation/process.py:1150
+msgid "Generating locales ..."
+msgstr "Erzeuge Lokale ..."
+
+#: ../thus/installation/process.py:1168
+msgid "Adjusting hardware clock ..."
+msgstr "Stelle Hardware-Uhr ein ..."
+
+#: ../thus/installation/process.py:1177
+msgid "Configuring hardware ..."
+msgstr "Konfiguriere Hardware ..."
+
+#: ../thus/installation/process.py:1185
+msgid "Updated Alsa mixer settings"
+msgstr "Alsa mixer Einstellungen aktualisiert"
+
+#: ../thus/installation/process.py:1193
+msgid "Installing drivers ..."
+msgstr "Installiere Treiber ..."
+
+#: ../thus/installation/process.py:1204
+msgid "Configure display manager ..."
+msgstr "Konfiguriere Display-Manager ..."
+
+#: ../thus/installation/process.py:1252
+msgid "Configure System ..."
+msgstr "Konfiguriere System ..."
+
+#: ../thus/installation/process.py:1270
+msgid "Removing live configuration (packages)"
+msgstr "Entferne die Pakete der Live-Konfigurationen."
+
+#: ../thus/installation/process.py:1286
+msgid "Configuring package manager"
+msgstr "Konfiguriere Paketverwaltung"
+
+#: ../thus/installation/process.py:1297
+msgid "Finished configuring package manager."
+msgstr "Die Konfiguration der Paketverwaltung ist beendet."
+
+#: ../thus/installation/process.py:1333
+msgid "Running mkinitcpio ..."
+msgstr "Führe mkinitcpio aus ..."
+
+#: ../thus/installation/process.py:1335
+msgid "Running mkinitcpio - done"
+msgstr "Ausführung von mkinitcpio durchgeführt."
+
+#: ../thus/installation/process.py:1346
+msgid "Encrypting user home dir..."
+msgstr "Verschlüssele Home-Verzeichnis ..."
+
+#: ../thus/installation/process.py:1348
+msgid "User home dir encrypted"
+msgstr "Benutzer verwendet verschlüsseltes Home-Verzeichnis."
+
+#: ../thus/installation/process.py:1353
+msgid "Installing bootloader..."
+msgstr "Installiere Bootloader ..."
+
+#: ../thus/installation/process.py:1359
+#, python-brace-format
+msgid "Couldn't install boot loader: {0}"
+msgstr "Bootloader konnte nicht installiert werden: {0}"
+
+#: ../thus/misc/misc.py:963
+#, python-brace-format
+msgid "Can't change to locale '{0}' : {1}"
+msgstr "Lokalisierung konnte nicht zu {0} geändert werden: {1}"
+
+#: ../thus/misc/validation.py:136
+msgid "Password is too short"
+msgstr "Das Passwort ist zu kurz"
+
+#: ../thus/misc/validation.py:139
+msgid "Weak password"
+msgstr "Schwaches Passwort"
+
+#: ../thus/misc/validation.py:142
+msgid "Fair password"
+msgstr "Angemessenes Passwort"
+
+#: ../thus/misc/validation.py:145
+msgid "Good password"
+msgstr "Gutes Passwort"
+
+#: ../thus/misc/validation.py:148
+msgid "Strong password"
+msgstr "Starkes Passwort"
+
+#: ../thus/misc/validation.py:163
+msgid "Passwords do not match"
+msgstr "Passwörter sind nicht gleich"
+
+#: ../thus/parted3/fs_module.py:103
+#, python-brace-format
+msgid "Can't label a {0} partition"
+msgstr "Hinzufügen von Label zu {0} Partition nicht möglich."
+
+#: ../thus/parted3/fs_module.py:190
+#, python-brace-format
+msgid "Can't verify if {0} is a Solid State Drive or not"
+msgstr "Konnte nicht feststellen ob {0} eine Solid State Festplatte ist"
+
+#: ../thus/parted3/fs_module.py:215
+#, python-brace-format
+msgid "Sorry but filesystem {0} can't be shrinked"
+msgstr "Das Dateisystem {0} kann nicht verkleinert werden"
+
+#: ../thus/parted3/lvm.py:81
+#, python-brace-format
+msgid "Can't remove logical volume {0}"
+msgstr "Konnte logisches Volumen {0} nicht entfernen"
+
+#: ../thus/parted3/lvm.py:100
+#, python-brace-format
+msgid "Can't remove volume group {0}"
+msgstr "Konnte Volumengruppe {0} nicht entfernen"
+
+#: ../thus/parted3/lvm.py:113
+#, python-brace-format
+msgid "Can't remove physical volume {0}"
+msgstr "Konnte physikalisches Volumen {0} nicht entfernen"
+
+#: ../thus/parted3/partition_module.py:111
+#, python-brace-format
+msgid ""
+"Exception: {0}.\n"
+"For more information take a look at /tmp/cnchi.log"
+msgstr "Ausnahme: {0}.\nFür weitere Details sehen Sie sich /tmp/cnchi.log an"
+
+#: ../thus/parted3/partition_module.py:182
+#, python-brace-format
+msgid "Can't delete partition {0}"
+msgstr "Konnte Partition {0} nicht löschen"
+
+#: ../thus/parted3/partition_module.py:235
+msgid "Partition is too large!"
+msgstr "Partition ist zu groß!"
+
+#: ../thus/parted3/partition_module.py:299
+#, python-brace-format
+msgid "Can't detect used space from {0}"
+msgstr "Konnte benutzten Speicher auf {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:42
+#, python-brace-format
+msgid "Can't detect used space of NTFS partition {0}"
+msgstr "Konnte benutzten Speicher auf NTFS Partition {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:71
+#, python-brace-format
+msgid "Can't detect used space of EXTFS partition {0}"
+msgstr "Konnte benutzten Speicher auf EXTFS Partition {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:103
+#, python-brace-format
+msgid "Can't detect used space of FAT partition {0}"
+msgstr "Konnte benutzten Speicher auf FAT Partition {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:134
+#, python-brace-format
+msgid "Can't detect used space of JFS partition {0}"
+msgstr "Konnte benutzten Speicher auf JFS Partition {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:159
+#, python-brace-format
+msgid "Can't detect used space of REISERFS partition {0}"
+msgstr "Konnte benutzten Speicher auf ReiserFS Partition {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:187
+#, python-brace-format
+msgid "Can't detect used space of BTRFS partition {0}"
+msgstr "Konnte benutzten Speicher auf btrfs-Partition {0} nicht erkennen"
+
+#: ../thus/parted3/used_space.py:224
+#, python-brace-format
+msgid "Can't detect used space of XFS partition {0}"
+msgstr "Konnte benutzten Speicher auf XFS Partition {0} nicht erkennen"
+
+#: ../ui/advanced.ui:84
+msgid "Partition table type:"
+msgstr "Partitionstabellentyp:"
+
+#: ../ui/advanced.ui:159
+msgid "Edit partition"
+msgstr "Partition ändern"
+
+#: ../ui/advanced.ui:182 ../ui/advanced.ui:437
+msgid "Use as:"
+msgstr "Benutzen als:"
+
+#: ../ui/advanced.ui:215 ../ui/advanced.ui:470
+msgid "Mount point:"
+msgstr "Einhängepunkt:"
+
+#: ../ui/advanced.ui:318 ../ui/advanced.ui:724
+msgid "Encryption options..."
+msgstr "Verschlüsselungseinstellungen..."
+
+#: ../ui/advanced.ui:383
+msgid "Create partition"
+msgstr "Partition erstellen"
+
+#: ../ui/advanced.ui:422
+msgid "Location:"
+msgstr "Ort:"
+
+#: ../ui/advanced.ui:582
+msgid "MB"
+msgstr "MB"
+
+#: ../ui/advanced.ui:943
+msgid "label"
+msgstr "Bezeichnung"
+
+#: ../ui/advanced.ui:1023 ../ui/automatic.ui:132
+msgid "Use this device for boot loader installation:"
+msgstr "Benutze dieses Gerät für Boot-Loader Installation:"
+
+#: ../ui/advanced.ui:1107
+msgid "Encryption properties"
+msgstr "Verschlüsselungs-Eigenschaften"
+
+#: ../ui/advanced.ui:1222
+msgid "Use LUKS encryption: "
+msgstr "Nutze LUKS-Verschlüsselung:"
+
+#: ../ui/advanced.ui:1287 ../ui/user_info.ui:119 ../ui/user_info.ui:589
+msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
+msgstr "<small><span color=\"darkgreen\">Starkes Passwort</span></small>"
+
+#: ../ui/automatic.ui:40
+msgid ""
+"<b>WARNING! This installation mode will overwrite everything in your "
+"drive!</b>"
+msgstr "<b>WARNUNG! Dieser Installationsmodus wird alles auf Ihrem Laufwerk überschreiben!</b>"
+
+#: ../ui/automatic.ui:62
+msgid ""
+"Please choose the drive where you want to install Antergos and click the "
+"button below to start the process."
+msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Antergos installieren wollen.\nDrücken Sie den Knopf unten um den Installationsprozess zu beginnen."
+
+#: ../ui/automatic.ui:275
+msgid "show password"
+msgstr "zeige Passwort"
+
+#: ../ui/automatic.ui:294
+msgid "LUKS Password. Do not use special chars or chars with accents!"
+msgstr "LUKS Passwort. Benutzen Sie keine Sonderzeichen oder Akzente!"
+
+#: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
 msgstr "Was ist der Typ Ihres Boot Systems?"
 
-#: ui/bootloader.ui:98
-msgid "BIOS (common)"
-msgstr "BIOS (üblich)"
+#: ../ui/bootloader.ui:98
+msgid "BIOS (Common)"
+msgstr "BIOS (Üblich)"
 
-#: ui/bootloader.ui:120
+#: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
 msgstr "x86_64 UEFI"
 
-#: ui/bootloader.ui:142
+#: ../ui/bootloader.ui:142
 msgid "i386 UEFI"
 msgstr "i386 UEFI"
 
-#: ui/bootloader.ui:169
-msgid "Choose 'Cancel' if you don't want to install a boot loader"
-msgstr "Bitte wählen Sie \\\"Abbruch\\\", wenn Sie keinen Boot-Loader installieren möchten"
+#: ../ui/bootloader.ui:169
+msgid "Choose 'cancel' if you don't want to install a boot loader"
+msgstr "Bitte wählen Sie \"Abbruch\", wenn Sie keinen Bootloader installieren möchten"
 
-#: ui/check.ui:29
+#: ../ui/check.ui:17
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Dieser Computer sollte, um das beste Ergebnis zu gewährleisten:</span>"
 
-#: ui/check.ui:108
+#: ../ui/check.ui:86
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
-"might need more space."
-msgstr "(*) Dies hängt von Ihrer ausgewählten Desktop-Umgebung ab. Somit benötigen Sie ggf. mehr Platz."
+"might need more space (for instance, KDE needs 6.5GB)."
+msgstr "(*) Dies hängt von Ihrer ausgewählten Desktop-Umgebung ab. Somit benötigen Sie ggf. mehr Platz. (Zum Beispiel, KDE benötigt 6,5 GB.)"
 
-#: ui/installation_advanced.ui:84
-msgid "Partition table type:"
-msgstr "Partitionstabellentyp:"
-
-#: ui/installation_advanced.ui:155
-msgid "Edit partition"
-msgstr "Partition ändern"
-
-#: ui/installation_advanced.ui:317 ui/installation_advanced.ui:774
-msgid "Encryption options..."
-msgstr "Verschlüsselungseinstellungen..."
-
-#: ui/installation_advanced.ui:383
-msgid "Create partition"
-msgstr "Partition erstellen"
-
-#: ui/installation_advanced.ui:423
-msgid "Location:"
-msgstr "Ort:"
-
-#: ui/installation_advanced.ui:607
-msgid "MB"
-msgstr "MB"
-
-#: ui/installation_advanced.ui:895
-msgid "New Partition Table"
-msgstr "Neue Partitionstabelle"
-
-#: ui/installation_advanced.ui:948
-msgid "Mount Checklist:"
-msgstr "Einhängepunkt-Checkliste:"
-
-#: ui/installation_advanced.ui:1103
-msgid "LVM..."
-msgstr "LVM..."
-
-#: ui/installation_advanced.ui:1256
-msgid "LUKS volume name:"
-msgstr "LUKS Volumen-Name:"
-
-#: ui/installation_advanced.ui:1270
-msgid "Password:"
-msgstr "Passwort:"
-
-#: ui/installation_advanced.ui:1284
-msgid "Confirm password:"
-msgstr "Bestätige Passwort:"
-
-#: ui/installation_advanced.ui:1313
-msgid "Use LUKS encryption: "
-msgstr "Nutze LUKS-Verschlüsselung:"
-
-#: ui/installation_alongside.ui:16
-msgid ""
-"<span size=\"large\">Choose which OS you want to install Manjaro next "
-"to</span>"
-msgstr "<span size=\\\"large\\\">Wählen Sie das Betriebsystem, um Manjaro daneben zu installieren</span>"
-
-#: ui/installation_alongside.ui:90
-msgid "Choose the new size"
-msgstr "Neue Größe wählen"
-
-#: ui/installation_alongside.ui:157
-msgid "Other OS"
-msgstr "Anderes Betriebssystem"
-
-#: ui/installation_alongside.ui:169
-msgid "Manjaro"
-msgstr "Manjaro"
-
-#: ui/installation_alongside.ui:193 ui/installation_alongside.ui:205
-#: ui/slides.ui:74
-msgid "label"
-msgstr "Bezeichnung"
-
-#: ui/installation_ask.ui:58
-msgid ""
-"<span weight=\"light\" size=\"small\">Warning: This will delete all "
-"programs, documents, photos, music and any other files on your disk</span>"
-msgstr "<span weight=\"light\" size=\"small\">Achtung: Hiermit werden alle Programme, Dokumente, Fotos, Musikdateien und alle sonstigen Dateien auf Ihrer Festplatte gelöscht!</span>"
-
-#: ui/installation_ask.ui:70
-msgid "Encrypts the new Manjaro installation for better security"
-msgstr "Verschlüsselt die neue Manjaro-Installation zur Sicherheit"
-
-#: ui/installation_ask.ui:91
-msgid ""
-"<span weight=\"light\" size=\"small\">You will be asked for the encryption "
-"key in the next step</span>"
-msgstr "<span weight=\"light\" size=\"small\">Sie werden sogleich nach Ihrem Schlüssel für die Verschlüsselung gefragt</span>"
-
-#: ui/installation_ask.ui:102
-msgid "Use LVM with the new Manjaro installation"
-msgstr "LVM mit der neuen Manjaro-Installation benutzen"
-
-#: ui/installation_ask.ui:123
-msgid ""
-"<span weight=\"light\" size=\"small\">This will set up LVM allowing you to "
-"make snapshots and change partition sizes in a straightforward way</span>"
-msgstr "<span weight=\\\"light\\\" size=\\\"small\\\">Hierdurch wird LVM eingestellt, was es Ihnen ermöglicht, sehr einfach Snapshots zu machen oder die Größe von Partitionen zu ändern</span>"
-
-#: ui/installation_ask.ui:155
-msgid ""
-"<span weight=\"light\" size=\"small\">This will setup your /home directory "
-"in a different partition or volume.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Ihr /home Verzeichnis wird in einer separaten Partition oder Volumen erstellt.</span>"
-
-#: ui/installation_ask.ui:166
-msgid "Install alongside other OSes"
-msgstr "Neben anderen Betriebssystemen installieren"
-
-#: ui/installation_ask.ui:192
-msgid ""
-"<span weight=\"light\" size=\"small\">With this option you will be "
-"installing Manjaro alongside one of the other OSes you already have "
-"installed.</span>"
-msgstr "<span weight=\\\"light\\\" size=\\\"small\\\">Hierdurch wird Manjaro neben anderen, von Ihnen bereits installierten Betriebssystemen installiert.</span>"
-
-#: ui/installation_ask.ui:204
-msgid "Manage your partitions and choose where to install Manjaro (advanced)"
-msgstr "Partitionen ändern und auswählen, wo Manjaro installiert werden soll (für Fortgeschrittene)"
-
-#: ui/installation_ask.ui:230
-msgid ""
-"<span weight=\"light\" size=\"small\">You will be able to create/delete "
-"partitions, choose where to install Manjaro and also choose additional mount"
-" points.</span>"
-msgstr "<span weight=\"light\" size=\"small\">Hiermit sind Sie in der Lage, Partitionen zu erstellen und diese zu ändern, Auszuwählen, wo Manjaro installiert werden soll und zusätzliche Einhängepunkte auszuwählen.</span>"
-
-#: ui/installation_automatic.ui:38
-msgid ""
-"<b>WARNING! This installation mode will overwrite everything on your "
-"drive!</b>"
-msgstr "<b>WARNUNG! Dieser Installationsmodus wird Alles auf Ihrer Festplatte überschreiben!</b>"
-
-#: ui/language.ui:26
-msgid "<span weight=\"bold\">Please choose your language:</span>"
-msgstr "<span weight=\"bold\">Bitte wählen Sie Ihre Sprache aus:</span>"
-
-#: ui/language.ui:89
-msgid ""
-"<span weight='bold'>Notice: The Thus Installer is beta software.</span>\n"
-"\n"
-"Thus is pre-release beta software that is under active development. It does not yet properly handle RAID, btrfs subvolumes, or other advanced setups. Please proceed with caution as data loss is possible! \n"
-"\n"
-"If you find any bug, please, visit <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
-msgstr "<span weight='bold'>Hinweis: Der Thus Installer ist Beta-Software.</span>\n\nThus ist Vorversions-Beta-Software, welche noch entwickelt wird. Es werden noch keine RAID, BTRFS-Subvolumen sowie andere aufwendige Installationen vollständig unterstützt. Datenverlust ist warscheinlich!\n\nFalls Sie Fehler finden, diese auf <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> melden.\""
-
-#: ui/thus.ui:37
+#: ../ui/main_window.ui:38
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
 msgstr "<span weight=\"bold\" size=\"large\">Willkommen bei Manjaro</span>"
 
-#: ui/user_info.ui:119 ui/user_info.ui:589
-msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
-msgstr "<small><span color=\"darkgreen\">Starkes Passwort</span></small>"
+#: ../ui/timezone.ui:105
+msgid "Use Network Time Protocol for clock synchronization:"
+msgstr "Nutze das Network Time Protocol zur Uhren-Synchronisation:"
 
-#: ui/user_info.ui:177 ui/user_info.ui:662
+#: ../ui/user_info.ui:177 ../ui/user_info.ui:662
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
 msgstr "<small><span color=\"darkred\">Sie müssen ein Passwort eingeben</span></small>"
 
-#: ui/user_info.ui:278
+#: ../ui/user_info.ui:278
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
 msgstr "<small><span color=\"darkred\">Sie müssen einen Benutzernamen eingeben</span></small>"
 
-#: ui/user_info.ui:356
+#: ../ui/user_info.ui:356
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
 msgstr "<small><span color=\"darkred\">Sie müssen einen Namen eingeben</span></small>"
 
-#: ui/user_info.ui:378
+#: ../ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Der Name, welcher von anderen PCs gesehen wird.</span>"
+
+#: ../ui/welcome.ui:45
+msgid "Try it"
+msgstr "Testen"
+
+#: ../ui/welcome.ui:83
+msgid "CLI Installer"
+msgstr "Kommandozeilen-Installer"
+
+#: ../ui/welcome.ui:121
+msgid "Graphical Installer"
+msgstr "Graphischer Installer"
+
+#: ../ui/welcome.ui:151
+msgid ""
+"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
+"If you want to install the system to your PC, use one of the two installer options."
+msgstr "Sie können Manjaro ausprobieren, ohne Veränderungen an ihrer Festplatte vorzunehmen. Klicken Sie hierzu auf \"Testen\".\nWenn Sie Manjaro auf Ihrem Computer installieren wollen, können Sie eine der beiden Installationsmöglichkeiten nutzen."
