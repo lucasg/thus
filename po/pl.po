@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the Thus package.
 # Philip Müller <philm@manjaro.org>, 2013-2015.
 # 
-# 
 # Translators:
 # adiq <adiq117@gmail.com>, 2013
 # Bartek Piotrowski <barthalion@gmail.com>, 2011
@@ -25,7 +24,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-04 16:58+0000\n"
+"PO-Revision-Date: 2015-04-05 09:18+0000\n"
 "Last-Translator: philm <philm@manjaro.org>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/manjaro-thus/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -127,11 +126,15 @@ msgstr "Odmiany"
 msgid "keyboard_layout is {0}"
 msgstr ""
 
-#: ../thus/language.py:78
+#: ../thus/language.py:79
+msgid "Welcome to Manjaro"
+msgstr ""
+
+#: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
 msgstr "Uwaga: Instalator Thus jest oprogramowaniem w wersji beta."
 
-#: ../thus/language.py:80
+#: ../thus/language.py:85
 msgid ""
 "Thus is pre-release beta software that is under active development. \n"
 "It does not yet properly handle RAID, btrfs subvolumes, or other  \n"
@@ -140,7 +143,7 @@ msgid ""
 "If you find any bugs, please report them at http://bugs.manjaro.org"
 msgstr ""
 
-#: ../thus/language.py:124
+#: ../thus/language.py:129
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
 msgstr ""
@@ -204,16 +207,28 @@ msgstr ""
 msgid "Thus installer version {0}"
 msgstr ""
 
-#: ../thus/main_window.py:190
+#: ../thus/main_window.py:140
+msgid "Forward"
+msgstr ""
+
+#: ../thus/main_window.py:142
+msgid "Close"
+msgstr ""
+
+#: ../thus/main_window.py:144
+msgid "Back"
+msgstr ""
+
+#: ../thus/main_window.py:197
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
 msgstr ""
 
-#: ../thus/main_window.py:322
+#: ../thus/main_window.py:329
 msgid "Do you really want to quit the installer?"
 msgstr ""
 
-#: ../thus/main_window.py:331
+#: ../thus/main_window.py:338
 msgid "Quiting installer..."
 msgstr "Zamykanie instalatora..."
 
@@ -587,263 +602,267 @@ msgstr ""
 msgid "Can't download {0}, even after trying all available mirrors"
 msgstr ""
 
-#: ../thus/installation/advanced.py:260 ../thus/installation/advanced.py:573
-#: ../thus/installation/advanced.py:587
+#: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
+#: ../thus/installation/advanced.py:591
 msgid "free space"
 msgstr "wolne miejsce"
 
-#: ../thus/installation/advanced.py:361
+#: ../thus/installation/advanced.py:365
 msgid "Device"
 msgstr "Urządzenie"
 
-#: ../thus/installation/advanced.py:364
+#: ../thus/installation/advanced.py:368
 msgid "Type"
 msgstr "Rodzaj"
 
-#: ../thus/installation/advanced.py:367
+#: ../thus/installation/advanced.py:371
 msgid "Mount point"
 msgstr "Punkt montowania"
 
-#: ../thus/installation/advanced.py:370
+#: ../thus/installation/advanced.py:374
 msgid "Label"
 msgstr "Etykieta"
 
-#: ../thus/installation/advanced.py:377 ../thus/installation/advanced.py:1907
+#: ../thus/installation/advanced.py:381 ../thus/installation/advanced.py:1914
 msgid "Format"
 msgstr "Format"
 
-#: ../thus/installation/advanced.py:384
+#: ../thus/installation/advanced.py:388
 msgid "Size"
 msgstr "Rozmiar"
 
-#: ../thus/installation/advanced.py:387
+#: ../thus/installation/advanced.py:391
 msgid "Used"
 msgstr "Używane"
 
-#: ../thus/installation/advanced.py:390
+#: ../thus/installation/advanced.py:394
 msgid "Flags"
 msgstr "Flagi"
 
-#: ../thus/installation/advanced.py:397
+#: ../thus/installation/advanced.py:401
 msgid "SSD"
 msgstr "SSD"
 
-#: ../thus/installation/advanced.py:555
+#: ../thus/installation/advanced.py:559
 msgid "none"
 msgstr "żaden"
 
-#: ../thus/installation/advanced.py:697
+#: ../thus/installation/advanced.py:701
 msgid "Can't edit a partition with LVM filesystem type"
 msgstr ""
 
-#: ../thus/installation/advanced.py:759
+#: ../thus/installation/advanced.py:763
 msgid "Can't use same mount point twice."
 msgstr ""
 
-#: ../thus/installation/advanced.py:761
+#: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
 msgstr ""
 
-#: ../thus/installation/advanced.py:859
+#: ../thus/installation/advanced.py:863
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:877
+#: ../thus/installation/advanced.py:881
 #, python-brace-format
 msgid "Unmounting {0}..."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1002
+#: ../thus/installation/advanced.py:1006
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1006
+#: ../thus/installation/advanced.py:1010
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1061
+#: ../thus/installation/advanced.py:1065
 msgid "Can't use same mount point twice..."
 msgstr "Nie można użyć tego samego punktu montowania dwa razy..."
 
-#: ../thus/installation/advanced.py:1086
+#: ../thus/installation/advanced.py:1090
 msgid "Creating a primary partition"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1097
+#: ../thus/installation/advanced.py:1101
 msgid "Creating an extended partition"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1103
+#: ../thus/installation/advanced.py:1107
 msgid "Creating a logical partition"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1165
+#: ../thus/installation/advanced.py:1169
 msgid "LUKS passwords do not match!"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1290
+#: ../thus/installation/advanced.py:1294
 msgid "Advanced installation mode"
 msgstr "Tryb instalacji zaawansowanej"
 
-#: ../thus/installation/advanced.py:1294 ../thus/installation/automatic.py:110
+#: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1299 ../thus/installation/automatic.py:115
+#: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:119
+#: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1307
+#: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
 msgstr "Zestawienie montowania:"
 
-#: ../thus/installation/advanced.py:1313
+#: ../thus/installation/advanced.py:1317
 msgid "Root"
 msgstr "Katalog główny"
 
-#: ../thus/installation/advanced.py:1317 ../ui/bootloader.ui:7
+#: ../thus/installation/advanced.py:1321 ../ui/bootloader.ui:7
 msgid "Boot"
 msgstr "Rozruch"
 
-#: ../thus/installation/advanced.py:1321
+#: ../thus/installation/advanced.py:1325
 msgid "EFI"
 msgstr "EFI"
 
-#: ../thus/installation/advanced.py:1325
+#: ../thus/installation/advanced.py:1329
 msgid "Swap"
 msgstr "Przestrzeń wymiany"
 
-#: ../thus/installation/advanced.py:1335
+#: ../thus/installation/advanced.py:1339
 msgid "Undo"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1338 ../thus/installation/advanced.py:1907
+#: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
 msgid "New"
 msgstr "Nowa"
 
-#: ../thus/installation/advanced.py:1341
+#: ../thus/installation/advanced.py:1345
 msgid "Delete"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1344
+#: ../thus/installation/advanced.py:1348
 msgid "Edit..."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1347
+#: ../thus/installation/advanced.py:1351
 msgid "New partition table"
 msgstr "Nowa tabela partycji"
 
-#: ../thus/installation/advanced.py:1358
+#: ../thus/installation/advanced.py:1362
 msgid "_Cancel"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1369
+#: ../thus/installation/advanced.py:1373
 msgid "_Apply"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1372 ../ui/advanced.ui:406
+#: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
 msgid "Size:"
 msgstr "Rozmiar:"
 
-#: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:605
+#: ../thus/installation/advanced.py:1380 ../ui/advanced.ui:605
 msgid "Type:"
 msgstr "Rodzaj:"
 
-#: ../thus/installation/advanced.py:1380 ../ui/advanced.ui:622
+#: ../thus/installation/advanced.py:1384 ../ui/advanced.ui:622
 msgid "Primary"
 msgstr "Podstawowy"
 
-#: ../thus/installation/advanced.py:1384 ../ui/advanced.ui:641
+#: ../thus/installation/advanced.py:1388 ../ui/advanced.ui:641
 msgid "Logical"
 msgstr "Logiczny"
 
-#: ../thus/installation/advanced.py:1388 ../ui/advanced.ui:659
+#: ../thus/installation/advanced.py:1392 ../ui/advanced.ui:659
 msgid "Extended"
 msgstr "Rozszerzony"
 
-#: ../thus/installation/advanced.py:1392 ../ui/advanced.ui:510
+#: ../thus/installation/advanced.py:1396 ../ui/advanced.ui:510
 msgid "Beginning of this space"
 msgstr "Początek obszaru"
 
-#: ../thus/installation/advanced.py:1396 ../ui/advanced.ui:529
+#: ../thus/installation/advanced.py:1400 ../ui/advanced.ui:529
 msgid "End of this space"
 msgstr "Koniec obszaru"
 
-#: ../thus/installation/advanced.py:1400 ../thus/installation/advanced.py:1417
+#: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
 msgid "Use As:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
+#: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
+#: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
 msgid "Label (optional):"
 msgstr "Etykieta (opcjonalnie):"
 
-#: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1433
+#: ../thus/installation/advanced.py:1416 ../thus/installation/advanced.py:1437
 msgid "Encryption Options..."
 msgstr "Opcje szyfrowania..."
 
-#: ../thus/installation/advanced.py:1429 ../ui/advanced.ui:279
+#: ../thus/installation/advanced.py:1433 ../ui/advanced.ui:279
 msgid "Format:"
 msgstr "Format:"
 
-#: ../thus/installation/advanced.py:1438
+#: ../thus/installation/advanced.py:1442
 msgid "Partition Table Type:"
 msgstr "Typ tabeli partycji:"
 
-#: ../thus/installation/advanced.py:1443
+#: ../thus/installation/advanced.py:1447
 msgid "Create Partition Table"
 msgstr "Utwórz tabelę partycji"
 
-#: ../thus/installation/advanced.py:1446
+#: ../thus/installation/advanced.py:1450
 msgid "Use LUKS encryption:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1450 ../ui/advanced.ui:1173
+#: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
 msgstr "Nazwa wolumenu LUKS:"
 
-#: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1185
+#: ../thus/installation/advanced.py:1458 ../ui/advanced.ui:1185
 msgid "Password:"
 msgstr "Hasło:"
 
-#: ../thus/installation/advanced.py:1458 ../ui/advanced.ui:1197
+#: ../thus/installation/advanced.py:1462 ../ui/advanced.ui:1197
 msgid "Confirm password:"
 msgstr "Potwierdź hasło:"
 
-#: ../thus/installation/advanced.py:1528
+#: ../thus/installation/advanced.py:1532
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1538
+#: ../thus/installation/advanced.py:1542
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Cnchi will create this BIOS Boot Partition for you."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1566
+#: ../thus/installation/advanced.py:1570
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr "Nie można utworzyć partycji rozruchowej BIOS GPT!"
 
-#: ../thus/installation/advanced.py:1595
+#: ../thus/installation/advanced.py:1599
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr "Nie można utworzyć partycji rozruchowej BIOS GPT!"
 
-#: ../thus/installation/advanced.py:1783
+#: ../thus/installation/advanced.py:1720 ../thus/installation/automatic.py:107
+msgid "Install now!"
+msgstr "Zainstaluj!"
+
+#: ../thus/installation/advanced.py:1790
 #, python-brace-format
 msgid ""
 "{0} is mounted as swap.\n"
@@ -851,7 +870,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1787
+#: ../thus/installation/advanced.py:1794
 #, python-brace-format
 msgid ""
 "{0} is mounted in '{1}'.\n"
@@ -859,99 +878,99 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1798 ../thus/installation/advanced.py:1819
+#: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
 #, python-brace-format
 msgid "{0} unmounted"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1812
+#: ../thus/installation/advanced.py:1819
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1823
+#: ../thus/installation/advanced.py:1830
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1830
+#: ../thus/installation/advanced.py:1837
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
 msgstr "Partycja root nie jest zaznaczona do sformatowania.\nMoże to stworzyć problemy. Czy zaznaczyć ja teraz do sformatowania?"
 
-#: ../thus/installation/advanced.py:1874
+#: ../thus/installation/advanced.py:1881
 #, python-brace-format
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1899
+#: ../thus/installation/advanced.py:1906
 #, python-brace-format
 msgid "Partition {0} will be deleted"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1907
+#: ../thus/installation/advanced.py:1914
 msgid "Partition"
 msgstr "Partycja"
 
-#: ../thus/installation/advanced.py:1907
+#: ../thus/installation/advanced.py:1914
 msgid "Relabel"
 msgstr "Zmień nazwę"
 
-#: ../thus/installation/advanced.py:1907
+#: ../thus/installation/advanced.py:1914
 msgid "Mount"
 msgstr "Zamontuj"
 
-#: ../thus/installation/advanced.py:1907
+#: ../thus/installation/advanced.py:1914
 msgid "Encrypt"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1928
+#: ../thus/installation/advanced.py:1935
 msgid "These disks will have partition actions:"
 msgstr "Na następujących dyskach zostaną podjęte czynności dzielenia partycji:"
 
-#: ../thus/installation/advanced.py:2028
+#: ../thus/installation/advanced.py:2035
 #, python-brace-format
 msgid "Finished saving changes in {0}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2049
+#: ../thus/installation/advanced.py:2056
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2052
+#: ../thus/installation/advanced.py:2059
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2081
+#: ../thus/installation/advanced.py:2088
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
 msgstr ""
 
-#: ../thus/installation/advanced.py:2096
+#: ../thus/installation/advanced.py:2103
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2120
+#: ../thus/installation/advanced.py:2127
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2178 ../thus/installation/automatic.py:274
+#: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2184
+#: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2199 ../thus/installation/automatic.py:304
+#: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Tryb testowania. Thus nie zastosuje żadnych zmian w Twoim systemie!"
 
@@ -1129,10 +1148,6 @@ msgstr "Hasło szyfrowania:"
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
 msgstr ""
-
-#: ../thus/installation/automatic.py:107
-msgid "Install now!"
-msgstr "Zainstaluj!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
@@ -1822,17 +1837,17 @@ msgstr ""
 msgid "Passwords do not match"
 msgstr "Hasła nie pasują do siebie"
 
-#: ../thus/parted3/fs_module.py:103
+#: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
 msgstr ""
 
-#: ../thus/parted3/fs_module.py:190
+#: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
 msgstr ""
 
-#: ../thus/parted3/fs_module.py:215
+#: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
 msgstr ""
