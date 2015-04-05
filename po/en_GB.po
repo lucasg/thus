@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 09:19+0000\n"
+"PO-Revision-Date: 2015-04-05 10:32+0000\n"
 "Last-Translator: philm <philm@manjaro.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/manjaro-thus/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -135,7 +135,19 @@ msgid ""
 "If you find any bugs, please report them at http://bugs.manjaro.org"
 msgstr "Thus is pre-release beta software that is under active development. \nIt does not yet properly handle RAID, btrfs subvolumes, or other  \nadvanced setups. Please proceed with caution as data loss is possible! \n\nIf you find any bugs, please report them at http://bugs.manjaro.org"
 
-#: ../thus/language.py:129
+#: ../thus/language.py:128 ../thus/installation/ask.py:213
+msgid "Forward"
+msgstr "Weiter"
+
+#: ../thus/language.py:130 ../thus/installation/ask.py:215
+msgid "Close"
+msgstr "Schließen"
+
+#: ../thus/language.py:132 ../thus/installation/ask.py:217
+msgid "Back"
+msgstr "Zurück"
+
+#: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
 msgstr "Can't find translation file for the {0} language"
@@ -199,28 +211,16 @@ msgstr "You cannot run two instances of this installer.\n\nIf you are sure that 
 msgid "Thus installer version {0}"
 msgstr "Thus installer version {0}"
 
-#: ../thus/main_window.py:140
-msgid "Forward"
-msgstr "Weiter"
-
-#: ../thus/main_window.py:142
-msgid "Close"
-msgstr "Schließen"
-
-#: ../thus/main_window.py:144
-msgid "Back"
-msgstr "Zurück"
-
-#: ../thus/main_window.py:197
+#: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
 msgstr "Manjaro Installer - Thus {0}"
 
-#: ../thus/main_window.py:329
+#: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
 msgstr "Do you really want to quit the installer?"
 
-#: ../thus/main_window.py:338
+#: ../thus/main_window.py:331
 msgid "Quiting installer..."
 msgstr "Exiting installer..."
 
@@ -1042,75 +1042,75 @@ msgstr "Unsuported disk layout for the 'alongside' installation mode"
 msgid " and "
 msgstr " and "
 
-#: ../thus/installation/ask.py:212
+#: ../thus/installation/ask.py:220
 msgid "Installation type"
 msgstr "Installation type"
 
-#: ../thus/installation/ask.py:227
+#: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
 msgstr "Replace {0} with Manjaro"
 
-#: ../thus/installation/ask.py:229
+#: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
 msgstr "Erase disk and install Manjaro"
 
-#: ../thus/installation/ask.py:234
+#: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
 msgstr "Warning: This will erase ALL data on your disk."
 
-#: ../thus/installation/ask.py:241
+#: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
 msgstr "Encrypt this installation for increased security."
 
-#: ../thus/installation/ask.py:246
+#: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
 msgstr "You will be asked to create an encryption password in the next step."
 
-#: ../thus/installation/ask.py:252
+#: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
 msgstr "Use LVM with this installation."
 
-#: ../thus/installation/ask.py:257
+#: ../thus/installation/ask.py:265
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
 msgstr "This will setup LVM and allow you to easily manage partitions and create snapshots."
 
-#: ../thus/installation/ask.py:263
+#: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
 msgstr "Set your Home in a different partition/volume"
 
-#: ../thus/installation/ask.py:268
+#: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
 msgstr "This will setup you /home directory in a different partition or volume."
 
-#: ../thus/installation/ask.py:288
+#: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
 msgstr "How would you like to proceed?"
 
-#: ../thus/installation/ask.py:297
+#: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
 msgstr "Choose exactly where Manjaro should be installed."
 
-#: ../thus/installation/ask.py:301
+#: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
 msgstr "Edit partition table and choose mount points."
 
-#: ../thus/installation/ask.py:333
+#: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
 msgstr "Manjaro installation will be encrypted using LUKS"
 
-#: ../thus/installation/ask.py:336
+#: ../thus/installation/ask.py:344
 msgid "Manjaro will be installed using LVM volumes"
 msgstr "Manjaro will be installed using LVM volumes"
 
-#: ../thus/installation/ask.py:338
+#: ../thus/installation/ask.py:346
 msgid "Manjaro will be installed using a separate /home volume."
 msgstr "Manjaro will be installed using a separate /home volume."
 
-#: ../thus/installation/ask.py:340
+#: ../thus/installation/ask.py:348
 msgid "Manjaro will be installed using a separate /home partition."
 msgstr "Manjaro will be installed using a separate /home partition."
 
@@ -2007,13 +2007,13 @@ msgstr "i386 UEFI"
 msgid "Choose 'cancel' if you don't want to install a boot loader"
 msgstr "Choose 'cancel' if you don't want to install a boot loader"
 
-#: ../ui/check.ui:17
+#: ../ui/check.ui:19
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
 msgstr "<span weight=\"bold\" size=\"large\">For best results, please ensure that this computer:</span>"
 
-#: ../ui/check.ui:86
+#: ../ui/check.ui:87
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
@@ -2042,21 +2042,3 @@ msgstr "<small><span color=\"darkred\">You must enter a name</span></small>"
 #: ../ui/user_info.ui:378
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Its name as it appears to other computers.</span>"
-
-#: ../ui/welcome.ui:45
-msgid "Try it"
-msgstr "Try it"
-
-#: ../ui/welcome.ui:83
-msgid "CLI Installer"
-msgstr "CLI Installer"
-
-#: ../ui/welcome.ui:121
-msgid "Graphical Installer"
-msgstr "Graphical Installer"
-
-#: ../ui/welcome.ui:151
-msgid ""
-"You can try Manjaro without modify your hard drive, just click on \"Try it\".\n"
-"If you want to install the system to your PC, use one of the two installer options."
-msgstr "You can try Manjaro without modify your hard drive, just click on \"Try it\".\nIf you want to install the system to your PC, use one of the two installer options."
