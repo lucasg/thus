@@ -124,6 +124,13 @@ class Language(GtkBaseBox):
         try:
             lang = gettext.translation(APP_NAME, LOCALE_DIR, [locale_code])
             lang.install()
+            # Translate buttons
+            txt = _("Forward")
+            self.forward_button.set_label(txt)
+            txt = _("Close")
+            self.exit_button.set_label(txt)
+            txt = _("Back")
+            self.backwards_button.set_label(txt)
             self.translate_ui()
         except IOError:
             logging.warning(_("Can't find translation file for the {0} language".format(locale_code)))

@@ -8,6 +8,7 @@
 # Davide_IT <davide.mauri88@tiscali.it>, 2013
 # Alexandre Filgueira <faidoc@gmail.com>, 2013
 # Luca Traversari <trave5@yahoo.it>, 2015
+# Mark <marco_pace@msn.com>, 2015
 # Massimo, 2015
 # Paolo Dongilli <paolo.dongilli@gmail.com>, 2013
 # Paolo Dongilli <paolo.dongilli@gmail.com>, 2013
@@ -19,8 +20,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 09:20+0000\n"
-"Last-Translator: Luca Traversari <trave5@yahoo.it>\n"
+"PO-Revision-Date: 2015-04-05 09:49+0000\n"
+"Last-Translator: Mark <marco_pace@msn.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -221,7 +222,7 @@ msgstr "Installer di Manjaro - Thus {0}"
 
 #: ../thus/main_window.py:329
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Vuoi veramente terminare il programma di installazione?"
 
 #: ../thus/main_window.py:338
 msgid "Quiting installer..."
@@ -268,28 +269,28 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "IMPORTANTE: Ci può essere stato un problema con l'installazione dil Grub che potrebbe impedire al sistema di avviarsi correttamente. prima\ndi riavviare si consiglia di verificare se GRUB 2) è installato e\nconfigurato. La Wiki di Arch Linux contiene informazioni sulla risoluzione dei problemi:\n\thttps://wiki.archlinux.org/index.php/GRUB\n\nVuoi vedere la pagina wiki ora?"
 
 #: ../thus/slides.py:203
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Installazione completata. \nVuoi riavviare il sistema ora?"
 
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "Impossibile creare  la finestra principale di Thus: {0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "Uso di pyalpm v{0} come interfaccia verso libalpm v{1}"
 
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Installer di Manjaro"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -297,7 +298,7 @@ msgstr "Imposta il livello di log per 'debug' di Thus"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Esegue thus anche se rileva l'esecuzione di un'altra istanza dello stesso."
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -305,11 +306,11 @@ msgstr "Non effettuare alcuna modifica (utile per gli sviluppatori)"
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Upgrade/Dowgrade Thus alla versione web"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Non cercare le nuove versioni di Thus online"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -317,20 +318,20 @@ msgstr "Mostra messaggi di logging a stdout"
 
 #: ../thus/thus.py:224
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Mostra opzioni in sviluppo (solo per sviluppatori, non usare questo!)"
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Programma aggiornato. Riavvio in corso..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "File di Thus non trovati. Per favore, installa Thus tramite pacman. "
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Per favore installa '{0}' prima di continuare ad eseguire l'installer"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -346,12 +347,12 @@ msgstr "Regione:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "User Network Time Protocol (NTP) per la sincronizzazione dell'orologio"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "località cambiata in : {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -359,59 +360,59 @@ msgstr "Non è possibile determinare automaticamente le coordinate per il timezo
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Sto fermado i thread del timezone..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Non riesco a rilevare lo stato della rete."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Abbiamo una connessione. Ora otteniamo la nostra timezone."
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Timezone (latitudine {0}, longitudine {1}) rilevata."
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "Impossibile trovare il file 'update.info'. Thus non sarà in grado di aggiornarsi automaticamente."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Thus versione Internet: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Nuova versione trovata. Aggiornamento dell'installer in corso..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Nessuna nuova versione trovata. Sto aggiornando in ogni modo..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "Scaricamento in corso della nuova versione di Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Impossibile scaricare la nuova versione di Thus."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Decompressione in corso della nuova versione..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Impossibile copiare {0} in {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "Md5 non corretto. Download non corretto o file sbagliato, non aggiornerò questo"
 
 #: ../thus/user_info.py:79
 msgid "Who are you?"
@@ -557,7 +558,7 @@ msgstr "Caratteri non sufficienti"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Url sbagliato, proverò un altro se disponibile."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -565,37 +566,37 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Non riesco ad aprire {0} - Motivo: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "Errore HTTP: {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "Errore di indirizzo URL: {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Scaricamento in corso di {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "Metalink per il pacchetto {0} non ha informazioni sulla dimensione."
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "Il File {0} esiste già, non verrà sovrascritto da Thus"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Impossibile scaricare {0}, anche dopo aver provato tutti i mirror disponibili"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:591
@@ -644,35 +645,35 @@ msgstr "niente"
 
 #: ../thus/installation/advanced.py:701
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Non è possibile modificare una partizione con filesystem di tipo LVM"
 
 #: ../thus/installation/advanced.py:763
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Non è possibile usare due volte lo stesso punto di montaggio"
 
 #: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
-msgstr ""
+msgstr "La partizione radice deve essere formattata"
 
 #: ../thus/installation/advanced.py:863
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "Stai per cancellare la partizione {0} dal disco {1}"
 
 #: ../thus/installation/advanced.py:881
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "Rimozione di {0}..."
 
 #: ../thus/installation/advanced.py:1006
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Mi dispiace, hai già creato {0} partizioni primarie"
 
 #: ../thus/installation/advanced.py:1010
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Mi dispiace, hai già creato {0} partizioni primarie e 1 partizione estesa"
 
 #: ../thus/installation/advanced.py:1065
 msgid "Can't use same mount point twice..."
@@ -680,15 +681,15 @@ msgstr "Non è possibile usare lo stesso punto di montaggio due volte..."
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Creazione di una partizione primaria"
 
 #: ../thus/installation/advanced.py:1101
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Creazione di una partizione estesa"
 
 #: ../thus/installation/advanced.py:1107
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Creazione di una partizione logica"
 
 #: ../thus/installation/advanced.py:1169
 msgid "LUKS passwords do not match!"
@@ -700,17 +701,17 @@ msgstr "Modalità di installazione avanzata"
 
 #: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Utilizza il seguente dispositivo per l'installazione del boot loader:"
 
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr ""
+msgstr "Bootloader:"
 
 #: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr ""
+msgstr "Dispositivo:"
 
 #: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
@@ -734,7 +735,7 @@ msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1339
 msgid "Undo"
-msgstr ""
+msgstr "Annulla"
 
 #: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
 msgid "New"
@@ -742,11 +743,11 @@ msgstr "Nuovo"
 
 #: ../thus/installation/advanced.py:1345
 msgid "Delete"
-msgstr ""
+msgstr "Cancella"
 
 #: ../thus/installation/advanced.py:1348
 msgid "Edit..."
-msgstr ""
+msgstr "Modifica..."
 
 #: ../thus/installation/advanced.py:1351
 msgid "New partition table"
@@ -754,11 +755,11 @@ msgstr "Nuova tabella delle partizioni"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annulla"
 
 #: ../thus/installation/advanced.py:1373
 msgid "_Apply"
-msgstr ""
+msgstr "_Applica"
 
 #: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
 msgid "Size:"
@@ -794,7 +795,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
-msgstr ""
+msgstr "Punto di Montaggio:"
 
 #: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -876,12 +877,12 @@ msgstr ""
 #: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr ""
+msgstr "{0} rimosso"
 
 #: ../thus/installation/advanced.py:1819
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
-msgstr ""
+msgstr "Partizione di swap {0} rimossa"
 
 #: ../thus/installation/advanced.py:1830
 #, python-brace-format
@@ -904,7 +905,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1906
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "La partizione {0} verrà cancellata"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Partition"
