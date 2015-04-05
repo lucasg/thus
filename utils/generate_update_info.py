@@ -38,15 +38,16 @@ def get_md5(file_name):
             md5_hash.update(line)
     return md5_hash.hexdigest()
 
-def get_files(path):
+def get_files(path, myfiles):
     """ Returns all files from a directory """
-    all_files = []
+    all_files = myfiles
     if os.path.exists(path):
         for dpath, d, files in os.walk(path):
             for f in files:
                 file_path = os.path.join(dpath, f)
-                print(file_path)
-                all_files.append(file_path)
+                if "~" not in file_path:
+                    print(file_path)
+                    all_files.append(file_path)
     else:
         all_files = False
 
@@ -55,7 +56,12 @@ def get_files(path):
 def create_update_info():
     """ Creates update.info file """
 
-    myfiles = get_files("/usr/share/thus") or get_files(".")
+    #myfiles = get_files("/usr/share/thus") or get_files(".")
+    myfiles = []
+    myfiles = get_files("./data", myfiles)
+    myfiles = get_files("./scripts", myfiles)
+    myfiles = get_files("./thus", myfiles)
+    myfiles = get_files("./ui", myfiles)
 
     txt = '{"version":"%s","files":[\n' % info.THUS_VERSION
 
