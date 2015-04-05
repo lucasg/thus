@@ -268,7 +268,8 @@ class UserInfo(GtkBaseBox):
         self.forward_button.set_sensitive(False)
 
         # restore forward button text (from install now! to next)
-        self.forward_button.set_label("gtk-go-forward")
+        txt = _("Forward")
+        self.forward_button.set_label(txt)
 
     def on_checkbutton_root_password_toggled(self, widget):
         """ Show/hide root password options """
