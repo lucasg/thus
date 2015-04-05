@@ -209,6 +209,14 @@ class InstallationAsk(GtkBaseBox):
     def translate_ui(self):
         """ Translates screen before showing it """
 
+        # Translate buttons
+        txt = _("Forward")
+        self.forward_button.set_label(txt)
+        txt = _("Close")
+        self.exit_button.set_label(txt)
+        txt = _("Back")
+        self.backwards_button.set_label(txt)
+
         txt = _("Installation type")
         txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
         self.title.set_markup(txt)

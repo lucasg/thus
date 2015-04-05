@@ -226,6 +226,14 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.current_page.prepare('forwards')
 
+        # Translate buttons
+        txt = _("Forward")
+        self.forward_button.set_label(txt)
+        txt = _("Close")
+        self.exit_button.set_label(txt)
+        txt = _("Back")
+        self.backwards_button.set_label(txt)
+
         # Hide backwards button
         self.backwards_button.hide()
 
