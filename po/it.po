@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 09:49+0000\n"
+"PO-Revision-Date: 2015-04-05 09:58+0000\n"
 "Last-Translator: Mark <marco_pace@msn.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -921,7 +921,7 @@ msgstr "Montato"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Encrypt"
-msgstr ""
+msgstr "Cifra"
 
 #: ../thus/installation/advanced.py:1935
 msgid "These disks will have partition actions:"
@@ -930,7 +930,7 @@ msgstr "Questi dischi verranno così partizionati:"
 #: ../thus/installation/advanced.py:2035
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "Modifiche salvate in {0}"
 
 #: ../thus/installation/advanced.py:2056
 #, python-brace-format
@@ -940,7 +940,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:2059
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "Creazione del nuovo filesystem {0} in {1}"
 
 #: ../thus/installation/advanced.py:2088
 #, python-brace-format
@@ -959,12 +959,12 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "Thus non installerà alcun bootloader"
 
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "Manjiaro installerà il bootloader {0} nel dispositivo {1}"
 
 #: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -972,7 +972,7 @@ msgstr "Modalità di test.Thus non applicherà le eventuali modifiche al sistema
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Non ci sono partizioni primarie disponibili"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
@@ -981,7 +981,7 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
-msgstr ""
+msgstr "Thus raccomanda di avere almeno 6.5GB di spazio libero per installare Manjaro"
 
 #: ../thus/installation/alongside.py:151
 #, python-brace-format
@@ -998,7 +998,7 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Installa a tuo rischio e pericolo!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1006,11 +1006,11 @@ msgstr "Manjaro accanto ad un altro OS"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Scegli la nuova dimensione della tua installazione"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Scegli la partizione che vuoi ridurre:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
@@ -1020,7 +1020,7 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "Non riesco a trovare nessun Sistema Operativo installato!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
@@ -1036,7 +1036,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "Non riesco a trovare nessun Sistema Operativo nel dispositivo sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
@@ -1044,7 +1044,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "e"
 
 #: ../thus/installation/ask.py:212
 msgid "Installation type"
@@ -1053,15 +1053,15 @@ msgstr "Tipo di installazione"
 #: ../thus/installation/ask.py:227
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "Sostituisci {0} con Manjaro"
 
 #: ../thus/installation/ask.py:229
 msgid "Erase disk and install Manjaro"
-msgstr ""
+msgstr "Cancella il disco e installa Manjaro"
 
 #: ../thus/installation/ask.py:234
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Attenzione: questo cancellerà TUTTI i dati contenuti nel tuo disco."
 
 #: ../thus/installation/ask.py:241
 msgid "Encrypt this installation for increased security."
@@ -1092,7 +1092,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:288
 msgid "How would you like to proceed?"
-msgstr ""
+msgstr "Come vuoi procedere?"
 
 #: ../thus/installation/ask.py:297
 msgid "Choose exactly where Manjaro should be installed."
@@ -1100,7 +1100,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:301
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Modifica la tabella delle partizioni e scegli i punti di montaggio."
 
 #: ../thus/installation/ask.py:333
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1152,7 +1152,7 @@ msgstr ""
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "Installazione automatica su {0}"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
