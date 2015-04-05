@@ -81,7 +81,7 @@ def check_alongside_disk_layout():
 
 
 class InstallationAsk(GtkBaseBox):
-    def __init__(self, params, prev_page="keymap", next_page=None):
+    def __init__(self, params, prev_page="check", next_page=None):
         super().__init__(self, params, "ask", prev_page, next_page)
 
         data_dir = self.settings.get("data")

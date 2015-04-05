@@ -1716,6 +1716,9 @@ class InstallationAdvanced(GtkBaseBox):
         #     check_ok = check_ok and has_part["swap"]
 
         self.forward_button.set_sensitive(check_ok)
+        if check_ok
+            txt = _("Install now!")
+            self.forward_button.set_label(txt)
 
     def get_changes(self):
         """ Grab all changes for confirmation """

@@ -75,6 +75,11 @@ class Language(GtkBaseBox):
 
     def translate_ui(self):
         """ Translates all ui elements """
+
+        txt = _("Welcome to Manjaro")
+        txt = "<span weight='bold' size='large'>{0}</span>".format(txt)
+        self.title.set_markup(txt)
+
         txt_bold = _("Notice: The Thus Installer is beta software.")
         # FIXME: Can't use an a html tag in the label. Causes an accessible GTK Assertion
         txt = _("Thus is pre-release beta software that is under active development. \n" \
