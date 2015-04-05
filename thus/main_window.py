@@ -137,13 +137,6 @@ class MainWindow(Gtk.ApplicationWindow):
         self.exit_button = self.ui.get_object("exit_button")
         self.backwards_button = self.ui.get_object("backwards_button")
 
-        txt = _("Forward")
-        self.forward_button.set_label(txt)
-        txt = _("Close")
-        self.exit_button.set_label(txt)
-        txt = _("Back")
-        self.backwards_button.set_label(txt)
-
         # image1 = Gtk.Image.new_from_icon_name("go-next", Gtk.IconSize.LARGE_TOOLBAR)
         # self.forward_button.set_label("")
         # self.forward_button.set_image(image1)

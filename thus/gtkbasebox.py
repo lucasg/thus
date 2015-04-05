@@ -61,6 +61,14 @@ class GtkBaseBox(Gtk.Box):
         self.ui_file = os.path.join(self.ui_dir, "{}.ui".format(name))
         self.ui.add_from_file(self.ui_file)
 
+        # Translate buttons
+        txt = _("Forward")
+        self.forward_button.set_label(txt)
+        txt = _("Close")
+        self.exit_button.set_label(txt)
+        txt = _("Back")
+        self.backwards_button.set_label(txt)
+
         # Connect UI signals
         self.ui.connect_signals(child)
 

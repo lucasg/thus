@@ -63,6 +63,9 @@ class Language(GtkBaseBox):
         label = self.ui.get_object("welcome_label")
         label.set_name("WelcomeMessage")
 
+        # Hide backwards button
+        self.backwards_button.hide()
+
     def on_listbox_row_selected(self, listbox, listbox_row):
         """ Someone selected a different row of the listbox """
         if listbox_row is not None:
