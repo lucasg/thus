@@ -25,7 +25,7 @@
 # Leonel <leonelmalon@gmail.com>, 2013
 # neiko <neikokz+tsfx@gmail.com>, 2011
 # Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013
-# philm <philm@manjaro.org>, 2013-2014
+# philm <philm@manjaro.org>, 2013-2015
 # Ramon Buldó <rbuldo@gmail.com>, 2013
 # Rodrigo Cares <rcares@gmail.com>, 2012
 # sfermat <sebas.larrieu@gmail.com>, 2014
@@ -37,8 +37,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 10:27+0000\n"
-"Last-Translator: José Luis García Morillo\n"
+"PO-Revision-Date: 2015-04-06 11:07+0000\n"
+"Last-Translator: Adrian Lowenberg <adrianlowenberg@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/manjaro-thus/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -154,7 +154,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr "Thus es software en versión beta de pre-lanzamiento y está bajo desarrollo activo.\nTodavía no gestiona RAID, subvolúmenes btrfs o otras configuraciones avanzadas adecuadamente. ¡Por favor, proceda con cuidado ya que la pérdida de datos es posible!\nSi encuentra algún fallo, por favor informe sobre él en http://bugs.manjaro.org"
+msgstr "Thus es software en versión beta de pre-lanzamiento y está bajo \ndesarrollo activo. Todavía no gestiona RAID, subvolúmenes btrfs o \notras configuraciones avanzadas adecuadamente. ¡Por favor, \nproceda con cuidado ya que la pérdida de datos es posible!\n\nSi encuentra algún fallo, por favor informe sobre él en \nhttp://bugs.manjaro.org"
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
@@ -622,7 +622,7 @@ msgstr "espacio libre"
 
 #: ../thus/installation/advanced.py:365
 msgid "Device"
-msgstr "Dispositivo"
+msgstr "Unidad"
 
 #: ../thus/installation/advanced.py:368
 msgid "Type"
@@ -718,7 +718,7 @@ msgstr "Instalación avanzada"
 
 #: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr "Usar el siguiente dispositivo para la instalación del cargador de arranque:"
+msgstr "Usar la siguiente unidad para la instalación del cargador de arranque:"
 
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
@@ -728,7 +728,7 @@ msgstr "Cargador de arranque:"
 #: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr "Dispositivo:"
+msgstr "Unidad:"
 
 #: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
@@ -967,7 +967,7 @@ msgstr "Cifrando {0}, asignando nombre al volumen {1} y formateandolo"
 #: ../thus/installation/advanced.py:2103
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr "No se ha podido formatear el dispositivo LUKS '{0}' con la etiqueta '{1}' como '{2}'"
+msgstr "No se ha podido formatear la unidad LUKS '{0}' con la etiqueta '{1}' como '{2}'"
 
 #: ../thus/installation/advanced.py:2127
 #, python-brace-format
@@ -981,7 +981,7 @@ msgstr "Thus no instalará gestor de arranque"
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr "Manjaro instalará el gestor de arranque {0} en el dispositivo {1}"
+msgstr "Manjaro instalará el gestor de arranque {0} en la unidad {1}"
 
 #: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -994,7 +994,7 @@ msgstr "No hay particiones primarias disponibles"
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr "Se reducirá {0} y se creará el nuevo sistema de ficheros {1}"
+msgstr "La unidad {0} de reducirá y se creará el nuevo sistema de archivos {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
@@ -1053,7 +1053,7 @@ msgstr "Windows(tm) no detectado."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "No se detecta ningún sistema operativo en la unidad sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
@@ -1180,12 +1180,12 @@ msgstr "¿Quieres continuar y borrar todo el contenido del disco?"
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr "Thus instalará Manjaro en el dispositivo {0}"
+msgstr "Thus instalará Manjaro en la unidad {0}"
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr "Thus instalará el gestor de arranque '{0}' en el dispositivo '{1}'"
+msgstr "Thus instalará el gestor de arranque '{0}' en la unidad '{1}'"
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:490 ../thus/installation/process.py:507
@@ -1259,28 +1259,28 @@ msgstr "No se pueden borrar los volúmenes LVM existentes"
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr "No se pueden cerrar los dispositivos LUKS abiertos"
+msgstr "No se pueden cerrar las unidades LUKS abiertas"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr "No se puede instalar LUKS en el dispositivo {0}. Se necesita una contraseña o fichero de claves"
+msgstr "No se puede instalar LUKS en la unidad {0}. Se necesita una contraseña o fichero de claves"
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr "Thus instalará LUKS en el dispositivo {0}"
+msgstr "Thus instalará LUKS en la unidad {0}"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr "No se puede formatear y abrir el dispositivo LUKS {0}"
+msgstr "No se puede formatear y abrir la unidad LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr "No se puede eliminar el sistema de archivos del dispositivo {0}"
+msgstr "No se puede eliminar el sistema de archivos de la unidad {0}"
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
@@ -1290,17 +1290,17 @@ msgstr "No se puede ejecutar 'dd'"
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr "Error al crear una nueva particion en el dispositivo {0}"
+msgstr "Error al crear una nueva particion en la unidad {0}"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr "Error al crear una nueva tabla de particiones en el dispositivo {0}"
+msgstr "Error al crear una nueva tabla de particiones en la unidad {0}"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr "Se formateará  el dispositivo {0} como {1}"
+msgstr "Se formateará la unidad {0} como {1}"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
@@ -1326,7 +1326,7 @@ msgstr "Error al intentar montar {0} en {1}"
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr "Información del dispositivo: {0} UUID={1} LABEL={2}"
+msgstr "Información de la unidad: {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
@@ -1336,7 +1336,7 @@ msgstr "{0} se montará en {1}"
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr "El dispositivo {0} tendrá un sistema de archivos {1}"
+msgstr "La unidad {0} tendrá un sistema de archivos {1}"
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1377,7 +1377,7 @@ msgstr "Tamaño partición Home: %dMiB"
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "La instalación no puede detectar el tamaño de su dispositivo, por favor, utilice la instalación avanzada para la partición y la selección de puntos de montaje."
+msgstr "La instalación no puede detectar el tamaño de su unidad, por favor, utilice la instalación avanzada para el particionado y la selección de puntos de montaje."
 
 #: ../thus/installation/auto_partition.py:671
 msgid "Error informing the kernel of the partition change."
@@ -1386,7 +1386,7 @@ msgstr "Error al informar al núcleo del cambio de la partición."
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr "Thus instalará LVM en el dispositivo {0}"
+msgstr "Thus instalará LVM en la unidad {0}"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
@@ -1402,7 +1402,7 @@ msgstr "Error al crear el volumen lógico LVM"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr "No se pudo copiar el fichero de claves LUKS al dispositivo de la instalación"
+msgstr "No se pudo copiar el fichero de claves LUKS a la unidad de la instalación"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
@@ -1909,32 +1909,32 @@ msgstr "No se puede detectar el espacio usado en la partición NTFS {0}"
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "No se puede detectar el espacio usado en la partición EXTFS {0}"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "No se puede detectar el espacio usado en la partición FAT {0}"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "No se puede detectar el espacio usado en la partición JFS {0}"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "No se puede detectar el espacio usado en la partición REISERFS {0}"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "No se puede detectar el espacio usado en la partición BTRFS {0}"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "No se puede detectar el espacio usado en la partición XFS {0}"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -1974,11 +1974,11 @@ msgstr "etiqueta"
 
 #: ../ui/advanced.ui:1023 ../ui/automatic.ui:132
 msgid "Use this device for boot loader installation:"
-msgstr "Usar este dispositivo para la instalación del gestor de arranque:"
+msgstr "Usar esta unidad para la instalación del gestor de arranque:"
 
 #: ../ui/advanced.ui:1107
 msgid "Encryption properties"
-msgstr ""
+msgstr "Propiedades de la encriptación"
 
 #: ../ui/advanced.ui:1222
 msgid "Use LUKS encryption: "
@@ -1992,21 +1992,21 @@ msgstr "<small><span color=\"darkgreen\">Contraseña fuerte</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>¡ADVERTENCIA! ¡Este modo de instalación sobreescribirá todo el contenido de la unidad!</b>"
 
 #: ../ui/automatic.ui:62
 msgid ""
 "Please choose the drive where you want to install Antergos and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Por favor seleccione la unidad donde desea instalar Antergos\ny presione el siguiente boton para iniciar el proceso."
 
 #: ../ui/automatic.ui:275
 msgid "show password"
-msgstr ""
+msgstr "mostrar contraseña"
 
 #: ../ui/automatic.ui:294
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "Contraseña de LUKS. ¡No use caracteres especiales ni acentos! "
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2014,7 +2014,7 @@ msgstr "¿Cuál es su tipo de sistema de arranque?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Común)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2026,7 +2026,7 @@ msgstr "UEFI i386"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Seleccione 'cancelar' si no desea instalar un cargador de arranque"
 
 #: ../ui/check.ui:19
 msgid ""
@@ -2038,7 +2038,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Para obtener mejores resultados, as
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Esto depende en gran medida de qué escritorio elija, así que puede ser que necesite más espacio. (por ejemplo, KDE necesita 6,5GB)"
 
 #: ../ui/main_window.ui:38
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
