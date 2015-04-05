@@ -157,8 +157,12 @@ class InstallationAdvanced(GtkBaseBox):
 
         for combo in mount_combos:
             combo.remove_all()
-            for mount_point in fs.COMMON_MOUNT_POINTS:
-                combo.append_text(mount_point)
+            if os.path.exists('/sys/firmware/efi'):
+                for mount_point in fs.COMMON_MOUNT_POINTS_EFI:
+                    combo.append_text(mount_point)
+            else:
+                for mount_point in fs.COMMON_MOUNT_POINTS:
+                    combo.append_text(mount_point)
 
         self.bootloader = "grub2"
         self.bootloader_entry = self.ui.get_object('bootloader_entry')
@@ -1686,7 +1690,7 @@ class InstallationAdvanced(GtkBaseBox):
                     has_part["root"] = True
                     part["root"].set_state(True)
             # /boot or /boot/efi
-            if mnt == "/boot":
+            if mnt == "/boot" or mnt == "/boot/efi":
                 if is_uefi and "fat" in fsystem:
                     # Only fat partitions
                     has_part["boot_efi"] = True
