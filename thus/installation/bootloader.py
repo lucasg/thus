@@ -278,7 +278,7 @@ class Bootloader(object):
         uefi_arch = "x86_64"
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
-        bootloader_id = 'manjaro_grub' if not os.path.exists('/install/boot/EFI/manjaro_grub') else \
+        bootloader_id = 'manjaro_grub' if not os.path.exists('/install/boot/efi/EFI/manjaro_grub') else \
             'manjaro_grub_{0}'.format(self.random_generator())
 
         txt = _("Installing GRUB(2) UEFI {0} boot loader".format(uefi_arch))
@@ -308,10 +308,10 @@ class Bootloader(object):
         # self.copy_grub2_theme_files()
 
         # Copy grub into dirs known to be used as default by some OEMs if they do not exist yet.
-        grub_defaults = [os.path.join(self.dest_dir, "boot/EFI/BOOT", "BOOT{0}.efi".format(spec_uefi_arch_caps)),
-                         os.path.join(self.dest_dir, "boot/EFI/Microsoft/Boot", 'bootmgfw.efi')]
+        grub_defaults = [os.path.join(self.dest_dir, "boot/efi/EFI/BOOT", "BOOT{0}.efi".format(spec_uefi_arch_caps)),
+                         os.path.join(self.dest_dir, "boot/efi/EFI/Microsoft/Boot", 'bootmgfw.efi')]
 
-        grub_path = os.path.join(self.dest_dir, "boot/EFI/manjaro_grub", "grub{0}.efi".format(spec_uefi_arch))
+        grub_path = os.path.join(self.dest_dir, "boot/efi/EFI/manjaro_grub", "grub{0}.efi".format(spec_uefi_arch))
 
         for grub_default in grub_defaults:
             path = grub_default.split()[0]
@@ -364,7 +364,7 @@ class Bootloader(object):
             subprocess.check_call(['killall', 'os-prober'])
 
         paths = [os.path.join(self.dest_dir, "boot/grub/x86_64-efi/core.efi"),
-                 os.path.join(self.dest_dir, "boot/EFI/{0}".format(bootloader_id),
+                 os.path.join(self.dest_dir, "boot/efi/EFI/{0}".format(bootloader_id),
                               "grub{0}.efi".format(spec_uefi_arch))]
 
         exists = False
