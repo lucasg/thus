@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 07:14+0000\n"
+"PO-Revision-Date: 2015-04-06 18:15+0000\n"
 "Last-Translator: LeilaSouad <drukova@hotmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/manjaro-thus/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -323,7 +323,7 @@ msgstr "Не применять изменения (полезно для раз
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Обновить/ восстановить Thus до интернет-версии"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
@@ -400,7 +400,7 @@ msgstr "Не удается найти файл 'update.info. Thus не смож
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Интернет-версия Thus"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
@@ -408,7 +408,7 @@ msgstr "Обнаружена новая версия. Обновление ус�
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Новая версия не обнаружена. Обновить в любом случае..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
@@ -889,7 +889,7 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} смонтирован в {1}. \nДля продолжения он должен быть отмонтирован.\nНажмите Да чтобы отмонтировать или Нет чтобы вернуться\n"
 
 #: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
 #, python-brace-format
@@ -1005,13 +1005,13 @@ msgstr "Для установки Manjaro рекомендуется миним�
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "Созданный в результате изменения размера раздела {1} новый раздел {0} не имеет достаточно свободного места для корректной установки"
 
 #: ../thus/installation/alongside.py:152
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "Вы можете продолжить установку Manjaro, но внимательно  выбирайте окружение для вашего рабочего стола"
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
@@ -1023,7 +1023,7 @@ msgstr "Manjaro рядом с другой ОС"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Выберите новый размер для установки"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
@@ -1086,7 +1086,7 @@ msgstr "Зашифровать для повышения безопасност�
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "На следующем этапе вам будет предложено создать пароль для шифрования данных"
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1096,7 +1096,7 @@ msgstr "Использовать LVM для установки."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Будет установлен LVM и вы сможете с легкостью создавать и управлять разделами"
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1160,39 +1160,39 @@ msgstr "Пароль шифрования:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "Пароль LUKS. Не используйте специальные символы или надстрочные знаки"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "Пароль LUKS для администратора установлен"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "Автоматическая установка на {0}"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Вы действительно желаете продолжить и стереть все данные на жестокм диске?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr " Thus установит Manjaro на устройство {0} "
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "Thus установит загрузчик {0} на устройство {1}"
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:490 ../thus/installation/process.py:507
 #: ../thus/installation/process.py:522
 #, python-brace-format
 msgid "Unmounting {0}"
-msgstr ""
+msgstr "Отмонтирование {0}"
 
 #: ../thus/installation/auto_partition.py:90
 #, python-brace-format
@@ -1202,7 +1202,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:94
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "Отмонтирование {0} не удалось"
 
 #: ../thus/installation/auto_partition.py:106
 #: ../thus/installation/auto_partition.py:112
@@ -1226,7 +1226,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:892
 #, python-brace-format
 msgid "Command {0} failed"
-msgstr ""
+msgstr "Команда {0} не удалась"
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1259,23 +1259,23 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Не удается закрыть уже открытые устройства LUKS"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "Не удается установить LUKS на устройство {0}.Требуется пароль или файл ключа.  "
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "Thus  установит LUKS на устройство {0}"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "Не удается форматировать и открыть устройство LUKS"
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format

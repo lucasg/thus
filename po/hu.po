@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 23:14+0000\n"
+"PO-Revision-Date: 2015-04-06 18:43+0000\n"
 "Last-Translator: Kisbenedek Márton <kmarton815@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -1312,17 +1312,17 @@ msgstr "Hiba a {0} csatolásakor itt: {1}"
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "Eszköz részletek: {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} csatolva lesz, mint: {1}"
 
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "{0} eszköznek {1} fájlrendszere lesz."
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1332,7 +1332,7 @@ msgstr "Teljes lemezméret: %dMiB"
 #: ../thus/installation/auto_partition.py:602
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "EFI rendszerpartíció (ESP) mérete: %dMiB"
 
 #: ../thus/installation/auto_partition.py:603
 #, python-format
@@ -1367,28 +1367,28 @@ msgstr "A telepítő nem tudja érzékelni az eszköz méretét, kérlek válasz
 
 #: ../thus/installation/auto_partition.py:671
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "A kernel tájékoztatása a partícióváltozásról nem sikerült."
 
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "A Thus Telepíteni fogja az LVM-t ezen az eszközön: {0}"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "Hiba az LVM fizikai kötet létrehozásakor."
 
 #: ../thus/installation/auto_partition.py:798
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "Hiba az LVM kötet csoport létrehozásakor."
 
 #: ../thus/installation/auto_partition.py:833
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "Hiba az LVM logikai kötet létrehozásakor."
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "Nem lehet a LUKS kulcsfájlt a telepítési eszközre másolni"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
@@ -1398,7 +1398,7 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "/etc/default/grub konfigurációja sikeresen befejezve."
 
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
@@ -1408,13 +1408,13 @@ msgstr ""
 #: ../thus/installation/bootloader.py:225
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "GRUB(2) rendszerbetöltő telepítése itt: {0}"
 
 #: ../thus/installation/bootloader.py:255
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "A grub-mkconfig nem válaszol. A grub-mount és az os-prober leállítása a folytatáshoz."
 
 #: ../thus/installation/bootloader.py:263
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1427,7 +1427,7 @@ msgstr "HIBA a GRUB(2) BIOS telepítése során."
 #: ../thus/installation/bootloader.py:284
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
-msgstr ""
+msgstr "GRUB(2) UEFI {0} rendszerbetöltő telepítése"
 
 #: ../thus/installation/bootloader.py:319
 #, python-brace-format
@@ -1441,11 +1441,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:327
 msgid "File not found."
-msgstr ""
+msgstr "Fájl nem található."
 
 #: ../thus/installation/bootloader.py:329
 msgid "File already exists."
-msgstr ""
+msgstr "A fájl már létezik."
 
 #: ../thus/installation/bootloader.py:347
 msgid "Generating grub.cfg"
@@ -1459,31 +1459,31 @@ msgstr "Úgy tűnik, hogy  a grub-mkconfig elakadt. A grub-mount és az os-probe
 
 #: ../thus/installation/bootloader.py:379
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "GRUB(2) UEFI sikeresen telepítve."
 
 #: ../thus/installation/bootloader.py:383
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "A GRUB(2) UEFI telepítése nem biztos, hogy sikeresen végbement."
 
 #: ../thus/installation/bootloader.py:395
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "Az 50mounted-tests fájl sikeresen javítva"
 
 #: ../thus/installation/bootloader.py:397
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "Az 50mounted-tests fájl javítása nem sikerült, fájl nem található."
 
 #: ../thus/installation/bootloader.py:401
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "GRUB(2) téma fájlok másolása"
 
 #: ../thus/installation/bootloader.py:407
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Grub2 téma fájlok nem találhatók"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Grub2 témafájlok már léteznek."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Installing Grub2 locales."
@@ -1491,15 +1491,15 @@ msgstr "Grub2 lokális változók telepítése."
 
 #: ../thus/installation/bootloader.py:424
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "Nem lehet telepíteni a GRUB(2) lokális változókat."
 
 #: ../thus/installation/bootloader.py:490
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Gummiboot telepítése sikeresen befejezve."
 
 #: ../thus/installation/bootloader.py:494
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Gummiboot telepítését nem sikerült befejezni."
 
 #: ../thus/installation/bootloader.py:526
 msgid "Can't freeze/unfreeze xfs system"
@@ -1507,7 +1507,7 @@ msgstr "Nem lehet az xfs rendszert hibernálni/felébreszteni."
 
 #: ../thus/installation/chroot.py:50
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Speciális könyvtárak már csatolva vannak. Kihagyás."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1522,27 +1522,27 @@ msgstr ""
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "{0} parancs sikertelen."
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "Kimenet: {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "Időtúllépés történt a {0} parancs futtatásakor."
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "A Thus mindenképpen megpróbálja folytatni"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "Hiba történt a {0} parancs futtatásakor."
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1551,28 +1551,28 @@ msgstr "Kapcsolódási pontok és modulok beállításai a mkinitcpio.conf fájl
 #: ../thus/installation/process.py:130
 #, python-brace-format
 msgid "Copying '/{0}'"
-msgstr ""
+msgstr "Másolás '/{0}'"
 
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Telepítés a következő módszerrel: '{0}'"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "Hiba történt a {0} parancs futtatásakor."
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "Partíciók és fájlrendszerek létrehozása ide: {0}"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "{0} partíció csatolása a {1} könyvtárba"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
@@ -1582,12 +1582,12 @@ msgstr ""
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "Swap aktiválása itt: {0}"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} törölve"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1612,13 +1612,13 @@ msgstr "Rendszerbetöltő telepítése..."
 #: ../thus/installation/process.py:481
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "Nem lehet a Thus log-ot másolni ide: {0}"
 
 #: ../thus/installation/process.py:498 ../thus/installation/process.py:517
 #: ../thus/installation/process.py:531
 #, python-brace-format
 msgid "Can't unmount {0}"
-msgstr ""
+msgstr "{0}-t nem lehet lecsatolni"
 
 #: ../thus/installation/process.py:533
 msgid "Installation finished successfully."
@@ -1635,7 +1635,7 @@ msgstr "Az asztali fájlrendszer nem létezik! Kritikus hiba (kilépés)."
 #: ../thus/installation/process.py:574 ../thus/installation/process.py:580
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{0} már csatolva van itt: {1}, mint {2}"
 
 #: ../thus/installation/process.py:591
 msgid "Indexing files to be copied ..."
@@ -1652,7 +1652,7 @@ msgstr "asztal fájlkép kibontása..."
 #: ../thus/installation/process.py:621
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
-msgstr ""
+msgstr "Meta információk visszaállítása a {0}-n"
 
 #: ../thus/installation/process.py:664
 msgid "Can't copy network configuration files"
