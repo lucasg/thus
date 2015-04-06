@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 18:43+0000\n"
+"PO-Revision-Date: 2015-04-06 19:20+0000\n"
 "Last-Translator: Kisbenedek Márton <kmarton815@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "ismeretlen"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Hiba a hexdump parancs hívásakor: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
@@ -283,7 +283,7 @@ msgstr "A rendszer telepítése befejeződött.\nÚjraindítod a rendszert most?
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "Nem lehet létrehozni a Thus fő ablakot: {0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
@@ -363,7 +363,7 @@ msgstr "Nem lehet automatikusan meghatározni az időzóna koordinátákat"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Időzónai szálak leállítása..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
@@ -589,7 +589,7 @@ msgstr "Letöltés: {0} {1} ({2}/{3})..."
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "A {0} csomag metalinkjéről nincs méret információ"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
@@ -953,12 +953,12 @@ msgstr "{0} titkosítása, {1} kötet név hozzárendelése és formázás..."
 #: ../thus/installation/advanced.py:2103
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Nem lehetett formázni a '{0}' LUKS eszközt '{1}' címkével, mint: '{2}'"
 
 #: ../thus/installation/advanced.py:2127
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Nem lehetett formázni a '{0}' partíciót '{1}' címkével, mint: '{2}'"
 
 #: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
@@ -991,7 +991,7 @@ msgstr "A Thus legalább 6.5GB szabad helyet javasol a Manjaro telepítésére."
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "Az új {0} partíción a zsugorítás miatt {1} nem fog elég szabad hellyel rendelkezni a teljes telepítéshez."
 
 #: ../thus/installation/alongside.py:152
 msgid ""
@@ -1663,12 +1663,12 @@ msgstr "Nem lehet másolni a hálózati konfigurációs fájlokat"
 #: ../thus/installation/process.py:806
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "Hozzáadva az fstab-hoz : {0} "
 
 #: ../thus/installation/process.py:723 ../thus/installation/process.py:739
 #, python-brace-format
 msgid "Added to crypttab : {0}"
-msgstr ""
+msgstr "Hozzáadva a crypttab-hoz : {0}"
 
 #: ../thus/installation/process.py:814
 msgid "fstab written."
@@ -1677,12 +1677,12 @@ msgstr ""
 #: ../thus/installation/process.py:823
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr "Engedélyezett {0} szolgáltatás."
 
 #: ../thus/installation/process.py:825
 #, python-brace-format
 msgid "Can't find service {0}"
-msgstr ""
+msgstr "Nem található a {0} szolgáltatás"
 
 #: ../thus/installation/process.py:833
 #, python-brace-format
@@ -1692,20 +1692,20 @@ msgstr ""
 #: ../thus/installation/process.py:839
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "Hiba {0} felhasználó jelszavának megváltoztatásánál"
 
 #: ../thus/installation/process.py:867
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "locale.gen fájl nem található"
 
 #: ../thus/installation/process.py:939
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
-msgstr ""
+msgstr "{0}: Automatikus bejelentkezés engedélyezése {1} felhasználónak."
 
 #: ../thus/installation/process.py:1058
 msgid "Configuring your new system"
-msgstr "Rendszer testreszabása"
+msgstr "Az új rendszer testreszabása"
 
 #: ../thus/installation/process.py:1061
 msgid "fstab file generated."
@@ -1722,17 +1722,17 @@ msgstr "Időzóna beállítva."
 #: ../thus/installation/process.py:1114
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
-msgstr ""
+msgstr "Sudo konfiguráció {0} felhasználónak elkészült."
 
 #: ../thus/installation/process.py:1124
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "{0} felhasználó hozzáadva."
 
 #: ../thus/installation/process.py:1136
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "Hálózati név {0} beállítva."
 
 #: ../thus/installation/process.py:1141
 msgid "Set root password."
@@ -1756,7 +1756,7 @@ msgstr "Hardware konfigurálása..."
 
 #: ../thus/installation/process.py:1185
 msgid "Updated Alsa mixer settings"
-msgstr ""
+msgstr "Frissített Alsa mixer beállítások"
 
 #: ../thus/installation/process.py:1193
 msgid "Installing drivers ..."
@@ -1772,7 +1772,7 @@ msgstr "Rendszer Konfigurálás..."
 
 #: ../thus/installation/process.py:1270
 msgid "Removing live configuration (packages)"
-msgstr "Lemezről betöltött \"élő\" konfiguráció (csomagok) eltávolítása "
+msgstr "Lemezről betöltött live konfiguráció (csomagok) eltávolítása "
 
 #: ../thus/installation/process.py:1286
 msgid "Configuring package manager"
@@ -1792,7 +1792,7 @@ msgstr "mkinitcpio futtatása - befejezve"
 
 #: ../thus/installation/process.py:1346
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "Felhasználói home könyvtár titkosítása ..."
 
 #: ../thus/installation/process.py:1348
 msgid "User home dir encrypted"
@@ -1800,37 +1800,37 @@ msgstr "A felhasználói Home könyvtár titkosítva."
 
 #: ../thus/installation/process.py:1353
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "Rendszerbetöltő telepítése..."
 
 #: ../thus/installation/process.py:1359
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "Rendszerbetöltőt nem lehetett telepíteni: {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
 msgid "Can't change to locale '{0}' : {1}"
-msgstr ""
+msgstr "Nem lehet erre a helyre váltani: '{0}' : {1}"
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "Túl rövid jelszó"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Gyenge jelszó"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Megfelelő jelszó"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "Jó jelszó"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Erős jelszó"
 
 #: ../thus/misc/validation.py:163
 msgid "Passwords do not match"
@@ -1839,44 +1839,44 @@ msgstr "A jelszavak nem egyeznek"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "Nem lehet {0} partíciót címkézni"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "Nem ellenőrizhető, hogy {0} SSD-e."
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "Sajnáljuk, de {0} fájlrendszer nem zsugorítható"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "Nem lehet a {0} logikai kötetet eltávolítani"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "Nem lehet a {0} kötetcsoportot eltávolítani"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "Nem lehet eltávolítani a {0} fizikai kötetet"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/cnchi.log"
-msgstr ""
+msgstr "Kivétel: {0}.\nBővebb információért nézd meg a /tmp/cnchi.log fájlt"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "Nem lehet a {0} partíciót törölni"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1885,42 +1885,42 @@ msgstr "A partíció mérete túl nagy!"
 #: ../thus/parted3/partition_module.py:299
 #, python-brace-format
 msgid "Can't detect used space from {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet innen: {0}"
 
 #: ../thus/parted3/used_space.py:42
 #, python-brace-format
 msgid "Can't detect used space of NTFS partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} NTFS partíción"
 
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} EXTFS partíción"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} FAT partíción"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} JFS partíción"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} REISERFS partíción"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} BTRFS partíción"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "Nem lehet meghatározni a használatban lévő tárhelyet a {0} XFS partíción"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -1964,7 +1964,7 @@ msgstr "Használja ezt az eszközt a rendszer betöltő telepítésére: "
 
 #: ../ui/advanced.ui:1107
 msgid "Encryption properties"
-msgstr ""
+msgstr "Titkosítási tulajdonságok"
 
 #: ../ui/advanced.ui:1222
 msgid "Use LUKS encryption: "
@@ -1978,21 +1978,21 @@ msgstr "<small><span color=\"darkgreen\">Erős jelszó</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!</b>"
 
 #: ../ui/automatic.ui:62
 msgid ""
 "Please choose the drive where you want to install Antergos and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Kérem válassza ki a meghajtót, ahova telepíteni akarja a Antergos-t és kattintson az alábbi gombra a folyamat megkezdéséhez."
 
 #: ../ui/automatic.ui:275
 msgid "show password"
-msgstr ""
+msgstr "Jelszó megjelenítése"
 
 #: ../ui/automatic.ui:294
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "LUKS jelszó. Ne használj speciális, vagy ékezetes karaktereket!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2000,7 +2000,7 @@ msgstr "Milyen típusú a rendszerindítód?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (általános)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2012,7 +2012,7 @@ msgstr "i386 UEFI"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Válaszd a 'mégse' gombot, ha nem akarod telepíteni a rendszerindítót"
 
 #: ../ui/check.ui:19
 msgid ""
@@ -2024,7 +2024,7 @@ msgstr "<span weight=\"bold\" size=\"large\">A legjobb eredmény érdekében gy�
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Ez nagymértékben függ attól, milyen asztali környezetet választasz, így lehetséges, hogy több helyre lesz szükség (például a KDE-hez szükség van legalább 6.5GB-ra)."
 
 #: ../ui/main_window.ui:38
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
