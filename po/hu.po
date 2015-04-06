@@ -8,6 +8,7 @@
 # chris020891 <chris020891@gmail.com>, 2013
 # Dr. Tibor Attila Anca <inactive+anca.tibor@transifex.com>, 2013
 # István Szőllősi <szollosi.istv4n@gmail.com>, 2013
+# Kisbenedek Márton <kmarton815@gmail.com>, 2015
 # lacika501 <80kiri@gmail.com>, 2013
 # Lajos Pasztor <mrlajos@gmail.com>, 2013
 # Lajos Pasztor <mrlajos@gmail.com>, 2013-2014
@@ -22,8 +23,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 11:22+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-05 23:14+0000\n"
+"Last-Translator: Kisbenedek Márton <kmarton815@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +47,7 @@ msgstr ""
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Partíció azonosító ismeretlen: {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -55,13 +56,13 @@ msgstr "Rendszer Ellenőrzés"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "rendelkezik legalább {0}GB szabad tárhellyel. (*)"
 
 #: ../thus/check.py:77
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "Ez nagymértékben függ attól milyen asztali környezetet választ, így lehetséges több helyre lesz szükség."
+msgstr "Ez nagymértékben függ attól, milyen asztali környezetet választasz, így lehetséges, hogy több helyre lesz szükség."
 
 #: ../thus/check.py:82
 msgid "is plugged in to a power source"
@@ -89,15 +90,15 @@ msgstr "Van elég szabad tárhely a lemezen."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Nem lehet létrehozni és módosítani encfs konfigurációs fájlokat."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "A home mappa nem lesz titkosítva."
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Nem lehet futtatni encfs-t. Rossz jelszó?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -105,11 +106,11 @@ msgstr "Válassz billentyűzetkiosztást"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Billentyűzetkiosztások"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Billentyűzet variációk"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -122,11 +123,11 @@ msgstr "Variációk"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "A billentyűzetkiosztás ez: {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Üdvözöl a Manjaro!"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -139,24 +140,24 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "A Thus egy korai kiadású béta szoftver, mely még erősen fejlesztés alatt áll.\nMég nem kezeli megfelelően a RAID és btrfs alköteteket, vagy más \nfejlett beállításokat. Kérjük, használd óvatosan, mert elveszítheted az adataidat!\nHa bármilyen hibát észlelsz, kérjük jelezd a <a href='http://bugs.manjaro.org</a> weboldalon."
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Tovább"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Bezár"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Vissza"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Nem található fordítási fájl a következő nyelvhez: {0}"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -167,7 +168,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "A tartózkodási hely kiválasztása segít a rendszer területi beállításainak meghatározásában. Ez általában az ország, ahol élsz. Ez egy rövid lista a helyekről az általad kiválasztott nyelv alapján."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -175,30 +176,30 @@ msgstr "Ország, terület vagy övezet:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Mutassa az összes helyet"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr ""
+msgstr "A területi beállítás erre változott : {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr ""
+msgstr "Nem lehet erre a helyre váltani: '{0}'"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Ezt a telepítőt adminisztrátor jogokkal kell futtatni, enélkül nem folytatható."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "A '{0}' fájl már létezik."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -210,21 +211,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "Nem lehet egyszerre két telepítőt futtatni.\nHa biztos vagy benne, hogy a telepítő nem indult már el korábban,\nfuttathatod a telepítőt a --force opcióval,\nvagy manuálisan törölheted az ütköző fájlt.\n\nAz ütköző fájl: '{0}'"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus telepítő verzió {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro telepítő - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Biztos vagy benne, hogy kilépsz a telepítőből?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -271,13 +272,13 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "FONTOS: Lehetséges, hogy probléma volt a rendszerbetöltő \ntelepítésekor, ami megakadályozhatja a rendszered betöltését. Mielőtt \nújraindítod a gépet, ellenőrizheted, hogy a rendszerbetöltő megfelelően volt-e telepítve \nés konfigurálva. Az Arch Linux Wiki-n bővebb információt találhatsz:\nhttps://wiki.archlinux.org/index.php/GRUB\n\nMegnézed a wiki oldalt most?"
 
 #: ../thus/slides.py:203
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "A rendszer telepítése befejeződött.\nÚjraindítod a rendszert most?"
 
 #: ../thus/thus.py:64
 #, python-brace-format
@@ -287,12 +288,12 @@ msgstr ""
 #: ../thus/thus.py:164
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "A pyalpm v{0} használata a libalpm v{1} felületeként"
 
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Manjaro telepítő"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -300,7 +301,7 @@ msgstr "Thus naplózási szintjének beállítása hibakereséshez"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Futtatja a Thus-t, még akkor is, ha egy másik telepítő már fut"
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -312,7 +313,7 @@ msgstr ""
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Ne keressen új Thus verziókat az interneten"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -320,20 +321,20 @@ msgstr "Mutassa a naplózott üzeneteket a stdout-on"
 
 #: ../thus/thus.py:224
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Mutassa a fejlesztés alatt álló opciókat (csakis fejlesztőknek, ne használd!)"
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "A program frissítve! Újraindítás..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Thus fájlok nem találhatók. Telepítsd a Thus-t a pacman használatával"
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Mielőtt futtatnád a telepítőt, telepítsd ezt: '{0}' "
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -349,16 +350,16 @@ msgstr "Régió:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Használjon NTP-t \"Network Time Protocol\" az óra szinkronizáláshoz"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "A hely erre változott: {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
-msgstr "Nem választódtak ki az időzónai koordináták:"
+msgstr "Nem lehet automatikusan meghatározni az időzóna koordinátákat"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
@@ -366,46 +367,46 @@ msgstr ""
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Hálózati állapot nem található"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Van kapcsolat. Kérdezzük le az időzónát"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Időzóna meghatározva (szélesség {0}, hosszúság {1})."
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "Nem található az 'update.info' fájl. A Thus nem lesz képes frissíteni magát."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Thus Internet verzió: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Új verzió elérhető. A telepítő frissítése... "
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Nem található új verzió. Frissítés mindenképp..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "A Thus új verziójának letöltése..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Nem tölthető le új Thus verzió."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Új verzió kicsomagolása..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
@@ -414,7 +415,7 @@ msgstr ""
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "Hibás md5. Hibás letöltés, vagy nem megfelelő fájl, ez nem fog frissülni"
 
 #: ../thus/user_info.py:79
 msgid "Who are you?"
@@ -465,27 +466,27 @@ msgstr "Jelszó megerősítése"
 
 #: ../thus/user_info.py:124 ../ui/user_info.ui:611
 msgid "Choose a root password:"
-msgstr "Válasszon jelszót a root-nak:"
+msgstr "Válassz egy root jelszót:"
 
 #: ../thus/user_info.py:132 ../ui/user_info.ui:684
 msgid "Confirm root password:"
-msgstr "root jelszó megerősítése:"
+msgstr "Root jelszó megerősítése:"
 
 #: ../thus/user_info.py:140
 msgid "Its name as it appears to other computers."
-msgstr "Név ami más számítógépek számára megjelenik."
+msgstr "Név, ami más számítógépek számára megjelenik."
 
 #: ../thus/user_info.py:144
 msgid "You must enter a name"
-msgstr "Megkel adjál egy nevet"
+msgstr " Kötelező nevet megadni"
 
 #: ../thus/user_info.py:148
 msgid "You must enter a username"
-msgstr "Megkel adjál egy felhasználónevet"
+msgstr "Kötelező felhasználónevet megadni"
 
 #: ../thus/user_info.py:152 ../thus/user_info.py:156
 msgid "You must enter a password"
-msgstr "Megkel adnod a jelszót"
+msgstr "Kötelező jelszót megadni"
 
 #: ../thus/user_info.py:160 ../ui/user_info.ui:473
 msgid "Log in automatically"
@@ -516,19 +517,19 @@ msgstr "Használjon root jelszót"
 msgid ""
 "Manjaro will use eCryptfs to encrypt your home directory. Unfortunately, eCryptfs does not handle sparse files well.\n"
 "\n"
-msgstr "Manjaro az eCryptfs-t használja az ön home könyvtárának a titkosítására. Sajnos az eCryptfs nem kezeli a töredezett fájlokat jól.\n\n"
+msgstr "Manjaro az eCryptfs-t használja az ön home könyvtárának a titkosítására. Sajnos az eCryptfs nem kezeli jól a töredezett fájlokat.\n\n"
 
 #: ../thus/user_info.py:241
 msgid ""
 "Don't worry, for most intents and purposes this deficiency does not pose a problem.\n"
 "\n"
-msgstr "Ne aggódjon, a legtöbb célra és szándékra ez a védelem nem okoz problémát.\n\n"
+msgstr "Ne aggódjon, a legtöbb felhasználási szándékot és célt tekintve ez a hiányosság nem jelent problémát.\n\n"
 
 #: ../thus/user_info.py:242
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "Egyébként egy népszerű és nem javasolt alkalmazása az eCryptfs-nek a BitTorrent letöltési helyének titkosítása ami sokszor megköveteli az eCryptfs-től, hogy 10 GB-nál több töredezett fájlt kezeljen. Ez intenzív lemezhasználathoz vezethet.\n\n"
+msgstr "Egyébként az egyik népszerű és nem javasolt alkalmazása az eCryptfs-nek a BitTorrent letöltési helyének titkosítása, ami sokszor megköveteli az eCryptfs-től, hogy 10 GB-nál több töredezett fájlt kezeljen. Ez intenzív lemezhasználathoz vezethet.\n\n"
 
 #: ../thus/user_info.py:243
 msgid ""
@@ -552,7 +553,7 @@ msgstr "Érvénytelen karaktereket adtál meg"
 
 #: ../thus/user_info.py:333
 msgid "Username can't contain dots"
-msgstr "Felhasználónév nem tartalmazhat pontokat"
+msgstr "A felhasználónév nem tartalmazhat pontokat"
 
 #: ../thus/user_info.py:337
 msgid "Too many characters"
@@ -560,7 +561,7 @@ msgstr "Túl sok karakter"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Helytelen url, másikat kell próbálni, ha van elérhető"
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -568,22 +569,22 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Nem lehet megnyitni ezt {0} - Oka: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "HTTP hiba : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "URL hiba : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Letöltés: {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
@@ -593,12 +594,12 @@ msgstr ""
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "{0} fájl már létezik, a Thus nem fogja felülírni"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Nem lehet letölteni: {0}, még az összes elérhető tükörszerver kipróbálása után sem"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:591
@@ -631,7 +632,7 @@ msgstr "Méret"
 
 #: ../thus/installation/advanced.py:391
 msgid "Used"
-msgstr "Használva"
+msgstr "Használt"
 
 #: ../thus/installation/advanced.py:394
 msgid "Flags"
@@ -647,35 +648,35 @@ msgstr "semmi"
 
 #: ../thus/installation/advanced.py:701
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Nem lehet LVM fájlrendszer típussal szerkeszteni a partíciót"
 
 #: ../thus/installation/advanced.py:763
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Nem használható kétszer ugyanaz a csatolási pont."
 
 #: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
-msgstr ""
+msgstr "A root partíciót formázni kell."
 
 #: ../thus/installation/advanced.py:863
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "Törölni fogod a {0} partíciót a {1} lemezről"
 
 #: ../thus/installation/advanced.py:881
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "Lecsatolás {0}..."
 
 #: ../thus/installation/advanced.py:1006
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Már létrehoztál {0} elsődleges partíciót."
 
 #: ../thus/installation/advanced.py:1010
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Már létrehoztál {0} elsődleges és 1 kiterjesztett partíciót."
 
 #: ../thus/installation/advanced.py:1065
 msgid "Can't use same mount point twice..."
@@ -683,19 +684,19 @@ msgstr "Nem lehet kétszer használni ugyanazt a csatolási pontot..."
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Elsődleges partíció létrehozása"
 
 #: ../thus/installation/advanced.py:1101
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Kiterjesztett partíció létrehozása"
 
 #: ../thus/installation/advanced.py:1107
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Logikai partíció létrehozása"
 
 #: ../thus/installation/advanced.py:1169
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "LUKS jelszavak nem egyeznek!"
 
 #: ../thus/installation/advanced.py:1294
 msgid "Advanced installation mode"
@@ -703,17 +704,17 @@ msgstr "Haladó telepítési mód"
 
 #: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Használja ezt az eszközt a rendszer betöltő telepítésére: "
 
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr ""
+msgstr "Rendszerbetöltő:"
 
 #: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr ""
+msgstr "Eszköz"
 
 #: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
@@ -737,7 +738,7 @@ msgstr "Swap "
 
 #: ../thus/installation/advanced.py:1339
 msgid "Undo"
-msgstr ""
+msgstr "Visszavonás"
 
 #: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
 msgid "New"
@@ -745,11 +746,11 @@ msgstr "Új"
 
 #: ../thus/installation/advanced.py:1345
 msgid "Delete"
-msgstr ""
+msgstr "Törlés"
 
 #: ../thus/installation/advanced.py:1348
 msgid "Edit..."
-msgstr ""
+msgstr "Szerkesztés..."
 
 #: ../thus/installation/advanced.py:1351
 msgid "New partition table"
@@ -757,11 +758,11 @@ msgstr "Új partíciós tábla"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Cancel"
-msgstr ""
+msgstr "_Mégsem"
 
 #: ../thus/installation/advanced.py:1373
 msgid "_Apply"
-msgstr ""
+msgstr "_Alkalmaz"
 
 #: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
 msgid "Size:"
@@ -793,11 +794,11 @@ msgstr "A végen ennek a helynek"
 
 #: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
 msgid "Use As:"
-msgstr ""
+msgstr "Használja mint:"
 
 #: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
-msgstr ""
+msgstr "Csatolási pont:"
 
 #: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -814,7 +815,7 @@ msgstr "Formatálás:"
 
 #: ../thus/installation/advanced.py:1442
 msgid "Partition Table Type:"
-msgstr "Partíciós táblat típusa:"
+msgstr "Partíciós tábla típusa:"
 
 #: ../thus/installation/advanced.py:1447
 msgid "Create Partition Table"
@@ -822,7 +823,7 @@ msgstr "Partíciós tábla létrehozása"
 
 #: ../thus/installation/advanced.py:1450
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Használjon LUKS titkosítást:"
 
 #: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -839,14 +840,14 @@ msgstr "Jelszó megerősítése:"
 #: ../thus/installation/advanced.py:1532
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "Új {0} partíciós tábla létrehozása a {1} lemez számára"
 
 #: ../thus/installation/advanced.py:1542
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "A GRUB-nak szüksége van egy BIOS rendszerbetöltő partícióra a BIOS alapú rendszereken a core.img fájl beépítésére, mivel nincs elegendő post-MBR rés a GPT lemezeken.\n\nA Thus létrehozza ezt a BIOS rendszerbetöltő partíciót."
 
 #: ../thus/installation/advanced.py:1570
 msgid "Can't create BIOS GPT Boot partition!"
@@ -866,7 +867,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} csatolva mint swap.\nA folytatáshoz le kell csatolni.\nKattints az Igen-re a lecsatoláshoz, vagy a Nem-re a visszalépéshez\n"
 
 #: ../thus/installation/advanced.py:1794
 #, python-brace-format
@@ -874,28 +875,28 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} csatlakoztatva ide '{1}'.\nA folytatáshoz le kell választani.\nKattints az Igen-re a lecsatoláshoz, vagy a Nem-re a vissza lépéshez\n"
 
 #: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr ""
+msgstr "{0} lecsatolva"
 
 #: ../thus/installation/advanced.py:1819
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
-msgstr ""
+msgstr "Swap partíció {0} lecsatolva"
 
 #: ../thus/installation/advanced.py:1830
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "{0} csatoltnak tűnik (foglalt), de nincs csatolási pontja"
 
 #: ../thus/installation/advanced.py:1837
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
-msgstr "A root partíció nincs formázásra kijelölve.\nEz problémákat okozhat. Meg kellene jelölni formázásra most?"
+msgstr "A root partíció nincs formázásra kijelölve.\nEz problémákat okozhat. Meg legyen jelölve formázásra most?"
 
 #: ../thus/installation/advanced.py:1881
 #, python-brace-format
@@ -907,7 +908,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1906
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "{0} partíció törlésre kerül"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Partition"
@@ -923,7 +924,7 @@ msgstr "Csatolás"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Encrypt"
-msgstr ""
+msgstr "Titkosítás"
 
 #: ../thus/installation/advanced.py:1935
 msgid "These disks will have partition actions:"
@@ -932,22 +933,22 @@ msgstr "Ennek a lemeznek ezek a partíciós beállításai lesznek:"
 #: ../thus/installation/advanced.py:2035
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "Változtatások mentve {0}"
 
 #: ../thus/installation/advanced.py:2056
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "Új {0} fájlrendszer létrehozása itt: {1} címkézve: {2}"
 
 #: ../thus/installation/advanced.py:2059
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "Új {0} fájlrendszer létrehozása itt: {1}"
 
 #: ../thus/installation/advanced.py:2088
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "{0} titkosítása, {1} kötet név hozzárendelése és formázás..."
 
 #: ../thus/installation/advanced.py:2103
 #, python-brace-format
@@ -961,12 +962,12 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "A Thus nem fog telepíteni semmilyen rendszerbetöltőt "
 
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "A Manjaro telepíteni fogja a {0} rendszerbetöltőt a {1} eszközre"
 
 #: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -974,16 +975,16 @@ msgstr "Teszt mód. Thus nem fog módosításokat eszközölni a rendszereden!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Nem érhető el elsődleges partíció"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "{0} eszköz zsugorításra kerül és új {1} eszköz létrehozása"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
-msgstr ""
+msgstr "A Thus legalább 6.5GB szabad helyet javasol a Manjaro telepítésére."
 
 #: ../thus/installation/alongside.py:151
 #, python-brace-format
@@ -996,11 +997,11 @@ msgstr ""
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "Még mindig telepítheted a Manjaro-t, de figyelj oda, melyik asztali környezetet választod."
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Telepítés csak saját felelősségre!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1008,11 +1009,11 @@ msgstr "Manjaro telepítése meglévő operációs rendszer mellé"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Válaszd ki a telepítésed új méretét"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Válaszd ki, hogy melyik partíciót akarod zsugorítani:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
@@ -1022,7 +1023,7 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "Nem található telepített operációs rendszer!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
@@ -1030,15 +1031,15 @@ msgstr ""
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "Windows(tm) operációs rendszer felderítve."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
-msgstr ""
+msgstr "Windows(tm) operációs rendszer nem található."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "Nem található operációs rendszer az sda eszközön."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
@@ -1046,7 +1047,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "és"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1055,23 +1056,23 @@ msgstr "Telepítés típusa"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "{0} cseréje Manjaro-ra."
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
-msgstr ""
+msgstr "Lemez törlése és Manjaro telepítése"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Figyelem: Ez törölni fogja az ÖSSZES adatot a lemezen."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
-msgstr "Titkosítsd ezt a telepítést a fokozott biztonság érdekében."
+msgstr "A telepítés titkosítása a fokozott biztonság érdekében."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "A következő lépésben titkosítási kulcsot kell létrehozni."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1081,7 +1082,7 @@ msgstr "Használjon LVM-et ezzel a telepítéssel."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Ez beállítja az LVM-et, és lehetővé teszi a partíciók könnyű kezelését, továbbá pillanatfelvételek készítését."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1090,19 +1091,19 @@ msgstr "Állítsd a Home könyvtárat egy eltérő partícióra/kötetre"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Ez a /home könyvtárat egy másik partícióra vagy kötetre állítja."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
-msgstr ""
+msgstr "Hogyan szeretnéd folytatni?"
 
 #: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
-msgstr ""
+msgstr "Válaszd ki, hogy pontosan hová települjön a Manjaro."
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Partíciós tábla szerkesztése és csatolási pontok létrehozása."
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1110,15 +1111,15 @@ msgstr "A Manjaro telepítés titkosítva lesz LUKS használatával"
 
 #: ../thus/installation/ask.py:344
 msgid "Manjaro will be installed using LVM volumes"
-msgstr "Manjaro telepítve lesz LVM kötetek használatával"
+msgstr "A Manjaro LVM kötetek használatával lesz telepítve."
 
 #: ../thus/installation/ask.py:346
 msgid "Manjaro will be installed using a separate /home volume."
-msgstr "Manjaro telepítve lesz egy különálló /home kötet használatával."
+msgstr "A Manjaro egy különálló /home kötet használatával lesz telepítve."
 
 #: ../thus/installation/ask.py:348
 msgid "Manjaro will be installed using a separate /home partition."
-msgstr "Manjaro telepítve lesz egy különálló /home partíció használatával."
+msgstr "A Manjaro egy különálló /home partíció használatával lesz telepítve."
 
 #: ../thus/installation/automatic.py:75
 msgid "Automatic installation mode"
@@ -1145,39 +1146,39 @@ msgstr "Titkosítás jelszó:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "LUKS jelszó. Ne használj speciális karaktereket, vagy ékezeteket!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "LUKS jelszó beállítva"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "Automatikus telepítés itt: {0}"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Biztosan folytatni akarod és törölni a merevlemez minden tartalmát?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr "A Thus telepíti a Manjaro-t a következő eszközre: {0}"
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "A Thus a {0} rendszerbetöltőt a {1} eszközre telepíti."
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:490 ../thus/installation/process.py:507
 #: ../thus/installation/process.py:522
 #, python-brace-format
 msgid "Unmounting {0}"
-msgstr ""
+msgstr "{0} lecsatollása"
 
 #: ../thus/installation/auto_partition.py:90
 #, python-brace-format
@@ -1187,7 +1188,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:94
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "{0} lecsatolása nem sikerült."
 
 #: ../thus/installation/auto_partition.py:106
 #: ../thus/installation/auto_partition.py:112
@@ -1211,7 +1212,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:892
 #, python-brace-format
 msgid "Command {0} failed"
-msgstr ""
+msgstr "{0} parancs sikertelen"
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1236,77 +1237,77 @@ msgstr ""
 #: ../thus/installation/process.py:267
 #, python-brace-format
 msgid "Output: {0}"
-msgstr ""
+msgstr "Kimenet: {0}"
 
 #: ../thus/installation/auto_partition.py:157
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "Nem lehet törölni meglévő LVM köteteket"
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Nem lehet lezárni már megnyitott LUKS eszközöket"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "Nem lehet beállítani LUKS-t a {0} eszközön. Jelszó, vagy kulcs szükséges"
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "A Thus beállítja a LUKS-t ezen az eszközön: {0}"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "Nem lehet formázni és megnyitni a LUKS {0} eszközt."
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "Nem törölhető a {0} eszköz fájlrendszere."
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
-msgstr ""
+msgstr "A dd parancs nem futtatható."
 
 #: ../thus/installation/auto_partition.py:277
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Hiba az új partíció létrehozásakor ezen az eszközön: {0}"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Hiba az új partíciós tábla létrehozásakor ezen az eszközön: {0}"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr ""
+msgstr "Ez leformázza a {0} eszközt, mint {1}"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
 #, python-brace-format
 msgid "Can't activate swap in {0}"
-msgstr ""
+msgstr "Nem lehet aktiválni a swap-ot itt: {0}"
 
 #: ../thus/installation/auto_partition.py:384
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Ismeretlen fájlrendszer típus: {0}"
 
 #: ../thus/installation/auto_partition.py:392
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "Nem lehet {0} fájlrendszert létrehozni"
 
 #: ../thus/installation/auto_partition.py:421
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "Hiba a {0} csatolásakor itt: {1}"
 
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format

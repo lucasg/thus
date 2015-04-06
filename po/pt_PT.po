@@ -9,17 +9,19 @@
 # António Correia, 2013
 # sierleunam <cfb53275@opayq.com>, 2013
 # Daniel Gerep <daniel.gerep@gmail.com>, 2014
+# Dércio Lopes <derci0_l0pes@hotmail.com>, 2015
 # Gonçalo Silva <goncaloluisilva@gmail.com>, 2014
 # philm <philm@manjaro.org>, 2013
 # philm <philm@manjaro.org>, 2013
 # Seaco <marcoafmiranda@gmail.com>, 2013
+# Tony Manjaro Linux <onlygamestuga@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 11:22+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-05 19:27+0000\n"
+"Last-Translator: Dércio Lopes <derci0_l0pes@hotmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +44,7 @@ msgstr ""
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Id {0} da partição desconhecido "
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -51,7 +53,7 @@ msgstr "Verificação do Sistema"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "tem pelo menos {0}GB de espaço disponível no disco. (*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -122,7 +124,7 @@ msgstr ""
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Bem vindo ao Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -139,20 +141,20 @@ msgstr ""
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Avançar"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Voltar"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Ficheiro de tradução para o idioma {0} não encontrado"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -171,7 +173,7 @@ msgstr "País, território ou área:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Mostrar todas as localizações"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
@@ -194,7 +196,7 @@ msgstr ""
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "Ficheiro '{0}' já existe."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -211,16 +213,16 @@ msgstr ""
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Instalador Thus versão {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Instalador do Manjaro - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Tem a certeza que deseja sair do instalador?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -273,7 +275,7 @@ msgstr ""
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Instalação Completa!\nDeseja reiniciar o seu sistema agora?"
 
 #: ../thus/thus.py:64
 #, python-brace-format
@@ -288,7 +290,7 @@ msgstr ""
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Instalador do Manjaro"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -296,7 +298,7 @@ msgstr "Define o nível de log do Thus para 'debug'"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Executa o thus mesmo que detetado outro processo em execução"
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -308,7 +310,7 @@ msgstr ""
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Não procurar por novas versões online do Thus"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -320,7 +322,7 @@ msgstr ""
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Programa atualizado! A reiniciar..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
@@ -350,7 +352,7 @@ msgstr ""
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "localização modificada para: {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -362,7 +364,7 @@ msgstr ""
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Não foi possível obter o estado da rede."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
@@ -381,7 +383,7 @@ msgstr ""
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Thus Internet versão: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
@@ -401,12 +403,12 @@ msgstr ""
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "A descompactar nova versão..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Não é possível copiar {0} para {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
@@ -564,22 +566,22 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Não é possível abrir {0} - Razão: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "Erro de HTTP : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "Erro de URL : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "A descarregar {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
@@ -651,7 +653,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
-msgstr ""
+msgstr "A partição Root tem de ser formatada."
 
 #: ../thus/installation/advanced.py:863
 #, python-brace-format
@@ -679,15 +681,15 @@ msgstr "Não pode usar mesmo o mesmo ponto de montagem duas vezes..."
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "A criar partição primária"
 
 #: ../thus/installation/advanced.py:1101
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "A criar partição extendida"
 
 #: ../thus/installation/advanced.py:1107
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "A criar partição lógica"
 
 #: ../thus/installation/advanced.py:1169
 msgid "LUKS passwords do not match!"
@@ -704,12 +706,12 @@ msgstr ""
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr ""
+msgstr "Bootloader:"
 
 #: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr ""
+msgstr "Dispositivo:"
 
 #: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
@@ -733,7 +735,7 @@ msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1339
 msgid "Undo"
-msgstr ""
+msgstr "Desfazer"
 
 #: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
 msgid "New"
@@ -741,11 +743,11 @@ msgstr "Nova"
 
 #: ../thus/installation/advanced.py:1345
 msgid "Delete"
-msgstr ""
+msgstr "Apagar"
 
 #: ../thus/installation/advanced.py:1348
 msgid "Edit..."
-msgstr ""
+msgstr "Editar..."
 
 #: ../thus/installation/advanced.py:1351
 msgid "New partition table"
@@ -753,11 +755,11 @@ msgstr "Nova tabela de partições"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancelar"
 
 #: ../thus/installation/advanced.py:1373
 msgid "_Apply"
-msgstr ""
+msgstr "_Aplicar"
 
 #: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
 msgid "Size:"
@@ -789,11 +791,11 @@ msgstr "Fim deste espaço"
 
 #: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
 msgid "Use As:"
-msgstr ""
+msgstr "Usar Como:"
 
 #: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
-msgstr ""
+msgstr "Ponto de Montagem:"
 
 #: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -818,7 +820,7 @@ msgstr "Criar Tabela de Partições"
 
 #: ../thus/installation/advanced.py:1450
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Usar encriptação LUKS:"
 
 #: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -903,7 +905,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1906
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "A partição {0} será apagada"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Partition"
@@ -919,7 +921,7 @@ msgstr "Montar"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Encrypt"
-msgstr ""
+msgstr "Encriptar"
 
 #: ../thus/installation/advanced.py:1935
 msgid "These disks will have partition actions:"
@@ -957,7 +959,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "Thus não irá instalar nenhum bootloader"
 
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
@@ -970,7 +972,7 @@ msgstr "Modo de teste. Thus não aplicará qualquer alteração ao seu sistema!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Não há partições primárias disponíveis"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
@@ -1026,7 +1028,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "Windows(tm) OS detetado."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
@@ -1042,7 +1044,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "e"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1051,7 +1053,7 @@ msgstr "Tipo de instalação"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "Substituir {0} pelo Manjaro"
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
@@ -1722,7 +1724,7 @@ msgstr ""
 #: ../thus/installation/process.py:1124
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "Utilizador {0} adicionado."
 
 #: ../thus/installation/process.py:1136
 #, python-brace-format
@@ -1795,7 +1797,7 @@ msgstr "Pasta home do utilizador encriptada"
 
 #: ../thus/installation/process.py:1353
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "A instalar bootloader..."
 
 #: ../thus/installation/process.py:1359
 #, python-brace-format
@@ -1809,23 +1811,23 @@ msgstr ""
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "A senha é muito curta"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Senha fraca"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Senha razoável"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "Boa senha"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Senha forte"
 
 #: ../thus/misc/validation.py:163
 msgid "Passwords do not match"
@@ -1871,7 +1873,7 @@ msgstr ""
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "Não foi possível apagar a partição {0}"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1983,11 +1985,11 @@ msgstr ""
 
 #: ../ui/automatic.ui:275
 msgid "show password"
-msgstr ""
+msgstr "mostrar senha"
 
 #: ../ui/automatic.ui:294
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "Senha LUKS. Não use caracteres especiais ou acentos!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2007,7 +2009,7 @@ msgstr "i386 UEFI"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Escolha 'Cancel' se você não quiser instalar um boot loader"
 
 #: ../ui/check.ui:19
 msgid ""
