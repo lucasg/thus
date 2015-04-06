@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 11:08+0000\n"
+"PO-Revision-Date: 2015-04-06 13:59+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -194,7 +194,7 @@ msgstr "Bu yükleyici yönetici hakları ile çalıştırılmalıdır, bu haklar
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "'{0}' dosyası zaten mevcut."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -206,21 +206,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "Bu yükleyici aynı anda iki ayrı pencerede çalıştırılamaz.\n\nYükleyicinin şu anda çalışmadığından eminseniz\nYükleyiciyi --force komutu ekleyerek uçbirimden çalıştırabilirsin\nveya manuel olarak, çalışmasını engelleyen dosyayı silebilirsin.\n\nÇalışmayı engelleyen dosya: '{0}'"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus sistem yükleyici sürümü {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro Sistem Yükleyicisi - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Sistem Yükleyiciden çıkmak istediğinizden emin misiniz?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -267,7 +267,7 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "ÖNEMLİ: Önyükleyicide sisteminizin düzgün yüklenmesini\nengelleyecek bir sorun olmuş olabilir. \nYeniden başlatmadan önce, önyükleme yapılandırmasının durumunu doğrulamak isteyebilirsiniz.\n\nEğer bir sorun var ise Arch Linux Wiki belgelerine bakabilirsiniz:\n\thttps://wiki.archlinux.org/index.php/GRUB\n\nŞimdi wiki sayfasını görüntülemek ister misiniz?"
 
 #: ../thus/slides.py:203
 msgid ""
@@ -278,17 +278,17 @@ msgstr "Kurulum tamamlandı! Sistemi yeniden başlatmak ister misiniz?"
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "Thus ana pencereyi oluşturamıyor: {0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "pyalpm v{0} arayüzü yerine libalpm v{1} kullanılıyor"
 
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Manjaro Sistem Yükleyici"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -296,7 +296,7 @@ msgstr "Thus ayar kayıtları için 'debug'"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Başka bir pencerede çalıştığı uyarısını verse de, Thus çalışsın"
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -304,11 +304,11 @@ msgstr "Herhangi bir değişiklik yapmayın (geliştiriciler için)"
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Thus sürümünü Yükselt/Düşür"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Yeni bir Thus sürümünün olup olmadığını kontrol et"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -316,20 +316,20 @@ msgstr "stdout'a tutulan kayıtları göster"
 
 #: ../thus/thus.py:224
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Geliştirme seçeneklerini göster (sadece geliştiriciler için, siz bunu kullanmayın!)"
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Program güncellendi! Yeniden başlatılıyor..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Thus paketi bulunamadı. Thus sistem yükleyiciyi uçbirimden pacman kullanarak yükleyin."
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Bu yükleyici çalıştırmadan önce '{0}' yükleyiniz"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -345,12 +345,12 @@ msgstr "Ülke/Şehir:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Saat senkronizasyonu için İnternet Zaman Protokolünü (NTP) kullanın:"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "konuma değiştirildi : {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -358,59 +358,59 @@ msgstr "Zaman dilimi koordinatları otomatik olarak algılanamadı"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Zaman dilimi konuları durduruluyor..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Internet bağlantısı bulunamadı"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Bağlantımız var. Şimdi zaman dilimini alıyoruz"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Zaman dilimi (enlem {0}, boylam {1}) olarak algılandı."
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "'update.info' dosyası bulunamadı. Thus kendini güncelleyemeyecek."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Thus sistem yükleyici sürümü {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Yeni sürüm bulundu. Sistem yükleyici güncelleniyor..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Yeni sürüm yok. Zaten güncel sürümdesiniz..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "Yeni Thus sürümü indiriliyor..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Yeni Thus sürümü indirilemedi."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Yeni sürüm paketi açılıyor..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "{0} şuna kopyalanamadı: {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "Bozuk md5 değeri. Paket bozuk ya da hatalı, güncelleme yapılamadı"
 
 #: ../thus/user_info.py:79
 msgid "Who are you?"
@@ -556,7 +556,7 @@ msgstr "Çok fazla karakter var"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Bozuk bağlantı, daha sonra tekrar deneyeceğiz."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -564,37 +564,37 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "{0} Açılamadı- Sebep: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "HTTP Hatası : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "Bağlantı Hatası : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "İndiriliyor {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "{0} paketi için hiçbir metalink bilgisi yok"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "{0} dosyası zaten mevcut, Thus bunun üzerine kurmayacak"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Tüm yansılar denendiği halde, {0} indiriledi"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:591
@@ -643,35 +643,35 @@ msgstr "-"
 
 #: ../thus/installation/advanced.py:701
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "LVM dosya sistemi ile bir disk bölümü hazırlanamadı"
 
 #: ../thus/installation/advanced.py:763
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Aynı bağlama noktası iki defa kullanılamaz..."
 
 #: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
-msgstr ""
+msgstr "Kök bölümü biçimlendirilmiş olmalıdır..."
 
 #: ../thus/installation/advanced.py:863
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "{1} diskinden {0} bölümünü sileceksiniz"
 
 #: ../thus/installation/advanced.py:881
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "Ayrılıyor {0}..."
 
 #: ../thus/installation/advanced.py:1006
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Maalesef, {0} disk bölümüne sahipsin bunu birincil bölüm olarak oluşturduk."
 
 #: ../thus/installation/advanced.py:1010
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Maalesef, {0} disk bölümüne sahipsin, 1 uzatılmış disk bölümü oluşturduk."
 
 #: ../thus/installation/advanced.py:1065
 msgid "Can't use same mount point twice..."
@@ -679,19 +679,19 @@ msgstr "Aynı bağlama noktası iki defa kullanılamaz..."
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Birincil bölüm oluşturuluyor"
 
 #: ../thus/installation/advanced.py:1101
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Uzatılmış bölüm oluşturuluyor"
 
 #: ../thus/installation/advanced.py:1107
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Mantıksal bölüm oluşturuluyor"
 
 #: ../thus/installation/advanced.py:1169
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "LUKS şifreleri eşleşmiyor!"
 
 #: ../thus/installation/advanced.py:1294
 msgid "Advanced installation mode"
@@ -699,7 +699,7 @@ msgstr "Gelişmiş kurulum kipi"
 
 #: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Önyükleyici kurulumu için bu aygıtı kullan:"
 
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
@@ -789,11 +789,11 @@ msgstr "Bu boşluğun sonu"
 
 #: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
 msgid "Use As:"
-msgstr ""
+msgstr "Şöyle Kullan:"
 
 #: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
-msgstr ""
+msgstr "Bağlama noktası:"
 
 #: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -818,7 +818,7 @@ msgstr "Bölüm Tablosu Oluştur"
 
 #: ../thus/installation/advanced.py:1450
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "LUKS şifreleme kullan: "
 
 #: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -835,14 +835,14 @@ msgstr "Şifreyi doğrula:"
 #: ../thus/installation/advanced.py:1532
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "{1} diskinde yeni bir {0} disk tablosu oluşturuluyor"
 
 #: ../thus/installation/advanced.py:1542
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "GRUB için BIOS Başlangıç Disk Bölümünde MBR oluşturacak alan olmalıdır. GPT disklerde core.img dosyasını aktarmak için BIOS önyükleme bölümünün oluşturulması da gereklidir.\n\nThus sizin için BIOS Önyükleme Bölümü oluşturacaktır."
 
 #: ../thus/installation/advanced.py:1570
 msgid "Can't create BIOS GPT Boot partition!"
@@ -862,7 +862,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} takas-swap olarak bağlandı.\nDevam etmek için bağlanmamış olması gerekir\nAyırmak için Eveti tıklayın, veya Hayır deyip geri dönün\n"
 
 #: ../thus/installation/advanced.py:1794
 #, python-brace-format
@@ -870,22 +870,22 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} '{1}' içerisine bağlanmış.\nDevam etmek için ayırmalısın.\nEvet diyerek ayırın veya Hayır diyerek geri dönün\n"
 
 #: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr ""
+msgstr "{0} ayırıldı"
 
 #: ../thus/installation/advanced.py:1819
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
-msgstr ""
+msgstr "Swap disk bölümü {0} ayırıldı"
 
 #: ../thus/installation/advanced.py:1830
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "{0} bağlı gibi gözüküyor ancak hirbir bağlama noktasına bağlı değil (meşgul)"
 
 #: ../thus/installation/advanced.py:1837
 msgid ""
@@ -898,12 +898,12 @@ msgstr "Root yani kök bölüm biçimlendirme için işaretli değil.\nBu sorun 
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
-msgstr ""
+msgstr "{0} değişiklik listesine eklendi: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] encrypt[{5}]"
 
 #: ../thus/installation/advanced.py:1906
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "{0} bölümü silinecek"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Partition"
@@ -919,7 +919,7 @@ msgstr "Bağla"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Encrypt"
-msgstr ""
+msgstr "Şifreleme"
 
 #: ../thus/installation/advanced.py:1935
 msgid "These disks will have partition actions:"
@@ -928,41 +928,41 @@ msgstr "Bu disklerde yapılacak bölümlendirme işlemleri:"
 #: ../thus/installation/advanced.py:2035
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "{0} içindeki değişiklikler kaydedildi."
 
 #: ../thus/installation/advanced.py:2056
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "{1} {2} olarak etiketli dosya sisteminde yeni {0} oluşturuluyor"
 
 #: ../thus/installation/advanced.py:2059
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "{1} dosya sisteminde yeni {0} oluşturuluyor"
 
 #: ../thus/installation/advanced.py:2088
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "{0} şifreleniyor, bölüm adı {1} olarak atandı ve biçimlendiriliyor..."
 
 #: ../thus/installation/advanced.py:2103
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "'{0}' LUKS aygıtı '{1}' ve '{2}' etiketiyle biçimlendirilemedi"
 
 #: ../thus/installation/advanced.py:2127
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "'{0}' bölümü '{1}' ve '{2}' etiketiyle biçimlendirilemedi"
 
 #: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "Thus herhangi bir önyükleyici kuramadı"
 
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "Manjaro {1} aygıtına {0} önyükleyici kuracak"
 
 #: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -970,12 +970,12 @@ msgstr "Test modu. Thus sisteminizde herhangi bir değişiklik yapmayacaktır!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Kullanılabilir bir birincil bölüm yok"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "{0} aygıtı küçült ve yeni {1} aygıtı oluştur"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
@@ -986,17 +986,17 @@ msgstr "Manjaro kurulumu için önerilen minimum alan 6.5GB'tır."
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "{0} yeni bölümü {1} durumuna küçültülüyor. Tam kurulum için yeterli boş alan kalmayacak."
 
 #: ../thus/installation/alongside.py:152
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "Halen Manjaro yükleyebilirsiniz fakat bu durum seçtiğiniz Masaüstü Yönetimine uygun olmayabilir."
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Riske rağmen yükleyeceğim!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1004,17 +1004,17 @@ msgstr "Başka bir işletim sistemi ile birlikte Manjaro"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Kurulum boyutunu seçiniz"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Küçültmek istediğiniz bölümü seçin:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
 "Can't find any spare partition number.\n"
 "Alongside installation can't continue."
-msgstr ""
+msgstr "Herhangi bir yedek disk bölümü bulunamadı.\nYanına Yükle seçeneği devam edemiyor."
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
@@ -1022,7 +1022,7 @@ msgstr "Kurulu işletim sistemi bulunamadı."
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
-msgstr ""
+msgstr "'Yanına Yükle' modu UEFI sistemlerde çalışmaz"
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
@@ -1038,11 +1038,11 @@ msgstr "sda cihazına kurulu işletim sistemi tespit edilmedi."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr ""
+msgstr "'Yayına Yükle' kurulum modu için desteklenmeyen disk düzeni"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "ve"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1051,7 +1051,7 @@ msgstr "Yükleme tipi"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "Manjaro ile {0} üzerine kur"
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
@@ -1059,7 +1059,7 @@ msgstr "Diski sil ve Manjaro kur"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Uyarı: Bu işlem ​​disk üzerindeki tüm verileri silecektir."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1067,7 +1067,7 @@ msgstr "Güvenlik için bu kurulumu şifreleyebilirsiniz."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "Bir sonraki adımda şifreleme parolası oluşturmanız istenecektir."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1077,7 +1077,7 @@ msgstr "LVM kullanarak yükle."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "LVM kurularak bölümler kolay yönetilecek ve oluşturulacak."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1086,19 +1086,19 @@ msgstr "Ev Dizini için farklı bir disk bölümü ayarlayın"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Farklı bir bölüme /home yani Ev Dizini oluşturmak sizin tercihinize bağlıdır."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
-msgstr ""
+msgstr "Nasıl devam etmek istersiniz?"
 
 #: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
-msgstr ""
+msgstr "Manjaro'nun tam olarak nereye yükleneceğini seçiniz."
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Disk bölümünü düzenle ve bağlama noktası seç."
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
