@@ -68,6 +68,30 @@
     -ms-animation-delay: 84s;
     animation-delay: 84s; 
 }
+.cb-slideshow li:nth-child(6) span { 
+    background-image: url(../images/slides/6.png);
+    -webkit-animation-delay: 84s;
+    -moz-animation-delay: 84s;
+    -o-animation-delay: 84s;
+    -ms-animation-delay: 84s;
+    animation-delay: 84s; 
+}
+.cb-slideshow li:nth-child(7) span { 
+    background-image: url(../images/slides/7.png);
+    -webkit-animation-delay: 84s;
+    -moz-animation-delay: 84s;
+    -o-animation-delay: 84s;
+    -ms-animation-delay: 84s;
+    animation-delay: 84s; 
+}
+.cb-slideshow li:nth-child(8) span { 
+    background-image: url(../images/slides/8.png);
+    -webkit-animation-delay: 84s;
+    -moz-animation-delay: 84s;
+    -o-animation-delay: 84s;
+    -ms-animation-delay: 84s;
+    animation-delay: 84s; 
+}
 
 /* Animation for the slideshow images */
 @-webkit-keyframes imageAnimation { 
