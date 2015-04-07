@@ -41,7 +41,12 @@ _special_dirs_mounted = False
 
 
 def mount_special_dirs(dest_dir):
-    """ Mount special directories for our chroot """
+    """ Mount special directories for our chroot (bind them)"""
+
+    """
+    There was an error creating the child process for this terminal
+    grantpt failed: Operation not permitted
+    """
 
     global _special_dirs_mounted
 
@@ -51,46 +56,41 @@ def mount_special_dirs(dest_dir):
         logging.debug(msg)
         return
 
-    special_dirs = ["sys", "proc", "dev", "dev/pts"]
+    efi = "/sys/firmware/efi"
+    if os.path.exists(efi):
+        special_dirs = ["dev", "dev/pts", "proc", "sys", efi[1:]]
+    else:
+        special_dirs = ["dev", "dev/pts", "proc", "sys"]
+
     for s_dir in special_dirs:
         mydir = os.path.join(dest_dir, s_dir)
         if not os.path.exists(mydir):
             os.makedirs(mydir)
-
-    efi = "/sys/firmware/efi"
-    if os.path.exists(efi):
-        mydir = os.path.join(dest_dir, efi[1:])
-        if not os.path.exists(mydir):
-            os.makedirs(mydir)
+        os.chmod(mydir, 0o755)
 
     try:
         mydir = os.path.join(dest_dir, "sys")
-        cmd = ["mount", "-t", "sysfs", "/sys", mydir]
+        cmd = ["mount", "--bind", "/sys", mydir]
         subprocess.check_call(cmd)
-        os.chmod(mydir, 0o555)
 
         mydir = os.path.join(dest_dir, "proc")
-        cmd = ["mount", "-t", "proc", "/proc", mydir]
+        cmd = ["mount", "--bind", "/proc", mydir]
         subprocess.check_call(cmd)
-        os.chmod(mydir, 0o555)
 
         mydir = os.path.join(dest_dir, "dev")
-        cmd = ["mount", "-o", "bind", "/dev", mydir]
+        cmd = ["mount", "--bind", "/dev", mydir]
         subprocess.check_call(cmd)
 
         mydir = os.path.join(dest_dir, "dev/pts")
-        cmd = ["mount", "-t", "devpts", "/dev/pts", mydir]
+        cmd = ["mount", "--bind", "/dev/pts", mydir]
         subprocess.check_call(cmd)
-        os.chmod(mydir, 0o555)
+
+        if os.path.exists(efi):
+            mydir = os.path.join(dest_dir, efi[1:])
+            cmd = ["mount", "--bind", efi, mydir]
+            subprocess.check_call(cmd)
     except subprocess.CalledProcessError as process_error:
         logging.error(process_error)
-
-    if os.path.exists(efi):
-        mydir = os.path.join(dest_dir, efi[1:])
-        try:
-            subprocess.check_call(["mount", "-o", "bind", efi, mydir])
-        except subprocess.CalledProcessError as process_error:
-            logging.error(process_error)
 
     _special_dirs_mounted = True
 
