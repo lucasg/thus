@@ -1039,8 +1039,6 @@ class InstallationProcess(multiprocessing.Process):
                             line = 'Session={}.desktop\n'.format(default_desktop_environment.desktop_file)
                     sddm_conf.write(line)
 
-
-
     def configure_system(self):
         """ Final install steps
             Set clock, language, timezone
@@ -1179,9 +1177,9 @@ class InstallationProcess(multiprocessing.Process):
         self.alsa_mixer_setup()
         logging.debug(_("Updated Alsa mixer settings"))
 
-        # Set pulse
+        '''# Set pulse
         if os.path.exists(os.path.join(DEST_DIR, "usr/bin/pulseaudio-ctl")):
-            chroot_run(['pulseaudio-ctl', 'up', '75%'])
+            chroot_run(['pulseaudio-ctl', 'set', '75%'])'''
 
         # Install xf86-video driver
         if os.path.exists("/opt/livecd/pacman-gfx.conf"):
