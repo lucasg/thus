@@ -442,11 +442,6 @@ class InstallationProcess(multiprocessing.Process):
             self.configure_system()
             self.queue_event('debug', _('System configured.'))
 
-            # Install boot loader (always after running mkinitcpio)
-            if self.settings.get('bootloader_install'):
-                self.queue_event('debug', _('Installing boot loader ...'))
-                self.bootloader_install()
-
         except subprocess.CalledProcessError as err:
             logging.error(err)
             self.queue_fatal_event("CalledProcessError.output = {0}".format(err.output))
