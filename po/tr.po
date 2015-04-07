@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 22:04+0000\n"
+"PO-Revision-Date: 2015-04-07 06:21+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -1141,32 +1141,32 @@ msgstr "Şifreleme Kodu:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "LUKS Şifreleme. Özel karakterler veya desteklenmeyen harfler kullanmayın!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "Bir root LUKS parolası ayarlandı"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "{0} üzerine otomatik yükle"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Gerçekten devam etmek ve harddiskinizdeki tüm içeriği silmek istiyor musunuz?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr "Thus {0} aygıtına Manjaro kuracak"
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "Thus '{1}' aygıtına '{0}' önyükleyici kuracak"
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:490 ../thus/installation/process.py:507
@@ -1245,7 +1245,7 @@ msgstr "Zaten açık olan LUKS aygıtları, kapatılamaz"
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "'{0}' aygıtına LUKS kurulamadı. Bir parola veya anahtar dosyası gerekli"
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
@@ -1256,7 +1256,7 @@ msgstr "Thus, {0} aygıtına LUKS ile kuracak"
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "{0} aygıtı biçimlenemedi ve açılamadı"
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
@@ -1317,7 +1317,7 @@ msgstr "{0} {1} olarak bağlanacak"
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "{0} aygıtı {1} dosya sisteminde olacak"
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1327,7 +1327,7 @@ msgstr "Toplam disk boyutu: %dMiB"
 #: ../thus/installation/auto_partition.py:602
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "EFI Sistem Disk bölümü (ESP) boyut: %dMiB"
 
 #: ../thus/installation/auto_partition.py:603
 #, python-format
@@ -1362,12 +1362,12 @@ msgstr "Kurulum disk boyutunuzu algılayamadı, bölümleme ve bağlama işleri 
 
 #: ../thus/installation/auto_partition.py:671
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "Bölüm değişikliğinde çekirdek bilgilendirilme hatası."
 
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "Thus, {0} aygıtına LUKS ile kuracak"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
@@ -1383,17 +1383,17 @@ msgstr "LVM mantıksal bölüm oluşturuluken hata"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "Kurulum cihazına LUKS keyfile kopyalanamıyor"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "'ruuid' değişken olarak ayarlanmadı. grub.cfg dosyasında root UUID değeri kontrol edilemeyebilir"
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "/etc/default/grub yapılandırmaları başarıyla tamamlandı."
 
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
@@ -1880,42 +1880,42 @@ msgstr "Disk bölümü çok büyük!"
 #: ../thus/parted3/partition_module.py:299
 #, python-brace-format
 msgid "Can't detect used space from {0}"
-msgstr ""
+msgstr "{0} kullanılan alan algılanamadı"
 
 #: ../thus/parted3/used_space.py:42
 #, python-brace-format
 msgid "Can't detect used space of NTFS partition {0}"
-msgstr ""
+msgstr "{0} NTFS bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "{0} EXTFS bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "{0} FAT bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "{0} JFS bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "{0} REISERFS bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "{0} BTRFS bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "{0} XFS bölümünde kullanılan disk alanı belirlenemedi"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -1959,7 +1959,7 @@ msgstr "Önyükleyici kurulumu için bu aygıtı kullan:"
 
 #: ../ui/advanced.ui:1107
 msgid "Encryption properties"
-msgstr ""
+msgstr "Şifreleme özellikleri"
 
 #: ../ui/advanced.ui:1222
 msgid "Use LUKS encryption: "
@@ -1973,21 +1973,21 @@ msgstr "<small><span color=\"darkgreen\">Güçlü şifre</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b> UYARI ! Bu yükleme modu diskinizdeki herşeyin üzerine yazacak! </b>"
 
 #: ../ui/automatic.ui:62
 msgid ""
 "Please choose the drive where you want to install Antergos and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Manjaro yüklemek istediğiniz sürücüyü seçin\nve işlemini başlatmak için aşağıdaki butona tıklayın."
 
 #: ../ui/automatic.ui:275
 msgid "show password"
-msgstr ""
+msgstr "Şifreyi göster"
 
 #: ../ui/automatic.ui:294
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "LUKS Şifreleme. Özel karakterler veya desteklenmeyen harfler kullanmayın!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -1995,7 +1995,7 @@ msgstr "Sisteminizin önyükleme tipi nedir ?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Common)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2007,7 +2007,7 @@ msgstr "i386 UEFI"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Önyükleyici kurulmasını istemiyorsanız 'vazgeç' seçimi yapınız."
 
 #: ../ui/check.ui:19
 msgid ""
@@ -2019,7 +2019,7 @@ msgstr "<span weight=\"bold\" size=\"large\">En iyi sonuç için bilgisayarını
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Kurulum yapacağınız masaüstü yöneticisi ve onun bağımlılıklarına yetecek disk alanı belirlemelisiniz. (örneğin, KDE en az 6.5GB gerektirir)."
 
 #: ../ui/main_window.ui:38
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"

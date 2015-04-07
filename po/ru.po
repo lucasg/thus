@@ -13,6 +13,7 @@
 # Barigosha <artisho5@gmail.com>, 2013
 # Виктор Кукшиев <andrey0bolkonsky@gmail.com>, 2013
 # Daniil <rostovslipknot@gmail.com>, 2013
+# Eugen <mail4mnu@yandex.ru>, 2015
 # Alexandre Filgueira <faidoc@gmail.com>, 2013
 # Анатолий Валерианович <ffox909@mail.ru>, 2014
 # Ivan Yurasov <vdk@gmx.us>, 2011
@@ -37,8 +38,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 19:30+0000\n"
-"Last-Translator: LeilaSouad <drukova@hotmail.com>\n"
+"PO-Revision-Date: 2015-04-07 14:01+0000\n"
+"Last-Translator: Eugen <mail4mnu@yandex.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/manjaro-thus/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +57,7 @@ msgstr "неизвестный"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Ошибка вызова hexdump команды {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
@@ -377,7 +378,7 @@ msgstr "Не удается автоматически определить вр
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Остановка определения временных зон..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
@@ -861,7 +862,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "Для GRUB необходим загрузочный раздел BIOS в системе BIOS для встраивания файла core.img file из-за отсутствия встроенной области post-MBR на дисках GPT.\n\nПоэтому будет создан загрузочный раздел BIOS."
 
 #: ../thus/installation/advanced.py:1570
 msgid "Can't create BIOS GPT Boot partition!"
@@ -1057,7 +1058,7 @@ msgstr "Не удается определить установленную ОС
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr ""
+msgstr "Диск имеет неподдерживаемое разбиение для выбранного режима установки"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
@@ -1197,7 +1198,7 @@ msgstr "Отмонтирование {0}"
 #: ../thus/installation/auto_partition.py:90
 #, python-brace-format
 msgid "Unmounting {0} failed. Trying lazy arg."
-msgstr ""
+msgstr "Не удалось отключить  {0}. Используйте аргумент lazy."
 
 #: ../thus/installation/auto_partition.py:94
 #, python-brace-format
@@ -1251,7 +1252,7 @@ msgstr "Ошибка команды {0}"
 #: ../thus/installation/process.py:267
 #, python-brace-format
 msgid "Output: {0}"
-msgstr ""
+msgstr "Вывод: {0}"
 
 #: ../thus/installation/auto_partition.py:157
 msgid "Can't delete existent LVM volumes"
@@ -1284,7 +1285,7 @@ msgstr "Не удается удалить файловую систему ус�
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
-msgstr ""
+msgstr "Не могу выполнить комманду \"dd\""
 
 #: ../thus/installation/auto_partition.py:277
 #: ../thus/installation/auto_partition.py:305
@@ -1326,7 +1327,7 @@ msgstr "Ошибка при попытке смонтировать {0} в {1}"
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "Данные устройства: {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
@@ -1408,7 +1409,7 @@ msgstr "Не удается копировать файл ключа LUKS на �
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "Переменная 'ruuid' не определена. Не могу проверить UUID корневого раздела в grub.cfg, будем надеятся, что там все в порядке."
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
@@ -1428,7 +1429,7 @@ msgstr "Установка загрузчика  GRUB(2)BIOS на {0}"
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig не отвечает. Убейте grub-mount и os-prober, чтобы продолжить."
 
 #: ../thus/installation/bootloader.py:263
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1446,12 +1447,12 @@ msgstr "Установка загрузчика GRUB(2) UEFI"
 #: ../thus/installation/bootloader.py:319
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
-msgstr ""
+msgstr "Не найден загрузчик OEM в  {0}. Копирование Grub(2) в папку."
 
 #: ../thus/installation/bootloader.py:323
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "Не удалось скопировать Grub(2) в папку OEM: {0}"
 
 #: ../thus/installation/bootloader.py:327
 msgid "File not found."
@@ -1481,23 +1482,23 @@ msgstr "Установка GRUB(2) UEFI может быть выполнена �
 
 #: ../thus/installation/bootloader.py:395
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "50mounted-tests пропатчен успешно"
 
 #: ../thus/installation/bootloader.py:397
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "Не удалось пропатчить 50mounted-tests, файл не найден."
 
 #: ../thus/installation/bootloader.py:401
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Копирую темы для GRUB(2)"
 
 #: ../thus/installation/bootloader.py:407
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Темы для Grub2 не найдены "
 
 #: ../thus/installation/bootloader.py:409
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Тема Grub2 уже существует."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Installing Grub2 locales."
@@ -1509,11 +1510,11 @@ msgstr "Не удается установить локаль GRUB(2)"
 
 #: ../thus/installation/bootloader.py:490
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Установка Gummiboot выполнена успешно"
 
 #: ../thus/installation/bootloader.py:494
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Установка Gummiboot завершилась неудачей!"
 
 #: ../thus/installation/bootloader.py:526
 msgid "Can't freeze/unfreeze xfs system"
@@ -1542,12 +1543,12 @@ msgstr "Ошибка команды {0}"
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "Вывод: {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "Превышен интервал оджидания для комманды {0}"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
@@ -1570,7 +1571,7 @@ msgstr "Копирование '/{0}' "
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Установка с помощью режима '{0}'  "
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
@@ -1836,7 +1837,7 @@ msgstr "Слабый пароль"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "прекрасный пароль"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
@@ -2014,7 +2015,7 @@ msgstr "Тип загрузки системы?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS(Обычный)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"

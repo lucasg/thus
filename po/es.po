@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 12:48+0000\n"
+"PO-Revision-Date: 2015-04-07 13:13+0000\n"
 "Last-Translator: José Luis García Morillo\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/manjaro-thus/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -718,7 +718,7 @@ msgstr "Instalación avanzada"
 
 #: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr "Usar la siguiente unidad para la instalación del gestor de arranque:"
+msgstr "Usar el siguiente dispositivo para la instalación del gestor de arranque:"
 
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
@@ -728,7 +728,7 @@ msgstr "Gestor de arranque:"
 #: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr "Unidad:"
+msgstr "Dispositivo:"
 
 #: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
@@ -967,7 +967,7 @@ msgstr "Cifrando {0}, asignando nombre al volumen {1} y formateandolo"
 #: ../thus/installation/advanced.py:2103
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr "No se ha podido formatear la unidad LUKS '{0}' con la etiqueta '{1}' como '{2}'"
+msgstr "No se ha podido formatear el dispositivo LUKS '{0}' con la etiqueta '{1}' como '{2}'"
 
 #: ../thus/installation/advanced.py:2127
 #, python-brace-format
@@ -981,7 +981,7 @@ msgstr "Thus no instalará gestor de arranque"
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr "Manjaro instalará el gestor de arranque {0} en la unidad {1}"
+msgstr "Manjaro instalará el gestor de arranque {0} en el dispositivo {1}"
 
 #: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -994,7 +994,7 @@ msgstr "No hay particiones primarias disponibles"
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr "La unidad {0} se reducirá y se creará el nuevo sistema de archivos {1}"
+msgstr "La partición {0} se reducirá y se creará la nueva partición {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
@@ -1141,7 +1141,7 @@ msgstr "Modo de instalación automático"
 
 #: ../thus/installation/automatic.py:79 ../ui/automatic.ui:84
 msgid "Select drive:"
-msgstr "Seleccionar unidad:"
+msgstr "Seleccionar dispositivo:"
 
 #: ../thus/installation/automatic.py:83
 msgid ""
@@ -1152,7 +1152,7 @@ msgstr "¡ADVERTENCIA! ¡Este modo de instalación sobrescribirá el disco enter
 msgid ""
 "Please choose the drive where you want to install Manjaro\n"
 "and click the button below to start the process."
-msgstr "Por favor seleccione la unidad donde desea instalar Manjaro\ny presione el siguiente boton para iniciar el proceso."
+msgstr "Por favor seleccione el dispositivo donde desea instalar Manjaro\ny presione el botón  para iniciar el proceso."
 
 #: ../thus/installation/automatic.py:93 ../ui/automatic.ui:227
 msgid "Encryption Password:"
@@ -1180,12 +1180,12 @@ msgstr "¿Quieres continuar y borrar todo el contenido del disco?"
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr "Thus instalará Manjaro en la unidad {0}"
+msgstr "Thus instalará Manjaro en el dispositivo {0}"
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr "Thus instalará el gestor de arranque '{0}' en la unidad '{1}'"
+msgstr "Thus instalará el gestor de arranque '{0}' en el dispositivo '{1}'"
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:490 ../thus/installation/process.py:507
@@ -1259,28 +1259,28 @@ msgstr "No se pueden borrar los volúmenes LVM existentes"
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr "No se pueden cerrar las unidades LUKS abiertas"
+msgstr "No se pueden cerrar los dispositivos LUKS abiertos"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr "No se puede instalar LUKS en la unidad {0}. Se necesita una contraseña o fichero de claves"
+msgstr "No se puede instalar LUKS en el dispositivo {0}. Se necesita una contraseña o fichero de claves"
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr "Thus instalará LUKS en la unidad {0}"
+msgstr "Thus instalará LUKS en el dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr "No se puede formatear y abrir la unidad LUKS {0}"
+msgstr "No se puede formatear y abrir el dispositivo LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr "No se puede eliminar el sistema de archivos de la unidad {0}"
+msgstr "No se puede eliminar el sistema de archivos del dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
@@ -1290,17 +1290,17 @@ msgstr "No se puede ejecutar 'dd'"
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr "Error al crear una nueva partición en la unidad {0}"
+msgstr "Error al crear una nueva partición en el dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr "Error al crear una nueva tabla de particiones en la unidad {0}"
+msgstr "Error al crear una nueva tabla de particiones en el dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr "Se formateará la unidad {0} como {1}"
+msgstr "Se formateará el dispositivo {0} con {1}"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
@@ -1326,7 +1326,7 @@ msgstr "Error al intentar montar {0} en {1}"
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr "Información de la unidad: {0} UUID={1} LABEL={2}"
+msgstr "Información del dispositivo: {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
@@ -1336,7 +1336,7 @@ msgstr "{0} se montará en {1}"
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr "La unidad {0} tendrá un sistema de archivos {1}"
+msgstr "El dispositivo {0} tendrá un sistema de archivos {1}"
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1377,7 +1377,7 @@ msgstr "Tamaño partición Home: %dMiB"
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "La instalación no puede detectar el tamaño de su unidad, por favor, utilice la instalación avanzada para el particionado y la selección de puntos de montaje."
+msgstr "La instalación no puede detectar el tamaño del dispositivo, por favor, utilice la instalación avanzada para el particionado y la selección de puntos de montaje."
 
 #: ../thus/installation/auto_partition.py:671
 msgid "Error informing the kernel of the partition change."
@@ -1386,7 +1386,7 @@ msgstr "Error al informar al núcleo del cambio de la partición."
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr "Thus instalará LVM en la unidad {0}"
+msgstr "Thus instalará LVM en el dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
@@ -1402,7 +1402,7 @@ msgstr "Error al crear el volumen lógico LVM"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr "No se pudo copiar el fichero de claves LUKS a la unidad de la instalación"
+msgstr "No se pudo copiar el fichero de claves LUKS al dispositivo de la instalación"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
@@ -1858,7 +1858,7 @@ msgstr "No se pudo etiquetar la partición de {0}"
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr "No se puede verificar si {0} es una unidad SSD o no"
+msgstr "No se puede verificar si {0} es un disco SSD o no"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
@@ -1974,7 +1974,7 @@ msgstr "etiqueta"
 
 #: ../ui/advanced.ui:1023 ../ui/automatic.ui:132
 msgid "Use this device for boot loader installation:"
-msgstr "Usar esta unidad para la instalación del gestor de arranque:"
+msgstr "Usar este dispositivo para la instalación del gestor de arranque:"
 
 #: ../ui/advanced.ui:1107
 msgid "Encryption properties"
@@ -1992,13 +1992,13 @@ msgstr "<small><span color=\"darkgreen\">Contraseña fuerte</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr "<b>¡ADVERTENCIA! ¡Este modo de instalación sobreescribirá todo el contenido de la unidad!</b>"
+msgstr "<b>¡ADVERTENCIA! ¡Este modo de instalación sobrescribirá todo el contenido del dispositivo!</b>"
 
 #: ../ui/automatic.ui:62
 msgid ""
 "Please choose the drive where you want to install Antergos and click the "
 "button below to start the process."
-msgstr "Por favor seleccione la unidad donde desea instalar Antergos y presione el botón de abajo para  comenzar."
+msgstr "Por favor seleccione el dispositivo donde desea instalar Antergos y presione el botón para  comenzar."
 
 #: ../ui/automatic.ui:275
 msgid "show password"

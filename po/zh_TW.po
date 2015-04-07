@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-07 04:26+0000\n"
+"PO-Revision-Date: 2015-04-07 05:04+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -1097,7 +1097,7 @@ msgstr "選擇 Manjaro 應該要裝在哪理。"
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "編輯分割表並選擇掛載點。"
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1140,49 +1140,49 @@ msgstr "加密的密碼："
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "LUKS 密碼。不要使用特殊符號或是帶有重音符號的字母！"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "根 LUKS 密碼已經被設定"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "自動安裝在 {0} 上"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "您真的想要繼續進行並刪除您硬碟上的所有內容嗎？"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr "Thus 將會在裝置 {0} 上安裝 Manjaro"
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "Manjaro 將會安裝「{0}」開機載入器到「{1}」上"
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:490 ../thus/installation/process.py:507
 #: ../thus/installation/process.py:522
 #, python-brace-format
 msgid "Unmounting {0}"
-msgstr ""
+msgstr "正在卸載 {0}"
 
 #: ../thus/installation/auto_partition.py:90
 #, python-brace-format
 msgid "Unmounting {0} failed. Trying lazy arg."
-msgstr ""
+msgstr "卸載 {0} 失敗。正在嘗試 lazy arg。"
 
 #: ../thus/installation/auto_partition.py:94
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "卸載 {0} 失敗。"
 
 #: ../thus/installation/auto_partition.py:106
 #: ../thus/installation/auto_partition.py:112
@@ -1206,7 +1206,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:892
 #, python-brace-format
 msgid "Command {0} failed"
-msgstr ""
+msgstr "指令 {0} 執行失敗"
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1231,92 +1231,92 @@ msgstr ""
 #: ../thus/installation/process.py:267
 #, python-brace-format
 msgid "Output: {0}"
-msgstr ""
+msgstr "輸出：{0}"
 
 #: ../thus/installation/auto_partition.py:157
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "無法刪除已存在的 LVM 卷"
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "無法關閉已開啟的 LUKS 裝置"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "無法在裝置 {0} 上設定 LUKS。需要密碼或金鑰檔"
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "Thus 將會在裝置 {0} 上設定 LUKS"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "無法格式化及開啟 LUKS 裝置 {0}"
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "無法抹除 {0} 裝置上的檔案系統"
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
-msgstr ""
+msgstr "無法執行 dd 指令"
 
 #: ../thus/installation/auto_partition.py:277
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "在建立在裝置 {0} 上的新分割區時發生錯誤"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "在建立在裝置 {0} 上的新分割表時發生錯誤"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr ""
+msgstr "將會格式化裝置 {0} 為 {1}"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
 #, python-brace-format
 msgid "Can't activate swap in {0}"
-msgstr ""
+msgstr "無法在 {0} 上啟用 swap"
 
 #: ../thus/installation/auto_partition.py:384
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "未知的檔案系統類型 {0}"
 
 #: ../thus/installation/auto_partition.py:392
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "無法建立檔案系統 {0}"
 
 #: ../thus/installation/auto_partition.py:421
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "嘗試掛載 {0} 在 {1} 上時發生錯誤"
 
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "裝置細節：{0} UUID={1} 標籤={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} 將會被掛載為 {1}"
 
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "裝置 {0} 將會有 {1} 檔案系統"
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1326,7 +1326,7 @@ msgstr "總磁碟大小： %dMiB"
 #: ../thus/installation/auto_partition.py:602
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "EFI 系統分割區 (ESP) 大小： %dMiB"
 
 #: ../thus/installation/auto_partition.py:603
 #, python-format
@@ -1361,54 +1361,54 @@ msgstr "安裝程式無法偵測您的裝置大小，請使用進階安裝模式
 
 #: ../thus/installation/auto_partition.py:671
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "分割區變動的核心通知錯誤。"
 
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "Thus 將會在裝置 {0} 上設定 LVM"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "建立 LVM 物理卷時發生錯誤"
 
 #: ../thus/installation/auto_partition.py:798
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "建立 LVM 卷群組時發生錯誤"
 
 #: ../thus/installation/auto_partition.py:833
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "建立 LVM 邏輯卷時發生錯誤"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "無法複製 LUKS 金鑰檔案至安裝的裝置"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "「ruuid」變量未被設定。我無法檢查在 grub.cfg 中的根 UUID，讓我們希望它是正常的"
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "/etc/default/grub 設定成功完成"
 
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "無法複製 {0} 到 grub.d"
 
 #: ../thus/installation/bootloader.py:225
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "正在安裝 GRUB(2) BIOS 開機載入器到 {0}"
 
 #: ../thus/installation/bootloader.py:255
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig 沒有回應。正在砍除 grub-mount 及 os-prober，這樣，我們才能繼續。"
 
 #: ../thus/installation/bootloader.py:263
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1421,25 +1421,25 @@ msgstr "安裝 GRUB(2)時發生錯誤。"
 #: ../thus/installation/bootloader.py:284
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
-msgstr ""
+msgstr "正在安裝 GRUB(2) UEFI {0} 開機載入器"
 
 #: ../thus/installation/bootloader.py:319
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
-msgstr ""
+msgstr "在 {0} 沒有發現 OEM 載入器。正在複製 Grub(2) 到目錄中。"
 
 #: ../thus/installation/bootloader.py:323
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "複製 Grub(2) 到 OEM 目錄失敗：{0}"
 
 #: ../thus/installation/bootloader.py:327
 msgid "File not found."
-msgstr ""
+msgstr "找不到檔案。"
 
 #: ../thus/installation/bootloader.py:329
 msgid "File already exists."
-msgstr ""
+msgstr "檔案已經存在。"
 
 #: ../thus/installation/bootloader.py:347
 msgid "Generating grub.cfg"
@@ -1453,31 +1453,31 @@ msgstr "grub-mkconfig 似乎沒有反應。砍除 grub-mount 和 os-prober 可�
 
 #: ../thus/installation/bootloader.py:379
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "GRUB(2) UEFI 成功安裝。"
 
 #: ../thus/installation/bootloader.py:383
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "GRUB(2) UEFI 的安裝可能沒有成功的完成。"
 
 #: ../thus/installation/bootloader.py:395
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "50mounted-tests 檔案成功打上 patch"
 
 #: ../thus/installation/bootloader.py:397
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "patch 50mounted-tests 失敗，檔案找不到。"
 
 #: ../thus/installation/bootloader.py:401
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "正在複製 GRUB(2) 主題檔案"
 
 #: ../thus/installation/bootloader.py:407
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Grub2 主題檔案找不到"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Grub2 主題檔案已經存在。"
 
 #: ../thus/installation/bootloader.py:413
 msgid "Installing Grub2 locales."
@@ -1485,15 +1485,15 @@ msgstr "正在安裝 GRUB2 語系。"
 
 #: ../thus/installation/bootloader.py:424
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "無法安裝 GRUB(2) 語系。"
 
 #: ../thus/installation/bootloader.py:490
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Gummiboot 成功安裝"
 
 #: ../thus/installation/bootloader.py:494
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Gummiboot 的安裝沒有成功的完成！"
 
 #: ../thus/installation/bootloader.py:526
 msgid "Can't freeze/unfreeze xfs system"
@@ -1501,7 +1501,7 @@ msgstr "無法凍結/解除凍結 xfs 系統"
 
 #: ../thus/installation/chroot.py:50
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "特殊目錄已掛載。略過。"
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1510,33 +1510,33 @@ msgstr "特殊目錄沒有掛載。正在略過。"
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "無法卸載 {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "指令 {0} 執行失敗。"
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "輸出：{0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "執行指令 {0} 逾時"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "無論如何，Thus 將會嘗試繼續下去"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "執行指令錯誤：{0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1545,43 +1545,43 @@ msgstr "正在設定 mkinitcpio.conf 中的關聯性及模組"
 #: ../thus/installation/process.py:130
 #, python-brace-format
 msgid "Copying '/{0}'"
-msgstr ""
+msgstr "正在複製「/{0}」"
 
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "正在使用「{0}」方法安裝"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "執行命令 {0} 錯誤"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "在 {0} 增加分割區及其檔案系統"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "正在掛載 {0} 分割區到 {1} 目錄"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
 msgid "Can't mount {0} in {1}"
-msgstr ""
+msgstr "無法掛載 {0} 在 {1}"
 
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "在 {0} 上啟用 swap"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} 已刪除"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1606,13 +1606,13 @@ msgstr "正在安裝開機載入器 ..."
 #: ../thus/installation/process.py:481
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "無法複製 Thus 的記錄檔到 {0}"
 
 #: ../thus/installation/process.py:498 ../thus/installation/process.py:517
 #: ../thus/installation/process.py:531
 #, python-brace-format
 msgid "Can't unmount {0}"
-msgstr ""
+msgstr "無法卸載 {0}"
 
 #: ../thus/installation/process.py:533
 msgid "Installation finished successfully."
@@ -1629,7 +1629,7 @@ msgstr "桌面檔案系統不存在！嚴重錯誤（正在離開）。"
 #: ../thus/installation/process.py:574 ../thus/installation/process.py:580
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{0} 已經在 {1} 被掛載為 {2}"
 
 #: ../thus/installation/process.py:591
 msgid "Indexing files to be copied ..."
@@ -1646,7 +1646,7 @@ msgstr "正在解壓縮 desktop-image ..."
 #: ../thus/installation/process.py:621
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
-msgstr ""
+msgstr "正在恢復 {0} 上的元資訊"
 
 #: ../thus/installation/process.py:664
 msgid "Can't copy network configuration files"
@@ -1657,45 +1657,45 @@ msgstr "無法複製網路設定檔"
 #: ../thus/installation/process.py:806
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "已加入 fstab：{0}"
 
 #: ../thus/installation/process.py:723 ../thus/installation/process.py:739
 #, python-brace-format
 msgid "Added to crypttab : {0}"
-msgstr ""
+msgstr "已加入 crypttab：{0}"
 
 #: ../thus/installation/process.py:814
 msgid "fstab written."
-msgstr ""
+msgstr "fstab 已寫入。"
 
 #: ../thus/installation/process.py:823
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr "已啟用 {0} 服務。"
 
 #: ../thus/installation/process.py:825
 #, python-brace-format
 msgid "Can't find service {0}"
-msgstr ""
+msgstr "找不到 {0} 服務"
 
 #: ../thus/installation/process.py:833
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "建立使用者 {0} 的密碼雜湊值時發生錯誤"
 
 #: ../thus/installation/process.py:839
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "更換使用者 {0} 的密碼時發生錯誤"
 
 #: ../thus/installation/process.py:867
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "找不到 locale.gen 檔案"
 
 #: ../thus/installation/process.py:939
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
-msgstr ""
+msgstr "{0}：為使用者 {1} 啟用自動登入。"
 
 #: ../thus/installation/process.py:1058
 msgid "Configuring your new system"
@@ -1716,17 +1716,17 @@ msgstr "時區設置。"
 #: ../thus/installation/process.py:1114
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
-msgstr ""
+msgstr "使用者 {0} 的 sudo 設定已完成。"
 
 #: ../thus/installation/process.py:1124
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "使用者 {0} 已加入。"
 
 #: ../thus/installation/process.py:1136
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "主機名稱  {0} 已設定。"
 
 #: ../thus/installation/process.py:1141
 msgid "Set root password."
@@ -1750,7 +1750,7 @@ msgstr "正在配置硬體 ..."
 
 #: ../thus/installation/process.py:1185
 msgid "Updated Alsa mixer settings"
-msgstr ""
+msgstr "已更新 Alsa mixer 設定"
 
 #: ../thus/installation/process.py:1193
 msgid "Installing drivers ..."
@@ -1786,7 +1786,7 @@ msgstr "正在執行 mkinitcpio - 完成"
 
 #: ../thus/installation/process.py:1346
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "正在加密使用者的家目錄..."
 
 #: ../thus/installation/process.py:1348
 msgid "User home dir encrypted"
@@ -1794,37 +1794,37 @@ msgstr "使用者的家目錄已加密。"
 
 #: ../thus/installation/process.py:1353
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "正在安裝開機載入器..."
 
 #: ../thus/installation/process.py:1359
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "無法安裝開機載入器：{0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
 msgid "Can't change to locale '{0}' : {1}"
-msgstr ""
+msgstr "無法更改語系到「{0}」：{1}"
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "密碼太短了"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "脆弱的密碼"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "一般的密碼"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "好的密碼"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "強壯的密碼"
 
 #: ../thus/misc/validation.py:163
 msgid "Passwords do not match"
@@ -1833,44 +1833,44 @@ msgstr "密碼不符合"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "無法標籤分割區 {0}"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "無法確認 {0} 是否為固態硬碟"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "抱歉，檔案系統 {0} 無法縮小"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "無法移除邏輯卷 {0}"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "無法移除卷群組 {0}"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "無法移除物理卷 {0}"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/cnchi.log"
-msgstr ""
+msgstr "例外：{0}。\n要獲得更多資訊，請見 /tmp/thus.log"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "無法刪除分割區 {0}"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1879,42 +1879,42 @@ msgstr "分割區太大了！"
 #: ../thus/parted3/partition_module.py:299
 #, python-brace-format
 msgid "Can't detect used space from {0}"
-msgstr ""
+msgstr "無法從 {0} 偵測已使用空間"
 
 #: ../thus/parted3/used_space.py:42
 #, python-brace-format
 msgid "Can't detect used space of NTFS partition {0}"
-msgstr ""
+msgstr "無法偵測 NTFS 分割區 {0} 的已使用空間"
 
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "無法偵測 EXTFS 分割區 {0} 的已使用空間"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "無法偵測 FAT 分割區 {0} 的已使用空間"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "無法偵測 JFS 分割區 {0} 的已使用空間"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "無法偵測 REISERFS 分割區 {0} 的已使用空間"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "無法偵測 BTRFS 分割區 {0} 的已使用空間"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "無法偵測 XFS 分割區 {0} 的已使用空間"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -1958,7 +1958,7 @@ msgstr "使用這個裝置安裝開機載入器："
 
 #: ../ui/advanced.ui:1107
 msgid "Encryption properties"
-msgstr ""
+msgstr "加密屬性"
 
 #: ../ui/advanced.ui:1222
 msgid "Use LUKS encryption: "
@@ -1972,21 +1972,21 @@ msgstr "<small><span color=\"darkgreen\">堅固的密碼</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>警告！這個安裝模式將會覆寫您磁碟中的所有資料！</b>"
 
 #: ../ui/automatic.ui:62
 msgid ""
 "Please choose the drive where you want to install Antergos and click the "
 "button below to start the process."
-msgstr ""
+msgstr "請選擇您要安裝 Manjaro 的裝置，並按下面的按鈕以啟動安裝程序。"
 
 #: ../ui/automatic.ui:275
 msgid "show password"
-msgstr ""
+msgstr "顯示密碼"
 
 #: ../ui/automatic.ui:294
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "LUKS 密碼。不要使用特殊符號或是帶有重音符號的字母！"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -1994,7 +1994,7 @@ msgstr "您的開機系統類型是？"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS（常見）"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2006,7 +2006,7 @@ msgstr "i386 UEFI"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "如果您不想安裝開機載入器，請選擇「取消」。"
 
 #: ../ui/check.ui:19
 msgid ""
@@ -2018,7 +2018,7 @@ msgstr "<span weight=\"bold\" size=\"large\">要獲得最好的結果，請確�
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) 這高度取決於您所選擇的桌面環境，所以您可能會需要更多的空間（舉例來說，KDE 需要 6.5GB）。"
 
 #: ../ui/main_window.ui:38
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
