@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 13:59+0000\n"
+"PO-Revision-Date: 2015-04-06 22:04+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -1173,17 +1173,17 @@ msgstr ""
 #: ../thus/installation/process.py:522
 #, python-brace-format
 msgid "Unmounting {0}"
-msgstr ""
+msgstr "{0} Ayırılıyor"
 
 #: ../thus/installation/auto_partition.py:90
 #, python-brace-format
 msgid "Unmounting {0} failed. Trying lazy arg."
-msgstr ""
+msgstr "{0} ayırma başarısız oldu. Tekrar dene."
 
 #: ../thus/installation/auto_partition.py:94
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "{0} ayırma başarısız oldu."
 
 #: ../thus/installation/auto_partition.py:106
 #: ../thus/installation/auto_partition.py:112
@@ -1207,7 +1207,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:892
 #, python-brace-format
 msgid "Command {0} failed"
-msgstr ""
+msgstr "{0} komutu başarısız oldu"
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1232,15 +1232,15 @@ msgstr ""
 #: ../thus/installation/process.py:267
 #, python-brace-format
 msgid "Output: {0}"
-msgstr ""
+msgstr "Çıktı: {0}"
 
 #: ../thus/installation/auto_partition.py:157
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "Mevcut LVM bölüm silinemiyor"
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Zaten açık olan LUKS aygıtları, kapatılamaz"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
@@ -1250,7 +1250,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "Thus, {0} aygıtına LUKS ile kuracak"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
@@ -1261,58 +1261,58 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "{0} aygıtındaki dosya sistemi silinemedi"
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
-msgstr ""
+msgstr "dd komutu çalıştırılamadı"
 
 #: ../thus/installation/auto_partition.py:277
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "{0} aygıtında yeni disk bölümü oluşturulurken hata oluştu"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "{0} aygıtında yeni disk bölümü tablosu oluşturulurken hata oluştu"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr ""
+msgstr "{0} aygıtı {1} olarak biçimlendirilecek"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
 #, python-brace-format
 msgid "Can't activate swap in {0}"
-msgstr ""
+msgstr "{0} içinde swap aktifleştirilemiyor"
 
 #: ../thus/installation/auto_partition.py:384
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Bilinmeyen dosya sistemi tipi {0}"
 
 #: ../thus/installation/auto_partition.py:392
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "Dosya sistemi oluşturulamıyor {0}"
 
 #: ../thus/installation/auto_partition.py:421
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "{1} içine {0} bağlanırken hata oluştu"
 
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "Aygıt detayları: {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} {1} olarak bağlanacak"
 
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
@@ -1371,15 +1371,15 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "LVM fiziksel bölüm oluşturuluken hata"
 
 #: ../thus/installation/auto_partition.py:798
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "LVM bölüm grubu oluşturuluken hata"
 
 #: ../thus/installation/auto_partition.py:833
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "LVM mantıksal bölüm oluşturuluken hata"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
@@ -1398,18 +1398,18 @@ msgstr ""
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "{0} şuna kopyalanamadı: grub.d"
 
 #: ../thus/installation/bootloader.py:225
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "GRUB(2) yükleniyor BIOS önyükleyici oluşturuluyor {0}"
 
 #: ../thus/installation/bootloader.py:255
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig yanıt vermiyor. grub-mount ve os-prober ile devam edebilirsiniz"
 
 #: ../thus/installation/bootloader.py:263
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1422,25 +1422,25 @@ msgstr "GRUB(2) BIOS yükleme hatası."
 #: ../thus/installation/bootloader.py:284
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
-msgstr ""
+msgstr "{0} önyükleyici GRUB(2) UEFI ile kuruluyor"
 
 #: ../thus/installation/bootloader.py:319
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
-msgstr ""
+msgstr "{0} içinde OEM yükleyici bulunamadı. Grub(2) dir içine kopyalanıyor."
 
 #: ../thus/installation/bootloader.py:323
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "dir içine Grub(2) kopyalaması başarısız oldu: {0}"
 
 #: ../thus/installation/bootloader.py:327
 msgid "File not found."
-msgstr ""
+msgstr "Dosya bulunamadı"
 
 #: ../thus/installation/bootloader.py:329
 msgid "File already exists."
-msgstr ""
+msgstr "Dosya zaten mevcut."
 
 #: ../thus/installation/bootloader.py:347
 msgid "Generating grub.cfg"
@@ -1454,31 +1454,31 @@ msgstr "grub-mkconfig askıya alınmış gibi görünüyor. grub-mount ve os-pro
 
 #: ../thus/installation/bootloader.py:379
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "GRUB(2) UEFI yüklemesi başarıyla tamamlandı"
 
 #: ../thus/installation/bootloader.py:383
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "GRUB(2) UEFI başarılı bir şekilde yüklenmemiş olabilir."
 
 #: ../thus/installation/bootloader.py:395
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "50mounted-tests dosya yaması başarılı"
 
 #: ../thus/installation/bootloader.py:397
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "50mounted-tests yaması başarısız, dosya bulunamadı."
 
 #: ../thus/installation/bootloader.py:401
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "GRUB(2) Tema Dosyası Kopyalanıyor"
 
 #: ../thus/installation/bootloader.py:407
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Grub2 tema dosyası bulunamadı"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Grub2 tema dosyası zaten mevcut."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Installing Grub2 locales."
@@ -1486,15 +1486,15 @@ msgstr "Grub2 yerel ayarlarla yükleniyor."
 
 #: ../thus/installation/bootloader.py:424
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "GRUB(2) sisteminize yüklenemedi"
 
 #: ../thus/installation/bootloader.py:490
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Gummiboot yüklemesi başarıyla tamamlandı"
 
 #: ../thus/installation/bootloader.py:494
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Gummiboot yüklemesi tamamlanamadı, başarısız oldu!"
 
 #: ../thus/installation/bootloader.py:526
 msgid "Can't freeze/unfreeze xfs system"
@@ -1502,7 +1502,7 @@ msgstr "xfs sistem dondurulamadı veya çözülemedi"
 
 #: ../thus/installation/chroot.py:50
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Özel disk zaten bağlı. Atlanıyor."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1511,33 +1511,33 @@ msgstr "Özel dizin bağlanmadı. Atlanıyor."
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "Ayırma işlemi yapılamadı {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "{0} komutu başarısız oldu."
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "Çıktı: {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "Komut zaman aşımına uğradı {0}"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "Thus denemeye devam edecek"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "Komut hatalı çalışıyor: {0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1546,43 +1546,43 @@ msgstr "mkinitcpio.conf içine kanca ve modül ayarlanmaları"
 #: ../thus/installation/process.py:130
 #, python-brace-format
 msgid "Copying '/{0}'"
-msgstr ""
+msgstr "Kopyalanıyor '/{0}'"
 
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "'{0}' yöntemini kullanarak yükleme"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "Komut hatalı çalışıyor {0}"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "{0} içinde bölümler ve dosya sistemleri oluşturuluyor"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "{0} disk bölümü {1} dizinine bağlanıyor"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
 msgid "Can't mount {0} in {1}"
-msgstr ""
+msgstr "Bağlanamadı {0} in {1}"
 
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "{0} içinde swap etkinleştiriliyor"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} silindi"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1607,13 +1607,13 @@ msgstr "Önyükleyici kuruluyor ..."
 #: ../thus/installation/process.py:481
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "Thus logları {0} üzerine kaydedemedi"
 
 #: ../thus/installation/process.py:498 ../thus/installation/process.py:517
 #: ../thus/installation/process.py:531
 #, python-brace-format
 msgid "Can't unmount {0}"
-msgstr ""
+msgstr "{0} Ayıramazsınız"
 
 #: ../thus/installation/process.py:533
 msgid "Installation finished successfully."
@@ -1630,7 +1630,7 @@ msgstr "Masaüstü dosya sistemi bulunamadı! Kritik hata (çıkılıyor)."
 #: ../thus/installation/process.py:574 ../thus/installation/process.py:580
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{1} ve {2} olarak {0} zaten bağlı"
 
 #: ../thus/installation/process.py:591
 msgid "Indexing files to be copied ..."
@@ -1647,7 +1647,7 @@ msgstr "Manjaro bilgisayarınıza yükleniyor  ..."
 #: ../thus/installation/process.py:621
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
-msgstr ""
+msgstr "Meta-bilgi geri yükleme {0}"
 
 #: ../thus/installation/process.py:664
 msgid "Can't copy network configuration files"
@@ -1658,45 +1658,45 @@ msgstr "Ağ dosyalarının kopyalanması başarısız oldu"
 #: ../thus/installation/process.py:806
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "fstab içine eklendi : {0}"
 
 #: ../thus/installation/process.py:723 ../thus/installation/process.py:739
 #, python-brace-format
 msgid "Added to crypttab : {0}"
-msgstr ""
+msgstr "Crypttab'a eklendi : {0}"
 
 #: ../thus/installation/process.py:814
 msgid "fstab written."
-msgstr ""
+msgstr "fstab yazıldı."
 
 #: ../thus/installation/process.py:823
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr "{0} Servisi etkin."
 
 #: ../thus/installation/process.py:825
 #, python-brace-format
 msgid "Can't find service {0}"
-msgstr ""
+msgstr "{0} servisi bulunamadı"
 
 #: ../thus/installation/process.py:833
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "Kullanıcı karma parola değiştirme hatası {0}"
 
 #: ../thus/installation/process.py:839
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "Kullanıcı parola değiştirme hatası {0}"
 
 #: ../thus/installation/process.py:867
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "locale.gen dosyası bulunamadı"
 
 #: ../thus/installation/process.py:939
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
-msgstr ""
+msgstr "{0}: Kullanıcı için otomatik giriş etkin {1}."
 
 #: ../thus/installation/process.py:1058
 msgid "Configuring your new system"
@@ -1717,17 +1717,17 @@ msgstr "Saat Zaman Ayarı"
 #: ../thus/installation/process.py:1114
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
-msgstr ""
+msgstr "Kullanıcı için sudo yapılandırması {0} yapıldı."
 
 #: ../thus/installation/process.py:1124
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "Kullanıcı {0} eklendi."
 
 #: ../thus/installation/process.py:1136
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "Hostname  {0} ayarlaması."
 
 #: ../thus/installation/process.py:1141
 msgid "Set root password."
@@ -1751,7 +1751,7 @@ msgstr "Donanım yapılandırılıyor ..."
 
 #: ../thus/installation/process.py:1185
 msgid "Updated Alsa mixer settings"
-msgstr ""
+msgstr "Alsa mixer ayarları güncellendi"
 
 #: ../thus/installation/process.py:1193
 msgid "Installing drivers ..."
@@ -1787,7 +1787,7 @@ msgstr "mkinitcpio çalışma sonucu- başarılı"
 
 #: ../thus/installation/process.py:1346
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "Kullanıcı home dizini şifreleniyor..."
 
 #: ../thus/installation/process.py:1348
 msgid "User home dir encrypted"
@@ -1795,37 +1795,37 @@ msgstr "Kullanıcı Ev Dizini şifrelendi"
 
 #: ../thus/installation/process.py:1353
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "Önyükleyici kuruluyor..."
 
 #: ../thus/installation/process.py:1359
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "Önyükleyici kurulamadı: {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
 msgid "Can't change to locale '{0}' : {1}"
-msgstr ""
+msgstr "'{0}' yereli değiiştirilemedi : {1}"
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "Şifre çok kısa"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Zayıf şifreleme"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Orta şifreleme"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "İyi şifreleme"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Güçlü şifreleme"
 
 #: ../thus/misc/validation.py:163
 msgid "Passwords do not match"
@@ -1834,44 +1834,44 @@ msgstr "Şifreler eşleşmiyor"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "{0} diski etiketlenemedi"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "{0} Sürücünün durumu sağlam değil veya kontrol edilemiyor"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "Üzgünüm {0} dosya sistemi küçültülemez"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "{0} mantıksal diski silinemez"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "{0} bölüm grubu silinemez"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "{0} fiziksel diski silinemez"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/cnchi.log"
-msgstr ""
+msgstr "Ayrıcalık: {0}.\nDaha fazla bilgi için /tmp/thus.log dosyasına göz atın"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "{0} disk bölümünü silemezsiniz"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"

@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 11:22+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-07 04:26+0000\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/manjaro-thus/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,7 +121,7 @@ msgstr "鍵盤佈局為 {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "歡迎使用 Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -138,15 +138,15 @@ msgstr "Thus 是一個未正式發行的測試版軟體，仍在積極的開發�
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "下一步"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "上一步"
 
 #: ../thus/language.py:136
 #, python-brace-format
@@ -205,21 +205,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "您不能同時執行兩個安裝程式的實體。\n\n如果您確定安裝程式並未執行中\n您可以以 --force 選項來執行安裝程式\n或是您可以手動刪除有問題的檔案。\n\n有問題的檔案：「{0}」"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus 安裝程式版本 {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro 安裝程式 - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "您真的想要結束安裝程式嗎？"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -266,28 +266,28 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "重要： 開機載入器的安裝過程可能有問題\n可能會導致您的系統無法正確開機。\n在重新開機前，您可能需要確認開機載入器是否已安裝並設定完成。\n下列Arch Linux 的 Wiki 頁面包含了解決方法的資訊：\n\thttps://wiki.archlinux.org/index.php/GRUB\n\n您想要現在就檢閱這個 wiki 頁面嗎？"
 
 #: ../thus/slides.py:203
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "安裝完成！\n您想立即重新啟動嗎？"
 
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "無法建立 Thus 主視窗：{0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "正在使用 pyalpm v{0} 作為 libalpm v{1} 的介面"
 
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Manjaro 安裝程式"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -295,7 +295,7 @@ msgstr "將 Thus 的 log 級別設為 'debug'"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "即便偵測到已有其它實體正在執行也要執行 thus"
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -303,11 +303,11 @@ msgstr "不要做出任何改變（對開發者很有用）"
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "升級/降級 Thus 到網路版"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "不要線上搜尋新的 Thus 版本"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -315,20 +315,20 @@ msgstr "顯示日誌訊息到標準輸出"
 
 #: ../thus/thus.py:224
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "顯示仍在開發中的選項（僅供開發者使用，請不要使用這個！）"
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "程式已更新！正在重新啟動..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "找不到 Thus 檔案。請使用 pacman 安裝 Thus"
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "請在執行這個安裝程式前安裝「{0}」"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -344,12 +344,12 @@ msgstr "地區："
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "使用網路時間協議 (NTP) 同步時鐘："
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "變更地區至：{0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -357,59 +357,59 @@ msgstr "無法自動偵測所在時區"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "正在停止時區線程..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "無法取得網路狀態。"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "我們已經連線了。讓我們取得我們的時區"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "時區(緯度 {0}，經度 {1}）已偵測。"
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "找不到「update.info」檔案。Thus 將無法更新它自己。"
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Thus 網路版本：{0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "找到新版本。正在更新安裝程式..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "找不到新版本。無論如何都要更新..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "正在下載新版本的 Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "無法下載新版的 Thus。"
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "正在解壓縮新版本..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "無法複製 {0} 到 {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "錯誤的 md5。可能是下載錯誤或是錯誤的檔案，將不會更新這一個"
 
 #: ../thus/user_info.py:79
 msgid "Who are you?"
@@ -555,7 +555,7 @@ msgstr "過多字元"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "錯誤的 url，將會嘗試其他可用的。"
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -563,37 +563,37 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "無法開啟 {0} - 理由：{1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "HTTP 錯誤：{0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "URL 錯誤：{0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "正在下載 {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "套件 {0} 的 metalink 沒有大小資訊"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "檔案 {0} 已經存在，Thus 將不會覆寫它"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "在嘗試過所有可用的鏡像後，依然無法下載 {0}"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:591
@@ -642,35 +642,35 @@ msgstr "無"
 
 #: ../thus/installation/advanced.py:701
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "無法在 LVM 檔案系統類型下編輯分割區"
 
 #: ../thus/installation/advanced.py:763
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "無法使用同一個掛載點兩次。"
 
 #: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
-msgstr ""
+msgstr "根目錄分割區必須格式化。"
 
 #: ../thus/installation/advanced.py:863
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "您將會刪除分割區 {0} 從磁碟 {1}"
 
 #: ../thus/installation/advanced.py:881
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "正在卸載 {0}..."
 
 #: ../thus/installation/advanced.py:1006
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "抱歉，您已經建立 {0} 個主要分割區了。"
 
 #: ../thus/installation/advanced.py:1010
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "抱歉，您已經建立 {0} 個主要分割區及 1 個延伸分割區了。"
 
 #: ../thus/installation/advanced.py:1065
 msgid "Can't use same mount point twice..."
@@ -678,19 +678,19 @@ msgstr "無法使用同一個掛載點兩次..."
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "正在建立主要分割區"
 
 #: ../thus/installation/advanced.py:1101
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "正在建立延伸分割區"
 
 #: ../thus/installation/advanced.py:1107
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "正在建立邏輯分割區"
 
 #: ../thus/installation/advanced.py:1169
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "LUKS 密碼不符合！"
 
 #: ../thus/installation/advanced.py:1294
 msgid "Advanced installation mode"
@@ -698,17 +698,17 @@ msgstr "進階安裝模式"
 
 #: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "使用下列裝置安裝開機載入器："
 
 #: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr ""
+msgstr "開機載入器："
 
 #: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr ""
+msgstr "裝置："
 
 #: ../thus/installation/advanced.py:1311
 msgid "Mount Checklist:"
@@ -732,7 +732,7 @@ msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1339
 msgid "Undo"
-msgstr ""
+msgstr "復原"
 
 #: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
 msgid "New"
@@ -740,11 +740,11 @@ msgstr "新的"
 
 #: ../thus/installation/advanced.py:1345
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: ../thus/installation/advanced.py:1348
 msgid "Edit..."
-msgstr ""
+msgstr "編輯..."
 
 #: ../thus/installation/advanced.py:1351
 msgid "New partition table"
@@ -752,11 +752,11 @@ msgstr "新的分割表"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Cancel"
-msgstr ""
+msgstr "取消(_C)"
 
 #: ../thus/installation/advanced.py:1373
 msgid "_Apply"
-msgstr ""
+msgstr "套用(_A)"
 
 #: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
 msgid "Size:"
@@ -788,11 +788,11 @@ msgstr "此空間的結束點"
 
 #: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
 msgid "Use As:"
-msgstr ""
+msgstr "用作："
 
 #: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
-msgstr ""
+msgstr "掛載點："
 
 #: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -817,7 +817,7 @@ msgstr "創建分割表"
 
 #: ../thus/installation/advanced.py:1450
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "使用 LUKS 加密："
 
 #: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -834,14 +834,14 @@ msgstr "確認密碼："
 #: ../thus/installation/advanced.py:1532
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "建立一個新的 {0} 分割表給磁碟 {1}"
 
 #: ../thus/installation/advanced.py:1542
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "GRUB 在 BIOS 系統中需要使用一個 BIOS 開機分割區來嵌入 core.img 檔案，因為在 MBR 系統中缺乏對 GPT 磁碟的支援。\n\nThus 將會馬上為您建立這個特殊的分割區。"
 
 #: ../thus/installation/advanced.py:1570
 msgid "Can't create BIOS GPT Boot partition!"
@@ -861,7 +861,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} 已被掛載為 swap。\n如要繼續則必須卸載。\n按是卸載，或按否返回\n"
 
 #: ../thus/installation/advanced.py:1794
 #, python-brace-format
@@ -869,22 +869,22 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} 已被掛載為「{1}」 。\n如要繼續則必須卸載。\n按是以卸載，或按否返回\n"
 
 #: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr ""
+msgstr "{0} 已卸載"
 
 #: ../thus/installation/advanced.py:1819
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
-msgstr ""
+msgstr "交換分割區 {0} 已卸載"
 
 #: ../thus/installation/advanced.py:1830
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "{0} 已經被掛載(忙碌中)但卻沒有掛載點"
 
 #: ../thus/installation/advanced.py:1837
 msgid ""
@@ -897,12 +897,12 @@ msgstr "根目錄分割區未被標記為需要格式化。\n這樣可能會導�
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
-msgstr ""
+msgstr "加入 {0} 到變更列表中：createme[{1}] 重新標籤[{2}] fmt[{3}] mnt[{4}] 加密[{5}]"
 
 #: ../thus/installation/advanced.py:1906
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "分割區 {0} 將會被刪除"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Partition"
@@ -918,7 +918,7 @@ msgstr "掛載"
 
 #: ../thus/installation/advanced.py:1914
 msgid "Encrypt"
-msgstr ""
+msgstr "加密"
 
 #: ../thus/installation/advanced.py:1935
 msgid "These disks will have partition actions:"
@@ -927,41 +927,41 @@ msgstr "這個磁碟將會有以下的分割區動作："
 #: ../thus/installation/advanced.py:2035
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "在 {0} 中儲存變更已完成"
 
 #: ../thus/installation/advanced.py:2056
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "正在建立新的 {0} 檔案系統在 {1} 中標籤為 {2}"
 
 #: ../thus/installation/advanced.py:2059
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "正在建立新的 {0} 檔案系統在 {1} 中"
 
 #: ../thus/installation/advanced.py:2088
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "正在加密 {0}，正在分配卷名稱 {1} 並將其格式化..."
 
 #: ../thus/installation/advanced.py:2103
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "無法格式化 LUKS 裝置「{0}」帶有標籤「{1}」作為「{2}」"
 
 #: ../thus/installation/advanced.py:2127
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "無法格式化「{0}」分割區使用標籤「{1}」作為「{2}」"
 
 #: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "Thus 將不會安裝任何開機載入器"
 
 #: ../thus/installation/advanced.py:2191
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "Manjaro 將會安裝 {0} 開機載入器到 {1} 上"
 
 #: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -969,33 +969,33 @@ msgstr "測試模式。Thus 將不會對您的系統作出任何改變！"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "沒有可用的主要分割區"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "將會縮減裝置 {0} 並建立新的裝置 {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
-msgstr ""
+msgstr "Thus 建議至少 6.5GB 的剩餘空間以安裝 Manjaro。"
 
 #: ../thus/installation/alongside.py:151
 #, python-brace-format
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "新分割區 {0} 導致縮減的 {1} 將不會有足夠的剩餘空間給完整安裝使用。"
 
 #: ../thus/installation/alongside.py:152
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "您仍然可以安裝 Manjaro，但要小心選擇您的桌面環境，它們有一些可能不適合您。"
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "自行承擔安裝風險！"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1003,45 +1003,45 @@ msgstr "Manjaro 與其他作業系統共存"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "選擇您安裝的新大小"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "選擇您想要縮減的分割區："
 
 #: ../thus/installation/alongside.py:257
 msgid ""
 "Can't find any spare partition number.\n"
 "Alongside installation can't continue."
-msgstr ""
+msgstr "無法找到任何備用的分割區號碼。\n並存安裝將不會繼續。"
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "找不到任何已安裝的作業系統！"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
-msgstr ""
+msgstr "「並存」安裝模式在 UEFI 系統上無法運作"
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "偵測到 Windows(tm) 作業系統。"
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
-msgstr ""
+msgstr "未偵測到 Windows(tm) 作業系統。"
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "無法在 sda 裝置上偵測到任何作業系統。"
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr ""
+msgstr "不被「並存」安裝模式所支援的磁碟佈局"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "及"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1050,15 +1050,15 @@ msgstr "安裝類型"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "以 {0} 取代 Manjaro"
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
-msgstr ""
+msgstr "抹除磁碟並安裝 Manjaro"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "警告：這樣將會抹除所有在您磁碟上的資料。"
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1066,7 +1066,7 @@ msgstr "加密這個安裝以增強安全性。"
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "您將會在下一個步驟輸入加密的密碼。"
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1076,7 +1076,7 @@ msgstr "在本次安裝中使用 LVM。"
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "將會設定 LVM 讓您以更簡單的方法產生快照及變更分割區大小。"
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1085,15 +1085,15 @@ msgstr "將您的家目錄設置為不同的分割區/容量"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "這將會將您的 /home 目錄設定到不同的分割區或卷中"
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
-msgstr ""
+msgstr "您要如何繼續？"
 
 #: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
-msgstr ""
+msgstr "選擇 Manjaro 應該要裝在哪理。"
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."

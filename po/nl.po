@@ -14,6 +14,7 @@
 # ringo.dekroon <ringodekroon@gmail.com>, 2013-2014
 # Ron, 2014-2015
 # Culinax <ruben.de.roo@gmail.com>, 2013
+# Thomas Dingemanse <thomas.dingemanse@gmail.com>, 2015
 # Tom Becht <tombecht@live.nl>, 2014
 # wieland <wieland@bierhof.nl>, 2014
 # zenlord <zenlord@gmail.com>, 2013
@@ -22,8 +23,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 11:22+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-06 22:29+0000\n"
+"Last-Translator: Thomas Dingemanse <thomas.dingemanse@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/manjaro-thus/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +47,7 @@ msgstr ""
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Partitie id {0} onbekend"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -55,7 +56,7 @@ msgstr "Systeem controleren"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "heeft tenminste {0}GB opslagruimte beschikbaar. (*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -89,7 +90,7 @@ msgstr "We hebben genoeg schijfruimte."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Kan encfs-configuratiebestanden niet aanmaken of bewerken."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
@@ -97,7 +98,7 @@ msgstr ""
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Kan encfs niet uitvoeren. Verkeerd wachtwoord?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -105,7 +106,7 @@ msgstr "Selecteer toetsenbordindeling"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Toetsenbordindelingen"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
@@ -126,7 +127,7 @@ msgstr ""
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Welkom bij Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -139,24 +140,24 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "Thus is pre-release software in beta en is nog ontwikkeling.\nEr is nog geen goede ondersteuning voor RAID, btrfs subvolumes \nen andere geavanceerde configuraties. Houd er dus rekening mee dat \nverlies van data mogelijk is!\n\nAls je bugs vindt, kun je die melden op http://bugs.manjaro.org"
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Ga verder"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Sluiten"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Geen vertaling gevonden voor de {0} taal."
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -167,7 +168,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "De lokatie die je selecteert wordt gebruikt om de lokalisatieinstellingen te bepalen. Normaal gesproken is dit het land waar je woont. Hier is een lijst met lokaties gebaseerd op de taal die je geselecteerd hebt."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -175,7 +176,7 @@ msgstr "Land, gebied of regio:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Laat alle lokaties zien"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
@@ -193,7 +194,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "De installatiesoftware moet uitgevoerd worden met administrator-rechten en kan anders niet verder gaan."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
@@ -215,16 +216,16 @@ msgstr ""
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus-installatieprogramma versie {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro installatieprogramma - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Weet u zeker dat u de installatie wilt afsluiten?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -277,7 +278,7 @@ msgstr ""
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Installatie voltooid!\nWil je het systeem nu opnieuw opstarten?"
 
 #: ../thus/thus.py:64
 #, python-brace-format
@@ -308,7 +309,7 @@ msgstr "Voer geen veranderingen uit (nuttig voor ontwikkelaars)"
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Upgrade/downgrade Thus naar de web-versie"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
@@ -328,12 +329,12 @@ msgstr ""
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Thus-bestanden niet gevonden. Installeer Thus via pacman"
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Installeer '{0}' voordat je dit installatieprogramma uitvoert."
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -349,12 +350,12 @@ msgstr "Regio:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Gebruik het Network Time Protocol (NTP) voor kloksynchronisatie"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "Lokatie veranderd in: {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -410,7 +411,7 @@ msgstr ""
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Kan {0} niet kopiëren naar {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
@@ -651,7 +652,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:763
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Kan niet twee keer hetzelfde aankoppelpunt gebruiken."
 
 #: ../thus/installation/advanced.py:765
 msgid "Root partition must be formatted."
@@ -737,7 +738,7 @@ msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1339
 msgid "Undo"
-msgstr ""
+msgstr "Ongedaan maken"
 
 #: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
 msgid "New"
@@ -745,11 +746,11 @@ msgstr "Nieuw"
 
 #: ../thus/installation/advanced.py:1345
 msgid "Delete"
-msgstr ""
+msgstr "Verwijderen"
 
 #: ../thus/installation/advanced.py:1348
 msgid "Edit..."
-msgstr ""
+msgstr "Bewerken..."
 
 #: ../thus/installation/advanced.py:1351
 msgid "New partition table"
@@ -757,11 +758,11 @@ msgstr "Nieuwe partitietabel"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuleren"
 
 #: ../thus/installation/advanced.py:1373
 msgid "_Apply"
-msgstr ""
+msgstr "_Toepassen"
 
 #: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
 msgid "Size:"
@@ -793,7 +794,7 @@ msgstr "Eind van deze ruimte"
 
 #: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
 msgid "Use As:"
-msgstr ""
+msgstr "Gebruiken als:"
 
 #: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
 msgid "Mount Point:"
@@ -822,7 +823,7 @@ msgstr "Creëer Partitietabel"
 
 #: ../thus/installation/advanced.py:1450
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "LUKS-encryptie gebruiken:"
 
 #: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -974,7 +975,7 @@ msgstr "Testing modus. Thus zal geen veranderingen doorvoeren op je systeem!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Er zijn geen primaire partities beschikbaar."
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
@@ -1030,15 +1031,15 @@ msgstr ""
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "Windows(tm)-besturingssysteem gevonden."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
-msgstr ""
+msgstr "Windows(tm)-besturingssysteem niet gevonden."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "Kan geen besturingssysteem vinden op het apparaat sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
@@ -1046,7 +1047,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "en"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1055,15 +1056,15 @@ msgstr "Installatie type"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "Vervang {0} door Manjaro"
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
-msgstr ""
+msgstr "Wis schijf en installeer Manjaro"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Waarschuwing: Dit verwijdert ALLE gegevens op je harde schijf!"
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1094,11 +1095,11 @@ msgstr ""
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
-msgstr ""
+msgstr "Hoe wil je verder gaan?"
 
 #: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
-msgstr ""
+msgstr "Kies waar Manjaro precies geïnstalleerd moet worden."
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
@@ -1275,17 +1276,17 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Fout bij het aanmaken van een nieuwe partitie op het apparaat {0}"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Fout bij het aanmaken van een nieuwe partitie-tabel op het apparaat {0}"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr ""
+msgstr "Het apparaat {0} zal worden geformatteerd als {1}"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
@@ -1296,12 +1297,12 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:384
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Onbekend type bestandssysteem {0}"
 
 #: ../thus/installation/auto_partition.py:392
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "Kan geen {0}-bestandssysteem maken"
 
 #: ../thus/installation/auto_partition.py:421
 #, python-brace-format
@@ -1371,7 +1372,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "Thus zal LVM installeren op het apparaat {0}"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
@@ -1397,17 +1398,17 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "/etc/default/grub configuratie succesvol uitgevoerd."
 
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "Kon {0} niet kopiëren naar grub.d"
 
 #: ../thus/installation/bootloader.py:225
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "GRUB(2) BIOS boot loader installeren op {0}"
 
 #: ../thus/installation/bootloader.py:255
 msgid ""
@@ -1426,7 +1427,7 @@ msgstr "FOUT bij installeren GRUB(2) BIOS."
 #: ../thus/installation/bootloader.py:284
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
-msgstr ""
+msgstr "GRUB(2) UEFI {0} boot loader installeren"
 
 #: ../thus/installation/bootloader.py:319
 #, python-brace-format
@@ -1440,11 +1441,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:327
 msgid "File not found."
-msgstr ""
+msgstr "Bestand niet gevonden."
 
 #: ../thus/installation/bootloader.py:329
 msgid "File already exists."
-msgstr ""
+msgstr "Bestand bestaat al."
 
 #: ../thus/installation/bootloader.py:347
 msgid "Generating grub.cfg"
@@ -1458,31 +1459,31 @@ msgstr "grub-mkconfig lijkt niet te reageren. Stoppen van grub-mount en os-probe
 
 #: ../thus/installation/bootloader.py:379
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "GRUB(2) UEFI installatie succesvol uitgevoerd"
 
 #: ../thus/installation/bootloader.py:383
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "GRUB(2) UEFI installatie is mogelijk niet goed uitgevoerd."
 
 #: ../thus/installation/bootloader.py:395
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "Patchen van het 50mounted-tests bestand is gelukt"
 
 #: ../thus/installation/bootloader.py:397
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "Patchen van het 50mounted-tests bestand is niet gelukt, bestand niet gevonden."
 
 #: ../thus/installation/bootloader.py:401
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "GRUB(2) themabestanden kopiëren"
 
 #: ../thus/installation/bootloader.py:407
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Grub2 themabestanden niet gevonden"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Grub2 themabestanden bestaan al."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Installing Grub2 locales."
@@ -1494,11 +1495,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:490
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Gummiboot installatie is gelukt"
 
 #: ../thus/installation/bootloader.py:494
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Gummiboot installatie is NIET gelukt!"
 
 #: ../thus/installation/bootloader.py:526
 msgid "Can't freeze/unfreeze xfs system"
@@ -1536,7 +1537,7 @@ msgstr ""
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "Thus probeert toch om verder te gaan"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
@@ -1586,7 +1587,7 @@ msgstr ""
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} verwijderd"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1662,7 +1663,7 @@ msgstr "Kan netwerk configuratie bestanden niet kopiëren"
 #: ../thus/installation/process.py:806
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "{0} toegevoegd aan fstab"
 
 #: ../thus/installation/process.py:723 ../thus/installation/process.py:739
 #, python-brace-format
