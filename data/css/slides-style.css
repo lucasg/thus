@@ -25,11 +25,11 @@
     opacity: 0;
     z-index: 0;
     -webkit-backface-visibility: hidden;
-    -webkit-animation: imageAnimation 180s linear infinite 0s;
-    -moz-animation: imageAnimation 180s linear infinite 0s;
-    -o-animation: imageAnimation 180s linear infinite 0s;
-    -ms-animation: imageAnimation 180s linear infinite 0s;
-    animation: imageAnimation 180s linear infinite 0s; 
+    -webkit-animation: imageAnimation 204s linear infinite 0s;
+    -moz-animation: imageAnimation 204s linear infinite 0s;
+    -o-animation: imageAnimation 204s linear infinite 0s;
+    -ms-animation: imageAnimation 204s linear infinite 0s;
+    animation: imageAnimation 204s linear infinite 0s; 
 }
 
 
@@ -91,6 +91,14 @@
     -o-animation-delay: 156s;
     -ms-animation-delay: 156s;
     animation-delay: 156s; 
+}
+.cb-slideshow li:nth-child(8) span { 
+    background-image: url(../images/slides/9.png);
+    -webkit-animation-delay: 180s;
+    -moz-animation-delay: 180s;
+    -o-animation-delay: 180s;
+    -ms-animation-delay: 180s;
+    animation-delay: 180s; 
 }
 
 /* Animation for the slideshow images */
