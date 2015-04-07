@@ -385,7 +385,7 @@ class InstallationProcess(multiprocessing.Process):
                         continue
                     mount_part = self.mount_devices[path]
                     if mount_part != root_partition and mount_part != boot_partition and mount_part != swap_partition:
-                        mount_dir = os.path.join(DEST_DIR, path)
+                        mount_dir = DEST_DIR + path
                         try:
                             if not os.path.exists(mount_dir):
                                 os.makedirs(mount_dir)
