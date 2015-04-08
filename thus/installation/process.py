@@ -757,47 +757,46 @@ class InstallationProcess(multiprocessing.Process):
 
             # Is ssd ?
             is_ssd = False
-            logging.debug("SSD list : {0}".format(self.ssd))
-            for ssd_device in self.ssd:
-                logging.debug("SSD device : {0}".format(ssd_device))
-                logging.debug("SSD partition path : {0}".format(partition_path))
+            logging.debug("Device list : {0}".format(self.ssd))
+            for ssd_device in self.ssd:               
                 if ssd_device in partition_path:
-                    logging.debug("Device is a SSD device : {0}".format(ssd_device))
+                    logging.debug("Device is a SSD : {0}".format(ssd_device))
+                    logging.debug("SSD partition path : {0}".format(partition_path))
                     is_ssd = True
 
-            # Add mount options parameters
-            if not is_ssd:
-                if "btrfs" in myfmt:
-                    opts = 'defaults,rw,relatime,space_cache,autodefrag,inode_cache'
-                elif "f2fs" in myfmt:
-                    opts = 'defaults,rw,noatime'
-                elif "ext3" in myfmt or "ext4" in myfmt:
-                    opts = 'defaults,rw,relatime,data=ordered'
+                # Add mount options parameters
+                if not is_ssd:
+                    if "btrfs" in myfmt:
+                        opts = 'defaults,rw,relatime,space_cache,autodefrag,inode_cache'
+                    elif "f2fs" in myfmt:
+                        opts = 'defaults,rw,noatime'
+                    elif "ext3" in myfmt or "ext4" in myfmt:
+                        opts = 'defaults,rw,relatime,data=ordered'
+                    else:
+                        opts = "defaults,rw,relatime"
                 else:
-                    opts = "defaults,rw,relatime"
-            else:
-                # As of linux kernel version 3.7, the following
-                # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
-                if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs':
-                    opts = 'defaults,rw,noatime,discard'
-                elif myfmt == 'btrfs':
-                    opts = 'defaults,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
+                    # As of linux kernel version 3.7, the following
+                    # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
+                    if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs':
+                        opts = 'defaults,rw,noatime,discard'
+                    elif myfmt == 'btrfs':
+                        opts = 'defaults,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
+                    else:
+                        opts = 'defaults,rw,noatime'
+
+                no_check = ["btrfs", "f2fs"]
+
+                if mount_point == "/" and myfmt not in no_check:
+                    chk = '1'
                 else:
-                    opts = 'defaults,rw,noatime'
+                    chk = '0'
 
-            no_check = ["btrfs", "f2fs"]
+                if mount_point == "/":
+                    self.settings.set('ruuid', uuid)
 
-            if mount_point == "/" and myfmt not in no_check:
-                chk = '1'
-            else:
-                chk = '0'
-
-            if mount_point == "/":
-                self.settings.set('ruuid', uuid)
-
-            txt = "UUID={0} {1} {2} {3} 0 {4}".format(uuid, mount_point, myfmt, opts, chk)
-            all_lines.append(txt)
-            logging.debug(_("Added to fstab : {0}".format(txt)))
+                txt = "UUID={0} {1} {2} {3} 0 {4}".format(uuid, mount_point, myfmt, opts, chk)
+                all_lines.append(txt)
+                logging.debug(_("Added to fstab : {0}".format(txt)))
 
         # Create tmpfs line in fstab
         tmpfs = "tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
