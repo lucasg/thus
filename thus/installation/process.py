@@ -757,18 +757,10 @@ class InstallationProcess(multiprocessing.Process):
 
             # Is ssd ?
             # Device list example: {'/dev/sdb': False, '/dev/sda': True}
-            device = re.sub("[0-9]+$", "", partition_path)
-            is_ssd = device in self.ssd
-            logging.debug("Is SSD? - Device: {0}, Status: {1}".format(device, is_ssd))
-
-            '''is_ssd = False
             logging.debug("Device list : {0}".format(self.ssd))
-            for ssd_device in self.ssd:
-                logging.debug("Device : {0}".format(ssd_device))             
-                if ssd_device in partition_path:
-                    logging.debug("Device is a SSD : {0}".format(ssd_device))
-                    logging.debug("SSD partition path : {0}".format(partition_path))
-                    is_ssd = True'''
+            device = re.sub("[0-9]+$", "", partition_path)
+            is_ssd = self.ssd.get(device)
+            logging.debug("Device: {0}, SSD: {1}".format(device, is_ssd))
 
             # Add mount options parameters
             if not is_ssd:
