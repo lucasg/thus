@@ -584,8 +584,6 @@ class InstallationAdvanced(GtkBaseBox):
                     if uid in self.stage_opts:
                         (is_new, label, mount_point, fs_type, fmt_active) = self.stage_opts[uid]
                         fmt_enable = not is_new
-                        if mount_point == "/":
-                            fmt_enable = False
                     else:
                         fmt_enable = True
                         if _("free space") not in path:
@@ -735,13 +733,6 @@ class InstallationAdvanced(GtkBaseBox):
         # Get disk path
         disk_path = self.get_disk_path_from_selection(model, tree_iter)
 
-        '''
-        try:
-            disk, result = self.disks[disk_path]
-        except Exception:
-            disk = None
-        '''
-
         uid = self.gen_partition_uid(path=row[COL_PARTITION_PATH])
 
         # Get LUKS info for the encryption properties dialog
@@ -761,8 +752,6 @@ class InstallationAdvanced(GtkBaseBox):
 
             if new_mount in self.diskdic['mounts'] and new_mount != row[COL_MOUNT_POINT]:
                 show.warning(self.get_toplevel(), _("Can't use same mount point twice."))
-            elif new_mount == "/" and not format_check.get_active():
-                show.warning(self.get_toplevel(), _('Root partition must be formatted.'))
             else:
                 if row[COL_MOUNT_POINT]:
                     self.diskdic['mounts'].remove(row[COL_MOUNT_POINT])
@@ -1735,10 +1724,6 @@ class InstallationAdvanced(GtkBaseBox):
                         fmt = 'Yes'
                     else:
                         fmt = 'No'
-                    # Advanced method formats root by default
-                    # https://github.com/Antergos/Cnchi/issues/8
-                    if mnt == "/":
-                        fmt = 'Yes'
                     if is_new:
                         if lbl != "":
                             relabel = 'Yes'
@@ -1836,7 +1821,7 @@ class InstallationAdvanced(GtkBaseBox):
                         if mnt == "/" and not fmt:
                              msg = _('The root partition is not marked to be formatted.\n'
                                      'This might create problems. Should it be marked to be formatted now?')
-                             response = show.question(msg)
+                             response = show.question(self.get_toplevel(), msg)
                              if response != Gtk.ResponseType.YES:
                                  # User doesn't want to format root partition.
                                  fmt = False
@@ -1996,18 +1981,6 @@ class InstallationAdvanced(GtkBaseBox):
             widget.set_sensitive(status)
         while Gtk.events_pending():
             Gtk.main_iteration()
-
-    '''
-    def on_advanced_progressbar_timeout(self):
-        """ Update value on the progress bar """
-        if self.stop_advanced_progressbar:
-            return False
-        else:
-            self.advanced_progressbar.pulse()
-            while Gtk.events_pending():
-                Gtk.main_iteration()
-            return True
-    '''
 
     def create_staged_partitions(self):
         """ Create staged partitions """

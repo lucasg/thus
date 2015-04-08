@@ -756,47 +756,53 @@ class InstallationProcess(multiprocessing.Process):
                 os.makedirs(full_path)
 
             # Is ssd ?
-            is_ssd = False
+            # Device list example: {'/dev/sdb': False, '/dev/sda': True}
+            device = re.sub("[0-9]+$", "", partition_path)
+            is_ssd = device in self.ssd
+            logging.debug("Is SSD? - Device: {0}, Status: {1}".format(device, is_ssd))
+
+            '''is_ssd = False
             logging.debug("Device list : {0}".format(self.ssd))
-            for ssd_device in self.ssd:               
+            for ssd_device in self.ssd:
+                logging.debug("Device : {0}".format(ssd_device))             
                 if ssd_device in partition_path:
                     logging.debug("Device is a SSD : {0}".format(ssd_device))
                     logging.debug("SSD partition path : {0}".format(partition_path))
-                    is_ssd = True
+                    is_ssd = True'''
 
-                # Add mount options parameters
-                if not is_ssd:
-                    if "btrfs" in myfmt:
-                        opts = 'defaults,rw,relatime,space_cache,autodefrag,inode_cache'
-                    elif "f2fs" in myfmt:
-                        opts = 'defaults,rw,noatime'
-                    elif "ext3" in myfmt or "ext4" in myfmt:
-                        opts = 'defaults,rw,relatime,data=ordered'
-                    else:
-                        opts = "defaults,rw,relatime"
+            # Add mount options parameters
+            if not is_ssd:
+                if "btrfs" in myfmt:
+                    opts = 'defaults,rw,relatime,space_cache,autodefrag,inode_cache'
+                elif "f2fs" in myfmt:
+                    opts = 'defaults,rw,noatime'
+                elif "ext3" in myfmt or "ext4" in myfmt:
+                    opts = 'defaults,rw,relatime,data=ordered'
                 else:
-                    # As of linux kernel version 3.7, the following
-                    # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
-                    if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs':
-                        opts = 'defaults,rw,noatime,discard'
-                    elif myfmt == 'btrfs':
-                        opts = 'defaults,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
-                    else:
-                        opts = 'defaults,rw,noatime'
-
-                no_check = ["btrfs", "f2fs"]
-
-                if mount_point == "/" and myfmt not in no_check:
-                    chk = '1'
+                    opts = "defaults,rw,relatime"
+            else:
+                # As of linux kernel version 3.7, the following
+                # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
+                if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs':
+                    opts = 'defaults,rw,noatime,discard'
+                elif myfmt == 'btrfs':
+                    opts = 'defaults,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
                 else:
-                    chk = '0'
+                    opts = 'defaults,rw,noatime'
 
-                if mount_point == "/":
-                    self.settings.set('ruuid', uuid)
+            no_check = ["btrfs", "f2fs"]
 
-                txt = "UUID={0} {1} {2} {3} 0 {4}".format(uuid, mount_point, myfmt, opts, chk)
-                all_lines.append(txt)
-                logging.debug(_("Added to fstab : {0}".format(txt)))
+            if mount_point == "/" and myfmt not in no_check:
+                chk = '1'
+            else:
+                chk = '0'
+
+            if mount_point == "/":
+                self.settings.set('ruuid', uuid)
+
+            txt = "UUID={0} {1} {2} {3} 0 {4}".format(uuid, mount_point, myfmt, opts, chk)
+            all_lines.append(txt)
+            logging.debug(_("Added to fstab : {0}".format(txt)))
 
         # Create tmpfs line in fstab
         tmpfs = "tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
@@ -1346,7 +1352,7 @@ class InstallationProcess(multiprocessing.Process):
         # Install boot loader (always after running mkinitcpio)
         if self.settings.get('bootloader_install'):
             try:
-                logging.debug(_("Installing bootloader..."))
+                self.queue_event('info', _("Installing bootloader..."))
                 from installation import bootloader
 
                 boot_loader = bootloader.Bootloader(DEST_DIR, self.settings, self.mount_devices)
