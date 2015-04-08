@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 11:22+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-08 16:12+0000\n"
+"Last-Translator: Tomàs Mallafré Gispert <tomas@mallafre.cat>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,12 +42,12 @@ msgstr "desconegut"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Error cridant la comanda hexdump: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Id de partició desconeguda {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -56,7 +56,7 @@ msgstr "Comprovació del sistema"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "té com a mínim  {0}GB d'espai d'emmagatzematge disponible. (*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -90,15 +90,15 @@ msgstr "Hi ha prou d'espai al disc."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "No es poden crear i modificar fitxers de configuració encfs."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "El directori /home no es xifrarà"
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "No es pot executar encfs. Contrasenya errònia?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -106,11 +106,11 @@ msgstr "Selecciona la teva distribució de teclat"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Disposicions del teclat"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Variants de teclat"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -123,11 +123,11 @@ msgstr "Variants"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "La disposició de teclat és  {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Benvinguts a Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -140,24 +140,24 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "El thus és programari beta de pre-llençament que està en desenvolupament actiu.\nEncara no gestiona correctament RAID, subvolums btrfs o altres configuracions avançades. Si us plau, procediu amb precaució ja que hi ha possibilitat de pèrdua de dades!\n\nSi trobeu cap errada, si us plau, reporteu-la a http://bugs.manjaro.org"
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Endavant"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Tanca"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Enrere"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "No es troba la traducció del fitxer per a idioma {0}"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -168,7 +168,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "La ubicació que trieu s'utilitzarà per a ajudar a triar la configuració local. Normalment hauria de ser el vostre país de residència. Aquí hi ha una llista d'ubicacions basades en l'idioma que heu triat."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -176,30 +176,30 @@ msgstr "País, territori o àrea:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Mostra totes les ubicacions"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr ""
+msgstr "configuració local modificada a: {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr ""
+msgstr "No es pot modificar la configuració local a '{0}'"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Aquest instal·lador s'ha d'executar amb privilegis d'administrador, i no es pot seguir sense aquests"
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "El fitxer '{0}' ja existeix."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -211,21 +211,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "No es poden executar dues instàncies d'aquest instal·lador.\n\nSi esteu segur que aquest instal·lador no s'està executant\nel podeu executar fent servir l'opció --force\no podeu eliminar manualment el fitxer corresponent.\n\nEl fitxer en conflicte és: '{0}' "
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Versió de l'instal·lador thus {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Instal·lador de Manjaro - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Segur que voleu sortir de l'instal·lador?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -272,28 +272,28 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "IMPORTANT: Hi pot haver un problema amb la instal·lació del\ncarregador d'arrencada que podria impedir que el vostre sistema arrenqués correctament.\nAbans de reiniciar, potser us caldria verificar la instal·lació i configuració del carregador. \nLa Wiki d'Arch Linux conté informació de resolució de problemes.\n  https://wiki.archlinux.org/index.php/GRUB\n\nVoleu visitar ara la pàgina de la wiki?"
 
 #: ../thus/slides.py:203
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Instal·lació completada!\nVoleu reiniciar el sistema ara?"
 
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "No es pot crear la finestra principal del Thus: {0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "Utilitzant pyalpm v{0} com a interfície per a libalpm v{1}"
 
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Instal·lador del Manjaro"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -301,7 +301,7 @@ msgstr "Estableix el nivell de registre a 'debug'"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Executa el thus encara que detecti que n'hi ha una altra instància executant-se"
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -309,11 +309,11 @@ msgstr "No realitzis cap canvi (útil per a desenvolupadors)"
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Actualitza/desactualitza el Thus a la versió web"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "No busquis noves versions del Thus en línia"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -321,20 +321,20 @@ msgstr "Mostra els missatges de registre per stdout"
 
 #: ../thus/thus.py:224
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Mostra les opcions en desenvolupament (només per a desenvolupadors; no ho feu servir!)"
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Programa actualitzat! Reiniciant..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "No s'han trobat els fitxers del Thus. Si us plau, instal·leu el Thus mitjançant el pacman"
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Si us plau, instal·leu '{0}' abans d'executar aquest instal·lador"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -350,12 +350,12 @@ msgstr "Regió:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Utilitza l'NTP (Network Time Protocol) per a la sincronització del rellotge"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "ubicació canviada a: {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -363,34 +363,34 @@ msgstr "No puc detectar automàticament la teva zona horària"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Aturant els fils de zona horària..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "No es pot obtenir l'estat de la xarxa."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Tenim connexió. Anem a obtenir la nostra zona horària"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Zona horària (latitud {0}, longitud {1}) detectada."
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "No s'ha pogut trobar el fitxer 'update.info'. El Thus no es podrà auto-actualitzar."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Versió del Thus Internet: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "S'ha trobat una nova versió. Actualitzant l'instal·lador..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."

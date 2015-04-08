@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-05 11:22+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-07 21:00+0000\n"
+"Last-Translator: Takefumi Nagata\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,12 +35,12 @@ msgstr "不明"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Error calling hexdump command: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "不明なパーティション id {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -49,7 +49,7 @@ msgstr "システムチェック"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "最小限 {0}GB の利用可能なストレージスペース (*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -83,15 +83,15 @@ msgstr "ディスクに十分な空き領域があります。"
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "encfs の設定ファイルの作成及び修正ができません。"
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "ホームディレクトリを暗号化できません。"
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "encfs が実行できません。悪いパスワード?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -99,11 +99,11 @@ msgstr "キーボードレイアウトの選択"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "キーボードレイアウト"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "キーボード Variants"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -111,16 +111,16 @@ msgstr "レイアウト"
 
 #: ../thus/keymap.py:78
 msgid "Variants"
-msgstr "相違点"
+msgstr "Variants"
 
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "キーボードレイアウトは {0} です"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Manjaro へようこそ"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -133,24 +133,24 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "Thus は未だ開発中のベータ版のソフトウェアです。\n未だRAID、 btrfs、subvolumesといった高度なセットアップではうまく作動しないことが知られています。\nデータを失う可能性などを考慮して続行してください。\n\nバグを見つけたら http://bugs.manjaro.org に報告してください。"
 
 #: ../thus/language.py:128 ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "進む"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "閉じる"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "言語 {0} の翻訳ファイルが見つかりません"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -161,7 +161,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "システムのロケールを選択するのを手助けするために地域を選択してください。通常これはあなたが住んでいる国にあたります。これは選択された言語に基づいた地域のリストです。"
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -169,30 +169,30 @@ msgstr "国、領域または地域:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "全てのロケーションを表示"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr ""
+msgstr "ロケールを変更しました: {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr ""
+msgstr "ロケールを '{0}' に変更できませんでした"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "このインストーラーは管理者権限で実行する必要があり、権限無しで続けることはできません。"
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "ファイル '{0}' は既に存在します。"
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -209,16 +209,16 @@ msgstr ""
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus インストーラー バージョン {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro インストーラー- Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "インストーラーを終了しますか?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -343,12 +343,12 @@ msgstr "地域:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "時刻の同期のためにNetwork Time Protocol (NTP)を使用します。"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "ロケーションが 変更されました: {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -356,25 +356,25 @@ msgstr "タイムゾーンを自動検出できません"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "タイムゾーンスレッドの停止中..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "ネットワークの状態を確認できません"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "ネットワークに接続しました。タイムゾーンを取得しましょう。"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "タイムゾーン (緯度 {0}, 経度 {1}) を検出しました。"
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "'update.info' ファイルを見つけることができません。Thusは自動でアップデートすることができません。"
 
 #: ../thus/updater.py:91
 #, python-brace-format
