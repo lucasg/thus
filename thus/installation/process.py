@@ -751,14 +751,18 @@ class InstallationProcess(multiprocessing.Process):
                 continue
 
             # Create mount point on destination system if it yet doesn't exist
-            full_path = os.path.join(DEST_DIR, mount_point)
+            full_path = DEST_DIR + mount_point
             if not os.path.exists(full_path):
                 os.makedirs(full_path)
 
             # Is ssd ?
             is_ssd = False
+            logging.debug("SSD list : {0}".format(self.ssd))
             for ssd_device in self.ssd:
+                logging.debug("SSD device : {0}".format(ssd_device))
+                logging.debug("SSD partition path : {0}".format(partition_path))
                 if ssd_device in partition_path:
+                    logging.debug("Device is a SSD device : {0}".format(ssd_device))
                     is_ssd = True
 
             # Add mount options parameters
