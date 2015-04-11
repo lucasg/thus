@@ -2188,7 +2188,6 @@ class InstallationAdvanced(GtkBaseBox):
             else:
                 self.settings.set('bootloader_device', self.bootloader_device)
 
-            self.settings.set('bootloader_type', bootloader_type)
             self.settings.set('bootloader', self.bootloader)
             msg = _("Manjaro will install the bootloader {0} in device {1}")
             msg = msg.format(self.bootloader, self.bootloader_device)
