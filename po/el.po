@@ -7,6 +7,7 @@
 # Axilleas P <markeleas@gmail.com>, 2011
 # Achilleas Pipinellis, 2013
 # Christos Nouskas <nous@archlinux.us>, 2011,2013
+# Chritis Leonidas <chritisleonidas@gmail.com>, 2015
 # denis_m <monedenis@gmail.com>, 2013
 # flamelab <panosfilip@gmail.com>, 2011
 # ΔΗΜΗΤΡΙΟΥ ΚΩΝΣΤΑΝΤΙΝΟΣ <gasdim@hotmail.gr>, 2013
@@ -26,8 +27,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-06 12:22+0000\n"
-"Last-Translator: Jim Traianos <dtraianos58@gmail.com>\n"
+"PO-Revision-Date: 2015-04-11 06:19+0000\n"
+"Last-Translator: philm <philm@manjaro.org>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/manjaro-thus/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -145,7 +146,8 @@ msgid ""
 "If you find any bugs, please report them at http://bugs.manjaro.org"
 msgstr "To Thus είναι δοκιμαστικό λογισμικό υπό ενεργή ανάπτυξη.\nΔεν διαχειρίζεται ακόμα σωστά το RAID, υπό-τόμους btrfs, ή άλλες \nπροχωρημένες διευθετήσεις. Παρακαλώ προχωρήστε με προσοχή εξαιτίας πιθανής απώλειας δεδομένων!\n\nΑν εντοπίσετε κάποιο πρόβλημα, αναφέρετέ το στο http://bugs.manjaro.org"
 
-#: ../thus/language.py:128 ../thus/installation/ask.py:213
+#: ../thus/language.py:128 ../thus/user_info.py:271
+#: ../thus/installation/ask.py:213
 msgid "Forward"
 msgstr "Επόμενο"
 
@@ -286,7 +288,7 @@ msgstr ""
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "Δεν είναι δυνατή η δημιουργία του κύριου παραθύρου Thus: {0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
@@ -312,7 +314,7 @@ msgstr "Μην κάνετε καμία αλλαγή (χρήσιμο για το�
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Αναβάθμιση/υποβάθμιση του Thus στην δικτυακή έκδοση"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
@@ -332,12 +334,12 @@ msgstr ""
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Δεν βρέθηκαν αρχεία του Thus. Παρακαλώ, εγκαταστήστε το Thus χρησιμοποιόντας το pacman"
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Παρακαλώ εγκαταστήστε '{0}' πριν ξεκινήσετε αυτήν την εγκατάσταση"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -428,50 +430,50 @@ msgstr "Ποιός είστε;"
 msgid "Your name:"
 msgstr "Το όνομα σας:"
 
-#: ../thus/user_info.py:88 ../ui/user_info.ui:206
+#: ../thus/user_info.py:88 ../ui/user_info.ui:194
 msgid "Your name"
 msgstr "Το όνομα σας"
 
-#: ../thus/user_info.py:92 ../ui/user_info.ui:328
+#: ../thus/user_info.py:92 ../ui/user_info.ui:310
 msgid "Hostname"
 msgstr "Όνομα Host"
 
-#: ../thus/user_info.py:96 ../ui/user_info.ui:405
+#: ../thus/user_info.py:96 ../ui/user_info.ui:385
 msgid "Your computer's name:"
 msgstr "Το όνομα του υπολογιστή σας:"
 
-#: ../thus/user_info.py:100 ../ui/user_info.ui:50
+#: ../thus/user_info.py:100 ../ui/user_info.ui:48
 msgid "Pick a username:"
 msgstr "Διαλέξτε ένα όνομα χρήστη:"
 
-#: ../thus/user_info.py:104 ../ui/user_info.ui:250
+#: ../thus/user_info.py:104 ../ui/user_info.ui:236
 msgid "Username"
 msgstr "Όνομα χρήστη"
 
-#: ../thus/user_info.py:108 ../ui/user_info.ui:65
+#: ../thus/user_info.py:108 ../ui/user_info.ui:61
 msgid "Choose a password:"
 msgstr "Επιλέξτε ένα κωδικό:"
 
-#: ../thus/user_info.py:112 ../thus/user_info.py:128 ../ui/user_info.ui:103
-#: ../ui/user_info.ui:573
+#: ../thus/user_info.py:112 ../thus/user_info.py:128 ../ui/user_info.ui:95
+#: ../ui/user_info.ui:546
 msgid "Password"
 msgstr "Κωδικός"
 
 #: ../thus/user_info.py:116 ../thus/installation/automatic.py:97
-#: ../ui/automatic.ui:307 ../ui/user_info.ui:80
+#: ../ui/automatic.ui:307 ../ui/user_info.ui:74
 msgid "Confirm your password:"
 msgstr "Επιβεβαίωση του κωδικού προβασής σας:"
 
-#: ../thus/user_info.py:120 ../thus/user_info.py:136 ../ui/user_info.ui:149
-#: ../ui/user_info.ui:634
+#: ../thus/user_info.py:120 ../thus/user_info.py:136 ../ui/user_info.ui:139
+#: ../ui/user_info.ui:603
 msgid "Confirm password"
 msgstr "Επιβεβαίωση κωδικού"
 
-#: ../thus/user_info.py:124 ../ui/user_info.ui:611
+#: ../thus/user_info.py:124 ../ui/user_info.ui:582
 msgid "Choose a root password:"
 msgstr "Επιλέξτε κωδικό πρόσβασης υπερχρήστη:"
 
-#: ../thus/user_info.py:132 ../ui/user_info.ui:684
+#: ../thus/user_info.py:132 ../ui/user_info.ui:651
 msgid "Confirm root password:"
 msgstr "Επιβεβαίωση κωδικού πρόσβασης υπερχρήστη:"
 
@@ -491,28 +493,28 @@ msgstr "Πρέπει να εισάγετε ένα όνομα χρήστη"
 msgid "You must enter a password"
 msgstr "Πρέπει να εισάγετε ένα κωδικό"
 
-#: ../thus/user_info.py:160 ../ui/user_info.ui:473
+#: ../thus/user_info.py:160 ../ui/user_info.ui:450
 msgid "Log in automatically"
 msgstr "Αυτόματη είσοδος"
 
-#: ../thus/user_info.py:161 ../ui/user_info.ui:490
+#: ../thus/user_info.py:161 ../ui/user_info.ui:467
 msgid "A password is required to log in"
 msgstr "Να απαιτείται κωδικός πρόσβασης για σύνδεση"
 
-#: ../thus/user_info.py:162 ../ui/user_info.ui:518
+#: ../thus/user_info.py:162 ../ui/user_info.ui:495
 msgid "Encrypt home folder"
 msgstr "Κρυπτογράφηση προσωπικού φακέλου"
 
 #: ../thus/user_info.py:165 ../thus/installation/automatic.py:105
-#: ../ui/user_info.ui:422
+#: ../ui/user_info.ui:400
 msgid "Show password"
 msgstr "Εμφάνιση κωδικού πρόσβασης"
 
-#: ../thus/user_info.py:168 ../ui/user_info.ui:544
+#: ../thus/user_info.py:168 ../ui/user_info.ui:519
 msgid "Show root password"
 msgstr "Εμφάνιση κωδικού πρόσβασης υπερχρήστη"
 
-#: ../thus/user_info.py:171 ../ui/user_info.ui:439
+#: ../thus/user_info.py:171 ../ui/user_info.ui:417
 msgid "Use a root password"
 msgstr "Χρήση κωδικού πρόσβασης υπερχρήστη"
 
@@ -550,15 +552,15 @@ msgstr "Κοιτάξτε στο https://wiki.archlinux.org/index.php/ECryptfs γ
 msgid "Are you sure you want to encrypt your home directory?\n"
 msgstr "Είστε σίγουροι οτι θέλετε να κρυπτογραφήσετε τον προσωπικό σας κατάλογο;\n"
 
-#: ../thus/user_info.py:329
+#: ../thus/user_info.py:330
 msgid "Invalid characters entered"
 msgstr "Εισάγατε μη έγκυρους χαρακτήρες"
 
-#: ../thus/user_info.py:333
+#: ../thus/user_info.py:334
 msgid "Username can't contain dots"
 msgstr "Το όνομα χρήστη δεν μπορεί να περιέχει τελείες"
 
-#: ../thus/user_info.py:337
+#: ../thus/user_info.py:338
 msgid "Too many characters"
 msgstr "Πολλοί χαρακτήρες"
 
@@ -605,7 +607,7 @@ msgid "Can't download {0}, even after trying all available mirrors"
 msgstr ""
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
-#: ../thus/installation/advanced.py:591
+#: ../thus/installation/advanced.py:589
 msgid "free space"
 msgstr "ελεύθερος χώρος"
 
@@ -625,7 +627,7 @@ msgstr "Σημείο προσάρτησης"
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: ../thus/installation/advanced.py:381 ../thus/installation/advanced.py:1914
+#: ../thus/installation/advanced.py:381 ../thus/installation/advanced.py:1896
 msgid "Format"
 msgstr "Διαμόρφωση"
 
@@ -649,222 +651,218 @@ msgstr "SSD"
 msgid "none"
 msgstr "καθόλου"
 
-#: ../thus/installation/advanced.py:701
+#: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
 msgstr ""
 
-#: ../thus/installation/advanced.py:763
+#: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
 msgstr ""
 
-#: ../thus/installation/advanced.py:765
-msgid "Root partition must be formatted."
-msgstr ""
-
-#: ../thus/installation/advanced.py:863
+#: ../thus/installation/advanced.py:852
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:881
+#: ../thus/installation/advanced.py:870
 #, python-brace-format
 msgid "Unmounting {0}..."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1006
+#: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1010
+#: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1065
+#: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
 msgstr "Αδυναμία χρήσης του ίδιου σημείου προσάρτησης δύο φορές..."
 
-#: ../thus/installation/advanced.py:1090
+#: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1101
+#: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1107
+#: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1169
+#: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1294
+#: ../thus/installation/advanced.py:1283
 msgid "Advanced installation mode"
 msgstr "Μέθοδος εγκατάστασης για προχωρημένους"
 
-#: ../thus/installation/advanced.py:1298 ../thus/installation/automatic.py:110
+#: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1303 ../thus/installation/automatic.py:115
+#: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1307 ../thus/installation/automatic.py:119
+#: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1311
+#: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1317
+#: ../thus/installation/advanced.py:1306
 msgid "Root"
 msgstr "Root"
 
-#: ../thus/installation/advanced.py:1321 ../ui/bootloader.ui:7
+#: ../thus/installation/advanced.py:1310 ../ui/bootloader.ui:7
 msgid "Boot"
 msgstr "Εκίνηση"
 
-#: ../thus/installation/advanced.py:1325
+#: ../thus/installation/advanced.py:1314
 msgid "EFI"
 msgstr "EFI"
 
-#: ../thus/installation/advanced.py:1329
+#: ../thus/installation/advanced.py:1318
 msgid "Swap"
 msgstr "Swap"
 
-#: ../thus/installation/advanced.py:1339
+#: ../thus/installation/advanced.py:1328
 msgid "Undo"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1342 ../thus/installation/advanced.py:1914
+#: ../thus/installation/advanced.py:1331 ../thus/installation/advanced.py:1896
 msgid "New"
 msgstr "Νέο"
 
-#: ../thus/installation/advanced.py:1345
+#: ../thus/installation/advanced.py:1334
 msgid "Delete"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1348
+#: ../thus/installation/advanced.py:1337
 msgid "Edit..."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1351
+#: ../thus/installation/advanced.py:1340
 msgid "New partition table"
 msgstr "Νέος πίνακας διαμερισμάτων"
 
-#: ../thus/installation/advanced.py:1362
+#: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1373
+#: ../thus/installation/advanced.py:1362
 msgid "_Apply"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1376 ../ui/advanced.ui:406
+#: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:406
 msgid "Size:"
 msgstr "Μέγεθος:"
 
-#: ../thus/installation/advanced.py:1380 ../ui/advanced.ui:605
+#: ../thus/installation/advanced.py:1369 ../ui/advanced.ui:605
 msgid "Type:"
 msgstr "Τύπος:"
 
-#: ../thus/installation/advanced.py:1384 ../ui/advanced.ui:622
+#: ../thus/installation/advanced.py:1373 ../ui/advanced.ui:622
 msgid "Primary"
 msgstr "Προτεύων"
 
-#: ../thus/installation/advanced.py:1388 ../ui/advanced.ui:641
+#: ../thus/installation/advanced.py:1377 ../ui/advanced.ui:641
 msgid "Logical"
 msgstr "Λογικό"
 
-#: ../thus/installation/advanced.py:1392 ../ui/advanced.ui:659
+#: ../thus/installation/advanced.py:1381 ../ui/advanced.ui:659
 msgid "Extended"
 msgstr "Εκτεταμένο"
 
-#: ../thus/installation/advanced.py:1396 ../ui/advanced.ui:510
+#: ../thus/installation/advanced.py:1385 ../ui/advanced.ui:510
 msgid "Beginning of this space"
 msgstr "Αρχή αυτού του χώρου"
 
-#: ../thus/installation/advanced.py:1400 ../ui/advanced.ui:529
+#: ../thus/installation/advanced.py:1389 ../ui/advanced.ui:529
 msgid "End of this space"
 msgstr "Τέλος αυτού του χώρου"
 
-#: ../thus/installation/advanced.py:1404 ../thus/installation/advanced.py:1421
+#: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1408 ../thus/installation/advanced.py:1425
+#: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1412 ../thus/installation/advanced.py:1429
+#: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
 msgid "Label (optional):"
 msgstr "Ετικέτα (προαιρετικό):"
 
-#: ../thus/installation/advanced.py:1416 ../thus/installation/advanced.py:1437
+#: ../thus/installation/advanced.py:1405 ../thus/installation/advanced.py:1426
 msgid "Encryption Options..."
 msgstr "Επιλογές Κρυπτογράφησης..."
 
-#: ../thus/installation/advanced.py:1433 ../ui/advanced.ui:279
+#: ../thus/installation/advanced.py:1422 ../ui/advanced.ui:279
 msgid "Format:"
 msgstr "Διαμόρφωση:"
 
-#: ../thus/installation/advanced.py:1442
+#: ../thus/installation/advanced.py:1431
 msgid "Partition Table Type:"
 msgstr "Τύπος Πίνακα Διαμερισμάτων: "
 
-#: ../thus/installation/advanced.py:1447
+#: ../thus/installation/advanced.py:1436
 msgid "Create Partition Table"
 msgstr "Δημιουργία Πίνακα Διαμερισμάτων"
 
-#: ../thus/installation/advanced.py:1450
+#: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1454 ../ui/advanced.ui:1173
+#: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
 msgstr "Όνομα τομέα LUKS:"
 
-#: ../thus/installation/advanced.py:1458 ../ui/advanced.ui:1185
+#: ../thus/installation/advanced.py:1447 ../ui/advanced.ui:1185
 msgid "Password:"
 msgstr "Κωδικός"
 
-#: ../thus/installation/advanced.py:1462 ../ui/advanced.ui:1197
+#: ../thus/installation/advanced.py:1451 ../ui/advanced.ui:1197
 msgid "Confirm password:"
 msgstr "Επιβεβαίωση κωδικού"
 
-#: ../thus/installation/advanced.py:1532
+#: ../thus/installation/advanced.py:1521
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1542
+#: ../thus/installation/advanced.py:1531
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
 msgstr ""
 
-#: ../thus/installation/advanced.py:1570
+#: ../thus/installation/advanced.py:1559
 msgid "Can't create BIOS GPT Boot partition!"
 msgstr "Αδυναμία δημιουργίας διαμερίσματος Εκκίνησης BIOS GPT!"
 
-#: ../thus/installation/advanced.py:1599
+#: ../thus/installation/advanced.py:1588
 msgid "Couldn't create BIOS GPT Boot partition"
 msgstr "Αδυναμία δημιουργίας διαμερίσματος Εκκίνησης BIOS GPT"
 
-#: ../thus/installation/advanced.py:1720 ../thus/installation/automatic.py:107
+#: ../thus/installation/advanced.py:1706 ../thus/installation/automatic.py:107
 msgid "Install now!"
 msgstr "Εγκατάσταση τώρα!"
 
-#: ../thus/installation/advanced.py:1790
+#: ../thus/installation/advanced.py:1772
 #, python-brace-format
 msgid ""
 "{0} is mounted as swap.\n"
@@ -872,7 +870,7 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1794
+#: ../thus/installation/advanced.py:1776
 #, python-brace-format
 msgid ""
 "{0} is mounted in '{1}'.\n"
@@ -880,99 +878,110 @@ msgid ""
 "Click Yes to unmount, or No to return\n"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1805 ../thus/installation/advanced.py:1826
+#: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
 msgid "{0} unmounted"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1819
+#: ../thus/installation/advanced.py:1801
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1830
+#: ../thus/installation/advanced.py:1812
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1837
+#: ../thus/installation/advanced.py:1819
 msgid ""
 "The root partition is not marked to be formatted.\n"
 "This might create problems. Should it be marked to be formatted now?"
 msgstr "Το διαμέρισμα root δεν είναι επισημασμένο για διαμόρφωση.\nΑυτό ίσως δημιουργήσει προβλήματα. Πρέπει να επισημανθεί για διαμόρφωση τώρα;"
 
-#: ../thus/installation/advanced.py:1881
+#: ../thus/installation/advanced.py:1863
 #, python-brace-format
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1906
+#: ../thus/installation/advanced.py:1888
 #, python-brace-format
 msgid "Partition {0} will be deleted"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1914
+#: ../thus/installation/advanced.py:1896
 msgid "Partition"
 msgstr "Διαμέρισμα"
 
-#: ../thus/installation/advanced.py:1914
+#: ../thus/installation/advanced.py:1896
 msgid "Relabel"
 msgstr "Αλλαγή ετικέτας"
 
-#: ../thus/installation/advanced.py:1914
+#: ../thus/installation/advanced.py:1896
 msgid "Mount"
 msgstr "Προσάρτηση"
 
-#: ../thus/installation/advanced.py:1914
+#: ../thus/installation/advanced.py:1896
 msgid "Encrypt"
 msgstr ""
 
-#: ../thus/installation/advanced.py:1935
+#: ../thus/installation/advanced.py:1917
 msgid "These disks will have partition actions:"
 msgstr "Αυτοί οι δίσκοι θα έχουν ενέργειες διαμερισμάτων:"
 
-#: ../thus/installation/advanced.py:2035
+#: ../thus/installation/advanced.py:2005
 #, python-brace-format
 msgid "Finished saving changes in {0}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2056
+#: ../thus/installation/advanced.py:2028
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2059
+#: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2088
+#: ../thus/installation/advanced.py:2040 ../thus/installation/advanced.py:2059
+#: ../thus/installation/advanced.py:2075
+#, python-brace-format
+msgid "Setting boot flag in {0} partition"
+msgstr ""
+
+#: ../thus/installation/advanced.py:2048
+#, python-brace-format
+msgid "Setting boot_legacy flag in {0} partition"
+msgstr ""
+
+#: ../thus/installation/advanced.py:2083
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
 msgstr ""
 
-#: ../thus/installation/advanced.py:2103
+#: ../thus/installation/advanced.py:2098
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2127
+#: ../thus/installation/advanced.py:2122
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2185 ../thus/installation/automatic.py:274
+#: ../thus/installation/advanced.py:2180 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2191
+#: ../thus/installation/advanced.py:2190
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
 msgstr ""
 
-#: ../thus/installation/advanced.py:2206 ../thus/installation/automatic.py:304
+#: ../thus/installation/advanced.py:2205 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
 msgstr "Λειτουργία δοκιμής. Το Thus δεν θα εφαρμόσει καμία αλλαγή στο σύστημα σας!"
 
@@ -1050,7 +1059,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "και"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1177,8 +1186,8 @@ msgid "Thus will install the bootloader '{0}' in device '{1}'"
 msgstr ""
 
 #: ../thus/installation/auto_partition.py:86
-#: ../thus/installation/process.py:490 ../thus/installation/process.py:507
-#: ../thus/installation/process.py:522
+#: ../thus/installation/process.py:485 ../thus/installation/process.py:502
+#: ../thus/installation/process.py:517
 #, python-brace-format
 msgid "Unmounting {0}"
 msgstr ""
@@ -1427,88 +1436,88 @@ msgstr "Η εγκατάσταση του GRUB(2) BIOS είναι επιτυχή�
 msgid "ERROR installing GRUB(2) BIOS."
 msgstr "ΣΦΑΛΜΑ εγκατάστασης του GRUB(2) BIOS."
 
-#: ../thus/installation/bootloader.py:284
+#: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:319
+#: ../thus/installation/bootloader.py:322
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:323
+#: ../thus/installation/bootloader.py:326
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:327
+#: ../thus/installation/bootloader.py:330
 msgid "File not found."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:329
+#: ../thus/installation/bootloader.py:332
 msgid "File already exists."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:347
+#: ../thus/installation/bootloader.py:350
 msgid "Generating grub.cfg"
 msgstr "Δημιουργία του grub.cfg"
 
-#: ../thus/installation/bootloader.py:361
+#: ../thus/installation/bootloader.py:364
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
 msgstr "Το grub-mkconfig φαίνεται πως κόλλησε. Γίνεται τερματισμό του grub-mount και του os-prober ώστε να μπορέσουμε να συνεχίσουμε."
 
-#: ../thus/installation/bootloader.py:379
+#: ../thus/installation/bootloader.py:382
 msgid "GRUB(2) UEFI install completed successfully"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:383
+#: ../thus/installation/bootloader.py:386
 msgid "GRUB(2) UEFI install may not have completed successfully."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:395
+#: ../thus/installation/bootloader.py:398
 msgid "50mounted-tests file patched successfully"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:397
+#: ../thus/installation/bootloader.py:400
 msgid "Failed to patch 50mounted-tests, file not found."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:401
+#: ../thus/installation/bootloader.py:404
 msgid "Copying GRUB(2) Theme Files"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:407
+#: ../thus/installation/bootloader.py:410
 msgid "Grub2 theme files not found"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:409
+#: ../thus/installation/bootloader.py:412
 msgid "Grub2 theme files already exist."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:413
+#: ../thus/installation/bootloader.py:416
 msgid "Installing Grub2 locales."
 msgstr "Εγκατάσταση των τοπικών του Grub2."
 
-#: ../thus/installation/bootloader.py:424
+#: ../thus/installation/bootloader.py:427
 msgid "Can't install GRUB(2) locale."
 msgstr ""
 
-#: ../thus/installation/bootloader.py:490
+#: ../thus/installation/bootloader.py:493
 msgid "Gummiboot install completed successfully"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:494
+#: ../thus/installation/bootloader.py:497
 msgid "Gummiboot install has NOT completed successfully!"
 msgstr ""
 
-#: ../thus/installation/bootloader.py:526
+#: ../thus/installation/bootloader.py:529
 msgid "Can't freeze/unfreeze xfs system"
 msgstr "Αδυναμία παγώματος/ξεπαγώματος του συστήματος xfs"
 
-#: ../thus/installation/chroot.py:50
+#: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
 msgstr ""
 
@@ -1608,204 +1617,200 @@ msgstr "Ρύθμιση συστήματος ..."
 msgid "System configured."
 msgstr "Το σύστημα ρυθμίστηκε."
 
-#: ../thus/installation/process.py:447
-msgid "Installing boot loader ..."
-msgstr "Εγκατάσταση φορτωτή εκκίνησης ..."
-
-#: ../thus/installation/process.py:481
+#: ../thus/installation/process.py:476
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:498 ../thus/installation/process.py:517
-#: ../thus/installation/process.py:531
+#: ../thus/installation/process.py:493 ../thus/installation/process.py:512
+#: ../thus/installation/process.py:526
 #, python-brace-format
 msgid "Can't unmount {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:533
+#: ../thus/installation/process.py:528
 msgid "Installation finished successfully."
 msgstr "Η εγκατάσταση ολοκληρώθηκε με επιτυχία."
 
-#: ../thus/installation/process.py:560
+#: ../thus/installation/process.py:555
 msgid "Base filesystem does not exist! Critical error (exiting)."
 msgstr "Το βασικό σύστημα αρχείων δεν υπάρχει! Σοβαρό σφάλμα (γίνεται έξοδος)."
 
-#: ../thus/installation/process.py:564
+#: ../thus/installation/process.py:559
 msgid "Desktop filesystem does not exist! Critical error (exiting)."
 msgstr "Το σύστημα αρχείων επιφάνειας εργασίας δεν υπάρχει! Σοβαρό σφάλμα (γίνεται έξοδος)."
 
-#: ../thus/installation/process.py:574 ../thus/installation/process.py:580
+#: ../thus/installation/process.py:569 ../thus/installation/process.py:575
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
 msgstr ""
 
-#: ../thus/installation/process.py:591
+#: ../thus/installation/process.py:586
 msgid "Indexing files to be copied ..."
 msgstr "Καταμέτρηση αρχείων για αντιγραφή ..."
 
-#: ../thus/installation/process.py:596
+#: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
 msgstr "Εξαγωγή του root-image ..."
 
-#: ../thus/installation/process.py:606
+#: ../thus/installation/process.py:601
 msgid "Extracting desktop-image ..."
 msgstr "Εξαγωγή του desktop-image ..."
 
-#: ../thus/installation/process.py:621
+#: ../thus/installation/process.py:616
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:664
+#: ../thus/installation/process.py:659
 msgid "Can't copy network configuration files"
 msgstr "Αδυναμία αντιγραφής αρχείων παραμέτρων δικτύου"
 
-#: ../thus/installation/process.py:703 ../thus/installation/process.py:729
-#: ../thus/installation/process.py:744 ../thus/installation/process.py:801
-#: ../thus/installation/process.py:806
+#: ../thus/installation/process.py:698 ../thus/installation/process.py:724
+#: ../thus/installation/process.py:739 ../thus/installation/process.py:797
+#: ../thus/installation/process.py:802
 #, python-brace-format
 msgid "Added to fstab : {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:723 ../thus/installation/process.py:739
+#: ../thus/installation/process.py:718 ../thus/installation/process.py:734
 #, python-brace-format
 msgid "Added to crypttab : {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:814
+#: ../thus/installation/process.py:810
 msgid "fstab written."
 msgstr ""
 
-#: ../thus/installation/process.py:823
+#: ../thus/installation/process.py:819
 #, python-brace-format
 msgid "Enabled {0} service."
 msgstr ""
 
-#: ../thus/installation/process.py:825
+#: ../thus/installation/process.py:821
 #, python-brace-format
 msgid "Can't find service {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:833
+#: ../thus/installation/process.py:829
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:839
+#: ../thus/installation/process.py:835
 #, python-brace-format
 msgid "Error changing password for user {0}"
 msgstr ""
 
-#: ../thus/installation/process.py:867
+#: ../thus/installation/process.py:863
 msgid "Can't find locale.gen file"
 msgstr ""
 
-#: ../thus/installation/process.py:939
+#: ../thus/installation/process.py:935
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
 msgstr ""
 
-#: ../thus/installation/process.py:1058
+#: ../thus/installation/process.py:1052
 msgid "Configuring your new system"
 msgstr "Ρύθμιση του νέου σας συστήματος"
 
-#: ../thus/installation/process.py:1061
+#: ../thus/installation/process.py:1055
 msgid "fstab file generated."
 msgstr "Το αρχείο fstab δημιουργήθηκε."
 
-#: ../thus/installation/process.py:1067
+#: ../thus/installation/process.py:1061
 msgid "Network configuration copied."
 msgstr "Οι ρυθμίσεις δικτύου αντιγράφτηκαν."
 
-#: ../thus/installation/process.py:1093
+#: ../thus/installation/process.py:1087
 msgid "Time zone set."
 msgstr "Η ζώνη ώρας ορίστηκε."
 
-#: ../thus/installation/process.py:1114
+#: ../thus/installation/process.py:1108
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
 msgstr ""
 
-#: ../thus/installation/process.py:1124
+#: ../thus/installation/process.py:1118
 #, python-brace-format
 msgid "User {0} added."
 msgstr ""
 
-#: ../thus/installation/process.py:1136
+#: ../thus/installation/process.py:1130
 #, python-brace-format
 msgid "Hostname  {0} set."
 msgstr ""
 
-#: ../thus/installation/process.py:1141
+#: ../thus/installation/process.py:1135
 msgid "Set root password."
 msgstr "Ορίστε κωδικό πρόσβασης υπερχρήστη"
 
-#: ../thus/installation/process.py:1144
+#: ../thus/installation/process.py:1138
 msgid "Set the same password to root."
 msgstr "Ορίστε τον ίδιο κωδικό πρόσβασης για δικαιώματα υπερχρήστη."
 
-#: ../thus/installation/process.py:1150
+#: ../thus/installation/process.py:1144
 msgid "Generating locales ..."
 msgstr "Δημιουργία τοπικών ..."
 
-#: ../thus/installation/process.py:1168
+#: ../thus/installation/process.py:1162
 msgid "Adjusting hardware clock ..."
 msgstr "Προσαρμογή ρολογιού υλικού ..."
 
-#: ../thus/installation/process.py:1177
+#: ../thus/installation/process.py:1171
 msgid "Configuring hardware ..."
 msgstr "Ρύθμιση υλικού ..."
 
-#: ../thus/installation/process.py:1185
+#: ../thus/installation/process.py:1179
 msgid "Updated Alsa mixer settings"
 msgstr ""
 
-#: ../thus/installation/process.py:1193
+#: ../thus/installation/process.py:1187
 msgid "Installing drivers ..."
 msgstr "Εγκατάσταση οδηγών ..."
 
-#: ../thus/installation/process.py:1204
+#: ../thus/installation/process.py:1198
 msgid "Configure display manager ..."
 msgstr "Ρύθμιση διαχειριστή οθόνης ..."
 
-#: ../thus/installation/process.py:1252
+#: ../thus/installation/process.py:1246
 msgid "Configure System ..."
 msgstr "Ρύθμιση Συστήματος ..."
 
-#: ../thus/installation/process.py:1270
+#: ../thus/installation/process.py:1264
 msgid "Removing live configuration (packages)"
 msgstr "Αφαίρεση ζωντανής παραμετροποίησης (πακέτα)"
 
-#: ../thus/installation/process.py:1286
+#: ../thus/installation/process.py:1280
 msgid "Configuring package manager"
 msgstr "Ρύθμιση διαχειριστή πακέτων"
 
-#: ../thus/installation/process.py:1297
+#: ../thus/installation/process.py:1291
 msgid "Finished configuring package manager."
 msgstr "Η ρύθμιση διαχειρηστή πακέτων ολοκληρώθηκε."
 
-#: ../thus/installation/process.py:1333
+#: ../thus/installation/process.py:1327
 msgid "Running mkinitcpio ..."
 msgstr "Εκτέλεση mkinitcpio ..."
 
-#: ../thus/installation/process.py:1335
+#: ../thus/installation/process.py:1329
 msgid "Running mkinitcpio - done"
 msgstr "Εκτέλεση mkinitcpio - ολοκληρώθηκε"
 
-#: ../thus/installation/process.py:1346
+#: ../thus/installation/process.py:1340
 msgid "Encrypting user home dir..."
 msgstr ""
 
-#: ../thus/installation/process.py:1348
+#: ../thus/installation/process.py:1342
 msgid "User home dir encrypted"
 msgstr "Ο κατάλογος home χρήστη κρυπτογραφήθηκε"
 
-#: ../thus/installation/process.py:1353
+#: ../thus/installation/process.py:1347
 msgid "Installing bootloader..."
 msgstr ""
 
-#: ../thus/installation/process.py:1359
+#: ../thus/installation/process.py:1353
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
 msgstr ""
@@ -1873,7 +1878,7 @@ msgstr ""
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
-"For more information take a look at /tmp/cnchi.log"
+"For more information take a look at /tmp/thus.log"
 msgstr ""
 
 #: ../thus/parted3/partition_module.py:182
@@ -1973,7 +1978,7 @@ msgstr ""
 msgid "Use LUKS encryption: "
 msgstr "Χρήση κρυπτογράφησης LUKS:"
 
-#: ../ui/advanced.ui:1287 ../ui/user_info.ui:119 ../ui/user_info.ui:589
+#: ../ui/advanced.ui:1287 ../ui/user_info.ui:111 ../ui/user_info.ui:562
 msgid "<small><span color=\"darkgreen\">Strong password</span></small>"
 msgstr "<small><span color=\"darkgreen\">Ιχυρός κωδικός</span></small>"
 
@@ -1985,7 +1990,7 @@ msgstr ""
 
 #: ../ui/automatic.ui:62
 msgid ""
-"Please choose the drive where you want to install Antergos and click the "
+"Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
 msgstr ""
 
@@ -2037,18 +2042,18 @@ msgstr "<span weight=\"bold\" size=\"large\">Καλως ορίσατε στο Ma
 msgid "Use Network Time Protocol for clock synchronization:"
 msgstr "Χρηση του Προτόκολλου Ώρας Δικτύου για τον συχρονισμό της ώρας:"
 
-#: ../ui/user_info.ui:177 ../ui/user_info.ui:662
+#: ../ui/user_info.ui:167 ../ui/user_info.ui:631
 msgid "<small><span color=\"darkred\">You must enter a password</span></small>"
 msgstr "<small><span color=\"darkred\">Πρέπει να εισάγετε ένα κωδικό</span></small>"
 
-#: ../ui/user_info.ui:278
+#: ../ui/user_info.ui:264
 msgid "<small><span color=\"darkred\">You must enter a username</span></small>"
 msgstr "<small><span color=\"darkred\">Πρέπει να εισάγετε ένα όνομα χρήστη</span></small>"
 
-#: ../ui/user_info.ui:356
+#: ../ui/user_info.ui:338
 msgid "<small><span color=\"darkred\">You must enter a name</span></small>"
 msgstr "<small><span color=\"darkred\">Πρέπει να εισάγετε ένα όνομα</span></small>"
 
-#: ../ui/user_info.ui:378
+#: ../ui/user_info.ui:360
 msgid "<span size=\"small\">Its name as it appears to other computers.</span>"
 msgstr "<span size=\"small\">Το όνομα του όπως παρουσιάζετε σε άλλους υπολογιστές.</span>"
