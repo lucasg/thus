@@ -278,16 +278,19 @@ class Bootloader(object):
         uefi_arch = "x86_64"
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
-        bootloader_id = 'manjaro_grub' if not os.path.exists('/install/boot/efi/EFI/manjaro_grub') else \
-            'manjaro_grub_{0}'.format(self.random_generator())
-
+        efi_path = self.settings.get('bootloader_device')
+        if not os.path.exists('/install{0}/EFI/manjaro_grub'.format(efi_path)):
+            bootloader_id = 'manjaro_grub'
+        else:
+            bootloader_id = 'manjaro_grub_{0}'.format(self.random_generator())
+        
         txt = _("Installing GRUB(2) UEFI {0} boot loader".format(uefi_arch))
         logging.info(txt)
 
         grub_install = [
             'grub-install',
             '--target={0}-efi'.format(uefi_arch),
-            '--efi-directory=/install/boot/efi',
+            '--efi-directory=/install{0}'.format(efi_path),
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/install/boot',
             '--recheck']
@@ -308,10 +311,10 @@ class Bootloader(object):
         # self.copy_grub2_theme_files()
 
         # Copy grub into dirs known to be used as default by some OEMs if they do not exist yet.
-        grub_defaults = [os.path.join(self.dest_dir, "boot/efi/EFI/BOOT", "BOOT{0}.efi".format(spec_uefi_arch_caps)),
-                         os.path.join(self.dest_dir, "boot/efi/EFI/Microsoft/Boot", 'bootmgfw.efi')]
+        grub_defaults = [os.path.join(self.dest_dir, "{0}EFI/BOOT".format(efi_path[1:]), "BOOT{0}.efi".format(spec_uefi_arch_caps)),
+                         os.path.join(self.dest_dir, "{0}/EFI/Microsoft/Boot".format(efi_path[1:]), 'bootmgfw.efi')]
 
-        grub_path = os.path.join(self.dest_dir, "boot/efi/EFI/manjaro_grub", "grub{0}.efi".format(spec_uefi_arch))
+        grub_path = os.path.join(self.dest_dir, "{0}/EFI/manjaro_grub".format(efi_path[1:]), "grub{0}.efi".format(spec_uefi_arch))
 
         for grub_default in grub_defaults:
             path = grub_default.split()[0]
@@ -364,7 +367,7 @@ class Bootloader(object):
             subprocess.check_call(['killall', 'os-prober'])
 
         paths = [os.path.join(self.dest_dir, "boot/grub/x86_64-efi/core.efi"),
-                 os.path.join(self.dest_dir, "boot/efi/EFI/{0}".format(bootloader_id),
+                 os.path.join(self.dest_dir, "{0}/EFI/{1}".format(efi_path[1:0], bootloader_id),
                               "grub{0}.efi".format(spec_uefi_arch))]
 
         exists = False

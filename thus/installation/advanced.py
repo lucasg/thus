@@ -1679,16 +1679,13 @@ class InstallationAdvanced(GtkBaseBox):
                     has_part["root"] = True
                     part["root"].set_state(True)
             # /boot or /boot/efi
-            if mnt == "/boot" or mnt == "/boot/efi":
-                if is_uefi and "fat" in fsystem:
-                    # Only fat partitions
-                    has_part["boot_efi"] = True
-                    part["boot_efi"].set_state(True)
-                else:
-                    if "f2fs" not in fsystem and "btrfs" not in fsystem and self.lv_partitions:
-                        has_part["boot"] = True
-                        # Not sure if this was an oversight or intended?
-                        part["boot"].set_state(True)
+            if is_uefi and (mnt == "/boot/efi") and ("fat" in fs):
+                # Only fat partitions
+                has_part["boot_efi"] = True
+                part["boot_efi"].set_state(True)
+            if mnt == "/boot" and "f2fs" not in fs and "btrfs" not in fs and self.lv_partitions:
+                has_part["boot"] = True
+                part["boot"].set_state(True)
             if mnt == "swap":
                 has_part["swap"] = True
                 part["swap"].set_state(True)
@@ -2012,10 +2009,12 @@ class InstallationAdvanced(GtkBaseBox):
             apartitions = list(partitions) + self.lv_partitions
 
             # Checks if a boot partition exists
-            noboot = True
             for allopts in self.stage_opts:
-                if self.stage_opts[allopts][2] == '/boot' or self.stage_opts[allopts][2] == '/boot/efi':
-                    noboot = False
+                    if self.stage_opts[allopts][2] == '/boot':
+                        boot = True
+                    if self.stage_opts[allopts][2] == '/boot/efi':
+                        boot = True
+                        efiboot = True
 
             for partition_path in apartitions:
                 # Get label, mount point and filesystem of staged partitions
@@ -2034,26 +2033,49 @@ class InstallationAdvanced(GtkBaseBox):
 
                     logging.info(txt)
 
-                    if ((mnt == '/' and noboot) or mnt == '/boot') and '/dev/mapper' not in partition_path:
+                    # EFI and /boot/efi is the EFI partition mount point -> Flag /boot/efi as boot
+                    if (mnt == '/boot/efi'):
+                        self.efi_path = mnt;
                         if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
-                            if self.bootloader_device or self.bootloader_device is not None:
-                                pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
+                            logging.info(("Setting boot flag in %s partition") % (partition_path))
+                            pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
                         if not self.testing:
                             pm.finalize_changes(partitions[partition_path].disk)
+
+                    # EFI and /boot is NOT the EFI partition mount point -> Flag /boot as legacy_boot
+                    if (mnt == '/boot' and efiboot):
+                        if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_LEGACY_BOOT):
+                            logging.info(("Setting boot_legacy flag in %s partition") % (partition_path))
+                            pm.set_flag(pm.PED_PARTITION_LEGACY_BOOT, partitions[partition_path])
+                        if not self.testing:
+                            pm.finalize_changes(partitions[partition_path].disk)
+
+                    # No LVM and
+                    # BIOS and / is the boot partition (no /boot or /boot/efi partition) -> Flag / as boot
+                    # BIOS or EFI, and /boot is the boot or/and the efi partition (no /boot/efi) -> Flag /boot as boot
+                    if ((mnt == '/' and not boot) or (mnt == '/boot' and not efiboot)) and ('/dev/mapper' not in partition_path):
+                        self.efi_path = mnt;
+                        if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
+                            logging.info(("Setting boot flag in %s partition") % (partition_path))
+                            pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
+                        if not self.testing:
+                            pm.finalize_changes(partitions[partition_path].disk)
+
                     if "/dev/mapper" in partition_path:
                         pvs = lvm.get_lvm_partitions()
                         vgname = partition_path.split("/")[-1]
                         vgname = vgname.split('-')[0]
-                        if mnt == '/' or mnt == '/boot':
-                            self.blvm = True
-                            if noboot or mnt == '/boot':
-                                for ee in pvs[vgname]:
-                                    # print(partitions)
-                                    if not pm.get_flag(partitions[ee], pm.PED_PARTITION_BOOT):
-                                        if self.bootloader_device or self.bootloader_device is not None:
-                                            pm.set_flag(pm.PED_PARTITION_BOOT, partitions[ee])
-                                    if not self.testing:
-                                        pm.finalize_changes(partitions[ee].disk)
+                        # If there is no separate /boot or /boot/efi partition, set boot flag to the lvm partition
+                        # TODO Needs testing with EFI (with only /boot, only /boot/efi or both)
+                        if (mnt == '/' and not boot) or (mnt == '/boot' and not efiboot):
+                            self.blvm = True  # Tells process.py there is a lvm partition
+                            for ee in pvs[vgname]:
+                                print(partitions)
+                                if not pm.get_flag(partitions[ee], pm.PED_PARTITION_BOOT):
+                                    logging.info(_("Setting boot flag in %s partition") % (partitions[ee]))
+                                    pm.set_flag(pm.PED_PARTITION_BOOT, partitions[ee])
+                            if not self.testing:
+                                pm.finalize_changes(partitions[ee].disk)
 
                     if uid in self.luks_options:
                         (use_luks, vol_name, password) = self.luks_options[uid]
@@ -2158,8 +2180,12 @@ class InstallationAdvanced(GtkBaseBox):
             logging.warning(_("Thus will not install any bootloader"))
         else:
             self.settings.set('bootloader_install', True)
-            self.settings.set('bootloader_device', self.bootloader_device)
+            if os.path.exists('/sys/firmware/efi'):
+                self.settings.set('bootloader_device', self.efi_path)
+            else:
+                self.settings.set('bootloader_device', self.bootloader_device)
 
+            self.settings.set('bootloader_type', bootloader_type)
             self.settings.set('bootloader', self.bootloader)
             msg = _("Manjaro will install the bootloader {0} in device {1}")
             msg = msg.format(self.bootloader, self.bootloader_device)
