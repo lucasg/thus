@@ -46,7 +46,7 @@ def backup_conf_files(dest_dir):
     for conf_file in conf_files:
         path = os.path.join(dest_dir, conf_file)
         if os.path.exists(path):
-            shutil.copy(path, path + ".cnchi")
+            shutil.copy(path, path + ".thus")
     os.system("sync")
 
 

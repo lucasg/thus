@@ -108,7 +108,7 @@ def get_devices():
                 result = UNRECOGNISED_DISK_LABEL
             except Exception as general_error:
                 logging.error(general_error)
-                msg = _("Exception: {0}.\nFor more information take a look at /tmp/cnchi.log").format(general_error)
+                msg = _("Exception: {0}.\nFor more information take a look at /tmp/thus.log").format(general_error)
                 show.error(None, msg)
                 result = UNKNOWN_ERROR
             finally:

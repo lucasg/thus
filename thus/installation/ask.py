@@ -108,9 +108,9 @@ class InstallationAsk(GtkBaseBox):
         self.settings.set('enable_alongside', enable_alongside)
         '''
         if enable_alongside:
-            msg = _("Cnchi will enable the 'alongside' installation mode.")
+            msg = _("Thus will enable the 'alongside' installation mode.")
         else:
-            msg = _("Cnchi will NOT enable the 'alongside' installation mode.")
+            msg = _("Thus will NOT enable the 'alongside' installation mode.")
         logging.debug(msg)
         '''
 

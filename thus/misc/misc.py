@@ -983,7 +983,7 @@ def gtk_refresh():
 
 
 def remove_temp_files():
-    """ Remove Cnchi temporary files """
+    """ Remove Thus temporary files """
     temp_files = [
         ".setup-running",
         ".km-running",
@@ -991,7 +991,7 @@ def remove_temp_files():
         "setup-mkinitcpio-running",
         ".tz-running",
         ".setup",
-        "Cnchi.log"]
+        "thus.log"]
     for temp in temp_files:
         path = os.path.join("/tmp", temp)
         if os.path.exists(path):
