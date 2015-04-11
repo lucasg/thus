@@ -2037,7 +2037,7 @@ class InstallationAdvanced(GtkBaseBox):
                     if (mnt == '/boot/efi'):
                         self.efi_path = mnt;
                         if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
-                            logging.info(("Setting boot flag in %s partition") % (partition_path))
+                            logging.info(_("Setting boot flag in {0} partition".format(partition_path)))
                             pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
                         if not self.testing:
                             pm.finalize_changes(partitions[partition_path].disk)
@@ -2045,7 +2045,7 @@ class InstallationAdvanced(GtkBaseBox):
                     # EFI and /boot is NOT the EFI partition mount point -> Flag /boot as legacy_boot
                     if (mnt == '/boot' and efiboot):
                         if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_LEGACY_BOOT):
-                            logging.info(("Setting boot_legacy flag in %s partition") % (partition_path))
+                            logging.info(_("Setting boot_legacy flag in {0} partition".format(partition_path)))
                             pm.set_flag(pm.PED_PARTITION_LEGACY_BOOT, partitions[partition_path])
                         if not self.testing:
                             pm.finalize_changes(partitions[partition_path].disk)
@@ -2056,7 +2056,7 @@ class InstallationAdvanced(GtkBaseBox):
                     if ((mnt == '/' and not boot) or (mnt == '/boot' and not efiboot)) and ('/dev/mapper' not in partition_path):
                         self.efi_path = mnt;
                         if not pm.get_flag(partitions[partition_path], pm.PED_PARTITION_BOOT):
-                            logging.info(("Setting boot flag in %s partition") % (partition_path))
+                            logging.info(_("Setting boot flag in {0} partition".format(partition_path)))
                             pm.set_flag(pm.PED_PARTITION_BOOT, partitions[partition_path])
                         if not self.testing:
                             pm.finalize_changes(partitions[partition_path].disk)
@@ -2072,7 +2072,7 @@ class InstallationAdvanced(GtkBaseBox):
                             for ee in pvs[vgname]:
                                 print(partitions)
                                 if not pm.get_flag(partitions[ee], pm.PED_PARTITION_BOOT):
-                                    logging.info(_("Setting boot flag in %s partition") % (partitions[ee]))
+                                    logging.info(_("Setting boot flag in {0} partition".format(partitions[ee])))
                                     pm.set_flag(pm.PED_PARTITION_BOOT, partitions[ee])
                             if not self.testing:
                                 pm.finalize_changes(partitions[ee].disk)
