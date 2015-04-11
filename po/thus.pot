@@ -941,9 +941,15 @@ msgstr ""
 msgid "Creating new {0} filesystem in {1}"
 msgstr ""
 
+#: ../thus/installation/advanced.py:2040 ../thus/installation/advanced.py:2059
 #: ../thus/installation/advanced.py:2075
-#, python-format
-msgid "Setting boot flag in %s partition"
+#, python-brace-format
+msgid "Setting boot flag in {0} partition"
+msgstr ""
+
+#: ../thus/installation/advanced.py:2048
+#, python-brace-format
+msgid "Setting boot_legacy flag in {0} partition"
 msgstr ""
 
 #: ../thus/installation/advanced.py:2083
