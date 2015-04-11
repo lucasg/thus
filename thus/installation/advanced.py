@@ -1679,11 +1679,11 @@ class InstallationAdvanced(GtkBaseBox):
                     has_part["root"] = True
                     part["root"].set_state(True)
             # /boot or /boot/efi
-            if is_uefi and (mnt == "/boot/efi") and ("fat" in fs):
+            if is_uefi and (mnt == "/boot/efi") and ("fat" in fsystem):
                 # Only fat partitions
                 has_part["boot_efi"] = True
                 part["boot_efi"].set_state(True)
-            if mnt == "/boot" and "f2fs" not in fs and "btrfs" not in fs and self.lv_partitions:
+            if mnt == "/boot" and "f2fs" not in fsystem and "btrfs" not in fsystem and self.lv_partitions:
                 has_part["boot"] = True
                 part["boot"].set_state(True)
             if mnt == "swap":
