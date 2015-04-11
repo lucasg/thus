@@ -1996,6 +1996,9 @@ class InstallationAdvanced(GtkBaseBox):
         from installation import auto_partition as ap
 
         partitions = {}
+        boot = False
+        efiboot = False
+
         if self.disks is not None:
             for disk_path in self.disks:
                 (disk, result) = self.disks[disk_path]
