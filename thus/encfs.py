@@ -24,7 +24,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-""" Configures Antergos to encrypt user's home with encFS """
+""" Configures Thus to encrypt user's home with encFS """
 
 import os
 import shutil

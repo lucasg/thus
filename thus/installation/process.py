@@ -713,13 +713,13 @@ class InstallationProcess(multiprocessing.Process):
 
                 os.chmod(crypttab_path, 0o666)
                 with open(crypttab_path, 'a') as crypttab_file:
-                    line = "cryptAntergosHome /dev/disk/by-uuid/{0} {1} luks\n".format(uuid, home_keyfile)
+                    line = "cryptManjaroHome /dev/disk/by-uuid/{0} {1} luks\n".format(uuid, home_keyfile)
                     crypttab_file.write(line)
                     logging.debug(_("Added to crypttab : {0}"), line)
                 os.chmod(crypttab_path, 0o600)
 
                 # Add line to fstab
-                txt = "/dev/mapper/cryptAntergosHome {0} {1} defaults 0 0".format(mount_point, myfmt)
+                txt = "/dev/mapper/cryptManjaroHome {0} {1} defaults 0 0".format(mount_point, myfmt)
                 all_lines.append(txt)
                 logging.debug(_("Added to fstab : {0}".format(txt)))
                 continue
