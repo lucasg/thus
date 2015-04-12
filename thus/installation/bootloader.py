@@ -101,8 +101,10 @@ class Bootloader(object):
             return
         ruuid_str = 'root=UUID=' + self.root_uuid
         boot_command = self.settings.get('GRUB_CMDLINE_LINUX')
+        if boot_command is None:
+            boot_command = ''
         boot_command = 'linux /' + self.vmlinuz + ' ' + ruuid_str + ' ' + boot_command + '\n'
-        pattern = re.compile("menuentry 'Manjaro Linux'[\s\S]*{0}.img\n}".format(self.vmlinuz))
+        pattern = re.compile("menuentry 'Manjaro Linux'[\s\S]*{0}.img\n}}".format(self.vmlinuz))
 
         with open(cfg) as grub_file:
             parse = grub_file.read()
