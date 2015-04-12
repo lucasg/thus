@@ -313,17 +313,14 @@ class UserInfo(GtkBaseBox):
     def validate(self, element, value):
         """ Check that what the user is typing is ok """
         if len(value) == 0:
-            self.is_ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
             self.is_ok[element].show()
             self.error_label[element].show()
         else:
             result = validation.check(element, value)
             if len(result) == 0:
-                self.is_ok[element].set_from_stock("gtk-yes", Gtk.IconSize.BUTTON)
                 self.is_ok[element].show()
                 self.error_label[element].hide()
             else:
-                self.is_ok[element].set_from_stock("gtk-no", Gtk.IconSize.BUTTON)
                 self.is_ok[element].show()
 
                 if validation.NAME_BADCHAR in result:
@@ -383,11 +380,6 @@ class UserInfo(GtkBaseBox):
         # Check if all fields are filled and ok
         all_ok = True
         ok_widgets = self.is_ok.values()
-        for ok_widget in ok_widgets:
-            (icon_name, icon_size) = ok_widget.get_stock()
-            visible = ok_widget.get_visible()
-            if visible is False or icon_name != "gtk-yes":
-                all_ok = False
 
         self.forward_button.set_sensitive(all_ok)
 
