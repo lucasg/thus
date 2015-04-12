@@ -16,15 +16,15 @@
 # Hager Harald <harald.hager@harrys-net.at>, 2013
 # t_bb_ <tabbo.hankel@bremen.piratenpartei.de>, 2013
 # theradialactive <account@d2ns.org>, 2013
-# Maphardam <t.sabsch@arcor.de>, 2014
+# Maphardam <t.sabsch@arcor.de>, 2014-2015
 # Veraendert <kleine@kanzlei-endingen.de>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-11 06:21+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-11 13:01+0000\n"
+"Last-Translator: Maphardam <t.sabsch@arcor.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -169,7 +169,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr "Der gewählte Ort wird zur Bestimmung der Systemsprache zugrunde gelegt. Normalerweise sollte dieser in dem Land sein, in dem Sie wohnen. Hier ist eine Vorauswahl von Orten basierend auf Ihrer Sprachauswahl."
+msgstr "Der gewählte Ort wird zur Bestimmung der Systemsprache zugrunde gelegt. Normalerweise sollte dieser in dem Land liegen, in dem Sie wohnen. Hier ist eine Vorauswahl an Orten basierend auf Ihrer Sprachauswahl."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -212,7 +212,7 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr "Sie können nicht zwei Instanzen dieses Installers ausführen\n\nWenn Sie sicher sind dass der Installer nicht bereits ausgeführt wird\nkönnen Sie die Option --force benutzen um den Installer zu starten\noder löschen Sie manuell die störende Datei.\n\nStörende Datei: '{0}'"
+msgstr "Sie können nicht zwei Instanzen dieses Installers ausführen.\n\nWenn Sie sicher sind, dass der Installer nicht bereits ausgeführt wird,\nkönnen Sie die Option --force benutzen, um den Installer zu starten\noder löschen Sie manuell die störende Datei.\n\nStörende Datei: '{0}'"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
@@ -273,7 +273,7 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr "WICHTIG: Möglicherweise gab es ein Problem mit der Bootloader-\nInstallation. Das könnte zur Folge haben dass Ihr System nicht ordnungs-\ngemäß bootet. Vor dem Reboot sollten Sie überprüfen ob der Bootloader\ninstalliert und konfiguriert ist. Das Arch Linux Wiki beinhaltet Informationen\nzur Fehlerbehebung: ⇥https://wiki.archlinux.org/index.php/GRUB\n\nMöchten Sie diese Wiki Seite jetzt anzeigen lassen?"
+msgstr "WICHTIG: Möglicherweise gab es ein Problem mit der Bootloader-\nInstallation. Das könnte zur Folge haben, dass Ihr System nicht ordnungs-\ngemäß bootet. Vor dem Reboot sollten Sie überprüfen, ob der Bootloader\ninstalliert und konfiguriert ist. Das Arch Linux Wiki beinhaltet Informationen\nzur Fehlerbehebung: ⇥https://wiki.archlinux.org/index.php/GRUB\n\nMöchten Sie diese Wiki Seite jetzt anzeigen lassen?"
 
 #: ../thus/slides.py:203
 msgid ""
@@ -335,7 +335,7 @@ msgstr "Thus-Dateien nicht gefunden. Bitte installieren Sie Thus mithilfe von Pa
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr "Bitte installieren Sie '{0}' bevor Sie diesen Installer ausführen"
+msgstr "Bitte installieren Sie '{0}', bevor Sie diesen Installer ausführen"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -562,7 +562,7 @@ msgstr "Zu viele Zeichen"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr "Falsche url, versuche andere Adresse falls verfügbar."
+msgstr "Falsche URL, versuche andere Adresse falls verfügbar."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -590,7 +590,7 @@ msgstr "Herunterladen von {0} {1} ({2}/{3})..."
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr "Metalink für Packet {0} hat keine Größeninformation"
+msgstr "Metalink für Paket {0} hat keine Größeninformation"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
@@ -658,7 +658,7 @@ msgstr "Es kann nicht derselbe Einhängepunkt zweimal benutzt werden."
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr "Sind sind dabei Partition {0} von Festplatte {1} zu löschen"
+msgstr "Sie sind dabei, Partition {0} von Festplatte {1} zu löschen"
 
 #: ../thus/installation/advanced.py:870
 #, python-brace-format
@@ -668,12 +668,12 @@ msgstr "{0} aushängen..."
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr "Sorry, Sie haben bereits {0} primäre Partitionen erzeugt."
+msgstr "Entschuldigung, Sie haben bereits {0} primäre Partitionen erzeugt."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr "Sorry, Sie haben bereits {0} primäre und 1 erweiterte Partition erzeugt."
+msgstr "Entschuldigung, Sie haben bereits {0} primäre und 1 erweiterte Partition erzeugt."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -706,7 +706,7 @@ msgstr "Benutzen Sie untenstehendes Laufwerk für die Bootloader-Installation:"
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr "Bootloader"
+msgstr "Bootloader:"
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178

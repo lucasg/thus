@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-11 06:19+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-11 18:00+0000\n"
+"Last-Translator: Tomàs Mallafré Gispert <tomas@mallafre.cat>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -600,7 +600,7 @@ msgstr "El fitxer {0} ja existeix; el Thus no el sobreescriurà"
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "No es pot descarregar {0}, ni després de provar-ho a totes les rèpliques disponibles"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -649,31 +649,31 @@ msgstr "cap"
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "No es pot editar una partició amb sistema de fitxers LVM"
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "No es pot utilitzar el mateix punt de muntatge dos cops."
 
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "Esteu a punt d'esborrar la partició {0} del disk {1}"
 
 #: ../thus/installation/advanced.py:870
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "Desmuntant {0}..."
 
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Ho sento, ja teniu {0} particions primàries creades."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Ho sento, ja teniu {0} particions primàries i 1 d'ampliada creades."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -681,19 +681,19 @@ msgstr "No es pot fer servir el mateix punt de muntatge dos cops..."
 
 #: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Creant una partició primària"
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Creant una partició ampliada"
 
 #: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Creant una partició lògica"
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "Les contrasenyes LUKS no coincideixen!"
 
 #: ../thus/installation/advanced.py:1283
 msgid "Advanced installation mode"
@@ -701,17 +701,17 @@ msgstr "Mode d'instal·lació avançat"
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Fes servir el dispositiu indicat per a la instal·lació del carregador d'arrencada:"
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr ""
+msgstr "Carregador d'arrencada:"
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr ""
+msgstr "Dispositiu:"
 
 #: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
@@ -735,7 +735,7 @@ msgstr "Intercanvi"
 
 #: ../thus/installation/advanced.py:1328
 msgid "Undo"
-msgstr ""
+msgstr "Desfés"
 
 #: ../thus/installation/advanced.py:1331 ../thus/installation/advanced.py:1896
 msgid "New"
@@ -743,11 +743,11 @@ msgstr "Nou"
 
 #: ../thus/installation/advanced.py:1334
 msgid "Delete"
-msgstr ""
+msgstr "Esborra"
 
 #: ../thus/installation/advanced.py:1337
 msgid "Edit..."
-msgstr ""
+msgstr "Edita..."
 
 #: ../thus/installation/advanced.py:1340
 msgid "New partition table"
@@ -755,11 +755,11 @@ msgstr "Nova taula de particions"
 
 #: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancel·la"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Apply"
-msgstr ""
+msgstr "_Aplica"
 
 #: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:406
 msgid "Size:"
@@ -791,11 +791,11 @@ msgstr "A la fi d'aquest espai"
 
 #: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
-msgstr ""
+msgstr "Utilitza com a:"
 
 #: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
-msgstr ""
+msgstr "Punt de muntatge:"
 
 #: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -820,7 +820,7 @@ msgstr "Crea la taula de particions"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Utilitza encriptació LUKS:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -837,14 +837,14 @@ msgstr "Confirmeu la contrasenya:"
 #: ../thus/installation/advanced.py:1521
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "Creant una nova {0} taula de particions per al disc {1}"
 
 #: ../thus/installation/advanced.py:1531
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "El GRUB requereix una partició d'arrencada BIOS als sistemes BIOS per a incrustar-hi el fitxer core.img degut a la falta d'una separació incrustada als discs GPT.\n\nEl Thus crearà aquesta Partició d'Arrencada BIOS."
 
 #: ../thus/installation/advanced.py:1559
 msgid "Can't create BIOS GPT Boot partition!"
@@ -864,7 +864,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} s'ha muntat com d'intercanvi.\nPer a continuar s'ha de desmuntar.\nFeu clic a Sí per a desmuntar-la, o No per a tornar\n"
 
 #: ../thus/installation/advanced.py:1776
 #, python-brace-format
@@ -872,22 +872,22 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} s'ha muntat a '{1}'.\nPer a continuar s'ha de desmuntar.\nFeu clic a Sí per a desmuntar-la, o No per a tornar\n"
 
 #: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr ""
+msgstr "{0} desmuntada"
 
 #: ../thus/installation/advanced.py:1801
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
-msgstr ""
+msgstr "Partició d'intercanvi {0} desmuntada"
 
 #: ../thus/installation/advanced.py:1812
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "{0} es mostra com a muntada (ocupada) però no té punt de muntatge"
 
 #: ../thus/installation/advanced.py:1819
 msgid ""
@@ -900,12 +900,12 @@ msgstr "La partició arrel no està marcada per a formatar.\nAixò podria crear 
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
-msgstr ""
+msgstr "Afegit {0} a la llista de canvis: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] encrypt[{5}]"
 
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "La partició {0} s'esborrarà"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Partition"
@@ -921,7 +921,7 @@ msgstr "Munta"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Encrypt"
-msgstr ""
+msgstr "Encripta"
 
 #: ../thus/installation/advanced.py:1917
 msgid "These disks will have partition actions:"
@@ -930,52 +930,52 @@ msgstr "Es faran els següents canvis:"
 #: ../thus/installation/advanced.py:2005
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "S'han desat tots els canvis a {0}"
 
 #: ../thus/installation/advanced.py:2028
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "Creant nou {0} sistema de fitxers a {1} amb etiqueta {2}"
 
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "Creant un nou {0} sistema de fitxers a {1}"
 
 #: ../thus/installation/advanced.py:2040 ../thus/installation/advanced.py:2059
 #: ../thus/installation/advanced.py:2075
 #, python-brace-format
 msgid "Setting boot flag in {0} partition"
-msgstr ""
+msgstr "Posant marcador d'arrencada a la partició {0}"
 
 #: ../thus/installation/advanced.py:2048
 #, python-brace-format
 msgid "Setting boot_legacy flag in {0} partition"
-msgstr ""
+msgstr "Posant marcador d'arrencada antic a la partició {0}"
 
 #: ../thus/installation/advanced.py:2083
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "Encriptant {0}, assignant nom de volum {1} i formatant..."
 
 #: ../thus/installation/advanced.py:2098
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "No s'ha pogut formatar el dispositiu LUKS '{0}' amb etiqueta '{1} com a '{2}'"
 
 #: ../thus/installation/advanced.py:2122
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "No s'ha pogut formatar la partició '{0}' amb etiqueta '{1}' com a '{2}'"
 
 #: ../thus/installation/advanced.py:2180 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "El Thus no instal·larà cap carregador d'arrencada"
 
 #: ../thus/installation/advanced.py:2190
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "El Manjaro instal·larà el carregador d'arrencada {0} al dispositiu {1}"
 
 #: ../thus/installation/advanced.py:2205 ../thus/installation/automatic.py:304
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -983,33 +983,33 @@ msgstr "Mode test. El Thus no aplicarà cap canvi al vostre sistema!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "No hi ha particions primàries disponibles"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "S'encongirà el dispositiu {0} i es crearà el nou dispositu {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
-msgstr ""
+msgstr "El Thus recomana com a mínim 6,5 GB disponibles per a instal·lar el Manjaro."
 
 #: ../thus/installation/alongside.py:151
 #, python-brace-format
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "La nova partició {0} resultat d'encongir {1} no tindrà prou espai disponible per a una instal·lació completa."
 
 #: ../thus/installation/alongside.py:152
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "Encara podreu instal·lar el Manjaro, però aneu amb compte amb l'entorn d'escriptori que trieu ja que podria no cabre-hi."
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Instal·leu-ho sota la vostra responsabilitat!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1017,45 +1017,45 @@ msgstr "El Manjaro al costat d'un altre SO"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Trieu la nova mida de la vostra instal·lació"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Trieu la partició que voleu encongir:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
 "Can't find any spare partition number.\n"
 "Alongside installation can't continue."
-msgstr ""
+msgstr "No es troba cap número de partició de recanvi.\nLa instal·lació contigua no pot seguir."
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "No es troba cap SO instal·lat!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
-msgstr ""
+msgstr "El mode d'instal·lació contigu no funciona a sistemes UEFI"
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "SO Windows(tm) detectat."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
-msgstr ""
+msgstr "SO Windows(tm) no detectat."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "No es detecta cap SO al dispositiu sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr ""
+msgstr "Format de disc no suportat per al mode d'instal·lació contigu"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "i"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1064,15 +1064,15 @@ msgstr "Tipus d'instal·lació"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "Substitueix {0} amb el Manjaro"
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
-msgstr ""
+msgstr "Esborra el disc i instal·la el Manjaro"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Advertiment: això esborrarà TOTES les dades del vostre disk."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1080,7 +1080,7 @@ msgstr "Encripteu la instal·lació per a més seguretat."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "Se us demanarà de crear una contrasenya d'encriptació al següent pas."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1090,7 +1090,7 @@ msgstr "Utilitza el LVM amb aquesta instal·lació."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Això configurarà LVM i us permetrà gestionar particions fàcilment i crear instantànies."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1099,19 +1099,19 @@ msgstr "Configureu la carpeta d'usuari en una altra partició/volum"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Això configurarà el vostre directori /home en una altra partició o volum."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
-msgstr ""
+msgstr "Com voleu procedir?"
 
 #: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
-msgstr ""
+msgstr "Trieu com s'ha d'instal·lar el Manjaro exactament."
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Editeu la taula de particions i trieu els punts de muntatge."
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1154,49 +1154,49 @@ msgstr "Contrasenya d'encriptació:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "Contrasenya LUKS. No utilitzeu caràcters especials o accents!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "S'ha configurat una contrasenya LUKS arrel"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "Instal·lació automàtica a {0}"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Segur que voleu continuar i esborrar tot el contingut del vostre disc dur?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr "El Thus instal·larà el Manjaro al dispositiu {0}"
 
 #: ../thus/installation/automatic.py:280
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "El Thus instal·larà el carregador d'arrencada '{0}' al dispositiu '{1}'"
 
 #: ../thus/installation/auto_partition.py:86
 #: ../thus/installation/process.py:485 ../thus/installation/process.py:502
 #: ../thus/installation/process.py:517
 #, python-brace-format
 msgid "Unmounting {0}"
-msgstr ""
+msgstr "Desmuntant {0}"
 
 #: ../thus/installation/auto_partition.py:90
 #, python-brace-format
 msgid "Unmounting {0} failed. Trying lazy arg."
-msgstr ""
+msgstr "El desmuntatge {0} ha fallat. Provant arg."
 
 #: ../thus/installation/auto_partition.py:94
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "El desmuntatge {0} ha fallat."
 
 #: ../thus/installation/auto_partition.py:106
 #: ../thus/installation/auto_partition.py:112
@@ -1220,7 +1220,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:892
 #, python-brace-format
 msgid "Command {0} failed"
-msgstr ""
+msgstr "L'ordre {0} ha fallat"
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1245,31 +1245,31 @@ msgstr ""
 #: ../thus/installation/process.py:267
 #, python-brace-format
 msgid "Output: {0}"
-msgstr ""
+msgstr "Sortida: {0}"
 
 #: ../thus/installation/auto_partition.py:157
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "No es poden esborrar els volums LVM existents"
 
 #: ../thus/installation/auto_partition.py:168
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "No es poden tancar els dispositius LUKS ja oberts"
 
 #: ../thus/installation/auto_partition.py:177
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "No es pot configurar LUKS al dispositiu {0}. Cal una contrasenya o fitxer clau"
 
 #: ../thus/installation/auto_partition.py:185
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "El Thus configurarà LUKS al dispositiu {0}"
 
 #: ../thus/installation/auto_partition.py:203
 #: ../thus/installation/auto_partition.py:226
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "No es pot formatar i obrir el dispositiu LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
