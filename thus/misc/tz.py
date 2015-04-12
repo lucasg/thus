@@ -173,12 +173,13 @@ def _parse_position(position, wholedigits):
 
 
 class Location(object):
+    # TODO: Change GObject.G_MAXFLOAT to GLib.MAXFLOAT (Gtk 3.16)
     __gtype_name__ = "Location"
     __gproperties__ = {
-        'zone': (GObject.TYPE_STRING, 'zone', None, 'zone', GObject.PARAM_READWRITE),
-        'latitude': (GObject.TYPE_FLOAT, 'latitude', 'latitude', 0, GObject.G_MAXFLOAT, 1, GObject.PARAM_READWRITE),
-        'longitude': (GObject.TYPE_FLOAT, 'longitude', 'longitude', 0, GObject.G_MAXFLOAT, 1, GObject.PARAM_READWRITE),
-        'human_country': (GObject.TYPE_STRING, 'human_country', None, 'human_country', GObject.PARAM_READWRITE)}
+        'zone': (GObject.TYPE_STRING, 'zone', None, 'zone', GObject.ParamFlags.READWRITE),
+        'latitude': (GObject.TYPE_FLOAT, 'latitude', 'latitude', 0, GObject.G_MAXFLOAT, 1, GObject.ParamFlags.READWRITE),
+        'longitude': (GObject.TYPE_FLOAT, 'longitude', 'longitude', 0, GObject.G_MAXFLOAT, 1, GObject.ParamFlags.READWRITE),
+        'human_country': (GObject.TYPE_STRING, 'human_country', None, 'human_country', GObject.ParamFlags.READWRITE)}
 
     def get_info(self):
         return self.info

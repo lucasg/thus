@@ -42,6 +42,8 @@ from gtkbasebox import GtkBaseBox
 SLIDES_PATH = "/usr/share/thus/data/images/slides"
 SLIDES_URI = 'file:///usr/share/thus/data/slides.html'
 
+import gi
+gi.require_version('WebKit', '3.0')
 from gi.repository import WebKit
 
 # When we reach this page we can't go neither backwards nor forwards
