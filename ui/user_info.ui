@@ -21,7 +21,6 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Your name:</property>
             <property name="width_chars">30</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -34,7 +33,6 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Pick a username:</property>
             <property name="justify">right</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -47,7 +45,6 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Choose a password:</property>
             <property name="justify">right</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -60,7 +57,6 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Confirm your password:</property>
             <property name="justify">right</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -97,7 +93,6 @@
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkgreen"&gt;Strong password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
-                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -142,7 +137,6 @@
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkred"&gt;You must enter a password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
-                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -229,7 +223,6 @@
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkred"&gt;You must enter a username&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
                 <property name="wrap">True</property>
-                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -309,7 +302,6 @@
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">&lt;span size="small"&gt;Its name as it appears to other computers.&lt;/span&gt;</property>
                 <property name="use_markup">True</property>
-                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -334,7 +326,6 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="valign">start</property>
-                <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
                 <signal name="toggled" handler="on_checkbutton_show_password_toggled" swapped="no"/>
               </object>
@@ -350,7 +341,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
                 <signal name="toggled" handler="on_checkbutton_root_password_toggled" swapped="no"/>
               </object>
@@ -383,7 +373,6 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0</property>
                     <property name="draw_indicator">True</property>
                     <property name="group">login_pass</property>
                     <signal name="clicked" handler="on_authentication_toggled" swapped="no"/>
@@ -400,7 +389,6 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0</property>
                     <property name="active">True</property>
                     <property name="draw_indicator">True</property>
                   </object>
@@ -440,7 +428,6 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0</property>
                     <property name="draw_indicator">True</property>
                     <signal name="clicked" handler="on_authentication_toggled" swapped="no"/>
                   </object>
@@ -470,7 +457,6 @@
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
             <property name="valign">start</property>
-            <property name="xalign">0</property>
             <property name="draw_indicator">True</property>
             <signal name="toggled" handler="on_checkbutton_show_root_password_toggled" swapped="no"/>
           </object>
@@ -509,7 +495,6 @@
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkgreen"&gt;Strong password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
-                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -529,7 +514,6 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Choose a root password:</property>
             <property name="justify">right</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -567,7 +551,6 @@
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkred"&gt;You must enter a password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
-                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -587,7 +570,6 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Confirm root password:</property>
             <property name="justify">right</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -600,7 +582,6 @@
             <property name="can_focus">False</property>
             <property name="margin_bottom">20</property>
             <property name="label" translatable="yes">Your computer's name:</property>
-            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
