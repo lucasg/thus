@@ -6,7 +6,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkFixed" id="placeholder1">
+      <object class="GtkLabel" id="placeholder1">
         <property name="width_request">40</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
@@ -427,9 +427,8 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <child>
-                  <object class="GtkFixed" id="placeholder2">
+                  <object class="GtkLabel" id="placeholder2">
                     <property name="width_request">16</property>
-                    <property name="height_request">10</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                   </object>
