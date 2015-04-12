@@ -7,7 +7,7 @@
 #  Check it at https://github.com/antergos
 #
 #  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -37,13 +37,6 @@ class UserInfo(GtkBaseBox):
 
     def __init__(self, params, prev_page=None, next_page="slides"):
         super().__init__(self, params, "user_info", prev_page, next_page)
-
-        self.is_ok = dict()
-        self.is_ok['fullname'] = self.ui.get_object('fullname_ok')
-        self.is_ok['hostname'] = self.ui.get_object('hostname_ok')
-        self.is_ok['username'] = self.ui.get_object('username_ok')
-        self.is_ok['password'] = self.ui.get_object('password_ok')
-        self.is_ok['root_password'] = self.ui.get_object('root_password_ok')
 
         self.error_label = dict()
         self.error_label['hostname'] = self.ui.get_object('hostname_error_label')
@@ -204,10 +197,6 @@ class UserInfo(GtkBaseBox):
 
     def hide_widgets(self):
         """ Hide unused and message widgets """
-        ok_widgets = self.is_ok.values()
-        for ok_widget in ok_widgets:
-            ok_widget.hide()
-
         error_label_widgets = self.error_label.values()
         for error_label in error_label_widgets:
             error_label.hide()
@@ -257,7 +246,6 @@ class UserInfo(GtkBaseBox):
         self.translate_ui()
         self.show_all()
         self.hide_widgets()
-        self.is_ok['root_password'].show()
 
         desktop = self.settings.get('desktop')
         if desktop != "nox" and self.login['auto']:
@@ -279,7 +267,6 @@ class UserInfo(GtkBaseBox):
             self.show_root_password()
         else:
             self.hide_root_password()
-            self.is_ok['root_password'].show()
         self.info_loop
 
     def on_checkbutton_show_password_toggled(self, widget):
@@ -313,16 +300,12 @@ class UserInfo(GtkBaseBox):
     def validate(self, element, value):
         """ Check that what the user is typing is ok """
         if len(value) == 0:
-            self.is_ok[element].show()
             self.error_label[element].show()
         else:
             result = validation.check(element, value)
             if len(result) == 0:
-                self.is_ok[element].show()
                 self.error_label[element].hide()
             else:
-                self.is_ok[element].show()
-
                 if validation.NAME_BADCHAR in result:
                     txt = _("Invalid characters entered")
                     txt = "<small><span color='darkred'>{0}</span></small>".format(txt)
@@ -343,10 +326,6 @@ class UserInfo(GtkBaseBox):
 
         if widget == self.entry['fullname']:
             fullname = self.entry['fullname'].get_text()
-            if len(fullname) > 0:
-                self.is_ok['fullname'].show()
-            else:
-                self.is_ok['fullname'].hide()
 
         if widget == self.entry['hostname']:
             hostname = self.entry['hostname'].get_text()
@@ -360,7 +339,6 @@ class UserInfo(GtkBaseBox):
                 widget == self.entry['verified_password']:
             validation.check_password(self.entry['password'],
                                       self.entry['verified_password'],
-                                      self.is_ok['password'],
                                       self.error_label['password'],
                                       self.password_strength)
 
@@ -371,15 +349,11 @@ class UserInfo(GtkBaseBox):
                     widget == self.entry['verified_root_password']:
                 validation.check_password(self.entry['root_password'],
                                           self.entry['verified_root_password'],
-                                          self.is_ok['root_password'],
                                           self.error_label['root_password'],
                                           self.root_password_strength)
-        else:
-            self.is_ok['root_password'].show()
 
         # Check if all fields are filled and ok
         all_ok = True
-        ok_widgets = self.is_ok.values()
 
         self.forward_button.set_sensitive(all_ok)
 
