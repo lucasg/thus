@@ -31,6 +31,8 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="hexpand">True</property>
+                <property name="xpad">60</property>
+                <property name="ypad">5</property>
                 <property name="label" translatable="yes">&lt;span weight="bold" size="large"&gt;Welcome to Manjaro&lt;/span&gt;</property>
                 <property name="use_markup">True</property>
               </object>
@@ -44,6 +46,8 @@
               <object class="GtkImage" id="logo">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="xpad">23</property>
+                <property name="ypad">13</property>
               </object>
               <packing>
                 <property name="expand">False</property>
