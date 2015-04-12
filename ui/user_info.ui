@@ -336,7 +336,6 @@
                 <property name="receives_default">False</property>
                 <property name="halign">start</property>
                 <property name="valign">start</property>
-                <property name="xalign">0.5</property>
                 <property name="draw_indicator">True</property>
                 <signal name="toggled" handler="on_checkbutton_show_password_toggled" swapped="no"/>
               </object>
@@ -353,7 +352,6 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="halign">start</property>
-                <property name="xalign">0.5</property>
                 <property name="draw_indicator">True</property>
                 <signal name="toggled" handler="on_checkbutton_root_password_toggled" swapped="no"/>
               </object>
@@ -387,7 +385,6 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
                     <property name="halign">start</property>
-                    <property name="xalign">0.5</property>
                     <property name="draw_indicator">True</property>
                     <property name="group">login_pass</property>
                     <signal name="clicked" handler="on_authentication_toggled" swapped="no"/>
@@ -405,7 +402,6 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
                     <property name="halign">start</property>
-                    <property name="xalign">0.5</property>
                     <property name="active">True</property>
                     <property name="draw_indicator">True</property>
                   </object>
@@ -445,7 +441,6 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
                     <property name="halign">start</property>
-                    <property name="xalign">0.5</property>
                     <property name="draw_indicator">True</property>
                     <signal name="clicked" handler="on_authentication_toggled" swapped="no"/>
                   </object>
@@ -476,7 +471,6 @@
             <property name="receives_default">False</property>
             <property name="halign">start</property>
             <property name="valign">start</property>
-            <property name="xalign">0.5</property>
             <property name="draw_indicator">True</property>
             <signal name="toggled" handler="on_checkbutton_show_root_password_toggled" swapped="no"/>
           </object>
