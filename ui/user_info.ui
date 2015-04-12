@@ -6,19 +6,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkEventBox" id="paddingbox">
-        <property name="width_request">100</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <child>
-          <placeholder/>
-        </child>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
+      <placeholder/>
     </child>
     <child>
       <object class="GtkGrid" id="userinfo_table">
@@ -31,9 +19,9 @@
           <object class="GtkLabel" id="fullname_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">1</property>
             <property name="label" translatable="yes">Your name:</property>
             <property name="width_chars">30</property>
+            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -44,9 +32,9 @@
           <object class="GtkLabel" id="username_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">1</property>
             <property name="label" translatable="yes">Pick a username:</property>
             <property name="justify">right</property>
+            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -57,9 +45,9 @@
           <object class="GtkLabel" id="password_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">1</property>
             <property name="label" translatable="yes">Choose a password:</property>
             <property name="justify">right</property>
+            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -70,9 +58,9 @@
           <object class="GtkLabel" id="verified_password_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">1</property>
             <property name="label" translatable="yes">Confirm your password:</property>
             <property name="justify">right</property>
+            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -107,9 +95,9 @@
             <child>
               <object class="GtkLabel" id="password_strength">
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkgreen"&gt;Strong password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -149,23 +137,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="password_ok">
-                <property name="can_focus">False</property>
-                <property name="stock">gtk-yes</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkLabel" id="password_error_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkred"&gt;You must enter a password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -246,24 +223,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="username_ok">
-                <property name="can_focus">False</property>
-                <property name="stock">gtk-yes</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkLabel" id="username_error_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkred"&gt;You must enter a username&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
                 <property name="wrap">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -309,26 +275,11 @@
                     <property name="invisible_char">•</property>
                     <property name="placeholder_text" translatable="yes">Hostname</property>
                     <signal name="changed" handler="info_loop" swapped="no"/>
-                    <accessibility>
-                      <relation type="labelled-by" target="hostname_label"/>
-                      <relation type="labelled-by" target="hostname_extra_label"/>
-                    </accessibility>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkImage" id="hostname_ok">
-                    <property name="can_focus">False</property>
-                    <property name="stock">gtk-yes</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">1</property>
                   </packing>
                 </child>
                 <child>
@@ -356,9 +307,9 @@
               <object class="GtkLabel" id="hostname_extra_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;span size="small"&gt;Its name as it appears to other computers.&lt;/span&gt;</property>
                 <property name="use_markup">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -369,25 +320,6 @@
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkAlignment" id="alignment2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="bottom_padding">20</property>
-            <child>
-              <object class="GtkLabel" id="hostname_label">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="xalign">1</property>
-                <property name="label" translatable="yes">Your computer's name:</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
             <property name="top_attach">1</property>
           </packing>
         </child>
@@ -558,9 +490,9 @@
             <child>
               <object class="GtkLabel" id="root_password_strength">
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkgreen"&gt;Strong password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -578,9 +510,9 @@
           <object class="GtkLabel" id="root_password_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">1</property>
             <property name="label" translatable="yes">Choose a root password:</property>
             <property name="justify">right</property>
+            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -613,23 +545,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="root_password_ok">
-                <property name="can_focus">False</property>
-                <property name="stock">gtk-yes</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkLabel" id="root_password_error_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;small&gt;&lt;span color="darkred"&gt;You must enter a password&lt;/span&gt;&lt;/small&gt;</property>
                 <property name="use_markup">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -647,13 +568,26 @@
           <object class="GtkLabel" id="verified_root_password_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">1</property>
             <property name="label" translatable="yes">Confirm root password:</property>
             <property name="justify">right</property>
+            <property name="xalign">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
             <property name="top_attach">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="hostname_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_bottom">20</property>
+            <property name="label" translatable="yes">Your computer's name:</property>
+            <property name="xalign">1</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
           </packing>
         </child>
         <child>
