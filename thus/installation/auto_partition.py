@@ -456,6 +456,7 @@ class AutoPartition(object):
             devices['boot'] = "{0}{1}".format(device, part_num)
             part_num += 1
             devices['root'] = "{0}{1}".format(device, part_num)
+            part_num += 1
             if self.home:
                 devices['home'] = "{0}{1}".format(device, part_num)
                 part_num += 1
