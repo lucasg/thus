@@ -14,13 +14,14 @@
 # Ade Malsasa Akbar <teknoloid@gmail.com>, 2013
 # Mohamad Hasan Al Banna, 2013
 # Hasan Al Banna, 2013-2014
+# Rendiyono Wahyu Saputro <rendi.7936@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-11 06:19+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-13 12:59+0000\n"
+"Last-Translator: Rendiyono Wahyu Saputro <rendi.7936@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/manjaro-thus/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,12 +39,12 @@ msgstr "tidak diketahui"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Galat memanggil perintah hexdump: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Id partisi tidak diketahui {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -52,7 +53,7 @@ msgstr "Pemeriksaan Sistem"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "memiliki setidaknya {0}GB ruang penyimpanan yang tersedia.(*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -86,15 +87,15 @@ msgstr "Ruang cakram mencukupi."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Tidak dapat membuat dan memodifikasi berkas konfigurasi encfs."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "Direktori rumah tidak bisa dienkripsi"
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Tidak dapat menjalankan encf. Password yang buruk ?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -102,11 +103,11 @@ msgstr "Pilih tata letak keyboard Anda"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Tata letak Keyboard"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Varian Keyboard"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -119,11 +120,11 @@ msgstr "Varian"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "Tata letak_keyboard adalah {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Selamat Datang di Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -141,20 +142,20 @@ msgstr ""
 #: ../thus/language.py:128 ../thus/user_info.py:271
 #: ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Selanjutnya"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Kembali"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Tidak dapat menemukan berjas terjemahan untuk bahasa {0}"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -165,7 +166,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "Lokasi yang dipilih akan digunakan untuk membantu memilih lokal sistem.\nUmumnya merupakan negara tempat Anda dinggal.\nBerikut ini adalah senarai singkat lokasi berdasarkan bahasa yang Anda pilih."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -173,30 +174,30 @@ msgstr "Negara:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Tampilkan semua lokasi"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr ""
+msgstr "lokal diubah ke : {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr ""
+msgstr "Tidak dapat mengubah locale '{0}'"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Pemasang ini harus dijalankan dengan hak akses administratif dan tidak dapat dilanjutkan tanpanya."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "Berkas '{0}' telah ada."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -218,11 +219,11 @@ msgstr ""
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Pemasang Manjaro - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Apakah anda ingin menghentikan pemasang ?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -275,22 +276,22 @@ msgstr ""
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Instalasi selesai!\nApakah anda ingin menjalankan ulang sistem sekarang?"
 
 #: ../thus/thus.py:64
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "Tidak dapat membuat jendela utama Thus: {0}"
 
 #: ../thus/thus.py:164
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "Menggunakan pyalpm v{0} sebagai antarmuka dari libalpm v{1}"
 
 #: ../thus/thus.py:179
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Pemasang Manjaro"
 
 #: ../thus/thus.py:192
 msgid "Sets Thus log level to 'debug'"
@@ -298,7 +299,7 @@ msgstr "Atur tingkat log Thus ke 'debug'"
 
 #: ../thus/thus.py:196
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Jalankan thus walaupun mendeteksi "
 
 #: ../thus/thus.py:208
 msgid "Do not perform any changes (useful for developers)"
@@ -306,11 +307,11 @@ msgstr "Jangan lakukan perubahan apapun (berguna bagi pengembang)"
 
 #: ../thus/thus.py:212
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Tingkatkan/Turunkan Thus ke versi web"
 
 #: ../thus/thus.py:216
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Jangan mencari versi Thus baru daring"
 
 #: ../thus/thus.py:220
 msgid "Show logging messages to stdout"
@@ -318,20 +319,20 @@ msgstr "Tampilkan pesan logging ke stdout"
 
 #: ../thus/thus.py:224
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Tampilkan opsi di pengembangan (hanya untuk pengembang, jangan gunakan ini!)"
 
 #: ../thus/thus.py:263
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Program telah diperbarui! Jalankan ulang..."
 
 #: ../thus/thus.py:303
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Berkas Thus tidak ditemukan. Silakan, pasang Thus menggunakan pacman"
 
 #: ../thus/thus.py:307
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Silakan install '{0}' sebelum menjalankan pemasang ini"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -347,12 +348,12 @@ msgstr "Wilayah:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Gunakan Protokol Waktu Jaringan (NTP) untuk penyelarasan jam"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "lokasi diubah ke : {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -360,59 +361,59 @@ msgstr "Tidak dapat mendeteksi otomatis koordinat zona waktu"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Menghentikan untaian zona waktu ..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Tidak mendapatkan status jaringan"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Kita telah mendapatkan koneksi. Mari dapatkan zona waktu kita"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Zona waktu (latitude {0}, longitude {1}) terdeteksi."
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "Tidak dapat menemukan berkas 'update.info'. Thus tidak akan bisa memperbarui sendiri."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Versi Internet Thus: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Versi baru ditemukan. Memperbarui pemasang..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Tidak ada versi baru ditemukan. Tetap memperbarui..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "Mengunduh versi baru Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Tidak dapat mengunduh Thus versi baru"
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Mengekstrak versi baru..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Tidak dapat menyalin {0} ke {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "md5 yang buruk. Unduhan yang buruk atau berkas yang salah, tidak memperbarui yang ini"
 
 #: ../thus/user_info.py:79
 msgid "Who are you?"
@@ -558,7 +559,7 @@ msgstr "Terlalu banyak karakter"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "url yang salah, akan mencoba yang lain jika tersedia"
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -566,37 +567,37 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Tidak dapat membuka {0} - Alasan: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "Galat HTTP : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "Galat URL : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Mengunduh {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "Metalink untuk paket {0} tidak memiliki informasi ukuran"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "Berkas {0} telah ada, Thus tidak akan menimpanya"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Tidak dapat mengunduh {0}, walaupun setelah mencoba semua mirror yang tersedia"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -645,31 +646,31 @@ msgstr "tidak ada"
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Tidak dapat menyunting sebuah partisi dengan tipe sistem berkas LVM"
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Tidak dapat menggunakan titik kait dua kali."
 
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "Anda akan menghapus partisi {0} dari disk {1}"
 
 #: ../thus/installation/advanced.py:870
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "Melepas kait {0}..."
 
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Maaf, anda telah memiliki {0} partisi primer yang telah dibuat."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Maaf, anda telah memiliki {0} partisi primer dan 1 tambahan yang telah dibuat."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -677,19 +678,19 @@ msgstr "Tidak dapat menggunakan titik kait yang sama dua kali..."
 
 #: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Membuat sebuah partisi primer"
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Membuat sebuah partisi tambahan"
 
 #: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Membuat sebuah partisi logikal"
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "Kata sandi LUKS tidak sama!"
 
 #: ../thus/installation/advanced.py:1283
 msgid "Advanced installation mode"
@@ -697,17 +698,17 @@ msgstr "Mode instalasi lanjutan"
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Gunakan perangkat di bawah ini untuk instalasi bootloader:"
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1042 ../ui/automatic.ui:153
 msgid "Bootloader:"
-msgstr ""
+msgstr "Bootloader:"
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1068 ../ui/automatic.ui:178
 msgid "Device:"
-msgstr ""
+msgstr "Perangkat:"
 
 #: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
@@ -739,11 +740,11 @@ msgstr "Baru"
 
 #: ../thus/installation/advanced.py:1334
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
 #: ../thus/installation/advanced.py:1337
 msgid "Edit..."
-msgstr ""
+msgstr "Sunting..."
 
 #: ../thus/installation/advanced.py:1340
 msgid "New partition table"
@@ -751,11 +752,11 @@ msgstr "Tabel partisi baru"
 
 #: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
-msgstr ""
+msgstr "_Batal"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Apply"
-msgstr ""
+msgstr "_Terapkan"
 
 #: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:406
 msgid "Size:"
@@ -787,11 +788,11 @@ msgstr "Akhir ruang ini"
 
 #: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
-msgstr ""
+msgstr "Gunakan Sebagai:"
 
 #: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
-msgstr ""
+msgstr "Titik Kait:"
 
 #: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:252 ../ui/advanced.ui:688
@@ -816,7 +817,7 @@ msgstr "Buat Tabel Partisi"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Gunakan enkripsi LUKS:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1173
 msgid "LUKS volume name:"
@@ -833,7 +834,7 @@ msgstr "Ulangi sandi:"
 #: ../thus/installation/advanced.py:1521
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "Membuat sebuah {0} tabel partisi untuk diska {1}"
 
 #: ../thus/installation/advanced.py:1531
 msgid ""
