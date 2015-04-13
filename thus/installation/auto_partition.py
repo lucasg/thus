@@ -27,6 +27,7 @@
 import os
 import subprocess
 import logging
+import math
 import show_message as show
 import parted3.partition_module as pm
 import parted3.fs_module as fs
@@ -578,6 +579,8 @@ class AutoPartition(object):
         max_swap = disk_size * 0.1
         if part_sizes['swap'] > max_swap:
             part_sizes['swap'] = max_swap
+
+        part_sizes['swap'] = math.ceil(part_sizes['swap'])
 
         part_sizes['root'] = disk_size - (start_part_sizes + part_sizes['boot'] + part_sizes['swap'])
 
