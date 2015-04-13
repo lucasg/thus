@@ -274,7 +274,13 @@ class InstallationAutomatic(GtkBaseBox):
             logging.warning(_("Thus will not install any bootloader"))
         else:
             self.settings.set('bootloader_install', True)
-            self.settings.set('bootloader_device', self.bootloader_device)
+            if os.path.exists('/sys/firmware/efi'):
+                if self.bootloader == "grub2":
+                    self.settings.set('bootloader_device', '/boot/efi')
+                elif self.bootloader == 'gummibot'
+                    self.settings.set('bootloader_device', '/boot')
+            else:
+                self.settings.set('bootloader_device', self.bootloader_device)
 
             self.settings.set('bootloader', self.bootloader)
             msg = _("Thus will install the bootloader '{0}' in device '{1}'")
