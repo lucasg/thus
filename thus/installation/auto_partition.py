@@ -569,7 +569,7 @@ class AutoPartition(object):
         elif 2048 <= mem < 8192:
             part_sizes['swap'] = mem
         elif 8192 <= mem < 65536:
-            part_sizes['swap'] = mem / 2
+            part_sizes['swap'] = mem // 2
         else:
             part_sizes['swap'] = 4096
 
@@ -582,7 +582,7 @@ class AutoPartition(object):
 
         if self.home:
             # Decide how much we leave to root and how much we leave to /home
-            new_root_part_size = part_sizes['root'] / 5
+            new_root_part_size = part_sizes['root'] // 5
             if new_root_part_size > MAX_ROOT_SIZE:
                 new_root_part_size = MAX_ROOT_SIZE
             elif new_root_part_size < MIN_ROOT_SIZE:
