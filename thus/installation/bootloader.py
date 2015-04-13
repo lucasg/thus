@@ -235,6 +235,7 @@ class Bootloader(object):
 
         grub_install = ['grub-install', '--directory=/usr/lib/grub/i386-pc', '--target=i386-pc',
                         '--boot-directory=/boot', '--recheck']
+        loggin.debug("grub-install command: {0}".format(" ".join(grub_install)))
 
         if len(grub_location) > len("/dev/sdX"):  # ex: /dev/sdXY > 8
             grub_install.append("--force")
@@ -283,12 +284,14 @@ class Bootloader(object):
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
         efi_path = self.settings.get('bootloader_device')
+        logging.debug('The efi directory is is: {0}').format(efi_path)
+
         if not os.path.exists('/install{0}/EFI/manjaro_grub'.format(efi_path)):
             bootloader_id = 'manjaro_grub'
         else:
             bootloader_id = 'manjaro_grub_{0}'.format(self.random_generator())
-        
-        txt = _("Installing GRUB(2) UEFI {0} boot loader".format(uefi_arch))
+
+        txt = _("Installing GRUB(2) UEFI {0} boot loader in {1}".format(uefi_arch))
         logging.info(txt)
 
         grub_install = [
@@ -298,6 +301,8 @@ class Bootloader(object):
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/install/boot',
             '--recheck']
+        loggin.debug("grub-install command: {0}".format(" ".join(grub_install)))
+
         load_module = ['modprobe', '-a', 'efivarfs']
 
         try:
@@ -315,7 +320,7 @@ class Bootloader(object):
         # self.copy_grub2_theme_files()
 
         # Copy grub into dirs known to be used as default by some OEMs if they do not exist yet.
-        grub_defaults = [os.path.join(self.dest_dir, "{0}EFI/BOOT".format(efi_path[1:]), "BOOT{0}.efi".format(spec_uefi_arch_caps)),
+        grub_defaults = [os.path.join(self.dest_dir, "{0}/EFI/BOOT".format(efi_path[1:]), "BOOT{0}.efi".format(spec_uefi_arch_caps)),
                          os.path.join(self.dest_dir, "{0}/EFI/Microsoft/Boot".format(efi_path[1:]), 'bootmgfw.efi')]
 
         grub_path = os.path.join(self.dest_dir, "{0}/EFI/manjaro_grub".format(efi_path[1:]), "grub{0}.efi".format(spec_uefi_arch))
