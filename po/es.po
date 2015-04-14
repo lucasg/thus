@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-13 13:22+0000\n"
+"PO-Revision-Date: 2015-04-13 13:30+0000\n"
 "Last-Translator: Uriel Velázquez <the.darkspider@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/manjaro-thus/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -965,7 +965,7 @@ msgstr "Ajustando la etiqueta de arranque en la partición {0}"
 #: ../thus/installation/advanced.py:2048
 #, python-brace-format
 msgid "Setting boot_legacy flag in {0} partition"
-msgstr ""
+msgstr "Ajustando la etiqueta de arranque boot_legacy en la partición {0}"
 
 #: ../thus/installation/advanced.py:2083
 #, python-brace-format
@@ -2002,7 +2002,7 @@ msgstr "<b>¡ADVERTENCIA! ¡Este modo de instalación sobrescribirá todo el con
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Por favor seleccione la unidad donde desea instalar Manjaro\ny presione el siguiente boton para iniciar el proceso."
 
 #: ../ui/automatic.ui:275
 msgid "show password"

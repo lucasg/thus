@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-12 21:20+0000\n"
+"PO-Revision-Date: 2015-04-13 21:15+0000\n"
 "Last-Translator: Takefumi Nagata\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1308,22 +1308,22 @@ msgstr "ファイルシステム {0} を作成できません"
 #: ../thus/installation/auto_partition.py:421
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "{1} に対する {0} のマウント操作エラー"
 
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "デバイス詳細:  {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} は {1} としてマウントされます"
 
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "デバイス {0} は {1} ファイルシステムを保有します"
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1333,7 +1333,7 @@ msgstr "全てのディスクのサイズ: %dMiB"
 #: ../thus/installation/auto_partition.py:602
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "EFI システムパーティション (ESP) サイズ: %dMiB"
 
 #: ../thus/installation/auto_partition.py:603
 #, python-format
@@ -1373,23 +1373,23 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "Thusはデバイス {0} にLVMをセットアップします"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "LVM 物理ボリュームの作成エラー"
 
 #: ../thus/installation/auto_partition.py:798
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "LVM ボリュームグループの作成エラー"
 
 #: ../thus/installation/auto_partition.py:833
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "LVM 論理ボリュームの作成エラー"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "インストールデバイスにLUKS キーファイルをコピーできません"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
@@ -1399,23 +1399,23 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "/etc/default/grub の設定が完了しました。"
 
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "grub.d に {0} がコピーできませんでした"
 
 #: ../thus/installation/bootloader.py:225
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "GRUB(2) BIOS ブートローダーを {0} にインストールしています"
 
 #: ../thus/installation/bootloader.py:255
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig が応答しません。続行するためにgrub-mountとos-proberをKillします。"
 
 #: ../thus/installation/bootloader.py:263
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1428,25 +1428,25 @@ msgstr "GRUB(2) のインストール中にエラーが発生しました。"
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
-msgstr ""
+msgstr "GRUB(2) UEFI {0} ブートローダーを インストールしています"
 
 #: ../thus/installation/bootloader.py:322
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
-msgstr ""
+msgstr " {0} にOEMローダーが見つかりません。 ディレクトリにGrub(2)をコピーします。 "
 
 #: ../thus/installation/bootloader.py:326
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "OEMディレクトリに Grub(2)をコピーすることに失敗しました: {0}"
 
 #: ../thus/installation/bootloader.py:330
 msgid "File not found."
-msgstr ""
+msgstr "ファイルが見つかりませんでした。"
 
 #: ../thus/installation/bootloader.py:332
 msgid "File already exists."
-msgstr ""
+msgstr "ファイルは既に存在します。"
 
 #: ../thus/installation/bootloader.py:350
 msgid "Generating grub.cfg"
@@ -1460,11 +1460,11 @@ msgstr "grub-mkconfig がハングしたみたいです。続行するためにg
 
 #: ../thus/installation/bootloader.py:382
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "GRUB(2) UEFIのインストールが完了しました。"
 
 #: ../thus/installation/bootloader.py:386
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "GRUB(2) UEFIのインストールが完了しませんでした。"
 
 #: ../thus/installation/bootloader.py:398
 msgid "50mounted-tests file patched successfully"
@@ -1476,15 +1476,15 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:404
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Copying GRUB(2) テーマファイルのコピー"
 
 #: ../thus/installation/bootloader.py:410
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Grub2 テーマファイルが見つかりませんでした"
 
 #: ../thus/installation/bootloader.py:412
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Grub2 テーマファイルは既に存在しています。"
 
 #: ../thus/installation/bootloader.py:416
 msgid "Installing Grub2 locales."
@@ -1492,15 +1492,15 @@ msgstr "Grub2ロケールをインストールしています。"
 
 #: ../thus/installation/bootloader.py:427
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "GRUB(2) ロケールがインストールできません。"
 
 #: ../thus/installation/bootloader.py:493
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Gummiboot のインストールに成功しました。"
 
 #: ../thus/installation/bootloader.py:497
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Gummiboot のインストールに成功しませんでした!"
 
 #: ../thus/installation/bootloader.py:529
 msgid "Can't freeze/unfreeze xfs system"
@@ -1508,7 +1508,7 @@ msgstr "xfs システムの圧縮/解凍ができません"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Special dirsが既にマウントされています。スキップします。"
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1517,33 +1517,33 @@ msgstr "Special dirsがマウントされていません。スキップします
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "{0} をアンマウントできないようにします"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "コマンド {0} が失敗しました。"
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "出力 : {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "{0} コマンドの実行がタイムアウトしました。"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "Thusはあらゆる方法で続行しようとします"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "エラー コマンド実行中: {0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1552,38 +1552,38 @@ msgstr "mkinitcpio.confでhookとmoduleの設定"
 #: ../thus/installation/process.py:130
 #, python-brace-format
 msgid "Copying '/{0}'"
-msgstr ""
+msgstr "'{0}' をコピー"
 
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "'{0}' メソッドを使用してインストール"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "{0} コマンド実行エラー"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "{0} でパーティション及びファイルシステムの作成"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "パーティション {0} を {1} ディレクトリにマウント"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
 msgid "Can't mount {0} in {1}"
-msgstr ""
+msgstr "{0} を {1} にマウントできません"
 
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "{0} でスワップをアクティブにする"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
@@ -1632,7 +1632,7 @@ msgstr "デスクトップのファイルシステムが存在しません! 重�
 #: ../thus/installation/process.py:569 ../thus/installation/process.py:575
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{0} は既に {1} に {2} としてマウントされています"
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files to be copied ..."
@@ -1649,7 +1649,7 @@ msgstr "デスクトップイメージの抽出中..."
 #: ../thus/installation/process.py:616
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
-msgstr ""
+msgstr "{0} 上のメタインフォメーションを復元しています"
 
 #: ../thus/installation/process.py:659
 msgid "Can't copy network configuration files"
@@ -1660,45 +1660,45 @@ msgstr "ネットワーク設定ファイルがコピーできません"
 #: ../thus/installation/process.py:802
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "fstabに追加されました: {0}"
 
 #: ../thus/installation/process.py:718 ../thus/installation/process.py:734
 #, python-brace-format
 msgid "Added to crypttab : {0}"
-msgstr ""
+msgstr "crypttabに追加されました : {0}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
-msgstr ""
+msgstr "fstab が上書きされました。"
 
 #: ../thus/installation/process.py:819
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr " {0} serviceが使用可能になりました。"
 
 #: ../thus/installation/process.py:821
 #, python-brace-format
 msgid "Can't find service {0}"
-msgstr ""
+msgstr "service {0} が見つかりません"
 
 #: ../thus/installation/process.py:829
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "ユーザー {0} のパスワードハッシュの作成エラー"
 
 #: ../thus/installation/process.py:835
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "ユーザー {0} のパスワードの変更エラー"
 
 #: ../thus/installation/process.py:863
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "locale.gen ファイルが見つかりません"
 
 #: ../thus/installation/process.py:935
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
-msgstr ""
+msgstr "{0}: ユーザー {1} の自動ログインを可能にします。"
 
 #: ../thus/installation/process.py:1052
 msgid "Configuring your new system"
@@ -1719,17 +1719,17 @@ msgstr "タイムゾーンが設定されました。"
 #: ../thus/installation/process.py:1108
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
-msgstr ""
+msgstr "ユーザー {0} に対するsudoの設定が完了しました。"
 
 #: ../thus/installation/process.py:1118
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "ユーザー {0} が追加されました。"
 
 #: ../thus/installation/process.py:1130
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "ホスト名 {0} が設定されました。"
 
 #: ../thus/installation/process.py:1135
 msgid "Set root password."
@@ -1753,7 +1753,7 @@ msgstr "ハードウェアの設定中.."
 
 #: ../thus/installation/process.py:1179
 msgid "Updated Alsa mixer settings"
-msgstr ""
+msgstr "Alsa mixer 設定の更新"
 
 #: ../thus/installation/process.py:1187
 msgid "Installing drivers ..."
@@ -1789,7 +1789,7 @@ msgstr "mkinitcpioを実行 - 完了"
 
 #: ../thus/installation/process.py:1340
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "ユーザーホームディレクトリを暗号化 ..."
 
 #: ../thus/installation/process.py:1342
 msgid "User home dir encrypted"
@@ -1797,37 +1797,37 @@ msgstr "ユーザーのホームディレクトリが暗号化されました。
 
 #: ../thus/installation/process.py:1347
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "ブートローダーをインストール中..."
 
 #: ../thus/installation/process.py:1353
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "ブートローダーのインストールができませんでした: {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
 msgid "Can't change to locale '{0}' : {1}"
-msgstr ""
+msgstr "ロケールを '{0}' に変更できません: {1}"
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "パスワードが短過ぎます"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "弱いパスワード"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "まあまあなパスワード"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "良いパスワード"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "強固なパスワード"
 
 #: ../thus/misc/validation.py:163
 msgid "Passwords do not match"

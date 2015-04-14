@@ -33,14 +33,14 @@
 # Francisco Suarez <franksg88@gmail.com>, 2013
 # Uriel Velázquez <the.darkspider@gmail.com>, 2013
 # Uriel Velázquez <the.darkspider@gmail.com>, 2013-2014
-# Uriel Velázquez <the.darkspider@gmail.com>, 2014
+# Uriel Velázquez <the.darkspider@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-11 06:19+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-13 14:45+0000\n"
+"Last-Translator: Uriel Velázquez <the.darkspider@gmail.com>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/projects/p/manjaro-thus/language/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,12 +58,12 @@ msgstr "desconocido"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Error al llamar al comando hexdump: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "ID de partición desconocida {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -72,7 +72,7 @@ msgstr "Comprobación de Sistema"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "Tienes al menos {0}GB disponibles en la unidad. (*)"
 
 #: ../thus/check.py:77
 msgid ""

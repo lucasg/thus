@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-11 18:00+0000\n"
+"PO-Revision-Date: 2015-04-13 18:12+0000\n"
 "Last-Translator: Tomàs Mallafré Gispert <tomas@mallafre.cat>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -1274,63 +1274,63 @@ msgstr "No es pot formatar i obrir el dispositiu LUKS {0}"
 #: ../thus/installation/auto_partition.py:237
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "No es pot esborrar el sistema de fitxers al dispositiu{0}"
 
 #: ../thus/installation/auto_partition.py:249
 msgid "Can't run dd command"
-msgstr ""
+msgstr "No es pot executar l'ordre dd"
 
 #: ../thus/installation/auto_partition.py:277
 #: ../thus/installation/auto_partition.py:305
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Error al crear una nova partició al dispositiu {0}"
 
 #: ../thus/installation/auto_partition.py:318
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Error al crear una taula de particions nova al dispositiu {0}"
 
 #: ../thus/installation/auto_partition.py:357
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr ""
+msgstr "Es formatarà el dispositiu {0} com a {1}"
 
 #: ../thus/installation/auto_partition.py:366
 #: ../thus/installation/process.py:407
 #, python-brace-format
 msgid "Can't activate swap in {0}"
-msgstr ""
+msgstr "No es pot activar l'intercanvi a {0}"
 
 #: ../thus/installation/auto_partition.py:384
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Sistema de fitxers tipus {0} desconegut"
 
 #: ../thus/installation/auto_partition.py:392
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "No es pot crear el sistema de fitxers {0}"
 
 #: ../thus/installation/auto_partition.py:421
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "Error a l'intentar muntar {0} a {1}"
 
 #: ../thus/installation/auto_partition.py:437
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "Detalls del dispositiu: {0} UUID={1} ETIQUETA={2}"
 
 #: ../thus/installation/auto_partition.py:520
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} es muntarà com a {1}"
 
 #: ../thus/installation/auto_partition.py:552
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "El dispositiu {0} tindrà un sistema de fitxers {1}"
 
 #: ../thus/installation/auto_partition.py:600
 #, python-format
@@ -1375,54 +1375,54 @@ msgstr "L'instal·lador no pot detectar la mida del dispositiu. Utilitzeu la rut
 
 #: ../thus/installation/auto_partition.py:671
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "Error en informar al kernel del canvi a la partició."
 
 #: ../thus/installation/auto_partition.py:784
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "Això configurarà LVM al dispositiu {0}"
 
 #: ../thus/installation/auto_partition.py:789
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "Error al crear el volum físic LVM"
 
 #: ../thus/installation/auto_partition.py:798
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "Error al crear el grup de volums LVM"
 
 #: ../thus/installation/auto_partition.py:833
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "Error al crear el volum lògic LVM"
 
 #: ../thus/installation/auto_partition.py:890
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "No es pot copiar el fitxer clau LUKS al dispositiu d'instal·lació"
 
 #: ../thus/installation/bootloader.py:100
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "La variable 'ruuid' no s'ha definit. No es pot comprovar l'UUID arrel al grub.cfg, esperem que sigui correcta"
 
 #: ../thus/installation/bootloader.py:170
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "Configuració d' /etc/default/grub finalitzada correctament."
 
 #: ../thus/installation/bootloader.py:216
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "No s'ha pogut copiar {0} a grub.d"
 
 #: ../thus/installation/bootloader.py:225
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "Instal·lant el GRUB(2) BIOS al carregador d'arrencada a {0} "
 
 #: ../thus/installation/bootloader.py:255
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig no respon. Matant grub-mount i os-prober per a poder continuar."
 
 #: ../thus/installation/bootloader.py:263
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1435,7 +1435,7 @@ msgstr "ERROR instal·lant el GRUB(2) BIOS."
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader"
-msgstr ""
+msgstr "Installant el carregador d'arrencada GRUB(2) UEFI {0} "
 
 #: ../thus/installation/bootloader.py:322
 #, python-brace-format
