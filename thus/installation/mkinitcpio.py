@@ -93,10 +93,8 @@ def run(dest_dir, settings, mount_devices, blvm):
     # Fix for bsdcpio error. See: http://forum.antergos.com/viewtopic.php?f=5&t=1378&start=20#p5450
     locale = settings.get('locale')
     kernel = configuration['install']['KERNEL']
-    chroot.mount_special_dirs(dest_dir)
     cmd = ['sh', '-c', 'LANG={0} /usr/bin/mkinitcpio -p {1}'.format(locale,kernel)]
     chroot.run(cmd, dest_dir)
-    chroot.umount_special_dirs(dest_dir)
 
 
 def set_hooks_and_modules(dest_dir, hooks, modules):
