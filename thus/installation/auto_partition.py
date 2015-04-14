@@ -461,14 +461,17 @@ class AutoPartition(object):
             if self.home:
                 devices['home'] = "{0}{1}".format(device, part_num)
                 part_num += 1
-            devices['swap'] = "{0}{1}".format(device, part_num)
-            part_num += 1
+            devices['swap'] = "{0}{1}".format(device, part_num)            
         else:
-            devices['boot'] = "{0}{1}".format(device, 1)
-            devices['root'] = "{0}{1}".format(device, 2)
+            part_num = 1
+            devices['boot'] = "{0}{1}".format(device, part_num)
+            part_num += 1
+            devices['root'] = "{0}{1}".format(device, part_num)
+            part_num += 1
             if self.home:
-                devices['home'] = "{0}{1}".format(device, 3)
-            devices['swap'] = "{0}{1}".format(device, 5)
+                devices['home'] = "{0}{1}".format(device, part_num)
+                part_num += 1
+            devices['swap'] = "{0}{1}".format(device, part_num)
 
         if self.luks:
             if self.lvm:
@@ -707,14 +710,13 @@ class AutoPartition(object):
                 sgdisk_new(device, part_num, "MANJARO_LVM", part_sizes['lvm_pv'], "8E00")
                 part_num += 1
             else:
-                sgdisk_new(device, part_num, "MANJARO_SWAP", part_sizes['swap'], "8200")
-                part_num += 1
                 sgdisk_new(device, part_num, "MANJARO_ROOT", part_sizes['root'], "8300")
                 part_num += 1
-
                 if self.home:
                     sgdisk_new(device, part_num, "MANJARO_HOME", part_sizes['home'], "8302")
                     part_num += 1
+                sgdisk_new(device, part_num, "MANJARO_SWAP", part_sizes['swap'], "8200")
+                part_num += 1
 
             logging.debug(check_output("sgdisk --print {0}".format(device)))
         else:
