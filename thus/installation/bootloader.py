@@ -291,7 +291,7 @@ class Bootloader(object):
         else:
             bootloader_id = 'manjaro_grub_{0}'.format(self.random_generator())
 
-        txt = _("Installing GRUB(2) UEFI {0} boot loader in {1}".format(uefi_arch))
+        txt = _("Installing GRUB(2) UEFI {0} boot loader in {1}".format(uefi_arch, efi_path))
         logging.info(txt)
 
         grub_install = [
