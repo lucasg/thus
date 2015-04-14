@@ -305,9 +305,7 @@ class UserInfo(GtkBaseBox):
             result = validation.check(element, value)
             if len(result) == 0:
                 self.error_label[element].hide()
-                self.forward_button.set_sensitive(True)
             else:
-                self.forward_button.set_sensitive(False)
                 if validation.NAME_BADCHAR in result:
                     txt = _("Invalid characters entered")
                     txt = "<small><span color='darkred'>{0}</span></small>".format(txt)
@@ -353,6 +351,16 @@ class UserInfo(GtkBaseBox):
                                           self.entry['verified_root_password'],
                                           self.error_label['root_password'],
                                           self.root_password_strength)
+
+        # Check if all fields are filled and ok
+        all_ok = True
+        ok_widgets = self.error_label.values()
+        for ok_widget in ok_widgets:
+            visible = ok_widget.get_visible()
+            if visible is True:
+                all_ok = False
+
+        self.forward_button.set_sensitive(all_ok)
 
 # When testing, no _() is available
 try:
