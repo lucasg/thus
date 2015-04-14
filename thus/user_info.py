@@ -30,10 +30,12 @@ import os
 import misc.validation as validation
 import show_message as show
 import logging
+import config
 
 from gtkbasebox import GtkBaseBox
 
-data_dir = self.settings.get('data')
+SETTINGS = config.Settings()
+data_dir = SETTINGS.get('data')
 ICON_WARNING = os.path.join(data_dir, "images", "manjaro", "icon_warning.png")
 ICON_OK = os.path.join(data_dir, "images", "manjaro", "icon_ok.png")
 
