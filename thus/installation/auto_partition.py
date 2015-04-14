@@ -598,6 +598,9 @@ class AutoPartition(object):
 
         part_sizes['lvm_pv'] = part_sizes['swap'] + part_sizes['root'] + part_sizes['home']
 
+        for part in part_sizes:
+            part_sizes[part] = int(part_sizes[part])
+
         return part_sizes
 
     def log_part_sizes(self, part_sizes):
