@@ -33,6 +33,7 @@ import logging
 
 from gtkbasebox import GtkBaseBox
 
+data_dir = self.settings.get('data')
 ICON_WARNING = os.path.join(data_dir, "images", "manjaro", "icon_warning.png")
 ICON_OK = os.path.join(data_dir, "images", "manjaro", "icon_ok.png")
 
