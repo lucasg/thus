@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-14 13:32+0000\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/manjaro-thus/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1430,31 +1430,31 @@ msgstr "GRUB(2) BIOS yükleme hatası."
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "The efi directory is: {0}"
-msgstr ""
+msgstr "Efi dizini: {0}"
 
 #: ../thus/installation/bootloader.py:294
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader in {1}"
-msgstr ""
+msgstr "{1} üzerine GRUB(2) önyükleyici UEFI {0} kuruluyor"
 
 #: ../thus/installation/bootloader.py:304
 #, python-brace-format
 msgid "grub-install command: {0}"
-msgstr ""
+msgstr "grub-install komutu: {0}"
 
 #: ../thus/installation/bootloader.py:312
 #, python-brace-format
 msgid "Command grub-install failed. Error output: {0}"
-msgstr ""
+msgstr "grub-install komutu başarısız oldu. Hata çıktısı: {0}"
 
 #: ../thus/installation/bootloader.py:314
 msgid "Command grub-install timed out."
-msgstr ""
+msgstr "grub-install komutu zaman aşımına uğradı."
 
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
 msgid "Command grub-install failed. Unknown Error: {0}"
-msgstr ""
+msgstr "grub-install komutu başarısız oldu. Bilinmeyen Hata: {0}"
 
 #: ../thus/installation/bootloader.py:331
 #, python-brace-format
@@ -1662,11 +1662,11 @@ msgstr "{1} ve {2} olarak {0} zaten bağlı"
 
 #: ../thus/installation/process.py:582
 msgid "Indexing files of root-image to be copied ..."
-msgstr ""
+msgstr "root-image dosyası dizinlere kopyalanmak üzere ..."
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files of desktop-image to be copied ..."
-msgstr ""
+msgstr "desktop-image dosyası dizinlere kopyalanmak üzere ..."
 
 #: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
@@ -1700,12 +1700,12 @@ msgstr "Crypttab'a eklendi : {0}"
 #: ../thus/installation/process.py:760
 #, python-brace-format
 msgid "Device list : {0}"
-msgstr ""
+msgstr "Aygıt listesi : {0}"
 
 #: ../thus/installation/process.py:763
 #, python-brace-format
 msgid "Device: {0}, SSD: {1}"
-msgstr ""
+msgstr "Aygıt: {0}, SSD: {1}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
