@@ -311,7 +311,7 @@ class Bootloader(object):
         except subprocess.CalledProcessError as process_error:
             logging.error(_('Command grub-install failed. Error output: {0}'.format(process_error.output)))
         except subprocess.TimeoutExpired:
-            logging.error(_'Command grub-install timed out.'))
+            logging.error(_('Command grub-install timed out.'))
         except Exception as general_error:
             logging.error(_('Command grub-install failed. Unknown Error: {0}'.format(general_error)))
 

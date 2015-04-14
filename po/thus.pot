@@ -1449,6 +1449,10 @@ msgstr ""
 msgid "Command grub-install failed. Error output: {0}"
 msgstr ""
 
+#: ../thus/installation/bootloader.py:314
+msgid "Command grub-install timed out."
+msgstr ""
+
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
 msgid "Command grub-install failed. Unknown Error: {0}"
