@@ -579,11 +579,11 @@ class InstallationProcess(multiprocessing.Process):
             DEST = DEST_DIR
             directory_times = []
             # index the files
-            self.queue_event('info', "Indexing files to be copied...")
+            self.queue_event('info', _("Indexing files of root-image to be copied ..."))
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(["wc", "-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output1 = p2.communicate()[0]
-            self.queue_event('info', _("Indexing files to be copied ..."))
+            self.queue_event('info', _("Indexing files of desktop-image to be copied ..."))
             p1 = subprocess.Popen(["unsquashfs", "-l", self.media_desktop], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(["wc", "-l"], stdin=p1.stdout, stdout=subprocess.PIPE)
             output2 = p2.communicate()[0]
@@ -757,10 +757,10 @@ class InstallationProcess(multiprocessing.Process):
 
             # Is ssd ?
             # Device list example: {'/dev/sdb': False, '/dev/sda': True}
-            logging.debug("Device list : {0}".format(self.ssd))
+            logging.debug(_("Device list : {0}".format(self.ssd)))
             device = re.sub("[0-9]+$", "", partition_path)
             is_ssd = self.ssd.get(device)
-            logging.debug("Device: {0}, SSD: {1}".format(device, is_ssd))
+            logging.debug(_("Device: {0}, SSD: {1}".format(device, is_ssd)))
 
             # Add mount options parameters
             if not is_ssd:

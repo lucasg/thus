@@ -284,7 +284,7 @@ class Bootloader(object):
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
         efi_path = self.settings.get('bootloader_device')
-        logging.debug('The efi directory is: {0}').format(efi_path)
+        logging.debug(_('The efi directory is: {0}'.format(efi_path)))
 
         if not os.path.exists('/install{0}/EFI/manjaro_grub'.format(efi_path)):
             bootloader_id = 'manjaro_grub'
@@ -301,7 +301,7 @@ class Bootloader(object):
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/install/boot',
             '--recheck']
-        logging.debug("grub-install command: {0}".format(" ".join(grub_install)))
+        logging.debug(_("grub-install command: {0}".format(" ".join(grub_install))))
 
         load_module = ['modprobe', '-a', 'efivarfs']
 
@@ -309,11 +309,11 @@ class Bootloader(object):
             subprocess.call(load_module, timeout=15)
             subprocess.check_call(grub_install, shell=True, timeout=120)
         except subprocess.CalledProcessError as process_error:
-            logging.error('Command grub-install failed. Error output: {0}'.format(process_error.output))
+            logging.error(_('Command grub-install failed. Error output: {0}'.format(process_error.output)))
         except subprocess.TimeoutExpired:
-            logging.error('Command grub-install timed out.')
+            logging.error(_'Command grub-install timed out.'))
         except Exception as general_error:
-            logging.error('Command grub-install failed. Unknown Error: {0}'.format(general_error))
+            logging.error(_('Command grub-install failed. Unknown Error: {0}'.format(general_error)))
 
         self.install_grub2_locales()
 
