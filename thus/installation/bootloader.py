@@ -307,7 +307,7 @@ class Bootloader(object):
 
         try:
             subprocess.call(load_module, timeout=15)
-            subprocess.check_call(grub_install, shell=True, timeout=120)
+            subprocess.check_call(grub_install, timeout=120)
         except subprocess.CalledProcessError as process_error:
             logging.error(_('Command grub-install failed. Error output: {0}'.format(process_error.output)))
         except subprocess.TimeoutExpired:
