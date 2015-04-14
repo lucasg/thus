@@ -555,7 +555,7 @@ class AutoPartition(object):
         return fs_devices
 
     def get_part_sizes(self, disk_size, start_part_sizes=0):
-        part_sizes = {'disk': disk_size, 'boot': 256}
+        part_sizes = {'disk': disk_size, 'boot': 256, 'efi': 0}
 
         if self.GPT:
             part_sizes['efi'] = 200
@@ -581,7 +581,7 @@ class AutoPartition(object):
 
         part_sizes['swap'] = math.ceil(part_sizes['swap'])
 
-        part_sizes['root'] = disk_size - (start_part_sizes + part_sizes['boot'] + part_sizes['swap'])
+        part_sizes['root'] = disk_size - (start_part_sizes + part_sizes['efi'] + part_sizes['boot'] + part_sizes['swap'])
 
         if self.home:
             # Decide how much we leave to root and how much we leave to /home
