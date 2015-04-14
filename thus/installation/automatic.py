@@ -277,7 +277,7 @@ class InstallationAutomatic(GtkBaseBox):
             if os.path.exists('/sys/firmware/efi'):
                 if self.bootloader == "grub2":
                     self.settings.set('bootloader_device', '/boot/efi')
-                elif self.bootloader == 'gummibot':
+                elif self.bootloader == 'gummiboot':
                     self.settings.set('bootloader_device', '/boot')
             else:
                 self.settings.set('bootloader_device', self.bootloader_device)

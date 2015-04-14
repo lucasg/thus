@@ -235,7 +235,7 @@ class Bootloader(object):
 
         grub_install = ['grub-install', '--directory=/usr/lib/grub/i386-pc', '--target=i386-pc',
                         '--boot-directory=/boot', '--recheck']
-        loggin.debug("grub-install command: {0}".format(" ".join(grub_install)))
+        logging.debug("grub-install command: {0}".format(" ".join(grub_install)))
 
         if len(grub_location) > len("/dev/sdX"):  # ex: /dev/sdXY > 8
             grub_install.append("--force")
@@ -284,7 +284,7 @@ class Bootloader(object):
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
         efi_path = self.settings.get('bootloader_device')
-        logging.debug('The efi directory is is: {0}').format(efi_path)
+        logging.debug('The efi directory is: {0}').format(efi_path)
 
         if not os.path.exists('/install{0}/EFI/manjaro_grub'.format(efi_path)):
             bootloader_id = 'manjaro_grub'
@@ -301,7 +301,7 @@ class Bootloader(object):
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/install/boot',
             '--recheck']
-        loggin.debug("grub-install command: {0}".format(" ".join(grub_install)))
+        logging.debug("grub-install command: {0}".format(" ".join(grub_install)))
 
         load_module = ['modprobe', '-a', 'efivarfs']
 
