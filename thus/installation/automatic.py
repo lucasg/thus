@@ -200,7 +200,7 @@ class InstallationAutomatic(GtkBaseBox):
             self.forward_button.set_sensitive(True)
         else:
             if luks_password == luks_password_confirm:
-                icon = "emblem-default"
+                icon = "dialog-ok"
             else:
                 icon = "dialog-warning"
                 install_ok = False

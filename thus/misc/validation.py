@@ -4,10 +4,12 @@
 #
 #  Copyright (C) 2005 Junta de Andalucía
 #  Copyright (C) 2005, 2006, 2007, 2008 Canonical Ltd.
+#  Copyright (C) 2015 Manjaro (http://manjaro.org)
 #
 #  Validation library.
 #  Created by Antonio Olmo <aolmo#emergya._info> on 26 jul 2005.
 
+from gi.repository import Gtk
 
 def check_grub_device(device):
     """Check that the user entered a valid boot device.
@@ -151,7 +153,8 @@ def human_password_strength(password):
 
 
 def check_password(password, verified_password, password_ok,
-                   password_error_label, password_strength,
+                   password_false, password_error_label,
+                   password_strength, icon_ok, icon_warning,
                    allow_empty=False):
     complete = True
     passw = password.get_text()
@@ -178,6 +181,12 @@ def check_password(password, verified_password, password_ok,
         password_strength.set_markup(txt)
         password_strength.show()
         if passw == vpassw:
+            password_ok.set_from_icon_name(icon_ok, Gtk.IconSize.LARGE_TOOLBAR)
             password_ok.show()
+            password_false.hide()
+        else:
+            password_false.set_from_icon_name(icon_warning, Gtk.IconSize.LARGE_TOOLBAR)
+            password_false.show()
+            password_ok.hide()
 
     return complete

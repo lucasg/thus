@@ -34,10 +34,8 @@ import config
 
 from gtkbasebox import GtkBaseBox
 
-SETTINGS = config.Settings()
-data_dir = SETTINGS.get('data')
-ICON_WARNING = os.path.join(data_dir, "images", "manjaro", "icon_warning.png")
-ICON_OK = os.path.join(data_dir, "images", "manjaro", "icon_ok.png")
+ICON_OK = "dialog-ok"
+ICON_WARNING = "dialog-warning"
 
 class UserInfo(GtkBaseBox):
     """ Asks for user information """
@@ -51,6 +49,13 @@ class UserInfo(GtkBaseBox):
         self.is_ok['username'] = self.ui.get_object('username_ok')
         self.is_ok['password'] = self.ui.get_object('password_ok')
         self.is_ok['root_password'] = self.ui.get_object('root_password_ok')
+
+        self.is_false = dict()
+        self.is_false['fullname'] = self.ui.get_object('fullname_false')
+        self.is_false['hostname'] = self.ui.get_object('hostname_false')
+        self.is_false['username'] = self.ui.get_object('username_false')
+        self.is_false['password'] = self.ui.get_object('password_false')
+        self.is_false['root_password'] = self.ui.get_object('root_password_false')
 
         self.error_label = dict()
         self.error_label['hostname'] = self.ui.get_object('hostname_error_label')
@@ -265,6 +270,7 @@ class UserInfo(GtkBaseBox):
         self.show_all()
         self.hide_widgets()
         self.is_ok['root_password'].show()
+        self.is_false['root_password'].hide()
 
         desktop = self.settings.get('desktop')
         if desktop != "nox" and self.login['auto']:
@@ -320,18 +326,21 @@ class UserInfo(GtkBaseBox):
     def validate(self, element, value):
         """ Check that what the user is typing is ok """
         if len(value) == 0:
-            self.is_ok[element].set_from_file(ICON_WARNING)
+            self.is_ok[element].set_from_icon_name(ICON_WARNING, Gtk.IconSize.LARGE_TOOLBAR)
             self.is_ok[element].show()
+            self.is_false[element].hide()
             self.error_label[element].show()
         else:
             result = validation.check(element, value)
             if len(result) == 0:
-                self.is_ok[element].set_from_file(ICON_OK)
+                self.is_ok[element].set_from_icon_name(ICON_OK, Gtk.IconSize.LARGE_TOOLBAR)
                 self.is_ok[element].show()
+                self.is_false[element].hide()
                 self.error_label[element].hide()
             else:
-                self.is_ok[element].set_from_file(ICON_WARNING)
-                self.is_ok[element].show()
+                self.is_false[element].set_from_icon_name(ICON_WARNING, Gtk.IconSize.LARGE_TOOLBAR)
+                self.is_false[element].show()
+                self.is_ok[element].hide()
 
                 if validation.NAME_BADCHAR in result:
                     txt = _("Invalid characters entered")
@@ -354,11 +363,13 @@ class UserInfo(GtkBaseBox):
         if widget == self.entry['fullname']:
             fullname = self.entry['fullname'].get_text()
             if len(fullname) > 0:
-                self.is_ok['fullname'].set_from_file(ICON_OK)
+                self.is_ok['fullname'].set_from_icon_name(ICON_OK, Gtk.IconSize.LARGE_TOOLBAR)
                 self.is_ok['fullname'].show()
+                self.is_false['fullname'].hide()
             else:
-                self.is_ok['fullname'].set_from_file(ICON_WARNING)
-                self.is_ok['fullname'].show()
+                self.is_false['fullname'].set_from_icon_name(ICON_WARNING, Gtk.IconSize.LARGE_TOOLBAR)
+                self.is_false['fullname'].show()
+                self.is_ok['fullname'].hide()
 
         if widget == self.entry['hostname']:
             hostname = self.entry['hostname'].get_text()
@@ -373,8 +384,11 @@ class UserInfo(GtkBaseBox):
             validation.check_password(self.entry['password'],
                                       self.entry['verified_password'],
                                       self.is_ok['password'],
+                                      self.is_false['password'],
                                       self.error_label['password'],
-                                      self.password_strength)
+                                      self.password_strength,
+                                      ICON_OK,
+                                      ICON_WARNING)
 
         btn = self.ui.get_object('checkbutton_root_password')
         show = btn.get_active()
@@ -384,19 +398,21 @@ class UserInfo(GtkBaseBox):
                 validation.check_password(self.entry['root_password'],
                                           self.entry['verified_root_password'],
                                           self.is_ok['root_password'],
+                                          self.is_false['root_password'],
                                           self.error_label['root_password'],
-                                          self.root_password_strength)
+                                          self.root_password_strength,
+                                          ICON_OK,
+                                          ICON_WARNING)
         else:
             self.is_ok['root_password'].show()
+            self.is_false['root_password'].hide()
 
         # Check if all fields are filled and ok
         all_ok = True
         ok_widgets = self.is_ok.values()
         for ok_widget in ok_widgets:
-            (icon_name, icon_size) = ok_widget.get_icon_name()
-            logging.debug("ok_widget: {0}; icon_name: {1}".format(ok_widget, icon_name))
-            visible = ok_widget.get_visible()
-            if visible is False or icon_name != "icon_ok":
+            widget = ok_widget.get_visible()
+            if widget is False:
                 all_ok = False
 
         self.forward_button.set_sensitive(all_ok)
