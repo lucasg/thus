@@ -463,15 +463,11 @@ class AutoPartition(object):
                 part_num += 1
             devices['swap'] = "{0}{1}".format(device, part_num)            
         else:
-            part_num = 1
-            devices['boot'] = "{0}{1}".format(device, part_num)
-            part_num += 1
-            devices['root'] = "{0}{1}".format(device, part_num)
-            part_num += 1
+            devices['boot'] = "{0}{1}".format(device, 1)
+            devices['root'] = "{0}{1}".format(device, 2)
             if self.home:
-                devices['home'] = "{0}{1}".format(device, part_num)
-                part_num += 1
-            devices['swap'] = "{0}{1}".format(device, part_num)
+                devices['home'] = "{0}{1}".format(device, 3)
+            devices['swap'] = "{0}{1}".format(device, 5)
 
         if self.luks:
             if self.lvm:
