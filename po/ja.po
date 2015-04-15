@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-14 21:13+0000\n"
+"Last-Translator: Takefumi Nagata\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -954,21 +954,21 @@ msgstr "暗号化 {0}、ボリュームネーム {1} の割り当て、及びフ
 #: ../thus/installation/advanced.py:2101
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "ラベル '{1}' のLUKSデバイス '{0}' が '{2}' としてフォーマットできませんでした"
 
 #: ../thus/installation/advanced.py:2125
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "ラベル '{1}' のパーティション '{0}' が '{2}' としてフォーマットできませんでした"
 
 #: ../thus/installation/advanced.py:2183 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "Thusはブートローダーをインストールしません"
 
 #: ../thus/installation/advanced.py:2192
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "Manjaroはデバイス '{1}' にブートローダー '{0}' をインストールします"
 
 #: ../thus/installation/advanced.py:2207 ../thus/installation/automatic.py:310
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -1428,31 +1428,31 @@ msgstr "GRUB(2) のインストール中にエラーが発生しました。"
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "The efi directory is: {0}"
-msgstr ""
+msgstr "efi ディレクトリ: {0}"
 
 #: ../thus/installation/bootloader.py:294
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader in {1}"
-msgstr ""
+msgstr "GRUB(2) UEFI {0} ブートローダーを {1} にインストールしています"
 
 #: ../thus/installation/bootloader.py:304
 #, python-brace-format
 msgid "grub-install command: {0}"
-msgstr ""
+msgstr "grub インストールコマンド:  {0}"
 
 #: ../thus/installation/bootloader.py:312
 #, python-brace-format
 msgid "Command grub-install failed. Error output: {0}"
-msgstr ""
+msgstr "grub インストールコマンドに失敗しました。エラー出力: {0}"
 
 #: ../thus/installation/bootloader.py:314
 msgid "Command grub-install timed out."
-msgstr ""
+msgstr "grub インストールコマンドがタイムアウトしました。"
 
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
 msgid "Command grub-install failed. Unknown Error: {0}"
-msgstr ""
+msgstr "grub インストールコマンドに失敗しました。未知のエラー: {0}"
 
 #: ../thus/installation/bootloader.py:331
 #, python-brace-format
@@ -1874,44 +1874,44 @@ msgstr "パスワードが一致しません"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "{0} パーティションにラベルをつけることができません"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "{0} がSSDであるかどうか確認できません"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "申し訳ありませんが、ファイルシステム{0}を縮小できません"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "論理ボリューム {0} を削除できません"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "ボリュームグループ {0} を削除できません"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "物理ボリューム {0} を削除できません。"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "例外: {0}\nより詳細な情報は /tmp/thus.log を見てください。"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "パーティション {0} を削除できません"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1920,42 +1920,42 @@ msgstr "パーティションが大きすぎます!"
 #: ../thus/parted3/partition_module.py:299
 #, python-brace-format
 msgid "Can't detect used space from {0}"
-msgstr ""
+msgstr "{0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:42
 #, python-brace-format
 msgid "Can't detect used space of NTFS partition {0}"
-msgstr ""
+msgstr "NTFSパーティション {0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "EXTFSパーティション {0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "FATパーティション {0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "JFSパーティション {0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "REISERFSパーティション {0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "BTRFSパーティション {0} から使用済みスペースを検出できません"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "XFSパーティション {0} から使用済みスペースを検出できません"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"

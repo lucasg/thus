@@ -18,13 +18,14 @@
 # philm <philm@manjaro.org>, 2013-2014
 # Dr. Tibor Attila Anca <inactive+anca.tibor@transifex.com>, 2013
 # Zeni <zen3ger@gmail.com>, 2014
+# Zsolt <notargets@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-14 19:11+0000\n"
+"Last-Translator: Zsolt <notargets@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/manjaro-thus/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -310,7 +311,7 @@ msgstr "Ne hajtson végre semmilyen változtatást (hasznos fejlesztők számár
 
 #: ../thus/thus.py:214
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "A Thus lecserélése a(z) (újabbi/régebbi) webes változatra"
 
 #: ../thus/thus.py:218
 msgid "Do not search for new Thus versions online"
@@ -412,7 +413,7 @@ msgstr "Új verzió kicsomagolása..."
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Nem lehet {0}-t ide másolni: {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
@@ -900,7 +901,7 @@ msgstr "A root partíció nincs formázásra kijelölve.\nEz problémákat okozh
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
-msgstr ""
+msgstr "{0} hozzáadva a változtatások listájához: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] encrypt[{5}]"
 
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
@@ -946,12 +947,12 @@ msgstr "Új {0} fájlrendszer létrehozása itt: {1}"
 #: ../thus/installation/advanced.py:2078
 #, python-brace-format
 msgid "Setting boot flag in {0} partition"
-msgstr ""
+msgstr "boot jelölés beállítása a(z) {0} partíción"
 
 #: ../thus/installation/advanced.py:2051
 #, python-brace-format
 msgid "Setting boot_legacy flag in {0} partition"
-msgstr ""
+msgstr "boot_legacy jelölés beállítása a(z) {0} partíción"
 
 #: ../thus/installation/advanced.py:2086
 #, python-brace-format
@@ -1402,7 +1403,7 @@ msgstr "Nem lehet a LUKS kulcsfájlt a telepítési eszközre másolni"
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "Az 'ruuid' változó nincs beállítva. Nem tudom megnézni a gyökér UUID-t a grub.cfg-ben, reménykedjünk, hogy rendben van."
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
@@ -1411,7 +1412,7 @@ msgstr "/etc/default/grub konfigurációja sikeresen befejezve."
 #: ../thus/installation/bootloader.py:220
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "Nem sikerült a(z) {0} másolása a grub.d helyre"
 
 #: ../thus/installation/bootloader.py:229
 #, python-brace-format
@@ -1435,7 +1436,7 @@ msgstr "HIBA a GRUB(2) BIOS telepítése során."
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "The efi directory is: {0}"
-msgstr ""
+msgstr "Az EFI-könyvtár a következő: {0}"
 
 #: ../thus/installation/bootloader.py:294
 #, python-brace-format
@@ -1445,31 +1446,31 @@ msgstr ""
 #: ../thus/installation/bootloader.py:304
 #, python-brace-format
 msgid "grub-install command: {0}"
-msgstr ""
+msgstr "grub-install parancs: {0}"
 
 #: ../thus/installation/bootloader.py:312
 #, python-brace-format
 msgid "Command grub-install failed. Error output: {0}"
-msgstr ""
+msgstr "A grub-install parancs sikertelen. Hibakimenet: {0}"
 
 #: ../thus/installation/bootloader.py:314
 msgid "Command grub-install timed out."
-msgstr ""
+msgstr "A grub-install parancs időtúllépés miatt nem sikerült."
 
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
 msgid "Command grub-install failed. Unknown Error: {0}"
-msgstr ""
+msgstr "A grub-install parancs sikertelen. Ismeretlen hiba: {0}"
 
 #: ../thus/installation/bootloader.py:331
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
-msgstr ""
+msgstr "Nem található OEM rendszerbetöltő a {0}-n. Grub(2) másolása könyvtárba."
 
 #: ../thus/installation/bootloader.py:335
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "Grub(2) másolása az OEM könyvtárba sikertelen: {0}"
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
@@ -1548,7 +1549,7 @@ msgstr "Speciális könyvtárak nincsenek csatolva. Kihagyás."
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "Nem lehet lecsatolni: {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
@@ -1609,7 +1610,7 @@ msgstr "{0} partíció csatolása a {1} könyvtárba"
 #: ../thus/installation/process.py:398
 #, python-brace-format
 msgid "Can't mount {0} in {1}"
-msgstr ""
+msgstr "A {0}-t nem lehet csatolni a {1} helyre"
 
 #: ../thus/installation/process.py:403
 #, python-brace-format
@@ -1667,11 +1668,11 @@ msgstr "{0} már csatolva van itt: {1}, mint {2}"
 
 #: ../thus/installation/process.py:582
 msgid "Indexing files of root-image to be copied ..."
-msgstr ""
+msgstr "Másolandó gyökérképfájlok indexelése..."
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files of desktop-image to be copied ..."
-msgstr ""
+msgstr "Másolandó asztali kép fájlok indexelése..."
 
 #: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
@@ -1705,16 +1706,16 @@ msgstr "Hozzáadva a crypttab-hoz : {0}"
 #: ../thus/installation/process.py:760
 #, python-brace-format
 msgid "Device list : {0}"
-msgstr ""
+msgstr "Eszközlista: {0}"
 
 #: ../thus/installation/process.py:763
 #, python-brace-format
 msgid "Device: {0}, SSD: {1}"
-msgstr ""
+msgstr "Eszköz: {0}, SSD: {1}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
-msgstr ""
+msgstr "fstab írása megtörtént."
 
 #: ../thus/installation/process.py:819
 #, python-brace-format
@@ -1729,7 +1730,7 @@ msgstr "Nem található a {0} szolgáltatás"
 #: ../thus/installation/process.py:829
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "Jelszó hash hiba miatt nem került létrehozásra a következő felhasználónak: {0}"
 
 #: ../thus/installation/process.py:835
 #, python-brace-format
@@ -1913,7 +1914,7 @@ msgstr "Nem lehet eltávolítani a {0} fizikai kötetet"
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Kivétel: {0}.\nBővebb információért nézd meg a /tmp/thus.log fájlt!"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
@@ -2026,7 +2027,7 @@ msgstr "<b>FIGYELEM! Ez a telepítési mód mindent felülír a meghajtón!</b>"
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Kérem, válassza ki a meghajtót, ahova telepíteni akarja a Manjaro-t,\nés kattintson az alábbi gombra a folyamat megkezdéséhez!"
 
 #: ../ui/automatic.ui:271
 msgid "show password"
