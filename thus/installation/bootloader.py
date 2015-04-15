@@ -300,7 +300,8 @@ class Bootloader(object):
             '--efi-directory=/install{0}'.format(efi_path),
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/install/boot',
-            '--recheck']
+            '--recheck',
+            '--verbose']
         logging.debug(_("grub-install command: {0}".format(" ".join(grub_install))))
 
         load_module = ['modprobe', '-a', 'efivarfs']
