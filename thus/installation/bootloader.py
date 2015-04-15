@@ -303,8 +303,7 @@ class Bootloader(object):
             '--efi-directory={0}'.format(efi_path),
             '--bootloader-id={0}'.format(bootloader_id),
             '--boot-directory=/boot',
-            '--recheck',
-            '--verbose']
+            '--recheck']
         logging.debug(_("grub-install command: {0}".format(" ".join(grub_install))))
 
         try:
