@@ -1166,7 +1166,7 @@ class InstallationProcess(multiprocessing.Process):
         chroot.mount_special_dirs(DEST_DIR)
 
         # Install configs for root
-        chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
+        # chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
 
         self.queue_event('info', _("Configuring hardware ..."))
         # Copy generated xorg.xonf to target
