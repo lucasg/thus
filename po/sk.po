@@ -5,9 +5,11 @@
 # 
 # Translators:
 # aasami <aasami@gmail.com>, 2014
+# aasami <aasami@gmail.com>, 2014
 # archetyp <archetyp@linuxmail.org>, 2013
 # Dušan Lago <dusan.lago@gmail.com>, 2011,2013
 # Jose Riha <jose1711@gmail.com>, 2011
+# mrstanlez <stanislav.petrek@gmail.com>, 2014
 # Richard Vajdel <riko442@gmail.com>, 2014
 # mrstanlez <stanislav.petrek@gmail.com>, 2014
 msgid ""
@@ -15,8 +17,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-15 21:24+0000\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/manjaro-thus/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +50,7 @@ msgstr "Kontrola systému"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "obsahuje aspoň {0}GB dostupného úložného miesta. (*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -82,15 +84,15 @@ msgstr "Na disku je dostatok miesta"
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Nedajú sa vytvoriť a upraviť konfiguračné súbory encfs."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "Domovský adresár nebude zašifrovaný."
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Nedá sa spustiť encfs. Nesprávne heslo?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -98,11 +100,11 @@ msgstr "Zvoľte si rozloženie klávesnice"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Rozloženia klávesnice"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Varianty klávesnice"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -137,15 +139,15 @@ msgstr ""
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Ďalší výskyt"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Zavrieť"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Prejde dozadu"
 
 #: ../thus/language.py:136
 #, python-brace-format
@@ -169,7 +171,7 @@ msgstr "Krajina, územie alebo miesto:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Zobraziť všetky umiestnenia"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
@@ -187,7 +189,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Tento inštalátor musí byť spustený s právami správcu. Bez nich sa nedá pokračovať."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
@@ -204,7 +206,7 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "Nemôžete spustiť dve inštancie tohoto inštalátora.\n\nAk ste si istý, že inštalátor už nie je spustený,\nmôžete spustiť inštalátor s voľbou --force\nalebo môžete ručne odstrániť problémový súbor.\n\nProblémový súbor: „{0}“"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
@@ -218,7 +220,7 @@ msgstr ""
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Naozaj chcete ukončiť inštalátor?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -265,13 +267,13 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "DÔLEŽITÉ: Môžu nastať problém s inštaláciou zavádzača,\nktoré môžu\nspôsobiť nesprávne spustenie systému. Pred reštartovaním by\nste mali overiť,\nči je zavádzač nainštalovaný a nakonfigurovaný. Wiki\nLinuxu Arch\nobsahuje informácie pre riešenie problémov:\n\thttps://wiki.archlinux.org/index.php/GRUB\n\nChcete teraz zobraziť stránku na wiki?"
 
 #: ../thus/slides.py:205
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Inštalácia je dokončená!\nChcete teraz reštartovať váš počítač?"
 
 #: ../thus/thus.py:66
 #, python-brace-format
@@ -281,7 +283,7 @@ msgstr ""
 #: ../thus/thus.py:166
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "Používa sa pyalpm v{0} ako rozhranie pre libalpm v{1}"
 
 #: ../thus/thus.py:181
 #, python-brace-format
@@ -314,11 +316,11 @@ msgstr "Zobraziť zápisy údajov v stdout"
 
 #: ../thus/thus.py:226
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Zobrazí vývojárske voľby (iba pre vývojárov, nepoužívajte túto voľbu!)"
 
 #: ../thus/thus.py:265
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Program bol aktualizovaný! Reštartuje sa..."
 
 #: ../thus/thus.py:305
 msgid "Thus files not found. Please, install Thus using pacman"
@@ -327,7 +329,7 @@ msgstr ""
 #: ../thus/thus.py:309
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Prosím, nainštalujte „{0}“ pred spustením inštalátora"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -343,7 +345,7 @@ msgstr "Región:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Použiť sieťový časový protokol (NTP) na synchronizáciu času"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
@@ -356,20 +358,20 @@ msgstr "Nepodarilo sa automaticky detegovať súradnice časového pásma"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Zastavujú sa vlákna časovej zóny..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Nedá sa získať stav siete."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Pripojenie dostupné. Zisťuje sa časová zóna."
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Časová zóna (zem. šírka {0}, zem. dĺžka {1}) zistená."
 
 #: ../thus/updater.py:71
 msgid ""
@@ -383,11 +385,11 @@ msgstr ""
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Našla sa nová verzia. Aktualizuje sa inštalátor..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Nenašla sa žiadna nová verzia. Napriek tomu sa aktualizuje..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
@@ -399,7 +401,7 @@ msgstr ""
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Rozbaľuje sa nová verzia..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
@@ -408,7 +410,7 @@ msgstr ""
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "Nesprávny medzisúčet md5. Zle prevzatý alebo nesprávny súbor. Aktualizácia nebude spustená."
 
 #: ../thus/user_info.py:72
 msgid "Who are you?"
@@ -554,7 +556,7 @@ msgstr "Príliš veľa znakov"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Nesprávna url. Skúsi sa iná dostupná."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -562,22 +564,22 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Nedá sa otvoriť {0} - Príčina: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "HTTP chyba : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "URL chyba : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Preberá sa {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
@@ -592,7 +594,7 @@ msgstr ""
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Nedá sa prebrať {0} ani po vyskúšaní všetkých dostupných zrkadiel"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -641,11 +643,11 @@ msgstr "žiadny"
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Nedá sa upraviť oddiel so systémom súborov typu LVM"
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Nedá sa použiť rovnaký bod pripojenia dvakrát."
 
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
@@ -660,12 +662,12 @@ msgstr ""
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Prepáčte, už máte vytvorené {0} primárne oddiely."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Prepáčte, už máte vytvorené {0} primárne oddiely a 1 rozšírený oddiel."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -673,15 +675,15 @@ msgstr "Nie je možné použiť ten istý prípojný bod dvakrát..."
 
 #: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Vytvára sa primárny oddiel"
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Vytvára sa rozšírený oddiel"
 
 #: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Vytvára sa logický oddiel"
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
@@ -693,17 +695,17 @@ msgstr "Pokročilý režim inštalácie"
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Použiť nasledovné zariadenie na inštaláciu zavádzača:"
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1041 ../ui/automatic.ui:149
 msgid "Bootloader:"
-msgstr ""
+msgstr "Zavádzač:"
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1067 ../ui/automatic.ui:174
 msgid "Device:"
-msgstr ""
+msgstr "Zariadenie:"
 
 #: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
@@ -727,7 +729,7 @@ msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1328
 msgid "Undo"
-msgstr ""
+msgstr "Vrátiť"
 
 #: ../thus/installation/advanced.py:1331 ../thus/installation/advanced.py:1896
 msgid "New"
@@ -735,11 +737,11 @@ msgstr "Nový"
 
 #: ../thus/installation/advanced.py:1334
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 #: ../thus/installation/advanced.py:1337
 msgid "Edit..."
-msgstr ""
+msgstr "Upraviť..."
 
 #: ../thus/installation/advanced.py:1340
 msgid "New partition table"
@@ -747,11 +749,11 @@ msgstr "Nová tabuľka oddielov"
 
 #: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
-msgstr ""
+msgstr "_Zrušiť"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Apply"
-msgstr ""
+msgstr "_Použiť"
 
 #: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:405
 msgid "Size:"
@@ -783,11 +785,11 @@ msgstr "Koniec tejto oblasti"
 
 #: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
-msgstr ""
+msgstr "Použiť ako:"
 
 #: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
-msgstr ""
+msgstr "Bod pripojenia:"
 
 #: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:251 ../ui/advanced.ui:687
@@ -812,7 +814,7 @@ msgstr "Vytvoriť tabuľku oddielov"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Použiť šifrovanie LUKS:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1172
 msgid "LUKS volume name:"
@@ -856,7 +858,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} je pripojený ako odkladacie miesto.\nPre pokračovanie sa musí odpojiť.\nKliknite na Áno pre odpojenie, alebo Nie pre návrat\n"
 
 #: ../thus/installation/advanced.py:1776
 #, python-brace-format
@@ -864,7 +866,7 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} je pripojený do „{1}“.\nPre pokračovanie sa musí odpojiť.\nKliknite na Áno pre odpojenie, alebo Nie pre návrat\n"
 
 #: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
@@ -897,7 +899,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "Oddiel {0} bude odstránený"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Partition"
@@ -913,7 +915,7 @@ msgstr "Pripojiť"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Encrypt"
-msgstr ""
+msgstr "Zašifrovať"
 
 #: ../thus/installation/advanced.py:1917
 msgid "These disks will have partition actions:"
@@ -927,12 +929,12 @@ msgstr ""
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "Vytvára sa nový systém súborov {0} v {1} označený ako {2}"
 
 #: ../thus/installation/advanced.py:2034
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "Vytvára sa nový systém súborov {0} v {1}"
 
 #: ../thus/installation/advanced.py:2043 ../thus/installation/advanced.py:2062
 #: ../thus/installation/advanced.py:2078
@@ -948,7 +950,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:2086
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "Šifruje sa {0}, priraďuje sa názov zväzku {1} a formátuje sa..."
 
 #: ../thus/installation/advanced.py:2101
 #, python-brace-format
@@ -958,7 +960,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:2125
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Nie je možné naformátovať oddiel „{0}“ s menovkou „{1}“ ako „{2}“"
 
 #: ../thus/installation/advanced.py:2183 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
@@ -975,12 +977,12 @@ msgstr "Testovací mód: Thus nevykoná žiadne zmeny vo vašom systéme!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Nie sú dostupné žiadne primárne oddiely"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "Zmenší sa zariadenie {0} a vytvorí sa nové zariadenie {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
@@ -991,7 +993,7 @@ msgstr ""
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "Nový oddiel {0} vyplývajúci zo zmenšenia {1} nebude mať dostatok voľného miesta pre plnú inštaláciu."
 
 #: ../thus/installation/alongside.py:152
 msgid ""
@@ -1001,7 +1003,7 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Pokračujte v inštalácii na vlastné riziko!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1009,29 +1011,29 @@ msgstr "Nainštalovať Manjaro vedľa iného operačného systému"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Zvoľte novú veľkosť vašej inštalácie"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Zvoľte oddiel, ktorý chcete zmenšiť:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
 "Can't find any spare partition number.\n"
 "Alongside installation can't continue."
-msgstr ""
+msgstr "Nedá sa nájsť žiadne číslo náhradného oddielu.\nInštalácia popri inom systéme nemôže pokračovať."
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "Nedajú sa nájsť žiadne nainštalované OS!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
-msgstr ""
+msgstr "Režim inštalácie popri inom systéme nefunguje so systémami UEFI"
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "OS Windows(tm) zistený."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
@@ -1039,11 +1041,11 @@ msgstr ""
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "Nedá sa zistiť žiadny OS na zariadení sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr ""
+msgstr "Nepodporované rozloženie disku pre režim inštalácie popri inom systéme"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
@@ -1064,7 +1066,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Upozornenie: Týmto sa vymažú VŠETKY údaje na vašom disku."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1072,7 +1074,7 @@ msgstr "Zašifrovať túto inštaláciu pre vyššiu bezpečnosť."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "V ďalšom kroku budete dotázaný na vytvorenie šifrovacieho hesla."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1082,7 +1084,7 @@ msgstr "Použiť LVM v inštalácii."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Týmto sa nastaví LVM a umožní vám jednoducho spravovať oddiely a vytvárať snímky."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1091,7 +1093,7 @@ msgstr "Umiestniť váš domovský priečinok na iný oddiel"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Týmto sa nastaví váš adresár /home na odlišný oddiel alebo zväzok."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
@@ -1103,7 +1105,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Budete môcť upraviť tabuľku oddielov a zvoliť body pripojení."
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1146,11 +1148,11 @@ msgstr "Šifrovacie heslo:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "Heslo pre LUKS. Nepoužívajte špeciálne znaky, alebo diakritiku!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "Administrátorské heslo pre LUKS bolo nastavené"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
@@ -1161,7 +1163,7 @@ msgstr ""
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Skutočne chcete pokračovať a odstrániť celý obsah vašej jednotky pevného disku?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
@@ -1241,16 +1243,16 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:158
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "Nedajú sa odstrániť existujúce zväzky LVM"
 
 #: ../thus/installation/auto_partition.py:169
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Nedajú sa zavrieť už otvorené zariadenia LUKS"
 
 #: ../thus/installation/auto_partition.py:178
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "Nedá sa nastaviť LUKS na zariadení {0}. Je potrebné heslo alebo súbor s kľúčom."
 
 #: ../thus/installation/auto_partition.py:186
 #, python-brace-format
@@ -1261,7 +1263,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:227
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "Nedá sa naformátovať a otvoriť zariadenie LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:238
 #, python-brace-format
@@ -1270,18 +1272,18 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:250
 msgid "Can't run dd command"
-msgstr ""
+msgstr "Nedá sa spustiť príkaz dd"
 
 #: ../thus/installation/auto_partition.py:278
 #: ../thus/installation/auto_partition.py:306
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Chyba pri vytváraní nového oddielu na zariadení {0}"
 
 #: ../thus/installation/auto_partition.py:319
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Chyba pri vytváraní novej tabuľky oddielov na zariadení {0}"
 
 #: ../thus/installation/auto_partition.py:358
 #, python-brace-format
@@ -1297,17 +1299,17 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:385
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Neznámy typ systému súborov {0}"
 
 #: ../thus/installation/auto_partition.py:393
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "Nedá sa vytvoriť systém súborov {0}"
 
 #: ../thus/installation/auto_partition.py:422
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "Chyba pri pokuse pripojiť {0} do {1}"
 
 #: ../thus/installation/auto_partition.py:438
 #, python-brace-format
@@ -1332,7 +1334,7 @@ msgstr "Celková veľkosť disku: %dMiB"
 #: ../thus/installation/auto_partition.py:606
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "Veľkosť oddielu systému EFI (ESP): %dMiB"
 
 #: ../thus/installation/auto_partition.py:607
 #, python-format
@@ -1367,7 +1369,7 @@ msgstr "Inštalácia nedokáže zistiť veľkosť zariadenia. Prosím, použite 
 
 #: ../thus/installation/auto_partition.py:675
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "Chyba pri informovaní jadra o zmene oddielov."
 
 #: ../thus/installation/auto_partition.py:788
 #, python-brace-format
@@ -1376,45 +1378,45 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:793
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "Chyba pri vytváraní fyzického zväzku LVM"
 
 #: ../thus/installation/auto_partition.py:802
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "Chyba pri vytváraní skupiny zväzkov LVM"
 
 #: ../thus/installation/auto_partition.py:837
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "Chyba pri vytváraní logického zväzku LVM"
 
 #: ../thus/installation/auto_partition.py:894
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "Nedá sa skopírovať súbor kľúča LUKS do inštalačného zariadenia"
 
 #: ../thus/installation/bootloader.py:102
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "Premenná „ruuid“ nie je nastavená. Nedá sa skontrolovať koreňové UUID v súbore grub.cfg. Dúfajme, že je v poriadku."
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "Konfigurácia /etc/default/grub bola úspešne dokončená."
 
 #: ../thus/installation/bootloader.py:220
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "Nepodarilo sa skopírovať {0} do grub.d"
 
 #: ../thus/installation/bootloader.py:229
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "Inštaluje sa zavádzač BIOSu GRUB(2) do {0}"
 
 #: ../thus/installation/bootloader.py:260
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "Nástroj grub-mkconfig neodpovedá. Zabíja sa proces grub-mount a os-prober, aby sa mohlo pokračovať."
 
 #: ../thus/installation/bootloader.py:268
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1465,11 +1467,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
-msgstr ""
+msgstr "Súbor sa nenašiel."
 
 #: ../thus/installation/bootloader.py:341
 msgid "File already exists."
-msgstr ""
+msgstr "Súbor už existuje."
 
 #: ../thus/installation/bootloader.py:359
 msgid "Generating grub.cfg"
@@ -1483,31 +1485,31 @@ msgstr "grub-mkconfig ostal bez odozvy. Zabiť proces grub-mount a os-prober aby
 
 #: ../thus/installation/bootloader.py:391
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "Inštalácia zavádzača GRUB(2) UEFI bola úspešne dokončená"
 
 #: ../thus/installation/bootloader.py:395
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "Inštalácia zavádzača GRUB(2) UEFI asi neskončila úspešne."
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "Na súbor 50mounted-tests bola úspešne aplikovaná záplata"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "Zlyhalo aplikovanie záplaty na súbor 50mounted-tests. Súbor sa nenašiel."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Kopírujú sa súbory témy zavádzača GRUB(2)"
 
 #: ../thus/installation/bootloader.py:419
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Súbory témy zavádzača Grub2 sa nenašli"
 
 #: ../thus/installation/bootloader.py:421
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Súbory témy zavádzača Grub2 už existujú."
 
 #: ../thus/installation/bootloader.py:425
 msgid "Installing Grub2 locales."
@@ -1515,15 +1517,15 @@ msgstr "Inštalujem lokalizáciu Grub2."
 
 #: ../thus/installation/bootloader.py:436
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "Nedá sa nainštalovať lokalizácia zavádzača GRUB(2)."
 
 #: ../thus/installation/bootloader.py:502
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Inštalácia Gummiboot úspešne dokončená"
 
 #: ../thus/installation/bootloader.py:506
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Inštalácia Gummiboot NEBOLA úspešne dokončená!"
 
 #: ../thus/installation/bootloader.py:538
 msgid "Can't freeze/unfreeze xfs system"
@@ -1531,7 +1533,7 @@ msgstr "Nedá sa zamraziť/odmraziť xfs systém"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Špeciálne adresáre sú už pripojené. Vynecháva sa."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1540,7 +1542,7 @@ msgstr "Špeciálne adresáre nie sú pripojené. Preskakujem."
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "Nepodarilo sa odpojiť {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
@@ -1552,21 +1554,21 @@ msgstr ""
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "Výstup: {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "Čas spúšťania príkazu {0} vypršal"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "Inštalátor Thus sa napriek tomu pokúsi pokračovať"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "Chyba pri spúšťaní príkazu: {0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1580,12 +1582,12 @@ msgstr ""
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Inštaluje sa pomocou spôsobu „{0}“"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "Chyba pri spúšťaní príkazu {0}"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
@@ -1596,17 +1598,17 @@ msgstr ""
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "Pripája sa oddiel {0} do adresára {1}"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
 msgid "Can't mount {0} in {1}"
-msgstr ""
+msgstr "Nedá sa pripojiť {0} do {1}"
 
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "Aktivuje sa odkladacie miesto v {0}"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
@@ -1632,7 +1634,7 @@ msgstr "Systém nakonfigurovaný."
 #: ../thus/installation/process.py:476
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "Nedá sa skopírovať záznam Thus do {0}"
 
 #: ../thus/installation/process.py:493 ../thus/installation/process.py:512
 #: ../thus/installation/process.py:526
@@ -1687,50 +1689,50 @@ msgstr "Nepodarilo sa skopírovať konfiguračné súbory siete"
 #: ../thus/installation/process.py:802
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "Pridané do súboru fstab: {0}"
 
 #: ../thus/installation/process.py:718 ../thus/installation/process.py:734
 #, python-brace-format
 msgid "Added to crypttab : {0}"
-msgstr ""
+msgstr "Pridané do súboru crypttab: {0}"
 
 #: ../thus/installation/process.py:760
 #, python-brace-format
 msgid "Device list : {0}"
-msgstr ""
+msgstr "Zoznam zariadení: {0}"
 
 #: ../thus/installation/process.py:763
 #, python-brace-format
 msgid "Device: {0}, SSD: {1}"
-msgstr ""
+msgstr "Zariadenie: {0}, SSD: {1}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
-msgstr ""
+msgstr "Súbor fstab bol zapísaný."
 
 #: ../thus/installation/process.py:819
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr "Povolená služba {0}."
 
 #: ../thus/installation/process.py:821
 #, python-brace-format
 msgid "Can't find service {0}"
-msgstr ""
+msgstr "Nedá sa nájsť služba {0}"
 
 #: ../thus/installation/process.py:829
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "Chyba pri vytváraní kontrolnej sumy hesla používateľa {0}"
 
 #: ../thus/installation/process.py:835
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "Chyba počas zmeny hesla pre používateľa {0}"
 
 #: ../thus/installation/process.py:863
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "Nedá sa nájsť súbor locale.gen"
 
 #: ../thus/installation/process.py:935
 #, python-brace-format
@@ -1756,17 +1758,17 @@ msgstr "Časové pásmo nastavené."
 #: ../thus/installation/process.py:1108
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
-msgstr ""
+msgstr "Konfigurácia sudo pre používateľa {0} bola dokončená."
 
 #: ../thus/installation/process.py:1118
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "Používateľ {0} bol pridaný."
 
 #: ../thus/installation/process.py:1130
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "Názov hostiteľa bol nastavený na {0}."
 
 #: ../thus/installation/process.py:1135
 msgid "Set root password."
@@ -1790,7 +1792,7 @@ msgstr "Konfigurujem hardvér..."
 
 #: ../thus/installation/process.py:1179
 msgid "Updated Alsa mixer settings"
-msgstr ""
+msgstr "Aktualizované nastavenia mixéra Alsa"
 
 #: ../thus/installation/process.py:1187
 msgid "Installing drivers ..."
@@ -1826,7 +1828,7 @@ msgstr "Spustenie mkinitcpio- hotovo"
 
 #: ../thus/installation/process.py:1340
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "Šifruje sa domovský priečinok používateľa..."
 
 #: ../thus/installation/process.py:1342
 msgid "User home dir encrypted"
@@ -1834,37 +1836,37 @@ msgstr "Používateľský domovský priečinok je zašifrovaný"
 
 #: ../thus/installation/process.py:1347
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "Inštaluje sa zavádzač..."
 
 #: ../thus/installation/process.py:1353
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "Nepodarilo sa nainštalovať zavádzač: {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
 msgid "Can't change to locale '{0}' : {1}"
-msgstr ""
+msgstr "Nedá sa zmeniť na lokalizáciu „{0}“ : {1}"
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "Heslo je príliš krátke"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Nedostatočné heslo"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Slabé heslo"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "Dobré heslo"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Silné heslo"
 
 #: ../thus/misc/validation.py:162
 msgid "Passwords do not match"
@@ -1873,44 +1875,44 @@ msgstr "Zadané heslá sa nezhodujú"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "Nedá sa označiť oddiel {0} menovkou"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "Nedá sa overiť, či je zariadenie {0} diskom SSD alebo nie"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "Prepáčte, ale systém súborov {0} sa nedá zmenšiť"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "Nedá sa odstrániť logický zväzok {0}"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "Nedá sa odstrániť skupina zväzkov {0}"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "Nedá sa odstrániť fyzický zväzok {0}"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Výnimka: {0}.\nPre viac informácií prezrite záznam /tmp/thus.log"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "Nedá sa odstrániť oddiel {0}"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1919,42 +1921,42 @@ msgstr "Oddiel je príliš veľký!"
 #: ../thus/parted3/partition_module.py:299
 #, python-brace-format
 msgid "Can't detect used space from {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto z {0}"
 
 #: ../thus/parted3/used_space.py:42
 #, python-brace-format
 msgid "Can't detect used space of NTFS partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto NTFS oddielu {0}"
 
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto EXTFS oddielu {0}"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto FAT oddielu {0}"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto JFS oddielu {0}"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto REISERFS oddielu {0}"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto BTRFS oddielu {0}"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "Nedá sa zistiť využité miesto XFS oddielu {0}"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -1998,7 +2000,7 @@ msgstr "Použiť toto zariadenie pre inštaláciu zavádzača:"
 
 #: ../ui/advanced.ui:1106
 msgid "Encryption properties"
-msgstr ""
+msgstr "Vlastnosti šifrovania"
 
 #: ../ui/advanced.ui:1221
 msgid "Use LUKS encryption: "
@@ -2012,7 +2014,7 @@ msgstr "<small><span color=\"darkgreen\">Silné heslo</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>UPOZORNENIE! Tento režim inštalácie prepíše všetky údaje na vašom disku!</b>"
 
 #: ../ui/automatic.ui:60
 msgid ""
@@ -2022,11 +2024,11 @@ msgstr ""
 
 #: ../ui/automatic.ui:271
 msgid "show password"
-msgstr ""
+msgstr "zobraziť heslo"
 
 #: ../ui/automatic.ui:289
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "Heslo pre LUKS. Nepoužívajte špeciálne znaky, alebo diakritiku!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2034,7 +2036,7 @@ msgstr "Aký typ bootovania má váš systém?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (bežný)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
