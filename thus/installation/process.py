@@ -1048,6 +1048,9 @@ class InstallationProcess(multiprocessing.Process):
             Setup systemd services
             ... and more """
 
+        # First and last thing we do here mounting/unmouting special dirs.
+        chroot.mount_special_dirs(DEST_DIR)
+        
         self.queue_event('pulse', 'start')
         self.queue_event('action', _("Configuring your new system"))
 
@@ -1161,9 +1164,6 @@ class InstallationProcess(multiprocessing.Process):
 
         self.queue_event('info', _("Adjusting hardware clock ..."))
         self.auto_timesetting()
-
-        # Enter chroot system
-        chroot.mount_special_dirs(DEST_DIR)
 
         # Install configs for root
         # chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
@@ -1351,7 +1351,6 @@ class InstallationProcess(multiprocessing.Process):
                 boot_loader.install()
             except Exception as general_error:
                 logging.error(_("Couldn't install boot loader: {0}".format(general_error)))
-
-        # This unmounts (unbinds) /dev and others to /DEST_DIR/dev and others
+      
+        self.queue_event('pulse', 'stop')        
         chroot.umount_special_dirs(DEST_DIR)
-        self.queue_event('pulse', 'stop')
