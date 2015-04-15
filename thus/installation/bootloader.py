@@ -376,12 +376,10 @@ class Bootloader(object):
                  os.path.join(self.dest_dir, "{0}/EFI/{1}".format(efi_path[1:0], bootloader_id),
                               "grub{0}.efi".format(spec_uefi_arch))]
 
-        exists = False
-
+        exists = True
         for path in paths:
-            if os.path.exists(path):
-                exists = True
-            else:
+            if not os.path.exists(path):
+                logging.debug("Path '{0}' doesn't exists, when it should".format(path))
                 exists = False
 
         if exists:
