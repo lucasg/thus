@@ -230,7 +230,7 @@ class Bootloader(object):
         logging.info(txt)
 
         grub_install = ['grub-install', '--directory=/usr/lib/grub/i386-pc', '--target=i386-pc',
-                        '--boot-directory=/boot', '--recheck']
+                        '--boot-directory=/boot', '--recheck', '--verbose']
         logging.debug("grub-install command: {0}".format(" ".join(grub_install)))
 
         if len(grub_location) > len("/dev/sdX"):  # ex: /dev/sdXY > 8
