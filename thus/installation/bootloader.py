@@ -238,7 +238,14 @@ class Bootloader(object):
 
         grub_install.append(grub_location)
 
-        chroot.run(grub_install, self.dest_dir)
+        try:
+            chroot.run(grub_install, self.dest_dir, 300)
+        except subprocess.CalledProcessError as process_error:
+            logging.error(_('Command grub-install failed. Error output: {0}'.format(process_error.output)))
+        except subprocess.TimeoutExpired:
+            logging.error(_('Command grub-install timed out.'))
+        except Exception as general_error:
+            logging.error(_('Command grub-install failed. Unknown Error: {0}'.format(general_error)))
 
         self.install_grub2_locales()
 
