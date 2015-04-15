@@ -373,7 +373,7 @@ class Bootloader(object):
             subprocess.check_call(['killall', 'os-prober'])
 
         paths = [os.path.join(self.dest_dir, "boot/grub/x86_64-efi/core.efi"),
-                 os.path.join(self.dest_dir, "{0}/EFI/{1}".format(efi_path[1:0], bootloader_id),
+                 os.path.join(self.dest_dir, "{0}/EFI/{1}".format(efi_path[1:], bootloader_id),
                               "grub{0}.efi".format(spec_uefi_arch))]
 
         exists = True
