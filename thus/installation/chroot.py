@@ -100,7 +100,7 @@ def umount_special_dirs(dest_dir):
     special_dirs = get_special_dirs()
 
     for special_dir in reversed(special_dirs):
-        mountpoint = os.path.join(dest_dir, s_dir)
+        mountpoint = os.path.join(dest_dir, special_dir)
         logging.debug("Unmounting special dir '{0}'".format(mountpoint))
         try:            
             subprocess.check_call(["umount", mountpoint])
