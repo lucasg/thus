@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 11:13+0000\n"
+"PO-Revision-Date: 2015-04-15 11:39+0000\n"
 "Last-Translator: Tomàs Mallafré Gispert <tomas@mallafre.cat>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/manjaro-thus/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -1340,7 +1340,7 @@ msgstr "Mida total del disc: %d MiB"
 #: ../thus/installation/auto_partition.py:606
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "Mida de la partició de sistema EFI (ESP): %dMiB"
 
 #: ../thus/installation/auto_partition.py:607
 #, python-format
@@ -1435,31 +1435,31 @@ msgstr "ERROR instal·lant el GRUB(2) BIOS."
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "The efi directory is: {0}"
-msgstr ""
+msgstr "El directori EFI és: {0}"
 
 #: ../thus/installation/bootloader.py:294
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader in {1}"
-msgstr ""
+msgstr "Instal·lant el carregador d'arrencada GRUB(2) UEFI {0} a {1}"
 
 #: ../thus/installation/bootloader.py:304
 #, python-brace-format
 msgid "grub-install command: {0}"
-msgstr ""
+msgstr "ordre grub-install: {0}"
 
 #: ../thus/installation/bootloader.py:312
 #, python-brace-format
 msgid "Command grub-install failed. Error output: {0}"
-msgstr ""
+msgstr "Ha fallat l'ordre grub-install. Error de sortida: {0}"
 
 #: ../thus/installation/bootloader.py:314
 msgid "Command grub-install timed out."
-msgstr ""
+msgstr "Temps excedit per a l'ordre grub-install."
 
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
 msgid "Command grub-install failed. Unknown Error: {0}"
-msgstr ""
+msgstr "L'ordre grub-install ha fallat. Error desconegut: {0}"
 
 #: ../thus/installation/bootloader.py:331
 #, python-brace-format
@@ -1469,15 +1469,15 @@ msgstr "No s'ha trobat cap carregador OEM a {0}. Copiant Grub(2) al directori."
 #: ../thus/installation/bootloader.py:335
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "Ha fallat la còpia del GRUB(2) al directori OEM: {0}"
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
-msgstr ""
+msgstr "Fitxer no trobat."
 
 #: ../thus/installation/bootloader.py:341
 msgid "File already exists."
-msgstr ""
+msgstr "El fitxer ja existeix."
 
 #: ../thus/installation/bootloader.py:359
 msgid "Generating grub.cfg"
@@ -1491,31 +1491,31 @@ msgstr "Sembla que el grub-mkconfig s'ha penjat. S'està matant grub-mount i os-
 
 #: ../thus/installation/bootloader.py:391
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "El GRUB(2) UEFI s'ha instal·lat correctament"
 
 #: ../thus/installation/bootloader.py:395
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "El GRUB(2) UEFI pot no haver-se instal·lat correctament."
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "Fitxer 50mountet-tests apedaçat correctament"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "No s'ha pogut apedaçar el fitxer 50mounted-tests; fitxer no trobat."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Copiant els fitxers del tema GRUB(2)"
 
 #: ../thus/installation/bootloader.py:419
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Fitxers del tema Grub2 no trobats"
 
 #: ../thus/installation/bootloader.py:421
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Els fitxers del tema Grub2 ja existeixen."
 
 #: ../thus/installation/bootloader.py:425
 msgid "Installing Grub2 locales."
@@ -1523,15 +1523,15 @@ msgstr "S'estan instal·lant les configuracions locals del Grub2."
 
 #: ../thus/installation/bootloader.py:436
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "No es pot instal·lar la configuració local del GRUB(2)."
 
 #: ../thus/installation/bootloader.py:502
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "El gummiboot s'ha instal·lat correctament"
 
 #: ../thus/installation/bootloader.py:506
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "El gummiboot no s'ha instal·lat correctament!"
 
 #: ../thus/installation/bootloader.py:538
 msgid "Can't freeze/unfreeze xfs system"
@@ -1539,7 +1539,7 @@ msgstr "No es pot congelar/descongelar el sistema xfs"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Directoris especials ja muntats. Ometent-los."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1548,33 +1548,33 @@ msgstr "Els directoris especials no estan muntats. S'està ometent."
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "No es pot muntar {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "L'ordre {0} ha fallat."
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "Sortida: {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "Temps excedit executant l'ordre {0}"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "El Thus provarà de continuar igualment"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "Error executant l'ordre: {0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1583,43 +1583,43 @@ msgstr "Configurant hooks i mòduls a mkinitcpio.conf"
 #: ../thus/installation/process.py:130
 #, python-brace-format
 msgid "Copying '/{0}'"
-msgstr ""
+msgstr "Copiant '/{0}'"
 
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Instal·lant fent servir el mètode '{0}'"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "Error executant l'ordre {0}"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "Creant particions i els seus sistemes de fitxers a {0}"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "Muntant la partició {0} al directori {1}"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
 msgid "Can't mount {0} in {1}"
-msgstr ""
+msgstr "No es pot muntar {0} a {1}"
 
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "Activant l'intercanvi a {0}"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} esborrat"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1640,13 +1640,13 @@ msgstr "S'ha configurat el sistema."
 #: ../thus/installation/process.py:476
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "No es pot copiar el log del Thus a {0}"
 
 #: ../thus/installation/process.py:493 ../thus/installation/process.py:512
 #: ../thus/installation/process.py:526
 #, python-brace-format
 msgid "Can't unmount {0}"
-msgstr ""
+msgstr "No es pot desmuntar {0}"
 
 #: ../thus/installation/process.py:528
 msgid "Installation finished successfully."
@@ -1663,15 +1663,15 @@ msgstr "El sistema de fitxers d'escriptori no existeix. És un error crític i s
 #: ../thus/installation/process.py:569 ../thus/installation/process.py:575
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{0} ja està muntat a {1} com a {2}"
 
 #: ../thus/installation/process.py:582
 msgid "Indexing files of root-image to be copied ..."
-msgstr ""
+msgstr "Indexant els fitxers de la imatge arrel per a copiar-los..."
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files of desktop-image to be copied ..."
-msgstr ""
+msgstr "Indexant els fitxers de la imatge d'escriptori per a copiar-los..."
 
 #: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
@@ -1684,7 +1684,7 @@ msgstr "S'està extraient la imatge de l'escriptori..."
 #: ../thus/installation/process.py:616
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
-msgstr ""
+msgstr "Recuperant meta-informació a {0}"
 
 #: ../thus/installation/process.py:659
 msgid "Can't copy network configuration files"
@@ -1695,55 +1695,55 @@ msgstr "No es poden copiar els fitxers de configuració de la xarxa"
 #: ../thus/installation/process.py:802
 #, python-brace-format
 msgid "Added to fstab : {0}"
-msgstr ""
+msgstr "Afegit a fstab: {0}"
 
 #: ../thus/installation/process.py:718 ../thus/installation/process.py:734
 #, python-brace-format
 msgid "Added to crypttab : {0}"
-msgstr ""
+msgstr "Afegit a crypttab: {0}"
 
 #: ../thus/installation/process.py:760
 #, python-brace-format
 msgid "Device list : {0}"
-msgstr ""
+msgstr "Llista de dispositius: {0}"
 
 #: ../thus/installation/process.py:763
 #, python-brace-format
 msgid "Device: {0}, SSD: {1}"
-msgstr ""
+msgstr "Dispositiu: {0}, SSD: {1}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
-msgstr ""
+msgstr "fstab escrit."
 
 #: ../thus/installation/process.py:819
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr "Servei {0} activat."
 
 #: ../thus/installation/process.py:821
 #, python-brace-format
 msgid "Can't find service {0}"
-msgstr ""
+msgstr "No es troba el servei {0}"
 
 #: ../thus/installation/process.py:829
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "Error al crear el hash de la contrasenya per a l'usuari {0}"
 
 #: ../thus/installation/process.py:835
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "Error al canviar la contrasenya de l'usuari {0}"
 
 #: ../thus/installation/process.py:863
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "No es troba el fitxer locale.gen"
 
 #: ../thus/installation/process.py:935
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
-msgstr ""
+msgstr "{0}: Activa l'entrada automàtica per a l'usuari {1}."
 
 #: ../thus/installation/process.py:1052
 msgid "Configuring your new system"
@@ -1764,17 +1764,17 @@ msgstr "S'ha establert la zona horària."
 #: ../thus/installation/process.py:1108
 #, python-brace-format
 msgid "Sudo configuration for user {0} done."
-msgstr ""
+msgstr "Configuració sudo per a l'usuari {0} finalitzada."
 
 #: ../thus/installation/process.py:1118
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "Usuari {0} afegit."
 
 #: ../thus/installation/process.py:1130
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "Hostname {0} definit."
 
 #: ../thus/installation/process.py:1135
 msgid "Set root password."
@@ -1798,7 +1798,7 @@ msgstr "S'està configurant el maquinari..."
 
 #: ../thus/installation/process.py:1179
 msgid "Updated Alsa mixer settings"
-msgstr ""
+msgstr "Configuració de l'alsa mixer actualitzada"
 
 #: ../thus/installation/process.py:1187
 msgid "Installing drivers ..."
@@ -1834,7 +1834,7 @@ msgstr "S'està executant mkinitcpio - fet"
 
 #: ../thus/installation/process.py:1340
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "Encriptant el directori home de l'usuari..."
 
 #: ../thus/installation/process.py:1342
 msgid "User home dir encrypted"
@@ -1842,37 +1842,37 @@ msgstr "Directori de l'usuari encriptat"
 
 #: ../thus/installation/process.py:1347
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "Instal·lant el carregador d'arrencada..."
 
 #: ../thus/installation/process.py:1353
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "No s'ha pogut instal·lar el carregador d'arrencada: {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
 msgid "Can't change to locale '{0}' : {1}"
-msgstr ""
+msgstr "No es pot canviar la configuració local '{0}': {1}"
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "La contrasenya és massa curta"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Contrasenya massa feble"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Contrasenya feble"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "Contrasenya correcta"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Contrasenya forta"
 
 #: ../thus/misc/validation.py:162
 msgid "Passwords do not match"
@@ -1881,44 +1881,44 @@ msgstr "Les contrasenyes no coincideixen"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "No es pot posar etiqueta a la partició {0}"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "No es pot verificar si {0} és un disc sòlid o no"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "Ho sentim, el sistema de fitxers {0} no es pot encongir"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "No es pot eliminar el volum lògic {0}"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "No es pot eliminar el grup de volums {0}"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "No es pot eliminar el volum físic {0}"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Excepció: {0}\nPer més informació feu una ullada a /tmp/thus.log"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "No es pot esborrar la partició {0}"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1927,42 +1927,42 @@ msgstr "La partició és massa gran."
 #: ../thus/parted3/partition_module.py:299
 #, python-brace-format
 msgid "Can't detect used space from {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a {0}"
 
 #: ../thus/parted3/used_space.py:42
 #, python-brace-format
 msgid "Can't detect used space of NTFS partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició NTFS {0}"
 
 #: ../thus/parted3/used_space.py:71
 #, python-brace-format
 msgid "Can't detect used space of EXTFS partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició EXTFS {0}"
 
 #: ../thus/parted3/used_space.py:103
 #, python-brace-format
 msgid "Can't detect used space of FAT partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició FAT {0}"
 
 #: ../thus/parted3/used_space.py:134
 #, python-brace-format
 msgid "Can't detect used space of JFS partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició JFS {0}"
 
 #: ../thus/parted3/used_space.py:159
 #, python-brace-format
 msgid "Can't detect used space of REISERFS partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició REISERFS {0}"
 
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició BTRFS {0}"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "No es pot detectar l'espai utilitzat a la partició XFS {0}"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -2006,7 +2006,7 @@ msgstr "Utilitza aquest dispositiu per a instal·lar el carregador d'arrencada:"
 
 #: ../ui/advanced.ui:1106
 msgid "Encryption properties"
-msgstr ""
+msgstr "Propietats de l'encriptació"
 
 #: ../ui/advanced.ui:1221
 msgid "Use LUKS encryption: "
@@ -2020,21 +2020,21 @@ msgstr "Contrasenya segura"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>AVÍS! Aquest mode d'instal·lació sobreescriurà tot el contingut de la vostra unitat!<b>"
 
 #: ../ui/automatic.ui:60
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Si us plau, trieu la unitat on voleu instal·lar el Manjaro i feu clic al botó d'aquí sota per a començar el procés."
 
 #: ../ui/automatic.ui:271
 msgid "show password"
-msgstr ""
+msgstr "mostra la contrasenya"
 
 #: ../ui/automatic.ui:289
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "Contrasenya LUKS. No utilitzeu caràcters especials ni accents!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2042,7 +2042,7 @@ msgstr "Quin és el tipus de sistema d'arrencada?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Comú)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2054,7 +2054,7 @@ msgstr "i386 UEFI"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Trieu 'cancel·la' si no voleu instal·lar un carregador d'arrencada"
 
 #: ../ui/check.ui:17
 msgid ""
@@ -2066,7 +2066,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Per a uns resultats òptims, assegu
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Això depèn molt de quin entorn d'escriptori trieu, per tant podríeu necessitar més espai. (per exemple, el KDE requereix 6,5 GB)."
 
 #: ../ui/main_window.ui:48
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
