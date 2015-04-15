@@ -229,10 +229,6 @@ class Bootloader(object):
         txt = _("Installing GRUB(2) BIOS boot loader in {0}".format(grub_location))
         logging.info(txt)
 
-        # /dev and others need to be mounted (binded).
-        # We call mount_special_dirs here just to be sure
-        chroot.mount_special_dirs(self.dest_dir)
-
         grub_install = ['grub-install', '--directory=/usr/lib/grub/i386-pc', '--target=i386-pc',
                         '--boot-directory=/boot', '--recheck']
         logging.debug("grub-install command: {0}".format(" ".join(grub_install)))
@@ -297,18 +293,15 @@ class Bootloader(object):
         grub_install = [
             'grub-install',
             '--target={0}-efi'.format(uefi_arch),
-            '--efi-directory=/install{0}'.format(efi_path),
+            '--efi-directory={0}'.format(efi_path),
             '--bootloader-id={0}'.format(bootloader_id),
-            '--boot-directory=/install/boot',
+            '--boot-directory=/boot',
             '--recheck',
             '--verbose']
         logging.debug(_("grub-install command: {0}".format(" ".join(grub_install))))
 
-        load_module = ['modprobe', '-a', 'efivarfs']
-
         try:
-            subprocess.call(load_module, timeout=15)
-            subprocess.check_call(grub_install, timeout=120)
+            chroot.run(grub_install, self.dest_dir, 300)
         except subprocess.CalledProcessError as process_error:
             logging.error(_('Command grub-install failed. Error output: {0}'.format(process_error.output)))
         except subprocess.TimeoutExpired:
@@ -358,10 +351,6 @@ class Bootloader(object):
 
         # Run grub-mkconfig last
         logging.info(_("Generating grub.cfg"))
-
-        # /dev and others need to be mounted (binded).
-        # We call mount_special_dirs here just to be sure
-        chroot.mount_special_dirs(self.dest_dir)
 
         # Add -l option to os-prober's umount call so that it does not hang
         self.apply_osprober_patch()
