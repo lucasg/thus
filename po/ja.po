@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 21:13+0000\n"
+"PO-Revision-Date: 2015-04-16 21:17+0000\n"
 "Last-Translator: Takefumi Nagata\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/manjaro-thus/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -388,7 +388,7 @@ msgstr "新しいバージョンが見つかりました。インストーラー
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "新しいバージョンが見つかりました。アップデート中..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
@@ -813,7 +813,7 @@ msgstr "パーティションテーブルの作成"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "LUKS暗号化の使用:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1172
 msgid "LUKS volume name:"
@@ -830,14 +830,14 @@ msgstr "パスワードの確認:"
 #: ../thus/installation/advanced.py:1521
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "ディスク {1} 上で新しいパーティションテーブル {0} を作成"
 
 #: ../thus/installation/advanced.py:1531
 msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "GRUBは、GPTディスクにおけるpost-MBR gap が不足するため、BIOSシステムにcore.img を埋め込む際に、BIOSブートパーティションを必要とします。\n\nThusはBIOSブートパーティションを作成します。"
 
 #: ../thus/installation/advanced.py:1559
 msgid "Can't create BIOS GPT Boot partition!"
@@ -1189,7 +1189,7 @@ msgstr "{0} のアンマウントに失敗しました。あとで試してく�
 #: ../thus/installation/auto_partition.py:95
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "{0} のアンマウントに失敗しました。"
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1267,7 +1267,7 @@ msgstr "デバイス {0} のLUKSを開いてフォーマットすることがで
 #: ../thus/installation/auto_partition.py:238
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "デバイス {0} のファイルシステムを消去できません"
 
 #: ../thus/installation/auto_partition.py:250
 msgid "Can't run dd command"
@@ -1395,7 +1395,7 @@ msgstr "インストールデバイスにLUKS キーファイルをコピーで�
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "'ruuid' 変数が設定されていません。 grub.cfg におけるルートUUIDの確認ができません。Ok とみなします。 "
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
@@ -1492,11 +1492,11 @@ msgstr "GRUB(2) UEFIのインストールが完了しませんでした。"
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "50mounted-tests ファイルのパッチに成功しました。"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "50mounted-tests ファイルのパッチに失敗しました。ファイルが見つかりません。"
 
 #: ../thus/installation/bootloader.py:413
 msgid "Copying GRUB(2) Theme Files"
@@ -1612,7 +1612,7 @@ msgstr "{0} でスワップをアクティブにする"
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} は削除されました"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1633,13 +1633,13 @@ msgstr "システムが設定されました。"
 #: ../thus/installation/process.py:476
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "Thusのログを {0} にコピーすることができません"
 
 #: ../thus/installation/process.py:493 ../thus/installation/process.py:512
 #: ../thus/installation/process.py:526
 #, python-brace-format
 msgid "Can't unmount {0}"
-msgstr ""
+msgstr "{0} をアンマウントできません"
 
 #: ../thus/installation/process.py:528
 msgid "Installation finished successfully."
@@ -1660,11 +1660,11 @@ msgstr "{0} は既に {1} に {2} としてマウントされています"
 
 #: ../thus/installation/process.py:582
 msgid "Indexing files of root-image to be copied ..."
-msgstr ""
+msgstr "root-imageのインデックスファイルがコピーされます..."
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files of desktop-image to be copied ..."
-msgstr ""
+msgstr "desktop-imageのインデックスファイルがコピーされます..."
 
 #: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
@@ -1698,12 +1698,12 @@ msgstr "crypttabに追加されました : {0}"
 #: ../thus/installation/process.py:760
 #, python-brace-format
 msgid "Device list : {0}"
-msgstr ""
+msgstr "デバイスリスト : {0}"
 
 #: ../thus/installation/process.py:763
 #, python-brace-format
 msgid "Device: {0}, SSD: {1}"
-msgstr ""
+msgstr "デバイス: {0}、SSD: {1}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
@@ -1999,7 +1999,7 @@ msgstr "ブートローダーのインストールにこのデバイスを使用
 
 #: ../ui/advanced.ui:1106
 msgid "Encryption properties"
-msgstr ""
+msgstr "暗号化のプロパティ"
 
 #: ../ui/advanced.ui:1221
 msgid "Use LUKS encryption: "
@@ -2013,21 +2013,21 @@ msgstr "<small><span color=\"darkgreen\">推測されにくいパスワード</s
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>警告! このインストールモードはハードディスクの全てのデータを上書きします</b>"
 
 #: ../ui/automatic.ui:60
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Manjaroをインストールしたいドライブを選択し、\n下のstart the processをクリックしてください。"
 
 #: ../ui/automatic.ui:271
 msgid "show password"
-msgstr ""
+msgstr "パスワードの表示"
 
 #: ../ui/automatic.ui:289
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "LUKSパスワード。特殊な文字は使わないでください!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2035,7 +2035,7 @@ msgstr "ブートシステムタイプは何ですか？"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS(共通)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2047,7 +2047,7 @@ msgstr "i386 UEFI "
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "ブートローダーをインストールしない場合は'Cancel（取消）'を選択してください"
 
 #: ../ui/check.ui:17
 msgid ""
@@ -2059,7 +2059,7 @@ msgstr "<span weight=\"bold\" size=\"large\">最良の結果を得るために�
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) 選択したデスクトップ環境に関する高い依存性のため、より大きなスペースが必要になります(例えば、KDEは6.5GBを必要とします)。"
 
 #: ../ui/main_window.ui:48
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
