@@ -63,11 +63,11 @@ class Bootloader(object):
         self.root_device = self.mount_devices["/"]
         self.root_uuid = fs.get_info(self.root_device)['UUID']
         if "swap" in self.mount_devices:
-            self.swap_partition = self.mount_devices["swap"]
-            self.swap_uuid = fs.get_info(self.swap_partition)['UUID']
+            swap_partition = self.mount_devices["swap"]
+            self.swap_uuid = fs.get_info(swap_partition)['UUID']
         if "/boot" in self.mount_devices:
-            self.boot_device = self.mount_devices["/boot"]
-            self.boot_uuid = fs.get_info(self.boot_device)['UUID']
+            boot_device = self.mount_devices["/boot"]
+            self.boot_uuid = fs.get_info(boot_device)['UUID']
         self.kernel = configuration['install']['KERNEL']
         self.vmlinuz = "vmlinuz-{0}".format(self.kernel)
         self.initramfs = "initramfs-{0}".format(self.kernel)
@@ -118,7 +118,7 @@ class Bootloader(object):
                 new_entry = re.sub("linux\t/{0}.*quiet\n".format(self.vmlinuz), boot_command, entry.group())
                 parse = parse.replace(entry.group(), new_entry)
 
-                with open(cfg) as grub_file:
+                with open(cfg, 'w') as grub_file:
                     grub_file.write(parse)
 
     def modify_grub_default(self):
@@ -396,7 +396,7 @@ class Bootloader(object):
         if os.path.exists(osp_path):
             with open(osp_path) as osp:
                 text = osp.read().replace("umount", "umount -l")
-            with open(osp_path, "w") as osp:
+            with open(osp_path, 'w') as osp:
                 osp.write(text)
             logging.debug(_("50mounted-tests file patched successfully"))
         else:
@@ -434,11 +434,12 @@ class Bootloader(object):
 
     def install_gummiboot(self):
         """ Install Gummiboot bootloader to the EFI System Partition """
+        logging.info("Installing the gummibot loader")
         # Setup bootloader menu
         menu_dir = os.path.join(self.dest_dir, "boot/loader")
         os.makedirs(menu_dir)
         menu_path = os.path.join(menu_dir, "loader.conf")
-        with open(menu_path, "w") as menu_file:
+        with open(menu_path, 'w') as menu_file:
             menu_file.write("default manjaro")
 
         # Setup boot entries
@@ -483,7 +484,7 @@ class Bootloader(object):
         entries_dir = os.path.join(self.dest_dir, "boot/loader/entries")
         os.makedirs(entries_dir)
         entry_path = os.path.join(entries_dir, "manjaro.conf")
-        with open(entry_path, "w") as entry_file:
+        with open(entry_path, 'w') as entry_file:
             for line in conf:
                 entry_file.write(line)
 
@@ -510,7 +511,7 @@ class Bootloader(object):
 
         try:
             subprocess.check_call(["sync"])
-            with open("/proc/mounts", "r") as mounts_file:
+            with open("/proc/mounts") as mounts_file:
                 mounts = mounts_file.readlines()
             # We leave a blank space in the end as we want to search exactly for this mount points
             boot_mount_point = self.dest_dir + "/boot "
