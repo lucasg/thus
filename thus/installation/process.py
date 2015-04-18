@@ -1290,23 +1290,6 @@ class InstallationProcess(multiprocessing.Process):
         chroot_run(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
-        # For keyboardctl
-        if os.path.exists("{0}/etc/keyboard.conf".format(DEST_DIR)):
-            consolefh = open("{0}/etc/keyboard.conf".format(DEST_DIR), "r")
-            newconsolefh = open("{0}/etc/keyboard.new".format(DEST_DIR), "w")
-            for line in consolefh:
-                 line = line.rstrip("\r\n")
-                 if(line.startswith("XKBLAYOUT=")):
-                     newconsolefh.write("XKBLAYOUT=\"{0}\"\n".format(keyboard_layout))
-                 elif(line.startswith("XKBVARIANT=") and keyboard_variant != ''):
-                     newconsolefh.write("XKBVARIANT=\"{0}\"\n".format(keyboard_variant))
-                 else:
-                     newconsolefh.write("{0}\n".format(line))
-            consolefh.close()
-            newconsolefh.close()
-            chroot_run(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
-            chroot_run(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
-
         # Write xorg keyboard configuration
         keyboardconf = open("{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR), "w")
         keyboardconf.write("\n");
