@@ -357,6 +357,7 @@ class InstallationAdvanced(GtkBaseBox):
         line = self.bootloader_entry.get_active_text()
         if line is not None:
             self.bootloader = line.lower()
+            self.check_mount_points()
 
     def prepare_partition_list(self):
         """ Create columns for our treeview """
@@ -1634,7 +1635,8 @@ class InstallationAdvanced(GtkBaseBox):
         """
         Check that all necessary mount points are specified.
         At least root (/) partition must be defined and in UEFI systems
-        a fat partition mounted in /boot or /boot/efi must be defined too
+        a fat partition mounted in /boot (gummiboot) or /boot/efi (grub2) 
+        must be defined too
         """
 
         # Initialize our mount point check widgets
@@ -1658,8 +1660,10 @@ class InstallationAdvanced(GtkBaseBox):
         part["boot"].hide()
         part["swap"].hide()
 
-        if is_uefi:
+        if is_uefi and self.bootloader == "grub2":
             part["boot_efi"].show()
+        elif is_uefi and self.bootloader == "gummiboot":
+            part["boot"].show()
         elif self.lv_partitions and not is_uefi:
             part["boot"].show()
         elif self.need_swap():
@@ -1672,26 +1676,37 @@ class InstallationAdvanced(GtkBaseBox):
         # Check mount points and filesystems
         for part_path in self.stage_opts:
             (is_new, lbl, mnt, fsystem, fmt) = self.stage_opts[part_path]
-            if mnt == "/":
-                # Don't allow vfat as / filesystem, it will not work!
-                # Don't allow ntfs as / filesystem, this is stupid!
-                if "fat" not in fsystem and "ntfs" not in fsystem:
-                    has_part["root"] = True
-                    part["root"].set_state(True)
-            # /boot or /boot/efi
-            if is_uefi and (mnt == "/boot/efi") and ("fat" in fsystem):
-                # Only fat partitions
+            if (mnt == "/" and 
+                "fat" not in fsystem and 
+                "ntfs" not in fsystem):
+                has_part["root"] = True
+                part["root"].set_state(True)
+            elif (is_uefi and 
+                  self.bootloader == "grub2" and 
+                  mnt == "/boot/efi" and 
+                  "fat" in fsystem):
                 has_part["boot_efi"] = True
                 part["boot_efi"].set_state(True)
-            if mnt == "/boot" and "f2fs" not in fsystem and "btrfs" not in fsystem and self.lv_partitions:
+            elif (is_uefi and 
+                  self.bootloader == "gummiboot" and 
+                  mnt == "/boot" and 
+                  "fat" in fsystem):
+                has_part["boot"] = True
+                part["boot"].set_state(True)                
+            elif (mnt == "/boot" and 
+                  "f2fs" not in fsystem and 
+                  "btrfs" not in fsystem and 
+                  self.lv_partitions):
                 has_part["boot"] = True
                 part["boot"].set_state(True)
-            if mnt == "swap":
+            elif mnt == "swap":
                 has_part["swap"] = True
                 part["swap"].set_state(True)
 
-        if is_uefi:
+        if is_uefi and self.bootloader == "grub2":
             check_ok = has_part["root"] and has_part["boot_efi"]
+        elif is_uefi and self.bootloader == "gummiboot":
+            check_ok = has_part["root"] and has_part["boot"]
         elif self.lv_partitions and not is_uefi:
             check_ok = has_part["root"] and has_part["boot"]
         else:
