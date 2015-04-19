@@ -450,10 +450,11 @@ class Bootloader(object):
             conf.append("linux\t/{0}\n".format(self.vmlinuz))
             conf.append("initrd\t/{0}.img\n".format(self.initramfs))
             conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
-            conf.append("title\tManjaro (fallback)\n")
-            conf.append("linux\t/{0}\n".format(self.vmlinuz))
-            conf.append("initrd\t/{0}-fallback.img\n".format(self.initramfs))
-            conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
+            conf_fallback = []
+            conf_fallback.append("title\tManjaro (fallback)\n")
+            conf_fallback.append("linux\t/{0}\n".format(self.vmlinuz))
+            conf_fallback.append("initrd\t/{0}-fallback.img\n".format(self.initramfs))
+            conf_fallback.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
         else:
             luks_root_volume = self.settings.get('luks_root_volume')
 
@@ -476,9 +477,10 @@ class Bootloader(object):
             conf.append("title\tManjaro\n")
             conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
             conf.append("options\tinitrd=/boot/{0}.img {1}\n\n".format(self.initramfs, root_uuid_line))
-            conf.append("title\tManjaro (fallback)\n")
-            conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
-            conf.append("options\tinitrd=/boot/{0}-fallback.img {1}\n\n".format(self.initramfs, root_uuid_line))
+            conf_fallback = []
+            conf_fallback.append("title\tManjaro (fallback)\n")
+            conf_fallback.append("linux\t/boot/{0}\n".format(self.vmlinuz))
+            conf_fallback.append("options\tinitrd=/boot/{0}-fallback.img {1}\n\n".format(self.initramfs, root_uuid_line))
 
         # Write boot entries
         entries_dir = os.path.join(self.dest_dir, "boot/loader/entries")
@@ -488,8 +490,12 @@ class Bootloader(object):
             for line in conf:
                 entry_file.write(line)
 
-        # Install bootloader
+        entry_path = os.path.join(entries_dir, "manjaro-fallback.conf")
+        with open(entry_path, 'w') as entry_file:
+            for line in conf_fallback:
+                entry_file.write(line)
 
+        # Install bootloader
         try:
             gummiboot_install = ['gummiboot', '--path=/boot', 'install']
             chroot.run(gummiboot_install, self.dest_dir, 300)
