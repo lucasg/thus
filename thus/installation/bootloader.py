@@ -68,9 +68,9 @@ class Bootloader(object):
         if "/boot" in self.mount_devices:
             boot_device = self.mount_devices["/boot"]
             self.boot_uuid = fs.get_info(boot_device)['UUID']
-        self.kernel = configuration['install']['KERNEL']
-        self.vmlinuz = "vmlinuz-{0}".format(self.kernel)
-        self.initramfs = "initramfs-{0}".format(self.kernel)
+        kernel = configuration['install']['KERNEL'].replace("linux", "")
+        self.vmlinuz = "vmlinuz-{0}-x86_64".format(kernel)
+        self.initramfs = "initramfs-{0}-x86_64".format(kernel)
 
     def install(self):
         """ Installs the bootloader """
@@ -442,8 +442,8 @@ class Bootloader(object):
         with open(menu_path, 'w') as menu_file:
             menu_file.write("default manjaro")
 
+        
         # Setup boot entries
-
         if not self.settings.get('use_luks'):
             conf = []
             conf.append("title\tManjaro\n")
