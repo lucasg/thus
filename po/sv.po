@@ -21,15 +21,15 @@
 # sixdegree <n.carlsson@gmail.com>, 2014
 #   <pojk3n@gmail.com>, 2011
 # sixdegree <n.carlsson@gmail.com>, 2014
-# chippey5 <s.wijmenga@gmail.com>, 2014
+# chippey5 <s.wijmenga@gmail.com>, 2014-2015
 # 1Miguel1 <the1miguel1guy@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-17 22:18+0000\n"
+"Last-Translator: chippey5 <s.wijmenga@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/manjaro-thus/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +52,7 @@ msgstr ""
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Okänd partition id {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -61,7 +61,7 @@ msgstr "Systemkontroll"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "har åtminstone {0}GB tillgängligt utrymme. (*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -95,15 +95,15 @@ msgstr "Vi har tillräckligt med diskutrymme."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Kan ej skapa och modifiera encfs konfigurationsfiler."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "Hem-mappen kan inte krypteras."
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Kan inte köra encfs. Fel lösenord?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -111,11 +111,11 @@ msgstr "Välj layout för ditt tangentbord"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Välj layout för ditt tangentbord"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Varianter"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -128,11 +128,11 @@ msgstr "Varianter"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "keyboard_layout är {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Välkommen till Manjaro!"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -145,7 +145,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "Thus är förhandsutgiven mjukvara som är under aktiv utveckling.\nDen hanterar ännu inte RAID, btrfs underkataloger och andra\navancerade inställningar. Gå vidare med försiktighet eftersom dataförlust är möjlig!\n\nOm du hittar buggar, rapportera dom till <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
@@ -163,7 +163,7 @@ msgstr ""
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Kan inte hitta översättning för {0} språket"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -174,7 +174,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "Vald plats kommer att användas för att hjälpa till att välja språk.\nNormalt är det landet där du bor.\nDet här är en urvalslista baserad på det språk du valde."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -182,7 +182,7 @@ msgstr "Land, distrikt eller område:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Visa alla platser"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
@@ -200,12 +200,12 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Installationen måste köras med administratörsrättigheter och kan inte fortsätta utan det."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "Filen '{0}' finns redan."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -217,21 +217,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "Du kan inte köra två installationer samtidigt. \n\nOm du är säker att installationsprogrammet inte körs \nkan du använda --force kommandot \neller manuellt ta bort den felande filen.\n\nFelande fil: '{0}'"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus installationsprogram version {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro Installationsprogram - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Är du säker på att du vill stänga installationsprogrammet?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -284,7 +284,7 @@ msgstr ""
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Installationen är klar!\nVill du starta om ditt system nu?"
 
 #: ../thus/thus.py:66
 #, python-brace-format
@@ -307,7 +307,7 @@ msgstr "Sätter Thus loggnings nivå till 'debug'"
 
 #: ../thus/thus.py:198
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Kör thus även om andra aktiva instanser upptäcks"
 
 #: ../thus/thus.py:210
 msgid "Do not perform any changes (useful for developers)"
@@ -315,11 +315,11 @@ msgstr "Gör inga ändringar (användbart för utvecklare)"
 
 #: ../thus/thus.py:214
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Uppgradera/nedgradera Thus till webbversionen"
 
 #: ../thus/thus.py:218
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Leta ej efter nya Thus-versioner online"
 
 #: ../thus/thus.py:222
 msgid "Show logging messages to stdout"
@@ -327,20 +327,20 @@ msgstr "Visa logg meddelanden till stdout"
 
 #: ../thus/thus.py:226
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Visa alternativ under utveckling (endast för utvecklare, använd inte detta!)"
 
 #: ../thus/thus.py:265
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Programmet uppdaterat! Startar om..."
 
 #: ../thus/thus.py:305
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Thus filer kunde inte hittas. Vänligen installera Thus genom pacman."
 
 #: ../thus/thus.py:309
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Vänligen installera '{0}' innan installationsprogrammet körs"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -356,12 +356,12 @@ msgstr "Region:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Använd (NTP) för synkronisering av klockan"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "Plats ändrar till : {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -373,16 +373,16 @@ msgstr ""
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Kan inte kontrollera nätverksstatus"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Vi har anslutning. Låt oss hämta vår tidszon"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Tidszon (latitud {0}, longitude {1}) upptäckt."
 
 #: ../thus/updater.py:71
 msgid ""
@@ -392,36 +392,36 @@ msgstr ""
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Thus installationsprogram version: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Ny version hittad. Uppdaterar installationsprogrammet"
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Ingen ny version hittad. Uppdaterar ändå..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "Laddar ned ny version av Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Kan ej ladda ner ny Thus version."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Packar upp ny version..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Kan ej kopiera {0} till {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "Fel md5. Skadad nerladdning eller fel fil, denna kommer ej uppdateras"
 
 #: ../thus/user_info.py:72
 msgid "Who are you?"
@@ -567,7 +567,7 @@ msgstr "För många tecken"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Fel url, försöker en annan om möjligt."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -575,37 +575,37 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Kan ej öppna {0} - Anledning: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "HTTP Fel : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "URL Fel : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Laddar ner {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "Metalink för paket {0} har ingen storleksinformation"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "Filen {0} finns redan, Thus kommer ej att skriva över denna"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Kan ej ladda ned {0}, även efter försök på alla källor"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -658,7 +658,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Kan ej använda samma monteringspunkt två gånger."
 
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
