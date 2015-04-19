@@ -439,7 +439,7 @@ class InstallationProcess(multiprocessing.Process):
             partition_dirs = []
             for path in sorted(self.mount_devices, reverse=True):
                 # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
-                if path == "" or path == "swap":
+                if path == "" or path == "swap" or path == "/":
                     continue
                 partition_dirs += [DEST_DIR + path]
 
