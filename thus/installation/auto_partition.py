@@ -563,7 +563,7 @@ class AutoPartition(object):
         part_sizes = {'disk': disk_size, 'boot': 256, 'efi': 0}
 
         if self.GPT and self.bootloader == "grub2":
-            part_sizes['efi'] = 200
+            part_sizes['efi'] = 100
 
         mem_total = check_output("grep MemTotal /proc/meminfo")
         mem_total = int(mem_total.split()[1])
