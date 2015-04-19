@@ -460,7 +460,7 @@ class InstallationProcess(multiprocessing.Process):
                         except subprocess.CalledProcessError as process_error:
                             logging.warning(_("Unable to umount {0}".format(p)))
                             logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-                            logging.warning(_("Output : {0}".format(process_error.output))))
+                            logging.warning(_("Output : {0}".format(process_error.output)))
 
             # Installation finished successfully
             self.queue_event("finished", _("Installation finished successfully."))
