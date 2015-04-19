@@ -360,7 +360,6 @@ class InstallationProcess(multiprocessing.Process):
                     logging.debug(txt)
                     subprocess.check_call(['mount', mount_part, mount_dir])
                 except subprocess.CalledProcessError as process_error:
-                    # We will continue as root and boot are already mounted
                     logging.warning(_("Can't mount {0} in {1}".format(mount_part, mount_dir)))
                     logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
                     logging.warning(_("Output : {0}".format(process_error.output)))
@@ -446,22 +445,22 @@ class InstallationProcess(multiprocessing.Process):
 
             install_dirs = ["/install"]
             unmount_points = source_dirs + partition_dirs + install_dirs
-            
-            self.queue_event('debug', "Paths to unmount: {0}".format(unmount_points))
+
+            logging.debug("Paths to unmount: {0}".format(unmount_points))
             for p in unmount_points:
                 (fsname, fstype, writable) = misc.mount_info(p)
                 if fsname:
+                    logging.debug(_("Unmounting {0}".format(p)))
                     try:
-                        txt = _("Unmounting {0}".format(p))
-                        self.queue_event('debug', txt)
                         subprocess.check_call(['umount', p])
                     except subprocess.CalledProcessError as err:
-                        logging.error(err)
+                        logging.debug("Can't unmount. Try -l to force it.")
                         try:
                             subprocess.check_call(["umount", "-l", p])
-                        except subprocess.CalledProcessError as err:
-                            self.queue_event('warning', _("Can't unmount {0}".format(p)))
-                            logging.warning(err)
+                        except subprocess.CalledProcessError as process_error:
+                            logging.warning(_("Unable to umount {0}".format(p)))
+                            logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
+                            logging.warning(_("Output : {0}".format(process_error.output))))
 
             # Installation finished successfully
             self.queue_event("finished", _("Installation finished successfully."))
