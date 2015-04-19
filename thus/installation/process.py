@@ -343,71 +343,28 @@ class InstallationProcess(multiprocessing.Process):
         if not os.path.exists(DEST_DIR):
             os.mkdir(DEST_DIR)
 
-        if self.method == 'alongside' or self.method == 'advanced':
-            root_partition = self.mount_devices["/"]
+        if self.method == 'advanced':
+            for path in sorted(self.mount_devices):
+                # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
+                if path == "" or path == "swap":
+                    continue
+                mount_part = self.mount_devices[path]
+                mount_dir = DEST_DIR + path
+                if not os.path.exists(mount_dir):
+                    os.makedirs(mount_dir)
+                try:
+                    if not os.path.exists(mount_dir):
+                        os.makedirs(mount_dir)
+                    txt = _("Mounting partition {0} into {1} directory")
+                    txt = txt.format(mount_part, mount_dir)
+                    logging.debug(txt)
+                    subprocess.check_call(['mount', mount_part, mount_dir])
+                except subprocess.CalledProcessError as process_error:
+                    # We will continue as root and boot are already mounted
+                    logging.warning(_("Can't mount {0} in {1}".format(mount_part, mount_dir)))
+                    logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
+                    logging.warning(_("Output : {0}".format(process_error.output)))
 
-            # NOTE: Advanced method formats root by default in installation_advanced
-
-            # if root_partition in self.fs_devices:
-            #     root_fs = self.fs_devices[root_partition]
-            # else:
-            #    root_fs = "ext4"
-
-            if "/boot" in self.mount_devices:
-                boot_partition = self.mount_devices["/boot"]
-            else:
-                boot_partition = ""
-
-            if "swap" in self.mount_devices:
-                swap_partition = self.mount_devices["swap"]
-            else:
-                swap_partition = ""
-
-            # Mount root and boot partitions (only if it's needed)
-            # Not doing this in automatic mode as AutoPartition class mounts the root and boot devices itself.
-            txt = _("Mounting partition {0} into {1} directory").format(root_partition, DEST_DIR)
-            logging.debug(txt)
-            subprocess.check_call(['mount', root_partition, DEST_DIR])
-            # We also mount the boot partition if it's needed
-            boot_path = os.path.join(DEST_DIR, "boot")
-            if not os.path.exists(boot_path):
-                os.makedirs(boot_path)
-            if "/boot" in self.mount_devices:
-                txt = _("Mounting partition {0} into {1} directory")
-                txt = txt.format(boot_partition, boot_path)
-                logging.debug(txt)
-                subprocess.check_call(['mount', boot_partition, boot_path])
-
-            # In advanced mode, mount all partitions (root and boot are already mounted)
-            if self.method == 'advanced':
-                for path in self.mount_devices:
-                    # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
-                    if path == "":
-                        continue
-                    mount_part = self.mount_devices[path]
-                    if mount_part != root_partition and mount_part != boot_partition and mount_part != swap_partition:
-                        mount_dir = DEST_DIR + path
-                        try:
-                            if not os.path.exists(mount_dir):
-                                os.makedirs(mount_dir)
-                            txt = _("Mounting partition {0} into {1} directory")
-                            txt = txt.format(mount_part, mount_dir)
-                            logging.debug(txt)
-                            subprocess.check_call(['mount', mount_part, mount_dir])
-                        except subprocess.CalledProcessError as process_error:
-                            # We will continue as root and boot are already mounted
-                            logging.warning(_("Can't mount {0} in {1}".format(mount_part, mount_dir)))
-                            logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-                            logging.warning(_("Output : {0}".format(process_error.output)))
-                    elif mount_part == swap_partition:
-                        try:
-                            logging.debug(_("Activating swap in {0}".format(mount_part)))
-                            subprocess.check_call(['swapon', swap_partition])
-                        except subprocess.CalledProcessError as process_error:
-                            # We can continue even if no swap is on
-                            logging.warning(_("Can't activate swap in {0}".format(mount_part)))
-                            logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-                            logging.warning(_("Output : {0}".format(process_error.output)))
 
         # Nasty workaround:
         # If pacman was stoped and /var is in another partition than root
@@ -477,9 +434,21 @@ class InstallationProcess(multiprocessing.Process):
                 logging.warning(_("Can't copy Thus log to {0}".format(dst)))
             except FileExistsError:
                 pass
-            source_dirs = {"source", "source_desktop"}
-            for p in source_dirs:
-                p = os.path.join("/", p)
+            
+            source_dirs = ["/source", "/source_desktop"]
+
+            partition_dirs = []
+            for path in sorted(self.mount_devices, reverse=True):
+                # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
+                if path == "" or path == "swap":
+                    continue
+                partition_dirs += [DEST_DIR + path]
+
+            install_dirs = ["/install"]
+            unmount_points = source_dirs + partition_dirs + install_dirs
+            
+            self.queue_event('debug', "Paths to unmount: {0}".format(unmount_points))
+            for p in unmount_points:
                 (fsname, fstype, writable) = misc.mount_info(p)
                 if fsname:
                     try:
@@ -493,38 +462,7 @@ class InstallationProcess(multiprocessing.Process):
                         except subprocess.CalledProcessError as err:
                             self.queue_event('warning', _("Can't unmount {0}".format(p)))
                             logging.warning(err)
-            self.queue_event('debug', "Mounted devices: {0}".format(self.mount_devices))
-            for path in self.mount_devices:
-                mount_part = self.mount_devices[path]
-                mount_dir = DEST_DIR + path
-                if path != '/' and path != 'swap' and path != '':
-                    try:
 
-                        txt = _("Unmounting {0}".format(mount_dir))
-                        self.queue_event('debug', txt)
-                        subprocess.check_call(['umount', mount_dir])
-                    except subprocess.CalledProcessError as err:
-                        logging.error(err)
-                        try:
-                            subprocess.check_call(["umount", "-l", mount_dir])
-                        except subprocess.CalledProcessError as err:
-                            # We will continue as root and boot are already mounted
-                            logging.warning(err)
-                            self.queue_event('debug', _("Can't unmount {0}".format(mount_dir)))
-            # now we can unmount /install
-            (fsname, fstype, writable) = misc.mount_info(DEST_DIR)
-            if fsname:
-                try:
-                    txt = _("Unmounting {0}".format(DEST_DIR))
-                    self.queue_event('debug', txt)
-                    subprocess.check_call(['umount', DEST_DIR])
-                except subprocess.CalledProcessError as err:
-                    logging.error(err)
-                    try:
-                        subprocess.check_call(["umount", "-l", DEST_DIR])
-                    except subprocess.CalledProcessError as err:
-                        logging.warning(err)
-                        self.queue_event('debug', _("Can't unmount {0}".format(p)))
             # Installation finished successfully
             self.queue_event("finished", _("Installation finished successfully."))
             self.running = False
