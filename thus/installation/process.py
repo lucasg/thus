@@ -222,9 +222,6 @@ class InstallationProcess(multiprocessing.Process):
         # Initialize some vars that are correctly initialized elsewhere (pylint complains about it)
         self.auto_device = ""
         self.arch = ""
-        self.initramfs = ""
-        self.kernel = ""
-        self.vmlinuz = ""
         DEST_DIR = ""
         self.bootloader_ok = self.settings.get('bootloader_ok')
 
@@ -306,10 +303,6 @@ class InstallationProcess(multiprocessing.Process):
         self.media = configuration['install']['LIVE_MEDIA_SOURCE']
         self.media_desktop = configuration['install']['LIVE_MEDIA_DESKTOP']
         self.media_type = configuration['install']['LIVE_MEDIA_TYPE']
-        self.kernel = configuration['install']['KERNEL']
-
-        self.vmlinuz = "vmlinuz-{0}".format(self.kernel)
-        self.initramfs = "initramfs-{0}".format(self.kernel)
 
         self.arch = os.uname()[-1]
 
