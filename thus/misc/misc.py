@@ -861,7 +861,7 @@ def has_connection():
     #    return True
 
     try:
-        url = 'http://74.125.228.100'
+        url = 'http://173.194.112.127'
         urllib.request.urlopen(url, timeout=5)
         return True
     except (OSError, timeout, urllib.error.URLError) as err:
@@ -919,7 +919,7 @@ def get_network():
     intip = False
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
-        s.connect(("antergos.com", 1234))
+        s.connect(("manjaro.org", 1234))
     except Exception:
         return ""
     myip = s.getsockname()[0]

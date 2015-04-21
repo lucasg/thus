@@ -256,6 +256,10 @@ class Timezone(GtkBaseBox):
             else:
                 self.settings.set("timezone_longitude", "")
 
+        # Stop thread now, else we will check for internet connection in endless loop if none
+        if self.auto_timezone_thread is not None:
+            self.auto_timezone_thread.stop()
+
         # This way process.py will know that all info has been entered
         self.settings.set("timezone_done", True)
         return True
