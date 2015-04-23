@@ -1082,10 +1082,6 @@ class InstallationProcess(multiprocessing.Process):
         with open(locale_conf_path, "w") as locale_conf:
             locale_conf.write('LANG={0}\n'.format(locale))
 
-        environment_path = os.path.join(DEST_DIR, "etc/environment")
-        with open(environment_path, "w") as environment:
-            environment.write('LANG={0}\n'.format(locale))
-
         keyboard_layout = self.settings.get("keyboard_layout")
         keyboard_variant = self.settings.get("keyboard_variant")
         # Set /etc/vconsole.conf
