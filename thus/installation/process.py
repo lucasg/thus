@@ -1064,7 +1064,7 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('debug', _('Hostname  {0} set.'.format(hostname)))
 
         # Set root password
-        if not root_password is '':
+        if root_password is not '':
             self.change_user_password('root', root_password)
             self.queue_event('debug', _('Set root password.'))
         else:
@@ -1073,11 +1073,11 @@ class InstallationProcess(multiprocessing.Process):
 
         # Generate locales
         locale = self.settings.get("locale")
+
         self.queue_event('info', _("Generating locales ..."))
-
         self.uncomment_locale_gen(locale)
-
         chroot_run(['locale-gen'])
+
         locale_conf_path = os.path.join(DEST_DIR, "etc/locale.conf")
         with open(locale_conf_path, "w") as locale_conf:
             locale_conf.write('LANG={0}\n'.format(locale))
@@ -1090,6 +1090,8 @@ class InstallationProcess(multiprocessing.Process):
             vconsole_conf.write('KEYMAP={0}\n'.format(keyboard_layout))
 
         # Write xorg keyboard configuration
+        xorg_conf_dir = os.path.join(DEST_DIR, "etc/X11/xorg.conf.d")
+        os.makedirs(xorg_conf_dir, exist_ok=True)
         fname = "{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR)
         default_kb_layout = "us"
         default_kb_model = "pc105"
