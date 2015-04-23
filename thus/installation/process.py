@@ -33,13 +33,12 @@ import logging
 import multiprocessing
 import os
 import collections
+import platform
 import queue
 import shutil
 import subprocess
 import sys
 import time
-import urllib.request
-import urllib.error
  
 import traceback
 
@@ -220,10 +219,17 @@ class InstallationProcess(multiprocessing.Process):
         self.special_dirs_mounted = False
 
         # Initialize some vars that are correctly initialized elsewhere (pylint complains about it)
-        self.auto_device = ""
-        self.arch = ""
-        DEST_DIR = ""
+        self.auto_device = self.settings.get('auto_device')
+        self.arch = platform.machine()
         self.bootloader_ok = self.settings.get('bootloader_ok')
+
+        # get thus.conf settings
+        self.distribution_name = configuration['distribution']['DISTRIBUTION_NAME']
+        self.distribution_version = configuration['distribution']['DISTRIBUTION_VERSION']
+        self.live_user = configuration['install']['LIVE_USER_NAME']
+        self.media = configuration['install']['LIVE_MEDIA_SOURCE']
+        self.media_desktop = configuration['install']['LIVE_MEDIA_DESKTOP']
+        self.media_type = configuration['install']['LIVE_MEDIA_TYPE']
 
     def queue_fatal_event(self, txt):
         """ Queues the fatal event and exits process """
@@ -275,42 +281,27 @@ class InstallationProcess(multiprocessing.Process):
 
     @misc.raise_privileges
     def run_installation(self):
-        """ Run installation """
+        """
+        Run installation
 
-        '''
-        From this point, on a warning situation, Cnchi should try to continue, so we need to catch the exception here.
-        If we don't catch the exception here, it will be catched in run() and managed as a fatal error.
-        On the other hand, if we want to clarify the exception message we can catch it here
-        and then raise an InstallError exception.
-        '''
+        From this point, on a warning situation, Thus should try to continue,
+        so we need to catch the exception here.
+        If we don't catch the exception here, it will be catched in run() and
+        managed as a fatal error.
+        On the other hand, if we want to clarify the exception message we can
+        catch it here and then raise an InstallError exception.
+        """
 
-        # Common vars
-        self.packages = []
-
-        if not os.path.exists(DEST_DIR):
-            with misc.raised_privileges():
-                os.makedirs(DEST_DIR)
-        else:
+        # Create the directory where we will mount our new root partition
+        try:
+            os.makedirs(DEST_DIR)
+        except OSError:
             # If we're recovering from a failed/stoped install, there'll be
             # some mounted directories. Try to unmount them first.
-            # We use unmount_all from auto_partition to do this.
             auto_partition.unmount_all(DEST_DIR)
 
-        # get settings
-        self.distribution_name = configuration['distribution']['DISTRIBUTION_NAME']
-        self.distribution_version = configuration['distribution']['DISTRIBUTION_VERSION']
-        self.live_user = configuration['install']['LIVE_USER_NAME']
-        self.media = configuration['install']['LIVE_MEDIA_SOURCE']
-        self.media_desktop = configuration['install']['LIVE_MEDIA_DESKTOP']
-        self.media_type = configuration['install']['LIVE_MEDIA_TYPE']
-
-        self.arch = os.uname()[-1]
-
-        # Create and format partitions
-
+        # Create, format and mount partitions in automatic mode
         if self.method == 'automatic':
-            self.auto_device = self.settings.get('auto_device')
-
             logging.debug(_("Creating partitions and their filesystems in {0}".format(self.auto_device)))
 
             # If no key password is given a key file is generated and stored in /boot
@@ -326,16 +317,12 @@ class InstallationProcess(multiprocessing.Process):
                                                 callback_queue=self.callback_queue)
             auto.run()
 
-            # Get mount_devices and fs_devices
-            # (mount_devices will be used when configuring GRUB in modify_grub_default)
-            # (fs_devices  will be used when configuring the fstab file)
+            # mount_devices will be used when configuring GRUB in modify_grub_default
+            # fs_devices will be used when configuring the fstab file
             self.mount_devices = auto.get_mount_devices()
             self.fs_devices = auto.get_fs_devices()
 
-        # Create the directory where we will mount our new root partition
-        if not os.path.exists(DEST_DIR):
-            os.mkdir(DEST_DIR)
-
+        # In advanced mode we only need to mount partitions
         if self.method == 'advanced':
             for path in sorted(self.mount_devices):
                 # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
@@ -475,18 +462,16 @@ class InstallationProcess(multiprocessing.Process):
         """ Copies all files to target """
         # mount the media location.
         try:
-            if(not os.path.exists(DEST_DIR)):
-                os.mkdir(DEST_DIR)
-            if(not os.path.exists("/source")):
-                os.mkdir("/source")
-            if(not os.path.exists("/source_desktop")):
-                os.mkdir("/source_desktop")
+            os.makedirs(DEST_DIR, exist_ok=True)
+            os.makedirs("/source", exist_ok=True)
+            os.makedirs("/source_desktop", exist_ok=True)
+
             # find the squashfs..
-            if(not os.path.exists(self.media)):
+            if not os.path.exists(self.media):
                 txt = _("Base filesystem does not exist! Critical error (exiting).")
                 logging.error(txt)
                 self.queue_fatal_event(txt)
-            if(not os.path.exists(self.media_desktop)):
+            if not os.path.exists(self.media_desktop):
                 txt = _("Desktop filesystem does not exist! Critical error (exiting).")
                 logging.error(txt)
                 self.queue_fatal_event(txt)
