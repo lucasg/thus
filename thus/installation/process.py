@@ -995,16 +995,16 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('debug', _('Network configuration copied.'))
 
         # enable services
-        self.enable_services([self.network_manager])
+        # self.enable_services([self.network_manager])
 
-        cups_service = os.path.join(DEST_DIR, "usr/lib/systemd/system/org.cups.cupsd.service")
-        if os.path.exists(cups_service):
-            self.enable_services(['org.cups.cupsd'])
+        # cups_service = os.path.join(DEST_DIR, "usr/lib/systemd/system/org.cups.cupsd.service")
+        # if os.path.exists(cups_service):
+        #    self.enable_services(['org.cups.cupsd'])"""
 
         # enable targets
         # self.enable_targets(['remote-fs.target'])
-        
-        self.queue_event('debug', 'Enabled installed services.')
+
+        # self.queue_event('debug', 'Enabled installed services.')
 
         # Wait FOREVER until the user sets the timezone
         while self.settings.get('timezone_done') is False:
