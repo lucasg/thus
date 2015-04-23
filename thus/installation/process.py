@@ -1222,17 +1222,23 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('info', _("Finished configuring package manager."))
 
         # Write xorg keyboard configuration
-        keyboardconf = open("{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR), "w")
-        keyboardconf.write("\n");
-        keyboardconf.write("Section \"InputClass\"\n")
-        keyboardconf.write(" Identifier \"system-keyboard\"\n") 
-        keyboardconf.write(" MatchIsKeyboard \"on\"\n")
-        keyboardconf.write(" Option \"XkbLayout\" \"{0}\"\n".format(keyboard_layout))
-        keyboardconf.write(" Option \"XkbModel\" \"{0}\"\n".format("pc105"))
-        keyboardconf.write(" Option \"XkbVariant\" \"{0}\"\n".format(keyboard_variant))
-        keyboardconf.write(" Option \"XkbOptions\" \"{0}\"\n".format("terminate:ctrl_alt_bksp"))        
-        keyboardconf.write("EndSection\n")
-        keyboardconf.close()
+        fname = "{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR)
+        default_kb_layout = "us"
+        default_kb_model = "pc105"
+        with open(fname, 'w') as file:
+            file.write("\n"
+                       "Section \"InputClass\"\n"
+                       " Identifier \"system-keyboard\"\n"
+                       " MatchIsKeyboard \"on\"\n"
+                       " Option \"XkbLayout\" \"{0},{1}\"\n"
+                       " Option \"XkbModel\" \"{2}\"\n"
+                       " Option \"XkbVariant\" \"{3},\"\n"
+                       " Option \"XkbOptions\" \"{4}\"\n"
+                       "EndSection\n"
+                       .format(keyboard_layout, default_kb_layout,
+                               default_kb_model,
+                               keyboard_variant,
+                               "terminate:ctrl_alt_bksp,grp:alt_shift_toggle"))
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
