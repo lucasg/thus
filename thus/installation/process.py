@@ -356,14 +356,9 @@ class InstallationProcess(multiprocessing.Process):
             logging.debug(_("{0} deleted".format(db_lock)))
 
         # Create some needed folders
-        folders = [
-            os.path.join(DEST_DIR, 'var/lib/pacman'),
-            os.path.join(DEST_DIR, 'etc/pacman.d/gnupg'),
-            os.path.join(DEST_DIR, 'var/log')]
-
-        for folder in folders:
-            if not os.path.exists(folder):
-                os.makedirs(folder)
+        os.makedirs(os.path.join(DEST_DIR, 'var/lib/pacman'), exist_ok=True)
+        os.makedirs(os.path.join(DEST_DIR, 'etc/pacman.d/gnupg'), exist_ok=True)
+        os.makedirs(os.path.join(DEST_DIR, 'var/log'), exist_ok=True)
 
         all_ok = True
 
@@ -372,7 +367,6 @@ class InstallationProcess(multiprocessing.Process):
             # very slow ...
             self.install_system()
 
-            subprocess.check_call(['mkdir', '-p', '{0}/var/log/'.format(DEST_DIR)])
             self.queue_event('debug', _('System installed.'))
 
             self.queue_event('debug', _('Configuring system ...'))
@@ -1102,10 +1096,6 @@ class InstallationProcess(multiprocessing.Process):
         # chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
 
         self.queue_event('info', _("Configuring hardware ..."))
-        # Copy generated xorg.xonf to target
-        if os.path.exists("/etc/X11/xorg.conf"):
-            shutil.copy2('/etc/X11/xorg.conf',
-                         os.path.join(DEST_DIR, 'etc/X11/xorg.conf'))
 
         # Configure ALSA
         self.alsa_mixer_setup()
