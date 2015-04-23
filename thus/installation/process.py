@@ -1072,8 +1072,6 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', _('Set the same password to root.'))
 
         # Generate locales
-        keyboard_layout = self.settings.get("keyboard_layout")
-        keyboard_variant = self.settings.get("keyboard_variant")
         locale = self.settings.get("locale")
         self.queue_event('info', _("Generating locales ..."))
 
@@ -1088,10 +1086,31 @@ class InstallationProcess(multiprocessing.Process):
         with open(environment_path, "w") as environment:
             environment.write('LANG={0}\n'.format(locale))
 
+        keyboard_layout = self.settings.get("keyboard_layout")
+        keyboard_variant = self.settings.get("keyboard_variant")
         # Set /etc/vconsole.conf
         vconsole_conf_path = os.path.join(DEST_DIR, "etc/vconsole.conf")
         with open(vconsole_conf_path, "w") as vconsole_conf:
             vconsole_conf.write('KEYMAP={0}\n'.format(keyboard_layout))
+
+        # Write xorg keyboard configuration
+        fname = "{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR)
+        default_kb_layout = "us"
+        default_kb_model = "pc105"
+        with open(fname, 'w') as file:
+            file.write("\n"
+                       "Section \"InputClass\"\n"
+                       " Identifier \"system-keyboard\"\n"
+                       " MatchIsKeyboard \"on\"\n"
+                       " Option \"XkbLayout\" \"{0},{1}\"\n"
+                       " Option \"XkbModel\" \"{2}\"\n"
+                       " Option \"XkbVariant\" \"{3},\"\n"
+                       " Option \"XkbOptions\" \"{4}\"\n"
+                       "EndSection\n"
+                       .format(keyboard_layout, default_kb_layout,
+                               default_kb_model,
+                               keyboard_variant,
+                               "terminate:ctrl_alt_bksp,grp:alt_shift_toggle"))
 
         self.queue_event('info', _("Adjusting hardware clock ..."))
         self.auto_timesetting()
@@ -1220,25 +1239,6 @@ class InstallationProcess(multiprocessing.Process):
         os.system("cp -a /etc/pacman.d/gnupg {0}/etc/pacman.d/".format(DEST_DIR))
         chroot_run(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
-
-        # Write xorg keyboard configuration
-        fname = "{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR)
-        default_kb_layout = "us"
-        default_kb_model = "pc105"
-        with open(fname, 'w') as file:
-            file.write("\n"
-                       "Section \"InputClass\"\n"
-                       " Identifier \"system-keyboard\"\n"
-                       " MatchIsKeyboard \"on\"\n"
-                       " Option \"XkbLayout\" \"{0},{1}\"\n"
-                       " Option \"XkbModel\" \"{2}\"\n"
-                       " Option \"XkbVariant\" \"{3},\"\n"
-                       " Option \"XkbOptions\" \"{4}\"\n"
-                       "EndSection\n"
-                       .format(keyboard_layout, default_kb_layout,
-                               default_kb_model,
-                               keyboard_variant,
-                               "terminate:ctrl_alt_bksp,grp:alt_shift_toggle"))
 
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
