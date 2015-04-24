@@ -33,8 +33,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-17 01:10+0000\n"
-"Last-Translator: Ivan Valentim Santos <ivanvalentimsantos@gmail.com>\n"
+"PO-Revision-Date: 2015-04-23 15:03+0000\n"
+"Last-Translator: Jhonny Rosa <jh0nny.rosa@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -361,7 +361,7 @@ msgstr "Região:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Usar o Network Time Protocol (NTP) para sincronização do relógio"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
@@ -374,7 +374,7 @@ msgstr "Não foi possível detectar automaticamente as coordenadas de fuso horá
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Finalizando as threads de fuso horário..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
@@ -382,22 +382,22 @@ msgstr "Não foi possível obter a condição da rede"
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Obtemos conexão. Agora vamos ajustar o fuso horário. "
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Fuso horário (latitude {0}, longitude {1}) detectado."
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "Impossível encontrar o arquivo 'update.info'. O Thus não conseguirá atualizar sozinho."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "Versão do Thus Internet: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
@@ -409,11 +409,11 @@ msgstr "Nenhuma versão nova encontrada. Atualizando de qualquer forma..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "Descarregando a nova versão do Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Impossível descarregar a nova versão do Thus."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
@@ -426,7 +426,7 @@ msgstr "Não é possível copiar {0} para {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "md5 errado. Download ruim ou arquivo errado, este não será atualizado."
 
 #: ../thus/user_info.py:72
 msgid "Who are you?"
@@ -572,7 +572,7 @@ msgstr "Muitos caracteres"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Url errada, tentaremos outra se disponível."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -600,7 +600,7 @@ msgstr "Baixando {0} {1} ({2}/{3})..."
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "O metalink do pacote {0} não possui informação de tamanho."
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
@@ -610,7 +610,7 @@ msgstr "Arquivo {0} já existe, Portanto não vai substituí-lo"
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Impossível descarregar {0}, mesmo depois de tentar todos os espelhos disponíveis."
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -659,7 +659,7 @@ msgstr "nenhum"
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Impossível editar uma partição com o sistema de arquivos LVM."
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
@@ -668,7 +668,7 @@ msgstr "Não é possível usar o mesmo ponto de montagem duas vezes."
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "Você irá apagar a partição {0} do disco {1}"
 
 #: ../thus/installation/advanced.py:870
 #, python-brace-format
@@ -678,12 +678,12 @@ msgstr "Desmontando {0}..."
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Desculpe, você já possui {0} partições primárias criadas."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Desculpe, você já possui {0} partições primárias e 1 partição extendida criadas."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -703,7 +703,7 @@ msgstr "Criando uma partição lógica"
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "As senhas do LUKS não correspondem."
 
 #: ../thus/installation/advanced.py:1283
 msgid "Advanced installation mode"
@@ -711,7 +711,7 @@ msgstr "Modo de instalação avançado"
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Use o dispositivo abaixo para instalar o boot loader:"
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1041 ../ui/automatic.ui:149
@@ -830,7 +830,7 @@ msgstr "Criar Tabela de Partições"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Usar encriptação LUKS:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1172
 msgid "LUKS volume name:"
@@ -854,7 +854,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "O GRUB requer uma partição de boot BIOS em um sistema BIOS para que possa anexar seu arquivo core.img, devido a falta de espaço vazio anexado ao pós-MBR em discos GPT.\n\nO Thus irá criar a partição de boot BIOS para você."
 
 #: ../thus/installation/advanced.py:1559
 msgid "Can't create BIOS GPT Boot partition!"
@@ -874,7 +874,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} está montada como swap.\nPara continuar ela precisa ser desmontada.\nClique em Sim para desmontar, ou Não para retornar\n"
 
 #: ../thus/installation/advanced.py:1776
 #, python-brace-format
@@ -882,7 +882,7 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} está montada em '{1}'.\nPara continuar ela precisa ser desmontada.\nClique em Sim para desmontar, ou Não para retornar\n"
 
 #: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
@@ -897,7 +897,7 @@ msgstr "partição swap {0} desmontada"
 #: ../thus/installation/advanced.py:1812
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "{0} parece estar montada (ocupada) mas não possui ponto de montagem"
 
 #: ../thus/installation/advanced.py:1819
 msgid ""
@@ -910,7 +910,7 @@ msgstr "A partição raiz não está marcada para ser formatada.\nIsso pode cria
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
-msgstr ""
+msgstr "{0} adicionada a linda de alterações: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] encrypt[{5}]"
 
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
@@ -940,12 +940,12 @@ msgstr "Estes discos serão particionados:"
 #: ../thus/installation/advanced.py:2008
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "Alterações finalizadas em {0}"
 
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "Criando um novo sistema de arquivos {0} em {1} rotulado {2}"
 
 #: ../thus/installation/advanced.py:2034
 #, python-brace-format
@@ -956,27 +956,27 @@ msgstr "Criando nova {0} sistema de arquivos em {1}"
 #: ../thus/installation/advanced.py:2078
 #, python-brace-format
 msgid "Setting boot flag in {0} partition"
-msgstr ""
+msgstr "Configurando boot flag na partição {0}"
 
 #: ../thus/installation/advanced.py:2051
 #, python-brace-format
 msgid "Setting boot_legacy flag in {0} partition"
-msgstr ""
+msgstr "Configurando boot_legacy flag na partição {0}"
 
 #: ../thus/installation/advanced.py:2086
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "Encriptando {0}, associando o nome de volume {1} e formatando..."
 
 #: ../thus/installation/advanced.py:2101
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Impossível formatar o dispositivo LUKS '{0}' com o rótulo '{1}' como '{2}'"
 
 #: ../thus/installation/advanced.py:2125
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Impossível formatar a partição '{0}' com o rótulo '{1}' como '{2}'"
 
 #: ../thus/installation/advanced.py:2183 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
@@ -985,7 +985,7 @@ msgstr "Portanto não será instalado nenhum bootloader"
 #: ../thus/installation/advanced.py:2192
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "O Manjaro irá instalar o bootloader {0} no dispositivo {1}"
 
 #: ../thus/installation/advanced.py:2207 ../thus/installation/automatic.py:310
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -993,33 +993,33 @@ msgstr "Modo de teste. Assim, não será aplicada qualquer alteração em seu si
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Não há partições primárias disponíveis"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "Irá reduzir o dispositivo {0} e criar um novo dispositivo {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
-msgstr ""
+msgstr "O Thus recomenda pelo menos 6.5GB livres para instalar o Manjaro."
 
 #: ../thus/installation/alongside.py:151
 #, python-brace-format
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "A nova partição {0} resultante da redução de {1} não terá espaço livre suficiente para uma instalação completa."
 
 #: ../thus/installation/alongside.py:152
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "Você ainda pode instalar o Manjaro, mas escolha o ambiente gráfico com cuidado pois ele pode não caber."
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Instale por sua conta e risco!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1031,21 +1031,21 @@ msgstr "Escolha o novo tamanho para sua instalação"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Escolha a partição que você quer reduzir:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
 "Can't find any spare partition number.\n"
 "Alongside installation can't continue."
-msgstr ""
+msgstr "Impossível encontrar um número de partição sobrando.\nA instalação lado a lado não pode continuar."
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "Nenhum SO instalado encontrado!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
-msgstr ""
+msgstr "O modo de instalação 'lado a lado' não funciona em sistemas UEFI."
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
@@ -1061,7 +1061,7 @@ msgstr "Não foi possível encontrar nenhum Sistema Operacional no dispositivo s
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr ""
+msgstr "Layout de disco não suportado para o modo de instalação 'lado a lado'"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
@@ -1082,7 +1082,7 @@ msgstr "Apagar o disco e instalar o Manjaro"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Atenção: Isso irá apagar TODOS os dados no disco."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1090,7 +1090,7 @@ msgstr "Criptografar esta instalação para uma maior segurança."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "Você deverá criar uma senha de encriptação no próximo passo."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1100,7 +1100,7 @@ msgstr "Utilizar LVM nesta instalação."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Isto irá configurar o LVM e permitirá que você gerencie as partições e snapshots com facilidade."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1168,7 +1168,7 @@ msgstr "Senha LUKS. Não use caracteres especiais e acentos!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "Uma senha root do LUKS foi definida"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
@@ -1179,17 +1179,17 @@ msgstr "Instalação automática ligada {0}"
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Você realmente quer prosseguir e apagar todo o conteúdo no seu disco rígido?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr "O Thus instalará o Manjaro no dispositivo {0}"
 
 #: ../thus/installation/automatic.py:286
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "O Thus instalará o bootloader '{0}' no dispositivo '{1}'"
 
 #: ../thus/installation/auto_partition.py:87
 #: ../thus/installation/process.py:485 ../thus/installation/process.py:502
@@ -1201,7 +1201,7 @@ msgstr "Desmontando {0}"
 #: ../thus/installation/auto_partition.py:91
 #, python-brace-format
 msgid "Unmounting {0} failed. Trying lazy arg."
-msgstr ""
+msgstr "Falha ao desmontar {0}. Tentando lazy arg."
 
 #: ../thus/installation/auto_partition.py:95
 #, python-brace-format
@@ -1259,47 +1259,47 @@ msgstr "Saída: {0}"
 
 #: ../thus/installation/auto_partition.py:158
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "Impossível apagar os volumes LVM existentes"
 
 #: ../thus/installation/auto_partition.py:169
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Impossível fechar os dispositivos LUKS abertos"
 
 #: ../thus/installation/auto_partition.py:178
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "Impossível configurar o LUKS no dispositivo {0}. Necessita de senha ou arquivo chave."
 
 #: ../thus/installation/auto_partition.py:186
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "O Thus irá configurar o LUKS no dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:204
 #: ../thus/installation/auto_partition.py:227
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "Impossível formatar e abrir o dispositivo LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:238
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "Impossível apagar o sistema de arquivos do dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:250
 msgid "Can't run dd command"
-msgstr ""
+msgstr "Impossível executar o comando dd"
 
 #: ../thus/installation/auto_partition.py:278
 #: ../thus/installation/auto_partition.py:306
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Erro ao criar uma nova partição no dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:319
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Erro ao criar uma nova tabela de partição no dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:358
 #, python-brace-format
@@ -1310,12 +1310,12 @@ msgstr "Formatará o dispositivo {0} com {1}"
 #: ../thus/installation/process.py:407
 #, python-brace-format
 msgid "Can't activate swap in {0}"
-msgstr ""
+msgstr "Impossível ativar o swap em {0}"
 
 #: ../thus/installation/auto_partition.py:385
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Sistema de arquivos {0} desconhecido"
 
 #: ../thus/installation/auto_partition.py:393
 #, python-brace-format
@@ -1325,22 +1325,22 @@ msgstr "Não foi possível criar o sistema de arquivos {0}"
 #: ../thus/installation/auto_partition.py:422
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "Erro ao tentar montar {0} em {1}"
 
 #: ../thus/installation/auto_partition.py:438
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "Detalhes do dispositivo:  {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:522
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} será montado como {1}"
 
 #: ../thus/installation/auto_partition.py:554
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "O dispositivo {0} terá o sistema de arquivos {1}"
 
 #: ../thus/installation/auto_partition.py:604
 #, python-format
@@ -1350,7 +1350,7 @@ msgstr "Tamanho total do disco: %dMiB"
 #: ../thus/installation/auto_partition.py:606
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "Tamanho da partição de sistema EFI (ESP): %dMiB"
 
 #: ../thus/installation/auto_partition.py:607
 #, python-format
@@ -1385,54 +1385,54 @@ msgstr "A configuração não pode detectar o tamanho do seu dispositivo, por fa
 
 #: ../thus/installation/auto_partition.py:675
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "Erro ao informar o kernel sobre a alteração na partição."
 
 #: ../thus/installation/auto_partition.py:788
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "O Thus irá configurar o LVM no dispositivo {0}"
 
 #: ../thus/installation/auto_partition.py:793
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "Erro ao criar o volume físico LVM"
 
 #: ../thus/installation/auto_partition.py:802
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "Erro ao criar o grupo de volumes LVM"
 
 #: ../thus/installation/auto_partition.py:837
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "Erro ao criar o volume lógico LVM"
 
 #: ../thus/installation/auto_partition.py:894
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "Impossível copiar o arquivo-chave do LUKS no dispositivo de instalação"
 
 #: ../thus/installation/bootloader.py:102
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "A variável 'ruuid' não foi definida. Não posso checar o UUID raiz no grub.cfg, vamos esperar que esteja certo"
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "Configuração completada com sucesso em /etc/default/grub"
 
 #: ../thus/installation/bootloader.py:220
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "Impossível copiar {0} para grub.d"
 
 #: ../thus/installation/bootloader.py:229
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "Instalando o bootloader GRUB(2) BIOS em {0}"
 
 #: ../thus/installation/bootloader.py:260
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "o grub-mkconfig não responde. Matando o grub-mount e o os-prober para que possamos continuar."
 
 #: ../thus/installation/bootloader.py:268
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1450,7 +1450,7 @@ msgstr "O diretório efi é: {0}"
 #: ../thus/installation/bootloader.py:294
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader in {1}"
-msgstr ""
+msgstr "Instalando o boot loader GRUB(2) UEFI {0} em {1}"
 
 #: ../thus/installation/bootloader.py:304
 #, python-brace-format
@@ -1464,7 +1464,7 @@ msgstr "Comando grub-install falhou. Saída de erro: {0}"
 
 #: ../thus/installation/bootloader.py:314
 msgid "Command grub-install timed out."
-msgstr ""
+msgstr "O comando grub-install falhou."
 
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
@@ -1474,12 +1474,12 @@ msgstr "Comando grub-install falhou. Erro desconhecido: {0}"
 #: ../thus/installation/bootloader.py:331
 #, python-brace-format
 msgid "No OEM loader found in {0}. Copying Grub(2) into dir."
-msgstr ""
+msgstr "Nenhum carregador OEM encontrado em {0}. Copiando o Grub(2) no diretório."
 
 #: ../thus/installation/bootloader.py:335
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr ""
+msgstr "A cópia do Grub(2)  no diretório OEM falhou: {0}"
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
@@ -1505,27 +1505,27 @@ msgstr "Instalação do GRUB(2) UEFI completada com sucesso"
 
 #: ../thus/installation/bootloader.py:395
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "A instalação do GRUB(2) UEFI pode não ter sido completada com sucesso."
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "Arquivo 50mounted-tests patcheado com sucesso"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "Falha ao aplicar o patch 50mounted-tests, arquivo não encontrado."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Copiando arquivos de tema do GRUB(2)"
 
 #: ../thus/installation/bootloader.py:419
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Arquivos de tema do Grub2 não encontrados"
 
 #: ../thus/installation/bootloader.py:421
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Arquivos de tema do Grub2 já existem."
 
 #: ../thus/installation/bootloader.py:425
 msgid "Installing Grub2 locales."
@@ -1533,15 +1533,15 @@ msgstr "Instalando localidades GRUB2."
 
 #: ../thus/installation/bootloader.py:436
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "Impossível instalar o idioma do GRUB(2)."
 
 #: ../thus/installation/bootloader.py:502
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Instalação do Gummiboot completada com sucesso"
 
 #: ../thus/installation/bootloader.py:506
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Instalação do Gummiboot NÃO completada com sucesso!"
 
 #: ../thus/installation/bootloader.py:538
 msgid "Can't freeze/unfreeze xfs system"
@@ -1549,7 +1549,7 @@ msgstr "Não foi possível congelar/descongelar o sistema xfs"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Diretórios especiais já montados. Pulando."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1558,7 +1558,7 @@ msgstr "Diretórios especiais não estão montados. Pulando."
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "Impossível desmontar {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
@@ -1575,16 +1575,16 @@ msgstr "Saída : {0}"
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "O tempo de execução do comando {0} esgotou"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "O Thus tentará continuar de qualquer forma"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "Erro ao executar o comando: {0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1598,17 +1598,17 @@ msgstr "Copiando '/{0}'"
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Instalando usando o método '{0}'"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "Erro ao executar o comando {0}"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "Criando partições e seus sistemas de arquivos em {0}"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
@@ -1650,7 +1650,7 @@ msgstr "Sistema configurado."
 #: ../thus/installation/process.py:476
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr ""
+msgstr "Impossível copiar o log do Thus para {0}"
 
 #: ../thus/installation/process.py:493 ../thus/installation/process.py:512
 #: ../thus/installation/process.py:526
@@ -1673,15 +1673,15 @@ msgstr "O sistema de arquivos do Desktop não existe! Erro crítico (saindo)."
 #: ../thus/installation/process.py:569 ../thus/installation/process.py:575
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{0} já está montado em {1} como {2}"
 
 #: ../thus/installation/process.py:582
 msgid "Indexing files of root-image to be copied ..."
-msgstr ""
+msgstr "indexando arquivos da root-image a serem copiados..."
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files of desktop-image to be copied ..."
-msgstr ""
+msgstr "Indexando arquivos da desktop-image a serem copiados..."
 
 #: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
@@ -1694,7 +1694,7 @@ msgstr "Extraindo a imagem desktop ..."
 #: ../thus/installation/process.py:616
 #, python-brace-format
 msgid "Restoring meta-information on {0}"
-msgstr ""
+msgstr "Restaurando informação meta em {0}"
 
 #: ../thus/installation/process.py:659
 msgid "Can't copy network configuration files"
@@ -1724,12 +1724,12 @@ msgstr "Dispositivo: {0}, SSD: {1}"
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
-msgstr ""
+msgstr "fstab escrito."
 
 #: ../thus/installation/process.py:819
 #, python-brace-format
 msgid "Enabled {0} service."
-msgstr ""
+msgstr "Serviço {0} habilitado."
 
 #: ../thus/installation/process.py:821
 #, python-brace-format
@@ -1739,12 +1739,12 @@ msgstr "Não foi possível encontrar o serviço {0}"
 #: ../thus/installation/process.py:829
 #, python-brace-format
 msgid "Error creating password hash for user {0}"
-msgstr ""
+msgstr "Erro ao criar hash da senha para o usuário {0}"
 
 #: ../thus/installation/process.py:835
 #, python-brace-format
 msgid "Error changing password for user {0}"
-msgstr ""
+msgstr "Erro ao mudar senha para o usuário {0}"
 
 #: ../thus/installation/process.py:863
 msgid "Can't find locale.gen file"
@@ -1753,7 +1753,7 @@ msgstr "Não foi possível localizar o arquivo locale.gen"
 #: ../thus/installation/process.py:935
 #, python-brace-format
 msgid "{0}: Enable automatic login for user {1}."
-msgstr ""
+msgstr "{0}: Habilitar login automático para o usuário {1}."
 
 #: ../thus/installation/process.py:1052
 msgid "Configuring your new system"
@@ -1784,7 +1784,7 @@ msgstr "Usuário {0} adicionado."
 #: ../thus/installation/process.py:1130
 #, python-brace-format
 msgid "Hostname  {0} set."
-msgstr ""
+msgstr "Hostname {0} definido."
 
 #: ../thus/installation/process.py:1135
 msgid "Set root password."
@@ -1857,7 +1857,7 @@ msgstr "Instalando o bootloader..."
 #: ../thus/installation/process.py:1353
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "Impossível instalar o boot loader: {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
@@ -1891,17 +1891,17 @@ msgstr "As senhas não coincidem"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr ""
+msgstr "Impossível rotular uma partição {0}"
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
 msgid "Can't verify if {0} is a Solid State Drive or not"
-msgstr ""
+msgstr "Impossível verificar se {0} é um Drive de Estado Sólido ou não"
 
 #: ../thus/parted3/fs_module.py:198
 #, python-brace-format
 msgid "Sorry but filesystem {0} can't be shrinked"
-msgstr ""
+msgstr "Desculpe mas o sistema de arquivos {0} não pode ser reduzido"
 
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
@@ -1911,7 +1911,7 @@ msgstr "Não foi possível remover o volume lógico {0}"
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "Impossível remover o grupo de volumes {0}"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
@@ -1923,7 +1923,7 @@ msgstr "Não foi possível remover o volume físico {0} "
 msgid ""
 "Exception: {0}.\n"
 "For more information take a look at /tmp/thus.log"
-msgstr ""
+msgstr "Exceção: {0}.\nPara mais informações dê uma olhada em /tmp/thus.log"
 
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
@@ -2036,7 +2036,7 @@ msgstr "<b>AVISO! Este modo de instalação irá sobrescrever todo o conteúdo d
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Por favor escolha o drive onde você quer instalar o Manjaro e clique no botão abaixo para iniciar o processo."
 
 #: ../ui/automatic.ui:271
 msgid "show password"
@@ -2044,7 +2044,7 @@ msgstr "mostrar senha"
 
 #: ../ui/automatic.ui:289
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "Senha LUKS. Não use caracteres especiais ou com acentos!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2052,7 +2052,7 @@ msgstr "Qual o seu sistema de boot?"
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
-msgstr ""
+msgstr "BIOS (Comum)"
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
@@ -2064,7 +2064,7 @@ msgstr "i386 UEFI"
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"
-msgstr ""
+msgstr "Escolha 'cancelar' se você não quer instalar um boot loader"
 
 #: ../ui/check.ui:17
 msgid ""
@@ -2076,7 +2076,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Para melhores resultados, por favor
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Isso depende majoritariamente de qual ambiente gráfico você escolher, talvez você precise de mais espaço (por exemplo, o KDE precisa de 6.5GB)"
 
 #: ../ui/main_window.ui:48
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
