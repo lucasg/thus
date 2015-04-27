@@ -39,6 +39,7 @@ except NameError as err:
 
 _special_dirs_mounted = False
 
+
 def get_special_dirs():
     """ Get special dirs to be mounted or unmounted """
     special_dirs = ["/dev", "/dev/pts", "/proc", "/sys"]    
@@ -60,27 +61,24 @@ def mount_special_dirs(dest_dir):
 
     # Don't try to remount them
     if _special_dirs_mounted:
-        msg = _("Special dirs are already mounted. Skipping.")
-        logging.debug(msg)
+        logging.debug(_("Special dirs are already mounted. Skipping."))
         return
-    
-    special_dirs = []
+
     special_dirs = get_special_dirs()
 
     for special_dir in special_dirs:
         mountpoint = os.path.join(dest_dir, special_dir[1:])
-        if not os.path.exists(mountpoint):
-            logging.debug("Making directory '{0}'".format(mountpoint))
-            os.makedirs(mountpoint)
+        os.makedirs(mountpoint, exist_ok=True)
         os.chmod(mountpoint, 0o755)
         cmd = ["mount", "--bind", special_dir, mountpoint]
-        logging.debug("Mounting special dir '{0}' to {1}".format(special_dir, mountpoint))
+        logging.debug("Mounting special dir '{0}' to {1}"
+                      .format(special_dir, mountpoint))
         try:
             subprocess.check_call(cmd)
-        except subprocess.CalledProcessError as process_error:
+        except subprocess.CalledProcessError as error:
             logging.warning(_("Unable to mount {0}".format(mountpoint)))
-            logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-            logging.warning(_("Output : {0}".format(process_error.output)))
+            logging.warning(_("Command {0} has failed.".format(error.cmd)))
+            logging.warning(_("Output : {0}".format(error.output)))
 
     _special_dirs_mounted = True
 
@@ -96,7 +94,6 @@ def umount_special_dirs(dest_dir):
         logging.debug(msg)
         return
 
-    special_dirs = []
     special_dirs = get_special_dirs()
 
     for special_dir in reversed(special_dirs):
@@ -108,10 +105,10 @@ def umount_special_dirs(dest_dir):
             logging.debug("Can't unmount. Try -l to force it.")
             try:
                 subprocess.check_call(["umount", "-l", mountpoint])
-            except subprocess.CalledProcessError as process_error:
+            except subprocess.CalledProcessError as error:
                 logging.warning(_("Unable to umount {0}".format(mountpoint)))
-                logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-                logging.warning(_("Output : {0}".format(process_error.output)))
+                logging.warning(_("Command {0} has failed.".format(error.cmd)))
+                logging.warning(_("Output : {0}".format(error.output)))
 
     _special_dirs_mounted = False
 
@@ -133,12 +130,12 @@ def run(cmd, dest_dir, timeout=None, stdin=None):
         txt = outs.decode().strip()
         if len(txt) > 0:
             logging.debug(txt)
-    except subprocess.TimeoutExpired as timeout_error:
+    except subprocess.TimeoutExpired as error:
         if proc:
             proc.kill()
             proc.communicate()
-        logging.error(_("Timeout running the command {0}".format(timeout_error.cmd)))
+        logging.error(_("Timeout running the command {0}".format(error.cmd)))
         logging.error(_("Thus will try to continue anyways"))
-    except OSError as os_error:
-        logging.error(_("Error running command: {0}".format(os_error.strerror)))
+    except OSError as error:
+        logging.error(_("Error running command: {0}".format(error.strerror)))
         logging.error(_("Thus will try to continue anyways"))
