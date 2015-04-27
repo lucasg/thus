@@ -419,8 +419,7 @@ class Bootloader(object):
         logging.info(_("Installing Grub2 locales."))
         dest_locale_dir = os.path.join(self.dest_dir, "boot/grub/locale")
 
-        if not os.path.exists(dest_locale_dir):
-            os.makedirs(dest_locale_dir)
+        os.makedirs(dest_locale_dir, exist_ok=True)
 
         grub_mo = os.path.join(self.dest_dir, "usr/share/locale/en@quot/LC_MESSAGES/grub.mo")
 
@@ -433,32 +432,40 @@ class Bootloader(object):
             pass
 
     def install_gummiboot(self):
-        """ Install Gummiboot bootloader to the EFI System Partition """
+        """
+        Install Gummiboot bootloader to the EFI System Partition
+        and configure entry files
+        """
         logging.info("Installing the gummibot loader")
         # Setup bootloader menu
         menu_dir = os.path.join(self.dest_dir, "boot/loader")
-        os.makedirs(menu_dir)
+        os.makedirs(menu_dir, exist_ok=True)
         menu_path = os.path.join(menu_dir, "loader.conf")
         with open(menu_path, 'w') as menu_file:
-            menu_file.write("default manjaro")
+            menu_file.write("default manjaro-default")
 
         # Setup boot entries
-
         if not self.settings.get('use_luks'):
-            conf = []
-            conf.append("title\tManjaro\n")
-            conf.append("linux\t/{0}\n".format(self.vmlinuz))
-            conf.append("initrd\t/{0}\n".format(self.initramfs))
-            conf.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
-            conf_fallback = []
-            conf_fallback.append("title\tManjaro (fallback)\n")
-            conf_fallback.append("linux\t/{0}\n".format(self.vmlinuz))
-            conf_fallback.append("initrd\t/{0}\n".format(self.fallback))
-            conf_fallback.append("options\troot=UUID={0} rw\n\n".format(self.root_uuid))
+            conf = {
+                'default': [
+                    'title\tManjaro\n',
+                    'linux\t/{0}\n'.format(self.vmlinuz),
+                    'initrd\t/{0}\n'.format(self.initramfs),
+                    'options\troot=UUID={0} rw quiet\n\n'.format(self.root_uuid)
+                ],
+                'fallback': [
+                    "title\tManjaro (fallback)\n",
+                    "linux\t/{0}\n".format(self.vmlinuz),
+                    "initrd\t/{0}\n".format(self.fallback),
+                    "options\troot=UUID={0} rw quiet\n\n".format(self.root_uuid)
+                ]
+            }
+
         else:
             luks_root_volume = self.settings.get('luks_root_volume')
+            luks_root_volume_uuid = fs.get_info(luks_root_volume)['UUID']
 
-            # In automatic mode, root_device is in self.mount_devices, as it should be
+            # In automatic mode, root_device is in self.mount_devices
             root_device = self.root_device
 
             if self.method == "advanced" and self.settings.get('use_luks_in_root'):
@@ -470,30 +477,34 @@ class Bootloader(object):
             if self.settings.get("luks_root_password") == "":
                 key = "cryptkey=UUID={0}:ext2:/.keyfile-root".format(self.boot_uuid)
 
-            root_uuid_line = "cryptdevice=UUID={0}:{1} {2} root=UUID={3} rw"
-            root_uuid_line = root_uuid_line.format(root_uuid, luks_root_volume, key, root_uuid)
+            root_uuid_line = "cryptdevice=UUID={0}:{1} {2} root=UUID={3} rw quit"\
+                .format(root_uuid, luks_root_volume, key, luks_root_volume_uuid)
 
-            conf = []
-            conf.append("title\tManjaro\n")
-            conf.append("linux\t/boot/{0}\n".format(self.vmlinuz))
-            conf.append("options\tinitrd=/boot/{0} {1}\n\n".format(self.initramfs, root_uuid_line))
-            conf_fallback = []
-            conf_fallback.append("title\tManjaro (fallback)\n")
-            conf_fallback.append("linux\t/boot/{0}\n".format(self.vmlinuz))
-            conf_fallback.append("options\tinitrd=/boot/{0} {1}\n\n".format(self.fallback, root_uuid_line))
+            conf = {
+                'default': [
+                    "title\tManjaro\n",
+                    "linux\t/{0}\n".format(self.vmlinuz),
+                    "options\tinitrd=/{0} {1}\n\n".format(self.initramfs,
+                                                          root_uuid_line)
+                ],
+                'fallback': [
+                    "title\tManjaro (fallback)\n",
+                    "linux\t/{0}\n".format(self.vmlinuz),
+                    "options\tinitrd=/{0} {1}\n\n".format(self.fallback,
+                                                          root_uuid_line)
+                ]
+            }
 
         # Write boot entries
         entries_dir = os.path.join(self.dest_dir, "boot/loader/entries")
-        os.makedirs(entries_dir)
-        entry_path = os.path.join(entries_dir, "manjaro.conf")
-        with open(entry_path, 'w') as entry_file:
-            for line in conf:
-                entry_file.write(line)
+        os.makedirs(entries_dir, exist_ok=True)
 
-        entry_path = os.path.join(entries_dir, "manjaro-fallback.conf")
-        with open(entry_path, 'w') as entry_file:
-            for line in conf_fallback:
-                entry_file.write(line)
+        for fname, entry in conf.items():
+            entry_path = os.path.join(entries_dir,
+                                      "manjaro-{}.conf".format(fname))
+            with open(entry_path, 'w') as file:
+                for line in entry:
+                    file.write(line)
 
         # Install bootloader
         try:
@@ -510,7 +521,6 @@ class Bootloader(object):
         except Exception as general_error:
             logging.error(_('Command gummiboot  failed. Unknown Error: {0}'.format(general_error))) 
             self.settings.set('bootloader_installation_successful', False)
-
 
     def freeze_unfreeze_xfs(self):
         """ Freeze and unfreeze xfs, as hack for grub(2) installing """
