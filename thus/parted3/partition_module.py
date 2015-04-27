@@ -3,22 +3,24 @@
 #
 #  partition_module.py
 #
-#  Copyright © 2013-2015 Antergos
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
 #
-#  This file is part of Cnchi.
+#  Copyright 2013 Antergos (http://antergos.com/)
+#  Copyright 2013 Manjaro (http://manjaro.org)
 #
-#  Cnchi is free software; you can redistribute it and/or modify
+#  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  Cnchi is distributed in the hope that it will be useful,
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Cnchi; if not, write to the Free Software
+#  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -97,9 +99,9 @@ def get_devices():
         # print(dev.length)
         # Must create disk object to drill down
 
-        # Skip cd drive and special devices like LUKS and LVM
+        # Skip cd drive and special devices like LUKS, LVM and MMC
         disk_obj = None
-        if not dev.path.startswith("/dev/sr") and not dev.path.startswith("/dev/mapper"):
+        if not dev.path.startswith("/dev/sr") and not dev.path.startswith("/dev/mapper") and not dev.path.startswith("/dev/mmcblk"):
             try:
                 disk_obj = parted.Disk(dev)
                 result = OK

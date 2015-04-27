@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-23 15:42+0000\n"
+"PO-Revision-Date: 2015-04-27 09:05+0000\n"
 "Last-Translator: Petros Alexandrinos <lipsari@yahoo.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/manjaro-thus/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -1478,11 +1478,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
-msgstr ""
+msgstr "Το αρχείο δεν βρέθηκε."
 
 #: ../thus/installation/bootloader.py:341
 msgid "File already exists."
-msgstr ""
+msgstr "Το αρχείο ήδη υπάρχει."
 
 #: ../thus/installation/bootloader.py:359
 msgid "Generating grub.cfg"
@@ -1559,7 +1559,7 @@ msgstr ""
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "Η εντολή {0} απέτυχε."
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
@@ -1624,7 +1624,7 @@ msgstr ""
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} διαγράφτηκε"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1774,7 +1774,7 @@ msgstr ""
 #: ../thus/installation/process.py:1118
 #, python-brace-format
 msgid "User {0} added."
-msgstr ""
+msgstr "Προστέθηκε ο χρήστης {0}"
 
 #: ../thus/installation/process.py:1130
 #, python-brace-format
@@ -1847,12 +1847,12 @@ msgstr "Ο κατάλογος home χρήστη κρυπτογραφήθηκε"
 
 #: ../thus/installation/process.py:1347
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "Εγκατάσταση του φορτωτή εκκίνησης..."
 
 #: ../thus/installation/process.py:1353
 #, python-brace-format
 msgid "Couldn't install boot loader: {0}"
-msgstr ""
+msgstr "Αδυναμία εγκατάστασης του φορτωτή εκκίνησης {0}"
 
 #: ../thus/misc/misc.py:963
 #, python-brace-format
@@ -1861,23 +1861,23 @@ msgstr ""
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "Ο κωδικός είναι πολύ σύντομος"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Αδύνατος κωδικός"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Ικανοποιητικός κωδικός"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "Καλός κωδικός"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Ισχυρός κωδικός"
 
 #: ../thus/misc/validation.py:162
 msgid "Passwords do not match"
@@ -1911,7 +1911,7 @@ msgstr ""
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "Αδυναμία απομάκρυνσης του φυσικού τόμου {0}"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
@@ -1923,7 +1923,7 @@ msgstr ""
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "Αδυναμία διαγραφής της κατάτμησης {0}"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -1962,12 +1962,12 @@ msgstr ""
 #: ../thus/parted3/used_space.py:187
 #, python-brace-format
 msgid "Can't detect used space of BTRFS partition {0}"
-msgstr ""
+msgstr "Αδυναμία ανίχνευσης του χώρου που καταλαμβάνει η BTRFS κατάτμηση {0}"
 
 #: ../thus/parted3/used_space.py:224
 #, python-brace-format
 msgid "Can't detect used space of XFS partition {0}"
-msgstr ""
+msgstr "Αδυναμία ανίχνευσης του χώρου που καταλαμβάνει η XFS κατάτμηση {0}"
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
@@ -2011,7 +2011,7 @@ msgstr "Χρήση αυτής της συσκευής για εγκατάστα�
 
 #: ../ui/advanced.ui:1106
 msgid "Encryption properties"
-msgstr ""
+msgstr "Ιδιότητες κρυπτογράφησης"
 
 #: ../ui/advanced.ui:1221
 msgid "Use LUKS encryption: "
