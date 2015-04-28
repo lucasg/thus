@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-23 14:29+0000\n"
+"PO-Revision-Date: 2015-04-27 17:55+0000\n"
 "Last-Translator: Adrian-Ciprian Tînjală <adrian.tinjala@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -841,7 +841,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr ""
+msgstr "GRUB necesită o partiție BIOS Boot în sistemele BIOS pentru a-și încorpora fișierul core.img din cauza lipsei de post-MBR încorporat în golul de discuri GPT.\n\nThus va crea această partiție BIOS Boot pentru dumneavoastră."
 
 #: ../thus/installation/advanced.py:1559
 msgid "Can't create BIOS GPT Boot partition!"
@@ -927,7 +927,7 @@ msgstr "Aceste discuri vor suferi acțiuni de partiționare:"
 #: ../thus/installation/advanced.py:2008
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr "S-a terminat salvarea schimbărilor în {0}"
+msgstr "S-a finalizat salvarea schimbărilor în {0}"
 
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
@@ -1403,7 +1403,7 @@ msgstr "Variabila 'ruuid' nu este setată. Nu se poate verifica root UUID în gr
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
-msgstr "/etc/default/grub configurare terminată cu succes."
+msgstr "/etc/default/grub configurare finalizată cu succes."
 
 #: ../thus/installation/bootloader.py:220
 #, python-brace-format
@@ -1488,31 +1488,31 @@ msgstr "grub-mkconfig pare că s-a blocat. Se continuă prin terminarea procesel
 
 #: ../thus/installation/bootloader.py:391
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "Instalarea GRUB(2) UEFI finalizată cu succes"
 
 #: ../thus/installation/bootloader.py:395
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "Este posibil ca instalarea GRUB(2) UEFI să nu se fi finalizat cu succes."
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
-msgstr ""
+msgstr "Fișierul 50mounted-tests peticit cu succes"
 
 #: ../thus/installation/bootloader.py:409
 msgid "Failed to patch 50mounted-tests, file not found."
-msgstr ""
+msgstr "S-a eșuat peticirea 50mounted-tests, fișierul nu a fost găsit."
 
 #: ../thus/installation/bootloader.py:413
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Se copiază fișierele de temă GRUB(2)"
 
 #: ../thus/installation/bootloader.py:419
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Fișierele de temă Grub2 nu au fost găsite"
 
 #: ../thus/installation/bootloader.py:421
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Fișierele de temă Grub2 există deja."
 
 #: ../thus/installation/bootloader.py:425
 msgid "Installing Grub2 locales."
@@ -1524,11 +1524,11 @@ msgstr "Nu se poate instala GRUB(2) local."
 
 #: ../thus/installation/bootloader.py:502
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Instalarea Gummiboot finalizată cu succes"
 
 #: ../thus/installation/bootloader.py:506
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "Instalarea Gummiboot NU s-a finalizat cu succes!"
 
 #: ../thus/installation/bootloader.py:538
 msgid "Can't freeze/unfreeze xfs system"
@@ -1536,7 +1536,7 @@ msgstr "Nu se poate îngheța/dezgheța sistemul xfs"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Directoarele speciale sunt deja montate. Se trece peste."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1545,33 +1545,33 @@ msgstr "Dosarele speciale nu sunt monstate. Se sare."
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
 msgid "Unable to umount {0}"
-msgstr ""
+msgstr "Nu s-a putut demonta {0}"
 
 #: ../thus/installation/chroot.py:125 ../thus/installation/process.py:399
 #: ../thus/installation/process.py:408
 #, python-brace-format
 msgid "Command {0} has failed."
-msgstr ""
+msgstr "Comanda {0} a eșuat."
 
 #: ../thus/installation/chroot.py:127 ../thus/installation/process.py:400
 #: ../thus/installation/process.py:409
 #, python-brace-format
 msgid "Output : {0}"
-msgstr ""
+msgstr "Output : {0}"
 
 #: ../thus/installation/chroot.py:154
 #, python-brace-format
 msgid "Timeout running the command {0}"
-msgstr ""
+msgstr "Comanda {0} a expirat"
 
 #: ../thus/installation/chroot.py:155 ../thus/installation/chroot.py:158
 msgid "Thus will try to continue anyways"
-msgstr ""
+msgstr "Thus va încerca să continue oricum"
 
 #: ../thus/installation/chroot.py:157
 #, python-brace-format
 msgid "Error running command: {0}"
-msgstr ""
+msgstr "Eroare rulând comanda: {0}"
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
@@ -1580,28 +1580,28 @@ msgstr "Se setează hooks și module în mkinitcpio.conf"
 #: ../thus/installation/process.py:130
 #, python-brace-format
 msgid "Copying '/{0}'"
-msgstr ""
+msgstr "Se copiază '/{0}'"
 
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Se instalează folosind metoda '{0}'"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
 msgid "Error running command {0}"
-msgstr ""
+msgstr "Eroare rulând comanda {0}"
 
 #: ../thus/installation/process.py:321
 #, python-brace-format
 msgid "Creating partitions and their filesystems in {0}"
-msgstr ""
+msgstr "Se creează partițiile și fișierele lor de sistem în {0}"
 
 #: ../thus/installation/process.py:367 ../thus/installation/process.py:375
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "Se montează partiția {0} în directorul {1}"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
@@ -1611,12 +1611,12 @@ msgstr "Nu se poate monta {0} în {1}"
 #: ../thus/installation/process.py:403
 #, python-brace-format
 msgid "Activating swap in {0}"
-msgstr ""
+msgstr "Se activează swap în {0}"
 
 #: ../thus/installation/process.py:419
 #, python-brace-format
 msgid "{0} deleted"
-msgstr ""
+msgstr "{0} șters"
 
 #: ../thus/installation/process.py:434
 msgid "Install System ..."
@@ -1647,7 +1647,7 @@ msgstr "Nu se poate demonta {0}"
 
 #: ../thus/installation/process.py:528
 msgid "Installation finished successfully."
-msgstr "Instalare terminată cu succes."
+msgstr "Instalare finalizată cu succes."
 
 #: ../thus/installation/process.py:555
 msgid "Base filesystem does not exist! Critical error (exiting)."
@@ -1660,11 +1660,11 @@ msgstr "Sistemul de fișiere al desktopului nu există! Eroare critică (ieșire
 #: ../thus/installation/process.py:569 ../thus/installation/process.py:575
 #, python-brace-format
 msgid "{0} is already mounted at {1} as {2}"
-msgstr ""
+msgstr "{0} este deja montat în {1} ca {2}"
 
 #: ../thus/installation/process.py:582
 msgid "Indexing files of root-image to be copied ..."
-msgstr ""
+msgstr "Se indexează fișierele de root-image pentru a fi copiate ..."
 
 #: ../thus/installation/process.py:586
 msgid "Indexing files of desktop-image to be copied ..."
@@ -1819,7 +1819,7 @@ msgstr "Se configurează gestionarul de pachete"
 
 #: ../thus/installation/process.py:1291
 msgid "Finished configuring package manager."
-msgstr "S-a terminat configurarea gestionarului de pachete."
+msgstr "S-a finalizat configurarea gestionarului de pachete."
 
 #: ../thus/installation/process.py:1327
 msgid "Running mkinitcpio ..."
@@ -2063,7 +2063,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Pentru rezultate optime, asigurați
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Acest lucru depinde în mare măsură de ce mediu desktop alegeți, deci s-ar putea să aveți nevoie de mai mult spațiu (de exemplu, KDE are nevoie de 6.5GB)."
 
 #: ../ui/main_window.ui:48
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"

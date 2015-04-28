@@ -6,8 +6,8 @@
 #  This file was forked from Cnchi (graphical installer from Antergos)
 #  Check it at https://github.com/antergos
 #
-#  Copyright 2013 Antergos (http://antergos.com/)
-#  Copyright 2013 Manjaro (http://manjaro.org)
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

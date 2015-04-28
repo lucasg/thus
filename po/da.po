@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Carl Andersen <carl@manjaro.dk>, 2014
+# Dan Johansen, 2015
 # Freso <transifex.net@freso.dk>, 2011,2013
 # jakobw <jakob.wadsager@gmail.com>, 2012
 # Joe Hansen <joedalton2@yahoo.dk>, 2011,2013
@@ -15,8 +16,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-04-28 11:07+0000\n"
+"Last-Translator: Dan Johansen\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/manjaro-thus/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +40,7 @@ msgstr ""
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Ukendt partitions ID {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -48,7 +49,7 @@ msgstr "System-check"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "har mindst {0}GB fri plads.(*)"
 
 #: ../thus/check.py:77
 msgid ""
@@ -82,15 +83,15 @@ msgstr "Vi har ikke tilstrækkelig diskplads."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Kan ikke lave eller ændre encfs konfigurationsfiler."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "Hjem mappen vil ikke blive krypteret."
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Kan ikke køre encfs. Forkert kodeord?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -98,11 +99,11 @@ msgstr "Vælg tastaturlayout"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Tastatur Layout"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Tastatur Varianter"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -115,11 +116,11 @@ msgstr "Varianter"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "keyboard_layout er {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Velkommen til Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -132,25 +133,25 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "Thus er pre-release software under aktiv udvikling.\nDen kan stadig ikke håndtere RAID, btrfs subvolumes og andre advancerede opstillinger ordentligt. Fortsæt med forsigtighed, da tab af data er muligt!\n\nHvis du finder nogle fejl, så rapporter dem venligst på http://bugs.manjaro.org"
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Frem"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Tilbage"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Kan ikke finde oversættelse for {0} sproget"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -161,7 +162,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "Placeringen du vælger vil blive brugt til at bestemme sproget på systemet. Det vil normalt være for landet du bor i. Her er en kort liste over placeringer baseret på sproget du valgte."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -169,30 +170,30 @@ msgstr "Land eller område:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Vis alle placeringer"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr ""
+msgstr "sprog ændret til : {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr ""
+msgstr "Kan ikke ændre til sprog '{0}'"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Installationsprogrammet skal køres med administrative rettigheder, og kan ikke fortsætte uden dem."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "Fil '{0}' eksisterer allerede."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -204,21 +205,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "Du kan ikke køre to udgaver af dette installationsprogram.\n\nHvis du er sikker på en anden udgave ikke kører, kan du bruge --force muligheden eller manuelt slette filen der giver problemer.\n\nFilproblem: '{0}'"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus installationsprogram version {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro Installationsprogram - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Er du sikker på du vil afbryde installationsprogrammet?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -265,18 +266,18 @@ msgid ""
 "\thttps://wiki.archlinux.org/index.php/GRUB\n"
 "\n"
 "Would you like to view the wiki page now?"
-msgstr ""
+msgstr "VIGTIGT: Der har måske været et problem med bootloader\ninstallationen, hvilket kan resultere i at dit system ikke vil starte ordentligt. Før\ndu genstarter bør du varificere at bootloaderen er installeret og\nkonfigureret. Arch Linux Wiki'en indeholder fejlfindings information:\n⇥https://wiki.archlinux.org/index.php/GRUB\n\nVil du se denne wiki side nu?"
 
 #: ../thus/slides.py:205
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "Installation Færdig!\nVil du genstarte dit system nu?"
 
 #: ../thus/thus.py:66
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr ""
+msgstr "Kan ikke lave Thus hoved vindue: {0}"
 
 #: ../thus/thus.py:166
 #, python-brace-format
@@ -286,7 +287,7 @@ msgstr ""
 #: ../thus/thus.py:181
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr ""
+msgstr "Thus v{0} - Manjaro Installationsprogram"
 
 #: ../thus/thus.py:194
 msgid "Sets Thus log level to 'debug'"
@@ -294,7 +295,7 @@ msgstr "Sætter Thus' logging-niveau til 'debug'"
 
 #: ../thus/thus.py:198
 msgid "Runs thus even if it detects that another instance is running"
-msgstr ""
+msgstr "Kører Thus selvom en anden udgave er fundet i gang"
 
 #: ../thus/thus.py:210
 msgid "Do not perform any changes (useful for developers)"
@@ -302,11 +303,11 @@ msgstr "Indlæg ingen ændringer (praktisk for udviklere)"
 
 #: ../thus/thus.py:214
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr ""
+msgstr "Opgrader/nedgrader thus til web versionen"
 
 #: ../thus/thus.py:218
 msgid "Do not search for new Thus versions online"
-msgstr ""
+msgstr "Søg ikke efter nye Thus versioner online"
 
 #: ../thus/thus.py:222
 msgid "Show logging messages to stdout"
@@ -314,20 +315,20 @@ msgstr "Vil logmeddelelser til stdout"
 
 #: ../thus/thus.py:226
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Vis muligheder i udvikling (kun for udviklere, brug ikke dette!)"
 
 #: ../thus/thus.py:265
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "Program opdateret! Genstarter..."
 
 #: ../thus/thus.py:305
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr ""
+msgstr "Thus filer ikke fundet. Venligst, installér Thus ved hjælp af pacman"
 
 #: ../thus/thus.py:309
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Venligst, installér '{0}' før du kører dette installationsprogram"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -343,12 +344,12 @@ msgstr "Region:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Brug Network Time Protocol (NTP) til at synkronisere uret"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr ""
+msgstr "Placering ændret til : {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
@@ -356,15 +357,15 @@ msgstr "Kan ikke registrere tidszonekoordinater automatisk"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Stopper tidszone tråde..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Kan ikke finde netværksstatus."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Vi har forbindelse. Lad os få fat i vores tidszone"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
@@ -374,41 +375,41 @@ msgstr ""
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr ""
+msgstr "Kunne ikke finde filen 'update.info'. Thus kan ikke opdatere sig selv."
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr ""
+msgstr "This internet version: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Ny version fundet. Opdaterer installationsprogrammet..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Ingen ny version fundet. Opdaterer alligevel..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr ""
+msgstr "Downloader ny version af Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr ""
+msgstr "Kan ikke downloade ny Thus version."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Udpakker ny version..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr ""
+msgstr "Kan ikke kopiere {0} til {1}"
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr ""
+msgstr "Forkert md5. Dårlig download eller forkert fil, vil ikke opdatere denne"
 
 #: ../thus/user_info.py:72
 msgid "Who are you?"
@@ -554,7 +555,7 @@ msgstr "For mange tegn"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr ""
+msgstr "Forkert url, prøver en anden hvis tilgængelig."
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -562,37 +563,37 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Kan ikke åbne {0} - Grund: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr ""
+msgstr "HTTP Fejl : {0}"
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr ""
+msgstr "URL Fejl : {0}"
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Downloader {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr ""
+msgstr "Metalink for pakke {0} har ingen størrelse info"
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
 msgid "File {0} already exists, Thus will not overwrite it"
-msgstr ""
+msgstr "Fil {0} eksisterer allerede, Thus vil ikke overskrive den"
 
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Kan ikke hente {0}, selv efter alle mirrors er prøvet"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -641,31 +642,31 @@ msgstr "intet"
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Kan ikke ændre en partition med LVM type filsystem"
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Kan ikke bruge samme mount sted to gange"
 
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
 msgid "You will delete the partition {0} from disk {1}"
-msgstr ""
+msgstr "Du vil slette partition {0} fra disk {1}"
 
 #: ../thus/installation/advanced.py:870
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr ""
+msgstr "Unmounter {0}..."
 
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Undskyld, du har allerede lavet {0} primære partitioner."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr ""
+msgstr "Undskyld, du har allerede lavet {0} primære og 1 udvidet partitioner."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -673,19 +674,19 @@ msgstr "Kan ikke bruge samme monteringspunkt to gange..."
 
 #: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Laver en primær partition"
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Laver en udvidet partition"
 
 #: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Laver en logisk partition"
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
-msgstr ""
+msgstr "LUKS kodeord matcher ikke!"
 
 #: ../thus/installation/advanced.py:1283
 msgid "Advanced installation mode"
@@ -693,17 +694,17 @@ msgstr "Avanceret installation"
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Brug enheden herunder til boot loader installatioen:"
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1041 ../ui/automatic.ui:149
 msgid "Bootloader:"
-msgstr ""
+msgstr "Bootloader:"
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1067 ../ui/automatic.ui:174
 msgid "Device:"
-msgstr ""
+msgstr "Enhed:"
 
 #: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
@@ -727,7 +728,7 @@ msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1328
 msgid "Undo"
-msgstr ""
+msgstr "Fortryd"
 
 #: ../thus/installation/advanced.py:1331 ../thus/installation/advanced.py:1896
 msgid "New"
@@ -735,11 +736,11 @@ msgstr "Ny"
 
 #: ../thus/installation/advanced.py:1334
 msgid "Delete"
-msgstr ""
+msgstr "Slet"
 
 #: ../thus/installation/advanced.py:1337
 msgid "Edit..."
-msgstr ""
+msgstr "Ændre"
 
 #: ../thus/installation/advanced.py:1340
 msgid "New partition table"
@@ -747,11 +748,11 @@ msgstr "Ny partitionstabel"
 
 #: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuller"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Apply"
-msgstr ""
+msgstr "_Anvend"
 
 #: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:405
 msgid "Size:"
@@ -783,11 +784,11 @@ msgstr "Enden af denne diskplads"
 
 #: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
-msgstr ""
+msgstr "Brug Som:"
 
 #: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
-msgstr ""
+msgstr "Mount Sted:"
 
 #: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:251 ../ui/advanced.ui:687
@@ -812,7 +813,7 @@ msgstr "Opret partitionstabel"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Brug LUKS kryptering:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1172
 msgid "LUKS volume name:"
@@ -829,7 +830,7 @@ msgstr "Bekræft adgangskode:"
 #: ../thus/installation/advanced.py:1521
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr ""
+msgstr "Laver en ny {0} partitionstabel for disk {1}"
 
 #: ../thus/installation/advanced.py:1531
 msgid ""
