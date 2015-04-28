@@ -28,6 +28,7 @@
 
 import subprocess
 import os
+import re
 import logging
 
 import misc.misc as misc
@@ -68,13 +69,14 @@ PED_PARTITION_APPLE_TV_RECOVERY = 13
 PED_PARTITION_DIAG = 14
 PED_PARTITION_LEGACY_BOOT = 15
 
+DEVICE_BLACKLIST = ["^mtd", r'^mmcblk.+boot', r'^mmcblk.+rpmb', "^zram"]
 
 @misc.raise_privileges
 def get_devices():
     device_list = parted.getAllDevices()
     disk_dic = {}
 
-    myhomepath = '/run/archiso/bootmnt'
+    myhomepath = '/bootmnt'
     if os.path.exists(myhomepath):
         myhome = subprocess.check_output(["df", "-P", myhomepath]).decode()
     else:
@@ -99,9 +101,14 @@ def get_devices():
         # print(dev.length)
         # Must create disk object to drill down
 
-        # Skip cd drive and special devices like LUKS, LVM and MMC
+        # Skip all blacklisted devices
+        dev_name = dev.path[5:]
+        if any(re.search(expr, dev_name) for expr in DEVICE_BLACKLIST):
+            continue
+
+        # Skip cd drive and special devices like LUKS and LVM
         disk_obj = None
-        if not dev.path.startswith("/dev/sr") and not dev.path.startswith("/dev/mapper") and not dev.path.startswith("/dev/mmcblk"):
+        if not dev.path.startswith("/dev/sr") and not dev.path.startswith("/dev/mapper"):
             try:
                 disk_obj = parted.Disk(dev)
                 result = OK
