@@ -1654,7 +1654,7 @@ class InstallationAdvanced(GtkBaseBox):
         # Initialize StateBox widgets and has_part
         part_label = {}
         has_part = {}
-        for mount_point, label in label_names.items:
+        for mount_point, label in label_names.items():
             part_label[mount_point] = self.ui.get_object(label)
             part_label[mount_point].set_state(False)
             part_label[mount_point].hide()
