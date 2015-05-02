@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-27 17:55+0000\n"
+"PO-Revision-Date: 2015-04-30 12:19+0000\n"
 "Last-Translator: Adrian-Ciprian Tînjală <adrian.tinjala@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/manjaro-thus/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "Aranjamente de tastatură"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr "Variante de tastatura"
+msgstr "Variante de tastatură"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -137,7 +137,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr "Thus este în pre-lansare beta, aflat în dezvoltare continuă. \nÎncă nu tratează cum trebuie RAID, btrfs subvolumes, sau alte  \nsetup-uri avansate. Vă rugăm procedați cu atenție. Pierderea de date este posibilă! \n\nDacă găsiți bug-uri, vă rugăm să le raportați la http://bugs.manjaro.org"
+msgstr "Thus este în pre-lansare beta, aflat în continuă dezvoltare. \nÎncă nu tratează cum trebuie RAID, btrfs subvolumes sau alte  \nsetup-uri avansate. Vă rugăm procedați cu atenție. Pierderea de date este posibilă! \n\nDacă găsiți bug-uri, vă rugăm să le raportați la http://bugs.manjaro.org"
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
@@ -231,7 +231,7 @@ msgstr "Se părăsește instalatorul..."
 
 #: ../thus/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
-msgstr "Nu se poate găsi scriptul rank mirrors"
+msgstr "Nu se poate găsi scriptul de clasificare oglinzi"
 
 #: ../thus/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
@@ -388,7 +388,7 @@ msgstr "Versiune Internet Thus: {0}"
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr "Versiune nouă găsită. Actualizare instalator..."
+msgstr "Versiune nouă găsită. Se actualizează instalator..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
@@ -396,11 +396,11 @@ msgstr "Nici o versiune nouă găsită. Se actualizează oricum..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr "Descărcare nouă versiune Thus..."
+msgstr "Se descarcă noua versiune a lui Thus..."
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr "Nu se poate descărca nouă versiune Thus."
+msgstr "Nu se poate descărca noua versiune Thus."
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
@@ -421,11 +421,11 @@ msgstr "Cine sunteți?"
 
 #: ../thus/user_info.py:77 ../ui/user_info.ui:32
 msgid "Your name:"
-msgstr "Numele vostru:"
+msgstr "Numele dumneavoastră:"
 
 #: ../thus/user_info.py:81 ../ui/user_info.ui:179
 msgid "Your name"
-msgstr "Numele vostru"
+msgstr "Numele dumneavoastră"
 
 #: ../thus/user_info.py:85 ../ui/user_info.ui:276
 msgid "Hostname"
@@ -433,7 +433,7 @@ msgstr "Nume de gazdă"
 
 #: ../thus/user_info.py:89 ../ui/user_info.ui:603
 msgid "Your computer's name:"
-msgstr "Numele calculatorului vostru:"
+msgstr "Numele calculatorului dumneavoastră:"
 
 #: ../thus/user_info.py:93 ../ui/user_info.ui:44
 msgid "Pick a username:"
@@ -665,12 +665,12 @@ msgstr "Demontare {0}..."
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr "Ne pare rău, ai deja {0} partiție primară creată."
+msgstr "Ne pare rău, aveți deja {0} partiție primară creată."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
 msgid "Sorry, you already have {0} primary and 1 extended partitions created."
-msgstr "Ne pare rău, ai deja {0} partiție primară și 1 extinsă create."
+msgstr "Ne pare rău, aveți deja {0} partiție primară și 1 extinsă create."
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
@@ -932,12 +932,12 @@ msgstr "S-a finalizat salvarea schimbărilor în {0}"
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr "Se crează un nou {0} sistem de fișiere în {1} etichetat {2}"
+msgstr "Se creează un nou {0} sistem de fișiere în {1} etichetat {2}"
 
 #: ../thus/installation/advanced.py:2034
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr "Se crează un nou {0} sistem de fișiere în {1}"
+msgstr "Se creează un nou {0} sistem de fișiere în {1}"
 
 #: ../thus/installation/advanced.py:2043 ../thus/installation/advanced.py:2062
 #: ../thus/installation/advanced.py:2078
@@ -1672,11 +1672,11 @@ msgstr "Indexarea fișierelor desktop-image pentru a fi copiate ..."
 
 #: ../thus/installation/process.py:591
 msgid "Extracting root-image ..."
-msgstr "Se extrage imaginea-rădăcină ..."
+msgstr "Se extrage root-image ..."
 
 #: ../thus/installation/process.py:601
 msgid "Extracting desktop-image ..."
-msgstr "Se extrage imaginea-desktop ..."
+msgstr "Se extrage desktop-image ..."
 
 #: ../thus/installation/process.py:616
 #, python-brace-format
@@ -2057,7 +2057,7 @@ msgstr "Selectați 'anulare' dacă nu vreți să instalați un bootloader"
 msgid ""
 "<span weight=\"bold\" size=\"large\">For best results, please ensure that "
 "this computer:</span>"
-msgstr "<span weight=\"bold\" size=\"large\">Pentru rezultate optime, asigurați-vă ca acest calculator:</span>"
+msgstr "<span weight=\"bold\" size=\"large\">Pentru rezultate optime, asigurați-vă că acest calculator:</span>"
 
 #: ../ui/check.ui:86
 msgid ""
@@ -2067,7 +2067,7 @@ msgstr "(*) Acest lucru depinde în mare măsură de ce mediu desktop alegeți, 
 
 #: ../ui/main_window.ui:48
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"
-msgstr "<span weight=\"bold\" size=\"large\">Bine ați venit la Manjaro</span>"
+msgstr "<span weight=\"bold\" size=\"large\">Bine ați venit pe Manjaro</span>"
 
 #: ../ui/timezone.ui:105
 msgid "Use Network Time Protocol for clock synchronization:"
