@@ -33,19 +33,17 @@ import logging
 import multiprocessing
 import os
 import collections
+import platform
 import queue
 import shutil
 import subprocess
 import sys
 import time
-import urllib.request
-import urllib.error
  
 import traceback
 
 import parted3.fs_module as fs
 import misc.misc as misc
-import info
 import encfs
 from installation import auto_partition
 from installation import chroot
@@ -61,8 +59,8 @@ DEST_DIR = "/install"
 DesktopEnvironment = collections.namedtuple('DesktopEnvironment', ['executable', 'desktop_file'])
 
 desktop_environments = [
-    DesktopEnvironment('/usr/bin/startkde', 'plasma'), # KDE Plasma 5
-    DesktopEnvironment('/usr/bin/startkde', 'kde-plasma'), # KDE Plasma 4
+    DesktopEnvironment('/usr/bin/startkde', 'plasma'),  # KDE Plasma 5
+    DesktopEnvironment('/usr/bin/startkde', 'kde-plasma'),  # KDE Plasma 4
     DesktopEnvironment('/usr/bin/gnome-session', 'gnome'),
     DesktopEnvironment('/usr/bin/startxfce4', 'xfce'),
     DesktopEnvironment('/usr/bin/cinnamon-session', 'cinnamon-session'),
@@ -88,21 +86,22 @@ def write_file(filecontents, filename):
     with open(filename, "w") as fh:
         fh.write(filecontents)
 
-## BEGIN: RSYNC-based file copy support
-#CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
+# BEGIN: RSYNC-based file copy support
+# CMD = 'unsquashfs -f -i -da 32 -fr 32 -d %(dest)s %(source)s'
 CMD = 'rsync -ar --progress %(source)s %(dest)s'
 PERCENTAGE_FORMAT = '%d/%d ( %.2f %% )'
 from threading import Thread
 import re
 ON_POSIX = 'posix' in sys.builtin_module_names
 
+
 class FileCopyThread(Thread):
     """ Update the value of the progress bar so that we get some movement """
     def __init__(self, installer, current_file, total_files, source, dest, offset=0):
         # Environment used for executing rsync properly
         # Setting locale to C (fix issue with tr_TR locale)
-        self.at_env=os.environ
-        self.at_env["LC_ALL"]="C"
+        self.at_env = os.environ
+        self.at_env["LC_ALL"] = "C"
 
         self.our_current = current_file
         self.process = subprocess.Popen(
@@ -118,7 +117,8 @@ class FileCopyThread(Thread):
         self.installer = installer
         self.total_files = total_files
         # in order for the progressbar to pick up where the last rsync ended,
-        # we need to set the offset (because the total number of files is calculated before)
+        # we need to set the offset because the total number of files is
+        # calculated before.
         self.offset = offset
         super(FileCopyThread, self).__init__()
 
@@ -143,10 +143,12 @@ class FileCopyThread(Thread):
             # to-check=x/y, where:
             #  - x = number of files yet to be checked
             #  - y = currently calculated total number of files.
-            # but if you're copying directory with some links in it, the xfer# might not be a
-            # reliable counter. ( for one increase of xfer, many files may be created)
-            # In case of manjaro, we pre-compute the total number of files.
-            # therefore we can easily subtract x from y in order to get real files copied / processed count.
+            # but if you're copying directory with some links in it, the xfer#
+            # might not be a reliable counter. For one increase of xfer, many
+            # files may be created.
+            # In case of Manjaro, we pre-compute the total number of files.
+            # Therefore we can easily subtract x from y in order to get real
+            # files copied / processed count.
             m = re.findall(r'xfr#(\d+), ir-chk=(\d+)/(\d+)', line.decode())
             if m:
                 # we've got a percentage update
@@ -156,7 +158,8 @@ class FileCopyThread(Thread):
                 num_files_copied = num_files_total_local - num_files_remaining + self.offset
                 if num_files_copied % 100 == 0:
                     self.update_progress(num_files_copied)
-            # Disabled until we find a proper solution for BadDrawable (invalid Pixmap or Window parameter) errors
+            # Disabled until we find a proper solution for BadDrawable
+            # (invalid Pixmap or Window parameter) errors
             # Details: serial YYYYY error_code 9 request_code 62 minor_code 0
             # This might even speed up the copy process ...
             """else:
@@ -166,7 +169,7 @@ class FileCopyThread(Thread):
 
         self.offset = num_files_copied
 
-## END: RSYNC-based file copy support
+# END: RSYNC-based file copy support
 
 
 class InstallError(Exception):
@@ -219,14 +222,17 @@ class InstallationProcess(multiprocessing.Process):
 
         self.special_dirs_mounted = False
 
-        # Initialize some vars that are correctly initialized elsewhere (pylint complains about it)
-        self.auto_device = ""
-        self.arch = ""
-        self.initramfs = ""
-        self.kernel = ""
-        self.vmlinuz = ""
-        DEST_DIR = ""
+        self.auto_device = self.settings.get('auto_device')
+        self.arch = platform.machine()
         self.bootloader_ok = self.settings.get('bootloader_ok')
+
+        # get thus.conf settings
+        self.distribution_name = configuration['distribution']['DISTRIBUTION_NAME']
+        self.distribution_version = configuration['distribution']['DISTRIBUTION_VERSION']
+        self.live_user = configuration['install']['LIVE_USER_NAME']
+        self.media = configuration['install']['LIVE_MEDIA_SOURCE']
+        self.media_desktop = configuration['install']['LIVE_MEDIA_DESKTOP']
+        self.media_type = configuration['install']['LIVE_MEDIA_TYPE']
 
     def queue_fatal_event(self, txt):
         """ Queues the fatal event and exits process """
@@ -278,139 +284,76 @@ class InstallationProcess(multiprocessing.Process):
 
     @misc.raise_privileges
     def run_installation(self):
-        """ Run installation """
+        """
+        Run installation
 
-        '''
-        From this point, on a warning situation, Cnchi should try to continue, so we need to catch the exception here.
-        If we don't catch the exception here, it will be catched in run() and managed as a fatal error.
-        On the other hand, if we want to clarify the exception message we can catch it here
-        and then raise an InstallError exception.
-        '''
+        From this point, on a warning situation, Thus should try to continue,
+        so we need to catch the exception here.
+        If we don't catch the exception here, it will be catched in run() and
+        managed as a fatal error.
+        On the other hand, if we want to clarify the exception message we can
+        catch it here and then raise an InstallError exception.
+        """
 
-        # Common vars
-        self.packages = []
-
-        if not os.path.exists(DEST_DIR):
-            with misc.raised_privileges():
-                os.makedirs(DEST_DIR)
-        else:
+        # Create the directory where we will mount our new root partition
+        try:
+            os.makedirs(DEST_DIR)
+        except OSError:
             # If we're recovering from a failed/stoped install, there'll be
             # some mounted directories. Try to unmount them first.
-            # We use unmount_all from auto_partition to do this.
             auto_partition.unmount_all(DEST_DIR)
 
-        # get settings
-        self.distribution_name = configuration['distribution']['DISTRIBUTION_NAME']
-        self.distribution_version = configuration['distribution']['DISTRIBUTION_VERSION']
-        self.live_user = configuration['install']['LIVE_USER_NAME']
-        self.media = configuration['install']['LIVE_MEDIA_SOURCE']
-        self.media_desktop = configuration['install']['LIVE_MEDIA_DESKTOP']
-        self.media_type = configuration['install']['LIVE_MEDIA_TYPE']
-        self.kernel = configuration['install']['KERNEL']
-
-        self.vmlinuz = "vmlinuz-{0}".format(self.kernel)
-        self.initramfs = "initramfs-{0}".format(self.kernel)
-
-        self.arch = os.uname()[-1]
-
-        # Create and format partitions
-
+        # Create, format and mount partitions in automatic mode
         if self.method == 'automatic':
-            self.auto_device = self.settings.get('auto_device')
-
             logging.debug(_("Creating partitions and their filesystems in {0}".format(self.auto_device)))
 
             # If no key password is given a key file is generated and stored in /boot
             # (see auto_partition.py)
 
-            auto = auto_partition.AutoPartition(dest_dir=DEST_DIR,
-                                                auto_device=self.auto_device,
-                                                use_luks=self.settings.get("use_luks"),
-                                                luks_password=self.settings.get("luks_root_password"),
-                                                use_lvm=self.settings.get("use_lvm"),
-                                                use_home=self.settings.get("use_home"),
-                                                callback_queue=self.callback_queue)
+            auto = auto_partition.AutoPartition(
+                dest_dir=DEST_DIR,
+                auto_device=self.auto_device,
+                use_luks=self.settings.get("use_luks"),
+                luks_password=self.settings.get("luks_root_password"),
+                use_lvm=self.settings.get("use_lvm"),
+                use_home=self.settings.get("use_home"),
+                bootloader=self.settings.get("bootloader"),
+                callback_queue=self.callback_queue
+            )
             auto.run()
 
-            # Get mount_devices and fs_devices
-            # (mount_devices will be used when configuring GRUB in modify_grub_default)
-            # (fs_devices  will be used when configuring the fstab file)
+            # used in modify_grub_default()
             self.mount_devices = auto.get_mount_devices()
+            # used when configuring fstab
             self.fs_devices = auto.get_fs_devices()
 
-        # Create the directory where we will mount our new root partition
-        if not os.path.exists(DEST_DIR):
-            os.mkdir(DEST_DIR)
-
-        if self.method == 'alongside' or self.method == 'advanced':
-            root_partition = self.mount_devices["/"]
-
-            # NOTE: Advanced method formats root by default in installation_advanced
-
-            # if root_partition in self.fs_devices:
-            #     root_fs = self.fs_devices[root_partition]
-            # else:
-            #    root_fs = "ext4"
-
-            if "/boot" in self.mount_devices:
-                boot_partition = self.mount_devices["/boot"]
-            else:
-                boot_partition = ""
-
-            if "swap" in self.mount_devices:
-                swap_partition = self.mount_devices["swap"]
-            else:
-                swap_partition = ""
-
-            # Mount root and boot partitions (only if it's needed)
-            # Not doing this in automatic mode as AutoPartition class mounts the root and boot devices itself.
-            txt = _("Mounting partition {0} into {1} directory").format(root_partition, DEST_DIR)
-            logging.debug(txt)
-            subprocess.check_call(['mount', root_partition, DEST_DIR])
-            # We also mount the boot partition if it's needed
-            boot_path = os.path.join(DEST_DIR, "boot")
-            if not os.path.exists(boot_path):
-                os.makedirs(boot_path)
-            if "/boot" in self.mount_devices:
-                txt = _("Mounting partition {0} into {1} directory")
-                txt = txt.format(boot_partition, boot_path)
-                logging.debug(txt)
-                subprocess.check_call(['mount', boot_partition, boot_path])
-
-            # In advanced mode, mount all partitions (root and boot are already mounted)
-            if self.method == 'advanced':
-                for path in self.mount_devices:
-                    # Ignore devices without a mount path (or they will be mounted at "DEST_DIR")
-                    if path == "":
-                        continue
-                    mount_part = self.mount_devices[path]
-                    if mount_part != root_partition and mount_part != boot_partition and mount_part != swap_partition:
-                        mount_dir = DEST_DIR + path
-                        try:
-                            if not os.path.exists(mount_dir):
-                                os.makedirs(mount_dir)
-                            txt = _("Mounting partition {0} into {1} directory")
-                            txt = txt.format(mount_part, mount_dir)
-                            logging.debug(txt)
-                            subprocess.check_call(['mount', mount_part, mount_dir])
-                        except subprocess.CalledProcessError as process_error:
-                            # We will continue as root and boot are already mounted
-                            logging.warning(_("Can't mount {0} in {1}".format(mount_part, mount_dir)))
-                            logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-                            logging.warning(_("Output : {0}".format(process_error.output)))
-                    elif mount_part == swap_partition:
-                        try:
-                            logging.debug(_("Activating swap in {0}".format(mount_part)))
-                            subprocess.check_call(['swapon', swap_partition])
-                        except subprocess.CalledProcessError as process_error:
-                            # We can continue even if no swap is on
-                            logging.warning(_("Can't activate swap in {0}".format(mount_part)))
-                            logging.warning(_("Command {0} has failed.".format(process_error.cmd)))
-                            logging.warning(_("Output : {0}".format(process_error.output)))
+        # In advanced mode we only need to mount partitions
+        if self.method == 'advanced':
+            for path in sorted(self.mount_devices):
+                if path == "" or path == "swap":
+                    continue
+                mount_part = self.mount_devices[path]
+                mount_dir = DEST_DIR + path
+                if not os.path.exists(mount_dir):
+                    os.makedirs(mount_dir)
+                try:
+                    if not os.path.exists(mount_dir):
+                        os.makedirs(mount_dir)
+                    txt = _("Mounting partition {0} into {1} directory")
+                    txt = txt.format(mount_part, mount_dir)
+                    logging.debug(txt)
+                    subprocess.check_call(['mount', mount_part, mount_dir])
+                except subprocess.CalledProcessError as err:
+                    logging.warning(_("Can't mount {0} in {1}"
+                                      .format(mount_part, mount_dir)))
+                    logging.warning(_("Command {0} has failed."
+                                      .format(err.cmd)))
+                    logging.warning(_("Output : {0}".format(err.output)))
 
         # Nasty workaround:
         # If pacman was stoped and /var is in another partition than root
-        # (so as to be able to resume install), database lock file will still be in place.
+        # (so as to be able to resume install), database lock file will still
+        # be in place.
         # We must delete it or this new installation will fail
         db_lock = os.path.join(DEST_DIR, "var/lib/pacman/db.lck")
         if os.path.exists(db_lock):
@@ -419,25 +362,16 @@ class InstallationProcess(multiprocessing.Process):
             logging.debug(_("{0} deleted".format(db_lock)))
 
         # Create some needed folders
-        folders = [
-            os.path.join(DEST_DIR, 'var/lib/pacman'),
-            os.path.join(DEST_DIR, 'etc/pacman.d/gnupg'),
-            os.path.join(DEST_DIR, 'var/log')]
-
-        for folder in folders:
-            if not os.path.exists(folder):
-                os.makedirs(folder)
+        os.makedirs(os.path.join(DEST_DIR, 'var/lib/pacman'), exist_ok=True)
+        os.makedirs(os.path.join(DEST_DIR, 'etc/pacman.d/gnupg'), exist_ok=True)
+        os.makedirs(os.path.join(DEST_DIR, 'var/log'), exist_ok=True)
 
         all_ok = True
 
         try:
             self.queue_event('debug', _('Install System ...'))
-            # very slow ...
             self.install_system()
-
-            subprocess.check_call(['mkdir', '-p', '{0}/var/log/'.format(DEST_DIR)])
             self.queue_event('debug', _('System installed.'))
-
             self.queue_event('debug', _('Configuring system ...'))
             self.configure_system()
             self.queue_event('debug', _('System configured.'))
@@ -469,68 +403,52 @@ class InstallationProcess(multiprocessing.Process):
         else:
             # Last but not least, copy Thus log to new installation
             datetime = time.strftime("%Y%m%d") + "-" + time.strftime("%H%M%S")
-            dst = os.path.join(DEST_DIR, "var/log/thus-{0}.log".format(datetime))
+            dst = os.path.join(DEST_DIR,
+                               "var/log/thus-{0}.log".format(datetime))
             try:
                 shutil.copy("/tmp/thus.log", dst)
             except FileNotFoundError:
                 logging.warning(_("Can't copy Thus log to {0}".format(dst)))
             except FileExistsError:
                 pass
-            source_dirs = {"source", "source_desktop"}
-            for p in source_dirs:
-                p = os.path.join("/", p)
+            
+            source_dirs = ["/source", "/source_desktop"]
+
+            partition_dirs = []
+            for path in sorted(self.mount_devices, reverse=True):
+                if path == "" or path == "swap" or path == "/":
+                    continue
+                partition_dirs += [DEST_DIR + path]
+
+            install_dirs = ["/install"]
+            unmount_points = source_dirs + partition_dirs + install_dirs
+
+            logging.debug("Paths to unmount: {0}".format(unmount_points))
+            for p in unmount_points:
                 (fsname, fstype, writable) = misc.mount_info(p)
                 if fsname:
+                    logging.debug(_("Unmounting {0}".format(p)))
                     try:
-                        txt = _("Unmounting {0}".format(p))
-                        self.queue_event('debug', txt)
                         subprocess.check_call(['umount', p])
-                    except subprocess.CalledProcessError as err:
-                        logging.error(err)
+                    except subprocess.CalledProcessError:
+                        logging.debug("Can't unmount. Try -l to force it.")
                         try:
                             subprocess.check_call(["umount", "-l", p])
                         except subprocess.CalledProcessError as err:
-                            self.queue_event('warning', _("Can't unmount {0}".format(p)))
-                            logging.warning(err)
-            self.queue_event('debug', "Mounted devices: {0}".format(self.mount_devices))
-            for path in self.mount_devices:
-                mount_part = self.mount_devices[path]
-                mount_dir = DEST_DIR + path
-                if path != '/' and path != 'swap' and path != '':
-                    try:
+                            logging.warning(_("Unable to umount {0}".format(p)))
+                            logging.warning(_("Command {0} has failed."
+                                              .format(err.cmd)))
+                            logging.warning(_("Output : {0}"
+                                              .format(err.output)))
 
-                        txt = _("Unmounting {0}".format(mount_dir))
-                        self.queue_event('debug', txt)
-                        subprocess.check_call(['umount', mount_dir])
-                    except subprocess.CalledProcessError as err:
-                        logging.error(err)
-                        try:
-                            subprocess.check_call(["umount", "-l", mount_dir])
-                        except subprocess.CalledProcessError as err:
-                            # We will continue as root and boot are already mounted
-                            logging.warning(err)
-                            self.queue_event('debug', _("Can't unmount {0}".format(mount_dir)))
-            # now we can unmount /install
-            (fsname, fstype, writable) = misc.mount_info(DEST_DIR)
-            if fsname:
-                try:
-                    txt = _("Unmounting {0}".format(DEST_DIR))
-                    self.queue_event('debug', txt)
-                    subprocess.check_call(['umount', DEST_DIR])
-                except subprocess.CalledProcessError as err:
-                    logging.error(err)
-                    try:
-                        subprocess.check_call(["umount", "-l", DEST_DIR])
-                    except subprocess.CalledProcessError as err:
-                        logging.warning(err)
-                        self.queue_event('debug', _("Can't unmount {0}".format(p)))
             # Installation finished successfully
             self.queue_event("finished", _("Installation finished successfully."))
             self.running = False
             self.error = False
             return True
 
-    def check_source_folder(self, mount_point):
+    @staticmethod
+    def check_source_folder(mount_point):
         """ Check if source folders are mounted """
         device = None
         with open('/proc/mounts', 'r') as fp:
@@ -544,18 +462,16 @@ class InstallationProcess(multiprocessing.Process):
         """ Copies all files to target """
         # mount the media location.
         try:
-            if(not os.path.exists(DEST_DIR)):
-                os.mkdir(DEST_DIR)
-            if(not os.path.exists("/source")):
-                os.mkdir("/source")
-            if(not os.path.exists("/source_desktop")):
-                os.mkdir("/source_desktop")
+            os.makedirs(DEST_DIR, exist_ok=True)
+            os.makedirs("/source", exist_ok=True)
+            os.makedirs("/source_desktop", exist_ok=True)
+
             # find the squashfs..
-            if(not os.path.exists(self.media)):
+            if not os.path.exists(self.media):
                 txt = _("Base filesystem does not exist! Critical error (exiting).")
                 logging.error(txt)
                 self.queue_fatal_event(txt)
-            if(not os.path.exists(self.media_desktop)):
+            if not os.path.exists(self.media_desktop):
                 txt = _("Desktop filesystem does not exist! Critical error (exiting).")
                 logging.error(txt)
                 self.queue_fatal_event(txt)
@@ -564,19 +480,33 @@ class InstallationProcess(multiprocessing.Process):
             mount_point = "/source"
             device = self.check_source_folder(mount_point)
             if device is None:
-                subprocess.check_call(["mount", self.media, mount_point, "-t", self.media_type, "-o", "loop"])
+                subprocess.check_call(["mount",
+                                       self.media,
+                                       mount_point,
+                                       "-t",
+                                       self.media_type,
+                                       "-o",
+                                       "loop"])
             else:
-                logging.warning(_("{0} is already mounted at {1} as {2}".format(self.media, mount_point, device)))
+                logging.warning(_("{0} is already mounted at {1} as {2}"
+                                  .format(self.media, mount_point, device)))
+
             mount_point = "/source_desktop"
             device = self.check_source_folder(mount_point)
             if device is None:
-                subprocess.check_call(["mount", self.media_desktop, mount_point, "-t", self.media_type, "-o", "loop"])
+                subprocess.check_call(["mount",
+                                       self.media_desktop,
+                                       mount_point,
+                                       "-t",
+                                       self.media_type,
+                                       "-o",
+                                       "loop"])
             else:
-                logging.warning(_("{0} is already mounted at {1} as {2}".format(self.media_desktop, mount_point, device)))
+                logging.warning(_("{0} is already mounted at {1} as {2}"
+                                  .format(self.media_desktop, mount_point, device)))
 
             # walk root filesystem
             SOURCE = "/source/"
-            DEST = DEST_DIR
             directory_times = []
             # index the files
             self.queue_event('info', _("Indexing files of root-image to be copied ..."))
@@ -590,24 +520,24 @@ class InstallationProcess(multiprocessing.Process):
             our_total = int(float(output1) + float(output2))
             self.queue_event('info', _("Extracting root-image ..."))
             our_current = 0
-            #t = FileCopyThread(self, our_total, self.media, DEST)
-            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST)
+            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST_DIR)
             t.start()
             t.join()
+
             # walk desktop filesystem
             SOURCE = "/source_desktop/"
             DEST = DEST_DIR
             directory_times = []
             self.queue_event('info', _("Extracting desktop-image ..."))
             our_current = int(output1)
-            #t = FileCopyThread(self, our_total, self.media_desktop, DEST)
-            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST, t.offset)
+            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST_DIR, t.offset)
             t.start()
             t.join()
-            # this is purely out of aesthetic reasons. Because we're reading of the queue
-            # once 3 seconds, good chances are we're going to miss the 100% file copy.
-            # therefore it would be nice to show 100% to the user so he doesn't panick that
-            # not all of the files copied.
+
+            # this is purely out of aesthetic reasons. Because we're reading of
+            # the queue once 3 seconds, good chances are we're going to miss
+            # the 100% file copy. Yherefore it would be nice to show 100% to
+            # the user so he doesn't panick that not all of the files copied.
             self.queue_event('percent', 1.00)
             self.queue_event('progress-info', PERCENTAGE_FORMAT % (our_total, our_total, 100))
             for dirtime in directory_times:
@@ -637,7 +567,8 @@ class InstallationProcess(multiprocessing.Process):
     def copy_network_config():
         """ Copies Network Manager configuration """
         source_nm = "/etc/NetworkManager/system-connections/"
-        target_nm = os.path.join(DEST_DIR, "etc/NetworkManager/system-connections")
+        target_nm = os.path.join(DEST_DIR,
+                                 "etc/NetworkManager/system-connections")
 
         # Sanity checks.  We don't want to do anything if a network
         # configuration already exists on the target
@@ -663,14 +594,15 @@ class InstallationProcess(multiprocessing.Process):
     def auto_fstab(self):
         """ Create /etc/fstab file """
 
-        all_lines = ["# /etc/fstab: static file system information.",
-                     "#",
-                     "# Use 'blkid' to print the universally unique identifier for a",
-                     "# device; this may be used with UUID= as a more robust way to name devices",
-                     "# that works even if disks are added and removed. See fstab(5).",
-                     "#",
-                     "# <file system> <mount point>   <type>  <options>       <dump>  <pass>",
-                     "#"]
+        all_lines = [
+            "# /etc/fstab: static file system information.",
+            "#",
+            "# Use 'blkid' to print the universally unique identifier for a",
+            "# device; this may be used with UUID= as a more robust way to name devices",
+            "# that works even if disks are added and removed. See fstab(5).",
+            "#",
+            "# <file system> <mount point>   <type>  <options>       <dump>  <pass>",
+            "#"]
 
         use_luks = self.settings.get("use_luks")
         use_lvm = self.settings.get("use_lvm")
@@ -701,7 +633,7 @@ class InstallationProcess(multiprocessing.Process):
             crypttab_path = os.path.join(DEST_DIR, 'etc/crypttab')
 
             # Fix for home + luks, no lvm (from Automatic Install)
-            if "/home" in mount_point and self.method == "automatic" and use_luks and not use_lvm:
+            if ("/home" in mount_point and self.method == "automatic" and use_luks and not use_lvm):
                 # Modify the crypttab file
                 luks_root_password = self.settings.get("luks_root_password")
                 if luks_root_password and len(luks_root_password) > 0:
@@ -1064,16 +996,16 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('debug', _('Network configuration copied.'))
 
         # enable services
-        self.enable_services([self.network_manager])
+        # self.enable_services([self.network_manager])
 
-        cups_service = os.path.join(DEST_DIR, "usr/lib/systemd/system/org.cups.cupsd.service")
-        if os.path.exists(cups_service):
-            self.enable_services(['org.cups.cupsd'])
+        # cups_service = os.path.join(DEST_DIR, "usr/lib/systemd/system/org.cups.cupsd.service")
+        # if os.path.exists(cups_service):
+        #    self.enable_services(['org.cups.cupsd'])"""
 
         # enable targets
         # self.enable_targets(['remote-fs.target'])
-        
-        self.queue_event('debug', 'Enabled installed services.')
+
+        # self.queue_event('debug', 'Enabled installed services.')
 
         # Wait FOREVER until the user sets the timezone
         while self.settings.get('timezone_done') is False:
@@ -1133,7 +1065,7 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('debug', _('Hostname  {0} set.'.format(hostname)))
 
         # Set root password
-        if not root_password is '':
+        if root_password is not '':
             self.change_user_password('root', root_password)
             self.queue_event('debug', _('Set root password.'))
         else:
@@ -1141,26 +1073,43 @@ class InstallationProcess(multiprocessing.Process):
             self.queue_event('debug', _('Set the same password to root.'))
 
         # Generate locales
-        keyboard_layout = self.settings.get("keyboard_layout")
-        keyboard_variant = self.settings.get("keyboard_variant")
         locale = self.settings.get("locale")
+
         self.queue_event('info', _("Generating locales ..."))
-
         self.uncomment_locale_gen(locale)
-
         chroot_run(['locale-gen'])
+
         locale_conf_path = os.path.join(DEST_DIR, "etc/locale.conf")
         with open(locale_conf_path, "w") as locale_conf:
             locale_conf.write('LANG={0}\n'.format(locale))
 
-        environment_path = os.path.join(DEST_DIR, "etc/environment")
-        with open(environment_path, "w") as environment:
-            environment.write('LANG={0}\n'.format(locale))
-
+        keyboard_layout = self.settings.get("keyboard_layout")
+        keyboard_variant = self.settings.get("keyboard_variant")
         # Set /etc/vconsole.conf
         vconsole_conf_path = os.path.join(DEST_DIR, "etc/vconsole.conf")
         with open(vconsole_conf_path, "w") as vconsole_conf:
             vconsole_conf.write('KEYMAP={0}\n'.format(keyboard_layout))
+
+        # Write xorg keyboard configuration
+        xorg_conf_dir = os.path.join(DEST_DIR, "etc/X11/xorg.conf.d")
+        os.makedirs(xorg_conf_dir, exist_ok=True)
+        fname = "{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR)
+        default_kb_layout = "us"
+        default_kb_model = "pc105"
+        with open(fname, 'w') as file:
+            file.write("\n"
+                       "Section \"InputClass\"\n"
+                       " Identifier \"system-keyboard\"\n"
+                       " MatchIsKeyboard \"on\"\n"
+                       " Option \"XkbLayout\" \"{0},{1}\"\n"
+                       " Option \"XkbModel\" \"{2}\"\n"
+                       " Option \"XkbVariant\" \"{3},\"\n"
+                       " Option \"XkbOptions\" \"{4}\"\n"
+                       "EndSection\n"
+                       .format(keyboard_layout, default_kb_layout,
+                               default_kb_model,
+                               keyboard_variant,
+                               "terminate:ctrl_alt_bksp,grp:alt_shift_toggle"))
 
         self.queue_event('info', _("Adjusting hardware clock ..."))
         self.auto_timesetting()
@@ -1169,10 +1118,6 @@ class InstallationProcess(multiprocessing.Process):
         # chroot_run(['cp', '-av', '/etc/skel/.', '/root/'])
 
         self.queue_event('info', _("Configuring hardware ..."))
-        # Copy generated xorg.xonf to target
-        if os.path.exists("/etc/X11/xorg.conf"):
-            shutil.copy2('/etc/X11/xorg.conf',
-                         os.path.join(DEST_DIR, 'etc/X11/xorg.conf'))
 
         # Configure ALSA
         self.alsa_mixer_setup()
@@ -1207,7 +1152,7 @@ class InstallationProcess(multiprocessing.Process):
         # setup lightdm
         if os.path.exists("{0}/usr/bin/lightdm".format(DEST_DIR)):
             default_desktop_environment = self.find_desktop_environment()
-            if default_desktop_environment != None:
+            if default_desktop_environment is not None:
                 os.system("sed -i -e 's/^.*user-session=.*/user-session={0}/' \
 		{1}/etc/lightdm/lightdm.conf".format(default_desktop_environment.desktop_file, DEST_DIR))
                 os.system("ln -s /usr/lib/lightdm/lightdm/gdmflexiserver {0}/usr/bin/gdmflexiserver".format(DEST_DIR))
@@ -1217,7 +1162,7 @@ class InstallationProcess(multiprocessing.Process):
         # Setup gdm
         if os.path.exists("{0}/usr/bin/gdm".format(DEST_DIR)):
             default_desktop_environment = self.find_desktop_environment()
-            if default_desktop_environment != None:
+            if default_desktop_environment is not None:
                 os.system("echo \"XSession={0}\" >> \
                 {1}/var/lib/AccountsService/users/gdm".format(default_desktop_environment.desktop_file, DEST_DIR))
                 os.system("echo \"Icon=\" >> {0}/var/lib/AccountsService/users/gdm".format(DEST_DIR))
@@ -1226,7 +1171,7 @@ class InstallationProcess(multiprocessing.Process):
         # Setup mdm
         if os.path.exists("{0}/usr/bin/mdm".format(DEST_DIR)):
             default_desktop_environment = self.find_desktop_environment()
-            if default_desktop_environment != None:
+            if default_desktop_environment is not None:
                 os.system("sed -i 's|default.desktop|{0}.desktop|g' \
                 {1}/etc/mdm/custom.conf".format(default_desktop_environment.desktop_file, DEST_DIR))
             self.desktop_manager = 'mdm'
@@ -1234,7 +1179,7 @@ class InstallationProcess(multiprocessing.Process):
         # Setup lxdm
         if os.path.exists("{0}/usr/bin/lxdm".format(DEST_DIR)):
             default_desktop_environment = self.find_desktop_environment()
-            if default_desktop_environment != None:
+            if default_desktop_environment is not None:
                 os.system("sed -i -e 's|^.*session=.*|session={0}|' \
                 {1}/etc/lxdm/lxdm.conf".format(default_desktop_environment.executable, DEST_DIR))
             self.desktop_manager = 'lxdm'
@@ -1255,8 +1200,8 @@ class InstallationProcess(multiprocessing.Process):
             os.system("echo \"TERM=mate-terminal\" >> {0}/etc/profile".format(DEST_DIR))
 
         # Adjust Steam-Native when libudev.so.0 is available
-        if os.path.exists("{0}/usr/lib/libudev.so.0".format(DEST_DIR)) \
-        or os.path.exists("{0}/usr/lib32/libudev.so.0".format(DEST_DIR)):
+        if (os.path.exists("{0}/usr/lib/libudev.so.0".format(DEST_DIR)) or
+                os.path.exists("{0}/usr/lib32/libudev.so.0".format(DEST_DIR))):
             os.system("echo -e \"STEAM_RUNTIME=0\nSTEAM_FRAME_FORCE_CLOSE=1\" >> {0}/etc/environment".format(DEST_DIR))
 
         # Remove thus
@@ -1275,7 +1220,6 @@ class InstallationProcess(multiprocessing.Process):
         chroot_run(['dbus-uuidgen', '--ensure=/etc/machine-id'])
         chroot_run(['dbus-uuidgen', '--ensure=/var/lib/dbus/machine-id'])
 
-
         # Setup pacman
         self.queue_event("action", _("Configuring package manager"))
 
@@ -1290,36 +1234,6 @@ class InstallationProcess(multiprocessing.Process):
         chroot_run(['pacman-key', '--populate', 'archlinux', 'manjaro'])
         self.queue_event('info', _("Finished configuring package manager."))
 
-        # For keyboardctl
-        if os.path.exists("{0}/etc/keyboard.conf".format(DEST_DIR)):
-            consolefh = open("{0}/etc/keyboard.conf".format(DEST_DIR), "r")
-            newconsolefh = open("{0}/etc/keyboard.new".format(DEST_DIR), "w")
-            for line in consolefh:
-                 line = line.rstrip("\r\n")
-                 if(line.startswith("XKBLAYOUT=")):
-                     newconsolefh.write("XKBLAYOUT=\"{0}\"\n".format(keyboard_layout))
-                 elif(line.startswith("XKBVARIANT=") and keyboard_variant != ''):
-                     newconsolefh.write("XKBVARIANT=\"{0}\"\n".format(keyboard_variant))
-                 else:
-                     newconsolefh.write("{0}\n".format(line))
-            consolefh.close()
-            newconsolefh.close()
-            chroot_run(['mv', '/etc/keyboard.conf', '/etc/keyboard.conf.old'])
-            chroot_run(['mv', '/etc/keyboard.new', '/etc/keyboard.conf'])
-
-        # Write xorg keyboard configuration
-        keyboardconf = open("{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR), "w")
-        keyboardconf.write("\n");
-        keyboardconf.write("Section \"InputClass\"\n")
-        keyboardconf.write(" Identifier \"system-keyboard\"\n") 
-        keyboardconf.write(" MatchIsKeyboard \"on\"\n")
-        keyboardconf.write(" Option \"XkbLayout\" \"{0}\"\n".format(keyboard_layout))
-        keyboardconf.write(" Option \"XkbModel\" \"{0}\"\n".format("pc105"))
-        keyboardconf.write(" Option \"XkbVariant\" \"{0}\"\n".format(keyboard_variant))
-        keyboardconf.write(" Option \"XkbOptions\" \"{0}\"\n".format("terminate:ctrl_alt_bksp"))        
-        keyboardconf.write("EndSection\n")
-        keyboardconf.close()
-
         # Let's start without using hwdetect for mkinitcpio.conf.
         # I think it should work out of the box most of the time.
         # This way we don't have to fix deprecated hooks.
@@ -1329,8 +1243,8 @@ class InstallationProcess(multiprocessing.Process):
         self.queue_event('info', _("Running mkinitcpio - done"))
 
         # Set autologin if selected
-        # Warning: In openbox "desktop", the post-install script writes /etc/slim.conf
-        # so we always have to call set_autologin AFTER the post-install script call.
+        # In openbox "desktop", the post-install script writes /etc/slim.conf
+        # so we always have to call set_autologin AFTER the post-install script.
         if self.settings.get('require_password') is False:
             self.set_autologin()
 
@@ -1347,10 +1261,13 @@ class InstallationProcess(multiprocessing.Process):
                 self.queue_event('info', _("Installing bootloader..."))
                 from installation import bootloader
 
-                boot_loader = bootloader.Bootloader(DEST_DIR, self.settings, self.mount_devices)
+                boot_loader = bootloader.Bootloader(DEST_DIR,
+                                                    self.settings,
+                                                    self.mount_devices)
                 boot_loader.install()
-            except Exception as general_error:
-                logging.error(_("Couldn't install boot loader: {0}".format(general_error)))
+            except Exception as error:
+                logging.error(_("Couldn't install boot loader: {0}"
+                                .format(error)))
       
         self.queue_event('pulse', 'stop')        
         chroot.umount_special_dirs(DEST_DIR)

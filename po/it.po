@@ -14,6 +14,7 @@
 # Paolo Dongilli <paolo.dongilli@gmail.com>, 2013
 # philm <philm@manjaro.org>, 2013-2015
 # Saverio <saverio.brancaccio@gmail.com>, 2014
+# Serverless <cla.mail@gmail.com>, 2015
 # Skinth <skinth91@gmail.com>, 2013
 # tblu <tblu@autistici.org>, 2015
 msgid ""
@@ -21,8 +22,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 19:49+0000\n"
-"Last-Translator: Luca Traversari <trave5@yahoo.it>\n"
+"PO-Revision-Date: 2015-04-22 22:03+0000\n"
+"Last-Translator: Serverless <cla.mail@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/manjaro-thus/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,11 +65,11 @@ msgstr "Questo dipende molto da quale ambiente desktop si sceglie, quindi potreb
 
 #: ../thus/check.py:82
 msgid "is plugged in to a power source"
-msgstr "Sia connesso alla corrente elettrica"
+msgstr "sia connesso alla corrente elettrica"
 
 #: ../thus/check.py:86
 msgid "is connected to the Internet"
-msgstr "Sia connesso a internet"
+msgstr "sia connesso a internet"
 
 #: ../thus/check.py:90
 msgid "For best results, please ensure that this computer:"
@@ -112,7 +113,7 @@ msgstr "Varianti della Tastiera"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
-msgstr "Layouts"
+msgstr "Layout"
 
 #: ../thus/keymap.py:78
 msgid "Variants"
@@ -138,7 +139,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr "Thus è un software pre-release beta che è in fase di sviluppo attivo.\nAncora non gestisce correttamente RAID, btrfs subvolumes o altre \nconfigurazioni avanzate. Procedere con cautela in quanto è possibile\nla perdita di dati! \n\nSe trovate qualche bug, si prega di far riferimento a http://bugs.manjaro.org"
+msgstr "Thus è un software pre-release beta che è in fase di sviluppo attivo.\nAncora non gestisce correttamente RAID, btrfs subvolumes o altre \nconfigurazioni avanzate. Procedere con cautela in quanto è possibile \nla perdita di dati! \n\nSe trovate qualche bug, si prega di far riferimento a http://bugs.manjaro.org"
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
@@ -167,7 +168,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr "La località selezionata verrà usata per aiutarti a selezionare le impostazioni locali.\nNormalmente dovrebbe essere il continente dove vivi. Questa è una piccola lista di\nlocalità basata sulla lingua che hai selezionato."
+msgstr "La località selezionata verrà usata per aiutarti a determinare le impostazioni locali. Normalmente dovrebbe essere il continente dove vivi. Questa è una piccola lista di località basata sulla lingua che hai selezionato."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -210,7 +211,7 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr "Non è possibile eseguire due istanze di questo installer.\nSe sei sicuro che l'installer non sia già in esecuzione, \npuoi eseguire questo installer usando l'opzione --force\no puoi manuamente cancellare il file duplicato."
+msgstr "Non è possibile eseguire due istanze di questo installer.\n\nSe sei sicuro che l'installer non sia già in esecuzione, \npuoi eseguire questo installer usando l'opzione --force\no puoi cancellare manualmente il file duplicato.\n\nFile duplicato: '{0}'"
 
 #: ../thus/main_window.py:87
 #, python-brace-format
@@ -228,7 +229,7 @@ msgstr "Vuoi veramente terminare il programma di installazione?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
-msgstr "Si sta uscendo dal programma di installazione..."
+msgstr "Uscendo dal programma di installazione..."
 
 #: ../thus/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
@@ -282,7 +283,7 @@ msgstr "Installazione completata. \nVuoi riavviare il sistema ora?"
 #: ../thus/thus.py:66
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr "Impossibile creare  la finestra principale di Thus: {0}"
+msgstr "Impossibile creare la finestra principale di Thus: {0}"
 
 #: ../thus/thus.py:166
 #, python-brace-format
@@ -308,7 +309,7 @@ msgstr "Non effettuare alcuna modifica (utile per gli sviluppatori)"
 
 #: ../thus/thus.py:214
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr "Upgrade/Dowgrade Thus alla versione web"
+msgstr "Upgrade/Downgrade Thus alla versione web"
 
 #: ../thus/thus.py:218
 msgid "Do not search for new Thus versions online"
@@ -320,7 +321,7 @@ msgstr "Mostra messaggi di logging a stdout"
 
 #: ../thus/thus.py:226
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr "Mostra opzioni in sviluppo (solo per sviluppatori, non usare questo!)"
+msgstr "Mostra opzioni in sviluppo (solo per sviluppatori, non usare!)"
 
 #: ../thus/thus.py:265
 msgid "Program updated! Restarting..."
@@ -349,7 +350,7 @@ msgstr "Regione:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr "User Network Time Protocol (NTP) per la sincronizzazione dell'orologio"
+msgstr "Utilizza Network Time Protocol (NTP) per la sincronizzazione dell'orologio"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
@@ -358,7 +359,7 @@ msgstr "località cambiata in : {0}"
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
-msgstr "Non è possibile determinare automaticamente le coordinate per il timezone"
+msgstr "Non è possibile determinare automaticamente le coordinate per il fuso orario"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
@@ -370,7 +371,7 @@ msgstr "Non riesco a rilevare lo stato della rete."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr "Abbiamo una connessione. Ora otteniamo la nostra timezone."
+msgstr "Abbiamo una connessione. Ora otteniamo il nostro fuso orario"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
@@ -393,7 +394,7 @@ msgstr "Nuova versione trovata. Aggiornamento dell'installer in corso..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr "Nessuna nuova versione trovata. Sto aggiornando in ogni modo..."
+msgstr "Nessuna nuova versione trovata. Sto aggiornando lo stesso..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
@@ -473,7 +474,7 @@ msgstr "Conferma la password di root:"
 
 #: ../thus/user_info.py:133
 msgid "Its name as it appears to other computers."
-msgstr "Il nome che verrà visualizzato da gli altri computer."
+msgstr "Il nome che verrà visualizzato dagli altri computer."
 
 #: ../thus/user_info.py:137
 msgid "You must enter a name"
@@ -528,19 +529,19 @@ msgstr "Non ti preoccupare, nella maggior parte dei casi di utlizzo, questa care
 msgid ""
 "Anyway, one popular and inadvisable application of eCryptfs is to encrypt a BitTorrent download location as this often requires eCryptfs to handle sparse files of 10 GB or more and may lead to intense disk starvation.\n"
 "\n"
-msgstr "Comunque, una popolare e sconsigliabile applicazione di eCryptfs è per crittografare un percorso di download BitTorrent in quanto questo richiede spesso eCryptfs per gestire i file sparsi di 10 GB e può portare ad un uso intensivo del disco.\n\n"
+msgstr "Comunque, una popolare e sconsigliabile utilizzo di eCryptfs è per crittografare un percorso di download BitTorrent in quanto questo richiede spesso eCryptfs per gestire i file sparsi di 10 GB o più e può portare ad un uso intensivo del disco.\n\n"
 
 #: ../thus/user_info.py:232
 msgid ""
 "A simple workaround is to place sparse files in an unencrypted .Public directory\n"
 "\n"
-msgstr "Una soluzione semplice è quella di mettere i file sparsi in una .Directory pubblica non cifrata\n\n"
+msgstr "Una soluzione semplice è quella di mettere i file sparsi in una cartella .Public non cifrata\n\n"
 
 #: ../thus/user_info.py:233
 msgid ""
 "Look at https://wiki.archlinux.org/index.php/ECryptfs for detailed information\n"
 "\n"
-msgstr "Guardate in  https://wiki.archlinux.org/index.php/ECryptfs per informazioni dettagliate\n\n"
+msgstr "Visita https://wiki.archlinux.org/index.php/ECryptfs per informazioni dettagliate\n\n"
 
 #: ../thus/user_info.py:234
 msgid "Are you sure you want to encrypt your home directory?\n"
@@ -556,7 +557,7 @@ msgstr "Nome utente non può contenere punti"
 
 #: ../thus/user_info.py:318
 msgid "Too many characters"
-msgstr "Caratteri non sufficienti"
+msgstr "Troppi caratteri"
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
@@ -1097,7 +1098,7 @@ msgstr "Imposta la tua Home in una partizione/volume diverso"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr "La directory Hiome verrà impostata su un altro volume o partizione."
+msgstr "La directory Home verrà impostata su un altro volume o partizione."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
@@ -2004,7 +2005,7 @@ msgstr "Utilizzare questo dispositivo per l'installazione del boot loader:"
 
 #: ../ui/advanced.ui:1106
 msgid "Encryption properties"
-msgstr "Proprietà di criptaggio"
+msgstr "Proprietà di crittografia"
 
 #: ../ui/advanced.ui:1221
 msgid "Use LUKS encryption: "

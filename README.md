@@ -11,7 +11,6 @@ Graphical Installer for Manjaro Linux
  * grep
  * gtk 3
  * libtimezonemap
- * hdparm
  * lvm 2
  * mhwd
  * parted (e2fsprogs, dosfstools, jfsutils, ntfs-3g, ntfsprogs, reiserfsprogs, xfsprogs)
@@ -35,6 +34,3 @@ Graphical Installer for Manjaro Linux
  * upower
  * util-linux
  * webkitgtk 3
-
- * keyboardctl (optional, deprectrated)
-

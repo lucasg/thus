@@ -305,11 +305,6 @@ def check_for_files():
             print(_("Thus files not found. Please, install Thus using pacman"))
             return False
 
-    if not os.path.exists("/usr/bin/hdparm") and not os.path.exists("/sbin/hdparm"):
-        txt = _("Please install '{0}' before running this installer").format("hdparm")
-        print(txt)
-        return False
-
     return True
 
 

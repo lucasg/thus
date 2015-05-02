@@ -3,22 +3,24 @@
 #
 #  partition_module.py
 #
-#  Copyright © 2013-2015 Antergos
+#  This file was forked from Cnchi (graphical installer from Antergos)
+#  Check it at https://github.com/antergos
 #
-#  This file is part of Cnchi.
+#  Copyright © 2013-2015 Antergos (http://antergos.com/)
+#  Copyright © 2013-2015 Manjaro (http://manjaro.org)
 #
-#  Cnchi is free software; you can redistribute it and/or modify
+#  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
 #
-#  Cnchi is distributed in the hope that it will be useful,
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Cnchi; if not, write to the Free Software
+#  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
@@ -26,6 +28,7 @@
 
 import subprocess
 import os
+import re
 import logging
 
 import misc.misc as misc
@@ -66,13 +69,14 @@ PED_PARTITION_APPLE_TV_RECOVERY = 13
 PED_PARTITION_DIAG = 14
 PED_PARTITION_LEGACY_BOOT = 15
 
+DEVICE_BLACKLIST = ["^mtd", r'^mmcblk.+boot', r'^mmcblk.+rpmb', "^zram"]
 
 @misc.raise_privileges
 def get_devices():
     device_list = parted.getAllDevices()
     disk_dic = {}
 
-    myhomepath = '/run/archiso/bootmnt'
+    myhomepath = '/bootmnt'
     if os.path.exists(myhomepath):
         myhome = subprocess.check_output(["df", "-P", myhomepath]).decode()
     else:
@@ -96,6 +100,11 @@ def get_devices():
         # print(byte_size)
         # print(dev.length)
         # Must create disk object to drill down
+
+        # Skip all blacklisted devices
+        dev_name = dev.path[5:]
+        if any(re.search(expr, dev_name) for expr in DEVICE_BLACKLIST):
+            continue
 
         # Skip cd drive and special devices like LUKS and LVM
         disk_obj = None
