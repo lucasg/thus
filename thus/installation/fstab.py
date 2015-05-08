@@ -124,8 +124,10 @@ class FstabGenerator(object):
         :param partition:
         :return:
         """
+        device = partition['device']
         fs = partition["fs"]
         mount_point = partition["mountPoint"]
+        uuid = partition["uuid"]
         disk_name = disk_name_for_partition(partition)
         is_ssd = disk_name in self.ssd_disks
 
@@ -133,6 +135,48 @@ class FstabGenerator(object):
 
         if not mount_point and not fs == "swap":
             return None
+
+        # Fix for home + luks, no lvm (from Automatic Install)
+        if (mount_point == "/home" and self.method == "automatic"
+                and self.use_luks and not self.use_lvm):
+            luks_root_password = self.settings.get("luks_root_password")
+            if luks_root_password and len(luks_root_password) > 0:
+                home_keyfile = "none"
+            else:
+                home_keyfile = "/etc/luks-keys/home"
+            crypttab_path = os.path.join(self.root_mount_point, 'etc/crypttab')
+            os.chmod(crypttab_path, 0o666)
+            with open(crypttab_path, 'a') as crypttab_file:
+                line = "cryptManjaroHome /dev/disk/by-uuid/{0} {1} luks\n"\
+                    .format(uuid, home_keyfile)
+                crypttab_file.write(line)
+                #logging.debug(_("Added to crypttab : {0}"), line)
+            os.chmod(crypttab_path, 0o600)
+            return dict(
+                device="/dev/mapper/cryptManjaroHome",
+                mount_point=mount_point,
+                fs=fs,
+                options='defaults',
+                check='0')
+
+        # Add all LUKS partitions from Advanced Install (except root).
+        if (mount_point == "/" and self.method == "advanced"
+                and self.use_luks and "/dev/mapper" in device):
+            crypttab_path = os.path.join(self.root_mount_point, 'etc/crypttab')
+            os.chmod(crypttab_path, 0o666)
+            vol_name = device[len("/dev/mapper/"):]
+            with open(crypttab_path, 'a') as crypttab_file:
+                line = "{0} /dev/disk/by-uuid/{1} none luks\n"\
+                    .format(vol_name, uuid)
+                crypttab_file.write(line)
+                #logging.debug(_("Added to crypttab : {0}".format(line)))
+            os.chmod(crypttab_path, 0o600)
+            return dict(
+                device=device,
+                mount_point=mount_point,
+                fs=fs,
+                options='defaults',
+                check='0')
 
         options = self.mount_options.get(fs, self.mount_options["default"])
         if is_ssd:
@@ -151,7 +195,7 @@ class FstabGenerator(object):
             self.root_is_ssd = is_ssd
 
         return dict(
-            device="UUID=" + partition["uuid"],
+            device="UUID=" + uuid,
             mount_point=mount_point or "swap",
             fs=fs,
             options=options,
