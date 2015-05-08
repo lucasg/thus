@@ -306,7 +306,8 @@ class InstallationProcess(multiprocessing.Process):
 
         # Create, format and mount partitions in automatic mode
         if self.method == 'automatic':
-            logging.debug(_("Creating partitions and their filesystems in {0}".format(self.auto_device)))
+            logging.debug(_("Creating partitions and their filesystems in {0}"
+                            .format(self.auto_device)))
 
             # If no key password is given a key file is generated and stored in /boot
             # (see auto_partition.py)
@@ -323,7 +324,7 @@ class InstallationProcess(multiprocessing.Process):
             )
             auto.run()
 
-            # used in modify_grub_default()
+            # used in modify_grub_default() and fstab
             self.mount_devices = auto.get_mount_devices()
             # used when configuring fstab
             self.fs_devices = auto.get_fs_devices()
@@ -335,14 +336,10 @@ class InstallationProcess(multiprocessing.Process):
                     continue
                 mount_part = self.mount_devices[path]
                 mount_dir = DEST_DIR + path
-                if not os.path.exists(mount_dir):
-                    os.makedirs(mount_dir)
+                os.makedirs(mount_dir, exist_ok=True)
                 try:
-                    if not os.path.exists(mount_dir):
-                        os.makedirs(mount_dir)
-                    txt = _("Mounting partition {0} into {1} directory")
-                    txt = txt.format(mount_part, mount_dir)
-                    logging.debug(txt)
+                    logging.debug(_("Mounting partition {0} into {1} directory"
+                                    .format(mount_part, mount_dir)))
                     subprocess.check_call(['mount', mount_part, mount_dir])
                 except subprocess.CalledProcessError as err:
                     logging.warning(_("Can't mount {0} in {1}"
@@ -507,7 +504,7 @@ class InstallationProcess(multiprocessing.Process):
                                   .format(self.media_desktop, mount_point, device)))
 
             # walk root filesystem
-            SOURCE = "/source/"
+            source = "/source/"
             directory_times = []
             # index the files
             self.queue_event('info', _("Indexing files of root-image to be copied ..."))
@@ -521,17 +518,16 @@ class InstallationProcess(multiprocessing.Process):
             our_total = int(float(output1) + float(output2))
             self.queue_event('info', _("Extracting root-image ..."))
             our_current = 0
-            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST_DIR)
+            t = FileCopyThread(self, our_current, our_total, source, DEST_DIR)
             t.start()
             t.join()
 
             # walk desktop filesystem
-            SOURCE = "/source_desktop/"
-            DEST = DEST_DIR
+            source = "/source_desktop/"
             directory_times = []
             self.queue_event('info', _("Extracting desktop-image ..."))
             our_current = int(output1)
-            t = FileCopyThread(self, our_current, our_total, SOURCE, DEST_DIR, t.offset)
+            t = FileCopyThread(self, our_current, our_total, source, DEST_DIR, t.offset)
             t.start()
             t.join()
 
