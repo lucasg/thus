@@ -599,13 +599,11 @@ class InstallationProcess(multiprocessing.Process):
         for mount_point in self.mount_devices:
             device = self.mount_devices[mount_point]
             part_info = fs.get_info(device)
-            uuid = part_info['UUID']
-            fs = self.fs_devices[device]
             partitions.append({
                 'device': device,
-                'fs': fs,
+                'fs': self.fs_devices[device],
                 'mountPoint': mount_point,
-                'uuid': uuid
+                'uuid': part_info['UUID']
             })
 
         root_mount_point = DEST_DIR
