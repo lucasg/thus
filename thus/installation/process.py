@@ -608,7 +608,7 @@ class InstallationProcess(multiprocessing.Process):
 
         root_mount_point = DEST_DIR
 
-        with open('fstab.conf', 'r') as f:
+        with open('/usr/share/thus/thus/installation/fstab.conf', 'r') as f:
             fstab_config = yaml.load(f)
 
         mount_options = fstab_config["mountOptions"]
