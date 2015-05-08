@@ -72,13 +72,18 @@ class FstabGenerator(object):
     """
 
     def __init__(self, partitions, root_mount_point, mount_options,
-                 ssd_extra_mount_options):
+                 ssd_extra_mount_options, use_luks, use_lvm, method,
+                 luks_root_password):
         self.partitions = partitions
         self.root_mount_point = root_mount_point
         self.mount_options = mount_options
         self.ssd_extra_mount_options = ssd_extra_mount_options
         self.ssd_disks = set()
         self.root_is_ssd = False
+        self.use_luks = use_luks
+        self.use_lvm = use_lvm
+        self.method = method
+        self.luks_root_password = luks_root_password
 
     def run(self):
         """ Calls needed sub routines.
@@ -97,9 +102,8 @@ class FstabGenerator(object):
 
     def generate_fstab(self):
         """ Create fstab. """
-        #os.makedirs(os.path.join(self.root_mount_point, "etc"), exist_ok=True)
-        #fstab_path = os.path.join(self.root_mount_point, "etc", "fstab")
-        fstab_path = 'fstab'
+        os.makedirs(os.path.join(self.root_mount_point, "etc"), exist_ok=True)
+        fstab_path = os.path.join(self.root_mount_point, "etc", "fstab")
         with open(fstab_path, "w") as fl:
             print(HEADER, file=fl)
             for partition in self.partitions:
@@ -219,6 +223,5 @@ class FstabGenerator(object):
         """ Creates mount points """
         for partition in self.partitions:
             if partition["mountPoint"]:
-                continue
                 os.makedirs(self.root_mount_point + partition["mountPoint"],
                             exist_ok=True)
