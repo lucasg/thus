@@ -39,8 +39,8 @@ import shutil
 import subprocess
 import sys
 import time
- 
 import traceback
+import yaml
 
 import parted3.fs_module as fs
 import misc.misc as misc
@@ -48,6 +48,7 @@ import encfs
 from installation import auto_partition
 from installation import chroot
 from installation import mkinitcpio
+from installation import fstab
 
 from configobj import ConfigObj
 
@@ -594,151 +595,35 @@ class InstallationProcess(multiprocessing.Process):
     def auto_fstab(self):
         """ Create /etc/fstab file """
 
-        all_lines = [
-            "# /etc/fstab: static file system information.",
-            "#",
-            "# Use 'blkid' to print the universally unique identifier for a",
-            "# device; this may be used with UUID= as a more robust way to name devices",
-            "# that works even if disks are added and removed. See fstab(5).",
-            "#",
-            "# <file system> <mount point>   <type>  <options>       <dump>  <pass>",
-            "#"]
+        partitions = []
+        for mount_point in self.mount_devices:
+            device = self.mount_devices[mount_point]
+            part_info = fs.get_info(device)
+            uuid = part_info['UUID']
+            fs = self.fs_devices[device]
+            partitions.append({
+                'device': device,
+                'fs': fs,
+                'mountPoint': mount_point,
+                'uuid': uuid
+            })
 
+        root_mount_point = DEST_DIR
+
+        with open('fstab.conf', 'r') as f:
+            fstab_config = yaml.load(f)
+
+        mount_options = fstab_config["mountOptions"]
+        ssd_extra_mount_options = fstab_config.get("ssdExtraMountOptions", {})
         use_luks = self.settings.get("use_luks")
         use_lvm = self.settings.get("use_lvm")
-
-        for mount_point in self.mount_devices:
-            partition_path = self.mount_devices[mount_point]
-            part_info = fs.get_info(partition_path)
-            uuid = part_info['UUID']
-
-            if partition_path in self.fs_devices:
-                myfmt = self.fs_devices[partition_path]
-            else:
-                # It hasn't any filesystem defined, skip it.
-                continue
-
-            # Take care of swap partitions
-            if "swap" in myfmt:
-                # If using a TRIM supported SSD, discard is a valid mount option for swap
-                if partition_path in self.ssd:
-                    opts = "defaults,discard"
-                else:
-                    opts = "defaults"
-                txt = "UUID={0} swap swap {1} 0 0".format(uuid, opts)
-                all_lines.append(txt)
-                logging.debug(_("Added to fstab : {0}".format(txt)))
-                continue
-
-            crypttab_path = os.path.join(DEST_DIR, 'etc/crypttab')
-
-            # Fix for home + luks, no lvm (from Automatic Install)
-            if ("/home" in mount_point and self.method == "automatic" and use_luks and not use_lvm):
-                # Modify the crypttab file
-                luks_root_password = self.settings.get("luks_root_password")
-                if luks_root_password and len(luks_root_password) > 0:
-                    # Use password and not a keyfile
-                    home_keyfile = "none"
-                else:
-                    # Use a keyfile
-                    home_keyfile = "/etc/luks-keys/home"
-
-                os.chmod(crypttab_path, 0o666)
-                with open(crypttab_path, 'a') as crypttab_file:
-                    line = "cryptManjaroHome /dev/disk/by-uuid/{0} {1} luks\n".format(uuid, home_keyfile)
-                    crypttab_file.write(line)
-                    logging.debug(_("Added to crypttab : {0}"), line)
-                os.chmod(crypttab_path, 0o600)
-
-                # Add line to fstab
-                txt = "/dev/mapper/cryptManjaroHome {0} {1} defaults 0 0".format(mount_point, myfmt)
-                all_lines.append(txt)
-                logging.debug(_("Added to fstab : {0}".format(txt)))
-                continue
-
-            # Add all LUKS partitions from Advanced Install (except root).
-            if self.method == "advanced" and mount_point is not "/" and use_luks and "/dev/mapper" in partition_path:
-                os.chmod(crypttab_path, 0o666)
-                vol_name = partition_path[len("/dev/mapper/"):]
-                with open(crypttab_path, 'a') as crypttab_file:
-                    line = "{0} /dev/disk/by-uuid/{1} none luks\n".format(vol_name, uuid)
-                    crypttab_file.write(line)
-                    logging.debug(_("Added to crypttab : {0}".format(line)))
-                os.chmod(crypttab_path, 0o600)
-
-                txt = "{0} {1} {2} defaults 0 0".format(partition_path, mount_point, myfmt)
-                all_lines.append(txt)
-                logging.debug(_("Added to fstab : {0}".format(txt)))
-                continue
-
-            # fstab uses vfat to mount fat16 and fat32 partitions
-            if "fat" in myfmt:
-                myfmt = 'vfat'
-
-            if "btrfs" in myfmt:
-                self.settings.set('btrfs', True)
-
-            # Avoid adding a partition to fstab when it has no mount point (swap has been checked above)
-            if mount_point == "":
-                continue
-
-            # Create mount point on destination system if it yet doesn't exist
-            full_path = DEST_DIR + mount_point
-            if not os.path.exists(full_path):
-                os.makedirs(full_path)
-
-            # Is ssd ?
-            # Device list example: {'/dev/sdb': False, '/dev/sda': True}
-            logging.debug(_("Device list : {0}".format(self.ssd)))
-            device = re.sub("[0-9]+$", "", partition_path)
-            is_ssd = self.ssd.get(device)
-            logging.debug(_("Device: {0}, SSD: {1}".format(device, is_ssd)))
-
-            # Add mount options parameters
-            if not is_ssd:
-                if "btrfs" in myfmt:
-                    opts = 'defaults,rw,relatime,space_cache,autodefrag,inode_cache'
-                elif "f2fs" in myfmt:
-                    opts = 'defaults,rw,noatime'
-                elif "ext3" in myfmt or "ext4" in myfmt:
-                    opts = 'defaults,rw,relatime,data=ordered'
-                else:
-                    opts = "defaults,rw,relatime"
-            else:
-                # As of linux kernel version 3.7, the following
-                # filesystems support TRIM: ext4, btrfs, JFS, and XFS.
-                if myfmt == 'ext4' or myfmt == 'jfs' or myfmt == 'xfs':
-                    opts = 'defaults,rw,noatime,discard'
-                elif myfmt == 'btrfs':
-                    opts = 'defaults,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache'
-                else:
-                    opts = 'defaults,rw,noatime'
-
-            no_check = ["btrfs", "f2fs"]
-
-            if mount_point == "/" and myfmt not in no_check:
-                chk = '1'
-            else:
-                chk = '0'
-
-            if mount_point == "/":
-                self.settings.set('ruuid', uuid)
-
-            txt = "UUID={0} {1} {2} {3} 0 {4}".format(uuid, mount_point, myfmt, opts, chk)
-            all_lines.append(txt)
-            logging.debug(_("Added to fstab : {0}".format(txt)))
-
-        # Create tmpfs line in fstab
-        tmpfs = "tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"
-        all_lines.append(tmpfs)
-        logging.debug(_("Added to fstab : {0}".format(tmpfs)))
-
-        full_text = '\n'.join(all_lines) + '\n'
-
-        fstab_path = os.path.join(DEST_DIR, 'etc/fstab')
-        with open(fstab_path, 'w') as fstab_file:
-            fstab_file.write(full_text)
-
+        method = self.method
+        luks_root_password = self.settings.get("luks_root_password")
+        generator = fstab.FstabGenerator(partitions, root_mount_point,
+                                         mount_options, ssd_extra_mount_options,
+                                         use_luks, use_lvm, method,
+                                         luks_root_password)
+        generator.run()
         logging.debug(_("fstab written."))
 
     @staticmethod
