@@ -145,7 +145,7 @@ class FstabGenerator(object):
         # Fix for home + luks, no lvm (from Automatic Install)
         if (mount_point == "/home" and self.method == "automatic"
                 and self.use_luks and not self.use_lvm):
-            luks_root_password = self.settings.get("luks_root_password")
+            luks_root_password = self.luks_root_password
             if luks_root_password and len(luks_root_password) > 0:
                 home_keyfile = "none"
             else:
