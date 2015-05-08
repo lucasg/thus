@@ -38,15 +38,6 @@ FS_MAP = {
 }
 
 
-def mkdir_p(path):
-    """ Create directory.
-
-    :param path:
-    """
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-
 def is_ssd_disk(disk_name):
     """ Checks if given disk is actually a ssd disk.
 
@@ -106,8 +97,9 @@ class FstabGenerator(object):
 
     def generate_fstab(self):
         """ Create fstab. """
-        mkdir_p(os.path.join(self.root_mount_point, "etc"))
-        fstab_path = os.path.join(self.root_mount_point, "etc", "fstab")
+        #os.makedirs(os.path.join(self.root_mount_point, "etc"), exist_ok=True)
+        #fstab_path = os.path.join(self.root_mount_point, "etc", "fstab")
+        fstab_path = 'fstab'
         with open(fstab_path, "w") as fl:
             print(HEADER, file=fl)
             for partition in self.partitions:
@@ -183,22 +175,6 @@ class FstabGenerator(object):
         """ Creates mount points """
         for partition in self.partitions:
             if partition["mountPoint"]:
-                mkdir_p(self.root_mount_point + partition["mountPoint"])
-
-
-def run():
-    """ Configures fstab.
-
-    :return:
-    """
-    gs = libcalamares.globalstorage
-    conf = libcalamares.job.configuration
-    partitions = gs.value("partitions")
-    root_mount_point = gs.value("rootMountPoint")
-
-    mount_options = conf["mountOptions"]
-    ssd_extra_mount_options = conf.get("ssdExtraMountOptions", {})
-
-    generator = FstabGenerator(partitions, root_mount_point,
-                               mount_options, ssd_extra_mount_options)
-    return generator.run()
+                continue
+                os.makedirs(self.root_mount_point + partition["mountPoint"],
+                            exist_ok=True)
