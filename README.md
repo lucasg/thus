@@ -15,12 +15,13 @@ Graphical Installer for Manjaro Linux
  * mhwd
  * parted (e2fsprogs, dosfstools, jfsutils, ntfs-3g, ntfsprogs, reiserfsprogs, xfsprogs)
  * pam_encfs
- * py3parted (pyparted on python3) -> https://github.com/antergos/manjaro-packages/tree/master/py3parted
+ * python-pyparted
  * python-configobj
  * python 3
  * python-gobject 3
  * python-dbus
  * python-cairo
+ * python-yaml
  * rsync
  * sudo
  * systemd
