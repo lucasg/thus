@@ -638,7 +638,7 @@ class AutoPartition(object):
                 logical_block_size = int(f.read())
             with open(size_path, 'r') as f:
                 size = int(f.read())
-            disk_size = ((logical_block_size * size) / 1024) / 1024
+            disk_size = (((logical_block_size - 68) * size) / 1024) / 1024
         else:
             txt = _("Setup cannot detect size of your device, please use advanced "
                     "installation routine for partitioning and mounting devices.")
