@@ -712,8 +712,7 @@ class AutoPartition(object):
 
             if self.lvm:
                 # Create partition for lvm (will store root, swap and home (if desired) logical volumes)
-                sgdisk_new(device, part_num, "MANJARO_LVM", part_sizes['lvm_pv'], "8E00")
-                part_num += 1
+                sgdisk_new(device, part_num, "MANJARO_LVM", 0, "8E00")
             else:
                 sgdisk_new(device, part_num, "MANJARO_ROOT", part_sizes['root'], "8300")
                 part_num += 1
