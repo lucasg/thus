@@ -296,9 +296,13 @@ def parted_mkpart(device, ptype, start, end, filesystem=""):
     else:
         start_str = "{0}MiB".format(start)
 
-    end_str = "{0}MiB".format(end)
+    # -1s means "end of disk"
+    if end == "-1s":
+        end_str = end
+    else:
+        end_str = "{0}MiB".format(end)
 
-    cmd = ['parted', '--align', 'optimal', '--script', device, 'mkpart', ptype, filesystem, start_str, end_str]
+    cmd = ['parted', '--align', 'optimal', '--script', device, "--", 'mkpart', ptype, filesystem, start_str, end_str]
 
     try:
         subprocess.check_call(cmd)
@@ -638,7 +642,7 @@ class AutoPartition(object):
                 logical_block_size = int(f.read())
             with open(size_path, 'r') as f:
                 size = int(f.read())
-            disk_size = ((logical_block_size * size) / 1024) / 1024
+            disk_size = ((logical_block_size * (size - 68)) / 1024) / 1024
         else:
             txt = _("Setup cannot detect size of your device, please use advanced "
                     "installation routine for partitioning and mounting devices.")
@@ -712,8 +716,7 @@ class AutoPartition(object):
 
             if self.lvm:
                 # Create partition for lvm (will store root, swap and home (if desired) logical volumes)
-                sgdisk_new(device, part_num, "MANJARO_LVM", part_sizes['lvm_pv'], "8E00")
-                part_num += 1
+                sgdisk_new(device, part_num, "MANJARO_LVM", 0, "8E00")
             else:
                 sgdisk_new(device, part_num, "MANJARO_ROOT", part_sizes['root'], "8300")
                 part_num += 1
@@ -745,8 +748,7 @@ class AutoPartition(object):
             if self.lvm:
                 # Create partition for lvm (will store root, swap and home (if desired) logical volumes)
                 start = end
-                end = start + part_sizes['lvm_pv']
-                parted_mkpart(device, "primary", start, end)
+                parted_mkpart(device, "primary", start, "-1s")
 
                 # Set lvm flag
                 parted_set(device, "2", "lvm", "on")
@@ -764,12 +766,11 @@ class AutoPartition(object):
 
                 # Create an extended partition where we will put our swap partition
                 start = end
-                end = start + part_sizes['swap']
-                parted_mkpart(device, "extended", start, end)
+                parted_mkpart(device, "extended", start, "-1s")
 
                 # Now create a logical swap partition
                 start += 1
-                parted_mkpart(device, "logical", start, end, "linux-swap")
+                parted_mkpart(device, "logical", start, "-1s", "linux-swap")
 
         printk(True)
 

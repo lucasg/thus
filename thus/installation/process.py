@@ -973,21 +973,29 @@ class InstallationProcess(multiprocessing.Process):
         xorg_conf_dir = os.path.join(DEST_DIR, "etc/X11/xorg.conf.d")
         os.makedirs(xorg_conf_dir, exist_ok=True)
         fname = "{0}/etc/X11/xorg.conf.d/00-keyboard.conf".format(DEST_DIR)
-        default_kb_layout = "us"
-        default_kb_model = "pc105"
         with open(fname, 'w') as file:
+            default_keyboard_layout = "us"
+            default_keyboard_model = "pc105"
+            if keyboard_layout == default_keyboard_layout:
+                xkblayout = "{}".format(keyboard_layout)
+                xkbvariant = "{}".format(keyboard_variant)
+            else:
+                xkblayout = "{},{}".format(keyboard_layout,
+                                           default_keyboard_layout)
+                xkbvariant = "{},".format(keyboard_variant)
+
             file.write("\n"
                        "Section \"InputClass\"\n"
                        " Identifier \"system-keyboard\"\n"
                        " MatchIsKeyboard \"on\"\n"
-                       " Option \"XkbLayout\" \"{0},{1}\"\n"
-                       " Option \"XkbModel\" \"{2}\"\n"
-                       " Option \"XkbVariant\" \"{3},\"\n"
-                       " Option \"XkbOptions\" \"{4}\"\n"
+                       " Option \"XkbLayout\" \"{}\"\n"
+                       " Option \"XkbModel\" \"{}\"\n"
+                       " Option \"XkbVariant\" \"{}\"\n"
+                       " Option \"XkbOptions\" \"{}\"\n"
                        "EndSection\n"
-                       .format(keyboard_layout, default_kb_layout,
-                               default_kb_model,
-                               keyboard_variant,
+                       .format(xkblayout,
+                               default_keyboard_model,
+                               xkbvariant,
                                "terminate:ctrl_alt_bksp,grp:alt_shift_toggle"))
 
         self.queue_event('info', _("Adjusting hardware clock ..."))

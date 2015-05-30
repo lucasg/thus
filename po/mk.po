@@ -4,6 +4,7 @@
 # Philip Müller <philm@manjaro.org>, 2013-2015.
 # 
 # Translators:
+# Andrej Antunovik <tunas@nigge.rs>, 2015
 # Kokan <kokan_malenko@hotmail.com>, 2013
 # exoos <mince.lesovski@gmail.com>, 2014
 msgid ""
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-05-23 14:19+0000\n"
+"Last-Translator: Andrej Antunovik <tunas@nigge.rs>\n"
 "Language-Team: Macedonian (http://www.transifex.com/projects/p/manjaro-thus/language/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,17 +26,17 @@ msgstr ""
 #: ../thus/bootinfo.py:165 ../thus/bootinfo.py:190 ../thus/bootinfo.py:212
 #: ../thus/bootinfo.py:215 ../thus/bootinfo.py:218 ../thus/bootinfo.py:248
 msgid "unknown"
-msgstr "непознат"
+msgstr "непознатo"
 
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr ""
+msgstr "Грешка при повикување на hexdump: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr ""
+msgstr "Непознат ID на партиција {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -44,13 +45,13 @@ msgstr "Проверка на системот"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "има најмалку {0}GB слободен простор за складирање. (*)"
 
 #: ../thus/check.py:77
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "Ова во голема мерка зависи од која работна околина ќе ја одбереш, па можеби ќе ти треба повеќе простор."
+msgstr "Ова во голема мерка зависи од која работна околина ќе ја одберете, па можеби ќе ти треба повеќе простор."
 
 #: ../thus/check.py:82
 msgid "is plugged in to a power source"
@@ -78,15 +79,15 @@ msgstr "Имаме доволно простор на дискот."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Не може да се креираат и модифицираат конфигурациските фајлови на encfs."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr ""
+msgstr "Домашната папка нема да биде енкриптирана."
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Не може да се вклучи encfs. Погрешна лозинка, можеби?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -94,11 +95,11 @@ msgstr "Изберете го распоредот на вашата таста�
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Распореди на тастатура"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Варијанти на тастатура"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -111,11 +112,11 @@ msgstr "Варијанти"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr ""
+msgstr "keyboard_layout е {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr ""
+msgstr "Добредојде во Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
@@ -128,25 +129,25 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "Thus е бета софтвер во предиздание кој е во активен развој.\nСеуште не се справува добро со RAID, btrfs субволумени и други напредни подесувања. Молиме продолжете со внимание бидејќи е можно да изгубите податоци.\n\nАко пронајдете некоја грешка ве молиме пријавете ги на <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a> "
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
 msgid "Forward"
-msgstr ""
+msgstr "Напред"
 
 #: ../thus/language.py:130 ../thus/installation/ask.py:215
 msgid "Close"
-msgstr ""
+msgstr "Затвори"
 
 #: ../thus/language.py:132 ../thus/installation/ask.py:217
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr ""
+msgstr "Не може да се најде превод за {0} јазик"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -157,7 +158,7 @@ msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr ""
+msgstr "Одбраната локација ќе се користи за помош при избирање на системскиот локал. Вообичаено ова треба да биде земјата во која живееш.\nОва е кратка листа на локации базирана на јазикот кој го избра."
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
@@ -165,30 +166,30 @@ msgstr "Држава, територија или област:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Покажи ги сите локации"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr ""
+msgstr "локалот е изменет во : {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr ""
+msgstr "Не може да се подеси локал {0}"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Оваа инсталирачка програма мора да работи со административни привилегии и не може да продолжи без нив."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr ""
+msgstr "Фајлот '{0}' веќе постои."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -200,21 +201,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr ""
+msgstr "Не можат да работат две инсталацијски програми во исто време.\n\nАко сте сигурни дека друга инсталацијска програма не работи во моментот\nприклучете го овој инсталер пак со опцијата --force, или може рачно да ја избришете датотеката '{0}'\nи да ја вклучите инсталацијската програма повторно. "
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr ""
+msgstr "Thus инсталер верзија {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr ""
+msgstr "Manjaro инсталер - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "Дали сакате да го затворите инсталерот?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
