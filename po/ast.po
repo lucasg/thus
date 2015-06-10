@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2015-06-10 13:56+0000\n"
+"Last-Translator: Ḷḷumex03 <tornes@opmbx.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/manjaro-thus/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,17 +48,17 @@ msgstr "Comprobación del sistema"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr ""
+msgstr "tien polo menos {0}GB d'espaciu en discu disponible. (*)"
 
 #: ../thus/check.py:77
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "Esto ta arreyao al entronu d'escritoriu qu'esbilles, asina que deberíes necesitar más espaciu."
+msgstr "Esto ta arreyao al entronu d'escritoriu qu'escueyas, asina que podríes necesitar más espaciu."
 
 #: ../thus/check.py:82
 msgid "is plugged in to a power source"
-msgstr "ta coneutáu a una fonte d'enerxía"
+msgstr "ta enchufáu a una fonte d'enerxía"
 
 #: ../thus/check.py:86
 msgid "is connected to the Internet"
@@ -66,7 +66,7 @@ msgstr "ta coneutáu a internet"
 
 #: ../thus/check.py:90
 msgid "For best results, please ensure that this computer:"
-msgstr "Pa los meyores resultaos, tate seguru por favor qu'esti ordenador:"
+msgstr "Pa los meyores resultaos, asegúrate por favor qu'esti ordenador:"
 
 #: ../thus/check.py:169
 msgid "We have Internet connection."
@@ -82,7 +82,7 @@ msgstr "Tenemos espaciu en discu abondo."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Nun puen copiase los ficheros de configuración encf."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr ""
+msgstr "Nun pue executase encfs. ¿Contraseña incorreuta?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
@@ -98,11 +98,11 @@ msgstr "Esbilla la to distribución tecláu"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Distribuciones de tecláu"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Variantes de tecláu"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -169,7 +169,7 @@ msgstr "País, territoriu o area:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
-msgstr ""
+msgstr "Amosar tolos allugamientos"
 
 #: ../thus/location.py:207 ../thus/location.py:215 ../thus/misc/misc.py:961
 #: ../thus/misc/misc.py:969
@@ -187,7 +187,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Esti instalador tien d'executase con drechos alministrativos, y nun pue siguir ensin ellos."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
@@ -218,7 +218,7 @@ msgstr ""
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr ""
+msgstr "¿De xuru que quies colar del instalador?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -254,7 +254,7 @@ msgstr "Instalando Manjaro..."
 
 #: ../thus/slides.py:82
 msgid "Please wait..."
-msgstr "Por favor, aspera..."
+msgstr "Espera por favor..."
 
 #: ../thus/slides.py:192
 msgid ""
@@ -271,7 +271,7 @@ msgstr ""
 msgid ""
 "Installation Complete!\n"
 "Do you want to restart your system now?"
-msgstr ""
+msgstr "¡Instalación completada!\n¿Quies reaniciar el to sistema agora?"
 
 #: ../thus/thus.py:66
 #, python-brace-format
@@ -281,7 +281,7 @@ msgstr ""
 #: ../thus/thus.py:166
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr ""
+msgstr "Usando pyalpm v{0} como interfaz pa libalpm v{1}"
 
 #: ../thus/thus.py:181
 #, python-brace-format
@@ -298,7 +298,7 @@ msgstr ""
 
 #: ../thus/thus.py:210
 msgid "Do not perform any changes (useful for developers)"
-msgstr "Nun faer camudancia dala (útil pa desendolcadores)"
+msgstr "Nun fai denguna camudancia (útil pa desendolcadores)"
 
 #: ../thus/thus.py:214
 msgid "Upgrade/downgrade Thus to the web version"
@@ -310,15 +310,15 @@ msgstr ""
 
 #: ../thus/thus.py:222
 msgid "Show logging messages to stdout"
-msgstr "Amosar mensaxes de rexistru a stdout"
+msgstr "Amuesa mensaxes de rexistru a stdout"
 
 #: ../thus/thus.py:226
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr ""
+msgstr "Amuesa opciones en desendolcu (namái pa desendolcadores, ¡nun uses esto!)"
 
 #: ../thus/thus.py:265
 msgid "Program updated! Restarting..."
-msgstr ""
+msgstr "¡Programa anováu! Reaniciando..."
 
 #: ../thus/thus.py:305
 msgid "Thus files not found. Please, install Thus using pacman"
@@ -327,7 +327,7 @@ msgstr ""
 #: ../thus/thus.py:309
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr ""
+msgstr "Por favor, instala '{0}' enantes d'executar esti instalador"
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
@@ -343,7 +343,7 @@ msgstr "Rexón:"
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr ""
+msgstr "Usar NTP pa la sincronización del reló"
 
 #: ../thus/timezone.py:117
 #, python-brace-format
@@ -352,24 +352,24 @@ msgstr ""
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
-msgstr "Nun puen detectase automáticamente les coordenaes del fusu horariu"
+msgstr "Nun puen deteutase automáticamente les coordenaes del fusu horariu"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr ""
+msgstr "Parando filos del fusu horariu..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr ""
+msgstr "Nun pue consiguise l'estáu la rede."
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr ""
+msgstr "Tenemos conexón. Vamos saber el to fusu horariu"
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr ""
+msgstr "Deteutóse'l fusu horariu (llatitú {0}, llonxitú {1})."
 
 #: ../thus/updater.py:71
 msgid ""
@@ -383,11 +383,11 @@ msgstr ""
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr ""
+msgstr "Alcontróse un anovamientu. Anovando instalador..."
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr ""
+msgstr "Nun s'alcontró denguna versión nueva, Anovando de toes toes..."
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
@@ -399,7 +399,7 @@ msgstr ""
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr ""
+msgstr "Descomprimiendo la versión nueva..."
 
 #: ../thus/updater.py:192
 #, python-brace-format
@@ -428,7 +428,7 @@ msgstr "Viesu l'equipu"
 
 #: ../thus/user_info.py:89 ../ui/user_info.ui:603
 msgid "Your computer's name:"
-msgstr "El viesu'l to ordenador:"
+msgstr "El nome del to ordenador:"
 
 #: ../thus/user_info.py:93 ../ui/user_info.ui:44
 msgid "Pick a username:"
@@ -440,7 +440,7 @@ msgstr "Nome d'usuariu"
 
 #: ../thus/user_info.py:101 ../ui/user_info.ui:57
 msgid "Choose a password:"
-msgstr "Escueyi una contraseña:"
+msgstr "Esbilla una contraseña:"
 
 #: ../thus/user_info.py:105 ../thus/user_info.py:121 ../ui/user_info.ui:91
 #: ../ui/user_info.ui:495
@@ -450,7 +450,7 @@ msgstr "Contraseña"
 #: ../thus/user_info.py:109 ../thus/installation/automatic.py:97
 #: ../ui/automatic.ui:302 ../ui/user_info.ui:70
 msgid "Confirm your password:"
-msgstr "Confirma la to contraseña:"
+msgstr "Confirma la to contraseña"
 
 #: ../thus/user_info.py:113 ../thus/user_info.py:129 ../ui/user_info.ui:135
 #: ../ui/user_info.ui:552
@@ -496,7 +496,7 @@ msgstr "Cifrar direutoriu home"
 #: ../thus/user_info.py:158 ../thus/installation/automatic.py:105
 #: ../ui/user_info.ui:333
 msgid "Show password"
-msgstr "Amosar contraseña:"
+msgstr "Amosar contraseña"
 
 #: ../thus/user_info.py:161 ../ui/user_info.ui:468
 msgid "Show root password"
@@ -542,11 +542,11 @@ msgstr "¿De xuru quies cifrar el to direutoriu home?\n"
 
 #: ../thus/user_info.py:310
 msgid "Invalid characters entered"
-msgstr "Introducíos caráuteres non válidos"
+msgstr "Introduxéronse carauteres non válidos"
 
 #: ../thus/user_info.py:314
 msgid "Username can't contain dots"
-msgstr "El nome d'usuariu nun pue tener puntos"
+msgstr "El nome d'usuariu nun pue contener puntos"
 
 #: ../thus/user_info.py:318
 msgid "Too many characters"
@@ -562,7 +562,7 @@ msgstr ""
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr ""
+msgstr "Nun pue abrise {0} - Razón: {1}"
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
@@ -577,7 +577,7 @@ msgstr ""
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Baxando {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
@@ -592,7 +592,7 @@ msgstr ""
 #: ../thus/download/download_urllib.py:187
 #, python-brace-format
 msgid "Can't download {0}, even after trying all available mirrors"
-msgstr ""
+msgstr "Nun pue baxase {0}, inclusu dempués d'intentalo con tolos espeyos disponibles"
 
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
@@ -609,7 +609,7 @@ msgstr "Triba"
 
 #: ../thus/installation/advanced.py:371
 msgid "Mount point"
-msgstr "Puntu de montaxe"
+msgstr "Puntu montaxe"
 
 #: ../thus/installation/advanced.py:374
 msgid "Label"
@@ -637,15 +637,15 @@ msgstr "SSD"
 
 #: ../thus/installation/advanced.py:559
 msgid "none"
-msgstr "un res"
+msgstr "dengún"
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
-msgstr ""
+msgstr "Nun pue editase una partición cola triba del sistema ficheros LVM"
 
 #: ../thus/installation/advanced.py:754
 msgid "Can't use same mount point twice."
-msgstr ""
+msgstr "Nun pue usase'l mesmu puntu de montaxe dos vegaes."
 
 #: ../thus/installation/advanced.py:852
 #, python-brace-format
@@ -660,7 +660,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr ""
+msgstr "Perdón, yá tienes creaes {0} particiones primaries."
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
@@ -669,19 +669,19 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:1054
 msgid "Can't use same mount point twice..."
-msgstr "Nun pue usase'l mesmu puntu montax dos vegaes..."
+msgstr "Nun pue usase'l mesmu puntu de montaxe dos vegaes..."
 
 #: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
-msgstr ""
+msgstr "Creando una partición primaria"
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
-msgstr ""
+msgstr "Creando una partición estendida"
 
 #: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
-msgstr ""
+msgstr "Creando una partición llóxica"
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
@@ -693,21 +693,21 @@ msgstr "Mou d'instalación avanzáu"
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr ""
+msgstr "Usar el preséu d'embaxo pa la instalación del cargador d'arranque:"
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1041 ../ui/automatic.ui:149
 msgid "Bootloader:"
-msgstr ""
+msgstr "Cargador d'arranque:"
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1067 ../ui/automatic.ui:174
 msgid "Device:"
-msgstr ""
+msgstr "Preséu:"
 
 #: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
-msgstr "Llista de montaxes:"
+msgstr "Comprobación de montaxes:"
 
 #: ../thus/installation/advanced.py:1306
 msgid "Root"
@@ -715,7 +715,7 @@ msgstr "Root"
 
 #: ../thus/installation/advanced.py:1310 ../ui/bootloader.ui:7
 msgid "Boot"
-msgstr "Arranque"
+msgstr "Boot"
 
 #: ../thus/installation/advanced.py:1314
 msgid "EFI"
@@ -723,23 +723,23 @@ msgstr "EFI"
 
 #: ../thus/installation/advanced.py:1318
 msgid "Swap"
-msgstr "Intercambéu"
+msgstr "Swap"
 
 #: ../thus/installation/advanced.py:1328
 msgid "Undo"
-msgstr ""
+msgstr "Desfacer"
 
 #: ../thus/installation/advanced.py:1331 ../thus/installation/advanced.py:1896
 msgid "New"
-msgstr "Nuevu"
+msgstr "Nueva"
 
 #: ../thus/installation/advanced.py:1334
 msgid "Delete"
-msgstr ""
+msgstr "Desaniciar"
 
 #: ../thus/installation/advanced.py:1337
 msgid "Edit..."
-msgstr ""
+msgstr "Editar..."
 
 #: ../thus/installation/advanced.py:1340
 msgid "New partition table"
@@ -747,11 +747,11 @@ msgstr "Tabla de particiones nueva"
 
 #: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
-msgstr ""
+msgstr "_Encaboxar"
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Apply"
-msgstr ""
+msgstr "_Aplicar"
 
 #: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:405
 msgid "Size:"
@@ -783,11 +783,11 @@ msgstr "A la fin d'esti espaciu"
 
 #: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
-msgstr ""
+msgstr "Usar como:"
 
 #: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
-msgstr ""
+msgstr "Puntu montaxe:"
 
 #: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:251 ../ui/advanced.ui:687
@@ -812,11 +812,11 @@ msgstr "Crear tabla de particiones"
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr ""
+msgstr "Usar cifráu LUKS:"
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1172
 msgid "LUKS volume name:"
-msgstr "Nome del volume LUKS:"
+msgstr "Nome de volume LUKS:"
 
 #: ../thus/installation/advanced.py:1447 ../ui/advanced.ui:1184
 msgid "Password:"
@@ -824,7 +824,7 @@ msgstr "Contraseña:"
 
 #: ../thus/installation/advanced.py:1451 ../ui/advanced.ui:1196
 msgid "Confirm password:"
-msgstr "Afitar contraseña:"
+msgstr "Confirmar contraseña:"
 
 #: ../thus/installation/advanced.py:1521
 #, python-brace-format
@@ -844,7 +844,7 @@ msgstr "¡Nun pue crease la partición d'arranque BIOS GPT!"
 
 #: ../thus/installation/advanced.py:1588
 msgid "Couldn't create BIOS GPT Boot partition"
-msgstr "Nun crease la partición d'arranque BIOS GPT"
+msgstr "Nun pudo crease la partición d'arranque BIOS GPT"
 
 #: ../thus/installation/advanced.py:1706 ../thus/installation/automatic.py:107
 msgid "Install now!"
@@ -856,7 +856,7 @@ msgid ""
 "{0} is mounted as swap.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} ta montáu como SWAP.\nPa siguir tien de desmontase.\nPrimi Sí pa desmontalu, o Non pa tornar\n"
 
 #: ../thus/installation/advanced.py:1776
 #, python-brace-format
@@ -864,7 +864,7 @@ msgid ""
 "{0} is mounted in '{1}'.\n"
 "To continue it has to be unmounted.\n"
 "Click Yes to unmount, or No to return\n"
-msgstr ""
+msgstr "{0} ta montáu en '{1}'.\nPa siguir tien de desmontase.\nPrimi Sí pa desmontalu, o Non pa tornar\n"
 
 #: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
@@ -897,7 +897,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "La partición {0} desaniciaráse"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Partition"
@@ -909,15 +909,15 @@ msgstr "Reetiquetar"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Mount"
-msgstr "Montar"
+msgstr "Montaxe"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Encrypt"
-msgstr ""
+msgstr "Cifrar"
 
 #: ../thus/installation/advanced.py:1917
 msgid "These disks will have partition actions:"
-msgstr "Estos discos tendrán opciones de particionáu:"
+msgstr "Estos discos tendrán les opciones de particionáu:"
 
 #: ../thus/installation/advanced.py:2008
 #, python-brace-format
@@ -927,12 +927,12 @@ msgstr ""
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "Creando'l sistema de ficheros nuevu {0} en {1} etiquetáu como {2}"
 
 #: ../thus/installation/advanced.py:2034
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "Creando'l sistema de ficheros nuevu {0} en {1}"
 
 #: ../thus/installation/advanced.py:2043 ../thus/installation/advanced.py:2062
 #: ../thus/installation/advanced.py:2078
@@ -948,7 +948,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:2086
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "Cifrando {0}, asignándo-y el nome de volume {1} y formatiándolu..."
 
 #: ../thus/installation/advanced.py:2101
 #, python-brace-format
@@ -958,7 +958,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:2125
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Nun pudo formatease la partición '{0}' cola etiqueta '{1}' como '{2}'"
 
 #: ../thus/installation/advanced.py:2183 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
@@ -975,7 +975,7 @@ msgstr "Mou Testing. ¡Thus nun aplicará camudancia dala al to sistema!"
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Nun hai particiones primaries disponibles"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
@@ -1009,11 +1009,11 @@ msgstr "Manjaro co otru SO"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Escueyi'l tamañu nuevu de la to instalación"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Escueyi la particón que quies redimensionar:"
 
 #: ../thus/installation/alongside.py:257
 msgid ""
@@ -1023,7 +1023,7 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "¡Nun pue alcontrase dengún SO instaláu!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
@@ -1031,15 +1031,15 @@ msgstr ""
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "SO Windows(tm) deteutáu."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
-msgstr ""
+msgstr "SO Windows(tm) non deteutáu."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "Nun pue deteutase dengún SO nel preséu sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
@@ -1047,7 +1047,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "y"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1064,34 +1064,34 @@ msgstr ""
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Avisu: Esto desaniciará TOLOS datos nel to discu."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
-msgstr "Cifrar esta instalación medrará la seguridá."
+msgstr "Cifrar esta instalación pa medrar la seguridá."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "Entrugarásete pa crear una contraseña de cifráu nel pasu próximu."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
-msgstr "Usar LVM con esta instalación."
+msgstr "Usa LVM con esta instalación."
 
 #: ../thus/installation/ask.py:265
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Esto configurará LVM y permitiráte alministrar cenciellamente particiones y crear captures."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
-msgstr "Afitar el to direutoriu Home nuna/nun partición/volume xebraos"
+msgstr "Afitar el to direutoriu personal nuna partición/volume xebráu"
 
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Esto configurará'l to direutoriu /home una partición o volume xebraos."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
@@ -1103,7 +1103,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Edita la tabla de particiones y escueyi los puntos de montaxe."
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1127,7 +1127,7 @@ msgstr "Mou d'instalación automáticu"
 
 #: ../thus/installation/automatic.py:79 ../ui/automatic.ui:81
 msgid "Select drive:"
-msgstr "Esbillar discu:"
+msgstr "Esbillar unidá:"
 
 #: ../thus/installation/automatic.py:83
 msgid ""
@@ -1146,11 +1146,11 @@ msgstr "Contraseña de cifráu:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "Contraseña LUKS. ¡Nun uses caráuteres especiales o acentos!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "Afitóse una contraseña LUKS de root"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
@@ -1161,7 +1161,7 @@ msgstr ""
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "¿De xuru que quies siguir y desaniciar tol conteníu nel to discu duru?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
@@ -1241,16 +1241,16 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:158
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "Nun puen desaniciase los volúmenes LVM esistentes"
 
 #: ../thus/installation/auto_partition.py:169
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Nun puen zarrase los preseos LUKS yá abiertos"
 
 #: ../thus/installation/auto_partition.py:178
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "Nun pue configurase LUKS nel preséu {0}. Necesítase una contraaseña o un ficheru de clave"
 
 #: ../thus/installation/auto_partition.py:186
 #, python-brace-format
@@ -1261,7 +1261,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:227
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "Nun pue formatiase y abrise'l preséu LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:238
 #, python-brace-format
@@ -1270,18 +1270,18 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:250
 msgid "Can't run dd command"
-msgstr ""
+msgstr "Nun pue executase'l comandu dd"
 
 #: ../thus/installation/auto_partition.py:278
 #: ../thus/installation/auto_partition.py:306
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Fallu creando una partición nueva nel preséu {0}"
 
 #: ../thus/installation/auto_partition.py:319
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Fallu creando un tabla de particiones nueva nel preséu {0}"
 
 #: ../thus/installation/auto_partition.py:358
 #, python-brace-format
@@ -1297,17 +1297,17 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:385
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Triba de sistema ficheros {0} desconocida"
 
 #: ../thus/installation/auto_partition.py:393
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "Nun pue crease'l sistema de ficheros {0}"
 
 #: ../thus/installation/auto_partition.py:422
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "Fallu intentando montar {0} en {1}"
 
 #: ../thus/installation/auto_partition.py:438
 #, python-brace-format
@@ -1332,12 +1332,12 @@ msgstr "Tamañu total del discu: %dMiB"
 #: ../thus/installation/auto_partition.py:606
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "Tamañu de la partición del sistema EFI (ESP) : %dMiB"
 
 #: ../thus/installation/auto_partition.py:607
 #, python-format
 msgid "Boot partition size: %dMiB"
-msgstr "Tamañu de la partición Boot: %dMiB"
+msgstr "Tamañu de la partición boot: %dMiB"
 
 #: ../thus/installation/auto_partition.py:610
 #, python-format
@@ -1347,27 +1347,27 @@ msgstr "Tamañu del volume físicu LVM: %dMiB"
 #: ../thus/installation/auto_partition.py:612
 #, python-format
 msgid "Swap partition size: %dMiB"
-msgstr "Tamañu de partición d'intercambéu: %dMiB"
+msgstr "Tamañu de la partición swap: %dMiB"
 
 #: ../thus/installation/auto_partition.py:613
 #, python-format
 msgid "Root partition size: %dMiB"
-msgstr "Tamañu de partición raigañu: %dMiB"
+msgstr "Tamañu de la partición root: %dMiB"
 
 #: ../thus/installation/auto_partition.py:616
 #, python-format
 msgid "Home partition size: %dMiB"
-msgstr "Tamañu de partición Home: %dMiB"
+msgstr "Tamañu de la partición home: %dMiB"
 
 #: ../thus/installation/auto_partition.py:636
 msgid ""
 "Setup cannot detect size of your device, please use advanced installation "
 "routine for partitioning and mounting devices."
-msgstr "L'instalador nun pue deteutar el tamañu del to preséu, por favor usa la rutina d'instalación avanzada pal particionáu y montax de preseos."
+msgstr "La configuración nun pue deteutar el tamañu del to preséu, usa por favor la rutina d'instalación avanzada pal particionáu y montaxe de preseos."
 
 #: ../thus/installation/auto_partition.py:675
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "Fallu informando al kernel de la camudancia de la partición"
 
 #: ../thus/installation/auto_partition.py:788
 #, python-brace-format
@@ -1376,19 +1376,19 @@ msgstr ""
 
 #: ../thus/installation/auto_partition.py:793
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "Fallu creando'l volume físicu LVM"
 
 #: ../thus/installation/auto_partition.py:802
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "Fallu creando'l grupu de volúmenes LVM"
 
 #: ../thus/installation/auto_partition.py:837
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "Fallu creando'l volume llóxicu LVM"
 
 #: ../thus/installation/auto_partition.py:894
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "Nun pue copiase'l ficheru de clave LUKS al preséu d'instalación"
 
 #: ../thus/installation/bootloader.py:102
 msgid ""
@@ -1398,7 +1398,7 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "Configuración de /etc/default/grub completada con ésitu."
 
 #: ../thus/installation/bootloader.py:220
 #, python-brace-format
@@ -1408,21 +1408,21 @@ msgstr ""
 #: ../thus/installation/bootloader.py:229
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "Instalando'l cargador d'arranque GRUB(2) BIOS en {0}"
 
 #: ../thus/installation/bootloader.py:260
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig nun respuende. Amortiando grub-mount y os-prober pa qu'asina podamos siguir."
 
 #: ../thus/installation/bootloader.py:268
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr "GRUB(2) BIOS fo instaláu con ésitu."
+msgstr "GRUB(2) BIOS instalóse con ésitu."
 
 #: ../thus/installation/bootloader.py:272
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr "Fallu instalando GRUB(2) BIOS."
+msgstr "FALLU instalando GRUB(2) BIOS."
 
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
@@ -1465,11 +1465,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
-msgstr ""
+msgstr "Nun s'alcontró'l ficheru."
 
 #: ../thus/installation/bootloader.py:341
 msgid "File already exists."
-msgstr ""
+msgstr "El ficheru yá esiste."
 
 #: ../thus/installation/bootloader.py:359
 msgid "Generating grub.cfg"
@@ -1479,15 +1479,15 @@ msgstr "Xenerando grub.cfg"
 msgid ""
 "grub-mkconfig appears to be hung. Killing grub-mount and os-prober so we can"
 " continue."
-msgstr "grub-mkconfig paez nun responder. Amortiendo grub-mount y os-prober pa que podamos siguir."
+msgstr "grub-mkconfig paez tar colgáu. Matando grub-mount y os-prober pa qu'asina podamos siguir."
 
 #: ../thus/installation/bootloader.py:391
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr ""
+msgstr "Instalación de GRUB(2) UEFI completada con ésitu"
 
 #: ../thus/installation/bootloader.py:395
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr ""
+msgstr "La instalación de GRUB(2) UEFI pudo nun completase con ésitu."
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
@@ -1499,43 +1499,43 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:413
 msgid "Copying GRUB(2) Theme Files"
-msgstr ""
+msgstr "Copiando ficheros de tema GRUB(2)"
 
 #: ../thus/installation/bootloader.py:419
 msgid "Grub2 theme files not found"
-msgstr ""
+msgstr "Ficheros de tema Grub2 non alcontraos"
 
 #: ../thus/installation/bootloader.py:421
 msgid "Grub2 theme files already exist."
-msgstr ""
+msgstr "Yá esisten los ficheros de tema Grub2"
 
 #: ../thus/installation/bootloader.py:425
 msgid "Installing Grub2 locales."
-msgstr "Instalando llingues Grub2."
+msgstr "Instalando locales de Grub2."
 
 #: ../thus/installation/bootloader.py:436
 msgid "Can't install GRUB(2) locale."
-msgstr ""
+msgstr "Nun pue instalase la locale GRUB(2)."
 
 #: ../thus/installation/bootloader.py:502
 msgid "Gummiboot install completed successfully"
-msgstr ""
+msgstr "Completóse con ésitu la instalación de Gummiboot"
 
 #: ../thus/installation/bootloader.py:506
 msgid "Gummiboot install has NOT completed successfully!"
-msgstr ""
+msgstr "¡La instalación de Gummibot nun se completó con ésitu!"
 
 #: ../thus/installation/bootloader.py:538
 msgid "Can't freeze/unfreeze xfs system"
-msgstr "Nun pue conxelase/desconxelase'l sistema xfs"
+msgstr "Nun pue conxelase/desconxelase'l sistema XFS"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr ""
+msgstr "Los direutorios especiales yá tán montaos. Saltando."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
-msgstr "Los direutorios especiales nun tan montaos. Saltando."
+msgstr "Los direutorios especiales nun tán montaos. Saltando."
 
 #: ../thus/installation/chroot.py:124
 #, python-brace-format
@@ -1570,7 +1570,7 @@ msgstr ""
 
 #: ../thus/installation/mkinitcpio.py:104
 msgid "Setting hooks and modules in mkinitcpio.conf"
-msgstr "Configurando hooks y módulos en mkinitcpio.conf"
+msgstr "Axustando ganchos y módulos en mkinitcpio.conf"
 
 #: ../thus/installation/process.py:130
 #, python-brace-format
@@ -1580,7 +1580,7 @@ msgstr ""
 #: ../thus/installation/process.py:194
 #, python-brace-format
 msgid "Installing using the '{0}' method"
-msgstr ""
+msgstr "Instalando usando'l métodu '{0}'"
 
 #: ../thus/installation/process.py:266
 #, python-brace-format
@@ -1596,7 +1596,7 @@ msgstr ""
 #: ../thus/installation/process.py:392
 #, python-brace-format
 msgid "Mounting partition {0} into {1} directory"
-msgstr ""
+msgstr "Montando partición {0} nel direutoriu {1}"
 
 #: ../thus/installation/process.py:398
 #, python-brace-format
@@ -1706,7 +1706,7 @@ msgstr ""
 
 #: ../thus/installation/process.py:810
 msgid "fstab written."
-msgstr ""
+msgstr "fstab escritu."
 
 #: ../thus/installation/process.py:819
 #, python-brace-format
@@ -1730,7 +1730,7 @@ msgstr ""
 
 #: ../thus/installation/process.py:863
 msgid "Can't find locale.gen file"
-msgstr ""
+msgstr "Nun pue alcontrase'l ficheru locale.gen"
 
 #: ../thus/installation/process.py:935
 #, python-brace-format
@@ -1739,15 +1739,15 @@ msgstr ""
 
 #: ../thus/installation/process.py:1052
 msgid "Configuring your new system"
-msgstr "En configurando'l to sistema nuevu"
+msgstr "Configurando'l to sistema nuevu"
 
 #: ../thus/installation/process.py:1055
 msgid "fstab file generated."
-msgstr "Xeneráu'l ficheru fstab."
+msgstr "ficheru fstab xeneráu."
 
 #: ../thus/installation/process.py:1061
 msgid "Network configuration copied."
-msgstr "Copiada la configuración de rede."
+msgstr "Configuración de rede copiada."
 
 #: ../thus/installation/process.py:1087
 msgid "Time zone set."
@@ -1786,7 +1786,7 @@ msgstr "Axustando'l reló de rede..."
 
 #: ../thus/installation/process.py:1171
 msgid "Configuring hardware ..."
-msgstr "Configurando'l hardware..."
+msgstr "Configurando'l hardware ..."
 
 #: ../thus/installation/process.py:1179
 msgid "Updated Alsa mixer settings"
@@ -1826,15 +1826,15 @@ msgstr "Executar mkinitcpio - fecho"
 
 #: ../thus/installation/process.py:1340
 msgid "Encrypting user home dir..."
-msgstr ""
+msgstr "Cifrando direutoriu Home d'usuariu..."
 
 #: ../thus/installation/process.py:1342
 msgid "User home dir encrypted"
-msgstr "Usar direutoriu home cifráu"
+msgstr "Direutoriu Home d'usuariu cifráu"
 
 #: ../thus/installation/process.py:1347
 msgid "Installing bootloader..."
-msgstr ""
+msgstr "Instalando'l xestor d'arranque..."
 
 #: ../thus/installation/process.py:1353
 #, python-brace-format
@@ -1848,23 +1848,23 @@ msgstr ""
 
 #: ../thus/misc/validation.py:136
 msgid "Password is too short"
-msgstr ""
+msgstr "La contraseña ye mui curtia"
 
 #: ../thus/misc/validation.py:139
 msgid "Weak password"
-msgstr ""
+msgstr "Contraseña feble"
 
 #: ../thus/misc/validation.py:142
 msgid "Fair password"
-msgstr ""
+msgstr "Contraseña cenciella"
 
 #: ../thus/misc/validation.py:145
 msgid "Good password"
-msgstr ""
+msgstr "Contraseña bona"
 
 #: ../thus/misc/validation.py:148
 msgid "Strong password"
-msgstr ""
+msgstr "Contraseña fuerte"
 
 #: ../thus/misc/validation.py:162
 msgid "Passwords do not match"
@@ -1888,17 +1888,17 @@ msgstr ""
 #: ../thus/parted3/lvm.py:81
 #, python-brace-format
 msgid "Can't remove logical volume {0}"
-msgstr ""
+msgstr "Nun pue desanciase'l volume llóxicu {0}"
 
 #: ../thus/parted3/lvm.py:100
 #, python-brace-format
 msgid "Can't remove volume group {0}"
-msgstr ""
+msgstr "Nun pue desanciase'l grupu de volúmenes {0}"
 
 #: ../thus/parted3/lvm.py:113
 #, python-brace-format
 msgid "Can't remove physical volume {0}"
-msgstr ""
+msgstr "Nun pue desaniciase'l volume físicu {0}"
 
 #: ../thus/parted3/partition_module.py:111
 #, python-brace-format
@@ -1910,7 +1910,7 @@ msgstr ""
 #: ../thus/parted3/partition_module.py:182
 #, python-brace-format
 msgid "Can't delete partition {0}"
-msgstr ""
+msgstr "Nun pue desaniciase la partición {0}"
 
 #: ../thus/parted3/partition_module.py:235
 msgid "Partition is too large!"
@@ -2022,7 +2022,7 @@ msgstr ""
 
 #: ../ui/automatic.ui:271
 msgid "show password"
-msgstr ""
+msgstr "amosar contraseña"
 
 #: ../ui/automatic.ui:289
 msgid "LUKS Password. Do not use special chars or chars with accents!"
