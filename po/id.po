@@ -10,19 +10,19 @@
 # Ibnu Daru AJi, 2013
 # Arif Budiman <arifpedia@gmail.com>, 2014
 # Arif Budiman <me@kangarif.com>, 2014
-# Hasan Al Banna, 2015
+# Se7enTime <se7entime@tutanota.com>, 2015
 # Ade Malsasa Akbar <teknoloid@gmail.com>, 2013
 # Mohamad Hasan Al Banna, 2013
-# Hasan Al Banna, 2013-2014
+# Se7enTime <se7entime@tutanota.com>, 2013-2014
 # Rendiyono Wahyu Saputro <rendi.7936@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-17 21:15+0000\n"
+"PO-Revision-Date: 2015-06-18 00:30+0000\n"
 "Last-Translator: Rendiyono Wahyu Saputro <rendi.7936@gmail.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/manjaro-thus/language/id/)\n"
+"Language-Team: Indonesian (http://www.transifex.com/p/manjaro-thus/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -874,17 +874,17 @@ msgstr ""
 #: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr ""
+msgstr "{0} dilepas"
 
 #: ../thus/installation/advanced.py:1801
 #, python-brace-format
 msgid "Swap partition {0} unmounted"
-msgstr ""
+msgstr "Partisi swap {0} dilepas"
 
 #: ../thus/installation/advanced.py:1812
 #, python-brace-format
 msgid "{0} shows as mounted (busy) but it has no mount point"
-msgstr ""
+msgstr "{0} terlihat sedang dikaitkan (sibuk) tetapi tidak memiliki titik kait."
 
 #: ../thus/installation/advanced.py:1819
 msgid ""
@@ -902,7 +902,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
 msgid "Partition {0} will be deleted"
-msgstr ""
+msgstr "Partisi{0} akan dihapus"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Partition"
@@ -918,7 +918,7 @@ msgstr "Kaitkan"
 
 #: ../thus/installation/advanced.py:1896
 msgid "Encrypt"
-msgstr ""
+msgstr "Enkrip"
 
 #: ../thus/installation/advanced.py:1917
 msgid "These disks will have partition actions:"
@@ -927,52 +927,52 @@ msgstr "Cakram-cakram akan dipartisi sebagai berikut:"
 #: ../thus/installation/advanced.py:2008
 #, python-brace-format
 msgid "Finished saving changes in {0}"
-msgstr ""
+msgstr "Penyimpanan perubahan telah selesai dalam {0}"
 
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr ""
+msgstr "Membuat sistem berkas {0} baru dengan {1} label {2}"
 
 #: ../thus/installation/advanced.py:2034
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr ""
+msgstr "Membuat sistem berkas {0} baru di {1}"
 
 #: ../thus/installation/advanced.py:2043 ../thus/installation/advanced.py:2062
 #: ../thus/installation/advanced.py:2078
 #, python-brace-format
 msgid "Setting boot flag in {0} partition"
-msgstr ""
+msgstr "Mengatur tanda boot di {0} partisi"
 
 #: ../thus/installation/advanced.py:2051
 #, python-brace-format
 msgid "Setting boot_legacy flag in {0} partition"
-msgstr ""
+msgstr "Mengatur tanda boot_flag di {0} partisi"
 
 #: ../thus/installation/advanced.py:2086
 #, python-brace-format
 msgid "Encrypting {0}, assigning volume name {1} and formatting it..."
-msgstr ""
+msgstr "Sedang mengenkripsi {0}, memberi nama volume {1} dan mengatur ulang..."
 
 #: ../thus/installation/advanced.py:2101
 #, python-brace-format
 msgid "Couldn't format LUKS device '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Tidak dapat mengatur ulang perangkat LUKS '{0}' dengan label '{1}' sebagai '{2}'"
 
 #: ../thus/installation/advanced.py:2125
 #, python-brace-format
 msgid "Couldn't format partition '{0}' with label '{1}' as '{2}'"
-msgstr ""
+msgstr "Tidak dapat mengatur ulang partisi '{0}' dengan label '{1}' sebagai '{2}'"
 
 #: ../thus/installation/advanced.py:2183 ../thus/installation/automatic.py:274
 msgid "Thus will not install any bootloader"
-msgstr ""
+msgstr "Thus tidak akan memasang bootloader apapun"
 
 #: ../thus/installation/advanced.py:2192
 #, python-brace-format
 msgid "Manjaro will install the bootloader {0} in device {1}"
-msgstr ""
+msgstr "Manjaro akan memasang bootloader {0} di perangkat {1}"
 
 #: ../thus/installation/advanced.py:2207 ../thus/installation/automatic.py:310
 msgid "Testing mode. Thus won't apply any changes to your system!"
@@ -980,33 +980,33 @@ msgstr "Mode pengujian. Thus tidak akan menerapkan perubahan apapun pada sistem!
 
 #: ../thus/installation/alongside.py:139
 msgid "There are no primary partitions available"
-msgstr ""
+msgstr "Tidak ada partisi utama yang tersedia"
 
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "Akan menyusutkan perangkat {0} dan membuat perangkat baru {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."
-msgstr ""
+msgstr "Thus merekomendasikan setidaknya 6.5GB bebas untuk memasang Manjaro."
 
 #: ../thus/installation/alongside.py:151
 #, python-brace-format
 msgid ""
 "New partition {0} resulting of shrinking {1} will not have enough free space"
 " for a full installation."
-msgstr ""
+msgstr "Partisi baru {0} hasil dari penyusutan {1} tidak memiliki ruang bebas yang cukup untuk pemasangan penuh."
 
 #: ../thus/installation/alongside.py:152
 msgid ""
 "You can still install Manjaro, but be carefull on which DE you choose as it "
 "might not fit in."
-msgstr ""
+msgstr "Anda masih bisa memasang Manjaro, tetapi hati - hati pada DE yang anda pilih karena kemungkinan tidak cocok."
 
 #: ../thus/installation/alongside.py:153
 msgid "Install at your own risk!"
-msgstr ""
+msgstr "Pasang dengan resiko anda sendiri!"
 
 #: ../thus/installation/alongside.py:208
 msgid "Manjaro alongside another OS"
@@ -1014,11 +1014,11 @@ msgstr "Manjaro berdampingan dengan Sistem Operasi lainnya"
 
 #: ../thus/installation/alongside.py:212
 msgid "Choose the new size of your installation"
-msgstr ""
+msgstr "Memilih ukuran baru dari pemasangan anda"
 
 #: ../thus/installation/alongside.py:216
 msgid "Choose the partition that you want to shrink:"
-msgstr ""
+msgstr "Pilih partisi yang anda inginkan untuk disusutkan."
 
 #: ../thus/installation/alongside.py:257
 msgid ""
@@ -1028,23 +1028,23 @@ msgstr ""
 
 #: ../thus/installation/alongside.py:268
 msgid "Can't find any installed OS!"
-msgstr ""
+msgstr "Tidak dapat menemukan OS apapun yang terpasang!"
 
 #: ../thus/installation/ask.py:128
 msgid "The 'alongside' installation mode does not work in UEFI systems"
-msgstr ""
+msgstr "Modus pemasangan 'alongside' tidak bekerja pada sistem UEFI."
 
 #: ../thus/installation/ask.py:142
 msgid "Windows(tm) OS detected."
-msgstr ""
+msgstr "OS Windows(tm) terdeteksi."
 
 #: ../thus/installation/ask.py:145
 msgid "Windows(tm) OS not detected."
-msgstr ""
+msgstr "OS Windows(tm) tidak terdeteksi."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr ""
+msgstr "Tidak dapat mendeteksi OS apapun di perangkat sda."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
@@ -1052,7 +1052,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:197
 msgid " and "
-msgstr ""
+msgstr "dan"
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
@@ -1061,15 +1061,15 @@ msgstr "Tipe instalasi"
 #: ../thus/installation/ask.py:235
 #, python-brace-format
 msgid "Replace {0} with Manjaro"
-msgstr ""
+msgstr "Ganti{0} dengan Manjaro"
 
 #: ../thus/installation/ask.py:237
 msgid "Erase disk and install Manjaro"
-msgstr ""
+msgstr "Hapus cakram dan pasang Manjaro"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr ""
+msgstr "Peringatan: Ini akan menghapus semua data pada cakram anda."
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1077,7 +1077,7 @@ msgstr "Lakukan enkripsi pada instalasi untuk meningkatkan keamanan data."
 
 #: ../thus/installation/ask.py:254
 msgid "You will be asked to create an encryption password in the next step."
-msgstr ""
+msgstr "Anda akan ditanya untuk membuat kata sandi enkripsi pada langkah selanjutnya."
 
 #: ../thus/installation/ask.py:260
 msgid "Use LVM with this installation."
@@ -1087,7 +1087,7 @@ msgstr "Gunakan LVM di instalasi ini."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr ""
+msgstr "Ini akan mengatur LVM dan mengizinkan anda untuk mengelola partisi dan membuat snapshot."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1096,7 +1096,7 @@ msgstr "Atur direktori Rumah Anda di partisi/volume yang berbeda"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr ""
+msgstr "Ini akan mengatur direktori /home anda pada partisi atau volume yang berbeda."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
@@ -1104,11 +1104,11 @@ msgstr ""
 
 #: ../thus/installation/ask.py:305
 msgid "Choose exactly where Manjaro should be installed."
-msgstr ""
+msgstr "Pilih persis di mana Manjaro harus dipasang."
 
 #: ../thus/installation/ask.py:309
 msgid "Edit partition table and choose mount points."
-msgstr ""
+msgstr "Sunting tabel partisi dan pilih titik kait."
 
 #: ../thus/installation/ask.py:341
 msgid "Manjaro installation will be encrypted using LUKS"
@@ -1151,49 +1151,49 @@ msgstr "Enkripsi Sandi:"
 
 #: ../thus/installation/automatic.py:101
 msgid "LUKS Password. Do not use special characters or accents!"
-msgstr ""
+msgstr "Kata sandi LUKS. Jangan gunakan karakter spesial atau akse!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr ""
+msgstr "Kata sandi LUKS root telah diatur"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
 msgid "Automatic install on {0}"
-msgstr ""
+msgstr "Otomasi pasang pada {0}"
 
 #: ../thus/installation/automatic.py:253
 msgid ""
 "Do you really want to proceed and delete all your content on your hard "
 "drive?"
-msgstr ""
+msgstr "Apakah anda ingin melanjutkan dan menghapus semua konten yang ada pada cakram anda ?"
 
 #: ../thus/installation/automatic.py:267
 #, python-brace-format
 msgid "Thus will install Manjaro on device {0}"
-msgstr ""
+msgstr "Thus akan memasang Manjaro pada perangkat {0}"
 
 #: ../thus/installation/automatic.py:286
 #, python-brace-format
 msgid "Thus will install the bootloader '{0}' in device '{1}'"
-msgstr ""
+msgstr "Thus akan memasang booloader '{0}' di perangkat '{1}'"
 
 #: ../thus/installation/auto_partition.py:87
 #: ../thus/installation/process.py:485 ../thus/installation/process.py:502
 #: ../thus/installation/process.py:517
 #, python-brace-format
 msgid "Unmounting {0}"
-msgstr ""
+msgstr "Melepas kait {0}"
 
 #: ../thus/installation/auto_partition.py:91
 #, python-brace-format
 msgid "Unmounting {0} failed. Trying lazy arg."
-msgstr ""
+msgstr "Melepas kait {0} gagal. Sedang mencoba argumen lazy."
 
 #: ../thus/installation/auto_partition.py:95
 #, python-brace-format
 msgid "Unmounting {0} failed."
-msgstr ""
+msgstr "Melepas kait {0} gagal."
 
 #: ../thus/installation/auto_partition.py:107
 #: ../thus/installation/auto_partition.py:113
@@ -1217,7 +1217,7 @@ msgstr ""
 #: ../thus/installation/auto_partition.py:896
 #, python-brace-format
 msgid "Command {0} failed"
-msgstr ""
+msgstr "Perintah {0} gagal"
 
 #: ../thus/installation/auto_partition.py:108
 #: ../thus/installation/auto_partition.py:114
@@ -1242,92 +1242,92 @@ msgstr ""
 #: ../thus/installation/process.py:267
 #, python-brace-format
 msgid "Output: {0}"
-msgstr ""
+msgstr "Keluaran: {0}"
 
 #: ../thus/installation/auto_partition.py:158
 msgid "Can't delete existent LVM volumes"
-msgstr ""
+msgstr "Tidak dapat menghapus volume LVM yang telah ada"
 
 #: ../thus/installation/auto_partition.py:169
 msgid "Can't close already opened LUKS devices"
-msgstr ""
+msgstr "Tidak dapat menutup perangkat LUKS yang telah terbuka"
 
 #: ../thus/installation/auto_partition.py:178
 #, python-brace-format
 msgid "Can't setup LUKS in device {0}. A password or a key file are needed"
-msgstr ""
+msgstr "Tidak dapat mengatur LUKS pada perangkat {0}. Sebuah kata sandi atau berkas kunci dibutuhkan"
 
 #: ../thus/installation/auto_partition.py:186
 #, python-brace-format
 msgid "Thus will setup LUKS on device {0}"
-msgstr ""
+msgstr "Thus akan mengatur LUKS pada perangkat {0}"
 
 #: ../thus/installation/auto_partition.py:204
 #: ../thus/installation/auto_partition.py:227
 #, python-brace-format
 msgid "Can't format and open the LUKS device {0}"
-msgstr ""
+msgstr "Tidak dapat mengatur ulang dan membuka perangkat LUKS {0}"
 
 #: ../thus/installation/auto_partition.py:238
 #, python-brace-format
 msgid "Can't wipe filesystem of device {0}"
-msgstr ""
+msgstr "Tidak dapat menghapus sistem berkas dari perangkat {0}"
 
 #: ../thus/installation/auto_partition.py:250
 msgid "Can't run dd command"
-msgstr ""
+msgstr "Tidak dapat menjalankan perintah dd"
 
 #: ../thus/installation/auto_partition.py:278
 #: ../thus/installation/auto_partition.py:306
 #, python-brace-format
 msgid "Error creating a new partition on device {0}"
-msgstr ""
+msgstr "Galat membuat partisi baru pada perangkat {0}"
 
 #: ../thus/installation/auto_partition.py:319
 #, python-brace-format
 msgid "Error creating a new partition table on device {0}"
-msgstr ""
+msgstr "Galat membuat partisi baru pada perangkat {0}"
 
 #: ../thus/installation/auto_partition.py:358
 #, python-brace-format
 msgid "Will format device {0} as {1}"
-msgstr ""
+msgstr "Akan mengatur ulang perangkat {0} sebagai {1}"
 
 #: ../thus/installation/auto_partition.py:367
 #: ../thus/installation/process.py:407
 #, python-brace-format
 msgid "Can't activate swap in {0}"
-msgstr ""
+msgstr "Tidak dapat mengaktifkan swap pada {0}"
 
 #: ../thus/installation/auto_partition.py:385
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr ""
+msgstr "Tipe sistem berkas tidak diketahui {0}"
 
 #: ../thus/installation/auto_partition.py:393
 #, python-brace-format
 msgid "Can't create filesystem {0}"
-msgstr ""
+msgstr "Tidak dapat membuat sistem berkas {0}"
 
 #: ../thus/installation/auto_partition.py:422
 #, python-brace-format
 msgid "Error trying to  mount {0} in {1}"
-msgstr ""
+msgstr "Galat mencoba untuk mengkaitkan {0} pada {1}"
 
 #: ../thus/installation/auto_partition.py:438
 #, python-brace-format
 msgid "Device details: {0} UUID={1} LABEL={2}"
-msgstr ""
+msgstr "Detil Perangkat: {0} UUID={1} LABEL={2}"
 
 #: ../thus/installation/auto_partition.py:522
 #, python-brace-format
 msgid "{0} will be mounted as {1}"
-msgstr ""
+msgstr "{0} akan dikaitkan sebagai {1}"
 
 #: ../thus/installation/auto_partition.py:554
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr ""
+msgstr "Perangkat {0} akan memiliki {1} sistem berkas"
 
 #: ../thus/installation/auto_partition.py:604
 #, python-format
@@ -1337,7 +1337,7 @@ msgstr "Total ukuran cakram: %dMiB"
 #: ../thus/installation/auto_partition.py:606
 #, python-format
 msgid "EFI System Partition (ESP) size: %dMiB"
-msgstr ""
+msgstr "EFI System Partition (ESP) ukuran: %dMiB"
 
 #: ../thus/installation/auto_partition.py:607
 #, python-format
@@ -1372,54 +1372,54 @@ msgstr "Pengaturan tidak dapat mendeteksi ukuran perangkat Anda, silakan gunakan
 
 #: ../thus/installation/auto_partition.py:675
 msgid "Error informing the kernel of the partition change."
-msgstr ""
+msgstr "Galat menginformasikan kernel dari perubahan partisi"
 
 #: ../thus/installation/auto_partition.py:788
 #, python-brace-format
 msgid "Thus will setup LVM on device {0}"
-msgstr ""
+msgstr "Thus akan mengatur LVM pada perangkat {0}"
 
 #: ../thus/installation/auto_partition.py:793
 msgid "Error creating LVM physical volume"
-msgstr ""
+msgstr "Galat membuat volume fisik LVM"
 
 #: ../thus/installation/auto_partition.py:802
 msgid "Error creating LVM volume group"
-msgstr ""
+msgstr "Galat membuat grup volume LVM"
 
 #: ../thus/installation/auto_partition.py:837
 msgid "Error creating LVM logical volume"
-msgstr ""
+msgstr "Galat membuat volume logikal LVM"
 
 #: ../thus/installation/auto_partition.py:894
 msgid "Can't copy LUKS keyfile to the installation device"
-msgstr ""
+msgstr "Tidak dapat menyalin berkas kunci ke pemasangan perangkat"
 
 #: ../thus/installation/bootloader.py:102
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr ""
+msgstr "variabel 'ruuid' tidak diatur. Saya tidak bisa mengecek root UUID di grub.cfg, mari kita berharap baik - baik saja"
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
-msgstr ""
+msgstr "konfigurasi /etc/default/grub berhasil diselesaikan."
 
 #: ../thus/installation/bootloader.py:220
 #, python-brace-format
 msgid "Could not copy {0} to grub.d"
-msgstr ""
+msgstr "Tidak dapat menyalin {0} ke grub.d"
 
 #: ../thus/installation/bootloader.py:229
 #, python-brace-format
 msgid "Installing GRUB(2) BIOS boot loader in {0}"
-msgstr ""
+msgstr "Memasang boot loader BIOS GRUB(2) di {0}"
 
 #: ../thus/installation/bootloader.py:260
 msgid ""
 "grub-mkconfig does not respond. Killing grub-mount and os-prober so we can "
 "continue."
-msgstr ""
+msgstr "grub-mkconfig tidak merespon. Matikan grub-mount dan os-prober sehingga kitadapat melanjutkan."
 
 #: ../thus/installation/bootloader.py:268
 msgid "GRUB(2) BIOS has been successfully installed."
@@ -1432,26 +1432,26 @@ msgstr "KESALAHAN saat menginstal GRUB(2) BIOS."
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
 msgid "The efi directory is: {0}"
-msgstr ""
+msgstr "Direktori efi adalah: {0}"
 
 #: ../thus/installation/bootloader.py:294
 #, python-brace-format
 msgid "Installing GRUB(2) UEFI {0} boot loader in {1}"
-msgstr ""
+msgstr "Memasang boot loader UEFI GRUB(2) {0} di {1}"
 
 #: ../thus/installation/bootloader.py:304
 #, python-brace-format
 msgid "grub-install command: {0}"
-msgstr ""
+msgstr "perintah grub-install: {0}"
 
 #: ../thus/installation/bootloader.py:312
 #, python-brace-format
 msgid "Command grub-install failed. Error output: {0}"
-msgstr ""
+msgstr "perintah grub-install gagal. Keluaran galat: {0}"
 
 #: ../thus/installation/bootloader.py:314
 msgid "Command grub-install timed out."
-msgstr ""
+msgstr "Perintah grub-install kehabisan waktu."
 
 #: ../thus/installation/bootloader.py:316
 #, python-brace-format
@@ -2003,7 +2003,7 @@ msgstr "Gunakan perangkat ini sebagai tempat pemasangan boot loader:"
 
 #: ../ui/advanced.ui:1106
 msgid "Encryption properties"
-msgstr ""
+msgstr "Properti Enkripsi"
 
 #: ../ui/advanced.ui:1221
 msgid "Use LUKS encryption: "
@@ -2017,21 +2017,21 @@ msgstr "<small><span color=\"darkgreen\">Sandi kuat</span></small>"
 msgid ""
 "<b>WARNING! This installation mode will overwrite everything in your "
 "drive!</b>"
-msgstr ""
+msgstr "<b>PERINGATAN! Modus instalasi ini akan menimpa apa saja pada drive Anda!</b>"
 
 #: ../ui/automatic.ui:60
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr ""
+msgstr "Silakan pilih drive dimana anda ingin memasang Manjaro dan klik tombol di bawah untuk memulai proses."
 
 #: ../ui/automatic.ui:271
 msgid "show password"
-msgstr ""
+msgstr "tampilkan kata sandi"
 
 #: ../ui/automatic.ui:289
 msgid "LUKS Password. Do not use special chars or chars with accents!"
-msgstr ""
+msgstr "Kata sandi LUKS. Jangan gunakan karakter spesial atau karakter dengan aksen!"
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
@@ -2063,7 +2063,7 @@ msgstr "<span weight=\"bold\" size=\"large\">Untuk hasil terbaik, mohon pastikan
 msgid ""
 "(*) This highly depends on which desktop environment you choose, so you "
 "might need more space (for instance, KDE needs 6.5GB)."
-msgstr ""
+msgstr "(*) Ini sangat tergantung dengan lingkungan desktop yang kamu pilih, mungkin anda membutuhkan lebih banyak ruang (sebagai contoh, KDE membutuhkan 6.5GB)."
 
 #: ../ui/main_window.ui:48
 msgid "<span weight=\"bold\" size=\"large\">Welcome to Manjaro</span>"

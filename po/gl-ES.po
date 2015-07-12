@@ -4,23 +4,19 @@
 # Philip Müller <philm@manjaro.org>, 2013-2015.
 # 
 # Translators:
-# Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2013
-# faidoc <alexfilgueira@antergos.com>, 2013
-# Alexandre Filgueira <faidoc@gmail.com>, 2013
-# Ismael Ordóñez <isorfe@gmail.com>, 2015
 # Noel Rodríguez Freire <noelrf.ou@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-07-12 09:48+0000\n"
+"PO-Revision-Date: 2015-07-10 09:10+0000\n"
 "Last-Translator: Noel Rodríguez Freire <noelrf.ou@gmail.com>\n"
-"Language-Team: Galician (http://www.transifex.com/p/manjaro-thus/language/gl/)\n"
+"Language-Team: Galician (Spain) (http://www.transifex.com/p/manjaro-thus/language/gl_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: gl\n"
+"Language: gl_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../thus/bootinfo.py:70 ../thus/bootinfo.py:83 ../thus/bootinfo.py:89
@@ -33,12 +29,12 @@ msgstr "descoñecido"
 #: ../thus/bootinfo.py:104
 #, python-brace-format
 msgid "Error calling hexdump command: {0}"
-msgstr "Erro chamando hexdump comando: {0}"
+msgstr "Erro na chmada a hexdump: {0}"
 
 #: ../thus/bootinfo.py:137
 #, python-brace-format
 msgid "Unknown partition id {0}"
-msgstr "Identificación partición descoñecida {0}"
+msgstr "ID de partición descoñecida {0}"
 
 #: ../thus/check.py:69
 msgid "System Check"
@@ -47,65 +43,65 @@ msgstr "Comprobación do Sistema"
 #: ../thus/check.py:74
 #, python-brace-format
 msgid "has at least {0}GB available storage space. (*)"
-msgstr "ten, polo menos, {0} GB espazo de almacenamento dispoñible. (*)"
+msgstr "Ten, polo menos, {0} GB de espazo de almacenamento dispoñible. (*)"
 
 #: ../thus/check.py:77
 msgid ""
 "This highly depends on which desktop environment you choose, so you might "
 "need more space."
-msgstr "Isto depende en gran medida do entorno de escritorio que elixa, para o que pode ser necesario máis espazo."
+msgstr "Isto depende en gran medida do escritorio que escolla, polo que pode necesitar máis espazo."
 
 #: ../thus/check.py:82
 msgid "is plugged in to a power source"
-msgstr "está conectado á corrente eléctrica"
+msgstr "está conectado a unha fonte de enerxía"
 
 #: ../thus/check.py:86
 msgid "is connected to the Internet"
-msgstr "está conectado ao Internet"
+msgstr "está conectado á Internet"
 
 #: ../thus/check.py:90
 msgid "For best results, please ensure that this computer:"
-msgstr "Para os mellores resultados, por favor asegúrese de que esta computadora:"
+msgstr "Para obter mellores resultados, asegúrese de que este equipo:"
 
 #: ../thus/check.py:169
 msgid "We have Internet connection."
-msgstr "Temos conexión a Internet"
+msgstr "Temos acceso a Internet."
 
 #: ../thus/check.py:170
 msgid "We're connected to a power source."
-msgstr "Estamos conectados á corrente eléctrica."
+msgstr "Estamos conectados a unha fonte de enerxía."
 
 #: ../thus/check.py:171
 msgid "We have enough disk space."
-msgstr "Temos espazo suficiente no disco."
+msgstr "Temos suficiente espazo no disco."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr "Non se pode crear e modificar os ficheiros de configuración de encfs"
+msgstr "Non pode crear e modificar ficheiros de configuración encfs."
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
-msgstr "O directorio de inicio non será cifrado."
+msgstr "O directorio 'home' non está cifrado."
 
 #: ../thus/encfs.py:132
 msgid "Can't run encfs. Bad password?"
-msgstr "Non se pode executar encfs. Mala contrasinal?"
+msgstr "Non pode executar encfs. Contrasinal incorrecto?"
 
 #: ../thus/keymap.py:60
 msgid "Select your keyboard layout"
-msgstr "Selecciona o teu mapa de teclado"
+msgstr "Seleccione a disposición do teclado"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr "Esquemas de teclado"
+msgstr "Distribución do teclado"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr "Variantes do teclado"
+msgstr "Variantes de teclado"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
-msgstr "Mapas de teclado"
+msgstr "Distribucións"
 
 #: ../thus/keymap.py:78
 msgid "Variants"
@@ -114,15 +110,15 @@ msgstr "Variantes"
 #: ../thus/keymap.py:106
 #, python-brace-format
 msgid "keyboard_layout is {0}"
-msgstr "keyboard_layout é {0}"
+msgstr "A distribución do teclado é {0}"
 
 #: ../thus/language.py:79
 msgid "Welcome to Manjaro"
-msgstr "Benvido a Manjaro"
+msgstr "Benvido/a a Manjaro"
 
 #: ../thus/language.py:83
 msgid "Notice: The Thus Installer is beta software."
-msgstr "Aviso: O instalador Thus é un software beta."
+msgstr "Aviso: o instalador Thus está en versión beta."
 
 #: ../thus/language.py:85
 msgid ""
@@ -131,7 +127,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr "Thus é software en beta e en activo desenvolvemento.\nTodavía non manexa adecuadamente configuracións RAID, subvolúmenes btrfs ou outras\nconfiguracións avanzadas. Por favor proceda con coidado, é posible unha perda de datos!\n\nSe atopa calquera fallo, por favor repórteo a http://bugs.manjaro.org"
+msgstr ""
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
@@ -149,22 +145,22 @@ msgstr "Atrás"
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr "Non se puido atopar un ficheiro de tradución para o idioma {0}"
+msgstr "Non se puido atopar o ficheiro de tradución ao idioma {0}"
 
 #: ../thus/location.py:71
 msgid "Select your location"
-msgstr "Selecciona a túa localización"
+msgstr "Seleccione a súa posición"
 
 #: ../thus/location.py:75
 msgid ""
 "The location you select will be used to help determine the system locale. It"
 " should normally be the country in which you reside. Here is a shortlist of "
 "locations based on the language you selected."
-msgstr "A localización que seleccione será usada para determinar a localización do sistema. Normalmente soe ser o país no que reside. Aquí está unha pequena lista de localizacións basada no linguaxe que seleccionou."
+msgstr ""
 
 #: ../thus/location.py:82
 msgid "Country, territory or area:"
-msgstr "País, territorio ou área:"
+msgstr "País, territorio ou rexión:"
 
 #: ../thus/location.py:87
 msgid "Show all locations"
@@ -174,24 +170,24 @@ msgstr "Amosar todas as localidades"
 #: ../thus/misc/misc.py:969
 #, python-brace-format
 msgid "locale changed to : {0}"
-msgstr "localidade cambiada: {0}"
+msgstr "Configuración rexional cambiada a: {0}"
 
 #: ../thus/location.py:209 ../thus/location.py:218 ../thus/location.py:220
 #: ../thus/misc/misc.py:971 ../thus/misc/misc.py:974
 #, python-brace-format
 msgid "Can't change to locale '{0}'"
-msgstr "Non se pode cambiar a localidade '{0}'"
+msgstr "Non se pode cambiar a configuración rexional '{0}'"
 
 #: ../thus/main_window.py:66
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr "Este instalador debe ser executado con privilexios administrativos, e non pode continuar sen eles."
+msgstr "Este instalador debe ser executado con privilexios de administrador, e non pode continuar sen eles."
 
 #: ../thus/main_window.py:74
 #, python-brace-format
 msgid "File '{0}' already exists."
-msgstr "Ficheiro '{0}' xa existe."
+msgstr "O ficheiro '{0}' xa existe."
 
 #: ../thus/main_window.py:75
 #, python-brace-format
@@ -203,21 +199,21 @@ msgid ""
 "or you can manually delete the offending file.\n"
 "\n"
 "Offending file: '{0}'"
-msgstr "Non pode executar dúas veces o instalador.\n\nSe está seguro de que o instalador non esa funcionando\npode executalo empregando a opción --force\nou pode borrar manualmente o ficheiro en conflicto.\n\nFicheiro en conflicto:'{0}'"
+msgstr ""
 
 #: ../thus/main_window.py:87
 #, python-brace-format
 msgid "Thus installer version {0}"
-msgstr "Versión Thus do instalador {0}"
+msgstr "Versión do instalador Thus {0}"
 
 #: ../thus/main_window.py:190
 #, python-brace-format
 msgid "Manjaro Installer - Thus {0}"
-msgstr "Manjaro Instalador - Thus {0}"
+msgstr "Instalador de Manjaro - Thus {0}"
 
 #: ../thus/main_window.py:322
 msgid "Do you really want to quit the installer?"
-msgstr "Realmente quere para pechar o instalador?"
+msgstr "Realmente quere saír do instalador?"
 
 #: ../thus/main_window.py:331
 msgid "Quiting installer..."
@@ -225,35 +221,35 @@ msgstr "Saíndo do instalador..."
 
 #: ../thus/rank_mirrors.py:54
 msgid "Can't find rank mirrors script"
-msgstr "Non atopa clasificación reflicte guión"
+msgstr "Non atopa o script para ordenar os repositorios"
 
 #: ../thus/rank_mirrors.py:61
 msgid "Couldn't execute auto mirroring selection"
-msgstr "Non se pode executar a selección de mirror automático"
+msgstr ""
 
 #: ../thus/show_message.py:59
 msgid "Manjaro Installer - Error"
-msgstr "Manjaro Instalador - Erro"
+msgstr "Instalador de Manjaro - Erro"
 
 #: ../thus/show_message.py:73
 msgid "Manjaro Installer - Warning"
-msgstr "Manjaro Instalador - Advertencia"
+msgstr ""
 
 #: ../thus/show_message.py:87
 msgid "Manjaro Installer - Information"
-msgstr "Manjaro Instalador - Información"
+msgstr "Instalador Manjaro - Información"
 
 #: ../thus/show_message.py:101
 msgid "Manjaro Installer - Confirmation"
-msgstr "Manjaro Instalador - Confirmación"
+msgstr "Instalador de Manjaro - Confirmación"
 
 #: ../thus/slides.py:77
 msgid "Installing Manjaro..."
-msgstr "Instalar Manjaro..."
+msgstr "Instalando Manjaro..."
 
 #: ../thus/slides.py:82
 msgid "Please wait..."
-msgstr "Por favor espere..."
+msgstr "Por favor, agarde..."
 
 #: ../thus/slides.py:192
 msgid ""
@@ -275,235 +271,235 @@ msgstr "Instalación completa!\nQuere reiniciar o sistema agora?"
 #: ../thus/thus.py:66
 #, python-brace-format
 msgid "Can't create Thus main window: {0}"
-msgstr "Non se pode crear xanela principal Thus: {0}"
+msgstr "Non se pode lanzar a fiestra principal Thus: {0}"
 
 #: ../thus/thus.py:166
 #, python-brace-format
 msgid "Using pyalpm v{0} as interface to libalpm v{1}"
-msgstr "Usando pyalpm v {0} como interface para libalpm v {1}"
+msgstr "Usando pyalpm v {0} como unha interface para libalpm v {1}"
 
 #: ../thus/thus.py:181
 #, python-brace-format
 msgid "Thus v{0} - Manjaro Installer"
-msgstr "Thus v{0} - Manjaro Instalador"
+msgstr "Thus v{0} - Instalador de Manjaro"
 
 #: ../thus/thus.py:194
 msgid "Sets Thus log level to 'debug'"
-msgstr "Prevé, Thus, nivel de rexistro para 'debug'"
+msgstr "Establecer o nivel de log de Thus en debug"
 
 #: ../thus/thus.py:198
 msgid "Runs thus even if it detects that another instance is running"
-msgstr "Transcorre así mesmo se detecta que outra instancia en execución"
+msgstr "Lanza Thu aínda que detecte outra instancia en execución."
 
 #: ../thus/thus.py:210
 msgid "Do not perform any changes (useful for developers)"
-msgstr "Non realice os cambios (útil para desenvolvedores)"
+msgstr ""
 
 #: ../thus/thus.py:214
 msgid "Upgrade/downgrade Thus to the web version"
-msgstr "Actualización / desatualización Así, para a versión web"
+msgstr ""
 
 #: ../thus/thus.py:218
 msgid "Do not search for new Thus versions online"
-msgstr "Non buscar novas versións Thus en liña"
+msgstr ""
 
 #: ../thus/thus.py:222
 msgid "Show logging messages to stdout"
-msgstr "Amosar as mensaxes de log para saída estándar"
+msgstr ""
 
 #: ../thus/thus.py:226
 msgid "Show options in development (for developers only, do not use this!)"
-msgstr "Amosar opcións de desenvolvemento (para desenvolvedores só, non empregue este!)"
+msgstr ""
 
 #: ../thus/thus.py:265
 msgid "Program updated! Restarting..."
-msgstr "Programa actualizado! Reiniciando ..."
+msgstr ""
 
 #: ../thus/thus.py:305
 msgid "Thus files not found. Please, install Thus using pacman"
-msgstr "Así, non ficheiros atopados. Por favor, instale Thus empregando pacman"
+msgstr ""
 
 #: ../thus/thus.py:309
 #, python-brace-format
 msgid "Please install '{0}' before running this installer"
-msgstr "Por favor, instale '{0}' antes de realizar este instalador"
+msgstr ""
 
 #: ../thus/timezone.py:94
 msgid "Where are you?"
-msgstr "Onde estás?"
+msgstr ""
 
 #: ../thus/timezone.py:99 ../ui/timezone.ui:36
 msgid "Zone:"
-msgstr "Zona:"
+msgstr ""
 
 #: ../thus/timezone.py:103 ../ui/timezone.ui:79
 msgid "Region:"
-msgstr "Rexión:"
+msgstr ""
 
 #: ../thus/timezone.py:107
 msgid "Use Network Time Protocol (NTP) for clock synchronization"
-msgstr "Use Network Time Protocol (NTP) para a sincronización do reloxo"
+msgstr ""
 
 #: ../thus/timezone.py:117
 #, python-brace-format
 msgid "location changed to : {0}"
-msgstr "localización modificada a: {0}"
+msgstr ""
 
 #: ../thus/timezone.py:196
 msgid "Can't autodetect timezone coordinates"
-msgstr "Non se poden autodetectar as coordinadas da zona horaria"
+msgstr ""
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr "Parando temas de zona horaria..."
+msgstr ""
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
-msgstr "Non se pode obter o estado da rede."
+msgstr ""
 
 #: ../thus/timezone.py:312
 msgid "We have connection. Let's get our timezone"
-msgstr "Temos conexión. Imos buscar a nosa zona horaria"
+msgstr ""
 
 #: ../thus/timezone.py:335
 #, python-brace-format
 msgid "Timezone (latitude {0}, longitude {1}) detected."
-msgstr "Zona horaria (latitude {0}, lonxitude {1}) detectado."
+msgstr ""
 
 #: ../thus/updater.py:71
 msgid ""
 "Could not find 'update.info' file. Thus will not be able to update itself."
-msgstr "Non se puido atopar o ficheiro 'update.info'. Thus non será actualizado automaticamente."
+msgstr ""
 
 #: ../thus/updater.py:91
 #, python-brace-format
 msgid "Thus Internet version: {0}"
-msgstr "Thus versión Internet: {0}"
+msgstr ""
 
 #: ../thus/updater.py:131
 msgid "New version found. Updating installer..."
-msgstr "Nova versión atopada. Actualizar instalador..."
+msgstr ""
 
 #: ../thus/updater.py:134
 msgid "No new version found. Updating anyways..."
-msgstr "Ningunha nova versión atopada. Actualizar de forma..."
+msgstr ""
 
 #: ../thus/updater.py:138
 msgid "Downloading new version of Thus..."
-msgstr "Baixando nova versión do Thus..."
+msgstr ""
 
 #: ../thus/updater.py:142
 msgid "Can't download new Thus version."
-msgstr "Non se pode descargar nova versión Thus."
+msgstr ""
 
 #: ../thus/updater.py:146
 msgid "Uncompressing new version..."
-msgstr "Descompactando nova versión..."
+msgstr ""
 
 #: ../thus/updater.py:192
 #, python-brace-format
 msgid "Can't copy {0} to {1}"
-msgstr "Non se pode copiar {0} a {1}"
+msgstr ""
 
 #: ../thus/updater.py:195
 msgid "Wrong md5. Bad download or wrong file, won't update this one"
-msgstr "Suma de verificación md5 incorrecta. Descarga corrupta ou arquivo incorrecto, non será actualizado"
+msgstr ""
 
 #: ../thus/user_info.py:72
 msgid "Who are you?"
-msgstr "Quen eres?"
+msgstr ""
 
 #: ../thus/user_info.py:77 ../ui/user_info.ui:32
 msgid "Your name:"
-msgstr "Teu nome:"
+msgstr ""
 
 #: ../thus/user_info.py:81 ../ui/user_info.ui:179
 msgid "Your name"
-msgstr "Teu nome"
+msgstr ""
 
 #: ../thus/user_info.py:85 ../ui/user_info.ui:276
 msgid "Hostname"
-msgstr "Nome de máquina"
+msgstr ""
 
 #: ../thus/user_info.py:89 ../ui/user_info.ui:603
 msgid "Your computer's name:"
-msgstr "O nome da túa computadora:"
+msgstr ""
 
 #: ../thus/user_info.py:93 ../ui/user_info.ui:44
 msgid "Pick a username:"
-msgstr "Escolle un nome de usuario:"
+msgstr ""
 
 #: ../thus/user_info.py:97 ../ui/user_info.ui:213
 msgid "Username"
-msgstr "Nome de usuario"
+msgstr ""
 
 #: ../thus/user_info.py:101 ../ui/user_info.ui:57
 msgid "Choose a password:"
-msgstr "Escolle unha contrasinal:"
+msgstr ""
 
 #: ../thus/user_info.py:105 ../thus/user_info.py:121 ../ui/user_info.ui:91
 #: ../ui/user_info.ui:495
 msgid "Password"
-msgstr "Contrasinal"
+msgstr ""
 
 #: ../thus/user_info.py:109 ../thus/installation/automatic.py:97
 #: ../ui/automatic.ui:302 ../ui/user_info.ui:70
 msgid "Confirm your password:"
-msgstr "Confirme a contrasinal:"
+msgstr ""
 
 #: ../thus/user_info.py:113 ../thus/user_info.py:129 ../ui/user_info.ui:135
 #: ../ui/user_info.ui:552
 msgid "Confirm password"
-msgstr "Confirme contrasinal"
+msgstr ""
 
 #: ../thus/user_info.py:117 ../ui/user_info.ui:531
 msgid "Choose a root password:"
-msgstr "Escolla un contrasinal root:"
+msgstr ""
 
 #: ../thus/user_info.py:125 ../ui/user_info.ui:589
 msgid "Confirm root password:"
-msgstr "Confirmar contrasinal de root:"
+msgstr ""
 
 #: ../thus/user_info.py:133
 msgid "Its name as it appears to other computers."
-msgstr "O seu nome como aparece cara a outros ordenadores."
+msgstr ""
 
 #: ../thus/user_info.py:137
 msgid "You must enter a name"
-msgstr "Debes introducir un nome"
+msgstr ""
 
 #: ../thus/user_info.py:141
 msgid "You must enter a username"
-msgstr "Debes introducir un nome de usuario"
+msgstr ""
 
 #: ../thus/user_info.py:145 ../thus/user_info.py:149
 msgid "You must enter a password"
-msgstr "Debes introducir un contrasinal"
+msgstr ""
 
 #: ../thus/user_info.py:153 ../ui/user_info.ui:383
 msgid "Log in automatically"
-msgstr "Acceso automático"
+msgstr ""
 
 #: ../thus/user_info.py:154 ../ui/user_info.ui:400
 msgid "A password is required to log in"
-msgstr "Requírese un contrasinal para entrar"
+msgstr ""
 
 #: ../thus/user_info.py:155 ../ui/user_info.ui:439
 msgid "Encrypt home folder"
-msgstr "Cifrar cartafol base"
+msgstr ""
 
 #: ../thus/user_info.py:158 ../thus/installation/automatic.py:105
 #: ../ui/user_info.ui:333
 msgid "Show password"
-msgstr "Amosar contrasinal"
+msgstr ""
 
 #: ../thus/user_info.py:161 ../ui/user_info.ui:468
 msgid "Show root password"
-msgstr "Amosar contrasinal de root"
+msgstr ""
 
 #: ../thus/user_info.py:164 ../ui/user_info.ui:350
 msgid "Use a root password"
-msgstr "Use un contrasinal de administrador"
+msgstr ""
 
 #: ../thus/user_info.py:229
 msgid ""
@@ -541,19 +537,19 @@ msgstr ""
 
 #: ../thus/user_info.py:310
 msgid "Invalid characters entered"
-msgstr "Introducidos carácteres inválidos"
+msgstr ""
 
 #: ../thus/user_info.py:314
 msgid "Username can't contain dots"
-msgstr "Usuario non pode conter puntos"
+msgstr ""
 
 #: ../thus/user_info.py:318
 msgid "Too many characters"
-msgstr "Demasiados caracteres"
+msgstr ""
 
 #: ../thus/download/download_urllib.py:42
 msgid "Wrong url, will try another one if available."
-msgstr "URL incorrecta, proba con outra se está dispoñible."
+msgstr ""
 
 #: ../thus/download/download_urllib.py:52
 #: ../thus/download/download_urllib.py:56
@@ -561,27 +557,27 @@ msgstr "URL incorrecta, proba con outra se está dispoñible."
 #: ../thus/download/download_urllib.py:64
 #, python-brace-format
 msgid "Can't open {0} - Reason: {1}"
-msgstr "Non se pode abrir {0} - Motivo: {1}"
+msgstr ""
 
 #: ../thus/download/download_urllib.py:80
 #, python-brace-format
 msgid "HTTP Error : {0}"
-msgstr "HTTP Erro : {0}"
+msgstr ""
 
 #: ../thus/download/download_urllib.py:83
 #, python-brace-format
 msgid "URL Error : {0}"
-msgstr "URL Erro : {0}"
+msgstr ""
 
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr "Baixando {0} {1} ({2} / {3})..."
+msgstr ""
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
 msgid "Metalink for package {0} has no size info"
-msgstr "O paquete Metalink {0} non ten información sobre tamaño"
+msgstr ""
 
 #: ../thus/download/download_urllib.py:137
 #, python-brace-format
@@ -596,47 +592,47 @@ msgstr ""
 #: ../thus/installation/advanced.py:264 ../thus/installation/advanced.py:577
 #: ../thus/installation/advanced.py:589
 msgid "free space"
-msgstr "espazo libre"
+msgstr ""
 
 #: ../thus/installation/advanced.py:365
 msgid "Device"
-msgstr "Dispositivo"
+msgstr ""
 
 #: ../thus/installation/advanced.py:368
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 #: ../thus/installation/advanced.py:371
 msgid "Mount point"
-msgstr "Punto de montaxe"
+msgstr ""
 
 #: ../thus/installation/advanced.py:374
 msgid "Label"
-msgstr "Etiqueta"
+msgstr ""
 
 #: ../thus/installation/advanced.py:381 ../thus/installation/advanced.py:1896
 msgid "Format"
-msgstr "Formato"
+msgstr ""
 
 #: ../thus/installation/advanced.py:388
 msgid "Size"
-msgstr "Tamaño"
+msgstr ""
 
 #: ../thus/installation/advanced.py:391
 msgid "Used"
-msgstr "Empregado"
+msgstr ""
 
 #: ../thus/installation/advanced.py:394
 msgid "Flags"
-msgstr "Bandeiras"
+msgstr ""
 
 #: ../thus/installation/advanced.py:401
 msgid "SSD"
-msgstr "SSD"
+msgstr ""
 
 #: ../thus/installation/advanced.py:559
 msgid "none"
-msgstr "ningún"
+msgstr ""
 
 #: ../thus/installation/advanced.py:699
 msgid "Can't edit a partition with LVM filesystem type"
@@ -654,12 +650,12 @@ msgstr ""
 #: ../thus/installation/advanced.py:870
 #, python-brace-format
 msgid "Unmounting {0}..."
-msgstr "Desmontando {0}..."
+msgstr ""
 
 #: ../thus/installation/advanced.py:995
 #, python-brace-format
 msgid "Sorry, you already have {0} primary partitions created."
-msgstr "Sentímolo, vostede xa ten {0} creado particións primarias."
+msgstr ""
 
 #: ../thus/installation/advanced.py:999
 #, python-brace-format
@@ -672,163 +668,163 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:1079
 msgid "Creating a primary partition"
-msgstr "Crear unha partición primaria"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1090
 msgid "Creating an extended partition"
-msgstr "Creando unha partición estendida"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1096
 msgid "Creating a logical partition"
-msgstr "Crear unha partición lóxica"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1158
 msgid "LUKS passwords do not match!"
-msgstr "LUKS contrasinais non coinciden!"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1283
 msgid "Advanced installation mode"
-msgstr "Modo de instalación avanzado"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1287 ../thus/installation/automatic.py:110
 msgid "Use the device below for boot loader installation:"
-msgstr "Use o dispositivo de abaixo para a instalación do cargador de arranque:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1292 ../thus/installation/automatic.py:115
 #: ../ui/advanced.ui:1041 ../ui/automatic.ui:149
 msgid "Bootloader:"
-msgstr "Cargador de arranque:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1296 ../thus/installation/automatic.py:119
 #: ../ui/advanced.ui:1067 ../ui/automatic.ui:174
 msgid "Device:"
-msgstr "Dispositivo:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1300
 msgid "Mount Checklist:"
-msgstr "Monte lista de comprobación:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1306
 msgid "Root"
-msgstr "Root"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1310 ../ui/bootloader.ui:7
 msgid "Boot"
-msgstr "Arranque"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1314
 msgid "EFI"
-msgstr "EFI"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1318
 msgid "Swap"
-msgstr "Swap"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1328
 msgid "Undo"
-msgstr "Desfacer"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1331 ../thus/installation/advanced.py:1896
 msgid "New"
-msgstr "Novo"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1334
 msgid "Delete"
-msgstr "Eliminar"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1337
 msgid "Edit..."
-msgstr "Editar..."
+msgstr ""
 
 #: ../thus/installation/advanced.py:1340
 msgid "New partition table"
-msgstr "Nova tabla de partición"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1351
 msgid "_Cancel"
-msgstr "_Cancelar"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1362
 msgid "_Apply"
-msgstr "_Aplicar"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1365 ../ui/advanced.ui:405
 msgid "Size:"
-msgstr "Tamaño:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1369 ../ui/advanced.ui:604
 msgid "Type:"
-msgstr "Tipo:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1373 ../ui/advanced.ui:621
 msgid "Primary"
-msgstr "Primaria"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1377 ../ui/advanced.ui:640
 msgid "Logical"
-msgstr "Lóxica"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1381 ../ui/advanced.ui:658
 msgid "Extended"
-msgstr "Extendida"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1385 ../ui/advanced.ui:509
 msgid "Beginning of this space"
-msgstr "Comezo de este espazo"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1389 ../ui/advanced.ui:528
 msgid "End of this space"
-msgstr "Final de este espazo"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1393 ../thus/installation/advanced.py:1410
 msgid "Use As:"
-msgstr "Usar como:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1397 ../thus/installation/advanced.py:1414
 msgid "Mount Point:"
-msgstr "Punto de montaxe:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1401 ../thus/installation/advanced.py:1418
 #: ../ui/advanced.ui:251 ../ui/advanced.ui:687
 msgid "Label (optional):"
-msgstr "Etiqueta (opcional):"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1405 ../thus/installation/advanced.py:1426
 msgid "Encryption Options..."
-msgstr "Opcións de cifrado..."
+msgstr ""
 
 #: ../thus/installation/advanced.py:1422 ../ui/advanced.ui:278
 msgid "Format:"
-msgstr "Formato:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1431
 msgid "Partition Table Type:"
-msgstr "Táboa de particións tipo"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1436
 msgid "Create Partition Table"
-msgstr "Crear táboa de particións"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1439
 msgid "Use LUKS encryption:"
-msgstr "Usar cifrado LUKS:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1443 ../ui/advanced.ui:1172
 msgid "LUKS volume name:"
-msgstr "LUKS nome de volume:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1447 ../ui/advanced.ui:1184
 msgid "Password:"
-msgstr "Contrasinal:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1451 ../ui/advanced.ui:1196
 msgid "Confirm password:"
-msgstr "Confirme contrasinal:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1521
 #, python-brace-format
 msgid "Creating a new {0} partition table for disk {1}"
-msgstr "Creando un novo {0} táboa de particións de disco para {1}"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1531
 msgid ""
@@ -847,7 +843,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:1706 ../thus/installation/automatic.py:107
 msgid "Install now!"
-msgstr "Instalar agora!"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1772
 #, python-brace-format
@@ -868,7 +864,7 @@ msgstr ""
 #: ../thus/installation/advanced.py:1787 ../thus/installation/advanced.py:1808
 #, python-brace-format
 msgid "{0} unmounted"
-msgstr "{0} desmontado"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1801
 #, python-brace-format
@@ -900,15 +896,15 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:1896
 msgid "Partition"
-msgstr "Partición"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1896
 msgid "Relabel"
-msgstr "Re-etiquetar"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1896
 msgid "Mount"
-msgstr "Montaxe"
+msgstr ""
 
 #: ../thus/installation/advanced.py:1896
 msgid "Encrypt"
@@ -916,7 +912,7 @@ msgstr ""
 
 #: ../thus/installation/advanced.py:1917
 msgid "These disks will have partition actions:"
-msgstr "Estes discos terán accións de partición:"
+msgstr ""
 
 #: ../thus/installation/advanced.py:2008
 #, python-brace-format
@@ -1050,7 +1046,7 @@ msgstr ""
 
 #: ../thus/installation/ask.py:220
 msgid "Installation type"
-msgstr "Tipo de instalación"
+msgstr ""
 
 #: ../thus/installation/ask.py:235
 #, python-brace-format
@@ -1122,11 +1118,11 @@ msgstr ""
 
 #: ../thus/installation/automatic.py:75
 msgid "Automatic installation mode"
-msgstr "Modo de instalación automático"
+msgstr ""
 
 #: ../thus/installation/automatic.py:79 ../ui/automatic.ui:81
 msgid "Select drive:"
-msgstr "Selecciona dispositivo"
+msgstr ""
 
 #: ../thus/installation/automatic.py:83
 msgid ""
@@ -1417,11 +1413,11 @@ msgstr ""
 
 #: ../thus/installation/bootloader.py:268
 msgid "GRUB(2) BIOS has been successfully installed."
-msgstr "GRUB(2) BIOS instalouse con éxito."
+msgstr ""
 
 #: ../thus/installation/bootloader.py:272
 msgid "ERROR installing GRUB(2) BIOS."
-msgstr "ERROR instalando GRUB(2) BIOS."
+msgstr ""
 
 #: ../thus/installation/bootloader.py:287
 #, python-brace-format
@@ -1738,7 +1734,7 @@ msgstr ""
 
 #: ../thus/installation/process.py:1052
 msgid "Configuring your new system"
-msgstr "Configurando o te novo sistema"
+msgstr ""
 
 #: ../thus/installation/process.py:1055
 msgid "fstab file generated."
@@ -1867,7 +1863,7 @@ msgstr ""
 
 #: ../thus/misc/validation.py:162
 msgid "Passwords do not match"
-msgstr "Contrasinais non coinciden"
+msgstr ""
 
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
@@ -1957,7 +1953,7 @@ msgstr ""
 
 #: ../ui/advanced.ui:84
 msgid "Partition table type:"
-msgstr "Tipo de tabla de partición:"
+msgstr ""
 
 #: ../ui/advanced.ui:159
 msgid "Edit partition"
@@ -1965,15 +1961,15 @@ msgstr ""
 
 #: ../ui/advanced.ui:181 ../ui/advanced.ui:436
 msgid "Use as:"
-msgstr "Usar como:"
+msgstr ""
 
 #: ../ui/advanced.ui:214 ../ui/advanced.ui:469
 msgid "Mount point:"
-msgstr "Punto de montaxe:"
+msgstr ""
 
 #: ../ui/advanced.ui:317 ../ui/advanced.ui:723
 msgid "Encryption options..."
-msgstr "Opcións de encriptado..."
+msgstr ""
 
 #: ../ui/advanced.ui:382
 msgid "Create partition"
@@ -2029,7 +2025,7 @@ msgstr ""
 
 #: ../ui/bootloader.ui:69
 msgid "What is your boot system type?"
-msgstr "Cal é o teu tipo de sistema de arrinque?"
+msgstr ""
 
 #: ../ui/bootloader.ui:98
 msgid "BIOS (Common)"
@@ -2037,11 +2033,11 @@ msgstr ""
 
 #: ../ui/bootloader.ui:120
 msgid "x86_64 UEFI"
-msgstr "x86_64 UEFI"
+msgstr ""
 
 #: ../ui/bootloader.ui:142
 msgid "i386 UEFI"
-msgstr "i386 UEFI"
+msgstr ""
 
 #: ../ui/bootloader.ui:169
 msgid "Choose 'cancel' if you don't want to install a boot loader"

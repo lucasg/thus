@@ -11,6 +11,7 @@
 # Libor Schejbal <libor.schejbal@gmail.com>, 2013
 # philm <philm@manjaro.org>, 2013
 # Marek Otahal <markotahalREMOVETHIS@gmail.com>, 2011
+# Miroslav Sittek <miroslav.sittek@gmail.com>, 2015
 # mmm <markotahal@gmail.com>, 2011,2013
 # philm <philm@manjaro.org>, 2013
 # Scibex <kroupa@wvw.cz>, 2013
@@ -21,9 +22,9 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/manjaro-thus/language/cs/)\n"
+"PO-Revision-Date: 2015-07-04 10:30+0000\n"
+"Last-Translator: Miroslav Sittek <miroslav.sittek@gmail.com>\n"
+"Language-Team: Czech (http://www.transifex.com/p/manjaro-thus/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -583,7 +584,7 @@ msgstr ""
 #: ../thus/download/download_urllib.py:117
 #, python-brace-format
 msgid "Downloading {0} {1} ({2}/{3})..."
-msgstr ""
+msgstr "Stahování {0} {1} ({2}/{3})..."
 
 #: ../thus/download/download_urllib.py:124
 #, python-brace-format
@@ -986,7 +987,7 @@ msgstr ""
 #: ../thus/installation/alongside.py:142
 #, python-brace-format
 msgid "Will shrink device {0} and create new device {1}"
-msgstr ""
+msgstr "Zmenší jednotku {0} a vytvoří novou jednotku {1}"
 
 #: ../thus/installation/alongside.py:150
 msgid "Thus recommends at least 6.5GB free to install Manjaro."

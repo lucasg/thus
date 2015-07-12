@@ -25,9 +25,9 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-06-09 22:29+0000\n"
+"PO-Revision-Date: 2015-06-16 21:17+0000\n"
 "Last-Translator: Gustav Gyges <gyges@gmx.net>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/manjaro-thus/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/p/manjaro-thus/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -160,7 +160,7 @@ msgstr "Zurück"
 #: ../thus/language.py:136
 #, python-brace-format
 msgid "Can't find translation file for the {0} language"
-msgstr "Kann die Übersetzungs-Datei für die {0} Sprache nicht finden"
+msgstr "Die Sprachdatei für die Sprache {0} konnte nicht gefunden werden"
 
 #: ../thus/location.py:71
 msgid "Select your location"
@@ -366,7 +366,7 @@ msgstr "Zeitzonenkoordinaten wurden nicht automatisch erkannt"
 
 #: ../thus/timezone.py:264
 msgid "Stoping timezone threads..."
-msgstr "Zeitzonen-thread wird gestoppt..."
+msgstr "Zeitzonen-Prozess wird gestoppt..."
 
 #: ../thus/timezone.py:301
 msgid "Can't get network status."
@@ -846,7 +846,7 @@ msgid ""
 "GRUB requires a BIOS Boot Partition in BIOS systems to embed its core.img file due to lack of post-MBR embed gap in GPT disks.\n"
 "\n"
 "Thus will create this BIOS Boot Partition for you."
-msgstr "GRUB benötigt eine BIOS Boot Partition auf BIOS-basierenden Systemen um seine core.img-Datei einbinden zu können, da in mit GPT formatierten Laufwerken eine post_MBR Lücke fehlt.\n\nThus wird diese spezielle Partition für Sie nun erstellen."
+msgstr "GRUB benötigt eine BIOS-Boot-Partition auf BIOS-basierenden Systemen, um die Datei core.img einbinden zu können, da mit GPT formatierten Laufwerken eine Post-MBR-Lücke fehlt.\n\nThus wird diese spezielle Partition nun für Sie erstellen."
 
 #: ../thus/installation/advanced.py:1559
 msgid "Can't create BIOS GPT Boot partition!"
@@ -902,7 +902,7 @@ msgstr "Die Root-Partition ist nicht zur Formatierung markiert.\nDies könnte Pr
 msgid ""
 "Added {0} to changelist: createme[{1}] relabel[{2}] fmt[{3}] mnt[{4}] "
 "encrypt[{5}]"
-msgstr "Füge {0} zu Prüfliste hinzu: erstelle[{1}] relabel[{2}] fmt[{3}] mnt[{4}] verschlüsseln[{5}]"
+msgstr "{0} zur Aufgabenliste hinzugefügt: erstelle[{1}] relabel[{2}] fmt[{3}] mounte[{4}] verschlüssele[{5}]"
 
 #: ../thus/installation/advanced.py:1888
 #, python-brace-format
@@ -937,12 +937,12 @@ msgstr "Speichern von Änderungen in {0} abgeschlossen"
 #: ../thus/installation/advanced.py:2031
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1} labeled {2}"
-msgstr "Neues Dateisystem {0} in {1} mit Label {2} wird erstellt"
+msgstr "Erstelle neues Dateisystem {0} in {1} mit Label {2}"
 
 #: ../thus/installation/advanced.py:2034
 #, python-brace-format
 msgid "Creating new {0} filesystem in {1}"
-msgstr "Neues Dateisystem {0} in {1} wird erstellt"
+msgstr "Erstelle neues Dateisystem {0} in {1}"
 
 #: ../thus/installation/advanced.py:2043 ../thus/installation/advanced.py:2062
 #: ../thus/installation/advanced.py:2078
@@ -1049,11 +1049,11 @@ msgstr "Windows(tm) Betriebssystem nicht gefunden."
 
 #: ../thus/installation/ask.py:148
 msgid "Can't detect any OS in device sda."
-msgstr "Kann kein OS auf Laufwerk sda erkennen"
+msgstr "Kann kein Betriebssystem auf Laufwerk sda finden."
 
 #: ../thus/installation/ask.py:152
 msgid "Unsuported disk layout for the 'alongside' installation mode"
-msgstr "Nicht unterstütztes Partitionsschema für Installation neben anderem Betriebssystem."
+msgstr "Nicht unterstütztes Partitionsschema für Installation neben anderem Betriebssystem"
 
 #: ../thus/installation/ask.py:197
 msgid " and "
@@ -1074,7 +1074,7 @@ msgstr "Festplatte löschen und Manjaro installieren"
 
 #: ../thus/installation/ask.py:242
 msgid "Warning: This will erase ALL data on your disk."
-msgstr "Warnung: Dies löscht ALLE Daten auf Ihrer Festplatte."
+msgstr "Warnung: ALLE Daten auf Ihrer Festplatte werden gelöscht!"
 
 #: ../thus/installation/ask.py:249
 msgid "Encrypt this installation for increased security."
@@ -1092,7 +1092,7 @@ msgstr "Nutze LVM mit dieser Installation."
 msgid ""
 "This will setup LVM and allow you to easily manage partitions and create "
 "snapshots."
-msgstr "Dies wird LVM einrichten, das die einfache Verwaltung von Partitionen und das\nErzeugen von Schnappschüssen erlaubt."
+msgstr "Dies wird LVM einrichten, das die einfache Verwaltung von Partitionen und das Erzeugen von Schnappschüssen erlaubt."
 
 #: ../thus/installation/ask.py:271
 msgid "Set your Home in a different partition/volume"
@@ -1101,7 +1101,7 @@ msgstr "Erstelle eine separate Partition/Volume für Ihr Home-Verzeichnis"
 #: ../thus/installation/ask.py:276
 msgid ""
 "This will setup you /home directory in a different partition or volume."
-msgstr "Dies wird Ihr /home Verzeichnis in einer anderen Partition oder einem\nanderen Volumen einrichten."
+msgstr "Dies wird das Verzeichnis /home in einer anderen Partition oder einem\nanderen Volumen einrichten."
 
 #: ../thus/installation/ask.py:296
 msgid "How would you like to proceed?"
@@ -1160,7 +1160,7 @@ msgstr "LUKS-Passwort. Benutzen Sie keine Sonderzeichen oder Akzente!"
 
 #: ../thus/installation/automatic.py:188
 msgid "A root LUKS password has been set"
-msgstr "Ein root LUKS Passwort wurde erstellt"
+msgstr "Ein Root-Passwort für LUKS wurde erstellt"
 
 #: ../thus/installation/automatic.py:190
 #, python-brace-format
@@ -1307,7 +1307,7 @@ msgstr "Swap in {0} kann nicht aktiviert werden"
 #: ../thus/installation/auto_partition.py:385
 #, python-brace-format
 msgid "Unknown filesystem type {0}"
-msgstr "Unbekanntes Dateisystem Typ {0}"
+msgstr "Unbekanntes Dateisystem {0}"
 
 #: ../thus/installation/auto_partition.py:393
 #, python-brace-format
@@ -1332,7 +1332,7 @@ msgstr "Mounte {0} als {1}"
 #: ../thus/installation/auto_partition.py:554
 #, python-brace-format
 msgid "Device {0} will have a {1} filesystem"
-msgstr "Laufwerk {0} wird ein {1} Dateisystem haben"
+msgstr "Laufwerk {0} wird das Dateisystem {1} haben"
 
 #: ../thus/installation/auto_partition.py:604
 #, python-format
@@ -1390,7 +1390,7 @@ msgstr "Fehler beim Erstellen einer physikalischen LVM-Partition"
 
 #: ../thus/installation/auto_partition.py:802
 msgid "Error creating LVM volume group"
-msgstr "Fehler beim Erstellen eines LVM-Pools (volume group)"
+msgstr "Fehler beim Erstellen der LVM-Volumengruppe"
 
 #: ../thus/installation/auto_partition.py:837
 msgid "Error creating LVM logical volume"
@@ -1404,7 +1404,7 @@ msgstr "Die Schlüsseldatei für LUKS kann nicht auf das Installations-Laufwerk 
 msgid ""
 "'ruuid' variable is not set. I can't check root UUID in grub.cfg, let's hope"
 " it's ok"
-msgstr "'ruuid' Variable ist nicht gesetzt. UUID in grub.cfg kann nicht überprüft werden. "
+msgstr "Die Variable 'ruuid' ist nicht gesetzt. Root's UUID in grub.cfg kann nicht überprüft werden. "
 
 #: ../thus/installation/bootloader.py:174
 msgid "/etc/default/grub configuration completed successfully."
@@ -1471,7 +1471,7 @@ msgstr "Kein OEM-Bootloader in {0} gefunden. Kopiere Grub(2) in das Verzeichnis.
 #: ../thus/installation/bootloader.py:335
 #, python-brace-format
 msgid "Copying Grub(2) into OEM dir failed: {0}"
-msgstr "Kopieren des GRUB(2) Bootloader in das OEM Verzeichnis {0} fehlgeschlagen"
+msgstr "Kopieren des GRUB(2)-Bootloaders in das OEM-Verzeichnis fehlgeschlagen: {0}"
 
 #: ../thus/installation/bootloader.py:339
 msgid "File not found."
@@ -1493,11 +1493,11 @@ msgstr "grub-mkconfig reagiert nicht. Beende groub-mount und os-prober, um fortz
 
 #: ../thus/installation/bootloader.py:391
 msgid "GRUB(2) UEFI install completed successfully"
-msgstr "GRUB(2) UEFI wurde erfolgreich installiert."
+msgstr "GRUB(2) für UEFI wurde erfolgreich installiert."
 
 #: ../thus/installation/bootloader.py:395
 msgid "GRUB(2) UEFI install may not have completed successfully."
-msgstr "GRUB(2) UEFI wurde unter Umständen nicht erfolgreich installiert."
+msgstr "GRUB(2) für UEFI wurde unter Umständen nicht erfolgreich installiert."
 
 #: ../thus/installation/bootloader.py:407
 msgid "50mounted-tests file patched successfully"
@@ -1525,7 +1525,7 @@ msgstr "Installiere GRUB2-Lokale"
 
 #: ../thus/installation/bootloader.py:436
 msgid "Can't install GRUB(2) locale."
-msgstr "Fehler beim Installieren der GRUB(2) Lokalisationen."
+msgstr "Fehler beim Installieren der Lokalisationen von GRUB(2)."
 
 #: ../thus/installation/bootloader.py:502
 msgid "Gummiboot install completed successfully"
@@ -1537,11 +1537,11 @@ msgstr "Gummiboot konnte NICHT erfolgreich installiert werden!"
 
 #: ../thus/installation/bootloader.py:538
 msgid "Can't freeze/unfreeze xfs system"
-msgstr "Kann xfs System nicht sperren/freigeben"
+msgstr "Kann XFS-System nicht sperren/freigeben"
 
 #: ../thus/installation/chroot.py:55
 msgid "Special dirs are already mounted. Skipping."
-msgstr "Überspringe einhängen von bereits eingebundenen Spezial-Verzeichnissen."
+msgstr "Überspringe das Einhängen von bereits eingebundenen Spezial-Verzeichnissen."
 
 #: ../thus/installation/chroot.py:105
 msgid "Special dirs are not mounted. Skipping."
@@ -1642,7 +1642,7 @@ msgstr "System konfiguriert."
 #: ../thus/installation/process.py:476
 #, python-brace-format
 msgid "Can't copy Thus log to {0}"
-msgstr "Konnte Thus-Log nicht nach {0} kopieren"
+msgstr "Die Logdateien von Thus können nicht nach {0} kopiert werden"
 
 #: ../thus/installation/process.py:493 ../thus/installation/process.py:512
 #: ../thus/installation/process.py:526
@@ -1883,7 +1883,7 @@ msgstr "Passwörter sind nicht gleich"
 #: ../thus/parted3/fs_module.py:105
 #, python-brace-format
 msgid "Can't label a {0} partition"
-msgstr "Hinzufügen von Label zu {0} Partition nicht möglich."
+msgstr "Hinzufügen eines Labels zu {0}-Partition nicht möglich."
 
 #: ../thus/parted3/fs_module.py:172
 #, python-brace-format
@@ -2028,7 +2028,7 @@ msgstr "<b>WARNUNG! Dieser Installationsmodus wird alles auf Ihrem Laufwerk übe
 msgid ""
 "Please choose the drive where you want to install Manjaro and click the "
 "button below to start the process."
-msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Manjaro installieren wollen.\nDrücken Sie den Knopf unten um den Installationsprozess zu beginnen."
+msgstr "Bitte wählen Sie das Laufwerk aus, auf dem Sie Manjaro installieren wollen.\nKlicken Sie den Knopf unten, um den Installationsprozess zu beginnen."
 
 #: ../ui/automatic.ui:271
 msgid "show password"

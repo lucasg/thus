@@ -7,10 +7,11 @@
 # Acácio da Rosa Florentino <acaciosc1@gmail.com>, 2014
 # António Correia, 2013-2015
 # António Correia, 2013
+# Cátia Carvalho <catia.carvalho1992@gmail.com>, 2015
 # sierleunam <cfb53275@opayq.com>, 2013
 # Daniel Gerep <daniel.gerep@gmail.com>, 2014
 # Dércio Lopes <derci0_l0pes@hotmail.com>, 2015
-# Gonçalo Silva <goncaloluisilva@gmail.com>, 2014
+# Gonçalo Silva <inactive+glrs@transifex.com>, 2014
 # philm <philm@manjaro.org>, 2013
 # philm <philm@manjaro.org>, 2013
 # Seaco <marcoafmiranda@gmail.com>, 2013
@@ -20,9 +21,9 @@ msgstr ""
 "Project-Id-Version: manjaro-thus\n"
 "Report-Msgid-Bugs-To: philm@manjaro.org\n"
 "POT-Creation-Date: 2015-04-04 18:39+0200\n"
-"PO-Revision-Date: 2015-04-14 10:10+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
-"Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/manjaro-thus/language/pt_PT/)\n"
+"PO-Revision-Date: 2015-07-02 18:32+0000\n"
+"Last-Translator: Cátia Carvalho <catia.carvalho1992@gmail.com>\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/p/manjaro-thus/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,7 +88,7 @@ msgstr "Espaço suficiente em disco."
 
 #: ../thus/encfs.py:105
 msgid "Can't create and modify encfs configuration files."
-msgstr ""
+msgstr "Impossível criar e modificar ficheiros de configuração encfs"
 
 #: ../thus/encfs.py:107
 msgid "Home directory won't be encrypted."
@@ -103,11 +104,11 @@ msgstr "Selecione a disposição do seu teclado"
 
 #: ../thus/keymap.py:65 ../ui/keymap.ui:75
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "DIsposições do Teclado"
 
 #: ../thus/keymap.py:68 ../ui/keymap.ui:86
 msgid "Keyboard Variants"
-msgstr ""
+msgstr "Variantes do Teclado"
 
 #: ../thus/keymap.py:72
 msgid "Layouts"
@@ -137,7 +138,7 @@ msgid ""
 "advanced setups. Please proceed with caution as data loss is possible! \n"
 "\n"
 "If you find any bugs, please report them at http://bugs.manjaro.org"
-msgstr ""
+msgstr "Thus é um software Beta, ainda em constante desenvolvimento.\nDe momento não lida correctamente com RAID, subvolumes btrfs ou outras configurações avançadas. Por favor, proceda com cautela uma vez que a perda de dados é possível!\n\nSe encontrar quaisquer problemas,por favor reporte-os em <a href='http://bugs.manjaro.org'>http://bugs.manjaro.org</a>"
 
 #: ../thus/language.py:128 ../thus/user_info.py:259
 #: ../thus/installation/ask.py:213
@@ -192,7 +193,7 @@ msgstr ""
 msgid ""
 "This installer must be run with administrative privileges, and cannot "
 "continue without them."
-msgstr ""
+msgstr "Este instalador deve ser executado com privilégios administrativos e não pode continuar sem eles."
 
 #: ../thus/main_window.py:74
 #, python-brace-format

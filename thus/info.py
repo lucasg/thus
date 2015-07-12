@@ -26,6 +26,6 @@
 
 """ Set some Thus global constants """
 
-THUS_VERSION = "0.8.13"
-THUS_LAST_STABLE = "0.8.13"
+THUS_VERSION = "0.8.13.1"
+THUS_LAST_STABLE = "0.8.13.1"
 THUS_WEBSITE = "http://www.manjaro.org"
