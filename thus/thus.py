@@ -295,11 +295,14 @@ def setup_gettext():
 
 def check_for_files():
     """ Check for some necessary files. Thus can't run without them """
+    if not os.path.exists("/etc/thus.conf"):
+        print("No configuration file. Copy /etc/thus.conf.default to /etc/thus.conf and configure it.")
+        return False
+
     paths = [
         "/usr/share/thus",
         "/usr/share/thus/ui",
         "/usr/share/thus/data"]
-
     for path in paths:
         if not os.path.exists(path):
             print(_("Thus files not found. Please, install Thus using pacman"))
